@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { getDetailedStadium } from './data/detailedStadiums';
@@ -19,7 +19,7 @@ function App() {
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
 
-  const loadWeatherForecast = async () => {
+  const loadWeatherForecast = useCallback(async () => {
     if (!selectedStadium) return;
     
     setLoadingWeather(true);
@@ -32,7 +32,7 @@ function App() {
     } finally {
       setLoadingWeather(false);
     }
-  };
+  }, [selectedStadium]);
 
   useEffect(() => {
     if (selectedStadium && gameDateTime) {
@@ -46,7 +46,7 @@ function App() {
       // Load weather forecast
       loadWeatherForecast();
     }
-  }, [selectedStadium, gameDateTime]);
+  }, [selectedStadium, gameDateTime, loadWeatherForecast]);
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
     setSelectedGame(game);

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
@@ -30,7 +30,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     stadium: stadium
   }));
 
-  const loadGamesForStadium = async () => {
+  const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
     
     setLoading(true);
@@ -51,13 +51,13 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     } finally {
       setLoading(false);
     }
-  };
+  }, [selectedStadium]);
 
   useEffect(() => {
     if (selectedStadium && viewMode === 'games') {
       loadGamesForStadium();
     }
-  }, [selectedStadium, viewMode]);
+  }, [selectedStadium, viewMode, loadGamesForStadium]);
 
   const handleGameSelect = (gameOption: any) => {
     if (gameOption?.game) {
