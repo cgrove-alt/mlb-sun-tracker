@@ -1,5 +1,6 @@
 import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
+import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -9,9 +10,9 @@ export interface SunPosition {
 }
 
 export interface SeatingSectionSun {
-  section: string;
+  section: StadiumSection;
   inSun: boolean;
-  sunIntensity: number; // 0-1, where 1 is fully in sun
+  sunExposure: number; // 0-100, percentage of sun exposure
 }
 
 export function getSunPosition(
@@ -99,6 +100,86 @@ export function calculateSunnySections(
   });
   
   return sunnySections;
+}
+
+// Calculate detailed section-level sun exposure for all sections in a stadium
+export function calculateDetailedSectionSunExposure(
+  stadium: Stadium,
+  sunPosition: SunPosition
+): SeatingSectionSun[] {
+  const sections = getStadiumSections(stadium.id);
+  const sectionSunData: SeatingSectionSun[] = [];
+  
+  // If stadium has a fixed roof, no sections get sun
+  if (stadium.roof === 'fixed') {
+    sections.forEach(section => {
+      sectionSunData.push({
+        section,
+        inSun: false,
+        sunExposure: 0
+      });
+    });
+    return sectionSunData;
+  }
+  
+  // Account for stadium orientation
+  // Section angles are relative to home plate, but sun azimuth is compass-based
+  // We need to adjust the sun azimuth relative to stadium orientation
+  const adjustedSunAzimuth = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
+  
+  sections.forEach(section => {
+    const inSun = isSectionInSun(section, adjustedSunAzimuth, sunPosition.altitudeDegrees);
+    const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, adjustedSunAzimuth);
+    
+    sectionSunData.push({
+      section,
+      inSun,
+      sunExposure
+    });
+  });
+  
+  return sectionSunData;
+}
+
+// Filter sections based on sun exposure criteria
+export function filterSectionsBySunExposure(
+  sectionSunData: SeatingSectionSun[],
+  criteria: {
+    minExposure?: number;
+    maxExposure?: number;
+    levels?: Array<'field' | 'lower' | 'club' | 'upper' | 'suite'>;
+    covered?: boolean;
+    priceRange?: Array<'value' | 'moderate' | 'premium' | 'luxury'>;
+  }
+): SeatingSectionSun[] {
+  return sectionSunData.filter(item => {
+    const { section, sunExposure } = item;
+    
+    // Check exposure range
+    if (criteria.minExposure !== undefined && sunExposure < criteria.minExposure) {
+      return false;
+    }
+    if (criteria.maxExposure !== undefined && sunExposure > criteria.maxExposure) {
+      return false;
+    }
+    
+    // Check level
+    if (criteria.levels && !criteria.levels.includes(section.level)) {
+      return false;
+    }
+    
+    // Check covered preference
+    if (criteria.covered !== undefined && section.covered !== criteria.covered) {
+      return false;
+    }
+    
+    // Check price range
+    if (criteria.priceRange && section.price && !criteria.priceRange.includes(section.price)) {
+      return false;
+    }
+    
+    return true;
+  });
 }
 
 // Get a simple description of sun conditions

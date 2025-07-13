@@ -6,7 +6,9 @@ import { StadiumView } from './components/StadiumView';
 import { DetailedStadiumView } from './components/DetailedStadiumView';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection } from './utils/sunCalculations';
+import { SunExposureFilter, SunFilterCriteria } from './components/SunExposureFilter';
+import { SectionList } from './components/SectionList';
+import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 
@@ -18,6 +20,10 @@ function App() {
   const [sunnySections, setSunnySections] = useState<Map<string, boolean>>(new Map());
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
+  const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
+  const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
+  const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
+  const [loadingSections, setLoadingSections] = useState(false);
 
   const loadWeatherForecast = useCallback(async () => {
     if (!selectedStadium) return;
@@ -36,6 +42,8 @@ function App() {
 
   useEffect(() => {
     if (selectedStadium && gameDateTime) {
+      setLoadingSections(true);
+      
       // Calculate sun position
       const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
       setSunPosition(position);
@@ -43,10 +51,32 @@ function App() {
       const sections = calculateSunnySections(selectedStadium, position);
       setSunnySections(sections);
 
+      // Calculate detailed section data
+      const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position);
+      setDetailedSections(detailedSectionData);
+      
+      // Apply current filter
+      const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
+      setFilteredSections(filtered);
+      
+      setLoadingSections(false);
+
       // Load weather forecast
       loadWeatherForecast();
     }
-  }, [selectedStadium, gameDateTime, loadWeatherForecast]);
+  }, [selectedStadium, gameDateTime, loadWeatherForecast, filterCriteria]);
+
+  // Update filtered sections when filter criteria changes
+  useEffect(() => {
+    if (detailedSections.length > 0) {
+      const filtered = filterSectionsBySunExposure(detailedSections, filterCriteria);
+      setFilteredSections(filtered);
+    }
+  }, [detailedSections, filterCriteria]);
+
+  const handleFilterChange = (criteria: SunFilterCriteria) => {
+    setFilterCriteria(criteria);
+  };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
@@ -60,6 +90,9 @@ function App() {
     setWeatherForecast(null);
     setSunPosition(null);
     setSunnySections(new Map());
+    setDetailedSections([]);
+    setFilteredSections([]);
+    setFilterCriteria({});
   };
 
   return (
@@ -79,6 +112,17 @@ function App() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
+            <div className="filter-section">
+              <SunExposureFilter 
+                onFilterChange={handleFilterChange}
+                disabled={loadingSections}
+              />
+              <SectionList 
+                sections={filteredSections}
+                loading={loadingSections}
+              />
+            </div>
+
             <div className="analysis-grid">
               <div className="sun-weather-info">
                 {weatherForecast && (
