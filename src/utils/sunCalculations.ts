@@ -1,0 +1,124 @@
+import SunCalc from 'suncalc';
+import { Stadium } from '../data/stadiums';
+
+export interface SunPosition {
+  azimuth: number; // Sun azimuth in radians
+  altitude: number; // Sun altitude in radians
+  azimuthDegrees: number; // Sun azimuth in degrees (0-360)
+  altitudeDegrees: number; // Sun altitude in degrees
+}
+
+export interface SeatingSectionSun {
+  section: string;
+  inSun: boolean;
+  sunIntensity: number; // 0-1, where 1 is fully in sun
+}
+
+export function getSunPosition(
+  date: Date,
+  latitude: number,
+  longitude: number
+): SunPosition {
+  const sunPos = SunCalc.getPosition(date, latitude, longitude);
+  
+  // Convert radians to degrees and normalize azimuth to 0-360
+  const azimuthDegrees = ((sunPos.azimuth * 180 / Math.PI) + 180) % 360;
+  const altitudeDegrees = sunPos.altitude * 180 / Math.PI;
+  
+  return {
+    azimuth: sunPos.azimuth,
+    altitude: sunPos.altitude,
+    azimuthDegrees,
+    altitudeDegrees
+  };
+}
+
+export function getSunTimes(date: Date, latitude: number, longitude: number) {
+  return SunCalc.getTimes(date, latitude, longitude);
+}
+
+// Calculate which sections of the stadium will be in sun
+export function calculateSunnySections(
+  stadium: Stadium,
+  sunPosition: SunPosition
+): Map<string, boolean> {
+  const sunnySections = new Map<string, boolean>();
+  
+  // If sun is below horizon, no sections are sunny
+  if (sunPosition.altitudeDegrees < 0) {
+    return sunnySections;
+  }
+  
+  // For stadiums with fixed roofs, no sections are sunny
+  if (stadium.roof === 'fixed') {
+    return sunnySections;
+  }
+  
+  // Calculate relative sun angle to stadium orientation
+  const relativeSunAngle = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
+  
+  // Define section angles relative to home plate
+  const sections = [
+    { name: 'Home Plate', startAngle: 170, endAngle: 190 },
+    { name: 'First Base Line', startAngle: 0, endAngle: 90 },
+    { name: 'Third Base Line', startAngle: 270, endAngle: 360 },
+    { name: 'Right Field', startAngle: 315, endAngle: 45 },
+    { name: 'Center Field', startAngle: 340, endAngle: 20 },
+    { name: 'Left Field', startAngle: 135, endAngle: 225 },
+    { name: 'Upper Deck - First Base', startAngle: 0, endAngle: 90 },
+    { name: 'Upper Deck - Third Base', startAngle: 270, endAngle: 360 },
+    { name: 'Upper Deck - Outfield', startAngle: 315, endAngle: 225 }
+  ];
+  
+  // Calculate shadow length based on sun altitude (for future enhancements)
+  // const shadowLength = 1 / Math.tan(sunPosition.altitude);
+  
+  sections.forEach(section => {
+    // Check if sun angle falls within section's range
+    let inSun = false;
+    
+    if (section.startAngle > section.endAngle) {
+      // Section crosses 0 degrees
+      inSun = relativeSunAngle >= section.startAngle || relativeSunAngle <= section.endAngle;
+    } else {
+      inSun = relativeSunAngle >= section.startAngle && relativeSunAngle <= section.endAngle;
+    }
+    
+    // Consider sun altitude - lower sections might be shaded by upper deck
+    if (inSun && section.name.includes('Lower') && sunPosition.altitudeDegrees < 30) {
+      inSun = false;
+    }
+    
+    // Opposite side of the stadium from the sun will be in shade
+    const oppositeAngle = (relativeSunAngle + 180) % 360;
+    if (section.startAngle <= oppositeAngle && oppositeAngle <= section.endAngle) {
+      inSun = true;
+    }
+    
+    sunnySections.set(section.name, inSun);
+  });
+  
+  return sunnySections;
+}
+
+// Get a simple description of sun conditions
+export function getSunDescription(sunPosition: SunPosition): string {
+  if (sunPosition.altitudeDegrees < 0) {
+    return 'Sun is below the horizon';
+  } else if (sunPosition.altitudeDegrees < 10) {
+    return 'Sun is very low on the horizon';
+  } else if (sunPosition.altitudeDegrees < 30) {
+    return 'Sun is low in the sky';
+  } else if (sunPosition.altitudeDegrees < 60) {
+    return 'Sun is at medium height';
+  } else {
+    return 'Sun is high in the sky';
+  }
+}
+
+// Get compass direction from azimuth
+export function getCompassDirection(azimuthDegrees: number): string {
+  const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
+  const index = Math.round(azimuthDegrees / 45) % 8;
+  return directions[index];
+}
