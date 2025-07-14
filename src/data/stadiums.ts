@@ -38,14 +38,14 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'athletics',
-    name: 'Oakland Coliseum',
+    name: 'Sutter Health Park',
     team: 'Oakland Athletics',
-    city: 'Oakland',
+    city: 'Sacramento',
     state: 'CA',
-    latitude: 37.7516,
-    longitude: -122.2006,
+    latitude: 38.5664,
+    longitude: -121.5030,
     orientation: 330,
-    capacity: 46847,
+    capacity: 14014,
     roof: 'open'
   },
   {
@@ -266,15 +266,15 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'Tropicana Field',
+    name: 'George M. Steinbrenner Field',
     team: 'Tampa Bay Rays',
-    city: 'St. Petersburg',
+    city: 'Tampa',
     state: 'FL',
-    latitude: 27.7682,
-    longitude: -82.6534,
+    latitude: 27.9628,
+    longitude: -82.5062,
     orientation: 316,
-    capacity: 25025,
-    roof: 'fixed'
+    capacity: 11026,
+    roof: 'open'
   },
   {
     id: 'redsox',
