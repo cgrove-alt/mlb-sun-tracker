@@ -115,7 +115,8 @@ export const SunExposureFilter: React.FC<SunExposureFilterProps> = ({
   };
 
   return (
-    <div className={`sun-exposure-filter ${disabled ? 'disabled' : ''}`}>
+    <div className={`sun-exposure-filter ${disabled ? 'disabled' : ''}`} style={{border: '3px solid green', background: 'lightgreen'}}>
+      <div>FILTER COMPONENT IS RENDERING</div>
       <div className="filter-header">
         <h3>🎯 Section Filter</h3>
         <button 
