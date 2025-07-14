@@ -67,8 +67,8 @@ export class WeatherApiService {
       return this.parseWeatherResponse(data);
     } catch (error) {
       console.error('Error fetching weather data:', error);
-      // Return mock data for development
-      return this.getMockWeather();
+      // Throw error instead of silently falling back to mock data
+      throw new Error(`Weather service unavailable: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
   }
 
@@ -145,7 +145,7 @@ export class WeatherApiService {
   }
 
   private getWeatherCondition(code: number): WeatherCondition {
-    // WMO Weather interpretation codes
+    // Complete WMO Weather interpretation codes
     const weatherCodes: Record<number, WeatherCondition> = {
       0: { id: 800, main: 'Clear', description: 'Clear sky', icon: '01d' },
       1: { id: 801, main: 'Clouds', description: 'Mainly clear', icon: '02d' },
@@ -156,18 +156,34 @@ export class WeatherApiService {
       51: { id: 300, main: 'Drizzle', description: 'Light drizzle', icon: '09d' },
       53: { id: 301, main: 'Drizzle', description: 'Moderate drizzle', icon: '09d' },
       55: { id: 302, main: 'Drizzle', description: 'Dense drizzle', icon: '09d' },
+      56: { id: 310, main: 'Drizzle', description: 'Light freezing drizzle', icon: '09d' },
+      57: { id: 311, main: 'Drizzle', description: 'Dense freezing drizzle', icon: '09d' },
       61: { id: 500, main: 'Rain', description: 'Slight rain', icon: '10d' },
       63: { id: 501, main: 'Rain', description: 'Moderate rain', icon: '10d' },
       65: { id: 502, main: 'Rain', description: 'Heavy rain', icon: '10d' },
+      66: { id: 511, main: 'Rain', description: 'Light freezing rain', icon: '10d' },
+      67: { id: 511, main: 'Rain', description: 'Heavy freezing rain', icon: '10d' },
       71: { id: 600, main: 'Snow', description: 'Slight snow', icon: '13d' },
       73: { id: 601, main: 'Snow', description: 'Moderate snow', icon: '13d' },
       75: { id: 602, main: 'Snow', description: 'Heavy snow', icon: '13d' },
+      77: { id: 600, main: 'Snow', description: 'Snow grains', icon: '13d' },
+      80: { id: 520, main: 'Rain', description: 'Slight rain showers', icon: '09d' },
+      81: { id: 521, main: 'Rain', description: 'Moderate rain showers', icon: '09d' },
+      82: { id: 522, main: 'Rain', description: 'Violent rain showers', icon: '09d' },
+      85: { id: 620, main: 'Snow', description: 'Slight snow showers', icon: '13d' },
+      86: { id: 621, main: 'Snow', description: 'Heavy snow showers', icon: '13d' },
       95: { id: 200, main: 'Thunderstorm', description: 'Thunderstorm', icon: '11d' },
       96: { id: 201, main: 'Thunderstorm', description: 'Thunderstorm with slight hail', icon: '11d' },
       99: { id: 202, main: 'Thunderstorm', description: 'Thunderstorm with heavy hail', icon: '11d' }
     };
     
-    return weatherCodes[code] || { id: 800, main: 'Clear', description: 'Clear sky', icon: '01d' };
+    // Log unmapped codes for debugging
+    if (!weatherCodes[code]) {
+      console.warn(`Unknown weather code: ${code}. Defaulting to partly cloudy.`);
+      return { id: 802, main: 'Clouds', description: 'Unknown conditions (partly cloudy)', icon: '03d' };
+    }
+    
+    return weatherCodes[code];
   }
 
   getWeatherImpactOnSun(weather: WeatherData): {

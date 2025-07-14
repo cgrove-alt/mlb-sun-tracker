@@ -37,7 +37,9 @@ function App() {
       setWeatherForecast(forecast);
     } catch (error) {
       console.error('Error loading weather forecast:', error);
+      // Show user-friendly message instead of null
       setWeatherForecast(null);
+      // Could add a toast notification here
     } finally {
       setLoadingWeather(false);
     }

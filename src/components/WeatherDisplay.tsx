@@ -37,7 +37,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
     // Find the closest hourly forecast to the game time
     const targetHour = targetTime.getTime();
     let closestWeather = weather.current;
-    let closestDiff = Math.abs(new Date().getTime() - targetHour);
+    let closestDiff = Infinity; // Start with infinity instead of current time difference
     
     weather.hourly.forEach(hourly => {
       const hourlyTime = new Date(hourly.time).getTime();
