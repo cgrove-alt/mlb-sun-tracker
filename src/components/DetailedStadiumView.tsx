@@ -18,7 +18,32 @@ export const DetailedStadiumView: React.FC<DetailedStadiumViewProps> = ({
     if (!sunPosition || sunPosition.altitudeDegrees < 0) return 'shaded';
     if (stadium.roof === 'fixed') return 'shaded';
     
-    // Calculate if sun angle falls within section's range
+    // First, try to use weather-adjusted sun data from sunnySections Map
+    const sectionKeys = [
+      section.name,
+      section.id,
+      `Section ${section.name}`,
+      `Section ${section.id}`,
+      section.name.replace(/\s+/g, ''), // Remove spaces
+      section.id.replace(/\s+/g, '')    // Remove spaces
+    ];
+    
+    for (const key of sectionKeys) {
+      const sectionInSun = sunnySections.get(key);
+      if (sectionInSun !== undefined) {
+        // Use the weather-adjusted data
+        console.log(`Found weather-adjusted data for section ${section.name}/${section.id} using key: ${key}, inSun: ${sectionInSun}`);
+        if (sectionInSun) {
+          return section.level === 'Field' && sunPosition.altitudeDegrees < 20 ? 'partial' : 'sunny';
+        } else {
+          return 'shaded';
+        }
+      }
+    }
+    
+    // Fallback to manual calculation if no match found (shouldn't happen with proper data)
+    console.warn(`No weather-adjusted data found for section: ${section.name}/${section.id}`);
+    
     const relativeSunAngle = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
     
     let inSun = false;

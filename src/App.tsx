@@ -69,10 +69,39 @@ function App() {
       // Convert detailed sections to simple Map for stadium visualization
       const sectionsMap = new Map<string, boolean>();
       detailedSectionData.forEach(sectionData => {
-        sectionsMap.set(sectionData.section.name, sectionData.inSun);
+        const section = sectionData.section;
+        // Add multiple mapping variations to handle different naming schemes
+        sectionsMap.set(section.name, sectionData.inSun);
+        sectionsMap.set(section.id, sectionData.inSun);
+        sectionsMap.set(`Section ${section.name}`, sectionData.inSun);
+        sectionsMap.set(`Section ${section.id}`, sectionData.inSun);
+        
+        // Add variations without spaces for better matching
+        if (section.name.includes(' ')) {
+          sectionsMap.set(section.name.replace(/\s+/g, ''), sectionData.inSun);
+        }
+        if (section.id.includes(' ')) {
+          sectionsMap.set(section.id.replace(/\s+/g, ''), sectionData.inSun);
+        }
+        
+        // Add level-based generic mappings for visualization components
+        if (section.level === 'field') {
+          sectionsMap.set(`Field Level ${section.name}`, sectionData.inSun);
+          sectionsMap.set(`Field Level`, sectionData.inSun);
+        } else if (section.level === 'lower') {
+          sectionsMap.set(`Lower Level ${section.name}`, sectionData.inSun);
+          sectionsMap.set(`Main Level`, sectionData.inSun);
+        } else if (section.level === 'upper') {
+          sectionsMap.set(`Upper Level ${section.name}`, sectionData.inSun);
+          sectionsMap.set(`Upper Deck`, sectionData.inSun);
+        } else if (section.level === 'club') {
+          sectionsMap.set(`Club Level ${section.name}`, sectionData.inSun);
+          sectionsMap.set(`Club Level`, sectionData.inSun);
+        }
       });
       setSunnySections(sectionsMap);
       console.log('Detailed sections calculated:', detailedSectionData.length);
+      console.log('Section mapping created with keys:', Array.from(sectionsMap.keys()).slice(0, 10));
       setDetailedSections(detailedSectionData);
       
       // Apply current filter
