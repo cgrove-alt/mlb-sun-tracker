@@ -8,6 +8,7 @@ import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilter, SunFilterCriteria } from './components/SunExposureFilter';
 import { SimpleFilter } from './components/SimpleFilter';
+import { SunExposureFilterFixed } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
 import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
@@ -116,12 +117,10 @@ function App() {
         {selectedStadium && gameDateTime && (
           <div className="results">
             <div className="filter-section">
-              <div style={{background: 'yellow', padding: '20px', border: '2px solid orange'}}>
-                <h3>DIRECT FILTER TEST</h3>
-                <p>Loading sections: {loadingSections.toString()}</p>
-                <p>Sections count: {filteredSections.length}</p>
-                <button onClick={() => console.log('Filter test clicked')}>Test Button</button>
-              </div>
+              <SunExposureFilterFixed 
+                onFilterChange={handleFilterChange}
+                disabled={loadingSections}
+              />
               <SectionList 
                 sections={filteredSections}
                 loading={loadingSections}
