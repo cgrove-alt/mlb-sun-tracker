@@ -10,6 +10,7 @@ import { SunExposureFilter, SunFilterCriteria } from './components/SunExposureFi
 import { SimpleFilter } from './components/SimpleFilter';
 import { SunExposureFilterFixed } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
+import { EmptyState } from './components/EmptyStates';
 import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
@@ -104,6 +105,12 @@ function App() {
       <header className="App-header">
         <h1>MLB Stadium Sun Tracker</h1>
         <p>Find out which seats will be in the sun during baseball games</p>
+        {selectedStadium && gameDateTime && (
+          <div className="quick-summary">
+            <span className="stadium-name">{selectedStadium.name}</span>
+            <span className="game-time">{gameDateTime.toLocaleDateString()}</span>
+          </div>
+        )}
       </header>
 
       <main className="App-main">
@@ -113,6 +120,28 @@ function App() {
           onStadiumChange={handleStadiumChange}
           stadiums={MLB_STADIUMS}
         />
+
+        {!selectedStadium && (
+          <EmptyState 
+            type="no-stadium"
+            action={
+              <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                💡 Choose from 30 MLB stadiums to analyze sun exposure patterns
+              </p>
+            }
+          />
+        )}
+
+        {selectedStadium && !gameDateTime && (
+          <EmptyState 
+            type="no-game"
+            action={
+              <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                🎯 Pick a real game or set any custom date and time
+              </p>
+            }
+          />
+        )}
 
         {selectedStadium && gameDateTime && (
           <div className="results">
@@ -186,6 +215,23 @@ function App() {
             </div>
 
             <div className="filter-section">
+              <div className="section-overview">
+                <div className="overview-stats">
+                  <div className="stat-item">
+                    <span className="stat-number">{detailedSections.length}</span>
+                    <span className="stat-label">Total Sections</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">{filteredSections.length}</span>
+                    <span className="stat-label">Matching Filters</span>
+                  </div>
+                  <div className="stat-item">
+                    <span className="stat-number">{filteredSections.filter(s => s.inSun).length}</span>
+                    <span className="stat-label">In Sun</span>
+                  </div>
+                </div>
+              </div>
+              
               <SunExposureFilterFixed 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}

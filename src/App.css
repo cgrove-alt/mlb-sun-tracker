@@ -23,6 +23,26 @@
   opacity: 0.9;
 }
 
+.quick-summary {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.stadium-name {
+  font-weight: 600;
+}
+
+.game-time {
+  opacity: 0.8;
+}
+
 .App-main {
   max-width: 1200px;
   margin: 0 auto;
@@ -92,6 +112,40 @@
 .filter-section > :last-child {
   flex: 1;
   min-width: 400px;
+}
+
+.section-overview {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.overview-stats {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 500;
 }
 
 .analysis-grid {
@@ -307,6 +361,12 @@
     font-size: 1rem;
   }
   
+  .quick-summary {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.8rem;
+  }
+  
   .controls {
     grid-template-columns: 1fr;
   }
@@ -323,6 +383,18 @@
   .filter-section > :last-child {
     flex: none;
     min-width: auto;
+  }
+
+  .overview-stats {
+    padding: 12px;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
   }
 
   .analysis-grid {
