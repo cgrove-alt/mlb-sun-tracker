@@ -31,27 +31,8 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
     return null;
   }
 
-  const getWeatherForTime = (targetTime: Date): WeatherData => {
-    if (!gameTime) return weather.current;
-    
-    // Find the closest hourly forecast to the game time
-    const targetHour = targetTime.getTime();
-    let closestWeather = weather.current;
-    let closestDiff = Infinity; // Start with infinity instead of current time difference
-    
-    weather.hourly.forEach(hourly => {
-      const hourlyTime = new Date(hourly.time).getTime();
-      const diff = Math.abs(hourlyTime - targetHour);
-      if (diff < closestDiff) {
-        closestDiff = diff;
-        closestWeather = hourly.weather;
-      }
-    });
-    
-    return closestWeather;
-  };
-
-  const relevantWeather = gameTime ? getWeatherForTime(gameTime) : weather.current;
+  // Use centralized weather selection method
+  const relevantWeather = weatherApi.getWeatherForTime(weather, gameTime || undefined);
   const weatherImpact = weatherApi.getWeatherImpactOnSun(relevantWeather);
 
   const getWeatherIcon = (condition: string, iconCode: string): string => {

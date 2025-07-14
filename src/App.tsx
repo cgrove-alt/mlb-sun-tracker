@@ -300,7 +300,7 @@ function App() {
                         <span className="rec-icon">🌦️</span>
                         <div className="rec-content">
                           <h4>Weather Considerations</h4>
-                          <p>{weatherApi.getWeatherImpactOnSun(weatherForecast.current).recommendation}</p>
+                          <p>{weatherApi.getWeatherImpactOnSun(weatherApi.getWeatherForTime(weatherForecast, gameDateTime || undefined)).recommendation}</p>
                         </div>
                       </div>
                     )}

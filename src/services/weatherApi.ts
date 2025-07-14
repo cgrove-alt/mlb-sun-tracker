@@ -40,6 +40,28 @@ export interface WeatherForecast {
 export class WeatherApiService {
   // Using Open-Meteo as it's free and doesn't require an API key
   private baseUrl = 'https://api.open-meteo.com/v1';
+
+  // Centralized method to get consistent weather for any time
+  getWeatherForTime(forecast: WeatherForecast, targetTime?: Date): WeatherData {
+    if (!targetTime) return forecast.current;
+    
+    // Find the closest hourly forecast to the target time
+    const targetHour = targetTime.getTime();
+    let closestWeather = forecast.current;
+    let closestDiff = Infinity;
+    
+    forecast.hourly.forEach(hourly => {
+      // Handle timezone properly by ensuring consistent parsing
+      const hourlyTime = new Date(hourly.time).getTime();
+      const diff = Math.abs(hourlyTime - targetHour);
+      if (diff < closestDiff) {
+        closestDiff = diff;
+        closestWeather = hourly.weather;
+      }
+    });
+    
+    return closestWeather;
+  }
   
   async getForecast(latitude: number, longitude: number): Promise<WeatherForecast> {
     try {
@@ -104,7 +126,7 @@ export class WeatherApiService {
       cloudCover: current.cloud_cover || 0,
       visibility: 10, // Open-Meteo doesn't provide current visibility
       uvIndex: 0, // Not available in current weather
-      conditions: [this.getWeatherCondition(current.weather_code || 0)],
+      conditions: [this.getWeatherCondition(current.weather_code || 0, current.is_day)],
       precipitationProbability: 0,
       precipitationAmount: current.precipitation || 0
     };
@@ -121,7 +143,7 @@ export class WeatherApiService {
       cloudCover: hourly.cloud_cover[index] || 0,
       visibility: hourly.visibility[index] / 1000 || 10, // Convert m to km
       uvIndex: hourly.uv_index[index] || 0,
-      conditions: [this.getWeatherCondition(hourly.weather_code[index] || 0)],
+      conditions: [this.getWeatherCondition(hourly.weather_code[index] || 0, hourly.is_day[index])],
       precipitationProbability: hourly.precipitation_probability[index] || 0,
       precipitationAmount: hourly.precipitation[index] || 0
     };
@@ -138,13 +160,13 @@ export class WeatherApiService {
       cloudCover: 50, // Estimated
       visibility: 10,
       uvIndex: daily.uv_index_max[index] || 0,
-      conditions: [this.getWeatherCondition(daily.weather_code[index] || 0)],
+      conditions: [this.getWeatherCondition(daily.weather_code[index] || 0, isDay)],
       precipitationProbability: daily.precipitation_probability_max[index] || 0,
       precipitationAmount: daily.precipitation_sum[index] || 0
     };
   }
 
-  private getWeatherCondition(code: number): WeatherCondition {
+  private getWeatherCondition(code: number, isDay: boolean = true): WeatherCondition {
     // Complete WMO Weather interpretation codes
     const weatherCodes: Record<number, WeatherCondition> = {
       0: { id: 800, main: 'Clear', description: 'Clear sky', icon: '01d' },
@@ -180,10 +202,17 @@ export class WeatherApiService {
     // Log unmapped codes for debugging
     if (!weatherCodes[code]) {
       console.warn(`Unknown weather code: ${code}. Defaulting to partly cloudy.`);
-      return { id: 802, main: 'Clouds', description: 'Unknown conditions (partly cloudy)', icon: '03d' };
+      return { id: 802, main: 'Clouds', description: 'Unknown conditions (partly cloudy)', icon: isDay ? '03d' : '03n' };
     }
     
-    return weatherCodes[code];
+    const condition = weatherCodes[code];
+    // Apply day/night icon variation
+    const icon = condition.icon.replace('d', isDay ? 'd' : 'n');
+    
+    return {
+      ...condition,
+      icon
+    };
   }
 
   getWeatherImpactOnSun(weather: WeatherData): {
