@@ -78,10 +78,20 @@
 }
 
 .filter-section {
-  display: grid;
-  grid-template-columns: 400px 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 20px;
+}
+
+.filter-section > :first-child {
+  flex: 0 0 400px;
+  min-width: 300px;
+}
+
+.filter-section > :last-child {
+  flex: 1;
+  min-width: 400px;
 }
 
 .analysis-grid {
@@ -306,7 +316,13 @@
   }
 
   .filter-section {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  
+  .filter-section > :first-child,
+  .filter-section > :last-child {
+    flex: none;
+    min-width: auto;
   }
 
   .analysis-grid {
