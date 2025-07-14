@@ -18,6 +18,7 @@ export const SunExposureFilter: React.FC<SunExposureFilterProps> = ({
   onFilterChange,
   disabled = false
 }) => {
+  console.log('SunExposureFilter rendering, disabled:', disabled);
   const [sunPreference, setSunPreference] = useState<'any' | 'avoid' | 'prefer' | 'custom'>('any');
   const [customMin, setCustomMin] = useState<number>(0);
   const [customMax, setCustomMax] = useState<number>(100);
