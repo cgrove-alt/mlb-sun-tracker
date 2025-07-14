@@ -116,17 +116,6 @@ function App() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
-            <div className="filter-section">
-              <SunExposureFilterFixed 
-                onFilterChange={handleFilterChange}
-                disabled={loadingSections}
-              />
-              <SectionList 
-                sections={filteredSections}
-                loading={loadingSections}
-              />
-            </div>
-
             <div className="analysis-grid">
               <div className="sun-weather-info">
                 {weatherForecast && (
@@ -194,6 +183,17 @@ function App() {
                   );
                 })()}
               </div>
+            </div>
+
+            <div className="filter-section">
+              <SunExposureFilterFixed 
+                onFilterChange={handleFilterChange}
+                disabled={loadingSections}
+              />
+              <SectionList 
+                sections={filteredSections}
+                loading={loadingSections}
+              />
             </div>
 
             <div className="recommendations">
