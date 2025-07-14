@@ -7,6 +7,7 @@ import { DetailedStadiumView } from './components/DetailedStadiumView';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilter, SunFilterCriteria } from './components/SunExposureFilter';
+import { SimpleFilter } from './components/SimpleFilter';
 import { SectionList } from './components/SectionList';
 import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
@@ -115,7 +116,7 @@ function App() {
         {selectedStadium && gameDateTime && (
           <div className="results">
             <div className="filter-section">
-              <SunExposureFilter 
+              <SimpleFilter 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
               />
