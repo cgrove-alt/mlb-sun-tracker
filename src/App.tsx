@@ -116,10 +116,12 @@ function App() {
         {selectedStadium && gameDateTime && (
           <div className="results">
             <div className="filter-section">
-              <SimpleFilter 
-                onFilterChange={handleFilterChange}
-                disabled={loadingSections}
-              />
+              <div style={{background: 'yellow', padding: '20px', border: '2px solid orange'}}>
+                <h3>DIRECT FILTER TEST</h3>
+                <p>Loading sections: {loadingSections.toString()}</p>
+                <p>Sections count: {filteredSections.length}</p>
+                <button onClick={() => console.log('Filter test clicked')}>Test Button</button>
+              </div>
               <SectionList 
                 sections={filteredSections}
                 loading={loadingSections}
