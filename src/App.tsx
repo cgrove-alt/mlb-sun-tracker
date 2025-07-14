@@ -194,73 +194,52 @@ function App() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
-            <div className="analysis-grid">
-              <div className="sun-weather-info">
-                {weatherForecast && (
-                  <WeatherDisplay 
-                    weather={weatherForecast} 
-                    gameTime={gameDateTime}
-                    loading={loadingWeather}
-                  />
-                )}
+            <div className="weather-info-section">
+              {weatherForecast && (
+                <WeatherDisplay 
+                  weather={weatherForecast} 
+                  gameTime={gameDateTime}
+                  loading={loadingWeather}
+                />
+              )}
 
-                {sunPosition && (
-                  <div className="sun-info">
-                    <h3>Sun Information</h3>
-                    <div className="sun-details">
-                      <div className="sun-detail-item">
-                        <span className="sun-icon">☀️</span>
-                        <div className="sun-detail-content">
-                          <span className="sun-label">Condition</span>
-                          <span className="sun-value">{getSunDescription(sunPosition)}</span>
-                        </div>
+              {sunPosition && (
+                <div className="sun-info">
+                  <h3>Sun Information</h3>
+                  <div className="sun-details">
+                    <div className="sun-detail-item">
+                      <span className="sun-icon">☀️</span>
+                      <div className="sun-detail-content">
+                        <span className="sun-label">Condition</span>
+                        <span className="sun-value">{getSunDescription(sunPosition)}</span>
                       </div>
-                      
-                      <div className="sun-detail-item">
-                        <span className="sun-icon">🧭</span>
-                        <div className="sun-detail-content">
-                          <span className="sun-label">Direction</span>
-                          <span className="sun-value">{sunPosition ? getCompassDirection(sunPosition.azimuthDegrees) : 'N/A'} ({sunPosition ? Math.round(sunPosition.azimuthDegrees) : 0}°)</span>
-                        </div>
-                      </div>
-                      
-                      <div className="sun-detail-item">
-                        <span className="sun-icon">📐</span>
-                        <div className="sun-detail-content">
-                          <span className="sun-label">Elevation</span>
-                          <span className="sun-value">{sunPosition ? Math.round(sunPosition.altitudeDegrees) : 0}°</span>
-                        </div>
-                      </div>
-
-                      {sunPosition && sunPosition.altitudeDegrees < 0 && (
-                        <div className="night-game">
-                          <span className="night-icon">🌙</span>
-                          <span>This is a night game - sun will not be a factor</span>
-                        </div>
-                      )}
                     </div>
-                  </div>
-                )}
-              </div>
+                    
+                    <div className="sun-detail-item">
+                      <span className="sun-icon">🧭</span>
+                      <div className="sun-detail-content">
+                        <span className="sun-label">Direction</span>
+                        <span className="sun-value">{sunPosition ? getCompassDirection(sunPosition.azimuthDegrees) : 'N/A'} ({sunPosition ? Math.round(sunPosition.azimuthDegrees) : 0}°)</span>
+                      </div>
+                    </div>
+                    
+                    <div className="sun-detail-item">
+                      <span className="sun-icon">📐</span>
+                      <div className="sun-detail-content">
+                        <span className="sun-label">Elevation</span>
+                        <span className="sun-value">{sunPosition ? Math.round(sunPosition.altitudeDegrees) : 0}°</span>
+                      </div>
+                    </div>
 
-              <div className="stadium-visualization">
-                {(() => {
-                  const detailedStadium = getDetailedStadium(selectedStadium.id);
-                  return detailedStadium ? (
-                    <DetailedStadiumView
-                      stadium={detailedStadium}
-                      sunPosition={sunPosition}
-                      sunnySections={sunnySections}
-                    />
-                  ) : (
-                    <StadiumView
-                      stadium={selectedStadium}
-                      sunPosition={sunPosition}
-                      sunnySections={sunnySections}
-                    />
-                  );
-                })()}
-              </div>
+                    {sunPosition && sunPosition.altitudeDegrees < 0 && (
+                      <div className="night-game">
+                        <span className="night-icon">🌙</span>
+                        <span>This is a night game - sun will not be a factor</span>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="filter-section">

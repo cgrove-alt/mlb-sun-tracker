@@ -148,22 +148,11 @@
   font-weight: 500;
 }
 
-.analysis-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin-bottom: 24px;
-}
-
-.sun-weather-info {
+.weather-info-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-.stadium-visualization {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .sun-info {
@@ -397,8 +386,7 @@
     font-size: 0.7rem;
   }
 
-  .analysis-grid {
-    grid-template-columns: 1fr;
+  .weather-info-section {
     gap: 16px;
   }
 
