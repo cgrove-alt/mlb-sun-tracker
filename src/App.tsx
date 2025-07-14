@@ -115,6 +115,9 @@ function App() {
         {selectedStadium && gameDateTime && (
           <div className="results">
             <div className="filter-section">
+              <div style={{background: 'red', color: 'white', padding: '20px', border: '2px solid black'}}>
+                FILTER PLACEHOLDER - if you see this, the container works
+              </div>
               <SunExposureFilter 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
