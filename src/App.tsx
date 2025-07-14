@@ -53,10 +53,12 @@ function App() {
 
       // Calculate detailed section data
       const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position);
+      console.log('Detailed sections calculated:', detailedSectionData.length);
       setDetailedSections(detailedSectionData);
       
       // Apply current filter
       const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
+      console.log('Filtered sections:', filtered.length);
       setFilteredSections(filtered);
       
       setLoadingSections(false);

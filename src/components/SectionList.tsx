@@ -11,6 +11,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false
 }) => {
+  console.log('SectionList rendering with sections:', sections.length);
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>('exposure');
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
 
