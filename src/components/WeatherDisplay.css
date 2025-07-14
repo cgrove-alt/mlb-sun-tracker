@@ -279,6 +279,18 @@
   color: #666;
 }
 
+.hourly-item.game-hour {
+  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+  border: 2px solid #ff9800;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+}
+
+.game-indicator {
+  margin-left: 4px;
+  font-size: 0.8rem;
+  color: #ff9800;
+}
+
 @media (max-width: 768px) {
   .weather-display {
     padding: 16px;

@@ -171,29 +171,43 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
 
       {gameTime && weather.hourly.length > 0 && (
         <div className="hourly-forecast">
-          <h4>Hourly Forecast</h4>
+          <h4>Game Day Forecast</h4>
           <div className="hourly-grid">
-            {weather.hourly.slice(0, 8).map((hour, index) => {
-              const hourTime = new Date(hour.time);
-              const hourWeather = hour.weather;
+            {(() => {
+              const gameHour = gameTime.getTime();
+              const startTime = gameHour - (2 * 60 * 60 * 1000); // 2 hours before
+              const endTime = gameHour + (5 * 60 * 60 * 1000);   // 5 hours after
               
-              return (
-                <div key={index} className="hourly-item">
-                  <div className="hourly-time">
-                    {hourTime.toLocaleTimeString([], { hour: 'numeric' })}
+              // Filter hours to show 2 hours before to 5 hours after game time
+              const relevantHours = weather.hourly.filter(hour => {
+                const hourTime = new Date(hour.time).getTime();
+                return hourTime >= startTime && hourTime <= endTime;
+              });
+
+              return relevantHours.map((hour, index) => {
+                const hourTime = new Date(hour.time);
+                const hourWeather = hour.weather;
+                const isGameHour = Math.abs(hourTime.getTime() - gameHour) < (30 * 60 * 1000); // Within 30 min of game
+                
+                return (
+                  <div key={index} className={`hourly-item ${isGameHour ? 'game-hour' : ''}`}>
+                    <div className="hourly-time">
+                      {hourTime.toLocaleTimeString([], { hour: 'numeric' })}
+                      {isGameHour && <span className="game-indicator">⚾</span>}
+                    </div>
+                    <div className="hourly-icon">
+                      {getWeatherIcon(hourWeather.conditions[0].main, hourWeather.conditions[0].icon)}
+                    </div>
+                    <div className="hourly-temp">
+                      {Math.round(hourWeather.temperature)}°
+                    </div>
+                    <div className="hourly-clouds">
+                      ☁️ {hourWeather.cloudCover}%
+                    </div>
                   </div>
-                  <div className="hourly-icon">
-                    {getWeatherIcon(hourWeather.conditions[0].main, hourWeather.conditions[0].icon)}
-                  </div>
-                  <div className="hourly-temp">
-                    {Math.round(hourWeather.temperature)}°
-                  </div>
-                  <div className="hourly-clouds">
-                    ☁️ {hourWeather.cloudCover}%
-                  </div>
-                </div>
-              );
-            })}
+                );
+              });
+            })()}
           </div>
         </div>
       )}
