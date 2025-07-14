@@ -275,6 +275,7 @@ function App() {
 
       <footer className="App-footer">
         <p>Sun calculations are approximate and may vary based on stadium architecture and weather conditions.</p>
+        <p>Weather data provided by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a></p>
       </footer>
     </div>
   );
