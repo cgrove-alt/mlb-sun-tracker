@@ -45,6 +45,7 @@ function App() {
     }
   }, [selectedStadium]);
 
+  // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
     if (selectedStadium && gameDateTime) {
       setLoadingSections(true);
@@ -53,11 +54,18 @@ function App() {
       const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
       setSunPosition(position);
       
-      const sections = calculateSunnySections(selectedStadium, position);
-      setSunnySections(sections);
+      // Get weather data for calculations
+      const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
 
-      // Calculate detailed section data
-      const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position);
+      // Calculate detailed section data with weather impact
+      const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
+      
+      // Convert detailed sections to simple Map for stadium visualization
+      const sectionsMap = new Map<string, boolean>();
+      detailedSectionData.forEach(sectionData => {
+        sectionsMap.set(sectionData.section.name, sectionData.inSun);
+      });
+      setSunnySections(sectionsMap);
       console.log('Detailed sections calculated:', detailedSectionData.length);
       setDetailedSections(detailedSectionData);
       
@@ -67,11 +75,15 @@ function App() {
       setFilteredSections(filtered);
       
       setLoadingSections(false);
+    }
+  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria]);
 
-      // Load weather forecast
+  // Load weather forecast when stadium changes
+  useEffect(() => {
+    if (selectedStadium) {
       loadWeatherForecast();
     }
-  }, [selectedStadium, gameDateTime, loadWeatherForecast, filterCriteria]);
+  }, [selectedStadium, loadWeatherForecast]);
 
   // Update filtered sections when filter criteria changes
   useEffect(() => {

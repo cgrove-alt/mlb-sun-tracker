@@ -1,6 +1,7 @@
 import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
+import { WeatherData } from '../services/weatherApi';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -105,7 +106,8 @@ export function calculateSunnySections(
 // Calculate detailed section-level sun exposure for all sections in a stadium
 export function calculateDetailedSectionSunExposure(
   stadium: Stadium,
-  sunPosition: SunPosition
+  sunPosition: SunPosition,
+  weather?: WeatherData
 ): SeatingSectionSun[] {
   const sections = getStadiumSections(stadium.id);
   const sectionSunData: SeatingSectionSun[] = [];
@@ -127,14 +129,34 @@ export function calculateDetailedSectionSunExposure(
   // We need to adjust the sun azimuth relative to stadium orientation
   const adjustedSunAzimuth = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
   
+  // Calculate weather impact on sun exposure
+  let weatherMultiplier = 1.0;
+  if (weather) {
+    const { cloudCover, conditions, precipitationProbability } = weather;
+    
+    // Reduce sun exposure based on weather conditions
+    if ((precipitationProbability && precipitationProbability > 70) || conditions.some(c => c.main === 'Rain' || c.main === 'Snow')) {
+      weatherMultiplier = 0.1; // Heavy rain/snow blocks most sun
+    } else if (cloudCover > 80) {
+      weatherMultiplier = 0.3; // Heavy clouds
+    } else if (cloudCover > 50) {
+      weatherMultiplier = 0.6; // Partial clouds
+    } else if (cloudCover > 20) {
+      weatherMultiplier = 0.8; // Light clouds
+    }
+  }
+
   sections.forEach(section => {
     const inSun = isSectionInSun(section, adjustedSunAzimuth, sunPosition.altitudeDegrees);
-    const sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, adjustedSunAzimuth);
+    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, adjustedSunAzimuth);
+    
+    // Apply weather impact to sun exposure
+    sunExposure = sunExposure * weatherMultiplier;
     
     sectionSunData.push({
       section,
-      inSun,
-      sunExposure
+      inSun: inSun && sunExposure > 10, // Consider it "in sun" only if meaningful exposure after weather
+      sunExposure: Math.round(sunExposure)
     });
   });
   

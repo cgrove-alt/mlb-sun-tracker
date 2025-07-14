@@ -191,6 +191,11 @@ export const SectionList: React.FC<SectionListProps> = ({
                         </span>
                         <span className="exposure-text">
                           {Math.round(sunExposure)}% sun exposure
+                          {sunExposure < 90 && inSun && (
+                            <span className="weather-adjusted" title="Weather conditions reducing sun exposure">
+                              🌤️
+                            </span>
+                          )}
                         </span>
                       </div>
                       <div className="exposure-bar">
