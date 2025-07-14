@@ -56,6 +56,12 @@ function App() {
       
       // Get weather data for calculations
       const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
+      console.log('Game weather for sun calculations:', gameWeather ? {
+        cloudCover: gameWeather.cloudCover,
+        conditions: gameWeather.conditions[0]?.main,
+        precipitationProbability: gameWeather.precipitationProbability,
+        temperature: gameWeather.temperature
+      } : 'No weather data');
 
       // Calculate detailed section data with weather impact
       const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);

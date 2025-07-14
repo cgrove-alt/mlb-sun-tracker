@@ -133,17 +133,27 @@ export function calculateDetailedSectionSunExposure(
   let weatherMultiplier = 1.0;
   if (weather) {
     const { cloudCover, conditions, precipitationProbability } = weather;
+    console.log('Weather data applied:', { cloudCover, conditions: conditions[0]?.main, precipitationProbability });
     
     // Reduce sun exposure based on weather conditions
-    if ((precipitationProbability && precipitationProbability > 70) || conditions.some(c => c.main === 'Rain' || c.main === 'Snow')) {
-      weatherMultiplier = 0.1; // Heavy rain/snow blocks most sun
+    if ((precipitationProbability && precipitationProbability > 70) || 
+        conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
+      weatherMultiplier = 0.1; // Heavy rain/snow/drizzle blocks most sun
+    } else if (precipitationProbability && precipitationProbability > 30) {
+      weatherMultiplier = 0.4; // Light rain likely
     } else if (cloudCover > 80) {
-      weatherMultiplier = 0.3; // Heavy clouds
-    } else if (cloudCover > 50) {
-      weatherMultiplier = 0.6; // Partial clouds
-    } else if (cloudCover > 20) {
-      weatherMultiplier = 0.8; // Light clouds
+      weatherMultiplier = 0.4; // Heavy clouds
+    } else if (cloudCover > 60) {
+      weatherMultiplier = 0.6; // Mostly cloudy
+    } else if (cloudCover > 40) {
+      weatherMultiplier = 0.8; // Partly cloudy
+    } else if (cloudCover > 15) {
+      weatherMultiplier = 0.9; // Light clouds
     }
+    
+    console.log('Weather multiplier applied:', weatherMultiplier);
+  } else {
+    console.log('No weather data available for sun calculations');
   }
 
   sections.forEach(section => {
