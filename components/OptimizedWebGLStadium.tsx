@@ -1,11 +1,31 @@
 'use client';
 
-console.log('IMPORT: OptimizedWebGLStadium module loading...');
+console.log('IMPORT: OptimizedWebGLStadium module loading...', Date.now());
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Stadium } from '../src/data/stadiums';
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+
+console.log('IMPORT: Basic imports successful, attempting Three.js imports...');
+
+let THREE: any = null;
+let OrbitControls: any = null;
+
+try {
+  console.log('IMPORT: Loading THREE...');
+  THREE = require('three');
+  console.log('IMPORT: THREE loaded successfully:', !!THREE);
+} catch (error) {
+  console.error('IMPORT: Failed to load THREE:', error);
+}
+
+try {
+  console.log('IMPORT: Loading OrbitControls...');
+  const controls = require('three/examples/jsm/controls/OrbitControls.js');
+  OrbitControls = controls.OrbitControls;
+  console.log('IMPORT: OrbitControls loaded successfully:', !!OrbitControls);
+} catch (error) {
+  console.error('IMPORT: Failed to load OrbitControls:', error);
+}
 
 interface OptimizedWebGLStadiumProps {
   stadium: Stadium;
@@ -52,7 +72,7 @@ export default function OptimizedWebGLStadium({
   selectedSections = [],
   onSectionClick,
 }: OptimizedWebGLStadiumProps) {
-  console.log('IMMEDIATE: OptimizedWebGLStadium function called');
+  console.log('IMMEDIATE: OptimizedWebGLStadium function called', Date.now());
   console.log('OptimizedWebGLStadium component mounted', { stadium: stadium?.name, sunPosition });
   
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,6 +103,13 @@ export default function OptimizedWebGLStadium({
       setDebugLog(prev => [...prev, 'Starting Three.js initialization...']);
       setIsLoading(true);
       
+      // Check if THREE.js modules loaded successfully
+      if (!THREE || !OrbitControls) {
+        throw new Error('THREE.js modules failed to load');
+      }
+      console.log('THREE.js modules confirmed loaded');
+      setDebugLog(prev => [...prev, 'THREE.js modules confirmed loaded']);
+      
       // Check WebGL support first
       if (!isWebGLSupported()) {
         throw new Error('WebGL is not supported in this browser');
@@ -90,8 +117,7 @@ export default function OptimizedWebGLStadium({
       console.log('WebGL support confirmed');
       setDebugLog(prev => [...prev, 'WebGL support confirmed']);
       
-      // THREE.js is now statically imported
-      console.log('THREE.js loaded successfully', { THREE, OrbitControls });
+      console.log('THREE.js loaded successfully', { THREE: !!THREE, OrbitControls: !!OrbitControls });
       setDebugLog(prev => [...prev, 'THREE.js loaded successfully']);
       
       setIsLoading(false);
@@ -557,6 +583,25 @@ export default function OptimizedWebGLStadium({
   }, []);
 
   console.log('RENDER: OptimizedWebGLStadium render - error:', error, 'isLoading:', isLoading);
+
+  // Immediate fallback if THREE.js failed to load
+  if (!THREE || !OrbitControls) {
+    console.log('RENDER: THREE.js failed to load, showing fallback');
+    return (
+      <div style={{ padding: '20px', background: '#ff5722', color: 'white', margin: '20px 0' }}>
+        <p>WEBGL ERROR: THREE.js modules failed to load!</p>
+        <p>THREE: {THREE ? 'Loaded' : 'Failed'}</p>
+        <p>OrbitControls: {OrbitControls ? 'Loaded' : 'Failed'}</p>
+        <p>This is likely a module resolution issue.</p>
+        <div style={{ marginTop: '10px' }}>
+          <p><strong>Debug Log:</strong></p>
+          {debugLog.map((log, index) => (
+            <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     console.log('RENDER: Rendering error state:', error);
