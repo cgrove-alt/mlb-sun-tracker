@@ -259,6 +259,11 @@ function AppContent() {
             {/* Optimized WebGL 3D Stadium Visualization */}
             {sunPosition && (
               <ErrorBoundary>
+                <div style={{ padding: '20px', background: '#f0f0f0', margin: '20px 0' }}>
+                  <p>DEBUG: About to render OptimizedWebGLStadium</p>
+                  <p>Stadium: {selectedStadium?.name}</p>
+                  <p>Sun Position: {sunPosition.azimuthDegrees}°/{sunPosition.altitudeDegrees}°</p>
+                </div>
                 <OptimizedWebGLStadium
                   stadium={selectedStadium}
                   sunPosition={sunPosition}
