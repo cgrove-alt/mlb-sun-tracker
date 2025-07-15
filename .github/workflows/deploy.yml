@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Next.js to GitHub Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -37,7 +37,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build
+      - name: Build Next.js
         run: npm run build
         env:
           CI: false  # Treats warnings as warnings, not errors
@@ -45,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build
+          path: ./out
 
   # Deployment job
   deploy:
