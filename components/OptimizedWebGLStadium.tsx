@@ -51,17 +51,6 @@ export default function OptimizedWebGLStadium({
   
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerReady, setContainerReady] = useState(false);
-  
-  // Callback ref to handle container mounting
-  const setContainerRef = useCallback((element: HTMLDivElement | null) => {
-    console.log('setContainerRef called with:', !!element);
-    (containerRef as any).current = element;
-    if (element) {
-      console.log('Setting container ready to true');
-      setDebugLog(prev => [...prev, 'Container element mounted']);
-      setContainerReady(true);
-    }
-  }, []); // Remove containerReady dependency to avoid infinite loop
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
@@ -506,6 +495,35 @@ export default function OptimizedWebGLStadium({
     }
   }, [onSectionClick]);
 
+  // Use useLayoutEffect to detect when container is mounted and ready
+  React.useLayoutEffect(() => {
+    console.log('useLayoutEffect triggered, checking container...');
+    setDebugLog(prev => [...prev, 'useLayoutEffect triggered']);
+    
+    if (containerRef.current) {
+      console.log('Container found in useLayoutEffect!');
+      setDebugLog(prev => [...prev, 'Container found in useLayoutEffect!']);
+      setContainerReady(true);
+    } else {
+      // If container not found immediately, wait for Next.js hydration
+      console.log('Container not found, waiting for hydration...');
+      setDebugLog(prev => [...prev, 'Container not found, waiting for hydration...']);
+      
+      const checkContainer = () => {
+        console.log('Checking container after timeout...');
+        if (containerRef.current) {
+          console.log('Container found after timeout!');
+          setDebugLog(prev => [...prev, 'Container found after timeout!']);
+          setContainerReady(true);
+        }
+      };
+      
+      // Give Next.js time to hydrate
+      const timeoutId = setTimeout(checkContainer, 100);
+      return () => clearTimeout(timeoutId);
+    }
+  }, []);
+
   // Initialize when container is ready
   useEffect(() => {
     console.log('useEffect triggered, containerReady:', containerReady);
@@ -642,7 +660,7 @@ export default function OptimizedWebGLStadium({
         </div>
       </div>
       <div
-        ref={setContainerRef}
+        ref={containerRef}
         className="webgl-stadium-canvas-container"
         style={{
           width: '100%',
