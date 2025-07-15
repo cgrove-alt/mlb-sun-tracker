@@ -565,6 +565,13 @@ export default function OptimizedWebGLStadium({
   console.log('RENDER: Rendering main component');
   return (
     <div className="webgl-stadium-container">
+      <div style={{ padding: '20px', background: '#f44336', color: 'white', margin: '20px 0' }}>
+        <p>WEBGL: OptimizedWebGLStadium component is executing!</p>
+        <p>WEBGL: Stadium: {stadium?.name}</p>
+        <p>WEBGL: Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
+        <p>WEBGL: Error: {error || 'None'}</p>
+        <p>WEBGL: Loading: {isLoading ? 'Yes' : 'No'}</p>
+      </div>
       <div
         ref={containerRef}
         className="webgl-stadium-canvas-container"
