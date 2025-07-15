@@ -484,18 +484,8 @@ export default function OptimizedWebGLStadium({
     console.log('OptimizedWebGLStadium useEffect called');
     setDebugLog(prev => [...prev, 'useEffect called']);
     
-    // Wait for container to be ready
-    const initWithDelay = () => {
-      if (containerRef.current) {
-        setDebugLog(prev => [...prev, 'Container ready, initializing Three.js']);
-        initializeThreeJS();
-      } else {
-        setDebugLog(prev => [...prev, 'Container not ready, waiting...']);
-        setTimeout(initWithDelay, 100);
-      }
-    };
-    
-    initWithDelay();
+    // Simple initialization without complex timing logic
+    initializeThreeJS();
     
     return () => {
       if (animationRef.current) {
