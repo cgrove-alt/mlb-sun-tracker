@@ -59,6 +59,7 @@ export default function OptimizedWebGLStadium({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
+  const [debugLog, setDebugLog] = useState<string[]>([]);
   
   // Animation control
   const animationRef = useRef<number>();
@@ -79,6 +80,7 @@ export default function OptimizedWebGLStadium({
   const initializeThreeJS = useCallback(async () => {
     try {
       console.log('Starting Three.js initialization...');
+      setDebugLog(prev => [...prev, 'Starting Three.js initialization...']);
       setIsLoading(true);
       
       // Check WebGL support first
@@ -86,14 +88,17 @@ export default function OptimizedWebGLStadium({
         throw new Error('WebGL is not supported in this browser');
       }
       console.log('WebGL support confirmed');
+      setDebugLog(prev => [...prev, 'WebGL support confirmed']);
       
       // THREE.js is now statically imported
       console.log('THREE.js loaded successfully', { THREE, OrbitControls });
+      setDebugLog(prev => [...prev, 'THREE.js loaded successfully']);
       
       setIsLoading(false);
       
       // Initialize the scene
       console.log('Initializing scene...');
+      setDebugLog(prev => [...prev, 'Initializing scene...']);
       initializeScene();
     } catch (err) {
       console.error('Failed to initialize THREE.js:', err);
@@ -571,6 +576,15 @@ export default function OptimizedWebGLStadium({
         <p>WEBGL: Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
         <p>WEBGL: Error: {error || 'None'}</p>
         <p>WEBGL: Loading: {isLoading ? 'Yes' : 'No'}</p>
+        <p>WEBGL: Container ref: {containerRef.current ? 'Connected' : 'Not connected'}</p>
+        <p>WEBGL: Scene ref: {sceneRef.current ? 'Created' : 'Not created'}</p>
+        <p>WEBGL: Renderer ref: {rendererRef.current ? 'Created' : 'Not created'}</p>
+        <div style={{ marginTop: '10px' }}>
+          <p><strong>Debug Log:</strong></p>
+          {debugLog.map((log, index) => (
+            <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
+          ))}
+        </div>
       </div>
       <div
         ref={containerRef}
