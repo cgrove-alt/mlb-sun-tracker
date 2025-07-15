@@ -484,10 +484,20 @@ export default function OptimizedWebGLStadium({
     console.log('OptimizedWebGLStadium useEffect called');
     setDebugLog(prev => [...prev, 'useEffect called']);
     
-    // Simple initialization without complex timing logic
-    initializeThreeJS();
+    // Wait for next tick to ensure DOM is ready
+    const timer = setTimeout(() => {
+      setDebugLog(prev => [...prev, 'Timer executed, checking container...']);
+      if (containerRef.current) {
+        setDebugLog(prev => [...prev, 'Container found, starting initialization']);
+        initializeThreeJS();
+      } else {
+        setDebugLog(prev => [...prev, 'Container still not found']);
+        setError('Container element not ready');
+      }
+    }, 100);
     
     return () => {
+      clearTimeout(timer);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
