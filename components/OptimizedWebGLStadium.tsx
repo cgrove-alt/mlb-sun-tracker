@@ -122,13 +122,27 @@ export default function OptimizedWebGLStadium({
   const initializeScene = useCallback((THREE: any, OrbitControls: any) => {
     console.log('initializeScene called');
     setDebugLog(prev => [...prev, 'initializeScene called']);
+    console.log('containerRef.current:', containerRef.current);
+    setDebugLog(prev => [...prev, `containerRef.current: ${!!containerRef.current}`]);
+    
     if (!containerRef.current) {
-      console.error('Container ref is null');
-      setDebugLog(prev => [...prev, 'ERROR: Container ref is null']);
-      setError('Container element not found');
-      return;
+      console.error('Container ref is null, trying querySelector...');
+      setDebugLog(prev => [...prev, 'Container ref is null, trying querySelector...']);
+      
+      // Try to find the container with querySelector as a fallback
+      const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      if (foundContainer) {
+        console.log('Found container with querySelector!');
+        setDebugLog(prev => [...prev, 'Found container with querySelector!']);
+        (containerRef as any).current = foundContainer;
+      } else {
+        console.error('Container element not found anywhere');
+        setDebugLog(prev => [...prev, 'ERROR: Container element not found anywhere']);
+        setError('Container element not found');
+        return;
+      }
     }
-    const container = containerRef.current;
+    const container = containerRef.current!; // Non-null assertion since we just ensured it exists
     const config = getPerformanceConfig();
     console.log('Container dimensions:', container.clientWidth, 'x', container.clientHeight);
     console.log('Performance config:', config);
@@ -508,6 +522,16 @@ export default function OptimizedWebGLStadium({
       return;
     }
     
+    // Try to find container immediately with querySelector
+    const existingContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+    if (existingContainer) {
+      console.log('Container found immediately via querySelector!');
+      setDebugLog(prev => [...prev, 'Container found immediately via querySelector!']);
+      (containerRef as any).current = existingContainer;
+      setContainerReady(true);
+      return;
+    }
+    
     console.log('Setting up MutationObserver to watch for container...');
     setDebugLog(prev => [...prev, 'Setting up MutationObserver...']);
     
@@ -519,6 +543,17 @@ export default function OptimizedWebGLStadium({
       if (containerRef.current) {
         console.log('Container found via MutationObserver!');
         setDebugLog(prev => [...prev, 'Container found via MutationObserver!']);
+        setContainerReady(true);
+        observer.disconnect();
+        return;
+      }
+      
+      // Also try querySelector in case ref isn't updated yet
+      const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      if (foundContainer) {
+        console.log('Container found via MutationObserver querySelector!');
+        setDebugLog(prev => [...prev, 'Container found via MutationObserver querySelector!']);
+        (containerRef as any).current = foundContainer;
         setContainerReady(true);
         observer.disconnect();
         return;
