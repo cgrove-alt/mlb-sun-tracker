@@ -35,6 +35,18 @@ function AppContent() {
   const [loadingSections, setLoadingSections] = useState(false);
   const { showError } = useError();
 
+  // Debug logging
+  useEffect(() => {
+    console.log('PARENT: AppContent component mounted and running');
+  }, []);
+
+  // Debug logging for 3D rendering
+  useEffect(() => {
+    if (selectedStadium && sunPosition) {
+      console.log('PARENT: About to render 3D components', { stadium: selectedStadium.name, sunPosition });
+    }
+  }, [selectedStadium, sunPosition]);
+
   // Load preferences and URL parameters on component mount
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -259,11 +271,17 @@ function AppContent() {
           <div className="results">
             {/* Optimized WebGL 3D Stadium Visualization */}
             {sunPosition && (
-              <ErrorBoundary>
+              <>
+                {console.log('PARENT: About to render child components', {stadium: selectedStadium?.name, sunPosition: sunPosition.azimuthDegrees})}
+                <ErrorBoundary>
                 <div style={{ padding: '20px', background: '#f0f0f0', margin: '20px 0' }}>
                   <p>DEBUG: About to render OptimizedWebGLStadium</p>
                   <p>Stadium: {selectedStadium?.name}</p>
                   <p>Sun Position: {sunPosition.azimuthDegrees}°/{sunPosition.altitudeDegrees}°</p>
+                  <p>DEBUG: React is executing - {new Date().toLocaleTimeString()}</p>
+                </div>
+                <div style={{ padding: '20px', background: '#ffeb3b', margin: '20px 0' }}>
+                  <p>INLINE: Simple inline component test</p>
                 </div>
                 <TestComponent />
                 <OptimizedWebGLStadium
@@ -276,6 +294,7 @@ function AppContent() {
                   }}
                 />
               </ErrorBoundary>
+              </>
             )}
 
             <div className="weather-info-section">
