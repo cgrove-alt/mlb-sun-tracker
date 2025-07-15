@@ -495,33 +495,82 @@ export default function OptimizedWebGLStadium({
     }
   }, [onSectionClick]);
 
-  // Use useLayoutEffect to detect when container is mounted and ready
-  React.useLayoutEffect(() => {
-    console.log('useLayoutEffect triggered, checking container...');
-    setDebugLog(prev => [...prev, 'useLayoutEffect triggered']);
+  // Use MutationObserver to detect when container is actually added to DOM
+  React.useEffect(() => {
+    console.log('MutationObserver effect triggered');
+    setDebugLog(prev => [...prev, 'MutationObserver effect triggered']);
     
+    // First, check if container already exists
     if (containerRef.current) {
-      console.log('Container found in useLayoutEffect!');
-      setDebugLog(prev => [...prev, 'Container found in useLayoutEffect!']);
+      console.log('Container already exists!');
+      setDebugLog(prev => [...prev, 'Container already exists!']);
       setContainerReady(true);
-    } else {
-      // If container not found immediately, wait for Next.js hydration
-      console.log('Container not found, waiting for hydration...');
-      setDebugLog(prev => [...prev, 'Container not found, waiting for hydration...']);
-      
-      const checkContainer = () => {
-        console.log('Checking container after timeout...');
-        if (containerRef.current) {
-          console.log('Container found after timeout!');
-          setDebugLog(prev => [...prev, 'Container found after timeout!']);
-          setContainerReady(true);
-        }
-      };
-      
-      // Give Next.js time to hydrate
-      const timeoutId = setTimeout(checkContainer, 100);
-      return () => clearTimeout(timeoutId);
+      return;
     }
+    
+    console.log('Setting up MutationObserver to watch for container...');
+    setDebugLog(prev => [...prev, 'Setting up MutationObserver...']);
+    
+    // Create a MutationObserver to watch for the container being added
+    const observer = new MutationObserver((mutations) => {
+      console.log('MutationObserver detected changes');
+      
+      // Check if our container ref is now populated
+      if (containerRef.current) {
+        console.log('Container found via MutationObserver!');
+        setDebugLog(prev => [...prev, 'Container found via MutationObserver!']);
+        setContainerReady(true);
+        observer.disconnect();
+        return;
+      }
+      
+      // Also check if any added nodes are our container
+      for (const mutation of mutations) {
+        if (mutation.type === 'childList') {
+          for (const node of Array.from(mutation.addedNodes)) {
+            if (node instanceof HTMLElement && 
+                node.classList.contains('webgl-stadium-canvas-container')) {
+              console.log('Container found in DOM via MutationObserver!');
+              setDebugLog(prev => [...prev, 'Container found in DOM via MutationObserver!']);
+              setContainerReady(true);
+              observer.disconnect();
+              return;
+            }
+          }
+        }
+      }
+    });
+    
+    // Start observing the document for changes
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+    
+    // Fallback timeout in case MutationObserver doesn't work
+    const timeoutId = setTimeout(() => {
+      console.log('Timeout reached, force checking container...');
+      setDebugLog(prev => [...prev, 'Timeout reached, force checking...']);
+      
+      // Try to find the container by class name as a last resort
+      const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      if (foundContainer) {
+        console.log('Container found via querySelector!');
+        setDebugLog(prev => [...prev, 'Container found via querySelector!']);
+        (containerRef as any).current = foundContainer;
+        setContainerReady(true);
+        observer.disconnect();
+      } else {
+        console.log('No container found anywhere!');
+        setDebugLog(prev => [...prev, 'ERROR: No container found anywhere!']);
+        setError('Container element could not be created');
+      }
+    }, 2000);
+    
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   // Initialize when container is ready
