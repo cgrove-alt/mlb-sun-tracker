@@ -53,7 +53,7 @@ export default function OptimizedWebGLStadium({
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
-  const [debugLog, setDebugLog] = useState<string[]>([]);
+  const [debugLog, setDebugLog] = useState<string[]>(['Component initialized']);
   
   // Animation control
   const animationRef = useRef<number>();
@@ -576,7 +576,7 @@ export default function OptimizedWebGLStadium({
   if (error) {
     console.log('RENDER: Rendering error state:', error);
     return (
-      <div className="webgl-error">
+      <div className="webgl-error" style={{ padding: '20px', background: '#f44336', color: 'white', margin: '20px 0' }}>
         <p>⚠️ {error}</p>
         <p>Your browser may not support WebGL or THREE.js failed to load.</p>
         <div className="webgl-fallback">
@@ -591,6 +591,12 @@ export default function OptimizedWebGLStadium({
             </span>
           </div>
         </div>
+        <div style={{ marginTop: '10px', borderTop: '1px solid rgba(255,255,255,0.3)', paddingTop: '10px' }}>
+          <p><strong>Debug Log:</strong></p>
+          {debugLog.map((log, index) => (
+            <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
+          ))}
+        </div>
       </div>
     );
   }
@@ -598,10 +604,16 @@ export default function OptimizedWebGLStadium({
   if (isLoading) {
     console.log('RENDER: Rendering loading state');
     return (
-      <div className="webgl-loading">
+      <div className="webgl-loading" style={{ padding: '20px', background: '#2196f3', color: 'white', margin: '20px 0' }}>
         <div className="loading-spinner"></div>
         <p>Loading 3D stadium visualization...</p>
         <p className="loading-details">Optimizing for your device...</p>
+        <div style={{ marginTop: '10px' }}>
+          <p><strong>Debug Log:</strong></p>
+          {debugLog.map((log, index) => (
+            <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
+          ))}
+        </div>
       </div>
     );
   }
