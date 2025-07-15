@@ -56,12 +56,12 @@ export default function OptimizedWebGLStadium({
   const setContainerRef = useCallback((element: HTMLDivElement | null) => {
     console.log('setContainerRef called with:', !!element);
     (containerRef as any).current = element;
-    if (element && !containerReady) {
+    if (element) {
       console.log('Setting container ready to true');
       setDebugLog(prev => [...prev, 'Container element mounted']);
       setContainerReady(true);
     }
-  }, [containerReady]);
+  }, []); // Remove containerReady dependency to avoid infinite loop
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
