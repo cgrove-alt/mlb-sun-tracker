@@ -1,21 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
-import { getDetailedStadium } from './data/detailedStadiums';
-import { StadiumView } from './components/StadiumView';
-import { DetailedStadiumView } from './components/DetailedStadiumView';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { SunExposureFilter, SunFilterCriteria } from './components/SunExposureFilter';
-import { SimpleFilter } from './components/SimpleFilter';
-import { SunExposureFilterFixed } from './components/SunExposureFilterFixed';
+import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { Tooltip } from './components/Tooltip';
 import { ShareButton } from './components/ShareButton';
-import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { preferencesStorage } from './utils/preferences';
@@ -25,7 +20,6 @@ function AppContent() {
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [sunPosition, setSunPosition] = useState<any>(null);
-  const [sunnySections, setSunnySections] = useState<Map<string, boolean>>(new Map());
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
   const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
@@ -117,42 +111,7 @@ function AppContent() {
         // Calculate detailed section data with weather impact
         const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
         
-        // Convert detailed sections to simple Map for stadium visualization
-        const sectionsMap = new Map<string, boolean>();
-        detailedSectionData.forEach(sectionData => {
-          const section = sectionData.section;
-          // Add multiple mapping variations to handle different naming schemes
-          sectionsMap.set(section.name, sectionData.inSun);
-          sectionsMap.set(section.id, sectionData.inSun);
-          sectionsMap.set(`Section ${section.name}`, sectionData.inSun);
-          sectionsMap.set(`Section ${section.id}`, sectionData.inSun);
-          
-          // Add variations without spaces for better matching
-          if (section.name.includes(' ')) {
-            sectionsMap.set(section.name.replace(/\s+/g, ''), sectionData.inSun);
-          }
-          if (section.id.includes(' ')) {
-            sectionsMap.set(section.id.replace(/\s+/g, ''), sectionData.inSun);
-          }
-          
-          // Add level-based generic mappings for visualization components
-          if (section.level === 'field') {
-            sectionsMap.set(`Field Level ${section.name}`, sectionData.inSun);
-            sectionsMap.set(`Field Level`, sectionData.inSun);
-          } else if (section.level === 'lower') {
-            sectionsMap.set(`Lower Level ${section.name}`, sectionData.inSun);
-            sectionsMap.set(`Main Level`, sectionData.inSun);
-          } else if (section.level === 'upper') {
-            sectionsMap.set(`Upper Level ${section.name}`, sectionData.inSun);
-            sectionsMap.set(`Upper Deck`, sectionData.inSun);
-          } else if (section.level === 'club') {
-            sectionsMap.set(`Club Level ${section.name}`, sectionData.inSun);
-            sectionsMap.set(`Club Level`, sectionData.inSun);
-          }
-        });
-        setSunnySections(sectionsMap);
         console.log('Detailed sections calculated:', detailedSectionData.length);
-        console.log('Section mapping created with keys:', Array.from(sectionsMap.keys()).slice(0, 10));
         setDetailedSections(detailedSectionData);
         
         // Apply current filter
@@ -204,7 +163,6 @@ function AppContent() {
     setGameDateTime(null);
     setWeatherForecast(null);
     setSunPosition(null);
-    setSunnySections(new Map());
     setDetailedSections([]);
     setFilteredSections([]);
     setFilterCriteria({});

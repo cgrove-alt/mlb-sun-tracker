@@ -82,7 +82,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
   };
 
   const shareNative = async () => {
-    if (navigator.share) {
+    if (typeof navigator.share === 'function') {
       try {
         await navigator.share({
           title: 'MLB Stadium Sun Tracker',
@@ -143,7 +143,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
       
       {isMenuOpen && hasContent && (
         <div className="share-menu" role="menu" aria-label="Share options">
-          {navigator.share && (
+          {typeof navigator.share === 'function' && (
             <button
               className="share-menu-item"
               onClick={shareNative}

@@ -1,3 +1,5 @@
+import { withCache } from '../utils/apiCache';
+
 export interface MLBGame {
   gamePk: number;
   gameDate: string;
@@ -67,8 +69,6 @@ const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
   145: 'whitesox', // Chicago White Sox
   147: 'yankees', // New York Yankees
 };
-
-import { withCache } from '../utils/apiCache';
 
 export class MLBApiService {
   private baseUrl = 'https://statsapi.mlb.com/api/v1';

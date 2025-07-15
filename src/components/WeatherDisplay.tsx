@@ -1,5 +1,5 @@
 import React from 'react';
-import { WeatherData, WeatherForecast, weatherApi } from '../services/weatherApi';
+import { WeatherForecast, weatherApi } from '../services/weatherApi';
 import './WeatherDisplay.css';
 
 interface WeatherDisplayProps {

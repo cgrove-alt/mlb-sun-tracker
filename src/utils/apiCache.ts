@@ -49,11 +49,13 @@ class APICache {
   }
 
   invalidatePattern(pattern: string): void {
-    for (const [key] of this.cache) {
+    const keysToDelete: string[] = [];
+    this.cache.forEach((_, key) => {
       if (key.includes(pattern)) {
-        this.cache.delete(key);
+        keysToDelete.push(key);
       }
-    }
+    });
+    keysToDelete.forEach(key => this.cache.delete(key));
   }
 
   clear(): void {
@@ -63,21 +65,26 @@ class APICache {
   // Clean up expired entries
   cleanup(): void {
     const now = Date.now();
-    for (const [key, entry] of this.cache) {
+    const keysToDelete: string[] = [];
+    this.cache.forEach((entry, key) => {
       if (now > entry.expiry) {
-        this.cache.delete(key);
+        keysToDelete.push(key);
       }
-    }
+    });
+    keysToDelete.forEach(key => this.cache.delete(key));
   }
 
   // Get cache statistics
   getStats(): { size: number; entries: Array<{ key: string; age: number; ttl: number }> } {
     const now = Date.now();
-    const entries = Array.from(this.cache.entries()).map(([key, entry]) => ({
-      key,
-      age: now - entry.timestamp,
-      ttl: entry.expiry - now
-    }));
+    const entries: Array<{ key: string; age: number; ttl: number }> = [];
+    this.cache.forEach((entry, key) => {
+      entries.push({
+        key,
+        age: now - entry.timestamp,
+        ttl: entry.expiry - now
+      });
+    });
 
     return {
       size: this.cache.size,

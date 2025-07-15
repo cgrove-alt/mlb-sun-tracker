@@ -1,3 +1,5 @@
+import { withCache } from '../utils/apiCache';
+
 export interface WeatherCondition {
   id: number;
   main: string;
@@ -36,8 +38,6 @@ export interface WeatherForecast {
     };
   }>;
 }
-
-import { withCache } from '../utils/apiCache';
 
 export class WeatherApiService {
   // Using Open-Meteo as it's free and doesn't require an API key
