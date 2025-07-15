@@ -73,19 +73,22 @@ export default function OptimizedWebGLStadium({
   // Initialize THREE.js scene
   const initializeThreeJS = useCallback(async () => {
     try {
+      console.log('Starting Three.js initialization...');
       setIsLoading(true);
       
       // Check WebGL support first
       if (!isWebGLSupported()) {
         throw new Error('WebGL is not supported in this browser');
       }
+      console.log('WebGL support confirmed');
       
       // THREE.js is now statically imported
-      console.log('THREE.js loaded successfully');
+      console.log('THREE.js loaded successfully', { THREE, OrbitControls });
       
       setIsLoading(false);
       
       // Initialize the scene
+      console.log('Initializing scene...');
       initializeScene();
     } catch (err) {
       console.error('Failed to initialize THREE.js:', err);
@@ -97,43 +100,69 @@ export default function OptimizedWebGLStadium({
 
   // Initialize THREE.js scene
   const initializeScene = useCallback(() => {
-    if (!containerRef.current) return;
+    console.log('initializeScene called');
+    if (!containerRef.current) {
+      console.error('Container ref is null');
+      return;
+    }
     const container = containerRef.current;
     const config = getPerformanceConfig();
+    console.log('Container dimensions:', container.clientWidth, 'x', container.clientHeight);
+    console.log('Performance config:', config);
 
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x87CEEB); // Sky blue
-    sceneRef.current = scene;
+    try {
+      // Scene setup
+      console.log('Creating scene...');
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x87CEEB); // Sky blue
+      sceneRef.current = scene;
+      console.log('Scene created successfully');
+    } catch (err) {
+      console.error('Error creating scene:', err);
+      setError(`Failed to create 3D scene: ${err}`);
+      return;
+    }
 
-    // Camera setup
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      container.clientWidth / container.clientHeight,
-      0.1,
-      1000
-    );
-    camera.position.set(0, 20, 30);
-    cameraRef.current = camera;
+    let camera, renderer;
+    try {
+      // Camera setup
+      console.log('Creating camera...');
+      camera = new THREE.PerspectiveCamera(
+        75,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.set(0, 20, 30);
+      cameraRef.current = camera;
+      console.log('Camera created successfully');
 
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({
-      antialias: config.antialiasing,
-      powerPreference: 'high-performance',
-      stencil: false,
-      depth: true,
-    });
-    
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(config.pixelRatio);
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-    renderer.toneMapping = THREE.ReinhardToneMapping;
-    renderer.toneMappingExposure = 1.0;
-    
-    container.appendChild(renderer.domElement);
-    rendererRef.current = renderer;
+      // Renderer setup
+      console.log('Creating renderer...');
+      renderer = new THREE.WebGLRenderer({
+        antialias: config.antialiasing,
+        powerPreference: 'high-performance',
+        stencil: false,
+        depth: true,
+      });
+      
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(config.pixelRatio);
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ReinhardToneMapping;
+      renderer.toneMappingExposure = 1.0;
+      
+      console.log('Appending renderer to container...');
+      container.appendChild(renderer.domElement);
+      rendererRef.current = renderer;
+      console.log('Renderer created and appended successfully');
+    } catch (err) {
+      console.error('Error creating renderer:', err);
+      setError(`Failed to create WebGL renderer: ${err}`);
+      return;
+    }
 
     // Controls setup
     const controls = new OrbitControls(camera, renderer.domElement);
@@ -158,13 +187,47 @@ export default function OptimizedWebGLStadium({
     createStadiumGeometry();
 
     // Setup lighting
-    setupLighting();
+    try {
+      console.log('Setting up lighting...');
+      setupLighting();
+      console.log('Lighting setup complete');
+    } catch (err) {
+      console.error('Error setting up lighting:', err);
+    }
 
     // Setup shadows
-    setupShadows();
+    try {
+      console.log('Setting up shadows...');
+      setupShadows();
+      console.log('Shadows setup complete');
+    } catch (err) {
+      console.error('Error setting up shadows:', err);
+    }
 
     // Start animation loop
-    startAnimationLoop();
+    try {
+      console.log('Starting animation loop...');
+      startAnimationLoop();
+      console.log('Animation loop started');
+    } catch (err) {
+      console.error('Error starting animation loop:', err);
+    }
+
+    // Test render to verify everything is working
+    try {
+      console.log('Performing test render...');
+      const scene = sceneRef.current;
+      const camera = cameraRef.current;
+      const renderer = rendererRef.current;
+      if (scene && camera && renderer) {
+        renderer.render(scene, camera);
+        console.log('Test render successful');
+      } else {
+        console.error('Missing scene, camera, or renderer for test render');
+      }
+    } catch (err) {
+      console.error('Error during test render:', err);
+    }
 
   }, []);
 
