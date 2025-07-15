@@ -499,20 +499,29 @@ export default function OptimizedWebGLStadium({
     console.log('OptimizedWebGLStadium useEffect called');
     setDebugLog(prev => [...prev, 'useEffect called']);
     
-    // Wait for next tick to ensure DOM is ready
-    const timer = setTimeout(() => {
-      setDebugLog(prev => [...prev, 'Timer executed, checking container...']);
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    const checkContainer = () => {
+      attempts++;
+      setDebugLog(prev => [...prev, `Attempt ${attempts}: checking container...`]);
+      
       if (containerRef.current) {
-        setDebugLog(prev => [...prev, 'Container found, starting initialization']);
+        setDebugLog(prev => [...prev, 'Container found! Starting initialization']);
         initializeThreeJS();
+      } else if (attempts < maxAttempts) {
+        setDebugLog(prev => [...prev, `Container not ready, retrying in 100ms...`]);
+        setTimeout(checkContainer, 100);
       } else {
-        setDebugLog(prev => [...prev, 'Container still not found']);
-        setError('Container element not ready');
+        setDebugLog(prev => [...prev, `Failed to find container after ${maxAttempts} attempts`]);
+        setError('Container element not ready after multiple attempts');
       }
-    }, 100);
+    };
+    
+    // Start checking immediately
+    checkContainer();
     
     return () => {
-      clearTimeout(timer);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
@@ -592,7 +601,7 @@ export default function OptimizedWebGLStadium({
           </div>
         </div>
         <div style={{ marginTop: '10px', borderTop: '1px solid rgba(255,255,255,0.3)', paddingTop: '10px' }}>
-          <p><strong>Debug Log:</strong></p>
+          <p><strong>Debug Log ({debugLog.length} entries):</strong></p>
           {debugLog.map((log, index) => (
             <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
           ))}
