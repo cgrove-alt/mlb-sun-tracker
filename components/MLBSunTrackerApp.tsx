@@ -17,7 +17,7 @@ import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfile
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
 import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
-import WebGLStadiumVisualization from './WebGLStadiumVisualization';
+import OptimizedWebGLStadium from './OptimizedWebGLStadium';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -250,9 +250,9 @@ function AppContent() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
-            {/* WebGL 3D Stadium Visualization */}
+            {/* Optimized WebGL 3D Stadium Visualization */}
             {sunPosition && (
-              <WebGLStadiumVisualization
+              <OptimizedWebGLStadium
                 stadium={selectedStadium}
                 sunPosition={sunPosition}
                 gameDateTime={gameDateTime}
