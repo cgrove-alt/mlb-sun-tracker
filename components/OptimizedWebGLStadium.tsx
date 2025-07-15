@@ -50,6 +50,16 @@ export default function OptimizedWebGLStadium({
 }: OptimizedWebGLStadiumProps) {
   
   const containerRef = useRef<HTMLDivElement>(null);
+  const [containerReady, setContainerReady] = useState(false);
+  
+  // Callback ref to handle container mounting
+  const setContainerRef = useCallback((element: HTMLDivElement | null) => {
+    (containerRef as any).current = element;
+    if (element && !containerReady) {
+      setDebugLog(prev => [...prev, 'Container element mounted']);
+      setContainerReady(true);
+    }
+  }, [containerReady]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
@@ -494,39 +504,20 @@ export default function OptimizedWebGLStadium({
     }
   }, [onSectionClick]);
 
-  // Initialize on mount
+  // Initialize when container is ready
   useEffect(() => {
-    console.log('OptimizedWebGLStadium useEffect called');
-    setDebugLog(prev => [...prev, 'useEffect called']);
-    
-    let attempts = 0;
-    const maxAttempts = 10;
-    
-    const checkContainer = () => {
-      attempts++;
-      setDebugLog(prev => [...prev, `Attempt ${attempts}: checking container...`]);
-      
-      if (containerRef.current) {
-        setDebugLog(prev => [...prev, 'Container found! Starting initialization']);
-        initializeThreeJS();
-      } else if (attempts < maxAttempts) {
-        setDebugLog(prev => [...prev, `Container not ready, retrying in 100ms...`]);
-        setTimeout(checkContainer, 100);
-      } else {
-        setDebugLog(prev => [...prev, `Failed to find container after ${maxAttempts} attempts`]);
-        setError('Container element not ready after multiple attempts');
-      }
-    };
-    
-    // Start checking immediately
-    checkContainer();
+    if (containerReady) {
+      console.log('Container is ready, initializing Three.js');
+      setDebugLog(prev => [...prev, 'Container ready! Starting Three.js initialization']);
+      initializeThreeJS();
+    }
     
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [initializeThreeJS]);
+  }, [containerReady, initializeThreeJS]);
 
   // Setup event listeners
   useEffect(() => {
@@ -648,7 +639,7 @@ export default function OptimizedWebGLStadium({
         </div>
       </div>
       <div
-        ref={containerRef}
+        ref={setContainerRef}
         className="webgl-stadium-canvas-container"
         style={{
           width: '100%',
