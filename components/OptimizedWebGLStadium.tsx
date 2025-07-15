@@ -17,6 +17,17 @@ const isMobile = () => {
   return window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
 
+// WebGL detection utility
+const isWebGLSupported = () => {
+  if (typeof window === 'undefined') return false;
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && canvas.getContext('webgl'));
+  } catch (e) {
+    return false;
+  }
+};
+
 // Performance configuration based on device
 const getPerformanceConfig = () => {
   const mobile = isMobile();
@@ -63,6 +74,11 @@ export default function OptimizedWebGLStadium({
     try {
       setIsLoading(true);
       
+      // Check WebGL support first
+      if (!isWebGLSupported()) {
+        throw new Error('WebGL is not supported in this browser');
+      }
+      
       // Dynamic import of Three.js with correct paths
       const [
         THREE,
@@ -80,7 +96,8 @@ export default function OptimizedWebGLStadium({
       setIsLoading(false);
     } catch (err) {
       console.error('Failed to load Three.js:', err);
-      setError('Failed to load 3D graphics library');
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      setError(`Failed to load 3D graphics: ${errorMessage}`);
       setIsLoading(false);
     }
   }, []);
@@ -462,6 +479,18 @@ export default function OptimizedWebGLStadium({
       <div className="webgl-error">
         <p>⚠️ {error}</p>
         <p>Your browser may not support WebGL or Three.js failed to load.</p>
+        <div className="webgl-fallback">
+          <h4>🏟️ {stadium.name}</h4>
+          <p>3D visualization is not available, but you can still view sun exposure data below.</p>
+          <div className="sun-info-fallback">
+            <span className="sun-position">
+              ☀️ {Math.round(sunPosition.azimuthDegrees)}° / {Math.round(sunPosition.altitudeDegrees)}°
+            </span>
+            <span className="sun-description">
+              {sunPosition.altitudeDegrees > 0 ? 'Daytime' : 'Nighttime'}
+            </span>
+          </div>
+        </div>
       </div>
     );
   }

@@ -18,6 +18,7 @@ import { getSunPosition, getSunDescription, getCompassDirection, calculateDetail
 import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import OptimizedWebGLStadium from './OptimizedWebGLStadium';
+import ErrorBoundary from './ErrorBoundary';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -163,21 +164,26 @@ function AppContent() {
   };
 
   const handleStadiumChange = (stadium: Stadium | null) => {
-    setSelectedStadium(stadium);
-    setSelectedGame(null);
-    setGameDateTime(null);
-    setWeatherForecast(null);
-    setSunPosition(null);
-    setDetailedSections([]);
-    setFilteredSections([]);
-    setFilterCriteria({});
-    
-    // Save selected stadium to user profile and track view
-    if (stadium) {
-      updatePreferences({ selectedStadiumId: stadium.id });
-      trackStadiumView(stadium.id);
-    } else {
-      updatePreferences({ selectedStadiumId: undefined });
+    try {
+      setSelectedStadium(stadium);
+      setSelectedGame(null);
+      setGameDateTime(null);
+      setWeatherForecast(null);
+      setSunPosition(null);
+      setDetailedSections([]);
+      setFilteredSections([]);
+      setFilterCriteria({});
+      
+      // Save selected stadium to user profile and track view
+      if (stadium) {
+        updatePreferences({ selectedStadiumId: stadium.id });
+        trackStadiumView(stadium.id);
+      } else {
+        updatePreferences({ selectedStadiumId: undefined });
+      }
+    } catch (error) {
+      console.error('Error changing stadium:', error);
+      showError('Failed to select stadium. Please try again.', 'error');
     }
   };
 
@@ -252,15 +258,17 @@ function AppContent() {
           <div className="results">
             {/* Optimized WebGL 3D Stadium Visualization */}
             {sunPosition && (
-              <OptimizedWebGLStadium
-                stadium={selectedStadium}
-                sunPosition={sunPosition}
-                gameDateTime={gameDateTime}
-                selectedSections={[]}
-                onSectionClick={(sectionId) => {
-                  console.log('Clicked section:', sectionId);
-                }}
-              />
+              <ErrorBoundary>
+                <OptimizedWebGLStadium
+                  stadium={selectedStadium}
+                  sunPosition={sunPosition}
+                  gameDateTime={gameDateTime}
+                  selectedSections={[]}
+                  onSectionClick={(sectionId) => {
+                    console.log('Clicked section:', sectionId);
+                  }}
+                />
+              </ErrorBoundary>
             )}
 
             <div className="weather-info-section">

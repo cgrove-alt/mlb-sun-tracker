@@ -2,6 +2,7 @@
 @import url('../src/index.css');
 @import url('../src/App.css');
 @import url('../components/OptimizedWebGLStadium.css');
+@import url('../components/ErrorBoundary.css');
 
 /* Additional Next.js specific styles */
 html {
