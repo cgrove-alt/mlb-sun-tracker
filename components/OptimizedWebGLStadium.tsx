@@ -111,22 +111,28 @@ export default function OptimizedWebGLStadium({
   // Initialize THREE.js scene
   const initializeScene = useCallback(() => {
     console.log('initializeScene called');
+    setDebugLog(prev => [...prev, 'initializeScene called']);
     if (!containerRef.current) {
       console.error('Container ref is null');
+      setDebugLog(prev => [...prev, 'ERROR: Container ref is null']);
+      setError('Container element not found');
       return;
     }
     const container = containerRef.current;
     const config = getPerformanceConfig();
     console.log('Container dimensions:', container.clientWidth, 'x', container.clientHeight);
     console.log('Performance config:', config);
+    setDebugLog(prev => [...prev, `Container dimensions: ${container.clientWidth}x${container.clientHeight}`]);
 
     try {
       // Scene setup
       console.log('Creating scene...');
+      setDebugLog(prev => [...prev, 'Creating scene...']);
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0x87CEEB); // Sky blue
       sceneRef.current = scene;
       console.log('Scene created successfully');
+      setDebugLog(prev => [...prev, 'Scene created successfully']);
     } catch (err) {
       console.error('Error creating scene:', err);
       setError(`Failed to create 3D scene: ${err}`);
@@ -137,6 +143,7 @@ export default function OptimizedWebGLStadium({
     try {
       // Camera setup
       console.log('Creating camera...');
+      setDebugLog(prev => [...prev, 'Creating camera...']);
       camera = new THREE.PerspectiveCamera(
         75,
         container.clientWidth / container.clientHeight,
@@ -146,9 +153,11 @@ export default function OptimizedWebGLStadium({
       camera.position.set(0, 20, 30);
       cameraRef.current = camera;
       console.log('Camera created successfully');
+      setDebugLog(prev => [...prev, 'Camera created successfully']);
 
       // Renderer setup
       console.log('Creating renderer...');
+      setDebugLog(prev => [...prev, 'Creating renderer...']);
       renderer = new THREE.WebGLRenderer({
         antialias: config.antialiasing,
         powerPreference: 'high-performance',
@@ -165,9 +174,11 @@ export default function OptimizedWebGLStadium({
       renderer.toneMappingExposure = 1.0;
       
       console.log('Appending renderer to container...');
+      setDebugLog(prev => [...prev, 'Appending renderer to container...']);
       container.appendChild(renderer.domElement);
       rendererRef.current = renderer;
       console.log('Renderer created and appended successfully');
+      setDebugLog(prev => [...prev, 'Renderer created and appended successfully']);
     } catch (err) {
       console.error('Error creating renderer:', err);
       setError(`Failed to create WebGL renderer: ${err}`);
@@ -471,7 +482,20 @@ export default function OptimizedWebGLStadium({
   // Initialize on mount
   useEffect(() => {
     console.log('OptimizedWebGLStadium useEffect called');
-    initializeThreeJS();
+    setDebugLog(prev => [...prev, 'useEffect called']);
+    
+    // Wait for container to be ready
+    const initWithDelay = () => {
+      if (containerRef.current) {
+        setDebugLog(prev => [...prev, 'Container ready, initializing Three.js']);
+        initializeThreeJS();
+      } else {
+        setDebugLog(prev => [...prev, 'Container not ready, waiting...']);
+        setTimeout(initWithDelay, 100);
+      }
+    };
+    
+    initWithDelay();
     
     return () => {
       if (animationRef.current) {
