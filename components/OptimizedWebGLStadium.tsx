@@ -603,6 +603,7 @@ export default function OptimizedWebGLStadium({
         <p>WEBGL: Container ref: {containerRef.current ? 'Connected' : 'Not connected'}</p>
         <p>WEBGL: Scene ref: {sceneRef.current ? 'Created' : 'Not created'}</p>
         <p>WEBGL: Renderer ref: {rendererRef.current ? 'Created' : 'Not created'}</p>
+        <p>WEBGL: Container div below: {containerRef.current ? 'EXISTS' : 'MISSING'}</p>
         <div style={{ marginTop: '10px' }}>
           <p><strong>Debug Log:</strong></p>
           {debugLog.map((log, index) => (
@@ -616,11 +617,20 @@ export default function OptimizedWebGLStadium({
         style={{
           width: '100%',
           height: '400px',
-          border: '1px solid #ddd',
+          border: '2px solid #00ff00',
           borderRadius: '8px',
           overflow: 'hidden',
+          backgroundColor: '#f0f0f0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          color: '#333',
         }}
-      />
+      >
+        {!rendererRef.current && 'THREE.js Canvas Container - Waiting for initialization...'}
+      </div>
       
       <div className="webgl-controls">
         <div className="stadium-info">
