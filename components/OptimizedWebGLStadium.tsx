@@ -51,7 +51,7 @@ export default function OptimizedWebGLStadium({
   
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerReady, setContainerReady] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false); // Start with false so container div renders
   const [error, setError] = useState<string | null>(null);
   const [isControlsActive, setIsControlsActive] = useState(false);
   const [debugLog, setDebugLog] = useState<string[]>(['Component initialized']);
