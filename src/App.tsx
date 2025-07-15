@@ -10,12 +10,15 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { Tooltip } from './components/Tooltip';
 import { ShareButton } from './components/ShareButton';
+import { UserProfileMenu } from './components/UserProfileMenu';
+import { FavoriteButton } from './components/FavoriteButton';
+import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
-import { preferencesStorage } from './utils/preferences';
 
 function AppContent() {
+  const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
@@ -31,7 +34,7 @@ function AppContent() {
   // Load preferences and URL parameters on component mount
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const preferences = preferencesStorage.load();
+    const preferences = currentProfile?.preferences || {};
     
     // Check URL parameters first (shared links take precedence)
     const stadiumParam = urlParams.get('stadium');
@@ -55,7 +58,7 @@ function AppContent() {
         }
       }
     } else {
-      // Fall back to preferences if no URL parameters
+      // Fall back to profile preferences if no URL parameters
       if (preferences.selectedStadiumId) {
         const stadium = MLB_STADIUMS.find(s => s.id === preferences.selectedStadiumId);
         if (stadium) {
@@ -68,7 +71,7 @@ function AppContent() {
     if (preferences.filterCriteria) {
       setFilterCriteria(preferences.filterCriteria);
     }
-  }, []);
+  }, [currentProfile]);
 
   const loadWeatherForecast = useCallback(async () => {
     if (!selectedStadium) return;
@@ -148,8 +151,8 @@ function AppContent() {
 
   const handleFilterChange = (criteria: SunFilterCriteria) => {
     setFilterCriteria(criteria);
-    // Save filter criteria to localStorage
-    preferencesStorage.update('filterCriteria', criteria);
+    // Save filter criteria to user profile
+    updatePreferences({ filterCriteria: criteria });
   };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
@@ -167,31 +170,42 @@ function AppContent() {
     setFilteredSections([]);
     setFilterCriteria({});
     
-    // Save selected stadium to localStorage
+    // Save selected stadium to user profile and track view
     if (stadium) {
-      preferencesStorage.update('selectedStadiumId', stadium.id);
+      updatePreferences({ selectedStadiumId: stadium.id });
+      trackStadiumView(stadium.id);
     } else {
-      preferencesStorage.update('selectedStadiumId', undefined);
+      updatePreferences({ selectedStadiumId: undefined });
     }
   };
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MLB Stadium Sun Tracker</h1>
-        <p>Find out which seats will be in the sun during baseball games</p>
-        {selectedStadium && gameDateTime && (
-          <div className="quick-summary">
-            <span className="stadium-name">{selectedStadium.name}</span>
-            <span className="game-time">{gameDateTime.toLocaleDateString()}</span>
-            <ShareButton
-              selectedStadium={selectedStadium}
-              selectedGame={selectedGame}
-              gameDateTime={gameDateTime}
-              className="header-share-btn"
-            />
+        <div className="header-content">
+          <div className="header-left">
+            <h1>MLB Stadium Sun Tracker</h1>
+            <p>Find out which seats will be in the sun during baseball games</p>
+            {selectedStadium && gameDateTime && (
+              <div className="quick-summary">
+                <span className="stadium-name">{selectedStadium.name}</span>
+                <FavoriteButton
+                  stadiumId={selectedStadium.id}
+                  stadiumName={selectedStadium.name}
+                  size="small"
+                />
+                <span className="game-time">{gameDateTime.toLocaleDateString()}</span>
+                <ShareButton
+                  selectedStadium={selectedStadium}
+                  selectedGame={selectedGame}
+                  gameDateTime={gameDateTime}
+                  className="header-share-btn"
+                />
+              </div>
+            )}
           </div>
-        )}
+          <UserProfileMenu />
+        </div>
       </header>
 
       <main className="App-main">
@@ -402,7 +416,9 @@ function AppContent() {
 function App() {
   return (
     <ErrorProvider>
-      <AppContent />
+      <UserProfileProvider>
+        <AppContent />
+      </UserProfileProvider>
     </ErrorProvider>
   );
 }

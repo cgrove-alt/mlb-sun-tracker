@@ -6,6 +6,27 @@
   margin-bottom: 24px;
 }
 
+/* Stadium option styling */
+.stadium-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.stadium-option-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.favorite-indicator {
+  color: #ffd700;
+  font-size: 16px;
+}
+
 .selector-header {
   display: flex;
   justify-content: space-between;

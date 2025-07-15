@@ -4,6 +4,8 @@ import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { Stadium } from '../data/stadiums';
 import { preferencesStorage } from '../utils/preferences';
+import { FavoriteButton } from './FavoriteButton';
+import { useUserProfile } from '../contexts/UserProfileContext';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -31,10 +33,23 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
 
-  const stadiumOptions = stadiums.map(stadium => ({
+  const { currentProfile } = useUserProfile();
+  
+  // Sort stadiums with favorites first
+  const sortedStadiums = [...stadiums].sort((a, b) => {
+    const aIsFavorite = currentProfile?.favorites.stadiums.includes(a.id) || false;
+    const bIsFavorite = currentProfile?.favorites.stadiums.includes(b.id) || false;
+    
+    if (aIsFavorite && !bIsFavorite) return -1;
+    if (!aIsFavorite && bIsFavorite) return 1;
+    return a.name.localeCompare(b.name);
+  });
+  
+  const stadiumOptions = sortedStadiums.map(stadium => ({
     value: stadium.id,
     label: `${stadium.name} - ${stadium.team}`,
-    stadium: stadium
+    stadium: stadium,
+    isFavorite: currentProfile?.favorites.stadiums.includes(stadium.id) || false
   }));
 
   const loadGamesForStadium = useCallback(async () => {
@@ -168,6 +183,19 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           placeholder="Choose a stadium..."
           className="stadium-select"
           aria-label="Select MLB stadium"
+          formatOptionLabel={(option) => (
+            <div className="stadium-option">
+              <div className="stadium-option-content">
+                {option.isFavorite && <span className="favorite-indicator">★</span>}
+                <span>{option.label}</span>
+              </div>
+              <FavoriteButton
+                stadiumId={option.stadium.id}
+                stadiumName={option.stadium.name}
+                size="small"
+              />
+            </div>
+          )}
         />
       </div>
 

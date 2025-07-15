@@ -7,8 +7,20 @@
   background-color: #1a237e;
   padding: 20px;
   color: white;
-  text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.header-left {
+  flex: 1;
 }
 
 .App-header h1 {
@@ -26,13 +38,14 @@
 .quick-summary {
   display: flex;
   gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-top: 15px;
   padding: 8px 16px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   font-size: 0.9rem;
+  width: fit-content;
 }
 
 .stadium-name {
