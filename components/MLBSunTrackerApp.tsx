@@ -18,6 +18,7 @@ import { getSunPosition, getSunDescription, getCompassDirection, calculateDetail
 import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import OptimizedWebGLStadium from './OptimizedWebGLStadium';
+import SimpleWebGLStadium from './SimpleWebGLStadium';
 import ErrorBoundary from './ErrorBoundary';
 import TestComponent from './TestComponent';
 
@@ -284,6 +285,15 @@ function AppContent() {
                   <p>INLINE: Simple inline component test</p>
                 </div>
                 <TestComponent />
+                <SimpleWebGLStadium
+                  stadium={selectedStadium}
+                  sunPosition={sunPosition}
+                  gameDateTime={gameDateTime}
+                  selectedSections={[]}
+                  onSectionClick={(sectionId) => {
+                    console.log('Clicked section:', sectionId);
+                  }}
+                />
                 <OptimizedWebGLStadium
                   stadium={selectedStadium}
                   sunPosition={sunPosition}
