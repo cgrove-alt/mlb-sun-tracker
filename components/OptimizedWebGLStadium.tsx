@@ -293,17 +293,32 @@ export default function OptimizedWebGLStadium({
     // Test render to verify everything is working
     try {
       console.log('Performing test render...');
+      setDebugLog(prev => [...prev, 'Performing test render...']);
       const scene = sceneRef.current;
       const camera = cameraRef.current;
       const renderer = rendererRef.current;
       if (scene && camera && renderer) {
+        console.log('Renderer canvas:', renderer.domElement);
+        console.log('Canvas dimensions:', renderer.domElement.width, 'x', renderer.domElement.height);
+        console.log('Canvas style:', renderer.domElement.style.cssText);
+        console.log('Scene children count:', scene.children.length);
+        setDebugLog(prev => [...prev, `Canvas dimensions: ${renderer.domElement.width}x${renderer.domElement.height}`]);
+        setDebugLog(prev => [...prev, `Scene children: ${scene.children.length}`]);
+        
         renderer.render(scene, camera);
         console.log('Test render successful');
+        setDebugLog(prev => [...prev, 'Test render successful']);
+        
+        // Add a visible indicator that rendering is working
+        renderer.domElement.style.border = '3px solid red';
+        renderer.domElement.style.backgroundColor = 'blue';
       } else {
         console.error('Missing scene, camera, or renderer for test render');
+        setDebugLog(prev => [...prev, 'ERROR: Missing scene, camera, or renderer']);
       }
     } catch (err) {
       console.error('Error during test render:', err);
+      setDebugLog(prev => [...prev, `ERROR during test render: ${err}`]);
     }
 
   }, []);
@@ -341,6 +356,8 @@ export default function OptimizedWebGLStadium({
     
     scene.add(stadiumMesh);
     stadiumMeshRef.current = stadiumMesh;
+    console.log('Stadium mesh added to scene');
+    setDebugLog(prev => [...prev, 'Stadium mesh added to scene']);
 
     // Field geometry
     const fieldGeometry = new THREE.CircleGeometry(20, 32 * config.maxGeometryDetail);
@@ -354,6 +371,8 @@ export default function OptimizedWebGLStadium({
     fieldMesh.receiveShadow = true;
     
     scene.add(fieldMesh);
+    console.log('Field mesh added to scene');
+    setDebugLog(prev => [...prev, 'Field mesh added to scene']);
 
     // Create seating sections
     createSeatingSections(THREE);
