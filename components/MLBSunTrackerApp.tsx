@@ -19,6 +19,7 @@ import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import OptimizedWebGLStadium from './OptimizedWebGLStadium';
 import ErrorBoundary from './ErrorBoundary';
+import TestComponent from './TestComponent';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -264,6 +265,7 @@ function AppContent() {
                   <p>Stadium: {selectedStadium?.name}</p>
                   <p>Sun Position: {sunPosition.azimuthDegrees}°/{sunPosition.altitudeDegrees}°</p>
                 </div>
+                <TestComponent />
                 <OptimizedWebGLStadium
                   stadium={selectedStadium}
                   sunPosition={sunPosition}
