@@ -130,15 +130,45 @@ export default function OptimizedWebGLStadium({
       setDebugLog(prev => [...prev, 'Container ref is null, trying querySelector...']);
       
       // Try to find the container with querySelector as a fallback
-      const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      console.log('Searching for container with querySelector...');
+      setDebugLog(prev => [...prev, 'Searching for container with querySelector...']);
+      
+      const allContainerElements = document.querySelectorAll('div');
+      console.log('Total div elements found:', allContainerElements.length);
+      setDebugLog(prev => [...prev, `Total div elements found: ${allContainerElements.length}`]);
+      
+      const containerWithClass = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      const containerWithPartialClass = document.querySelector('[class*="webgl-stadium-canvas-container"]') as HTMLDivElement;
+      
+      console.log('Container with exact class:', !!containerWithClass);
+      console.log('Container with partial class match:', !!containerWithPartialClass);
+      setDebugLog(prev => [...prev, `Container with exact class: ${!!containerWithClass}`]);
+      setDebugLog(prev => [...prev, `Container with partial class: ${!!containerWithPartialClass}`]);
+      
+      const foundContainer = containerWithClass || containerWithPartialClass;
       if (foundContainer) {
         console.log('Found container with querySelector!');
         setDebugLog(prev => [...prev, 'Found container with querySelector!']);
         (containerRef as any).current = foundContainer;
       } else {
-        console.error('Container element not found anywhere');
-        setDebugLog(prev => [...prev, 'ERROR: Container element not found anywhere']);
-        setError('Container element not found');
+        // Let's wait a bit and try again
+        console.log('Container not found, waiting 500ms and trying again...');
+        setDebugLog(prev => [...prev, 'Container not found, waiting 500ms and trying again...']);
+        
+        setTimeout(() => {
+          const retryContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+          if (retryContainer) {
+            console.log('Found container on retry!');
+            setDebugLog(prev => [...prev, 'Found container on retry!']);
+            (containerRef as any).current = retryContainer;
+            // Restart initialization
+            initializeThreeJS();
+          } else {
+            console.error('Container element not found anywhere after retry');
+            setDebugLog(prev => [...prev, 'ERROR: Container element not found anywhere after retry']);
+            setError('Container element not found');
+          }
+        }, 500);
         return;
       }
     }
