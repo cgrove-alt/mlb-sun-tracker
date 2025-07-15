@@ -547,29 +547,46 @@ export default function OptimizedWebGLStadium({
       subtree: true
     });
     
-    // Fallback timeout in case MutationObserver doesn't work
-    const timeoutId = setTimeout(() => {
-      console.log('Timeout reached, force checking container...');
-      setDebugLog(prev => [...prev, 'Timeout reached, force checking...']);
+    // Initial check after a short delay to let React render
+    const quickCheckId = setTimeout(() => {
+      console.log('Quick check after 100ms...');
+      setDebugLog(prev => [...prev, 'Quick check after 100ms...']);
+      
+      const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
+      if (foundContainer) {
+        console.log('Container found via quick querySelector!');
+        setDebugLog(prev => [...prev, 'Container found via quick querySelector!']);
+        (containerRef as any).current = foundContainer;
+        setContainerReady(true);
+        observer.disconnect();
+        clearTimeout(finalCheckId);
+      }
+    }, 100);
+
+    // Final fallback timeout in case MutationObserver doesn't work
+    const finalCheckId = setTimeout(() => {
+      console.log('Final timeout reached, force checking container...');
+      setDebugLog(prev => [...prev, 'Final timeout reached, force checking...']);
       
       // Try to find the container by class name as a last resort
       const foundContainer = document.querySelector('.webgl-stadium-canvas-container') as HTMLDivElement;
       if (foundContainer) {
-        console.log('Container found via querySelector!');
-        setDebugLog(prev => [...prev, 'Container found via querySelector!']);
+        console.log('Container found via final querySelector!');
+        setDebugLog(prev => [...prev, 'Container found via final querySelector!']);
         (containerRef as any).current = foundContainer;
         setContainerReady(true);
         observer.disconnect();
       } else {
-        console.log('No container found anywhere!');
-        setDebugLog(prev => [...prev, 'ERROR: No container found anywhere!']);
-        setError('Container element could not be created');
+        console.log('No container found anywhere, but continuing to render...');
+        setDebugLog(prev => [...prev, 'WARNING: No container found after 5 seconds']);
+        // Don't set error here - let the component render the container div first
       }
-    }, 2000);
+    }, 5000);
     
     return () => {
       observer.disconnect();
-      clearTimeout(timeoutId);
+      clearTimeout(quickCheckId);
+      clearTimeout(finalCheckId);
     };
   }, []);
 
