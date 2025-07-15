@@ -3,6 +3,7 @@ import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { Stadium } from '../data/stadiums';
+import { preferencesStorage } from '../utils/preferences';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -20,9 +21,15 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 }) => {
   const [games, setGames] = useState<MLBGame[]>([]);
   const [loading, setLoading] = useState(false);
-  const [viewMode, setViewMode] = useState<'games' | 'custom'>('games');
-  const [customDate, setCustomDate] = useState<string>(format(new Date(), 'yyyy-MM-dd'));
-  const [customTime, setCustomTime] = useState<string>(format(new Date(), 'HH:mm'));
+  const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
+    return preferencesStorage.get('viewMode', 'games');
+  });
+  const [customDate, setCustomDate] = useState<string>(() => {
+    return preferencesStorage.get('lastUsedDate', format(new Date(), 'yyyy-MM-dd'));
+  });
+  const [customTime, setCustomTime] = useState<string>(() => {
+    return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
+  });
 
   const stadiumOptions = stadiums.map(stadium => ({
     value: stadium.id,
@@ -72,6 +79,30 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     if (customDate && customTime) {
       const dateTime = new Date(`${customDate}T${customTime}:00`);
       onGameSelect(null, dateTime);
+      
+      // Save custom date and time to localStorage
+      preferencesStorage.update('lastUsedDate', customDate);
+      preferencesStorage.update('lastUsedTime', customTime);
+    }
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      action();
+    }
+  };
+
+  const handleTabKeyDown = (event: React.KeyboardEvent, mode: 'games' | 'custom') => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      setViewMode(mode);
+      preferencesStorage.update('viewMode', mode);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      const newMode = mode === 'games' ? 'custom' : 'games';
+      setViewMode(newMode);
+      preferencesStorage.update('viewMode', newMode);
     }
   };
 
@@ -92,17 +123,35 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   return (
     <div className="game-selector">
       <div className="selector-header">
-        <h3>Select Game or Time</h3>
-        <div className="view-mode-toggle">
+        <h3 id="game-selector-title">Select Game or Time</h3>
+        <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
           <button 
             className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
-            onClick={() => setViewMode('games')}
+            onClick={() => {
+              setViewMode('games');
+              preferencesStorage.update('viewMode', 'games');
+            }}
+            onKeyDown={(e) => handleTabKeyDown(e, 'games')}
+            role="tab"
+            aria-selected={viewMode === 'games'}
+            aria-controls="games-panel"
+            id="games-tab"
+            tabIndex={viewMode === 'games' ? 0 : -1}
           >
             📅 Real Games
           </button>
           <button 
             className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
-            onClick={() => setViewMode('custom')}
+            onClick={() => {
+              setViewMode('custom');
+              preferencesStorage.update('viewMode', 'custom');
+            }}
+            onKeyDown={(e) => handleTabKeyDown(e, 'custom')}
+            role="tab"
+            aria-selected={viewMode === 'custom'}
+            aria-controls="custom-panel"
+            id="custom-tab"
+            tabIndex={viewMode === 'custom' ? 0 : -1}
           >
             🕒 Custom Time
           </button>
@@ -110,31 +159,37 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       </div>
 
       <div className="control-group">
-        <label>Stadium:</label>
+        <label htmlFor="stadium-select">Stadium:</label>
         <Select
+          inputId="stadium-select"
           options={stadiumOptions}
           value={stadiumOptions.find(option => option.stadium.id === selectedStadium?.id) || null}
           onChange={(option) => onStadiumChange(option?.stadium || null)}
           placeholder="Choose a stadium..."
           className="stadium-select"
+          aria-label="Select MLB stadium"
         />
       </div>
 
       {viewMode === 'games' ? (
-        <div className="games-section">
+        <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
           {selectedStadium ? (
             <>
               <div className="control-group">
-                <label>Upcoming Home Games:</label>
+                <label htmlFor="game-select">Upcoming Home Games:</label>
                 {loading ? (
-                  <div className="loading">Loading games...</div>
+                  <div className="loading" role="status" aria-live="polite">
+                    Loading games...
+                  </div>
                 ) : (
                   <Select
+                    inputId="game-select"
                     options={gameOptions}
                     onChange={handleGameSelect}
                     placeholder={games.length > 0 ? "Choose a game..." : "No upcoming games found"}
                     className="game-select"
                     isDisabled={games.length === 0}
+                    aria-label="Select upcoming game"
                     formatOptionLabel={(option) => (
                       <div className="game-option">
                         <div className="game-date-time">
@@ -171,32 +226,38 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           )}
         </div>
       ) : (
-        <div className="custom-section">
+        <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
           <div className="custom-controls">
             <div className="control-group">
-              <label>Date:</label>
+              <label htmlFor="custom-date">Date:</label>
               <input
+                id="custom-date"
                 type="date"
                 value={customDate}
                 onChange={(e) => setCustomDate(e.target.value)}
                 className="date-input"
+                aria-label="Select date for custom time analysis"
               />
             </div>
 
             <div className="control-group">
-              <label>Time (local):</label>
+              <label htmlFor="custom-time">Time (local):</label>
               <input
+                id="custom-time"
                 type="time"
                 value={customTime}
                 onChange={(e) => setCustomTime(e.target.value)}
                 className="time-input"
+                aria-label="Select time for custom time analysis"
               />
             </div>
 
             <button 
               onClick={handleCustomDateTime}
+              onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
               className="apply-custom-btn"
               disabled={!customDate || !customTime || !selectedStadium}
+              aria-label="Apply custom date and time for sun analysis"
             >
               Apply Custom Time
             </button>

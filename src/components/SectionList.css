@@ -72,6 +72,73 @@
   color: #0c5460;
 }
 
+.summary-item.search-results {
+  background: #e2e3e5;
+  color: #495057;
+}
+
+.search-and-sort {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+}
+
+.search-label {
+  font-size: 0.9em;
+  color: #6c757d;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 0.9em;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-color: #007bff;
+}
+
+.search-clear-btn {
+  background: #6c757d;
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  transition: background-color 0.2s ease;
+  position: absolute;
+  right: 8px;
+}
+
+.search-clear-btn:hover {
+  background: #495057;
+}
+
+.search-clear-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
 .sort-controls {
   display: flex;
   align-items: center;
@@ -106,6 +173,11 @@
   background: #007bff;
   border-color: #007bff;
   color: white;
+}
+
+.sort-btn:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 
 .no-sections {
@@ -150,6 +222,11 @@
 
 .section-card.covered {
   border-style: dashed;
+}
+
+.section-card:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
 }
 
 .section-header {
@@ -319,8 +396,41 @@
     gap: 8px;
   }
   
+  .search-and-sort {
+    gap: 8px;
+  }
+  
+  .search-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  
+  .search-label {
+    font-size: 1rem;
+  }
+  
+  .search-input {
+    min-height: 48px;
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+  
+  .search-clear-btn {
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    font-size: 0.8em;
+  }
+  
   .sort-controls {
     justify-content: center;
+  }
+  
+  .sort-btn {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
   }
   
   .section-meta {

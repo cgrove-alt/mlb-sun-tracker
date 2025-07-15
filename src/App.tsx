@@ -11,11 +11,16 @@ import { SimpleFilter } from './components/SimpleFilter';
 import { SunExposureFilterFixed } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
+import { ErrorProvider, useError } from './components/ErrorNotification';
+import { Breadcrumb } from './components/Breadcrumb';
+import { Tooltip } from './components/Tooltip';
+import { ShareButton } from './components/ShareButton';
 import { getSunPosition, calculateSunnySections, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
+import { preferencesStorage } from './utils/preferences';
 
-function App() {
+function AppContent() {
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
@@ -27,6 +32,49 @@ function App() {
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
+  const { showError } = useError();
+
+  // Load preferences and URL parameters on component mount
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const preferences = preferencesStorage.load();
+    
+    // Check URL parameters first (shared links take precedence)
+    const stadiumParam = urlParams.get('stadium');
+    const datetimeParam = urlParams.get('datetime');
+    
+    if (stadiumParam) {
+      const stadium = MLB_STADIUMS.find(s => s.id === stadiumParam);
+      if (stadium) {
+        setSelectedStadium(stadium);
+        
+        // If datetime is provided, set it
+        if (datetimeParam) {
+          try {
+            const dateTime = new Date(datetimeParam);
+            if (!isNaN(dateTime.getTime())) {
+              setGameDateTime(dateTime);
+            }
+          } catch (error) {
+            console.error('Invalid datetime parameter:', error);
+          }
+        }
+      }
+    } else {
+      // Fall back to preferences if no URL parameters
+      if (preferences.selectedStadiumId) {
+        const stadium = MLB_STADIUMS.find(s => s.id === preferences.selectedStadiumId);
+        if (stadium) {
+          setSelectedStadium(stadium);
+        }
+      }
+    }
+    
+    // Restore filter criteria (unless overridden by URL)
+    if (preferences.filterCriteria) {
+      setFilterCriteria(preferences.filterCriteria);
+    }
+  }, []);
 
   const loadWeatherForecast = useCallback(async () => {
     if (!selectedStadium) return;
@@ -37,81 +85,92 @@ function App() {
       setWeatherForecast(forecast);
     } catch (error) {
       console.error('Error loading weather forecast:', error);
-      // Show user-friendly message instead of null
       setWeatherForecast(null);
-      // Could add a toast notification here
+      showError(
+        'Unable to load weather forecast. Sun calculations will continue without weather data.',
+        'warning'
+      );
     } finally {
       setLoadingWeather(false);
     }
-  }, [selectedStadium]);
+  }, [selectedStadium, showError]);
 
   // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
     if (selectedStadium && gameDateTime) {
       setLoadingSections(true);
       
-      // Calculate sun position
-      const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
-      setSunPosition(position);
-      
-      // Get weather data for calculations
-      const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
-      console.log('Game weather for sun calculations:', gameWeather ? {
-        cloudCover: gameWeather.cloudCover,
-        conditions: gameWeather.conditions[0]?.main,
-        precipitationProbability: gameWeather.precipitationProbability,
-        temperature: gameWeather.temperature
-      } : 'No weather data');
+      try {
+        // Calculate sun position
+        const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
+        setSunPosition(position);
+        
+        // Get weather data for calculations
+        const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
+        console.log('Game weather for sun calculations:', gameWeather ? {
+          cloudCover: gameWeather.cloudCover,
+          conditions: gameWeather.conditions[0]?.main,
+          precipitationProbability: gameWeather.precipitationProbability,
+          temperature: gameWeather.temperature
+        } : 'No weather data');
 
-      // Calculate detailed section data with weather impact
-      const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
-      
-      // Convert detailed sections to simple Map for stadium visualization
-      const sectionsMap = new Map<string, boolean>();
-      detailedSectionData.forEach(sectionData => {
-        const section = sectionData.section;
-        // Add multiple mapping variations to handle different naming schemes
-        sectionsMap.set(section.name, sectionData.inSun);
-        sectionsMap.set(section.id, sectionData.inSun);
-        sectionsMap.set(`Section ${section.name}`, sectionData.inSun);
-        sectionsMap.set(`Section ${section.id}`, sectionData.inSun);
+        // Calculate detailed section data with weather impact
+        const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
         
-        // Add variations without spaces for better matching
-        if (section.name.includes(' ')) {
-          sectionsMap.set(section.name.replace(/\s+/g, ''), sectionData.inSun);
-        }
-        if (section.id.includes(' ')) {
-          sectionsMap.set(section.id.replace(/\s+/g, ''), sectionData.inSun);
-        }
+        // Convert detailed sections to simple Map for stadium visualization
+        const sectionsMap = new Map<string, boolean>();
+        detailedSectionData.forEach(sectionData => {
+          const section = sectionData.section;
+          // Add multiple mapping variations to handle different naming schemes
+          sectionsMap.set(section.name, sectionData.inSun);
+          sectionsMap.set(section.id, sectionData.inSun);
+          sectionsMap.set(`Section ${section.name}`, sectionData.inSun);
+          sectionsMap.set(`Section ${section.id}`, sectionData.inSun);
+          
+          // Add variations without spaces for better matching
+          if (section.name.includes(' ')) {
+            sectionsMap.set(section.name.replace(/\s+/g, ''), sectionData.inSun);
+          }
+          if (section.id.includes(' ')) {
+            sectionsMap.set(section.id.replace(/\s+/g, ''), sectionData.inSun);
+          }
+          
+          // Add level-based generic mappings for visualization components
+          if (section.level === 'field') {
+            sectionsMap.set(`Field Level ${section.name}`, sectionData.inSun);
+            sectionsMap.set(`Field Level`, sectionData.inSun);
+          } else if (section.level === 'lower') {
+            sectionsMap.set(`Lower Level ${section.name}`, sectionData.inSun);
+            sectionsMap.set(`Main Level`, sectionData.inSun);
+          } else if (section.level === 'upper') {
+            sectionsMap.set(`Upper Level ${section.name}`, sectionData.inSun);
+            sectionsMap.set(`Upper Deck`, sectionData.inSun);
+          } else if (section.level === 'club') {
+            sectionsMap.set(`Club Level ${section.name}`, sectionData.inSun);
+            sectionsMap.set(`Club Level`, sectionData.inSun);
+          }
+        });
+        setSunnySections(sectionsMap);
+        console.log('Detailed sections calculated:', detailedSectionData.length);
+        console.log('Section mapping created with keys:', Array.from(sectionsMap.keys()).slice(0, 10));
+        setDetailedSections(detailedSectionData);
         
-        // Add level-based generic mappings for visualization components
-        if (section.level === 'field') {
-          sectionsMap.set(`Field Level ${section.name}`, sectionData.inSun);
-          sectionsMap.set(`Field Level`, sectionData.inSun);
-        } else if (section.level === 'lower') {
-          sectionsMap.set(`Lower Level ${section.name}`, sectionData.inSun);
-          sectionsMap.set(`Main Level`, sectionData.inSun);
-        } else if (section.level === 'upper') {
-          sectionsMap.set(`Upper Level ${section.name}`, sectionData.inSun);
-          sectionsMap.set(`Upper Deck`, sectionData.inSun);
-        } else if (section.level === 'club') {
-          sectionsMap.set(`Club Level ${section.name}`, sectionData.inSun);
-          sectionsMap.set(`Club Level`, sectionData.inSun);
-        }
-      });
-      setSunnySections(sectionsMap);
-      console.log('Detailed sections calculated:', detailedSectionData.length);
-      console.log('Section mapping created with keys:', Array.from(sectionsMap.keys()).slice(0, 10));
-      setDetailedSections(detailedSectionData);
-      
-      // Apply current filter
-      const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
-      console.log('Filtered sections:', filtered.length);
-      setFilteredSections(filtered);
-      
-      setLoadingSections(false);
+        // Apply current filter
+        const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
+        console.log('Filtered sections:', filtered.length);
+        setFilteredSections(filtered);
+        
+      } catch (error) {
+        console.error('Error calculating sun exposure:', error);
+        showError(
+          'Unable to calculate sun exposure for stadium sections. Please try again.',
+          'error'
+        );
+      } finally {
+        setLoadingSections(false);
+      }
     }
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria]);
+  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError]);
 
   // Load weather forecast when stadium changes
   useEffect(() => {
@@ -130,6 +189,8 @@ function App() {
 
   const handleFilterChange = (criteria: SunFilterCriteria) => {
     setFilterCriteria(criteria);
+    // Save filter criteria to localStorage
+    preferencesStorage.update('filterCriteria', criteria);
   };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
@@ -147,6 +208,13 @@ function App() {
     setDetailedSections([]);
     setFilteredSections([]);
     setFilterCriteria({});
+    
+    // Save selected stadium to localStorage
+    if (stadium) {
+      preferencesStorage.update('selectedStadiumId', stadium.id);
+    } else {
+      preferencesStorage.update('selectedStadiumId', undefined);
+    }
   };
 
   return (
@@ -158,11 +226,25 @@ function App() {
           <div className="quick-summary">
             <span className="stadium-name">{selectedStadium.name}</span>
             <span className="game-time">{gameDateTime.toLocaleDateString()}</span>
+            <ShareButton
+              selectedStadium={selectedStadium}
+              selectedGame={selectedGame}
+              gameDateTime={gameDateTime}
+              className="header-share-btn"
+            />
           </div>
         )}
       </header>
 
       <main className="App-main">
+        <Breadcrumb
+          selectedStadium={selectedStadium}
+          selectedGame={selectedGame}
+          gameDateTime={gameDateTime}
+          onStadiumChange={handleStadiumChange}
+          onGameSelect={handleGameSelect}
+        />
+        
         <GameSelector
           selectedStadium={selectedStadium}
           onGameSelect={handleGameSelect}
@@ -218,7 +300,9 @@ function App() {
                     <div className="sun-detail-item">
                       <span className="sun-icon">🧭</span>
                       <div className="sun-detail-content">
-                        <span className="sun-label">Direction</span>
+                        <Tooltip content="The compass direction where the sun is located (0° = North, 90° = East, 180° = South, 270° = West)">
+                          <span className="sun-label">Direction</span>
+                        </Tooltip>
                         <span className="sun-value">{sunPosition ? getCompassDirection(sunPosition.azimuthDegrees) : 'N/A'} ({sunPosition ? Math.round(sunPosition.azimuthDegrees) : 0}°)</span>
                       </div>
                     </div>
@@ -226,7 +310,9 @@ function App() {
                     <div className="sun-detail-item">
                       <span className="sun-icon">📐</span>
                       <div className="sun-detail-content">
-                        <span className="sun-label">Elevation</span>
+                        <Tooltip content="The sun's angle above the horizon (0° = horizon, 90° = directly overhead). Negative values indicate the sun is below the horizon.">
+                          <span className="sun-label">Elevation</span>
+                        </Tooltip>
                         <span className="sun-value">{sunPosition ? Math.round(sunPosition.altitudeDegrees) : 0}°</span>
                       </div>
                     </div>
@@ -352,6 +438,14 @@ function App() {
         <p>Weather data provided by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a></p>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ErrorProvider>
+      <AppContent />
+    </ErrorProvider>
   );
 }
 

@@ -43,6 +43,10 @@
   opacity: 0.8;
 }
 
+.header-share-btn {
+  margin-left: auto;
+}
+
 .App-main {
   max-width: 1200px;
   margin: 0 auto;
@@ -402,5 +406,89 @@
 
   .rec-icon {
     align-self: center;
+  }
+  
+  /* Ensure minimum touch target sizes (44px minimum) */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .clickable {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve input sizing for mobile */
+  input[type="text"],
+  input[type="search"],
+  input[type="date"],
+  input[type="time"],
+  input[type="range"],
+  select,
+  textarea {
+    min-height: 44px;
+    padding: 12px;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Improve spacing for mobile */
+  .control-group {
+    margin-bottom: 24px;
+  }
+  
+  .control-group label {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .App-header p {
+    font-size: 0.9rem;
+  }
+  
+  .quick-summary {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+  
+  .App-main {
+    padding: 12px;
+  }
+  
+  /* Larger touch targets for very small screens */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  .clickable {
+    min-height: 48px;
+    padding: 12px 16px;
+  }
+  
+  /* Improve readability on small screens */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .recommendations {
+    padding: 12px;
+  }
+  
+  .recommendation-item {
+    padding: 12px;
+  }
+  
+  .rec-content h4 {
+    font-size: 1rem;
+  }
+  
+  .rec-content p {
+    font-size: 0.9rem;
   }
 }

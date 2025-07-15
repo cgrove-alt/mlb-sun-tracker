@@ -37,6 +37,8 @@ export interface WeatherForecast {
   }>;
 }
 
+import { withCache } from '../utils/apiCache';
+
 export class WeatherApiService {
   // Using Open-Meteo as it's free and doesn't require an API key
   private baseUrl = 'https://api.open-meteo.com/v1';
@@ -63,36 +65,40 @@ export class WeatherApiService {
     return closestWeather;
   }
   
-  async getForecast(latitude: number, longitude: number): Promise<WeatherForecast> {
-    try {
-      const params = new URLSearchParams({
-        latitude: latitude.toString(),
-        longitude: longitude.toString(),
-        current: 'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m',
-        hourly: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,pressure_msl,surface_pressure,cloud_cover,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m,uv_index,is_day',
-        daily: 'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,showers_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant',
-        temperature_unit: 'fahrenheit',
-        wind_speed_unit: 'mph',
-        precipitation_unit: 'inch',
-        timezone: 'auto',
-        forecast_days: '7'
-      });
+  getForecast = withCache(
+    async (latitude: number, longitude: number): Promise<WeatherForecast> => {
+      try {
+        const params = new URLSearchParams({
+          latitude: latitude.toString(),
+          longitude: longitude.toString(),
+          current: 'temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m',
+          hourly: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,weather_code,pressure_msl,surface_pressure,cloud_cover,visibility,wind_speed_10m,wind_direction_10m,wind_gusts_10m,uv_index,is_day',
+          daily: 'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset,uv_index_max,precipitation_sum,rain_sum,showers_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max,wind_direction_10m_dominant',
+          temperature_unit: 'fahrenheit',
+          wind_speed_unit: 'mph',
+          precipitation_unit: 'inch',
+          timezone: 'auto',
+          forecast_days: '7'
+        });
 
-      const response = await fetch(`${this.baseUrl}/forecast?${params}`);
-      
-      if (!response.ok) {
-        throw new Error(`Weather API request failed: ${response.status}`);
+        const response = await fetch(`${this.baseUrl}/forecast?${params}`);
+        
+        if (!response.ok) {
+          throw new Error(`Weather API request failed: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        
+        return this.parseWeatherResponse(data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        // Throw error instead of silently falling back to mock data
+        throw new Error(`Weather service unavailable: ${error instanceof Error ? error.message : 'Unknown error'}`);
       }
-      
-      const data = await response.json();
-      
-      return this.parseWeatherResponse(data);
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-      // Throw error instead of silently falling back to mock data
-      throw new Error(`Weather service unavailable: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    }
-  }
+    },
+    'weather-forecast',
+    10 * 60 * 1000 // Cache for 10 minutes
+  );
 
   private parseWeatherResponse(data: any): WeatherForecast {
     const current = this.parseCurrentWeather(data.current);

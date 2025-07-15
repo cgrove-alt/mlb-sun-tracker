@@ -68,10 +68,13 @@ const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
   147: 'yankees', // New York Yankees
 };
 
+import { withCache } from '../utils/apiCache';
+
 export class MLBApiService {
   private baseUrl = 'https://statsapi.mlb.com/api/v1';
 
-  async getSchedule(startDate?: string, endDate?: string): Promise<MLBGame[]> {
+  getSchedule = withCache(
+    async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
     try {
       const today = new Date();
       const defaultStart = startDate || today.toISOString().split('T')[0];
@@ -98,7 +101,10 @@ export class MLBApiService {
       // Return mock data for development
       return this.getMockSchedule();
     }
-  }
+    },
+    'mlb-schedule',
+    30 * 60 * 1000 // Cache for 30 minutes
+  );
 
   async getTeamSchedule(teamId: number, startDate?: string, endDate?: string): Promise<MLBGame[]> {
     try {
