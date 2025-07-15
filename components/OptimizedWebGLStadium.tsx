@@ -7,25 +7,11 @@ import { Stadium } from '../src/data/stadiums';
 
 console.log('IMPORT: Basic imports successful, attempting Three.js imports...');
 
+// Temporarily disable Three.js loading to test if that's the issue
 let THREE: any = null;
 let OrbitControls: any = null;
 
-try {
-  console.log('IMPORT: Loading THREE...');
-  THREE = require('three');
-  console.log('IMPORT: THREE loaded successfully:', !!THREE);
-} catch (error) {
-  console.error('IMPORT: Failed to load THREE:', error);
-}
-
-try {
-  console.log('IMPORT: Loading OrbitControls...');
-  const controls = require('three/examples/jsm/controls/OrbitControls.js');
-  OrbitControls = controls.OrbitControls;
-  console.log('IMPORT: OrbitControls loaded successfully:', !!OrbitControls);
-} catch (error) {
-  console.error('IMPORT: Failed to load OrbitControls:', error);
-}
+console.log('IMPORT: Skipping Three.js imports for debugging...');
 
 interface OptimizedWebGLStadiumProps {
   stadium: Stadium;
@@ -74,6 +60,19 @@ export default function OptimizedWebGLStadium({
 }: OptimizedWebGLStadiumProps) {
   console.log('IMMEDIATE: OptimizedWebGLStadium function called', Date.now());
   console.log('OptimizedWebGLStadium component mounted', { stadium: stadium?.name, sunPosition });
+  
+  // SIMPLE TEST: Just return a basic div to see if this component renders at all
+  return (
+    <div style={{ padding: '20px', background: '#ff5722', color: 'white', margin: '20px 0' }}>
+      <p>🔥 OPTIMIZED WEBGL STADIUM COMPONENT IS RENDERING!</p>
+      <p>Stadium: {stadium?.name}</p>
+      <p>Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
+      <p>Component successfully loaded and executing</p>
+      <p>Time: {new Date().toLocaleTimeString()}</p>
+    </div>
+  );
+  
+  // Rest of the component is temporarily disabled for debugging
   
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
