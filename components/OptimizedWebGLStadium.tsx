@@ -1,5 +1,7 @@
 'use client';
 
+console.log('IMPORT: OptimizedWebGLStadium module loading...');
+
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Stadium } from '../src/data/stadiums';
 import * as THREE from 'three';
@@ -50,6 +52,7 @@ export default function OptimizedWebGLStadium({
   selectedSections = [],
   onSectionClick,
 }: OptimizedWebGLStadiumProps) {
+  console.log('IMMEDIATE: OptimizedWebGLStadium function called');
   console.log('OptimizedWebGLStadium component mounted', { stadium: stadium?.name, sunPosition });
   
   const containerRef = useRef<HTMLDivElement>(null);
@@ -524,10 +527,10 @@ export default function OptimizedWebGLStadium({
     };
   }, []);
 
-  console.log('OptimizedWebGLStadium render - error:', error, 'isLoading:', isLoading);
+  console.log('RENDER: OptimizedWebGLStadium render - error:', error, 'isLoading:', isLoading);
 
   if (error) {
-    console.log('Rendering error state:', error);
+    console.log('RENDER: Rendering error state:', error);
     return (
       <div className="webgl-error">
         <p>⚠️ {error}</p>
@@ -549,7 +552,7 @@ export default function OptimizedWebGLStadium({
   }
 
   if (isLoading) {
-    console.log('Rendering loading state');
+    console.log('RENDER: Rendering loading state');
     return (
       <div className="webgl-loading">
         <div className="loading-spinner"></div>
@@ -559,7 +562,7 @@ export default function OptimizedWebGLStadium({
     );
   }
 
-  console.log('Rendering main component');
+  console.log('RENDER: Rendering main component');
   return (
     <div className="webgl-stadium-container">
       <div
