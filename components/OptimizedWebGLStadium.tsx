@@ -76,7 +76,8 @@ export default function OptimizedWebGLStadium({
     try {
       console.log('Starting Three.js initialization...');
       setDebugLog(prev => [...prev, 'Starting Three.js initialization...']);
-      setIsLoading(true);
+      // Don't set loading to true here since container needs to be visible
+      // setIsLoading(true);
       
       // Check WebGL support first
       if (!isWebGLSupported()) {
@@ -104,12 +105,13 @@ export default function OptimizedWebGLStadium({
       (window as any).THREE = THREE;
       (window as any).OrbitControls = OrbitControls;
       
-      setIsLoading(false);
-      
       // Initialize the scene
       console.log('Initializing scene...');
       setDebugLog(prev => [...prev, 'Initializing scene...']);
       initializeScene(THREE, OrbitControls);
+      
+      // Set loading to false after successful initialization
+      setIsLoading(false);
     } catch (err) {
       console.error('Failed to initialize THREE.js:', err);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
