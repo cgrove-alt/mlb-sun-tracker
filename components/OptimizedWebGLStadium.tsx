@@ -54,8 +54,10 @@ export default function OptimizedWebGLStadium({
   
   // Callback ref to handle container mounting
   const setContainerRef = useCallback((element: HTMLDivElement | null) => {
+    console.log('setContainerRef called with:', !!element);
     (containerRef as any).current = element;
     if (element && !containerReady) {
+      console.log('Setting container ready to true');
       setDebugLog(prev => [...prev, 'Container element mounted']);
       setContainerReady(true);
     }
@@ -506,6 +508,7 @@ export default function OptimizedWebGLStadium({
 
   // Initialize when container is ready
   useEffect(() => {
+    console.log('useEffect triggered, containerReady:', containerReady);
     if (containerReady) {
       console.log('Container is ready, initializing Three.js');
       setDebugLog(prev => [...prev, 'Container ready! Starting Three.js initialization']);
