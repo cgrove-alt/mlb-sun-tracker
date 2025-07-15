@@ -1,17 +1,7 @@
 'use client';
 
-console.log('IMPORT: OptimizedWebGLStadium module loading...', Date.now());
-
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { Stadium } from '../src/data/stadiums';
-
-console.log('IMPORT: Basic imports successful, attempting Three.js imports...');
-
-// Temporarily disable Three.js loading to test if that's the issue
-let THREE: any = null;
-let OrbitControls: any = null;
-
-console.log('IMPORT: Skipping Three.js imports for debugging...');
 
 interface OptimizedWebGLStadiumProps {
   stadium: Stadium;
@@ -58,21 +48,6 @@ export default function OptimizedWebGLStadium({
   selectedSections = [],
   onSectionClick,
 }: OptimizedWebGLStadiumProps) {
-  console.log('IMMEDIATE: OptimizedWebGLStadium function called', Date.now());
-  console.log('OptimizedWebGLStadium component mounted', { stadium: stadium?.name, sunPosition });
-  
-  // SIMPLE TEST: Just return a basic div to see if this component renders at all
-  return (
-    <div style={{ padding: '20px', background: '#ff5722', color: 'white', margin: '20px 0' }}>
-      <p>🔥 OPTIMIZED WEBGL STADIUM COMPONENT IS RENDERING!</p>
-      <p>Stadium: {stadium?.name}</p>
-      <p>Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
-      <p>Component successfully loaded and executing</p>
-      <p>Time: {new Date().toLocaleTimeString()}</p>
-    </div>
-  );
-  
-  // Rest of the component is temporarily disabled for debugging
   
   const containerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -102,13 +77,6 @@ export default function OptimizedWebGLStadium({
       setDebugLog(prev => [...prev, 'Starting Three.js initialization...']);
       setIsLoading(true);
       
-      // Check if THREE.js modules loaded successfully
-      if (!THREE || !OrbitControls) {
-        throw new Error('THREE.js modules failed to load');
-      }
-      console.log('THREE.js modules confirmed loaded');
-      setDebugLog(prev => [...prev, 'THREE.js modules confirmed loaded']);
-      
       // Check WebGL support first
       if (!isWebGLSupported()) {
         throw new Error('WebGL is not supported in this browser');
@@ -116,15 +84,31 @@ export default function OptimizedWebGLStadium({
       console.log('WebGL support confirmed');
       setDebugLog(prev => [...prev, 'WebGL support confirmed']);
       
+      // Dynamic import of Three.js
+      console.log('Loading Three.js modules...');
+      setDebugLog(prev => [...prev, 'Loading Three.js modules...']);
+      
+      const [threeModule, controlsModule] = await Promise.all([
+        import('three'),
+        import('three/examples/jsm/controls/OrbitControls.js')
+      ]);
+      
+      const THREE = threeModule;
+      const { OrbitControls } = controlsModule;
+      
       console.log('THREE.js loaded successfully', { THREE: !!THREE, OrbitControls: !!OrbitControls });
       setDebugLog(prev => [...prev, 'THREE.js loaded successfully']);
+      
+      // Store references
+      (window as any).THREE = THREE;
+      (window as any).OrbitControls = OrbitControls;
       
       setIsLoading(false);
       
       // Initialize the scene
       console.log('Initializing scene...');
       setDebugLog(prev => [...prev, 'Initializing scene...']);
-      initializeScene();
+      initializeScene(THREE, OrbitControls);
     } catch (err) {
       console.error('Failed to initialize THREE.js:', err);
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
@@ -134,7 +118,7 @@ export default function OptimizedWebGLStadium({
   }, []);
 
   // Initialize THREE.js scene
-  const initializeScene = useCallback(() => {
+  const initializeScene = useCallback((THREE: any, OrbitControls: any) => {
     console.log('initializeScene called');
     setDebugLog(prev => [...prev, 'initializeScene called']);
     if (!containerRef.current) {
@@ -230,12 +214,12 @@ export default function OptimizedWebGLStadium({
     controlsRef.current = controls;
 
     // Create stadium geometry
-    createStadiumGeometry();
+    createStadiumGeometry(THREE);
 
     // Setup lighting
     try {
       console.log('Setting up lighting...');
-      setupLighting();
+      setupLighting(THREE);
       console.log('Lighting setup complete');
     } catch (err) {
       console.error('Error setting up lighting:', err);
@@ -278,7 +262,7 @@ export default function OptimizedWebGLStadium({
   }, []);
 
   // Create stadium geometry with LOD
-  const createStadiumGeometry = useCallback(() => {
+  const createStadiumGeometry = useCallback((THREE: any) => {
     if (!sceneRef.current) return;
 
     const scene = sceneRef.current;
@@ -325,12 +309,12 @@ export default function OptimizedWebGLStadium({
     scene.add(fieldMesh);
 
     // Create seating sections
-    createSeatingSections();
+    createSeatingSections(THREE);
 
   }, []);
 
   // Create seating sections with click detection
-  const createSeatingSections = useCallback(() => {
+  const createSeatingSections = useCallback((THREE: any) => {
     if (!sceneRef.current) return;
 
     const scene = sceneRef.current;
@@ -359,7 +343,7 @@ export default function OptimizedWebGLStadium({
   }, [selectedSections]);
 
   // Setup lighting system
-  const setupLighting = useCallback(() => {
+  const setupLighting = useCallback((THREE: any) => {
     if (!sceneRef.current) return;
 
     const scene = sceneRef.current;
@@ -405,6 +389,9 @@ export default function OptimizedWebGLStadium({
   // Setup shadow system with mobile optimization
   const setupShadows = useCallback(() => {
     if (!rendererRef.current || !sunLightRef.current) return;
+
+    const THREE = (window as any).THREE;
+    if (!THREE) return;
 
     const config = getPerformanceConfig();
     const renderer = rendererRef.current;
@@ -480,6 +467,9 @@ export default function OptimizedWebGLStadium({
   // Handle section click
   const handleCanvasClick = useCallback((event: MouseEvent) => {
     if (!onSectionClick || !cameraRef.current || !sceneRef.current) return;
+
+    const THREE = (window as any).THREE;
+    if (!THREE) return;
 
     const camera = cameraRef.current;
     const scene = sceneRef.current;
@@ -582,25 +572,6 @@ export default function OptimizedWebGLStadium({
   }, []);
 
   console.log('RENDER: OptimizedWebGLStadium render - error:', error, 'isLoading:', isLoading);
-
-  // Immediate fallback if THREE.js failed to load
-  if (!THREE || !OrbitControls) {
-    console.log('RENDER: THREE.js failed to load, showing fallback');
-    return (
-      <div style={{ padding: '20px', background: '#ff5722', color: 'white', margin: '20px 0' }}>
-        <p>WEBGL ERROR: THREE.js modules failed to load!</p>
-        <p>THREE: {THREE ? 'Loaded' : 'Failed'}</p>
-        <p>OrbitControls: {OrbitControls ? 'Loaded' : 'Failed'}</p>
-        <p>This is likely a module resolution issue.</p>
-        <div style={{ marginTop: '10px' }}>
-          <p><strong>Debug Log:</strong></p>
-          {debugLog.map((log, index) => (
-            <p key={index} style={{ margin: '2px 0', fontSize: '12px' }}>• {log}</p>
-          ))}
-        </div>
-      </div>
-    );
-  }
 
   if (error) {
     console.log('RENDER: Rendering error state:', error);
