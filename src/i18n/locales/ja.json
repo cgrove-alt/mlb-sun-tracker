@@ -33,6 +33,15 @@
     "next": "次へ",
     "previous": "前へ"
   },
+  "breadcrumb": {
+    "label": "現在の選択パンくずリスト",
+    "selectStadium": "スタジアムを選択",
+    "backToStadium": "スタジアム選択に戻る",
+    "selectDifferentStadium": "別のスタジアムを選択",
+    "backToGame": "試合選択に戻る",
+    "selectDifferentGame": "別の試合または時間を選択",
+    "customTime": "カスタム時間"
+  },
   "stadium": {
     "select": "スタジアムを選択",
     "selectStadium": "スタジアムを選択してください",
@@ -228,7 +237,43 @@
       "moderate": "標準",
       "premium": "プレミアム",
       "luxury": "ラグジュアリー"
-    }
+    },
+    "calculating": "すべてのセクションの日照を計算中...",
+    "listLabel": "スタジアムセクション一覧",
+    "summaryStats": {
+      "sunny": "{count} 日向",
+      "shaded": "{count} 日陰",
+      "searchResults": "{shown} / {total} 件表示"
+    },
+    "searchLabel": "スタジアムセクション検索",
+    "clearSearch": "検索をクリア",
+    "sortingOptions": "セクション並び替えオプション",
+    "sortBySun": "日照で並び替え",
+    "sortByName": "セクション名で並び替え",
+    "sortByLevel": "座席レベルで並び替え",
+    "sortByPrice": "価格帯で並び替え",
+    "descending": "降順",
+    "ascending": "昇順",
+    "sortLabels": {
+      "sun": "日照",
+      "name": "名前",
+      "level": "レベル",
+      "price": "価格"
+    },
+    "noSearchResults": "\"{term}\"に一致するセクションが見つかりません。",
+    "tryDifferentSearch": "別の検索用語を試すか、検索をクリアしてすべてのセクションを表示してください。",
+    "noFilterResults": "フィルタ条件に一致するセクションはありません。",
+    "tryAdjustFilters": "フィルタを調整してより多くの結果を表示してください。",
+    "coveredSection": "屋根付きセクション",
+    "levelSeating": "レベル座席",
+    "sunExposure": "日照",
+    "sunExposureTooltip": "試合中にこのセクションが直射日光を受ける時間の割合（天気条件を考慮）",
+    "weatherAdjusted": "天気条件によりこのセクションの日照が減少しています",
+    "weatherAdjustedLabel": "天気調整済み日照",
+    "angleRangeTooltip": "このセクションが向いている方位角の範囲（0° = 北、90° = 東、180° = 南、270° = 西）。日照のタイミングを決定するのに役立ちます。",
+    "angleRangeLabel": "角度範囲 {start} から {end} 度",
+    "rowCount": "約{count}列",
+    "rows": "列"
   },
   "filter": {
     "title": "セクションフィルタ",

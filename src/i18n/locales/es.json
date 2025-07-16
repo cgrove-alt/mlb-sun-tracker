@@ -33,6 +33,15 @@
     "next": "Siguiente",
     "previous": "Anterior"
   },
+  "breadcrumb": {
+    "label": "Navegación breadcrumb de selección actual",
+    "selectStadium": "Seleccionar Estadio",
+    "backToStadium": "Volver a la selección de estadio",
+    "selectDifferentStadium": "Seleccionar un estadio diferente",
+    "backToGame": "Volver a la selección de juego",
+    "selectDifferentGame": "Seleccionar un juego o hora diferente",
+    "customTime": "Hora Personalizada"
+  },
   "stadium": {
     "select": "Seleccionar Estadio",
     "selectStadium": "Selecciona un estadio",
@@ -228,7 +237,43 @@
       "moderate": "Moderado",
       "premium": "Premium",
       "luxury": "Lujo"
-    }
+    },
+    "calculating": "Calculando exposición al sol para todas las secciones...",
+    "listLabel": "Lista de secciones del estadio",
+    "summaryStats": {
+      "sunny": "{count} soleado",
+      "shaded": "{count} sombreado",
+      "searchResults": "{shown} de {total} mostrados"
+    },
+    "searchLabel": "Buscar secciones del estadio",
+    "clearSearch": "Limpiar búsqueda",
+    "sortingOptions": "Opciones de ordenación de secciones",
+    "sortBySun": "Ordenar por exposición al sol",
+    "sortByName": "Ordenar por nombre de sección",
+    "sortByLevel": "Ordenar por nivel de asientos",
+    "sortByPrice": "Ordenar por rango de precios",
+    "descending": "descendente",
+    "ascending": "ascendente",
+    "sortLabels": {
+      "sun": "Sol",
+      "name": "Nombre",
+      "level": "Nivel",
+      "price": "Precio"
+    },
+    "noSearchResults": "No se encontraron secciones que coincidan con \"{term}\".",
+    "tryDifferentSearch": "Intente con un término de búsqueda diferente o limpie la búsqueda para ver todas las secciones.",
+    "noFilterResults": "No hay secciones que coincidan con sus criterios de filtro.",
+    "tryAdjustFilters": "Intente ajustar sus filtros para ver más resultados.",
+    "coveredSection": "Sección cubierta",
+    "levelSeating": "asientos de nivel",
+    "sunExposure": "exposición al sol",
+    "sunExposureTooltip": "El porcentaje de tiempo que esta sección recibe luz solar directa durante el juego, considerando las condiciones climáticas",
+    "weatherAdjusted": "Las condiciones climáticas están reduciendo la exposición al sol para esta sección",
+    "weatherAdjustedLabel": "Exposición al sol ajustada por el clima",
+    "angleRangeTooltip": "El rango de dirección de brújula que enfrenta esta sección (0° = Norte, 90° = Este, 180° = Sur, 270° = Oeste). Esto ayuda a determinar el momento de la exposición al sol.",
+    "angleRangeLabel": "Rango de ángulo de {start} a {end} grados",
+    "rowCount": "Aproximadamente {count} filas",
+    "rows": "filas"
   },
   "filter": {
     "title": "Filtro de Secciones",

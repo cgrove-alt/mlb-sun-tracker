@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from '../i18n/i18nContext';
 import './EmptyStates.css';
 
 interface EmptyStateProps {

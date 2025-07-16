@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { useTranslation } from '../i18n/i18nContext';
 import './Breadcrumb.css';
 
 interface BreadcrumbProps {
@@ -18,6 +19,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   onStadiumChange,
   onGameSelect
 }) => {
+  const { t } = useTranslation();
   const handleBackToStadiumSelection = () => {
     onStadiumChange(null);
   };
