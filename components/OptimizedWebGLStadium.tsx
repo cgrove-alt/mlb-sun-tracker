@@ -368,6 +368,29 @@ export default function OptimizedWebGLStadium({
             console.log('Test 2D canvas added');
             setDebugLog(prev => [...prev, 'Test 2D canvas added']);
           }
+          
+          // Create a raw WebGL test canvas
+          const webglTestCanvas = document.createElement('canvas');
+          webglTestCanvas.width = 200;
+          webglTestCanvas.height = 200;
+          webglTestCanvas.style.position = 'absolute';
+          webglTestCanvas.style.top = '10px';
+          webglTestCanvas.style.right = '10px';
+          webglTestCanvas.style.zIndex = '1000';
+          webglTestCanvas.style.border = '2px solid blue';
+          
+          const gl = webglTestCanvas.getContext('webgl') || webglTestCanvas.getContext('experimental-webgl');
+          if (gl) {
+            // Simple WebGL clear test
+            gl.clearColor(0.0, 0.0, 1.0, 1.0); // Blue
+            gl.clear(gl.COLOR_BUFFER_BIT);
+            container.appendChild(webglTestCanvas);
+            console.log('Raw WebGL test canvas added with blue clear');
+            setDebugLog(prev => [...prev, 'Raw WebGL test canvas added']);
+          } else {
+            console.error('Could not get WebGL context for test canvas');
+            setDebugLog(prev => [...prev, 'ERROR: No WebGL context for test']);
+          }
         } else {
           console.error('NO CANVAS FOUND IN DOM!');
           setDebugLog(prev => [...prev, 'ERROR: NO CANVAS IN DOM']);
