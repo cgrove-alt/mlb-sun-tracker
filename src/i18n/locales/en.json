@@ -537,7 +537,17 @@
     "maxPrice": "Max Price",
     "showOnlyAvailable": "Show only available tickets",
     "noMatchingTickets": "No tickets match your current filters",
-    "foundResults": "Found {count} sections with tickets"
+    "foundResults": "Found {count} sections with tickets",
+    "apiConfigurationRequired": "API Configuration Required",
+    "apiConfigurationMessage": "To display ticket prices and purchase links, SeatGeek API credentials need to be configured.",
+    "configStep1": "Sign up for a SeatGeek developer account at seatgeek.com/account/develop",
+    "configStep2": "Create a new app and get your Client ID",
+    "configStep3": "Set the NEXT_PUBLIC_SEATGEEK_CLIENT_ID environment variable",
+    "configNote": "This is a one-time setup for developers. End users won't see this message.",
+    "apiNotConfigured": "SeatGeek API credentials not configured",
+    "invalidCredentials": "Invalid SeatGeek API credentials",
+    "accessDenied": "Access denied to SeatGeek API",
+    "genericError": "Failed to load ticket information"
   },
   "footer": {
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",

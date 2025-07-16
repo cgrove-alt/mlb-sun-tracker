@@ -526,7 +526,17 @@
     "maxPrice": "最高価格",
     "showOnlyAvailable": "利用可能なチケットのみを表示",
     "noMatchingTickets": "現在のフィルタに一致するチケットはありません",
-    "foundResults": "{count}個のセクションでチケットが見つかりました"
+    "foundResults": "{count}個のセクションでチケットが見つかりました",
+    "apiConfigurationRequired": "API設定が必要です",
+    "apiConfigurationMessage": "チケット価格と購入リンクを表示するには、SeatGeek API認証情報を設定する必要があります。",
+    "configStep1": "seatgeek.com/account/developでSeatGeek開発者アカウントにサインアップ",
+    "configStep2": "新しいアプリを作成してクライアントIDを取得",
+    "configStep3": "NEXT_PUBLIC_SEATGEEK_CLIENT_ID環境変数を設定",
+    "configNote": "これは開発者向けの一度だけの設定です。エンドユーザーはこのメッセージを見ることはありません。",
+    "apiNotConfigured": "SeatGeek API認証情報が設定されていません",
+    "invalidCredentials": "無効なSeatGeek API認証情報",
+    "accessDenied": "SeatGeek APIへのアクセスが拒否されました",
+    "genericError": "チケット情報の読み込みに失敗しました"
   },
   "footer": {
     "disclaimer": "太陽の計算は近似値であり、スタジアムの建築や気象条件によって変動する場合があります。",

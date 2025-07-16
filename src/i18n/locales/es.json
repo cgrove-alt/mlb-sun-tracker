@@ -526,7 +526,17 @@
     "maxPrice": "Precio Máximo",
     "showOnlyAvailable": "Mostrar solo entradas disponibles",
     "noMatchingTickets": "No hay entradas que coincidan con tus filtros actuales",
-    "foundResults": "Se encontraron {count} secciones con entradas"
+    "foundResults": "Se encontraron {count} secciones con entradas",
+    "apiConfigurationRequired": "Configuración de API Requerida",
+    "apiConfigurationMessage": "Para mostrar precios de entradas y enlaces de compra, se necesitan configurar las credenciales de la API de SeatGeek.",
+    "configStep1": "Regístrate para una cuenta de desarrollador de SeatGeek en seatgeek.com/account/develop",
+    "configStep2": "Crea una nueva aplicación y obtén tu ID de Cliente",
+    "configStep3": "Establece la variable de entorno NEXT_PUBLIC_SEATGEEK_CLIENT_ID",
+    "configNote": "Esta es una configuración única para desarrolladores. Los usuarios finales no verán este mensaje.",
+    "apiNotConfigured": "Credenciales de API de SeatGeek no configuradas",
+    "invalidCredentials": "Credenciales de API de SeatGeek inválidas",
+    "accessDenied": "Acceso denegado a la API de SeatGeek",
+    "genericError": "Error al cargar información de entradas"
   },
   "footer": {
     "disclaimer": "Los cálculos del sol son aproximados y pueden variar según la arquitectura del estadio y las condiciones climáticas.",

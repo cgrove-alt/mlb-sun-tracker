@@ -89,15 +89,27 @@ class SeatGeekAPI {
   private clientId: string;
   private clientSecret: string;
   private baseUrl = 'https://api.seatgeek.com/2';
+  private isConfigured: boolean;
 
   constructor() {
-    // Note: In production, these should be environment variables
-    // For now, we'll use the public demo credentials
-    this.clientId = process.env.NEXT_PUBLIC_SEATGEEK_CLIENT_ID || 'MzgxNDY4MjN8MTcwMjQwNTI5My4wNTUwNzI';
+    // Check if proper credentials are configured
+    this.clientId = process.env.NEXT_PUBLIC_SEATGEEK_CLIENT_ID || '';
     this.clientSecret = process.env.NEXT_PUBLIC_SEATGEEK_CLIENT_SECRET || '';
+    
+    // API is considered configured if we have a client ID that's not the old demo one
+    this.isConfigured = !!this.clientId && this.clientId !== 'MzgxNDY4MjN8MTcwMjQwNTI5My4wNTUwNzI';
+    
+    if (!this.isConfigured) {
+      console.warn('SeatGeek API credentials not configured. Set NEXT_PUBLIC_SEATGEEK_CLIENT_ID environment variable.');
+    }
   }
 
   private async fetchWithAuth(endpoint: string, params: URLSearchParams = new URLSearchParams()) {
+    // Check if API is configured
+    if (!this.isConfigured) {
+      throw new Error('SeatGeek API credentials not configured. Please set NEXT_PUBLIC_SEATGEEK_CLIENT_ID environment variable.');
+    }
+
     // Add authentication
     params.append('client_id', this.clientId);
     if (this.clientSecret) {
@@ -110,8 +122,20 @@ class SeatGeekAPI {
       const response = await fetch(url);
       
       if (!response.ok) {
-        console.error('SeatGeek API error:', response.status, response.statusText);
-        throw new Error(`SeatGeek API error: ${response.status}`);
+        let errorMessage = `SeatGeek API error: ${response.status}`;
+        
+        try {
+          const errorData = await response.json();
+          if (errorData.message) {
+            errorMessage = errorData.message;
+          }
+        } catch (e) {
+          // If we can't parse error response, use status text
+          errorMessage = response.statusText || errorMessage;
+        }
+        
+        console.error('SeatGeek API error:', response.status, errorMessage);
+        throw new Error(errorMessage);
       }
       
       const data = await response.json();
@@ -231,6 +255,11 @@ class SeatGeekAPI {
     return url;
   }
 
+  // Check if API is configured
+  isApiConfigured(): boolean {
+    return this.isConfigured;
+  }
+
   // Find MLB game event for a specific venue and date/time
   async findGameEvent(
     stadiumId: string,
@@ -240,6 +269,10 @@ class SeatGeekAPI {
     if (!venueId) {
       console.error(`No SeatGeek venue ID found for stadium: ${stadiumId}`);
       return null;
+    }
+    
+    if (!this.isConfigured) {
+      throw new Error('SeatGeek API credentials not configured');
     }
     
     try {
@@ -257,7 +290,7 @@ class SeatGeekAPI {
       return matchingEvent || null;
     } catch (error) {
       console.error('Error finding game event:', error);
-      return null;
+      throw error;
     }
   }
 }

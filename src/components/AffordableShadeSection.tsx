@@ -117,7 +117,21 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
       
     } catch (err) {
       console.error('Error fetching ticket data:', err);
-      setError('Failed to load ticket information');
+      
+      // Provide more specific error messages
+      if (err instanceof Error) {
+        if (err.message.includes('credentials not configured')) {
+          setError(t('tickets.apiNotConfigured'));
+        } else if (err.message.includes('Invalid client credentials')) {
+          setError(t('tickets.invalidCredentials'));
+        } else if (err.message.includes('403')) {
+          setError(t('tickets.accessDenied'));
+        } else {
+          setError(t('tickets.genericError'));
+        }
+      } else {
+        setError(t('tickets.genericError'));
+      }
     } finally {
       setLoading(false);
     }
@@ -226,9 +240,43 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
     return null;
   }
 
+  // Check if SeatGeek API is configured
+  if (!seatgeekApi.isApiConfigured()) {
+    return (
+      <div className="affordable-shade-section">
+        <div className="section-header">
+          <h3>
+            <span className="icon">🎟️</span>
+            {t('tickets.ticketSearch')}
+          </h3>
+        </div>
+        <div className="api-config-notice">
+          <div className="config-notice-content">
+            <h4>🔧 {t('tickets.apiConfigurationRequired')}</h4>
+            <p>{t('tickets.apiConfigurationMessage')}</p>
+            <div className="config-steps">
+              <ol>
+                <li>{t('tickets.configStep1')}</li>
+                <li>{t('tickets.configStep2')}</li>
+                <li>{t('tickets.configStep3')}</li>
+              </ol>
+            </div>
+            <p className="config-note">{t('tickets.configNote')}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!SEATGEEK_VENUE_IDS[stadium.id]) {
     return (
       <div className="affordable-shade-section">
+        <div className="section-header">
+          <h3>
+            <span className="icon">🎟️</span>
+            {t('tickets.ticketSearch')}
+          </h3>
+        </div>
         <div className="no-data">
           <p>{t('tickets.notAvailable')}</p>
         </div>
