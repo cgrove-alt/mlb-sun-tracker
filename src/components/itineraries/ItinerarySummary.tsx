@@ -215,6 +215,48 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
             </div>
           </div>
         </div>
+
+        {itinerary.sectionRecommendations && (
+          <div className="section-recommendations">
+            <h4>🎯 Recommended Seating Sections</h4>
+            <div className="section-recommendation-content">
+              <p className="recommendation-reasoning">{itinerary.sectionRecommendations.reasoning}</p>
+              
+              {itinerary.sectionRecommendations.preferred.length > 0 && (
+                <div className="section-group preferred">
+                  <h5>✅ Preferred Sections</h5>
+                  <div className="section-list">
+                    {itinerary.sectionRecommendations.preferred.map(section => (
+                      <span key={section} className="section-badge preferred">{section}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {itinerary.sectionRecommendations.alternatives.length > 0 && (
+                <div className="section-group alternatives">
+                  <h5>🔄 Alternative Sections</h5>
+                  <div className="section-list">
+                    {itinerary.sectionRecommendations.alternatives.map(section => (
+                      <span key={section} className="section-badge alternative">{section}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {itinerary.sectionRecommendations.avoid.length > 0 && (
+                <div className="section-group avoid">
+                  <h5>⚠️ Sections to Avoid</h5>
+                  <div className="section-list">
+                    {itinerary.sectionRecommendations.avoid.map(section => (
+                      <span key={section} className="section-badge avoid">{section}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="mlb-play-sun-smart">

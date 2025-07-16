@@ -54,6 +54,14 @@ export interface SmartItinerary {
   // Chronological list of recommendations
   recommendations: ItineraryRecommendation[];
   
+  // Seating section recommendations
+  sectionRecommendations?: {
+    preferred: string[]; // Top recommended sections based on preferences
+    alternatives: string[]; // Alternative sections
+    avoid: string[]; // Sections to avoid based on preferences
+    reasoning: string; // Explanation of recommendations
+  };
+  
   // Summary statistics
   summary: {
     totalWalkingTime: number;

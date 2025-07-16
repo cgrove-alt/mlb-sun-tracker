@@ -9,7 +9,7 @@ import {
   RECOMMENDATION_TEMPLATES
 } from '../data/itineraryTypes';
 import { WeatherForecast } from './weatherApi';
-import { getSunPosition } from '../utils/sunCalculations';
+import { getSunPosition, calculateDetailedSectionSunExposure, filterSectionsBySunExposure } from '../utils/sunCalculations';
 import { MLBGame } from './mlbApi';
 
 export class ItineraryService {
@@ -62,6 +62,15 @@ export class ItineraryService {
     
     itinerary.recommendations = recommendations;
     itinerary.summary = this.calculateSummary(recommendations);
+    
+    // Generate section recommendations based on sun exposure preferences
+    const sectionRecommendations = this.generateSectionRecommendations(
+      stadium,
+      gameDateTime,
+      weather,
+      preferences
+    );
+    itinerary.sectionRecommendations = sectionRecommendations;
     
     return itinerary;
   }
@@ -623,6 +632,102 @@ export class ItineraryService {
     }
     
     return recommendations.sort((a, b) => a.time.getTime() - b.time.getTime());
+  }
+
+  /**
+   * Generate section recommendations based on sun exposure preferences
+   */
+  private generateSectionRecommendations(
+    stadium: Stadium,
+    gameDateTime: Date,
+    weather: WeatherForecast,
+    preferences: ItineraryPreferences
+  ): SmartItinerary['sectionRecommendations'] {
+    // Calculate sun position for game time
+    const sunPosition = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude);
+    
+    // Get weather data for calculations
+    const gameWeather = weather ? this.getWeatherForGameTime(weather, gameDateTime) : undefined;
+    
+    // Calculate detailed section sun exposure
+    const sectionData = calculateDetailedSectionSunExposure(stadium, sunPosition, gameWeather);
+    
+    // Separate sections by sun exposure
+    const sunnySection = sectionData.filter(s => s.inSun && s.sunExposure > 60);
+    const partialSunSections = sectionData.filter(s => s.inSun && s.sunExposure <= 60);
+    const shadeSections = sectionData.filter(s => !s.inSun);
+    
+    let preferred: string[] = [];
+    let alternatives: string[] = [];
+    let avoid: string[] = [];
+    let reasoning = '';
+    
+    // Determine recommendations based on preferences
+    if (preferences.prioritizeShade || preferences.sunSensitivity === 'high' || preferences.sunSensitivity === 'extreme') {
+      // User wants shade
+      preferred = shadeSections.slice(0, 5).map(s => s.section.id);
+      alternatives = partialSunSections.slice(0, 3).map(s => s.section.id);
+      avoid = sunnySection.slice(0, 3).map(s => s.section.id);
+      
+      reasoning = `Based on your ${preferences.sunSensitivity} sun sensitivity and preference for shade, we recommend sections that will remain shaded throughout the game. `;
+      
+      if (preferences.hasChildren) {
+        reasoning += 'These sections are also ideal for families with children to avoid prolonged sun exposure. ';
+      }
+      
+      if (sunPosition.altitudeDegrees < 0) {
+        reasoning = 'This is a night game, so sun exposure is not a concern. All sections are suitable. ';
+      }
+    } else if (preferences.sunSensitivity === 'low') {
+      // User doesn't mind or wants sun
+      preferred = [...partialSunSections.slice(0, 3), ...shadeSections.slice(0, 2)].map(s => s.section.id);
+      alternatives = sunnySection.slice(0, 3).map(s => s.section.id);
+      avoid = []; // No sections to avoid
+      
+      reasoning = 'Since you have low sun sensitivity, we recommend sections with partial sun for warmth without excessive exposure. ';
+      
+      if (gameWeather && gameWeather.temperature < 60) {
+        reasoning += 'Given the cooler temperature, some sun exposure might be comfortable. ';
+      }
+    } else {
+      // Moderate sensitivity - balanced approach
+      preferred = [...partialSunSections.slice(0, 2), ...shadeSections.slice(0, 3)].map(s => s.section.id);
+      alternatives = [...shadeSections.slice(3, 5), ...partialSunSections.slice(2, 4)].map(s => s.section.id);
+      avoid = sunnySection.filter(s => s.sunExposure > 80).slice(0, 2).map(s => s.section.id);
+      
+      reasoning = 'With moderate sun sensitivity, we recommend sections with partial shade for a comfortable balance. ';
+    }
+    
+    // Add weather considerations
+    if (gameWeather) {
+      if (gameWeather.cloudCover > 70) {
+        reasoning += 'Cloudy conditions will provide natural sun protection across all sections. ';
+      } else if (weather.current.uvIndex > 7) {
+        reasoning += `High UV index (${weather.current.uvIndex}) - extra sun protection is recommended regardless of seating choice. `;
+      }
+    }
+    
+    // Add amenity proximity considerations
+    if (preferences.hasChildren || preferences.frequentRestrooms) {
+      reasoning += 'Preferred sections are also close to family amenities and restrooms. ';
+    }
+    
+    return {
+      preferred,
+      alternatives,
+      avoid,
+      reasoning
+    };
+  }
+
+  /**
+   * Get weather data for specific game time
+   */
+  private getWeatherForGameTime(weather: WeatherForecast, gameTime: Date) {
+    const closestHour = weather.hourly.find(h => 
+      Math.abs(new Date(h.time).getTime() - gameTime.getTime()) < 60 * 60 * 1000
+    );
+    return closestHour?.weather || weather.current;
   }
 
   // Helper methods

@@ -217,6 +217,101 @@
   font-weight: 600;
 }
 
+.section-recommendations {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff9800;
+  margin-bottom: 20px;
+}
+
+.section-recommendations h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.section-recommendation-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recommendation-reasoning {
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 10px 0;
+  font-size: 0.95rem;
+}
+
+.section-group {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-group h5 {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-group.preferred h5 {
+  color: #2e7d32;
+}
+
+.section-group.alternatives h5 {
+  color: #ed6c02;
+}
+
+.section-group.avoid h5 {
+  color: #d32f2f;
+}
+
+.section-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.section-badge.preferred {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #4caf50;
+}
+
+.section-badge.alternative {
+  background: #fff3e0;
+  color: #e65100;
+  border: 1px solid #ff9800;
+}
+
+.section-badge.avoid {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+}
+
+.section-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .mlb-play-sun-smart {
   margin-top: 25px;
   padding-top: 20px;
@@ -299,5 +394,22 @@
   
   .banner-icon {
     font-size: 1.5rem;
+  }
+  
+  .section-recommendations {
+    padding: 15px;
+  }
+  
+  .section-group {
+    padding: 12px;
+  }
+  
+  .section-list {
+    gap: 6px;
+  }
+  
+  .section-badge {
+    font-size: 0.8rem;
+    padding: 5px 10px;
   }
 }
