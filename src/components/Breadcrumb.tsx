@@ -1,7 +1,6 @@
 import React from 'react';
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
-import { useTranslation } from '../i18n/i18nContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './Breadcrumb.css';
 
@@ -20,7 +19,6 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   onStadiumChange,
   onGameSelect
 }) => {
-  const { t } = useTranslation();
   const handleBackToStadiumSelection = () => {
     onStadiumChange(null);
   };
@@ -58,10 +56,10 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
             className="breadcrumb-button"
             onClick={handleBackToStadiumSelection}
             onKeyDown={(e) => handleKeyDown(e, handleBackToStadiumSelection)}
-            aria-label={t('breadcrumb.backToStadium')}
-            title={t('breadcrumb.selectDifferentStadium')}
+            aria-label="Back to stadium selection"
+            title="Select a different stadium"
           >
-            🏟️ {t('breadcrumb.selectStadium')}
+            🏟️ Select Stadium
           </button>
         </li>
         
@@ -74,14 +72,14 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   className="breadcrumb-button"
                   onClick={handleBackToGameSelection}
                   onKeyDown={(e) => handleKeyDown(e, handleBackToGameSelection)}
-                  aria-label={t('breadcrumb.backToGame')}
-                  title={t('breadcrumb.selectDifferentGame')}
+                  aria-label="Back to game selection"
+                  title="Select a different game"
                 >
-                  {t(`mlb.stadiums.${selectedStadium.id}`)}
+                  {selectedStadium.name}
                 </button>
               ) : (
                 <span className="breadcrumb-current" aria-current="page">
-                  {t(`mlb.stadiums.${selectedStadium.id}`)}
+                  {selectedStadium.name}
                 </span>
               )}
             </li>
@@ -101,8 +99,8 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                       const awayTeamId = MLB_STADIUMS.find(s => s.team === selectedGame.teams.away.team.name)?.id || '';
                       
                       // Translate team names if possible, fallback to original names
-                      const homeTeamName = homeTeamId ? t(`mlb.teams.${homeTeamId}`) : selectedGame.teams.home.team.name;
-                      const awayTeamName = awayTeamId ? t(`mlb.teams.${awayTeamId}`) : selectedGame.teams.away.team.name;
+                      const homeTeamName = selectedGame.teams.home.team.name;
+                      const awayTeamName = selectedGame.teams.away.team.name;
                       
                       return `${awayTeamName} @ ${homeTeamName}`;
                     })()}
@@ -112,7 +110,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   </>
                 ) : (
                   <>
-                    {t('breadcrumb.customTime')}
+                    Custom Time
                     <span className="breadcrumb-subtitle">
                       {formatDateTime(gameDateTime)}
                     </span>

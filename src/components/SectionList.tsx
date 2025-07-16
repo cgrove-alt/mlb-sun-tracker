@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
-import { useTranslation } from '../i18n/i18nContext';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -14,7 +13,6 @@ export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false
 }) => {
-  const { t } = useTranslation();
   console.log('SectionList rendering with sections:', sections.length);
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -280,10 +278,10 @@ export const SectionList: React.FC<SectionListProps> = ({
                   <h4 className="section-name">{section.name}</h4>
                   <div className="section-badges">
                     {section.covered && (
-                      <span className="badge covered-badge" aria-label={t('sections.coveredSection')}>🏛️ {t('sections.covered')}</span>
+                      <span className="badge covered-badge" aria-label="Covered section">🏛️ Covered</span>
                     )}
-                    <span className={`badge level-badge level-${section.level}`} aria-label={`${t(`sections.levels.${section.level}`)} ${t('sections.levelSeating')}`}>
-                      {getLevelIcon(section.level)} {t(`sections.levels.${section.level}`)}
+                    <span className={`badge level-badge level-${section.level}`} aria-label={`${section.level} level seating`}>
+                      {getLevelIcon(section.level)} {section.level === 'field' ? 'Field Level' : section.level === 'lower' ? 'Lower Bowl' : section.level === 'club' ? 'Club Level' : section.level === 'upper' ? 'Upper Deck' : section.level === 'suite' ? 'Suites' : section.level}
                     </span>
                   </div>
                 </div>

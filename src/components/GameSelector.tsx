@@ -6,7 +6,6 @@ import { Stadium } from '../data/stadiums';
 import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
-import { useTranslation } from '../i18n/i18nContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './GameSelector.css';
 
@@ -23,7 +22,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   onStadiumChange,
   stadiums
 }) => {
-  const { t } = useTranslation();
   const [games, setGames] = useState<MLBGame[]>([]);
   const [loading, setLoading] = useState(false);
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
@@ -50,7 +48,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   
   const stadiumOptions = sortedStadiums.map(stadium => ({
     value: stadium.id,
-    label: `${t(`mlb.stadiums.${stadium.id}`)} - ${t(`mlb.teams.${stadium.id}`)}`,
+    label: `${stadium.name} - ${stadium.team}`,
     stadium: stadium,
     isFavorite: currentProfile?.favorites.stadiums.includes(stadium.id) || false
   }));
@@ -131,9 +129,9 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     const homeTeamId = stadiums.find(s => s.team === game.teams.home.team.name)?.id || '';
     const awayTeamId = stadiums.find(s => s.team === game.teams.away.team.name)?.id || '';
     
-    // Translate team names if possible, fallback to original names
-    const homeTeamName = homeTeamId ? t(`mlb.teams.${homeTeamId}`) : game.teams.home.team.name;
-    const awayTeamName = awayTeamId ? t(`mlb.teams.${awayTeamId}`) : game.teams.away.team.name;
+    // Use original team names directly
+    const homeTeamName = game.teams.home.team.name;
+    const awayTeamName = game.teams.away.team.name;
     
     // Format date and time with stadium's local timezone
     const homeStadium = stadiums.find(s => s.id === homeTeamId);
@@ -152,7 +150,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   return (
     <div className="game-selector">
       <div className="selector-header">
-        <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
+        <h3 id="game-selector-title">Select Stadium & Game</h3>
         <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
           <button 
             className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
@@ -167,7 +165,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             id="games-tab"
             tabIndex={viewMode === 'games' ? 0 : -1}
           >
-            📅 {t('gameSelector.realGames')}
+            📅 Real Games
           </button>
           <button 
             className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
@@ -182,21 +180,21 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             id="custom-tab"
             tabIndex={viewMode === 'custom' ? 0 : -1}
           >
-            🕒 {t('gameSelector.customTime')}
+            🕒 Custom Time
           </button>
         </div>
       </div>
 
       <div className="control-group">
-        <label htmlFor="stadium-select">{t('gameSelector.stadium')}:</label>
+        <label htmlFor="stadium-select">Stadium:</label>
         <Select
           inputId="stadium-select"
           options={stadiumOptions}
           value={stadiumOptions.find(option => option.stadium.id === selectedStadium?.id) || null}
           onChange={(option) => onStadiumChange(option?.stadium || null)}
-          placeholder={t('gameSelector.chooseStadium')}
+          placeholder="Choose a stadium"
           className="stadium-select"
-          aria-label={t('gameSelector.selectStadium')}
+          aria-label="Select a stadium"
           formatOptionLabel={(option) => (
             <div className="stadium-option">
               <div className="stadium-option-content">
@@ -205,7 +203,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               </div>
               <FavoriteButton
                 stadiumId={option.stadium.id}
-                stadiumName={t(`mlb.stadiums.${option.stadium.id}`)}
+                stadiumName={option.stadium.name}
                 size="small"
               />
             </div>
@@ -218,20 +216,20 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           {selectedStadium ? (
             <>
               <div className="control-group">
-                <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
+                <label htmlFor="game-select">Upcoming Games:</label>
                 {loading ? (
                   <div className="loading" role="status" aria-live="polite">
-                    {t('gameSelector.loadingGames')}
+                    Loading games...
                   </div>
                 ) : (
                   <Select
                     inputId="game-select"
                     options={gameOptions}
                     onChange={handleGameSelect}
-                    placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
+                    placeholder={games.length > 0 ? 'Choose a game' : 'No games found'}
                     className="game-select"
                     isDisabled={games.length === 0}
-                    aria-label={t('gameSelector.selectGame')}
+                    aria-label="Select a game"
                     formatOptionLabel={(option) => (
                       <div className="game-option">
                         <div className="game-date-time">
@@ -248,22 +246,22 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               
               {games.length === 0 && !loading && (
                 <div className="no-games">
-                  <p>{t('gameSelector.noGamesForStadium')}</p>
-                  <p>{t('gameSelector.tryCustomTime')}</p>
+                  <p>No upcoming games found for this stadium.</p>
+                  <p>Try using a custom date and time instead.</p>
                 </div>
               )}
 
               {games.length > 0 && (
                 <div className="games-info">
                   <p className="games-count">
-                    📊 {t('gameSelector.foundGames', { count: games.length })}
+                    📊 Found {games.length} upcoming games
                   </p>
                 </div>
               )}
             </>
           ) : (
             <div className="no-stadium">
-              <p>{t('gameSelector.selectStadiumPrompt')}</p>
+              <p>Please select a stadium first to see upcoming games.</p>
             </div>
           )}
         </div>
@@ -271,26 +269,26 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
           <div className="custom-controls">
             <div className="control-group">
-              <label htmlFor="custom-date">{t('gameSelector.date')}:</label>
+              <label htmlFor="custom-date">Date:</label>
               <input
                 id="custom-date"
                 type="date"
                 value={customDate}
                 onChange={(e) => setCustomDate(e.target.value)}
                 className="date-input"
-                aria-label={t('gameSelector.selectDate')}
+                aria-label="Select date"
               />
             </div>
 
             <div className="control-group">
-              <label htmlFor="custom-time">{t('gameSelector.timeLocal')}:</label>
+              <label htmlFor="custom-time">Time (Local):</label>
               <input
                 id="custom-time"
                 type="time"
                 value={customTime}
                 onChange={(e) => setCustomTime(e.target.value)}
                 className="time-input"
-                aria-label={t('gameSelector.selectTime')}
+                aria-label="Select time"
               />
             </div>
 
@@ -299,14 +297,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
               className="apply-custom-btn"
               disabled={!customDate || !customTime || !selectedStadium}
-              aria-label={t('gameSelector.applyCustomTime')}
+              aria-label="Apply custom date and time"
             >
-              {t('gameSelector.applyCustomTime')}
+              Apply Custom Time
             </button>
           </div>
 
           <div className="custom-info">
-            <p>💡 {t('gameSelector.customTimeInfo')}</p>
+            <p>💡 Use this to see sun exposure for any date and time.</p>
           </div>
         </div>
       )}

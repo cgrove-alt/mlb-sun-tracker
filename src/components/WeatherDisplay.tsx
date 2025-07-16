@@ -1,8 +1,8 @@
 import React from 'react';
 import { WeatherForecast, weatherApi } from '../services/weatherApi';
-import { useTranslation } from '../i18n/i18nContext';
 import { Stadium } from '../data/stadiums';
 import { formatDateTimeWithTimezone, formatTimeWithTimezone } from '../utils/timeUtils';
+import { useTranslation } from '../i18n/i18nContext';
 import './WeatherDisplay.css';
 
 interface WeatherDisplayProps {
@@ -24,11 +24,11 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
     return (
       <div className="weather-display loading">
         <div className="weather-header">
-          <h3>{t('weather.forecast')}</h3>
+          <h3>Weather Forecast</h3>
         </div>
         <div className="loading-content">
           <div className="loading-spinner"></div>
-          <p>{t('weather.loading')}</p>
+          <p>Loading weather data...</p>
         </div>
       </div>
     );
@@ -62,11 +62,11 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   };
 
   const getUVIndexLevel = (uvIndex: number): { level: string; color: string } => {
-    if (uvIndex <= 2) return { level: t('weather.uvLevels.low'), color: '#4CAF50' };
-    if (uvIndex <= 5) return { level: t('weather.uvLevels.moderate'), color: '#FF9800' };
-    if (uvIndex <= 7) return { level: t('weather.uvLevels.high'), color: '#FF5722' };
-    if (uvIndex <= 10) return { level: t('weather.uvLevels.veryHigh'), color: '#9C27B0' };
-    return { level: t('weather.uvLevels.extreme'), color: '#E91E63' };
+    if (uvIndex <= 2) return { level: 'Low', color: '#4CAF50' };
+    if (uvIndex <= 5) return { level: 'Moderate', color: '#FF9800' };
+    if (uvIndex <= 7) return { level: 'High', color: '#FF5722' };
+    if (uvIndex <= 10) return { level: 'Very High', color: '#9C27B0' };
+    return { level: 'Extreme', color: '#E91E63' };
   };
 
   const uvLevel = getUVIndexLevel(relevantWeather.uvIndex);
@@ -77,7 +77,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
         <h3>{t('weather.forecast')}</h3>
         {gameTime && (
           <span className="forecast-time">
-            {t('weather.forGameTime')}: {stadium ? formatDateTimeWithTimezone(gameTime, stadium.timezone) : gameTime.toLocaleString()}
+            For game time: {stadium ? formatDateTimeWithTimezone(gameTime, stadium.timezone) : gameTime.toLocaleString()}
           </span>
         )}
       </div>
@@ -89,7 +89,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
           </div>
           <div className="weather-temp">
             <span className="temp-value">{Math.round(relevantWeather.temperature)}°F</span>
-            <span className="feels-like">{t('weather.feelsLike')} {Math.round(relevantWeather.feelsLike)}°F</span>
+            <span className="feels-like">Feels like {Math.round(relevantWeather.feelsLike)}°F</span>
           </div>
           <div className="weather-desc">
             <p>{relevantWeather.conditions[0].description}</p>
@@ -100,13 +100,13 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
           <div className="detail-grid">
             <div className="detail-item">
               <span className="detail-icon">💧</span>
-              <span className="detail-label">{t('weather.humidity')}</span>
+              <span className="detail-label">Humidity</span>
               <span className="detail-value">{relevantWeather.humidity}%</span>
             </div>
 
             <div className="detail-item">
               <span className="detail-icon">💨</span>
-              <span className="detail-label">{t('weather.wind')}</span>
+              <span className="detail-label">Wind</span>
               <span className="detail-value">
                 {Math.round(relevantWeather.windSpeed)} mph {getWindDirection(relevantWeather.windDirection)}
               </span>
@@ -114,20 +114,20 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
 
             <div className="detail-item">
               <span className="detail-icon">☁️</span>
-              <span className="detail-label">{t('weather.cloudCover')}</span>
+              <span className="detail-label">Cloud Cover</span>
               <span className="detail-value">{relevantWeather.cloudCover}%</span>
             </div>
 
             <div className="detail-item">
               <span className="detail-icon">🌡️</span>
-              <span className="detail-label">{t('weather.pressure')}</span>
+              <span className="detail-label">Pressure</span>
               <span className="detail-value">{Math.round(relevantWeather.pressure)} hPa</span>
             </div>
 
             {relevantWeather.uvIndex > 0 && (
               <div className="detail-item">
                 <span className="detail-icon">☀️</span>
-                <span className="detail-label">{t('weather.uvIndex')}</span>
+                <span className="detail-label">UV Index</span>
                 <span className="detail-value" style={{ color: uvLevel.color }}>
                   {relevantWeather.uvIndex} ({uvLevel.level})
                 </span>
@@ -137,7 +137,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
             {relevantWeather.precipitationProbability && relevantWeather.precipitationProbability > 0 && (
               <div className="detail-item">
                 <span className="detail-icon">🌧️</span>
-                <span className="detail-label">{t('weather.rainChance')}</span>
+                <span className="detail-label">Rain Chance</span>
                 <span className="detail-value">{relevantWeather.precipitationProbability}%</span>
               </div>
             )}
@@ -155,7 +155,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
               {weatherImpact.visibility === 'blocked' && '🌧️'}
             </span>
             <span className="impact-title">
-              {t('weather.sunVisibility')}: {t(`weather.visibility.${weatherImpact.visibility}`)}
+              Sun Visibility: {weatherImpact.visibility}
             </span>
           </div>
           <p className="impact-desc">{weatherImpact.recommendation}</p>
@@ -169,7 +169,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
                 ></div>
               </div>
               <span className="adjustment-text">
-                {t('weather.sunExposureAdjustment', { percentage: Math.round(weatherImpact.sunExposureAdjustment * 100) })}
+                Sun exposure reduced to {Math.round(weatherImpact.sunExposureAdjustment * 100)}% due to weather
               </span>
             </div>
           )}
@@ -178,7 +178,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
 
       {gameTime && weather.hourly.length > 0 && (
         <div className="hourly-forecast">
-          <h4>{t('weather.gameDayForecast')}</h4>
+          <h4>Game Day Forecast</h4>
           <div className="hourly-grid">
             {(() => {
               const gameHour = gameTime.getTime();

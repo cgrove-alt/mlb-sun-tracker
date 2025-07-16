@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Tooltip } from './Tooltip';
-import { useTranslation } from '../i18n/i18nContext';
 
 export interface SunFilterCriteria {
   minExposure?: number;
@@ -19,7 +18,6 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
   onFilterChange,
   disabled = false
 }) => {
-  const { t } = useTranslation();
   const [sunPreference, setSunPreference] = useState<'any' | 'avoid' | 'prefer' | 'custom'>('any');
   const [customMin, setCustomMin] = useState<number>(0);
   const [customMax, setCustomMax] = useState<number>(100);
@@ -149,7 +147,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         overflowY: 'auto'
       }}
       role="region"
-      aria-label={t('filter.options')}
+      aria-label="Filter options"
     >
       <div style={{
         display: 'flex',
@@ -160,7 +158,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         borderBottom: '2px solid #f0f0f0'
       }}>
         <h3 id="section-filter-title" style={{margin: 0, color: '#333', fontSize: '1.2em'}}>
-          🎯 {t('filter.title')}
+          🎯 Filter Sections
         </h3>
         <button 
           onClick={clearFilters}
@@ -176,9 +174,9 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             cursor: disabled ? 'not-allowed' : 'pointer',
             outline: 'none'
           }}
-          aria-label={t('app.clearAll')}
+          aria-label="Clear all filters"
         >
-          {t('app.clearAll')}
+          Clear All
         </button>
       </div>
 
@@ -204,8 +202,8 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.sunPreference}
           aria-controls="sun-preference-content"
         >
-          <Tooltip content={t('sun.preferences.description')}>
-            <span>☀️ {t('sun.preferences.title')}</span>
+          <Tooltip content="Choose your sun exposure preference to filter sections">
+            <span>☀️ Sun Preference</span>
           </Tooltip>
           <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.sunPreference ? 'rotate(180deg)' : 'rotate(0deg)'}}>
             ▼
@@ -230,7 +228,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-any-desc"
             />
-            <span id="sun-any-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('sun.preferences.any')}</span>
+            <span id="sun-any-desc" style={{fontSize: '0.9em', color: '#333'}}>Any amount of sun</span>
           </label>
           
           <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
@@ -244,7 +242,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-avoid-desc"
             />
-            <span id="sun-avoid-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('sun.preferences.avoid')}</span>
+            <span id="sun-avoid-desc" style={{fontSize: '0.9em', color: '#333'}}>Avoid sun (≤20% exposure)</span>
           </label>
           
           <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
@@ -258,7 +256,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-prefer-desc"
             />
-            <span id="sun-prefer-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('sun.preferences.prefer')}</span>
+            <span id="sun-prefer-desc" style={{fontSize: '0.9em', color: '#333'}}>Prefer sun (≥60% exposure)</span>
           </label>
           
           <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
@@ -272,7 +270,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-custom-desc"
             />
-            <span id="sun-custom-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('sun.preferences.custom')}</span>
+            <span id="sun-custom-desc" style={{fontSize: '0.9em', color: '#333'}}>Custom range</span>
           </label>
           </div>
         )}
@@ -284,7 +282,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 htmlFor="custom-min-range"
                 style={{display: 'block', marginBottom: '6px', fontSize: '0.85em', color: '#6c757d', fontWeight: 500}}
               >
-                {t('sun.preferences.minExposure')}: {customMin}{t('sun.preferences.percentage')}
+                Minimum Exposure: {customMin}%
               </label>
               <input
                 id="custom-min-range"
@@ -295,7 +293,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 onChange={(e) => handleCustomRangeChange(Number(e.target.value), customMax)}
                 disabled={disabled}
                 style={{width: '100%', height: '6px', borderRadius: '3px', background: '#dee2e6', outline: 'none', cursor: 'pointer'}}
-                aria-label={`${t('sun.preferences.minExposure')}: ${customMin}${t('sun.preferences.percentage')}`}
+                aria-label={`Minimum exposure: ${customMin}%`}
               />
             </div>
             <div style={{marginBottom: '0'}}>
@@ -303,7 +301,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 htmlFor="custom-max-range"
                 style={{display: 'block', marginBottom: '6px', fontSize: '0.85em', color: '#6c757d', fontWeight: 500}}
               >
-                {t('sun.preferences.maxExposure')}: {customMax}{t('sun.preferences.percentage')}
+                Maximum Exposure: {customMax}%
               </label>
               <input
                 id="custom-max-range"
@@ -314,7 +312,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 onChange={(e) => handleCustomRangeChange(customMin, Number(e.target.value))}
                 disabled={disabled}
                 style={{width: '100%', height: '6px', borderRadius: '3px', background: '#dee2e6', outline: 'none', cursor: 'pointer'}}
-                aria-label={`${t('sun.preferences.maxExposure')}: ${customMax}${t('sun.preferences.percentage')}`}
+                aria-label={`Maximum exposure: ${customMax}%`}
               />
             </div>
           </div>
@@ -343,8 +341,8 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.seatingLevel}
           aria-controls="seating-level-content"
         >
-          <Tooltip content={t('filter.seatingLevel.description')}>
-            <span>🏟️ {t('filter.seatingLevel.title')}</span>
+          <Tooltip content="Filter by seating level">
+            <span>🏟️ Seating Level</span>
           </Tooltip>
           <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.seatingLevel ? 'rotate(180deg)' : 'rotate(0deg)'}}>
             ▼
@@ -359,11 +357,11 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             aria-labelledby="seating-level-label"
           >
           {[
-            { value: 'field', label: t('sections.levels.field'), icon: '⚾' },
-            { value: 'lower', label: t('sections.levels.lower'), icon: '🎫' },
-            { value: 'club', label: t('sections.levels.club'), icon: '🥂' },
-            { value: 'upper', label: t('sections.levels.upper'), icon: '🎪' },
-            { value: 'suite', label: t('sections.levels.suite'), icon: '👑' }
+            { value: 'field', label: 'Field Level', icon: '⚾' },
+            { value: 'lower', label: 'Lower Bowl', icon: '🎫' },
+            { value: 'club', label: 'Club Level', icon: '🥂' },
+            { value: 'upper', label: 'Upper Deck', icon: '🎪' },
+            { value: 'suite', label: 'Suites', icon: '👑' }
           ].map(level => (
             <label key={level.value} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
               <input
@@ -403,8 +401,8 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.coverage}
           aria-controls="coverage-content"
         >
-          <Tooltip content={t('filter.coverage.description')}>
-            <span>🏛️ {t('filter.coverage.title')}</span>
+          <Tooltip content="Filter by roof coverage">
+            <span>🏛️ Coverage</span>
           </Tooltip>
           <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.coverage ? 'rotate(180deg)' : 'rotate(0deg)'}}>
             ▼
@@ -428,7 +426,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-any-desc"
             />
-            <span id="coverage-any-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('filter.coverage.any')}</span>
+            <span id="coverage-any-desc" style={{fontSize: '0.9em', color: '#333'}}>Any coverage</span>
           </label>
           
           <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
@@ -442,7 +440,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-covered-desc"
             />
-            <span id="coverage-covered-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('filter.coverage.covered')}</span>
+            <span id="coverage-covered-desc" style={{fontSize: '0.9em', color: '#333'}}>Covered sections only</span>
           </label>
           
           <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
@@ -456,7 +454,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-uncovered-desc"
             />
-            <span id="coverage-uncovered-desc" style={{fontSize: '0.9em', color: '#333'}}>{t('filter.coverage.uncovered')}</span>
+            <span id="coverage-uncovered-desc" style={{fontSize: '0.9em', color: '#333'}}>Uncovered sections only</span>
           </label>
         </div>
         )}
@@ -484,8 +482,8 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.priceRange}
           aria-controls="price-range-content"
         >
-          <Tooltip content={t('filter.priceRange.description')}>
-            <span>💰 {t('filter.priceRange.title')}</span>
+          <Tooltip content="Filter by typical price range">
+            <span>💰 Price Range</span>
           </Tooltip>
           <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.priceRange ? 'rotate(180deg)' : 'rotate(0deg)'}}>
             ▼
@@ -499,10 +497,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-labelledby="price-range-label"
         >
           {[
-            { value: 'value', label: t('sections.priceRanges.value'), icon: '💵' },
-            { value: 'moderate', label: t('sections.priceRanges.moderate'), icon: '💶' },
-            { value: 'premium', label: t('sections.priceRanges.premium'), icon: '💷' },
-            { value: 'luxury', label: t('sections.priceRanges.luxury'), icon: '💎' }
+            { value: 'value', label: 'Value', icon: '💵' },
+            { value: 'moderate', label: 'Moderate', icon: '💶' },
+            { value: 'premium', label: 'Premium', icon: '💷' },
+            { value: 'luxury', label: 'Luxury', icon: '💎' }
           ].map(price => (
             <label key={price.value} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
               <input
