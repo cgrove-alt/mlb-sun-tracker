@@ -513,6 +513,22 @@
       "yankees": "Yankee Stadium"
     }
   },
+  "tickets": {
+    "affordableShade": "Shaded Seats Under ${price}",
+    "shadedSeatsUnder": "Shaded sections (≤{exposure}% sun) with tickets under ${price}",
+    "loading": "Loading ticket information...",
+    "notAvailable": "Ticket information not available for this stadium",
+    "noAffordableShade": "No affordable shaded seats found for this game",
+    "viewAllTickets": "View all tickets on SeatGeek",
+    "viewAllSections": "View all sections on SeatGeek",
+    "from": "from",
+    "available": "available",
+    "buyTickets": "Buy Tickets",
+    "buyTicketsFor": "Buy tickets for {section}",
+    "poweredBy": "Powered by SeatGeek",
+    "priceRange": "${min} - ${max}",
+    "dealScore": "Deal Score: {score}/100"
+  },
   "footer": {
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",
     "weatherCredit": "Weather data provided by",

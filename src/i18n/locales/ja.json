@@ -502,6 +502,22 @@
       "yankees": "ヤンキー・スタジアム"
     }
   },
+  "tickets": {
+    "affordableShade": "${price}以下の日陰席",
+    "shadedSeatsUnder": "日陰セクション（≤{exposure}%太陽）で${price}以下のチケット",
+    "loading": "チケット情報を読み込み中...",
+    "notAvailable": "このスタジアムのチケット情報は利用できません",
+    "noAffordableShade": "この試合では手頃な日陰席が見つかりませんでした",
+    "viewAllTickets": "SeatGeekですべてのチケットを見る",
+    "viewAllSections": "SeatGeekですべてのセクションを見る",
+    "from": "〜",
+    "available": "利用可能",
+    "buyTickets": "チケットを購入",
+    "buyTicketsFor": "{section}のチケットを購入",
+    "poweredBy": "SeatGeekによって提供",
+    "priceRange": "${min} - ${max}",
+    "dealScore": "お得度スコア: {score}/100"
+  },
   "footer": {
     "disclaimer": "太陽の計算は近似値であり、スタジアムの建築や気象条件によって変動する場合があります。",
     "weatherCredit": "気象データ提供",
