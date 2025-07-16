@@ -410,6 +410,21 @@ export default function OptimizedWebGLStadium({
             console.log('Identical canvas with green clear added to container');
             setDebugLog(prev => [...prev, 'Identical canvas added to container']);
           }
+          
+          // Test if ANY content can show in this container
+          const testDiv = document.createElement('div');
+          testDiv.style.position = 'absolute';
+          testDiv.style.top = '10px';
+          testDiv.style.left = '10px';
+          testDiv.style.width = '200px';
+          testDiv.style.height = '100px';
+          testDiv.style.backgroundColor = 'yellow';
+          testDiv.style.zIndex = '999';
+          testDiv.style.border = '3px solid black';
+          testDiv.innerHTML = '<h2 style="margin:0;">TEST DIV VISIBLE</h2>';
+          container.appendChild(testDiv);
+          console.log('Test div added to container');
+          setDebugLog(prev => [...prev, 'Test div added to container']);
         } else {
           console.error('NO CANVAS FOUND IN DOM!');
           setDebugLog(prev => [...prev, 'ERROR: NO CANVAS IN DOM']);
