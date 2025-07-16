@@ -242,6 +242,7 @@ export default function OptimizedWebGLStadium({
       renderer.domElement.style.visibility = 'visible';
       renderer.domElement.style.zIndex = '1';
       renderer.domElement.style.pointerEvents = 'auto';
+      renderer.domElement.style.backgroundColor = 'purple'; // CSS fallback color
       renderer.setPixelRatio(config.pixelRatio);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
@@ -384,6 +385,30 @@ export default function OptimizedWebGLStadium({
           } else {
             console.error('Could not get WebGL context for test canvas');
             setDebugLog(prev => [...prev, 'ERROR: No WebGL context for test']);
+          }
+          
+          // Create a canvas with IDENTICAL styling to Three.js canvas
+          const identicalCanvas = document.createElement('canvas');
+          identicalCanvas.width = 819;
+          identicalCanvas.height = 400;
+          identicalCanvas.style.position = 'absolute';
+          identicalCanvas.style.top = '0';
+          identicalCanvas.style.left = '0';
+          identicalCanvas.style.width = '100%';
+          identicalCanvas.style.height = '100%';
+          identicalCanvas.style.opacity = '1';
+          identicalCanvas.style.visibility = 'visible';
+          identicalCanvas.style.zIndex = '2'; // Higher than Three.js canvas
+          identicalCanvas.style.pointerEvents = 'auto';
+          identicalCanvas.style.backgroundColor = 'orange';
+          
+          const identicalGl = identicalCanvas.getContext('webgl') as WebGLRenderingContext | null;
+          if (identicalGl) {
+            identicalGl.clearColor(0.0, 1.0, 0.0, 1.0); // Green
+            identicalGl.clear(identicalGl.COLOR_BUFFER_BIT);
+            container.appendChild(identicalCanvas);
+            console.log('Identical canvas with green clear added to container');
+            setDebugLog(prev => [...prev, 'Identical canvas added to container']);
           }
         } else {
           console.error('NO CANVAS FOUND IN DOM!');
