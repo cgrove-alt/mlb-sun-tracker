@@ -15,6 +15,9 @@ const PREFERENCES_KEY = 'mlb-sun-tracker-preferences';
 export const preferencesStorage = {
   // Load preferences from localStorage
   load(): UserPreferences {
+    if (typeof window === 'undefined') {
+      return {};
+    }
     try {
       const stored = localStorage.getItem(PREFERENCES_KEY);
       if (stored) {
@@ -28,6 +31,9 @@ export const preferencesStorage = {
 
   // Save preferences to localStorage
   save(preferences: UserPreferences): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
     try {
       const currentPrefs = this.load();
       const updated = { ...currentPrefs, ...preferences };
@@ -46,6 +52,9 @@ export const preferencesStorage = {
 
   // Clear all preferences
   clear(): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
     try {
       localStorage.removeItem(PREFERENCES_KEY);
     } catch (error) {

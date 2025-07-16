@@ -36,6 +36,9 @@ const AVATAR_COLORS = [
 export const userProfilesStorage = {
   // Load all profiles
   loadProfiles(): UserProfilesData {
+    if (typeof window === 'undefined') {
+      return { profiles: [], activeProfileId: null };
+    }
     try {
       const stored = localStorage.getItem(PROFILES_KEY);
       if (stored) {
@@ -49,6 +52,9 @@ export const userProfilesStorage = {
 
   // Save profiles data
   saveProfiles(data: UserProfilesData): void {
+    if (typeof window === 'undefined') {
+      return;
+    }
     try {
       localStorage.setItem(PROFILES_KEY, JSON.stringify(data));
     } catch (error) {

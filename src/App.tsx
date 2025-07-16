@@ -38,7 +38,8 @@ function AppContent() {
 
   // Load preferences and URL parameters on component mount
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
+    // Only access window in the browser environment
+    const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
     const preferences = currentProfile?.preferences || {};
     
     // Check URL parameters first (shared links take precedence)

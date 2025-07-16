@@ -48,6 +48,11 @@ const interpolateString = (str: string, params: Record<string, string | number> 
 
 // Detect user's preferred language
 const detectLanguage = (): SupportedLanguage => {
+  // Only access browser APIs in the browser environment
+  if (typeof window === 'undefined') {
+    return 'en'; // Default language for SSR
+  }
+
   // Check localStorage first
   const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
   if (savedLanguage && SUPPORTED_LANGUAGES.some(lang => lang.code === savedLanguage)) {
@@ -136,10 +141,12 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   // Set language and save to localStorage
   const setLanguage = (lang: SupportedLanguage) => {
     setLanguageState(lang);
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
-    
-    // Update HTML lang attribute for accessibility
-    document.documentElement.lang = lang;
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang);
+      
+      // Update HTML lang attribute for accessibility
+      document.documentElement.lang = lang;
+    }
   };
 
   // Translation function
@@ -165,7 +172,9 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
 
   // Set initial HTML lang attribute
   useEffect(() => {
-    document.documentElement.lang = language;
+    if (typeof window !== 'undefined') {
+      document.documentElement.lang = language;
+    }
   }, [language]);
 
   const contextValue: I18nContextType = {
