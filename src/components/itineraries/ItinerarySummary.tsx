@@ -37,9 +37,6 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
     return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
   };
 
-  const formatCost = (cost: number): string => {
-    return `$${cost.toFixed(0)}`;
-  };
 
   const uvLevel = getUVIndexLevel(itinerary.weatherContext.maxUVIndex);
   const weatherIcon = getWeatherIcon(
@@ -59,10 +56,6 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
           <div className="stat-item">
             <span className="stat-value">{formatDuration(itinerary.summary.totalWalkingTime)}</span>
             <span className="stat-label">Total Walking</span>
-          </div>
-          <div className="stat-item">
-            <span className="stat-value">{formatCost(itinerary.summary.estimatedCost)}</span>
-            <span className="stat-label">Est. Cost</span>
           </div>
         </div>
       </div>

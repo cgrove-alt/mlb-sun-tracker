@@ -44,8 +44,7 @@ export class ItineraryService {
         totalWalkingTime: 0,
         sunscreenReminders: 0,
         shadeBreaks: 0,
-        familyFriendlyStops: 0,
-        estimatedCost: 0
+        familyFriendlyStops: 0
       }
     };
 
@@ -892,8 +891,7 @@ export class ItineraryService {
       totalWalkingTime: 0,
       sunscreenReminders: 0,
       shadeBreaks: 0,
-      familyFriendlyStops: 0,
-      estimatedCost: 0
+      familyFriendlyStops: 0
     };
     
     recommendations.forEach(rec => {
@@ -901,13 +899,6 @@ export class ItineraryService {
       if (rec.type === 'sunscreen') summary.sunscreenReminders++;
       if (rec.type === 'shade_break') summary.shadeBreaks++;
       if (rec.familyConsiderations?.kidFriendly) summary.familyFriendlyStops++;
-      
-      // Estimate costs
-      if (rec.type === 'concession') {
-        summary.estimatedCost += 25; // Average concession cost
-      } else if (rec.type === 'activity') {
-        summary.estimatedCost += 10; // Activity cost
-      }
     });
     
     return summary;

@@ -68,7 +68,6 @@ export interface SmartItinerary {
     sunscreenReminders: number;
     shadeBreaks: number;
     familyFriendlyStops: number;
-    estimatedCost: number;
   };
 }
 
