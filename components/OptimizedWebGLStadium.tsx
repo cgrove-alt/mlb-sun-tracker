@@ -284,26 +284,9 @@ export default function OptimizedWebGLStadium({
     
     controlsRef.current = controls;
 
-    // Create stadium geometry
-    createStadiumGeometry(THREE);
-
-    // Setup lighting
-    try {
-      console.log('Setting up lighting...');
-      setupLighting(THREE);
-      console.log('Lighting setup complete');
-    } catch (err) {
-      console.error('Error setting up lighting:', err);
-    }
-
-    // Setup shadows
-    try {
-      console.log('Setting up shadows...');
-      setupShadows();
-      console.log('Shadows setup complete');
-    } catch (err) {
-      console.error('Error setting up shadows:', err);
-    }
+    // Skip complex geometry for now - just test basic rendering
+    console.log('Skipping complex geometry to test basic rendering');
+    setDebugLog(prev => [...prev, 'Skipping complex geometry to test basic rendering']);
 
     // Start animation loop
     try {
@@ -590,18 +573,15 @@ export default function OptimizedWebGLStadium({
       
       // Log every 60 frames to verify animation is running
       if (frameCount % 60 === 0) {
-        console.log(`Animation frame ${frameCount} - rendering scene`);
+        console.log(`Animation frame ${frameCount} - just clearing red`);
       }
       
-      // Always update controls
-      if (controls) controls.update();
-      
-      // Force clear with bright color to verify rendering
+      // Just clear with red color - no scene rendering
       renderer.setClearColor(0xff0000, 1); // Bright red background
       renderer.clear();
       
-      // Always render for now to debug visibility
-      renderer.render(scene, camera);
+      // Skip scene rendering for now to test just clear color
+      // renderer.render(scene, camera);
       
       animationRef.current = requestAnimationFrame(animate);
     };
