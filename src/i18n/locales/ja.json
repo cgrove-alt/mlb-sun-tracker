@@ -516,7 +516,17 @@
     "buyTicketsFor": "{section}のチケットを購入",
     "poweredBy": "SeatGeekによって提供",
     "priceRange": "${min} - ${max}",
-    "dealScore": "お得度スコア: {score}/100"
+    "dealScore": "お得度スコア: {score}/100",
+    "ticketSearch": "チケット検索",
+    "findTicketsDescription": "太陽への露出、座席レベル、価格の好みに合うチケットを見つける",
+    "filterTickets": "チケットをフィルタ",
+    "filterToggle": "チケットフィルタを切り替え",
+    "resetFilters": "すべてのフィルタをリセット",
+    "minPrice": "最低価格",
+    "maxPrice": "最高価格",
+    "showOnlyAvailable": "利用可能なチケットのみを表示",
+    "noMatchingTickets": "現在のフィルタに一致するチケットはありません",
+    "foundResults": "{count}個のセクションでチケットが見つかりました"
   },
   "footer": {
     "disclaimer": "太陽の計算は近似値であり、スタジアムの建築や気象条件によって変動する場合があります。",

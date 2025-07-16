@@ -527,7 +527,17 @@
     "buyTicketsFor": "Buy tickets for {section}",
     "poweredBy": "Powered by SeatGeek",
     "priceRange": "${min} - ${max}",
-    "dealScore": "Deal Score: {score}/100"
+    "dealScore": "Deal Score: {score}/100",
+    "ticketSearch": "Ticket Search",
+    "findTicketsDescription": "Find tickets that match your preferences for sun exposure, seating level, and price",
+    "filterTickets": "Filter Tickets",
+    "filterToggle": "Toggle ticket filters",
+    "resetFilters": "Reset all filters",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "showOnlyAvailable": "Show only available tickets",
+    "noMatchingTickets": "No tickets match your current filters",
+    "foundResults": "Found {count} sections with tickets"
   },
   "footer": {
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",

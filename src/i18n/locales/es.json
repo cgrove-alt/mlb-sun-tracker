@@ -516,7 +516,17 @@
     "buyTicketsFor": "Comprar entradas para {section}",
     "poweredBy": "Impulsado por SeatGeek",
     "priceRange": "${min} - ${max}",
-    "dealScore": "Puntuación de Oferta: {score}/100"
+    "dealScore": "Puntuación de Oferta: {score}/100",
+    "ticketSearch": "Búsqueda de Entradas",
+    "findTicketsDescription": "Encuentra entradas que coincidan con tus preferencias de exposición al sol, nivel de asientos y precio",
+    "filterTickets": "Filtrar Entradas",
+    "filterToggle": "Alternar filtros de entradas",
+    "resetFilters": "Restablecer todos los filtros",
+    "minPrice": "Precio Mínimo",
+    "maxPrice": "Precio Máximo",
+    "showOnlyAvailable": "Mostrar solo entradas disponibles",
+    "noMatchingTickets": "No hay entradas que coincidan con tus filtros actuales",
+    "foundResults": "Se encontraron {count} secciones con entradas"
   },
   "footer": {
     "disclaimer": "Los cálculos del sol son aproximados y pueden variar según la arquitectura del estadio y las condiciones climáticas.",

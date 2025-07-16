@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { seatgeekApi, SeatGeekEvent, SeatGeekListing, SEATGEEK_VENUE_IDS } from '../services/seatgeekApi';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { useTranslation } from '../i18n/i18nContext';
+import { SeatGeekTicketFilter, TicketFilterCriteria } from './SeatGeekTicketFilter';
 import './AffordableShadeSection.css';
 
 interface AffordableShadeSectionProps {
@@ -20,6 +21,12 @@ interface AffordableSection {
   listings: SeatGeekListing[];
 }
 
+interface TicketData {
+  event: SeatGeekEvent;
+  allListings: Map<string, SeatGeekListing[]>;
+  priceRange: { min: number; max: number };
+}
+
 export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
   stadium,
   sections,
@@ -28,18 +35,30 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
 }) => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
-  const [event, setEvent] = useState<SeatGeekEvent | null>(null);
-  const [affordableShadedSections, setAffordableShadedSections] = useState<AffordableSection[]>([]);
+  const [ticketData, setTicketData] = useState<TicketData | null>(null);
+  const [filteredSections, setFilteredSections] = useState<AffordableSection[]>([]);
   const [error, setError] = useState<string | null>(null);
-  
-  const MAX_PRICE = 40; // Maximum price threshold
-  const MAX_SUN_EXPOSURE = 20; // Maximum sun exposure for "shaded" sections
+  const [filterCriteria, setFilterCriteria] = useState<TicketFilterCriteria>({
+    priceRange: { min: 0, max: 100 },
+    sunExposure: { min: 0, max: 20 },
+    seatingLevels: [],
+    coverage: 'any',
+    showOnlyAvailable: true,
+    sortBy: 'price',
+    sortOrder: 'asc'
+  });
 
   useEffect(() => {
     if (gameDateTime && SEATGEEK_VENUE_IDS[stadium.id]) {
       fetchTicketData();
     }
   }, [stadium.id, gameDateTime]);
+
+  useEffect(() => {
+    if (ticketData) {
+      applyFilters();
+    }
+  }, [ticketData, filterCriteria]);
 
   const fetchTicketData = async () => {
     setLoading(true);
@@ -51,49 +70,50 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
       
       if (!gameEvent) {
         setError('No ticket data available for this game');
-        setAffordableShadedSections([]);
+        setTicketData(null);
         return;
       }
       
-      setEvent(gameEvent);
+      // Get all section names for API query
+      const sectionNames = sections.map(s => s.section.name);
       
-      // Filter sections that are in shade (low sun exposure)
-      const shadedSections = sections.filter(s => s.sunExposure <= MAX_SUN_EXPOSURE);
-      
-      if (shadedSections.length === 0) {
-        setAffordableShadedSections([]);
-        return;
-      }
-      
-      // Get section names for API query
-      const sectionNames = shadedSections.map(s => s.section.name);
-      
-      // Fetch affordable tickets in these sections
+      // Fetch tickets for all sections (we'll filter later)
       const sectionListings = await seatgeekApi.getAffordableTicketsInSections(
         gameEvent.id,
         sectionNames,
-        MAX_PRICE
+        500 // High price limit to get all tickets
       );
       
-      // Build affordable sections data
-      const affordable: AffordableSection[] = [];
+      // Calculate price range
+      let minPrice = Infinity;
+      let maxPrice = 0;
       
-      shadedSections.forEach(sectionData => {
-        const listings = sectionListings.get(sectionData.section.name);
-        if (listings && listings.length > 0) {
-          const lowestPrice = Math.min(...listings.map(l => l.price));
-          affordable.push({
-            section: sectionData,
-            lowestPrice,
-            listingCount: listings.length,
-            listings: listings.sort((a, b) => a.price - b.price).slice(0, 3) // Top 3 cheapest
-          });
-        }
+      sectionListings.forEach(listings => {
+        listings.forEach(listing => {
+          minPrice = Math.min(minPrice, listing.price);
+          maxPrice = Math.max(maxPrice, listing.price);
+        });
       });
       
-      // Sort by lowest price
-      affordable.sort((a, b) => a.lowestPrice - b.lowestPrice);
-      setAffordableShadedSections(affordable);
+      const priceRange = {
+        min: minPrice === Infinity ? 0 : minPrice,
+        max: maxPrice || 200
+      };
+      
+      setTicketData({
+        event: gameEvent,
+        allListings: sectionListings,
+        priceRange
+      });
+      
+      // Update filter criteria with actual price range
+      setFilterCriteria(prev => ({
+        ...prev,
+        priceRange: {
+          min: priceRange.min,
+          max: Math.min(priceRange.max, 100) // Default max to $100
+        }
+      }));
       
     } catch (err) {
       console.error('Error fetching ticket data:', err);
@@ -103,12 +123,99 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
     }
   };
 
-  const handleBuyTickets = (section: AffordableSection) => {
-    if (!event) return;
+  const applyFilters = useCallback(() => {
+    if (!ticketData) return;
     
-    const url = seatgeekApi.generateTicketUrl(event, {
+    const { allListings } = ticketData;
+    const filtered: AffordableSection[] = [];
+    
+    // Filter sections based on criteria
+    const eligibleSections = sections.filter(sectionData => {
+      // Sun exposure filter
+      const sunExposure = sectionData.sunExposure;
+      if (sunExposure < filterCriteria.sunExposure.min || sunExposure > filterCriteria.sunExposure.max) {
+        return false;
+      }
+      
+      // Seating level filter
+      if (filterCriteria.seatingLevels.length > 0 && 
+          !filterCriteria.seatingLevels.includes(sectionData.section.level)) {
+        return false;
+      }
+      
+      // Coverage filter
+      if (filterCriteria.coverage !== 'any') {
+        const isCovered = sectionData.section.covered;
+        if (filterCriteria.coverage === 'covered' && !isCovered) return false;
+        if (filterCriteria.coverage === 'uncovered' && isCovered) return false;
+      }
+      
+      return true;
+    });
+    
+    // Build filtered sections with ticket data
+    eligibleSections.forEach(sectionData => {
+      const listings = allListings.get(sectionData.section.name);
+      if (listings && listings.length > 0) {
+        // Filter listings by price
+        const priceFilteredListings = listings.filter(listing => 
+          listing.price >= filterCriteria.priceRange.min && 
+          listing.price <= filterCriteria.priceRange.max
+        );
+        
+        if (priceFilteredListings.length > 0) {
+          const lowestPrice = Math.min(...priceFilteredListings.map(l => l.price));
+          filtered.push({
+            section: sectionData,
+            lowestPrice,
+            listingCount: priceFilteredListings.length,
+            listings: priceFilteredListings.sort((a, b) => a.price - b.price).slice(0, 3)
+          });
+        }
+      }
+    });
+    
+    // Sort results
+    filtered.sort((a, b) => {
+      let aValue: any, bValue: any;
+      
+      switch (filterCriteria.sortBy) {
+        case 'price':
+          aValue = a.lowestPrice;
+          bValue = b.lowestPrice;
+          break;
+        case 'sunExposure':
+          aValue = a.section.sunExposure;
+          bValue = b.section.sunExposure;
+          break;
+        case 'section':
+          aValue = a.section.section.name;
+          bValue = b.section.section.name;
+          break;
+        default:
+          return 0;
+      }
+      
+      if (typeof aValue === 'string' && typeof bValue === 'string') {
+        return filterCriteria.sortOrder === 'asc' 
+          ? aValue.localeCompare(bValue)
+          : bValue.localeCompare(aValue);
+      }
+      
+      return filterCriteria.sortOrder === 'asc' 
+        ? aValue - bValue
+        : bValue - aValue;
+    });
+    
+    setFilteredSections(filtered);
+  }, [ticketData, filterCriteria, sections]);
+  
+  const handleBuyTickets = (section: AffordableSection) => {
+    if (!ticketData) return;
+    
+    const url = seatgeekApi.generateTicketUrl(ticketData.event, {
       section: section.section.section.name,
-      priceMax: MAX_PRICE
+      priceMax: filterCriteria.priceRange.max
     });
     
     // Open in new tab
@@ -134,12 +241,21 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
       <div className="section-header">
         <h3>
           <span className="icon">🎟️</span>
-          {t('tickets.affordableShade', { price: MAX_PRICE })}
+          {t('tickets.ticketSearch')}
         </h3>
         <p className="subtitle">
-          {t('tickets.shadedSeatsUnder', { price: MAX_PRICE, exposure: MAX_SUN_EXPOSURE })}
+          {t('tickets.findTicketsDescription')}
         </p>
       </div>
+
+      {ticketData && (
+        <SeatGeekTicketFilter
+          onFilterChange={setFilterCriteria}
+          availableSections={sections}
+          priceRange={ticketData.priceRange}
+          disabled={loading}
+        />
+      )}
 
       {loading && (
         <div className="loading">
@@ -154,25 +270,27 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
         </div>
       )}
 
-      {!loading && !error && affordableShadedSections.length === 0 && (
+      {!loading && !error && filteredSections.length === 0 && ticketData && (
         <div className="no-results">
-          <p>{t('tickets.noAffordableShade')}</p>
-          {event && (
-            <a 
-              href={event.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="view-all-link"
-            >
-              {t('tickets.viewAllTickets')}
-            </a>
-          )}
+          <p>{t('tickets.noMatchingTickets')}</p>
+          <a 
+            href={ticketData.event.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="view-all-link"
+          >
+            {t('tickets.viewAllTickets')}
+          </a>
         </div>
       )}
 
-      {!loading && !error && affordableShadedSections.length > 0 && (
+      {!loading && !error && filteredSections.length > 0 && (
         <div className="affordable-sections-list">
-          {affordableShadedSections.map((affordableSection) => (
+          <div className="results-summary">
+            <p>{t('tickets.foundResults', { count: filteredSections.length })}</p>
+          </div>
+          
+          {filteredSections.map((affordableSection) => (
             <div key={affordableSection.section.section.id} className="affordable-section-card">
               <div className="section-info">
                 <h4>{affordableSection.section.section.name}</h4>
@@ -183,6 +301,11 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
                   <span className="level">
                     {t(`sections.levels.${affordableSection.section.section.level}`)}
                   </span>
+                  {affordableSection.section.section.covered && (
+                    <span className="covered-badge">
+                      🏛️ {t('sections.covered')}
+                    </span>
+                  )}
                 </div>
               </div>
               
@@ -207,10 +330,10 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
             </div>
           ))}
           
-          {event && (
+          {ticketData && (
             <div className="view-all-section">
               <a 
-                href={event.url} 
+                href={ticketData.event.url} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="view-all-link"
