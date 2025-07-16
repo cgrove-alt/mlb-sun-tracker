@@ -223,6 +223,11 @@ export default function OptimizedWebGLStadium({
       });
       
       renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.domElement.style.position = 'absolute';
+      renderer.domElement.style.top = '0';
+      renderer.domElement.style.left = '0';
+      renderer.domElement.style.width = '100%';
+      renderer.domElement.style.height = '100%';
       renderer.setPixelRatio(config.pixelRatio);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
@@ -319,11 +324,7 @@ export default function OptimizedWebGLStadium({
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
         
-        // Remove debug styling now that we know canvas is rendering
-        // renderer.domElement.style.border = '3px solid red';
-        // renderer.domElement.style.backgroundColor = 'blue';
-        renderer.domElement.style.position = 'relative';
-        renderer.domElement.style.zIndex = '10';
+        // Debug styling removed - canvas positioning is set during creation
       } else {
         console.error('Missing scene, camera, or renderer for test render');
         setDebugLog(prev => [...prev, 'ERROR: Missing scene, camera, or renderer']);
@@ -833,12 +834,7 @@ export default function OptimizedWebGLStadium({
           borderRadius: '8px',
           overflow: 'hidden',
           backgroundColor: '#f0f0f0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '16px',
-          fontWeight: 'bold',
-          color: '#333',
+          position: 'relative',
         }}
       >
         {!rendererRef.current && 'THREE.js Canvas Container - Waiting for initialization...'}
