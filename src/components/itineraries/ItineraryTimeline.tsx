@@ -55,6 +55,28 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
     return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
   };
 
+  const getInningForTime = (time: Date): string | null => {
+    // Calculate approximate inning based on time relative to game start
+    const gameStart = itinerary.gameStartTime;
+    const timeDiff = time.getTime() - gameStart.getTime();
+    const minutesDiff = timeDiff / (1000 * 60);
+    
+    if (minutesDiff < 0) return 'Pre-Game';
+    
+    // Estimate ~20 minutes per inning
+    const estimatedInning = Math.floor(minutesDiff / 20) + 1;
+    
+    if (estimatedInning > 9) return 'Post-Game';
+    if (estimatedInning < 1) return 'Pre-Game';
+    
+    // Format as ordinal (1st, 2nd, 3rd, etc.)
+    const suffix = estimatedInning === 1 ? 'st' : 
+                   estimatedInning === 2 ? 'nd' : 
+                   estimatedInning === 3 ? 'rd' : 'th';
+    
+    return `${estimatedInning}${suffix} Inning`;
+  };
+
   const groupRecommendationsByHour = (recommendations: ItineraryRecommendation[]) => {
     const groups: { [key: string]: ItineraryRecommendation[] } = {};
     
@@ -107,6 +129,9 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
                       <div className="recommendation-header">
                         <h5>{recommendation.details.title}</h5>
                         <div className="recommendation-meta">
+                          <span className="inning-badge">
+                            ⚾ {getInningForTime(recommendation.time)}
+                          </span>
                           <span className="time">
                             {formatTimeWithTimezone(recommendation.time, stadium.timezone)}
                           </span>
