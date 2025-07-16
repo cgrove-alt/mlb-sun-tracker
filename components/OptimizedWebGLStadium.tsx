@@ -935,10 +935,12 @@ export default function OptimizedWebGLStadium({
           height: '400px',
           border: '2px solid #00ff00',
           backgroundColor: 'red', // Make container itself red to test visibility
-          position: 'relative',
         }}
       >
         {!rendererRef.current && 'THREE.js Canvas Container - Waiting for initialization...'}
+        <div style={{ color: 'white', fontSize: '20px', fontWeight: 'bold', padding: '10px' }}>
+          SIMPLE TEXT TEST - This should be visible
+        </div>
       </div>
       
       <div className="webgl-controls">
