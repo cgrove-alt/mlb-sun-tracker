@@ -112,6 +112,11 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
         <div className="recommendations-summary">
           <h4>📝 Recommendation Breakdown</h4>
           <div className="recommendation-types">
+            <div className="recommendation-type">
+              <span className="type-icon">📍</span>
+              <span className="type-count">{itinerary.recommendations.length}</span>
+              <span className="type-label">Total Recommendations</span>
+            </div>
             {itinerary.summary.sunscreenReminders > 0 && (
               <div className="recommendation-type">
                 <span className="type-icon">🧴</span>
@@ -131,6 +136,20 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
                 <span className="type-icon">👨‍👩‍👧‍👦</span>
                 <span className="type-count">{itinerary.summary.familyFriendlyStops}</span>
                 <span className="type-label">Family-Friendly Stops</span>
+              </div>
+            )}
+            {itinerary.recommendations.filter(r => r.type === 'concession').length > 0 && (
+              <div className="recommendation-type">
+                <span className="type-icon">🍿</span>
+                <span className="type-count">{itinerary.recommendations.filter(r => r.type === 'concession').length}</span>
+                <span className="type-label">Concession Visits</span>
+              </div>
+            )}
+            {itinerary.recommendations.filter(r => r.type === 'activity').length > 0 && (
+              <div className="recommendation-type">
+                <span className="type-icon">⚾</span>
+                <span className="type-count">{itinerary.recommendations.filter(r => r.type === 'activity').length}</span>
+                <span className="type-label">Activities</span>
               </div>
             )}
           </div>

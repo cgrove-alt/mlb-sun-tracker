@@ -712,7 +712,7 @@ export class ItineraryService {
     };
     
     recommendations.forEach(rec => {
-      summary.totalWalkingTime += rec.location.walkingTime;
+      summary.totalWalkingTime += rec.location.walkingTime || 0;
       if (rec.type === 'sunscreen') summary.sunscreenReminders++;
       if (rec.type === 'shade_break') summary.shadeBreaks++;
       if (rec.familyConsiderations?.kidFriendly) summary.familyFriendlyStops++;
