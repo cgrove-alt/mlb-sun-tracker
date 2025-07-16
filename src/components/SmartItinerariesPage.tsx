@@ -107,11 +107,8 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
           <GameSelector
             stadiums={MLB_STADIUMS}
             selectedStadium={selectedStadium}
-            selectedGame={selectedGame}
-            gameDateTime={gameDateTime}
             onStadiumChange={onStadiumChange}
             onGameSelect={onGameSelect}
-            showWeatherInfo={false}
           />
           
           <div className="empty-state-features">
