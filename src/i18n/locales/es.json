@@ -74,6 +74,29 @@
     "postponed": "Pospuesto",
     "cancelled": "Cancelado"
   },
+  "gameSelector": {
+    "title": "Seleccionar Juego o Hora",
+    "realGames": "Juegos Reales",
+    "customTime": "Hora Personalizada",
+    "stadium": "Estadio",
+    "chooseStadium": "Elige un estadio...",
+    "selectStadium": "Seleccionar estadio MLB",
+    "upcomingGames": "Próximos Juegos en Casa",
+    "loadingGames": "Cargando juegos...",
+    "chooseGame": "Elige un juego...",
+    "noGamesFound": "No se encontraron próximos juegos",
+    "selectGame": "Seleccionar próximo juego",
+    "noGamesForStadium": "No se encontraron próximos juegos en casa para este estadio.",
+    "tryCustomTime": "Intenta seleccionar \"Hora Personalizada\" para analizar cualquier fecha y hora.",
+    "foundGames": "Se encontraron {count} próximos juegos en casa",
+    "selectStadiumPrompt": "Por favor selecciona un estadio para ver los próximos juegos.",
+    "date": "Fecha",
+    "timeLocal": "Hora (local)",
+    "selectDate": "Seleccionar fecha para análisis de hora personalizada",
+    "selectTime": "Seleccionar hora para análisis de hora personalizada",
+    "applyCustomTime": "Aplicar Hora Personalizada",
+    "customTimeInfo": "Usa hora personalizada para analizar la exposición al sol en cualquier fecha y hora, incluso durante la temporada baja."
+  },
   "sun": {
     "position": "Posición del Sol",
     "information": "Información del Sol",
@@ -135,6 +158,25 @@
     "loading": "Cargando datos meteorológicos...",
     "error": "No se pudo cargar el pronóstico del tiempo. Los cálculos del sol continuarán sin datos meteorológicos.",
     "impact": "Impacto del Clima",
+    "forGameTime": "Para la hora del juego",
+    "wind": "Viento",
+    "rainChance": "Probabilidad de Lluvia",
+    "sunVisibility": "Visibilidad del Sol",
+    "sunExposureAdjustment": "{percentage}% de la exposición solar normal",
+    "gameDayForecast": "Pronóstico del Día del Juego",
+    "uvLevels": {
+      "low": "Bajo",
+      "moderate": "Moderado",
+      "high": "Alto",
+      "veryHigh": "Muy Alto",
+      "extreme": "Extremo"
+    },
+    "visibility": {
+      "excellent": "Excelente",
+      "good": "Buena",
+      "poor": "Pobre",
+      "blocked": "Bloqueada"
+    },
     "conditions": {
       "clear": "Despejado",
       "cloudy": "Nublado",

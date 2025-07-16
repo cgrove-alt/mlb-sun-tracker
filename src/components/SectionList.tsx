@@ -278,10 +278,10 @@ export const SectionList: React.FC<SectionListProps> = ({
                   <h4 className="section-name">{section.name}</h4>
                   <div className="section-badges">
                     {section.covered && (
-                      <span className="badge covered-badge" aria-label="Covered section">🏛️ Covered</span>
+                      <span className="badge covered-badge" aria-label={t('sections.coveredSection')}>🏛️ {t('sections.covered')}</span>
                     )}
-                    <span className={`badge level-badge level-${section.level}`} aria-label={`${section.level} level seating`}>
-                      {getLevelIcon(section.level)} {section.level}
+                    <span className={`badge level-badge level-${section.level}`} aria-label={`${t(`sections.levels.${section.level}`)} ${t('sections.levelSeating')}`}>
+                      {getLevelIcon(section.level)} {t(`sections.levels.${section.level}`)}
                     </span>
                   </div>
                 </div>

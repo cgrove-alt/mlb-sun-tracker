@@ -74,6 +74,29 @@
     "postponed": "延期",
     "cancelled": "中止"
   },
+  "gameSelector": {
+    "title": "試合または時間を選択",
+    "realGames": "実際の試合",
+    "customTime": "カスタム時間",
+    "stadium": "スタジアム",
+    "chooseStadium": "スタジアムを選択...",
+    "selectStadium": "MLBスタジアムを選択",
+    "upcomingGames": "今後のホームゲーム",
+    "loadingGames": "試合を読み込み中...",
+    "chooseGame": "試合を選択...",
+    "noGamesFound": "今後の試合が見つかりません",
+    "selectGame": "今後の試合を選択",
+    "noGamesForStadium": "このスタジアムの今後のホームゲームは見つかりませんでした。",
+    "tryCustomTime": "「カスタム時間」を選択して任意の日時を分析してみてください。",
+    "foundGames": "{count}件の今後のホームゲームが見つかりました",
+    "selectStadiumPrompt": "今後の試合を見るにはスタジアムを選択してください。",
+    "date": "日付",
+    "timeLocal": "時間（現地時間）",
+    "selectDate": "カスタム時間分析の日付を選択",
+    "selectTime": "カスタム時間分析の時間を選択",
+    "applyCustomTime": "カスタム時間を適用",
+    "customTimeInfo": "カスタム時間を使用して、オフシーズンでも任意の日時の日照を分析できます。"
+  },
   "sun": {
     "position": "太陽の位置",
     "information": "太陽の情報",
@@ -135,6 +158,25 @@
     "loading": "気象データを読み込み中...",
     "error": "天気予報を読み込めませんでした。太陽の計算は気象データなしで続行されます。",
     "impact": "天気の影響",
+    "forGameTime": "試合時間",
+    "wind": "風",
+    "rainChance": "降水確率",
+    "sunVisibility": "太陽の見え方",
+    "sunExposureAdjustment": "通常の日照の{percentage}%",
+    "gameDayForecast": "試合日の予報",
+    "uvLevels": {
+      "low": "低い",
+      "moderate": "中程度",
+      "high": "高い",
+      "veryHigh": "非常に高い",
+      "extreme": "極端"
+    },
+    "visibility": {
+      "excellent": "優秀",
+      "good": "良好",
+      "poor": "悪い",
+      "blocked": "遮断"
+    },
     "conditions": {
       "clear": "晴れ",
       "cloudy": "曇り",

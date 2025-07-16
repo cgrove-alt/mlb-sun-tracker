@@ -52,10 +52,10 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
             className="breadcrumb-button"
             onClick={handleBackToStadiumSelection}
             onKeyDown={(e) => handleKeyDown(e, handleBackToStadiumSelection)}
-            aria-label="Back to stadium selection"
-            title="Select a different stadium"
+            aria-label={t('breadcrumb.backToStadium')}
+            title={t('breadcrumb.selectDifferentStadium')}
           >
-            🏟️ Select Stadium
+            🏟️ {t('breadcrumb.selectStadium')}
           </button>
         </li>
         
@@ -68,8 +68,8 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   className="breadcrumb-button"
                   onClick={handleBackToGameSelection}
                   onKeyDown={(e) => handleKeyDown(e, handleBackToGameSelection)}
-                  aria-label="Back to game selection"
-                  title="Select a different game or time"
+                  aria-label={t('breadcrumb.backToGame')}
+                  title={t('breadcrumb.selectDifferentGame')}
                 >
                   {selectedStadium.name}
                 </button>
@@ -96,7 +96,7 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   </>
                 ) : (
                   <>
-                    Custom Time
+                    {t('breadcrumb.customTime')}
                     <span className="breadcrumb-subtitle">
                       {formatDateTime(gameDateTime)}
                     </span>

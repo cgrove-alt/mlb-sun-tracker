@@ -33,6 +33,15 @@
     "next": "Next",
     "previous": "Previous"
   },
+  "breadcrumb": {
+    "label": "Current selection breadcrumb",
+    "selectStadium": "Select Stadium",
+    "backToStadium": "Back to stadium selection",
+    "selectDifferentStadium": "Select a different stadium",
+    "backToGame": "Back to game selection",
+    "selectDifferentGame": "Select a different game or time",
+    "customTime": "Custom Time"
+  },
   "stadium": {
     "select": "Select Stadium",
     "selectStadium": "Select a stadium",
@@ -73,6 +82,29 @@
     "final": "Final",
     "postponed": "Postponed",
     "cancelled": "Cancelled"
+  },
+  "gameSelector": {
+    "title": "Select Game or Time",
+    "realGames": "Real Games",
+    "customTime": "Custom Time",
+    "stadium": "Stadium",
+    "chooseStadium": "Choose a stadium...",
+    "selectStadium": "Select MLB stadium",
+    "upcomingGames": "Upcoming Home Games",
+    "loadingGames": "Loading games...",
+    "chooseGame": "Choose a game...",
+    "noGamesFound": "No upcoming games found",
+    "selectGame": "Select upcoming game",
+    "noGamesForStadium": "No upcoming home games found for this stadium.",
+    "tryCustomTime": "Try selecting \"Custom Time\" to analyze any date and time.",
+    "foundGames": "Found {count} upcoming home games",
+    "selectStadiumPrompt": "Please select a stadium to see upcoming games.",
+    "date": "Date",
+    "timeLocal": "Time (local)",
+    "selectDate": "Select date for custom time analysis",
+    "selectTime": "Select time for custom time analysis",
+    "applyCustomTime": "Apply Custom Time",
+    "customTimeInfo": "Use custom time to analyze sun exposure for any date and time, even during off-season."
   },
   "sun": {
     "position": "Sun Position",
@@ -135,6 +167,25 @@
     "loading": "Loading weather data...",
     "error": "Unable to load weather forecast. Sun calculations will continue without weather data.",
     "impact": "Weather Impact",
+    "forGameTime": "For game time",
+    "wind": "Wind",
+    "rainChance": "Rain Chance",
+    "sunVisibility": "Sun Visibility",
+    "sunExposureAdjustment": "{percentage}% of normal sun exposure",
+    "gameDayForecast": "Game Day Forecast",
+    "uvLevels": {
+      "low": "Low",
+      "moderate": "Moderate",
+      "high": "High",
+      "veryHigh": "Very High",
+      "extreme": "Extreme"
+    },
+    "visibility": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "poor": "Poor",
+      "blocked": "Blocked"
+    },
     "conditions": {
       "clear": "Clear",
       "cloudy": "Cloudy",
@@ -186,7 +237,43 @@
       "moderate": "Moderate",
       "premium": "Premium",
       "luxury": "Luxury"
-    }
+    },
+    "calculating": "Calculating sun exposure for all sections...",
+    "listLabel": "Stadium sections list",
+    "summaryStats": {
+      "sunny": "{count} sunny",
+      "shaded": "{count} shaded",
+      "searchResults": "{shown} of {total} shown"
+    },
+    "searchLabel": "Search stadium sections",
+    "clearSearch": "Clear search",
+    "sortingOptions": "Section sorting options",
+    "sortBySun": "Sort by sun exposure",
+    "sortByName": "Sort by section name",
+    "sortByLevel": "Sort by seating level",
+    "sortByPrice": "Sort by price range",
+    "descending": "descending",
+    "ascending": "ascending",
+    "sortLabels": {
+      "sun": "Sun",
+      "name": "Name",
+      "level": "Level",
+      "price": "Price"
+    },
+    "noSearchResults": "No sections found matching \"{term}\".",
+    "tryDifferentSearch": "Try a different search term or clear the search to see all sections.",
+    "noFilterResults": "No sections match your filter criteria.",
+    "tryAdjustFilters": "Try adjusting your filters to see more results.",
+    "coveredSection": "Covered section",
+    "levelSeating": "level seating",
+    "sunExposure": "sun exposure",
+    "sunExposureTooltip": "The percentage of time this section receives direct sunlight during the game, considering weather conditions",
+    "weatherAdjusted": "Weather conditions are reducing the sun exposure for this section",
+    "weatherAdjustedLabel": "Weather-adjusted sun exposure",
+    "angleRangeTooltip": "The compass direction range this section faces (0° = North, 90° = East, 180° = South, 270° = West). This helps determine sun exposure timing.",
+    "angleRangeLabel": "Angle range from {start} to {end} degrees",
+    "rowCount": "Approximately {count} rows",
+    "rows": "rows"
   },
   "filter": {
     "title": "Section Filter",
@@ -296,20 +383,31 @@
   },
   "emptyStates": {
     "noStadium": {
-      "title": "Select a Stadium",
-      "description": "Choose from 30 MLB stadiums to analyze sun exposure patterns"
+      "title": "Choose Your Stadium",
+      "description": "Choose from 30 MLB stadiums to analyze sun exposure patterns",
+      "message": "Select an MLB stadium to get started with sun exposure analysis."
     },
     "noGame": {
-      "title": "Select a Game or Date",
-      "description": "Pick a real game or set any custom date and time"
+      "title": "Select Game Time",
+      "description": "Pick a real game or set any custom date and time",
+      "message": "Choose a game or set a custom time to see sun analysis."
     },
     "noSections": {
       "title": "No Sections Found",
-      "description": "Try adjusting your filters or search criteria"
+      "description": "Try adjusting your filters or search criteria",
+      "message": "Try adjusting your filters to see more seating options."
     },
     "noResults": {
       "title": "No Results",
       "description": "No sections match your current criteria"
+    },
+    "loading": {
+      "title": "Calculating...",
+      "message": "Analyzing sun exposure for all stadium sections."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "message": "Please try again."
     }
   },
   "errors": {

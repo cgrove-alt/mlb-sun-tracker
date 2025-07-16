@@ -14,37 +14,38 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
   message,
   action
 }) => {
+  const { t } = useTranslation();
   const getEmptyStateContent = () => {
     switch (type) {
       case 'no-stadium':
         return {
           icon: '🏟️',
-          title: title || 'Choose Your Stadium',
-          message: message || 'Select an MLB stadium to get started with sun exposure analysis.'
+          title: title || t('emptyStates.noStadium.title'),
+          message: message || t('emptyStates.noStadium.message')
         };
       case 'no-game':
         return {
           icon: '⚾',
-          title: title || 'Select Game Time',
-          message: message || 'Choose a game or set a custom time to see sun analysis.'
+          title: title || t('emptyStates.noGame.title'),
+          message: message || t('emptyStates.noGame.message')
         };
       case 'no-sections':
         return {
           icon: '🔍',
-          title: title || 'No Sections Found',
-          message: message || 'Try adjusting your filters to see more seating options.'
+          title: title || t('emptyStates.noSections.title'),
+          message: message || t('emptyStates.noSections.message')
         };
       case 'loading':
         return {
           icon: '⏳',
-          title: title || 'Calculating...',
-          message: message || 'Analyzing sun exposure for all stadium sections.'
+          title: title || t('emptyStates.loading.title'),
+          message: message || t('emptyStates.loading.message')
         };
       default:
         return {
           icon: '🤔',
-          title: title || 'Something went wrong',
-          message: message || 'Please try again.'
+          title: title || t('emptyStates.error.title'),
+          message: message || t('emptyStates.error.message')
         };
     }
   };
