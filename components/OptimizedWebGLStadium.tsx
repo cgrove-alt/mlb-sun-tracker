@@ -206,7 +206,8 @@ export default function OptimizedWebGLStadium({
         0.1,
         1000
       );
-      camera.position.set(0, 20, 30);
+      camera.position.set(0, 30, 50);
+      camera.lookAt(0, 0, 0);
       cameraRef.current = camera;
       console.log('Camera created successfully');
       setDebugLog(prev => [...prev, 'Camera created successfully']);
@@ -318,9 +319,9 @@ export default function OptimizedWebGLStadium({
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
         
-        // Add a visible indicator that rendering is working
-        renderer.domElement.style.border = '3px solid red';
-        renderer.domElement.style.backgroundColor = 'blue';
+        // Remove debug styling now that we know canvas is rendering
+        // renderer.domElement.style.border = '3px solid red';
+        // renderer.domElement.style.backgroundColor = 'blue';
         renderer.domElement.style.position = 'relative';
         renderer.domElement.style.zIndex = '10';
       } else {
@@ -426,8 +427,8 @@ export default function OptimizedWebGLStadium({
     const scene = sceneRef.current;
     const config = getPerformanceConfig();
 
-    // Ambient light
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+    // Ambient light - increased for better visibility
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
     scene.add(ambientLight);
 
     // Sun light (directional)
