@@ -346,6 +346,28 @@ export default function OptimizedWebGLStadium({
           console.log('Canvas visibility:', window.getComputedStyle(canvasCheck).visibility);
           setDebugLog(prev => [...prev, `Canvas display: ${window.getComputedStyle(canvasCheck).display}`]);
           setDebugLog(prev => [...prev, `Canvas opacity: ${window.getComputedStyle(canvasCheck).opacity}`]);
+          
+          // Create a test 2D canvas to verify canvas rendering works
+          const testCanvas = document.createElement('canvas');
+          testCanvas.width = 200;
+          testCanvas.height = 200;
+          testCanvas.style.position = 'absolute';
+          testCanvas.style.top = '10px';
+          testCanvas.style.left = '10px';
+          testCanvas.style.zIndex = '1000';
+          testCanvas.style.border = '2px solid yellow';
+          
+          const ctx = testCanvas.getContext('2d');
+          if (ctx) {
+            ctx.fillStyle = 'red';
+            ctx.fillRect(0, 0, 200, 200);
+            ctx.fillStyle = 'white';
+            ctx.font = '20px Arial';
+            ctx.fillText('Canvas Test', 10, 30);
+            container.appendChild(testCanvas);
+            console.log('Test 2D canvas added');
+            setDebugLog(prev => [...prev, 'Test 2D canvas added']);
+          }
         } else {
           console.error('NO CANVAS FOUND IN DOM!');
           setDebugLog(prev => [...prev, 'ERROR: NO CANVAS IN DOM']);
@@ -532,6 +554,10 @@ export default function OptimizedWebGLStadium({
     const animate = (currentTime: number) => {
       // Always update controls
       if (controls) controls.update();
+      
+      // Force clear with bright color to verify rendering
+      renderer.setClearColor(0x00ff00, 1); // Bright green
+      renderer.clear();
       
       // Always render for now to debug visibility
       renderer.render(scene, camera);
