@@ -94,13 +94,13 @@ function AppContent() {
       console.error('Error loading weather forecast:', error);
       setWeatherForecast(null);
       showError(
-        'Unable to load weather forecast. Sun calculations will continue without weather data.',
+        t('weather.error'),
         'warning'
       );
     } finally {
       setLoadingWeather(false);
     }
-  }, [selectedStadium, showError]);
+  }, [selectedStadium, showError, t]);
 
   // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
@@ -135,14 +135,14 @@ function AppContent() {
       } catch (error) {
         console.error('Error calculating sun exposure:', error);
         showError(
-          'Unable to calculate sun exposure for stadium sections. Please try again.',
+          t('errors.sunCalculation'),
           'error'
         );
       } finally {
         setLoadingSections(false);
       }
     }
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError]);
+  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError, t]);
 
   // Load weather forecast when stadium changes
   useEffect(() => {
@@ -190,7 +190,7 @@ function AppContent() {
       }
     } catch (error) {
       console.error('Error changing stadium:', error);
-      showError('Failed to select stadium. Please try again.', 'error');
+      showError(t('errors.stadiumLoad'), 'error');
     }
   };
 
@@ -247,7 +247,7 @@ function AppContent() {
             type="no-stadium"
             action={
               <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                💡 Choose from 30 MLB stadiums to analyze sun exposure patterns
+                💡 {t('emptyStates.noStadium.description')}
               </p>
             }
           />
@@ -258,7 +258,7 @@ function AppContent() {
             type="no-game"
             action={
               <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                🎯 Pick a real game or set any custom date and time
+                🎯 {t('emptyStates.noGame.description')}
               </p>
             }
           />
@@ -278,12 +278,12 @@ function AppContent() {
 
               {sunPosition && (
                 <div className="sun-info">
-                  <h3>Sun Information</h3>
+                  <h3>{t('sun.information')}</h3>
                   <div className="sun-details">
                     <div className="sun-detail-item">
                       <span className="sun-icon">☀️</span>
                       <div className="sun-detail-content">
-                        <span className="sun-label">Condition</span>
+                        <span className="sun-label">{t('sun.condition')}</span>
                         <span className="sun-value">{getSunDescription(sunPosition)}</span>
                       </div>
                     </div>
@@ -291,8 +291,8 @@ function AppContent() {
                     <div className="sun-detail-item">
                       <span className="sun-icon">🧭</span>
                       <div className="sun-detail-content">
-                        <Tooltip content="The compass direction where the sun is located (0° = North, 90° = East, 180° = South, 270° = West)">
-                          <span className="sun-label">Direction</span>
+                        <Tooltip content={t('tooltips.sunDirection')}>
+                          <span className="sun-label">{t('sun.direction')}</span>
                         </Tooltip>
                         <span className="sun-value">{sunPosition ? getCompassDirection(sunPosition.azimuthDegrees) : 'N/A'} ({sunPosition ? Math.round(sunPosition.azimuthDegrees) : 0}°)</span>
                       </div>
@@ -301,8 +301,8 @@ function AppContent() {
                     <div className="sun-detail-item">
                       <span className="sun-icon">📐</span>
                       <div className="sun-detail-content">
-                        <Tooltip content="The sun's angle above the horizon (0° = horizon, 90° = directly overhead). Negative values indicate the sun is below the horizon.">
-                          <span className="sun-label">Elevation</span>
+                        <Tooltip content={t('tooltips.sunElevation')}>
+                          <span className="sun-label">{t('sun.elevation')}</span>
                         </Tooltip>
                         <span className="sun-value">{sunPosition ? Math.round(sunPosition.altitudeDegrees) : 0}°</span>
                       </div>
@@ -311,7 +311,7 @@ function AppContent() {
                     {sunPosition && sunPosition.altitudeDegrees < 0 && (
                       <div className="night-game">
                         <span className="night-icon">🌙</span>
-                        <span>This is a night game - sun will not be a factor</span>
+                        <span>{t('recommendations.nightGame.description')}</span>
                       </div>
                     )}
                   </div>
@@ -324,15 +324,15 @@ function AppContent() {
                 <div className="overview-stats">
                   <div className="stat-item">
                     <span className="stat-number">{detailedSections.length}</span>
-                    <span className="stat-label">Total Sections</span>
+                    <span className="stat-label">{t('sections.totalSections')}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-number">{filteredSections.length}</span>
-                    <span className="stat-label">Matching Filters</span>
+                    <span className="stat-label">{t('sections.matchingFilters')}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-number">{filteredSections.filter(s => s.inSun).length}</span>
-                    <span className="stat-label">In Sun</span>
+                    <span className="stat-label">{t('sun.inSun')}</span>
                   </div>
                 </div>
               </div>
@@ -348,22 +348,22 @@ function AppContent() {
             </div>
 
             <div className="recommendations">
-              <h3>🎯 Smart Seating Recommendations</h3>
+              <h3>🎯 {t('recommendations.title')}</h3>
               <div className="recommendations-content">
                 {sunPosition && sunPosition.altitudeDegrees < 0 ? (
                   <div className="recommendation-item night">
                     <span className="rec-icon">🌙</span>
                     <div className="rec-content">
-                      <h4>Night Game</h4>
-                      <p>Since this is a night game, sun exposure won't be a concern for any seats. Focus on other factors like sightlines and amenities.</p>
+                      <h4>{t('recommendations.nightGame.title')}</h4>
+                      <p>{t('recommendations.nightGame.description')}</p>
                     </div>
                   </div>
                 ) : selectedStadium.roof === 'fixed' ? (
                   <div className="recommendation-item covered">
                     <span className="rec-icon">🏟️</span>
                     <div className="rec-content">
-                      <h4>Covered Stadium</h4>
-                      <p>This stadium has a fixed roof, so all seats are protected from direct sunlight and weather.</p>
+                      <h4>{t('recommendations.coveredStadium.title')}</h4>
+                      <p>{t('recommendations.coveredStadium.description')}</p>
                     </div>
                   </div>
                 ) : (
@@ -371,20 +371,16 @@ function AppContent() {
                     <div className="recommendation-item shade">
                       <span className="rec-icon">🏛️</span>
                       <div className="rec-content">
-                        <h4>To Avoid Sun</h4>
-                        <p>Choose seats on the <strong>{
-                          sunPosition && sunPosition.azimuthDegrees > 180 ? 'first base side' : 'third base side'
-                        }</strong> or in shaded sections. {selectedStadium.roof === 'retractable' && 'The retractable roof may also provide coverage.'}</p>
+                        <h4>{t('recommendations.avoidSun.title')}</h4>
+                        <p>{sunPosition && sunPosition.azimuthDegrees > 180 ? t('recommendations.avoidSun.firstBaseSide') : t('recommendations.avoidSun.thirdBaseSide')} {selectedStadium.roof === 'retractable' && t('recommendations.avoidSun.retractableRoof')}</p>
                       </div>
                     </div>
 
                     <div className="recommendation-item sun">
                       <span className="rec-icon">☀️</span>
                       <div className="rec-content">
-                        <h4>For Sun Lovers</h4>
-                        <p>Seats in <strong>{
-                          sunPosition && (sunPosition.azimuthDegrees < 90 || sunPosition.azimuthDegrees > 270) ? 'right field' : 'left field'
-                        }</strong> will likely have the most sun exposure.</p>
+                        <h4>{t('recommendations.sunLovers.title')}</h4>
+                        <p>{sunPosition && (sunPosition.azimuthDegrees < 90 || sunPosition.azimuthDegrees > 270) ? t('recommendations.sunLovers.rightField') : t('recommendations.sunLovers.leftField')}</p>
                       </div>
                     </div>
 
@@ -392,8 +388,8 @@ function AppContent() {
                       <div className="recommendation-item high-sun">
                         <span className="rec-icon">🌤️</span>
                         <div className="rec-content">
-                          <h4>High Sun</h4>
-                          <p>With the sun high in the sky, upper deck seats may provide more shade from overhangs.</p>
+                          <h4>{t('recommendations.highSun.title')}</h4>
+                          <p>{t('recommendations.highSun.description')}</p>
                         </div>
                       </div>
                     )}
@@ -402,7 +398,7 @@ function AppContent() {
                       <div className="recommendation-item weather">
                         <span className="rec-icon">🌦️</span>
                         <div className="rec-content">
-                          <h4>Weather Considerations</h4>
+                          <h4>{t('recommendations.weather.title')}</h4>
                           <p>{weatherApi.getWeatherImpactOnSun(weatherApi.getWeatherForTime(weatherForecast, gameDateTime || undefined)).recommendation}</p>
                         </div>
                       </div>
@@ -412,10 +408,10 @@ function AppContent() {
 
                 {selectedGame && (
                   <div className="game-info">
-                    <h4>📊 Game Details</h4>
-                    <p><strong>Matchup:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
-                    <p><strong>Venue:</strong> {selectedGame.venue.name}</p>
-                    <p><strong>Game Time:</strong> {gameDateTime.toLocaleString()}</p>
+                    <h4>📊 {t('game.gameDetails')}</h4>
+                    <p><strong>{t('game.matchup')}:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
+                    <p><strong>{t('game.venue')}:</strong> {selectedGame.venue.name}</p>
+                    <p><strong>{t('game.gameTime')}:</strong> {gameDateTime.toLocaleString()}</p>
                   </div>
                 )}
               </div>
@@ -425,8 +421,8 @@ function AppContent() {
       </main>
 
       <footer className="App-footer">
-        <p>Sun calculations are approximate and may vary based on stadium architecture and weather conditions.</p>
-        <p>Weather data provided by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a></p>
+        <p>{t('footer.disclaimer')}</p>
+        <p>{t('footer.weatherCredit')} <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">{t('footer.openMeteo')}</a></p>
       </footer>
     </div>
   );
