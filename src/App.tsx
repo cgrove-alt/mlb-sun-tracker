@@ -408,8 +408,27 @@ function AppContent() {
       </main>
 
       <footer className="App-footer">
-        <p>Sun calculations are approximate and may vary based on stadium architecture and weather conditions.</p>
-        <p>Weather data provided by <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a></p>
+        <div className="footer-content">
+          <div className="disclaimer">
+            <p>Sun calculations are approximate and may vary based on stadium architecture and weather conditions.</p>
+          </div>
+          
+          <div className="data-sources">
+            <h4>Data Sources</h4>
+            <ul>
+              <li><strong>Game Schedules:</strong> <a href="https://statsapi.mlb.com" target="_blank" rel="noopener noreferrer">MLB Stats API</a></li>
+              <li><strong>Weather Data:</strong> <a href="https://open-meteo.com" target="_blank" rel="noopener noreferrer">Open-Meteo.com</a></li>
+              <li><strong>Stadium Information:</strong> Compiled from publicly available MLB resources</li>
+              <li><strong>Astronomical Calculations:</strong> Based on standard solar position algorithms</li>
+              <li><strong>Timezone Data:</strong> <a href="https://www.iana.org/time-zones" target="_blank" rel="noopener noreferrer">IANA Time Zone Database</a></li>
+            </ul>
+          </div>
+          
+          <div className="attribution">
+            <p>Built with <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a> and <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a></p>
+            <p>All APIs used within their terms of service with appropriate rate limiting and caching.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
