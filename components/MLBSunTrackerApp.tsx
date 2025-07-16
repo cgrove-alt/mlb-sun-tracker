@@ -17,10 +17,12 @@ import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfile
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
 import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
+import { I18nProvider, useTranslation, LanguageSelector } from '../src/i18n/i18nContext';
 import ErrorBoundary from './ErrorBoundary';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
+  const { t } = useTranslation();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
@@ -197,8 +199,8 @@ function AppContent() {
       <header className="App-header">
         <div className="header-content">
           <div className="header-left">
-            <h1>MLB Stadium Sun Tracker</h1>
-            <p>Find out which seats will be in the sun during baseball games</p>
+            <h1>{t('app.title')}</h1>
+            <p>{t('app.subtitle')}</p>
             {selectedStadium && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedStadium.name}</span>
@@ -217,7 +219,10 @@ function AppContent() {
               </div>
             )}
           </div>
-          <UserProfileMenu />
+          <div className="header-right">
+            <LanguageSelector variant="buttons" showLabel={false} className="header-language-selector" />
+            <UserProfileMenu />
+          </div>
         </div>
       </header>
 
@@ -429,10 +434,12 @@ function AppContent() {
 
 export default function MLBSunTrackerApp() {
   return (
-    <ErrorProvider>
-      <UserProfileProvider>
-        <AppContent />
-      </UserProfileProvider>
-    </ErrorProvider>
+    <I18nProvider>
+      <ErrorProvider>
+        <UserProfileProvider>
+          <AppContent />
+        </UserProfileProvider>
+      </ErrorProvider>
+    </I18nProvider>
   );
 }

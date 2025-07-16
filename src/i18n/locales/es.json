@@ -1,0 +1,357 @@
+{
+  "app": {
+    "title": "Rastreador de Sol en Estadios MLB",
+    "subtitle": "Descubre qué asientos estarán al sol durante los juegos de béisbol",
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "create": "Crear",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "export": "Exportar",
+    "import": "Importar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "clear": "Limpiar",
+    "clearAll": "Limpiar Todo",
+    "apply": "Aplicar",
+    "reset": "Restablecer",
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "no": "No",
+    "any": "Cualquiera",
+    "none": "Ninguno",
+    "required": "Requerido",
+    "optional": "Opcional"
+  },
+  "navigation": {
+    "breadcrumb": "Navegación breadcrumb",
+    "currentPage": "Página actual",
+    "home": "Inicio",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior"
+  },
+  "stadium": {
+    "select": "Seleccionar Estadio",
+    "selectStadium": "Selecciona un estadio",
+    "selectedStadium": "Estadio seleccionado",
+    "noStadium": "No hay estadio seleccionado",
+    "stadiumName": "Nombre del Estadio",
+    "location": "Ubicación",
+    "capacity": "Capacidad",
+    "opened": "Inaugurado",
+    "surface": "Superficie",
+    "roof": "Techo",
+    "roofTypes": {
+      "open": "Abierto",
+      "fixed": "Fijo",
+      "retractable": "Retráctil"
+    },
+    "totalStadiums": "Estadios Totales",
+    "stadiumsViewed": "estadios vistos",
+    "favorites": "favoritos"
+  },
+  "game": {
+    "selectGame": "Seleccionar Juego",
+    "selectDate": "Seleccionar Fecha",
+    "noGames": "No se encontraron juegos",
+    "upcomingGames": "Próximos Juegos",
+    "customDateTime": "Fecha y Hora Personalizada",
+    "gameTime": "Hora del Juego",
+    "gameDate": "Fecha del Juego",
+    "matchup": "Enfrentamiento",
+    "venue": "Estadio",
+    "gameDetails": "Detalles del Juego",
+    "homeTeam": "Equipo Local",
+    "awayTeam": "Equipo Visitante",
+    "firstPitch": "Primer Lanzamiento",
+    "status": "Estado",
+    "scheduled": "Programado",
+    "inProgress": "En Progreso",
+    "final": "Final",
+    "postponed": "Pospuesto",
+    "cancelled": "Cancelado"
+  },
+  "sun": {
+    "position": "Posición del Sol",
+    "information": "Información del Sol",
+    "condition": "Condición",
+    "direction": "Dirección",
+    "elevation": "Elevación",
+    "azimuth": "Azimut",
+    "altitude": "Altitud",
+    "exposure": "Exposición al Sol",
+    "sunExposure": "Exposición al Sol",
+    "inSun": "Al Sol",
+    "inShade": "En Sombra",
+    "partialSun": "Sol Parcial",
+    "description": {
+      "daytime": "Día",
+      "nighttime": "Noche",
+      "sunrise": "Amanecer",
+      "sunset": "Atardecer",
+      "twilight": "Crepúsculo",
+      "dawn": "Alba",
+      "dusk": "Anochecer"
+    },
+    "compass": {
+      "north": "Norte",
+      "northeast": "Noreste",
+      "east": "Este",
+      "southeast": "Sureste",
+      "south": "Sur",
+      "southwest": "Suroeste",
+      "west": "Oeste",
+      "northwest": "Noroeste"
+    },
+    "preferences": {
+      "title": "Preferencia de Sol",
+      "description": "Filtra secciones basándose en cuánta luz solar directa reciben durante el juego",
+      "any": "Cualquiera (sin preferencia)",
+      "avoid": "Evitar sol (≤20% exposición)",
+      "prefer": "Preferir sol (≥60% exposición)",
+      "custom": "Rango personalizado",
+      "minExposure": "Exposición mínima",
+      "maxExposure": "Exposición máxima",
+      "percentage": "%"
+    }
+  },
+  "weather": {
+    "forecast": "Pronóstico del Tiempo",
+    "conditions": "Condiciones",
+    "temperature": "Temperatura",
+    "humidity": "Humedad",
+    "windSpeed": "Velocidad del Viento",
+    "windDirection": "Dirección del Viento",
+    "cloudCover": "Cobertura de Nubes",
+    "precipitation": "Precipitación",
+    "precipitationChance": "Probabilidad de Precipitación",
+    "uvIndex": "Índice UV",
+    "visibility": "Visibilidad",
+    "pressure": "Presión",
+    "feelsLike": "Sensación Térmica",
+    "loading": "Cargando datos meteorológicos...",
+    "error": "No se pudo cargar el pronóstico del tiempo. Los cálculos del sol continuarán sin datos meteorológicos.",
+    "impact": "Impacto del Clima",
+    "conditions": {
+      "clear": "Despejado",
+      "cloudy": "Nublado",
+      "partlyCloudy": "Parcialmente Nublado",
+      "overcast": "Nublado",
+      "rain": "Lluvia",
+      "snow": "Nieve",
+      "thunderstorm": "Tormenta",
+      "fog": "Niebla",
+      "mist": "Neblina",
+      "drizzle": "Llovizna"
+    }
+  },
+  "sections": {
+    "title": "Secciones del Estadio",
+    "list": "Lista de Secciones",
+    "search": "Buscar secciones",
+    "searchPlaceholder": "Buscar por nombre o número de sección...",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "sortBy": "Ordenar por",
+    "sortOptions": {
+      "name": "Nombre",
+      "sunExposure": "Exposición al Sol",
+      "level": "Nivel",
+      "price": "Precio"
+    },
+    "totalSections": "Secciones Totales",
+    "matchingFilters": "Coinciden con Filtros",
+    "noResults": "No hay secciones que coincidan con sus criterios",
+    "clearFilters": "Limpie los filtros para ver todas las secciones",
+    "section": "Sección",
+    "sectionInfo": "Información de la Sección",
+    "level": "Nivel",
+    "levels": {
+      "field": "Nivel del Campo",
+      "lower": "Nivel Inferior",
+      "club": "Nivel Club",
+      "upper": "Nivel Superior",
+      "suite": "Suites"
+    },
+    "coverage": "Cobertura",
+    "covered": "Cubierto",
+    "uncovered": "Descubierto",
+    "price": "Precio",
+    "priceRange": "Rango de Precios",
+    "priceRanges": {
+      "value": "Económico",
+      "moderate": "Moderado",
+      "premium": "Premium",
+      "luxury": "Lujo"
+    }
+  },
+  "filter": {
+    "title": "Filtro de Secciones",
+    "options": "Opciones de filtrado",
+    "seatingLevel": {
+      "title": "Nivel de Asientos",
+      "description": "Filtra por el nivel de asientos en el estadio (nivel del campo más cerca de la acción, nivel superior más alto)"
+    },
+    "coverage": {
+      "title": "Cobertura",
+      "description": "Filtra por si las secciones están cubiertas por un techo o voladizo, proporcionando protección del sol y el clima",
+      "any": "Cualquiera",
+      "covered": "Solo secciones cubiertas",
+      "uncovered": "Solo secciones descubiertas"
+    },
+    "priceRange": {
+      "title": "Rango de Precios",
+      "description": "Filtra por el rango de precios típico para boletos en diferentes secciones (económico = asequible, lujo = precios premium)"
+    }
+  },
+  "recommendations": {
+    "title": "Recomendaciones Inteligentes de Asientos",
+    "nightGame": {
+      "title": "Juego Nocturno",
+      "description": "Como este es un juego nocturno, la exposición al sol no será una preocupación para ningún asiento. Enfócate en otros factores como las líneas de visión y las comodidades."
+    },
+    "coveredStadium": {
+      "title": "Estadio Cubierto",
+      "description": "Este estadio tiene un techo fijo, por lo que todos los asientos están protegidos de la luz solar directa y el clima."
+    },
+    "avoidSun": {
+      "title": "Para Evitar el Sol",
+      "firstBaseSide": "Elige asientos en el lado de la primera base o en secciones sombreadas.",
+      "thirdBaseSide": "Elige asientos en el lado de la tercera base o en secciones sombreadas.",
+      "retractableRoof": "El techo retráctil también puede proporcionar cobertura."
+    },
+    "sunLovers": {
+      "title": "Para Amantes del Sol",
+      "rightField": "Los asientos en el campo derecho probablemente tendrán la mayor exposición al sol.",
+      "leftField": "Los asientos en el campo izquierdo probablemente tendrán la mayor exposición al sol."
+    },
+    "highSun": {
+      "title": "Sol Alto",
+      "description": "Con el sol alto en el cielo, los asientos del nivel superior pueden proporcionar más sombra de los voladizos."
+    },
+    "weather": {
+      "title": "Consideraciones Meteorológicas"
+    }
+  },
+  "profile": {
+    "menu": "Menú de Perfil",
+    "loggedInAs": "Conectado como",
+    "current": "Perfil Actual",
+    "switchProfile": "Cambiar Perfil",
+    "createNew": "Crear Nuevo Perfil",
+    "createProfile": "Crear Perfil",
+    "profileName": "Nombre del Perfil",
+    "email": "Correo Electrónico",
+    "emailOptional": "Correo Electrónico (Opcional)",
+    "profileNamePlaceholder": "Ingresa nombre del perfil",
+    "emailPlaceholder": "Ingresa dirección de correo electrónico",
+    "profileNameHelp": "Esto se mostrará como el nombre de tu perfil",
+    "emailHelp": "Usado para identificación del perfil y exportación de datos",
+    "profileNameRequired": "El nombre del perfil es requerido",
+    "createSuccess": "Perfil creado exitosamente",
+    "deleteProfile": "Eliminar Perfil",
+    "deleteConfirm": "¿Estás seguro de que quieres eliminar el perfil \"{name}\"?",
+    "exportProfile": "Exportar Perfil",
+    "importProfile": "Importar Perfil",
+    "importError": "Error al importar el perfil. Por favor verifica el formato del archivo.",
+    "stats": {
+      "stadiumsViewed": "estadios vistos",
+      "favorites": "favoritos",
+      "gamesAnalyzed": "juegos analizados",
+      "totalSessions": "sesiones totales"
+    }
+  },
+  "sharing": {
+    "share": "Compartir",
+    "shareButton": "Botón de Compartir",
+    "shareMenu": "Menú de Compartir",
+    "copyLink": "Copiar Enlace",
+    "linkCopied": "¡Enlace copiado al portapapeles!",
+    "shareVia": "Compartir vía",
+    "email": "Correo Electrónico",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "reddit": "Reddit"
+  },
+  "favorites": {
+    "add": "Agregar a Favoritos",
+    "remove": "Quitar de Favoritos",
+    "addedToFavorites": "Agregado a favoritos",
+    "removedFromFavorites": "Quitado de favoritos",
+    "yourFavorites": "Tus Favoritos",
+    "noFavorites": "Aún no hay favoritos"
+  },
+  "tooltips": {
+    "sunDirection": "La dirección de brújula donde se encuentra el sol (0° = Norte, 90° = Este, 180° = Sur, 270° = Oeste)",
+    "sunElevation": "El ángulo del sol sobre el horizonte (0° = horizonte, 90° = directamente arriba). Los valores negativos indican que el sol está bajo el horizonte.",
+    "sunExposure": "Porcentaje de tiempo que esta sección recibe luz solar directa durante el juego",
+    "sectionLevel": "El nivel de asientos en el estadio",
+    "coverage": "Si esta sección está cubierta por un techo o voladizo",
+    "priceRange": "Rango de precios típico para boletos en esta sección"
+  },
+  "emptyStates": {
+    "noStadium": {
+      "title": "Selecciona un Estadio",
+      "description": "Elige entre 30 estadios MLB para analizar patrones de exposición al sol"
+    },
+    "noGame": {
+      "title": "Selecciona un Juego o Fecha",
+      "description": "Elige un juego real o establece cualquier fecha y hora personalizada"
+    },
+    "noSections": {
+      "title": "No se Encontraron Secciones",
+      "description": "Intenta ajustar tus filtros o criterios de búsqueda"
+    },
+    "noResults": {
+      "title": "Sin Resultados",
+      "description": "Ninguna sección coincide con tus criterios actuales"
+    }
+  },
+  "errors": {
+    "generic": "Algo salió mal. Por favor intenta de nuevo.",
+    "network": "Error de red. Por favor verifica tu conexión.",
+    "notFound": "El recurso solicitado no fue encontrado.",
+    "timeout": "La solicitud tardó demasiado. Por favor intenta de nuevo.",
+    "validation": "Por favor verifica tu entrada e intenta de nuevo.",
+    "stadiumLoad": "Error al cargar datos del estadio.",
+    "gameLoad": "Error al cargar datos del juego.",
+    "weatherLoad": "Error al cargar datos meteorológicos.",
+    "sunCalculation": "Error al calcular la exposición al sol.",
+    "profileCreate": "Error al crear perfil.",
+    "profileDelete": "Error al eliminar perfil.",
+    "profileImport": "Error al importar perfil.",
+    "profileExport": "Error al exportar perfil.",
+    "webglNotSupported": "WebGL no es compatible con este navegador.",
+    "threejsLoad": "Error al cargar gráficos 3D.",
+    "containerNotFound": "Elemento contenedor no encontrado."
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "skipToNavigation": "Saltar a la navegación",
+    "menu": "Menú",
+    "menuExpanded": "Menú expandido",
+    "menuCollapsed": "Menú colapsado",
+    "searchResults": "Resultados de búsqueda",
+    "loading": "Cargando",
+    "error": "Error",
+    "required": "Campo requerido",
+    "optional": "Campo opcional",
+    "clickToExpand": "Haz clic para expandir",
+    "clickToCollapse": "Haz clic para colapsar",
+    "pressEnterToActivate": "Presiona Enter para activar",
+    "pressSpaceToActivate": "Presiona Espacio para activar",
+    "useArrowKeysToNavigate": "Usa las teclas de flecha para navegar",
+    "screenReaderOnly": "Contenido solo para lector de pantalla"
+  },
+  "footer": {
+    "disclaimer": "Los cálculos del sol son aproximados y pueden variar según la arquitectura del estadio y las condiciones climáticas.",
+    "weatherCredit": "Datos meteorológicos proporcionados por",
+    "openMeteo": "Open-Meteo.com",
+    "copyright": "© 2024 Rastreador de Sol en Estadios MLB"
+  }
+}
