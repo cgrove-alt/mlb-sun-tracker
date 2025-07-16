@@ -13,7 +13,6 @@ import { Tooltip } from '../src/components/Tooltip';
 import { ShareButton } from '../src/components/ShareButton';
 import { UserProfileMenu } from '../src/components/UserProfileMenu';
 import { FavoriteButton } from '../src/components/FavoriteButton';
-import { AffordableShadeSection } from '../src/components/AffordableShadeSection';
 import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfileContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
 import { MLBGame } from '../src/services/mlbApi';
@@ -347,12 +346,6 @@ function AppContent() {
                 loading={loadingSections}
               />
               
-              <AffordableShadeSection 
-                stadium={selectedStadium}
-                sections={detailedSections}
-                gameDateTime={gameDateTime}
-                selectedGame={selectedGame}
-              />
             </div>
 
             <div className="recommendations">
