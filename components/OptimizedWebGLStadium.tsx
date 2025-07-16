@@ -233,11 +233,10 @@ export default function OptimizedWebGLStadium({
       renderer.setClearColor(0xff00ff, 1); // Bright magenta background for debugging
       
       renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.domElement.style.position = 'absolute';
-      renderer.domElement.style.top = '0';
-      renderer.domElement.style.left = '0';
+      renderer.domElement.style.position = 'relative';
       renderer.domElement.style.width = '100%';
       renderer.domElement.style.height = '100%';
+      renderer.domElement.style.display = 'block';
       renderer.domElement.style.opacity = '1';
       renderer.domElement.style.visibility = 'visible';
       renderer.domElement.style.zIndex = '1';
@@ -413,15 +412,14 @@ export default function OptimizedWebGLStadium({
           
           // Test if ANY content can show in this container
           const testDiv = document.createElement('div');
-          testDiv.style.position = 'absolute';
-          testDiv.style.top = '10px';
-          testDiv.style.left = '10px';
+          testDiv.style.position = 'relative'; // Change from absolute
           testDiv.style.width = '200px';
           testDiv.style.height = '100px';
           testDiv.style.backgroundColor = 'yellow';
-          testDiv.style.zIndex = '999';
           testDiv.style.border = '3px solid black';
-          testDiv.innerHTML = '<h2 style="margin:0;">TEST DIV VISIBLE</h2>';
+          testDiv.style.margin = '10px';
+          testDiv.style.display = 'block';
+          testDiv.innerHTML = '<h2 style="margin:0; color: black;">TEST DIV VISIBLE</h2>';
           container.appendChild(testDiv);
           console.log('Test div added to container');
           setDebugLog(prev => [...prev, 'Test div added to container']);
