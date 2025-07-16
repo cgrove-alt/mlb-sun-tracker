@@ -379,8 +379,9 @@ export default function OptimizedWebGLStadium({
           webglTestCanvas.style.zIndex = '1000';
           webglTestCanvas.style.border = '2px solid blue';
           
-          const gl = webglTestCanvas.getContext('webgl') || webglTestCanvas.getContext('experimental-webgl');
-          if (gl) {
+          const gl = webglTestCanvas.getContext('webgl') as WebGLRenderingContext | null || 
+                     webglTestCanvas.getContext('experimental-webgl') as WebGLRenderingContext | null;
+          if (gl && gl instanceof WebGLRenderingContext) {
             // Simple WebGL clear test
             gl.clearColor(0.0, 0.0, 1.0, 1.0); // Blue
             gl.clear(gl.COLOR_BUFFER_BIT);
