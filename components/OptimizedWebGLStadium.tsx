@@ -241,7 +241,7 @@ export default function OptimizedWebGLStadium({
       renderer.domElement.style.visibility = 'visible';
       renderer.domElement.style.zIndex = '1';
       renderer.domElement.style.pointerEvents = 'auto';
-      renderer.domElement.style.backgroundColor = 'purple'; // CSS fallback color
+      // Remove CSS background to see WebGL content
       renderer.setPixelRatio(config.pixelRatio);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
@@ -313,18 +313,7 @@ export default function OptimizedWebGLStadium({
         setDebugLog(prev => [...prev, `Canvas parent: ${renderer.domElement.parentElement?.className || 'none'}`]);
         setDebugLog(prev => [...prev, `Canvas visible size: ${renderer.domElement.offsetWidth}x${renderer.domElement.offsetHeight}`]);
         
-        // Try raw WebGL on the Three.js canvas
-        const gl = renderer.getContext();
-        console.log('Got WebGL context from Three.js renderer:', !!gl);
-        
-        if (gl) {
-          // Use raw WebGL to clear with red
-          gl.clearColor(1.0, 0.0, 0.0, 1.0); // Red
-          gl.clear(gl.COLOR_BUFFER_BIT);
-          gl.flush();
-          console.log('Raw WebGL clear on Three.js canvas completed');
-          setDebugLog(prev => [...prev, 'Raw WebGL clear on Three.js canvas']);
-        }
+        // WebGL context is working - let Three.js handle rendering
         
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
