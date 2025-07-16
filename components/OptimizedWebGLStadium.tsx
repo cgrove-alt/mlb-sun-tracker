@@ -185,13 +185,13 @@ export default function OptimizedWebGLStadium({
       console.log('Creating scene...');
       setDebugLog(prev => [...prev, 'Creating scene...']);
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x87CEEB); // Sky blue
+      scene.background = new THREE.Color(0x000080); // Navy blue for better contrast
       
       // Add a test cube to verify rendering is working
-      const testGeometry = new THREE.BoxGeometry(5, 5, 5);
-      const testMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow cube
+      const testGeometry = new THREE.BoxGeometry(8, 8, 8);
+      const testMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 }); // Bright red cube
       const testCube = new THREE.Mesh(testGeometry, testMaterial);
-      testCube.position.set(0, 10, 0);
+      testCube.position.set(0, 12, 0);
       scene.add(testCube);
       console.log('Test cube added to scene');
       sceneRef.current = scene;
@@ -214,8 +214,8 @@ export default function OptimizedWebGLStadium({
         0.1,
         1000
       );
-      camera.position.set(0, 30, 50);
-      camera.lookAt(0, 0, 0);
+      camera.position.set(0, 15, 25); // Move camera closer
+      camera.lookAt(0, 5, 0); // Look at the field level
       cameraRef.current = camera;
       console.log('Camera created successfully');
       setDebugLog(prev => [...prev, 'Camera created successfully']);
