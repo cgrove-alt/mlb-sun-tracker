@@ -216,6 +216,11 @@ function AppContent() {
         activeTab={activeTab} 
         onTabChange={setActiveTab} 
       />
+      
+      {/* Debug info */}
+      <div style={{ background: 'yellow', padding: '10px', textAlign: 'center' }}>
+        DEBUG: Current tab is "{activeTab}". Navigation should be visible above.
+      </div>
 
       {activeTab === 'tracker' ? (
         <main className="App-main">
