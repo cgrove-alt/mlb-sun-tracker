@@ -12,6 +12,8 @@ import { Tooltip } from './components/Tooltip';
 import { ShareButton } from './components/ShareButton';
 import { UserProfileMenu } from './components/UserProfileMenu';
 import { FavoriteButton } from './components/FavoriteButton';
+import { Navigation } from './components/Navigation';
+import { SmartItinerariesPage } from './components/SmartItinerariesPage';
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
@@ -30,6 +32,7 @@ function AppContent() {
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
+  const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
@@ -186,7 +189,7 @@ function AppContent() {
         <div className="header-content">
           <div className="header-left">
             <h1>MLB Stadium Sun Tracker</h1>
-            <p>Find out which seats will be in the sun during baseball games</p>
+            <p>Find optimal seats and plan your perfect ballpark experience</p>
             {selectedStadium && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedStadium.name}</span>
@@ -209,21 +212,27 @@ function AppContent() {
         </div>
       </header>
 
-      <main className="App-main">
-        <Breadcrumb
-          selectedStadium={selectedStadium}
-          selectedGame={selectedGame}
-          gameDateTime={gameDateTime}
-          onStadiumChange={handleStadiumChange}
-          onGameSelect={handleGameSelect}
-        />
-        
-        <GameSelector
-          selectedStadium={selectedStadium}
-          onGameSelect={handleGameSelect}
-          onStadiumChange={handleStadiumChange}
-          stadiums={MLB_STADIUMS}
-        />
+      <Navigation 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab} 
+      />
+
+      {activeTab === 'tracker' ? (
+        <main className="App-main">
+          <Breadcrumb
+            selectedStadium={selectedStadium}
+            selectedGame={selectedGame}
+            gameDateTime={gameDateTime}
+            onStadiumChange={handleStadiumChange}
+            onGameSelect={handleGameSelect}
+          />
+          
+          <GameSelector
+            selectedStadium={selectedStadium}
+            onGameSelect={handleGameSelect}
+            onStadiumChange={handleStadiumChange}
+            stadiums={MLB_STADIUMS}
+          />
 
         {!selectedStadium && (
           <EmptyState 
@@ -405,7 +414,16 @@ function AppContent() {
             </div>
           </div>
         )}
-      </main>
+        </main>
+      ) : (
+        <SmartItinerariesPage
+          selectedStadium={selectedStadium}
+          selectedGame={selectedGame}
+          gameDateTime={gameDateTime}
+          weatherForecast={weatherForecast}
+          selectedSectionId={filteredSections.length > 0 ? filteredSections[0].section.id : undefined}
+        />
+      )}
 
       <footer className="App-footer">
         <div className="footer-content">

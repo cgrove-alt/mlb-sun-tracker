@@ -1,0 +1,303 @@
+.itinerary-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.summary-header h3 {
+  color: #333;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2196F3;
+  margin-bottom: 2px;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.summary-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.weather-summary,
+.recommendations-summary,
+.safety-highlights,
+.timing-overview {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2196F3;
+}
+
+.weather-summary h4,
+.recommendations-summary h4,
+.safety-highlights h4,
+.timing-overview h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.weather-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.weather-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 120px;
+}
+
+.weather-icon {
+  font-size: 1.5rem;
+  width: 30px;
+  text-align: center;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.weather-temp,
+.uv-index,
+.cloud-cover,
+.precipitation {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.weather-desc {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.recommendation-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.recommendation-type {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.type-icon {
+  font-size: 1.2rem;
+}
+
+.type-count {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2196F3;
+}
+
+.type-label {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.safety-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.safety-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  border-left: 3px solid #4CAF50;
+}
+
+.safety-item.high-uv {
+  border-left-color: #ff9800;
+}
+
+.safety-item.rain-chance {
+  border-left-color: #2196F3;
+}
+
+.safety-item.high-temp {
+  border-left-color: #f44336;
+}
+
+.safety-item.family-safety {
+  border-left-color: #9c27b0;
+}
+
+.safety-icon {
+  font-size: 1.2rem;
+  width: 25px;
+  text-align: center;
+}
+
+.safety-text {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.timing-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timing-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.timing-item:last-child {
+  border-bottom: none;
+}
+
+.timing-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.timing-value {
+  color: #333;
+  font-weight: 600;
+}
+
+.mlb-play-sun-smart {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.play-sun-smart-banner {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #2196F3;
+}
+
+.banner-icon {
+  font-size: 2rem;
+  color: #1976d2;
+}
+
+.banner-content h5 {
+  margin: 0 0 5px 0;
+  color: #1976d2;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.banner-content p {
+  margin: 0;
+  color: #1565c0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .itinerary-summary {
+    padding: 20px;
+  }
+  
+  .summary-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .summary-stats {
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .summary-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .weather-details {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .weather-item {
+    min-width: auto;
+  }
+  
+  .recommendation-types {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .recommendation-type {
+    justify-content: center;
+  }
+  
+  .play-sun-smart-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .banner-icon {
+    font-size: 1.5rem;
+  }
+}
