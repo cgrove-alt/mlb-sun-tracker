@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
+import { useTranslation } from '../i18n/i18nContext';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -13,6 +14,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false
 }) => {
+  const { t } = useTranslation();
   console.log('SectionList rendering with sections:', sections.length);
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
