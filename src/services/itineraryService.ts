@@ -734,11 +734,30 @@ export class ItineraryService {
     const getSectionName = (section: typeof sectionData[0]) => {
       const sectionId = section.section.id;
       const name = section.section.name;
-      // Format section names for better display
-      if (name.toLowerCase().includes('field level') || name.toLowerCase().includes('lower level')) {
-        return `${name} (${sectionId})`;
+      const level = section.section.level;
+      
+      // If it's a special named section (like "Green Monster", "Bleachers", etc.)
+      if (!name.startsWith('Section ')) {
+        return name;
       }
-      return `Section ${sectionId} - ${name}`;
+      
+      // For generic numbered sections, add level description
+      const levelDescription = {
+        'field': 'Field Level',
+        'lower': 'Lower Level', 
+        'club': 'Club Level',
+        'upper': 'Upper Level',
+        'suite': 'Suite Level'
+      }[level] || '';
+      
+      // Extract section number from generic sections
+      const sectionNumber = sectionId.replace(/^[a-zA-Z]*/, '');
+      
+      if (levelDescription) {
+        return `${levelDescription} (${sectionNumber})`;
+      }
+      
+      return name;
     };
 
     // Determine recommendations based on preferences
