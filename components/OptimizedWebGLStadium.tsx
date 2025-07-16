@@ -334,9 +334,15 @@ export default function OptimizedWebGLStadium({
         setDebugLog(prev => [...prev, `Canvas parent: ${renderer.domElement.parentElement?.className || 'none'}`]);
         setDebugLog(prev => [...prev, `Canvas visible size: ${renderer.domElement.offsetWidth}x${renderer.domElement.offsetHeight}`]);
         
+        // Force direct rendering to canvas with bright color
+        renderer.setClearColor(0xff0000, 1); // Bright red
+        renderer.clear();
         renderer.render(scene, camera);
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
+        
+        // Force immediate flush to canvas
+        renderer.getContext().flush();
         
         // Force check canvas visibility
         const canvasCheck = container.querySelector('canvas');
@@ -578,7 +584,15 @@ export default function OptimizedWebGLStadium({
     const camera = cameraRef.current;
     const controls = controlsRef.current;
 
+    let frameCount = 0;
     const animate = (currentTime: number) => {
+      frameCount++;
+      
+      // Log every 60 frames to verify animation is running
+      if (frameCount % 60 === 0) {
+        console.log(`Animation frame ${frameCount} - rendering scene`);
+      }
+      
       // Always update controls
       if (controls) controls.update();
       
