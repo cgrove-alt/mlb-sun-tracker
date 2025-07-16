@@ -351,11 +351,12 @@ export default function OptimizedWebGLStadium({
           const testCanvas = document.createElement('canvas');
           testCanvas.width = 200;
           testCanvas.height = 200;
-          testCanvas.style.position = 'absolute';
-          testCanvas.style.top = '10px';
-          testCanvas.style.left = '10px';
-          testCanvas.style.zIndex = '1000';
-          testCanvas.style.border = '2px solid yellow';
+          testCanvas.style.position = 'fixed';
+          testCanvas.style.top = '50px';
+          testCanvas.style.left = '50px';
+          testCanvas.style.zIndex = '9999';
+          testCanvas.style.border = '3px solid yellow';
+          testCanvas.style.backgroundColor = 'white';
           
           const ctx = testCanvas.getContext('2d');
           if (ctx) {
@@ -364,7 +365,7 @@ export default function OptimizedWebGLStadium({
             ctx.fillStyle = 'white';
             ctx.font = '20px Arial';
             ctx.fillText('Canvas Test', 10, 30);
-            container.appendChild(testCanvas);
+            document.body.appendChild(testCanvas);
             console.log('Test 2D canvas added');
             setDebugLog(prev => [...prev, 'Test 2D canvas added']);
           }
@@ -373,11 +374,12 @@ export default function OptimizedWebGLStadium({
           const webglTestCanvas = document.createElement('canvas');
           webglTestCanvas.width = 200;
           webglTestCanvas.height = 200;
-          webglTestCanvas.style.position = 'absolute';
-          webglTestCanvas.style.top = '10px';
-          webglTestCanvas.style.right = '10px';
-          webglTestCanvas.style.zIndex = '1000';
-          webglTestCanvas.style.border = '2px solid blue';
+          webglTestCanvas.style.position = 'fixed';
+          webglTestCanvas.style.top = '50px';
+          webglTestCanvas.style.right = '50px';
+          webglTestCanvas.style.zIndex = '9999';
+          webglTestCanvas.style.border = '3px solid blue';
+          webglTestCanvas.style.backgroundColor = 'white';
           
           const gl = webglTestCanvas.getContext('webgl') as WebGLRenderingContext | null || 
                      webglTestCanvas.getContext('experimental-webgl') as WebGLRenderingContext | null;
@@ -385,7 +387,7 @@ export default function OptimizedWebGLStadium({
             // Simple WebGL clear test
             gl.clearColor(0.0, 0.0, 1.0, 1.0); // Blue
             gl.clear(gl.COLOR_BUFFER_BIT);
-            container.appendChild(webglTestCanvas);
+            document.body.appendChild(webglTestCanvas);
             console.log('Raw WebGL test canvas added with blue clear');
             setDebugLog(prev => [...prev, 'Raw WebGL test canvas added']);
           } else {
