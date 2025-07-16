@@ -51,7 +51,7 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
     skipActivities: false,
     prioritizeSpeed: false
   });
-  const [showPreferences, setShowPreferences] = useState(false);
+  const [showPreferences, setShowPreferences] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   /**
