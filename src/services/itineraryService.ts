@@ -117,12 +117,13 @@ export class ItineraryService {
     const amenities = getStadiumAmenities(stadium.id);
     
     if (!amenities) {
-      return recommendations;
+      // If no amenities data, create basic recommendations
+      return this.createBasicRecommendations(timeSlots, stadium, preferences);
     }
 
     // Pre-game recommendations
     const preGameSlots = timeSlots.filter(slot => 
-      slot.startTime < slot.startTime // This should be gameStartTime, but using slot logic
+      slot.inningRange === null
     );
     
     // Add arrival recommendation
@@ -482,6 +483,146 @@ export class ItineraryService {
     }
     
     return recommendations;
+  }
+
+  /**
+   * Create basic recommendations when no amenities data is available
+   */
+  private createBasicRecommendations(
+    timeSlots: ItineraryTimeSlot[],
+    stadium: Stadium,
+    preferences: ItineraryPreferences
+  ): ItineraryRecommendation[] {
+    const recommendations: ItineraryRecommendation[] = [];
+    
+    // Add arrival recommendation
+    recommendations.push(this.createArrivalRecommendation(timeSlots[0], stadium, preferences));
+    
+    // Add basic sunscreen reminders for high UV periods
+    const highUVSlots = timeSlots.filter(slot => slot.sunConditions.uvIndex > 5);
+    if (highUVSlots.length > 0) {
+      recommendations.push({
+        id: `sunscreen_basic_${highUVSlots[0].startTime.getTime()}`,
+        time: highUVSlots[0].startTime,
+        duration: 5,
+        type: 'sunscreen',
+        priority: 'high',
+        location: {
+          description: 'Stadium sunscreen station or concourse',
+          walkingTime: 3
+        },
+        details: {
+          title: 'Apply Sunscreen',
+          description: 'Look for Play Sun Smart stations around the concourse',
+          reason: `UV index is ${highUVSlots[0].sunConditions.uvIndex} - sun protection recommended`,
+          uvIndexAtTime: highUVSlots[0].sunConditions.uvIndex,
+          sunExposureLevel: this.getSunExposureLevel(highUVSlots[0].sunConditions.uvIndex)
+        },
+        familyConsiderations: {
+          kidFriendly: true,
+          hasRestroom: false,
+          shaded: true,
+          quietArea: true,
+          strollerAccessible: true
+        }
+      });
+    }
+    
+    // Add shade break recommendations for very high UV periods
+    const extremeUVSlots = timeSlots.filter(slot => slot.sunConditions.uvIndex > 7);
+    extremeUVSlots.forEach(slot => {
+      recommendations.push({
+        id: `shade_break_basic_${slot.startTime.getTime()}`,
+        time: slot.startTime,
+        duration: 10,
+        type: 'shade_break',
+        priority: preferences.sunSensitivity === 'high' || preferences.sunSensitivity === 'extreme' ? 'high' : 'medium',
+        location: {
+          description: 'Concourse or covered area',
+          walkingTime: 2
+        },
+        details: {
+          title: 'Shade Break',
+          description: 'Take a break from direct sun exposure in the concourse',
+          reason: `UV index is ${slot.sunConditions.uvIndex} - shade strongly recommended`,
+          uvIndexAtTime: slot.sunConditions.uvIndex,
+          sunExposureLevel: this.getSunExposureLevel(slot.sunConditions.uvIndex)
+        },
+        familyConsiderations: {
+          kidFriendly: true,
+          hasRestroom: true,
+          shaded: true,
+          quietArea: true,
+          strollerAccessible: true
+        }
+      });
+    });
+    
+    // Add seventh inning stretch recommendation
+    const seventhInningSlot = timeSlots.find(slot => 
+      slot.inningRange && slot.inningRange.start <= 7 && slot.inningRange.end >= 7
+    );
+    
+    if (seventhInningSlot) {
+      recommendations.push({
+        id: `seventh_inning_basic_${seventhInningSlot.startTime.getTime()}`,
+        time: seventhInningSlot.startTime,
+        duration: 10,
+        type: 'activity',
+        priority: 'medium',
+        location: {
+          description: 'Stretch and walk around',
+          walkingTime: 0
+        },
+        details: {
+          title: 'Seventh Inning Stretch',
+          description: 'Traditional time to stand, stretch, and take a break',
+          reason: 'Classic baseball tradition and good time for refreshments',
+          uvIndexAtTime: seventhInningSlot.sunConditions.uvIndex
+        },
+        familyConsiderations: preferences.hasChildren ? {
+          kidFriendly: true,
+          hasRestroom: true,
+          shaded: false,
+          quietArea: false,
+          strollerAccessible: true
+        } : undefined
+      });
+    }
+    
+    // Add general concession recommendation
+    const preGameSlot = timeSlots.find(slot => 
+      slot.crowdLevel === 'low' && slot.inningRange === null
+    );
+    
+    if (preGameSlot) {
+      recommendations.push({
+        id: `concession_basic_${preGameSlot.startTime.getTime()}`,
+        time: preGameSlot.startTime,
+        duration: 15,
+        type: 'concession',
+        priority: 'medium',
+        location: {
+          description: 'Stadium concession stands',
+          walkingTime: 5
+        },
+        details: {
+          title: 'Get Game Snacks',
+          description: 'Visit concession stands before crowds arrive',
+          reason: 'Low crowd level - optimal time for concessions',
+          uvIndexAtTime: preGameSlot.sunConditions.uvIndex
+        },
+        familyConsiderations: preferences.hasChildren ? {
+          kidFriendly: true,
+          hasRestroom: true,
+          shaded: true,
+          quietArea: false,
+          strollerAccessible: true
+        } : undefined
+      });
+    }
+    
+    return recommendations.sort((a, b) => a.time.getTime() - b.time.getTime());
   }
 
   // Helper methods
