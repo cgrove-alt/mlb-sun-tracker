@@ -17,10 +17,7 @@ import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfile
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
 import { MLBGame } from '../src/services/mlbApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
-import OptimizedWebGLStadium from './OptimizedWebGLStadium';
-import SimpleWebGLStadium from './SimpleWebGLStadium';
 import ErrorBoundary from './ErrorBoundary';
-import TestComponent from './TestComponent';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -41,12 +38,6 @@ function AppContent() {
     console.log('PARENT: AppContent component mounted and running');
   }, []);
 
-  // Debug logging for 3D rendering
-  useEffect(() => {
-    if (selectedStadium && sunPosition) {
-      console.log('PARENT: About to render 3D components', { stadium: selectedStadium.name, sunPosition });
-    }
-  }, [selectedStadium, sunPosition]);
 
   // Load preferences and URL parameters on component mount
   useEffect(() => {
@@ -270,42 +261,6 @@ function AppContent() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
-            {/* Optimized WebGL 3D Stadium Visualization */}
-            {sunPosition && (
-              <>
-                {console.log('PARENT: About to render child components', {stadium: selectedStadium?.name, sunPosition: sunPosition.azimuthDegrees})}
-                <ErrorBoundary>
-                <div style={{ padding: '20px', background: '#f0f0f0', margin: '20px 0' }}>
-                  <p>DEBUG: About to render OptimizedWebGLStadium</p>
-                  <p>Stadium: {selectedStadium?.name}</p>
-                  <p>Sun Position: {sunPosition.azimuthDegrees}°/{sunPosition.altitudeDegrees}°</p>
-                  <p>DEBUG: React is executing - {new Date().toLocaleTimeString()}</p>
-                </div>
-                <div style={{ padding: '20px', background: '#ffeb3b', margin: '20px 0' }}>
-                  <p>INLINE: Simple inline component test</p>
-                </div>
-                <TestComponent />
-                <SimpleWebGLStadium
-                  stadium={selectedStadium}
-                  sunPosition={sunPosition}
-                  gameDateTime={gameDateTime}
-                  selectedSections={[]}
-                  onSectionClick={(sectionId) => {
-                    console.log('Clicked section:', sectionId);
-                  }}
-                />
-                <OptimizedWebGLStadium
-                  stadium={selectedStadium}
-                  sunPosition={sunPosition}
-                  gameDateTime={gameDateTime}
-                  selectedSections={[]}
-                  onSectionClick={(sectionId) => {
-                    console.log('Clicked section:', sectionId);
-                  }}
-                />
-              </ErrorBoundary>
-              </>
-            )}
 
             <div className="weather-info-section">
               {weatherForecast && (
