@@ -424,6 +424,8 @@ function AppContent() {
           gameDateTime={gameDateTime}
           weatherForecast={weatherForecast}
           selectedSectionId={filteredSections.length > 0 ? filteredSections[0].section.id : undefined}
+          onStadiumChange={handleStadiumChange}
+          onGameSelect={handleGameSelect}
         />
       )}
 

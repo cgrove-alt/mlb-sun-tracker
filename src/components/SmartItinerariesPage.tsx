@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Stadium } from '../data/stadiums';
+import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { WeatherForecast } from '../services/weatherApi';
 import { SmartItinerary, ItineraryPreferences } from '../data/itineraryTypes';
@@ -7,6 +7,7 @@ import { itineraryService } from '../services/itineraryService';
 import { ItineraryTimeline } from './itineraries/ItineraryTimeline';
 import { PreferencesPanel } from './itineraries/PreferencesPanel';
 import { ItinerarySummary } from './itineraries/ItinerarySummary';
+import { GameSelector } from './GameSelector';
 import { useTranslation } from '../i18n/i18nContext';
 import { ErrorProvider } from './ErrorNotification';
 import './SmartItinerariesPage.css';
@@ -17,6 +18,8 @@ interface SmartItinerariesPageProps {
   gameDateTime: Date | null;
   weatherForecast: WeatherForecast | null;
   selectedSectionId?: string;
+  onStadiumChange: (stadium: Stadium | null) => void;
+  onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
 }
 
 export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
@@ -24,7 +27,9 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
   selectedGame,
   gameDateTime,
   weatherForecast,
-  selectedSectionId
+  selectedSectionId,
+  onStadiumChange,
+  onGameSelect
 }) => {
   const { t } = useTranslation();
   const [itinerary, setItinerary] = useState<SmartItinerary | null>(null);
@@ -98,6 +103,17 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
         <div className="empty-state">
           <h2>🗓️ Smart Itineraries</h2>
           <p>Select a stadium and game time to generate your personalized ballpark itinerary</p>
+          
+          <GameSelector
+            stadiums={MLB_STADIUMS}
+            selectedStadium={selectedStadium}
+            selectedGame={selectedGame}
+            gameDateTime={gameDateTime}
+            onStadiumChange={onStadiumChange}
+            onGameSelect={onGameSelect}
+            showWeatherInfo={false}
+          />
+          
           <div className="empty-state-features">
             <h3>What you'll get:</h3>
             <ul>
