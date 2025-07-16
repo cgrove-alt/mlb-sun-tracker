@@ -1,6 +1,7 @@
 import React from 'react';
 import { DetailedStadium, SeatSection } from '../data/detailedStadiums';
 import { SunPosition } from '../utils/sunCalculations';
+import { useTranslation } from '../i18n/i18nContext';
 import './DetailedStadiumView.css';
 
 interface DetailedStadiumViewProps {
@@ -14,6 +15,7 @@ export const DetailedStadiumView: React.FC<DetailedStadiumViewProps> = ({
   sunPosition, 
   sunnySections 
 }) => {
+  const { t } = useTranslation();
   const getSectionSunStatus = (section: SeatSection): 'sunny' | 'shaded' | 'partial' => {
     if (!sunPosition || sunPosition.altitudeDegrees < 0) return 'shaded';
     if (stadium.roof === 'fixed') return 'shaded';
@@ -617,11 +619,11 @@ export const DetailedStadiumView: React.FC<DetailedStadiumViewProps> = ({
   return (
     <div className="detailed-stadium-container">
       <div className="stadium-header">
-        <h3>{stadium.name}</h3>
+        <h3>{t(`mlb.stadiums.${stadium.id}`)}</h3>
         <div className="stadium-details">
-          <span>Team: {stadium.team}</span>
-          <span>Capacity: {stadium.capacity.toLocaleString()}</span>
-          <span>Roof: {stadium.roof}</span>
+          <span>{t('game.homeTeam')}: {t(`mlb.teams.${stadium.id}`)}</span>
+          <span>{t('stadium.capacity')}: {stadium.capacity.toLocaleString()}</span>
+          <span>{t('stadium.roof')}: {t(`stadium.roofTypes.${stadium.roof}`)}</span>
         </div>
         {stadium.roof === 'fixed' && (
           <p className="roof-warning">This stadium has a fixed roof - no direct sunlight on seats</p>

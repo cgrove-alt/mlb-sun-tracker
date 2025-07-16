@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stadium } from '../data/stadiums';
+import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { useTranslation } from '../i18n/i18nContext';
 import './Breadcrumb.css';
@@ -73,11 +73,11 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
                   aria-label={t('breadcrumb.backToGame')}
                   title={t('breadcrumb.selectDifferentGame')}
                 >
-                  {selectedStadium.name}
+                  {t(`mlb.stadiums.${selectedStadium.id}`)}
                 </button>
               ) : (
                 <span className="breadcrumb-current" aria-current="page">
-                  {selectedStadium.name}
+                  {t(`mlb.stadiums.${selectedStadium.id}`)}
                 </span>
               )}
             </li>
@@ -91,7 +91,17 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
               <span className="breadcrumb-current" aria-current="page">
                 {selectedGame ? (
                   <>
-                    {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}
+                    {(() => {
+                      // Get team IDs from stadium data for translation
+                      const homeTeamId = MLB_STADIUMS.find(s => s.team === selectedGame.teams.home.team.name)?.id || '';
+                      const awayTeamId = MLB_STADIUMS.find(s => s.team === selectedGame.teams.away.team.name)?.id || '';
+                      
+                      // Translate team names if possible, fallback to original names
+                      const homeTeamName = homeTeamId ? t(`mlb.teams.${homeTeamId}`) : selectedGame.teams.home.team.name;
+                      const awayTeamName = awayTeamId ? t(`mlb.teams.${awayTeamId}`) : selectedGame.teams.away.team.name;
+                      
+                      return `${awayTeamName} @ ${homeTeamName}`;
+                    })()}
                     <span className="breadcrumb-subtitle">
                       {formatDateTime(gameDateTime)}
                     </span>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
 import { SunPosition } from '../utils/sunCalculations';
+import { useTranslation } from '../i18n/i18nContext';
 import './StadiumView.css';
 
 interface StadiumViewProps {
@@ -10,6 +11,7 @@ interface StadiumViewProps {
 }
 
 export const StadiumView: React.FC<StadiumViewProps> = ({ stadium, sunPosition, sunnySections }) => {
+  const { t } = useTranslation();
   const getSectionClass = (sectionName: string): string => {
     const inSun = sunnySections.get(sectionName);
     if (sunPosition.altitudeDegrees < 0) return 'section night';
@@ -23,10 +25,10 @@ export const StadiumView: React.FC<StadiumViewProps> = ({ stadium, sunPosition, 
 
   return (
     <div className="stadium-container">
-      <h3>{stadium.name}</h3>
+      <h3>{t(`mlb.stadiums.${stadium.id}`)}</h3>
       <div className="stadium-info">
-        <p>Team: {stadium.team}</p>
-        <p>Roof: {stadium.roof}</p>
+        <p>{t('game.homeTeam')}: {t(`mlb.teams.${stadium.id}`)}</p>
+        <p>{t('stadium.roof')}: {t(`stadium.roofTypes.${stadium.roof}`)}</p>
         {stadium.roof === 'fixed' && (
           <p className="roof-warning">This stadium has a fixed roof - no direct sunlight on seats</p>
         )}

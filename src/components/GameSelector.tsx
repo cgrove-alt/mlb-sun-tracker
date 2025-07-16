@@ -49,7 +49,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   
   const stadiumOptions = sortedStadiums.map(stadium => ({
     value: stadium.id,
-    label: `${stadium.name} - ${stadium.team}`,
+    label: `${t(`mlb.stadiums.${stadium.id}`)} - ${t(`mlb.teams.${stadium.id}`)}`,
     stadium: stadium,
     isFavorite: currentProfile?.favorites.stadiums.includes(stadium.id) || false
   }));
@@ -128,9 +128,17 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     const dateStr = format(gameDate, 'MMM dd, yyyy');
     const timeStr = format(gameDate, 'h:mm a');
     
+    // Get team IDs from stadium data for translation
+    const homeTeamId = stadiums.find(s => s.team === game.teams.home.team.name)?.id || '';
+    const awayTeamId = stadiums.find(s => s.team === game.teams.away.team.name)?.id || '';
+    
+    // Translate team names if possible, fallback to original names
+    const homeTeamName = homeTeamId ? t(`mlb.teams.${homeTeamId}`) : game.teams.home.team.name;
+    const awayTeamName = awayTeamId ? t(`mlb.teams.${awayTeamId}`) : game.teams.away.team.name;
+    
     return {
       value: game.gamePk,
-      label: `${dateStr} at ${timeStr} - ${game.teams.away.team.name} @ ${game.teams.home.team.name}`,
+      label: `${dateStr} ${t('game.at', { fallback: 'at' })} ${timeStr} - ${awayTeamName} @ ${homeTeamName}`,
       game: game
     };
   };
@@ -193,7 +201,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               </div>
               <FavoriteButton
                 stadiumId={option.stadium.id}
-                stadiumName={option.stadium.name}
+                stadiumName={t(`mlb.stadiums.${option.stadium.id}`)}
                 size="small"
               />
             </div>
