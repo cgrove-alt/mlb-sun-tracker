@@ -185,7 +185,7 @@ export default function OptimizedWebGLStadium({
       console.log('Creating scene...');
       setDebugLog(prev => [...prev, 'Creating scene...']);
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xff0000); // Bright red to match clear color
+      scene.background = new THREE.Color(0x87CEEB); // Sky blue
       
       // Add a test cube to verify rendering is working
       const testGeometry = new THREE.BoxGeometry(5, 5, 5);
@@ -230,7 +230,7 @@ export default function OptimizedWebGLStadium({
         depth: true,
         alpha: false, // Ensure opaque background
       });
-      renderer.setClearColor(0xff00ff, 1); // Bright magenta background for debugging
+      renderer.setClearColor(0x87CEEB, 1); // Sky blue background
       
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.domElement.style.position = 'relative';
@@ -284,13 +284,14 @@ export default function OptimizedWebGLStadium({
     
     controlsRef.current = controls;
 
-    // Skip complex geometry for now - just test basic rendering
-    console.log('Skipping complex geometry to test basic rendering');
-    setDebugLog(prev => [...prev, 'Skipping complex geometry to test basic rendering']);
+    // Create stadium geometry
+    createStadiumGeometry(THREE);
 
-    // Skip animation loop for now - just test static render
-    console.log('Skipping animation loop to test static render');
-    setDebugLog(prev => [...prev, 'Skipping animation loop']);
+    // Setup lighting
+    setupLighting(THREE);
+
+    // Start animation loop
+    startAnimationLoop();
 
     // Test render to verify everything is working
     try {
@@ -328,105 +329,8 @@ export default function OptimizedWebGLStadium({
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
         
-        // Force check canvas visibility
-        const canvasCheck = container.querySelector('canvas');
-        if (canvasCheck) {
-          console.log('Canvas found in DOM:', canvasCheck);
-          console.log('Canvas computed style:', window.getComputedStyle(canvasCheck).display);
-          console.log('Canvas opacity:', window.getComputedStyle(canvasCheck).opacity);
-          console.log('Canvas visibility:', window.getComputedStyle(canvasCheck).visibility);
-          setDebugLog(prev => [...prev, `Canvas display: ${window.getComputedStyle(canvasCheck).display}`]);
-          setDebugLog(prev => [...prev, `Canvas opacity: ${window.getComputedStyle(canvasCheck).opacity}`]);
-          
-          // Create a test 2D canvas to verify canvas rendering works
-          const testCanvas = document.createElement('canvas');
-          testCanvas.width = 200;
-          testCanvas.height = 200;
-          testCanvas.style.position = 'fixed';
-          testCanvas.style.top = '50px';
-          testCanvas.style.left = '50px';
-          testCanvas.style.zIndex = '9999';
-          testCanvas.style.border = '3px solid yellow';
-          testCanvas.style.backgroundColor = 'white';
-          
-          const ctx = testCanvas.getContext('2d');
-          if (ctx) {
-            ctx.fillStyle = 'red';
-            ctx.fillRect(0, 0, 200, 200);
-            ctx.fillStyle = 'white';
-            ctx.font = '20px Arial';
-            ctx.fillText('Canvas Test', 10, 30);
-            document.body.appendChild(testCanvas);
-            console.log('Test 2D canvas added');
-            setDebugLog(prev => [...prev, 'Test 2D canvas added']);
-          }
-          
-          // Create a raw WebGL test canvas
-          const webglTestCanvas = document.createElement('canvas');
-          webglTestCanvas.width = 200;
-          webglTestCanvas.height = 200;
-          webglTestCanvas.style.position = 'fixed';
-          webglTestCanvas.style.top = '50px';
-          webglTestCanvas.style.right = '50px';
-          webglTestCanvas.style.zIndex = '9999';
-          webglTestCanvas.style.border = '3px solid blue';
-          webglTestCanvas.style.backgroundColor = 'white';
-          
-          const gl = webglTestCanvas.getContext('webgl') as WebGLRenderingContext | null || 
-                     webglTestCanvas.getContext('experimental-webgl') as WebGLRenderingContext | null;
-          if (gl && gl instanceof WebGLRenderingContext) {
-            // Simple WebGL clear test
-            gl.clearColor(0.0, 0.0, 1.0, 1.0); // Blue
-            gl.clear(gl.COLOR_BUFFER_BIT);
-            document.body.appendChild(webglTestCanvas);
-            console.log('Raw WebGL test canvas added with blue clear');
-            setDebugLog(prev => [...prev, 'Raw WebGL test canvas added']);
-          } else {
-            console.error('Could not get WebGL context for test canvas');
-            setDebugLog(prev => [...prev, 'ERROR: No WebGL context for test']);
-          }
-          
-          // Create a canvas with IDENTICAL styling to Three.js canvas
-          const identicalCanvas = document.createElement('canvas');
-          identicalCanvas.width = 819;
-          identicalCanvas.height = 400;
-          identicalCanvas.style.position = 'absolute';
-          identicalCanvas.style.top = '0';
-          identicalCanvas.style.left = '0';
-          identicalCanvas.style.width = '100%';
-          identicalCanvas.style.height = '100%';
-          identicalCanvas.style.opacity = '1';
-          identicalCanvas.style.visibility = 'visible';
-          identicalCanvas.style.zIndex = '2'; // Higher than Three.js canvas
-          identicalCanvas.style.pointerEvents = 'auto';
-          identicalCanvas.style.backgroundColor = 'orange';
-          
-          const identicalGl = identicalCanvas.getContext('webgl') as WebGLRenderingContext | null;
-          if (identicalGl) {
-            identicalGl.clearColor(0.0, 1.0, 0.0, 1.0); // Green
-            identicalGl.clear(identicalGl.COLOR_BUFFER_BIT);
-            container.appendChild(identicalCanvas);
-            console.log('Identical canvas with green clear added to container');
-            setDebugLog(prev => [...prev, 'Identical canvas added to container']);
-          }
-          
-          // Test if ANY content can show in this container
-          const testDiv = document.createElement('div');
-          testDiv.style.position = 'relative'; // Change from absolute
-          testDiv.style.width = '200px';
-          testDiv.style.height = '100px';
-          testDiv.style.backgroundColor = 'yellow';
-          testDiv.style.border = '3px solid black';
-          testDiv.style.margin = '10px';
-          testDiv.style.display = 'block';
-          testDiv.innerHTML = '<h2 style="margin:0; color: black;">TEST DIV VISIBLE</h2>';
-          container.appendChild(testDiv);
-          console.log('Test div added to container');
-          setDebugLog(prev => [...prev, 'Test div added to container']);
-        } else {
-          console.error('NO CANVAS FOUND IN DOM!');
-          setDebugLog(prev => [...prev, 'ERROR: NO CANVAS IN DOM']);
-        }
+        console.log('Test render completed successfully');
+        setDebugLog(prev => [...prev, 'Test render completed successfully']);
       } else {
         console.error('Missing scene, camera, or renderer for test render');
         setDebugLog(prev => [...prev, 'ERROR: Missing scene, camera, or renderer']);
@@ -606,22 +510,21 @@ export default function OptimizedWebGLStadium({
     const camera = cameraRef.current;
     const controls = controlsRef.current;
 
-    let frameCount = 0;
     const animate = (currentTime: number) => {
-      frameCount++;
-      
-      // Log every 60 frames to verify animation is running
-      if (frameCount % 60 === 0) {
-        console.log(`Animation frame ${frameCount} - just clearing red`);
+      // Throttle animation based on controls activity
+      if (isControlsActive) {
+        // Full frame rate when controls are active
+        if (controls) controls.update();
+        renderer.render(scene, camera);
+      } else {
+        // Reduced frame rate when controls are inactive
+        if (currentTime - lastFrameTime.current >= frameInterval) {
+          if (controls) controls.update();
+          renderer.render(scene, camera);
+          lastFrameTime.current = currentTime;
+        }
       }
-      
-      // Just clear with red color - no scene rendering
-      renderer.setClearColor(0xff0000, 1); // Bright red background
-      renderer.clear();
-      
-      // Skip scene rendering for now to test just clear color
-      // renderer.render(scene, camera);
-      
+
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -934,13 +837,10 @@ export default function OptimizedWebGLStadium({
           width: '100%',
           height: '400px',
           border: '2px solid #00ff00',
-          backgroundColor: 'red', // Make container itself red to test visibility
+          backgroundColor: 'transparent',
         }}
       >
         {!rendererRef.current && 'THREE.js Canvas Container - Waiting for initialization...'}
-        <div style={{ color: 'white', fontSize: '20px', fontWeight: 'bold', padding: '10px' }}>
-          SIMPLE TEXT TEST - This should be visible
-        </div>
       </div>
       
       <div className="webgl-controls">
