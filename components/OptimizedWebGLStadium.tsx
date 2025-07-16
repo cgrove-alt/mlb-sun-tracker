@@ -186,6 +186,14 @@ export default function OptimizedWebGLStadium({
       setDebugLog(prev => [...prev, 'Creating scene...']);
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0x87CEEB); // Sky blue
+      
+      // Add a test cube to verify rendering is working
+      const testGeometry = new THREE.BoxGeometry(5, 5, 5);
+      const testMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      const testCube = new THREE.Mesh(testGeometry, testMaterial);
+      testCube.position.set(0, 10, 0);
+      scene.add(testCube);
+      console.log('Test cube added to scene');
       sceneRef.current = scene;
       console.log('Scene created successfully');
       setDebugLog(prev => [...prev, 'Scene created successfully']);
@@ -505,20 +513,12 @@ export default function OptimizedWebGLStadium({
     const controls = controlsRef.current;
 
     const animate = (currentTime: number) => {
-      // Throttle animation based on controls activity
-      if (isControlsActive) {
-        // Full frame rate when controls are active
-        if (controls) controls.update();
-        renderer.render(scene, camera);
-      } else {
-        // Reduced frame rate when controls are inactive
-        if (currentTime - lastFrameTime.current >= frameInterval) {
-          if (controls) controls.update();
-          renderer.render(scene, camera);
-          lastFrameTime.current = currentTime;
-        }
-      }
-
+      // Always update controls
+      if (controls) controls.update();
+      
+      // Always render for now to debug visibility
+      renderer.render(scene, camera);
+      
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -833,7 +833,7 @@ export default function OptimizedWebGLStadium({
           border: '2px solid #00ff00',
           borderRadius: '8px',
           overflow: 'hidden',
-          backgroundColor: '#f0f0f0',
+          backgroundColor: 'transparent',
           position: 'relative',
         }}
       >
