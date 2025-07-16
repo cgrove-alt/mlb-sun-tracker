@@ -231,8 +231,12 @@ export default function OptimizedWebGLStadium({
       
       console.log('Appending renderer to container...');
       setDebugLog(prev => [...prev, 'Appending renderer to container...']);
+      
+      // Clear any text content from container before appending canvas
+      container.textContent = '';
       container.appendChild(renderer.domElement);
       rendererRef.current = renderer;
+      
       console.log('Renderer created and appended successfully');
       setDebugLog(prev => [...prev, 'Renderer created and appended successfully']);
     } catch (err) {
@@ -302,8 +306,13 @@ export default function OptimizedWebGLStadium({
         console.log('Canvas dimensions:', renderer.domElement.width, 'x', renderer.domElement.height);
         console.log('Canvas style:', renderer.domElement.style.cssText);
         console.log('Scene children count:', scene.children.length);
+        console.log('Canvas parent:', renderer.domElement.parentElement);
+        console.log('Canvas offset:', renderer.domElement.offsetWidth, 'x', renderer.domElement.offsetHeight);
+        
         setDebugLog(prev => [...prev, `Canvas dimensions: ${renderer.domElement.width}x${renderer.domElement.height}`]);
         setDebugLog(prev => [...prev, `Scene children: ${scene.children.length}`]);
+        setDebugLog(prev => [...prev, `Canvas parent: ${renderer.domElement.parentElement?.className || 'none'}`]);
+        setDebugLog(prev => [...prev, `Canvas visible size: ${renderer.domElement.offsetWidth}x${renderer.domElement.offsetHeight}`]);
         
         renderer.render(scene, camera);
         console.log('Test render successful');
@@ -312,6 +321,8 @@ export default function OptimizedWebGLStadium({
         // Add a visible indicator that rendering is working
         renderer.domElement.style.border = '3px solid red';
         renderer.domElement.style.backgroundColor = 'blue';
+        renderer.domElement.style.position = 'relative';
+        renderer.domElement.style.zIndex = '10';
       } else {
         console.error('Missing scene, camera, or renderer for test render');
         setDebugLog(prev => [...prev, 'ERROR: Missing scene, camera, or renderer']);
