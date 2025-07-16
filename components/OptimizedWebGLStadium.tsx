@@ -288,14 +288,9 @@ export default function OptimizedWebGLStadium({
     console.log('Skipping complex geometry to test basic rendering');
     setDebugLog(prev => [...prev, 'Skipping complex geometry to test basic rendering']);
 
-    // Start animation loop
-    try {
-      console.log('Starting animation loop...');
-      startAnimationLoop();
-      console.log('Animation loop started');
-    } catch (err) {
-      console.error('Error starting animation loop:', err);
-    }
+    // Skip animation loop for now - just test static render
+    console.log('Skipping animation loop to test static render');
+    setDebugLog(prev => [...prev, 'Skipping animation loop']);
 
     // Test render to verify everything is working
     try {
@@ -317,15 +312,21 @@ export default function OptimizedWebGLStadium({
         setDebugLog(prev => [...prev, `Canvas parent: ${renderer.domElement.parentElement?.className || 'none'}`]);
         setDebugLog(prev => [...prev, `Canvas visible size: ${renderer.domElement.offsetWidth}x${renderer.domElement.offsetHeight}`]);
         
-        // Force direct rendering to canvas with bright color
-        renderer.setClearColor(0xff0000, 1); // Bright red
-        renderer.clear();
-        renderer.render(scene, camera);
+        // Try raw WebGL on the Three.js canvas
+        const gl = renderer.getContext();
+        console.log('Got WebGL context from Three.js renderer:', !!gl);
+        
+        if (gl) {
+          // Use raw WebGL to clear with red
+          gl.clearColor(1.0, 0.0, 0.0, 1.0); // Red
+          gl.clear(gl.COLOR_BUFFER_BIT);
+          gl.flush();
+          console.log('Raw WebGL clear on Three.js canvas completed');
+          setDebugLog(prev => [...prev, 'Raw WebGL clear on Three.js canvas']);
+        }
+        
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
-        
-        // Force immediate flush to canvas
-        renderer.getContext().flush();
         
         // Force check canvas visibility
         const canvasCheck = container.querySelector('canvas');
