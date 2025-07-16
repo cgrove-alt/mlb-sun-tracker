@@ -38,6 +38,8 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
   const [ticketData, setTicketData] = useState<TicketData | null>(null);
   const [filteredSections, setFilteredSections] = useState<AffordableSection[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const [showRetryButton, setShowRetryButton] = useState(false);
   const [filterCriteria, setFilterCriteria] = useState<TicketFilterCriteria>({
     priceRange: { min: 0, max: 100 },
     sunExposure: { min: 0, max: 20 },
@@ -60,17 +62,19 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
     }
   }, [ticketData, filterCriteria]);
 
-  const fetchTicketData = async () => {
+  const fetchTicketData = async (isRetry = false) => {
     setLoading(true);
     setError(null);
+    setShowRetryButton(false);
     
     try {
       // Find the SeatGeek event for this game
       const gameEvent = await seatgeekApi.findGameEvent(stadium.id, gameDateTime!);
       
       if (!gameEvent) {
-        setError('No ticket data available for this game');
+        setError(t('tickets.noTicketDataAvailable'));
         setTicketData(null);
+        setShowRetryButton(false); // No retry for unavailable data
         return;
       }
       
@@ -115,25 +119,50 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
         }
       }));
       
+      // Reset retry count on success
+      setRetryCount(0);
+      
     } catch (err) {
       console.error('Error fetching ticket data:', err);
       
       // Provide more specific error messages
       if (err instanceof Error) {
         if (err.message.includes('credentials not configured')) {
-          setError(t('tickets.apiNotConfigured'));
+          setError(t('tickets.ticketDataUnavailable'));
+          setShowRetryButton(false); // No retry for missing configuration
         } else if (err.message.includes('Invalid client credentials')) {
           setError(t('tickets.invalidCredentials'));
+          setShowRetryButton(false); // No retry for invalid credentials
         } else if (err.message.includes('403')) {
           setError(t('tickets.accessDenied'));
+          setShowRetryButton(false); // No retry for access denied
+        } else if (err.message.includes('429')) {
+          setError(t('tickets.rateLimitExceeded'));
+          setShowRetryButton(true);
+        } else if (err.message.includes('timeout') || err.message.includes('network')) {
+          setError(t('tickets.networkError'));
+          setShowRetryButton(true);
         } else {
           setError(t('tickets.genericError'));
+          setShowRetryButton(true);
         }
       } else {
         setError(t('tickets.genericError'));
+        setShowRetryButton(true);
+      }
+      
+      // Increment retry count
+      if (isRetry) {
+        setRetryCount(prev => prev + 1);
       }
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleRetry = () => {
+    if (retryCount < 3) {
+      fetchTicketData(true);
     }
   };
 
@@ -253,7 +282,7 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
         <div className="api-config-notice">
           <div className="config-notice-content">
             <h4>🔧 {t('tickets.apiConfigurationRequired')}</h4>
-            <p>{t('tickets.apiConfigurationMessage')}</p>
+            <p>{t('tickets.ticketDataUnavailable')}</p>
             <div className="config-steps">
               <ol>
                 <li>{t('tickets.configStep1')}</li>
@@ -315,6 +344,22 @@ export const AffordableShadeSection: React.FC<AffordableShadeSectionProps> = ({
       {error && (
         <div className="error">
           <p>{error}</p>
+          {showRetryButton && (
+            <div className="error-actions">
+              <button 
+                onClick={handleRetry}
+                disabled={retryCount >= 3}
+                className="retry-button"
+              >
+                {retryCount >= 3 ? t('tickets.maxRetriesReached') : t('app.retry')}
+              </button>
+              {retryCount > 0 && (
+                <span className="retry-count">
+                  {t('tickets.retryAttempt', { count: retryCount, max: 3 })}
+                </span>
+              )}
+            </div>
+          )}
         </div>
       )}
 

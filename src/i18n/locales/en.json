@@ -517,7 +517,7 @@
     "affordableShade": "Shaded Seats Under ${price}",
     "shadedSeatsUnder": "Shaded sections (≤{exposure}% sun) with tickets under ${price}",
     "loading": "Loading ticket information...",
-    "notAvailable": "Ticket information not available for this stadium",
+    "notAvailable": "Ticket data is not available for this stadium",
     "noAffordableShade": "No affordable shaded seats found for this game",
     "viewAllTickets": "View all tickets on SeatGeek",
     "viewAllSections": "View all sections on SeatGeek",
@@ -539,7 +539,7 @@
     "noMatchingTickets": "No tickets match your current filters",
     "foundResults": "Found {count} sections with tickets",
     "apiConfigurationRequired": "API Configuration Required",
-    "apiConfigurationMessage": "To display ticket prices and purchase links, SeatGeek API credentials need to be configured.",
+    "ticketDataUnavailable": "Ticket data is not available. Real-time ticket pricing requires SeatGeek API configuration.",
     "configStep1": "Sign up for a SeatGeek developer account at seatgeek.com/account/develop",
     "configStep2": "Create a new app and get your Client ID",
     "configStep3": "Set the NEXT_PUBLIC_SEATGEEK_CLIENT_ID environment variable",
@@ -547,7 +547,12 @@
     "apiNotConfigured": "SeatGeek API credentials not configured",
     "invalidCredentials": "Invalid SeatGeek API credentials",
     "accessDenied": "Access denied to SeatGeek API",
-    "genericError": "Failed to load ticket information"
+    "genericError": "Failed to load ticket information",
+    "noTicketDataAvailable": "No ticket data available for this game",
+    "rateLimitExceeded": "Rate limit exceeded. Please try again in a few minutes.",
+    "networkError": "Network error. Please check your connection and try again.",
+    "maxRetriesReached": "Maximum retries reached",
+    "retryAttempt": "Retry attempt {count}/{max}"
   },
   "footer": {
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",

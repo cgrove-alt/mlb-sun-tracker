@@ -506,7 +506,7 @@
     "affordableShade": "Asientos Sombreados Bajo ${price}",
     "shadedSeatsUnder": "Secciones sombreadas (≤{exposure}% sol) con entradas bajo ${price}",
     "loading": "Cargando información de entradas...",
-    "notAvailable": "Información de entradas no disponible para este estadio",
+    "notAvailable": "Los datos de boletos no están disponibles para este estadio",
     "noAffordableShade": "No se encontraron asientos sombreados asequibles para este juego",
     "viewAllTickets": "Ver todas las entradas en SeatGeek",
     "viewAllSections": "Ver todas las secciones en SeatGeek",
@@ -528,7 +528,7 @@
     "noMatchingTickets": "No hay entradas que coincidan con tus filtros actuales",
     "foundResults": "Se encontraron {count} secciones con entradas",
     "apiConfigurationRequired": "Configuración de API Requerida",
-    "apiConfigurationMessage": "Para mostrar precios de entradas y enlaces de compra, se necesitan configurar las credenciales de la API de SeatGeek.",
+    "ticketDataUnavailable": "Los datos de boletos no están disponibles. Los precios de boletos en tiempo real requieren la configuración de la API de SeatGeek.",
     "configStep1": "Regístrate para una cuenta de desarrollador de SeatGeek en seatgeek.com/account/develop",
     "configStep2": "Crea una nueva aplicación y obtén tu ID de Cliente",
     "configStep3": "Establece la variable de entorno NEXT_PUBLIC_SEATGEEK_CLIENT_ID",
@@ -536,7 +536,12 @@
     "apiNotConfigured": "Credenciales de API de SeatGeek no configuradas",
     "invalidCredentials": "Credenciales de API de SeatGeek inválidas",
     "accessDenied": "Acceso denegado a la API de SeatGeek",
-    "genericError": "Error al cargar información de entradas"
+    "genericError": "Error al cargar información de entradas",
+    "noTicketDataAvailable": "No hay datos de boletos disponibles para este juego",
+    "rateLimitExceeded": "Límite de velocidad excedido. Inténtalo de nuevo en unos minutos.",
+    "networkError": "Error de red. Por favor verifica tu conexión e inténtalo de nuevo.",
+    "maxRetriesReached": "Máximo de intentos alcanzado",
+    "retryAttempt": "Intento {count}/{max}"
   },
   "footer": {
     "disclaimer": "Los cálculos del sol son aproximados y pueden variar según la arquitectura del estadio y las condiciones climáticas.",

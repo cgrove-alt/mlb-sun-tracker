@@ -85,6 +85,7 @@ export const SEATGEEK_VENUE_IDS: Record<string, number> = {
   'rockies': 25,       // Coors Field
 };
 
+
 class SeatGeekAPI {
   private clientId: string;
   private clientSecret: string;
@@ -119,7 +120,19 @@ class SeatGeekAPI {
     const url = `${this.baseUrl}${endpoint}?${params.toString()}`;
     
     try {
-      const response = await fetch(url);
+      // Add timeout to fetch request
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+      
+      const response = await fetch(url, {
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'MLB-Sun-Tracker/1.0'
+        }
+      });
+      
+      clearTimeout(timeoutId);
       
       if (!response.ok) {
         let errorMessage = `SeatGeek API error: ${response.status}`;
@@ -141,6 +154,14 @@ class SeatGeekAPI {
       const data = await response.json();
       return data;
     } catch (error) {
+      if (error instanceof Error) {
+        if (error.name === 'AbortError') {
+          console.error('SeatGeek API request timed out');
+          throw new Error('Request timed out. Please try again.');
+        }
+        console.error('Error fetching from SeatGeek:', error.message);
+        throw error;
+      }
       console.error('Error fetching from SeatGeek:', error);
       throw error;
     }
@@ -269,10 +290,6 @@ class SeatGeekAPI {
     if (!venueId) {
       console.error(`No SeatGeek venue ID found for stadium: ${stadiumId}`);
       return null;
-    }
-    
-    if (!this.isConfigured) {
-      throw new Error('SeatGeek API credentials not configured');
     }
     
     try {
