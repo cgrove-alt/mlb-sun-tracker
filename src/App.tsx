@@ -15,6 +15,7 @@ import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { SmartItinerariesPage } from './components/SmartItinerariesPage';
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
+import { I18nProvider } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
@@ -459,11 +460,13 @@ function AppContent() {
 
 function App() {
   return (
-    <ErrorProvider>
-      <UserProfileProvider>
-        <AppContent />
-      </UserProfileProvider>
-    </ErrorProvider>
+    <I18nProvider>
+      <ErrorProvider>
+        <UserProfileProvider>
+          <AppContent />
+        </UserProfileProvider>
+      </ErrorProvider>
+    </I18nProvider>
   );
 }
 
