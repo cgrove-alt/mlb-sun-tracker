@@ -185,11 +185,11 @@ export default function OptimizedWebGLStadium({
       console.log('Creating scene...');
       setDebugLog(prev => [...prev, 'Creating scene...']);
       const scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x87CEEB); // Sky blue
+      scene.background = new THREE.Color(0xff0000); // Bright red to match clear color
       
       // Add a test cube to verify rendering is working
       const testGeometry = new THREE.BoxGeometry(5, 5, 5);
-      const testMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+      const testMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 }); // Yellow cube
       const testCube = new THREE.Mesh(testGeometry, testMaterial);
       testCube.position.set(0, 10, 0);
       scene.add(testCube);
@@ -430,8 +430,8 @@ export default function OptimizedWebGLStadium({
     );
 
     // Stadium material with optimized settings
-    const bowlMaterial = new THREE.MeshLambertMaterial({
-      color: 0x888888,
+    const bowlMaterial = new THREE.MeshBasicMaterial({
+      color: 0x0000ff, // Bright blue stadium
       transparent: false,
       side: THREE.DoubleSide,
     });
@@ -448,8 +448,8 @@ export default function OptimizedWebGLStadium({
 
     // Field geometry
     const fieldGeometry = new THREE.CircleGeometry(20, 32 * config.maxGeometryDetail);
-    const fieldMaterial = new THREE.MeshLambertMaterial({
-      color: 0x228B22, // Forest green
+    const fieldMaterial = new THREE.MeshBasicMaterial({
+      color: 0x00ff00, // Bright green field
     });
     
     const fieldMesh = new THREE.Mesh(fieldGeometry, fieldMaterial);
