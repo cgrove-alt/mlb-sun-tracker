@@ -731,12 +731,23 @@ export class ItineraryService {
     let avoid: string[] = [];
     let reasoning = '';
     
+    // Helper function to get section display name
+    const getSectionName = (section: typeof sectionData[0]) => {
+      const sectionId = section.section.id;
+      const name = section.section.name;
+      // Format section names for better display
+      if (name.toLowerCase().includes('field level') || name.toLowerCase().includes('lower level')) {
+        return `${name} (${sectionId})`;
+      }
+      return `Section ${sectionId} - ${name}`;
+    };
+
     // Determine recommendations based on preferences
     if (preferences.prioritizeShade || preferences.sunSensitivity === 'high' || preferences.sunSensitivity === 'extreme') {
       // User wants shade
-      preferred = shadeSections.slice(0, 5).map(s => s.section.id);
-      alternatives = partialSunSections.slice(0, 3).map(s => s.section.id);
-      avoid = sunnySection.slice(0, 3).map(s => s.section.id);
+      preferred = shadeSections.slice(0, 5).map(s => getSectionName(s));
+      alternatives = partialSunSections.slice(0, 3).map(s => getSectionName(s));
+      avoid = sunnySection.slice(0, 3).map(s => getSectionName(s));
       
       reasoning = `Based on your ${preferences.sunSensitivity} sun sensitivity and preference for shade, we recommend sections that will remain shaded throughout the game. `;
       
@@ -749,8 +760,8 @@ export class ItineraryService {
       }
     } else if (preferences.sunSensitivity === 'low') {
       // User doesn't mind or wants sun
-      preferred = [...partialSunSections.slice(0, 3), ...shadeSections.slice(0, 2)].map(s => s.section.id);
-      alternatives = sunnySection.slice(0, 3).map(s => s.section.id);
+      preferred = [...partialSunSections.slice(0, 3), ...shadeSections.slice(0, 2)].map(s => getSectionName(s));
+      alternatives = sunnySection.slice(0, 3).map(s => getSectionName(s));
       avoid = []; // No sections to avoid
       
       reasoning = 'Since you have low sun sensitivity, we recommend sections with partial sun for warmth without excessive exposure. ';
@@ -760,9 +771,9 @@ export class ItineraryService {
       }
     } else {
       // Moderate sensitivity - balanced approach
-      preferred = [...partialSunSections.slice(0, 2), ...shadeSections.slice(0, 3)].map(s => s.section.id);
-      alternatives = [...shadeSections.slice(3, 5), ...partialSunSections.slice(2, 4)].map(s => s.section.id);
-      avoid = sunnySection.filter(s => s.sunExposure > 80).slice(0, 2).map(s => s.section.id);
+      preferred = [...partialSunSections.slice(0, 2), ...shadeSections.slice(0, 3)].map(s => getSectionName(s));
+      alternatives = [...shadeSections.slice(3, 5), ...partialSunSections.slice(2, 4)].map(s => getSectionName(s));
+      avoid = sunnySection.filter(s => s.sunExposure > 80).slice(0, 2).map(s => getSectionName(s));
       
       reasoning = 'With moderate sun sensitivity, we recommend sections with partial shade for a comfortable balance. ';
     }

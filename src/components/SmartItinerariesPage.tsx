@@ -130,50 +130,58 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
   return (
     <ErrorProvider>
       <div className="smart-itineraries-page">
-        <div className="itinerary-header">
-          <div className="header-content">
-            <h1>🗓️ Smart Itinerary</h1>
-            <h2>{selectedStadium.name}</h2>
-            <p className="game-info">
-              {selectedGame ? (
-                `${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name}`
-              ) : (
-                'Custom Game Time'
-              )}
-            </p>
-            <p className="datetime">
-              {gameDateTime.toLocaleDateString()} at {gameDateTime.toLocaleTimeString([], { 
-                hour: 'numeric', 
-                minute: '2-digit' 
-              })}
-            </p>
-          </div>
-          
-          <div className="header-actions">
+        <div className={`preferences-sidebar ${showPreferences ? 'open' : ''}`}>
+          <div className="sidebar-header">
+            <h3>⚙️ Preferences</h3>
             <button
-              className="preferences-button"
+              className="sidebar-toggle"
               onClick={() => setShowPreferences(!showPreferences)}
-              aria-expanded={showPreferences}
+              aria-label={showPreferences ? 'Close preferences' : 'Open preferences'}
             >
-              ⚙️ Preferences
-            </button>
-            <button
-              className="regenerate-button"
-              onClick={handleRegenerateItinerary}
-              disabled={isGenerating}
-            >
-              {isGenerating ? '🔄 Generating...' : '🔄 Regenerate'}
+              {showPreferences ? '×' : '☰'}
             </button>
           </div>
+          {showPreferences && (
+            <div className="sidebar-content">
+              <PreferencesPanel
+                preferences={preferences}
+                onPreferencesChange={handlePreferencesChange}
+                onClose={() => setShowPreferences(false)}
+              />
+            </div>
+          )}
         </div>
 
-        {showPreferences && (
-          <PreferencesPanel
-            preferences={preferences}
-            onPreferencesChange={handlePreferencesChange}
-            onClose={() => setShowPreferences(false)}
-          />
-        )}
+        <div className={`itinerary-main-content ${showPreferences ? 'with-sidebar' : ''}`}>
+          <div className="itinerary-header">
+            <div className="header-content">
+              <h1>🗓️ Smart Itinerary</h1>
+              <h2>{selectedStadium.name}</h2>
+              <p className="game-info">
+                {selectedGame ? (
+                  `${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name}`
+                ) : (
+                  'Custom Game Time'
+                )}
+              </p>
+              <p className="datetime">
+                {gameDateTime.toLocaleDateString()} at {gameDateTime.toLocaleTimeString([], { 
+                  hour: 'numeric', 
+                  minute: '2-digit' 
+                })}
+              </p>
+            </div>
+            
+            <div className="header-actions">
+              <button
+                className="regenerate-button"
+                onClick={handleRegenerateItinerary}
+                disabled={isGenerating}
+              >
+                {isGenerating ? '🔄 Generating...' : '🔄 Regenerate'}
+              </button>
+            </div>
+          </div>
 
         {error && (
           <div className="error-message">
@@ -235,6 +243,7 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
             </div>
           </div>
         )}
+        </div>
       </div>
     </ErrorProvider>
   );

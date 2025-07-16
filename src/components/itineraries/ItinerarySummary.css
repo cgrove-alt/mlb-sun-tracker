@@ -281,12 +281,14 @@
 
 .section-badge {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s ease;
   cursor: default;
+  white-space: nowrap;
+  margin-bottom: 6px;
 }
 
 .section-badge.preferred {

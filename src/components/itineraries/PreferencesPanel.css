@@ -1,9 +1,17 @@
 .preferences-panel {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  margin-bottom: 20px;
+  height: 100%;
   overflow: hidden;
+}
+
+.sidebar-content .preferences-panel {
+  box-shadow: none;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.sidebar-content .preferences-header {
+  display: none;
 }
 
 .preferences-header {
@@ -41,9 +49,13 @@
 }
 
 .preferences-content {
-  padding: 25px;
-  max-height: 60vh;
+  padding: 0;
+  height: 100%;
   overflow-y: auto;
+}
+
+.sidebar-content .preferences-content {
+  padding: 0;
 }
 
 .preference-section {
