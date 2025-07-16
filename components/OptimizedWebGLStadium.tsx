@@ -228,7 +228,9 @@ export default function OptimizedWebGLStadium({
         powerPreference: 'high-performance',
         stencil: false,
         depth: true,
+        alpha: false, // Ensure opaque background
       });
+      renderer.setClearColor(0xff00ff, 1); // Bright magenta background for debugging
       
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.domElement.style.position = 'absolute';
@@ -236,6 +238,9 @@ export default function OptimizedWebGLStadium({
       renderer.domElement.style.left = '0';
       renderer.domElement.style.width = '100%';
       renderer.domElement.style.height = '100%';
+      renderer.domElement.style.opacity = '1';
+      renderer.domElement.style.visibility = 'visible';
+      renderer.domElement.style.zIndex = '1';
       renderer.setPixelRatio(config.pixelRatio);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
@@ -332,7 +337,19 @@ export default function OptimizedWebGLStadium({
         console.log('Test render successful');
         setDebugLog(prev => [...prev, 'Test render successful']);
         
-        // Debug styling removed - canvas positioning is set during creation
+        // Force check canvas visibility
+        const canvasCheck = container.querySelector('canvas');
+        if (canvasCheck) {
+          console.log('Canvas found in DOM:', canvasCheck);
+          console.log('Canvas computed style:', window.getComputedStyle(canvasCheck).display);
+          console.log('Canvas opacity:', window.getComputedStyle(canvasCheck).opacity);
+          console.log('Canvas visibility:', window.getComputedStyle(canvasCheck).visibility);
+          setDebugLog(prev => [...prev, `Canvas display: ${window.getComputedStyle(canvasCheck).display}`]);
+          setDebugLog(prev => [...prev, `Canvas opacity: ${window.getComputedStyle(canvasCheck).opacity}`]);
+        } else {
+          console.error('NO CANVAS FOUND IN DOM!');
+          setDebugLog(prev => [...prev, 'ERROR: NO CANVAS IN DOM']);
+        }
       } else {
         console.error('Missing scene, camera, or renderer for test render');
         setDebugLog(prev => [...prev, 'ERROR: Missing scene, camera, or renderer']);
