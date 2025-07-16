@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { Tooltip } from './Tooltip';
+import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './ShareButton.css';
 
 interface ShareButtonProps {
@@ -43,22 +44,14 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
       return 'Check out this MLB Stadium Sun Tracker!';
     }
     
-    const dateStr = gameDateTime.toLocaleDateString('en-US', {
-      weekday: 'short',
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    });
-    
-    const timeStr = gameDateTime.toLocaleTimeString('en-US', {
-      hour: 'numeric',
-      minute: '2-digit'
-    });
+    // Format date and time with stadium's local timezone
+    const timezone = selectedStadium.timezone || 'America/New_York';
+    const dateTimeStr = formatDateTimeWithTimezone(gameDateTime, timezone);
     
     if (selectedGame) {
-      return `Check out sun exposure for ${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name} at ${selectedStadium.name} on ${dateStr} at ${timeStr}`;
+      return `Check out sun exposure for ${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name} at ${selectedStadium.name} on ${dateTimeStr}`;
     } else {
-      return `Check out sun exposure at ${selectedStadium.name} on ${dateStr} at ${timeStr}`;
+      return `Check out sun exposure at ${selectedStadium.name} on ${dateTimeStr}`;
     }
   };
 

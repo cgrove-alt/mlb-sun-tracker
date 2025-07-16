@@ -7,6 +7,7 @@ import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
 import { useTranslation } from '../i18n/i18nContext';
+import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -125,8 +126,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   const formatGameOption = (game: MLBGame) => {
     const gameDate = new Date(game.gameDate);
-    const dateStr = format(gameDate, 'MMM dd, yyyy');
-    const timeStr = format(gameDate, 'h:mm a');
     
     // Get team IDs from stadium data for translation
     const homeTeamId = stadiums.find(s => s.team === game.teams.home.team.name)?.id || '';
@@ -136,9 +135,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     const homeTeamName = homeTeamId ? t(`mlb.teams.${homeTeamId}`) : game.teams.home.team.name;
     const awayTeamName = awayTeamId ? t(`mlb.teams.${awayTeamId}`) : game.teams.away.team.name;
     
+    // Format date and time with stadium's local timezone
+    const homeStadium = stadiums.find(s => s.id === homeTeamId);
+    const timezone = homeStadium?.timezone || 'America/New_York';
+    const dateTimeStr = formatDateTimeWithTimezone(gameDate, timezone);
+    
     return {
       value: game.gamePk,
-      label: `${dateStr} ${t('game.at', { fallback: 'at' })} ${timeStr} - ${awayTeamName} @ ${homeTeamName}`,
+      label: `${dateTimeStr} - ${awayTeamName} @ ${homeTeamName}`,
       game: game
     };
   };

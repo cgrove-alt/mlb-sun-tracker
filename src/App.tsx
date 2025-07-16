@@ -16,6 +16,7 @@ import { UserProfileProvider, useUserProfile } from './contexts/UserProfileConte
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
+import { formatDateTimeWithTimezone } from './utils/timeUtils';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -194,7 +195,7 @@ function AppContent() {
                   stadiumName={selectedStadium.name}
                   size="small"
                 />
-                <span className="game-time">{gameDateTime.toLocaleDateString()}</span>
+                <span className="game-time">{selectedStadium ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime.toLocaleDateString()}</span>
                 <ShareButton
                   selectedStadium={selectedStadium}
                   selectedGame={selectedGame}
@@ -254,6 +255,7 @@ function AppContent() {
                   weather={weatherForecast} 
                   gameTime={gameDateTime}
                   loading={loadingWeather}
+                  stadium={selectedStadium}
                 />
               )}
 
@@ -396,7 +398,7 @@ function AppContent() {
                     <h4>📊 Game Details</h4>
                     <p><strong>Matchup:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
                     <p><strong>Venue:</strong> {selectedGame.venue.name}</p>
-                    <p><strong>Game Time:</strong> {gameDateTime.toLocaleString()}</p>
+                    <p><strong>Game Time:</strong> {selectedStadium ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime.toLocaleString()}</p>
                   </div>
                 )}
               </div>

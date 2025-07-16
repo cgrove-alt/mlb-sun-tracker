@@ -2,6 +2,7 @@ import React from 'react';
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { useTranslation } from '../i18n/i18nContext';
+import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './Breadcrumb.css';
 
 interface BreadcrumbProps {
@@ -36,6 +37,9 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({
   };
 
   const formatDateTime = (dateTime: Date): string => {
+    if (selectedStadium) {
+      return formatDateTimeWithTimezone(dateTime, selectedStadium.timezone);
+    }
     return dateTime.toLocaleDateString('en-US', {
       weekday: 'short',
       year: 'numeric',

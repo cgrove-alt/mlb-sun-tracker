@@ -1,18 +1,22 @@
 import React from 'react';
 import { WeatherForecast, weatherApi } from '../services/weatherApi';
 import { useTranslation } from '../i18n/i18nContext';
+import { Stadium } from '../data/stadiums';
+import { formatDateTimeWithTimezone, formatTimeWithTimezone } from '../utils/timeUtils';
 import './WeatherDisplay.css';
 
 interface WeatherDisplayProps {
   weather: WeatherForecast | null;
   gameTime?: Date;
   loading?: boolean;
+  stadium?: Stadium | null;
 }
 
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ 
   weather, 
   gameTime, 
-  loading = false 
+  loading = false,
+  stadium = null
 }) => {
   const { t } = useTranslation();
   
@@ -73,7 +77,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
         <h3>{t('weather.forecast')}</h3>
         {gameTime && (
           <span className="forecast-time">
-            {t('weather.forGameTime')}: {gameTime.toLocaleString()}
+            {t('weather.forGameTime')}: {stadium ? formatDateTimeWithTimezone(gameTime, stadium.timezone) : gameTime.toLocaleString()}
           </span>
         )}
       </div>
@@ -195,7 +199,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
                 return (
                   <div key={index} className={`hourly-item ${isGameHour ? 'game-hour' : ''}`}>
                     <div className="hourly-time">
-                      {hourTime.toLocaleTimeString([], { hour: 'numeric' })}
+                      {stadium ? formatTimeWithTimezone(hourTime, stadium.timezone).split(' ')[0] : hourTime.toLocaleTimeString([], { hour: 'numeric' })}
                       {isGameHour && <span className="game-indicator">⚾</span>}
                     </div>
                     <div className="hourly-icon">
