@@ -936,9 +936,7 @@ export default function OptimizedWebGLStadium({
           width: '100%',
           height: '400px',
           border: '2px solid #00ff00',
-          borderRadius: '8px',
-          overflow: 'visible',
-          backgroundColor: 'transparent',
+          backgroundColor: 'red', // Make container itself red to test visibility
           position: 'relative',
         }}
       >
