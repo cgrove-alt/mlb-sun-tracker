@@ -241,6 +241,7 @@ export default function OptimizedWebGLStadium({
       renderer.domElement.style.opacity = '1';
       renderer.domElement.style.visibility = 'visible';
       renderer.domElement.style.zIndex = '1';
+      renderer.domElement.style.pointerEvents = 'auto';
       renderer.setPixelRatio(config.pixelRatio);
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = config.shadowType === 'pcf' ? THREE.PCFShadowMap : THREE.BasicShadowMap;
@@ -582,7 +583,7 @@ export default function OptimizedWebGLStadium({
       if (controls) controls.update();
       
       // Force clear with bright color to verify rendering
-      renderer.setClearColor(0x00ff00, 1); // Bright green
+      renderer.setClearColor(0xff0000, 1); // Bright red background
       renderer.clear();
       
       // Always render for now to debug visibility
@@ -901,7 +902,7 @@ export default function OptimizedWebGLStadium({
           height: '400px',
           border: '2px solid #00ff00',
           borderRadius: '8px',
-          overflow: 'hidden',
+          overflow: 'visible',
           backgroundColor: 'transparent',
           position: 'relative',
         }}
