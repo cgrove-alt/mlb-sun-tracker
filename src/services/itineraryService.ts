@@ -774,44 +774,47 @@ export class ItineraryService {
     // Calculate detailed section sun exposure
     const sectionData = calculateDetailedSectionSunExposure(stadium, sunPosition, gameWeather);
     
-    // Separate sections by sun exposure
-    const sunnySection = sectionData.filter(s => s.inSun && s.sunExposure > 60);
-    const partialSunSections = sectionData.filter(s => s.inSun && s.sunExposure <= 60);
-    const shadeSections = sectionData.filter(s => !s.inSun);
+    // Separate sections by sun exposure and sort by desirability
+    const sortByDesirability = (a: typeof sectionData[0], b: typeof sectionData[0]) => {
+      // Prioritize lower levels
+      const levelPriority: Record<string, number> = {
+        'field': 1,
+        'lower': 2,
+        'club': 3,
+        'upper': 4,
+        'suite': 0 // Suites are special, put them first
+      };
+      
+      const aLevel = levelPriority[a.section.level] ?? 5;
+      const bLevel = levelPriority[b.section.level] ?? 5;
+      
+      if (aLevel !== bLevel) {
+        return aLevel - bLevel;
+      }
+      
+      // Then sort by section name for consistency
+      return a.section.name.localeCompare(b.section.name);
+    };
+    
+    const sunnySection = sectionData
+      .filter(s => s.inSun && s.sunExposure > 60)
+      .sort(sortByDesirability);
+    const partialSunSections = sectionData
+      .filter(s => s.inSun && s.sunExposure <= 60)
+      .sort(sortByDesirability);
+    const shadeSections = sectionData
+      .filter(s => !s.inSun)
+      .sort(sortByDesirability);
     
     let preferred: string[] = [];
     let alternatives: string[] = [];
     let avoid: string[] = [];
     let reasoning = '';
     
-    // Helper function to get section display name
+    // Helper function to get section display name - match Sun Tracker format
     const getSectionName = (section: typeof sectionData[0]) => {
-      const sectionId = section.section.id;
-      const name = section.section.name;
-      const level = section.section.level;
-      
-      // If it's a special named section (like "Green Monster", "Bleachers", etc.)
-      if (!name.startsWith('Section ')) {
-        return name;
-      }
-      
-      // For generic numbered sections, add level description
-      const levelDescription = {
-        'field': 'Field Level',
-        'lower': 'Lower Level', 
-        'club': 'Club Level',
-        'upper': 'Upper Level',
-        'suite': 'Suite Level'
-      }[level] || '';
-      
-      // Extract section number from generic sections
-      const sectionNumber = sectionId.replace(/^[a-zA-Z]*/, '');
-      
-      if (levelDescription) {
-        return `${levelDescription} (${sectionNumber})`;
-      }
-      
-      return name;
+      // Return the exact section name as displayed in Sun Tracker
+      return section.section.name;
     };
 
     // Determine recommendations based on preferences
