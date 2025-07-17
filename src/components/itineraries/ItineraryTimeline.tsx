@@ -55,19 +55,24 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
     return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
   };
 
-  const getInningForTime = (time: Date): string | null => {
-    // Calculate approximate inning based on time relative to game start
+  const getRelativeTimeLabel = (time: Date): string => {
+    // Calculate time relative to game start
     const gameStart = itinerary.gameStartTime;
     const timeDiff = time.getTime() - gameStart.getTime();
-    const minutesDiff = timeDiff / (1000 * 60);
+    const minutesDiff = Math.round(timeDiff / (1000 * 60));
     
-    if (minutesDiff < 0) return 'Pre-Game';
+    // Pre-game times
+    if (minutesDiff < -120) return 'Early Arrival';
+    if (minutesDiff < -90) return '2hr Before Game';
+    if (minutesDiff < -60) return '90min Before Game';
+    if (minutesDiff < -30) return '1hr Before Game';
+    if (minutesDiff < 0) return '30min Before Game';
     
-    // Estimate ~20 minutes per inning
+    // During game - estimate ~20 minutes per inning
     const estimatedInning = Math.floor(minutesDiff / 20) + 1;
     
     if (estimatedInning > 9) return 'Post-Game';
-    if (estimatedInning < 1) return 'Pre-Game';
+    if (estimatedInning < 1) return 'Game Start';
     
     // Format as ordinal (1st, 2nd, 3rd, etc.)
     const suffix = estimatedInning === 1 ? 'st' : 
@@ -77,34 +82,47 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
     return `${estimatedInning}${suffix} Inning`;
   };
 
-  const groupRecommendationsByHour = (recommendations: ItineraryRecommendation[]) => {
+  const groupRecommendationsByTimePhase = (recommendations: ItineraryRecommendation[]) => {
     const groups: { [key: string]: ItineraryRecommendation[] } = {};
     
     recommendations.forEach(rec => {
-      const hourKey = rec.time.toISOString().substring(0, 13); // YYYY-MM-DDTHH
-      if (!groups[hourKey]) {
-        groups[hourKey] = [];
+      const timeLabel = getRelativeTimeLabel(rec.time);
+      if (!groups[timeLabel]) {
+        groups[timeLabel] = [];
       }
-      groups[hourKey].push(rec);
+      groups[timeLabel].push(rec);
     });
     
-    return groups;
+    // Return in chronological order
+    const orderedKeys = [
+      'Early Arrival', '2hr Before Game', '90min Before Game', '1hr Before Game', 
+      '30min Before Game', 'Game Start', '1st Inning', '2nd Inning', '3rd Inning', 
+      '4th Inning', '5th Inning', '6th Inning', '7th Inning', '8th Inning', 
+      '9th Inning', 'Post-Game'
+    ];
+    
+    const orderedGroups: { [key: string]: ItineraryRecommendation[] } = {};
+    orderedKeys.forEach(key => {
+      if (groups[key]) {
+        orderedGroups[key] = groups[key];
+      }
+    });
+    
+    return orderedGroups;
   };
 
-  const groupedRecommendations = groupRecommendationsByHour(itinerary.recommendations);
+  const groupedRecommendations = groupRecommendationsByTimePhase(itinerary.recommendations);
 
   return (
     <div className="itinerary-timeline">
       <h3>📅 Your Game Day Timeline</h3>
       
       <div className="timeline-container">
-        {Object.entries(groupedRecommendations).map(([hourKey, recommendations]) => {
-          const hour = new Date(hourKey + ':00:00');
-          
+        {Object.entries(groupedRecommendations).map(([timePhase, recommendations]) => {
           return (
-            <div key={hourKey} className="timeline-hour-group">
+            <div key={timePhase} className="timeline-hour-group">
               <div className="hour-header">
-                <h4>{formatTimeWithTimezone(hour, stadium.timezone)}</h4>
+                <h4>{getRelativeTimeLabel(new Date(recommendations[0].time))}</h4>
                 <div className="hour-divider"></div>
               </div>
               
@@ -129,12 +147,6 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
                       <div className="recommendation-header">
                         <h5>{recommendation.details.title}</h5>
                         <div className="recommendation-meta">
-                          <span className="inning-badge">
-                            ⚾ {getInningForTime(recommendation.time)}
-                          </span>
-                          <span className="time">
-                            {formatTimeWithTimezone(recommendation.time, stadium.timezone)}
-                          </span>
                           <span className="duration">
                             {formatDuration(recommendation.duration)}
                           </span>

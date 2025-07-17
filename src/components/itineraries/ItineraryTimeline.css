@@ -28,15 +28,16 @@
 }
 
 .hour-header h4 {
-  background: #f5f5f5;
-  color: #333;
-  padding: 8px 16px;
-  border-radius: 20px;
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  min-width: 120px;
+  min-width: 150px;
   text-align: center;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
 }
 
 .hour-divider {
