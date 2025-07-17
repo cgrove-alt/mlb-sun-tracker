@@ -9,23 +9,28 @@ export const OfflineIndicator: React.FC = () => {
   const [showIndicator, setShowIndicator] = useState(false);
   const [syncPending, setSyncPending] = useState(false);
   const [cacheInfo, setCacheInfo] = useState<{ percentage: number } | null>(null);
+  const [hasBeenOffline, setHasBeenOffline] = useState(false);
 
   useEffect(() => {
     const handleOnline = () => {
-      setOffline(false);
-      setSyncPending(true);
-      setShowIndicator(true);
-      
-      // Hide indicator after showing "back online" message
-      setTimeout(() => {
-        setShowIndicator(false);
-        setSyncPending(false);
-      }, 3000);
+      // Only show "back online" message if we were previously offline
+      if (hasBeenOffline) {
+        setOffline(false);
+        setSyncPending(true);
+        setShowIndicator(true);
+        
+        // Hide indicator after showing "back online" message
+        setTimeout(() => {
+          setShowIndicator(false);
+          setSyncPending(false);
+        }, 3000);
+      }
     };
 
     const handleOffline = () => {
       setOffline(true);
       setShowIndicator(true);
+      setHasBeenOffline(true);
     };
 
     const handleSyncComplete = () => {
@@ -42,6 +47,7 @@ export const OfflineIndicator: React.FC = () => {
     if (initialOfflineState) {
       setOffline(true);
       setShowIndicator(true);
+      setHasBeenOffline(true);
     }
 
     // Get cache info only when offline
@@ -69,8 +75,11 @@ export const OfflineIndicator: React.FC = () => {
 
   // Don't show indicator if translations are still loading or if we shouldn't show it
   if (!showIndicator || translationsLoading) {
+    console.log('[OfflineIndicator] Not showing:', { showIndicator, translationsLoading });
     return null;
   }
+  
+  console.log('[OfflineIndicator] Rendering:', { offline, syncPending, showIndicator });
 
   return (
     <div className={`offline-indicator ${offline ? 'offline' : 'online'} ${syncPending ? 'syncing' : ''}`}>
