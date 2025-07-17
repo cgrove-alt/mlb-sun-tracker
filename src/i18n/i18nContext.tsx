@@ -1,8 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-
-// Types
-export type SupportedLanguage = 'en' | 'es' | 'ja';
-export type TranslationKeys = Record<string, any>;
+import { translations, SupportedLanguage, TranslationKeys } from './translations';
 
 interface I18nContextType {
   language: SupportedLanguage;
@@ -85,40 +82,9 @@ const detectLanguage = (): SupportedLanguage => {
   return DEFAULT_LANGUAGE;
 };
 
-// Load translation files
-const loadTranslations = async (language: SupportedLanguage): Promise<TranslationKeys> => {
-  try {
-    // For GitHub Pages deployment, we need to include the repository name in the path
-    // Check if we're on GitHub Pages by looking at the pathname
-    const isGitHubPages = window.location.pathname.startsWith('/mlb-sun-tracker');
-    const basePath = isGitHubPages ? '/mlb-sun-tracker' : '';
-    
-    const response = await fetch(`${basePath}/locales/${language}.json`);
-    
-    if (!response.ok) {
-      throw new Error(`Failed to load translations: ${response.status}`);
-    }
-    
-    const translations = await response.json();
-    return translations;
-  } catch (error) {
-    console.error(`Failed to load translations for language: ${language}`, error);
-    // Fallback to English if translation loading fails
-    if (language !== 'en') {
-      try {
-        const isGitHubPages = window.location.pathname.startsWith('/mlb-sun-tracker');
-        const basePath = isGitHubPages ? '/mlb-sun-tracker' : '';
-        const fallbackResponse = await fetch(`${basePath}/locales/en.json`);
-        
-        if (fallbackResponse.ok) {
-          return await fallbackResponse.json();
-        }
-      } catch (fallbackError) {
-        console.error('Failed to load fallback translations', fallbackError);
-      }
-    }
-    return {};
-  }
+// Get translations for a specific language
+const getTranslations = (language: SupportedLanguage): TranslationKeys => {
+  return translations[language] || translations.en;
 };
 
 interface I18nProviderProps {
@@ -133,24 +99,14 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
   const [language, setLanguageState] = useState<SupportedLanguage>(
     initialLanguage || detectLanguage()
   );
-  const [translations, setTranslations] = useState<TranslationKeys>({});
-  const [isLoading, setIsLoading] = useState(true);
+  const [currentTranslations, setCurrentTranslations] = useState<TranslationKeys>(
+    getTranslations(initialLanguage || detectLanguage())
+  );
+  const [isLoading] = useState(false); // Translations are now embedded, no loading needed
 
-  // Load translations when language changes
+  // Update translations when language changes
   useEffect(() => {
-    const loadLanguageData = async () => {
-      setIsLoading(true);
-      try {
-        const translationData = await loadTranslations(language);
-        setTranslations(translationData);
-      } catch (error) {
-        console.error('Error loading translations:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadLanguageData();
+    setCurrentTranslations(getTranslations(language));
   }, [language]);
 
   // Set language and save to localStorage
@@ -166,7 +122,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
 
   // Translation function
   const t = (key: string, params?: Record<string, string | number>): string => {
-    const value = getNestedValue(translations, key);
+    const value = getNestedValue(currentTranslations, key);
     
     if (value === null || value === undefined) {
       console.warn(`Translation key not found: ${key}`);
@@ -194,7 +150,7 @@ export const I18nProvider: React.FC<I18nProviderProps> = ({
 
   const contextValue: I18nContextType = {
     language,
-    translations,
+    translations: currentTranslations,
     setLanguage,
     t,
     isLoading,
