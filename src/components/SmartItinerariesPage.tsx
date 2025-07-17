@@ -10,6 +10,7 @@ import { ItinerarySummary } from './itineraries/ItinerarySummary';
 import { GameSelector } from './GameSelector';
 import { useTranslation } from '../i18n/i18nContext';
 import { ErrorProvider } from './ErrorNotification';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import './SmartItinerariesPage.css';
 
 interface SmartItinerariesPageProps {
@@ -32,6 +33,7 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
   onGameSelect
 }) => {
   const { t } = useTranslation();
+  const haptic = useHapticFeedback();
   const [itinerary, setItinerary] = useState<SmartItinerary | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [preferences, setPreferences] = useState<ItineraryPreferences>({
@@ -135,7 +137,10 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
             <h3>⚙️ Preferences</h3>
             <button
               className="sidebar-toggle"
-              onClick={() => setShowPreferences(!showPreferences)}
+              onClick={() => {
+                haptic.light();
+                setShowPreferences(!showPreferences);
+              }}
               aria-label={showPreferences ? 'Close preferences' : 'Open preferences'}
             >
               {showPreferences ? '×' : '☰'}
@@ -178,7 +183,10 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
             <div className="header-actions">
               <button
                 className="regenerate-button"
-                onClick={handleRegenerateItinerary}
+                onClick={() => {
+                  haptic.medium();
+                  handleRegenerateItinerary();
+                }}
                 disabled={isGenerating}
               >
                 {isGenerating ? '🔄 Generating...' : '🔄 Regenerate'}
@@ -189,7 +197,10 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
         {error && (
           <div className="error-message">
             <p>❌ {error}</p>
-            <button onClick={handleRegenerateItinerary}>Try Again</button>
+            <button onClick={() => {
+              haptic.medium();
+              handleRegenerateItinerary();
+            }}>Try Again</button>
           </div>
         )}
 

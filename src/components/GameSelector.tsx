@@ -7,6 +7,7 @@ import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -22,6 +23,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   onStadiumChange,
   stadiums
 }) => {
+  const haptic = useHapticFeedback();
   const [games, setGames] = useState<MLBGame[]>([]);
   const [loading, setLoading] = useState(false);
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
@@ -155,6 +157,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           <button 
             className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
             onClick={() => {
+              haptic.light();
               setViewMode('games');
               preferencesStorage.update('viewMode', 'games');
             }}
@@ -170,6 +173,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           <button 
             className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
             onClick={() => {
+              haptic.light();
               setViewMode('custom');
               preferencesStorage.update('viewMode', 'custom');
             }}
@@ -293,7 +297,10 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             </div>
 
             <button 
-              onClick={handleCustomDateTime}
+              onClick={() => {
+                haptic.medium();
+                handleCustomDateTime();
+              }}
               onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
               className="apply-custom-btn"
               disabled={!customDate || !customTime || !selectedStadium}

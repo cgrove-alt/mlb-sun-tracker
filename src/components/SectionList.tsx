@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -22,6 +23,8 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
+  const haptic = useHapticFeedback();
+  const sectionListRef = useRef<HTMLDivElement>(null);
 
   // Debounce search term
   useEffect(() => {
@@ -31,6 +34,28 @@ export const SectionList: React.FC<SectionListProps> = ({
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
+
+  // Improve scroll performance with passive event listeners
+  useEffect(() => {
+    const element = sectionListRef.current;
+    if (!element) return;
+
+    const handleTouchStart = () => {
+      // Passive listener - no preventDefault
+    };
+
+    const handleTouchMove = () => {
+      // Passive listener - no preventDefault  
+    };
+
+    element.addEventListener('touchstart', handleTouchStart, { passive: true });
+    element.addEventListener('touchmove', handleTouchMove, { passive: true });
+
+    return () => {
+      element.removeEventListener('touchstart', handleTouchStart);
+      element.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, []);
 
   const getSunExposureColor = (exposure: number): string => {
     if (exposure === 0) return '#6c757d'; // Gray for no sun
@@ -121,6 +146,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
 
   const handleSort = (newSortBy: 'name' | 'exposure' | 'level' | 'price') => {
+    haptic.light();
     let newSortOrder: 'asc' | 'desc';
     
     if (sortBy === newSortBy) {
@@ -159,7 +185,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   }
 
   return (
-    <div className="section-list" role="region" aria-label="Stadium sections list">
+    <div className="section-list" role="region" aria-label="Stadium sections list" ref={sectionListRef}>
       <div className="section-list-header">
         <div className="list-title">
           <h3 id="sections-title">📋 Stadium Sections</h3>
@@ -195,7 +221,10 @@ export const SectionList: React.FC<SectionListProps> = ({
             {searchTerm && (
               <button
                 className="search-clear-btn"
-                onClick={() => setSearchTerm('')}
+                onClick={() => {
+                  haptic.light();
+                  setSearchTerm('');
+                }}
                 onKeyDown={(e) => handleKeyDown(e, () => setSearchTerm(''))}
                 aria-label="Clear search"
                 title="Clear search"
@@ -262,81 +291,44 @@ export const SectionList: React.FC<SectionListProps> = ({
           )}
         </div>
       ) : (
-        <div className="sections-grid" role="list" aria-labelledby="sections-title">
+        <div className="section-grid" role="list" aria-labelledby="sections-title">
           {sortedSections.map((sectionData, index) => {
             const { section, sunExposure, inSun } = sectionData;
+            const roundedExposure = Math.round(sunExposure);
             
             return (
               <div 
                 key={`${section.id}-${index}`}
-                className={`section-card ${inSun ? 'sunny' : 'shady'} ${section.covered ? 'covered' : ''}`}
+                className="section-card"
+                data-exposure={roundedExposure}
+                data-section={section.id}
                 role="listitem"
                 tabIndex={0}
-                aria-label={`Section ${section.name}, ${Math.round(sunExposure)}% sun exposure, ${section.level} level${section.covered ? ', covered' : ''}`}
+                aria-label={`Section ${section.name}, ${roundedExposure}% sun exposure, ${section.level} level${section.covered ? ', covered' : ''}`}
               >
                 <div className="section-header">
-                  <h4 className="section-name">{section.name}</h4>
-                  <div className="section-badges">
-                    {section.covered && (
-                      <span className="badge covered-badge" aria-label="Covered section">🏛️ Covered</span>
-                    )}
-                    <span className={`badge level-badge level-${section.level}`} aria-label={`${section.level} level seating`}>
-                      {getLevelIcon(section.level)} {section.level === 'field' ? 'Field Level' : section.level === 'lower' ? 'Lower Bowl' : section.level === 'club' ? 'Club Level' : section.level === 'upper' ? 'Upper Deck' : section.level === 'suite' ? 'Suites' : section.level}
-                    </span>
+                  <h3>{section.name}</h3>
+                  <div className="sun-indicator">
+                    <span className="sun-icon">{getSunExposureIcon(sunExposure)}</span>
+                    <span className="exposure-text">{roundedExposure}% sun</span>
                   </div>
                 </div>
-                
-                <div className="section-details">
-                  <div className="sun-exposure">
-                    <div className="exposure-bar-container">
-                      <div className="exposure-label">
-                        <span className="exposure-icon" aria-hidden="true">
-                          {getSunExposureIcon(sunExposure)}
-                        </span>
-                        <span className="exposure-text">
-                          <Tooltip content="The percentage of time this section receives direct sunlight during the game, considering weather conditions">
-                            <span>{Math.round(sunExposure)}% sun exposure</span>
-                          </Tooltip>
-                          {sunExposure < 90 && inSun && (
-                            <Tooltip content="Weather conditions are reducing the sun exposure for this section">
-                              <span className="weather-adjusted" aria-label="Weather-adjusted sun exposure">
-                                🌤️
-                              </span>
-                            </Tooltip>
-                          )}
-                        </span>
-                      </div>
-                      <div className="exposure-bar" role="progressbar" aria-valuenow={sunExposure} aria-valuemin={0} aria-valuemax={100} aria-label={`${Math.round(sunExposure)}% sun exposure`}>
-                        <div 
-                          className="exposure-fill"
-                          style={{ 
-                            width: `${sunExposure}%`,
-                            backgroundColor: getSunExposureColor(sunExposure)
-                          }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="section-meta">
-                    {section.price && (
-                      <span className={`price-indicator price-${section.price}`} aria-label={`${section.price} price range`}>
-                        <span aria-hidden="true">{getPriceIcon(section.price)}</span> {section.price}
-                      </span>
-                    )}
-                    
-                    <Tooltip content="The compass direction range this section faces (0° = North, 90° = East, 180° = South, 270° = West). This helps determine sun exposure timing.">
-                      <span className="angle-info" aria-label={`Angle range from ${Math.round(section.baseAngle)} to ${Math.round(section.baseAngle + section.angleSpan)} degrees`}>
-                        <span aria-hidden="true">📐</span> {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
-                      </span>
-                    </Tooltip>
-                  </div>
-                  
-                  {section.rows && (
-                    <div className="row-count" aria-label={`Approximately ${section.rows} rows`}>
-                      <span aria-hidden="true">🪑</span> ~{section.rows} rows
-                    </div>
+                <div className="section-meta">
+                  <span className="section-level">
+                    {section.level === 'field' ? 'Field Level' : 
+                     section.level === 'lower' ? 'Lower Level' : 
+                     section.level === 'club' ? 'Club Level' : 
+                     section.level === 'upper' ? 'Upper Level' : 
+                     section.level === 'suite' ? 'Suite Level' : section.level}
+                  </span>
+                  {section.price && (
+                    <span className={`price-tier ${section.price}`}>
+                      {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
+                    </span>
                   )}
+                </div>
+                <div className="section-direction">
+                  {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
                 </div>
               </div>
             );

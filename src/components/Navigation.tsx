@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -7,12 +8,16 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
+  const haptic = useHapticFeedback();
   return (
     <nav className="main-navigation" style={{ backgroundColor: '#667eea', minHeight: '60px' }}>
       <div className="nav-container">
         <button
           className={`nav-tab ${activeTab === 'tracker' ? 'active' : ''}`}
-          onClick={() => onTabChange('tracker')}
+          onClick={() => {
+            haptic.light();
+            onTabChange('tracker');
+          }}
           style={{ color: 'white', fontWeight: 'bold' }}
         >
           <span className="tab-icon">☀️</span>
@@ -20,7 +25,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
         </button>
         <button
           className={`nav-tab ${activeTab === 'itinerary' ? 'active' : ''}`}
-          onClick={() => onTabChange('itinerary')}
+          onClick={() => {
+            haptic.light();
+            onTabChange('itinerary');
+          }}
           style={{ color: 'white', fontWeight: 'bold' }}
         >
           <span className="tab-icon">🗓️</span>
