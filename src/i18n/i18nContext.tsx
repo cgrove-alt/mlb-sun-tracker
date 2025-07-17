@@ -88,8 +88,11 @@ const detectLanguage = (): SupportedLanguage => {
 // Load translation files
 const loadTranslations = async (language: SupportedLanguage): Promise<TranslationKeys> => {
   try {
-    // Use fetch to load translations from public directory for static export
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    // For GitHub Pages deployment, we need to include the repository name in the path
+    // Check if we're on GitHub Pages by looking at the pathname
+    const isGitHubPages = window.location.pathname.startsWith('/mlb-sun-tracker');
+    const basePath = isGitHubPages ? '/mlb-sun-tracker' : '';
+    
     const response = await fetch(`${basePath}/locales/${language}.json`);
     
     if (!response.ok) {
@@ -103,7 +106,8 @@ const loadTranslations = async (language: SupportedLanguage): Promise<Translatio
     // Fallback to English if translation loading fails
     if (language !== 'en') {
       try {
-        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const isGitHubPages = window.location.pathname.startsWith('/mlb-sun-tracker');
+        const basePath = isGitHubPages ? '/mlb-sun-tracker' : '';
         const fallbackResponse = await fetch(`${basePath}/locales/en.json`);
         
         if (fallbackResponse.ok) {

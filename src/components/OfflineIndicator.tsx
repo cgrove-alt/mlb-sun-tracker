@@ -34,6 +34,11 @@ export const OfflineIndicator: React.FC = () => {
 
     // Check initial state - only show indicator if actually offline
     const initialOfflineState = isOffline();
+    console.log('[OfflineIndicator] Initial state:', { 
+      offline: initialOfflineState, 
+      navigatorOnLine: navigator.onLine 
+    });
+    
     if (initialOfflineState) {
       setOffline(true);
       setShowIndicator(true);
@@ -73,22 +78,22 @@ export const OfflineIndicator: React.FC = () => {
         {offline ? (
           <>
             <span className="offline-icon">📵</span>
-            <span className="offline-text">{t('offline.message')}</span>
+            <span className="offline-text">{t('offline.message') || "You're offline - Using cached data"}</span>
             {cacheInfo && (
               <span className="cache-info">
-                {t('offline.cacheUsage', { percentage: cacheInfo.percentage.toFixed(1) })}
+                {t('offline.cacheUsage', { percentage: cacheInfo.percentage.toFixed(1) }) || `Cache: ${cacheInfo.percentage.toFixed(1)}%`}
               </span>
             )}
           </>
         ) : syncPending ? (
           <>
             <span className="sync-icon">🔄</span>
-            <span className="sync-text">{t('offline.syncing')}</span>
+            <span className="sync-text">{t('offline.syncing') || 'Syncing your data...'}</span>
           </>
         ) : (
           <>
             <span className="online-icon">✅</span>
-            <span className="online-text">{t('offline.backOnline')}</span>
+            <span className="online-text">{t('offline.backOnline') || 'Back online!'}</span>
           </>
         )}
       </div>
