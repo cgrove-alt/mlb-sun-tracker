@@ -4,7 +4,7 @@ import { isOffline, getCacheInfo } from '../utils/serviceWorkerRegistration';
 import './OfflineIndicator.css';
 
 export const OfflineIndicator: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, isLoading: translationsLoading } = useTranslation();
   const [offline, setOffline] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
   const [syncPending, setSyncPending] = useState(false);
@@ -62,7 +62,8 @@ export const OfflineIndicator: React.FC = () => {
     }
   }, [offline]);
 
-  if (!showIndicator) {
+  // Don't show indicator if translations are still loading or if we shouldn't show it
+  if (!showIndicator || translationsLoading) {
     return null;
   }
 

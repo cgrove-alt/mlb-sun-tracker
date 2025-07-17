@@ -88,18 +88,29 @@ const detectLanguage = (): SupportedLanguage => {
 // Load translation files
 const loadTranslations = async (language: SupportedLanguage): Promise<TranslationKeys> => {
   try {
-    const translations = await import(`./locales/${language}.json`);
-    return translations.default || translations;
+    // Use fetch to load translations from public directory for static export
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    const response = await fetch(`${basePath}/locales/${language}.json`);
+    
+    if (!response.ok) {
+      throw new Error(`Failed to load translations: ${response.status}`);
+    }
+    
+    const translations = await response.json();
+    return translations;
   } catch (error) {
     console.error(`Failed to load translations for language: ${language}`, error);
     // Fallback to English if translation loading fails
     if (language !== 'en') {
       try {
-        const fallbackTranslations = await import('./locales/en.json');
-        return fallbackTranslations.default || fallbackTranslations;
+        const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+        const fallbackResponse = await fetch(`${basePath}/locales/en.json`);
+        
+        if (fallbackResponse.ok) {
+          return await fallbackResponse.json();
+        }
       } catch (fallbackError) {
         console.error('Failed to load fallback translations', fallbackError);
-        return {};
       }
     }
     return {};
