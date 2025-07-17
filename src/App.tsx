@@ -16,7 +16,7 @@ import { Navigation } from './components/Navigation';
 import { SmartItinerariesPage } from './components/SmartItinerariesPage';
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
-import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
@@ -35,6 +35,7 @@ function AppContent() {
   const [loadingWeather, setLoadingWeather] = useState(false);
   const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
+  const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
@@ -154,9 +155,21 @@ function AppContent() {
         } : 'No weather data');
 
         // Calculate detailed section data with weather impact
-        const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
+        // Use enhanced calculator if stadium has geometry data
+        const detailedSectionData = selectedStadium.roofHeight 
+          ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
+          : calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
         
         console.log('Detailed sections calculated:', detailedSectionData.length);
+        
+        // Calculate game-long sun exposure if using enhanced calculator
+        if (selectedStadium.roofHeight && selectedGame) {
+          const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
+          console.log('Game sun exposure calculated:', gameExposure);
+          setGameExposureData(gameExposure);
+        } else {
+          setGameExposureData(null);
+        }
         setDetailedSections(detailedSectionData);
         
         // Apply current filter
@@ -309,7 +322,14 @@ function AppContent() {
 
               {sunPosition && (
                 <div className="sun-info">
-                  <h3>Sun Information</h3>
+                  <h3>
+                    Sun Information
+                    {selectedStadium?.roofHeight && (
+                      <span className="enhanced-indicator" title="Using enhanced shadow calculations with stadium geometry">
+                        ✨ Enhanced
+                      </span>
+                    )}
+                  </h3>
                   <div className="sun-details">
                     <div className="sun-detail-item">
                       <span className="sun-icon">☀️</span>

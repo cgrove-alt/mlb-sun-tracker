@@ -10,6 +10,10 @@ export interface Stadium {
   capacity: number;
   roof: 'open' | 'retractable' | 'fixed';
   timezone: string; // IANA timezone identifier
+  // Geometry data for shadow calculations
+  roofHeight?: number; // Height of roof/overhang in feet
+  roofOverhang?: number; // Horizontal overhang distance in feet
+  upperDeckHeight?: number; // Height of upper deck in feet
 }
 
 export const MLB_STADIUMS: Stadium[] = [
@@ -24,7 +28,10 @@ export const MLB_STADIUMS: Stadium[] = [
     orientation: 65,
     capacity: 45517,
     roof: 'open',
-    timezone: 'America/Los_Angeles'
+    timezone: 'America/Los_Angeles',
+    roofHeight: 120,
+    roofOverhang: 40,
+    upperDeckHeight: 80
   },
   {
     id: 'astros',

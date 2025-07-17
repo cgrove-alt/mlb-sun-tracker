@@ -2,6 +2,7 @@ import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
 import { WeatherData } from '../services/weatherApi';
+import { SunCalculator } from './sunCalculator';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -234,4 +235,124 @@ export function getCompassDirection(azimuthDegrees: number): string {
   const directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
   const index = Math.round(azimuthDegrees / 45) % 8;
   return directions[index];
+}
+
+// Enhanced sun exposure calculation using advanced shadow calculations
+export function calculateEnhancedSectionSunExposure(
+  stadium: Stadium,
+  date: Date,
+  weather?: WeatherData
+): SeatingSectionSun[] {
+  const calculator = new SunCalculator(stadium);
+  const sections = getStadiumSections(stadium.id);
+  
+  // Get sun position for the given time
+  const dateStr = date.toISOString().split('T')[0];
+  const timeStr = date.toTimeString().split(' ')[0];
+  const sunPos = calculator.calculateSunPosition(dateStr, timeStr);
+  
+  // If stadium has a fixed roof, no sections get sun
+  if (stadium.roof === 'fixed') {
+    return sections.map(section => ({
+      section,
+      inSun: false,
+      sunExposure: 0
+    }));
+  }
+  
+  // Calculate shadows for all sections
+  const shadowData = calculator.calculateShadows(
+    sunPos,
+    sections.map(s => ({
+      ...s,
+      side: getSectionSide(s),
+      angle: getSectionAngle(s, stadium.orientation)
+    }))
+  );
+  
+  // Apply weather impact
+  let weatherMultiplier = 1.0;
+  if (weather) {
+    const { cloudCover, conditions, precipitationProbability } = weather;
+    
+    if ((precipitationProbability && precipitationProbability > 70) || 
+        conditions.some(c => c.main === 'Rain' || c.main === 'Snow' || c.main === 'Drizzle')) {
+      weatherMultiplier = 0.1;
+    } else if (precipitationProbability && precipitationProbability > 30) {
+      weatherMultiplier = 0.4;
+    } else if (cloudCover > 80) {
+      weatherMultiplier = 0.4;
+    } else if (cloudCover > 60) {
+      weatherMultiplier = 0.6;
+    } else if (cloudCover > 40) {
+      weatherMultiplier = 0.8;
+    } else if (cloudCover > 15) {
+      weatherMultiplier = 0.9;
+    }
+  }
+  
+  // Combine section data with shadow calculations
+  return sections.map((section, index) => {
+    const shadow = shadowData[index];
+    const adjustedExposure = Math.round(shadow.sunExposure * weatherMultiplier);
+    
+    return {
+      section,
+      inSun: adjustedExposure > 20,
+      sunExposure: adjustedExposure
+    };
+  });
+}
+
+// Helper function to determine section side
+function getSectionSide(section: StadiumSection): 'home' | 'first' | 'third' | 'outfield' {
+  const name = section.name.toLowerCase();
+  if (name.includes('home') || name.includes('behind') || name.includes('backstop')) {
+    return 'home';
+  } else if (name.includes('first') || name.includes('1b') || name.includes('right field')) {
+    return 'first';
+  } else if (name.includes('third') || name.includes('3b') || name.includes('left field')) {
+    return 'third';
+  } else {
+    return 'outfield';
+  }
+}
+
+// Helper function to calculate section angle
+function getSectionAngle(section: StadiumSection, stadiumOrientation: number): number {
+  // This is a simplified calculation - in reality, we'd need exact section coordinates
+  const baseAngles: Record<string, number> = {
+    'home': 0,
+    'first': 90,
+    'third': 270,
+    'outfield': 180
+  };
+  
+  const side = getSectionSide(section);
+  return (baseAngles[side] + stadiumOrientation) % 360;
+}
+
+// Calculate sun exposure for entire game duration
+export function calculateGameSunExposure(
+  stadium: Stadium,
+  gameDateTime: Date,
+  gameDuration: number = 3
+): Map<string, number> {
+  const calculator = new SunCalculator(stadium);
+  const sections = getStadiumSections(stadium.id);
+  const exposureMap = new Map<string, number>();
+  
+  sections.forEach(section => {
+    const sectionWithGeometry = {
+      ...section,
+      side: getSectionSide(section),
+      angle: getSectionAngle(section, stadium.orientation),
+      depth: 50 // Default depth in feet
+    };
+    
+    const exposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDateTime, gameDuration);
+    exposureMap.set(section.id, exposure.percentage);
+  });
+  
+  return exposureMap;
 }

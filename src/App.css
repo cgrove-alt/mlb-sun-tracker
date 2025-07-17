@@ -191,6 +191,19 @@
   color: #1a237e;
   font-size: 1.3rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.enhanced-indicator {
+  font-size: 0.75rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  cursor: help;
 }
 
 .sun-details {
