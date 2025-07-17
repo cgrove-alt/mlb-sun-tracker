@@ -2,10 +2,10 @@
  * Custom hook for haptic feedback on mobile devices
  */
 export const useHapticFeedback = () => {
-  const triggerHaptic = (duration: number = 10) => {
+  const triggerHaptic = (pattern: number | number[]) => {
     if ('vibrate' in navigator && navigator.vibrate) {
       try {
-        navigator.vibrate(duration);
+        navigator.vibrate(pattern);
       } catch (error) {
         // Fail silently - not all devices support vibration
         console.debug('Haptic feedback not supported:', error);
