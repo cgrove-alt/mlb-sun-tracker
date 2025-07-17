@@ -5,7 +5,7 @@ import './OfflineIndicator.css';
 
 export const OfflineIndicator: React.FC = () => {
   const { t } = useTranslation();
-  const [offline, setOffline] = useState(isOffline());
+  const [offline, setOffline] = useState(false);
   const [showIndicator, setShowIndicator] = useState(false);
   const [syncPending, setSyncPending] = useState(false);
   const [cacheInfo, setCacheInfo] = useState<{ percentage: number } | null>(null);
@@ -14,6 +14,7 @@ export const OfflineIndicator: React.FC = () => {
     const handleOnline = () => {
       setOffline(false);
       setSyncPending(true);
+      setShowIndicator(true);
       
       // Hide indicator after showing "back online" message
       setTimeout(() => {
@@ -31,14 +32,17 @@ export const OfflineIndicator: React.FC = () => {
       setSyncPending(false);
     };
 
-    // Check initial state
-    if (isOffline()) {
+    // Check initial state - only show indicator if actually offline
+    const initialOfflineState = isOffline();
+    if (initialOfflineState) {
       setOffline(true);
       setShowIndicator(true);
     }
 
-    // Get cache info
-    getCacheInfo().then(setCacheInfo).catch(console.error);
+    // Get cache info only when offline
+    if (initialOfflineState) {
+      getCacheInfo().then(setCacheInfo).catch(console.error);
+    }
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
@@ -51,7 +55,14 @@ export const OfflineIndicator: React.FC = () => {
     };
   }, []);
 
-  if (!showIndicator && !syncPending) {
+  // Update cache info when offline status changes
+  useEffect(() => {
+    if (offline) {
+      getCacheInfo().then(setCacheInfo).catch(console.error);
+    }
+  }, [offline]);
+
+  if (!showIndicator) {
     return null;
   }
 
