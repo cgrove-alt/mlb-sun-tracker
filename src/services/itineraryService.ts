@@ -164,6 +164,12 @@ export class ItineraryService {
       recommendations.push(...this.createFamilyActivityRecommendations(timeSlots, familyAreas, preferences));
     }
     
+    // Add team store visit recommendations
+    const teamStores = amenities.amenities.filter(a => a.type === 'souvenir');
+    if (teamStores.length > 0 && !preferences.skipActivities) {
+      recommendations.push(...this.createTeamStoreRecommendations(timeSlots, teamStores, preferences));
+    }
+    
     // Sort recommendations by time
     return recommendations.sort((a, b) => a.time.getTime() - b.time.getTime());
   }
@@ -329,9 +335,9 @@ export class ItineraryService {
           walkingTime: 5
         },
         details: {
-          title: 'Grab Game Snacks',
-          description: 'Beat the crowds with pre-game concession visit',
-          reason: 'Low crowd level - optimal time for concessions',
+          title: 'Pre-Game Food Stop',
+          description: `Visit ${concession.name} for ${concession.details.foodType === 'hot_food' ? 'hot food' : concession.details.foodType}`,
+          reason: 'Beat the crowds with pre-game visit',
           uvIndexAtTime: preGameSlot.sunConditions.uvIndex
         },
         familyConsiderations: preferences.hasChildren ? {
@@ -395,6 +401,54 @@ export class ItineraryService {
           shaded: true,
           quietArea: true,
           strollerAccessible: restroom.details.accessibility || false
+        } : undefined
+      });
+    }
+    
+    return recommendations;
+  }
+
+  /**
+   * Create team store recommendations
+   */
+  private createTeamStoreRecommendations(
+    timeSlots: ItineraryTimeSlot[],
+    teamStores: StadiumAmenity[],
+    preferences: ItineraryPreferences
+  ): ItineraryRecommendation[] {
+    const recommendations: ItineraryRecommendation[] = [];
+    
+    // Find 8th inning slot for late-game shopping
+    const eighthInningSlot = timeSlots.find(slot => slot.inningRange?.start === 8);
+    
+    if (eighthInningSlot && teamStores.length > 0) {
+      const teamStore = teamStores[0]; // Use main team store
+      
+      recommendations.push({
+        id: `team_store_${eighthInningSlot.startTime.getTime()}`,
+        time: eighthInningSlot.startTime,
+        duration: 20,
+        type: 'activity',
+        priority: 'low',
+        location: {
+          amenityId: teamStore.id,
+          description: teamStore.name,
+          sectionId: teamStore.location.section,
+          walkingTime: 5
+        },
+        details: {
+          title: 'Team Store Visit',
+          description: `Browse ${teamStore.name} while avoiding post-game crowds`,
+          reason: 'Late innings are ideal for shopping to beat exit rush',
+          uvIndexAtTime: eighthInningSlot.sunConditions.uvIndex,
+          sunExposureLevel: 'low' // Most stores are indoors
+        },
+        familyConsiderations: preferences.hasChildren ? {
+          kidFriendly: true,
+          hasRestroom: false,
+          shaded: true,
+          quietArea: true,
+          strollerAccessible: true
         } : undefined
       });
     }
