@@ -20,6 +20,7 @@ import { getSunPosition, getSunDescription, getCompassDirection, calculateDetail
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
+import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -37,6 +38,22 @@ function AppContent() {
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
+  // Initialize performance monitoring
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      trackWebVitals();
+      
+      // Log performance report every 30 seconds in development
+      if (process.env.NODE_ENV === 'development') {
+        const interval = setInterval(() => {
+          performanceMonitor.logReport();
+        }, 30000);
+        
+        return () => clearInterval(interval);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     // Only access window in the browser environment
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();

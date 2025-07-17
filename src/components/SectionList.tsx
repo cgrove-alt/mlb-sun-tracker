@@ -3,6 +3,7 @@ import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
+import { LazySectionCard } from './LazySectionCard';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -292,47 +293,15 @@ export const SectionList: React.FC<SectionListProps> = ({
         </div>
       ) : (
         <div className="section-grid" role="list" aria-labelledby="sections-title">
-          {sortedSections.map((sectionData, index) => {
-            const { section, sunExposure, inSun } = sectionData;
-            const roundedExposure = Math.round(sunExposure);
-            
-            return (
-              <div 
-                key={`${section.id}-${index}`}
-                className="section-card"
-                data-exposure={roundedExposure}
-                data-section={section.id}
-                role="listitem"
-                tabIndex={0}
-                aria-label={`Section ${section.name}, ${roundedExposure}% sun exposure, ${section.level} level${section.covered ? ', covered' : ''}`}
-              >
-                <div className="section-header">
-                  <h3>{section.name}</h3>
-                  <div className="sun-indicator">
-                    <span className="sun-icon">{getSunExposureIcon(sunExposure)}</span>
-                    <span className="exposure-text">{roundedExposure}% sun</span>
-                  </div>
-                </div>
-                <div className="section-meta">
-                  <span className="section-level">
-                    {section.level === 'field' ? 'Field Level' : 
-                     section.level === 'lower' ? 'Lower Level' : 
-                     section.level === 'club' ? 'Club Level' : 
-                     section.level === 'upper' ? 'Upper Level' : 
-                     section.level === 'suite' ? 'Suite Level' : section.level}
-                  </span>
-                  {section.price && (
-                    <span className={`price-tier ${section.price}`}>
-                      {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
-                    </span>
-                  )}
-                </div>
-                <div className="section-direction">
-                  {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
-                </div>
-              </div>
-            );
-          })}
+          {sortedSections.map((sectionData, index) => (
+            <LazySectionCard
+              key={`${sectionData.section.id}-${index}`}
+              section={sectionData.section}
+              sunExposure={sectionData.sunExposure}
+              inSun={sectionData.inSun}
+              index={index}
+            />
+          ))}
         </div>
       )}
     </div>
