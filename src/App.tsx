@@ -15,7 +15,7 @@ import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { SmartItinerariesPage } from './components/SmartItinerariesPage';
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
-import { I18nProvider } from './i18n/i18nContext';
+import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from './utils/sunCalculations';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
@@ -24,6 +24,7 @@ import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
+  const { t } = useTranslation();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
@@ -207,8 +208,8 @@ function AppContent() {
       <header className="App-header">
         <div className="header-content">
           <div className="header-left">
-            <h1>MLB Stadium Sun Tracker</h1>
-            <p>Find optimal seats and plan your perfect ballpark experience</p>
+            <h1>{t('app.title')}</h1>
+            <p>{t('app.subtitle')}</p>
             {selectedStadium && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedStadium.name}</span>

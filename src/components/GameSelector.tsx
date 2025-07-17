@@ -8,6 +8,7 @@ import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
+import { useTranslation } from '../i18n/i18nContext';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -24,6 +25,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   stadiums
 }) => {
   const haptic = useHapticFeedback();
+  const { t } = useTranslation();
   const [games, setGames] = useState<MLBGame[]>([]);
   const [loading, setLoading] = useState(false);
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
@@ -152,7 +154,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   return (
     <div className="game-selector">
       <div className="selector-header">
-        <h3 id="game-selector-title">Select Stadium & Game</h3>
+        <h3 id="game-selector-title">{t('game.selectStadiumAndGame')}</h3>
         <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
           <button 
             className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
@@ -168,7 +170,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             id="games-tab"
             tabIndex={viewMode === 'games' ? 0 : -1}
           >
-            📅 Real Games
+            📅 {t('game.realGames')}
           </button>
           <button 
             className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
@@ -184,21 +186,21 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             id="custom-tab"
             tabIndex={viewMode === 'custom' ? 0 : -1}
           >
-            🕒 Custom Time
+            🕒 {t('game.customTime')}
           </button>
         </div>
       </div>
 
       <div className="control-group">
-        <label htmlFor="stadium-select">Stadium:</label>
+        <label htmlFor="stadium-select">{t('stadium.label')}:</label>
         <Select
           inputId="stadium-select"
           options={stadiumOptions}
           value={stadiumOptions.find(option => option.stadium.id === selectedStadium?.id) || null}
           onChange={(option) => onStadiumChange(option?.stadium || null)}
-          placeholder="Choose a stadium"
+          placeholder={t('stadium.choosePlaceholder')}
           className="stadium-select"
-          aria-label="Select a stadium"
+          aria-label={t('stadium.selectAriaLabel')}
           formatOptionLabel={(option) => (
             <div className="stadium-option">
               <div className="stadium-option-content">
@@ -220,20 +222,20 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           {selectedStadium ? (
             <>
               <div className="control-group">
-                <label htmlFor="game-select">Upcoming Games:</label>
+                <label htmlFor="game-select">{t('game.upcomingGames')}:</label>
                 {loading ? (
                   <div className="loading" role="status" aria-live="polite">
-                    Loading games...
+                    {t('game.loading')}
                   </div>
                 ) : (
                   <Select
                     inputId="game-select"
                     options={gameOptions}
                     onChange={handleGameSelect}
-                    placeholder={games.length > 0 ? 'Choose a game' : 'No games found'}
+                    placeholder={games.length > 0 ? t('game.choosePlaceholder') : t('game.noGamesFound')}
                     className="game-select"
                     isDisabled={games.length === 0}
-                    aria-label="Select a game"
+                    aria-label={t('game.selectAriaLabel')}
                     formatOptionLabel={(option) => (
                       <div className="game-option">
                         <div className="game-date-time">
@@ -250,22 +252,22 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               
               {games.length === 0 && !loading && (
                 <div className="no-games">
-                  <p>No upcoming games found for this stadium.</p>
-                  <p>Try using a custom date and time instead.</p>
+                  <p>{t('game.noUpcomingGamesFound')}</p>
+                  <p>{t('game.tryCustomDateTime')}</p>
                 </div>
               )}
 
               {games.length > 0 && (
                 <div className="games-info">
                   <p className="games-count">
-                    📊 Found {games.length} upcoming games
+                    📊 {t('game.foundUpcomingGames', { count: games.length })}
                   </p>
                 </div>
               )}
             </>
           ) : (
             <div className="no-stadium">
-              <p>Please select a stadium first to see upcoming games.</p>
+              <p>{t('game.selectStadiumFirst')}</p>
             </div>
           )}
         </div>
@@ -273,26 +275,26 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
           <div className="custom-controls">
             <div className="control-group">
-              <label htmlFor="custom-date">Date:</label>
+              <label htmlFor="custom-date">{t('game.date')}:</label>
               <input
                 id="custom-date"
                 type="date"
                 value={customDate}
                 onChange={(e) => setCustomDate(e.target.value)}
                 className="date-input"
-                aria-label="Select date"
+                aria-label={t('game.selectDateAriaLabel')}
               />
             </div>
 
             <div className="control-group">
-              <label htmlFor="custom-time">Time (Local):</label>
+              <label htmlFor="custom-time">{t('game.timeLocal')}:</label>
               <input
                 id="custom-time"
                 type="time"
                 value={customTime}
                 onChange={(e) => setCustomTime(e.target.value)}
                 className="time-input"
-                aria-label="Select time"
+                aria-label={t('game.selectTimeAriaLabel')}
               />
             </div>
 
@@ -304,14 +306,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
               className="apply-custom-btn"
               disabled={!customDate || !customTime || !selectedStadium}
-              aria-label="Apply custom date and time"
+              aria-label={t('game.applyCustomDateTimeAriaLabel')}
             >
-              Apply Custom Time
+              {t('game.applyCustomTime')}
             </button>
           </div>
 
           <div className="custom-info">
-            <p>💡 Use this to see sun exposure for any date and time.</p>
+            <p>💡 {t('game.customDateTimeHint')}</p>
           </div>
         </div>
       )}

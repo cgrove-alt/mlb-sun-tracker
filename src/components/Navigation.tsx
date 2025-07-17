@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
-import { LanguageSelector } from '../i18n/i18nContext';
+import { LanguageSelector, useTranslation } from '../i18n/i18nContext';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -10,6 +10,7 @@ interface NavigationProps {
 
 export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }) => {
   const haptic = useHapticFeedback();
+  const { t } = useTranslation();
   return (
     <nav className="main-navigation" style={{ backgroundColor: '#667eea', minHeight: '60px' }}>
       <div className="nav-container">
@@ -23,7 +24,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
             style={{ color: 'white', fontWeight: 'bold' }}
           >
             <span className="tab-icon">☀️</span>
-            <span className="tab-label">Sun Tracker</span>
+            <span className="tab-label">{t('navigation.sunTracker')}</span>
           </button>
           <button
             className={`nav-tab ${activeTab === 'itinerary' ? 'active' : ''}`}
@@ -34,7 +35,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
             style={{ color: 'white', fontWeight: 'bold' }}
           >
             <span className="tab-icon">🗓️</span>
-            <span className="tab-label">Smart Itinerary</span>
+            <span className="tab-label">{t('navigation.smartItinerary')}</span>
           </button>
         </div>
         <div className="nav-controls">

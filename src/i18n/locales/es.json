@@ -31,7 +31,9 @@
     "home": "Inicio",
     "back": "Atrás",
     "next": "Siguiente",
-    "previous": "Anterior"
+    "previous": "Anterior",
+    "sunTracker": "Rastreador de Sol",
+    "smartItinerary": "Itinerario Inteligente"
   },
   "breadcrumb": {
     "label": "Navegación breadcrumb de selección actual",

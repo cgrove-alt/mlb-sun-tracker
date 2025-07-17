@@ -31,7 +31,9 @@
     "home": "ホーム",
     "back": "戻る",
     "next": "次へ",
-    "previous": "前へ"
+    "previous": "前へ",
+    "sunTracker": "サントラッカー",
+    "smartItinerary": "スマート旅程"
   },
   "breadcrumb": {
     "label": "現在の選択パンくずリスト",
