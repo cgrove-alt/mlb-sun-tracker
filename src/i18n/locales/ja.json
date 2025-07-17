@@ -23,7 +23,9 @@
     "any": "すべて",
     "none": "なし",
     "required": "必須",
-    "optional": "任意"
+    "optional": "任意",
+    "language": "言語",
+    "selectLanguage": "言語を選択"
   },
   "navigation": {
     "breadcrumb": "ナビゲーション パンくずリスト",

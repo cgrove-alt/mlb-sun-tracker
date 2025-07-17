@@ -198,10 +198,10 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       <div className={`language-selector language-selector-buttons ${className}`}>
         {showLabel && (
           <label className="language-selector-label">
-            {t('app.language', { fallback: 'Language' })}
+            {t('app.language')}
           </label>
         )}
-        <div className="language-buttons" role="radiogroup" aria-label={t('app.selectLanguage', { fallback: 'Select language' })}>
+        <div className="language-buttons" role="radiogroup" aria-label={t('app.selectLanguage')}>
           {supportedLanguages.map((lang) => (
             <button
               key={lang.code}
@@ -233,7 +233,7 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
         value={language}
         onChange={(e) => setLanguage(e.target.value as SupportedLanguage)}
         className="language-select"
-        aria-label={t('app.selectLanguage', { fallback: 'Select language' })}
+        aria-label={t('app.selectLanguage')}
       >
         {supportedLanguages.map((lang) => (
           <option key={lang.code} value={lang.code}>

@@ -23,7 +23,9 @@
     "any": "Any",
     "none": "None",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "language": "Language",
+    "selectLanguage": "Select language"
   },
   "navigation": {
     "breadcrumb": "Navigation breadcrumb",

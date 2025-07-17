@@ -23,7 +23,9 @@
     "any": "Cualquiera",
     "none": "Ninguno",
     "required": "Requerido",
-    "optional": "Opcional"
+    "optional": "Opcional",
+    "language": "Idioma",
+    "selectLanguage": "Seleccionar idioma"
   },
   "navigation": {
     "breadcrumb": "Navegación breadcrumb",
