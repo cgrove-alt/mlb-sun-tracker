@@ -520,5 +520,13 @@
     "weatherCredit": "Weather data provided by",
     "openMeteo": "Open-Meteo.com",
     "copyright": "© 2024 MLB Stadium Sun Tracker"
+  },
+  "offline": {
+    "message": "You're offline - Using cached data",
+    "backOnline": "Back online!",
+    "syncing": "Syncing your data...",
+    "cacheUsage": "Cache: {percentage}%",
+    "dataAvailable": "Stadium data available offline",
+    "willSyncWhenOnline": "Changes will sync when you're back online"
   }
 }

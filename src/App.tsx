@@ -21,6 +21,8 @@ import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
+import { OfflineIndicator } from './components/OfflineIndicator';
+import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -39,10 +41,26 @@ function AppContent() {
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
-  // Initialize performance monitoring
+  // Initialize performance monitoring and service worker
   useEffect(() => {
     if (typeof window !== 'undefined') {
       trackWebVitals();
+      
+      // Register service worker
+      serviceWorkerRegistration.register({
+        onSuccess: (registration) => {
+          console.log('Service worker registered successfully');
+        },
+        onUpdate: (registration) => {
+          console.log('New content available, refresh to update');
+        },
+        onOffline: () => {
+          console.log('App is running in offline mode');
+        },
+        onOnline: () => {
+          console.log('App is back online');
+        }
+      });
       
       // Log performance report every 30 seconds in development
       if (process.env.NODE_ENV === 'development') {
@@ -205,6 +223,7 @@ function AppContent() {
 
   return (
     <div className="App">
+      <OfflineIndicator />
       <header className="App-header">
         <div className="header-content">
           <div className="header-left">

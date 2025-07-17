@@ -509,5 +509,13 @@
     "weatherCredit": "気象データ提供",
     "openMeteo": "Open-Meteo.com",
     "copyright": "© 2024 MLBスタジアム太陽追跡システム"
+  },
+  "offline": {
+    "message": "オフラインです - キャッシュデータを使用中",
+    "backOnline": "オンラインに戻りました！",
+    "syncing": "データを同期中...",
+    "cacheUsage": "キャッシュ: {percentage}%",
+    "dataAvailable": "スタジアムデータはオフラインで利用可能",
+    "willSyncWhenOnline": "オンラインに戻ると変更が同期されます"
   }
 }

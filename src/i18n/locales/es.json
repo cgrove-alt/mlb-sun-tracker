@@ -509,5 +509,13 @@
     "weatherCredit": "Datos meteorológicos proporcionados por",
     "openMeteo": "Open-Meteo.com",
     "copyright": "© 2024 Rastreador de Sol en Estadios MLB"
+  },
+  "offline": {
+    "message": "Estás sin conexión - Usando datos en caché",
+    "backOnline": "¡De vuelta en línea!",
+    "syncing": "Sincronizando tus datos...",
+    "cacheUsage": "Caché: {percentage}%",
+    "dataAvailable": "Datos del estadio disponibles sin conexión",
+    "willSyncWhenOnline": "Los cambios se sincronizarán cuando vuelvas a estar en línea"
   }
 }
