@@ -13,7 +13,6 @@ interface BeforeInstallPromptEvent extends Event {
 export default function PWAInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
   const [showPrompt, setShowPrompt] = useState(false);
-  const [isOnline, setIsOnline] = useState(true);
   const [showUpdatePrompt, setShowUpdatePrompt] = useState(false);
 
   useEffect(() => {
@@ -28,9 +27,6 @@ export default function PWAInstallPrompt() {
       }, 5000);
     };
 
-    // Handle online/offline status
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
 
     // Handle service worker updates
     const handleServiceWorkerUpdate = () => {
@@ -38,8 +34,6 @@ export default function PWAInstallPrompt() {
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
 
     // Check for service worker updates
     if ('serviceWorker' in navigator) {
@@ -48,8 +42,6 @@ export default function PWAInstallPrompt() {
 
     return () => {
       window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
       
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.removeEventListener('controllerchange', handleServiceWorkerUpdate);
@@ -107,10 +99,6 @@ export default function PWAInstallPrompt() {
         </div>
       )}
 
-      {/* Offline Indicator */}
-      <div className={`offline-indicator ${!isOnline ? 'show' : ''}`}>
-        📡 You're offline. Some features may not work.
-      </div>
 
       {/* Update Available Notification */}
       {showUpdatePrompt && (

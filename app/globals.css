@@ -107,25 +107,6 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Offline indicator */
-.offline-indicator {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #f44336;
-  color: white;
-  padding: 8px;
-  text-align: center;
-  font-size: 14px;
-  z-index: 1001;
-  transform: translateY(-100%);
-  transition: transform 0.3s ease;
-}
-
-.offline-indicator.show {
-  transform: translateY(0);
-}
 
 /* Update available notification */
 .update-available {
