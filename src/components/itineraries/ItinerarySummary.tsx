@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SmartItinerary } from '../../data/itineraryTypes';
 import { Stadium } from '../../data/stadiums';
 import { useTranslation } from '../../i18n/i18nContext';
+import { useHapticFeedback } from '../../hooks/useHapticFeedback';
 import './ItinerarySummary.css';
 
 interface ItinerarySummaryProps {
@@ -14,6 +15,8 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
   stadium
 }) => {
   const { t } = useTranslation();
+  const haptic = useHapticFeedback();
+  const [showAllSections, setShowAllSections] = useState(false);
 
   const getUVIndexLevel = (uvIndex: number): { level: string; color: string } => {
     if (uvIndex <= 2) return { level: 'Low', color: '#4CAF50' };
@@ -211,38 +214,75 @@ export const ItinerarySummary: React.FC<ItinerarySummaryProps> = ({
 
         {itinerary.sectionRecommendations && (
           <div className="section-recommendations">
-            <h4>🎯 Recommended Seating Sections</h4>
+            <div className="section-recommendations-header">
+              <h4>🎯 Seating Sections</h4>
+              {itinerary.sectionRecommendations.allSections && (
+                <button
+                  className={`toggle-sections-btn ${showAllSections ? 'active' : ''}`}
+                  onClick={() => {
+                    haptic.light();
+                    setShowAllSections(!showAllSections);
+                  }}
+                  aria-label={showAllSections ? 'Show recommendations only' : 'Show all sections'}
+                >
+                  {showAllSections ? '🎯 Show Recommendations' : '📋 Show All Sections'}
+                </button>
+              )}
+            </div>
+            
             <div className="section-recommendation-content">
-              <p className="recommendation-reasoning">{itinerary.sectionRecommendations.reasoning}</p>
-              
-              {itinerary.sectionRecommendations.preferred.length > 0 && (
-                <div className="section-group preferred">
-                  <h5>✅ Preferred Sections</h5>
-                  <div className="section-list">
-                    {itinerary.sectionRecommendations.preferred.map(section => (
-                      <span key={section} className="section-badge preferred">{section}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {itinerary.sectionRecommendations.alternatives.length > 0 && (
-                <div className="section-group alternatives">
-                  <h5>🔄 Alternative Sections</h5>
-                  <div className="section-list">
-                    {itinerary.sectionRecommendations.alternatives.map(section => (
-                      <span key={section} className="section-badge alternative">{section}</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {itinerary.sectionRecommendations.avoid.length > 0 && (
-                <div className="section-group avoid">
-                  <h5>⚠️ Sections to Avoid</h5>
-                  <div className="section-list">
-                    {itinerary.sectionRecommendations.avoid.map(section => (
-                      <span key={section} className="section-badge avoid">{section}</span>
+              {!showAllSections ? (
+                <>
+                  <p className="recommendation-reasoning">{itinerary.sectionRecommendations.reasoning}</p>
+                  
+                  {itinerary.sectionRecommendations.preferred.length > 0 && (
+                    <div className="section-group preferred">
+                      <h5>✅ Preferred Sections</h5>
+                      <div className="section-list">
+                        {itinerary.sectionRecommendations.preferred.map(section => (
+                          <span key={section} className="section-badge preferred">{section}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {itinerary.sectionRecommendations.alternatives.length > 0 && (
+                    <div className="section-group alternatives">
+                      <h5>🔄 Alternative Sections</h5>
+                      <div className="section-list">
+                        {itinerary.sectionRecommendations.alternatives.map(section => (
+                          <span key={section} className="section-badge alternative">{section}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {itinerary.sectionRecommendations.avoid.length > 0 && (
+                    <div className="section-group avoid">
+                      <h5>⚠️ Sections to Avoid</h5>
+                      <div className="section-list">
+                        {itinerary.sectionRecommendations.avoid.map(section => (
+                          <span key={section} className="section-badge avoid">{section}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <div className="all-sections-view">
+                  <p className="all-sections-note">
+                    All stadium sections with sun exposure data (same as Sun Tracker view):
+                  </p>
+                  <div className="all-sections-grid">
+                    {itinerary.sectionRecommendations.allSections?.map(section => (
+                      <div key={section.name} className="section-card-mini">
+                        <div className="section-name">{section.name}</div>
+                        <div className="section-exposure">
+                          <span className={`exposure-indicator ${section.inSun ? 'sunny' : 'shade'}`}>
+                            {section.inSun ? '☀️' : '🌫️'} {section.sunExposure}%
+                          </span>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>

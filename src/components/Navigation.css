@@ -11,6 +11,13 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-tabs {
+  display: flex;
   gap: 0;
 }
 
@@ -70,9 +77,49 @@
   white-space: nowrap;
 }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+}
+
+.nav-language-selector {
+  /* Override default language selector styles for navigation */
+}
+
+.nav-language-selector .language-selector-buttons {
+  gap: 4px;
+}
+
+.nav-language-selector .language-selector-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  min-height: 32px;
+  min-width: 32px;
+}
+
+.nav-language-selector .language-selector-buttons button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.nav-language-selector .language-selector-buttons button.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
 @media (max-width: 768px) {
   .main-navigation {
     padding: 0 10px;
+  }
+  
+  .nav-container {
+    gap: 10px;
   }
   
   .nav-tab {
@@ -92,5 +139,12 @@
   .nav-tab:active {
     transform: scale(0.98);
     background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .nav-language-selector .language-selector-buttons button {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    min-height: 36px;
+    min-width: 36px;
   }
 }

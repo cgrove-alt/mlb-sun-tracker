@@ -225,11 +225,45 @@
   margin-bottom: 20px;
 }
 
+.section-recommendations-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 .section-recommendations h4 {
-  margin: 0 0 15px 0;
+  margin: 0;
   color: #333;
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+.toggle-sections-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.toggle-sections-btn:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.toggle-sections-btn.active {
+  background: #28a745;
+}
+
+.toggle-sections-btn.active:hover {
+  background: #1e7e34;
 }
 
 .section-recommendation-content {
@@ -312,6 +346,83 @@
 .section-badge:hover {
   transform: translateY(-1px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.all-sections-view {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.all-sections-note {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
+.all-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.section-card-mini {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.section-card-mini:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.section-exposure {
+  font-size: 0.85rem;
+}
+
+.exposure-indicator.sunny {
+  color: #ff6b35;
+  font-weight: 500;
+}
+
+.exposure-indicator.shade {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .all-sections-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+  }
+  
+  .section-card-mini {
+    padding: 8px;
+  }
+  
+  .section-recommendations-header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  
+  .toggle-sections-btn {
+    width: 100%;
+    padding: 12px;
+  }
 }
 
 .mlb-play-sun-smart {

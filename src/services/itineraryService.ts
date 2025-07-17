@@ -774,6 +774,21 @@ export class ItineraryService {
     // Calculate detailed section sun exposure
     const sectionData = calculateDetailedSectionSunExposure(stadium, sunPosition, gameWeather);
     
+    // Debug logging to understand section matching
+    console.log('Smart Itinerary Section Calculation:', {
+      stadiumId: stadium.id,
+      gameDateTime: gameDateTime.toISOString(),
+      sunPosition: {
+        azimuth: sunPosition.azimuthDegrees,
+        altitude: sunPosition.altitudeDegrees
+      },
+      totalSections: sectionData.length,
+      preferences: {
+        prioritizeShade: preferences.prioritizeShade,
+        sunSensitivity: preferences.sunSensitivity
+      }
+    });
+    
     // Separate sections by sun exposure and sort by desirability
     const sortByDesirability = (a: typeof sectionData[0], b: typeof sectionData[0]) => {
       // Prioritize lower levels
@@ -805,6 +820,12 @@ export class ItineraryService {
     const shadeSections = sectionData
       .filter(s => !s.inSun)
       .sort(sortByDesirability);
+    
+    console.log('Section categorization:', {
+      sunny: sunnySection.length,
+      partialSun: partialSunSections.length,
+      shade: shadeSections.length
+    });
     
     let preferred: string[] = [];
     let alternatives: string[] = [];
@@ -871,7 +892,12 @@ export class ItineraryService {
       preferred,
       alternatives,
       avoid,
-      reasoning
+      reasoning,
+      allSections: sectionData.map(s => ({
+        name: getSectionName(s),
+        sunExposure: s.sunExposure,
+        inSun: s.inSun
+      })).sort((a, b) => a.name.localeCompare(b.name))
     };
   }
 

@@ -60,6 +60,11 @@ export interface SmartItinerary {
     alternatives: string[]; // Alternative sections
     avoid: string[]; // Sections to avoid based on preferences
     reasoning: string; // Explanation of recommendations
+    allSections?: Array<{ // All sections with sun exposure data
+      name: string;
+      sunExposure: number;
+      inSun: boolean;
+    }>;
   };
   
   // Summary statistics
