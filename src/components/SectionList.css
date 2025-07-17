@@ -117,17 +117,18 @@
   background: #6c757d;
   border: none;
   color: white;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7em;
+  font-size: 0.8em;
   transition: background-color 0.2s ease;
   position: absolute;
   right: 8px;
+  touch-action: manipulation;
 }
 
 .search-clear-btn:hover {
@@ -156,12 +157,14 @@
   background: #f8f9fa;
   border: 1px solid #dee2e6;
   border-radius: 20px;
-  padding: 6px 12px;
+  padding: 12px 16px;
   font-size: 0.8em;
   color: #495057;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
+  min-height: 44px;
+  touch-action: manipulation;
 }
 
 .sort-btn:hover {
@@ -203,11 +206,19 @@
   background: white;
   transition: all 0.2s ease;
   position: relative;
+  min-height: 44px;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 
 .section-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.section-card:active {
+  transform: scale(0.98);
+  background-color: #f0f8ff;
 }
 
 .section-card.sunny {
@@ -387,7 +398,12 @@
   
   .sections-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
+  }
+  
+  .section-card {
+    min-height: 48px;
+    padding: 14px;
   }
   
   .list-title {
@@ -428,9 +444,14 @@
   }
   
   .sort-btn {
-    min-height: 44px;
-    padding: 12px 16px;
+    min-height: 48px;
+    padding: 14px 18px;
     font-size: 0.9rem;
+  }
+  
+  .sort-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
   }
   
   .section-meta {

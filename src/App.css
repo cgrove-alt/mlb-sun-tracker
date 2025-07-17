@@ -688,3 +688,55 @@
 
 /* Import language selector styles */
 @import './i18n/LanguageSelector.css';
+
+/* Touch-friendly sizing */
+.section-card, .filter-button, .interactive-element {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 12px;
+  margin: 4px;
+  cursor: pointer;
+}
+
+/* Improved touch feedback */
+.section-card:active {
+  transform: scale(0.98);
+  background-color: #f0f8ff;
+}
+
+/* Additional touch-friendly improvements */
+button, select, input, textarea, a.clickable {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Ensure all interactive elements have proper spacing */
+.btn, .button, .tab-button, .sort-btn {
+  min-height: 44px;
+  padding: 12px 16px;
+  touch-action: manipulation;
+}
+
+/* Improve tap targets for mobile */
+@media (max-width: 768px) {
+  .section-card, .filter-button, .interactive-element {
+    min-height: 48px;
+    padding: 14px;
+  }
+  
+  /* Increase spacing between interactive elements on mobile */
+  .btn + .btn,
+  .section-card + .section-card {
+    margin-left: 8px;
+  }
+  
+  /* Better touch feedback for all clickable elements */
+  button:active,
+  a.clickable:active,
+  .clickable:active,
+  .sort-btn:active,
+  .tab-button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+}
