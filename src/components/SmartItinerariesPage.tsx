@@ -147,6 +147,9 @@ export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({
                 preferences={preferences}
                 onPreferencesChange={handlePreferencesChange}
                 onClose={() => setShowPreferences(false)}
+                selectedStadium={selectedStadium}
+                onStadiumChange={onStadiumChange}
+                onGameSelect={onGameSelect}
               />
             </div>
           )}

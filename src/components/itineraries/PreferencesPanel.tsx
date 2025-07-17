@@ -1,5 +1,8 @@
 import React from 'react';
 import { ItineraryPreferences } from '../../data/itineraryTypes';
+import { Stadium, MLB_STADIUMS } from '../../data/stadiums';
+import { MLBGame } from '../../services/mlbApi';
+import { GameSelector } from '../GameSelector';
 import { useTranslation } from '../../i18n/i18nContext';
 import './PreferencesPanel.css';
 
@@ -7,12 +10,18 @@ interface PreferencesPanelProps {
   preferences: ItineraryPreferences;
   onPreferencesChange: (preferences: ItineraryPreferences) => void;
   onClose: () => void;
+  selectedStadium: Stadium | null;
+  onStadiumChange: (stadium: Stadium | null) => void;
+  onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
 }
 
 export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
   preferences,
   onPreferencesChange,
-  onClose
+  onClose,
+  selectedStadium,
+  onStadiumChange,
+  onGameSelect
 }) => {
   const { t } = useTranslation();
 
@@ -40,6 +49,18 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
       </div>
       
       <div className="preferences-content">
+        <div className="preference-section">
+          <h4>⚾ Stadium & Game</h4>
+          <div className="game-selector-wrapper">
+            <GameSelector
+              selectedStadium={selectedStadium}
+              onStadiumChange={onStadiumChange}
+              onGameSelect={onGameSelect}
+              stadiums={MLB_STADIUMS}
+            />
+          </div>
+        </div>
+
         <div className="preference-section">
           <h4>👥 Group Details</h4>
           
