@@ -13,6 +13,11 @@
   align-items: center;
   width: 100%;
   padding: 4px 0;
+  color: #000 !important;
+}
+
+.stadium-option span {
+  color: #000 !important;
 }
 
 .stadium-option-content {
@@ -20,10 +25,15 @@
   align-items: center;
   gap: 8px;
   flex: 1;
+  color: #000 !important;
+}
+
+.stadium-option-content span {
+  color: #000 !important;
 }
 
 .favorite-indicator {
-  color: #ffd700;
+  color: #ffd700 !important;
   font-size: 16px;
 }
 
@@ -110,6 +120,19 @@
 .stadium-select,
 .game-select {
   font-size: 16px;
+}
+
+/* Global React-Select overrides to ensure text visibility */
+.stadium-select *,
+.game-select * {
+  color: #000 !important;
+}
+
+/* Specific overrides for selected state to keep white text */
+.stadium-select .react-select__option--is-selected,
+.game-select .react-select__option--is-selected {
+  background-color: #1a237e !important;
+  color: white !important;
 }
 
 /* React-Select styling for better readability */
@@ -465,4 +488,14 @@
     background-color: #1a237e;
     color: white;
   }
+}
+
+/* Ultimate override - force all dropdown text to be visible */
+.game-selector .react-select__menu * {
+  color: #000 !important;
+}
+
+/* Keep selected items white on blue background */
+.game-selector .react-select__option--is-selected * {
+  color: white !important;
 }
