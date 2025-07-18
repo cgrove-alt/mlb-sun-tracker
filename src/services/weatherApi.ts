@@ -45,14 +45,30 @@ export class WeatherApiService {
   private baseUrl = 'https://api.open-meteo.com/v1';
 
   // Centralized method to get consistent weather for any time
-  getWeatherForTime(forecast: WeatherForecast, targetTime?: Date): WeatherData {
+  getWeatherForTime(forecast: WeatherForecast, targetTime?: Date): WeatherData & { isForecastAvailable?: boolean } {
     if (!targetTime) return forecast.current;
     
-    // Find the closest hourly forecast to the target time
+    // Check if we have hourly data
+    if (!forecast.hourly || forecast.hourly.length === 0) {
+      return {
+        ...forecast.current,
+        isForecastAvailable: false
+      };
+    }
+    
+    // Get the time range of available forecast data
+    const firstHourTime = new Date(forecast.hourly[0].time).getTime();
+    const lastHourTime = new Date(forecast.hourly[forecast.hourly.length - 1].time).getTime();
     const targetHour = targetTime.getTime();
+    
+    // Check if target time is beyond forecast range
+    const isBeyondForecast = targetHour > lastHourTime;
+    const isBeforeForecast = targetHour < firstHourTime;
+    
+    // Find the closest hourly forecast to the target time
     let closestWeather = {
       ...forecast.current,
-      time: new Date().toISOString() // Add current time to current weather
+      time: new Date().toISOString()
     };
     let closestDiff = Infinity;
     
@@ -62,32 +78,40 @@ export class WeatherApiService {
         targetTime: targetTime.toISOString(),
         hourlyDataCount: forecast.hourly.length,
         firstHour: forecast.hourly[0]?.time,
-        lastHour: forecast.hourly[forecast.hourly.length - 1]?.time
+        lastHour: forecast.hourly[forecast.hourly.length - 1]?.time,
+        isBeyondForecast,
+        isBeforeForecast
       });
     }
     
     forecast.hourly.forEach(hourly => {
-      // Handle timezone properly by ensuring consistent parsing
       const hourlyTime = new Date(hourly.time).getTime();
       const diff = Math.abs(hourlyTime - targetHour);
       if (diff < closestDiff) {
         closestDiff = diff;
         closestWeather = {
           ...hourly.weather,
-          time: hourly.time // Include the time in the weather object
+          time: hourly.time
         };
       }
     });
+    
+    // Add metadata about forecast availability
+    const result = {
+      ...closestWeather,
+      isForecastAvailable: !isBeyondForecast && !isBeforeForecast
+    };
     
     if (process.env.NODE_ENV === 'development') {
       console.log('Selected weather:', {
         selectedTime: closestWeather.time,
         temperature: closestWeather.temperature,
-        diffHours: closestDiff / (1000 * 60 * 60)
+        diffHours: closestDiff / (1000 * 60 * 60),
+        isForecastAvailable: result.isForecastAvailable
       });
     }
     
-    return closestWeather;
+    return result;
   }
   
   getForecast = withCache(

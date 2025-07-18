@@ -41,6 +41,10 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   // Use centralized weather selection method
   const relevantWeather = weatherApi.getWeatherForTime(weather, gameTime || undefined);
   const weatherImpact = weatherApi.getWeatherImpactOnSun(relevantWeather);
+  const isForecastAvailable = relevantWeather.isForecastAvailable !== false;
+  
+  // Calculate days until game
+  const daysUntilGame = gameTime ? Math.ceil((gameTime.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0;
   
   // Debug logging
   if (process.env.NODE_ENV === 'development' && gameTime) {
@@ -48,7 +52,9 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
       gameTime: gameTime.toISOString(),
       selectedWeatherTime: relevantWeather.time,
       temperature: relevantWeather.temperature,
-      conditions: relevantWeather.conditions[0]?.main
+      conditions: relevantWeather.conditions[0]?.main,
+      isForecastAvailable,
+      daysUntilGame
     });
   }
 
@@ -91,6 +97,16 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
           </span>
         )}
       </div>
+
+      {!isForecastAvailable && daysUntilGame > 7 && (
+        <div className="weather-warning">
+          <span className="warning-icon">⚠️</span>
+          <div className="warning-content">
+            <strong>Extended Forecast Unavailable</strong>
+            <p>This game is {daysUntilGame} days away. Weather forecast is only available up to 7 days in advance. Showing the latest available forecast data.</p>
+          </div>
+        </div>
+      )}
 
       <div className="weather-main">
         <div className="weather-primary">

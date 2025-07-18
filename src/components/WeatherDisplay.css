@@ -36,6 +36,37 @@
   border: 1px solid #ddd;
 }
 
+.weather-warning {
+  display: flex;
+  gap: 12px;
+  padding: 16px;
+  margin: 16px 0;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  color: #856404;
+}
+
+.weather-warning .warning-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.weather-warning .warning-content {
+  flex: 1;
+}
+
+.weather-warning strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #704300;
+}
+
+.weather-warning p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
 .loading-content {
   display: flex;
   flex-direction: column;
