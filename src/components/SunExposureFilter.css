@@ -219,6 +219,7 @@
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 4px;
 }
 
 .filter-option:hover {
@@ -228,9 +229,13 @@
 }
 
 .filter-option.selected {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-  border-color: var(--color-primary);
-  color: var(--color-white);
+  background: linear-gradient(135deg, #1a237e 0%, #534bae 100%);
+  border-color: #1a237e;
+  color: white;
+}
+
+.filter-option.selected .filter-option-label {
+  color: white;
 }
 
 .filter-option input[type="radio"],
@@ -248,13 +253,15 @@
 }
 
 .filter-option-label {
-  font-size: var(--font-size-sm);
+  font-size: 14px;
   color: inherit;
   display: flex;
   align-items: center;
-  gap: var(--spacing-1);
+  gap: 4px;
   flex: 1;
   user-select: none;
+  cursor: pointer;
+  margin: 0;
 }
 
 .filter-option-icon {
