@@ -132,10 +132,10 @@
 }
 
 .filter-section > :first-child {
-  position: sticky;
-  top: calc(var(--nav-height) + var(--spacing-5));
+  /* position: sticky;
+  top: calc(var(--nav-height) + var(--spacing-5)); */
   align-self: start;
-  max-height: calc(100vh - var(--nav-height) - var(--spacing-8));
+  /* max-height: calc(100vh - var(--nav-height) - var(--spacing-8)); */
 }
 
 .filter-section > :last-child {

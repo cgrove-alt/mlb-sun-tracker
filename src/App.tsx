@@ -435,24 +435,24 @@ function AppContent() {
               )}
             </div>
 
-            <div className="filter-section">
-              <div className="section-overview">
-                <div className="overview-stats">
-                  <div className="stat-item">
-                    <span className="stat-number">{detailedSections.length}</span>
-                    <span className="stat-label">Total Sections</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">{filteredSections.length}</span>
-                    <span className="stat-label">Matching Filters</span>
-                  </div>
-                  <div className="stat-item">
-                    <span className="stat-number">{filteredSections.filter(s => s.inSun).length}</span>
-                    <span className="stat-label">In Sun</span>
-                  </div>
+            <div className="section-overview">
+              <div className="overview-stats">
+                <div className="stat-item">
+                  <span className="stat-number">{detailedSections.length}</span>
+                  <span className="stat-label">Total Sections</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">{filteredSections.length}</span>
+                  <span className="stat-label">Matching Filters</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-number">{filteredSections.filter(s => s.inSun).length}</span>
+                  <span className="stat-label">In Sun</span>
                 </div>
               </div>
-              
+            </div>
+            
+            <div className="filter-section">
               <SunExposureFilterFixed 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
