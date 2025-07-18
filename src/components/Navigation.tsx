@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LanguageSelector, useTranslation } from '../i18n/i18nContext';
+import { SunIcon, CalendarIcon } from './Icons';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -12,7 +13,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
   return (
-    <nav className="main-navigation" style={{ backgroundColor: '#667eea', minHeight: '60px' }}>
+    <nav className="main-navigation">
       <div className="nav-container">
         <div className="nav-tabs">
           <button
@@ -21,9 +22,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
               haptic.light();
               onTabChange('tracker');
             }}
-            style={{ color: 'white', fontWeight: 'bold' }}
+            aria-label={t('navigation.sunTracker')}
+            aria-current={activeTab === 'tracker' ? 'page' : undefined}
           >
-            <span className="tab-icon">☀️</span>
+            <span className="tab-icon" aria-hidden="true"><SunIcon size={20} /></span>
             <span className="tab-label">{t('navigation.sunTracker')}</span>
           </button>
           <button
@@ -32,9 +34,10 @@ export const Navigation: React.FC<NavigationProps> = ({ activeTab, onTabChange }
               haptic.light();
               onTabChange('itinerary');
             }}
-            style={{ color: 'white', fontWeight: 'bold' }}
+            aria-label={t('navigation.smartItinerary')}
+            aria-current={activeTab === 'itinerary' ? 'page' : undefined}
           >
-            <span className="tab-icon">🗓️</span>
+            <span className="tab-icon" aria-hidden="true"><CalendarIcon size={20} /></span>
             <span className="tab-label">{t('navigation.smartItinerary')}</span>
           </button>
         </div>

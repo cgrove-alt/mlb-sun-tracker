@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ErrorIcon, WarningIcon, InfoIcon, CloseIcon } from './Icons';
 import './ErrorNotification.css';
 
 export interface ErrorNotificationProps {
@@ -37,13 +38,13 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
   const getIcon = () => {
     switch (type) {
       case 'error':
-        return '❌';
+        return <ErrorIcon size={20} />;
       case 'warning':
-        return '⚠️';
+        return <WarningIcon size={20} />;
       case 'info':
-        return 'ℹ️';
+        return <InfoIcon size={20} />;
       default:
-        return '❌';
+        return <ErrorIcon size={20} />;
     }
   };
 
@@ -61,7 +62,7 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
           onClick={handleClose}
           aria-label="Close notification"
         >
-          ✕
+          <CloseIcon size={16} />
         </button>
       </div>
     </div>
@@ -69,17 +70,17 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
 };
 
 export interface ErrorContextType {
-  showError: (message: string, type?: 'error' | 'warning' | 'info') => void;
+  showError: (message: string, type?: 'error' | 'warning' | 'info', duration?: number) => void;
   clearError: () => void;
 }
 
 export const ErrorContext = React.createContext<ErrorContextType | null>(null);
 
 export const ErrorProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [error, setError] = useState<{ message: string; type: 'error' | 'warning' | 'info' } | null>(null);
+  const [error, setError] = useState<{ message: string; type: 'error' | 'warning' | 'info'; duration?: number } | null>(null);
 
-  const showError = (message: string, type: 'error' | 'warning' | 'info' = 'error') => {
-    setError({ message, type });
+  const showError = (message: string, type: 'error' | 'warning' | 'info' = 'error', duration?: number) => {
+    setError({ message, type, duration });
   };
 
   const clearError = () => {
@@ -93,6 +94,7 @@ export const ErrorProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         <ErrorNotification
           message={error.message}
           type={error.type}
+          duration={error.duration}
           onClose={clearError}
         />
       )}

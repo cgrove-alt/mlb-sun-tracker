@@ -1,9 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCard } from './LazySectionCard';
+import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
+import { LoadingSpinner } from './LoadingSpinner';
 import './SectionList.css';
 
 interface SectionListProps {
@@ -15,7 +17,6 @@ export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false
 }) => {
-  console.log('SectionList rendering with sections:', sections.length);
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
   });
@@ -31,7 +32,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm);
-    }, 300); // 300ms delay
+    }, 150); // 150ms delay for faster response
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
@@ -41,18 +42,21 @@ export const SectionList: React.FC<SectionListProps> = ({
     const element = sectionListRef.current;
     if (!element) return;
 
-    const handleTouchStart = () => {
-      // Passive listener - no preventDefault
-    };
+    // Add passive listeners for better touch performance
+    const options = { passive: true };
+    
+    // These listeners are added as passive to improve scrolling performance
+    // They don't need to prevent default behavior
+    const handleWheel = () => {};
+    const handleTouchStart = () => {};
+    const handleTouchMove = () => {};
 
-    const handleTouchMove = () => {
-      // Passive listener - no preventDefault  
-    };
-
-    element.addEventListener('touchstart', handleTouchStart, { passive: true });
-    element.addEventListener('touchmove', handleTouchMove, { passive: true });
+    element.addEventListener('wheel', handleWheel, options);
+    element.addEventListener('touchstart', handleTouchStart, options);
+    element.addEventListener('touchmove', handleTouchMove, options);
 
     return () => {
+      element.removeEventListener('wheel', handleWheel);
       element.removeEventListener('touchstart', handleTouchStart);
       element.removeEventListener('touchmove', handleTouchMove);
     };
@@ -66,51 +70,54 @@ export const SectionList: React.FC<SectionListProps> = ({
     return '#dc3545'; // Red for very high sun
   };
 
-  const getSunExposureIcon = (exposure: number): string => {
-    if (exposure === 0) return '🌫️';
-    if (exposure < 25) return '⛅';
-    if (exposure < 50) return '🌤️';
-    if (exposure < 75) return '☀️';
-    return '🔥';
+  const getSunExposureIcon = (exposure: number) => {
+    if (exposure === 0) return <CloudIcon size={20} />;
+    if (exposure < 25) return <PartlyCloudyIcon size={20} />;
+    if (exposure < 50) return <SunIcon size={20} color="#f59e0b" />;
+    if (exposure < 75) return <SunIcon size={20} color="#f97316" />;
+    return <FireIcon size={20} color="#dc2626" />;
   };
 
-  const getLevelIcon = (level: string): string => {
+  const getLevelIcon = (level: string) => {
     switch (level) {
-      case 'field': return '⚾';
-      case 'lower': return '🎫';
-      case 'club': return '🥂';
-      case 'upper': return '🎪';
-      case 'suite': return '👑';
-      default: return '🏟️';
+      case 'field': return <FieldLevelIcon size={20} />;
+      case 'lower': return <LowerLevelIcon size={20} />;
+      case 'club': return <ClubLevelIcon size={20} />;
+      case 'upper': return <UpperLevelIcon size={20} />;
+      case 'suite': return <CrownIcon size={20} />;
+      default: return <StadiumIcon size={20} />;
     }
   };
 
-  const getPriceIcon = (price?: string): string => {
+  const getPriceIcon = (price?: string) => {
     switch (price) {
-      case 'value': return '💵';
-      case 'moderate': return '💶';
-      case 'premium': return '💷';
-      case 'luxury': return '💎';
-      default: return '💰';
+      case 'value': return <ValuePriceIcon size={20} />;
+      case 'moderate': return <ModeratePriceIcon size={20} />;
+      case 'premium': return <PremiumPriceIcon size={20} />;
+      case 'luxury': return <LuxuryPriceIcon size={20} />;
+      default: return <MoneyIcon size={20} />;
     }
   };
 
   // Filter sections based on debounced search term
-  const filteredSections = sections.filter(sectionData => {
-    if (!debouncedSearchTerm) return true;
-    
-    const term = debouncedSearchTerm.toLowerCase();
-    const section = sectionData.section;
-    
-    return (
-      section.name.toLowerCase().includes(term) ||
-      section.id.toLowerCase().includes(term) ||
-      section.level.toLowerCase().includes(term) ||
-      (section.price && section.price.toLowerCase().includes(term))
-    );
-  });
+  const filteredSections = useMemo(() => {
+    return sections.filter(sectionData => {
+      if (!debouncedSearchTerm) return true;
+      
+      const term = debouncedSearchTerm.toLowerCase();
+      const section = sectionData.section;
+      
+      return (
+        section.name.toLowerCase().includes(term) ||
+        section.id.toLowerCase().includes(term) ||
+        section.level.toLowerCase().includes(term) ||
+        (section.price && section.price.toLowerCase().includes(term))
+      );
+    });
+  }, [sections, debouncedSearchTerm]);
 
-  const sortedSections = [...filteredSections].sort((a, b) => {
+  const sortedSections = useMemo(() => {
+    return [...filteredSections].sort((a, b) => {
     let aValue: any, bValue: any;
     
     switch (sortBy) {
@@ -144,7 +151,8 @@ export const SectionList: React.FC<SectionListProps> = ({
     return sortOrder === 'asc' 
       ? aValue - bValue
       : bValue - aValue;
-  });
+    });
+  }, [filteredSections, sortBy, sortOrder]);
 
   const handleSort = (newSortBy: 'name' | 'exposure' | 'level' | 'price') => {
     haptic.light();
@@ -177,10 +185,10 @@ export const SectionList: React.FC<SectionListProps> = ({
   if (loading) {
     return (
       <div className="section-list loading">
-        <div className="loading-spinner" role="status" aria-live="polite">
-          <div className="spinner"></div>
-          <p>Calculating sun exposure for all sections...</p>
-        </div>
+        <LoadingSpinner 
+          size="medium" 
+          message="Calculating sun exposure for all sections..."
+        />
       </div>
     );
   }
@@ -189,17 +197,17 @@ export const SectionList: React.FC<SectionListProps> = ({
     <div className="section-list" role="region" aria-label="Stadium sections list" ref={sectionListRef}>
       <div className="section-list-header">
         <div className="list-title">
-          <h3 id="sections-title">📋 Stadium Sections</h3>
+          <h3 id="sections-title"><ListIcon size={20} /> Stadium Sections</h3>
           <div className="section-summary" aria-live="polite">
             <span className="summary-item sunny">
-              ☀️ {sunnyCount} sunny
+              <SunIcon size={16} /> {sunnyCount} sunny
             </span>
             <span className="summary-item shady">
-              🌫️ {shadyCount} shaded
+              <CloudIcon size={16} /> {shadyCount} shaded
             </span>
             {debouncedSearchTerm && (
               <span className="summary-item search-results">
-                🔍 {filteredSections.length} of {sections.length} shown
+                <SearchIcon size={16} /> {filteredSections.length} of {sections.length} shown
               </span>
             )}
           </div>
@@ -208,7 +216,7 @@ export const SectionList: React.FC<SectionListProps> = ({
         <div className="search-and-sort">
           <div className="search-section">
             <label htmlFor="section-search" className="search-label">
-              🔍 Search sections:
+              <SearchIcon size={16} /> Search sections:
             </label>
             <input
               id="section-search"
@@ -230,7 +238,7 @@ export const SectionList: React.FC<SectionListProps> = ({
                 aria-label="Clear search"
                 title="Clear search"
               >
-                ✕
+                <CloseIcon size={14} />
               </button>
             )}
           </div>

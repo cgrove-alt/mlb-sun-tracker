@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { GameSelector } from './components/GameSelector';
@@ -13,7 +13,11 @@ import { ShareButton } from './components/ShareButton';
 import { UserProfileMenu } from './components/UserProfileMenu';
 import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
-import { SmartItinerariesPage } from './components/SmartItinerariesPage';
+import { LoadingSpinner } from './components/LoadingSpinner';
+import { useSunCalculations } from './hooks/useSunCalculations';
+import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
+
+const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
@@ -40,6 +44,7 @@ function AppContent() {
   const [loadingSections, setLoadingSections] = useState(false);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const { showError } = useError();
+  const { calculateSunPosition, calculateSectionExposures } = useSunCalculations();
 
   // Load preferences and URL parameters on component mount
   // Initialize performance monitoring and service worker
@@ -50,16 +55,24 @@ function AppContent() {
       // Register service worker
       serviceWorkerRegistration.register({
         onSuccess: (registration) => {
-          console.log('Service worker registered successfully');
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Service worker registered successfully');
+          }
         },
         onUpdate: (registration) => {
-          console.log('New content available, refresh to update');
+          if (process.env.NODE_ENV === 'development') {
+            console.log('New content available, refresh to update');
+          }
         },
         onOffline: () => {
-          console.log('App is running in offline mode');
+          if (process.env.NODE_ENV === 'development') {
+            console.log('App is running in offline mode');
+          }
         },
         onOnline: () => {
-          console.log('App is back online');
+          if (process.env.NODE_ENV === 'development') {
+            console.log('App is back online');
+          }
         }
       });
       
@@ -96,7 +109,9 @@ function AppContent() {
               setGameDateTime(dateTime);
             }
           } catch (error) {
-            console.error('Invalid datetime parameter:', error);
+            if (process.env.NODE_ENV === 'development') {
+              console.error('Invalid datetime parameter:', error);
+            }
           }
         }
       }
@@ -124,7 +139,9 @@ function AppContent() {
       const forecast = await weatherApi.getForecast(selectedStadium.latitude, selectedStadium.longitude);
       setWeatherForecast(forecast);
     } catch (error) {
-      console.error('Error loading weather forecast:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.error('Error loading weather forecast:', error);
+      }
       setWeatherForecast(null);
       showError(
         'Unable to load weather forecast. Sun calculations will continue without weather data.',
@@ -140,54 +157,74 @@ function AppContent() {
     if (selectedStadium && gameDateTime) {
       setLoadingSections(true);
       
-      try {
-        // Calculate sun position
-        const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
-        setSunPosition(position);
-        
-        // Get weather data for calculations
-        const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
-        console.log('Game weather for sun calculations:', gameWeather ? {
-          cloudCover: gameWeather.cloudCover,
-          conditions: gameWeather.conditions[0]?.main,
-          precipitationProbability: gameWeather.precipitationProbability,
-          temperature: gameWeather.temperature
-        } : 'No weather data');
+      const calculateSunData = async () => {
+        try {
+          // Calculate sun position using Web Worker
+          const position = await calculateSunPosition(
+            gameDateTime,
+            selectedStadium.latitude,
+            selectedStadium.longitude
+          );
+          
+          // Convert worker response format to match existing format
+          const formattedPosition = {
+            altitudeDegrees: position.altitude,
+            azimuthDegrees: position.azimuth,
+            altitude: position.altitude * Math.PI / 180,
+            azimuth: position.azimuth * Math.PI / 180
+          };
+          setSunPosition(formattedPosition);
+          
+          // Get weather data for calculations
+          const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Game weather for sun calculations:', gameWeather ? {
+              cloudCover: gameWeather.cloudCover,
+              conditions: gameWeather.conditions[0]?.main,
+              precipitationProbability: gameWeather.precipitationProbability,
+              temperature: gameWeather.temperature
+            } : 'No weather data');
+          }
 
-        // Calculate detailed section data with weather impact
-        // Use enhanced calculator if stadium has geometry data
-        const detailedSectionData = selectedStadium.roofHeight 
-          ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
-          : calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
-        
-        console.log('Detailed sections calculated:', detailedSectionData.length);
-        
-        // Calculate game-long sun exposure if using enhanced calculator
-        if (selectedStadium.roofHeight && selectedGame) {
-          const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
-          console.log('Game sun exposure calculated:', gameExposure);
-          setGameExposureData(gameExposure);
-        } else {
-          setGameExposureData(null);
+          // Calculate detailed section data with weather impact
+          // Use enhanced calculator if stadium has geometry data
+          const detailedSectionData = selectedStadium.roofHeight 
+            ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
+            : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, gameWeather);
+          
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Detailed sections calculated:', detailedSectionData.length);
+          }
+          
+          // Calculate game-long sun exposure if using enhanced calculator
+          if (selectedStadium.roofHeight && selectedGame) {
+            const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
+            console.log('Game sun exposure calculated:', gameExposure);
+            setGameExposureData(gameExposure);
+          } else {
+            setGameExposureData(null);
+          }
+          setDetailedSections(detailedSectionData);
+          
+          // Apply current filter
+          const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
+          console.log('Filtered sections:', filtered.length);
+          setFilteredSections(filtered);
+          
+        } catch (error) {
+          console.error('Error calculating sun exposure:', error);
+          showError(
+            'Unable to calculate sun exposure for stadium sections. Please try again.',
+            'error'
+          );
+        } finally {
+          setLoadingSections(false);
         }
-        setDetailedSections(detailedSectionData);
-        
-        // Apply current filter
-        const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
-        console.log('Filtered sections:', filtered.length);
-        setFilteredSections(filtered);
-        
-      } catch (error) {
-        console.error('Error calculating sun exposure:', error);
-        showError(
-          'Unable to calculate sun exposure for stadium sections. Please try again.',
-          'error'
-        );
-      } finally {
-        setLoadingSections(false);
-      }
+      };
+      
+      calculateSunData();
     }
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError]);
+  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError, calculateSunPosition]);
 
   // Load weather forecast when stadium changes
   useEffect(() => {
@@ -291,7 +328,7 @@ function AppContent() {
             type="no-stadium"
             action={
               <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                💡 Choose from 30 MLB stadiums to analyze sun exposure patterns
+                Choose from 30 MLB stadiums to analyze sun exposure patterns
               </p>
             }
           />
@@ -302,7 +339,7 @@ function AppContent() {
             type="no-game"
             action={
               <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                🎯 Pick a real game or set any custom date and time
+                Pick a real game or set any custom date and time
               </p>
             }
           />
@@ -332,7 +369,7 @@ function AppContent() {
                   </h3>
                   <div className="sun-details">
                     <div className="sun-detail-item">
-                      <span className="sun-icon">☀️</span>
+                      <span className="sun-icon"><SunIcon size={20} /></span>
                       <div className="sun-detail-content">
                         <span className="sun-label">Condition</span>
                         <span className="sun-value">{getSunDescription(sunPosition)}</span>
@@ -340,7 +377,7 @@ function AppContent() {
                     </div>
                     
                     <div className="sun-detail-item">
-                      <span className="sun-icon">🧭</span>
+                      <span className="sun-icon"><InfoIcon size={20} /></span>
                       <div className="sun-detail-content">
                         <Tooltip content="The compass direction where the sun is located (0° = North, 90° = East, 180° = South, 270° = West)">
                           <span className="sun-label">Direction</span>
@@ -350,7 +387,7 @@ function AppContent() {
                     </div>
                     
                     <div className="sun-detail-item">
-                      <span className="sun-icon">📐</span>
+                      <span className="sun-icon"><ChartIcon size={20} /></span>
                       <div className="sun-detail-content">
                         <Tooltip content="The sun's angle above the horizon (0° = horizon, 90° = directly overhead). Negative values indicate the sun is below the horizon.">
                           <span className="sun-label">Elevation</span>
@@ -361,7 +398,7 @@ function AppContent() {
 
                     {sunPosition && sunPosition.altitudeDegrees < 0 && (
                       <div className="night-game">
-                        <span className="night-icon">🌙</span>
+                        <span className="night-icon"><MoonIcon size={20} /></span>
                         <span>This is a night game - sun will not be a factor</span>
                       </div>
                     )}
@@ -399,11 +436,11 @@ function AppContent() {
             </div>
 
             <div className="recommendations">
-              <h3>🎯 Smart Seating Recommendations</h3>
+              <h3><InfoIcon size={20} /> Smart Seating Recommendations</h3>
               <div className="recommendations-content">
                 {sunPosition && sunPosition.altitudeDegrees < 0 ? (
                   <div className="recommendation-item night">
-                    <span className="rec-icon">🌙</span>
+                    <span className="rec-icon"><MoonIcon size={24} /></span>
                     <div className="rec-content">
                       <h4>Night Game</h4>
                       <p>Since this is a night game, sun exposure won't be a concern for any seats. Focus on other factors like sightlines and amenities.</p>
@@ -411,7 +448,7 @@ function AppContent() {
                   </div>
                 ) : selectedStadium.roof === 'fixed' ? (
                   <div className="recommendation-item covered">
-                    <span className="rec-icon">🏟️</span>
+                    <span className="rec-icon"><StadiumIcon size={24} /></span>
                     <div className="rec-content">
                       <h4>Covered Stadium</h4>
                       <p>This stadium has a fixed roof, so all seats are protected from direct sunlight and weather.</p>
@@ -420,7 +457,7 @@ function AppContent() {
                 ) : (
                   <>
                     <div className="recommendation-item shade">
-                      <span className="rec-icon">🏛️</span>
+                      <span className="rec-icon"><ShadeIcon size={24} /></span>
                       <div className="rec-content">
                         <h4>To Avoid Sun</h4>
                         <p>Choose seats on the <strong>{
@@ -430,7 +467,7 @@ function AppContent() {
                     </div>
 
                     <div className="recommendation-item sun">
-                      <span className="rec-icon">☀️</span>
+                      <span className="rec-icon"><SunIcon size={24} /></span>
                       <div className="rec-content">
                         <h4>For Sun Lovers</h4>
                         <p>Seats in <strong>{
@@ -441,7 +478,7 @@ function AppContent() {
 
                     {sunPosition && sunPosition.altitudeDegrees > 60 && (
                       <div className="recommendation-item high-sun">
-                        <span className="rec-icon">🌤️</span>
+                        <span className="rec-icon"><PartlyCloudyIcon size={24} /></span>
                         <div className="rec-content">
                           <h4>High Sun</h4>
                           <p>With the sun high in the sky, upper deck seats may provide more shade from overhangs.</p>
@@ -451,7 +488,7 @@ function AppContent() {
 
                     {weatherForecast && (
                       <div className="recommendation-item weather">
-                        <span className="rec-icon">🌦️</span>
+                        <span className="rec-icon"><RainIcon size={24} /></span>
                         <div className="rec-content">
                           <h4>Weather Considerations</h4>
                           <p>{weatherApi.getWeatherImpactOnSun(weatherApi.getWeatherForTime(weatherForecast, gameDateTime || undefined)).recommendation}</p>
@@ -463,7 +500,7 @@ function AppContent() {
 
                 {selectedGame && (
                   <div className="game-info">
-                    <h4>📊 Game Details</h4>
+                    <h4><ChartIcon size={20} /> Game Details</h4>
                     <p><strong>Matchup:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
                     <p><strong>Venue:</strong> {selectedGame.venue.name}</p>
                     <p><strong>Game Time:</strong> {selectedStadium ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime.toLocaleString()}</p>
@@ -475,15 +512,17 @@ function AppContent() {
         )}
         </main>
       ) : (
-        <SmartItinerariesPage
-          selectedStadium={selectedStadium}
-          selectedGame={selectedGame}
-          gameDateTime={gameDateTime}
-          weatherForecast={weatherForecast}
-          selectedSectionId={filteredSections.length > 0 ? filteredSections[0].section.id : undefined}
-          onStadiumChange={handleStadiumChange}
-          onGameSelect={handleGameSelect}
-        />
+        <Suspense fallback={<LoadingSpinner size="large" message="Loading Smart Itineraries..." fullScreen />}>
+          <SmartItinerariesPage
+            selectedStadium={selectedStadium}
+            selectedGame={selectedGame}
+            gameDateTime={gameDateTime}
+            weatherForecast={weatherForecast}
+            selectedSectionId={filteredSections.length > 0 ? filteredSections[0].section.id : undefined}
+            onStadiumChange={handleStadiumChange}
+            onGameSelect={handleGameSelect}
+          />
+        </Suspense>
       )}
 
       <footer className="App-footer">

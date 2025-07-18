@@ -1,4 +1,6 @@
 import React from 'react';
+import { StadiumIcon, BaseballIcon, SearchIcon } from './Icons';
+import { LoadingSpinner } from './LoadingSpinner';
 import './EmptyStates.css';
 
 interface EmptyStateProps {
@@ -18,25 +20,25 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
     switch (type) {
       case 'no-stadium':
         return {
-          icon: '🏟️',
+          icon: <StadiumIcon size={48} color="#9ca3af" />,
           title: title || 'Select a Stadium',
           message: message || 'Choose a stadium to see sun exposure data for upcoming games.'
         };
       case 'no-game':
         return {
-          icon: '⚾',
+          icon: <BaseballIcon size={48} color="#9ca3af" />,
           title: title || 'Select a Game or Time',
           message: message || 'Choose a game time to see which sections will be in sun or shade.'
         };
       case 'no-sections':
         return {
-          icon: '🔍',
+          icon: <SearchIcon size={48} color="#9ca3af" />,
           title: title || 'No Sections Found',
           message: message || 'Try adjusting your filters to see more sections.'
         };
       case 'loading':
         return {
-          icon: '⏳',
+          icon: null,
           title: title || 'Loading...',
           message: message || 'Please wait while we calculate sun exposure data.'
         };
@@ -59,11 +61,7 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
         <p className="empty-state-message">{content.message}</p>
         {action && <div className="empty-state-action">{action}</div>}
         {type === 'loading' && (
-          <div className="loading-dots">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <LoadingSpinner size="medium" />
         )}
       </div>
     </div>
