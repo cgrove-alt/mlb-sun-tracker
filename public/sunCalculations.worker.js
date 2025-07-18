@@ -45,6 +45,8 @@ function getSunPosition(date, lat, lng) {
 
 // Optimized batch calculation for sections
 function calculateSectionExposureBatch(sections, sunPosition, stadiumOrientation, weatherConditions) {
+  console.log('Worker: Processing', sections.length, 'sections');
+  
   // Early exit if sun is below horizon
   if (sunPosition.altitude <= 0) {
     return sections.map(section => ({
@@ -133,47 +135,56 @@ function getCachedSunPosition(date, lat, lng) {
 // Message handler
 self.addEventListener('message', (event) => {
   const { type, data } = event.data;
+  console.log('Worker received message:', type);
   
-  switch (type) {
-    case 'calculateSunPosition':
-      const { date, latitude, longitude } = data;
-      const position = getCachedSunPosition(new Date(date), latitude, longitude);
-      self.postMessage({ type: 'sunPosition', data: position });
-      break;
-      
-    case 'calculateSectionExposures':
-      const { sections, sunPosition, stadiumOrientation, weatherConditions } = data;
-      
-      // Process in chunks to avoid blocking
-      const chunkSize = 50;
-      const results = [];
-      
-      for (let i = 0; i < sections.length; i += chunkSize) {
-        const chunk = sections.slice(i, i + chunkSize);
-        const chunkResults = calculateSectionExposureBatch(
-          chunk, 
-          sunPosition, 
-          stadiumOrientation, 
-          weatherConditions
-        );
-        results.push(...chunkResults);
+  try {
+    switch (type) {
+      case 'calculateSunPosition':
+        const { date, latitude, longitude } = data;
+        const position = getCachedSunPosition(new Date(date), latitude, longitude);
+        console.log('Worker: Sun position calculated:', position);
+        self.postMessage({ type: 'sunPosition', data: position });
+        break;
         
-        // Send progress update
-        if (i + chunkSize < sections.length) {
-          self.postMessage({ 
-            type: 'progress', 
-            data: { 
-              completed: i + chunkSize, 
-              total: sections.length 
-            } 
-          });
+      case 'calculateSectionExposures':
+        const { sections, sunPosition, stadiumOrientation, weatherConditions } = data;
+        console.log('Worker: Starting section calculations for', sections.length, 'sections');
+        
+        // Process in chunks to avoid blocking
+        const chunkSize = 50;
+        const results = [];
+        
+        for (let i = 0; i < sections.length; i += chunkSize) {
+          const chunk = sections.slice(i, i + chunkSize);
+          const chunkResults = calculateSectionExposureBatch(
+            chunk, 
+            sunPosition, 
+            stadiumOrientation, 
+            weatherConditions
+          );
+          results.push(...chunkResults);
+          
+          // Send progress update
+          if (i + chunkSize < sections.length) {
+            self.postMessage({ 
+              type: 'progress', 
+              data: { 
+                completed: Math.min(i + chunkSize, sections.length), 
+                total: sections.length 
+              } 
+            });
+          }
         }
-      }
-      
-      self.postMessage({ type: 'sectionExposures', data: results });
-      break;
-      
-    default:
-      console.error('Unknown message type:', type);
+        
+        console.log('Worker: Completed calculations, sending', results.length, 'results');
+        self.postMessage({ type: 'sectionExposures', data: results });
+        break;
+        
+      default:
+        console.error('Unknown message type:', type);
+    }
+  } catch (error) {
+    console.error('Worker error:', error);
+    self.postMessage({ type: 'error', data: error.message });
   }
 });

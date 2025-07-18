@@ -188,26 +188,35 @@ function AppContent() {
             } : 'No weather data');
           }
 
-          // Get sections and calculate using Web Worker
+          // Get sections and calculate
           const sections = getStadiumSections(selectedStadium.id);
+          let detailedSectionData;
           
-          // Use Web Worker for all calculations now
-          const workerSections = await calculateSectionExposures(
-            sections,
-            position,
-            selectedStadium.orientation,
-            gameWeather,
-            (completed, total) => {
-              setCalculationProgress({ completed, total });
-            }
-          );
-          
-          // Format results to match expected structure
-          const detailedSectionData = workerSections.map(section => ({
-            section: section,
-            inSun: section.inSun,
-            sunExposure: section.sunExposure
-          }));
+          try {
+            // Try Web Worker first
+            const workerSections = await calculateSectionExposures(
+              sections,
+              position,
+              selectedStadium.orientation,
+              gameWeather,
+              (completed, total) => {
+                setCalculationProgress({ completed, total });
+              }
+            );
+            
+            // Format results to match expected structure
+            detailedSectionData = workerSections.map(section => ({
+              section: section,
+              inSun: section.inSun,
+              sunExposure: section.sunExposure
+            }));
+          } catch (workerError) {
+            console.error('Worker calculation failed, using fallback:', workerError);
+            // Fallback to synchronous calculation
+            detailedSectionData = selectedStadium.roofHeight 
+              ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
+              : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, gameWeather);
+          }
           
           if (process.env.NODE_ENV === 'development') {
             console.log('Detailed sections calculated:', detailedSectionData.length);
