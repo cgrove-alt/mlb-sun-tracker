@@ -223,7 +223,9 @@ function AppContent() {
               : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, gameWeather);
           }
           
-          console.log('Detailed sections calculated:', detailedSectionData.length, detailedSectionData.slice(0, 3));
+          if (process.env.NODE_ENV === 'development') {
+            console.log('Detailed sections calculated:', detailedSectionData.length);
+          }
           
           // Calculate game-long sun exposure if using enhanced calculator
           if (selectedStadium.roofHeight && selectedGame) {
@@ -265,20 +267,13 @@ function AppContent() {
 
   // Update filtered sections when filter criteria changes
   useEffect(() => {
-    console.log('Filter effect triggered:', {
-      detailedSections: detailedSections.length,
-      filterCriteria,
-      hasDetailedSections: detailedSections.length > 0
-    });
     if (detailedSections.length > 0) {
       const filtered = filterSectionsBySunExposure(detailedSections, filterCriteria);
-      console.log('Filtered result:', filtered.length);
       setFilteredSections(filtered);
     }
   }, [detailedSections, filterCriteria]);
 
   const handleFilterChange = (criteria: SunFilterCriteria) => {
-    console.log('Filter criteria changed:', criteria);
     setFilterCriteria(criteria);
     // Save filter criteria to user profile
     updatePreferences({ filterCriteria: criteria });
