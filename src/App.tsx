@@ -452,7 +452,7 @@ function AppContent() {
               </div>
             </div>
             
-            <div className="filter-section">
+            <div className="filter-and-sections-container">
               <SunExposureFilterFixed 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
