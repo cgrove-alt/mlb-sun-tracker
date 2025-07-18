@@ -43,37 +43,91 @@ function getSunPosition(date, lat, lng) {
   };
 }
 
-function calculateSectionExposure(section, sunPosition, stadiumOrientation, weatherConditions) {
-  // Simplified calculation for worker
-  const sectionMidAngle = section.baseAngle + section.angleSpan / 2;
-  const relativeAngle = Math.abs(sunPosition.azimuth - stadiumOrientation - sectionMidAngle);
-  const normalizedAngle = relativeAngle > 180 ? 360 - relativeAngle : relativeAngle;
+// Optimized batch calculation for sections
+function calculateSectionExposureBatch(sections, sunPosition, stadiumOrientation, weatherConditions) {
+  // Early exit if sun is below horizon
+  if (sunPosition.altitude <= 0) {
+    return sections.map(section => ({
+      ...section,
+      sunExposure: 0,
+      inSun: false
+    }));
+  }
+
+  // Pre-calculate common values
+  const weatherMultiplier = weatherConditions ? 
+    (1 - (weatherConditions.cloudCover || 0) / 100 * 0.7) : 1;
   
-  let exposure = 0;
-  
-  if (sunPosition.altitude > 0) {
-    // Direct sun exposure based on angle
-    const angleFactor = Math.max(0, 1 - normalizedAngle / 90);
-    const altitudeFactor = Math.min(1, sunPosition.altitude / 45);
-    exposure = angleFactor * altitudeFactor * 100;
-    
-    // Weather impact
-    if (weatherConditions) {
-      const cloudReduction = (weatherConditions.cloudCover || 0) / 100;
-      exposure *= (1 - cloudReduction * 0.7);
-    }
-    
-    // Coverage impact
+  const normalizedSunAzimuth = sunPosition.azimuth - stadiumOrientation;
+  const altitudeFactor = Math.min(1, sunPosition.altitude / 45);
+
+  return sections.map(section => {
+    // Skip covered sections
     if (section.covered) {
-      exposure *= 0.1;
+      return {
+        ...section,
+        sunExposure: 0,
+        inSun: false
+      };
     }
+
+    // Calculate relative angle
+    const sectionMidAngle = section.baseAngle + section.angleSpan / 2;
+    const relativeAngle = Math.abs(normalizedSunAzimuth - sectionMidAngle);
+    const normalizedAngle = relativeAngle > 180 ? 360 - relativeAngle : relativeAngle;
+    
+    // Quick check if section faces away from sun
+    if (normalizedAngle > 120) {
+      return {
+        ...section,
+        sunExposure: 0,
+        inSun: false
+      };
+    }
+    
+    // Calculate exposure
+    const angleFactor = Math.max(0, 1 - normalizedAngle / 90);
+    let exposure = angleFactor * altitudeFactor * 100 * weatherMultiplier;
+    
+    // Apply level multipliers
+    const levelMultipliers = {
+      'field': 1.0,
+      'lower': 0.9,
+      'club': 0.8,
+      'upper': 0.95,
+      'suite': 0.7
+    };
+    
+    exposure *= levelMultipliers[section.level] || 1.0;
+    
+    return {
+      ...section,
+      sunExposure: Math.round(exposure),
+      inSun: exposure > 10
+    };
+  });
+}
+
+// Cache for sun positions
+const sunPositionCache = new Map();
+
+function getCachedSunPosition(date, lat, lng) {
+  const cacheKey = `${date.toISOString()}_${lat}_${lng}`;
+  
+  if (sunPositionCache.has(cacheKey)) {
+    return sunPositionCache.get(cacheKey);
   }
   
-  return {
-    ...section,
-    sunExposure: Math.round(exposure),
-    inSun: exposure > 10
-  };
+  const position = getSunPosition(date, lat, lng);
+  
+  // Limit cache size
+  if (sunPositionCache.size > 100) {
+    const firstKey = sunPositionCache.keys().next().value;
+    sunPositionCache.delete(firstKey);
+  }
+  
+  sunPositionCache.set(cacheKey, position);
+  return position;
 }
 
 // Message handler
@@ -83,15 +137,39 @@ self.addEventListener('message', (event) => {
   switch (type) {
     case 'calculateSunPosition':
       const { date, latitude, longitude } = data;
-      const position = getSunPosition(new Date(date), latitude, longitude);
+      const position = getCachedSunPosition(new Date(date), latitude, longitude);
       self.postMessage({ type: 'sunPosition', data: position });
       break;
       
     case 'calculateSectionExposures':
       const { sections, sunPosition, stadiumOrientation, weatherConditions } = data;
-      const results = sections.map(section => 
-        calculateSectionExposure(section, sunPosition, stadiumOrientation, weatherConditions)
-      );
+      
+      // Process in chunks to avoid blocking
+      const chunkSize = 50;
+      const results = [];
+      
+      for (let i = 0; i < sections.length; i += chunkSize) {
+        const chunk = sections.slice(i, i + chunkSize);
+        const chunkResults = calculateSectionExposureBatch(
+          chunk, 
+          sunPosition, 
+          stadiumOrientation, 
+          weatherConditions
+        );
+        results.push(...chunkResults);
+        
+        // Send progress update
+        if (i + chunkSize < sections.length) {
+          self.postMessage({ 
+            type: 'progress', 
+            data: { 
+              completed: i + chunkSize, 
+              total: sections.length 
+            } 
+          });
+        }
+      }
+      
       self.postMessage({ type: 'sectionExposures', data: results });
       break;
       

@@ -21,6 +21,7 @@ const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPag
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
+import { getStadiumSections } from './data/stadiumSections';
 import { MLBGame } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
@@ -42,6 +43,7 @@ function AppContent() {
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
+  const [calculationProgress, setCalculationProgress] = useState<{completed: number, total: number} | null>(null);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const { showError } = useError();
   const { calculateSunPosition, calculateSectionExposures } = useSunCalculations();
@@ -186,11 +188,31 @@ function AppContent() {
             } : 'No weather data');
           }
 
-          // Calculate detailed section data with weather impact
-          // Use enhanced calculator if stadium has geometry data
-          const detailedSectionData = selectedStadium.roofHeight 
-            ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
-            : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, gameWeather);
+          // Get sections and calculate using Web Worker
+          const sections = getStadiumSections(selectedStadium.id);
+          
+          // Use Web Worker for all calculations now
+          const workerSections = await calculateSectionExposures(
+            sections,
+            position,
+            selectedStadium.orientation,
+            gameWeather,
+            (completed, total) => {
+              setCalculationProgress({ completed, total });
+            }
+          );
+          
+          // Format results to match expected structure
+          const detailedSectionData = workerSections.map(section => ({
+            section: {
+              id: section.id,
+              name: section.name,
+              level: section.level,
+              price: section.price
+            },
+            inSun: section.inSun,
+            sunExposure: section.sunExposure
+          }));
           
           if (process.env.NODE_ENV === 'development') {
             console.log('Detailed sections calculated:', detailedSectionData.length);
@@ -205,6 +227,7 @@ function AppContent() {
             setGameExposureData(null);
           }
           setDetailedSections(detailedSectionData);
+          setCalculationProgress(null);
           
           // Apply current filter
           const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
@@ -224,7 +247,7 @@ function AppContent() {
       
       calculateSunData();
     }
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError, calculateSunPosition]);
+  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError, calculateSunPosition, calculateSectionExposures]);
 
   // Load weather forecast when stadium changes
   useEffect(() => {
@@ -432,6 +455,7 @@ function AppContent() {
               <SectionList 
                 sections={filteredSections}
                 loading={loadingSections}
+                calculationProgress={calculationProgress}
               />
             </div>
 

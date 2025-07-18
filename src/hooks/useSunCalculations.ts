@@ -5,9 +5,14 @@ interface SunPosition {
   azimuth: number;
 }
 
+interface ProgressCallback {
+  (completed: number, total: number): void;
+}
+
 export const useSunCalculations = () => {
   const workerRef = useRef<Worker | null>(null);
   const callbacksRef = useRef<Map<string, (data: any) => void>>(new Map());
+  const progressCallbackRef = useRef<ProgressCallback | null>(null);
 
   useEffect(() => {
     // Only create worker in browser environment
@@ -16,6 +21,12 @@ export const useSunCalculations = () => {
       
       workerRef.current.onmessage = (event) => {
         const { type, data } = event.data;
+        
+        if (type === 'progress' && progressCallbackRef.current) {
+          progressCallbackRef.current(data.completed, data.total);
+          return;
+        }
+        
         const callback = callbacksRef.current.get(type);
         if (callback) {
           callback(data);
@@ -59,10 +70,12 @@ export const useSunCalculations = () => {
     sections: any[],
     sunPosition: SunPosition,
     stadiumOrientation: number,
-    weatherConditions?: any
+    weatherConditions?: any,
+    onProgress?: ProgressCallback
   ): Promise<any[]> => {
     return new Promise((resolve) => {
       if (workerRef.current) {
+        progressCallbackRef.current = onProgress || null;
         callbacksRef.current.set('sectionExposures', resolve);
         workerRef.current.postMessage({
           type: 'calculateSectionExposures',

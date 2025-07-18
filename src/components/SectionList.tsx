@@ -11,11 +11,13 @@ import './SectionList.css';
 interface SectionListProps {
   sections: SeatingSectionSun[];
   loading?: boolean;
+  calculationProgress?: { completed: number; total: number } | null;
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
   sections,
-  loading = false
+  loading = false,
+  calculationProgress
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -187,7 +189,11 @@ export const SectionList: React.FC<SectionListProps> = ({
       <div className="section-list loading">
         <LoadingSpinner 
           size="medium" 
-          message="Calculating sun exposure for all sections..."
+          message={
+            calculationProgress 
+              ? `Calculating sun exposure... ${calculationProgress.completed}/${calculationProgress.total} sections`
+              : "Calculating sun exposure for all sections..."
+          }
         />
       </div>
     );
