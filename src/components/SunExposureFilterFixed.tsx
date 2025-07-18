@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Tooltip } from './Tooltip';
 import './SunExposureFilter.css';
 
 export interface SunFilterCriteria {
@@ -174,12 +173,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.sunPreference}
           aria-controls="sun-preference-content"
         >
-          <Tooltip content="Choose your sun exposure preference to filter sections">
-            <span className="filter-section-title">
-              <span className="filter-section-icon">☀️</span>
-              Sun Preference
-            </span>
-          </Tooltip>
+          <span className="filter-section-title" title="Choose your sun exposure preference to filter sections">
+            <span className="filter-section-icon">☀️</span>
+            Sun Preference
+          </span>
           <span className={`filter-section-chevron ${expandedSections.sunPreference ? 'expanded' : ''}`}>
             ▼
           </span>
@@ -298,12 +295,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.seatingLevel}
           aria-controls="seating-level-content"
         >
-          <Tooltip content="Filter by seating level">
-            <span className="filter-section-title">
-              <span className="filter-section-icon">🏟️</span>
-              Seating Level
-            </span>
-          </Tooltip>
+          <span className="filter-section-title" title="Filter by seating level">
+            <span className="filter-section-icon">🏟️</span>
+            Seating Level
+          </span>
           <span className={`filter-section-chevron ${expandedSections.seatingLevel ? 'expanded' : ''}`}>
             ▼
           </span>
@@ -349,12 +344,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.coverage}
           aria-controls="coverage-content"
         >
-          <Tooltip content="Filter by roof coverage">
-            <span className="filter-section-title">
-              <span className="filter-section-icon">🏛️</span>
-              Coverage
-            </span>
-          </Tooltip>
+          <span className="filter-section-title" title="Filter by roof coverage">
+            <span className="filter-section-icon">🏛️</span>
+            Coverage
+          </span>
           <span className={`filter-section-chevron ${expandedSections.coverage ? 'expanded' : ''}`}>
             ▼
           </span>
@@ -417,12 +410,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.priceRange}
           aria-controls="price-range-content"
         >
-          <Tooltip content="Filter by typical price range">
-            <span className="filter-section-title">
-              <span className="filter-section-icon">💰</span>
-              Price Range
-            </span>
-          </Tooltip>
+          <span className="filter-section-title" title="Filter by typical price range">
+            <span className="filter-section-icon">💰</span>
+            Price Range
+          </span>
           <span className={`filter-section-chevron ${expandedSections.priceRange ? 'expanded' : ''}`}>
             ▼
           </span>
