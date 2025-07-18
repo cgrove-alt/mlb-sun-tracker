@@ -20,6 +20,7 @@ export interface WeatherData {
   conditions: WeatherCondition[];
   precipitationProbability?: number;
   precipitationAmount?: number;
+  time?: string; // Optional time property for weather data
 }
 
 export interface WeatherForecast {
@@ -49,7 +50,10 @@ export class WeatherApiService {
     
     // Find the closest hourly forecast to the target time
     const targetHour = targetTime.getTime();
-    let closestWeather = forecast.current;
+    let closestWeather = {
+      ...forecast.current,
+      time: new Date().toISOString() // Add current time to current weather
+    };
     let closestDiff = Infinity;
     
     forecast.hourly.forEach(hourly => {
@@ -58,7 +62,10 @@ export class WeatherApiService {
       const diff = Math.abs(hourlyTime - targetHour);
       if (diff < closestDiff) {
         closestDiff = diff;
-        closestWeather = hourly.weather;
+        closestWeather = {
+          ...hourly.weather,
+          time: hourly.time // Include the time in the weather object
+        };
       }
     });
     

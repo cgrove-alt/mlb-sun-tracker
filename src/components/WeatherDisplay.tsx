@@ -41,6 +41,16 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   // Use centralized weather selection method
   const relevantWeather = weatherApi.getWeatherForTime(weather, gameTime || undefined);
   const weatherImpact = weatherApi.getWeatherImpactOnSun(relevantWeather);
+  
+  // Debug logging
+  if (process.env.NODE_ENV === 'development' && gameTime) {
+    console.log('Weather Display Debug:', {
+      gameTime: gameTime.toISOString(),
+      selectedWeatherTime: relevantWeather.time,
+      temperature: relevantWeather.temperature,
+      conditions: relevantWeather.conditions[0]?.main
+    });
+  }
 
   const getWeatherIcon = (condition: string, iconCode: string): string => {
     const iconMap: Record<string, string> = {
