@@ -197,11 +197,11 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
     return (
       <div className={`language-selector language-selector-buttons ${className}`}>
         {showLabel && (
-          <label className="language-selector-label">
+          <span className="language-selector-label" id="language-selector-label">
             {t('app.language')}
-          </label>
+          </span>
         )}
-        <div className="language-buttons" role="radiogroup" aria-label={t('app.selectLanguage')}>
+        <div className="language-buttons" role="radiogroup" aria-label={t('app.selectLanguage')} aria-labelledby={showLabel ? "language-selector-label" : undefined}>
           {supportedLanguages.map((lang) => (
             <button
               key={lang.code}
