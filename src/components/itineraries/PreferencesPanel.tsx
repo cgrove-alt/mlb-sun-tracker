@@ -81,6 +81,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-has-children"
                 checked={preferences.hasChildren}
                 onChange={(e) => handleChange('hasChildren', e.target.checked)}
               />
@@ -93,6 +94,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-has-elderly"
                 checked={preferences.hasElderly}
                 onChange={(e) => handleChange('hasElderly', e.target.checked)}
               />
@@ -105,6 +107,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-mobility-needs"
                 checked={preferences.mobilityNeeds}
                 onChange={(e) => handleChange('mobilityNeeds', e.target.checked)}
               />
@@ -122,6 +125,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
               <label key={restriction} className="checkbox-label">
                 <input
                   type="checkbox"
+                  id={`pref-dietary-${restriction}`}
                   checked={preferences.dietaryRestrictions.includes(restriction as any)}
                   onChange={() => handleDietaryRestrictionToggle(restriction)}
                 />
@@ -139,6 +143,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-prioritize-shade"
                 checked={preferences.prioritizeShade}
                 onChange={(e) => handleChange('prioritizeShade', e.target.checked)}
               />
@@ -151,6 +156,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-frequent-restrooms"
                 checked={preferences.frequentRestrooms}
                 onChange={(e) => handleChange('frequentRestrooms', e.target.checked)}
               />
@@ -229,6 +235,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-skip-concessions"
                 checked={preferences.skipConcessions}
                 onChange={(e) => handleChange('skipConcessions', e.target.checked)}
               />
@@ -241,6 +248,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-skip-activities"
                 checked={preferences.skipActivities}
                 onChange={(e) => handleChange('skipActivities', e.target.checked)}
               />
@@ -253,6 +261,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
             <label className="checkbox-label">
               <input
                 type="checkbox"
+                id="pref-prioritize-speed"
                 checked={preferences.prioritizeSpeed}
                 onChange={(e) => handleChange('prioritizeSpeed', e.target.checked)}
               />
@@ -270,6 +279,7 @@ export const PreferencesPanel: React.FC<PreferencesPanelProps> = ({
               <label className="checkbox-label">
                 <input
                   type="checkbox"
+                  id="pref-nursling-needs"
                   checked={preferences.nurslingNeeds}
                   onChange={(e) => handleChange('nurslingNeeds', e.target.checked)}
                 />
