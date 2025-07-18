@@ -73,14 +73,16 @@ export class WeatherApiService {
     let closestDiff = Infinity;
     
     // Debug logging
-    console.log('Weather selection debug:', {
-      targetTime: targetTime.toISOString(),
-      hourlyDataCount: forecast.hourly.length,
-      firstHour: forecast.hourly[0]?.time,
-      lastHour: forecast.hourly[forecast.hourly.length - 1]?.time,
-      isBeyondForecast,
-      isBeforeForecast
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Weather selection debug:', {
+        targetTime: targetTime.toISOString(),
+        hourlyDataCount: forecast.hourly.length,
+        firstHour: forecast.hourly[0]?.time,
+        lastHour: forecast.hourly[forecast.hourly.length - 1]?.time,
+        isBeyondForecast,
+        isBeforeForecast
+      });
+    }
     
     forecast.hourly.forEach(hourly => {
       const hourlyTime = new Date(hourly.time).getTime();
@@ -100,12 +102,14 @@ export class WeatherApiService {
       isForecastAvailable: !isBeyondForecast && !isBeforeForecast
     };
     
-    console.log('Selected weather:', {
-      selectedTime: closestWeather.time,
-      temperature: closestWeather.temperature,
-      diffHours: closestDiff / (1000 * 60 * 60),
-      isForecastAvailable: result.isForecastAvailable
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Selected weather:', {
+        selectedTime: closestWeather.time,
+        temperature: closestWeather.temperature,
+        diffHours: closestDiff / (1000 * 60 * 60),
+        isForecastAvailable: result.isForecastAvailable
+      });
+    }
     
     return result;
   }

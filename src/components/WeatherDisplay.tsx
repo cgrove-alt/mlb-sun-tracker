@@ -47,17 +47,16 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   const daysUntilGame = gameTime ? Math.ceil((gameTime.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0;
   
   // Debug logging
-  console.log('Weather Display Debug:', {
-    gameTime: gameTime?.toISOString() || 'No game time',
-    selectedWeatherTime: relevantWeather.time,
-    temperature: relevantWeather.temperature,
-    conditions: relevantWeather.conditions[0]?.main,
-    isForecastAvailable,
-    daysUntilGame,
-    cloudCover: relevantWeather.cloudCover,
-    humidity: relevantWeather.humidity,
-    windSpeed: relevantWeather.windSpeed
-  });
+  if (process.env.NODE_ENV === 'development') {
+    console.log('Weather Display Debug:', {
+      gameTime: gameTime?.toISOString() || 'No game time',
+      selectedWeatherTime: relevantWeather.time,
+      temperature: relevantWeather.temperature,
+      conditions: relevantWeather.conditions[0]?.main,
+      isForecastAvailable,
+      daysUntilGame
+    });
+  }
 
   const getWeatherIcon = (condition: string, iconCode: string): string => {
     const iconMap: Record<string, string> = {
@@ -88,6 +87,25 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
 
   const uvLevel = getUVIndexLevel(relevantWeather.uvIndex);
 
+  // If forecast is not available for games beyond 7 days, show only the warning
+  if (!isForecastAvailable && daysUntilGame > 7) {
+    return (
+      <div className="weather-display unavailable">
+        <div className="weather-header">
+          <h3>{t('weather.forecast')}</h3>
+        </div>
+        <div className="weather-unavailable">
+          <span className="unavailable-icon">🌤️</span>
+          <div className="unavailable-content">
+            <strong>Weather Forecast Unavailable</strong>
+            <p>This game is {daysUntilGame} days away. Weather forecasts are only available up to 7 days in advance.</p>
+            <p className="unavailable-note">Sun position calculations are still accurate and based on astronomical data.</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="weather-display">
       <div className="weather-header">
@@ -98,16 +116,6 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
           </span>
         )}
       </div>
-
-      {!isForecastAvailable && daysUntilGame > 7 && (
-        <div className="weather-warning">
-          <span className="warning-icon">⚠️</span>
-          <div className="warning-content">
-            <strong>Extended Forecast Unavailable</strong>
-            <p>This game is {daysUntilGame} days away. Weather forecast is only available up to 7 days in advance. Showing the latest available forecast data.</p>
-          </div>
-        </div>
-      )}
 
       <div className="weather-main">
         <div className="weather-primary">

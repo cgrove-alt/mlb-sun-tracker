@@ -179,7 +179,13 @@ function AppContent() {
           setSunPosition(formattedPosition);
           
           // Get weather data for calculations
-          const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
+          let gameWeather;
+          if (weatherForecast) {
+            const weatherData = weatherApi.getWeatherForTime(weatherForecast, gameDateTime);
+            // Only use weather data if it's actually available for the game time
+            gameWeather = weatherData.isForecastAvailable !== false ? weatherData : undefined;
+          }
+          
           if (process.env.NODE_ENV === 'development') {
             console.log('Game weather for sun calculations:', {
               gameDateTime: gameDateTime.toISOString(),
@@ -189,8 +195,9 @@ function AppContent() {
                 conditions: gameWeather.conditions[0]?.main,
                 precipitationProbability: gameWeather.precipitationProbability,
                 temperature: gameWeather.temperature,
-                time: gameWeather.time
-              } : 'No weather data'
+                time: gameWeather.time,
+                isForecastAvailable: gameWeather.isForecastAvailable
+              } : 'No weather data available for this date'
             });
           }
 
@@ -285,11 +292,6 @@ function AppContent() {
   };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
-    console.log('Game selected:', {
-      game: game?.gamePk,
-      dateTime: dateTime?.toISOString(),
-      stadium: selectedStadium?.name
-    });
     setSelectedGame(game);
     setGameDateTime(dateTime);
   };

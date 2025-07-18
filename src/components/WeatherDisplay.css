@@ -67,6 +67,50 @@
   font-size: 0.9em;
 }
 
+/* Unavailable state */
+.weather-display.unavailable {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+}
+
+.weather-unavailable {
+  display: flex;
+  gap: 20px;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.unavailable-icon {
+  font-size: 48px;
+  opacity: 0.5;
+}
+
+.unavailable-content {
+  max-width: 400px;
+}
+
+.unavailable-content strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 12px;
+}
+
+.unavailable-content p {
+  margin: 8px 0;
+  color: #6c757d;
+  line-height: 1.5;
+}
+
+.unavailable-note {
+  font-size: 0.9em;
+  color: #28a745;
+  font-style: italic;
+}
+
 .loading-content {
   display: flex;
   flex-direction: column;
