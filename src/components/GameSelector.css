@@ -119,6 +119,7 @@
   min-height: 44px;
   box-shadow: none;
   transition: border-color 0.3s ease;
+  color: #000;
 }
 
 .stadium-select .react-select__control:hover {
@@ -131,21 +132,26 @@
 }
 
 .stadium-select .react-select__single-value {
-  color: #333;
-  font-weight: 500;
+  color: #000 !important;
+  font-weight: 600;
 }
 
 .stadium-select .react-select__placeholder {
-  color: #999;
+  color: #666 !important;
 }
 
 .stadium-select .react-select__input-container {
-  color: #333;
+  color: #000 !important;
+}
+
+.stadium-select .react-select__input {
+  color: #000 !important;
 }
 
 .stadium-select .react-select__option {
-  color: #333;
+  color: #000 !important;
   padding: 10px 12px;
+  font-weight: 500;
 }
 
 .stadium-select .react-select__option--is-focused {
@@ -179,13 +185,14 @@
 }
 
 .game-select .react-select__single-value {
-  color: #333;
-  font-weight: 500;
+  color: #000 !important;
+  font-weight: 600;
 }
 
 .game-select .react-select__option {
-  color: #333;
+  color: #000 !important;
   padding: 10px 12px;
+  font-weight: 500;
 }
 
 .games-section {
