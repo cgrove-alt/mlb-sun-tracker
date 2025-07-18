@@ -285,6 +285,11 @@ function AppContent() {
   };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
+    console.log('Game selected:', {
+      game: game?.gamePk,
+      dateTime: dateTime?.toISOString(),
+      stadium: selectedStadium?.name
+    });
     setSelectedGame(game);
     setGameDateTime(dateTime);
   };
@@ -387,6 +392,7 @@ function AppContent() {
             <div className="weather-info-section">
               {weatherForecast && (
                 <WeatherDisplay 
+                  key={`weather-${gameDateTime?.toISOString() || 'no-game'}`}
                   weather={weatherForecast} 
                   gameTime={gameDateTime}
                   loading={loadingWeather}

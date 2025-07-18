@@ -47,16 +47,17 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   const daysUntilGame = gameTime ? Math.ceil((gameTime.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) : 0;
   
   // Debug logging
-  if (process.env.NODE_ENV === 'development' && gameTime) {
-    console.log('Weather Display Debug:', {
-      gameTime: gameTime.toISOString(),
-      selectedWeatherTime: relevantWeather.time,
-      temperature: relevantWeather.temperature,
-      conditions: relevantWeather.conditions[0]?.main,
-      isForecastAvailable,
-      daysUntilGame
-    });
-  }
+  console.log('Weather Display Debug:', {
+    gameTime: gameTime?.toISOString() || 'No game time',
+    selectedWeatherTime: relevantWeather.time,
+    temperature: relevantWeather.temperature,
+    conditions: relevantWeather.conditions[0]?.main,
+    isForecastAvailable,
+    daysUntilGame,
+    cloudCover: relevantWeather.cloudCover,
+    humidity: relevantWeather.humidity,
+    windSpeed: relevantWeather.windSpeed
+  });
 
   const getWeatherIcon = (condition: string, iconCode: string): string => {
     const iconMap: Record<string, string> = {
