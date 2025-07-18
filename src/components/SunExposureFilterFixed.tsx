@@ -188,8 +188,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             className="filter-content"
             role="radiogroup"
             aria-labelledby="sun-preference-label"
+            style={{ background: 'lightblue', padding: '10px', border: '1px solid blue' }}
           >
-            <div className={`filter-option ${sunPreference === 'any' ? 'selected' : ''}`}>
+            <div>CONTENT IS RENDERING</div>
+            <div className={`filter-option ${sunPreference === 'any' ? 'selected' : ''}`} style={{ display: 'flex', padding: '8px', background: 'white' }}>
               <input
                 type="radio"
                 id="sun-pref-any"

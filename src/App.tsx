@@ -4,7 +4,6 @@ import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
-import { TestFilter } from './components/TestFilter';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
@@ -454,7 +453,6 @@ function AppContent() {
                 </div>
               </div>
               
-              <TestFilter />
               <SunExposureFilterFixed 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
