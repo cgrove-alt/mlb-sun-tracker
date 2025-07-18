@@ -205,12 +205,16 @@ function AppContent() {
               }
             );
             
-            // Format results to match expected structure
-            detailedSectionData = workerSections.map(section => ({
-              section: section,
-              inSun: section.inSun,
-              sunExposure: section.sunExposure
-            }));
+            // Format results to match expected SeatingSectionSun structure
+            detailedSectionData = workerSections.map(ws => {
+              // Extract section properties (everything except inSun and sunExposure)
+              const { inSun, sunExposure, ...sectionProps } = ws;
+              return {
+                section: sectionProps,
+                inSun: inSun,
+                sunExposure: sunExposure
+              };
+            });
           } catch (workerError) {
             console.error('Worker calculation failed, using fallback:', workerError);
             // Fallback to synchronous calculation
