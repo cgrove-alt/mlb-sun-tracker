@@ -204,12 +204,7 @@ function AppContent() {
           
           // Format results to match expected structure
           const detailedSectionData = workerSections.map(section => ({
-            section: {
-              id: section.id,
-              name: section.name,
-              level: section.level,
-              price: section.price
-            },
+            section: section,
             inSun: section.inSun,
             sunExposure: section.sunExposure
           }));
