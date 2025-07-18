@@ -3,15 +3,15 @@
 :root {
   /* ===== Color Palette ===== */
   /* Primary Colors */
-  --color-primary: #1a237e;
-  --color-primary-light: #534bae;
-  --color-primary-dark: #000051;
-  --color-primary-rgb: 26, 35, 126;
+  --color-primary: #2196f3;
+  --color-primary-light: #64b5f6;
+  --color-primary-dark: #1976d2;
+  --color-primary-rgb: 33, 150, 243;
   
   /* Secondary Colors */
-  --color-secondary: #3949ab;
-  --color-secondary-light: #6f74dd;
-  --color-secondary-dark: #00227b;
+  --color-secondary: #42a5f5;
+  --color-secondary-light: #90caf9;
+  --color-secondary-dark: #1e88e5;
   
   /* Semantic Colors */
   --color-success: #4caf50;
@@ -224,5 +224,5 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-gray-900);
-  background-color: var(--color-gray-50);
+  background-color: #ffffff;
 }
