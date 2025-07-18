@@ -4,6 +4,7 @@ import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCard } from './LazySectionCard';
+import { VirtualSectionList } from './VirtualSectionList';
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import './SectionList.css';
@@ -306,16 +307,28 @@ export const SectionList: React.FC<SectionListProps> = ({
           )}
         </div>
       ) : (
-        <div className="section-grid" role="list" aria-labelledby="sections-title">
-          {sortedSections.map((sectionData, index) => (
-            <LazySectionCard
-              key={`${sectionData.section.id}-${index}`}
-              section={sectionData.section}
-              sunExposure={sectionData.sunExposure}
-              inSun={sectionData.inSun}
-              index={index}
+        <div className="section-list-container" role="list" aria-labelledby="sections-title">
+          {sortedSections.length > 20 ? (
+            // Use virtual scrolling for large lists
+            <VirtualSectionList
+              sections={sortedSections}
+              height={600}
+              itemHeight={240}
             />
-          ))}
+          ) : (
+            // Use regular rendering for small lists
+            <div className="section-grid">
+              {sortedSections.map((sectionData, index) => (
+                <LazySectionCard
+                  key={`${sectionData.section.id}-${index}`}
+                  section={sectionData.section}
+                  sunExposure={sectionData.sunExposure}
+                  inSun={sectionData.inSun}
+                  index={index}
+                />
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

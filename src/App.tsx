@@ -16,6 +16,7 @@ import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { useSunCalculations } from './hooks/useSunCalculations';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
@@ -582,13 +583,15 @@ function AppContent() {
 
 function App() {
   return (
-    <I18nProvider>
-      <ErrorProvider>
-        <UserProfileProvider>
-          <AppContent />
-        </UserProfileProvider>
-      </ErrorProvider>
-    </I18nProvider>
+    <ErrorBoundary>
+      <I18nProvider>
+        <ErrorProvider>
+          <UserProfileProvider>
+            <AppContent />
+          </UserProfileProvider>
+        </ErrorProvider>
+      </I18nProvider>
+    </ErrorBoundary>
   );
 }
 

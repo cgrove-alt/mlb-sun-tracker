@@ -476,3 +476,16 @@
     gap: 4px;
   }
 }
+
+/* Virtual list styles */
+.section-list-container {
+  padding: 20px 0;
+}
+
+.virtual-section-list {
+  /* Ensure proper scrollbar styling */
+}
+
+.section-grid-virtual > div {
+  padding: 10px;
+}
