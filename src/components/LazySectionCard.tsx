@@ -18,8 +18,8 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
   index,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
-    threshold: 0.1,
-    rootMargin: '100px',
+    threshold: 0.01,
+    rootMargin: '200px',
   });
   const [isLoaded, setIsLoaded] = useState(false);
   const haptic = useHapticFeedback();
@@ -63,9 +63,9 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
       onClick={handleClick}
       aria-label={`Section ${section.name}, ${roundedExposure}% sun exposure, ${section.level} level${section.covered ? ', covered' : ''}`}
       style={{
-        opacity: isLoaded ? 1 : 0,
-        transform: isLoaded ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.3s ease, transform 0.3s ease',
+        opacity: isLoaded ? 1 : 0.3,
+        transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
+        transition: 'opacity 0.2s ease, transform 0.2s ease',
       }}
     >
       {isLoaded ? (

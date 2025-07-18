@@ -140,6 +140,8 @@
 
 .filter-section > :last-child {
   min-width: 0;
+  width: 100%;
+  overflow: visible;
 }
 
 .section-overview {

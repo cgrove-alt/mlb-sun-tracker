@@ -313,7 +313,8 @@ export const SectionList: React.FC<SectionListProps> = ({
             <VirtualSectionList
               sections={sortedSections}
               height={600}
-              itemHeight={240}
+              itemHeight={260}
+              width="100%"
             />
           ) : (
             // Use regular rendering for small lists
