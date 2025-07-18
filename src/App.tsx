@@ -181,12 +181,17 @@ function AppContent() {
           // Get weather data for calculations
           const gameWeather = weatherForecast ? weatherApi.getWeatherForTime(weatherForecast, gameDateTime) : undefined;
           if (process.env.NODE_ENV === 'development') {
-            console.log('Game weather for sun calculations:', gameWeather ? {
-              cloudCover: gameWeather.cloudCover,
-              conditions: gameWeather.conditions[0]?.main,
-              precipitationProbability: gameWeather.precipitationProbability,
-              temperature: gameWeather.temperature
-            } : 'No weather data');
+            console.log('Game weather for sun calculations:', {
+              gameDateTime: gameDateTime.toISOString(),
+              hasWeatherForecast: !!weatherForecast,
+              weatherData: gameWeather ? {
+                cloudCover: gameWeather.cloudCover,
+                conditions: gameWeather.conditions[0]?.main,
+                precipitationProbability: gameWeather.precipitationProbability,
+                temperature: gameWeather.temperature,
+                time: gameWeather.time
+              } : 'No weather data'
+            });
           }
 
           // Get sections and calculate

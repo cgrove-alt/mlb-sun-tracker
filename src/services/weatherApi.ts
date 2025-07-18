@@ -56,6 +56,16 @@ export class WeatherApiService {
     };
     let closestDiff = Infinity;
     
+    // Debug logging
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Weather selection debug:', {
+        targetTime: targetTime.toISOString(),
+        hourlyDataCount: forecast.hourly.length,
+        firstHour: forecast.hourly[0]?.time,
+        lastHour: forecast.hourly[forecast.hourly.length - 1]?.time
+      });
+    }
+    
     forecast.hourly.forEach(hourly => {
       // Handle timezone properly by ensuring consistent parsing
       const hourlyTime = new Date(hourly.time).getTime();
@@ -68,6 +78,14 @@ export class WeatherApiService {
         };
       }
     });
+    
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Selected weather:', {
+        selectedTime: closestWeather.time,
+        temperature: closestWeather.temperature,
+        diffHours: closestDiff / (1000 * 60 * 60)
+      });
+    }
     
     return closestWeather;
   }
@@ -110,7 +128,8 @@ export class WeatherApiService {
   private parseWeatherResponse(data: any): WeatherForecast {
     const current = this.parseCurrentWeather(data.current);
     
-    const hourly = data.hourly.time.slice(0, 24).map((time: string, index: number) => ({
+    // Get all hourly data (7 days * 24 hours = 168 hours)
+    const hourly = data.hourly.time.map((time: string, index: number) => ({
       time,
       weather: this.parseHourlyWeather(data.hourly, index)
     }));
