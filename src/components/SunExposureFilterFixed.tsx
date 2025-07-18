@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Tooltip } from './Tooltip';
+import './SunExposureFilter.css';
 
 export interface SunFilterCriteria {
   minExposure?: number;
@@ -133,79 +134,53 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
     }));
   };
 
+  const activeFiltersCount = [
+    sunPreference !== 'any' ? 1 : 0,
+    selectedLevels.length > 0 ? 1 : 0,
+    coveredPreference !== 'any' ? 1 : 0,
+    selectedPriceRanges.length > 0 ? 1 : 0
+  ].reduce((a, b) => a + b, 0);
+
   return (
     <div 
-      style={{
-        background: 'white',
-        borderRadius: '12px',
-        padding: '20px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        marginBottom: '20px',
-        width: '100%',
-        maxWidth: '400px',
-        maxHeight: '90vh',
-        overflowY: 'auto'
-      }}
+      className={`sun-exposure-filter ${disabled ? 'disabled' : ''}`}
       role="region"
       aria-label="Filter options"
     >
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: '20px',
-        paddingBottom: '10px',
-        borderBottom: '2px solid #f0f0f0'
-      }}>
-        <h3 id="section-filter-title" style={{margin: 0, color: '#333', fontSize: '1.2em'}}>
-          🎯 Filter Sections
+      <div className="filter-header">
+        <h3 id="section-filter-title" className="filter-title">
+          <span className="filter-title-icon">🎯</span>
+          Filter Sections
+          {activeFiltersCount > 0 && (
+            <span className="active-filters-count">{activeFiltersCount}</span>
+          )}
         </h3>
         <button 
           onClick={clearFilters}
           onKeyDown={(e) => handleKeyDown(e, clearFilters)}
           disabled={disabled}
-          style={{
-            background: '#f8f9fa',
-            border: '1px solid #dee2e6',
-            borderRadius: '6px',
-            padding: '6px 12px',
-            fontSize: '0.85em',
-            color: '#6c757d',
-            cursor: disabled ? 'not-allowed' : 'pointer',
-            outline: 'none'
-          }}
+          className="clear-filters-btn"
           aria-label="Clear all filters"
         >
           Clear All
         </button>
       </div>
 
-      <div style={{marginBottom: '24px'}}>
+      <div className="filter-section">
         <button
           onClick={() => toggleSection('sunPreference')}
           onKeyDown={(e) => handleKeyDown(e, () => toggleSection('sunPreference'))}
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: 'none',
-            border: 'none',
-            padding: '8px 0',
-            margin: '0 0 12px 0',
-            color: '#495057',
-            fontSize: '1em',
-            fontWeight: 600,
-            cursor: 'pointer',
-            borderBottom: '1px solid #dee2e6'
-          }}
+          className="filter-section-header"
           aria-expanded={expandedSections.sunPreference}
           aria-controls="sun-preference-content"
         >
           <Tooltip content="Choose your sun exposure preference to filter sections">
-            <span>☀️ Sun Preference</span>
+            <span className="filter-section-title">
+              <span className="filter-section-icon">☀️</span>
+              Sun Preference
+            </span>
           </Tooltip>
-          <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.sunPreference ? 'rotate(180deg)' : 'rotate(0deg)'}}>
+          <span className={`filter-section-chevron ${expandedSections.sunPreference ? 'expanded' : ''}`}>
             ▼
           </span>
         </button>
@@ -213,11 +188,11 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         {expandedSections.sunPreference && (
           <div 
             id="sun-preference-content"
-            style={{display: 'flex', flexDirection: 'column', gap: '8px'}}
+            className="filter-content"
             role="radiogroup"
             aria-labelledby="sun-preference-label"
           >
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${sunPreference === 'any' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="sun-preference"
@@ -225,13 +200,12 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={sunPreference === 'any'}
               onChange={() => handleSunPreferenceChange('any')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-any-desc"
             />
-            <span id="sun-any-desc" style={{fontSize: '0.9em', color: '#333'}}>Any amount of sun</span>
+            <span id="sun-any-desc" className="filter-option-label">Any amount of sun</span>
           </label>
           
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${sunPreference === 'avoid' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="sun-preference"
@@ -239,13 +213,12 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={sunPreference === 'avoid'}
               onChange={() => handleSunPreferenceChange('avoid')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-avoid-desc"
             />
-            <span id="sun-avoid-desc" style={{fontSize: '0.9em', color: '#333'}}>Avoid sun (≤20% exposure)</span>
+            <span id="sun-avoid-desc" className="filter-option-label">Avoid sun (≤20% exposure)</span>
           </label>
           
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${sunPreference === 'prefer' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="sun-preference"
@@ -253,13 +226,12 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={sunPreference === 'prefer'}
               onChange={() => handleSunPreferenceChange('prefer')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-prefer-desc"
             />
-            <span id="sun-prefer-desc" style={{fontSize: '0.9em', color: '#333'}}>Prefer sun (≥60% exposure)</span>
+            <span id="sun-prefer-desc" className="filter-option-label">Prefer sun (≥60% exposure)</span>
           </label>
           
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${sunPreference === 'custom' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="sun-preference"
@@ -267,22 +239,21 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={sunPreference === 'custom'}
               onChange={() => handleSunPreferenceChange('custom')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="sun-custom-desc"
             />
-            <span id="sun-custom-desc" style={{fontSize: '0.9em', color: '#333'}}>Custom range</span>
+            <span id="sun-custom-desc" className="filter-option-label">Custom range</span>
           </label>
           </div>
         )}
 
         {sunPreference === 'custom' && expandedSections.sunPreference && (
-          <div style={{marginTop: '12px', padding: '12px', background: '#f8f9fa', borderRadius: '6px'}}>
-            <div style={{marginBottom: '12px'}}>
+          <div className="custom-range-container">
+            <div className="range-input-group">
               <label 
                 htmlFor="custom-min-range"
-                style={{display: 'block', marginBottom: '6px', fontSize: '0.85em', color: '#6c757d', fontWeight: 500}}
+                className="range-label"
               >
-                Minimum Exposure: {customMin}%
+                Minimum Exposure: <span className="range-value">{customMin}%</span>
               </label>
               <input
                 id="custom-min-range"
@@ -292,16 +263,16 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 value={customMin}
                 onChange={(e) => handleCustomRangeChange(Number(e.target.value), customMax)}
                 disabled={disabled}
-                style={{width: '100%', height: '6px', borderRadius: '3px', background: '#dee2e6', outline: 'none', cursor: 'pointer'}}
+                className="range-slider"
                 aria-label={`Minimum exposure: ${customMin}%`}
               />
             </div>
-            <div style={{marginBottom: '0'}}>
+            <div className="range-input-group">
               <label 
                 htmlFor="custom-max-range"
-                style={{display: 'block', marginBottom: '6px', fontSize: '0.85em', color: '#6c757d', fontWeight: 500}}
+                className="range-label"
               >
-                Maximum Exposure: {customMax}%
+                Maximum Exposure: <span className="range-value">{customMax}%</span>
               </label>
               <input
                 id="custom-max-range"
@@ -311,7 +282,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 value={customMax}
                 onChange={(e) => handleCustomRangeChange(customMin, Number(e.target.value))}
                 disabled={disabled}
-                style={{width: '100%', height: '6px', borderRadius: '3px', background: '#dee2e6', outline: 'none', cursor: 'pointer'}}
+                className="range-slider"
                 aria-label={`Maximum exposure: ${customMax}%`}
               />
             </div>
@@ -319,32 +290,21 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         )}
       </div>
 
-      <div style={{marginBottom: '24px'}}>
+      <div className="filter-section">
         <button
           onClick={() => toggleSection('seatingLevel')}
           onKeyDown={(e) => handleKeyDown(e, () => toggleSection('seatingLevel'))}
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: 'none',
-            border: 'none',
-            padding: '8px 0',
-            margin: '0 0 12px 0',
-            color: '#495057',
-            fontSize: '1em',
-            fontWeight: 600,
-            cursor: 'pointer',
-            borderBottom: '1px solid #dee2e6'
-          }}
+          className="filter-section-header"
           aria-expanded={expandedSections.seatingLevel}
           aria-controls="seating-level-content"
         >
           <Tooltip content="Filter by seating level">
-            <span>🏟️ Seating Level</span>
+            <span className="filter-section-title">
+              <span className="filter-section-icon">🏟️</span>
+              Seating Level
+            </span>
           </Tooltip>
-          <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.seatingLevel ? 'rotate(180deg)' : 'rotate(0deg)'}}>
+          <span className={`filter-section-chevron ${expandedSections.seatingLevel ? 'expanded' : ''}`}>
             ▼
           </span>
         </button>
@@ -352,7 +312,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         {expandedSections.seatingLevel && (
           <div 
             id="seating-level-content"
-            style={{display: 'flex', flexDirection: 'column', gap: '8px'}}
+            className="filter-content"
             role="group"
             aria-labelledby="seating-level-label"
           >
@@ -363,59 +323,51 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             { value: 'upper', label: 'Upper Deck', icon: '🎪' },
             { value: 'suite', label: 'Suites', icon: '👑' }
           ].map(level => (
-            <label key={level.value} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+            <label key={level.value} className={`filter-option ${selectedLevels.includes(level.value as any) ? 'selected' : ''}`}>
               <input
                 type="checkbox"
                 checked={selectedLevels.includes(level.value as any)}
                 onChange={() => handleLevelToggle(level.value as any)}
                 disabled={disabled}
-                style={{margin: 0, cursor: 'pointer'}}
                 aria-describedby={`level-${level.value}-desc`}
               />
-              <span id={`level-${level.value}-desc`} style={{fontSize: '0.9em', color: '#333'}}>{level.icon} {level.label}</span>
+              <span id={`level-${level.value}-desc`} className="filter-option-label">
+                <span className="filter-option-icon">{level.icon}</span>
+                {level.label}
+              </span>
             </label>
           ))}
           </div>
         )}
       </div>
 
-      <div style={{marginBottom: '24px'}}>
+      <div className="filter-section">
         <button
           onClick={() => toggleSection('coverage')}
           onKeyDown={(e) => handleKeyDown(e, () => toggleSection('coverage'))}
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: 'none',
-            border: 'none',
-            padding: '8px 0',
-            margin: '0 0 12px 0',
-            color: '#495057',
-            fontSize: '1em',
-            fontWeight: 600,
-            cursor: 'pointer',
-            borderBottom: '1px solid #dee2e6'
-          }}
+          className="filter-section-header"
           aria-expanded={expandedSections.coverage}
           aria-controls="coverage-content"
         >
           <Tooltip content="Filter by roof coverage">
-            <span>🏛️ Coverage</span>
+            <span className="filter-section-title">
+              <span className="filter-section-icon">🏛️</span>
+              Coverage
+            </span>
           </Tooltip>
-          <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.coverage ? 'rotate(180deg)' : 'rotate(0deg)'}}>
+          <span className={`filter-section-chevron ${expandedSections.coverage ? 'expanded' : ''}`}>
             ▼
           </span>
         </button>
         
         {expandedSections.coverage && (
         <div 
-          style={{display: 'flex', flexDirection: 'column', gap: '8px'}}
+          id="coverage-content"
+          className="filter-content"
           role="radiogroup"
           aria-labelledby="coverage-label"
         >
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${coveredPreference === 'any' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="covered-preference"
@@ -423,13 +375,12 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={coveredPreference === 'any'}
               onChange={() => handleCoveredPreferenceChange('any')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-any-desc"
             />
-            <span id="coverage-any-desc" style={{fontSize: '0.9em', color: '#333'}}>Any coverage</span>
+            <span id="coverage-any-desc" className="filter-option-label">Any coverage</span>
           </label>
           
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${coveredPreference === 'covered' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="covered-preference"
@@ -437,13 +388,12 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={coveredPreference === 'covered'}
               onChange={() => handleCoveredPreferenceChange('covered')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-covered-desc"
             />
-            <span id="coverage-covered-desc" style={{fontSize: '0.9em', color: '#333'}}>Covered sections only</span>
+            <span id="coverage-covered-desc" className="filter-option-label">Covered sections only</span>
           </label>
           
-          <label style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+          <label className={`filter-option ${coveredPreference === 'uncovered' ? 'selected' : ''}`}>
             <input
               type="radio"
               name="covered-preference"
@@ -451,48 +401,37 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
               checked={coveredPreference === 'uncovered'}
               onChange={() => handleCoveredPreferenceChange('uncovered')}
               disabled={disabled}
-              style={{margin: 0, cursor: 'pointer'}}
               aria-describedby="coverage-uncovered-desc"
             />
-            <span id="coverage-uncovered-desc" style={{fontSize: '0.9em', color: '#333'}}>Uncovered sections only</span>
+            <span id="coverage-uncovered-desc" className="filter-option-label">Uncovered sections only</span>
           </label>
         </div>
         )}
       </div>
 
-      <div style={{marginBottom: '24px'}}>
+      <div className="filter-section">
         <button
           onClick={() => toggleSection('priceRange')}
           onKeyDown={(e) => handleKeyDown(e, () => toggleSection('priceRange'))}
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            background: 'none',
-            border: 'none',
-            padding: '8px 0',
-            margin: '0 0 12px 0',
-            color: '#495057',
-            fontSize: '1em',
-            fontWeight: 600,
-            cursor: 'pointer',
-            borderBottom: '1px solid #dee2e6'
-          }}
+          className="filter-section-header"
           aria-expanded={expandedSections.priceRange}
           aria-controls="price-range-content"
         >
           <Tooltip content="Filter by typical price range">
-            <span>💰 Price Range</span>
+            <span className="filter-section-title">
+              <span className="filter-section-icon">💰</span>
+              Price Range
+            </span>
           </Tooltip>
-          <span style={{fontSize: '0.8em', transition: 'transform 0.2s ease', transform: expandedSections.priceRange ? 'rotate(180deg)' : 'rotate(0deg)'}}>
+          <span className={`filter-section-chevron ${expandedSections.priceRange ? 'expanded' : ''}`}>
             ▼
           </span>
         </button>
         
         {expandedSections.priceRange && (
         <div 
-          style={{display: 'flex', flexDirection: 'column', gap: '8px'}}
+          id="price-range-content"
+          className="filter-content"
           role="group"
           aria-labelledby="price-range-label"
         >
@@ -502,16 +441,18 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             { value: 'premium', label: 'Premium', icon: '💷' },
             { value: 'luxury', label: 'Luxury', icon: '💎' }
           ].map(price => (
-            <label key={price.value} style={{display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '8px', borderRadius: '6px', border: '1px solid #dee2e6'}}>
+            <label key={price.value} className={`filter-option ${selectedPriceRanges.includes(price.value as any) ? 'selected' : ''}`}>
               <input
                 type="checkbox"
                 checked={selectedPriceRanges.includes(price.value as any)}
                 onChange={() => handlePriceRangeToggle(price.value as any)}
                 disabled={disabled}
-                style={{margin: 0, cursor: 'pointer'}}
                 aria-describedby={`price-${price.value}-desc`}
               />
-              <span id={`price-${price.value}-desc`} style={{fontSize: '0.9em', color: '#333'}}>{price.icon} {price.label}</span>
+              <span id={`price-${price.value}-desc`} className="filter-option-label">
+                <span className="filter-option-icon">{price.icon}</span>
+                {price.label}
+              </span>
             </label>
           ))}
         </div>
