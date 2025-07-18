@@ -37,6 +37,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const [customTime, setCustomTime] = useState<string>(() => {
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
+  const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
 
   const { currentProfile } = useUserProfile();
   
@@ -84,9 +85,12 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     if (selectedStadium && viewMode === 'games') {
       loadGamesForStadium();
     }
+    // Reset selected game when stadium changes
+    setSelectedGameOption(null);
   }, [selectedStadium, viewMode, loadGamesForStadium]);
 
   const handleGameSelect = (gameOption: any) => {
+    setSelectedGameOption(gameOption);
     if (gameOption?.game) {
       const gameDateTime = new Date(gameOption.game.gameDate);
       onGameSelect(gameOption.game, gameDateTime);
@@ -230,6 +234,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                 ) : (
                   <Select
                     inputId="game-select"
+                    value={selectedGameOption}
                     options={gameOptions}
                     onChange={handleGameSelect}
                     placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
