@@ -192,57 +192,57 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             role="radiogroup"
             aria-labelledby="sun-preference-label"
           >
-          <label className={`filter-option ${sunPreference === 'any' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="sun-preference"
-              value="any"
-              checked={sunPreference === 'any'}
-              onChange={() => handleSunPreferenceChange('any')}
-              disabled={disabled}
-              aria-describedby="sun-any-desc"
-            />
-            <span id="sun-any-desc" className="filter-option-label">Any amount of sun</span>
-          </label>
-          
-          <label className={`filter-option ${sunPreference === 'avoid' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="sun-preference"
-              value="avoid"
-              checked={sunPreference === 'avoid'}
-              onChange={() => handleSunPreferenceChange('avoid')}
-              disabled={disabled}
-              aria-describedby="sun-avoid-desc"
-            />
-            <span id="sun-avoid-desc" className="filter-option-label">Avoid sun (≤20% exposure)</span>
-          </label>
-          
-          <label className={`filter-option ${sunPreference === 'prefer' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="sun-preference"
-              value="prefer"
-              checked={sunPreference === 'prefer'}
-              onChange={() => handleSunPreferenceChange('prefer')}
-              disabled={disabled}
-              aria-describedby="sun-prefer-desc"
-            />
-            <span id="sun-prefer-desc" className="filter-option-label">Prefer sun (≥60% exposure)</span>
-          </label>
-          
-          <label className={`filter-option ${sunPreference === 'custom' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="sun-preference"
-              value="custom"
-              checked={sunPreference === 'custom'}
-              onChange={() => handleSunPreferenceChange('custom')}
-              disabled={disabled}
-              aria-describedby="sun-custom-desc"
-            />
-            <span id="sun-custom-desc" className="filter-option-label">Custom range</span>
-          </label>
+            <label className={`filter-option ${sunPreference === 'any' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="sun-preference"
+                value="any"
+                checked={sunPreference === 'any'}
+                onChange={() => handleSunPreferenceChange('any')}
+                disabled={disabled}
+                aria-describedby="sun-any-desc"
+              />
+              <span id="sun-any-desc" className="filter-option-label">Any amount of sun</span>
+            </label>
+            
+            <label className={`filter-option ${sunPreference === 'avoid' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="sun-preference"
+                value="avoid"
+                checked={sunPreference === 'avoid'}
+                onChange={() => handleSunPreferenceChange('avoid')}
+                disabled={disabled}
+                aria-describedby="sun-avoid-desc"
+              />
+              <span id="sun-avoid-desc" className="filter-option-label">Avoid sun (≤20% exposure)</span>
+            </label>
+            
+            <label className={`filter-option ${sunPreference === 'prefer' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="sun-preference"
+                value="prefer"
+                checked={sunPreference === 'prefer'}
+                onChange={() => handleSunPreferenceChange('prefer')}
+                disabled={disabled}
+                aria-describedby="sun-prefer-desc"
+              />
+              <span id="sun-prefer-desc" className="filter-option-label">Prefer sun (≥60% exposure)</span>
+            </label>
+            
+            <label className={`filter-option ${sunPreference === 'custom' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="sun-preference"
+                value="custom"
+                checked={sunPreference === 'custom'}
+                onChange={() => handleSunPreferenceChange('custom')}
+                disabled={disabled}
+                aria-describedby="sun-custom-desc"
+              />
+              <span id="sun-custom-desc" className="filter-option-label">Custom range</span>
+            </label>
           </div>
         )}
 
@@ -316,27 +316,27 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             role="group"
             aria-labelledby="seating-level-label"
           >
-          {[
-            { value: 'field', label: 'Field Level', icon: '⚾' },
-            { value: 'lower', label: 'Lower Bowl', icon: '🎫' },
-            { value: 'club', label: 'Club Level', icon: '🥂' },
-            { value: 'upper', label: 'Upper Deck', icon: '🎪' },
-            { value: 'suite', label: 'Suites', icon: '👑' }
-          ].map(level => (
-            <label key={level.value} className={`filter-option ${selectedLevels.includes(level.value as any) ? 'selected' : ''}`}>
-              <input
-                type="checkbox"
-                checked={selectedLevels.includes(level.value as any)}
-                onChange={() => handleLevelToggle(level.value as any)}
-                disabled={disabled}
-                aria-describedby={`level-${level.value}-desc`}
-              />
-              <span id={`level-${level.value}-desc`} className="filter-option-label">
-                <span className="filter-option-icon">{level.icon}</span>
-                {level.label}
-              </span>
-            </label>
-          ))}
+            {[
+              { value: 'field', label: 'Field Level', icon: '⚾' },
+              { value: 'lower', label: 'Lower Bowl', icon: '🎫' },
+              { value: 'club', label: 'Club Level', icon: '🥂' },
+              { value: 'upper', label: 'Upper Deck', icon: '🎪' },
+              { value: 'suite', label: 'Suites', icon: '👑' }
+            ].map(level => (
+              <label key={level.value} className={`filter-option ${selectedLevels.includes(level.value as any) ? 'selected' : ''}`}>
+                <input
+                  type="checkbox"
+                  checked={selectedLevels.includes(level.value as any)}
+                  onChange={() => handleLevelToggle(level.value as any)}
+                  disabled={disabled}
+                  aria-describedby={`level-${level.value}-desc`}
+                />
+                <span id={`level-${level.value}-desc`} className="filter-option-label">
+                  <span className="filter-option-icon">{level.icon}</span>
+                  {level.label}
+                </span>
+              </label>
+            ))}
           </div>
         )}
       </div>
@@ -361,51 +361,51 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         </button>
         
         {expandedSections.coverage && (
-        <div 
-          id="coverage-content"
-          className="filter-content"
-          role="radiogroup"
-          aria-labelledby="coverage-label"
-        >
-          <label className={`filter-option ${coveredPreference === 'any' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="covered-preference"
-              value="any"
-              checked={coveredPreference === 'any'}
-              onChange={() => handleCoveredPreferenceChange('any')}
-              disabled={disabled}
-              aria-describedby="coverage-any-desc"
-            />
-            <span id="coverage-any-desc" className="filter-option-label">Any coverage</span>
-          </label>
-          
-          <label className={`filter-option ${coveredPreference === 'covered' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="covered-preference"
-              value="covered"
-              checked={coveredPreference === 'covered'}
-              onChange={() => handleCoveredPreferenceChange('covered')}
-              disabled={disabled}
-              aria-describedby="coverage-covered-desc"
-            />
-            <span id="coverage-covered-desc" className="filter-option-label">Covered sections only</span>
-          </label>
-          
-          <label className={`filter-option ${coveredPreference === 'uncovered' ? 'selected' : ''}`}>
-            <input
-              type="radio"
-              name="covered-preference"
-              value="uncovered"
-              checked={coveredPreference === 'uncovered'}
-              onChange={() => handleCoveredPreferenceChange('uncovered')}
-              disabled={disabled}
-              aria-describedby="coverage-uncovered-desc"
-            />
-            <span id="coverage-uncovered-desc" className="filter-option-label">Uncovered sections only</span>
-          </label>
-        </div>
+          <div 
+            id="coverage-content"
+            className="filter-content"
+            role="radiogroup"
+            aria-labelledby="coverage-label"
+          >
+            <label className={`filter-option ${coveredPreference === 'any' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="covered-preference"
+                value="any"
+                checked={coveredPreference === 'any'}
+                onChange={() => handleCoveredPreferenceChange('any')}
+                disabled={disabled}
+                aria-describedby="coverage-any-desc"
+              />
+              <span id="coverage-any-desc" className="filter-option-label">Any coverage</span>
+            </label>
+            
+            <label className={`filter-option ${coveredPreference === 'covered' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="covered-preference"
+                value="covered"
+                checked={coveredPreference === 'covered'}
+                onChange={() => handleCoveredPreferenceChange('covered')}
+                disabled={disabled}
+                aria-describedby="coverage-covered-desc"
+              />
+              <span id="coverage-covered-desc" className="filter-option-label">Covered sections only</span>
+            </label>
+            
+            <label className={`filter-option ${coveredPreference === 'uncovered' ? 'selected' : ''}`}>
+              <input
+                type="radio"
+                name="covered-preference"
+                value="uncovered"
+                checked={coveredPreference === 'uncovered'}
+                onChange={() => handleCoveredPreferenceChange('uncovered')}
+                disabled={disabled}
+                aria-describedby="coverage-uncovered-desc"
+              />
+              <span id="coverage-uncovered-desc" className="filter-option-label">Uncovered sections only</span>
+            </label>
+          </div>
         )}
       </div>
 
@@ -429,33 +429,33 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         </button>
         
         {expandedSections.priceRange && (
-        <div 
-          id="price-range-content"
-          className="filter-content"
-          role="group"
-          aria-labelledby="price-range-label"
-        >
-          {[
-            { value: 'value', label: 'Value', icon: '💵' },
-            { value: 'moderate', label: 'Moderate', icon: '💶' },
-            { value: 'premium', label: 'Premium', icon: '💷' },
-            { value: 'luxury', label: 'Luxury', icon: '💎' }
-          ].map(price => (
-            <label key={price.value} className={`filter-option ${selectedPriceRanges.includes(price.value as any) ? 'selected' : ''}`}>
-              <input
-                type="checkbox"
-                checked={selectedPriceRanges.includes(price.value as any)}
-                onChange={() => handlePriceRangeToggle(price.value as any)}
-                disabled={disabled}
-                aria-describedby={`price-${price.value}-desc`}
-              />
-              <span id={`price-${price.value}-desc`} className="filter-option-label">
-                <span className="filter-option-icon">{price.icon}</span>
-                {price.label}
-              </span>
-            </label>
-          ))}
-        </div>
+          <div 
+            id="price-range-content"
+            className="filter-content"
+            role="group"
+            aria-labelledby="price-range-label"
+          >
+            {[
+              { value: 'value', label: 'Value', icon: '💵' },
+              { value: 'moderate', label: 'Moderate', icon: '💶' },
+              { value: 'premium', label: 'Premium', icon: '💷' },
+              { value: 'luxury', label: 'Luxury', icon: '💎' }
+            ].map(price => (
+              <label key={price.value} className={`filter-option ${selectedPriceRanges.includes(price.value as any) ? 'selected' : ''}`}>
+                <input
+                  type="checkbox"
+                  checked={selectedPriceRanges.includes(price.value as any)}
+                  onChange={() => handlePriceRangeToggle(price.value as any)}
+                  disabled={disabled}
+                  aria-describedby={`price-${price.value}-desc`}
+                />
+                <span id={`price-${price.value}-desc`} className="filter-option-label">
+                  <span className="filter-option-icon">{price.icon}</span>
+                  {price.label}
+                </span>
+              </label>
+            ))}
+          </div>
         )}
       </div>
     </div>
