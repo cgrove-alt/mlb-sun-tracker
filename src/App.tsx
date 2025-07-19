@@ -484,7 +484,11 @@ function AppContent() {
             <div className="recommendations">
               <h3><InfoIcon size={20} /> Smart Seating Recommendations</h3>
               <div className="recommendations-content">
-                {sunPosition && sunPosition.altitudeDegrees < 0 ? (
+                {!sunPosition ? (
+                  <div className="recommendation-item">
+                    <p>Calculating sun position...</p>
+                  </div>
+                ) : sunPosition.altitudeDegrees < 0 ? (
                   <div className="recommendation-item night">
                     <span className="rec-icon"><MoonIcon size={24} /></span>
                     <div className="rec-content">
@@ -492,7 +496,7 @@ function AppContent() {
                       <p>Since this is a night game, sun exposure won't be a concern for any seats. Focus on other factors like sightlines and amenities.</p>
                     </div>
                   </div>
-                ) : selectedStadium.roof === 'fixed' ? (
+                ) : selectedStadium && selectedStadium.roof === 'fixed' ? (
                   <div className="recommendation-item covered">
                     <span className="rec-icon"><StadiumIcon size={24} /></span>
                     <div className="rec-content">
@@ -508,7 +512,7 @@ function AppContent() {
                         <h4>To Avoid Sun</h4>
                         <p>Choose seats on the <strong>{
                           sunPosition && sunPosition.azimuthDegrees > 180 ? 'first base side' : 'third base side'
-                        }</strong> or in shaded sections. {selectedStadium.roof === 'retractable' && 'The retractable roof may also provide coverage.'}</p>
+                        }</strong> or in shaded sections. {selectedStadium && selectedStadium.roof === 'retractable' && 'The retractable roof may also provide coverage.'}</p>
                       </div>
                     </div>
 
@@ -549,7 +553,7 @@ function AppContent() {
                     <h4><ChartIcon size={20} /> Game Details</h4>
                     <p><strong>Matchup:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
                     <p><strong>Venue:</strong> {selectedGame.venue.name}</p>
-                    <p><strong>Game Time:</strong> {selectedStadium ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime.toLocaleString()}</p>
+                    <p><strong>Game Time:</strong> {selectedStadium && gameDateTime ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime?.toLocaleString()}</p>
                   </div>
                 )}
               </div>
