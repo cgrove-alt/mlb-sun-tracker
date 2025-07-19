@@ -5,6 +5,9 @@
   min-height: 100vh;
   background-color: #ffffff;
   background-image: linear-gradient(to bottom, #ffffff 0%, #f5f9fc 100%);
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .App-header {
@@ -509,22 +512,30 @@
   }
   
   .App-main {
-    padding: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   .filter-and-sections-container {
     grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+    width: 100%;
+    overflow: hidden;
   }
   
   .filter-and-sections-container > :first-child {
     position: relative;
     top: auto;
     max-height: none;
-    order: 2;
+    width: 100%;
+    max-width: 100%;
   }
   
   .filter-and-sections-container > :last-child {
-    order: 1;
+    width: 100%;
+    max-width: 100%;
   }
 
   .overview-stats {
@@ -545,6 +556,8 @@
 
   .recommendations {
     padding: 16px;
+    width: 100%;
+    overflow: hidden;
   }
 
   .recommendation-item {

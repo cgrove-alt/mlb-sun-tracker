@@ -5,6 +5,8 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   border: 1px solid #e8f4f8;
   margin-bottom: 24px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Stadium option styling */
@@ -398,6 +400,12 @@
 }
 
 @media (max-width: 768px) {
+  .game-selector {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
   .selector-header {
     flex-direction: column;
     align-items: stretch;
