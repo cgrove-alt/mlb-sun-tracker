@@ -9,9 +9,11 @@ import { MobileGameScheduler } from './components/MobileGameScheduler';
 import { MobileFilterSheet } from './components/MobileFilterSheet';
 import { SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { MobileSectionCard } from './components/MobileSectionCard';
+import { SwipeableCarousel } from './components/SwipeableCarousel';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
+import { haptics } from './utils/haptics';
 import './styles/mobile-first.css';
 import './MobileApp.css';
 
@@ -238,14 +240,22 @@ const MobileApp: React.FC = () => {
                   </div>
                 ) : filteredSections.length > 0 ? (
                   <div className="mobile-section-list">
-                    {filteredSections.map((sectionData) => (
-                      <MobileSectionCard
-                        key={sectionData.section.id}
-                        section={sectionData.section}
-                        sunExposure={sectionData.sunExposure}
-                        inSun={sectionData.inSun}
-                      />
-                    ))}
+                    <SwipeableCarousel
+                      items={filteredSections.map((sectionData) => (
+                        <MobileSectionCard
+                          key={sectionData.section.id}
+                          section={sectionData.section}
+                          sunExposure={sectionData.sunExposure}
+                          inSun={sectionData.inSun}
+                          onClick={() => {
+                            haptics.tap();
+                          }}
+                        />
+                      ))}
+                      itemsPerView={1.2}
+                      gap={16}
+                      showIndicators={true}
+                    />
                   </div>
                 ) : (
                   <div className="mobile-empty-state">

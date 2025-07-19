@@ -18,9 +18,9 @@
   --text-xl: 1.25rem;    /* 20px */
   --text-2xl: 1.5rem;    /* 24px */
   
-  /* Touch-friendly sizes */
-  --touch-target: 44px;
-  --touch-target-sm: 36px;
+  /* Touch-friendly sizes - increased to 48px for better accessibility */
+  --touch-target: 48px;
+  --touch-target-sm: 40px;
   
   /* Mobile-first layout */
   --mobile-header-height: 56px;
@@ -62,6 +62,31 @@
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Ensure all interactive elements meet minimum touch target */
+button, a, input, select, textarea {
+  min-height: var(--touch-target);
+  min-width: var(--touch-target);
+}
+
+/* Small buttons can use smaller target but with padding */
+.btn-sm, .icon-btn {
+  min-height: var(--touch-target-sm);
+  min-width: var(--touch-target-sm);
+}
+
+/* Prevent text selection on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
 }
 
 html {
