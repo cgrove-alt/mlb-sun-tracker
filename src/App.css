@@ -127,6 +127,8 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .filter-and-sections-container {
@@ -518,11 +520,19 @@
     overflow-x: hidden;
   }
 
+  .results {
+    gap: 16px;
+    padding: 0;
+    max-width: 100vw;
+  }
+  
   .filter-and-sections-container {
     grid-template-columns: 1fr;
-    gap: var(--spacing-4);
+    gap: var(--spacing-3);
     width: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
   
   .filter-and-sections-container > :first-child {
@@ -540,6 +550,15 @@
 
   .overview-stats {
     padding: 12px;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .section-overview {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .stat-number {
@@ -551,7 +570,20 @@
   }
 
   .weather-info-section {
-    gap: 16px;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .sun-info {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .sun-details {
+    width: 100%;
+    overflow-x: auto;
   }
 
   .recommendations {
@@ -606,19 +638,38 @@
 
 @media (max-width: 480px) {
   .App-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .App-header p {
-    font-size: 0.9rem;
-  }
-  
-  .quick-summary {
-    padding: 12px;
     font-size: 0.85rem;
   }
   
+  .quick-summary {
+    padding: 8px;
+    font-size: 0.75rem;
+  }
+  
   .App-main {
+    padding: 8px;
+  }
+  
+  /* Force all content to respect viewport */
+  .results > * {
+    max-width: calc(100vw - 16px);
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  .weather-info-section > * {
+    max-width: 100%;
+  }
+  
+  .recommendations {
+    padding: 12px;
+  }
+  
+  .recommendation-item {
     padding: 12px;
   }
   

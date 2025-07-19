@@ -439,8 +439,15 @@
     gap: 12px;
   }
   
+  .section-list-container {
+    width: 100%;
+    padding: 0;
+  }
+  
   .section-card {
     min-height: 48px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .list-title {

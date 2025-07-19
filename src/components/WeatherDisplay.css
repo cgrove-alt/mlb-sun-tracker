@@ -369,6 +369,9 @@
 @media (max-width: 768px) {
   .weather-display {
     padding: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   .weather-main {
