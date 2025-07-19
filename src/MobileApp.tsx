@@ -19,6 +19,7 @@ const MobileApp: React.FC = () => {
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [games, setGames] = useState<MLBGame[]>([]);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
+  const [allSections, setAllSections] = useState<SeatingSectionSun[]>([]);
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [isLoading, setIsLoading] = useState(false);
@@ -52,6 +53,7 @@ const MobileApp: React.FC = () => {
     if (selectedGame && selectedStadium) {
       calculateSections();
     } else {
+      setAllSections([]);
       setFilteredSections([]);
     }
   }, [selectedGame, selectedStadium, filterCriteria]);
@@ -131,6 +133,9 @@ const MobileApp: React.FC = () => {
           inSun: sunExposure > 10
         };
       });
+    
+    // Store all sections for filter preview
+    setAllSections(results);
     
     // Apply filters
     let filtered = results;
@@ -224,6 +229,7 @@ const MobileApp: React.FC = () => {
                   onFilterChange={handleFilterChange}
                   currentFilters={filterCriteria}
                   resultCount={filteredSections.length}
+                  allSections={allSections}
                 />
               </section>
 

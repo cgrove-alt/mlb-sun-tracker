@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { SunFilterCriteria } from './SunExposureFilterFixed';
+import { SeatingSectionSun } from '../utils/sunCalculations';
 import './MobileFilterSheet.css';
 
 interface MobileFilterSheetProps {
   onFilterChange: (criteria: SunFilterCriteria) => void;
   currentFilters: SunFilterCriteria;
   resultCount: number;
+  allSections?: SeatingSectionSun[];
 }
 
 export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   onFilterChange,
   currentFilters,
-  resultCount
+  resultCount,
+  allSections = []
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
@@ -28,6 +31,41 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   };
 
   const activeFilterCount = Object.keys(currentFilters).length;
+
+  // Calculate preview count based on local filters
+  const previewCount = useMemo(() => {
+    if (!allSections.length) return resultCount;
+    
+    let filtered = [...allSections];
+    
+    // Apply sun preference filter
+    if (localFilters.sunPreference) {
+      if (localFilters.sunPreference === 'sun') {
+        filtered = filtered.filter(s => s.sunExposure >= 50);
+      } else if (localFilters.sunPreference === 'shade') {
+        filtered = filtered.filter(s => s.sunExposure < 50);
+      }
+    }
+    
+    // Apply max sun exposure filter
+    if (localFilters.maxSunExposure !== undefined) {
+      const maxExposure = localFilters.maxSunExposure;
+      filtered = filtered.filter(s => s.sunExposure <= maxExposure);
+    }
+    
+    // Apply seating areas filter
+    if (localFilters.seatingAreas && localFilters.seatingAreas.length > 0) {
+      filtered = filtered.filter(s => {
+        const sectionLevel = s.section.level.charAt(0).toUpperCase() + s.section.level.slice(1) + ' Level';
+        return localFilters.seatingAreas!.some(area => 
+          area.toLowerCase() === sectionLevel.toLowerCase() ||
+          area.toLowerCase() === s.section.level.toLowerCase()
+        );
+      });
+    }
+    
+    return filtered.length;
+  }, [localFilters, allSections]);
 
   return (
     <>
@@ -165,7 +203,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                 className="mobile-filter-btn mobile-filter-btn-primary"
                 onClick={handleApplyFilters}
               >
-                Show {resultCount} Sections
+                Show {previewCount} Sections
               </button>
             </div>
           </div>
