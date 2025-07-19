@@ -52,7 +52,7 @@ export function generateViewport() {
     width: 'device-width',
     initialScale: 1,
     maximumScale: 1,
-    themeColor: '#1a237e',
+    themeColor: '#2196f3',
   };
 }
 
@@ -66,7 +66,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/mlb-sun-tracker/favicon.ico" />
         <link rel="apple-touch-icon" href="/mlb-sun-tracker/logo192.png" />
-        <meta name="theme-color" content="#1a237e" />
+        <meta name="theme-color" content="#2196f3" />
       </head>
       <body className={inter.className}>
         <div id="root">{children}</div>

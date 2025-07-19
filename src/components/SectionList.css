@@ -428,10 +428,15 @@
 @media (max-width: 768px) {
   .section-list {
     padding: 16px;
+    box-shadow: none;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
   }
   
   .section-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
   
   .section-card {

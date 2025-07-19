@@ -16,6 +16,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  overscroll-behavior: none;
+}
+
+/* Prevent text selection on interactive elements */
+button, a, .clickable {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Improve scrolling performance */
+.scrollable, [data-scrollable] {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 #root {
@@ -28,7 +43,7 @@ body {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #1a237e;
+  background: #2196f3;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -86,7 +101,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #1a237e;
+  background: #2196f3;
   display: flex;
   align-items: center;
   justify-content: center;

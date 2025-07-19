@@ -387,12 +387,17 @@
   }
 
   .hourly-grid {
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     gap: 8px;
+    padding-bottom: 8px;
   }
 
   .hourly-item {
     padding: 8px 4px;
+    flex: 0 0 auto;
+    min-width: 70px;
   }
 
   .weather-header {
