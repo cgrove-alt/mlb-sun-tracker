@@ -17,6 +17,7 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { useSunCalculations } from './hooks/useSunCalculations';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import MobileApp from './MobileApp';
 
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
@@ -603,6 +604,33 @@ function AppContent() {
 }
 
 function App() {
+  // Check if the device is mobile based on viewport width
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Use mobile-first design for mobile devices
+  if (isMobile) {
+    return (
+      <ErrorProvider>
+        <UserProfileProvider>
+          <I18nProvider>
+            <ErrorBoundary>
+              <MobileApp />
+            </ErrorBoundary>
+          </I18nProvider>
+        </UserProfileProvider>
+      </ErrorProvider>
+    );
+  }
+
   return (
     <ErrorBoundary>
       <I18nProvider>

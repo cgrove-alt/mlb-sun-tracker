@@ -1,0 +1,120 @@
+/* Mobile Header Styles */
+.mobile-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-md);
+  width: 100%;
+}
+
+.mobile-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--mobile-header-height);
+  padding: 0 var(--space-sm);
+  gap: var(--space-sm);
+}
+
+.mobile-header-back,
+.mobile-header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target);
+  height: var(--touch-target);
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: var(--radius-full);
+  transition: background-color 0.2s ease;
+}
+
+.mobile-header-back:active,
+.mobile-header-menu:active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-header-title {
+  flex: 1;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mobile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: var(--shadow-lg);
+  max-height: calc(100vh - var(--mobile-header-height));
+  overflow-y: auto;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-menu-item:active {
+  background: var(--color-background);
+}
+
+.mobile-menu-icon {
+  font-size: var(--text-xl);
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .mobile-header-content {
+    padding: 0 var(--space-lg);
+  }
+  
+  .mobile-header-title {
+    font-size: var(--text-xl);
+  }
+  
+  .mobile-menu {
+    max-width: 400px;
+    border-radius: 0 0 var(--radius-lg) 0;
+  }
+}

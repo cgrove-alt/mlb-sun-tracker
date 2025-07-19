@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import './SunExposureFilter.css';
 
 export interface SunFilterCriteria {
+  sunPreference?: 'any' | 'sun' | 'shade';
   minExposure?: number;
   maxExposure?: number;
+  maxSunExposure?: number;
   levels?: Array<'field' | 'lower' | 'club' | 'upper' | 'suite'>;
+  seatingAreas?: Array<string>;
   covered?: boolean;
   priceRange?: Array<'value' | 'moderate' | 'premium' | 'luxury'>;
 }
