@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MLBGame } from '../services/mlbApi';
 import { format, isToday, isTomorrow, differenceInDays } from 'date-fns';
+import { formatGameTime } from '../utils/dateTimeUtils';
 import './MobileGameScheduler.css';
 
 interface MobileGameSchedulerProps {
@@ -52,7 +53,7 @@ export const MobileGameScheduler: React.FC<MobileGameSchedulerProps> = ({
   };
 
   const getGameTimeLabel = (date: Date) => {
-    return format(date, 'h:mm a');
+    return formatGameTime(date, false);
   };
 
   if (loading) {

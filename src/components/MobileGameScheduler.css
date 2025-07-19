@@ -207,6 +207,16 @@
 
 .mobile-game-time {
   white-space: nowrap;
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.mobile-game-timezone {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  font-weight: normal;
 }
 
 .mobile-game-weather {
