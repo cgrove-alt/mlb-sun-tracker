@@ -23,7 +23,7 @@ const MobileApp: React.FC = () => {
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [weatherData, setWeatherData] = useState<any>(null);
+  const [weatherForecast, setWeatherForecast] = useState<any>(null);
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
 
   const [isCalculating, setIsCalculating] = useState(false);
@@ -43,7 +43,7 @@ const MobileApp: React.FC = () => {
     if (selectedGame && selectedStadium) {
       loadWeather();
     } else {
-      setWeatherData(null);
+      setWeatherForecast(null);
     }
   }, [selectedGame]);
 
@@ -84,11 +84,10 @@ const MobileApp: React.FC = () => {
         selectedStadium.latitude,
         selectedStadium.longitude
       );
-      const weather = weatherApi.getWeatherForTime(forecast, new Date(selectedGame.gameDate));
-      setWeatherData(weather);
+      setWeatherForecast(forecast);
     } catch (err) {
       console.error('Error loading weather:', err);
-      setWeatherData(null);
+      setWeatherForecast(null);
     } finally {
       setIsWeatherLoading(false);
     }
@@ -204,11 +203,11 @@ const MobileApp: React.FC = () => {
           )}
 
           {/* Weather Display */}
-          {selectedGame && weatherData && (
+          {selectedGame && weatherForecast && (
             <section className="mobile-section">
               <h2 className="mobile-section-title">Game Weather</h2>
               <WeatherDisplay
-                weather={weatherData}
+                weather={weatherForecast}
                 gameTime={new Date(selectedGame.gameDate)}
                 loading={isWeatherLoading}
                 stadium={selectedStadium}
