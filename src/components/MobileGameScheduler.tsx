@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { SwipeableGameCard } from './SwipeableGameCard';
-import { SwipeableCarousel } from './SwipeableCarousel';
-import { haptics } from '../utils/haptics';
 import { MLBGame } from '../services/mlbApi';
 import { format, isToday, isTomorrow, differenceInDays } from 'date-fns';
 import './MobileGameScheduler.css';
@@ -113,32 +110,40 @@ export const MobileGameScheduler: React.FC<MobileGameSchedulerProps> = ({
 
             {expandedMonth === month && (
               <div className="mobile-game-list">
-                <SwipeableCarousel
-                  items={monthGames.map((game, index) => (
-                    <SwipeableGameCard
+                {monthGames.map(game => {
+                  const gameDate = new Date(game.gameDate);
+                  const isSelected = selectedGame?.gamePk === game.gamePk;
+                  
+                  return (
+                    <button
                       key={game.gamePk}
-                      game={game}
-                      isSelected={selectedGame?.gamePk === game.gamePk}
-                      onSelect={() => {
-                        onGameSelect(game);
-                        haptics.select();
-                      }}
-                      onSwipeLeft={() => {
-                        haptics.swipe();
-                        // Could mark game as not interested
-                        console.log('Game swiped left:', game.gamePk);
-                      }}
-                      onSwipeRight={() => {
-                        haptics.swipe();
-                        // Could mark game as favorite
-                        console.log('Game swiped right:', game.gamePk);
-                      }}
-                    />
-                  ))}
-                  itemsPerView={1}
-                  gap={16}
-                  showIndicators={monthGames.length > 1}
-                />
+                      className={`mobile-game-item ${isSelected ? 'selected' : ''}`}
+                      onClick={() => onGameSelect(game)}
+                      aria-pressed={isSelected}
+                    >
+                      <div className="mobile-game-date">
+                        <div className="mobile-game-date-day">{format(gameDate, 'd')}</div>
+                        <div className="mobile-game-date-label">{getGameDateLabel(gameDate)}</div>
+                      </div>
+                      
+                      <div className="mobile-game-details">
+                        <div className="mobile-game-teams">
+                          <span className="mobile-game-opponent">vs {game.teams.away.team.name}</span>
+                        </div>
+                        <div className="mobile-game-meta">
+                          <span className="mobile-game-time">{getGameTimeLabel(gameDate)}</span>
+                          {/* Weather will be loaded separately */}
+                        </div>
+                      </div>
+
+                      {isSelected && (
+                        <svg className="mobile-game-check" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                        </svg>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>

@@ -104,8 +104,10 @@
 
 /* Section List */
 .mobile-section-list {
-  margin: 0 calc(-1 * var(--space-md)); /* Allow carousel to extend to edges */
-  padding: var(--space-md) 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
 }
 
 .mobile-virtual-list {
