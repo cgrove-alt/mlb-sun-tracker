@@ -44,7 +44,30 @@ export const getTimezoneAbbreviation = (): string => {
 };
 
 /**
- * Formats game time with local timezone
+ * Formats game time in stadium's local timezone
+ * @param gameDate - Game date/time
+ * @param stadiumTimezone - Stadium's IANA timezone (e.g., 'America/New_York')
+ * @param includeDate - Whether to include the date
+ * @returns Formatted game time in stadium's timezone
+ */
+export const formatGameTimeInStadiumTZ = (
+  gameDate: string | Date,
+  stadiumTimezone: string,
+  includeDate: boolean = false
+): string => {
+  try {
+    const date = typeof gameDate === 'string' ? parseISO(gameDate) : gameDate;
+    const formatStr = includeDate ? 'MMM d, h:mm a zzz' : 'h:mm a zzz';
+    return formatInTimeZone(date, stadiumTimezone, formatStr);
+  } catch (error) {
+    console.error('Error formatting game time:', error);
+    const date = typeof gameDate === 'string' ? new Date(gameDate) : gameDate;
+    return date.toLocaleString();
+  }
+};
+
+/**
+ * Formats game time with local timezone (keeping for backwards compatibility)
  * @param gameDate - Game date/time
  * @param includeDate - Whether to include the date
  * @returns Formatted game time
@@ -70,3 +93,8 @@ export const getTimezoneDescription = (): string => {
     return Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 };
+
+/**
+ * Re-export formatInTimeZone for use in other components
+ */
+export { formatInTimeZone };

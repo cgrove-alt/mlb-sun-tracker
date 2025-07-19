@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { MLBGame } from '../services/mlbApi';
 import { format, isToday, isTomorrow, differenceInDays } from 'date-fns';
-import { formatGameTime } from '../utils/dateTimeUtils';
+import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
+import { Stadium } from '../data/stadiums';
 import './MobileGameScheduler.css';
 
 interface MobileGameSchedulerProps {
@@ -9,13 +10,15 @@ interface MobileGameSchedulerProps {
   selectedGame: MLBGame | null;
   onGameSelect: (game: MLBGame) => void;
   loading?: boolean;
+  stadium?: Stadium | null;
 }
 
 export const MobileGameScheduler: React.FC<MobileGameSchedulerProps> = ({
   games,
   selectedGame,
   onGameSelect,
-  loading = false
+  loading = false,
+  stadium
 }) => {
   const [expandedMonth, setExpandedMonth] = useState<string | null>(null);
 
@@ -53,7 +56,9 @@ export const MobileGameScheduler: React.FC<MobileGameSchedulerProps> = ({
   };
 
   const getGameTimeLabel = (date: Date) => {
-    return formatGameTime(date, false);
+    // Use stadium timezone if available, otherwise default to Eastern
+    const timezone = stadium?.timezone || 'America/New_York';
+    return formatGameTimeInStadiumTZ(date, timezone, false);
   };
 
   if (loading) {

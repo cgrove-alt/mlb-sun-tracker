@@ -198,6 +198,7 @@ const MobileApp: React.FC = () => {
                 selectedGame={selectedGame}
                 onGameSelect={handleGameSelect}
                 loading={isLoading}
+                stadium={selectedStadium}
               />
             </section>
           )}

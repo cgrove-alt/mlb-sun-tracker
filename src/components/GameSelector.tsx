@@ -7,7 +7,7 @@ import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
-import { formatGameTime } from '../utils/dateTimeUtils';
+import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import './GameSelector.css';
@@ -142,12 +142,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     const homeTeamName = game.teams.home.team.name;
     const awayTeamName = game.teams.away.team.name;
     
-    // Format date and time in user's local timezone
-    const localTimeStr = formatGameTime(gameDate, true);
+    // Format date and time in stadium's local timezone
+    const homeStadium = stadiums.find(s => s.id === homeTeamId);
+    const timezone = homeStadium?.timezone || 'America/New_York';
+    const stadiumTimeStr = formatGameTimeInStadiumTZ(gameDate, timezone, true);
     
     return {
       value: game.gamePk,
-      label: `${localTimeStr} - ${awayTeamName} @ ${homeTeamName}`,
+      label: `${stadiumTimeStr} - ${awayTeamName} @ ${homeTeamName}`,
       game: game
     };
   };

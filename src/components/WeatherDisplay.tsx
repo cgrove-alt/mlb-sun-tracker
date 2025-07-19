@@ -2,7 +2,7 @@ import React from 'react';
 import { WeatherForecast, weatherApi } from '../services/weatherApi';
 import { Stadium } from '../data/stadiums';
 import { formatDateTimeWithTimezone, formatTimeWithTimezone } from '../utils/timeUtils';
-import { formatGameTime, formatInLocalTimezone } from '../utils/dateTimeUtils';
+import { formatGameTimeInStadiumTZ, formatInTimeZone } from '../utils/dateTimeUtils';
 import { useTranslation } from '../i18n/i18nContext';
 import './WeatherDisplay.css';
 
@@ -113,7 +113,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
         <h3>{t('weather.forecast')}</h3>
         {gameTime && (
           <span className="forecast-time">
-            For game time: {formatGameTime(gameTime, true)}
+            For game time: {stadium ? formatGameTimeInStadiumTZ(gameTime, stadium.timezone, true) : gameTime.toLocaleString()}
           </span>
         )}
       </div>
@@ -235,7 +235,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
                 return (
                   <div key={index} className={`hourly-item ${isGameHour ? 'game-hour' : ''}`}>
                     <div className="hourly-time">
-                      {formatInLocalTimezone(hourTime, 'h a')}
+                      {stadium ? formatInTimeZone(hourTime, stadium.timezone, 'h a') : hourTime.toLocaleTimeString([], { hour: 'numeric' })}
                       {isGameHour && <span className="game-indicator">⚾</span>}
                     </div>
                     <div className="hourly-icon">
