@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { SunFilterCriteria } from './SunExposureFilterFixed';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import './MobileFilterSheet.css';
@@ -18,6 +18,48 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
+
+  // Handle body scroll locking
+  useEffect(() => {
+    if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
+      
+      // Add class to body
+      document.body.classList.add('filter-open');
+      document.body.style.top = `-${scrollY}px`;
+      
+      // Prevent touchmove on the overlay
+      const preventScroll = (e: TouchEvent) => {
+        if (e.target && (e.target as HTMLElement).closest('.mobile-filter-body')) {
+          // Allow scrolling within the filter body
+          return;
+        }
+        e.preventDefault();
+      };
+      
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+      
+      return () => {
+        // Remove class from body
+        document.body.classList.remove('filter-open');
+        const savedScrollY = Math.abs(parseInt(document.body.style.top || '0'));
+        document.body.style.top = '';
+        
+        // Restore scroll position
+        window.scrollTo(scrollX, savedScrollY || scrollY);
+        
+        // Remove event listener
+        document.removeEventListener('touchmove', preventScroll);
+      };
+    }
+  }, [isOpen]);
+
+  // Update local filters when props change
+  useEffect(() => {
+    setLocalFilters(currentFilters);
+  }, [currentFilters]);
 
   const handleApplyFilters = () => {
     onFilterChange(localFilters);
@@ -88,7 +130,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       {isOpen && (
         <div className="mobile-filter-sheet">
           <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} />
-          <div className="mobile-filter-content">
+          <div className="mobile-filter-content" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-filter-header">
               <h2>Filter Sections</h2>
               <button 
