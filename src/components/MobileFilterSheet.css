@@ -79,6 +79,11 @@
   z-index: var(--z-modal);
   display: flex;
   align-items: flex-end;
+  pointer-events: none; /* Allow touches to pass through except on children */
+}
+
+.mobile-filter-sheet > * {
+  pointer-events: auto; /* Re-enable touches on actual content */
 }
 
 .mobile-filter-overlay {
@@ -99,8 +104,8 @@
 .mobile-filter-content {
   position: relative;
   width: 100%;
-  max-height: 90vh;
-  max-height: 90dvh; /* Dynamic viewport height for mobile */
+  max-height: 75vh; /* Lower to ensure button is always visible */
+  max-height: 75dvh;
   background: var(--color-white);
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   display: flex;
@@ -108,6 +113,7 @@
   animation: slideUp var(--transition-base) var(--ease-out);
   box-shadow: var(--shadow-2xl);
   overflow: hidden;
+  margin-bottom: env(safe-area-inset-bottom, 0); /* Account for iPhone home bar */
 }
 
 @keyframes slideUp {
@@ -124,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) var(--space-4); /* Smaller padding */
   background: var(--gradient-field);
   color: white;
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
@@ -160,27 +166,30 @@
   transform: scale(0.95);
 }
 
-/* Compact Body - Allow scrolling only when needed */
+/* Compact Body - Simple scrolling */
 .mobile-filter-body {
   padding: var(--space-4);
+  padding-bottom: var(--space-2); /* Less bottom padding */
   background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-white) 100%);
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3); /* Smaller gap */
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  flex: 1;
-  min-height: 0; /* Important for flexbox overflow */
+  flex: 1 1 0%; /* Better flex basis */
+  min-height: 0;
+  overscroll-behavior: contain;
 }
 
 /* Compact Filter Sections */
 .mobile-filter-section {
-  animation: fadeInUp 0.3s var(--ease-out) backwards;
+  margin-bottom: var(--space-3); /* Add spacing between sections */
 }
 
-.mobile-filter-section:nth-child(1) { animation-delay: 0.05s; }
-.mobile-filter-section:nth-child(2) { animation-delay: 0.1s; }
-.mobile-filter-section:nth-child(3) { animation-delay: 0.15s; }
+.mobile-filter-section:last-child {
+  margin-bottom: 0;
+}
 
 @keyframes fadeInUp {
   from {
@@ -194,8 +203,8 @@
 }
 
 .mobile-filter-section h3 {
-  margin: 0 0 var(--space-3) 0;
-  font-size: var(--font-size-base);
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--color-neutral-700);
   letter-spacing: var(--letter-spacing-tight);
@@ -337,10 +346,13 @@
 .mobile-filter-footer {
   display: flex;
   gap: var(--space-3);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4); /* Smaller padding */
   background: var(--color-white);
   border-top: 1px solid var(--color-neutral-200);
   flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
 }
 
 .mobile-filter-btn {
@@ -464,13 +476,18 @@
 
 /* Small phones - Even more compact */
 @media (max-height: 667px) {
+  .mobile-filter-content {
+    max-height: 70vh;
+    max-height: 70dvh;
+  }
+  
   .mobile-filter-header {
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-2) var(--space-3);
   }
   
   .mobile-filter-body {
     padding: var(--space-3);
-    gap: var(--space-3);
+    gap: var(--space-2);
   }
   
   .mobile-filter-section h3 {
