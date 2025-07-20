@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { SunFilterCriteria } from './SunExposureFilterFixed';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import './MobileFilterSheet.css';
@@ -18,6 +18,17 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
+
+  // Simple scroll prevention when filter is open
+  useEffect(() => {
+    if (isOpen) {
+      // Just add overflow hidden to html element
+      document.documentElement.style.overflow = 'hidden';
+      return () => {
+        document.documentElement.style.overflow = '';
+      };
+    }
+  }, [isOpen]);
 
   const handleApplyFilters = () => {
     onFilterChange(localFilters);
@@ -88,7 +99,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       {isOpen && (
         <div className="mobile-filter-sheet">
           <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} />
-          <div className="mobile-filter-content">
+          <div className="mobile-filter-content" onClick={(e) => e.stopPropagation()}>
             <div className="mobile-filter-header">
               <h2>Filter Sections</h2>
               <button 
