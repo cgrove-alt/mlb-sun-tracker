@@ -17,6 +17,7 @@
     <meta property="og:description" content="Analyze sun exposure and weather conditions for all 30 MLB stadiums. Make informed seating decisions with real-time data." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cgrove-alt.github.io/mlb-sun-tracker" />
+    <link rel="canonical" href="https://cgrove-alt.github.io/mlb-sun-tracker" />
     <meta property="og:image" content="%PUBLIC_URL%/logo192.png" />
     
     <!-- Twitter Card Meta Tags -->
@@ -28,7 +29,68 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <title>MLB Stadium Sun Tracker - Find the Perfect Seats</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "MLB Stadium Sun Tracker",
+      "description": "Find the best seats at MLB stadiums by analyzing sun exposure, weather conditions, and seating sections. Get real-time sun position and weather data for all 30 MLB stadiums.",
+      "url": "https://cgrove-alt.github.io/mlb-sun-tracker",
+      "applicationCategory": "SportsApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "MLB Stadium Sun Tracker"
+      },
+      "featureList": [
+        "Real-time sun position calculations",
+        "Weather forecast integration",
+        "Stadium-specific seating recommendations",
+        "Sun exposure analysis for all 30 MLB stadiums",
+        "Mobile-optimized interface"
+      ],
+      "screenshot": [
+        {
+          "@type": "ImageObject",
+          "url": "https://cgrove-alt.github.io/mlb-sun-tracker/logo512.png",
+          "width": 512,
+          "height": 512
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cgrove-alt.github.io/mlb-sun-tracker"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

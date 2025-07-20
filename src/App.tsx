@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { GameSelector } from './components/GameSelector';
@@ -17,6 +18,7 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { useSunCalculations } from './hooks/useSunCalculations';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { SEOHelmet } from './components/SEOHelmet';
 import MobileApp from './MobileApp';
 
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
@@ -30,6 +32,7 @@ import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
+import { trackStadiumSelection, trackGameSelection, trackFilterUsage } from './utils/analytics';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -290,11 +293,24 @@ function AppContent() {
     setFilterCriteria(criteria);
     // Save filter criteria to user profile
     updatePreferences({ filterCriteria: criteria });
+    
+    // Track filter usage
+    if (criteria.sunPreference) {
+      trackFilterUsage('sun_preference', criteria.sunPreference);
+    }
+    if (criteria.maxSunExposure !== undefined) {
+      trackFilterUsage('max_sun_exposure', criteria.maxSunExposure.toString());
+    }
   };
 
   const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
+    
+    // Track game selection
+    if (game && selectedStadium && dateTime) {
+      trackGameSelection(selectedStadium.name, dateTime.toISOString());
+    }
   };
 
   const handleStadiumChange = (stadium: Stadium | null) => {
@@ -311,6 +327,8 @@ function AppContent() {
     if (stadium) {
       updatePreferences({ selectedStadiumId: stadium.id });
       trackStadiumView(stadium.id);
+      // Track analytics
+      trackStadiumSelection(stadium.name);
     } else {
       updatePreferences({ selectedStadiumId: undefined });
     }
@@ -318,6 +336,11 @@ function AppContent() {
 
   return (
     <div className="App">
+      <SEOHelmet 
+        stadium={selectedStadium} 
+        game={selectedGame}
+        pageType={selectedGame ? 'game' : selectedStadium ? 'stadium' : 'home'}
+      />
       <OfflineIndicator />
       <header className="App-header">
         <div className="header-content">
@@ -632,15 +655,17 @@ function App() {
   }
 
   return (
-    <ErrorBoundary>
-      <I18nProvider>
-        <ErrorProvider>
-          <UserProfileProvider>
-            <AppContent />
-          </UserProfileProvider>
-        </ErrorProvider>
-      </I18nProvider>
-    </ErrorBoundary>
+    <HelmetProvider>
+      <ErrorBoundary>
+        <I18nProvider>
+          <ErrorProvider>
+            <UserProfileProvider>
+              <AppContent />
+            </UserProfileProvider>
+          </ErrorProvider>
+        </I18nProvider>
+      </ErrorBoundary>
+    </HelmetProvider>
   );
 }
 
