@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import GoogleAnalytics from './GoogleAnalytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -71,6 +72,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#2196f3" />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <div id="root">{children}</div>
       </body>
     </html>
