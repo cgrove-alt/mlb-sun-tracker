@@ -1,5 +1,6 @@
 /* Modern Mobile Header - 2025 Design */
 @import '../styles/modern-design-system.css';
+@import './MobileMenu.css';
 
 .mobile-header {
   position: sticky;
@@ -113,10 +114,10 @@
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: var(--z-modal-backdrop);
+  /* Remove backdrop filter from overlay to prevent full page blur */
+  z-index: 1040;
   animation: fadeIn var(--transition-fast);
+  pointer-events: auto;
 }
 
 /* Mobile Menu */
@@ -128,11 +129,13 @@
   width: min(320px, 80vw);
   background: var(--color-white);
   box-shadow: var(--shadow-2xl);
-  z-index: var(--z-modal);
+  z-index: 1050;
   transform: translateX(0);
   animation: slideInRight var(--transition-base) var(--ease-out);
   display: flex;
   flex-direction: column;
+  /* Ensure menu is interactive */
+  pointer-events: auto;
 }
 
 @keyframes slideInRight {

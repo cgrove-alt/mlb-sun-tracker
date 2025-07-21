@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserProfileMenu } from './UserProfileMenu';
+import { MobileMenuPortal } from './MobileMenuPortal';
 import './MobileHeader.css';
 
 interface MobileHeaderProps {
@@ -28,6 +29,9 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
   // Close menu when clicking outside
   useEffect(() => {
     if (menuOpen) {
+      // Add class to body to prevent scrolling
+      document.body.classList.add('menu-open');
+      
       const handleClick = (e: MouseEvent) => {
         const target = e.target as HTMLElement;
         if (!target.closest('.mobile-menu') && !target.closest('.mobile-header-menu')) {
@@ -40,7 +44,12 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
         document.addEventListener('click', handleClick);
       }, 0);
       
-      return () => document.removeEventListener('click', handleClick);
+      return () => {
+        document.removeEventListener('click', handleClick);
+        document.body.classList.remove('menu-open');
+      };
+    } else {
+      document.body.classList.remove('menu-open');
     }
   }, [menuOpen]);
 
@@ -86,9 +95,13 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
         </div>
       </header>
       
-      {menuOpen && (
+      <MobileMenuPortal isOpen={menuOpen}>
         <>
-          <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)} />
+          <div 
+            className="mobile-menu-overlay" 
+            onClick={() => setMenuOpen(false)} 
+            aria-hidden="true"
+          />
           <nav className="mobile-menu" role="navigation" aria-label="Main menu">
             <div className="mobile-menu-header">
               <h2>Menu</h2>
@@ -135,7 +148,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             </div>
           </nav>
         </>
-      )}
+      </MobileMenuPortal>
     </>
   );
 };
