@@ -51,6 +51,7 @@ function AppContent() {
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationProgress, setCalculationProgress] = useState<{completed: number, total: number} | null>(null);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
+  const [isCalculating, setIsCalculating] = useState(false);
   const { showError } = useError();
   const { calculateSunPosition, calculateSectionExposures } = useSunCalculations();
 
@@ -194,17 +195,36 @@ function AppContent() {
       return;
     }
     
-    setLoadingSections(true);
+    // Debounce calculation to prevent rapid updates
+    const debounceTimer = setTimeout(() => {
+      setLoadingSections(true);
+    }, 100);
     
     // Use an abort controller to cancel if dependencies change
     const abortController = new AbortController();
     
     const calculateSunData = async () => {
-      // Check if aborted
-      if (abortController.signal.aborted) return;
+      // Check if aborted or already calculating
+      if (abortController.signal.aborted || isCalculating) {
+        console.log('[calculateSunData] Skipping - aborted or already calculating');
+        return;
+      }
+      
+      console.log('[calculateSunData] Starting calculation', {
+        stadium: selectedStadium?.name,
+        time: gameDateTime?.toISOString(),
+        hasWeather: !!weatherForecast
+      });
+      
+      setIsCalculating(true);
       
       try {
-          // Calculate sun position using Web Worker
+          // Calculate sun position
+          if (!calculateSunPosition || !calculateSectionExposures) {
+            console.error('[calculateSunData] Calculation functions not ready');
+            return;
+          }
+          
           const position = await calculateSunPosition(
             gameDateTime,
             selectedStadium.latitude,
@@ -308,6 +328,7 @@ function AppContent() {
         } finally {
           if (!abortController.signal.aborted) {
             setLoadingSections(false);
+            setIsCalculating(false);
           }
         }
       };
@@ -316,9 +337,11 @@ function AppContent() {
       
     // Cleanup function to abort if dependencies change
     return () => {
+      clearTimeout(debounceTimer);
       abortController.abort();
+      setIsCalculating(false);
     };
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, selectedGame]); // Simplified dependencies
+  }, [selectedStadium, gameDateTime, filterCriteria]); // Remove weatherForecast and selectedGame to prevent loops
 
   // Load weather forecast when stadium changes
   useEffect(() => {

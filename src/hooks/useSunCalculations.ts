@@ -105,6 +105,8 @@ export const useSunCalculations = () => {
       const processChunk = () => {
         const endIndex = Math.min(currentIndex + chunkSize, sections.length);
         
+        console.log(`[processChunk] Processing sections ${currentIndex} to ${endIndex} of ${sections.length}`);
+        
         // Process chunk
         for (let i = currentIndex; i < endIndex; i++) {
           results.push(calculateSectionExposureInline(
@@ -127,6 +129,7 @@ export const useSunCalculations = () => {
           // Use setTimeout to yield to browser
           timeoutId = setTimeout(processChunk, 0);
         } else {
+          console.log(`[processChunk] Completed processing ${results.length} sections`);
           resolve(results);
         }
       };
