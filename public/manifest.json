@@ -6,8 +6,8 @@
   "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
-  "scope": "/mlb-sun-tracker/",
-  "start_url": "/mlb-sun-tracker/",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "favicon.ico",

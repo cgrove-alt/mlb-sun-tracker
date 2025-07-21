@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: mlb-sun-tracker
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: NEXT_PUBLIC_GA_ID
+        value: G-JXGEKF957C
+    autoDeploy: true
+    plan: free # You can upgrade to 'starter' ($7/mo) or 'standard' for more resources

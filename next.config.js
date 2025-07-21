@@ -1,14 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Enable static export for GitHub Pages compatibility
-  output: 'export',
   trailingSlash: true,
-  basePath: '/mlb-sun-tracker',
-  assetPrefix: '/mlb-sun-tracker/',
-  // Disable image optimization for static export
+  // Image optimization now works with server deployment
   images: {
-    unoptimized: true,
+    domains: ['statsapi.mlb.com', 'api.open-meteo.com'],
   },
 };
 
