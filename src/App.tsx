@@ -57,45 +57,47 @@ function AppContent() {
   // Load preferences and URL parameters on component mount
   // Initialize performance monitoring and service worker
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      trackWebVitals();
-      
-      // Register service worker
-      serviceWorkerRegistration.register({
-        onSuccess: (registration) => {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Service worker registered successfully');
-          }
-        },
-        onUpdate: (registration) => {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('New content available, refresh to update');
-          }
-        },
-        onOffline: () => {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('App is running in offline mode');
-          }
-        },
-        onOnline: () => {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('App is back online');
-          }
-        }
-      });
-      
-      // Log performance report every 30 seconds in development
-      if (process.env.NODE_ENV === 'development') {
-        const interval = setInterval(() => {
-          performanceMonitor.logReport();
-        }, 30000);
-        
-        return () => clearInterval(interval);
-      }
-    }
+    // TEMPORARILY DISABLED to fix infinite loop
+    // if (typeof window !== 'undefined') {
+    //   trackWebVitals();
+    //   
+    //   // Register service worker
+    //   serviceWorkerRegistration.register({
+    //     onSuccess: (registration) => {
+    //       if (process.env.NODE_ENV === 'development') {
+    //         console.log('Service worker registered successfully');
+    //       }
+    //     },
+    //     onUpdate: (registration) => {
+    //       if (process.env.NODE_ENV === 'development') {
+    //         console.log('New content available, refresh to update');
+    //       }
+    //     },
+    //     onOffline: () => {
+    //       if (process.env.NODE_ENV === 'development') {
+    //         console.log('App is running in offline mode');
+    //       }
+    //     },
+    //     onOnline: () => {
+    //       if (process.env.NODE_ENV === 'development') {
+    //         console.log('App is back online');
+    //       }
+    //     }
+    //   });
+    //   
+    //   // Log performance report every 30 seconds in development
+    //   if (process.env.NODE_ENV === 'development') {
+    //     const interval = setInterval(() => {
+    //       performanceMonitor.logReport();
+    //     }, 30000);
+    //     
+    //     return () => clearInterval(interval);
+    //   }
+    // }
   }, []);
 
   useEffect(() => {
+    // Only run once on mount to avoid infinite loops
     // Only access window in the browser environment
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
     const preferences = currentProfile?.preferences || {};
@@ -137,7 +139,7 @@ function AppContent() {
     if (preferences.filterCriteria) {
       setFilterCriteria(preferences.filterCriteria);
     }
-  }, [currentProfile]);
+  }, []); // Empty dependency array - only run once
 
   const loadWeatherForecast = useCallback(async () => {
     if (!selectedStadium) return;
@@ -394,7 +396,7 @@ function AppContent() {
         pageType={selectedGame ? 'game' : selectedStadium ? 'stadium' : 'home'}
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
-      <OfflineIndicator />
+      {/* <OfflineIndicator /> */}
       <header className="App-header">
         <div className="header-content">
           <div className="header-left">
