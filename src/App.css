@@ -163,11 +163,12 @@
 .overview-stats {
   display: flex;
   justify-content: space-around;
-  background: #ffffff;
-  border-radius: var(--card-border-radius);
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
   padding: var(--spacing-4);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e8f4f8;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  transition: var(--transition-shadow);
 }
 
 .stat-item {
@@ -211,20 +212,22 @@
 
 .sun-info {
   background: linear-gradient(135deg, #fffbf0 0%, #fff5e6 100%);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-5);
   box-shadow: 0 4px 12px rgba(255, 152, 0, 0.08);
   border: 1px solid #ffe4cc;
+  transition: var(--transition-all);
 }
 
 .sun-info h3 {
-  margin: 0 0 16px 0;
-  color: #1976d2;
-  font-size: 1.3rem;
-  font-weight: 700;
+  margin: 0 0 var(--spacing-4) 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
+  letter-spacing: -0.02em;
 }
 
 .enhanced-indicator {
@@ -246,11 +249,12 @@
 .sun-detail-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 204, 2, 0.3);
+  transition: var(--transition-transform);
 }
 
 .sun-icon {
@@ -265,16 +269,18 @@
 }
 
 .sun-label {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 2px;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-1);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .sun-value {
-  font-size: 1rem;
-  color: #333;
-  font-weight: 600;
+  font-size: var(--font-size-base);
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-semibold);
 }
 
 .night-game {
@@ -294,19 +300,22 @@
 }
 
 .recommendations {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-lg);
   width: 100%;
   overflow: hidden;
+  transition: var(--transition-all);
+  border: 1px solid var(--color-gray-100);
 }
 
 .recommendations h3 {
-  margin: 0 0 20px 0;
-  color: #1976d2;
-  font-size: 1.5rem;
-  font-weight: 700;
+  margin: 0 0 var(--spacing-5) 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
 }
 
 .recommendations-content {
@@ -316,30 +325,35 @@
 
 .recommendation-item {
   display: flex;
-  gap: 16px;
-  padding: 16px 20px;
-  border-radius: 8px;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4) var(--spacing-5);
+  border-radius: var(--radius-lg);
   border-left: 4px solid;
+  transition: var(--transition-all);
 }
 
 .recommendation-item.night {
   background: #f3e5f5;
   border-left-color: #9c27b0;
+  box-shadow: var(--shadow-sm);
 }
 
 .recommendation-item.covered {
   background: #e8f5e8;
-  border-left-color: #4caf50;
+  border-left-color: var(--color-success);
+  box-shadow: var(--shadow-sm);
 }
 
 .recommendation-item.shade {
-  background: #e3f2fd;
-  border-left-color: #2196f3;
+  background: rgba(var(--color-primary-rgb), 0.05);
+  border-left-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
 }
 
 .recommendation-item.sun {
   background: #fff8e1;
-  border-left-color: #ff9800;
+  border-left-color: var(--color-warning);
+  box-shadow: var(--shadow-sm);
 }
 
 .recommendation-item.high-sun {
@@ -384,37 +398,39 @@
 }
 
 .game-info h4 {
-  margin: 0 0 12px 0;
-  color: #1a237e;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin: 0 0 var(--spacing-3) 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
 }
 
 .game-info p {
-  margin: 6px 0;
-  color: #666;
-  line-height: 1.5;
+  margin: var(--spacing-2) 0;
+  color: var(--color-gray-600);
+  line-height: var(--line-height-normal);
 }
 
 .game-info strong {
-  color: #333;
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-semibold);
 }
 
 .App-footer {
   background: linear-gradient(to bottom, #f8fbfd 0%, #e3f2fd 100%);
-  padding: 20px;
-  color: #666;
-  font-size: 0.9rem;
-  border-top: 1px solid #bbdefb;
-  margin-top: 40px;
+  padding: var(--spacing-5);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  border-top: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  margin-top: var(--spacing-10);
 }
 
 .footer-content {
-  max-width: 1200px;
+  max-width: var(--breakpoint-xl);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--spacing-5);
 }
 
 .disclaimer {
@@ -427,9 +443,11 @@
 }
 
 .data-sources h4 {
-  margin-bottom: 10px;
-  color: #333;
-  font-size: 1rem;
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
 }
 
 .data-sources ul {
@@ -448,24 +466,27 @@
   content: "•";
   position: absolute;
   left: 0;
-  color: #2196F3;
-  font-weight: bold;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
 }
 
 .attribution {
   text-align: center;
-  padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
-  font-size: 0.8rem;
+  padding-top: var(--spacing-2);
+  border-top: 1px solid var(--color-gray-300);
+  font-size: var(--font-size-xs);
 }
 
 .App-footer a {
-  color: #2196F3;
+  color: var(--color-primary);
   text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-colors);
 }
 
 .App-footer a:hover {
   text-decoration: underline;
+  color: var(--color-primary-dark);
 }
 
 /* Tablet and mobile styles */

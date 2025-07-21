@@ -1,10 +1,11 @@
 .weather-display {
   background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-  border: 1px solid #e1bee7;
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-lg);
+  margin-bottom: var(--spacing-6);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  transition: var(--transition-all);
 }
 
 .weather-display.loading {
@@ -22,29 +23,32 @@
 
 .weather-header h3 {
   margin: 0;
-  color: #1a237e;
-  font-size: 1.5rem;
-  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
 }
 
 .forecast-time {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
   background: rgba(255, 255, 255, 0.8);
-  padding: 4px 12px;
-  border-radius: 16px;
-  border: 1px solid #ddd;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-gray-300);
+  font-weight: var(--font-weight-medium);
 }
 
 .weather-warning {
   display: flex;
-  gap: 12px;
-  padding: 16px;
-  margin: 16px 0;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  margin: var(--spacing-4) 0;
   background: #fff3cd;
   border: 1px solid #ffeaa7;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   color: #856404;
+  box-shadow: var(--shadow-sm);
 }
 
 .weather-warning .warning-icon {
@@ -161,18 +165,20 @@
 }
 
 .temp-value {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a237e;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
   display: block;
-  line-height: 1;
+  line-height: var(--line-height-none);
+  letter-spacing: -0.03em;
 }
 
 .feels-like {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
   display: block;
-  margin-top: 4px;
+  margin-top: var(--spacing-1);
+  font-weight: var(--font-weight-medium);
 }
 
 .weather-desc p {
@@ -200,10 +206,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 12px;
+  padding: var(--spacing-3);
   background: rgba(255, 255, 255, 0.7);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: var(--transition-transform);
 }
 
 .detail-icon {
@@ -212,16 +219,18 @@
 }
 
 .detail-label {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 2px;
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-1);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .detail-value {
-  font-size: 0.9rem;
-  color: #333;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-800);
+  font-weight: var(--font-weight-semibold);
 }
 
 .weather-impact {
@@ -229,9 +238,10 @@
 }
 
 .impact-indicator {
-  padding: 16px 20px;
-  border-radius: 8px;
+  padding: var(--spacing-4) var(--spacing-5);
+  border-radius: var(--radius-lg);
   border-left: 4px solid;
+  transition: var(--transition-all);
 }
 
 .impact-indicator.excellent {
@@ -266,8 +276,9 @@
 }
 
 .impact-title {
-  font-weight: 600;
-  color: #333;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
 }
 
 .impact-desc {
@@ -307,10 +318,11 @@
 }
 
 .hourly-forecast h4 {
-  margin: 0 0 16px 0;
-  color: #1a237e;
-  font-size: 1.2rem;
-  font-weight: 600;
+  margin: 0 0 var(--spacing-4) 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
 }
 
 .hourly-grid {
@@ -323,11 +335,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 8px;
+  padding: var(--spacing-3) var(--spacing-2);
   background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   border: 1px solid rgba(255, 255, 255, 0.9);
   text-align: center;
+  transition: var(--transition-all);
 }
 
 .hourly-time {
@@ -356,8 +369,9 @@
 
 .hourly-item.game-hour {
   background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
-  border: 2px solid #ff9800;
+  border: 2px solid var(--color-warning);
   box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3);
+  transform: translateY(-2px);
 }
 
 .game-indicator {

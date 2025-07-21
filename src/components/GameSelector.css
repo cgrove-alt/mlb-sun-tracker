@@ -1,12 +1,13 @@
 .game-selector {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e8f4f8;
-  margin-bottom: 24px;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  margin-bottom: var(--spacing-6);
   width: 100%;
   box-sizing: border-box;
+  transition: var(--transition-shadow);
 }
 
 /* Stadium option styling */
@@ -51,44 +52,48 @@
 
 .selector-header h3 {
   margin: 0;
-  color: #1a237e;
-  font-size: 1.5rem;
-  font-weight: 700;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
 }
 
 .view-mode-toggle {
   display: flex;
-  background: #f5f5f5;
-  border-radius: 8px;
-  padding: 4px;
-  gap: 4px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-1);
+  gap: var(--spacing-1);
+  box-shadow: var(--shadow-inner);
 }
 
 .toggle-btn {
-  padding: 12px 16px;
+  padding: var(--spacing-3) var(--spacing-4);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   background: transparent;
-  color: #666;
-  font-size: 0.9rem;
-  font-weight: 600;
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--spacing-2);
   min-height: 44px;
   touch-action: manipulation;
 }
 
 .toggle-btn:hover {
-  background: #e0e0e0;
+  background: var(--color-gray-200);
+  transform: translateY(-1px);
 }
 
 .toggle-btn.active {
-  background: #1a237e;
-  color: white;
-  box-shadow: 0 2px 4px rgba(26, 35, 126, 0.3);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transform: scale(1);
 }
 
 .toggle-btn:active {
@@ -97,7 +102,7 @@
 }
 
 .toggle-btn:focus {
-  outline: 2px solid #1a237e;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -114,10 +119,11 @@
 
 .control-group label {
   display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
-  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+  letter-spacing: -0.01em;
 }
 
 .stadium-select,
@@ -140,21 +146,22 @@
 
 /* React-Select styling for better readability */
 .stadium-select .react-select__control {
-  border: 2px solid #ddd;
-  border-radius: 6px;
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
   min-height: 44px;
   box-shadow: none;
-  transition: border-color 0.3s ease;
-  color: #000;
+  transition: var(--transition-colors);
+  color: var(--color-black);
+  background: var(--color-white);
 }
 
 .stadium-select .react-select__control:hover {
-  border-color: #bbb;
+  border-color: var(--color-gray-400);
 }
 
 .stadium-select .react-select__control--is-focused {
-  border-color: #1a237e;
-  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
 }
 
 .stadium-select .react-select__single-value {
@@ -261,12 +268,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  color: #666;
+  padding: var(--spacing-10);
+  color: var(--color-gray-600);
   font-style: italic;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border: 2px dashed #ddd;
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-gray-300);
 }
 
 .game-option {
@@ -287,11 +294,12 @@
 
 .no-games {
   text-align: center;
-  padding: 40px 20px;
+  padding: var(--spacing-10) var(--spacing-5);
   background: #fff3cd;
   border: 1px solid #ffeaa7;
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   color: #856404;
+  box-shadow: var(--shadow-sm);
 }
 
 .no-games p {
@@ -337,12 +345,13 @@
 .date-input,
 .time-input {
   width: 100%;
-  padding: 10px 12px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
-  font-size: 16px;
-  background-color: white;
-  transition: border-color 0.3s ease;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background-color: var(--color-white);
+  transition: var(--transition-colors);
+  font-weight: var(--font-weight-medium);
 }
 
 .date-input:focus,
@@ -353,25 +362,26 @@
 }
 
 .apply-custom-btn {
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
-  color: white;
+  padding: var(--spacing-3) var(--spacing-5);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-white);
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-all);
   white-space: nowrap;
   height: fit-content;
   min-height: 44px;
   touch-action: manipulation;
+  box-shadow: var(--shadow-md);
 }
 
 .apply-custom-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #303f9f 0%, #3f51b5 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(26, 35, 126, 0.3);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .apply-custom-btn:active:not(:disabled) {
