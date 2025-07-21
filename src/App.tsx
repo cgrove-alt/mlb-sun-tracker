@@ -363,6 +363,7 @@ function AppContent() {
         stadium={selectedStadium} 
         game={selectedGame}
         pageType={selectedGame ? 'game' : selectedStadium ? 'stadium' : 'home'}
+        shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       <OfflineIndicator />
       <header className="App-header">
@@ -627,6 +628,17 @@ function AppContent() {
 
       <footer className="App-footer">
         <div className="footer-content">
+          <div className="footer-section guides-section">
+            <h4>Shade Guides</h4>
+            <ul>
+              <li><a href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</a></li>
+              <li><a href="/guide/best-shaded-seats-mlb">Best Shaded Seats at Every Stadium</a></li>
+              <li><a href="/guide/avoid-sun-baseball-games">How to Avoid Sun at Games</a></li>
+              <li><a href="/faq">FAQ</a></li>
+              <li><a href="/guide">View All Guides →</a></li>
+            </ul>
+          </div>
+          
           <div className="disclaimer">
             <p>Sun calculations are approximate and may vary based on stadium architecture and weather conditions.</p>
           </div>

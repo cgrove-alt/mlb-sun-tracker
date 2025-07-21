@@ -2,14 +2,16 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { StadiumSchema, StadiumShadeGuideSchema, ShadeFAQSchema } from './StadiumSchema';
 
 interface SEOHelmetProps {
   stadium?: Stadium | null;
   game?: MLBGame | null;
   pageType?: 'home' | 'stadium' | 'game';
+  shadedSectionsCount?: number;
 }
 
-export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 'home' }) => {
+export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 'home', shadedSectionsCount }) => {
   // Generate dynamic title
   const getTitle = () => {
     if (pageType === 'game' && stadium && game) {
@@ -103,28 +105,52 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
   const structuredData = getStructuredData();
 
   return (
-    <Helmet>
-      <title>{getTitle()}</title>
-      <meta name="description" content={getDescription()} />
-      <link rel="canonical" href={getCanonicalUrl()} />
+    <>
+      <Helmet>
+        <title>{getTitle()}</title>
+        <meta name="description" content={getDescription()} />
+        <link rel="canonical" href={getCanonicalUrl()} />
+        
+        {/* Open Graph Tags */}
+        <meta property="og:title" content={getTitle()} />
+        <meta property="og:description" content={getDescription()} />
+        <meta property="og:url" content={getCanonicalUrl()} />
+        <meta property="og:type" content={pageType === 'home' ? 'website' : 'article'} />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={getTitle()} />
+        <meta name="twitter:description" content={getDescription()} />
+        
+        {/* Basic Structured Data */}
+        {structuredData && (
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        )}
+      </Helmet>
       
-      {/* Open Graph Tags */}
-      <meta property="og:title" content={getTitle()} />
-      <meta property="og:description" content={getDescription()} />
-      <meta property="og:url" content={getCanonicalUrl()} />
-      <meta property="og:type" content={pageType === 'home' ? 'website' : 'article'} />
-      
-      {/* Twitter Card Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={getTitle()} />
-      <meta name="twitter:description" content={getDescription()} />
-      
-      {/* Structured Data */}
-      {structuredData && (
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
+      {/* Additional Schema Components */}
+      {pageType === 'stadium' && stadium && (
+        <>
+          <StadiumSchema 
+            stadium={stadium} 
+            gameDate={game ? new Date(game.gameDate) : undefined}
+            shadedSectionsCount={shadedSectionsCount}
+          />
+          <StadiumShadeGuideSchema stadium={stadium} />
+        </>
       )}
-    </Helmet>
+      
+      {pageType === 'game' && stadium && game && (
+        <StadiumSchema 
+          stadium={stadium} 
+          gameDate={new Date(game.gameDate)}
+          shadedSectionsCount={shadedSectionsCount}
+        />
+      )}
+      
+      {pageType === 'home' && <ShadeFAQSchema />}
+    </>
   );
 };

@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
-  title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
-  description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
-  keywords: ['MLB', 'baseball', 'stadium', 'sun', 'shade', 'seats', 'weather', 'tickets', 'The Shadium'],
+  title: 'The Shadium - Find Seats in the Shade at MLB Stadiums | Avoid Sun Exposure',
+  description: 'Find seats in the shade at any MLB stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during baseball games. Real-time sun tracking for all 30 MLB ballparks.',
+  keywords: ['seats in the shade', 'shaded seats', 'MLB stadium shade', 'baseball shade seating', 'avoid sun at stadium', 'shadium', 'shady seats', 'stadium sun exposure', 'cool seats baseball', 'shade finder', 'MLB sun tracker', 'baseball game shade', 'stadium shade map', 'where to sit in shade', 'best shaded seats'],
   authors: [{ name: 'The Shadium Team' }],
   creator: 'The Shadium',
   publisher: 'The Shadium',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
-    title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
-    description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
+    title: 'The Shadium - Find Seats in the Shade at MLB Stadiums',
+    description: 'Find seats in the shade at any MLB stadium. Real-time sun tracking helps you avoid sun exposure and stay cool. Shade maps for all 30 MLB ballparks.',
     siteName: 'The Shadium',
     images: [
       {
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
-    description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
+    title: 'The Shadium - Find Seats in the Shade at MLB Stadiums',
+    description: 'Find seats in the shade at any MLB stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during baseball games.',
     images: ['/logo512.png'],
   },
 };

@@ -319,3 +319,375 @@ button, a, .clickable {
 .webgl-stadium-canvas[style*="pointer"]:hover {
   box-shadow: 0 2px 12px rgba(26, 35, 126, 0.2);
 }
+
+/* Guide pages styles */
+.guide-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem 1rem;
+}
+
+.guide-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.breadcrumb a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.guide-page h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a237e;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.guide-page .lead {
+  font-size: 1.25rem;
+  color: #495057;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.guide-page section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.guide-page h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.guide-page h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.guide-page ul, .guide-page ol {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.guide-page li {
+  margin-bottom: 0.5rem;
+}
+
+.cta-box {
+  background: #e3f2fd;
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #2196f3;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #1976d2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+}
+
+.cta-button.primary {
+  background: #1a237e;
+}
+
+.cta-button.primary:hover {
+  background: #0d47a1;
+}
+
+/* Stadium shade cards */
+.stadium-shade-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.stadium-shade-card h3 {
+  margin-top: 0;
+  color: #1a237e;
+}
+
+.team-name {
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.sections {
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.tip {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* Guide index page */
+.guides-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.guide-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.guide-card.featured {
+  border: 2px solid #2196f3;
+}
+
+.guide-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.guide-card h2 a {
+  color: #1a237e;
+  text-decoration: none;
+}
+
+.guide-card h2 a:hover {
+  color: #2196f3;
+}
+
+.guide-card p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.guide-cta {
+  background: #1a237e;
+  color: white;
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.guide-cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.guide-cta p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.guide-footer {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.tips-section {
+  background: #fff9c4;
+  border-left: 4px solid #fbc02d;
+}
+
+.cta-section {
+  background: #e3f2fd;
+  border: 2px solid #2196f3;
+}
+
+/* FAQ specific styles */
+.faq-toc {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.faq-toc h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #1a237e;
+}
+
+.faq-toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+.faq-toc a {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.faq-toc a:hover {
+  text-decoration: underline;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.faq-item h3 {
+  font-size: 1.125rem;
+  color: #1a237e;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.faq-item p {
+  color: #495057;
+  line-height: 1.7;
+}
+
+.faq-contact {
+  background: #e3f2fd;
+  border: 2px solid #2196f3;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.related-resources {
+  background: #f8f9fa;
+}
+
+.related-resources ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.related-resources li a {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.related-resources li a:before {
+  content: '→';
+  font-size: 1.25rem;
+}
+
+.related-resources li a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .guide-page {
+    padding: 1rem 0.5rem;
+  }
+  
+  .guide-container {
+    padding: 0 0.5rem;
+  }
+  
+  .guide-page h1 {
+    font-size: 2rem;
+  }
+  
+  .guide-page section {
+    padding: 1.5rem;
+  }
+  
+  .guides-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .faq-toc ul {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cta-button {
+    width: 100%;
+    text-align: center;
+  }
+}
