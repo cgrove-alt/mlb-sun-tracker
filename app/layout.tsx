@@ -6,7 +6,7 @@ import GoogleAnalytics from './GoogleAnalytics';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.onrender.com/'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
   title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
   description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
   keywords: ['MLB', 'baseball', 'stadium', 'sun', 'shade', 'seats', 'weather', 'tickets', 'The Shadium'],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.onrender.com/',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/',
     title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
     description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
     siteName: 'The Shadium',

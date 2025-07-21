@@ -36,7 +36,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
   const getCanonicalUrl = () => {
     // Use environment variable or fallback to current origin
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
-      (typeof window !== 'undefined' ? window.location.origin : 'https://mlb-sun-tracker.onrender.com');
+      (typeof window !== 'undefined' ? window.location.origin : 'https://theshadium.com');
     if (pageType === 'stadium' && stadium) {
       return `${baseUrl}/stadium/${stadium.name.toLowerCase().replace(/\s+/g, '-')}`;
     }

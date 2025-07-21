@@ -13,6 +13,6 @@ services:
       - key: NEXT_PUBLIC_GA_ID
         value: G-JXGEKF957C
       - key: NEXT_PUBLIC_SITE_URL
-        value: https://theshadium.onrender.com
+        value: https://theshadium.com
     autoDeploy: true
     plan: starter # Pro account - always on, better performance, no spin-down
