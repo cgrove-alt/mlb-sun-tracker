@@ -184,11 +184,24 @@ function AppContent() {
 
   // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
-    if (selectedStadium && gameDateTime) {
-      setLoadingSections(true);
+    // Exit early if no stadium or game time
+    if (!selectedStadium || !gameDateTime) {
+      setDetailedSections([]);
+      setFilteredSections([]);
+      setSunPosition(null);
+      return;
+    }
+    
+    setLoadingSections(true);
+    
+    // Use an abort controller to cancel if dependencies change
+    const abortController = new AbortController();
+    
+    const calculateSunData = async () => {
+      // Check if aborted
+      if (abortController.signal.aborted) return;
       
-      const calculateSunData = async () => {
-        try {
+      try {
           // Calculate sun position using Web Worker
           const position = await calculateSunPosition(
             gameDateTime,
@@ -283,24 +296,37 @@ function AppContent() {
           setFilteredSections(filtered);
           
         } catch (error) {
-          console.error('Error calculating sun exposure:', error);
-          showError(
-            'Unable to calculate sun exposure for stadium sections. Please try again.',
-            'error'
-          );
+          if (!abortController.signal.aborted) {
+            console.error('Error calculating sun exposure:', error);
+            showError(
+              'Unable to calculate sun exposure for stadium sections. Please try again.',
+              'error'
+            );
+          }
         } finally {
-          setLoadingSections(false);
+          if (!abortController.signal.aborted) {
+            setLoadingSections(false);
+          }
         }
       };
       
       calculateSunData();
-    }
-  }, [selectedStadium, gameDateTime, weatherForecast, filterCriteria, showError, calculateSunPosition, calculateSectionExposures]);
+      
+    // Cleanup function to abort if dependencies change
+    return () => {
+      abortController.abort();
+    };
+  }, [selectedStadium, gameDateTime, filterCriteria, showError, calculateSunPosition, calculateSectionExposures]);
 
   // Load weather forecast when stadium changes
   useEffect(() => {
     if (selectedStadium) {
-      loadWeatherForecast();
+      // Add a small delay to prevent rapid updates
+      const timeoutId = setTimeout(() => {
+        loadWeatherForecast();
+      }, 500);
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [selectedStadium, loadWeatherForecast]);
 
@@ -336,7 +362,8 @@ function AppContent() {
     }
   };
 
-  const handleStadiumChange = (stadium: Stadium | null) => {
+  const handleStadiumChange = useCallback((stadium: Stadium | null) => {
+    // Use React's batching to update all states together
     setSelectedStadium(stadium);
     setSelectedGame(null);
     setGameDateTime(null);
@@ -345,6 +372,8 @@ function AppContent() {
     setDetailedSections([]);
     setFilteredSections([]);
     setFilterCriteria({});
+    setLoadingSections(false);
+    setCalculationProgress(null);
     
     // Save selected stadium to user profile and track view
     if (stadium) {
@@ -355,7 +384,7 @@ function AppContent() {
     } else {
       updatePreferences({ selectedStadiumId: undefined });
     }
-  };
+  }, [updatePreferences, trackStadiumView]);
 
   return (
     <div className="App">
