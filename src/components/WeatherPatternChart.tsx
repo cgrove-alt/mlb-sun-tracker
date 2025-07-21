@@ -59,10 +59,17 @@ const stadiumWeatherPatterns: Record<string, MonthlyWeatherPattern[]> = {
 };
 
 export const WeatherPatternChart: React.FC<WeatherPatternChartProps> = ({ stadiumId, city }) => {
-  const patterns = stadiumWeatherPatterns[stadiumId] || stadiumWeatherPatterns['default'];
+  // Use React.memo to prevent unnecessary re-renders
+  const patterns = React.useMemo(() => 
+    stadiumWeatherPatterns[stadiumId] || stadiumWeatherPatterns['default'],
+    [stadiumId]
+  );
   
   // Find max values for scaling
-  const maxTemp = Math.max(...patterns.map(p => p.avgTemp));
+  const maxTemp = React.useMemo(() => 
+    Math.max(...patterns.map(p => p.avgTemp)),
+    [patterns]
+  );
   const maxDays = 31;
   
   return (
@@ -151,3 +158,6 @@ export const WeatherPatternChart: React.FC<WeatherPatternChartProps> = ({ stadiu
     </div>
   );
 };
+
+// Memoize the component to prevent unnecessary re-renders
+export default React.memo(WeatherPatternChart);

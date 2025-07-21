@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
-import StadiumGuide from '../../../src/components/StadiumGuide';
+import StadiumGuide from '../../../src/components/StadiumGuideLazy';
 
 interface StadiumPageProps {
   params: Promise<{
