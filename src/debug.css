@@ -1,0 +1,25 @@
+/* Debug CSS to find blocking elements */
+.debug-mode * {
+  pointer-events: auto !important;
+}
+
+/* Remove any potential blocking overlays */
+body::before,
+body::after,
+.App::before,
+.App::after {
+  display: none !important;
+}
+
+/* Ensure interactive elements are clickable */
+button,
+a,
+select,
+input,
+textarea,
+[role="button"],
+[tabindex] {
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+}

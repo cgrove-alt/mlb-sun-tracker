@@ -713,7 +713,12 @@ function AppContent() {
 
 function App() {
   // Check if the device is mobile based on viewport width
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768;
+    }
+    return false; // Default to desktop during SSR
+  });
 
   useEffect(() => {
     const handleResize = () => {

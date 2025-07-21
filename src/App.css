@@ -1,6 +1,9 @@
 /* Import Design System */
 @import './styles/design-system.css';
 
+/* Temporary debug import to fix click issues */
+@import './debug.css';
+
 .App {
   min-height: 100vh;
   background-color: #ffffff;
