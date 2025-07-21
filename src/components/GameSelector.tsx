@@ -17,13 +17,15 @@ interface GameSelectorProps {
   onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
   onStadiumChange: (stadium: Stadium | null) => void;
   stadiums: Stadium[];
+  onGamesLoaded?: (games: MLBGame[]) => void;
 }
 
 export const GameSelector: React.FC<GameSelectorProps> = ({
   selectedStadium,
   onGameSelect,
   onStadiumChange,
-  stadiums
+  stadiums,
+  onGamesLoaded
 }) => {
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
@@ -74,6 +76,10 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       
       const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
       setGames(homeGames);
+      // Notify parent component about loaded games
+      if (onGamesLoaded) {
+        onGamesLoaded(homeGames);
+      }
     } catch (error) {
       console.error('Error loading games:', error);
       setGames([]);

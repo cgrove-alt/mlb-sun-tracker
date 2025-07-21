@@ -7,6 +7,7 @@ import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
+import { StadiumGamesDisplay } from './components/StadiumGamesDisplay';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { Tooltip } from './components/Tooltip';
@@ -26,7 +27,7 @@ import { UserProfileProvider, useUserProfile } from './contexts/UserProfileConte
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { getStadiumSections } from './data/stadiumSections';
-import { MLBGame } from './services/mlbApi';
+import { MLBGame, mlbApi } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
@@ -40,6 +41,7 @@ function AppContent() {
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
+  const [stadiumGames, setStadiumGames] = useState<MLBGame[]>([]);
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
@@ -158,6 +160,28 @@ function AppContent() {
       setLoadingWeather(false);
     }
   }, [selectedStadium, showError]);
+
+  // Load games when stadium is selected
+  const loadGames = useCallback(async () => {
+    if (!selectedStadium) {
+      setStadiumGames([]);
+      return;
+    }
+    
+    try {
+      const allGames = await mlbApi.getSchedule();
+      const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
+      setStadiumGames(homeGames);
+    } catch (error) {
+      console.error('Error loading games:', error);
+      setStadiumGames([]);
+    }
+  }, [selectedStadium]);
+
+  // Load games when stadium changes
+  useEffect(() => {
+    loadGames();
+  }, [loadGames]);
 
   // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
@@ -389,6 +413,7 @@ function AppContent() {
             onGameSelect={handleGameSelect}
             onStadiumChange={handleStadiumChange}
             stadiums={MLB_STADIUMS}
+            onGamesLoaded={setStadiumGames}
           />
 
         {!selectedStadium && (
@@ -403,14 +428,26 @@ function AppContent() {
         )}
 
         {selectedStadium && !gameDateTime && (
-          <EmptyState 
-            type="no-game"
-            action={
-              <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                Pick a real game or set any custom date and time
-              </p>
-            }
-          />
+          <>
+            <EmptyState 
+              type="no-game"
+              action={
+                <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                  Pick a real game or set any custom date and time
+                </p>
+              }
+            />
+            {stadiumGames.length > 0 && (
+              <StadiumGamesDisplay
+                stadium={selectedStadium}
+                games={stadiumGames}
+                selectedGame={selectedGame}
+                onGameSelect={(game) => {
+                  handleGameSelect(game, new Date(game.gameDate));
+                }}
+              />
+            )}
+          </>
         )}
 
         {selectedStadium && gameDateTime && (

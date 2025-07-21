@@ -1,0 +1,206 @@
+.stadium-games-display {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-xl);
+  margin: var(--spacing-lg) 0;
+}
+
+.stadium-games-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.stadium-games-header h3 {
+  flex: 1;
+  margin: 0;
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+.games-count {
+  background: var(--color-field-green);
+  color: var(--color-white);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+}
+
+.stadium-games-empty {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--color-text-secondary);
+}
+
+.stadium-games-empty p {
+  margin: var(--spacing-md) 0 0;
+  font-size: var(--font-base);
+}
+
+.stadium-games-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.games-month-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.games-month-title {
+  margin: 0;
+  font-size: var(--font-md);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.game-card {
+  position: relative;
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  min-height: 100px;
+}
+
+.game-card:hover {
+  background: var(--color-gray-100);
+  border-color: var(--color-field-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.game-card.selected {
+  background: var(--color-field-green);
+  border-color: var(--color-field-green-dark);
+  color: var(--color-white);
+}
+
+.game-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.game-day-week {
+  font-size: var(--font-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.game-day-num {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+  line-height: 1;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  flex: 1;
+  justify-content: center;
+}
+
+.game-teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  font-weight: var(--font-semibold);
+}
+
+.away-team,
+.home-team {
+  font-size: var(--font-base);
+}
+
+.vs {
+  font-size: var(--font-sm);
+  opacity: 0.6;
+}
+
+.game-time {
+  font-size: var(--font-sm);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.game-card.selected .game-time,
+.game-card.selected .vs,
+.game-card.selected .game-day-week {
+  opacity: 0.9;
+}
+
+.selected-indicator {
+  position: absolute;
+  top: var(--spacing-xs);
+  right: var(--spacing-xs);
+  width: 20px;
+  height: 20px;
+  background: var(--color-white);
+  color: var(--color-field-green);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-bold);
+  font-size: var(--font-sm);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .stadium-games-display {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-top: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .stadium-games-header h3 {
+    font-size: var(--font-base);
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+  }
+
+  .game-card {
+    min-height: 90px;
+    padding: var(--spacing-sm);
+  }
+
+  .game-day-num {
+    font-size: var(--font-lg);
+  }
+
+  .game-teams {
+    font-size: var(--font-sm);
+  }
+}

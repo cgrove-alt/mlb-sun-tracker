@@ -10,6 +10,8 @@ import { MobileFilterSheet } from './components/MobileFilterSheet';
 import { SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
+import { EmptyState } from './components/EmptyStates';
+import { StadiumGamesDisplay } from './components/StadiumGamesDisplay';
 import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
 import './styles/mobile-first.css';
@@ -194,6 +196,33 @@ const MobileApp: React.FC = () => {
             />
           </section>
 
+          {/* Empty State Info Box */}
+          {!selectedStadium && (
+            <section className="mobile-section">
+              <EmptyState 
+                type="no-stadium"
+                action={
+                  <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                    Choose from 30 MLB stadiums to analyze sun exposure patterns
+                  </p>
+                }
+              />
+            </section>
+          )}
+          
+          {selectedStadium && !selectedGame && (
+            <section className="mobile-section">
+              <EmptyState 
+                type="no-game"
+                action={
+                  <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                    Pick a real game or set any custom date and time
+                  </p>
+                }
+              />
+            </section>
+          )}
+
           {/* Game Selection */}
           {selectedStadium && (
             <section className="mobile-section">
@@ -204,6 +233,18 @@ const MobileApp: React.FC = () => {
                 onGameSelect={handleGameSelect}
                 loading={isLoading}
                 stadium={selectedStadium}
+              />
+            </section>
+          )}
+
+          {/* All Games Display */}
+          {selectedStadium && games.length > 0 && (
+            <section className="mobile-section">
+              <StadiumGamesDisplay
+                stadium={selectedStadium}
+                games={games}
+                selectedGame={selectedGame}
+                onGameSelect={handleGameSelect}
               />
             </section>
           )}
