@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useEffect } from 'react';
+import { useCallback, useRef, useEffect } from 'react';
 
 /**
  * Enhanced haptic feedback hook with multiple patterns and iOS support
@@ -98,29 +98,25 @@ export const useHapticFeedback = () => {
   };
 };
 
-// HOC to add haptic feedback to components
-export function withHapticFeedback<P extends object>(
-  Component: React.ComponentType<P>,
+// Helper function to enhance props with haptic feedback
+export function enhancePropsWithHaptic<P extends object>(
+  props: P,
   hapticType: keyof ReturnType<typeof useHapticFeedback> = 'tap'
-) {
-  return (props: P) => {
-    const haptic = useHapticFeedback();
-    
-    const handleInteraction = useCallback((originalHandler?: Function) => {
-      return (...args: any[]) => {
-        if (typeof haptic[hapticType] === 'function') {
-          (haptic[hapticType] as Function)();
-        }
-        originalHandler?.(...args);
-      };
-    }, [haptic, hapticType]);
-
-    const enhancedProps = {
-      ...props,
-      onClick: handleInteraction((props as any).onClick),
-      onTouchStart: handleInteraction((props as any).onTouchStart)
+): P {
+  const haptic = useHapticFeedback();
+  
+  const handleInteraction = (originalHandler?: Function) => {
+    return (...args: any[]) => {
+      if (typeof haptic[hapticType] === 'function') {
+        (haptic[hapticType] as Function)();
+      }
+      originalHandler?.(...args);
     };
+  };
 
-    return <Component {...enhancedProps} />;
+  return {
+    ...props,
+    onClick: handleInteraction((props as any).onClick),
+    onTouchStart: handleInteraction((props as any).onTouchStart)
   };
 }
