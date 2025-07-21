@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import Link from 'next/link';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { GameSelector } from './components/GameSelector';
@@ -201,6 +202,12 @@ function AppContent() {
         time: gameDateTime.toISOString()
       });
       
+      // Double-check we're not cancelled before starting heavy work
+      if (isCancelled) {
+        console.log('[performCalculation] Cancelled before starting');
+        return;
+      }
+      
       setLoadingSections(true);
       
       try {
@@ -219,6 +226,12 @@ function AppContent() {
         // Get sections
         const sections = getStadiumSections(selectedStadium.id);
         console.log(`[performCalculation] Got ${sections.length} sections`);
+        
+        // Safety check - if too many sections, something's wrong
+        if (sections.length > 500) {
+          console.error('[performCalculation] Too many sections, aborting');
+          return;
+        }
         
         // Calculate synchronously to avoid complex async issues
         const detailedSectionData = selectedStadium.roofHeight 
@@ -254,8 +267,8 @@ function AppContent() {
       }
     };
     
-    // Use a small timeout to batch updates
-    const timeoutId = setTimeout(performCalculation, 50);
+    // Use a longer timeout to batch updates and allow navigation
+    const timeoutId = setTimeout(performCalculation, 300);
     
     // Cleanup
     return () => {
@@ -410,7 +423,7 @@ function AppContent() {
                   <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 1rem 0'}}>
                     Pick a real game or set any custom date and time
                   </p>
-                  <a 
+                  <Link 
                     href={`/stadium/${selectedStadium.id}`}
                     style={{
                       color: '#2196f3',
@@ -420,7 +433,7 @@ function AppContent() {
                     }}
                   >
                     View {selectedStadium.name} Shade Guide →
-                  </a>
+                  </Link>
                 </div>
               }
             />
@@ -505,9 +518,9 @@ function AppContent() {
                   <span className="stat-label">In Sun</span>
                 </div>
                 <div className="stat-item stadium-guide-link">
-                  <a href={`/stadium/${selectedStadium.id}`}>
+                  <Link href={`/stadium/${selectedStadium.id}`}>
                     View Full Stadium Guide →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -623,11 +636,11 @@ function AppContent() {
           <div className="footer-section guides-section">
             <h4>Shade Guides</h4>
             <ul>
-              <li><a href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</a></li>
-              <li><a href="/guide/best-shaded-seats-mlb">Best Shaded Seats at Every Stadium</a></li>
-              <li><a href="/guide/avoid-sun-baseball-games">How to Avoid Sun at Games</a></li>
-              <li><a href="/faq">FAQ</a></li>
-              <li><a href="/guide">View All Guides →</a></li>
+              <li><Link href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</Link></li>
+              <li><Link href="/guide/best-shaded-seats-mlb">Best Shaded Seats at Every Stadium</Link></li>
+              <li><Link href="/guide/avoid-sun-baseball-games">How to Avoid Sun at Games</Link></li>
+              <li><Link href="/faq">FAQ</Link></li>
+              <li><Link href="/guide">View All Guides →</Link></li>
             </ul>
           </div>
           
