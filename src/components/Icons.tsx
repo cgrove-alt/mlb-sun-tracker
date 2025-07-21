@@ -232,3 +232,24 @@ export const LuxuryPriceIcon: React.FC<IconProps> = ({ size = 24, color = 'curre
     <text x="12" y="16" fontSize="14" fontWeight="bold" textAnchor="middle" fill={color}>$$$$</text>
   </svg>
 );
+
+// Weather icons
+export const WindIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 2C6.48 2 2 6.48 2 12H4C4 7.58 7.58 4 12 4S20 7.58 20 12 16.42 20 12 20C9.45 20 7.19 18.92 5.61 17.23L7.03 15.81C8.23 17.1 9.97 17.9 12 17.9 15.31 17.9 17.9 15.31 17.9 12S15.31 6.1 12 6.1 6.1 8.69 6.1 12H8.2C8.2 9.85 10.01 8.04 12.26 8.04S16.32 9.85 16.32 12.1 14.51 16.16 12.26 16.16C10.81 16.16 9.58 15.35 8.96 14.17H6.68C7.39 16.46 9.58 18.26 12.26 18.26 15.66 18.26 18.42 15.5 18.42 12.1S15.66 5.94 12.26 5.94 6.1 8.7 6.1 12.1" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+    <path d="M2 16H18M14 16L17 13" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const DropletIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
+export const MapPinIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke={color} strokeWidth="2"/>
+    <circle cx="12" cy="10" r="3" stroke={color} strokeWidth="2"/>
+  </svg>
+);

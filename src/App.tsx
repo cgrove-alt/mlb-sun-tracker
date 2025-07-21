@@ -432,9 +432,22 @@ function AppContent() {
             <EmptyState 
               type="no-game"
               action={
-                <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                  Pick a real game or set any custom date and time
-                </p>
+                <div style={{textAlign: 'center'}}>
+                  <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 1rem 0'}}>
+                    Pick a real game or set any custom date and time
+                  </p>
+                  <a 
+                    href={`/stadium/${selectedStadium.id}`}
+                    style={{
+                      color: '#2196f3',
+                      textDecoration: 'none',
+                      fontWeight: 500,
+                      fontSize: '0.9rem'
+                    }}
+                  >
+                    View {selectedStadium.name} Shade Guide →
+                  </a>
+                </div>
               }
             />
           </>
@@ -516,6 +529,11 @@ function AppContent() {
                 <div className="stat-item">
                   <span className="stat-number">{filteredSections.filter(s => s.inSun).length}</span>
                   <span className="stat-label">In Sun</span>
+                </div>
+                <div className="stat-item stadium-guide-link">
+                  <a href={`/stadium/${selectedStadium.id}`}>
+                    View Full Stadium Guide →
+                  </a>
                 </div>
               </div>
             </div>
