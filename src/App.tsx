@@ -15,7 +15,6 @@ import { UserProfileMenu } from './components/UserProfileMenu';
 import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
-import { useSunCalculations } from './hooks/useSunCalculations';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SEOHelmet } from './components/SEOHelmet';
@@ -49,11 +48,8 @@ function AppContent() {
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
-  const [calculationProgress, setCalculationProgress] = useState<{completed: number, total: number} | null>(null);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
-  const [isCalculating, setIsCalculating] = useState(false);
   const { showError } = useError();
-  const { calculateSunPosition, calculateSectionExposures } = useSunCalculations();
 
   // Load preferences and URL parameters on component mount
   // Initialize performance monitoring and service worker
@@ -195,153 +191,78 @@ function AppContent() {
       return;
     }
     
-    // Debounce calculation to prevent rapid updates
-    const debounceTimer = setTimeout(() => {
-      setLoadingSections(true);
-    }, 100);
+    let isCancelled = false;
     
-    // Use an abort controller to cancel if dependencies change
-    const abortController = new AbortController();
-    
-    const calculateSunData = async () => {
-      // Check if aborted or already calculating
-      if (abortController.signal.aborted || isCalculating) {
-        console.log('[calculateSunData] Skipping - aborted or already calculating');
-        return;
-      }
+    const performCalculation = () => {
+      if (isCancelled) return;
       
-      console.log('[calculateSunData] Starting calculation', {
-        stadium: selectedStadium?.name,
-        time: gameDateTime?.toISOString(),
-        hasWeather: !!weatherForecast
+      console.log('[performCalculation] Starting', {
+        stadium: selectedStadium.name,
+        time: gameDateTime.toISOString()
       });
       
-      setIsCalculating(true);
+      setLoadingSections(true);
       
       try {
-          // Calculate sun position
-          if (!calculateSunPosition || !calculateSectionExposures) {
-            console.error('[calculateSunData] Calculation functions not ready');
-            return;
-          }
-          
-          const position = await calculateSunPosition(
-            gameDateTime,
-            selectedStadium.latitude,
-            selectedStadium.longitude
-          );
-          
-          // Convert worker response format to match existing format
-          const formattedPosition = {
-            altitudeDegrees: position.altitude,
-            azimuthDegrees: position.azimuth,
-            altitude: position.altitude * Math.PI / 180,
-            azimuth: position.azimuth * Math.PI / 180
-          };
-          setSunPosition(formattedPosition);
-          
-          // Get weather data for calculations
-          let gameWeather;
-          if (weatherForecast) {
-            const weatherData = weatherApi.getWeatherForTime(weatherForecast, gameDateTime);
-            // Only use weather data if it's actually available for the game time
-            gameWeather = weatherData.isForecastAvailable !== false ? weatherData : undefined;
-          }
-          
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Game weather for sun calculations:', {
-              gameDateTime: gameDateTime.toISOString(),
-              hasWeatherForecast: !!weatherForecast,
-              weatherData: gameWeather ? {
-                cloudCover: gameWeather.cloudCover,
-                conditions: gameWeather.conditions[0]?.main,
-                precipitationProbability: gameWeather.precipitationProbability,
-                temperature: gameWeather.temperature,
-                time: gameWeather.time,
-                isForecastAvailable: gameWeather.isForecastAvailable
-              } : 'No weather data available for this date'
-            });
-          }
-
-          // Get sections and calculate
-          const sections = getStadiumSections(selectedStadium.id);
-          let detailedSectionData;
-          
-          try {
-            // Try Web Worker first
-            const workerSections = await calculateSectionExposures(
-              sections,
-              position,
-              selectedStadium.orientation,
-              gameWeather,
-              (completed, total) => {
-                setCalculationProgress({ completed, total });
-              }
-            );
-            
-            // Format results to match expected SeatingSectionSun structure
-            detailedSectionData = workerSections.map(ws => {
-              // Extract section properties (everything except inSun and sunExposure)
-              const { inSun, sunExposure, ...sectionProps } = ws;
-              return {
-                section: sectionProps,
-                inSun: inSun,
-                sunExposure: sunExposure
-              };
-            });
-          } catch (workerError) {
-            console.error('Worker calculation failed, using fallback:', workerError);
-            // Fallback to synchronous calculation
-            detailedSectionData = selectedStadium.roofHeight 
-              ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, gameWeather)
-              : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, gameWeather);
-          }
-          
-          if (process.env.NODE_ENV === 'development') {
-            console.log('Detailed sections calculated:', detailedSectionData.length);
-          }
-          
-          // Calculate game-long sun exposure if using enhanced calculator
-          if (selectedStadium.roofHeight && selectedGame) {
-            const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
-            console.log('Game sun exposure calculated:', gameExposure);
-            setGameExposureData(gameExposure);
-          } else {
-            setGameExposureData(null);
-          }
-          setDetailedSections(detailedSectionData);
-          setCalculationProgress(null);
-          
-          // Apply current filter
-          const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
-          console.log('Filtered sections:', filtered.length);
-          setFilteredSections(filtered);
-          
-        } catch (error) {
-          if (!abortController.signal.aborted) {
-            console.error('Error calculating sun exposure:', error);
-            showError(
-              'Unable to calculate sun exposure for stadium sections. Please try again.',
-              'error'
-            );
-          }
-        } finally {
-          if (!abortController.signal.aborted) {
-            setLoadingSections(false);
-            setIsCalculating(false);
-          }
+        // Calculate sun position synchronously
+        const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
+        const formattedPosition = {
+          altitudeDegrees: position.altitudeDegrees,
+          azimuthDegrees: position.azimuthDegrees,
+          altitude: position.altitude,
+          azimuth: position.azimuth
+        };
+        
+        if (isCancelled) return;
+        setSunPosition(formattedPosition);
+        
+        // Get sections
+        const sections = getStadiumSections(selectedStadium.id);
+        console.log(`[performCalculation] Got ${sections.length} sections`);
+        
+        // Calculate synchronously to avoid complex async issues
+        const detailedSectionData = selectedStadium.roofHeight 
+          ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, undefined)
+          : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, undefined);
+        
+        if (isCancelled) return;
+        
+        console.log(`[performCalculation] Calculated ${detailedSectionData.length} sections`);
+        setDetailedSections(detailedSectionData);
+        
+        // Apply filter
+        const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
+        setFilteredSections(filtered);
+        
+        // Calculate game exposure if needed
+        if (selectedStadium.roofHeight && selectedGame) {
+          const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
+          setGameExposureData(gameExposure);
+        } else {
+          setGameExposureData(null);
         }
-      };
-      
-      calculateSunData();
-      
-    // Cleanup function to abort if dependencies change
-    return () => {
-      clearTimeout(debounceTimer);
-      abortController.abort();
-      setIsCalculating(false);
+        
+      } catch (error) {
+        console.error('[performCalculation] Error:', error);
+        if (!isCancelled) {
+          showError?.('Unable to calculate sun exposure. Please try again.', 'error');
+        }
+      } finally {
+        if (!isCancelled) {
+          setLoadingSections(false);
+        }
+      }
     };
-  }, [selectedStadium, gameDateTime, filterCriteria]); // Remove weatherForecast and selectedGame to prevent loops
+    
+    // Use a small timeout to batch updates
+    const timeoutId = setTimeout(performCalculation, 50);
+    
+    // Cleanup
+    return () => {
+      isCancelled = true;
+      clearTimeout(timeoutId);
+    };
+  }, [selectedStadium, gameDateTime, filterCriteria, selectedGame]); // Minimal dependencies
 
   // Load weather forecast when stadium changes
   useEffect(() => {
@@ -398,7 +319,6 @@ function AppContent() {
     setFilteredSections([]);
     setFilterCriteria({});
     setLoadingSections(false);
-    setCalculationProgress(null);
     
     // Save selected stadium to user profile and track view
     if (stadium) {
@@ -600,7 +520,7 @@ function AppContent() {
               <SectionList 
                 sections={filteredSections}
                 loading={loadingSections}
-                calculationProgress={calculationProgress}
+                calculationProgress={null}
               />
             </div>
 
