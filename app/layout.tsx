@@ -6,45 +6,45 @@ import GoogleAnalytics from './GoogleAnalytics';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cgrove-alt.github.io/mlb-sun-tracker/'),
-  title: 'MLB Stadium Sun Tracker',
-  description: 'Find out which seats will be in the sun during baseball games',
-  keywords: ['MLB', 'baseball', 'stadium', 'sun', 'seats', 'weather', 'tickets'],
-  authors: [{ name: 'MLB Sun Tracker Team' }],
-  creator: 'MLB Sun Tracker',
-  publisher: 'MLB Sun Tracker',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.onrender.com/'),
+  title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
+  description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
+  keywords: ['MLB', 'baseball', 'stadium', 'sun', 'shade', 'seats', 'weather', 'tickets', 'The Shadium'],
+  authors: [{ name: 'The Shadium Team' }],
+  creator: 'The Shadium',
+  publisher: 'The Shadium',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  manifest: '/mlb-sun-tracker/manifest.json',
+  manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: 'MLB Sun Tracker',
+    title: 'The Shadium',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://cgrove-alt.github.io/mlb-sun-tracker/',
-    title: 'MLB Stadium Sun Tracker',
-    description: 'Find out which seats will be in the sun during baseball games',
-    siteName: 'MLB Stadium Sun Tracker',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.onrender.com/',
+    title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
+    description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
+    siteName: 'The Shadium',
     images: [
       {
-        url: '/mlb-sun-tracker/logo512.png',
+        url: '/logo512.png',
         width: 512,
         height: 512,
-        alt: 'MLB Stadium Sun Tracker Logo',
+        alt: 'The Shadium Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MLB Stadium Sun Tracker',
-    description: 'Find out which seats will be in the sun during baseball games',
-    images: ['/mlb-sun-tracker/logo512.png'],
+    title: 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums',
+    description: 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.',
+    images: ['/logo512.png'],
   },
 };
 
@@ -67,8 +67,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/mlb-sun-tracker/favicon.ico" />
-        <link rel="apple-touch-icon" href="/mlb-sun-tracker/logo192.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#2196f3" />
       </head>
       <body className={inter.className}>

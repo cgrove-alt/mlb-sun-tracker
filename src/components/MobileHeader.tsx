@@ -9,7 +9,7 @@ interface MobileHeaderProps {
 }
 
 export const MobileHeader: React.FC<MobileHeaderProps> = ({ 
-  title = 'MLB Sun Tracker',
+  title = 'The Shadium',
   showBack = false,
   onBack
 }) => {
@@ -128,7 +128,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             </div>
             
             <div className="mobile-menu-footer">
-              <p className="mobile-menu-version">MLB Sun Tracker v2.0</p>
+              <p className="mobile-menu-version">The Shadium v2.0</p>
             </div>
           </nav>
         </>

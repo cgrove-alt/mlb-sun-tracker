@@ -91,7 +91,7 @@ export default function PWAInstallPrompt() {
       {/* PWA Install Prompt */}
       {showPrompt && deferredPrompt && (
         <div className="pwa-install-prompt">
-          <span>📱 Install MLB Sun Tracker for quick access!</span>
+          <span>📱 Install The Shadium for quick access!</span>
           <button onClick={handleInstallClick}>Install</button>
           <button className="close-btn" onClick={handleDismissInstall}>
             ✕
@@ -104,7 +104,7 @@ export default function PWAInstallPrompt() {
       {showUpdatePrompt && (
         <div className="update-available">
           <h4>🔄 Update Available</h4>
-          <p>A new version of MLB Sun Tracker is available!</p>
+          <p>A new version of The Shadium is available!</p>
           <button onClick={handleUpdateClick}>Update Now</button>
           <button className="dismiss-btn" onClick={handleDismissUpdate}>
             Later

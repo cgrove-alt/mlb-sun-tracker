@@ -13,12 +13,12 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
   // Generate dynamic title
   const getTitle = () => {
     if (pageType === 'game' && stadium && game) {
-      return `${stadium.name} - ${new Date(game.gameDate).toLocaleDateString()} | MLB Sun Tracker`;
+      return `${stadium.name} - ${new Date(game.gameDate).toLocaleDateString()} | The Shadium`;
     }
     if (pageType === 'stadium' && stadium) {
-      return `${stadium.name} Sun Exposure Guide | MLB Stadium Sun Tracker`;
+      return `${stadium.name} Shade Guide | The Shadium`;
     }
-    return 'MLB Stadium Sun Tracker - Find the Perfect Seats';
+    return 'The Shadium - Find the Perfect Shaded Seats at MLB Stadiums';
   };
 
   // Generate dynamic description
@@ -29,7 +29,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
     if (pageType === 'stadium' && stadium) {
       return `Discover the best seats at ${stadium.name} with our sun exposure analysis. View real-time weather, seating sections, and make informed decisions for your next ${stadium.team} game.`;
     }
-    return 'Find the best seats at MLB stadiums by analyzing sun exposure, weather conditions, and seating sections. Get real-time sun position and weather data for all 30 MLB stadiums.';
+    return 'Find the best shaded seats at MLB stadiums. The Shadium analyzes sun exposure, weather conditions, and seating sections to help you avoid the heat and enjoy the game in comfort.';
   };
 
   // Generate canonical URL

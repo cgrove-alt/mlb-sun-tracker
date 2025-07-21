@@ -41,7 +41,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
 
   const generateShareText = () => {
     if (!selectedStadium || !gameDateTime) {
-      return 'Check out this MLB Stadium Sun Tracker!';
+      return 'Check out The Shadium - Find the best shaded seats at MLB stadiums!';
     }
     
     // Format date and time with stadium's local timezone
@@ -49,9 +49,9 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     const dateTimeStr = formatDateTimeWithTimezone(gameDateTime, timezone);
     
     if (selectedGame) {
-      return `Check out sun exposure for ${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name} at ${selectedStadium.name} on ${dateTimeStr}`;
+      return `Check out The Shadium for ${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name} at ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
     } else {
-      return `Check out sun exposure at ${selectedStadium.name} on ${dateTimeStr}`;
+      return `Check out The Shadium for ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
     }
   };
 
@@ -78,7 +78,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     if (typeof navigator.share === 'function') {
       try {
         await navigator.share({
-          title: 'MLB Stadium Sun Tracker',
+          title: 'The Shadium - Find the best shaded seats',
           text: generateShareText(),
           url: generateShareUrl()
         });
@@ -89,7 +89,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
   };
 
   const shareViaEmail = () => {
-    const subject = encodeURIComponent('MLB Stadium Sun Tracker');
+    const subject = encodeURIComponent('The Shadium - Find the best shaded seats');
     const body = encodeURIComponent(`${generateShareText()}\n\n${generateShareUrl()}`);
     window.open(`mailto:?subject=${subject}&body=${body}`);
   };

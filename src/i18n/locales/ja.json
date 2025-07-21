@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "MLB スタジアム太陽追跡システム",
+    "title": "The Shadium",
     "subtitle": "野球の試合中に太陽の下になる席を見つけよう",
     "loading": "読み込み中...",
     "error": "エラー",
@@ -363,6 +363,8 @@
     "copyLink": "リンクをコピー",
     "linkCopied": "リンクがクリップボードにコピーされました！",
     "shareVia": "共有方法",
+    "shareTitle": "The Shadiumをチェック - {stadium}で最適な日陰の席を見つけよう",
+    "shareDescription": "{date}の{stadium}でどの席が日向になるか発見しよう。The Shadiumが完璧な席を見つけるお手伝いをします！",
     "email": "メール",
     "twitter": "Twitter",
     "facebook": "Facebook",
@@ -510,7 +512,7 @@
     "disclaimer": "太陽の計算は近似値であり、スタジアムの建築や気象条件によって変動する場合があります。",
     "weatherCredit": "気象データ提供",
     "openMeteo": "Open-Meteo.com",
-    "copyright": "© 2024 MLBスタジアム太陽追跡システム"
+    "copyright": "© 2024 The Shadium"
   },
   "offline": {
     "message": "オフラインです - キャッシュデータを使用中",

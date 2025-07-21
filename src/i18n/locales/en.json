@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "MLB Stadium Sun Tracker",
+    "title": "The Shadium",
     "subtitle": "Find out which seats will be in the sun during baseball games",
     "loading": "Loading...",
     "error": "Error",
@@ -363,6 +363,8 @@
     "copyLink": "Copy Link",
     "linkCopied": "Link copied to clipboard!",
     "shareVia": "Share via",
+    "shareTitle": "Check out The Shadium - Find the best shaded seats at {stadium}",
+    "shareDescription": "Discover which seats will be in the sun at {stadium} on {date}. The Shadium helps you find the perfect seats!",
     "email": "Email",
     "twitter": "Twitter",
     "facebook": "Facebook",
@@ -521,7 +523,7 @@
     "disclaimer": "Sun calculations are approximate and may vary based on stadium architecture and weather conditions.",
     "weatherCredit": "Weather data provided by",
     "openMeteo": "Open-Meteo.com",
-    "copyright": "© 2024 MLB Stadium Sun Tracker"
+    "copyright": "© 2024 The Shadium"
   },
   "offline": {
     "message": "You're offline - Using cached data",
