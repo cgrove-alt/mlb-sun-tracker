@@ -7,7 +7,6 @@ import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
-import { StadiumGamesDisplay } from './components/StadiumGamesDisplay';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { Tooltip } from './components/Tooltip';
@@ -437,16 +436,6 @@ function AppContent() {
                 </p>
               }
             />
-            {stadiumGames.length > 0 && (
-              <StadiumGamesDisplay
-                stadium={selectedStadium}
-                games={stadiumGames}
-                selectedGame={selectedGame}
-                onGameSelect={(game) => {
-                  handleGameSelect(game, new Date(game.gameDate));
-                }}
-              />
-            )}
           </>
         )}
 

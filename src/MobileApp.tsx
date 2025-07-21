@@ -11,7 +11,6 @@ import { SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
-import { StadiumGamesDisplay } from './components/StadiumGamesDisplay';
 import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
 import './styles/mobile-first.css';
@@ -237,17 +236,6 @@ const MobileApp: React.FC = () => {
             </section>
           )}
 
-          {/* All Games Display */}
-          {selectedStadium && games.length > 0 && (
-            <section className="mobile-section">
-              <StadiumGamesDisplay
-                stadium={selectedStadium}
-                games={games}
-                selectedGame={selectedGame}
-                onGameSelect={handleGameSelect}
-              />
-            </section>
-          )}
 
           {/* Weather Display */}
           {selectedGame && weatherForecast && (
