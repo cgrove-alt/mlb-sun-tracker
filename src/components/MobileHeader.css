@@ -207,6 +207,7 @@
   transition: all var(--transition-fast);
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .mobile-menu-item::before {
@@ -233,6 +234,17 @@
 
 .mobile-menu-item:active {
   transform: translateX(2px) scale(0.98);
+}
+
+/* Ensure anchor tags work like buttons */
+a.mobile-menu-item {
+  display: flex;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+a.mobile-menu-item:hover {
+  text-decoration: none;
 }
 
 .mobile-menu-icon {

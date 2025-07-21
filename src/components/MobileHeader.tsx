@@ -35,7 +35,11 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
         }
       };
 
-      document.addEventListener('click', handleClick);
+      // Use setTimeout to avoid immediate closing when opening
+      setTimeout(() => {
+        document.addEventListener('click', handleClick);
+      }, 0);
+      
       return () => document.removeEventListener('click', handleClick);
     }
   }, [menuOpen]);
@@ -66,7 +70,10 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             {!showBack && (
               <button 
                 className={`mobile-header-menu ${menuOpen ? 'active' : ''}`}
-                onClick={() => setMenuOpen(!menuOpen)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setMenuOpen(!menuOpen);
+                }}
                 aria-label="Menu"
                 aria-expanded={menuOpen}
               >
@@ -97,33 +104,29 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             </div>
             
             <div className="mobile-menu-items">
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+              <a href="/" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon">🏟️</span>
-                <span>All Stadiums</span>
-              </button>
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">📅</span>
-                <span>Game Schedule</span>
-              </button>
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+                <span>Home</span>
+              </a>
+              <a href="/guide" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon">☀️</span>
-                <span>Sun Guide</span>
-              </button>
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+                <span>Shade Guides</span>
+              </a>
+              <a href="/guide/how-to-find-shaded-seats" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+                <span className="mobile-menu-icon">🔍</span>
+                <span>Find Shaded Seats</span>
+              </a>
+              <a href="/guide/best-shaded-seats-mlb" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon">⭐</span>
-                <span>My Favorites</span>
-              </button>
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">📍</span>
-                <span>Nearby Games</span>
-              </button>
+                <span>Best Shaded Seats</span>
+              </a>
+              <a href="/faq" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
+                <span className="mobile-menu-icon">❓</span>
+                <span>FAQ</span>
+              </a>
               <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
                 <span className="mobile-menu-icon">⚙️</span>
                 <span>Settings</span>
-              </button>
-              <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">💡</span>
-                <span>Help & Tips</span>
               </button>
             </div>
             
