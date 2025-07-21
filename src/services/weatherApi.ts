@@ -1,4 +1,5 @@
 import { withCache } from '../utils/apiCache';
+import { withRetry, createRetryableFetch } from '../utils/retryUtils';
 
 export interface WeatherCondition {
   id: number;
@@ -43,6 +44,14 @@ export interface WeatherForecast {
 export class WeatherApiService {
   // Using Open-Meteo as it's free and doesn't require an API key
   private baseUrl = 'https://api.open-meteo.com/v1';
+  private retryableFetch = createRetryableFetch({
+    maxRetries: 3,
+    initialDelay: 500,
+    maxDelay: 5000,
+    onRetry: (error, retryCount) => {
+      console.log(`Weather API retry attempt ${retryCount} after error:`, error.message);
+    }
+  });
 
   // Centralized method to get consistent weather for any time
   getWeatherForTime(forecast: WeatherForecast, targetTime?: Date): WeatherData & { isForecastAvailable?: boolean } {
@@ -130,7 +139,7 @@ export class WeatherApiService {
           forecast_days: '7'
         });
 
-        const response = await fetch(`${this.baseUrl}/forecast?${params}`);
+        const response = await this.retryableFetch(`${this.baseUrl}/forecast?${params}`);
         
         if (!response.ok) {
           throw new Error(`Weather API request failed: ${response.status}`);

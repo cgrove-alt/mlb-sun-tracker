@@ -1,4 +1,5 @@
 import { withCache } from '../utils/apiCache';
+import { withRetry, createRetryableFetch } from '../utils/retryUtils';
 
 export interface MLBGame {
   gamePk: number;
@@ -72,6 +73,13 @@ const MLB_TEAM_TO_STADIUM_MAP: Record<number, string> = {
 
 export class MLBApiService {
   private baseUrl = 'https://statsapi.mlb.com/api/v1';
+  private retryableFetch = createRetryableFetch({
+    maxRetries: 3,
+    initialDelay: 500,
+    onRetry: (error, retryCount) => {
+      console.log(`MLB API retry attempt ${retryCount} after error:`, error.message);
+    }
+  });
 
   getSchedule = withCache(
     async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
@@ -82,7 +90,7 @@ export class MLBApiService {
       
       const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
       
-      const response = await fetch(url);
+      const response = await this.retryableFetch(url);
       if (!response.ok) {
         throw new Error(`MLB API request failed: ${response.status}`);
       }
@@ -114,7 +122,7 @@ export class MLBApiService {
       
       const url = `${this.baseUrl}/schedule/games/?sportId=1&teamId=${teamId}&startDate=${defaultStart}&endDate=${defaultEnd}`;
       
-      const response = await fetch(url);
+      const response = await this.retryableFetch(url);
       if (!response.ok) {
         throw new Error(`MLB API request failed: ${response.status}`);
       }

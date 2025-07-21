@@ -1,23 +1,28 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Stadium } from '../data/stadiums';
 import { useUserProfile } from '../contexts/UserProfileContext';
 import { FavoriteButton } from './FavoriteButton';
+import { MobileStadiumCardSkeleton } from './SkeletonScreens';
+import { useLoadingState } from '../hooks/useLoadingState';
 import './MobileStadiumSelector.css';
 
 interface MobileStadiumSelectorProps {
   stadiums: Stadium[];
   selectedStadium: Stadium | null;
   onStadiumSelect: (stadium: Stadium) => void;
+  loading?: boolean;
 }
 
 export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
   stadiums,
   selectedStadium,
-  onStadiumSelect
+  onStadiumSelect,
+  loading = false
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const { currentProfile } = useUserProfile();
+  const loadingState = useLoadingState<Stadium[]>({ initialLoading: loading });
 
   const filteredStadiums = useMemo(() => {
     const query = searchQuery.toLowerCase();
@@ -93,7 +98,14 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
             </div>
 
             <div className="mobile-stadium-list">
-              {filteredStadiums.length === 0 ? (
+              {loading ? (
+                // Show skeleton loaders while loading
+                <>
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <MobileStadiumCardSkeleton key={i} />
+                  ))}
+                </>
+              ) : filteredStadiums.length === 0 ? (
                 <div className="mobile-stadium-empty">
                   <p>No stadiums found</p>
                 </div>
@@ -101,7 +113,7 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
                 filteredStadiums.map(stadium => (
                   <button
                     key={stadium.id}
-                    className={`mobile-stadium-item ${selectedStadium?.id === stadium.id ? 'selected' : ''}`}
+                    className={`mobile-stadium-item ${selectedStadium?.id === stadium.id ? 'selected' : ''} fade-in`}
                     onClick={() => handleSelect(stadium)}
                   >
                     <div className="mobile-stadium-item-content">

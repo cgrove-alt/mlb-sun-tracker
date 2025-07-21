@@ -10,6 +10,8 @@ import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
+import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
+import { useLoadingState } from '../hooks/useLoadingState';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -30,7 +32,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
   const [games, setGames] = useState<MLBGame[]>([]);
-  const [loading, setLoading] = useState(false);
+  const gamesLoading = useLoadingState<MLBGame[]>({ minLoadingTime: 500 });
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
     return preferencesStorage.get('viewMode', 'games');
   });
@@ -41,6 +43,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     return preferencesStorage.get('lastUsedTime', format(new Date(), 'HH:mm'));
   });
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const { currentProfile } = useUserProfile();
   
@@ -64,29 +67,39 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
     
-    setLoading(true);
-    try {
-      const today = new Date();
-      const endDate = new Date(today.getTime() + 60 * 24 * 60 * 60 * 1000); // Next 60 days
-      
-      const allGames = await mlbApi.getSchedule(
-        today.toISOString().split('T')[0],
-        endDate.toISOString().split('T')[0]
-      );
-      
-      const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
-      setGames(homeGames);
-      // Notify parent component about loaded games
-      if (onGamesLoaded) {
-        onGamesLoaded(homeGames);
+    await gamesLoading.execute(async () => {
+      try {
+        setError(null);
+        const today = new Date();
+        const endDate = new Date(today.getTime() + 60 * 24 * 60 * 60 * 1000); // Next 60 days
+        
+        const allGames = await mlbApi.getSchedule(
+          today.toISOString().split('T')[0],
+          endDate.toISOString().split('T')[0]
+        );
+        
+        const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
+        setGames(homeGames);
+        
+        // Notify parent component about loaded games
+        if (onGamesLoaded) {
+          onGamesLoaded(homeGames);
+        }
+        
+        return homeGames;
+      } catch (error) {
+        console.error('Error loading games:', error);
+        setError('Unable to load games. Please try again.');
+        setGames([]);
+        throw error;
       }
-    } catch (error) {
-      console.error('Error loading games:', error);
-      setGames([]);
-    } finally {
-      setLoading(false);
-    }
-  }, [selectedStadium]);
+    }, {
+      onError: (error) => {
+        haptic.error();
+        console.error('Failed to load games:', error);
+      }
+    });
+  }, [selectedStadium, gamesLoading, onGamesLoaded, haptic]);
 
   useEffect(() => {
     if (selectedStadium && viewMode === 'games') {
@@ -234,9 +247,18 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             <>
               <div className="control-group">
                 <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
-                {loading ? (
-                  <div className="loading" role="status" aria-live="polite">
-                    {t('gameSelector.loadingGames')}
+                {gamesLoading.loading && gamesLoading.isInitialLoad ? (
+                  <GameSelectorSkeleton />
+                ) : error ? (
+                  <div className="error-message" role="alert">
+                    {error}
+                    <button 
+                      onClick={loadGamesForStadium}
+                      className="retry-button"
+                      aria-label="Retry loading games"
+                    >
+                      Retry
+                    </button>
                   </div>
                 ) : (
                   <Select
@@ -245,8 +267,8 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                     options={gameOptions}
                     onChange={handleGameSelect}
                     placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
-                    className="game-select"
-                    isDisabled={games.length === 0}
+                    className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
+                    isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                     aria-label={t('gameSelector.selectGame')}
                     formatOptionLabel={(option) => (
                       <div className="game-option">
@@ -262,7 +284,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                 )}
               </div>
               
-              {games.length === 0 && !loading && (
+              {games.length === 0 && !gamesLoading.loading && !error && (
                 <div className="no-games">
                   <p>{t('gameSelector.noGamesForStadium')}</p>
                   <p>{t('gameSelector.tryCustomTime')}</p>
