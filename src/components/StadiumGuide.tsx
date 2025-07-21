@@ -7,7 +7,7 @@ import { StadiumSection } from '../data/stadiumSections';
 import { StadiumAmenities, StadiumAmenity } from '../data/stadiumAmenities';
 import { StadiumSchema, StadiumShadeGuideSchema } from './StadiumSchema';
 import { stadiumHistories } from '../data/stadiumDetails';
-import WeatherPatternChart from './WeatherPatternChart';
+import { WeatherPatternChart } from './WeatherPatternChart';
 import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon } from './Icons';
 import './StadiumGuide.css';
 

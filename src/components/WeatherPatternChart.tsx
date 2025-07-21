@@ -58,7 +58,7 @@ const stadiumWeatherPatterns: Record<string, MonthlyWeatherPattern[]> = {
   ]
 };
 
-export const WeatherPatternChart: React.FC<WeatherPatternChartProps> = ({ stadiumId, city }) => {
+const WeatherPatternChartComponent: React.FC<WeatherPatternChartProps> = ({ stadiumId, city }) => {
   // Use React.memo to prevent unnecessary re-renders
   const patterns = React.useMemo(() => 
     stadiumWeatherPatterns[stadiumId] || stadiumWeatherPatterns['default'],
@@ -159,5 +159,5 @@ export const WeatherPatternChart: React.FC<WeatherPatternChartProps> = ({ stadiu
   );
 };
 
-// Memoize the component to prevent unnecessary re-renders
-export default React.memo(WeatherPatternChart);
+// Export memoized component
+export const WeatherPatternChart = React.memo(WeatherPatternChartComponent);
