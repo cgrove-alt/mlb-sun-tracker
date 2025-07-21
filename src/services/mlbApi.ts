@@ -78,7 +78,7 @@ export class MLBApiService {
     try {
       const today = new Date();
       const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
       
       const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
       
@@ -110,7 +110,7 @@ export class MLBApiService {
     try {
       const today = new Date();
       const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
       
       const url = `${this.baseUrl}/schedule/games/?sportId=1&teamId=${teamId}&startDate=${defaultStart}&endDate=${defaultEnd}`;
       
