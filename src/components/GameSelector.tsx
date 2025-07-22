@@ -67,55 +67,47 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
     
-    // Don't prevent concurrent loads - let the loading state handle it
-    // This was causing a deadlock when loading state got stuck
+    console.log('[GameSelector] Loading games for:', selectedStadium.name);
     
-    console.log('[GameSelector] Starting execute...');
-    await gamesLoading.execute(async () => {
-      console.log('[GameSelector] Inside execute callback');
-      try {
-        setError(null);
-        const today = new Date();
-        const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // Next 30 days instead of 60
-        
-        console.log('[GameSelector] About to call mlbApi.getSchedule');
-        const allGames = await mlbApi.getSchedule(
-          today.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
-        );
-        
-        console.log('[GameSelector] Got allGames:', allGames.length);
-        const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
-        console.log('[GameSelector] Setting games:', homeGames.length);
-        console.log('[GameSelector] First game sample:', homeGames[0]);
-        setGames(homeGames);
-        
-        // Notify parent component about loaded games
-        if (onGamesLoaded) {
-          console.log('[GameSelector] Notifying parent of loaded games');
-          onGamesLoaded(homeGames);
-        }
-        
-        console.log('[GameSelector] Returning games successfully');
-        return homeGames;
-      } catch (error) {
-        console.error('[GameSelector] Error in execute:', error);
-        setError('Unable to load games. Please try again.');
-        setGames([]);
-        // Don't re-throw the error - let the loading state complete
-        return [];
+    // Simple direct loading without complex state management
+    try {
+      setError(null);
+      gamesLoading.setLoading(true);
+      
+      const today = new Date();
+      const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+      
+      const allGames = await mlbApi.getSchedule(
+        today.toISOString().split('T')[0],
+        endDate.toISOString().split('T')[0]
+      );
+      
+      const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
+      console.log('[GameSelector] Found', homeGames.length, 'games');
+      
+      setGames(homeGames);
+      gamesLoading.setData(homeGames);
+      
+      if (onGamesLoaded) {
+        onGamesLoaded(homeGames);
       }
-    }, {
-      onError: (error) => {
-        console.error('[GameSelector] onError callback:', error);
-        haptic.error();
-      }
-    });
-    console.log('[GameSelector] Execute completed');
-  }, [selectedStadium, gamesLoading, onGamesLoaded, haptic]);
+    } catch (error) {
+      console.error('[GameSelector] Error loading games:', error);
+      setError('Unable to load games. Please try again.');
+      setGames([]);
+      gamesLoading.setError(error as Error);
+    } finally {
+      gamesLoading.setLoading(false);
+    }
+  }, [selectedStadium, gamesLoading, onGamesLoaded]);
 
   useEffect(() => {
     if (selectedStadium && viewMode === 'games') {
+      // Force reset any stuck state
+      gamesLoading.reset();
+      setGames([]);
+      setError(null);
+      
       // Defer loading to prevent UI blocking
       const timeoutId = setTimeout(() => {
         loadGamesForStadium();
@@ -125,7 +117,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     }
     // Reset selected game when stadium changes
     setSelectedGameOption(null);
-  }, [selectedStadium, viewMode, loadGamesForStadium]);
+  }, [selectedStadium, viewMode]); // Remove loadGamesForStadium dependency to avoid loops
 
   const handleGameSelect = (gameOption: any) => {
     setSelectedGameOption(gameOption);
@@ -193,18 +185,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   const gameOptions = games.map(formatGameOption);
   
-  // Debug logging
-  useEffect(() => {
-    console.log('[GameSelector] Current state:', {
-      gamesLength: games.length,
-      gameOptionsLength: gameOptions.length,
-      loading: gamesLoading.loading,
-      error: error,
-      selectedStadium: selectedStadium?.name,
-      viewMode: viewMode,
-      firstGame: games[0]?.teams ? `${games[0].teams.away.team.name} @ ${games[0].teams.home.team.name}` : 'No games'
-    });
-  }, [games, gameOptions, gamesLoading.loading, error, selectedStadium, viewMode]);
 
   return (
     <div className="game-selector">
