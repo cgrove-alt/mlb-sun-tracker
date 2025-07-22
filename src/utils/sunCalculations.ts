@@ -115,7 +115,9 @@ export function calculateDetailedSectionSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    }
   }
   
   // If stadium has a fixed roof, no sections get sun
@@ -139,7 +141,9 @@ export function calculateDetailedSectionSunExposure(
   let weatherMultiplier = 1.0;
   if (weather) {
     const { cloudCover, conditions, precipitationProbability } = weather;
-    console.log('Weather data applied:', { cloudCover, conditions: conditions[0]?.main, precipitationProbability });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Weather data applied:', { cloudCover, conditions: conditions[0]?.main, precipitationProbability });
+    }
     
     // Reduce sun exposure based on weather conditions
     if ((precipitationProbability && precipitationProbability > 70) || 
@@ -157,9 +161,13 @@ export function calculateDetailedSectionSunExposure(
       weatherMultiplier = 0.9; // Light clouds
     }
     
-    console.log('Weather multiplier applied:', weatherMultiplier);
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Weather multiplier applied:', weatherMultiplier);
+    }
   } else {
-    console.log('No weather data available for sun calculations');
+    if (process.env.NODE_ENV === 'development') {
+      console.log('No weather data available for sun calculations');
+    }
   }
 
   sections.forEach(section => {
@@ -253,7 +261,9 @@ export function calculateEnhancedSectionSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    }
   }
   
   // Get sun position for the given time
@@ -354,7 +364,9 @@ export function calculateGameSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    console.warn(`[calculateGameSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`[calculateGameSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+    }
   }
   
   sections.forEach(section => {

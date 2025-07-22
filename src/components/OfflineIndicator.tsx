@@ -39,10 +39,12 @@ export const OfflineIndicator: React.FC = () => {
 
     // Check initial state - only show indicator if actually offline
     const initialOfflineState = isOffline();
-    console.log('[OfflineIndicator] Initial state:', { 
-      offline: initialOfflineState, 
-      navigatorOnLine: navigator.onLine 
-    });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[OfflineIndicator] Initial state:', { 
+        offline: initialOfflineState, 
+        navigatorOnLine: navigator.onLine 
+      });
+    }
     
     if (initialOfflineState) {
       setOffline(true);
@@ -52,7 +54,11 @@ export const OfflineIndicator: React.FC = () => {
 
     // Get cache info only when offline
     if (initialOfflineState) {
-      getCacheInfo().then(setCacheInfo).catch(console.error);
+      getCacheInfo().then(setCacheInfo).catch(error => {
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Failed to get cache info:', error);
+        }
+      });
     }
 
     window.addEventListener('online', handleOnline);
@@ -69,17 +75,25 @@ export const OfflineIndicator: React.FC = () => {
   // Update cache info when offline status changes
   useEffect(() => {
     if (offline) {
-      getCacheInfo().then(setCacheInfo).catch(console.error);
+      getCacheInfo().then(setCacheInfo).catch(error => {
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Failed to get cache info:', error);
+        }
+      });
     }
   }, [offline]);
 
   // Don't show indicator if translations are still loading or if we shouldn't show it
   if (!showIndicator || translationsLoading) {
-    console.log('[OfflineIndicator] Not showing:', { showIndicator, translationsLoading });
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[OfflineIndicator] Not showing:', { showIndicator, translationsLoading });
+    }
     return null;
   }
   
-  console.log('[OfflineIndicator] Rendering:', { offline, syncPending, showIndicator });
+  if (process.env.NODE_ENV === 'development') {
+    console.log('[OfflineIndicator] Rendering:', { offline, syncPending, showIndicator });
+  }
 
   return (
     <div className={`offline-indicator ${offline ? 'offline' : 'online'} ${syncPending ? 'syncing' : ''}`}>

@@ -50,6 +50,7 @@ function AppContent() {
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
+  const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const { showError } = useError();
 
@@ -123,7 +124,7 @@ function AppContent() {
           }
         }
       }
-    } else {
+    } else if (!selectedStadium) { // Only set from preferences if no stadium is already selected
       // Fall back to profile preferences if no URL parameters
       if (preferences.selectedStadiumId) {
         const stadium = MLB_STADIUMS.find(s => s.id === preferences.selectedStadiumId);
@@ -134,7 +135,7 @@ function AppContent() {
     }
     
     // Restore filter criteria (unless overridden by URL)
-    if (preferences.filterCriteria) {
+    if (preferences.filterCriteria && Object.keys(filterCriteria).length === 0) {
       setFilterCriteria(preferences.filterCriteria);
     }
   }, []); // Empty dependency array - only run once
@@ -159,7 +160,7 @@ function AppContent() {
     } finally {
       setLoadingWeather(false);
     }
-  }, [selectedStadium]); // Remove showError from dependencies
+  }, [selectedStadium]); // showError excluded to prevent loops
 
   // Load games when stadium is selected
   const loadGames = useCallback(async () => {
@@ -191,26 +192,32 @@ function AppContent() {
       setFilteredSections([]);
       setSunPosition(null);
       setLoadingSections(false);
+      setCalculationInProgress(false);
       return;
     }
     
     let isCancelled = false;
     
     const performCalculation = async () => {
-      if (isCancelled) return;
+      if (isCancelled || calculationInProgress) return;
       
-      console.log('[performCalculation] Starting', {
-        stadium: selectedStadium.name,
-        time: gameDateTime.toISOString()
-      });
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[performCalculation] Starting', {
+          stadium: selectedStadium.name,
+          time: gameDateTime.toISOString()
+        });
+      }
       
       // Double-check we're not cancelled before starting heavy work
       if (isCancelled) {
-        console.log('[performCalculation] Cancelled before starting');
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[performCalculation] Cancelled before starting');
+        }
         return;
       }
       
       setLoadingSections(true);
+      setCalculationInProgress(true);
       
       try {
         // Calculate sun position synchronously
@@ -227,7 +234,9 @@ function AppContent() {
         
         // Get sections
         const sections = getStadiumSections(selectedStadium.id);
-        console.log(`[performCalculation] Got ${sections.length} sections`);
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`[performCalculation] Got ${sections.length} sections`);
+        }
         
         // Safety check - if too many sections, something's wrong
         if (sections.length > 500) {
@@ -243,14 +252,18 @@ function AppContent() {
         
         if (sections.length > 150 && !selectedStadium.roofHeight) {
           // Use async optimized version for large stadiums without enhanced calculations
-          console.log('[performCalculation] Using optimized calculation for large stadium');
+          if (process.env.NODE_ENV === 'development') {
+            console.log('[performCalculation] Using optimized calculation for large stadium');
+          }
           detailedSectionData = await calculateDetailedSectionSunExposureOptimized(
             selectedStadium, 
             formattedPosition, 
             undefined,
             (progress) => {
-              if (progress % 0.1 === 0) {
-                console.log(`[performCalculation] Progress: ${Math.round(progress * 100)}%`);
+              // Log progress at 10% intervals
+              const progressPercent = Math.round(progress * 100);
+              if (progressPercent % 10 === 0 && process.env.NODE_ENV === 'development') {
+                console.log(`[performCalculation] Progress: ${progressPercent}%`);
               }
             }
           );
@@ -263,7 +276,9 @@ function AppContent() {
         
         if (isCancelled) return;
         
-        console.log(`[performCalculation] Calculated ${detailedSectionData.length} sections`);
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`[performCalculation] Calculated ${detailedSectionData.length} sections`);
+        }
         setDetailedSections(detailedSectionData);
         
         // Apply filter
@@ -279,13 +294,16 @@ function AppContent() {
         }
         
       } catch (error) {
-        console.error('[performCalculation] Error:', error);
+        if (process.env.NODE_ENV === 'development') {
+          console.error('[performCalculation] Error:', error);
+        }
         if (!isCancelled) {
           showError?.('Unable to calculate sun exposure. Please try again.', 'error');
         }
       } finally {
         if (!isCancelled) {
           setLoadingSections(false);
+          setCalculationInProgress(false);
         }
       }
     };
@@ -297,6 +315,7 @@ function AppContent() {
     return () => {
       isCancelled = true;
       clearTimeout(timeoutId);
+      setCalculationInProgress(false);
     };
   }, [selectedStadium, gameDateTime, filterCriteria, selectedGame]); // Minimal dependencies
 
@@ -310,7 +329,7 @@ function AppContent() {
       
       return () => clearTimeout(timeoutId);
     }
-  }, [selectedStadium]); // Remove loadWeatherForecast to avoid dependency loop
+  }, [selectedStadium, loadWeatherForecast]); // Include loadWeatherForecast with proper dependencies
 
   // Update filtered sections when filter criteria changes
   useEffect(() => {
