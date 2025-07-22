@@ -183,9 +183,10 @@ function AppContent() {
     }
     
     try {
-      // Only load next 30 days to reduce data size
+      // Load games through end of October to ensure we get all remaining regular season games
       const today = new Date();
-      const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+      const currentYear = today.getFullYear();
+      const endDate = new Date(currentYear, 9, 31); // October 31st
       const allGames = await mlbApi.getSchedule(
         today.toISOString().split('T')[0],
         endDate.toISOString().split('T')[0]
