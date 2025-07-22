@@ -68,19 +68,26 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     if (!selectedStadium) return;
     
     // Prevent multiple concurrent loads
-    if (gamesLoading.loading) return;
+    if (gamesLoading.loading) {
+      console.log('[GameSelector] Skipping load - already loading');
+      return;
+    }
     
+    console.log('[GameSelector] Starting execute...');
     await gamesLoading.execute(async () => {
+      console.log('[GameSelector] Inside execute callback');
       try {
         setError(null);
         const today = new Date();
         const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // Next 30 days instead of 60
         
+        console.log('[GameSelector] About to call mlbApi.getSchedule');
         const allGames = await mlbApi.getSchedule(
           today.toISOString().split('T')[0],
           endDate.toISOString().split('T')[0]
         );
         
+        console.log('[GameSelector] Got allGames:', allGames.length);
         const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
         console.log('[GameSelector] Setting games:', homeGames.length);
         console.log('[GameSelector] First game sample:', homeGames[0]);
@@ -95,7 +102,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         console.log('[GameSelector] Returning games successfully');
         return homeGames;
       } catch (error) {
-        console.error('Error loading games:', error);
+        console.error('[GameSelector] Error in execute:', error);
         setError('Unable to load games. Please try again.');
         setGames([]);
         // Don't re-throw the error - let the loading state complete
@@ -103,10 +110,11 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       }
     }, {
       onError: (error) => {
+        console.error('[GameSelector] onError callback:', error);
         haptic.error();
-        console.error('Failed to load games:', error);
       }
     });
+    console.log('[GameSelector] Execute completed');
   }, [selectedStadium, gamesLoading, onGamesLoaded, haptic]);
 
   useEffect(() => {
@@ -196,7 +204,8 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       loading: gamesLoading.loading,
       error: error,
       selectedStadium: selectedStadium?.name,
-      viewMode: viewMode
+      viewMode: viewMode,
+      firstGame: games[0]?.teams ? `${games[0].teams.away.team.name} @ ${games[0].teams.home.team.name}` : 'No games'
     });
   }, [games, gameOptions, gamesLoading.loading, error, selectedStadium, viewMode]);
 
