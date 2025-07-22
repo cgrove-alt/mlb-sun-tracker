@@ -89,8 +89,10 @@ export class MLBApiService {
     const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
     
     try {
+      console.log('Fetching MLB schedule from:', url);
       const response = await this.retryableFetch(url);
       if (!response.ok) {
+        console.error(`MLB API request failed with status: ${response.status}`);
         throw new Error(`MLB API request failed: ${response.status}`);
       }
       
@@ -170,11 +172,11 @@ export class MLBApiService {
       const isHomeGame = game.teams.home.team.id === parseInt(teamId);
       const isNotFinished = game.status.statusCode !== 'F';
       const isNotCancelled = game.status.statusCode !== 'C';
-      // Include regular season (R), spring training (S), exhibition (E), and wild card (W) games
-      const isValidGameType = ['R', 'S', 'E', 'W', 'F', 'D', 'L', 'A'].includes(game.gameType);
+      // For now, include all game types to ensure we show games
+      const isValidGameType = true;
       
-      if (isHomeGame && !isValidGameType) {
-        console.log(`Excluding game type: ${game.gameType}`);
+      if (isHomeGame) {
+        console.log(`Home game found: ${game.teams.away.team.name} @ ${game.teams.home.team.name}, status: ${game.status.statusCode}, type: ${game.gameType}`);
       }
       
       return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
