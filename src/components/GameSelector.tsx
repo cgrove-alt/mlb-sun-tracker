@@ -67,11 +67,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
     
+    // Prevent multiple concurrent loads
+    if (gamesLoading.loading) return;
+    
     await gamesLoading.execute(async () => {
       try {
         setError(null);
         const today = new Date();
-        const endDate = new Date(today.getTime() + 60 * 24 * 60 * 60 * 1000); // Next 60 days
+        const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // Next 30 days instead of 60
         
         const allGames = await mlbApi.getSchedule(
           today.toISOString().split('T')[0],
@@ -103,7 +106,12 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   useEffect(() => {
     if (selectedStadium && viewMode === 'games') {
-      loadGamesForStadium();
+      // Defer loading to prevent UI blocking
+      const timeoutId = setTimeout(() => {
+        loadGamesForStadium();
+      }, 200);
+      
+      return () => clearTimeout(timeoutId);
     }
     // Reset selected game when stadium changes
     setSelectedGameOption(null);

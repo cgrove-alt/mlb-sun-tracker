@@ -52,6 +52,7 @@ function AppContent() {
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
+  const [changingStadium, setChangingStadium] = useState(false);
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
@@ -182,7 +183,13 @@ function AppContent() {
     }
     
     try {
-      const allGames = await mlbApi.getSchedule();
+      // Only load next 30 days to reduce data size
+      const today = new Date();
+      const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000);
+      const allGames = await mlbApi.getSchedule(
+        today.toISOString().split('T')[0],
+        endDate.toISOString().split('T')[0]
+      );
       const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
       setStadiumGames(homeGames);
     } catch (error) {
@@ -191,10 +198,17 @@ function AppContent() {
     }
   }, [selectedStadium]);
 
-  // Load games when stadium changes
+  // Load games when stadium changes - but defer to prevent UI blocking
   useEffect(() => {
-    loadGames();
-  }, [loadGames]);
+    if (!selectedStadium) return;
+    
+    // Defer game loading to next tick to allow UI to update
+    const timeoutId = setTimeout(() => {
+      loadGames();
+    }, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, [selectedStadium, loadGames]);
 
   // Calculate sun and section data when stadium, time, or weather changes
   useEffect(() => {
@@ -338,17 +352,18 @@ function AppContent() {
     };
   }, [selectedStadium, gameDateTime, filterCriteria, selectedGame]); // Minimal dependencies
 
-  // Load weather forecast when stadium changes
+  // Load weather forecast when stadium AND game time are selected
   useEffect(() => {
-    if (selectedStadium) {
-      // Add a small delay to prevent rapid updates
+    // Only load weather when we have both stadium and game time
+    if (selectedStadium && gameDateTime) {
+      // Add a delay to prevent rapid updates
       const timeoutId = setTimeout(() => {
         loadWeatherForecast();
-      }, 500);
+      }, 1000);
       
       return () => clearTimeout(timeoutId);
     }
-  }, [selectedStadium, loadWeatherForecast]); // Include loadWeatherForecast with proper dependencies
+  }, [selectedStadium, gameDateTime, loadWeatherForecast]); // Include all dependencies
 
   // Update filtered sections when filter criteria changes
   useEffect(() => {
@@ -383,6 +398,9 @@ function AppContent() {
   };
 
   const handleStadiumChange = useCallback((stadium: Stadium | null) => {
+    // Set loading state to prevent UI interactions during state reset
+    setChangingStadium(true);
+    
     // Use React's batching to update all states together
     setSelectedStadium(stadium);
     setSelectedGame(null);
@@ -403,6 +421,11 @@ function AppContent() {
     } else {
       updatePreferences({ selectedStadiumId: undefined });
     }
+    
+    // Clear loading state after a brief delay
+    setTimeout(() => {
+      setChangingStadium(false);
+    }, 300);
   }, [updatePreferences, trackStadiumView]);
 
   return (
@@ -448,6 +471,25 @@ function AppContent() {
 
       {activeTab === 'tracker' ? (
         <main className="App-main">
+          {changingStadium && (
+            <div style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(255, 255, 255, 0.9)',
+              zIndex: 9998,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <LoadingSpinner />
+                <p style={{ marginTop: '1rem', color: '#666' }}>Loading stadium data...</p>
+              </div>
+            </div>
+          )}
           <Breadcrumb
             selectedStadium={selectedStadium}
             selectedGame={selectedGame}
