@@ -83,6 +83,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         
         const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
         console.log('[GameSelector] Setting games:', homeGames.length);
+        console.log('[GameSelector] First game sample:', homeGames[0]);
         setGames(homeGames);
         
         // Notify parent component about loaded games
@@ -186,6 +187,18 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   };
 
   const gameOptions = games.map(formatGameOption);
+  
+  // Debug logging
+  useEffect(() => {
+    console.log('[GameSelector] Current state:', {
+      gamesLength: games.length,
+      gameOptionsLength: gameOptions.length,
+      loading: gamesLoading.loading,
+      error: error,
+      selectedStadium: selectedStadium?.name,
+      viewMode: viewMode
+    });
+  }, [games, gameOptions, gamesLoading.loading, error, selectedStadium, viewMode]);
 
   return (
     <div className="game-selector">
@@ -273,26 +286,33 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                     </button>
                   </div>
                 ) : (
-                  <Select
-                    inputId="game-select"
-                    value={selectedGameOption}
-                    options={gameOptions}
-                    onChange={handleGameSelect}
-                    placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
-                    className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
-                    isDisabled={games.length === 0 || gamesLoading.isRefreshing}
-                    aria-label={t('gameSelector.selectGame')}
-                    formatOptionLabel={(option) => (
-                      <div className="game-option">
-                        <div className="game-date-time">
-                          {option.label.split(' - ')[0]}
-                        </div>
-                        <div className="game-matchup">
-                          {option.label.split(' - ')[1]}
-                        </div>
+                  <>
+                    {games.length > 0 && (
+                      <div style={{ fontSize: '12px', color: 'green', marginBottom: '8px' }}>
+                        ✓ {games.length} games loaded successfully
                       </div>
                     )}
-                  />
+                    <Select
+                      inputId="game-select"
+                      value={selectedGameOption}
+                      options={gameOptions}
+                      onChange={handleGameSelect}
+                      placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
+                      className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
+                      isDisabled={games.length === 0 || gamesLoading.isRefreshing}
+                      aria-label={t('gameSelector.selectGame')}
+                      formatOptionLabel={(option) => (
+                        <div className="game-option">
+                          <div className="game-date-time">
+                            {option.label.split(' - ')[0]}
+                          </div>
+                          <div className="game-matchup">
+                            {option.label.split(' - ')[1]}
+                          </div>
+                        </div>
+                      )}
+                    />
+                  </>
                 )}
               </div>
               
