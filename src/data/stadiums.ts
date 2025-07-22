@@ -295,15 +295,15 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'George M. Steinbrenner Field',
+    name: 'Tropicana Field',
     team: 'Tampa Bay Rays',
-    city: 'Tampa',
+    city: 'St. Petersburg',
     state: 'FL',
-    latitude: 27.9628,
-    longitude: -82.5062,
-    orientation: 316,
-    capacity: 11026,
-    roof: 'open',
+    latitude: 27.7683,
+    longitude: -82.6534,
+    orientation: 315,
+    capacity: 25025,
+    roof: 'fixed',
     timezone: 'America/New_York'
   },
   {
