@@ -295,15 +295,15 @@ export const MLB_STADIUMS: Stadium[] = [
   },
   {
     id: 'rays',
-    name: 'Tropicana Field',
+    name: 'George M. Steinbrenner Field', // Temporary home for 2025 season due to Tropicana Field hurricane damage
     team: 'Tampa Bay Rays',
-    city: 'St. Petersburg',
+    city: 'Tampa',
     state: 'FL',
-    latitude: 27.7683,
-    longitude: -82.6534,
-    orientation: 315,
-    capacity: 25025,
-    roof: 'fixed',
+    latitude: 27.9628,
+    longitude: -82.5062,
+    orientation: 316,
+    capacity: 11026,
+    roof: 'open',
     timezone: 'America/New_York'
   },
   {
