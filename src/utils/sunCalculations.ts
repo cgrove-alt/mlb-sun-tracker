@@ -113,6 +113,11 @@ export function calculateDetailedSectionSunExposure(
   const sections = getStadiumSections(stadium.id);
   const sectionSunData: SeatingSectionSun[] = [];
   
+  // Safety check to prevent performance issues
+  if (sections.length > 250) {
+    console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+  }
+  
   // If stadium has a fixed roof, no sections get sun
   if (stadium.roof === 'fixed') {
     sections.forEach(section => {
@@ -246,6 +251,11 @@ export function calculateEnhancedSectionSunExposure(
   const calculator = new SunCalculator(stadium);
   const sections = getStadiumSections(stadium.id);
   
+  // Safety check to prevent performance issues
+  if (sections.length > 250) {
+    console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+  }
+  
   // Get sun position for the given time
   const dateStr = date.toISOString().split('T')[0];
   const timeStr = date.toTimeString().split(' ')[0];
@@ -341,6 +351,11 @@ export function calculateGameSunExposure(
   const calculator = new SunCalculator(stadium);
   const sections = getStadiumSections(stadium.id);
   const exposureMap = new Map<string, number>();
+  
+  // Safety check to prevent performance issues
+  if (sections.length > 250) {
+    console.warn(`[calculateGameSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+  }
   
   sections.forEach(section => {
     const sectionWithGeometry = {

@@ -25,6 +25,7 @@ const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPag
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
+import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedSunCalculations';
 import { getStadiumSections } from './data/stadiumSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
@@ -189,12 +190,13 @@ function AppContent() {
       setDetailedSections([]);
       setFilteredSections([]);
       setSunPosition(null);
+      setLoadingSections(false);
       return;
     }
     
     let isCancelled = false;
     
-    const performCalculation = () => {
+    const performCalculation = async () => {
       if (isCancelled) return;
       
       console.log('[performCalculation] Starting', {
@@ -233,10 +235,31 @@ function AppContent() {
           return;
         }
         
-        // Calculate synchronously to avoid complex async issues
-        const detailedSectionData = selectedStadium.roofHeight 
-          ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, undefined)
-          : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, undefined);
+        // Allow UI to update before heavy calculation
+        await new Promise(resolve => setTimeout(resolve, 0));
+        
+        // Use optimized calculation for large stadiums
+        let detailedSectionData: SeatingSectionSun[];
+        
+        if (sections.length > 150 && !selectedStadium.roofHeight) {
+          // Use async optimized version for large stadiums without enhanced calculations
+          console.log('[performCalculation] Using optimized calculation for large stadium');
+          detailedSectionData = await calculateDetailedSectionSunExposureOptimized(
+            selectedStadium, 
+            formattedPosition, 
+            undefined,
+            (progress) => {
+              if (progress % 0.1 === 0) {
+                console.log(`[performCalculation] Progress: ${Math.round(progress * 100)}%`);
+              }
+            }
+          );
+        } else {
+          // Use original synchronous calculations for smaller stadiums or enhanced calculations
+          detailedSectionData = selectedStadium.roofHeight 
+            ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, undefined)
+            : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, undefined);
+        }
         
         if (isCancelled) return;
         
