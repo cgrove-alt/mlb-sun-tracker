@@ -32,7 +32,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
   const [games, setGames] = useState<MLBGame[]>([]);
-  const gamesLoading = useLoadingState<MLBGame[]>({ minLoadingTime: 500 });
+  const gamesLoading = useLoadingState<MLBGame[]>({ minLoadingTime: 500, initialLoading: false });
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
     return preferencesStorage.get('viewMode', 'games');
   });
@@ -67,11 +67,8 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
     
-    // Prevent multiple concurrent loads
-    if (gamesLoading.loading) {
-      console.log('[GameSelector] Skipping load - already loading');
-      return;
-    }
+    // Don't prevent concurrent loads - let the loading state handle it
+    // This was causing a deadlock when loading state got stuck
     
     console.log('[GameSelector] Starting execute...');
     await gamesLoading.execute(async () => {
