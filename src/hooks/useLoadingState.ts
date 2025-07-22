@@ -164,6 +164,7 @@ export function useLoadingState<T = any>(
     } catch (error) {
       const err = error instanceof Error ? error : new Error(String(error));
       setError(err);
+      setLoading(false); // Ensure loading is set to false on error
 
       // Auto-retry for transient errors
       if (autoRetry && state.retryCount < retryLimit) {

@@ -259,7 +259,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             <>
               <div className="control-group">
                 <label htmlFor="game-select">{t('gameSelector.upcomingGames')}:</label>
-                {gamesLoading.loading && gamesLoading.isInitialLoad ? (
+                {gamesLoading.loading ? (
                   <GameSelectorSkeleton />
                 ) : error ? (
                   <div className="error-message" role="alert">
