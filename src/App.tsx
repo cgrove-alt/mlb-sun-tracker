@@ -125,13 +125,16 @@ function AppContent() {
         }
       }
     } else if (!selectedStadium) { // Only set from preferences if no stadium is already selected
-      // Fall back to profile preferences if no URL parameters
+      // DISABLED: Auto-loading stadium from preferences to prevent freeze on page load
+      // Users must manually select a stadium
+      /*
       if (preferences.selectedStadiumId) {
         const stadium = MLB_STADIUMS.find(s => s.id === preferences.selectedStadiumId);
         if (stadium) {
           setSelectedStadium(stadium);
         }
       }
+      */
     }
     
     // Restore filter criteria (unless overridden by URL)
@@ -196,6 +199,11 @@ function AppContent() {
       return;
     }
     
+    // Don't calculate immediately on mount - wait for user interaction
+    if (!selectedGame && !gameDateTime) {
+      return;
+    }
+    
     let isCancelled = false;
     
     const performCalculation = async () => {
@@ -239,9 +247,11 @@ function AppContent() {
         }
         
         // Safety check - if too many sections, something's wrong
-        if (sections.length > 500) {
-          console.error('[performCalculation] Too many sections, aborting');
-          return;
+        if (sections.length > 300) {
+          console.error(`[performCalculation] Too many sections (${sections.length}), limiting to 300`);
+          showError?.('Stadium has too many sections. Showing first 300 sections only.', 'warning');
+          // Limit to first 300 sections to prevent freeze
+          sections.splice(300);
         }
         
         // Allow UI to update before heavy calculation
@@ -484,6 +494,24 @@ function AppContent() {
 
         {selectedStadium && gameDateTime && (
           <div className="results">
+            {loadingSections && (
+              <div style={{
+                position: 'fixed',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                zIndex: 9999,
+                background: 'white',
+                padding: '2rem',
+                borderRadius: '8px',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+                textAlign: 'center'
+              }}>
+                <LoadingSpinner />
+                <p style={{marginTop: '1rem', color: '#666'}}>Calculating sun exposure for {selectedStadium.name}...</p>
+                <p style={{fontSize: '0.875rem', color: '#999'}}>This may take a moment for large stadiums</p>
+              </div>
+            )}
             <div className="weather-info-section">
               {weatherForecast && (
                 <WeatherDisplay 
