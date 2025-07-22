@@ -176,7 +176,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.sunPreference}
           aria-controls="sun-preference-content"
         >
-          <span className="filter-section-title" title="Choose your sun exposure preference to filter sections">
+          <span className="filter-section-title" title="Filter by sun exposure percentage (0% = fully shaded, 100% = full sun)">
             <span className="filter-section-icon">☀️</span>
             Sun Preference
           </span>

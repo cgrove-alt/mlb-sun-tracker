@@ -75,8 +75,8 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
             <div className="sun-indicator">
               <span className="sun-icon" aria-hidden="true">{getSunExposureIcon(sunExposure)}</span>
               <span className="exposure-text">
-                {roundedExposure}% sun
-                <span className="sr-only"> - {getSunExposureDescription(sunExposure)}</span>
+                {roundedExposure}%
+                <span className="sr-only"> sun exposure - {getSunExposureDescription(sunExposure)}</span>
               </span>
               <span className="exposure-description" aria-hidden="true">
                 {getSunExposureDescription(sunExposure)}

@@ -218,6 +218,13 @@ export const SectionList: React.FC<SectionListProps> = ({
               </span>
             )}
           </div>
+          <div className="exposure-info">
+            <Tooltip content="Percentage indicates how much of the section will be in direct sunlight at game time. 0% = fully shaded, 100% = full sun exposure.">
+              <span className="info-text">
+                <span className="info-icon">ℹ</span> What do the percentages mean?
+              </span>
+            </Tooltip>
+          </div>
         </div>
         
         <div className="search-and-sort">
