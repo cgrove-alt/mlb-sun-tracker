@@ -63,6 +63,12 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
           <span className="mobile-section-detail-label">Time in sun</span>
           <span className="mobile-section-detail-value">{getSunDescription()}</span>
         </div>
+        {section.covered && (
+          <div className="mobile-section-detail">
+            <span className="mobile-section-detail-label">Coverage</span>
+            <span className="mobile-section-detail-value">🏛️ Covered</span>
+          </div>
+        )}
         {section.price && (
           <div className="mobile-section-detail">
             <span className="mobile-section-detail-label">Price Tier</span>

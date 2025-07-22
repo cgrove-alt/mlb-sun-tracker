@@ -3,6 +3,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { StadiumSection } from '../data/stadiumSections';
 import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon } from './Icons';
+import { Tooltip } from './Tooltip';
 
 interface LazySectionCardProps {
   section: StadiumSection;
@@ -93,6 +94,13 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
                section.level === 'upper' ? 'Upper Level' : 
                section.level === 'suite' ? 'Suite Level' : section.level}
             </span>
+            {section.covered && (
+              <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
+                <span className="covered-indicator" aria-label="Covered section">
+                  🏛️ Covered
+                </span>
+              </Tooltip>
+            )}
             {section.price && (
               <span className={`price-tier ${section.price}`} aria-label={`Price tier: ${section.price}`}>
                 {section.price.charAt(0).toUpperCase() + section.price.slice(1)}

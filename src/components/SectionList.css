@@ -413,6 +413,16 @@
   color: white;
 }
 
+.covered-indicator {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
 .section-direction {
   font-size: 0.85rem;
   color: #616161;

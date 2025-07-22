@@ -153,6 +153,11 @@ export const SunExposureExplanation: React.FC = () => {
                 <strong>Special Considerations:</strong> Young children, elderly fans, and those with 
                 sun sensitivity should prioritize sections with minimal sun time (0-25%) for comfort and safety.
               </p>
+              <p>
+                <strong>Covered Sections:</strong> Look for the 🏛️ "Covered" indicator. These sections have 
+                permanent roofs or overhangs that provide protection from both sun and rain, typically showing 
+                0% sun exposure throughout the game.
+              </p>
             </div>
           </div>
         </div>
