@@ -1,0 +1,349 @@
+.affordable-shade-section {
+  background: var(--surface-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.affordable-shade-section .section-header {
+  margin-bottom: 20px;
+}
+
+.affordable-shade-section .section-header h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+}
+
+.affordable-shade-section .section-header .icon {
+  font-size: 1.4rem;
+}
+
+.affordable-shade-section .subtitle {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.affordable-shade-section .loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 16px;
+}
+
+.affordable-shade-section .spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.affordable-shade-section .error,
+.affordable-shade-section .no-results,
+.affordable-shade-section .no-data {
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--text-secondary);
+}
+
+.affordable-shade-section .error {
+  color: var(--error-color);
+}
+
+.affordable-shade-section .error-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.affordable-shade-section .retry-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.affordable-shade-section .retry-button:hover:not(:disabled) {
+  background: var(--primary-color-dark);
+}
+
+.affordable-shade-section .retry-button:disabled {
+  background: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.affordable-shade-section .retry-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.api-config-notice {
+  background: #fef3cd;
+  border: 1px solid #f0c674;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.config-notice-content h4 {
+  margin: 0 0 12px 0;
+  color: #b45309;
+  font-size: 1.1rem;
+}
+
+.config-notice-content p {
+  margin: 0 0 16px 0;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.config-steps {
+  margin: 16px 0;
+}
+
+.config-steps ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #92400e;
+}
+
+.config-steps li {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.config-note {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 16px !important;
+  color: #a16207;
+}
+
+@media (prefers-color-scheme: dark) {
+  .api-config-notice {
+    background: #451a03;
+    border-color: #92400e;
+  }
+  
+  .config-notice-content h4 {
+    color: #fbbf24;
+  }
+  
+  .config-notice-content p,
+  .config-steps li {
+    color: #fcd34d;
+  }
+  
+  .config-note {
+    color: #f59e0b;
+  }
+}
+
+.affordable-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.results-summary {
+  padding: 12px 16px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.results-summary p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.affordable-section-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.affordable-section-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-info {
+  flex: 1;
+}
+
+.section-info h4 {
+  margin: 0 0 8px 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.section-details {
+  display: flex;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.sun-exposure {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.covered-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: var(--success-color);
+  color: white;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.pricing-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.price-display {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-display .from {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.price-display .price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--success-color);
+}
+
+.listing-count {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.buy-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.buy-button:hover {
+  background: var(--primary-hover);
+  transform: translateX(2px);
+}
+
+.buy-button:active {
+  transform: translateX(0);
+}
+
+.buy-button .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.buy-button:hover .arrow {
+  transform: translateX(4px);
+}
+
+.view-all-section {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.view-all-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.view-all-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .affordable-section-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .section-details {
+    justify-content: center;
+  }
+  
+  .pricing-info {
+    align-items: center;
+    margin: 12px 0;
+  }
+  
+  .buy-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .affordable-shade-section {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+  
+  .affordable-section-card {
+    background: #252525;
+    border-color: #444;
+  }
+  
+  .affordable-section-card:hover {
+    border-color: var(--primary-color);
+  }
+}
