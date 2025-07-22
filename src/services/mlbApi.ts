@@ -83,13 +83,12 @@ export class MLBApiService {
 
   getSchedule = withCache(
     async (startDate?: string, endDate?: string): Promise<MLBGame[]> => {
+    const today = new Date();
+    const defaultStart = startDate || today.toISOString().split('T')[0];
+    const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
+    
     try {
-      const today = new Date();
-      const defaultStart = startDate || today.toISOString().split('T')[0];
-      const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
-      
-      const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
-      
       const response = await this.retryableFetch(url);
       if (!response.ok) {
         throw new Error(`MLB API request failed: ${response.status}`);
