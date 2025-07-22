@@ -97,15 +97,26 @@ export class MLBApiService {
       
       const data: MLBScheduleResponse = await response.json();
       
+      // Check if we have valid data
+      if (!data || !data.dates) {
+        console.error('Invalid response from MLB API:', data);
+        throw new Error('Invalid API response structure');
+      }
+      
       // Flatten the schedule data
       const games: MLBGame[] = [];
       data.dates.forEach(dateEntry => {
-        games.push(...dateEntry.games);
+        if (dateEntry.games && Array.isArray(dateEntry.games)) {
+          games.push(...dateEntry.games);
+        }
       });
       
+      console.log(`MLB API returned ${games.length} total games`);
       return games;
     } catch (error) {
       console.error('Error fetching MLB schedule:', error);
+      console.error('URL attempted:', url);
+      console.error('Start date:', defaultStart, 'End date:', defaultEnd);
       // Return mock data for development
       return this.getMockSchedule();
     }
@@ -149,14 +160,30 @@ export class MLBApiService {
     const teamId = Object.entries(MLB_TEAM_TO_STADIUM_MAP)
       .find(([_, stadium]) => stadium === stadiumId)?.[0];
     
-    if (!teamId) return [];
+    if (!teamId) {
+      console.error(`No team ID found for stadium: ${stadiumId}`);
+      return [];
+    }
     
-    return games.filter(game => 
-      game.teams.home.team.id === parseInt(teamId) &&
-      game.status.statusCode !== 'F' && // Not finished
-      game.status.statusCode !== 'C' && // Not cancelled
-      game.gameType === 'R' // Regular season games
-    );
+    console.log(`Filtering games for stadium ${stadiumId}, team ID ${teamId}`);
+    console.log(`Total games before filtering: ${games.length}`);
+    
+    const homeGames = games.filter(game => {
+      const isHomeGame = game.teams.home.team.id === parseInt(teamId);
+      const isNotFinished = game.status.statusCode !== 'F';
+      const isNotCancelled = game.status.statusCode !== 'C';
+      // Include all game types to debug the issue
+      const isValidGameType = true; // Temporarily accept all game types
+      
+      if (isHomeGame && !isValidGameType) {
+        console.log(`Excluding game type: ${game.gameType}`);
+      }
+      
+      return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
+    });
+    
+    console.log(`Home games found: ${homeGames.length}`);
+    return homeGames;
   }
 
   private getMockSchedule(): MLBGame[] {
