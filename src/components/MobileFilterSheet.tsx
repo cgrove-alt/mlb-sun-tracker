@@ -130,7 +130,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     />
                     <span className="mobile-filter-option-content">
                       <span className="mobile-filter-option-icon">☀️</span>
-                      <span>More sun</span>
+                      <span>More sun (≥50% of game)</span>
                     </span>
                   </label>
                   <label className={`mobile-filter-option ${localFilters.sunPreference === 'shade' ? 'selected' : ''}`}>
@@ -143,15 +143,15 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     />
                     <span className="mobile-filter-option-content">
                       <span className="mobile-filter-option-icon">🌂</span>
-                      <span>More shade</span>
+                      <span>More shade (&lt;50% of game)</span>
                     </span>
                   </label>
                 </div>
               </div>
 
-              {/* Time in Sun */}
+              {/* Maximum Time in Sun */}
               <div className="mobile-filter-section">
-                <h3>Time in Sun</h3>
+                <h3>Maximum Time in Sun</h3>
                 <div className="mobile-filter-slider">
                   <input
                     type="range"
@@ -166,6 +166,9 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     <span className="mobile-filter-range-value">{localFilters.maxSunExposure || 100}%</span>
                     <span>100%</span>
                   </div>
+                  <p className="mobile-filter-help-text">
+                    {localFilters.maxSunExposure ? `Up to ${Math.round((localFilters.maxSunExposure / 100) * 180)} minutes of sun` : 'No limit'}
+                  </p>
                 </div>
               </div>
 

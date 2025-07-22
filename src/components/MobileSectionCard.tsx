@@ -6,6 +6,7 @@ interface MobileSectionCardProps {
   section: StadiumSection;
   sunExposure: number;
   inSun: boolean;
+  timeInSun?: number;
   onClick?: () => void;
 }
 
@@ -13,6 +14,7 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
   section,
   sunExposure,
   inSun,
+  timeInSun,
   onClick
 }) => {
   const getSunIcon = () => {
@@ -24,11 +26,11 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
   };
 
   const getSunDescription = () => {
-    if (sunExposure === 0) return 'Fully shaded';
-    if (sunExposure < 25) return 'Mostly shaded';
-    if (sunExposure < 50) return 'Partial sun';
-    if (sunExposure < 75) return 'Mostly sunny';
-    return 'Full sun';
+    if (sunExposure === 0) return 'No sun during game';
+    if (sunExposure < 25) return timeInSun ? `Sun for ~${Math.round(timeInSun)} min` : 'Minimal sun';
+    if (sunExposure < 50) return timeInSun ? `Sun for ~${Math.round(timeInSun)} min` : 'Some sun';
+    if (sunExposure < 75) return timeInSun ? `Sun for ~${Math.round(timeInSun)} min` : 'Mostly sun';
+    return timeInSun ? `Sun for ~${Math.round(timeInSun)} min` : 'Full sun';
   };
 
   const getSunClass = () => {
@@ -58,7 +60,7 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
       
       <div className="mobile-section-details">
         <div className="mobile-section-detail">
-          <span className="mobile-section-detail-label">Sun exposure</span>
+          <span className="mobile-section-detail-label">Time in sun</span>
           <span className="mobile-section-detail-value">{getSunDescription()}</span>
         </div>
         {section.price && (

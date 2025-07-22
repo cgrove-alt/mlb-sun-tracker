@@ -13,6 +13,7 @@ import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
 import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
+import { SunCalculator } from './utils/sunCalculator';
 import './styles/mobile-first.css';
 import './MobileApp.css';
 
@@ -105,33 +106,33 @@ const MobileApp: React.FC = () => {
       const sections = getStadiumSections(selectedStadium.id);
       const gameDate = new Date(selectedGame.gameDate);
       
-      // Simple sun exposure calculation based on time of day
-      const hour = gameDate.getHours();
-      const isNightGame = hour >= 19 || hour < 10;
+      // Use the same time-based calculation as desktop
+      const calculator = new SunCalculator(selectedStadium);
+      const gameDuration = 3; // 3 hour game
       
-      const results = sections.map(section => {
-        let sunExposure = 0;
+      const results: SeatingSectionSun[] = sections.map(section => {
+        // Add section geometry for calculations
+        const side: 'home' | 'first' | 'third' | 'outfield' = 
+          section.name.toLowerCase().includes('third') || section.name.toLowerCase().includes('3b') || section.name.toLowerCase().includes('left') ? 'third' :
+          section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
+          section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
         
-        if (!isNightGame && !section.covered) {
-          // Basic calculation based on section angle and time
-          const angle = section.baseAngle;
-          if (angle >= 45 && angle <= 135) {
-            sunExposure = hour < 15 ? 80 : 40; // East-facing sections
-          } else if (angle >= 225 && angle <= 315) {
-            sunExposure = hour >= 15 ? 80 : 40; // West-facing sections
-          } else {
-            sunExposure = 60; // North/South facing
-          }
-          
-          // Reduce for upper levels
-          if (section.level === 'upper') sunExposure *= 0.8;
-          if (section.level === 'club' || section.level === 'suite') sunExposure *= 0.7;
-        }
+        const sectionWithGeometry = {
+          ...section,
+          side,
+          angle: section.baseAngle || 0,
+          depth: 50 // Default depth
+        };
+        
+        // Calculate time in sun
+        const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDate, gameDuration);
         
         return {
           section,
-          sunExposure: Math.round(sunExposure),
-          inSun: sunExposure > 10
+          sunExposure: Math.round(timeExposure.percentage),
+          inSun: timeExposure.percentage > 20,
+          timeInSun: timeExposure.totalMinutes,
+          percentageOfGameInSun: timeExposure.percentage
         };
       });
     
@@ -280,6 +281,7 @@ const MobileApp: React.FC = () => {
                         section={sectionData.section}
                         sunExposure={sectionData.sunExposure}
                         inSun={sectionData.inSun}
+                        timeInSun={sectionData.timeInSun}
                       />
                     ))}
                   </div>

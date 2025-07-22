@@ -25,6 +25,7 @@ const Row = ({ index, style, data }: { index: number; style: React.CSSProperties
         sunExposure={section.sunExposure}
         inSun={section.inSun}
         index={index}
+        timeInSun={section.timeInSun}
       />
     </div>
   );

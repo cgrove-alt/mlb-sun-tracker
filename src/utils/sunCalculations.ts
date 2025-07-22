@@ -14,7 +14,9 @@ export interface SunPosition {
 export interface SeatingSectionSun {
   section: StadiumSection;
   inSun: boolean;
-  sunExposure: number; // 0-100, percentage of sun exposure
+  sunExposure: number; // 0-100, percentage of game time in sun
+  timeInSun?: number; // Total minutes in sun during game
+  percentageOfGameInSun?: number; // Same as sunExposure, for clarity
 }
 
 export function getSunPosition(

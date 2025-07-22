@@ -302,6 +302,13 @@
   color: var(--color-field-green);
 }
 
+.mobile-filter-help-text {
+  margin: var(--space-2) 0 0 0;
+  font-size: 11px;
+  color: var(--color-neutral-600);
+  text-align: center;
+}
+
 /* Compact Chips */
 .mobile-filter-chips {
   display: grid;

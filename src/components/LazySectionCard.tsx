@@ -9,6 +9,7 @@ interface LazySectionCardProps {
   sunExposure: number;
   inSun: boolean;
   index: number;
+  timeInSun?: number;
 }
 
 const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
@@ -16,6 +17,7 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
   sunExposure,
   inSun,
   index,
+  timeInSun,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -39,12 +41,12 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
     return <FireIcon size={20} color="#dc2626" />;
   };
 
-  const getSunExposureDescription = (exposure: number): string => {
-    if (exposure === 0) return 'Fully shaded';
-    if (exposure < 25) return 'Mostly shaded';
-    if (exposure < 50) return 'Partially sunny';
-    if (exposure < 75) return 'Mostly sunny';
-    return 'Full sun exposure';
+  const getSunExposureDescription = (exposure: number, minutes?: number): string => {
+    if (exposure === 0) return 'No sun during game';
+    if (exposure < 25) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Minimal sun';
+    if (exposure < 50) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Some sun';
+    if (exposure < 75) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Mostly sun';
+    return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Full sun';
   };
 
   const handleClick = () => {
@@ -61,7 +63,7 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
       role="listitem"
       tabIndex={0}
       onClick={handleClick}
-      aria-label={`Section ${section.name}, ${roundedExposure}% sun exposure, ${section.level} level${section.covered ? ', covered' : ''}`}
+      aria-label={`Section ${section.name}, sun for ${roundedExposure}% of game${timeInSun ? ` (about ${Math.round(timeInSun)} minutes)` : ''}, ${section.level} level${section.covered ? ', covered' : ''}`}
       style={{
         opacity: isLoaded ? 1 : 0.3,
         transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',
@@ -76,10 +78,10 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
               <span className="sun-icon" aria-hidden="true">{getSunExposureIcon(sunExposure)}</span>
               <span className="exposure-text">
                 {roundedExposure}%
-                <span className="sr-only"> sun exposure - {getSunExposureDescription(sunExposure)}</span>
+                <span className="sr-only"> of game in sun - {getSunExposureDescription(sunExposure, timeInSun)}</span>
               </span>
               <span className="exposure-description" aria-hidden="true">
-                {getSunExposureDescription(sunExposure)}
+                {getSunExposureDescription(sunExposure, timeInSun)}
               </span>
             </div>
           </div>

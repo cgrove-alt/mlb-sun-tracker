@@ -19,6 +19,7 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SEOHelmet } from './components/SEOHelmet';
+import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
@@ -26,6 +27,7 @@ import { UserProfileProvider, useUserProfile } from './contexts/UserProfileConte
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedSunCalculations';
+import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSections } from './data/stadiumSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
@@ -254,7 +256,7 @@ function AppContent() {
       setCalculationInProgress(true);
       
       try {
-        // Calculate sun position synchronously
+        // Calculate sun position for display
         const position = getSunPosition(gameDateTime, selectedStadium.latitude, selectedStadium.longitude);
         const formattedPosition = {
           altitudeDegrees: position.altitudeDegrees,
@@ -283,51 +285,56 @@ function AppContent() {
         // Allow UI to update before heavy calculation
         await new Promise(resolve => setTimeout(resolve, 0));
         
-        // Use optimized calculation for large stadiums
-        let detailedSectionData: SeatingSectionSun[];
+        // Calculate time-based sun exposure for entire game duration
+        const calculator = new SunCalculator(selectedStadium);
+        const gameDuration = 3; // 3 hour game
         
-        if (sections.length > 150 && !selectedStadium.roofHeight) {
-          // Use async optimized version for large stadiums without enhanced calculations
-          if (process.env.NODE_ENV === 'development') {
-            console.log('[performCalculation] Using optimized calculation for large stadium');
-          }
-          detailedSectionData = await calculateDetailedSectionSunExposureOptimized(
-            selectedStadium, 
-            formattedPosition, 
-            undefined,
-            (progress) => {
-              // Log progress at 10% intervals
-              const progressPercent = Math.round(progress * 100);
-              if (progressPercent % 10 === 0 && process.env.NODE_ENV === 'development') {
-                console.log(`[performCalculation] Progress: ${progressPercent}%`);
-              }
-            }
-          );
-        } else {
-          // Use original synchronous calculations for smaller stadiums or enhanced calculations
-          detailedSectionData = selectedStadium.roofHeight 
-            ? calculateEnhancedSectionSunExposure(selectedStadium, gameDateTime, undefined)
-            : calculateDetailedSectionSunExposure(selectedStadium, formattedPosition, undefined);
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[performCalculation] Calculating time-based sun exposure');
         }
+        
+        // Calculate time-based exposure for each section
+        const detailedSectionData: SeatingSectionSun[] = sections.map((section, index) => {
+          // Add section geometry for calculations
+          const side: 'home' | 'first' | 'third' | 'outfield' = 
+            section.name.toLowerCase().includes('third') || section.name.toLowerCase().includes('3b') || section.name.toLowerCase().includes('left') ? 'third' :
+            section.name.toLowerCase().includes('first') || section.name.toLowerCase().includes('1b') || section.name.toLowerCase().includes('right') ? 'first' :
+            section.name.toLowerCase().includes('behind') || section.name.toLowerCase().includes('home') || section.name.toLowerCase().includes('backstop') ? 'home' : 'outfield';
+          
+          const sectionWithGeometry = {
+            ...section,
+            side,
+            angle: section.baseAngle || 0,
+            depth: 50 // Default depth
+          };
+          
+          // Calculate time in sun
+          const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDateTime, gameDuration);
+          
+          // Log progress at intervals
+          if (index % 50 === 0 && process.env.NODE_ENV === 'development') {
+            console.log(`[performCalculation] Progress: ${Math.round((index / sections.length) * 100)}%`);
+          }
+          
+          return {
+            section,
+            sunExposure: Math.round(timeExposure.percentage),
+            inSun: timeExposure.percentage > 20,
+            timeInSun: timeExposure.totalMinutes,
+            percentageOfGameInSun: timeExposure.percentage
+          };
+        });
         
         if (isCancelled) return;
         
         if (process.env.NODE_ENV === 'development') {
-          console.log(`[performCalculation] Calculated ${detailedSectionData.length} sections`);
+          console.log(`[performCalculation] Calculated time-based exposure for ${detailedSectionData.length} sections`);
         }
         setDetailedSections(detailedSectionData);
         
         // Apply filter
         const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
         setFilteredSections(filtered);
-        
-        // Calculate game exposure if needed
-        if (selectedStadium.roofHeight && selectedGame) {
-          const gameExposure = calculateGameSunExposure(selectedStadium, gameDateTime, 3);
-          setGameExposureData(gameExposure);
-        } else {
-          setGameExposureData(null);
-        }
         
       } catch (error) {
         if (process.env.NODE_ENV === 'development') {
@@ -627,6 +634,8 @@ function AppContent() {
               )}
             </div>
 
+            <SunExposureExplanation />
+
             <div className="section-overview">
               <div className="overview-stats">
                 <div className="stat-item">
@@ -692,7 +701,7 @@ function AppContent() {
                         <h4>To Avoid Sun</h4>
                         <p>Choose seats on the <strong>{
                           sunPosition && sunPosition.azimuthDegrees > 180 ? 'first base side' : 'third base side'
-                        }</strong> or in shaded sections. {selectedStadium && selectedStadium.roof === 'retractable' && 'The retractable roof may also provide coverage.'}</p>
+                        }</strong> for minimal sun time. Look for sections with 0-25% sun exposure. {selectedStadium && selectedStadium.roof === 'retractable' && 'The retractable roof may also provide coverage.'}</p>
                       </div>
                     </div>
 
@@ -702,7 +711,7 @@ function AppContent() {
                         <h4>For Sun Lovers</h4>
                         <p>Seats in <strong>{
                           sunPosition && (sunPosition.azimuthDegrees < 90 || sunPosition.azimuthDegrees > 270) ? 'right field' : 'left field'
-                        }</strong> will likely have the most sun exposure.</p>
+                        }</strong> will be in sun for most of the game. Look for 75-100% exposure sections.</p>
                       </div>
                     </div>
 

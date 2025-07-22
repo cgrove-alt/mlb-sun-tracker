@@ -176,7 +176,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
           aria-expanded={expandedSections.sunPreference}
           aria-controls="sun-preference-content"
         >
-          <span className="filter-section-title" title="Filter by sun exposure percentage (0% = fully shaded, 100% = full sun)">
+          <span className="filter-section-title" title="Filter sections by percentage of game time in direct sunlight. 0% = no sun, 50% = sun for half the game, 100% = sun entire game.">
             <span className="filter-section-icon">☀️</span>
             Sun Preference
           </span>
@@ -215,7 +215,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 onChange={() => handleSunPreferenceChange('avoid')}
                 disabled={disabled}
               />
-              <label htmlFor="sun-pref-avoid" className="filter-option-label">Avoid sun (≤20% exposure)</label>
+              <label htmlFor="sun-pref-avoid" className="filter-option-label">Avoid sun (≤20% of game)</label>
             </div>
             
             <div className={`filter-option ${sunPreference === 'prefer' ? 'selected' : ''}`}>
@@ -228,7 +228,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 onChange={() => handleSunPreferenceChange('prefer')}
                 disabled={disabled}
               />
-              <label htmlFor="sun-pref-prefer" className="filter-option-label">Prefer sun (≥60% exposure)</label>
+              <label htmlFor="sun-pref-prefer" className="filter-option-label">Prefer sun (≥60% of game)</label>
             </div>
             
             <div className={`filter-option ${sunPreference === 'custom' ? 'selected' : ''}`}>
