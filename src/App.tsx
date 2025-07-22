@@ -316,6 +316,11 @@ function AppContent() {
             console.log(`[performCalculation] Progress: ${Math.round((index / sections.length) * 100)}%`);
           }
           
+          // Debug: Log covered sections and very low sun exposure
+          if (process.env.NODE_ENV === 'development' && (section.covered || timeExposure.percentage < 10)) {
+            console.log(`[Debug] Section ${section.name}: covered=${section.covered}, sun=${timeExposure.percentage.toFixed(1)}%`);
+          }
+          
           return {
             section,
             sunExposure: Math.round(timeExposure.percentage),

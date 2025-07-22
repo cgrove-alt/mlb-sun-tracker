@@ -174,10 +174,16 @@ export class SunCalculator {
   }
 
   private calculateRoofShadow(section: Section, sunAltitude: number, sunAzimuth: number): number {
-    if (!section.covered || sunAltitude <= 0) return 0;
+    if (sunAltitude <= 0) return 0;
     
+    // Covered sections always have full coverage from their overhang
+    if (section.covered) return 100;
+    
+    // Fixed roof stadiums always have 100% coverage
     if (this.stadium.roofType === 'fixed') return 100;
     
+    // For non-covered sections in retractable roof stadiums
+    // (this code path won't be reached for covered sections now)
     const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
     const shadowDirection = (sunAzimuth + 180) % 360;
     
@@ -254,6 +260,11 @@ export class SunCalculator {
     
     const startDate = new Date(gameStartTime);
     
+    // Debug logging for covered sections
+    if (section.covered && process.env.NODE_ENV === 'development') {
+      console.log(`[SunCalc] Calculating for covered section: ${section.name}`);
+    }
+    
     for (let i = 0; i <= intervals; i++) {
       const checkTime = new Date(startDate.getTime() + i * timeStep * 60000);
       const sunPos = this.calculateSunPosition(
@@ -263,7 +274,8 @@ export class SunCalculator {
       
       if (sunPos.altitude > 0) {
         const shadows = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
-        if (shadows.sunExposure > 50) {
+        // Count any sun exposure (> 20% to account for partial shade)
+        if (shadows.sunExposure > 20) {
           sunExposureMinutes += timeStep;
         }
       }
