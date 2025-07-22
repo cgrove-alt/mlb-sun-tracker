@@ -94,7 +94,8 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         console.error('Error loading games:', error);
         setError('Unable to load games. Please try again.');
         setGames([]);
-        throw error;
+        // Don't re-throw the error - let the loading state complete
+        return [];
       }
     }, {
       onError: (error) => {

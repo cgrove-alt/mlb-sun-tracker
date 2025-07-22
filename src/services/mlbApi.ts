@@ -168,6 +168,7 @@ export class MLBApiService {
     console.log(`Filtering games for stadium ${stadiumId}, team ID ${teamId}`);
     console.log(`Total games before filtering: ${games.length}`);
     
+    let firstHomeGameLogged = false;
     const homeGames = games.filter(game => {
       const isHomeGame = game.teams.home.team.id === parseInt(teamId);
       const isNotFinished = game.status.statusCode !== 'F';
@@ -175,8 +176,10 @@ export class MLBApiService {
       // For now, include all game types to ensure we show games
       const isValidGameType = true;
       
-      if (isHomeGame) {
-        console.log(`Home game found: ${game.teams.away.team.name} @ ${game.teams.home.team.name}, status: ${game.status.statusCode}, type: ${game.gameType}`);
+      // Log only the first home game to reduce console noise
+      if (isHomeGame && !firstHomeGameLogged) {
+        console.log(`Sample home game: ${game.teams.away.team.name} @ ${game.teams.home.team.name}, status: ${game.status.statusCode}, type: ${game.gameType}`);
+        firstHomeGameLogged = true;
       }
       
       return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
