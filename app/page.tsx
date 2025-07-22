@@ -5,12 +5,8 @@ import dynamic from 'next/dynamic';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-// TEMPORARY: Using minimal app to debug freeze issue
-// const App = dynamic(() => import('../src/App'), {
-//   ssr: false,
-//   loading: () => <LoadingSpinner />,
-// });
-const App = dynamic(() => import('../src/AppMinimal'), {
+// Use the full App component
+const App = dynamic(() => import('../src/App'), {
   ssr: false,
   loading: () => <LoadingSpinner />,
 });
