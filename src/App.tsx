@@ -195,6 +195,8 @@ function AppContent() {
     } catch (error) {
       console.error('Error loading games:', error);
       setStadiumGames([]);
+      // Show error to user
+      showError?.('Unable to load MLB games. Please check your connection and try again.', 'error');
     }
   }, [selectedStadium]);
 

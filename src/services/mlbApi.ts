@@ -117,8 +117,7 @@ export class MLBApiService {
       console.error('Error fetching MLB schedule:', error);
       console.error('URL attempted:', url);
       console.error('Start date:', defaultStart, 'End date:', defaultEnd);
-      // Return mock data for development
-      return this.getMockSchedule();
+      throw error; // Propagate the error instead of returning mock data
     }
     },
     'mlb-schedule',
@@ -172,8 +171,8 @@ export class MLBApiService {
       const isHomeGame = game.teams.home.team.id === parseInt(teamId);
       const isNotFinished = game.status.statusCode !== 'F';
       const isNotCancelled = game.status.statusCode !== 'C';
-      // Include all game types to debug the issue
-      const isValidGameType = true; // Temporarily accept all game types
+      // Include regular season (R), spring training (S), exhibition (E), and wild card (W) games
+      const isValidGameType = ['R', 'S', 'E', 'W', 'F', 'D', 'L', 'A'].includes(game.gameType);
       
       if (isHomeGame && !isValidGameType) {
         console.log(`Excluding game type: ${game.gameType}`);
@@ -184,140 +183,6 @@ export class MLBApiService {
     
     console.log(`Home games found: ${homeGames.length}`);
     return homeGames;
-  }
-
-  private getMockSchedule(): MLBGame[] {
-    const today = new Date();
-    const games: MLBGame[] = [];
-    
-    // Generate mock games for the next 30 days
-    for (let i = 0; i < 30; i++) {
-      const gameDate = new Date(today.getTime() + i * 24 * 60 * 60 * 1000);
-      
-      // Add 2-3 random games per day
-      const gamesPerDay = Math.floor(Math.random() * 2) + 2;
-      
-      for (let j = 0; j < gamesPerDay; j++) {
-        const homeTeamIds = Object.keys(MLB_TEAM_TO_STADIUM_MAP).map(Number);
-        const homeTeamId = homeTeamIds[Math.floor(Math.random() * homeTeamIds.length)];
-        let awayTeamId = homeTeamIds[Math.floor(Math.random() * homeTeamIds.length)];
-        
-        // Ensure away team is different from home team
-        while (awayTeamId === homeTeamId) {
-          awayTeamId = homeTeamIds[Math.floor(Math.random() * homeTeamIds.length)];
-        }
-        
-        const gameTime = new Date(gameDate);
-        gameTime.setHours(13 + Math.floor(Math.random() * 6), Math.floor(Math.random() * 60)); // 1 PM - 7 PM
-        
-        games.push({
-          gamePk: 1000000 + i * 10 + j,
-          gameDate: gameTime.toISOString(),
-          status: {
-            statusCode: 'S',
-            detailedState: 'Scheduled'
-          },
-          teams: {
-            away: {
-              team: {
-                id: awayTeamId,
-                name: this.getTeamName(awayTeamId)
-              }
-            },
-            home: {
-              team: {
-                id: homeTeamId,
-                name: this.getTeamName(homeTeamId)
-              }
-            }
-          },
-          venue: {
-            id: homeTeamId + 1000,
-            name: this.getVenueName(homeTeamId)
-          },
-          gameType: 'R',
-          scheduledInnings: 9
-        });
-      }
-    }
-    
-    return games;
-  }
-
-  private getTeamName(teamId: number): string {
-    const teamNames: Record<number, string> = {
-      108: 'Los Angeles Angels',
-      117: 'Houston Astros',
-      133: 'Oakland Athletics',
-      141: 'Toronto Blue Jays',
-      144: 'Atlanta Braves',
-      158: 'Milwaukee Brewers',
-      138: 'St. Louis Cardinals',
-      112: 'Chicago Cubs',
-      109: 'Arizona Diamondbacks',
-      119: 'Los Angeles Dodgers',
-      137: 'San Francisco Giants',
-      114: 'Cleveland Guardians',
-      136: 'Seattle Mariners',
-      146: 'Miami Marlins',
-      121: 'New York Mets',
-      120: 'Washington Nationals',
-      110: 'Baltimore Orioles',
-      135: 'San Diego Padres',
-      143: 'Philadelphia Phillies',
-      134: 'Pittsburgh Pirates',
-      140: 'Texas Rangers',
-      139: 'Tampa Bay Rays',
-      111: 'Boston Red Sox',
-      113: 'Cincinnati Reds',
-      115: 'Colorado Rockies',
-      118: 'Kansas City Royals',
-      116: 'Detroit Tigers',
-      142: 'Minnesota Twins',
-      145: 'Chicago White Sox',
-      147: 'New York Yankees',
-    };
-    return teamNames[teamId] || 'Unknown Team';
-  }
-
-  private getVenueName(teamId: number): string {
-    const stadiumId = MLB_TEAM_TO_STADIUM_MAP[teamId];
-    if (!stadiumId) return 'Unknown Venue';
-    
-    const venueNames: Record<string, string> = {
-      angels: 'Angel Stadium',
-      astros: 'Minute Maid Park',
-      athletics: 'Oakland Coliseum',
-      bluejays: 'Rogers Centre',
-      braves: 'Truist Park',
-      brewers: 'American Family Field',
-      cardinals: 'Busch Stadium',
-      cubs: 'Wrigley Field',
-      diamondbacks: 'Chase Field',
-      dodgers: 'Dodger Stadium',
-      giants: 'Oracle Park',
-      guardians: 'Progressive Field',
-      mariners: 'T-Mobile Park',
-      marlins: 'loanDepot park',
-      mets: 'Citi Field',
-      nationals: 'Nationals Park',
-      orioles: 'Oriole Park at Camden Yards',
-      padres: 'Petco Park',
-      phillies: 'Citizens Bank Park',
-      pirates: 'PNC Park',
-      rangers: 'Globe Life Field',
-      rays: 'Tropicana Field',
-      redsox: 'Fenway Park',
-      reds: 'Great American Ball Park',
-      rockies: 'Coors Field',
-      royals: 'Kauffman Stadium',
-      tigers: 'Comerica Park',
-      twins: 'Target Field',
-      whitesox: 'Guaranteed Rate Field',
-      yankees: 'Yankee Stadium',
-    };
-    
-    return venueNames[stadiumId] || 'Unknown Venue';
   }
 }
 
