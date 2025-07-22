@@ -58,9 +58,11 @@ function AppContent() {
   // Initialize performance monitoring and service worker
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      trackWebVitals();
+      // DISABLED: Performance tracking to reduce initial load
+      // trackWebVitals();
       
-      // Register service worker
+      // DISABLED: Service worker to reduce initial load
+      /*
       serviceWorkerRegistration.register({
         onSuccess: (registration) => {
           if (process.env.NODE_ENV === 'development') {
@@ -83,8 +85,10 @@ function AppContent() {
           }
         }
       });
+      */
       
-      // Log performance report every 30 seconds in development
+      // DISABLED: Performance logging to reduce overhead
+      /*
       if (process.env.NODE_ENV === 'development') {
         const interval = setInterval(() => {
           performanceMonitor.logReport();
@@ -92,10 +96,16 @@ function AppContent() {
         
         return () => clearInterval(interval);
       }
+      */
     }
   }, []);
 
   useEffect(() => {
+    // DISABLED: All initial loading to prevent page freeze
+    // Users must manually select stadium and game
+    return;
+    
+    /*
     // Only run once on mount to avoid infinite loops
     // Only access window in the browser environment
     const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : new URLSearchParams();
@@ -127,20 +137,19 @@ function AppContent() {
     } else if (!selectedStadium) { // Only set from preferences if no stadium is already selected
       // DISABLED: Auto-loading stadium from preferences to prevent freeze on page load
       // Users must manually select a stadium
-      /*
       if (preferences.selectedStadiumId) {
         const stadium = MLB_STADIUMS.find(s => s.id === preferences.selectedStadiumId);
         if (stadium) {
           setSelectedStadium(stadium);
         }
       }
-      */
     }
     
     // Restore filter criteria (unless overridden by URL)
     if (preferences.filterCriteria && Object.keys(filterCriteria).length === 0) {
       setFilterCriteria(preferences.filterCriteria);
     }
+    */
   }, []); // Empty dependency array - only run once
 
   const loadWeatherForecast = useCallback(async () => {
