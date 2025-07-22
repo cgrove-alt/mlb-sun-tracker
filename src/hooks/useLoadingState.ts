@@ -51,6 +51,7 @@ export function useLoadingState<T = any>(
   }, []);
 
   const setLoading = useCallback((loading: boolean, isRefreshing = false) => {
+    console.log('[useLoadingState] setLoading called with:', loading);
     if (loading) {
       loadStartTimeRef.current = Date.now();
       setState(prev => ({
@@ -63,9 +64,11 @@ export function useLoadingState<T = any>(
       // Ensure minimum loading time for smooth transitions
       const loadTime = Date.now() - loadStartTimeRef.current;
       const remainingTime = Math.max(0, minLoadingTime - loadTime);
+      console.log('[useLoadingState] Setting loading to false, remainingTime:', remainingTime);
 
       if (remainingTime > 0) {
         loadingTimeoutRef.current = window.setTimeout(() => {
+          console.log('[useLoadingState] Timeout completed, setting loading false');
           setState(prev => ({
             ...prev,
             loading: false,
@@ -156,6 +159,7 @@ export function useLoadingState<T = any>(
         onSuccess(result);
       }
       
+      console.log('[useLoadingState] Execute completed successfully');
       return result;
     } catch (error) {
       const err = error instanceof Error ? error : new Error(String(error));

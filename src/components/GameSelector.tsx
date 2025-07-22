@@ -82,13 +82,16 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
         );
         
         const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
+        console.log('[GameSelector] Setting games:', homeGames.length);
         setGames(homeGames);
         
         // Notify parent component about loaded games
         if (onGamesLoaded) {
+          console.log('[GameSelector] Notifying parent of loaded games');
           onGamesLoaded(homeGames);
         }
         
+        console.log('[GameSelector] Returning games successfully');
         return homeGames;
       } catch (error) {
         console.error('Error loading games:', error);
