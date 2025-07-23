@@ -11,11 +11,17 @@ import { SunFilterCriteria } from './components/SunExposureFilterFixed';
 import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';
+import { SEOHelmet } from './components/SEOHelmet';
 import { mlbApi } from './services/mlbApi';
 import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
+import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
 import './styles/mobile-first.css';
 import './MobileApp.css';
+
+// Create rate limiters for API calls
+const gameLoadRateLimiter = new RateLimiter(5, 60000); // 5 requests per minute
+const weatherLoadRateLimiter = new RateLimiter(10, 60000); // 10 requests per minute
 
 const MobileApp: React.FC = () => {
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
@@ -63,6 +69,12 @@ const MobileApp: React.FC = () => {
   const loadGames = async () => {
     if (!selectedStadium) return;
     
+    // Rate limit check
+    if (!gameLoadRateLimiter.isAllowed('games')) {
+      setError('Too many requests. Please wait a moment.');
+      return;
+    }
+    
     setIsLoading(true);
     setError(null);
     
@@ -80,6 +92,12 @@ const MobileApp: React.FC = () => {
 
   const loadWeather = async () => {
     if (!selectedGame || !selectedStadium) return;
+    
+    // Rate limit check
+    if (!weatherLoadRateLimiter.isAllowed('weather')) {
+      console.warn('Weather API rate limited');
+      return;
+    }
     
     setIsWeatherLoading(true);
     
@@ -168,6 +186,11 @@ const MobileApp: React.FC = () => {
   };
 
   const handleStadiumChange = useCallback((stadium: Stadium | null) => {
+    // Validate stadium ID if provided
+    if (stadium && !validateStadiumId(stadium.id)) {
+      console.error('Invalid stadium ID:', stadium.id);
+      return;
+    }
     setSelectedStadium(stadium);
     setSelectedGame(null);
   }, []);
@@ -177,12 +200,23 @@ const MobileApp: React.FC = () => {
   }, []);
 
   const handleFilterChange = useCallback((criteria: SunFilterCriteria) => {
+    // Validate filter criteria
+    if (!validateFilterCriteria(criteria)) {
+      console.error('Invalid filter criteria:', criteria);
+      return;
+    }
     setFilterCriteria(criteria);
   }, []);
 
 
   return (
     <div className="mobile-app">
+      <SEOHelmet 
+        stadium={selectedStadium}
+        game={selectedGame}
+        pageType={selectedGame ? 'game' : selectedStadium ? 'stadium' : 'home'}
+        shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
+      />
       <MobileHeader />
       
       <main className="mobile-main">

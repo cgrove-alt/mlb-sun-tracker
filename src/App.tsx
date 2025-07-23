@@ -828,15 +828,17 @@ function App() {
   // Use mobile-first design for mobile devices
   if (isMobile) {
     return (
-      <ErrorProvider>
-        <UserProfileProvider>
+      <HelmetProvider>
+        <ErrorBoundary>
           <I18nProvider>
-            <ErrorBoundary>
-              <MobileApp />
-            </ErrorBoundary>
+            <ErrorProvider>
+              <UserProfileProvider>
+                <MobileApp />
+              </UserProfileProvider>
+            </ErrorProvider>
           </I18nProvider>
-        </UserProfileProvider>
-      </ErrorProvider>
+        </ErrorBoundary>
+      </HelmetProvider>
     );
   }
 

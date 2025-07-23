@@ -1,5 +1,6 @@
 import { withCache } from '../utils/apiCache';
 import { withRetry, createRetryableFetch } from '../utils/retryUtils';
+import { validateNumericRange, sanitizeApiUrl } from '../utils/validation';
 
 export interface WeatherCondition {
   id: number;
@@ -125,6 +126,14 @@ export class WeatherApiService {
   
   getForecast = withCache(
     async (latitude: number, longitude: number): Promise<WeatherForecast> => {
+      // Validate coordinates
+      if (!validateNumericRange(latitude, -90, 90)) {
+        throw new Error('Invalid latitude: must be between -90 and 90');
+      }
+      if (!validateNumericRange(longitude, -180, 180)) {
+        throw new Error('Invalid longitude: must be between -180 and 180');
+      }
+      
       try {
         const params = new URLSearchParams({
           latitude: latitude.toString(),
@@ -139,7 +148,9 @@ export class WeatherApiService {
           forecast_days: '7'
         });
 
-        const response = await this.retryableFetch(`${this.baseUrl}/forecast?${params}`);
+        const url = `${this.baseUrl}/forecast?${params}`;
+        const sanitizedUrl = sanitizeApiUrl(url);
+        const response = await this.retryableFetch(sanitizedUrl);
         
         if (!response.ok) {
           throw new Error(`Weather API request failed: ${response.status}`);

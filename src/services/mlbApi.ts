@@ -1,5 +1,6 @@
 import { withCache } from '../utils/apiCache';
 import { withRetry, createRetryableFetch } from '../utils/retryUtils';
+import { validateDate, sanitizeApiUrl } from '../utils/validation';
 
 export interface MLBGame {
   gamePk: number;
@@ -86,11 +87,23 @@ export class MLBApiService {
     const today = new Date();
     const defaultStart = startDate || today.toISOString().split('T')[0];
     const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    
+    // Validate dates
+    if (startDate && !validateDate(startDate)) {
+      throw new Error('Invalid start date format');
+    }
+    if (endDate && !validateDate(endDate)) {
+      throw new Error('Invalid end date format');
+    }
+    
     const url = `${this.baseUrl}/schedule/games/?sportId=1&startDate=${defaultStart}&endDate=${defaultEnd}`;
     
+    // Sanitize URL before making request
+    const sanitizedUrl = sanitizeApiUrl(url);
+    
     try {
-      console.log('Fetching MLB schedule from:', url);
-      const response = await this.retryableFetch(url);
+      console.log('Fetching MLB schedule from:', sanitizedUrl);
+      const response = await this.retryableFetch(sanitizedUrl);
       if (!response.ok) {
         console.error(`MLB API request failed with status: ${response.status}`);
         throw new Error(`MLB API request failed: ${response.status}`);
@@ -116,7 +129,7 @@ export class MLBApiService {
       return games;
     } catch (error) {
       console.error('Error fetching MLB schedule:', error);
-      console.error('URL attempted:', url);
+      console.error('URL attempted:', sanitizedUrl);
       console.error('Start date:', defaultStart, 'End date:', defaultEnd);
       throw error; // Propagate the error instead of returning mock data
     }
@@ -127,13 +140,27 @@ export class MLBApiService {
 
   async getTeamSchedule(teamId: number, startDate?: string, endDate?: string): Promise<MLBGame[]> {
     try {
+      // Validate team ID
+      if (!Number.isInteger(teamId) || teamId < 100 || teamId > 200) {
+        throw new Error('Invalid team ID');
+      }
+      
       const today = new Date();
       const defaultStart = startDate || today.toISOString().split('T')[0];
       const defaultEnd = endDate || new Date(today.getTime() + 180 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
       
-      const url = `${this.baseUrl}/schedule/games/?sportId=1&teamId=${teamId}&startDate=${defaultStart}&endDate=${defaultEnd}`;
+      // Validate dates
+      if (startDate && !validateDate(startDate)) {
+        throw new Error('Invalid start date format');
+      }
+      if (endDate && !validateDate(endDate)) {
+        throw new Error('Invalid end date format');
+      }
       
-      const response = await this.retryableFetch(url);
+      const url = `${this.baseUrl}/schedule/games/?sportId=1&teamId=${teamId}&startDate=${defaultStart}&endDate=${defaultEnd}`;
+      const sanitizedUrl = sanitizeApiUrl(url);
+      
+      const response = await this.retryableFetch(sanitizedUrl);
       if (!response.ok) {
         throw new Error(`MLB API request failed: ${response.status}`);
       }
