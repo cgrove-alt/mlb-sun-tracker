@@ -200,6 +200,40 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                   ))}
                 </div>
               </div>
+
+              {/* Price Range */}
+              <div className="mobile-filter-section">
+                <h3>Price Range</h3>
+                <div className="mobile-filter-price-options">
+                  {[
+                    { value: 'value', label: 'Value', icon: '💵', description: 'Upper deck, bleachers' },
+                    { value: 'moderate', label: 'Moderate', icon: '💶', description: 'Lower bowl, main level' },
+                    { value: 'premium', label: 'Premium', icon: '💷', description: 'Field level, club seats' },
+                    { value: 'luxury', label: 'Luxury', icon: '💎', description: 'Behind home plate, dugout' }
+                  ].map(price => (
+                    <label key={price.value} className={`mobile-filter-option ${localFilters.priceRange?.includes(price.value as any) ? 'selected' : ''}`}>
+                      <input
+                        type="checkbox"
+                        checked={localFilters.priceRange?.includes(price.value as any) || false}
+                        onChange={() => {
+                          const ranges = localFilters.priceRange || [];
+                          const newRanges = ranges.includes(price.value as any)
+                            ? ranges.filter(r => r !== price.value)
+                            : [...ranges, price.value as any];
+                          setLocalFilters({...localFilters, priceRange: newRanges});
+                        }}
+                      />
+                      <span className="mobile-filter-option-content">
+                        <span className="mobile-filter-option-icon">{price.icon}</span>
+                        <span className="mobile-filter-option-text">
+                          <span className="mobile-filter-option-title">{price.label}</span>
+                          <span className="mobile-filter-option-description">{price.description}</span>
+                        </span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </div>
             </div>
 
             <div className="mobile-filter-footer">
