@@ -433,10 +433,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
             aria-labelledby="price-range-label"
           >
             {[
-              { value: 'value', label: 'Value', icon: '💵' },
-              { value: 'moderate', label: 'Moderate', icon: '💶' },
-              { value: 'premium', label: 'Premium', icon: '💷' },
-              { value: 'luxury', label: 'Luxury', icon: '💎' }
+              { value: 'value', label: 'Value', icon: '💵', description: 'Upper deck, bleachers' },
+              { value: 'moderate', label: 'Moderate', icon: '💶', description: 'Lower bowl, main level' },
+              { value: 'premium', label: 'Premium', icon: '💷', description: 'Field level, club seats' },
+              { value: 'luxury', label: 'Luxury', icon: '💎', description: 'Behind home plate, dugout' }
             ].map(price => (
               <div key={price.value} className={`filter-option ${selectedPriceRanges.includes(price.value as any) ? 'selected' : ''}`}>
                 <input
@@ -448,7 +448,10 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
                 />
                 <label htmlFor={`price-${price.value}`} className="filter-option-label">
                   <span className="filter-option-icon">{price.icon}</span>
-                  {price.label}
+                  <span className="filter-option-text">
+                    <span className="filter-option-title">{price.label}</span>
+                    <span className="filter-option-description">{price.description}</span>
+                  </span>
                 </label>
               </div>
             ))}

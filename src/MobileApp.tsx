@@ -179,6 +179,12 @@ const MobileApp: React.FC = () => {
       );
     }
     
+    if (filterCriteria.priceRange && filterCriteria.priceRange.length > 0) {
+      filtered = filtered.filter(s => 
+        s.section.price && filterCriteria.priceRange!.includes(s.section.price)
+      );
+    }
+    
       setFilteredSections(filtered);
     } finally {
       setIsCalculating(false);

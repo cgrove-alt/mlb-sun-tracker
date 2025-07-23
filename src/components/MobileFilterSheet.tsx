@@ -64,6 +64,13 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       });
     }
     
+    // Apply price range filter
+    if (localFilters.priceRange && localFilters.priceRange.length > 0) {
+      filtered = filtered.filter(s => 
+        s.section.price && localFilters.priceRange!.includes(s.section.price)
+      );
+    }
+    
     return filtered.length;
   }, [localFilters, allSections]);
 

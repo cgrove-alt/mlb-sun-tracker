@@ -265,6 +265,29 @@
   margin: 0;
 }
 
+.filter-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.filter-option-title {
+  font-weight: 500;
+  font-size: 14px;
+  color: inherit;
+}
+
+.filter-option-description {
+  font-size: 12px;
+  color: #666;
+  opacity: 0.8;
+}
+
+.filter-option.selected .filter-option-description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .filter-option-icon {
   font-size: 1.1em;
 }

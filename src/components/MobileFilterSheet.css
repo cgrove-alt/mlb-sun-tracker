@@ -235,6 +235,24 @@
   box-shadow: var(--shadow-xs);
 }
 
+.mobile-filter-option-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: center;
+}
+
+.mobile-filter-option-title {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.mobile-filter-option-description {
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: normal;
+}
+
 .mobile-filter-option:hover .mobile-filter-option-content {
   border-color: var(--color-field-green-light);
   transform: translateY(-1px);
