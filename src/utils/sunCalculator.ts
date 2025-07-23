@@ -176,28 +176,41 @@ export class SunCalculator {
   private calculateRoofShadow(section: Section, sunAltitude: number, sunAzimuth: number): number {
     if (sunAltitude <= 0) return 0;
     
-    // Covered sections always have full coverage from their overhang
-    if (section.covered) return 100;
-    
     // Fixed roof stadiums always have 100% coverage
     if (this.stadium.roofType === 'fixed') return 100;
     
-    // For non-covered sections in retractable roof stadiums
-    // (this code path won't be reached for covered sections now)
-    const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
-    const shadowDirection = (sunAzimuth + 180) % 360;
-    
-    const sectionAngle = this.getSectionAngle(section);
-    const angleDiff = Math.abs(shadowDirection - sectionAngle);
-    
-    if (angleDiff > 90 && angleDiff < 270) {
-      return 0;
+    // For covered sections and retractable roofs, calculate actual shadow based on sun position
+    if (section.covered || this.stadium.roofType === 'retractable') {
+      // Calculate shadow length based on sun altitude
+      const roofHeight = section.covered ? this.stadiumGeometry.upperDeckHeight : this.stadiumGeometry.roofHeight;
+      const shadowLength = roofHeight / Math.tan(sunAltitude * Math.PI / 180);
+      const shadowDirection = (sunAzimuth + 180) % 360;
+      
+      const sectionAngle = this.getSectionAngle(section);
+      const angleDiff = Math.abs(shadowDirection - sectionAngle);
+      
+      // If sun is behind the section (opposite side), no shadow from roof
+      if (angleDiff > 90 && angleDiff < 270) {
+        return 0;
+      }
+      
+      // For covered sections, assume a typical overhang depth
+      const overhangDepth = section.covered ? 30 : this.stadiumGeometry.roofOverhang;
+      const effectiveShadow = Math.min(shadowLength, overhangDepth);
+      
+      // Calculate coverage based on shadow depth vs section depth
+      const sectionDepth = section.depth || 50;
+      let coverage = (effectiveShadow / sectionDepth) * 100;
+      
+      // For low sun angles, reduce effectiveness of overhang
+      if (sunAltitude < 30) {
+        coverage *= (sunAltitude / 30); // Linear reduction for low sun
+      }
+      
+      return Math.min(100, coverage);
     }
     
-    const effectiveShadow = Math.min(shadowLength, this.stadiumGeometry.roofOverhang);
-    const coverage = (effectiveShadow / (section.depth || 50)) * 100;
-    
-    return Math.min(100, coverage);
+    return 0;
   }
 
   private calculateUpperDeckShadow(section: Section, sunAltitude: number, sunAzimuth: number): number {
@@ -277,9 +290,10 @@ export class SunCalculator {
         
         // Debug covered sections showing sun exposure
         if (section.covered && shadows.sunExposure > 0 && i === 0) {
-          console.log(`[SunCalc] WARNING: Covered section ${section.name} showing ${shadows.sunExposure}% sun exposure`);
+          console.log(`[SunCalc] Covered section ${section.name}:`);
+          console.log(`  - Sun position: alt=${sunPos.altitude.toFixed(1)}°, az=${sunPos.azimuth.toFixed(1)}°`);
           console.log(`  - Roof shadow: ${shadows.shadowSources.roof}%`);
-          console.log(`  - Total coverage: ${shadows.coverage}%`);
+          console.log(`  - Sun exposure: ${shadows.sunExposure}%`);
         }
         
         // Count any sun exposure (> 20% to account for partial shade)
