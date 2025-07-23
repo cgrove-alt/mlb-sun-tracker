@@ -200,7 +200,17 @@ export function filterSectionsBySunExposure(
     priceRange?: Array<'value' | 'moderate' | 'premium' | 'luxury'>;
   }
 ): SeatingSectionSun[] {
-  return sectionSunData.filter(item => {
+  // Debug logging
+  if (process.env.NODE_ENV === 'development' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
+    console.log('[Filter Debug] Criteria:', { 
+      minExposure: criteria.minExposure, 
+      maxExposure: criteria.maxExposure,
+      totalSections: sectionSunData.length,
+      highSunSections: sectionSunData.filter(s => s.sunExposure >= 75).length
+    });
+  }
+  
+  const filteredResults = sectionSunData.filter(item => {
     const { section, sunExposure } = item;
     
     // Check exposure range
@@ -212,7 +222,7 @@ export function filterSectionsBySunExposure(
     }
     
     // Check level
-    if (criteria.levels && !criteria.levels.includes(section.level)) {
+    if (criteria.levels && criteria.levels.length > 0 && !criteria.levels.includes(section.level)) {
       return false;
     }
     
@@ -222,12 +232,22 @@ export function filterSectionsBySunExposure(
     }
     
     // Check price range
-    if (criteria.priceRange && section.price && !criteria.priceRange.includes(section.price)) {
+    if (criteria.priceRange && criteria.priceRange.length > 0 && section.price && !criteria.priceRange.includes(section.price)) {
       return false;
     }
     
     return true;
   });
+  
+  // Debug logging for results
+  if (process.env.NODE_ENV === 'development' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
+    console.log('[Filter Debug] Results:', { 
+      filteredCount: filteredResults.length,
+      examples: filteredResults.slice(0, 3).map(s => ({ name: s.section.name, sun: s.sunExposure }))
+    });
+  }
+  
+  return filteredResults;
 }
 
 // Get a simple description of sun conditions

@@ -47,9 +47,11 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
     // Set sun exposure criteria based on preference
     switch (preference) {
       case 'avoid':
+        criteria.sunPreference = 'shade';
         criteria.maxExposure = 20;
         break;
       case 'prefer':
+        criteria.sunPreference = 'sun';
         criteria.minExposure = 60;
         break;
       case 'custom':
@@ -58,6 +60,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
         break;
       case 'any':
       default:
+        criteria.sunPreference = 'any';
         // No exposure restrictions
         break;
     }

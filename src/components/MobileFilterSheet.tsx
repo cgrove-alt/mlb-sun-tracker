@@ -41,9 +41,9 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
     // Apply sun preference filter
     if (localFilters.sunPreference) {
       if (localFilters.sunPreference === 'sun') {
-        filtered = filtered.filter(s => s.sunExposure >= 50);
+        filtered = filtered.filter(s => s.sunExposure >= 60);
       } else if (localFilters.sunPreference === 'shade') {
-        filtered = filtered.filter(s => s.sunExposure < 50);
+        filtered = filtered.filter(s => s.sunExposure <= 20);
       }
     }
     
@@ -130,7 +130,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     />
                     <span className="mobile-filter-option-content">
                       <span className="mobile-filter-option-icon">☀️</span>
-                      <span>More sun (≥50% of game)</span>
+                      <span>More sun (≥60% of game)</span>
                     </span>
                   </label>
                   <label className={`mobile-filter-option ${localFilters.sunPreference === 'shade' ? 'selected' : ''}`}>
@@ -143,7 +143,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     />
                     <span className="mobile-filter-option-content">
                       <span className="mobile-filter-option-icon">🌂</span>
-                      <span>More shade (&lt;50% of game)</span>
+                      <span>More shade (≤20% of game)</span>
                     </span>
                   </label>
                 </div>

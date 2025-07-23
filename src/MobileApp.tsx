@@ -162,9 +162,9 @@ const MobileApp: React.FC = () => {
     
     if (filterCriteria.sunPreference) {
       if (filterCriteria.sunPreference === 'sun') {
-        filtered = filtered.filter(s => s.sunExposure >= 50);
+        filtered = filtered.filter(s => s.sunExposure >= 60);
       } else if (filterCriteria.sunPreference === 'shade') {
-        filtered = filtered.filter(s => s.sunExposure < 50);
+        filtered = filtered.filter(s => s.sunExposure <= 20);
       }
     }
     
