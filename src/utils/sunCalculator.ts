@@ -274,6 +274,14 @@ export class SunCalculator {
       
       if (sunPos.altitude > 0) {
         const shadows = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
+        
+        // Debug covered sections showing sun exposure
+        if (section.covered && shadows.sunExposure > 0 && i === 0) {
+          console.log(`[SunCalc] WARNING: Covered section ${section.name} showing ${shadows.sunExposure}% sun exposure`);
+          console.log(`  - Roof shadow: ${shadows.shadowSources.roof}%`);
+          console.log(`  - Total coverage: ${shadows.coverage}%`);
+        }
+        
         // Count any sun exposure (> 20% to account for partial shade)
         if (shadows.sunExposure > 20) {
           sunExposureMinutes += timeStep;
