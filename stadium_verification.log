@@ -1,0 +1,302 @@
+=== Verifying Sun Exposure Calculations for All MLB Stadiums ===
+
+
+Checking Angel Stadium...
+  Sun position: alt=50.8°, az=93.6°
+  Stadium orientation: 65°
+  Roof type: open
+  Total sections: 97
+  Covered sections: 64
+  Exposure distribution:
+    0%: 64 sections
+    100%: 33 sections
+
+Checking Minute Maid Park...
+  Sun position: alt=70.3°, az=103.7°
+  Stadium orientation: 20°
+  Roof type: retractable
+  Total sections: 78
+  Covered sections: 72
+  Exposure distribution:
+    0%: 72 sections
+    100%: 6 sections
+
+Checking Sutter Health Park...
+  Sun position: alt=47.5°, az=96.7°
+  Stadium orientation: 330°
+  Roof type: open
+  Total sections: 45
+  Covered sections: 3
+  Exposure distribution:
+    0%: 3 sections
+    100%: 42 sections
+
+Checking Rogers Centre...
+  Sun position: alt=69.4°, az=167.0°
+  Stadium orientation: 15°
+  Roof type: retractable
+  Total sections: 172
+  Covered sections: 172
+  Exposure distribution:
+    0%: 172 sections
+
+Checking Truist Park...
+  Sun position: alt=76.4°, az=137.4°
+  Stadium orientation: 45°
+  Roof type: open
+  Total sections: 168
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 158 sections
+
+Checking American Family Field...
+  Sun position: alt=67.4°, az=146.0°
+  Stadium orientation: 357°
+  Roof type: retractable
+  Total sections: 182
+  Covered sections: 180
+  Exposure distribution:
+    0%: 180 sections
+    100%: 2 sections
+
+Checking Busch Stadium...
+  Sun position: alt=69.7°, az=134.0°
+  Stadium orientation: 92°
+  Roof type: open
+  Total sections: 170
+  Covered sections: 19
+  Exposure distribution:
+    0%: 19 sections
+    100%: 151 sections
+
+Checking Wrigley Field...
+  Sun position: alt=68.5°, az=145.2°
+  Stadium orientation: 13°
+  Roof type: open
+  Total sections: 139
+  Covered sections: 18
+  Exposure distribution:
+    0%: 18 sections
+    100%: 121 sections
+
+Checking Chase Field...
+  Sun position: alt=55.6°, az=97.0°
+  Stadium orientation: 23°
+  Roof type: retractable
+  Total sections: 142
+  Covered sections: 142
+  Exposure distribution:
+    0%: 142 sections
+
+Checking Dodger Stadium...
+  Sun position: alt=50.5°, az=93.7°
+  Stadium orientation: 25°
+  Roof type: open
+  Total sections: 144
+  Covered sections: 31
+  Exposure distribution:
+    0%: 31 sections
+    100%: 113 sections
+
+Checking Oracle Park...
+  Sun position: alt=46.8°, az=95.2°
+  Stadium orientation: 87°
+  Roof type: open
+  Total sections: 154
+  Covered sections: 47
+  Exposure distribution:
+    0%: 47 sections
+    100%: 107 sections
+
+Checking Progressive Field...
+  Sun position: alt=71.0°, az=159.2°
+  Stadium orientation: 60°
+  Roof type: open
+  Total sections: 172
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 162 sections
+
+Checking T-Mobile Park...
+  Sun position: alt=45.1°, az=105.3°
+  Stadium orientation: 318°
+  Roof type: retractable
+  Total sections: 165
+  Covered sections: 165
+  Exposure distribution:
+    0%: 165 sections
+
+Checking loanDepot park...
+  Sun position: alt=84.3°, az=112.8°
+  Stadium orientation: 40°
+  Roof type: retractable
+  Total sections: 147
+  Covered sections: 124
+  Exposure distribution:
+    0%: 124 sections
+    100%: 23 sections
+
+Checking Citi Field...
+  Sun position: alt=72.7°, az=181.8°
+  Stadium orientation: 90°
+  Roof type: open
+  Total sections: 166
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 156 sections
+
+Checking Nationals Park...
+  Sun position: alt=74.4°, az=171.2°
+  Stadium orientation: 87°
+  Roof type: open
+  Total sections: 170
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 160 sections
+
+Checking Oriole Park at Camden Yards...
+  Sun position: alt=74.0°, az=172.7°
+  Stadium orientation: 58°
+  Roof type: open
+  Total sections: 145
+  Covered sections: 5
+  Exposure distribution:
+    0%: 5 sections
+    100%: 140 sections
+
+Checking Petco Park...
+  Sun position: alt=51.5°, az=92.7°
+  Stadium orientation: 25°
+  Roof type: open
+  Total sections: 131
+  Covered sections: 28
+  Exposure distribution:
+    0%: 28 sections
+    100%: 103 sections
+
+Checking Citizens Bank Park...
+  Sun position: alt=73.5°, az=177.7°
+  Stadium orientation: 59°
+  Roof type: open
+  Total sections: 160
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 150 sections
+
+Checking PNC Park...
+  Sun position: alt=72.4°, az=162.9°
+  Stadium orientation: 25°
+  Roof type: open
+  Total sections: 220
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 210 sections
+
+Checking Globe Life Field...
+  Sun position: alt=68.0°, az=109.3°
+  Stadium orientation: 46°
+  Roof type: retractable
+  Total sections: 179
+  Covered sections: 179
+  Exposure distribution:
+    0%: 179 sections
+
+Checking George M. Steinbrenner Field...
+  Sun position: alt=81.4°, az=120.1°
+  Stadium orientation: 316°
+  Roof type: open
+  Total sections: 128
+  Covered sections: 17
+  Exposure distribution:
+    0%: 17 sections
+    100%: 111 sections
+
+Checking Fenway Park...
+  Sun position: alt=70.9°, az=189.4°
+  Stadium orientation: 52°
+  Roof type: open
+  Total sections: 100
+  Covered sections: 51
+  Exposure distribution:
+    0%: 51 sections
+    100%: 49 sections
+
+Checking Great American Ball Park...
+  Sun position: alt=72.2°, az=148.4°
+  Stadium orientation: 105°
+  Roof type: open
+  Total sections: 161
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 151 sections
+
+Checking Coors Field...
+  Sun position: alt=59.5°, az=113.2°
+  Stadium orientation: 40°
+  Roof type: open
+  Total sections: 179
+  Covered sections: 52
+  Exposure distribution:
+    0%: 52 sections
+    100%: 127 sections
+
+Checking Kauffman Stadium...
+  Sun position: alt=66.9°, az=126.7°
+  Stadium orientation: 58°
+  Roof type: open
+  Total sections: 221
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 211 sections
+
+Checking Comerica Park...
+  Sun position: alt=69.8°, az=156.6°
+  Stadium orientation: 145°
+  Roof type: open
+  Total sections: 218
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 208 sections
+
+Checking Target Field...
+  Sun position: alt=63.6°, az=138.3°
+  Stadium orientation: 0°
+  Roof type: open
+  Total sections: 218
+  Covered sections: 10
+  Exposure distribution:
+    0%: 10 sections
+    100%: 208 sections
+
+Checking Guaranteed Rate Field...
+  Sun position: alt=68.6°, az=145.0°
+  Stadium orientation: 90°
+  Roof type: open
+  Total sections: 162
+  Covered sections: 14
+  Exposure distribution:
+    0%: 14 sections
+    100%: 148 sections
+
+Checking Yankee Stadium...
+  Sun position: alt=72.6°, az=181.6°
+  Stadium orientation: 55°
+  Roof type: open
+  Total sections: 121
+  Covered sections: 43
+  Exposure distribution:
+    0%: 43 sections
+    100%: 78 sections
+
+
+=== SUMMARY OF ISSUES ===
+✅ No issues found! All stadiums have valid sun exposure calculations.

@@ -302,10 +302,10 @@ export class SunCalculator {
           console.error(`  - Section covered flag: ${section.covered}`);
         }
         
-        // Count any sun exposure (> 20% to account for partial shade)
-        if (shadows.sunExposure > 20) {
-          sunExposureMinutes += timeStep;
-        }
+        // Accumulate actual sun exposure percentage for this time interval
+        // If a section has 30% sun exposure for this interval, count 30% of the time
+        const exposureFraction = shadows.sunExposure / 100;
+        sunExposureMinutes += timeStep * exposureFraction;
       }
     }
     
