@@ -295,7 +295,7 @@ export class SunCalculator {
       console.log(`[SunCalc] Calculating for covered section: ${section.name} at ${this.stadium.name}`);
     }
     
-    for (let i = 0; i <= intervals; i++) {
+    for (let i = 0; i < intervals; i++) {
       const checkTime = new Date(startDate.getTime() + i * timeStep * 60000);
       const sunPos = this.calculateSunPosition(
         checkTime.toISOString().split('T')[0],
@@ -321,8 +321,8 @@ export class SunCalculator {
     }
     
     return {
-      totalMinutes: sunExposureMinutes,
-      percentage: (sunExposureMinutes / (gameDuration * 60)) * 100
+      totalMinutes: Math.min(sunExposureMinutes, gameDuration * 60),
+      percentage: Math.min(100, (sunExposureMinutes / (gameDuration * 60)) * 100)
     };
   }
 
