@@ -3,9 +3,9 @@
 import dynamic from 'next/dynamic';
 import { LoadingSpinner } from './LoadingSpinner';
 
-const StadiumGuide = dynamic(() => import('./StadiumGuide'), {
+const ResponsiveStadiumGuide = dynamic(() => import('./ResponsiveStadiumGuide'), {
   loading: () => <LoadingSpinner size="large" message="Loading stadium guide..." />,
   ssr: true
 });
 
-export default StadiumGuide;
+export default ResponsiveStadiumGuide;

@@ -251,16 +251,32 @@ const MobileApp: React.FC = () => {
           )}
           
           {selectedStadium && !selectedGame && (
-            <section className="mobile-section">
-              <EmptyState 
-                type="no-game"
-                action={
-                  <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                    Pick a real game or set any custom date and time
+            <>
+              <section className="mobile-section">
+                <EmptyState 
+                  type="no-game"
+                  action={
+                    <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
+                      Pick a real game or set any custom date and time
+                    </p>
+                  }
+                />
+              </section>
+              
+              <section className="mobile-section">
+                <div className="mobile-stadium-guide-link">
+                  <a href={`/stadium/${selectedStadium.id}`} className="mobile-guide-button">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" className="guide-icon">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"/>
+                    </svg>
+                    View {selectedStadium.name} Shade Guide
+                  </a>
+                  <p className="mobile-guide-description">
+                    Complete stadium guide with best shaded sections, weather patterns, and sun protection tips
                   </p>
-                }
-              />
-            </section>
+                </div>
+              </section>
+            </>
           )}
 
           {/* Game Selection */}
