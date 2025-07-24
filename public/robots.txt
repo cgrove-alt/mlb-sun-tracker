@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+# Sitemap location
+Sitemap: https://cgrove-alt.github.io/mlb-sun-tracker/sitemap.xml
