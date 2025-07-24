@@ -1,0 +1,39 @@
+{
+  "name": "The Shadium - MLB Stadium Sun Tracker",
+  "short_name": "The Shadium",
+  "description": "Find the best shaded seats at MLB stadiums. Avoid the sun, enjoy the game!",
+  "theme_color": "#1a237e",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["sports", "utilities", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr"
+}
