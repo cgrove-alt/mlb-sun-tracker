@@ -179,21 +179,10 @@ export class SunCalculator {
     // Fixed roof stadiums always have 100% coverage
     if (this.stadium.roofType === 'fixed') return 100;
     
-    // For covered sections, they should always have significant coverage
+    // For covered sections, they should always have complete coverage
     if (section.covered) {
-      // Covered sections have permanent overhead coverage
-      // Only reduce coverage if sun is very low and coming from the side
-      if (sunAltitude < 20) {
-        // For very low sun angles, check if sun is coming from the open side
-        const sectionAngle = this.getSectionAngle(section);
-        const angleDiff = Math.abs(((sunAzimuth - sectionAngle + 180 + 360) % 360) - 180);
-        
-        // If sun is coming from directly in front of the section at low angle
-        if (angleDiff < 30) {
-          return 70; // Still mostly covered but some sun can get under
-        }
-      }
-      return 95; // Covered sections provide 95% coverage typically
+      // Covered sections have permanent overhead coverage that blocks direct sunlight
+      return 100; // Covered sections provide complete protection from direct sun
     }
     
     // For retractable roofs when closed
@@ -305,12 +294,12 @@ export class SunCalculator {
       if (sunPos.altitude > 0) {
         const shadows = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
         
-        // Debug covered sections showing sun exposure
-        if (section.covered && shadows.sunExposure > 10 && process.env.NODE_ENV === 'development') {
-          console.log(`[SunCalc] WARNING: Covered section ${section.name} has ${shadows.sunExposure}% sun exposure at interval ${i}`);
-          console.log(`  - Sun position: alt=${sunPos.altitude.toFixed(1)}°, az=${sunPos.azimuth.toFixed(1)}°`);
-          console.log(`  - Shadow coverage: ${shadows.coverage}%`);
-          console.log(`  - Roof shadow: ${shadows.shadowSources.roof}%`);
+        // Debug covered sections - they should always have 0% sun exposure
+        if (section.covered && shadows.sunExposure > 0 && process.env.NODE_ENV === 'development') {
+          console.error(`[SunCalc] ERROR: Covered section ${section.name} has ${shadows.sunExposure}% sun exposure (should be 0%)`);
+          console.error(`  - Coverage breakdown: roof=${shadows.shadowSources.roof}%, upperDeck=${shadows.shadowSources.upperDeck}%, bowl=${shadows.shadowSources.bowl}%`);
+          console.error(`  - Total coverage: ${shadows.coverage}%`);
+          console.error(`  - Section covered flag: ${section.covered}`);
         }
         
         // Count any sun exposure (> 20% to account for partial shade)
