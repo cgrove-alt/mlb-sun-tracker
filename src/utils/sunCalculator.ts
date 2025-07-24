@@ -179,18 +179,35 @@ export class SunCalculator {
     // Fixed roof stadiums always have 100% coverage
     if (this.stadium.roofType === 'fixed') return 100;
     
-    // For covered sections and retractable roofs, calculate actual shadow based on sun position
-    if (section.covered || this.stadium.roofType === 'retractable') {
-      // Calculate shadow length based on sun altitude
-      const roofHeight = section.covered ? this.stadiumGeometry.upperDeckHeight : this.stadiumGeometry.roofHeight;
+    // For covered sections, they should always have significant coverage
+    if (section.covered) {
+      // Covered sections have permanent overhead coverage
+      // Only reduce coverage if sun is very low and coming from the side
+      if (sunAltitude < 20) {
+        // For very low sun angles, check if sun is coming from the open side
+        const sectionAngle = this.getSectionAngle(section);
+        const angleDiff = Math.abs(((sunAzimuth - sectionAngle + 180 + 360) % 360) - 180);
+        
+        // If sun is coming from directly in front of the section at low angle
+        if (angleDiff < 30) {
+          return 70; // Still mostly covered but some sun can get under
+        }
+      }
+      return 95; // Covered sections provide 95% coverage typically
+    }
+    
+    // For retractable roofs when closed
+    if (this.stadium.roofType === 'retractable') {
+      // Calculate shadow based on roof overhang
+      const roofHeight = this.stadiumGeometry.roofHeight;
       const shadowLength = roofHeight / Math.tan(sunAltitude * Math.PI / 180);
       const shadowDirection = (sunAzimuth + 180) % 360;
       
       const sectionAngle = this.getSectionAngle(section);
-      const angleDiff = Math.abs(shadowDirection - sectionAngle);
+      const angleDiff = Math.abs(((shadowDirection - sectionAngle + 180 + 360) % 360) - 180);
       
-      // If sun is behind the section (opposite side), no shadow from roof
-      if (angleDiff > 90 && angleDiff < 270) {
+      // If sun is coming from behind the section, no shadow
+      if (angleDiff > 90) {
         return 0;
       }
       
@@ -275,7 +292,7 @@ export class SunCalculator {
     
     // Debug logging for covered sections
     if (section.covered && process.env.NODE_ENV === 'development') {
-      console.log(`[SunCalc] Calculating for covered section: ${section.name}`);
+      console.log(`[SunCalc] Calculating for covered section: ${section.name} at ${this.stadium.name}`);
     }
     
     for (let i = 0; i <= intervals; i++) {
@@ -289,11 +306,11 @@ export class SunCalculator {
         const shadows = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
         
         // Debug covered sections showing sun exposure
-        if (section.covered && shadows.sunExposure > 0 && i === 0) {
-          console.log(`[SunCalc] Covered section ${section.name}:`);
+        if (section.covered && shadows.sunExposure > 10 && process.env.NODE_ENV === 'development') {
+          console.log(`[SunCalc] WARNING: Covered section ${section.name} has ${shadows.sunExposure}% sun exposure at interval ${i}`);
           console.log(`  - Sun position: alt=${sunPos.altitude.toFixed(1)}°, az=${sunPos.azimuth.toFixed(1)}°`);
+          console.log(`  - Shadow coverage: ${shadows.coverage}%`);
           console.log(`  - Roof shadow: ${shadows.shadowSources.roof}%`);
-          console.log(`  - Sun exposure: ${shadows.sunExposure}%`);
         }
         
         // Count any sun exposure (> 20% to account for partial shade)
