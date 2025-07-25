@@ -82,7 +82,8 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
         </nav>
 
         <header className="stadium-header">
-          <h1>{stadium.name} Shade Guide</h1>
+          <h1>Shaded Seats at {stadium.name}</h1>
+          <p className="stadium-subtitle">Find the Best Seats in the Shade for {stadium.team} Games</p>
           <div className="stadium-meta">
             <span className="team">{stadium.team}</span>
             <span className="location">
@@ -334,8 +335,50 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
           </div>
         </section>
 
+        <section className="seo-content">
+          <h2>Finding Shaded Seats at {stadium.name}</h2>
+          <p>
+            When searching for shaded seats at {stadium.name}, timing is everything. 
+            {stadium.roof === 'open' ? 
+              ` This open-air stadium in ${stadium.city} experiences varying sun exposure throughout the day. ` :
+              stadium.roof === 'retractable' ?
+              ` With its retractable roof, ${stadium.name} can provide complete shade when closed, but when open, sun exposure varies by section. ` :
+              ` Thanks to its fixed roof, all seats at ${stadium.name} are protected from direct sunlight. `
+            }
+            The Shadium's real-time shade calculator helps you find the best shaded seats at {stadium.name} for any game time.
+          </p>
+          
+          <h3>Best Shaded Seats at {stadium.name} by Game Time</h3>
+          <ul>
+            <li><strong>Day Games (12-3 PM):</strong> {stadium.roof !== 'open' ? 'All seats are shaded' : 'Upper deck sections and third base side offer the most shade'}</li>
+            <li><strong>Afternoon Games (3-6 PM):</strong> {stadium.roof !== 'open' ? 'All seats remain shaded' : 'First base side begins to get shade as sun moves west'}</li>
+            <li><strong>Evening Games (6 PM+):</strong> {stadium.roof !== 'open' ? 'Complete shade coverage' : 'Most sections have shade except far outfield'}</li>
+          </ul>
+          
+          <h3>Tips for Avoiding Sun at {stadium.name}</h3>
+          <p>
+            To stay cool and avoid sun exposure during {stadium.team} games:
+          </p>
+          <ul>
+            <li>Choose upper deck seats for maximum shade coverage during day games</li>
+            <li>Sit on the third base side for afternoon shade</li>
+            <li>Consider club level seats which often have overhead coverage</li>
+            <li>Arrive early to claim shaded standing room areas</li>
+            <li>Bring sunscreen and reapply every 2 hours for uncovered seats</li>
+          </ul>
+          
+          <h3>Covered Seating Options at {stadium.name}</h3>
+          <p>
+            {stadium.roof === 'fixed' || stadium.roof === 'retractable' ?
+              `All seats at ${stadium.name} can be covered when the roof is closed. ` :
+              `While ${stadium.name} doesn't have a roof, several sections offer overhead coverage including club levels and premium seating areas. `
+            }
+            Use The Shadium to check which sections have permanent overhead coverage and which rely on the sun angle for shade.
+          </p>
+        </section>
+
         <section className="cta-section">
-          <h2>Plan Your Visit</h2>
+          <h2>Plan Your Visit to {stadium.name}</h2>
           <p>
             Ready to find the perfect shaded seats for your next {stadium.team} game? 
             Use our real-time sun tracker to see exactly which sections will be shaded.

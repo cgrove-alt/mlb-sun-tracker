@@ -39,6 +39,12 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.stadium-subtitle {
+  font-size: 1.25rem;
+  color: #495057;
   margin-bottom: 1rem;
 }
 
@@ -477,6 +483,56 @@
 .tip p {
   color: #495057;
   margin: 0;
+}
+
+/* SEO Content Section */
+.seo-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.seo-content h2 {
+  font-size: 1.875rem;
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+}
+
+.seo-content h3 {
+  font-size: 1.5rem;
+  color: #1a237e;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.seo-content p {
+  line-height: 1.8;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.seo-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.seo-content ul li {
+  padding: 0.75rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+  color: #495057;
+}
+
+.seo-content ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #4caf50;
+  font-weight: bold;
 }
 
 /* CTA Section */

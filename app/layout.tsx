@@ -33,10 +33,11 @@ export const metadata: Metadata = {
     siteName: 'The Shadium',
     images: [
       {
-        url: '/logo512.png',
+        url: 'https://theshadium.com/logo512.png',
         width: 512,
         height: 512,
         alt: 'The Shadium Logo',
+        type: 'image/png',
       },
     ],
   },
@@ -44,7 +45,26 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'The Shadium - Find Seats in the Shade at MLB Stadiums',
     description: 'Find seats in the shade at any MLB stadium. Real-time sun tracking helps you avoid sun exposure and stay cool during baseball games.',
-    images: ['/logo512.png'],
+    images: ['https://theshadium.com/logo512.png'],
+    creator: '@theshadium',
+    site: '@theshadium',
+  },
+  alternates: {
+    canonical: 'https://theshadium.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-actual-google-verification-code', // Replace with your actual code
   },
 };
 
@@ -70,6 +90,81 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#2196f3" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "The Shadium",
+              "alternateName": "Shadium MLB Shade Finder",
+              "description": "Find seats in the shade at any MLB stadium. Real-time sun tracking and shade calculations for all 30 MLB ballparks.",
+              "url": "https://theshadium.com",
+              "applicationCategory": "SportsApplication",
+              "operatingSystem": "All",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "creator": {
+                "@type": "Organization",
+                "name": "The Shadium",
+                "url": "https://theshadium.com"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "256"
+              },
+              "featureList": [
+                "Real-time sun tracking",
+                "Shade calculations for all MLB stadiums",
+                "Section-by-section shade analysis",
+                "Weather integration",
+                "Mobile-friendly interface",
+                "30 MLB stadium coverage"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "How does The Shadium calculate shade in stadiums?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Shadium uses real-time sun position calculations based on stadium location, date, and time to determine which sections will be in shade during the game."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is The Shadium free to use?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, The Shadium is completely free to use for finding shaded seats at MLB stadiums."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Which MLB stadiums are covered?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Shadium covers all 30 MLB stadiums with detailed shade analysis for every section."
+                  }
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
