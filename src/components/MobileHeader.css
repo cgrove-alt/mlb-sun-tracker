@@ -59,15 +59,11 @@
 }
 
 .mobile-header-title {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-neutral-900);
+  color: var(--color-primary);
   margin: 0;
-  letter-spacing: var(--letter-spacing-tight);
-  background: var(--gradient-field);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  letter-spacing: -0.025em;
 }
 
 /* Menu Button */
