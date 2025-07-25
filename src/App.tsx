@@ -800,6 +800,10 @@ function AppContent() {
           <div className="attribution">
             <p>Built with <a href="https://react.dev" target="_blank" rel="noopener noreferrer">React</a> and <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">Next.js</a></p>
             <p>All APIs used within their terms of service with appropriate rate limiting and caching.</p>
+            <p className="legal-links">
+              <Link href="/privacy">Privacy Policy</Link> • <Link href="/terms">Terms of Service</Link>
+            </p>
+            <p>© {new Date().getFullYear()} The Shadium. All rights reserved.</p>
           </div>
         </div>
       </footer>

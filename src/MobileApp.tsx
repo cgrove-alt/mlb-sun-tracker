@@ -362,6 +362,19 @@ const MobileApp: React.FC = () => {
           )}
         </div>
       </main>
+      
+      <footer className="mobile-footer">
+        <div className="mobile-footer-content">
+          <div className="mobile-footer-links">
+            <a href="/privacy" className="mobile-footer-link">Privacy Policy</a>
+            <span className="mobile-footer-separator">•</span>
+            <a href="/terms" className="mobile-footer-link">Terms of Service</a>
+          </div>
+          <p className="mobile-footer-copyright">
+            © {new Date().getFullYear()} The Shadium. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

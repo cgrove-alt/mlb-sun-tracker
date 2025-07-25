@@ -537,6 +537,15 @@
   font-size: var(--font-size-xs);
 }
 
+.legal-links {
+  margin: var(--spacing-2) 0;
+  font-size: var(--font-size-sm);
+}
+
+.legal-links a {
+  margin: 0 var(--spacing-2);
+}
+
 .App-footer a {
   color: var(--color-primary);
   text-decoration: none;
