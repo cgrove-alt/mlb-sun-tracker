@@ -11,10 +11,10 @@
 }
 
 .App-header {
-  background: linear-gradient(135deg, #2196f3 0%, #42a5f5 100%);
-  padding: var(--spacing-5);
-  color: var(--color-white);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+  background: var(--color-white);
+  padding: var(--spacing-4) var(--spacing-5);
+  border-bottom: 1px solid var(--color-gray-200);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
@@ -39,28 +39,31 @@
 
 .App-header h1 {
   margin: 0;
-  font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  letter-spacing: -0.025em;
 }
 
 .App-header p {
-  margin: var(--spacing-2) 0 0 0;
-  font-size: var(--font-size-lg);
-  opacity: 0.9;
+  margin: var(--spacing-1) 0 0 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-normal);
 }
 
 .quick-summary {
   display: flex;
-  gap: var(--spacing-5);
+  gap: var(--spacing-3);
   justify-content: flex-start;
   align-items: center;
-  margin-top: var(--spacing-4);
-  padding: var(--spacing-2) var(--spacing-4);
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-3xl);
+  margin-top: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
   font-size: var(--font-size-sm);
   width: fit-content;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--color-gray-200);
 }
 
 .stadium-name {
@@ -436,11 +439,11 @@
 }
 
 .App-footer {
-  background: linear-gradient(to bottom, #f8fbfd 0%, #e3f2fd 100%);
-  padding: var(--spacing-5);
+  background: var(--color-white);
+  padding: var(--spacing-8) var(--spacing-5) var(--spacing-6);
   color: var(--color-gray-600);
   font-size: var(--font-size-sm);
-  border-top: 1px solid rgba(var(--color-primary-rgb), 0.2);
+  border-top: 1px solid var(--color-gray-200);
   margin-top: var(--spacing-10);
 }
 
