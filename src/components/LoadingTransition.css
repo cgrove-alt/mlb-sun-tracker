@@ -1,0 +1,197 @@
+/* Loading Transition Container */
+.loading-transition-container {
+  position: relative;
+  min-height: inherit;
+}
+
+.loading-transition-content {
+  width: 100%;
+}
+
+/* Enter/Exit transitions */
+.loading-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.loading-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.loading-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loading-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* Crossfade transitions */
+.crossfade-enter {
+  opacity: 0;
+}
+
+.crossfade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.crossfade-exit {
+  opacity: 1;
+}
+
+.crossfade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Staggered list transitions */
+.staggered-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.staggered-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.staggered-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.staggered-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.staggered-item-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+/* Skeleton transition */
+.skeleton-transition {
+  position: relative;
+  min-height: inherit;
+}
+
+.skeleton-transition-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.skeleton-transition-layer.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.skeleton-transition-layer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Smooth height transitions */
+.height-transition {
+  transition: height 300ms ease-in-out;
+  overflow: hidden;
+}
+
+/* Fade and scale animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOutScale {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* Slide animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Loading pulse animation */
+@keyframes loadingPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading-pulse {
+  animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .loading-transition-enter,
+  .staggered-item-enter {
+    transform: translateY(5px);
+  }
+  
+  .loading-transition-exit-active,
+  .staggered-item-exit-active {
+    transform: translateY(-5px);
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .loading-transition-enter-active,
+    .loading-transition-exit-active,
+    .crossfade-enter-active,
+    .crossfade-exit-active,
+    .staggered-item-enter-active,
+    .staggered-item-exit-active,
+    .skeleton-transition-layer {
+      transition: opacity 150ms ease-in-out !important;
+      transform: none !important;
+    }
+  }
+}
