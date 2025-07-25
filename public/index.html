@@ -36,7 +36,16 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-JXGEKF957C');
+      gtag('config', 'G-JXGEKF957C', {
+        custom_map: {
+          'dimension1': 'app_type'
+        }
+      });
+      
+      // Set custom dimension for app type
+      gtag('set', {
+        'app_type': 'react'
+      });
     </script>
     
     <title>The Shadium - Find Seats in the Shade at MLB Stadiums | Avoid Sun Exposure</title>
