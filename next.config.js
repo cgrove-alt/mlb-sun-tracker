@@ -35,22 +35,8 @@ const nextConfig = {
         ...config.optimization,
         splitChunks: {
           ...config.optimization.splitChunks,
-          chunks: 'all',
           cacheGroups: {
             ...config.optimization.splitChunks?.cacheGroups,
-            // Vendor chunks
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendor',
-              priority: 10,
-              reuseExistingChunk: true,
-            },
-            // Common chunks
-            common: {
-              minChunks: 2,
-              priority: -10,
-              reuseExistingChunk: true,
-            },
             styles: {
               name: 'styles',
               test: /\.(css|scss)$/,
@@ -68,9 +54,6 @@ const nextConfig = {
             },
           },
         },
-        // Tree shake more aggressively
-        usedExports: true,
-        sideEffects: false,
       };
       
       // Skip polyfills for modern JavaScript features
@@ -98,12 +81,6 @@ const nextConfig = {
         )
       );
       
-      // Minimize bundle size
-      config.plugins.push(
-        new webpack.optimize.LimitChunkCountPlugin({
-          maxChunks: 50,
-        })
-      );
     }
     
     // Add webpack plugin to analyze bundle
