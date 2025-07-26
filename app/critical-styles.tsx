@@ -14,7 +14,8 @@ export const criticalStyles = `
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    overscroll-behavior: none;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
   
   #root {
@@ -52,10 +53,17 @@ export const criticalStyles = `
   @media (max-width: 768px) {
     body {
       font-size: 16px; /* Prevent zoom on iOS */
+      touch-action: pan-y; /* Allow vertical scrolling */
     }
     
     input, select, textarea {
       font-size: 16px; /* Prevent zoom on form focus */
+    }
+    
+    /* Ensure main content is scrollable */
+    main {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
   }
 `;

@@ -29,7 +29,7 @@ export function useSwipeGesture(config: SwipeConfig) {
     onSwipeDown,
     threshold = 50,
     velocity = 0.3,
-    preventDefault = true,
+    preventDefault = false,
     trackMouse = false,
     enableHaptic = true
   } = config;
@@ -88,8 +88,6 @@ export function useSwipeGesture(config: SwipeConfig) {
   }, [onSwipeLeft, onSwipeRight, onSwipeUp, onSwipeDown, threshold, velocity, haptic, enableHaptic]);
 
   const handleTouchStart = useCallback((e: TouchEvent) => {
-    if (preventDefault) e.preventDefault();
-    
     const touch = e.touches[0];
     touchData.current = {
       startX: touch.clientX,
@@ -98,21 +96,30 @@ export function useSwipeGesture(config: SwipeConfig) {
       currentX: touch.clientX,
       currentY: touch.clientY
     };
-  }, [preventDefault]);
+  }, []);
 
   const handleTouchMove = useCallback((e: TouchEvent) => {
     if (!touchData.current) return;
-    if (preventDefault) e.preventDefault();
 
     const touch = e.touches[0];
     touchData.current.currentX = touch.clientX;
     touchData.current.currentY = touch.clientY;
+
+    // Only prevent default if it's clearly a horizontal swipe
+    if (preventDefault) {
+      const deltaX = Math.abs(touch.clientX - touchData.current.startX);
+      const deltaY = Math.abs(touch.clientY - touchData.current.startY);
+      
+      // If horizontal movement is greater than vertical, prevent default
+      if (deltaX > deltaY && deltaX > 10) {
+        e.preventDefault();
+      }
+    }
   }, [preventDefault]);
 
   const handleTouchEnd = useCallback((e: TouchEvent) => {
-    if (preventDefault) e.preventDefault();
     handleSwipeEnd();
-  }, [preventDefault, handleSwipeEnd]);
+  }, [handleSwipeEnd]);
 
   const handleMouseDown = useCallback((e: MouseEvent) => {
     if (!trackMouse) return;
@@ -155,10 +162,10 @@ export function useSwipeGesture(config: SwipeConfig) {
     elementRef.current = element;
 
     if (element) {
-      // Add new listeners
-      element.addEventListener('touchstart', handleTouchStart, { passive: !preventDefault });
-      element.addEventListener('touchmove', handleTouchMove, { passive: !preventDefault });
-      element.addEventListener('touchend', handleTouchEnd, { passive: !preventDefault });
+      // Add new listeners - always passive for touchstart and touchend
+      element.addEventListener('touchstart', handleTouchStart, { passive: true });
+      element.addEventListener('touchmove', handleTouchMove, { passive: false });
+      element.addEventListener('touchend', handleTouchEnd, { passive: true });
       
       if (trackMouse) {
         element.addEventListener('mousedown', handleMouseDown);
@@ -222,7 +229,8 @@ export function useSwipeableCarousel<T>(
     onSwipeLeft: goToNext,
     onSwipeRight: goToPrevious,
     threshold: 30,
-    velocity: 0.2
+    velocity: 0.2,
+    preventDefault: true
   });
 
   return {
