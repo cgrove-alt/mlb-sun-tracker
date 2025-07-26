@@ -33,38 +33,49 @@ export const event = ({ action, category, label, value }: {
 export default function GoogleAnalyticsOptimized() {
   const pathname = usePathname();
 
+  // Initialize gtag immediately for when the script loads
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      const gtag = function(...args: any[]) {
+        window.dataLayer.push(args);
+      };
+      (window as any).gtag = gtag;
+    }
+  }, []);
+
   // Load GA script after user interaction or timeout
   const loadGoogleAnalytics = useCallback(() => {
     // Check if already loaded
-    if (typeof window !== 'undefined' && (window as any).gtag) {
+    if (typeof window !== 'undefined' && (window as any).gaLoaded) {
       return;
     }
+
+    // Mark as loaded to prevent duplicate loading
+    (window as any).gaLoaded = true;
 
     // Create script element
     const script = document.createElement('script');
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
     script.async = true;
-    script.defer = true;
     
-    // Initialize dataLayer before script loads
-    window.dataLayer = window.dataLayer || [];
-    function gtag(...args: any[]) {
-      window.dataLayer.push(arguments);
-    }
-    (window as any).gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID, {
-      send_page_view: false,
-    });
-
     // Append script
     document.head.appendChild(script);
 
     // Send initial pageview once loaded
     script.onload = () => {
-      pageview(pathname);
+      console.log('Google Analytics loaded successfully');
+      (window as any).gtag('js', new Date());
+      (window as any).gtag('config', GA_MEASUREMENT_ID, {
+        send_page_view: true, // Enable automatic page view tracking
+      });
     };
-  }, [pathname]);
+    
+    script.onerror = () => {
+      console.error('Failed to load Google Analytics script');
+      (window as any).gaLoaded = false;
+    };
+  }, []);
 
   useEffect(() => {
     // Strategy 1: Load after user interaction
@@ -104,9 +115,9 @@ export default function GoogleAnalyticsOptimized() {
     };
   }, [loadGoogleAnalytics]);
 
-  // Track page changes
+  // Track page changes (only after GA is loaded)
   useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).gtag) {
+    if (typeof window !== 'undefined' && (window as any).gtag && (window as any).gaLoaded) {
       pageview(pathname);
     }
   }, [pathname]);
