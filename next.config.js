@@ -206,7 +206,7 @@ const withPWA = require('next-pwa')({
         cacheName: 'image-cache',
         expiration: {
           maxEntries: 100,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days (increased from 7)
+          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 year
         },
         cacheableResponse: {
           statuses: [0, 200],
@@ -248,7 +248,7 @@ const withPWA = require('next-pwa')({
         cacheName: 'static-resources',
         expiration: {
           maxEntries: 100,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 days (increased from 1)
+          maxAgeSeconds: 365 * 24 * 60 * 60, // 1 year
         },
         cacheableResponse: {
           statuses: [0, 200],

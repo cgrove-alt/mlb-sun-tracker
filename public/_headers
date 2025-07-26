@@ -1,88 +1,58 @@
-# Next.js static assets - 1 year cache
-/_next/static/chunks/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/_next/static/css/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/_next/static/media/*
-  Cache-Control: public, max-age=31536000, immutable
-
+# Cache static assets for 1 year
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Specific high-value chunks
-/_next/static/chunks/700*.js
+# Cache media files for 1 year  
+/_next/media/*
   Cache-Control: public, max-age=31536000, immutable
 
-/_next/static/chunks/4bd1b696*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/_next/static/chunks/125*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/_next/static/chunks/964*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-/_next/static/chunks/164*.js
-  Cache-Control: public, max-age=31536000, immutable
-
-# App chunks
-/_next/static/chunks/app/*
+# Cache chunks for 1 year
+/_next/chunks/*
   Cache-Control: public, max-age=31536000, immutable
 
 # Images - 1 year cache
-/logo*.png
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
-
-/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
-
 /*.png
   Cache-Control: public, max-age=31536000, immutable
-
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
 /*.gif
   Cache-Control: public, max-age=31536000, immutable
-
 /*.webp
   Cache-Control: public, max-age=31536000, immutable
-
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
 
-/*.ico
-  Cache-Control: public, max-age=31536000, immutable
-
 # Fonts - 1 year cache
-/_next/static/media/*.woff2
-  Cache-Control: public, max-age=31536000, immutable
-
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
-
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
-
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
-
 /*.eot
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS - 1 year cache
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# JS - 1 year cache
+/*.js
   Cache-Control: public, max-age=31536000, immutable
 
 # HTML pages - shorter cache
 /*.html
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
-/index.html
-  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
-
 # Service worker - no cache
 /sw.js
   Cache-Control: public, max-age=0, must-revalidate
 
+# Workbox
 /workbox-*.js
   Cache-Control: public, max-age=3600
 
@@ -94,7 +64,10 @@
 /*.json
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
-# Default for all files
+# Default headers for all files
 /*
-  X-DNS-Prefetch-Control: on
+  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=()
