@@ -25,11 +25,11 @@ export function middleware(request: NextRequest) {
     // Content Security Policy
     'Content-Security-Policy': [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.google.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' data: https: blob:",
+      "img-src 'self' data: https: blob: https://www.google-analytics.com https://www.googletagmanager.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://www.google-analytics.com https://region1.google-analytics.com",
+      "connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://www.google-analytics.com https://region1.google-analytics.com https://www.google.com https://*.google-analytics.com",
       "frame-src 'none'",
       "object-src 'none'",
       "base-uri 'self'",
