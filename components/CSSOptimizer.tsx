@@ -60,12 +60,9 @@ export function CSSOptimizer() {
     const prefetchRouteCSS = () => {
       if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
-          // Prefetch stadium page CSS
-          const stadiumCSS = document.createElement('link');
-          stadiumCSS.rel = 'prefetch';
-          stadiumCSS.as = 'style';
-          stadiumCSS.href = '/_next/static/css/stadium.css';
-          document.head.appendChild(stadiumCSS);
+          // Dynamically prefetch CSS based on actual build output
+          // Next.js generates dynamic CSS filenames, so we can't hardcode them
+          // Instead, we'll let Next.js handle CSS prefetching automatically
         });
       }
     };
