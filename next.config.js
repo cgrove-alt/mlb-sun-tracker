@@ -56,30 +56,8 @@ const nextConfig = {
         },
       };
       
-      // Skip polyfills for modern JavaScript features
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'core-js': false,
-        '@babel/runtime': false,
-      };
-      
-      // Exclude polyfills from bundle
-      config.externals = {
-        ...config.externals,
-        'core-js': 'null',
-        '@babel/runtime': 'null',
-      };
-      
-      // Use modern JavaScript target
-      config.target = ['web', 'es2020'];
-      
-      // Modify webpack to skip certain polyfills
-      config.plugins.push(
-        new webpack.NormalModuleReplacementPlugin(
-          /\/polyfills\//,
-          require.resolve('./scripts/empty.js')
-        )
-      );
+      // Use more compatible JavaScript target
+      config.target = ['web', 'es5'];
       
     }
     

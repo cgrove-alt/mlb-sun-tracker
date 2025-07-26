@@ -42,11 +42,11 @@
   },
   "browserslist": {
     "production": [
-      "chrome >= 92",
-      "edge >= 92", 
-      "firefox >= 90",
-      "safari >= 15.4",
-      "ios >= 15.4",
+      "chrome >= 61",
+      "edge >= 16", 
+      "firefox >= 60",
+      "safari >= 11",
+      "ios >= 11",
       "not dead",
       "not ie 11",
       "not op_mini all"
