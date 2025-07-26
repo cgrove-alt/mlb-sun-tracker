@@ -2,8 +2,14 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import GoogleAnalytics from './GoogleAnalytics';
+import { CriticalStyles } from './critical-styles';
+import { CSSOptimizer } from '../components/CSSOptimizer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap', // Improve font loading
+  preload: true,
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
@@ -87,11 +93,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <CriticalStyles />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#2196f3" />
+        
+        {/* Critical CSS will be preloaded dynamically by CSSOptimizer */}
+        
+        {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://api.open-meteo.com" />
+        <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -168,6 +181,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
+        <CSSOptimizer />
         <div id="root">{children}</div>
       </body>
     </html>

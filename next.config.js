@@ -15,6 +15,39 @@ const nextConfig = {
     domains: ['statsapi.mlb.com', 'api.open-meteo.com'],
     unoptimized: true,
   },
+  // Compress output
+  compress: true,
+  // Optimize webpack configuration
+  webpack: (config, { isServer }) => {
+    // Optimize CSS loading
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          ...config.optimization.splitChunks,
+          cacheGroups: {
+            ...config.optimization.splitChunks?.cacheGroups,
+            styles: {
+              name: 'styles',
+              test: /\.(css|scss)$/,
+              chunks: 'all',
+              enforce: true,
+              priority: 20,
+            },
+            // Separate critical CSS
+            critical: {
+              name: 'critical',
+              test: /critical.*\.css$/,
+              chunks: 'all',
+              enforce: true,
+              priority: 30,
+            },
+          },
+        },
+      };
+    }
+    return config;
+  },
   // Add cache headers for static assets
   async headers() {
     return [
