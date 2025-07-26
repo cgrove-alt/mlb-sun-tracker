@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap.js && next build",
+    "postbuild": "node scripts/add-cache-headers.js",
     "start": "npx serve@latest out",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
