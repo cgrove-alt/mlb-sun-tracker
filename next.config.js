@@ -17,8 +17,18 @@ const nextConfig = {
   },
   // Compress output
   compress: true,
+  // Compiler optimizations for modern browsers
+  compiler: {
+    // Remove console logs in production
+    removeConsole: isProd,
+  },
+  // Experimental features to reduce bundle size
+  experimental: {
+    // Reduce the number of modules that Next.js processes
+    optimizePackageImports: ['@mui/material', '@mui/icons-material'],
+  },
   // Optimize webpack configuration
-  webpack: (config, { isServer }) => {
+  webpack: (config, { isServer, webpack }) => {
     // Optimize CSS loading
     if (!isServer) {
       config.optimization = {
@@ -45,7 +55,44 @@ const nextConfig = {
           },
         },
       };
+      
+      // Skip polyfills for modern JavaScript features
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        'core-js': false,
+        '@babel/runtime': false,
+      };
+      
+      // Exclude polyfills from bundle
+      config.externals = {
+        ...config.externals,
+        'core-js': 'null',
+        '@babel/runtime': 'null',
+      };
+      
+      // Use modern JavaScript target
+      config.target = ['web', 'es2020'];
+      
+      // Modify webpack to skip certain polyfills
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /\/polyfills\//,
+          require.resolve('./scripts/empty.js')
+        )
+      );
     }
+    
+    // Add webpack plugin to analyze bundle
+    if (process.env.ANALYZE === 'true') {
+      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+      config.plugins.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+    }
+    
     return config;
   },
   // Add cache headers for static assets

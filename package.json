@@ -39,5 +39,22 @@
     "eslint-config-next": "15.4.1",
     "next-pwa": "^5.6.0",
     "typescript": "^5.0.0"
+  },
+  "browserslist": {
+    "production": [
+      "chrome >= 92",
+      "edge >= 92", 
+      "firefox >= 90",
+      "safari >= 15.4",
+      "ios >= 15.4",
+      "not dead",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
