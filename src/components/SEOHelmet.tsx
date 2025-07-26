@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
-import { StadiumSchema, StadiumShadeGuideSchema, ShadeFAQSchema } from './StadiumSchema';
+import { StadiumSchema, StadiumShadeGuideSchema } from './StadiumSchema';
 
 interface SEOHelmetProps {
   stadium?: Stadium | null;
@@ -150,7 +150,6 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
         />
       )}
       
-      {pageType === 'home' && <ShadeFAQSchema />}
     </>
   );
 };

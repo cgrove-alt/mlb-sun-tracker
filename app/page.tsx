@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import LoadingSpinner from '../components/LoadingSpinner';
+import HomepageSchema from './HomepageSchema';
 
 // Use the full App component
 const App = dynamic(() => import('../src/App'), {
@@ -13,11 +14,14 @@ const App = dynamic(() => import('../src/App'), {
 
 export default function Home() {
   return (
-    <main>
-      <Suspense fallback={<LoadingSpinner />}>
-        <App />
-      </Suspense>
-      <PWAInstallPrompt />
-    </main>
+    <>
+      <HomepageSchema />
+      <main>
+        <Suspense fallback={<LoadingSpinner />}>
+          <App />
+        </Suspense>
+        <PWAInstallPrompt />
+      </main>
+    </>
   );
 }
