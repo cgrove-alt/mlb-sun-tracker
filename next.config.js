@@ -5,9 +5,9 @@ const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages';
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  // Add basePath for GitHub Pages
-  basePath: isProd && isGitHubPages ? '/mlb-sun-tracker' : '',
-  assetPrefix: isProd && isGitHubPages ? '/mlb-sun-tracker/' : '',
+  // No basePath for custom domain
+  // basePath: isProd && isGitHubPages ? '/mlb-sun-tracker' : '',
+  // assetPrefix: isProd && isGitHubPages ? '/mlb-sun-tracker/' : '',
   // Static export for GitHub Pages
   output: 'export',
   // Image optimization now works with server deployment

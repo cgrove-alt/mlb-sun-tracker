@@ -32,10 +32,10 @@ const generateSitemap = () => {
   
   // Guide pages
   const guidePages = [
-    { path: '/guide', priority: '0.9' },
-    { path: '/guide/how-to-find-shaded-seats', priority: '0.8' },
-    { path: '/guide/best-shaded-seats-mlb', priority: '0.8' },
-    { path: '/guide/avoid-sun-baseball-games', priority: '0.8' },
+    { path: '/guide/', priority: '0.9' },
+    { path: '/guide/how-to-find-shaded-seats/', priority: '0.8' },
+    { path: '/guide/best-shaded-seats-mlb/', priority: '0.8' },
+    { path: '/guide/avoid-sun-baseball-games/', priority: '0.8' },
   ];
   
   guidePages.forEach(page => {
@@ -49,9 +49,9 @@ const generateSitemap = () => {
   
   // FAQ and other pages
   const otherPages = [
-    { path: '/faq', priority: '0.7' },
-    { path: '/privacy', priority: '0.3' },
-    { path: '/terms', priority: '0.3' },
+    { path: '/faq/', priority: '0.7' },
+    { path: '/privacy/', priority: '0.3' },
+    { path: '/terms/', priority: '0.3' },
   ];
   
   otherPages.forEach(page => {
@@ -66,7 +66,7 @@ const generateSitemap = () => {
   // Stadium pages
   stadiums.forEach(stadium => {
     xml += '  <url>\n';
-    xml += `    <loc>https://theshadium.com/stadium/${stadium}</loc>\n`;
+    xml += `    <loc>https://theshadium.com/stadium/${stadium}/</loc>\n`;
     xml += `    <lastmod>${today}</lastmod>\n`;
     xml += '    <changefreq>weekly</changefreq>\n';
     xml += '    <priority>0.8</priority>\n';

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     site: '@theshadium',
   },
   alternates: {
-    canonical: 'https://theshadium.com',
+    canonical: 'https://theshadium.com/',
   },
   robots: {
     index: true,
