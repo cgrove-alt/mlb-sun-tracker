@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import GoogleAnalytics from './GoogleAnalytics';
+import GoogleAnalyticsClient from './GoogleAnalyticsClient';
 import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 
@@ -147,6 +148,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
+        <GoogleAnalyticsClient />
         <div id="root">{children}</div>
       </body>
     </html>
