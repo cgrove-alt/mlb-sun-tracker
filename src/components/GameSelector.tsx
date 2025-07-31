@@ -44,6 +44,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   });
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const { currentProfile } = useUserProfile();
   
@@ -123,6 +124,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   const handleGameSelect = (gameOption: any) => {
     setSelectedGameOption(gameOption);
+    setMenuIsOpen(false); // Close the dropdown after selection
     if (gameOption?.game) {
       const gameDateTime = new Date(gameOption.game.gameDate);
       onGameSelect(gameOption.game, gameDateTime);
@@ -285,6 +287,9 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                       value={selectedGameOption}
                       options={gameOptions}
                       onChange={handleGameSelect}
+                      menuIsOpen={menuIsOpen}
+                      onMenuOpen={() => setMenuIsOpen(true)}
+                      onMenuClose={() => setMenuIsOpen(false)}
                       placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
                       className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
                       isDisabled={games.length === 0 || gamesLoading.isRefreshing}
