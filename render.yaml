@@ -3,7 +3,7 @@ services:
     name: mlb-sun-tracker
     runtime: node
     rootDir: .
-    buildCommand: ./build.sh
+    buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
     envVars:
