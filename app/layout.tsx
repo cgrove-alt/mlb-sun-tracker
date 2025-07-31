@@ -1,7 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-// Google Analytics is now added via post-build script for static export
+import GoogleAnalytics from './GoogleAnalytics';
 import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 
@@ -143,6 +143,7 @@ export default function RootLayout({
             })
           }}
         />
+        <GoogleAnalytics />
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
