@@ -289,18 +289,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                       className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
                       isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                       aria-label={t('gameSelector.selectGame')}
-                      closeMenuOnSelect={true}
-                      blurInputOnSelect={true}
-                      formatOptionLabel={(option) => (
-                        <div className="game-option">
-                          <div className="game-date-time">
-                            {option.label.split(' - ')[0]}
-                          </div>
-                          <div className="game-matchup">
-                            {option.label.split(' - ')[1]}
-                          </div>
-                        </div>
-                      )}
                     />
                   </>
                 )}
