@@ -3,6 +3,7 @@ import { Stadium } from '../data/stadiums';
 import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
 import { WeatherData } from '../services/weatherApi';
 import { SunCalculator } from './sunCalculator';
+import { getSunPositionNREL } from './nrelSolarPosition';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -24,6 +25,21 @@ export function getSunPosition(
   latitude: number,
   longitude: number
 ): SunPosition {
+  // Use NREL Solar Position Algorithm for higher accuracy
+  // Maintaining backward compatibility with existing interface
+  const useNREL = process.env.REACT_APP_USE_NREL_SPA !== 'false'; // Default to true
+  
+  if (useNREL) {
+    try {
+      // Use NREL algorithm
+      return getSunPositionNREL(date, latitude, longitude);
+    } catch (error) {
+      console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
+      // Fall through to SunCalc implementation
+    }
+  }
+  
+  // Fallback to original SunCalc implementation
   const sunPos = SunCalc.getPosition(date, latitude, longitude);
   
   // Convert radians to degrees and normalize azimuth to 0-360

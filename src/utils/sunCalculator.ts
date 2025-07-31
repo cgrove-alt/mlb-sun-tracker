@@ -1,5 +1,6 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
+import { computeSunPosition } from './nrelSolarPosition';
 
 interface Stadium {
   id: string;
@@ -82,25 +83,56 @@ export class SunCalculator {
 
   calculateSunPosition(date: string, time: string): SunPosition {
     const dateTime = new Date(`${date}T${time}`);
-    const sunPos = SunCalc.getPosition(
-      dateTime,
-      this.stadium.latitude,
-      this.stadium.longitude
-    );
+    const useNREL = process.env.REACT_APP_USE_NREL_SPA !== 'false'; // Default to true
     
+    let altitude: number;
+    let azimuth: number;
+    
+    if (useNREL) {
+      try {
+        // Use NREL Solar Position Algorithm
+        const timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
+        const nrelResult = computeSunPosition(
+          dateTime,
+          this.stadium.latitude,
+          this.stadium.longitude,
+          timeZoneOffset
+        );
+        altitude = nrelResult.elevation;
+        azimuth = nrelResult.azimuth;
+      } catch (error) {
+        console.warn('NREL SPA calculation failed, falling back to SunCalc:', error);
+        // Fall through to SunCalc
+        const sunPos = SunCalc.getPosition(
+          dateTime,
+          this.stadium.latitude,
+          this.stadium.longitude
+        );
+        altitude = sunPos.altitude * 180 / Math.PI;
+        azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
+      }
+    } else {
+      // Use original SunCalc implementation
+      const sunPos = SunCalc.getPosition(
+        dateTime,
+        this.stadium.latitude,
+        this.stadium.longitude
+      );
+      altitude = sunPos.altitude * 180 / Math.PI;
+      azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
+    }
+    
+    // Get sun times (still using SunCalc for these)
     const sunTimes = SunCalc.getTimes(
       dateTime,
       this.stadium.latitude,
       this.stadium.longitude
     );
     
-    const altitude = sunPos.altitude * 180 / Math.PI;
-    const azimuth = (sunPos.azimuth * 180 / Math.PI + 180) % 360;
-    
     return {
       altitude,
       azimuth,
-      elevation: this.getElevationAngle(sunPos.altitude),
+      elevation: this.getElevationAngle(altitude * Math.PI / 180),
       isDay: dateTime > sunTimes.sunrise && dateTime < sunTimes.sunset,
       solarNoon: sunTimes.solarNoon,
       sunrise: sunTimes.sunrise,
