@@ -166,6 +166,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     max="100"
                     value={localFilters.maxSunExposure || 100}
                     onChange={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt(e.target.value)})}
+                    onInput={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt((e.target as HTMLInputElement).value)})}
                     className="mobile-filter-range"
                   />
                   <div className="mobile-filter-range-labels">
