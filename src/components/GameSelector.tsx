@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
@@ -44,7 +44,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   });
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const selectRef = useRef<any>(null);
 
   const { currentProfile } = useUserProfile();
   
@@ -124,7 +124,12 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   const handleGameSelect = (gameOption: any) => {
     setSelectedGameOption(gameOption);
-    setMenuIsOpen(false); // Close the dropdown after selection
+    
+    // Close the dropdown by blurring the input
+    if (selectRef.current) {
+      selectRef.current.blur();
+    }
+    
     if (gameOption?.game) {
       const gameDateTime = new Date(gameOption.game.gameDate);
       onGameSelect(gameOption.game, gameDateTime);
@@ -283,17 +288,16 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                       </div>
                     )}
                     <Select
+                      ref={selectRef}
                       inputId="game-select"
                       value={selectedGameOption}
                       options={gameOptions}
                       onChange={handleGameSelect}
-                      menuIsOpen={menuIsOpen}
-                      onMenuOpen={() => setMenuIsOpen(true)}
-                      onMenuClose={() => setMenuIsOpen(false)}
                       placeholder={games.length > 0 ? t('gameSelector.chooseGame') : t('gameSelector.noGamesFound')}
                       className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
                       isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                       aria-label={t('gameSelector.selectGame')}
+                      blurInputOnSelect={true}
                       formatOptionLabel={(option) => (
                         <div className="game-option">
                           <div className="game-date-time">
