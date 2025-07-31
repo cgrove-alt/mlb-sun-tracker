@@ -411,6 +411,10 @@
   transition: background-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
   position: relative;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .mobile-filter-btn-secondary {
@@ -454,7 +458,7 @@
 }
 
 .mobile-filter-btn:active {
-  transform: scale(0.98);
+  transform: translateZ(0) scale(0.98);
 }
 
 /* Landscape Mode */
