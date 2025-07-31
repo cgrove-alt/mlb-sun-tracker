@@ -421,3 +421,6 @@ export function calculateGameSunExposure(
   
   return exposureMap;
 }
+
+// Export the new 3D shade calculation function
+export { getShadedSections } from './getShadedSections';
