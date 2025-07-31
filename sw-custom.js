@@ -77,10 +77,62 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch event - handle offline functionality
+// Fetch event - handle offline functionality and cache headers
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
+  
+  // Check if this is a static asset that should be cached long-term
+  const isStaticAsset = url.pathname.includes('/_next/static/') ||
+                       url.pathname.match(/\.(js|css|woff2|jpg|jpeg|png|gif|svg|ico|webp)$/);
+  
+  // Handle static assets with aggressive caching
+  if (isStaticAsset) {
+    event.respondWith(
+      caches.match(request).then((cachedResponse) => {
+        if (cachedResponse) {
+          // Clone the response to modify headers
+          const response = new Response(cachedResponse.body, {
+            status: cachedResponse.status,
+            statusText: cachedResponse.statusText,
+            headers: new Headers(cachedResponse.headers)
+          });
+          
+          // Set aggressive cache headers
+          response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+          response.headers.set('X-SW-Cache', 'HIT');
+          
+          return response;
+        }
+        
+        // No cache, fetch from network
+        return fetch(request).then((response) => {
+          if (response.ok) {
+            // Clone response for caching
+            const responseToCache = response.clone();
+            const responseToReturn = new Response(response.body, {
+              status: response.status,
+              statusText: response.statusText,
+              headers: new Headers(response.headers)
+            });
+            
+            // Set cache headers on returned response
+            responseToReturn.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+            responseToReturn.headers.set('X-SW-Cache', 'MISS');
+            
+            // Cache the response
+            caches.open('static-assets-v1').then((cache) => {
+              cache.put(request, responseToCache);
+            });
+            
+            return responseToReturn;
+          }
+          return response;
+        });
+      })
+    );
+    return;
+  }
   
   // Handle stadium data requests
   if (url.pathname.includes('/stadium') || url.pathname.includes('/api/stadiums')) {
@@ -213,6 +265,25 @@ self.addEventListener('message', (event) => {
           type: 'CACHE_COMPLETE', 
           stadiumId 
         });
+      });
+    });
+  }
+  
+  // Handle static asset caching with custom TTL
+  if (event.data && event.data.type === 'CACHE_STATIC_ASSET') {
+    const { url, ttl } = event.data;
+    
+    caches.open('static-assets-v1').then((cache) => {
+      // Check if already cached
+      cache.match(url).then((response) => {
+        if (!response) {
+          // Fetch and cache with headers
+          fetch(url).then((fetchResponse) => {
+            if (fetchResponse.ok) {
+              cache.put(url, fetchResponse);
+            }
+          });
+        }
       });
     });
   }
