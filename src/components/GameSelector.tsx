@@ -126,6 +126,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
     if (gameOption?.game) {
       const gameDateTime = new Date(gameOption.game.gameDate);
       onGameSelect(gameOption.game, gameDateTime);
+      
+      // Force close the dropdown by removing focus
+      setTimeout(() => {
+        const selectInput = document.getElementById('game-select');
+        if (selectInput) {
+          selectInput.blur();
+        }
+      }, 0);
     } else {
       onGameSelect(null, null);
     }
