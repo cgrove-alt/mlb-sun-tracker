@@ -1,0 +1,255 @@
+.sun-exposure-explanation {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  overflow: hidden;
+  transition: var(--transition-all);
+  margin-bottom: var(--spacing-5);
+}
+
+.explanation-toggle {
+  width: 100%;
+  padding: var(--spacing-4) var(--spacing-5);
+  background: linear-gradient(135deg, #fff9f0 0%, #fff5e6 100%);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  transition: var(--transition-all);
+  min-height: 56px;
+}
+
+.explanation-toggle:hover {
+  background: linear-gradient(135deg, #fff5e6 0%, #ffedd5 100%);
+}
+
+.explanation-toggle:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.toggle-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.explanation-content {
+  padding: var(--spacing-6);
+  background: var(--color-gray-50);
+  border-top: 1px solid var(--color-gray-200);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.exposure-ranges h4,
+.practical-tips h4,
+.health-safety h4 {
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin: 0 0 var(--spacing-4) 0;
+  letter-spacing: -0.02em;
+}
+
+.intro-text {
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-5);
+  font-size: var(--font-size-base);
+}
+
+.exposure-range-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+.exposure-range {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  border: 1px solid var(--color-gray-200);
+  transition: var(--transition-all);
+}
+
+.exposure-range[data-range="0"] {
+  border-left: 4px solid var(--color-sun-none);
+  background: linear-gradient(to right, rgba(108, 117, 125, 0.05), transparent);
+}
+
+.exposure-range[data-range="25"] {
+  border-left: 4px solid var(--color-sun-low);
+  background: linear-gradient(to right, rgba(34, 197, 94, 0.05), transparent);
+}
+
+.exposure-range[data-range="50"] {
+  border-left: 4px solid var(--color-sun-moderate);
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.05), transparent);
+}
+
+.exposure-range[data-range="75"] {
+  border-left: 4px solid var(--color-sun-high);
+  background: linear-gradient(to right, rgba(249, 115, 22, 0.05), transparent);
+}
+
+.exposure-range[data-range="100"] {
+  border-left: 4px solid var(--color-sun-extreme);
+  background: linear-gradient(to right, rgba(220, 38, 38, 0.05), transparent);
+}
+
+.exposure-range:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.range-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-3);
+}
+
+.range-title {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+}
+
+.range-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.range-details li {
+  padding: var(--spacing-1) 0;
+  padding-left: var(--spacing-5);
+  position: relative;
+}
+
+.range-details li:before {
+  content: "•";
+  position: absolute;
+  left: var(--spacing-2);
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.practical-tips {
+  margin-bottom: var(--spacing-8);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.tip-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-4);
+  border: 1px solid var(--color-gray-200);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-all);
+}
+
+.tip-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.tip-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  margin-bottom: var(--spacing-3);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.tip-card p {
+  margin: 0;
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.health-safety {
+  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-5);
+  border: 1px solid rgba(33, 150, 243, 0.2);
+}
+
+.safety-content p {
+  margin: 0 0 var(--spacing-3) 0;
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+}
+
+.safety-content p:last-child {
+  margin-bottom: 0;
+}
+
+.safety-content strong {
+  color: var(--color-primary-dark);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .explanation-toggle {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+
+  .explanation-content {
+    padding: var(--spacing-4);
+  }
+
+  .exposure-range-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+
+  .tips-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3);
+  }
+
+  .exposure-ranges h4,
+  .practical-tips h4,
+  .health-safety h4 {
+    font-size: var(--font-size-lg);
+  }
+
+  .range-details {
+    font-size: var(--font-size-xs);
+  }
+
+  .tip-card p {
+    font-size: var(--font-size-xs);
+  }
+}
