@@ -40,7 +40,7 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
       (typeof window !== 'undefined' ? window.location.origin : 'https://theshadium.com');
     if (pageType === 'stadium' && stadium) {
-      return `${baseUrl}/stadium/${stadium.name.toLowerCase().replace(/\s+/g, '-')}`;
+      return `${baseUrl}/stadium/${stadium.id}`;
     }
     return baseUrl;
   };
