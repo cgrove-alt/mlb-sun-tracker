@@ -7,6 +7,8 @@ import { StadiumSection } from '../data/stadiumSections';
 import { StadiumAmenities } from '../data/stadiumAmenities';
 import { stadiumHistories } from '../data/stadiumDetails';
 import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon, InfoIcon } from './Icons';
+import { SectionShadeSEO } from './SectionShadeSEO';
+import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -161,6 +163,9 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
         )}
       </div>
 
+      {/* Are My Seats Shaded FAQ */}
+      <StadiumShadeQuestions stadium={stadium} />
+      
       {/* Sun Protection Tips */}
       <div className="mobile-card">
         <h2>Sun Protection Tips</h2>
@@ -242,6 +247,9 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
           Get real-time sun tracking for any {stadium.team} game
         </p>
       </div>
+      
+      {/* SEO content for "are my seats in the shade" queries */}
+      <SectionShadeSEO stadium={stadium} />
     </div>
   );
 };

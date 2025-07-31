@@ -36,6 +36,7 @@ const generateSitemap = () => {
     { path: '/guide/how-to-find-shaded-seats/', priority: '0.8' },
     { path: '/guide/best-shaded-seats-mlb/', priority: '0.8' },
     { path: '/guide/avoid-sun-baseball-games/', priority: '0.8' },
+    { path: '/seats-shade-finder/', priority: '0.9' }, // New SEO page
   ];
   
   guidePages.forEach(page => {

@@ -9,6 +9,8 @@ import { StadiumSchema, StadiumShadeGuideSchema } from './StadiumSchema';
 import { stadiumHistories } from '../data/stadiumDetails';
 import { WeatherPatternChart } from './WeatherPatternChart';
 import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon } from './Icons';
+import { SectionShadeSEO } from './SectionShadeSEO';
+import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import './StadiumGuide.css';
 
 interface StadiumGuideProps {
@@ -170,6 +172,9 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
           <WeatherPatternChart stadiumId={stadium.id} city={stadium.city} />
         </section>
 
+        {/* Are My Seats Shaded FAQ */}
+        <StadiumShadeQuestions stadium={stadium} />
+        
         <section className="best-sections">
           <h2>Best Shaded Sections</h2>
           <p>These sections typically offer the most shade coverage:</p>
@@ -406,6 +411,9 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
           </div>
         </section>
       </div>
+      
+      {/* SEO content for "are my seats in the shade" queries */}
+      <SectionShadeSEO stadium={stadium} />
     </>
   );
 };
