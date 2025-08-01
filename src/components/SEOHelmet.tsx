@@ -3,11 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
+import { NFLGame } from '../services/nflApi';
 import { StadiumSchema, StadiumShadeGuideSchema } from './StadiumSchema';
 
 interface SEOHelmetProps {
   stadium?: Stadium | null;
-  game?: MLBGame | MiLBGame | null;
+  game?: MLBGame | MiLBGame | NFLGame | null;
   pageType?: 'home' | 'stadium' | 'game';
   shadedSectionsCount?: number;
 }
@@ -72,10 +73,25 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
     }
     
     if (pageType === 'game' && stadium && game) {
+      // Handle different game structures
+      let homeTeamName: string;
+      let awayTeamName: string;
+      
+      if ('teams' in game) {
+        // MLB/MiLB game structure
+        homeTeamName = game.teams.home.team.name;
+        awayTeamName = game.teams.away.team.name;
+      } else {
+        // NFL game structure
+        const nflGame = game as NFLGame;
+        homeTeamName = nflGame.homeTeam.name;
+        awayTeamName = nflGame.awayTeam.name;
+      }
+      
       return {
         "@context": "https://schema.org",
         "@type": "SportsEvent",
-        "name": `${game.teams.away.team.name} @ ${game.teams.home.team.name}`,
+        "name": `${awayTeamName} @ ${homeTeamName}`,
         "startDate": game.gameDate,
         "location": {
           "@type": "StadiumOrArena",
@@ -90,11 +106,11 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({ stadium, game, pageType = 
         "competitor": [
           {
             "@type": "SportsTeam",
-            "name": game.teams.home.team.name
+            "name": homeTeamName
           },
           {
             "@type": "SportsTeam",
-            "name": game.teams.away.team.name
+            "name": awayTeamName
           }
         ]
       };

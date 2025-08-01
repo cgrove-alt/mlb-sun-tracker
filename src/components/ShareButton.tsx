@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
 import { MiLBGame } from '../services/milbApi';
+import { NFLGame } from '../services/nflApi';
 import { Tooltip } from './Tooltip';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './ShareButton.css';
 
 interface ShareButtonProps {
   selectedStadium: Stadium | null;
-  selectedGame: MLBGame | MiLBGame | null;
+  selectedGame: MLBGame | MiLBGame | NFLGame | null;
   gameDateTime: Date | null;
   className?: string;
 }
@@ -34,7 +35,15 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     }
     
     if (selectedGame) {
-      params.set('game', selectedGame.gamePk.toString());
+      // Handle different game structures
+      if ('gamePk' in selectedGame) {
+        // MLB/MiLB game structure
+        params.set('game', selectedGame.gamePk.toString());
+      } else {
+        // NFL game structure
+        const nflGame = selectedGame as NFLGame;
+        params.set('game', nflGame.gameId);
+      }
     }
     
     return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
@@ -50,7 +59,22 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
     const dateTimeStr = formatDateTimeWithTimezone(gameDateTime, timezone);
     
     if (selectedGame) {
-      return `Check out The Shadium for ${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name} at ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
+      // Handle different game structures
+      let homeTeamName: string;
+      let awayTeamName: string;
+      
+      if ('teams' in selectedGame) {
+        // MLB/MiLB game structure
+        homeTeamName = selectedGame.teams.home.team.name;
+        awayTeamName = selectedGame.teams.away.team.name;
+      } else {
+        // NFL game structure
+        const nflGame = selectedGame as NFLGame;
+        homeTeamName = nflGame.homeTeam.name;
+        awayTeamName = nflGame.awayTeam.name;
+      }
+      
+      return `Check out The Shadium for ${awayTeamName} @ ${homeTeamName} at ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
     } else {
       return `Check out The Shadium for ${selectedStadium.name} on ${dateTimeStr} - Find the best shaded seats!`;
     }

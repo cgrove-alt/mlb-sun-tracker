@@ -6,6 +6,7 @@ import { getVenueSections } from './data/venueSections';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
+import { NFLGame } from './services/nflApi';
 import { SeatingSectionSun } from './utils/sunCalculations';
 import { MobileHeader } from './components/MobileHeader';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
@@ -30,8 +31,8 @@ const weatherLoadRateLimiter = new RateLimiter(10, 60000); // 10 requests per mi
 const MobileApp: React.FC = () => {
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
-  const [games, setGames] = useState<(MLBGame | MiLBGame)[]>([]);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | null>(null);
+  const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [allSections, setAllSections] = useState<SeatingSectionSun[]>([]);
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
@@ -71,7 +72,7 @@ const MobileApp: React.FC = () => {
     }
   }, [gameDateTime, selectedVenue, selectedStadium, filterCriteria]);
 
-  const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame)[]) => {
+  const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame)[]) => {
     setGames(loadedGames);
   };
 
@@ -190,7 +191,7 @@ const MobileApp: React.FC = () => {
     setGameDateTime(null);
   }, []);
 
-  const handleGameSelect = useCallback((game: MLBGame | MiLBGame | null, dateTime: Date | null) => {
+  const handleGameSelect = useCallback((game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
   }, []);

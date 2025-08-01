@@ -17,6 +17,7 @@ import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfile
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
 import { MLBGame } from '../src/services/mlbApi';
 import { MiLBGame } from '../src/services/milbApi';
+import { NFLGame } from '../src/services/nflApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import { I18nProvider, useTranslation, LanguageSelector } from '../src/i18n/i18nContext';
 import ErrorBoundary from './ErrorBoundary';
@@ -25,7 +26,7 @@ function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const { t } = useTranslation();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | null>(null);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
@@ -166,7 +167,7 @@ function AppContent() {
     updatePreferences({ filterCriteria: criteria });
   };
 
-  const handleGameSelect = (game: MLBGame | MiLBGame | null, dateTime: Date | null) => {
+  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
   };
@@ -411,7 +412,11 @@ function AppContent() {
                 {selectedGame && (
                   <div className="game-info">
                     <h4>📊 {t('game.gameDetails')}</h4>
-                    <p><strong>{t('game.matchup')}:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
+                    <p><strong>{t('game.matchup')}:</strong> {
+                      'teams' in selectedGame 
+                        ? `${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name}`
+                        : `${(selectedGame as NFLGame).awayTeam.name} @ ${(selectedGame as NFLGame).homeTeam.name}`
+                    }</p>
                     <p><strong>{t('game.venue')}:</strong> {selectedGame.venue.name}</p>
                     <p><strong>{t('game.gameTime')}:</strong> {gameDateTime.toLocaleString()}</p>
                   </div>

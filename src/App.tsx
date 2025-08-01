@@ -30,6 +30,7 @@ import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedS
 import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSections } from './data/stadiumSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
+import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
@@ -42,7 +43,7 @@ function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const { t } = useTranslation();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | null>(null);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame)[]>([]);
   const [sunPosition, setSunPosition] = useState<any>(null);
@@ -403,7 +404,7 @@ function AppContent() {
     }
   };
 
-  const handleGameSelect = (game: MLBGame | MiLBGame | null, dateTime: Date | null) => {
+  const handleGameSelect = (game: MLBGame | MiLBGame | NFLGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
     
@@ -746,7 +747,11 @@ function AppContent() {
                 {selectedGame && (
                   <div className="game-info">
                     <h4><ChartIcon size={20} /> Game Details</h4>
-                    <p><strong>Matchup:</strong> {selectedGame.teams.away.team.name} @ {selectedGame.teams.home.team.name}</p>
+                    <p><strong>Matchup:</strong> {
+                      'teams' in selectedGame 
+                        ? `${selectedGame.teams.away.team.name} @ ${selectedGame.teams.home.team.name}`
+                        : `${(selectedGame as NFLGame).awayTeam.name} @ ${(selectedGame as NFLGame).homeTeam.name}`
+                    }</p>
                     <p><strong>Venue:</strong> {selectedGame.venue.name}</p>
                     <p><strong>Game Time:</strong> {selectedStadium && gameDateTime ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime?.toLocaleString()}</p>
                   </div>

@@ -12,6 +12,7 @@ import { WeatherForecast } from './weatherApi';
 import { getSunPosition, calculateDetailedSectionSunExposure, filterSectionsBySunExposure } from '../utils/sunCalculations';
 import { MLBGame } from './mlbApi';
 import { MiLBGame } from './milbApi';
+import { NFLGame } from './nflApi';
 
 export class ItineraryService {
   
@@ -20,7 +21,7 @@ export class ItineraryService {
    */
   async generateSmartItinerary(
     stadium: Stadium,
-    game: MLBGame | MiLBGame | null,
+    game: MLBGame | MiLBGame | NFLGame | null,
     gameDateTime: Date,
     weather: WeatherForecast,
     preferences: ItineraryPreferences,
