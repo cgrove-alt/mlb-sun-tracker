@@ -180,3 +180,23 @@ export function getHighSunExposureVenues(): UnifiedVenue[] {
     (venue.sport === 'baseball' || venue.sport === 'football' || venue.sport === 'soccer')
   );
 }
+
+// Convert UnifiedVenue to legacy Stadium format for backward compatibility
+export function convertToLegacyStadium(venue: UnifiedVenue): Stadium {
+  return {
+    id: venue.id,
+    name: venue.name,
+    team: venue.team,
+    city: venue.city,
+    state: venue.state,
+    latitude: venue.latitude,
+    longitude: venue.longitude,
+    orientation: venue.orientation,
+    capacity: venue.capacity,
+    roof: venue.roof,
+    timezone: venue.timezone,
+    roofHeight: venue.roofHeight,
+    roofOverhang: venue.roofOverhang,
+    upperDeckHeight: venue.upperDeckHeight
+  };
+}

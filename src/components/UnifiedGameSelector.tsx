@@ -119,7 +119,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       console.error('[GameSelector] Error loading games:', error);
       setError('Unable to load games. Please try again.');
       setGames([]);
-      gamesLoading.setError(error);
+      gamesLoading.setError(error as Error);
     } finally {
       gamesLoading.setLoading(false);
     }

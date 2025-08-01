@@ -69,10 +69,9 @@ function UnifiedAppContent() {
 
     setLoadingWeather(true);
     try {
-      const forecast = await weatherApi.getWeatherForecast(
+      const forecast = await weatherApi.getForecast(
         selectedVenue.latitude,
-        selectedVenue.longitude,
-        gameDateTime
+        selectedVenue.longitude
       );
       setWeatherForecast(forecast);
     } catch (error) {
@@ -111,8 +110,8 @@ function UnifiedAppContent() {
     setSelectedGame(game);
     setGameDateTime(dateTime);
     
-    if (game) {
-      trackGameSelection(game.gamePk);
+    if (game && selectedVenue) {
+      trackGameSelection(selectedVenue.name, new Date(game.gameDate).toISOString());
     }
   };
 
@@ -164,7 +163,7 @@ function UnifiedAppContent() {
           selectedVenue,
           gameDateTime,
           sections,
-          weatherForecast || undefined
+          weatherForecast?.current || undefined
         );
         
         if (isCancelled) return;
@@ -182,13 +181,23 @@ function UnifiedAppContent() {
               section.baseAngle >= 45 && section.baseAngle < 135 ? 'first' :
               section.baseAngle >= 135 && section.baseAngle < 225 ? 'third' : 'outfield';
             
-            const geometry = {
+            const sectionWithGeometry = {
               ...section,
-              side
+              side,
+              angle: section.baseAngle || 0,
+              depth: 50 // Default depth
             };
             
-            const result = calculator.calculateSectionSunExposure(geometry, gameDateTime, gameDuration);
-            return result;
+            // Calculate time in sun
+            const timeExposure = calculator.calculateTimeInSun(sectionWithGeometry, gameDateTime, gameDuration);
+            
+            return {
+              section,
+              sunExposure: Math.round(timeExposure.percentage),
+              inSun: timeExposure.percentage > 20,
+              timeInSun: timeExposure.totalMinutes,
+              percentageOfGameInSun: timeExposure.percentage
+            };
           });
           
           if (isCancelled) return;
@@ -197,26 +206,24 @@ function UnifiedAppContent() {
           setFilteredSections(filterSectionsBySunExposure(detailedSectionData, filterCriteria));
           
           // Calculate game exposure
-          const exposureMap = calculateGameSunExposure(detailedSectionData);
+          const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration);
           setGameExposureData(exposureMap);
         } else {
           // For non-MLB venues, convert shade results to legacy format
           const convertedSections: SeatingSectionSun[] = shadeResults.map(result => ({
-            section: result.section.name,
-            side: 'outfield' as const,
-            baseAngle: result.section.baseAngle,
-            angleSpan: result.section.angleSpan,
-            covered: result.section.covered,
-            level: result.section.level,
-            price: result.section.price,
+            section: {
+              id: result.section.id,
+              name: result.section.name,
+              level: result.section.level as 'field' | 'lower' | 'club' | 'upper' | 'suite',
+              baseAngle: result.section.baseAngle,
+              angleSpan: result.section.angleSpan,
+              covered: result.section.covered,
+              price: result.section.price as 'value' | 'moderate' | 'premium' | 'luxury'
+            },
+            sunExposure: Math.round(100 - result.shadePercentage),
             inSun: result.isInSun,
-            partialSun: result.isPartiallyShaded,
-            inShade: result.isFullyShaded,
-            shadePercentage: result.shadePercentage,
-            sunExposureMinutes: result.isInSun ? 180 : 0,
-            directSunMinutes: result.isInSun ? 120 : 0,
-            averageSunIntensity: result.shadeFactor,
-            sunScore: result.shadePercentage / 100
+            timeInSun: result.isInSun ? 180 : 0,
+            percentageOfGameInSun: 100 - result.shadePercentage
           }));
           
           setDetailedSections(convertedSections);
@@ -302,7 +309,7 @@ function UnifiedAppContent() {
           <div className="header-right">
             <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
             <ShareButton
-              stadium={legacyStadium}
+              selectedStadium={legacyStadium}
               gameDateTime={gameDateTime}
               selectedGame={selectedGame}
             />
@@ -461,30 +468,23 @@ function UnifiedAppContent() {
                 <>
                   <SunExposureFilterFixed
                     onFilterChange={handleFilterChange}
-                    initialCriteria={filterCriteria}
                   />
                   
-                  <SunExposureExplanation
-                    sunPosition={sunPosition}
-                    stadium={legacyStadium!}
-                    gameDateTime={gameDateTime}
-                  />
+                  <SunExposureExplanation />
                 </>
               )}
 
               {filteredSections.length > 0 && (
-                <SectionList
+                <SectionList 
                   sections={filteredSections}
-                  stadium={legacyStadium!}
-                  gameExposureData={gameExposureData}
-                  gameDuration={3}
-                  sunPosition={sunPosition}
+                  loading={loadingSections}
+                  calculationProgress={null}
                 />
               )}
 
               {filteredSections.length === 0 && detailedSections.length > 0 && (
                 <EmptyState 
-                  type="no-results"
+                  type="no-sections"
                   action={
                     <button 
                       onClick={() => setFilterCriteria({})}
