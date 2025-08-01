@@ -48,7 +48,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'charlotte-knights',
-    venueId: 2511,
+    venueId: 4670,
     name: 'Truist Field',
     team: 'Charlotte Knights',
     parentOrg: 'Chicago White Sox',
@@ -66,7 +66,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'columbus-clippers',
-    venueId: 2680,
+    venueId: 3970,
     name: 'Huntington Park',
     team: 'Columbus Clippers',
     parentOrg: 'Cleveland Guardians',
@@ -84,7 +84,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'durham-bulls',
-    venueId: 234,
+    venueId: 2541,
     name: 'Durham Bulls Athletic Park',
     team: 'Durham Bulls',
     parentOrg: 'Tampa Bay Rays',
@@ -102,7 +102,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'gwinnett-stripers',
-    venueId: 4705,
+    venueId: 3810,
     name: 'Coolray Field',
     team: 'Gwinnett Stripers',
     parentOrg: 'Atlanta Braves',
@@ -120,7 +120,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'indianapolis-indians',
-    venueId: 2853,
+    venueId: 2858,
     name: 'Victory Field',
     team: 'Indianapolis Indians',
     parentOrg: 'Pittsburgh Pirates',
@@ -138,7 +138,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'iowa-cubs',
-    venueId: 2809,
+    venueId: 2844,
     name: 'Principal Park',
     team: 'Iowa Cubs',
     parentOrg: 'Chicago Cubs',
@@ -156,7 +156,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'jacksonville-jumbo-shrimp',
-    venueId: 2520,
+    venueId: 2852,
     name: '121 Financial Ballpark',
     team: 'Jacksonville Jumbo Shrimp',
     parentOrg: 'Miami Marlins',
@@ -174,7 +174,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lehigh-valley-ironpigs',
-    venueId: 3289,
+    venueId: 3230,
     name: 'Coca-Cola Park',
     team: 'Lehigh Valley IronPigs',
     parentOrg: 'Philadelphia Phillies',
@@ -192,7 +192,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'louisville-bats',
-    venueId: 2853,
+    venueId: 2724,
     name: 'Louisville Slugger Field',
     team: 'Louisville Bats',
     parentOrg: 'Cincinnati Reds',
@@ -210,7 +210,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'memphis-redbirds',
-    venueId: 249,
+    venueId: 2542,
     name: 'AutoZone Park',
     team: 'Memphis Redbirds',
     parentOrg: 'St. Louis Cardinals',
@@ -228,7 +228,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'nashville-sounds',
-    venueId: 3834,
+    venueId: 4715,
     name: 'First Horizon Park',
     team: 'Nashville Sounds',
     parentOrg: 'Milwaukee Brewers',
@@ -246,7 +246,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'norfolk-tides',
-    venueId: 104,
+    venueId: 2781,
     name: 'Harbor Park',
     team: 'Norfolk Tides',
     parentOrg: 'Baltimore Orioles',
@@ -264,7 +264,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'omaha-storm-chasers',
-    venueId: 2860,
+    venueId: 4271,
     name: 'Werner Park',
     team: 'Omaha Storm Chasers',
     parentOrg: 'Kansas City Royals',
@@ -282,7 +282,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'rochester-red-wings',
-    venueId: 2507,
+    venueId: 2773,
     name: 'Innovative Field',
     team: 'Rochester Red Wings',
     parentOrg: 'Washington Nationals',
@@ -300,7 +300,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'scranton-railriders',
-    venueId: 2731,
+    venueId: 2797,
     name: 'PNC Field',
     team: 'Scranton/Wilkes-Barre RailRiders',
     parentOrg: 'New York Yankees',
@@ -318,7 +318,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'st-paul-saints',
-    venueId: 4629,
+    venueId: 5472,
     name: 'CHS Field',
     team: 'St. Paul Saints',
     parentOrg: 'Minnesota Twins',
@@ -336,7 +336,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'syracuse-mets',
-    venueId: 2735,
+    venueId: 2823,
     name: 'NBT Bank Stadium',
     team: 'Syracuse Mets',
     parentOrg: 'New York Mets',
@@ -354,7 +354,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'toledo-mud-hens',
-    venueId: 2736,
+    venueId: 2767,
     name: 'Fifth Third Field',
     team: 'Toledo Mud Hens',
     parentOrg: 'Detroit Tigers',
@@ -372,7 +372,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'worcester-red-sox',
-    venueId: 5325,
+    venueId: 5410,
     name: 'Polar Park',
     team: 'Worcester Red Sox',
     parentOrg: 'Boston Red Sox',
@@ -391,7 +391,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   // Pacific Coast League
   {
     id: 'albuquerque-isotopes',
-    venueId: 2518,
+    venueId: 2683,
     name: 'Isotopes Park',
     team: 'Albuquerque Isotopes',
     parentOrg: 'Colorado Rockies',
@@ -410,7 +410,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'el-paso-chihuahuas',
-    venueId: 4956,
+    venueId: 4669,
     name: 'Southwest University Park',
     team: 'El Paso Chihuahuas',
     parentOrg: 'San Diego Padres',
@@ -429,7 +429,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'las-vegas-aviators',
-    venueId: 4949,
+    venueId: 5355,
     name: 'Las Vegas Ballpark',
     team: 'Las Vegas Aviators',
     parentOrg: 'Oakland Athletics',
@@ -466,7 +466,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'reno-aces',
-    venueId: 3394,
+    venueId: 3789,
     name: 'Greater Nevada Field',
     team: 'Reno Aces',
     parentOrg: 'Arizona Diamondbacks',
@@ -485,7 +485,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'round-rock-express',
-    venueId: 2524,
+    venueId: 2528,
     name: 'Dell Diamond',
     team: 'Round Rock Express',
     parentOrg: 'Texas Rangers',
@@ -503,7 +503,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'sacramento-river-cats',
-    venueId: 2680,
+    venueId: 2529,
     name: 'Sutter Health Park',
     team: 'Sacramento River Cats',
     parentOrg: 'San Francisco Giants',
@@ -521,7 +521,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'salt-lake-bees',
-    venueId: 237,
+    venueId: 2772,
     name: 'Smith\'s Ballpark',
     team: 'Salt Lake Bees',
     parentOrg: 'Los Angeles Angels',
@@ -540,7 +540,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'sugar-land-space-cowboys',
-    venueId: 4574,
+    venueId: 5421,
     name: 'Constellation Field',
     team: 'Sugar Land Space Cowboys',
     parentOrg: 'Houston Astros',
@@ -558,7 +558,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'tacoma-rainiers',
-    venueId: 103,
+    venueId: 2745,
     name: 'Cheney Stadium',
     team: 'Tacoma Rainiers',
     parentOrg: 'Seattle Mariners',
@@ -581,7 +581,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   // Eastern League
   {
     id: 'akron-rubberducks',
-    venueId: 2508,
+    venueId: 2740,
     name: 'Canal Park',
     team: 'Akron RubberDucks',
     parentOrg: 'Cleveland Guardians',
@@ -599,7 +599,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'altoona-curve',
-    venueId: 3040,
+    venueId: 2733,
     name: 'Peoples Natural Gas Field',
     team: 'Altoona Curve',
     parentOrg: 'Pittsburgh Pirates',
@@ -617,7 +617,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'binghamton-rumble-ponies',
-    venueId: 2749,
+    venueId: 2820,
     name: 'Mirabito Stadium',
     team: 'Binghamton Rumble Ponies',
     parentOrg: 'New York Mets',
@@ -635,7 +635,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'bowie-baysox',
-    venueId: 113,
+    venueId: 2832,
     name: 'Prince George\'s Stadium',
     team: 'Bowie Baysox',
     parentOrg: 'Baltimore Orioles',
@@ -653,7 +653,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'erie-seawolves',
-    venueId: 2732,
+    venueId: 2512,
     name: 'UPMC Park',
     team: 'Erie SeaWolves',
     parentOrg: 'Detroit Tigers',
@@ -671,7 +671,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'harrisburg-senators',
-    venueId: 2520,
+    venueId: 2749,
     name: 'FNB Field',
     team: 'Harrisburg Senators',
     parentOrg: 'Washington Nationals',
@@ -689,7 +689,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'hartford-yard-goats',
-    venueId: 5326,
+    venueId: 4985,
     name: 'Dunkin\' Park',
     team: 'Hartford Yard Goats',
     parentOrg: 'Colorado Rockies',
@@ -707,7 +707,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'new-hampshire-fisher-cats',
-    venueId: 2731,
+    venueId: 2868,
     name: 'Delta Dental Stadium',
     team: 'New Hampshire Fisher Cats',
     parentOrg: 'Toronto Blue Jays',
@@ -725,7 +725,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'portland-sea-dogs',
-    venueId: 2953,
+    venueId: 2779,
     name: 'Hadlock Field',
     team: 'Portland Sea Dogs',
     parentOrg: 'Boston Red Sox',
@@ -743,7 +743,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'reading-fightin-phils',
-    venueId: 2956,
+    venueId: 2769,
     name: 'FirstEnergy Stadium',
     team: 'Reading Fightin Phils',
     parentOrg: 'Philadelphia Phillies',
@@ -761,7 +761,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'richmond-flying-squirrels',
-    venueId: 3195,
+    venueId: 2853,
     name: 'The Diamond',
     team: 'Richmond Flying Squirrels',
     parentOrg: 'San Francisco Giants',
@@ -779,7 +779,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'somerset-patriots',
-    venueId: 5027,
+    venueId: 5418,
     name: 'TD Bank Ballpark',
     team: 'Somerset Patriots',
     parentOrg: 'New York Yankees',
@@ -798,7 +798,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   // Southern League
   {
     id: 'birmingham-barons',
-    venueId: 233,
+    venueId: 4529,
     name: 'Regions Field',
     team: 'Birmingham Barons',
     parentOrg: 'Chicago White Sox',
@@ -816,7 +816,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'biloxi-shuckers',
-    venueId: 4851,
+    venueId: 4960,
     name: 'MGM Park',
     team: 'Biloxi Shuckers',
     parentOrg: 'Milwaukee Brewers',
@@ -834,7 +834,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'chattanooga-lookouts',
-    venueId: 4873,
+    venueId: 2682,
     name: 'AT&T Field',
     team: 'Chattanooga Lookouts',
     parentOrg: 'Cincinnati Reds',
@@ -852,7 +852,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'mississippi-braves',
-    venueId: 4255,
+    venueId: 2813,
     name: 'Trustmark Park',
     team: 'Mississippi Braves',
     parentOrg: 'Atlanta Braves',
@@ -870,7 +870,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'montgomery-biscuits',
-    venueId: 4467,
+    venueId: 2814,
     name: 'Riverwalk Stadium',
     team: 'Montgomery Biscuits',
     parentOrg: 'Tampa Bay Rays',
@@ -888,7 +888,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'pensacola-blue-wahoos',
-    venueId: 4588,
+    venueId: 4329,
     name: 'Blue Wahoos Stadium',
     team: 'Pensacola Blue Wahoos',
     parentOrg: 'Miami Marlins',
@@ -906,7 +906,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'rocket-city-trash-pandas',
-    venueId: 5327,
+    venueId: 5455,
     name: 'Toyota Field',
     team: 'Rocket City Trash Pandas',
     parentOrg: 'Los Angeles Angels',
@@ -924,7 +924,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'tennessee-smokies',
-    venueId: 2869,
+    venueId: 2848,
     name: 'Smokies Stadium',
     team: 'Tennessee Smokies',
     parentOrg: 'Chicago Cubs',
@@ -943,7 +943,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   // Texas League
   {
     id: 'amarillo-sod-poodles',
-    venueId: 5328,
+    venueId: 5415,
     name: 'HODGETOWN',
     team: 'Amarillo Sod Poodles',
     parentOrg: 'Arizona Diamondbacks',
@@ -962,7 +962,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'arkansas-travelers',
-    venueId: 2402,
+    venueId: 3389,
     name: 'Dickey-Stephens Park',
     team: 'Arkansas Travelers',
     parentOrg: 'Seattle Mariners',
@@ -980,7 +980,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'corpus-christi-hooks',
-    venueId: 2853,
+    venueId: 2861,
     name: 'Whataburger Field',
     team: 'Corpus Christi Hooks',
     parentOrg: 'Houston Astros',
@@ -998,7 +998,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'frisco-roughriders',
-    venueId: 3825,
+    venueId: 2755,
     name: 'Riders Field',
     team: 'Frisco RoughRiders',
     parentOrg: 'Texas Rangers',
@@ -1016,7 +1016,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'midland-rockhounds',
-    venueId: 2846,
+    venueId: 2768,
     name: 'Momentum Bank Ballpark',
     team: 'Midland RockHounds',
     parentOrg: 'Oakland Athletics',
@@ -1035,7 +1035,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'northwest-arkansas-naturals',
-    venueId: 4154,
+    venueId: 3329,
     name: 'Arvest Ballpark',
     team: 'Northwest Arkansas Naturals',
     parentOrg: 'Kansas City Royals',
@@ -1053,7 +1053,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'san-antonio-missions',
-    venueId: 2854,
+    venueId: 2818,
     name: 'Nelson W. Wolff Municipal Stadium',
     team: 'San Antonio Missions',
     parentOrg: 'San Diego Padres',
@@ -1071,7 +1071,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'springfield-cardinals',
-    venueId: 4269,
+    venueId: 2722,
     name: 'Hammons Field',
     team: 'Springfield Cardinals',
     parentOrg: 'St. Louis Cardinals',
@@ -1089,7 +1089,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'tulsa-drillers',
-    venueId: 2758,
+    venueId: 4149,
     name: 'ONEOK Field',
     team: 'Tulsa Drillers',
     parentOrg: 'Los Angeles Dodgers',
@@ -1107,7 +1107,7 @@ export const AA_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'wichita-wind-surge',
-    venueId: 5329,
+    venueId: 5450,
     name: 'Riverfront Stadium',
     team: 'Wichita Wind Surge',
     parentOrg: 'Minnesota Twins',
@@ -1130,7 +1130,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   // South Atlantic League
   {
     id: 'aberdeen-ironbirds',
-    venueId: 2725,
+    venueId: 2837,
     name: 'Leidos Field at Ripken Stadium',
     team: 'Aberdeen IronBirds',
     parentOrg: 'Baltimore Orioles',
@@ -1148,7 +1148,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'asheville-tourists',
-    venueId: 4148,
+    venueId: 2807,
     name: 'McCormick Field',
     team: 'Asheville Tourists',
     parentOrg: 'Houston Astros',
@@ -1166,7 +1166,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'bowling-green-hot-rods',
-    venueId: 3415,
+    venueId: 3569,
     name: 'Bowling Green Ballpark',
     team: 'Bowling Green Hot Rods',
     parentOrg: 'Tampa Bay Rays',
@@ -1184,7 +1184,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'brooklyn-cyclones',
-    venueId: 3289,
+    venueId: 2795,
     name: 'Maimonides Park',
     team: 'Brooklyn Cyclones',
     parentOrg: 'New York Mets',
@@ -1202,7 +1202,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'greensboro-grasshoppers',
-    venueId: 2920,
+    venueId: 2723,
     name: 'First National Bank Field',
     team: 'Greensboro Grasshoppers',
     parentOrg: 'Pittsburgh Pirates',
@@ -1220,7 +1220,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'greenville-drive',
-    venueId: 4525,
+    venueId: 3429,
     name: 'Fluor Field at the West End',
     team: 'Greenville Drive',
     parentOrg: 'Boston Red Sox',
@@ -1238,7 +1238,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'hickory-crawdads',
-    venueId: 3186,
+    venueId: 2796,
     name: 'L.P. Frans Stadium',
     team: 'Hickory Crawdads',
     parentOrg: 'Texas Rangers',
@@ -1256,7 +1256,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'hudson-valley-renegades',
-    venueId: 5380,
+    venueId: 2757,
     name: 'Heritage Financial Park',
     team: 'Hudson Valley Renegades',
     parentOrg: 'New York Yankees',
@@ -1274,7 +1274,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'jersey-shore-blueclaws',
-    venueId: 2913,
+    venueId: 2866,
     name: 'ShoreTown Ballpark',
     team: 'Jersey Shore BlueClaws',
     parentOrg: 'Philadelphia Phillies',
@@ -1310,7 +1310,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'wilmington-blue-rocks',
-    venueId: 3178,
+    venueId: 2793,
     name: 'Daniel S. Frawley Stadium',
     team: 'Wilmington Blue Rocks',
     parentOrg: 'Washington Nationals',
@@ -1328,7 +1328,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'winston-salem-dash',
-    venueId: 3420,
+    venueId: 4089,
     name: 'Truist Stadium',
     team: 'Winston-Salem Dash',
     parentOrg: 'Chicago White Sox',
@@ -1347,7 +1347,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   // Midwest League
   {
     id: 'beloit-sky-carp',
-    venueId: 5330,
+    venueId: 5525,
     name: 'ABC Supply Stadium',
     team: 'Beloit Sky Carp',
     parentOrg: 'Miami Marlins',
@@ -1365,7 +1365,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'cedar-rapids-kernels',
-    venueId: 2848,
+    venueId: 2857,
     name: 'Veterans Memorial Stadium',
     team: 'Cedar Rapids Kernels',
     parentOrg: 'Minnesota Twins',
@@ -1383,7 +1383,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'dayton-dragons',
-    venueId: 2724,
+    venueId: 2766,
     name: 'Day Air Ballpark',
     team: 'Dayton Dragons',
     parentOrg: 'Cincinnati Reds',
@@ -1401,7 +1401,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'fort-wayne-tincaps',
-    venueId: 3410,
+    venueId: 3790,
     name: 'Parkview Field',
     team: 'Fort Wayne TinCaps',
     parentOrg: 'San Diego Padres',
@@ -1419,7 +1419,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'great-lakes-loons',
-    venueId: 3834,
+    venueId: 3189,
     name: 'Dow Diamond',
     team: 'Great Lakes Loons',
     parentOrg: 'Los Angeles Dodgers',
@@ -1437,7 +1437,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lake-county-captains',
-    venueId: 3436,
+    venueId: 2759,
     name: 'Classic Park',
     team: 'Lake County Captains',
     parentOrg: 'Cleveland Guardians',
@@ -1455,7 +1455,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lansing-lugnuts',
-    venueId: 2929,
+    venueId: 2822,
     name: 'Jackson Field',
     team: 'Lansing Lugnuts',
     parentOrg: 'Oakland Athletics',
@@ -1473,7 +1473,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'peoria-chiefs',
-    venueId: 2954,
+    venueId: 2821,
     name: 'Dozer Park',
     team: 'Peoria Chiefs',
     parentOrg: 'St. Louis Cardinals',
@@ -1491,7 +1491,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'quad-cities-river-bandits',
-    venueId: 2853,
+    venueId: 2790,
     name: 'Modern Woodmen Park',
     team: 'Quad Cities River Bandits',
     parentOrg: 'Kansas City Royals',
@@ -1509,7 +1509,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'south-bend-cubs',
-    venueId: 2932,
+    venueId: 2850,
     name: 'Four Winds Field',
     team: 'South Bend Cubs',
     parentOrg: 'Chicago Cubs',
@@ -1527,7 +1527,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'west-michigan-whitecaps',
-    venueId: 3178,
+    venueId: 2765,
     name: 'LMCU Ballpark',
     team: 'West Michigan Whitecaps',
     parentOrg: 'Detroit Tigers',
@@ -1545,7 +1545,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'wisconsin-timber-rattlers',
-    venueId: 2880,
+    venueId: 2771,
     name: 'Neuroscience Group Field at Fox Cities Stadium',
     team: 'Wisconsin Timber Rattlers',
     parentOrg: 'Milwaukee Brewers',
@@ -1564,7 +1564,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   // Northwest League
   {
     id: 'eugene-emeralds',
-    venueId: 3919,
+    venueId: 4109,
     name: 'PK Park',
     team: 'Eugene Emeralds',
     parentOrg: 'San Francisco Giants',
@@ -1582,7 +1582,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'everett-aquasox',
-    venueId: 2862,
+    venueId: 2762,
     name: 'Funko Field',
     team: 'Everett AquaSox',
     parentOrg: 'Seattle Mariners',
@@ -1600,7 +1600,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'hillsboro-hops',
-    venueId: 4861,
+    venueId: 4429,
     name: 'Ron Tonkin Field',
     team: 'Hillsboro Hops',
     parentOrg: 'Arizona Diamondbacks',
@@ -1618,7 +1618,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'spokane-indians',
-    venueId: 2971,
+    venueId: 2730,
     name: 'Avista Stadium',
     team: 'Spokane Indians',
     parentOrg: 'Colorado Rockies',
@@ -1637,7 +1637,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'tri-city-dust-devils',
-    venueId: 3256,
+    venueId: 2826,
     name: 'Gesa Stadium',
     team: 'Tri-City Dust Devils',
     parentOrg: 'Los Angeles Angels',
@@ -1655,7 +1655,7 @@ export const HIGH_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'vancouver-canadians',
-    venueId: 2853,
+    venueId: 2817,
     name: 'Nat Bailey Stadium',
     team: 'Vancouver Canadians',
     parentOrg: 'Toronto Blue Jays',
@@ -1678,7 +1678,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   // California League
   {
     id: 'fresno-grizzlies',
-    venueId: 2856,
+    venueId: 2640,
     name: 'Chukchansi Park',
     team: 'Fresno Grizzlies',
     parentOrg: 'Colorado Rockies',
@@ -1696,7 +1696,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'inland-empire-66ers',
-    venueId: 2922,
+    venueId: 2728,
     name: 'San Manuel Stadium',
     team: 'Inland Empire 66ers',
     parentOrg: 'Los Angeles Angels',
@@ -1714,7 +1714,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lake-elsinore-storm',
-    venueId: 2763,
+    venueId: 2516,
     name: 'Lake Elsinore Diamond',
     team: 'Lake Elsinore Storm',
     parentOrg: 'San Diego Padres',
@@ -1732,7 +1732,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'modesto-nuts',
-    venueId: 2945,
+    venueId: 2791,
     name: 'John Thurman Field',
     team: 'Modesto Nuts',
     parentOrg: 'Seattle Mariners',
@@ -1750,7 +1750,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'rancho-cucamonga-quakes',
-    venueId: 2988,
+    venueId: 2854,
     name: 'LoanMart Field',
     team: 'Rancho Cucamonga Quakes',
     parentOrg: 'Los Angeles Dodgers',
@@ -1768,7 +1768,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'san-jose-giants',
-    venueId: 2935,
+    venueId: 2815,
     name: 'Excite Ballpark',
     team: 'San Jose Giants',
     parentOrg: 'San Francisco Giants',
@@ -1786,7 +1786,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'stockton-ports',
-    venueId: 2972,
+    venueId: 2731,
     name: 'Banner Island Ballpark',
     team: 'Stockton Ports',
     parentOrg: 'Oakland Athletics',
@@ -1804,7 +1804,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'visalia-rawhide',
-    venueId: 2764,
+    venueId: 2835,
     name: 'Valley Strong Ballpark',
     team: 'Visalia Rawhide',
     parentOrg: 'Arizona Diamondbacks',
@@ -1823,7 +1823,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   // Carolina League
   {
     id: 'augusta-greenjackets',
-    venueId: 3403,
+    venueId: 5345,
     name: 'SRP Park',
     team: 'Augusta GreenJackets',
     parentOrg: 'Atlanta Braves',
@@ -1841,7 +1841,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'carolina-mudcats',
-    venueId: 3118,
+    venueId: 2625,
     name: 'Five County Stadium',
     team: 'Carolina Mudcats',
     parentOrg: 'Milwaukee Brewers',
@@ -1859,7 +1859,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'charleston-riverdogs',
-    venueId: 2419,
+    venueId: 2540,
     name: 'Joseph P. Riley Jr. Park',
     team: 'Charleston RiverDogs',
     parentOrg: 'Tampa Bay Rays',
@@ -1877,7 +1877,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'columbia-fireflies',
-    venueId: 5331,
+    venueId: 4980,
     name: 'Segra Park',
     team: 'Columbia Fireflies',
     parentOrg: 'Kansas City Royals',
@@ -1895,7 +1895,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'delmarva-shorebirds',
-    venueId: 2923,
+    venueId: 2729,
     name: 'Arthur W. Perdue Stadium',
     team: 'Delmarva Shorebirds',
     parentOrg: 'Baltimore Orioles',
@@ -1913,7 +1913,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'down-east-wood-ducks',
-    venueId: 2882,
+    venueId: 2777,
     name: 'Grainger Stadium',
     team: 'Down East Wood Ducks',
     parentOrg: 'Texas Rangers',
@@ -1931,7 +1931,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'fayetteville-woodpeckers',
-    venueId: 5332,
+    venueId: 5400,
     name: 'Segra Stadium',
     team: 'Fayetteville Woodpeckers',
     parentOrg: 'Houston Astros',
@@ -1949,7 +1949,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'fredericksburg-nationals',
-    venueId: 5333,
+    venueId: 5520,
     name: 'Virginia Credit Union Stadium',
     team: 'Fredericksburg Nationals',
     parentOrg: 'Washington Nationals',
@@ -1967,7 +1967,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'kannapolis-cannon-ballers',
-    venueId: 5334,
+    venueId: 2764,
     name: 'Atrium Health Ballpark',
     team: 'Kannapolis Cannon Ballers',
     parentOrg: 'Chicago White Sox',
@@ -1985,7 +1985,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lynchburg-hillcats',
-    venueId: 2851,
+    venueId: 2803,
     name: 'Bank of the James Stadium',
     team: 'Lynchburg Hillcats',
     parentOrg: 'Cleveland Guardians',
@@ -2003,7 +2003,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'myrtle-beach-pelicans',
-    venueId: 3043,
+    venueId: 2747,
     name: 'Pelicans Ballpark',
     team: 'Myrtle Beach Pelicans',
     parentOrg: 'Chicago Cubs',
@@ -2021,7 +2021,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'salem-red-sox',
-    venueId: 3168,
+    venueId: 2840,
     name: 'Carilion Clinic Field at Salem Memorial Ballpark',
     team: 'Salem Red Sox',
     parentOrg: 'Boston Red Sox',
@@ -2040,7 +2040,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   // Florida State League
   {
     id: 'bradenton-marauders',
-    venueId: 2862,
+    venueId: 2526,
     name: 'LECOM Park',
     team: 'Bradenton Marauders',
     parentOrg: 'Pittsburgh Pirates',
@@ -2058,7 +2058,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'clearwater-threshers',
-    venueId: 3467,
+    venueId: 2700,
     name: 'BayCare Ballpark',
     team: 'Clearwater Threshers',
     parentOrg: 'Philadelphia Phillies',
@@ -2076,7 +2076,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'daytona-tortugas',
-    venueId: 3111,
+    venueId: 2787,
     name: 'Jackie Robinson Ballpark',
     team: 'Daytona Tortugas',
     parentOrg: 'Cincinnati Reds',
@@ -2094,7 +2094,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'dunedin-blue-jays',
-    venueId: 3292,
+    venueId: 2536,
     name: 'TD Ballpark',
     team: 'Dunedin Blue Jays',
     parentOrg: 'Toronto Blue Jays',
@@ -2112,7 +2112,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'fort-myers-mighty-mussels',
-    venueId: 2534,
+    venueId: 2862,
     name: 'Hammond Stadium',
     team: 'Fort Myers Mighty Mussels',
     parentOrg: 'Minnesota Twins',
@@ -2130,7 +2130,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'jupiter-hammerheads',
-    venueId: 2526,
+    venueId: 2520,
     name: 'Roger Dean Chevrolet Stadium',
     team: 'Jupiter Hammerheads',
     parentOrg: 'Miami Marlins',
@@ -2148,7 +2148,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'lakeland-flying-tigers',
-    venueId: 2492,
+    venueId: 2511,
     name: 'Publix Field at Joker Marchant Stadium',
     team: 'Lakeland Flying Tigers',
     parentOrg: 'Detroit Tigers',
@@ -2166,7 +2166,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'palm-beach-cardinals',
-    venueId: 2526,
+    venueId: 2520,
     name: 'Roger Dean Chevrolet Stadium',
     team: 'Palm Beach Cardinals',
     parentOrg: 'St. Louis Cardinals',
@@ -2184,7 +2184,7 @@ export const LOW_A_STADIUMS: MiLBStadium[] = [
   },
   {
     id: 'st-lucie-mets',
-    venueId: 2862,
+    venueId: 2856,
     name: 'Clover Park',
     team: 'St. Lucie Mets',
     parentOrg: 'New York Mets',
