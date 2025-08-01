@@ -437,8 +437,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         />
       </div>
 
-      {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') ? (
-        // MLB and MiLB venues show games or custom time
+      {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB' || selectedVenue?.league === 'NFL') ? (
+        // MLB, MiLB, and NFL venues show games or custom time
         viewMode === 'games' ? (
           <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
             {selectedVenue ? (
@@ -501,7 +501,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
             )}
           </div>
         ) : (
-          // Custom time mode for MLB
+          // Custom time mode for MLB, MiLB, and NFL
           <div className="custom-section" role="tabpanel" id="custom-panel" aria-labelledby="custom-tab">
             <div className="custom-controls">
               <div className="control-group">
