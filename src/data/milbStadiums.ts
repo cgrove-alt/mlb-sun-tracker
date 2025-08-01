@@ -30,7 +30,7 @@ export const AAA_STADIUMS: MiLBStadium[] = [
   // International League
   {
     id: 'buffalo-bisons',
-    venueId: 106,
+    venueId: 2756,
     name: 'Sahlen Field',
     team: 'Buffalo Bisons',
     parentOrg: 'Toronto Blue Jays',

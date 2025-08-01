@@ -5,6 +5,7 @@ import { MLBGame, mlbApi } from '../services/mlbApi';
 import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
+import { getTeamIdFromVenueId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
@@ -120,8 +121,18 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'MiLB' && selectedVenue.venueId) {
-        // First get the team ID for this venue
-        const teamId = selectedVenue.venueId; // For MiLB, we're using venueId to store the teamId
+        // Get the team ID for this venue
+        const teamId = getTeamIdFromVenueId(selectedVenue.venueId);
+        
+        if (!teamId) {
+          console.error('[GameSelector] No team ID found for venue:', selectedVenue.venueId);
+          setError('Unable to find team information for this venue');
+          setGames([]);
+          gamesLoading.setData([]);
+          return;
+        }
+        
+        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', selectedVenue.venueId);
         
         const schedule = await milbApi.getTeamSchedule(
           teamId,
