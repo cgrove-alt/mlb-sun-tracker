@@ -229,8 +229,8 @@ export const ALL_VENUES: Venue[] = [
     "address": "Cincinnati, OH"
   },
   {
-    "id": "cleveland-browns-stadium",
-    "name": "Cleveland Browns Stadium",
+    "id": "huntington-bank-field",
+    "name": "Huntington Bank Field",
     "league": "NFL",
     "team": "Cleveland Browns",
     "city": "Cleveland",
@@ -355,8 +355,8 @@ export const ALL_VENUES: Venue[] = [
     "address": "Indianapolis, IN"
   },
   {
-    "id": "tiaa-bank-field",
-    "name": "TIAA Bank Field",
+    "id": "everbank-stadium",
+    "name": "EverBank Stadium",
     "league": "NFL",
     "team": "Jacksonville Jaguars",
     "city": "Jacksonville",
@@ -448,8 +448,8 @@ export const ALL_VENUES: Venue[] = [
     "address": "Denver, CO"
   },
   {
-    "id": "arrowhead-stadium",
-    "name": "Arrowhead Stadium",
+    "id": "geha-field-arrowhead",
+    "name": "GEHA Field at Arrowhead Stadium",
     "league": "NFL",
     "team": "Kansas City Chiefs",
     "city": "Kansas City",
@@ -609,8 +609,8 @@ export const ALL_VENUES: Venue[] = [
     "address": "Philadelphia, PA"
   },
   {
-    "id": "fedexfield",
-    "name": "FedExField",
+    "id": "northwest-stadium",
+    "name": "Northwest Stadium",
     "league": "NFL",
     "team": "Washington Commanders",
     "city": "Landover",
@@ -1181,8 +1181,8 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Cincinnati, OH"
   },
   {
-    "id": "cleveland-browns-stadium",
-    "name": "Cleveland Browns Stadium",
+    "id": "huntington-bank-field",
+    "name": "Huntington Bank Field",
     "league": "NFL",
     "team": "Cleveland Browns",
     "city": "Cleveland",
@@ -1307,8 +1307,8 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Indianapolis, IN"
   },
   {
-    "id": "tiaa-bank-field",
-    "name": "TIAA Bank Field",
+    "id": "everbank-stadium",
+    "name": "EverBank Stadium",
     "league": "NFL",
     "team": "Jacksonville Jaguars",
     "city": "Jacksonville",
@@ -1400,8 +1400,8 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Denver, CO"
   },
   {
-    "id": "arrowhead-stadium",
-    "name": "Arrowhead Stadium",
+    "id": "geha-field-arrowhead",
+    "name": "GEHA Field at Arrowhead Stadium",
     "league": "NFL",
     "team": "Kansas City Chiefs",
     "city": "Kansas City",
@@ -1561,8 +1561,8 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Philadelphia, PA"
   },
   {
-    "id": "fedexfield",
-    "name": "FedExField",
+    "id": "northwest-stadium",
+    "name": "Northwest Stadium",
     "league": "NFL",
     "team": "Washington Commanders",
     "city": "Landover",
@@ -2132,9 +2132,9 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2000,
     "address": "Cincinnati, OH"
 },
-  "cleveland-browns-stadium": {
-    "id": "cleveland-browns-stadium",
-    "name": "Cleveland Browns Stadium",
+  "huntington-bank-field": {
+    "id": "huntington-bank-field",
+    "name": "Huntington Bank Field",
     "league": "NFL",
     "team": "Cleveland Browns",
     "city": "Cleveland",
@@ -2258,9 +2258,9 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2008,
     "address": "Indianapolis, IN"
 },
-  "tiaa-bank-field": {
-    "id": "tiaa-bank-field",
-    "name": "TIAA Bank Field",
+  "everbank-stadium": {
+    "id": "everbank-stadium",
+    "name": "EverBank Stadium",
     "league": "NFL",
     "team": "Jacksonville Jaguars",
     "city": "Jacksonville",
@@ -2351,9 +2351,9 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2001,
     "address": "Denver, CO"
 },
-  "arrowhead-stadium": {
-    "id": "arrowhead-stadium",
-    "name": "Arrowhead Stadium",
+  "geha-field-arrowhead": {
+    "id": "geha-field-arrowhead",
+    "name": "GEHA Field at Arrowhead Stadium",
     "league": "NFL",
     "team": "Kansas City Chiefs",
     "city": "Kansas City",
@@ -2512,9 +2512,9 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2003,
     "address": "Philadelphia, PA"
 },
-  "fedexfield": {
-    "id": "fedexfield",
-    "name": "FedExField",
+  "northwest-stadium": {
+    "id": "northwest-stadium",
+    "name": "Northwest Stadium",
     "league": "NFL",
     "team": "Washington Commanders",
     "city": "Landover",

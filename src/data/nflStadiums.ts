@@ -143,8 +143,8 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Riverfront location', 'Jungle-themed']
   },
   {
-    id: 'cleveland-browns-stadium',
-    name: 'Cleveland Browns Stadium',
+    id: 'huntington-bank-field',
+    name: 'Huntington Bank Field',
     team: 'Cleveland Browns',
     conference: 'AFC',
     division: 'North',
@@ -223,8 +223,8 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Window wall', 'Downtown location']
   },
   {
-    id: 'tiaa-bank-field',
-    name: 'TIAA Bank Field',
+    id: 'everbank-stadium',
+    name: 'EverBank Stadium',
     team: 'Jacksonville Jaguars',
     conference: 'AFC',
     division: 'South',
@@ -282,8 +282,8 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Mile High altitude', 'Ring of Fame']
   },
   {
-    id: 'arrowhead-stadium',
-    name: 'Arrowhead Stadium',
+    id: 'geha-field-arrowhead',
+    name: 'GEHA Field at Arrowhead Stadium',
     team: 'Kansas City Chiefs',
     conference: 'AFC',
     division: 'West',
@@ -401,8 +401,8 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Solar panels', 'Wind turbines']
   },
   {
-    id: 'fedexfield',
-    name: 'FedExField',
+    id: 'northwest-stadium',
+    name: 'Northwest Stadium',
     team: 'Washington Commanders',
     conference: 'NFC',
     division: 'East',

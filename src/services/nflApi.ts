@@ -1,6 +1,8 @@
 // NFL API Service
 // Fetches NFL game schedules and data
 
+import { NFL_2025_SCHEDULE } from '../data/nfl2025Schedule';
+
 export interface NFLGame {
   gameId: string;
   gameDate: string; // ISO date string
@@ -34,228 +36,7 @@ export interface NFLSchedule {
   games: NFLGame[];
 }
 
-// Mock 2025 NFL Schedule - Early season games for each team
-// In production, this would fetch from ESPN or NFL API
-const MOCK_2025_SCHEDULE: NFLGame[] = [
-  // Week 1 - September 7-9, 2025
-  {
-    gameId: 'nfl-2025-w1-buf-mia',
-    gameDate: '2025-09-07',
-    gameTime: '13:00',
-    week: 1,
-    seasonType: 'regular',
-    homeTeam: { id: 'mia', name: 'Miami Dolphins', abbreviation: 'MIA' },
-    awayTeam: { id: 'buf', name: 'Buffalo Bills', abbreviation: 'BUF' },
-    venue: { id: 'hard-rock-stadium', name: 'Hard Rock Stadium' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w1-gb-chi',
-    gameDate: '2025-09-07',
-    gameTime: '13:00',
-    week: 1,
-    seasonType: 'regular',
-    homeTeam: { id: 'gb', name: 'Green Bay Packers', abbreviation: 'GB' },
-    awayTeam: { id: 'chi', name: 'Chicago Bears', abbreviation: 'CHI' },
-    venue: { id: 'lambeau-field', name: 'Lambeau Field' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w1-lar-sea',
-    gameDate: '2025-09-07',
-    gameTime: '16:25',
-    week: 1,
-    seasonType: 'regular',
-    homeTeam: { id: 'lar', name: 'Los Angeles Rams', abbreviation: 'LAR' },
-    awayTeam: { id: 'sea', name: 'Seattle Seahawks', abbreviation: 'SEA' },
-    venue: { id: 'sofi-stadium', name: 'SoFi Stadium' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w1-lac-kc',
-    gameDate: '2025-09-07',
-    gameTime: '20:20',
-    week: 1,
-    seasonType: 'regular',
-    homeTeam: { id: 'lac', name: 'Los Angeles Chargers', abbreviation: 'LAC' },
-    awayTeam: { id: 'kc', name: 'Kansas City Chiefs', abbreviation: 'KC' },
-    venue: { id: 'sofi-stadium', name: 'SoFi Stadium' },
-    tvNetwork: 'NBC'
-  },
-  {
-    gameId: 'nfl-2025-w1-dal-nyg',
-    gameDate: '2025-09-08',
-    gameTime: '20:15',
-    week: 1,
-    seasonType: 'regular',
-    homeTeam: { id: 'dal', name: 'Dallas Cowboys', abbreviation: 'DAL' },
-    awayTeam: { id: 'nyg', name: 'New York Giants', abbreviation: 'NYG' },
-    venue: { id: 'at-t-stadium', name: 'AT&T Stadium' },
-    tvNetwork: 'ESPN'
-  },
-  
-  // Week 2 - September 14-16, 2025
-  {
-    gameId: 'nfl-2025-w2-mia-ne',
-    gameDate: '2025-09-14',
-    gameTime: '13:00',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'mia', name: 'Miami Dolphins', abbreviation: 'MIA' },
-    awayTeam: { id: 'ne', name: 'New England Patriots', abbreviation: 'NE' },
-    venue: { id: 'hard-rock-stadium', name: 'Hard Rock Stadium' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w2-chi-gb',
-    gameDate: '2025-09-14',
-    gameTime: '13:00',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'chi', name: 'Chicago Bears', abbreviation: 'CHI' },
-    awayTeam: { id: 'gb', name: 'Green Bay Packers', abbreviation: 'GB' },
-    venue: { id: 'soldier-field', name: 'Soldier Field' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w2-tb-det',
-    gameDate: '2025-09-14',
-    gameTime: '13:00',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'tb', name: 'Tampa Bay Buccaneers', abbreviation: 'TB' },
-    awayTeam: { id: 'det', name: 'Detroit Lions', abbreviation: 'DET' },
-    venue: { id: 'raymond-james-stadium', name: 'Raymond James Stadium' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w2-az-lar',
-    gameDate: '2025-09-14',
-    gameTime: '16:05',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'az', name: 'Arizona Cardinals', abbreviation: 'AZ' },
-    awayTeam: { id: 'lar', name: 'Los Angeles Rams', abbreviation: 'LAR' },
-    venue: { id: 'state-farm-stadium', name: 'State Farm Stadium' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w2-sf-sea',
-    gameDate: '2025-09-14',
-    gameTime: '16:25',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'sf', name: 'San Francisco 49ers', abbreviation: 'SF' },
-    awayTeam: { id: 'sea', name: 'Seattle Seahawks', abbreviation: 'SEA' },
-    venue: { id: 'levis-stadium', name: 'Levi\'s Stadium' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w2-den-kc',
-    gameDate: '2025-09-14',
-    gameTime: '20:20',
-    week: 2,
-    seasonType: 'regular',
-    homeTeam: { id: 'den', name: 'Denver Broncos', abbreviation: 'DEN' },
-    awayTeam: { id: 'kc', name: 'Kansas City Chiefs', abbreviation: 'KC' },
-    venue: { id: 'empower-field', name: 'Empower Field at Mile High' },
-    tvNetwork: 'NBC'
-  },
-  
-  // Week 3 - September 21-23, 2025
-  {
-    gameId: 'nfl-2025-w3-buf-mia',
-    gameDate: '2025-09-21',
-    gameTime: '13:00',
-    week: 3,
-    seasonType: 'regular',
-    homeTeam: { id: 'buf', name: 'Buffalo Bills', abbreviation: 'BUF' },
-    awayTeam: { id: 'mia', name: 'Miami Dolphins', abbreviation: 'MIA' },
-    venue: { id: 'highmark-stadium', name: 'Highmark Stadium' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w3-lv-den',
-    gameDate: '2025-09-21',
-    gameTime: '16:05',
-    week: 3,
-    seasonType: 'regular',
-    homeTeam: { id: 'lv', name: 'Las Vegas Raiders', abbreviation: 'LV' },
-    awayTeam: { id: 'den', name: 'Denver Broncos', abbreviation: 'DEN' },
-    venue: { id: 'allegiant-stadium', name: 'Allegiant Stadium' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w3-sea-ne',
-    gameDate: '2025-09-21',
-    gameTime: '16:25',
-    week: 3,
-    seasonType: 'regular',
-    homeTeam: { id: 'sea', name: 'Seattle Seahawks', abbreviation: 'SEA' },
-    awayTeam: { id: 'ne', name: 'New England Patriots', abbreviation: 'NE' },
-    venue: { id: 'lumen-field', name: 'Lumen Field' },
-    tvNetwork: 'FOX'
-  },
-  
-  // Thursday Night Football
-  {
-    gameId: 'nfl-2025-w3-nyj-ne',
-    gameDate: '2025-09-18',
-    gameTime: '20:15',
-    week: 3,
-    seasonType: 'regular',
-    homeTeam: { id: 'nyj', name: 'New York Jets', abbreviation: 'NYJ' },
-    awayTeam: { id: 'ne', name: 'New England Patriots', abbreviation: 'NE' },
-    venue: { id: 'metlife-stadium', name: 'MetLife Stadium' },
-    tvNetwork: 'Prime Video'
-  },
-  
-  // Week 4 - September 28-30, 2025
-  {
-    gameId: 'nfl-2025-w4-jax-hou',
-    gameDate: '2025-09-28',
-    gameTime: '13:00',
-    week: 4,
-    seasonType: 'regular',
-    homeTeam: { id: 'jax', name: 'Jacksonville Jaguars', abbreviation: 'JAX' },
-    awayTeam: { id: 'hou', name: 'Houston Texans', abbreviation: 'HOU' },
-    venue: { id: 'tiaa-bank-field', name: 'TIAA Bank Field' },
-    tvNetwork: 'CBS'
-  },
-  {
-    gameId: 'nfl-2025-w4-car-atl',
-    gameDate: '2025-09-28',
-    gameTime: '13:00',
-    week: 4,
-    seasonType: 'regular',
-    homeTeam: { id: 'car', name: 'Carolina Panthers', abbreviation: 'CAR' },
-    awayTeam: { id: 'atl', name: 'Atlanta Falcons', abbreviation: 'ATL' },
-    venue: { id: 'bank-of-america-stadium', name: 'Bank of America Stadium' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w4-phi-tb',
-    gameDate: '2025-09-28',
-    gameTime: '13:00',
-    week: 4,
-    seasonType: 'regular',
-    homeTeam: { id: 'phi', name: 'Philadelphia Eagles', abbreviation: 'PHI' },
-    awayTeam: { id: 'tb', name: 'Tampa Bay Buccaneers', abbreviation: 'TB' },
-    venue: { id: 'lincoln-financial-field', name: 'Lincoln Financial Field' },
-    tvNetwork: 'FOX'
-  },
-  {
-    gameId: 'nfl-2025-w4-kc-lac',
-    gameDate: '2025-09-28',
-    gameTime: '16:25',
-    week: 4,
-    seasonType: 'regular',
-    homeTeam: { id: 'kc', name: 'Kansas City Chiefs', abbreviation: 'KC' },
-    awayTeam: { id: 'lac', name: 'Los Angeles Chargers', abbreviation: 'LAC' },
-    venue: { id: 'arrowhead-stadium', name: 'Arrowhead Stadium' },
-    tvNetwork: 'CBS'
-  }
-];
+// NFL API now uses the comprehensive schedule imported from nfl2025Schedule.ts
 
 class NFLApiService {
   private cache = new Map<string, { data: any; timestamp: number }>();
@@ -270,8 +51,8 @@ class NFLApiService {
       return cached.data;
     }
 
-    // Filter games for the specific team
-    const teamGames = MOCK_2025_SCHEDULE.filter(game => 
+    // Filter games for the specific team from comprehensive schedule
+    const teamGames = NFL_2025_SCHEDULE.filter(game => 
       game.homeTeam.id === teamId || game.awayTeam.id === teamId
     );
 
@@ -288,8 +69,8 @@ class NFLApiService {
       return cached.data;
     }
 
-    // Filter games for the specific venue
-    const venueGames = MOCK_2025_SCHEDULE.filter(game => 
+    // Filter games for the specific venue from comprehensive schedule
+    const venueGames = NFL_2025_SCHEDULE.filter(game => 
       game.venue.id === venueId
     );
 
@@ -306,7 +87,7 @@ class NFLApiService {
       return cached.data;
     }
 
-    const weekGames = MOCK_2025_SCHEDULE.filter(game => game.week === week);
+    const weekGames = NFL_2025_SCHEDULE.filter(game => game.week === week);
     
     this.cache.set(cacheKey, { data: weekGames, timestamp: Date.now() });
     return weekGames;
@@ -334,6 +115,68 @@ class NFLApiService {
   // Get typical game times for NFL
   getTypicalGameTimes(): string[] {
     return ['13:00', '16:05', '16:25', '20:15', '20:20']; // 1PM, 4:05PM, 4:25PM, 8:15PM, 8:20PM ET
+  }
+
+  // Get all games for the entire season
+  async getAllGames(season: number = 2025): Promise<NFLGame[]> {
+    return NFL_2025_SCHEDULE;
+  }
+
+  // Get games by network
+  async getGamesByNetwork(network: string): Promise<NFLGame[]> {
+    return NFL_2025_SCHEDULE.filter(game => 
+      game.tvNetwork?.toLowerCase().includes(network.toLowerCase())
+    );
+  }
+
+  // Get primetime games (TNF, SNF, MNF)
+  async getPrimetimeGames(): Promise<NFLGame[]> {
+    return NFL_2025_SCHEDULE.filter(game => 
+      ['NBC', 'ESPN', 'Prime Video'].includes(game.tvNetwork || '')
+    );
+  }
+
+  // Get games by time slot
+  async getGamesByTimeSlot(timeSlot: 'early' | 'afternoon' | 'night'): Promise<NFLGame[]> {
+    const timeMapping = {
+      'early': ['13:00'],
+      'afternoon': ['16:05', '16:25'], 
+      'night': ['20:15', '20:20']
+    };
+
+    const times = timeMapping[timeSlot];
+    return NFL_2025_SCHEDULE.filter(game => 
+      times.includes(game.gameTime)
+    );
+  }
+
+  // Get games in date range
+  async getGamesInDateRange(startDate: string, endDate: string): Promise<NFLGame[]> {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    
+    return NFL_2025_SCHEDULE.filter(game => {
+      const gameDate = new Date(game.gameDate);
+      return gameDate >= start && gameDate <= end;
+    });
+  }
+
+  // Get stadium utilization stats
+  getStadiumStats(): Record<string, { games: number; venues: string[] }> {
+    const stats: Record<string, { games: number; venues: string[] }> = {};
+    
+    NFL_2025_SCHEDULE.forEach(game => {
+      const venueId = game.venue.id;
+      if (!stats[venueId]) {
+        stats[venueId] = { games: 0, venues: [] };
+      }
+      stats[venueId].games++;
+      if (!stats[venueId].venues.includes(game.venue.name)) {
+        stats[venueId].venues.push(game.venue.name);
+      }
+    });
+
+    return stats;
   }
 }
 
