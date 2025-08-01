@@ -29,6 +29,7 @@ import { getStadiumSections } from './data/stadiumSections';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { MiLBGame } from './services/milbApi';
+import { generateBaseballSections } from './utils/generateBaseballSections';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
@@ -154,6 +155,9 @@ function UnifiedAppContent() {
         if (selectedVenue.league === 'MLB') {
           // Use existing MLB sections
           sections = getStadiumSections(selectedVenue.id);
+        } else if (selectedVenue.league === 'MiLB') {
+          // Generate sections for MiLB stadiums (they're baseball stadiums like MLB)
+          sections = generateBaseballSections(selectedVenue);
         } else {
           // Use generated sections for other sports
           sections = getVenueSections(selectedVenue.id);

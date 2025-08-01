@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { getVenueSections } from '../../../src/data/venueSections';
+import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
 import UnifiedVenueGuide from '../../../src/components/UnifiedVenueGuide';
 
 interface VenuePageProps {
@@ -124,7 +125,15 @@ export default async function VenuePage({ params }: VenuePageProps) {
     notFound();
   }
 
-  const sections = getVenueSections(venueId);
+  // Get sections based on venue type
+  let sections = [];
+  if (venue.league === 'MiLB') {
+    // Generate sections for MiLB stadiums
+    sections = generateBaseballSections(venue);
+  } else {
+    // Use pre-defined sections for other venues
+    sections = getVenueSections(venueId);
+  }
 
   return (
     <UnifiedVenueGuide 
