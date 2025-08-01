@@ -1,6 +1,7 @@
 // NFL API Service
-// Fetches real NFL game schedules when available
-// Note: NFL typically releases schedules in May for the upcoming season
+// Uses real NFL schedule data
+
+import { getNFL2025Schedule, getNFL2025VenueSchedule } from '../data/nfl2025Schedule';
 
 export interface NFLGame {
   gameId: string;
@@ -81,41 +82,61 @@ const TEAM_STADIUM_MAP: Record<string, string> = {
 };
 
 class NFLApiService {
-  private apiBaseUrl = 'https://api.nfl.com/v1'; // This would be the real API endpoint
   private cache: Map<string, { data: any; timestamp: number }> = new Map();
   private cacheTimeout = 3600000; // 1 hour cache
 
-  // Check if schedule data is available
-  async isScheduleAvailable(season: number = 2025): Promise<boolean> {
-    // NFL schedules are typically released in May
-    // For 2025 season, check if we're past May 2025
-    const scheduleReleaseDate = new Date(2025, 4, 1); // May 1, 2025
+  // Get current season based on date
+  private getCurrentSeason(): number {
     const now = new Date();
-    return now >= scheduleReleaseDate;
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth();
+    
+    // NFL season runs from September to February
+    // If we're in Jan-Feb, we're still in last year's season
+    // If we're in Mar-Aug, we're looking at the upcoming season
+    // If we're in Sep-Dec, we're in the current season
+    if (currentMonth < 2) { // January or February
+      return currentYear - 1;
+    } else if (currentMonth < 8) { // March through August
+      return currentYear; // Show upcoming season
+    }
+    return currentYear;
   }
 
-  // Get full season schedule from API
-  async getSeasonSchedule(season: number = 2025): Promise<NFLSchedule> {
-    const scheduleAvailable = await this.isScheduleAvailable(season);
+  // Get full season schedule
+  async getSeasonSchedule(season?: number): Promise<NFLSchedule> {
+    const targetSeason = season || this.getCurrentSeason();
+    const cacheKey = `season-${targetSeason}`;
+    const cached = this.cache.get(cacheKey);
     
-    if (!scheduleAvailable) {
-      return {
-        season,
-        games: []
-      };
+    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
+      return cached.data;
     }
 
-    // In production, this would fetch from the real NFL API
-    // For now, return empty as no real 2025 data exists yet
-    console.log(`[NFL API] 2025 schedule not yet available. Check back after May 2025.`);
+    // For now, we only have 2025 data
+    // In production, this would fetch from a real API
+    if (targetSeason === 2025) {
+      const games = getNFL2025Schedule();
+      const schedule = {
+        season: targetSeason,
+        games
+      };
+      
+      this.cache.set(cacheKey, { data: schedule, timestamp: Date.now() });
+      console.log(`[NFL API] Loaded ${games.length} games for ${targetSeason} season`);
+      return schedule;
+    }
+
+    // For other years, return empty (would fetch from API in production)
+    console.log(`[NFL API] No data available for ${targetSeason} season`);
     return {
-      season,
+      season: targetSeason,
       games: []
     };
   }
 
   // Get games for a specific team
-  async getTeamSchedule(teamName: string, season: number = 2025): Promise<NFLGame[]> {
+  async getTeamSchedule(teamName: string, season?: number): Promise<NFLGame[]> {
     const schedule = await this.getSeasonSchedule(season);
     return schedule.games.filter(game => 
       game.homeTeam.name === teamName || game.awayTeam.name === teamName
@@ -123,47 +144,52 @@ class NFLApiService {
   }
 
   // Get games for a specific venue (only home games)
-  async getVenueSchedule(venueId: string, season: number = 2025): Promise<NFLGame[]> {
-    const cacheKey = `venue-${venueId}-${season}`;
-    const cached = this.cache.get(cacheKey);
+  async getVenueSchedule(venueId: string, season?: number): Promise<NFLGame[]> {
+    const targetSeason = season || this.getCurrentSeason();
     
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.data;
+    // For 2025, use the optimized venue-specific function
+    if (targetSeason === 2025) {
+      const games = getNFL2025VenueSchedule(venueId);
+      console.log(`[NFL API] Found ${games.length} games for venue ${venueId}`);
+      return games;
     }
-
-    const schedule = await this.getSeasonSchedule(season);
     
-    // Filter games for the specific venue
+    // For other years, filter from full schedule
+    const schedule = await this.getSeasonSchedule(season);
     const venueGames = schedule.games.filter(game => 
       game.venue.id === venueId
     );
-
-    this.cache.set(cacheKey, { data: venueGames, timestamp: Date.now() });
+    
+    console.log(`[NFL API] Found ${venueGames.length} games for venue ${venueId}`);
     return venueGames;
   }
 
   // Get games for a specific week
-  async getWeekSchedule(week: number, season: number = 2025): Promise<NFLGame[]> {
+  async getWeekSchedule(week: number, season?: number): Promise<NFLGame[]> {
     const schedule = await this.getSeasonSchedule(season);
     return schedule.games.filter(game => game.week === week);
   }
 
   // Get upcoming games for a venue
   async getUpcomingVenueGames(venueId: string): Promise<NFLGame[]> {
-    const scheduleAvailable = await this.isScheduleAvailable();
-    
-    if (!scheduleAvailable) {
-      console.log('[NFL API] 2025 NFL schedule will be available in May 2025');
-      return [];
-    }
-
-    const allGames = await this.getVenueSchedule(venueId);
+    // First try current season
+    let allGames = await this.getVenueSchedule(venueId);
     const today = new Date();
     
-    return allGames
+    let upcomingGames = allGames
       .filter(game => new Date(game.gameDate) >= today)
-      .sort((a, b) => new Date(a.gameDate).getTime() - new Date(b.gameDate).getTime())
-      .slice(0, 8); // Return next 8 home games
+      .sort((a, b) => new Date(a.gameDate).getTime() - new Date(b.gameDate).getTime());
+
+    // If no upcoming games in current season, try next season
+    if (upcomingGames.length === 0) {
+      const nextSeason = this.getCurrentSeason() + 1;
+      allGames = await this.getVenueSchedule(venueId, nextSeason);
+      upcomingGames = allGames
+        .sort((a, b) => new Date(a.gameDate).getTime() - new Date(b.gameDate).getTime());
+    }
+
+    // Return up to 8 games
+    return upcomingGames.slice(0, 8);
   }
 
   // Convert game time to full datetime
