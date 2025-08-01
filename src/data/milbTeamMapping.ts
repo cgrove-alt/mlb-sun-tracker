@@ -53,10 +53,10 @@ export const MILB_VENUE_TO_TEAM_MAP: Record<number, number> = {
   2749: 547,  // FNB Field -> Harrisburg Senators
   5418: 1956,  // TD Bank Ballpark -> Somerset Patriots
   2814: 421,  // Montgomery Riverwalk Stadium -> Montgomery Biscuits
-  2848: 553,  // Smokies Stadium -> Tennessee Smokies
+  2848: 553,  // Covenant Health Park -> Knoxville Smokies
   2512: 106,  // UPMC Park -> Erie SeaWolves
   2768: 237,  // Momentum Bank Ballpark -> Midland RockHounds
-  2813: 430,  // Trustmark Park -> Mississippi Braves
+  2813: 430,  // Synovus Park -> Columbus Clingstones
   5455: 559,  // Toyota Field -> Rocket City Trash Pandas
   2682: 498,  // AT&T Field -> Chattanooga Lookouts
   4529: 247,  // Regions Field -> Birmingham Barons
