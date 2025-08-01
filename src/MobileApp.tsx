@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Stadium, MLB_STADIUMS } from './data/stadiums';
+import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { getStadiumSections } from './data/stadiumSections';
+import { getVenueSections } from './data/venueSections';
+import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
+import { MiLBGame } from './services/milbApi';
 import { SeatingSectionSun } from './utils/sunCalculations';
 import { MobileHeader } from './components/MobileHeader';
-import { MobileStadiumSelector } from './components/MobileStadiumSelector';
+import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { MobileGameScheduler } from './components/MobileGameScheduler';
 import { MobileFilterSheet } from './components/MobileFilterSheet';
 import { SunFilterCriteria } from './components/SunExposureFilterFixed';
@@ -24,9 +28,11 @@ const gameLoadRateLimiter = new RateLimiter(5, 60000); // 5 requests per minute
 const weatherLoadRateLimiter = new RateLimiter(10, 60000); // 10 requests per minute
 
 const MobileApp: React.FC = () => {
+  const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
-  const [games, setGames] = useState<MLBGame[]>([]);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
+  const [games, setGames] = useState<(MLBGame | MiLBGame)[]>([]);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | null>(null);
+  const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
   const [allSections, setAllSections] = useState<SeatingSectionSun[]>([]);
   const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
@@ -37,61 +43,40 @@ const MobileApp: React.FC = () => {
 
   const [isCalculating, setIsCalculating] = useState(false);
 
-  // Load games when stadium is selected
+  // Convert unified venue to legacy stadium when needed
   useEffect(() => {
-    if (selectedStadium) {
-      loadGames();
+    if (selectedVenue) {
+      setSelectedStadium(convertToLegacyStadium(selectedVenue));
     } else {
-      setGames([]);
-      setSelectedGame(null);
+      setSelectedStadium(null);
     }
-  }, [selectedStadium]);
+  }, [selectedVenue]);
 
   // Load weather when game is selected
   useEffect(() => {
-    if (selectedGame && selectedStadium) {
+    if (gameDateTime && selectedVenue) {
       loadWeather();
     } else {
       setWeatherForecast(null);
     }
-  }, [selectedGame]);
+  }, [gameDateTime, selectedVenue]);
 
   // Calculate sun exposure when game is selected
   useEffect(() => {
-    if (selectedGame && selectedStadium) {
+    if (gameDateTime && selectedVenue && selectedStadium) {
       calculateSections();
     } else {
       setAllSections([]);
       setFilteredSections([]);
     }
-  }, [selectedGame, selectedStadium, filterCriteria]);
+  }, [gameDateTime, selectedVenue, selectedStadium, filterCriteria]);
 
-  const loadGames = async () => {
-    if (!selectedStadium) return;
-    
-    // Rate limit check
-    if (!gameLoadRateLimiter.isAllowed('games')) {
-      setError('Too many requests. Please wait a moment.');
-      return;
-    }
-    
-    setIsLoading(true);
-    setError(null);
-    
-    try {
-      const allGames = await mlbApi.getSchedule();
-      const upcomingGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
-      setGames(upcomingGames);
-    } catch (err) {
-      setError('Failed to load games');
-      console.error('Error loading games:', err);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame)[]) => {
+    setGames(loadedGames);
   };
 
   const loadWeather = async () => {
-    if (!selectedGame || !selectedStadium) return;
+    if (!gameDateTime || !selectedVenue) return;
     
     // Rate limit check
     if (!weatherLoadRateLimiter.isAllowed('weather')) {
@@ -103,8 +88,8 @@ const MobileApp: React.FC = () => {
     
     try {
       const forecast = await weatherApi.getForecast(
-        selectedStadium.latitude,
-        selectedStadium.longitude
+        selectedVenue.latitude,
+        selectedVenue.longitude
       );
       setWeatherForecast(forecast);
     } catch (err) {
@@ -116,13 +101,21 @@ const MobileApp: React.FC = () => {
   };
 
   const calculateSections = async () => {
-    if (!selectedGame || !selectedStadium) return;
+    if (!gameDateTime || !selectedVenue || !selectedStadium) return;
     
     setIsCalculating(true);
     
     try {
-      const sections = getStadiumSections(selectedStadium.id);
-      const gameDate = new Date(selectedGame.gameDate);
+      // Get sections based on venue type
+      let sections: any[] = [];
+      if (selectedVenue.league === 'MLB') {
+        sections = getStadiumSections(selectedVenue.id);
+      } else if (selectedVenue.league === 'MiLB') {
+        sections = generateBaseballSections(selectedVenue);
+      } else {
+        sections = getVenueSections(selectedVenue.id);
+      }
+      const gameDate = gameDateTime;
       
       // Use the same time-based calculation as desktop
       const calculator = new SunCalculator(selectedStadium);
@@ -191,18 +184,15 @@ const MobileApp: React.FC = () => {
     }
   };
 
-  const handleStadiumChange = useCallback((stadium: Stadium | null) => {
-    // Validate stadium ID if provided
-    if (stadium && !validateStadiumId(stadium.id)) {
-      console.error('Invalid stadium ID:', stadium.id);
-      return;
-    }
-    setSelectedStadium(stadium);
+  const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
+    setSelectedVenue(venue);
     setSelectedGame(null);
+    setGameDateTime(null);
   }, []);
 
-  const handleGameSelect = useCallback((game: MLBGame) => {
+  const handleGameSelect = useCallback((game: MLBGame | MiLBGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
+    setGameDateTime(dateTime);
   }, []);
 
   const handleFilterChange = useCallback((criteria: SunFilterCriteria) => {
@@ -220,44 +210,48 @@ const MobileApp: React.FC = () => {
       <SEOHelmet 
         stadium={selectedStadium}
         game={selectedGame}
-        pageType={selectedGame ? 'game' : selectedStadium ? 'stadium' : 'home'}
+        pageType={selectedGame ? 'game' : selectedVenue ? 'stadium' : 'home'}
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       <MobileHeader />
       
       <main className="mobile-main">
         <div className="mobile-content">
-          {/* Stadium Selection */}
+          {/* Unified Venue and Game Selection */}
           <section className="mobile-section">
-            <MobileStadiumSelector
-              stadiums={MLB_STADIUMS}
-              selectedStadium={selectedStadium}
-              onStadiumSelect={handleStadiumChange}
+            <UnifiedGameSelector
+              selectedVenue={selectedVenue}
+              onGameSelect={handleGameSelect}
+              onVenueChange={handleVenueChange}
+              onGamesLoaded={handleGamesLoaded}
             />
           </section>
 
           {/* Empty State Info Box */}
-          {!selectedStadium && (
+          {!selectedVenue && (
             <section className="mobile-section">
               <EmptyState 
                 type="no-stadium"
                 action={
                   <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                    Choose from 30 MLB stadiums to analyze sun exposure patterns
+                    Choose from MLB, MiLB, NFL, or MLS venues to analyze sun exposure patterns
                   </p>
                 }
               />
             </section>
           )}
           
-          {selectedStadium && !selectedGame && (
+          {selectedVenue && !gameDateTime && (
             <>
               <section className="mobile-section">
                 <EmptyState 
                   type="no-game"
                   action={
                     <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                      Pick a real game or set any custom date and time
+                      {selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB'
+                        ? 'Pick a real game or set any custom date and time'
+                        : 'Set a custom date and time for shade calculations'
+                      }
                     </p>
                   }
                 />
@@ -265,9 +259,9 @@ const MobileApp: React.FC = () => {
               
               <section className="mobile-section">
                 <div className="mobile-stadium-guide-link">
-                  <a href={`/stadium/${selectedStadium.id}`} className="mobile-guide-button">
+                  <a href={`/venue/${selectedVenue.id}`} className="mobile-guide-button">
                     <div>
-                      <div className="guide-title">View {selectedStadium.name} Shade Guide</div>
+                      <div className="guide-title">View {selectedVenue.name} Shade Guide</div>
                       <p className="mobile-guide-description">
                         Discover the best shaded sections, weather patterns, and tips
                       </p>
@@ -281,28 +275,16 @@ const MobileApp: React.FC = () => {
             </>
           )}
 
-          {/* Game Selection */}
-          {selectedStadium && (
-            <section className="mobile-section">
-              <h2 className="mobile-section-title">Select a Game</h2>
-              <MobileGameScheduler
-                games={games}
-                selectedGame={selectedGame}
-                onGameSelect={handleGameSelect}
-                loading={isLoading}
-                stadium={selectedStadium}
-              />
-            </section>
-          )}
+          {/* Games are now handled by UnifiedGameSelector */}
 
 
           {/* Weather Display */}
-          {selectedGame && weatherForecast && (
+          {gameDateTime && weatherForecast && selectedStadium && (
             <section className="mobile-section">
               <h2 className="mobile-section-title">Game Weather</h2>
               <WeatherDisplay
                 weather={weatherForecast}
-                gameTime={new Date(selectedGame.gameDate)}
+                gameTime={gameDateTime}
                 loading={isWeatherLoading}
                 stadium={selectedStadium}
               />
@@ -310,7 +292,7 @@ const MobileApp: React.FC = () => {
           )}
 
           {/* Filter and Results */}
-          {selectedGame && (
+          {gameDateTime && selectedVenue && (
             <>
               <section className="mobile-section mobile-filter-section">
                 <MobileFilterSheet
