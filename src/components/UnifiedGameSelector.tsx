@@ -486,7 +486,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                   <div className="no-games">
                     {selectedVenue.league === 'NFL' ? (
                       <>
-                        <p>2025 NFL schedule will be available in May 2025</p>
+                        <p>No games found for this venue</p>
                         <p>Use custom date/time for shade calculations</p>
                       </>
                     ) : (
@@ -495,6 +495,20 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         <p>{t('gameSelector.tryCustomTime')}</p>
                       </>
                     )}
+                  </div>
+                )}
+                {selectedVenue.league === 'NFL' && games.length > 0 && (
+                  <div className="demo-notice" style={{ 
+                    background: '#fff3cd', 
+                    border: '1px solid #ffeeba', 
+                    borderRadius: '4px', 
+                    padding: '8px 12px', 
+                    marginTop: '10px',
+                    fontSize: '13px',
+                    color: '#856404'
+                  }}>
+                    <strong>Note:</strong> This is demonstration data for shade calculations. 
+                    For actual NFL game schedules, please visit <a href="https://www.nfl.com/schedules" target="_blank" rel="noopener noreferrer">NFL.com</a>
                   </div>
                 )}
                 {games.length > 0 && (
