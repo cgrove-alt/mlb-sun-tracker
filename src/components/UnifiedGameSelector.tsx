@@ -87,11 +87,26 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   });
 
   const milbLevelOptions = milbLevels.map(level => {
-    const levelInfo = (MILB_LEVELS as any)[level.replace('+', '_').replace('A', level === 'A+' ? 'HIGH_A' : level === 'AA' ? 'AA' : level === 'AAA' ? 'AAA' : 'LOW_A')];
     const venues = getMiLBVenuesByLevel(level);
+    // Use consistent abbreviation-based naming
+    let displayName = level;
+    switch (level) {
+      case 'AAA':
+        displayName = 'Triple-A (AAA)';
+        break;
+      case 'AA':
+        displayName = 'Double-A (AA)';
+        break;
+      case 'A+':
+        displayName = 'High-A (A+)';
+        break;
+      case 'A':
+        displayName = 'Single-A (A)';
+        break;
+    }
     return {
       value: level,
-      label: `${levelInfo?.name || level} (${venues.length} venues)`
+      label: `${displayName} - ${venues.length} venues`
     };
   });
 
