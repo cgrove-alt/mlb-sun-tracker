@@ -1,7 +1,7 @@
 // NFL API Service
-// Uses real NFL schedule data
+// Uses real NFL schedule data from ESPN API
 
-import { getNFL2025Schedule, getNFL2025VenueSchedule } from '../data/nfl2025Schedule';
+import { nflApiClient } from './nflApiClient';
 
 export interface NFLGame {
   gameId: string;
@@ -113,27 +113,32 @@ class NFLApiService {
       return cached.data;
     }
 
-    // For now, we only have 2025 data
-    // In production, this would fetch from a real API
-    if (targetSeason === 2025) {
-      const games = getNFL2025Schedule();
-      const schedule = {
-        season: targetSeason,
-        games
-      };
+    let games: NFLGame[] = [];
+
+    // Try to fetch real data
+    try {
+      console.log(`[NFL API] Fetching real data for ${targetSeason} season`);
+      games = await nflApiClient.fetchSeasonSchedule(targetSeason);
       
-      this.cache.set(cacheKey, { data: schedule, timestamp: Date.now() });
-      console.log(`[NFL API] Loaded ${games.length} games for ${targetSeason} season`);
-      return schedule;
+      if (games.length === 0) {
+        console.log(`[NFL API] No real data available for ${targetSeason} season`);
+        throw new Error('No NFL schedule data available');
+      }
+    } catch (error) {
+      console.error(`[NFL API] Error fetching real data:`, error);
+      throw new Error('NFL schedule data is currently unavailable');
     }
 
-    // For other years, return empty (would fetch from API in production)
-    console.log(`[NFL API] No data available for ${targetSeason} season`);
-    return {
+    const schedule = {
       season: targetSeason,
-      games: []
+      games
     };
+    
+    this.cache.set(cacheKey, { data: schedule, timestamp: Date.now() });
+    console.log(`[NFL API] Loaded ${games.length} games for ${targetSeason} season`);
+    return schedule;
   }
+
 
   // Get games for a specific team
   async getTeamSchedule(teamName: string, season?: number): Promise<NFLGame[]> {
@@ -147,21 +152,31 @@ class NFLApiService {
   async getVenueSchedule(venueId: string, season?: number): Promise<NFLGame[]> {
     const targetSeason = season || this.getCurrentSeason();
     
-    // For 2025, use the optimized venue-specific function
-    if (targetSeason === 2025) {
-      const games = getNFL2025VenueSchedule(venueId);
-      console.log(`[NFL API] Found ${games.length} games for venue ${venueId}`);
-      return games;
+    // Try to get real data
+    try {
+      console.log(`[NFL API] Fetching real venue data for ${venueId} in ${targetSeason}`);
+      const games = await nflApiClient.fetchVenueSchedule(venueId, targetSeason);
+      
+      if (games.length > 0) {
+        console.log(`[NFL API] Found ${games.length} real games for venue ${venueId}`);
+        return games;
+      }
+      
+      // If no games found for specific venue, try getting from full schedule
+      const schedule = await this.getSeasonSchedule(targetSeason);
+      const venueGames = schedule.games.filter(game => 
+        game.venue.id === venueId
+      );
+      
+      if (venueGames.length === 0) {
+        throw new Error('No games found for this venue');
+      }
+      
+      return venueGames;
+    } catch (error) {
+      console.error(`[NFL API] Error fetching venue data:`, error);
+      throw new Error('NFL schedule data is currently unavailable');
     }
-    
-    // For other years, filter from full schedule
-    const schedule = await this.getSeasonSchedule(season);
-    const venueGames = schedule.games.filter(game => 
-      game.venue.id === venueId
-    );
-    
-    console.log(`[NFL API] Found ${venueGames.length} games for venue ${venueId}`);
-    return venueGames;
   }
 
   // Get games for a specific week
