@@ -103,7 +103,10 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       
       const now = new Date();
       const currentYear = now.getFullYear();
-      const endDate = new Date(currentYear, 9, 31); // End of October
+      // For MiLB, use 30 days due to API limitation with multiple sport IDs
+      const endDate = selectedVenue.league === 'MiLB' 
+        ? new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000) 
+        : new Date(currentYear, 9, 31); // End of October for MLB
       
       if (selectedVenue.league === 'MLB') {
         const schedule = await mlbApi.getSchedule(
@@ -132,12 +135,18 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           return;
         }
         
-        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', selectedVenue.venueId);
+        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', selectedVenue.venueId, 'level:', selectedVenue.milbLevel);
         
-        const schedule = await milbApi.getTeamSchedule(
+        // Get the sport ID for this MiLB level
+        const sportId = selectedVenue.milbLevel ? (MILB_LEVELS as any)[
+          selectedVenue.milbLevel.replace('+', '_').replace('A', selectedVenue.milbLevel === 'A+' ? 'HIGH_A' : selectedVenue.milbLevel === 'AA' ? 'AA' : selectedVenue.milbLevel === 'AAA' ? 'AAA' : 'LOW_A')
+        ]?.id || 11 : 11;
+        
+        const schedule = await milbApi.getTeamScheduleByLevel(
           teamId,
           now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
+          endDate.toISOString().split('T')[0],
+          sportId
         );
         
         const homeGames = milbApi.getHomeGamesForVenue(selectedVenue.venueId, schedule);

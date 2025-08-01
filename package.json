@@ -12,7 +12,8 @@
     "generate-sitemap": "node scripts/generate-sitemap.js",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "deploy": "npm run build && npx gh-pages -d out -t true"
   },
   "dependencies": {
     "@types/three": "^0.178.1",
@@ -20,6 +21,7 @@
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "next": "^15.4.1",
+    "node-fetch": "^2.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
@@ -43,6 +45,7 @@
     "@types/suncalc": "^1.9.2",
     "eslint": "8.48.0",
     "eslint-config-next": "15.4.1",
+    "gh-pages": "^6.3.0",
     "jest": "^30.0.5",
     "jest-environment-jsdom": "^30.0.5",
     "next-pwa": "^5.6.0",

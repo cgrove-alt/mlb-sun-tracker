@@ -150,6 +150,17 @@ class MiLBApiService {
     return this.fetchWithCache<MiLBSchedule>(url);
   }
 
+  // Get schedule for a specific team and level (to avoid API date range limitation)
+  async getTeamScheduleByLevel(
+    teamId: number,
+    startDate: string,
+    endDate: string,
+    sportId: number
+  ): Promise<MiLBSchedule> {
+    const url = `${this.baseUrl}/schedule?teamId=${teamId}&startDate=${startDate}&endDate=${endDate}&sportId=${sportId}`;
+    return this.fetchWithCache<MiLBSchedule>(url);
+  }
+
   // Get home games for a specific venue
   getHomeGamesForVenue(venueId: number, schedule: MiLBSchedule): MiLBGame[] {
     const games: MiLBGame[] = [];
