@@ -7,8 +7,8 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 
-// Use the full App component
-const App = dynamic(() => import('../src/App'), {
+// Use the unified App component that supports multiple leagues
+const App = dynamic(() => import('../src/UnifiedApp'), {
   ssr: false,
   loading: () => <LoadingSpinner />,
 });
