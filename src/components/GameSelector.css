@@ -572,56 +572,63 @@
   color: white !important;
 }
 
-/* League selector styles */
-.league-selector {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
+/* League and level selector dropdown styles */
+.league-select .react-select__control,
+.milb-level-select .react-select__control {
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  min-height: 44px;
+  box-shadow: none;
+  transition: var(--transition-colors);
+  color: var(--color-black);
+  background: var(--color-white);
 }
 
-.league-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background: white;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-size: 14px;
+.league-select .react-select__control:hover,
+.milb-level-select .react-select__control:hover {
+  border-color: var(--color-gray-400);
 }
 
-.league-btn:hover {
-  border-color: #2196f3;
-  background-color: #f5f5f5;
+.league-select .react-select__control--is-focused,
+.milb-level-select .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
 }
 
-.league-btn.active {
-  border-color: #2196f3;
-  background-color: #e3f2fd;
-  color: #1976d2;
+.league-select .react-select__single-value,
+.milb-level-select .react-select__single-value {
+  color: #000 !important;
+  font-weight: 600;
 }
 
-.league-icon {
-  font-size: 18px;
+.league-select .react-select__placeholder,
+.milb-level-select .react-select__placeholder {
+  color: #666 !important;
 }
 
-.league-label {
+.league-select .react-select__option,
+.milb-level-select .react-select__option {
+  color: #000 !important;
+  padding: 10px 12px;
   font-weight: 500;
 }
 
-.league-count {
-  font-size: 12px;
-  color: #666;
-  background: #f0f0f0;
-  padding: 2px 6px;
-  border-radius: 10px;
+.league-select .react-select__option--is-focused,
+.milb-level-select .react-select__option--is-focused {
+  background-color: #f5f5f5;
 }
 
-.league-btn.active .league-count {
-  background: #bbdefb;
-  color: #1565c0;
+.league-select .react-select__option--is-selected,
+.milb-level-select .react-select__option--is-selected {
+  background-color: #1a237e !important;
+  color: white !important;
+}
+
+.league-select .react-select__menu,
+.milb-level-select .react-select__menu {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  background-color: white;
 }
 
 .non-mlb-notice {
@@ -658,14 +665,3 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .league-selector {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .league-btn {
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-}

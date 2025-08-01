@@ -82,9 +82,16 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     const venues = getVenuesByLeague(league);
     return {
       value: league,
-      label: info?.name || league,
-      count: venues.length,
-      icon: league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'MLS' ? '⚽' : '🏟️'
+      label: `${league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'MLS' ? '⚽' : '🏟️'} ${info?.name || league} (${venues.length})`,
+    };
+  });
+
+  const milbLevelOptions = milbLevels.map(level => {
+    const levelInfo = (MILB_LEVELS as any)[level.replace('+', '_').replace('A', level === 'A+' ? 'HIGH_A' : level === 'AA' ? 'AA' : level === 'AAA' ? 'AAA' : 'LOW_A')];
+    const venues = getMiLBVenuesByLevel(level);
+    return {
+      value: level,
+      label: `${levelInfo?.name || level} (${venues.length} venues)`
     };
   });
 
@@ -291,40 +298,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       <div className="selector-header">
         <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
         
-        {/* League Selector */}
-        <div className="league-selector">
-          {leagueOptions.map(league => (
-            <button
-              key={league.value}
-              className={`league-btn ${selectedLeague === league.value ? 'active' : ''}`}
-              onClick={() => handleLeagueChange(league.value)}
-              title={`${league.label} (${league.count} venues)`}
-            >
-              <span className="league-icon">{league.icon}</span>
-              <span className="league-label">{league.value}</span>
-              <span className="league-count">{league.count}</span>
-            </button>
-          ))}
-        </div>
-
-        {/* MiLB Level Selector */}
-        {selectedLeague === 'MiLB' && (
-          <div className="milb-level-selector">
-            <label>Minor League Level:</label>
-            <div className="level-buttons">
-              {milbLevels.map(level => (
-                <button
-                  key={level}
-                  className={`level-btn ${selectedMiLBLevel === level ? 'active' : ''}`}
-                  onClick={() => handleMiLBLevelChange(level)}
-                  title={(MILB_LEVELS as any)[level.replace('+', '_').replace('A', level === 'A+' ? 'HIGH_A' : level === 'AA' ? 'AA' : level === 'AAA' ? 'AAA' : 'LOW_A')]?.name || level}
-                >
-                  {level}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
 
         {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
           <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
@@ -362,6 +335,47 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         )}
       </div>
 
+      {/* League Selection Dropdown */}
+      <div className="control-group">
+        <label htmlFor="league-select">League:</label>
+        <Select
+          inputId="league-select"
+          options={leagueOptions}
+          value={leagueOptions.find(opt => opt.value === selectedLeague)}
+          onChange={(option) => {
+            if (option) {
+              handleLeagueChange(option.value);
+            }
+          }}
+          placeholder="Select a league"
+          className="league-select"
+          aria-label="Select league"
+          isSearchable={false}
+        />
+      </div>
+
+      {/* MiLB Level Selection Dropdown - Only shown when MiLB is selected */}
+      {selectedLeague === 'MiLB' && (
+        <div className="control-group">
+          <label htmlFor="milb-level-select">Minor League Level:</label>
+          <Select
+            inputId="milb-level-select"
+            options={milbLevelOptions}
+            value={milbLevelOptions.find(opt => opt.value === selectedMiLBLevel)}
+            onChange={(option) => {
+              if (option) {
+                handleMiLBLevelChange(option.value);
+              }
+            }}
+            placeholder="Select MiLB level"
+            className="milb-level-select"
+            aria-label="Select MiLB level"
+            isSearchable={false}
+          />
+        </div>
+      )}
+
+      {/* Venue Selection Dropdown */}
       <div className="control-group">
         <label htmlFor="venue-select">
           {selectedLeague === 'MLB' ? t('gameSelector.stadium') : 'Venue'}:
@@ -371,11 +385,12 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           options={venueOptions}
           value={venueOptions.find(opt => opt.venue.id === selectedVenue?.id) || null}
           onChange={(option) => onVenueChange(option?.venue || null)}
-          placeholder={`Choose ${leagueInfo?.name || selectedLeague} venue`}
+          placeholder={selectedLeague ? `Choose ${leagueInfo?.name || selectedLeague} venue` : 'Select a league first'}
           className="venue-select"
           aria-label={t('gameSelector.selectStadium')}
           formatOptionLabel={formatOptionLabel}
           blurInputOnSelect={true}
+          isDisabled={!selectedLeague}
         />
       </div>
 
@@ -528,127 +543,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         )
       )}
 
-      <style jsx>{`
-        .league-selector {
-          display: flex;
-          gap: 8px;
-          margin-bottom: 12px;
-        }
-
-        .league-btn {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          padding: 8px 12px;
-          border: 2px solid #e0e0e0;
-          border-radius: 8px;
-          background: white;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-size: 14px;
-        }
-
-        .league-btn:hover {
-          border-color: #2196f3;
-          background-color: #f5f5f5;
-        }
-
-        .league-btn.active {
-          border-color: #2196f3;
-          background-color: #e3f2fd;
-          color: #1976d2;
-        }
-
-        .league-icon {
-          font-size: 18px;
-        }
-
-        .league-label {
-          font-weight: 500;
-        }
-
-        .league-count {
-          font-size: 12px;
-          color: #666;
-          background: #f0f0f0;
-          padding: 2px 6px;
-          border-radius: 10px;
-        }
-
-        .league-btn.active .league-count {
-          background: #bbdefb;
-          color: #1565c0;
-        }
-
-        .non-mlb-notice {
-          background: #fff3cd;
-          border: 1px solid #ffeaa7;
-          color: #856404;
-          padding: 12px;
-          border-radius: 8px;
-          margin-bottom: 16px;
-          font-size: 14px;
-        }
-
-        .milb-level-selector {
-          margin-bottom: 16px;
-        }
-
-        .milb-level-selector label {
-          display: block;
-          margin-bottom: 8px;
-          font-weight: 500;
-          color: #333;
-        }
-
-        .level-buttons {
-          display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
-        .level-btn {
-          padding: 8px 16px;
-          border: 2px solid #e0e0e0;
-          border-radius: 8px;
-          background: white;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-size: 14px;
-          font-weight: 600;
-        }
-
-        .level-btn:hover {
-          border-color: #2196f3;
-          background-color: #f5f5f5;
-        }
-
-        .level-btn.active {
-          border-color: #2196f3;
-          background-color: #e3f2fd;
-          color: #1976d2;
-        }
-
-        @media (max-width: 768px) {
-          .league-selector {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-          }
-
-          .league-btn {
-            white-space: nowrap;
-          }
-
-          .level-buttons {
-            width: 100%;
-          }
-
-          .level-btn {
-            flex: 1;
-            min-width: 60px;
-          }
-        }
-      `}</style>
     </div>
   );
 };
