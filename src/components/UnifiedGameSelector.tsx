@@ -484,8 +484,17 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                 </div>
                 {games.length === 0 && !gamesLoading.loading && !error && (
                   <div className="no-games">
-                    <p>{t('gameSelector.noGamesForStadium')}</p>
-                    <p>{t('gameSelector.tryCustomTime')}</p>
+                    {selectedVenue.league === 'NFL' ? (
+                      <>
+                        <p>2025 NFL schedule will be available in May 2025</p>
+                        <p>Use custom date/time for shade calculations</p>
+                      </>
+                    ) : (
+                      <>
+                        <p>{t('gameSelector.noGamesForStadium')}</p>
+                        <p>{t('gameSelector.tryCustomTime')}</p>
+                      </>
+                    )}
                   </div>
                 )}
                 {games.length > 0 && (

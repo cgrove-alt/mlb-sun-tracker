@@ -84,9 +84,9 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Lighthouse', 'Open concourses']
   },
   {
-    id: 'metlife-stadium',
+    id: 'metlife-stadium-jets',
     name: 'MetLife Stadium',
-    team: 'New York Jets', // Also Giants
+    team: 'New York Jets',
     conference: 'AFC',
     division: 'East',
     city: 'East Rutherford',
@@ -321,9 +321,9 @@ export const NFL_STADIUMS: NFLStadium[] = [
     features: ['Translucent roof', 'Natural grass tray system']
   },
   {
-    id: 'sofi-stadium',
+    id: 'sofi-stadium-chargers',
     name: 'SoFi Stadium',
-    team: 'Los Angeles Chargers', // Also Rams
+    team: 'Los Angeles Chargers',
     conference: 'AFC',
     division: 'West',
     city: 'Los Angeles',

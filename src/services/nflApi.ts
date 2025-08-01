@@ -1,12 +1,11 @@
 // NFL API Service
-// Fetches NFL game schedules and data
-
-import { NFL_2025_SCHEDULE } from '../data/nfl2025Schedule';
+// Fetches real NFL game schedules when available
+// Note: NFL typically releases schedules in May for the upcoming season
 
 export interface NFLGame {
   gameId: string;
   gameDate: string; // ISO date string
-  gameTime: string; // Local time
+  gameTime: string; // Local time HH:MM
   week: number;
   seasonType: 'preseason' | 'regular' | 'postseason';
   homeTeam: {
@@ -31,36 +30,99 @@ export interface NFLGame {
   };
 }
 
+export interface NFLTeam {
+  id: string;
+  name: string;
+  abbreviation: string;
+  conference: 'AFC' | 'NFC';
+  division: 'East' | 'North' | 'South' | 'West';
+}
+
 export interface NFLSchedule {
   season: number;
+  week?: number;
   games: NFLGame[];
 }
 
-// NFL API now uses the comprehensive schedule imported from nfl2025Schedule.ts
+// Team to stadium mapping for proper venue association
+const TEAM_STADIUM_MAP: Record<string, string> = {
+  'Buffalo Bills': 'highmark-stadium',
+  'Miami Dolphins': 'hard-rock-stadium',
+  'New England Patriots': 'gillette-stadium',
+  'New York Jets': 'metlife-stadium-jets',
+  'Baltimore Ravens': 'mt-bank-stadium',
+  'Cincinnati Bengals': 'paycor-stadium',
+  'Cleveland Browns': 'huntington-bank-field',
+  'Pittsburgh Steelers': 'acrisure-stadium',
+  'Houston Texans': 'nrg-stadium',
+  'Indianapolis Colts': 'lucas-oil-stadium',
+  'Jacksonville Jaguars': 'everbank-stadium',
+  'Tennessee Titans': 'nissan-stadium',
+  'Denver Broncos': 'empower-field',
+  'Kansas City Chiefs': 'geha-field-arrowhead',
+  'Las Vegas Raiders': 'allegiant-stadium',
+  'Los Angeles Chargers': 'sofi-stadium-chargers',
+  'Dallas Cowboys': 'at-t-stadium',
+  'New York Giants': 'metlife-stadium-giants',
+  'Philadelphia Eagles': 'lincoln-financial-field',
+  'Washington Commanders': 'northwest-stadium',
+  'Chicago Bears': 'soldier-field',
+  'Detroit Lions': 'ford-field',
+  'Green Bay Packers': 'lambeau-field',
+  'Minnesota Vikings': 'us-bank-stadium',
+  'Atlanta Falcons': 'mercedes-benz-stadium',
+  'Carolina Panthers': 'bank-of-america-stadium',
+  'New Orleans Saints': 'caesars-superdome',
+  'Tampa Bay Buccaneers': 'raymond-james-stadium',
+  'Arizona Cardinals': 'state-farm-stadium',
+  'Los Angeles Rams': 'sofi-stadium-rams',
+  'San Francisco 49ers': 'levis-stadium',
+  'Seattle Seahawks': 'lumen-field'
+};
 
 class NFLApiService {
-  private cache = new Map<string, { data: any; timestamp: number }>();
-  private cacheTimeout = 15 * 60 * 1000; // 15 minutes
+  private apiBaseUrl = 'https://api.nfl.com/v1'; // This would be the real API endpoint
+  private cache: Map<string, { data: any; timestamp: number }> = new Map();
+  private cacheTimeout = 3600000; // 1 hour cache
 
-  // Get schedule for a specific team
-  async getTeamSchedule(teamId: string, season: number = 2025): Promise<NFLGame[]> {
-    const cacheKey = `schedule-${teamId}-${season}`;
-    const cached = this.cache.get(cacheKey);
-    
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.data;
-    }
-
-    // Filter games for the specific team from comprehensive schedule
-    const teamGames = NFL_2025_SCHEDULE.filter(game => 
-      game.homeTeam.id === teamId || game.awayTeam.id === teamId
-    );
-
-    this.cache.set(cacheKey, { data: teamGames, timestamp: Date.now() });
-    return teamGames;
+  // Check if schedule data is available
+  async isScheduleAvailable(season: number = 2025): Promise<boolean> {
+    // NFL schedules are typically released in May
+    // For 2025 season, check if we're past May 2025
+    const scheduleReleaseDate = new Date(2025, 4, 1); // May 1, 2025
+    const now = new Date();
+    return now >= scheduleReleaseDate;
   }
 
-  // Get all games for a specific venue
+  // Get full season schedule from API
+  async getSeasonSchedule(season: number = 2025): Promise<NFLSchedule> {
+    const scheduleAvailable = await this.isScheduleAvailable(season);
+    
+    if (!scheduleAvailable) {
+      return {
+        season,
+        games: []
+      };
+    }
+
+    // In production, this would fetch from the real NFL API
+    // For now, return empty as no real 2025 data exists yet
+    console.log(`[NFL API] 2025 schedule not yet available. Check back after May 2025.`);
+    return {
+      season,
+      games: []
+    };
+  }
+
+  // Get games for a specific team
+  async getTeamSchedule(teamName: string, season: number = 2025): Promise<NFLGame[]> {
+    const schedule = await this.getSeasonSchedule(season);
+    return schedule.games.filter(game => 
+      game.homeTeam.name === teamName || game.awayTeam.name === teamName
+    );
+  }
+
+  // Get games for a specific venue (only home games)
   async getVenueSchedule(venueId: string, season: number = 2025): Promise<NFLGame[]> {
     const cacheKey = `venue-${venueId}-${season}`;
     const cached = this.cache.get(cacheKey);
@@ -69,8 +131,10 @@ class NFLApiService {
       return cached.data;
     }
 
-    // Filter games for the specific venue from comprehensive schedule
-    const venueGames = NFL_2025_SCHEDULE.filter(game => 
+    const schedule = await this.getSeasonSchedule(season);
+    
+    // Filter games for the specific venue
+    const venueGames = schedule.games.filter(game => 
       game.venue.id === venueId
     );
 
@@ -80,21 +144,19 @@ class NFLApiService {
 
   // Get games for a specific week
   async getWeekSchedule(week: number, season: number = 2025): Promise<NFLGame[]> {
-    const cacheKey = `week-${week}-${season}`;
-    const cached = this.cache.get(cacheKey);
-    
-    if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      return cached.data;
-    }
-
-    const weekGames = NFL_2025_SCHEDULE.filter(game => game.week === week);
-    
-    this.cache.set(cacheKey, { data: weekGames, timestamp: Date.now() });
-    return weekGames;
+    const schedule = await this.getSeasonSchedule(season);
+    return schedule.games.filter(game => game.week === week);
   }
 
-  // Get upcoming games for a venue (next 8 weeks)
+  // Get upcoming games for a venue
   async getUpcomingVenueGames(venueId: string): Promise<NFLGame[]> {
+    const scheduleAvailable = await this.isScheduleAvailable();
+    
+    if (!scheduleAvailable) {
+      console.log('[NFL API] 2025 NFL schedule will be available in May 2025');
+      return [];
+    }
+
     const allGames = await this.getVenueSchedule(venueId);
     const today = new Date();
     
@@ -117,118 +179,10 @@ class NFLApiService {
     return ['13:00', '16:05', '16:25', '20:15', '20:20']; // 1PM, 4:05PM, 4:25PM, 8:15PM, 8:20PM ET
   }
 
-  // Get all games for the entire season
-  async getAllGames(season: number = 2025): Promise<NFLGame[]> {
-    return NFL_2025_SCHEDULE;
-  }
-
-  // Get games by network
-  async getGamesByNetwork(network: string): Promise<NFLGame[]> {
-    return NFL_2025_SCHEDULE.filter(game => 
-      game.tvNetwork?.toLowerCase().includes(network.toLowerCase())
-    );
-  }
-
-  // Get primetime games (TNF, SNF, MNF)
-  async getPrimetimeGames(): Promise<NFLGame[]> {
-    return NFL_2025_SCHEDULE.filter(game => 
-      ['NBC', 'ESPN', 'Prime Video'].includes(game.tvNetwork || '')
-    );
-  }
-
-  // Get games by time slot
-  async getGamesByTimeSlot(timeSlot: 'early' | 'afternoon' | 'night'): Promise<NFLGame[]> {
-    const timeMapping = {
-      'early': ['13:00'],
-      'afternoon': ['16:05', '16:25'], 
-      'night': ['20:15', '20:20']
-    };
-
-    const times = timeMapping[timeSlot];
-    return NFL_2025_SCHEDULE.filter(game => 
-      times.includes(game.gameTime)
-    );
-  }
-
-  // Get games in date range
-  async getGamesInDateRange(startDate: string, endDate: string): Promise<NFLGame[]> {
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    
-    return NFL_2025_SCHEDULE.filter(game => {
-      const gameDate = new Date(game.gameDate);
-      return gameDate >= start && gameDate <= end;
-    });
-  }
-
-  // Get stadium utilization stats
-  getStadiumStats(): Record<string, { games: number; venues: string[] }> {
-    const stats: Record<string, { games: number; venues: string[] }> = {};
-    
-    NFL_2025_SCHEDULE.forEach(game => {
-      const venueId = game.venue.id;
-      if (!stats[venueId]) {
-        stats[venueId] = { games: 0, venues: [] };
-      }
-      stats[venueId].games++;
-      if (!stats[venueId].venues.includes(game.venue.name)) {
-        stats[venueId].venues.push(game.venue.name);
-      }
-    });
-
-    return stats;
+  // Helper to get venue ID for a team
+  getVenueIdForTeam(teamName: string): string | null {
+    return TEAM_STADIUM_MAP[teamName] || null;
   }
 }
 
 export const nflApi = new NFLApiService();
-
-// Team ID mapping for reference
-export const NFL_TEAM_IDS: Record<string, string> = {
-  // AFC East
-  'Buffalo Bills': 'buf',
-  'Miami Dolphins': 'mia',
-  'New England Patriots': 'ne',
-  'New York Jets': 'nyj',
-  
-  // AFC North
-  'Baltimore Ravens': 'bal',
-  'Cincinnati Bengals': 'cin',
-  'Cleveland Browns': 'cle',
-  'Pittsburgh Steelers': 'pit',
-  
-  // AFC South
-  'Houston Texans': 'hou',
-  'Indianapolis Colts': 'ind',
-  'Jacksonville Jaguars': 'jax',
-  'Tennessee Titans': 'ten',
-  
-  // AFC West
-  'Denver Broncos': 'den',
-  'Kansas City Chiefs': 'kc',
-  'Las Vegas Raiders': 'lv',
-  'Los Angeles Chargers': 'lac',
-  
-  // NFC East
-  'Dallas Cowboys': 'dal',
-  'New York Giants': 'nyg',
-  'Philadelphia Eagles': 'phi',
-  'Washington Commanders': 'was',
-  
-  // NFC North
-  'Chicago Bears': 'chi',
-  'Detroit Lions': 'det',
-  'Green Bay Packers': 'gb',
-  'Minnesota Vikings': 'min',
-  
-  // NFC South
-  'Atlanta Falcons': 'atl',
-  'Carolina Panthers': 'car',
-  'New Orleans Saints': 'no',
-  'Tampa Bay Buccaneers': 'tb',
-  
-  // NFC West
-  'Arizona Cardinals': 'az',
-  'Los Angeles Rams': 'lar',
-  'San Francisco 49ers': 'sf',
-  'Seattle Seahawks': 'sea'
-};

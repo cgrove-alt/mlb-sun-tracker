@@ -133,13 +133,41 @@ export const ALL_VENUES: Venue[] = [
     "address": "Foxborough, MA"
   },
   {
-    "id": "metlife-stadium",
+    "id": "metlife-stadium-jets",
     "name": "MetLife Stadium",
     "league": "NFL",
     "team": "New York Jets",
-    "alternateTeams": [
-      "New York Giants"
-    ],
+    "city": "East Rutherford",
+    "state": "NJ",
+    "latitude": 40.8128,
+    "longitude": -74.0742,
+    "orientation": 23,
+    "capacity": 82500,
+    "roof": "open",
+    "timezone": "America/New_York",
+    "seatingGeometry": {
+      "bowlShape": "rectangular",
+      "fieldDimensions": {
+        "length": 120,
+        "width": 53.3
+      },
+      "endZoneOrientation": "northeast-southwest",
+      "primarySeatingAngle": 23,
+      "sideline1Angle": 113,
+      "sideline2Angle": 293,
+      "endZone1Angle": 23,
+      "endZone2Angle": 203
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2010,
+    "address": "East Rutherford, NJ"
+  },
+  {
+    "id": "metlife-stadium-giants",
+    "name": "MetLife Stadium",
+    "league": "NFL",
+    "team": "New York Giants",
     "city": "East Rutherford",
     "state": "NJ",
     "latitude": 40.8128,
@@ -511,13 +539,42 @@ export const ALL_VENUES: Venue[] = [
     "address": "Las Vegas, NV"
   },
   {
-    "id": "sofi-stadium",
+    "id": "sofi-stadium-chargers",
     "name": "SoFi Stadium",
     "league": "NFL",
     "team": "Los Angeles Chargers",
-    "alternateTeams": [
-      "Los Angeles Rams"
-    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "latitude": 33.9535,
+    "longitude": -118.3392,
+    "orientation": 90,
+    "capacity": 70240,
+    "roof": "fixed",
+    "roofHeight": 150,
+    "timezone": "America/Los_Angeles",
+    "seatingGeometry": {
+      "bowlShape": "rectangular",
+      "fieldDimensions": {
+        "length": 120,
+        "width": 53.3
+      },
+      "endZoneOrientation": "east-west",
+      "primarySeatingAngle": 90,
+      "sideline1Angle": 180,
+      "sideline2Angle": 0,
+      "endZone1Angle": 90,
+      "endZone2Angle": 270
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2020,
+    "address": "Los Angeles, CA"
+  },
+  {
+    "id": "sofi-stadium-rams",
+    "name": "SoFi Stadium",
+    "league": "NFL",
+    "team": "Los Angeles Rams",
     "city": "Los Angeles",
     "state": "CA",
     "latitude": 33.9535,
@@ -1085,13 +1142,41 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Foxborough, MA"
   },
   {
-    "id": "metlife-stadium",
+    "id": "metlife-stadium-jets",
     "name": "MetLife Stadium",
     "league": "NFL",
     "team": "New York Jets",
-    "alternateTeams": [
-      "New York Giants"
-    ],
+    "city": "East Rutherford",
+    "state": "NJ",
+    "latitude": 40.8128,
+    "longitude": -74.0742,
+    "orientation": 23,
+    "capacity": 82500,
+    "roof": "open",
+    "timezone": "America/New_York",
+    "seatingGeometry": {
+      "bowlShape": "rectangular",
+      "fieldDimensions": {
+        "length": 120,
+        "width": 53.3
+      },
+      "endZoneOrientation": "northeast-southwest",
+      "primarySeatingAngle": 23,
+      "sideline1Angle": 113,
+      "sideline2Angle": 293,
+      "endZone1Angle": 23,
+      "endZone2Angle": 203
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2010,
+    "address": "East Rutherford, NJ"
+  },
+  {
+    "id": "metlife-stadium-giants",
+    "name": "MetLife Stadium",
+    "league": "NFL",
+    "team": "New York Giants",
     "city": "East Rutherford",
     "state": "NJ",
     "latitude": 40.8128,
@@ -1463,13 +1548,42 @@ export const VENUES_BY_LEAGUE: Record<string, Venue[]> = {
     "address": "Las Vegas, NV"
   },
   {
-    "id": "sofi-stadium",
+    "id": "sofi-stadium-chargers",
     "name": "SoFi Stadium",
     "league": "NFL",
     "team": "Los Angeles Chargers",
-    "alternateTeams": [
-      "Los Angeles Rams"
-    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "latitude": 33.9535,
+    "longitude": -118.3392,
+    "orientation": 90,
+    "capacity": 70240,
+    "roof": "fixed",
+    "roofHeight": 150,
+    "timezone": "America/Los_Angeles",
+    "seatingGeometry": {
+      "bowlShape": "rectangular",
+      "fieldDimensions": {
+        "length": 120,
+        "width": 53.3
+      },
+      "endZoneOrientation": "east-west",
+      "primarySeatingAngle": 90,
+      "sideline1Angle": 180,
+      "sideline2Angle": 0,
+      "endZone1Angle": 90,
+      "endZone2Angle": 270
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2020,
+    "address": "Los Angeles, CA"
+  },
+  {
+    "id": "sofi-stadium-rams",
+    "name": "SoFi Stadium",
+    "league": "NFL",
+    "team": "Los Angeles Rams",
     "city": "Los Angeles",
     "state": "CA",
     "latitude": 33.9535,
@@ -2036,14 +2150,42 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2002,
     "address": "Foxborough, MA"
 },
-  "metlife-stadium": {
-    "id": "metlife-stadium",
+  "metlife-stadium-jets": {
+    "id": "metlife-stadium-jets",
     "name": "MetLife Stadium",
     "league": "NFL",
     "team": "New York Jets",
-    "alternateTeams": [
-        "New York Giants"
-    ],
+    "city": "East Rutherford",
+    "state": "NJ",
+    "latitude": 40.8128,
+    "longitude": -74.0742,
+    "orientation": 23,
+    "capacity": 82500,
+    "roof": "open",
+    "timezone": "America/New_York",
+    "seatingGeometry": {
+        "bowlShape": "rectangular",
+        "fieldDimensions": {
+            "length": 120,
+            "width": 53.3
+        },
+        "endZoneOrientation": "northeast-southwest",
+        "primarySeatingAngle": 23,
+        "sideline1Angle": 113,
+        "sideline2Angle": 293,
+        "endZone1Angle": 23,
+        "endZone2Angle": 203
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2010,
+    "address": "East Rutherford, NJ"
+},
+  "metlife-stadium-giants": {
+    "id": "metlife-stadium-giants",
+    "name": "MetLife Stadium",
+    "league": "NFL",
+    "team": "New York Giants",
     "city": "East Rutherford",
     "state": "NJ",
     "latitude": 40.8128,
@@ -2414,14 +2556,43 @@ export const VENUE_BY_ID: Record<string, Venue> = {
     "opened": 2020,
     "address": "Las Vegas, NV"
 },
-  "sofi-stadium": {
-    "id": "sofi-stadium",
+  "sofi-stadium-chargers": {
+    "id": "sofi-stadium-chargers",
     "name": "SoFi Stadium",
     "league": "NFL",
     "team": "Los Angeles Chargers",
-    "alternateTeams": [
-        "Los Angeles Rams"
-    ],
+    "city": "Los Angeles",
+    "state": "CA",
+    "latitude": 33.9535,
+    "longitude": -118.3392,
+    "orientation": 90,
+    "capacity": 70240,
+    "roof": "fixed",
+    "roofHeight": 150,
+    "timezone": "America/Los_Angeles",
+    "seatingGeometry": {
+        "bowlShape": "rectangular",
+        "fieldDimensions": {
+            "length": 120,
+            "width": 53.3
+        },
+        "endZoneOrientation": "east-west",
+        "primarySeatingAngle": 90,
+        "sideline1Angle": 180,
+        "sideline2Angle": 0,
+        "endZone1Angle": 90,
+        "endZone2Angle": 270
+    },
+    "venueType": "football",
+    "surface": "turf",
+    "opened": 2020,
+    "address": "Los Angeles, CA"
+},
+  "sofi-stadium-rams": {
+    "id": "sofi-stadium-rams",
+    "name": "SoFi Stadium",
+    "league": "NFL",
+    "team": "Los Angeles Rams",
     "city": "Los Angeles",
     "state": "CA",
     "latitude": 33.9535,
