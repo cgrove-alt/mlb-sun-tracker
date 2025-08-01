@@ -28,6 +28,7 @@ import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSections } from './data/stadiumSections';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
+import { MiLBGame } from './services/milbApi';
 import { WeatherForecast, weatherApi } from './services/weatherApi';
 import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
@@ -40,9 +41,9 @@ function UnifiedAppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const { t } = useTranslation();
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
-  const [selectedGame, setSelectedGame] = useState<MLBGame | null>(null);
+  const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | null>(null);
   const [gameDateTime, setGameDateTime] = useState<Date | null>(null);
-  const [stadiumGames, setStadiumGames] = useState<MLBGame[]>([]);
+  const [stadiumGames, setStadiumGames] = useState<(MLBGame | MiLBGame)[]>([]);
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
@@ -106,7 +107,7 @@ function UnifiedAppContent() {
   };
 
   // Handle game/time selection
-  const handleGameSelect = (game: MLBGame | null, dateTime: Date | null) => {
+  const handleGameSelect = (game: MLBGame | MiLBGame | null, dateTime: Date | null) => {
     setSelectedGame(game);
     setGameDateTime(dateTime);
     

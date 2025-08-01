@@ -2,8 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Select from 'react-select';
 import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
+import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { Stadium } from '../data/stadiums';
-import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo } from '../data/unifiedVenues';
+import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
 import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
@@ -17,9 +18,9 @@ import './GameSelector.css';
 
 interface UnifiedGameSelectorProps {
   selectedVenue: UnifiedVenue | null;
-  onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
+  onGameSelect: (game: MLBGame | MiLBGame | null, dateTime: Date | null) => void;
   onVenueChange: (venue: UnifiedVenue | null) => void;
-  onGamesLoaded?: (games: MLBGame[]) => void;
+  onGamesLoaded?: (games: (MLBGame | MiLBGame)[]) => void;
 }
 
 export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
@@ -30,10 +31,13 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 }) => {
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
-  const [games, setGames] = useState<MLBGame[]>([]);
-  const gamesLoading = useLoadingState<MLBGame[]>({ minLoadingTime: 500, initialLoading: false });
+  const [games, setGames] = useState<(MLBGame | MiLBGame)[]>([]);
+  const gamesLoading = useLoadingState<(MLBGame | MiLBGame)[]>({ minLoadingTime: 500, initialLoading: false });
   const [selectedLeague, setSelectedLeague] = useState<string>(() => {
     return preferencesStorage.get('selectedLeague', 'MLB');
+  });
+  const [selectedMiLBLevel, setSelectedMiLBLevel] = useState<string>(() => {
+    return preferencesStorage.get('selectedMiLBLevel', 'AAA');
   });
   const [viewMode, setViewMode] = useState<'games' | 'custom'>(() => {
     return preferencesStorage.get('viewMode', 'games');
@@ -51,8 +55,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   
   // Get all leagues and venues
   const leagues = getAllLeagues();
-  const venuesInLeague = getVenuesByLeague(selectedLeague);
+  const venuesInLeague = selectedLeague === 'MiLB' ? getMiLBVenuesByLevel(selectedMiLBLevel) : getVenuesByLeague(selectedLeague);
   const leagueInfo = getLeagueInfo(selectedLeague);
+  const milbLevels = getMiLBLevels();
   
   // Sort venues with favorites first
   const sortedVenues = [...venuesInLeague].sort((a, b) => {
@@ -78,13 +83,13 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       value: league,
       label: info?.name || league,
       count: venues.length,
-      icon: league === 'MLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'MLS' ? '⚽' : '🏟️'
+      icon: league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'MLS' ? '⚽' : '🏟️'
     };
   });
 
-  // Load games for MLB venues
+  // Load games for MLB and MiLB venues
   const loadGames = useCallback(async () => {
-    if (!selectedVenue || selectedVenue.league !== 'MLB') {
+    if (!selectedVenue || (selectedVenue.league !== 'MLB' && selectedVenue.league !== 'MiLB')) {
       setGames([]);
       return;
     }
@@ -97,22 +102,42 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       
       const now = new Date();
       const currentYear = now.getFullYear();
-      const endOfOctober = new Date(currentYear, 9, 31);
-      const endDate = endOfOctober;
+      const endDate = new Date(currentYear, 9, 31); // End of October
       
-      const schedule = await mlbApi.getSchedule(
-        now.toISOString().split('T')[0],
-        endDate.toISOString().split('T')[0]
-      );
-      
-      const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
-      
-      console.log('[GameSelector] Found', homeGames.length, 'games');
-      setGames(homeGames);
-      gamesLoading.setData(homeGames);
-      
-      if (onGamesLoaded) {
-        onGamesLoaded(homeGames);
+      if (selectedVenue.league === 'MLB') {
+        const schedule = await mlbApi.getSchedule(
+          now.toISOString().split('T')[0],
+          endDate.toISOString().split('T')[0]
+        );
+        
+        const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
+        
+        console.log('[GameSelector] Found', homeGames.length, 'MLB games');
+        setGames(homeGames);
+        gamesLoading.setData(homeGames);
+        
+        if (onGamesLoaded) {
+          onGamesLoaded(homeGames);
+        }
+      } else if (selectedVenue.league === 'MiLB' && selectedVenue.venueId) {
+        // First get the team ID for this venue
+        const teamId = selectedVenue.venueId; // For MiLB, we're using venueId to store the teamId
+        
+        const schedule = await milbApi.getTeamSchedule(
+          teamId,
+          now.toISOString().split('T')[0],
+          endDate.toISOString().split('T')[0]
+        );
+        
+        const homeGames = milbApi.getHomeGamesForVenue(selectedVenue.venueId, schedule);
+        
+        console.log('[GameSelector] Found', homeGames.length, 'MiLB games');
+        setGames(homeGames);
+        gamesLoading.setData(homeGames);
+        
+        if (onGamesLoaded) {
+          onGamesLoaded(homeGames);
+        }
       }
       
     } catch (error) {
@@ -125,9 +150,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     }
   }, [selectedVenue, gamesLoading, onGamesLoaded]);
 
-  // Load games when venue changes (MLB only)
+  // Load games when venue changes (MLB and MiLB only)
   useEffect(() => {
-    if (selectedVenue && viewMode === 'games' && selectedVenue.league === 'MLB') {
+    if (selectedVenue && viewMode === 'games' && (selectedVenue.league === 'MLB' || selectedVenue.league === 'MiLB')) {
       gamesLoading.reset();
       setGames([]);
       setError(null);
@@ -148,6 +173,18 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     
     // Clear selected venue when switching leagues
     if (selectedVenue && selectedVenue.league !== league) {
+      onVenueChange(null);
+      setSelectedGameOption(null);
+    }
+  };
+
+  const handleMiLBLevelChange = (level: string) => {
+    haptic.light();
+    setSelectedMiLBLevel(level);
+    preferencesStorage.update('selectedMiLBLevel', level);
+    
+    // Clear selected venue when switching levels
+    if (selectedVenue && isMiLBVenue(selectedVenue) && selectedVenue.milbLevel !== level) {
       onVenueChange(null);
       setSelectedGameOption(null);
     }
@@ -213,7 +250,26 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           ))}
         </div>
 
-        {selectedVenue?.league === 'MLB' && (
+        {/* MiLB Level Selector */}
+        {selectedLeague === 'MiLB' && (
+          <div className="milb-level-selector">
+            <label>Minor League Level:</label>
+            <div className="level-buttons">
+              {milbLevels.map(level => (
+                <button
+                  key={level}
+                  className={`level-btn ${selectedMiLBLevel === level ? 'active' : ''}`}
+                  onClick={() => handleMiLBLevelChange(level)}
+                  title={(MILB_LEVELS as any)[level.replace('+', '_').replace('A', level === 'A+' ? 'HIGH_A' : level === 'AA' ? 'AA' : level === 'AAA' ? 'AAA' : 'LOW_A')]?.name || level}
+                >
+                  {level}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
           <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
             <button
               className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
@@ -266,8 +322,8 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         />
       </div>
 
-      {selectedVenue?.league === 'MLB' ? (
-        // MLB venues show games or custom time
+      {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') ? (
+        // MLB and MiLB venues show games or custom time
         viewMode === 'games' ? (
           <div className="games-section" role="tabpanel" id="games-panel" aria-labelledby="games-tab">
             {selectedVenue ? (
@@ -477,6 +533,45 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           font-size: 14px;
         }
 
+        .milb-level-selector {
+          margin-bottom: 16px;
+        }
+
+        .milb-level-selector label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: 500;
+          color: #333;
+        }
+
+        .level-buttons {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap;
+        }
+
+        .level-btn {
+          padding: 8px 16px;
+          border: 2px solid #e0e0e0;
+          border-radius: 8px;
+          background: white;
+          cursor: pointer;
+          transition: all 0.2s;
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .level-btn:hover {
+          border-color: #2196f3;
+          background-color: #f5f5f5;
+        }
+
+        .level-btn.active {
+          border-color: #2196f3;
+          background-color: #e3f2fd;
+          color: #1976d2;
+        }
+
         @media (max-width: 768px) {
           .league-selector {
             overflow-x: auto;
@@ -485,6 +580,15 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 
           .league-btn {
             white-space: nowrap;
+          }
+
+          .level-buttons {
+            width: 100%;
+          }
+
+          .level-btn {
+            flex: 1;
+            min-width: 60px;
           }
         }
       `}</style>

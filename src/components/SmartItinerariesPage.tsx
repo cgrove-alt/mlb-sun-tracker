@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { MiLBGame } from '../services/milbApi';
 import { WeatherForecast } from '../services/weatherApi';
 import { SmartItinerary, ItineraryPreferences } from '../data/itineraryTypes';
 import { itineraryService } from '../services/itineraryService';
@@ -15,12 +16,12 @@ import './SmartItinerariesPage.css';
 
 interface SmartItinerariesPageProps {
   selectedStadium: Stadium | null;
-  selectedGame: MLBGame | null;
+  selectedGame: MLBGame | MiLBGame | null;
   gameDateTime: Date | null;
   weatherForecast: WeatherForecast | null;
   selectedSectionId?: string;
   onStadiumChange: (stadium: Stadium | null) => void;
-  onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
+  onGameSelect: (game: MLBGame | MiLBGame | null, dateTime: Date | null) => void;
 }
 
 export const SmartItinerariesPage: React.FC<SmartItinerariesPageProps> = ({

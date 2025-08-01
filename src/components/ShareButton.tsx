@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { MiLBGame } from '../services/milbApi';
 import { Tooltip } from './Tooltip';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './ShareButton.css';
 
 interface ShareButtonProps {
   selectedStadium: Stadium | null;
-  selectedGame: MLBGame | null;
+  selectedGame: MLBGame | MiLBGame | null;
   gameDateTime: Date | null;
   className?: string;
 }

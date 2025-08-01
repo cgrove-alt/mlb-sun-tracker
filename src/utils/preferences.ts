@@ -3,6 +3,7 @@ import { SunFilterCriteria } from '../components/SunExposureFilterFixed';
 export interface UserPreferences {
   selectedStadiumId?: string;
   selectedLeague?: string;
+  selectedMiLBLevel?: string;
   filterCriteria?: SunFilterCriteria;
   viewMode?: 'games' | 'custom';
   lastUsedDate?: string;

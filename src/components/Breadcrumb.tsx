@@ -1,15 +1,16 @@
 import React from 'react';
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { MiLBGame } from '../services/milbApi';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import './Breadcrumb.css';
 
 interface BreadcrumbProps {
   selectedStadium: Stadium | null;
-  selectedGame: MLBGame | null;
+  selectedGame: MLBGame | MiLBGame | null;
   gameDateTime: Date | null;
   onStadiumChange: (stadium: Stadium | null) => void;
-  onGameSelect: (game: MLBGame | null, dateTime: Date | null) => void;
+  onGameSelect: (game: MLBGame | MiLBGame | null, dateTime: Date | null) => void;
 }
 
 export const Breadcrumb: React.FC<BreadcrumbProps> = ({

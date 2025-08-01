@@ -2,11 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Stadium } from '../data/stadiums';
 import { MLBGame } from '../services/mlbApi';
+import { MiLBGame } from '../services/milbApi';
 import { StadiumSchema, StadiumShadeGuideSchema } from './StadiumSchema';
 
 interface SEOHelmetProps {
   stadium?: Stadium | null;
-  game?: MLBGame | null;
+  game?: MLBGame | MiLBGame | null;
   pageType?: 'home' | 'stadium' | 'game';
   shadedSectionsCount?: number;
 }

@@ -1,6 +1,14 @@
 // Unified venue data combining MLB stadiums with other sports venues
 import { Stadium, MLB_STADIUMS } from './stadiums';
 import { ALL_VENUES, Venue, VENUES_BY_LEAGUE, LEAGUES } from './venues';
+import { 
+  AAA_STADIUMS, 
+  AA_STADIUMS, 
+  HIGH_A_STADIUMS, 
+  LOW_A_STADIUMS,
+  MiLBStadium 
+} from './milbStadiums';
+import { MILB_LEVELS, MiLBLevel } from '../services/milbApi';
 
 // Extended interface that combines Stadium and Venue types
 export interface UnifiedVenue {
@@ -22,6 +30,10 @@ export interface UnifiedVenue {
   surface?: string;
   opened?: number;
   address?: string;
+  // MiLB specific fields
+  parentOrg?: string;
+  milbLevel?: string;
+  venueId?: number;
   // Geometry data for shadow calculations
   roofHeight?: number;
   roofOverhang?: number;
@@ -60,6 +72,53 @@ const MLB_AS_UNIFIED: UnifiedVenue[] = MLB_STADIUMS.map(stadium => ({
   }
 }));
 
+// Convert MiLB stadiums to unified format
+const convertMiLBToUnified = (stadium: MiLBStadium, level: string): UnifiedVenue => ({
+  id: stadium.id,
+  name: stadium.name,
+  team: stadium.team,
+  city: stadium.city,
+  state: stadium.state,
+  latitude: stadium.latitude,
+  longitude: stadium.longitude,
+  orientation: stadium.orientation,
+  capacity: stadium.capacity,
+  roof: stadium.roof,
+  timezone: stadium.timezone,
+  league: 'MiLB',
+  sport: 'baseball',
+  venueType: 'baseball',
+  surface: stadium.surface,
+  opened: stadium.opened,
+  address: stadium.address,
+  parentOrg: stadium.parentOrg,
+  milbLevel: level,
+  venueId: stadium.venueId,
+  roofHeight: stadium.roofHeight,
+  roofOverhang: stadium.roofOverhang,
+  upperDeckHeight: stadium.upperDeckHeight,
+  seatingGeometry: {
+    bowlShape: 'oval' as const,
+    fieldDimensions: {
+      length: 300,
+      width: 300
+    },
+    primarySeatingAngle: stadium.orientation,
+  }
+});
+
+const AAA_AS_UNIFIED: UnifiedVenue[] = AAA_STADIUMS.map(stadium => convertMiLBToUnified(stadium, 'AAA'));
+const AA_AS_UNIFIED: UnifiedVenue[] = AA_STADIUMS.map(stadium => convertMiLBToUnified(stadium, 'AA'));
+const HIGH_A_AS_UNIFIED: UnifiedVenue[] = HIGH_A_STADIUMS.map(stadium => convertMiLBToUnified(stadium, 'A+'));
+const SINGLE_A_AS_UNIFIED: UnifiedVenue[] = LOW_A_STADIUMS.map(stadium => convertMiLBToUnified(stadium, 'A'));
+
+const ALL_MILB_UNIFIED: UnifiedVenue[] = [
+  ...AAA_AS_UNIFIED,
+  ...AA_AS_UNIFIED,
+  ...HIGH_A_AS_UNIFIED,
+  ...SINGLE_A_AS_UNIFIED
+];
+
 // Convert other venues to unified format
 const OTHER_VENUES_AS_UNIFIED: UnifiedVenue[] = ALL_VENUES.map(venue => ({
   ...venue,
@@ -69,13 +128,23 @@ const OTHER_VENUES_AS_UNIFIED: UnifiedVenue[] = ALL_VENUES.map(venue => ({
 // Combined all venues
 export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
   ...MLB_AS_UNIFIED,
+  ...ALL_MILB_UNIFIED,
   ...OTHER_VENUES_AS_UNIFIED
 ];
 
 // Group all venues by league
 export const UNIFIED_VENUES_BY_LEAGUE: Record<string, UnifiedVenue[]> = {
   MLB: MLB_AS_UNIFIED,
+  MiLB: ALL_MILB_UNIFIED,
   ...VENUES_BY_LEAGUE
+};
+
+// Group MiLB venues by level
+export const MILB_VENUES_BY_LEVEL: Record<string, UnifiedVenue[]> = {
+  'AAA': AAA_AS_UNIFIED,
+  'AA': AA_AS_UNIFIED,
+  'A+': HIGH_A_AS_UNIFIED,
+  'A': SINGLE_A_AS_UNIFIED
 };
 
 // Create lookup by ID
@@ -105,6 +174,17 @@ export const ALL_LEAGUES = {
     },
     gameTypes: ['day', 'night'],
     typicalGameTimes: ['13:00', '19:00', '20:00']
+  },
+  MiLB: {
+    name: 'Minor League Baseball',
+    sport: 'baseball',
+    season: {
+      start: 'April',
+      end: 'September'
+    },
+    gameTypes: ['day', 'night'],
+    typicalGameTimes: ['13:00', '18:35', '19:05'],
+    levels: ['AAA', 'AA', 'A+', 'A']
   }
 };
 
@@ -199,4 +279,21 @@ export function convertToLegacyStadium(venue: UnifiedVenue): Stadium {
     roofOverhang: venue.roofOverhang,
     upperDeckHeight: venue.upperDeckHeight
   };
+}
+
+// MiLB specific helper functions
+export function getMiLBVenuesByLevel(level: string): UnifiedVenue[] {
+  return MILB_VENUES_BY_LEVEL[level] || [];
+}
+
+export function isMiLBVenue(venue: UnifiedVenue): boolean {
+  return venue.league === 'MiLB';
+}
+
+export function getMiLBLevels(): string[] {
+  return Object.keys(MILB_VENUES_BY_LEVEL);
+}
+
+export function getMiLBVenueByVenueId(venueId: number): UnifiedVenue | null {
+  return ALL_MILB_UNIFIED.find(venue => venue.venueId === venueId) || null;
 }
