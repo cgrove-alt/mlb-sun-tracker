@@ -1,0 +1,254 @@
+/* Mobile Stadium Selector */
+.mobile-stadium-selector {
+  width: 100%;
+  margin-bottom: var(--space-md);
+}
+
+.mobile-stadium-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-stadium-trigger:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.mobile-stadium-trigger:active {
+  background: var(--color-background);
+}
+
+.mobile-stadium-trigger-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+.mobile-stadium-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.mobile-stadium-value {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+/* Modal */
+.mobile-stadium-modal {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-end;
+}
+
+.mobile-stadium-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.mobile-stadium-modal-content {
+  position: relative;
+  width: 100%;
+  max-height: 85vh;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-stadium-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-stadium-modal-header h2 {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.mobile-stadium-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--touch-target-sm);
+  height: var(--touch-target-sm);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  color: var(--color-text-secondary);
+}
+
+.mobile-stadium-modal-close:active {
+  background: var(--color-background);
+}
+
+/* Search */
+.mobile-stadium-search {
+  position: relative;
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-stadium-search-icon {
+  position: absolute;
+  left: calc(var(--space-md) + var(--space-sm));
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+}
+
+.mobile-stadium-search-input {
+  width: 100%;
+  min-height: var(--touch-target);
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) calc(var(--space-xl) + var(--space-sm));
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  transition: border-color 0.2s ease;
+}
+
+.mobile-stadium-search-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Stadium List */
+.mobile-stadium-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-sm);
+}
+
+.mobile-stadium-item {
+  display: block;
+  width: 100%;
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mobile-stadium-item:active {
+  transform: scale(0.98);
+}
+
+.mobile-stadium-item.selected {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+.mobile-stadium-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.mobile-stadium-item-info h3 {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.mobile-stadium-item-info p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.mobile-stadium-favorite-badge {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  color: var(--color-warning);
+  font-size: var(--text-sm);
+}
+
+.mobile-stadium-empty {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+/* Fade-in animation for items */
+.mobile-stadium-item.fade-in {
+  animation: fadeInScale 300ms ease-out;
+  animation-fill-mode: both;
+}
+
+.mobile-stadium-item.fade-in:nth-child(1) { animation-delay: 0ms; }
+.mobile-stadium-item.fade-in:nth-child(2) { animation-delay: 50ms; }
+.mobile-stadium-item.fade-in:nth-child(3) { animation-delay: 100ms; }
+.mobile-stadium-item.fade-in:nth-child(4) { animation-delay: 150ms; }
+.mobile-stadium-item.fade-in:nth-child(5) { animation-delay: 200ms; }
+.mobile-stadium-item.fade-in:nth-child(n+6) { animation-delay: 250ms; }
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .mobile-stadium-modal-content {
+    max-width: 500px;
+    max-height: 70vh;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .mobile-stadium-modal {
+    align-items: center;
+    padding: var(--space-xl);
+  }
+}
