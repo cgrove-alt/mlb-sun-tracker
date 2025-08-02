@@ -3,10 +3,9 @@ import * as path from 'path';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { NFL_STADIUMS } from '../src/data/nflStadiums';
 
-// Read existing venues.json to get MLS venues
+// Read existing venues.json
 const venuesPath = path.join(__dirname, '../venues.json');
 const venuesData = JSON.parse(fs.readFileSync(venuesPath, 'utf-8'));
-const existingMLSVenues = venuesData.venues.filter((v: any) => v.league === 'MLS');
 
 // Convert MLB stadiums to venue format
 const mlbVenues = MLB_STADIUMS.map(stadium => ({
@@ -103,7 +102,7 @@ function getEndZoneOrientation(orientation: number): string {
 }
 
 // Combine all venues
-const allVenues = [...mlbVenues, ...nflVenues, ...existingMLSVenues, ...milbVenues];
+const allVenues = [...mlbVenues, ...nflVenues, ...milbVenues];
 
 // Update venues.json
 const updatedVenuesData = {
@@ -116,7 +115,6 @@ fs.writeFileSync(venuesPath, JSON.stringify(updatedVenuesData, null, 2));
 console.log(`✅ Updated venues.json with:`);
 console.log(`   - ${mlbVenues.length} MLB stadiums`);
 console.log(`   - ${nflVenues.length} NFL stadiums`);
-console.log(`   - ${existingMLSVenues.length} MLS venues`);
 console.log(`   - ${milbVenues.length} MiLB stadiums`);
 console.log(`   Total: ${allVenues.length} venues`);
 
@@ -128,7 +126,7 @@ const unifiedVenuesContent = `// Auto-generated unified venues data
 export interface UnifiedVenue {
   id: string;
   name: string;
-  league: 'MLB' | 'NFL' | 'MLS' | 'MiLB';
+  league: 'MLB' | 'NFL' | 'MiLB';
   team: string;
   alternateTeams?: string[];
   city: string;
@@ -155,13 +153,13 @@ export interface UnifiedVenue {
     endZone1Angle: number;
     endZone2Angle: number;
   };
-  venueType: 'baseball' | 'football' | 'soccer';
+  venueType: 'baseball' | 'football';
   surface?: string;
   opened?: number;
   address?: string;
   features?: string[];
   level?: string; // For MiLB
-  sport?: 'baseball' | 'football' | 'soccer';
+  sport?: 'baseball' | 'football';
 }
 
 export const ALL_UNIFIED_VENUES: UnifiedVenue[] = ${JSON.stringify(allVenues, null, 2)};
@@ -170,7 +168,7 @@ export function getUnifiedVenueById(id: string): UnifiedVenue | null {
   return ALL_UNIFIED_VENUES.find(venue => venue.id === id) || null;
 }
 
-export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MLS' | 'MiLB'): UnifiedVenue[] {
+export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MiLB'): UnifiedVenue[] {
   return ALL_UNIFIED_VENUES.filter(venue => venue.league === league);
 }
 
@@ -196,7 +194,7 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
 }
 
 // League-related exports
-export const ALL_LEAGUES = ['MLB', 'NFL', 'MLS', 'MiLB'] as const;
+export const ALL_LEAGUES = ['MLB', 'NFL', 'MiLB'] as const;
 
 export function getAllLeagues() {
   return ALL_LEAGUES;
@@ -215,12 +213,6 @@ export function getLeagueInfo(league: string) {
       sport: 'football',
       season: { start: 'September', end: 'February' },
       typicalGameTimes: ['13:00', '16:00', '20:00']
-    },
-    MLS: { 
-      name: 'Major League Soccer', 
-      sport: 'soccer',
-      season: { start: 'March', end: 'November' },
-      typicalGameTimes: ['12:00', '15:00', '19:00']
     },
     MiLB: { 
       name: 'Minor League Baseball', 

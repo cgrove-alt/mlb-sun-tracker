@@ -90,7 +90,7 @@ const unifiedVenuesContent = `// Auto-generated unified venues data
 export interface UnifiedVenue {
   id: string;
   name: string;
-  league: 'MLB' | 'NFL' | 'MLS' | 'MiLB';
+  league: 'MLB' | 'NFL' | 'MiLB';
   team: string;
   alternateTeams?: string[];
   city: string;
@@ -130,7 +130,7 @@ export function getUnifiedVenueById(id: string): UnifiedVenue | null {
   return ALL_UNIFIED_VENUES.find(venue => venue.id === id) || null;
 }
 
-export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MLS' | 'MiLB'): UnifiedVenue[] {
+export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MiLB'): UnifiedVenue[] {
   return ALL_UNIFIED_VENUES.filter(venue => venue.league === league);
 }
 `;

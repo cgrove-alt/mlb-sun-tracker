@@ -235,7 +235,7 @@ const MobileApp: React.FC = () => {
                 type="no-stadium"
                 action={
                   <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                    Choose from MLB, MiLB, NFL, or MLS venues to analyze sun exposure patterns
+                    Choose from MLB, MiLB, and NFL venues to analyze sun exposure patterns
                   </p>
                 }
               />

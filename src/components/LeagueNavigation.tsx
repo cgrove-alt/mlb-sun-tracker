@@ -52,8 +52,7 @@ const LeagueNavigation: React.FC<LeagueNavigationProps> = ({ currentLeague, clas
             if (!league || venues.length === 0) return null;
 
             const icon = leagueKey === 'MLB' ? '⚾' : 
-                        leagueKey === 'NFL' ? '🏈' : 
-                        leagueKey === 'MLS' ? '⚽' : '🏟️';
+                        leagueKey === 'NFL' ? '🏈' : '🏟️';
 
             return (
               <Link

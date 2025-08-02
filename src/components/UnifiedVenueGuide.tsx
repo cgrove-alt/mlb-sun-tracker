@@ -52,13 +52,6 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
           { value: '16:00', label: '4:00 PM' },
           { value: '20:00', label: '8:00 PM' },
         ];
-      case 'soccer':
-        return [
-          { value: '12:00', label: '12:00 PM' },
-          { value: '15:00', label: '3:00 PM' },
-          { value: '17:00', label: '5:00 PM' },
-          { value: '19:00', label: '7:00 PM' },
-        ];
       default: // baseball
         return [
           { value: '12:00', label: '12:00 PM' },
@@ -85,13 +78,6 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
           shadeImportance: 'important for early season games and sunny afternoon kickoffs',
           bestShadeAdvice: 'Upper deck and covered club sections provide the best shade during afternoon games'
         };
-      case 'soccer':
-        return {
-          gameTypeLabel: 'MLS matches', 
-          durationLabel: '2+ hours',
-          shadeImportance: 'crucial for summer afternoon matches',
-          bestShadeAdvice: 'Sideline sections with overhead coverage are ideal for long matches in the sun'
-        };
       default:
         return {
           gameTypeLabel: 'MLB games',
@@ -113,10 +99,6 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
       baseAdvice.push('Early season (September-October): High sun exposure risk during day games');
       baseAdvice.push('Late season (December-January): Sun exposure less of a concern');
       baseAdvice.push('Playoff games: Weather protection becomes more important than shade');
-    } else if (sport === 'soccer') {
-      baseAdvice.push('Summer season (June-August): Peak sun exposure during afternoon matches');
-      baseAdvice.push('Spring/Fall: Moderate sun exposure, comfortable for most seating');
-      baseAdvice.push('Weekend afternoon games: Highest shade demand');
     } else {
       baseAdvice.push('Summer games (June-August): Highest sun exposure risk');
       baseAdvice.push('Day games: Choose shaded sections to avoid 3+ hours in direct sun');
@@ -206,8 +188,6 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
                 const sport = venue.sport || venue.venueType;
                 const isRelevantMonth = sport === 'football' 
                   ? (index >= 8 || index <= 1) // Sep-Feb
-                  : sport === 'soccer'
-                  ? (index >= 2 && index <= 10) // Mar-Nov  
                   : (index >= 3 && index <= 9); // Apr-Oct for baseball
                 
                 return (

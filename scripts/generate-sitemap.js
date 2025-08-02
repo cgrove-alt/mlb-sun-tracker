@@ -18,7 +18,6 @@ const venuesArray = eval(venuesMatch[1]);
 // Group venues by league
 const mlbVenues = venuesArray.filter(v => v.league === 'MLB').map(v => v.id);
 const nflVenues = venuesArray.filter(v => v.league === 'NFL').map(v => v.id);
-const mlsVenues = venuesArray.filter(v => v.league === 'MLS').map(v => v.id);
 const milbVenues = venuesArray.filter(v => v.league === 'MiLB').map(v => v.id);
 
 // Static pages
@@ -38,7 +37,6 @@ const staticPages = [
 const leaguePages = [
   'league/mlb',
   'league/nfl', 
-  'league/mls',
   'league/milb',
   'league/milb/aaa',
   'league/milb/aa',
@@ -102,15 +100,6 @@ nflVenues.forEach(venue => {
   </url>`;
 });
 
-// Add MLS venue pages
-mlsVenues.forEach(venue => {
-  sitemap += `
-  <url>
-    <loc>${baseUrl}/venue/${venue}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>`;
-});
 
 // Add MiLB venue pages
 milbVenues.forEach(venue => {
@@ -133,13 +122,11 @@ fs.writeFileSync(sitemapPath, sitemap);
 const totalUrls = staticPages.length + leaguePages.length + 
                  (mlbVenues.length * 2) + // MLB has both /stadium and /venue URLs
                  nflVenues.length + 
-                 mlsVenues.length + 
                  milbVenues.length;
 
 console.log(`✓ Sitemap generated with ${totalUrls} URLs`);
 console.log(`  - ${mlbVenues.length} MLB stadiums`);
 console.log(`  - ${nflVenues.length} NFL venues`);
-console.log(`  - ${mlsVenues.length} MLS venues`);
 console.log(`  - ${milbVenues.length} MiLB stadiums`);
 console.log(`  - ${staticPages.length} static pages`);
 console.log(`  - ${leaguePages.length} league/level pages`);

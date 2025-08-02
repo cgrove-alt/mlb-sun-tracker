@@ -51,31 +51,9 @@ export interface FootballVenue extends BaseVenue {
   upperDeckHeight?: number;
 }
 
-export interface SoccerVenue extends BaseVenue {
-  league: 'MLS';
-  sport: 'soccer';
-  venueType: 'soccer';
-  surface: 'natural grass' | 'artificial' | 'hybrid';
-  opened: number;
-  address: string;
-  // Soccer-specific geometry
-  seatingGeometry: {
-    bowlShape: 'rectangular';
-    fieldDimensions: {
-      length: number; // meters (100-110)
-      width: number;  // meters (64-75)
-    };
-    endZoneOrientation: string;
-    primarySeatingAngle: number;
-    sideline1Angle: number;
-    sideline2Angle: number;
-    endZone1Angle: number;
-    endZone2Angle: number;
-  };
-}
 
 // Union type for all venue types
-export type AnyVenue = BaseballVenue | FootballVenue | SoccerVenue;
+export type AnyVenue = BaseballVenue | FootballVenue;
 
 // League information
 export interface LeagueInfo {
@@ -113,12 +91,8 @@ export interface FootballSection extends BaseSection {
   yardlineEnd?: number;
 }
 
-export interface SoccerSection extends BaseSection {
-  venueType: 'soccer';
-  sectionType?: 'sideline' | 'goal' | 'corner';
-}
 
-export type AnySection = BaseballSection | FootballSection | SoccerSection;
+export type AnySection = BaseballSection | FootballSection;
 
 // Shade calculation interfaces
 export interface ShadeCalculationResult {
@@ -192,14 +166,8 @@ export interface FootballGame extends BaseGameEvent {
   overtime?: boolean;
 }
 
-export interface SoccerMatch extends BaseGameEvent {
-  sport: 'soccer';
-  minute?: number;
-  extraTime?: boolean;
-  tournament?: string;
-}
 
-export type AnyGameEvent = BaseballGame | FootballGame | SoccerMatch;
+export type AnyGameEvent = BaseballGame | FootballGame;
 
 // Utility type guards
 export function isBaseballVenue(venue: AnyVenue): venue is BaseballVenue {
@@ -210,9 +178,6 @@ export function isFootballVenue(venue: AnyVenue): venue is FootballVenue {
   return venue.sport === 'football';
 }
 
-export function isSoccerVenue(venue: AnyVenue): venue is SoccerVenue {
-  return venue.sport === 'soccer';
-}
 
 export function isBaseballSection(section: AnySection): section is BaseballSection {
   return section.venueType === 'baseball';
@@ -222,9 +187,6 @@ export function isFootballSection(section: AnySection): section is FootballSecti
   return section.venueType === 'football';
 }
 
-export function isSoccerSection(section: AnySection): section is SoccerSection {
-  return section.venueType === 'soccer';
-}
 
 // Configuration interfaces for venues.json
 export interface VenueConfiguration {

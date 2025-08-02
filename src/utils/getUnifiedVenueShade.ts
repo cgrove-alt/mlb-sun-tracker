@@ -38,12 +38,6 @@ const SPORT_SHADE_MODIFIERS = {
     sidelineAdvantage: 20, // Sideline sections are prime seating
     endZoneShade: 5, // End zones less shade priority but still relevant
     upperDeckAdvantage: 30, // Upper decks provide excellent shade
-  },
-  soccer: {
-    // Soccer stadiums prioritize sideline seating
-    sidelineAdvantage: 25, // Sidelines are premium seating
-    goalEndShade: 8, // Goal ends have some shade value
-    upperDeckAdvantage: 20, // Upper tier provides good shade
   }
 };
 
@@ -179,15 +173,6 @@ function getSportSpecificShadeBonus(
     }
     if (section.name.toLowerCase().includes('end')) {
       bonus += footballModifier.endZoneShade;
-    }
-  } else if (venue.sport === 'soccer') {
-    // Soccer-specific logic
-    const soccerModifier = modifier as typeof SPORT_SHADE_MODIFIERS.soccer;
-    if (section.name.toLowerCase().includes('east') || section.name.toLowerCase().includes('west')) {
-      bonus += soccerModifier.sidelineAdvantage;
-    }
-    if (section.name.toLowerCase().includes('north') || section.name.toLowerCase().includes('south')) {
-      bonus += soccerModifier.goalEndShade;
     }
   } else if (venue.sport === 'baseball') {
     // Baseball-specific logic

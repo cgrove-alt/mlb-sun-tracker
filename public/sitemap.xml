@@ -56,11 +56,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://mlbsuntracker.com/league/mls</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://mlbsuntracker.com/league/milb</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -542,11 +537,6 @@
   </url>
   <url>
     <loc>https://mlbsuntracker.com/venue/lumen-field</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mlbsuntracker.com/venue/bmo-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

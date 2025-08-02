@@ -84,7 +84,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     const venues = getVenuesByLeague(league);
     return {
       value: league,
-      label: `${league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : league === 'MLS' ? '⚽' : '🏟️'} ${info?.name || league} (${venues.length})`,
+      label: `${league === 'MLB' ? '⚾' : league === 'MiLB' ? '⚾' : league === 'NFL' ? '🏈' : '🏟️'} ${info?.name || league} (${venues.length})`,
     };
   });
 

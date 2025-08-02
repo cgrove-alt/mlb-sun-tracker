@@ -1,10 +1,10 @@
 // Auto-generated unified venues data
-// Generated on 2025-08-02T01:16:12.542Z
+// Generated on 2025-08-02T18:57:10.435Z
 
 export interface UnifiedVenue {
   id: string;
   name: string;
-  league: 'MLB' | 'NFL' | 'MLS' | 'MiLB';
+  league: 'MLB' | 'NFL' | 'MiLB';
   team: string;
   alternateTeams?: string[];
   city: string;
@@ -31,13 +31,13 @@ export interface UnifiedVenue {
     endZone1Angle: number;
     endZone2Angle: number;
   };
-  venueType: 'baseball' | 'football' | 'soccer';
+  venueType: 'baseball' | 'football';
   surface?: string;
   opened?: number;
   address?: string;
   features?: string[];
   level?: string; // For MiLB
-  sport?: 'baseball' | 'football' | 'soccer';
+  sport?: 'baseball' | 'football';
 }
 
 export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
@@ -2109,37 +2109,6 @@ export const ALL_UNIFIED_VENUES: UnifiedVenue[] = [
       "12th Man",
       "Extremely loud"
     ]
-  },
-  {
-    "id": "bmo-stadium",
-    "name": "BMO Stadium",
-    "league": "MLS",
-    "team": "Los Angeles FC",
-    "city": "Los Angeles",
-    "state": "CA",
-    "latitude": 34.0119,
-    "longitude": -118.285,
-    "orientation": 15,
-    "capacity": 22000,
-    "roof": "open",
-    "timezone": "America/Los_Angeles",
-    "seatingGeometry": {
-      "bowlShape": "rectangular",
-      "fieldDimensions": {
-        "length": 110,
-        "width": 70
-      },
-      "endZoneOrientation": "north-south",
-      "primarySeatingAngle": 15,
-      "sideline1Angle": 105,
-      "sideline2Angle": 285,
-      "endZone1Angle": 15,
-      "endZone2Angle": 195
-    },
-    "venueType": "soccer",
-    "surface": "natural grass",
-    "opened": 2018,
-    "address": "3939 S Figueroa St, Los Angeles, CA 90037"
   }
 ];
 
@@ -2147,7 +2116,7 @@ export function getUnifiedVenueById(id: string): UnifiedVenue | null {
   return ALL_UNIFIED_VENUES.find(venue => venue.id === id) || null;
 }
 
-export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MLS' | 'MiLB'): UnifiedVenue[] {
+export function getUnifiedVenuesByLeague(league: 'MLB' | 'NFL' | 'MiLB'): UnifiedVenue[] {
   return ALL_UNIFIED_VENUES.filter(venue => venue.league === league);
 }
 
@@ -2173,7 +2142,7 @@ export function convertToLegacyStadium(venue: UnifiedVenue): any {
 }
 
 // League-related exports
-export const ALL_LEAGUES = ['MLB', 'NFL', 'MLS', 'MiLB'] as const;
+export const ALL_LEAGUES = ['MLB', 'NFL', 'MiLB'] as const;
 
 export function getAllLeagues() {
   return ALL_LEAGUES;
@@ -2192,12 +2161,6 @@ export function getLeagueInfo(league: string) {
       sport: 'football',
       season: { start: 'September', end: 'February' },
       typicalGameTimes: ['13:00', '16:00', '20:00']
-    },
-    MLS: { 
-      name: 'Major League Soccer', 
-      sport: 'soccer',
-      season: { start: 'March', end: 'November' },
-      typicalGameTimes: ['12:00', '15:00', '19:00']
     },
     MiLB: { 
       name: 'Minor League Baseball', 
