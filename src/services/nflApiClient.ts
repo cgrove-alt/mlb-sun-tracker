@@ -4,105 +4,56 @@
 import { createRetryableFetch, CircuitBreaker } from '../utils/retryUtils';
 import { NFLGame } from './nflApi';
 
-// ESPN API types
+// ESPN Scoreboard API types
+interface ESPNScoreboardResponse {
+  events: ESPNEvent[];
+  week?: {
+    number: number;
+  };
+  season?: {
+    year: number;
+    type: number;
+  };
+}
+
 interface ESPNEvent {
   id: string;
-  uid: string;
-  date: string; // ISO date string
+  date: string;
   name: string;
   shortName: string;
-  competitions: ESPNCompetition[];
   season: {
     year: number;
     type: number;
-    slug: string;
   };
   week: {
     number: number;
   };
+  competitions: ESPNCompetition[];
 }
 
 interface ESPNCompetition {
   id: string;
   date: string;
-  attendance?: number;
-  type: {
-    id: string;
-    abbreviation: string;
-  };
-  timeValid: boolean;
-  neutralSite: boolean;
-  conferenceCompetition: boolean;
-  playByPlayAvailable: boolean;
-  recent: boolean;
-  venue: {
+  venue?: {
     id: string;
     fullName: string;
-    address: {
-      city: string;
-      state: string;
-    };
   };
   competitors: ESPNCompetitor[];
-  broadcasts?: ESPNBroadcast[];
-  status: {
-    clock: number;
-    displayClock: string;
-    period: number;
-    type: {
-      id: string;
-      name: string;
-      state: string;
-      completed: boolean;
-      description: string;
-      detail: string;
-      shortDetail: string;
-    };
-  };
+  broadcasts?: Array<{
+    names: string[];
+  }>;
 }
 
 interface ESPNCompetitor {
   id: string;
-  uid: string;
-  type: string;
-  order: number;
   homeAway: 'home' | 'away';
   team: {
     id: string;
-    uid: string;
     location: string;
     name: string;
-    abbreviation: string;
     displayName: string;
-    shortDisplayName: string;
-    color: string;
-    alternateColor: string;
-    isActive: boolean;
-    venue: {
-      id: string;
-    };
-    links: Array<{
-      rel: string[];
-      href: string;
-      text: string;
-      isExternal: boolean;
-      isPremium: boolean;
-    }>;
-    logo: string;
+    abbreviation: string;
   };
-  score?: string;
-  statistics?: any[];
-  records?: any[];
-  linescores?: any[];
-}
-
-interface ESPNBroadcast {
-  market: string;
-  names: string[];
-}
-
-interface ESPNScheduleResponse {
-  events: ESPNEvent[];
 }
 
 // ESPN team ID to our venue ID mapping
@@ -150,7 +101,6 @@ const ESPN_TEAM_TO_VENUE_MAP: Record<string, string> = {
 };
 
 class NFLApiClient {
-  private baseUrl = 'https://sports.core.api.espn.com/v2/sports/football/leagues/nfl';
   private backupUrl = 'https://site.api.espn.com/apis/site/v2/sports/football/nfl';
   private retryableFetch = createRetryableFetch({
     maxRetries: 3,
@@ -175,16 +125,18 @@ class NFLApiClient {
       if (!homeCompetitor || !awayCompetitor) return null;
 
       // Get venue ID from our mapping
-      const venueId = ESPN_TEAM_TO_VENUE_MAP[homeCompetitor.team.id];
+      const venueId = ESPN_TEAM_TO_VENUE_MAP[homeCompetitor.id];
       if (!venueId) {
-        console.warn(`[NFL API Client] No venue mapping for team ${homeCompetitor.team.displayName} (${homeCompetitor.team.id})`);
+        console.warn(`[NFL API Client] No venue mapping for team ${homeCompetitor.team.displayName} (${homeCompetitor.id})`);
         return null;
       }
 
       // Parse date and time
       const gameDate = new Date(competition.date);
       const localGameDate = gameDate.toISOString().split('T')[0];
-      const localGameTime = gameDate.toTimeString().slice(0, 5);
+      const hours = gameDate.getHours().toString().padStart(2, '0');
+      const minutes = gameDate.getMinutes().toString().padStart(2, '0');
+      const localGameTime = `${hours}:${minutes}`;
 
       // Determine season type
       let seasonType: 'preseason' | 'regular' | 'postseason' = 'regular';
@@ -198,21 +150,21 @@ class NFLApiClient {
         gameId: event.id,
         gameDate: localGameDate,
         gameTime: localGameTime,
-        week: event.week?.number || 0,
+        week: event.week.number,
         seasonType,
         homeTeam: {
-          id: homeCompetitor.team.abbreviation,
-          name: homeCompetitor.team.displayName,
+          id: homeCompetitor.id,
+          name: homeCompetitor.team.name,
           abbreviation: homeCompetitor.team.abbreviation
         },
         awayTeam: {
-          id: awayCompetitor.team.abbreviation,
-          name: awayCompetitor.team.displayName,
+          id: awayCompetitor.id,
+          name: awayCompetitor.team.name,
           abbreviation: awayCompetitor.team.abbreviation
         },
         venue: {
           id: venueId,
-          name: competition.venue.fullName
+          name: competition.venue?.fullName || homeCompetitor.team.displayName + ' Stadium'
         },
         tvNetwork
       };
@@ -222,9 +174,43 @@ class NFLApiClient {
     }
   }
 
-  // Fetch season schedule from ESPN
+  // Fetch games for a specific week
+  private async fetchWeekGames(season: number, week: number): Promise<NFLGame[]> {
+    try {
+      const url = `${this.backupUrl}/scoreboard?seasontype=2&week=${week}&season=${season}`;
+      
+      const response = await this.retryableFetch(url, {
+        headers: {
+          'Accept': 'application/json',
+          'User-Agent': 'Mozilla/5.0 (compatible; MLB-Sun-Tracker/1.0)'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data: ESPNScoreboardResponse = await response.json();
+      
+      if (!data.events || !Array.isArray(data.events)) {
+        return []; // No games for this week
+      }
+
+      // Convert ESPN events to our format
+      const games = data.events
+        .map(event => this.convertESPNEventToNFLGame(event))
+        .filter((game): game is NFLGame => game !== null);
+
+      return games;
+    } catch (error) {
+      console.error(`[NFL API Client] Error fetching week ${week}:`, error);
+      return []; // Return empty array for failed weeks
+    }
+  }
+
+  // Fetch all games for a season
   async fetchSeasonSchedule(season: number): Promise<NFLGame[]> {
-    const cacheKey = `espn-season-${season}`;
+    const cacheKey = `season-${season}`;
     const cached = this.cache.get(cacheKey);
     
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
@@ -233,86 +219,46 @@ class NFLApiClient {
     }
 
     try {
-      // Try primary endpoint first
-      const url = `${this.baseUrl}/seasons/${season}/types/2/events?limit=1000`;
-      console.log(`[NFL API Client] Fetching ${season} season from: ${url}`);
+      const allGames: NFLGame[] = [];
       
-      const response = await this.circuitBreaker.execute(() => 
-        this.retryableFetch(url, {
-          headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'MLB-Sun-Tracker/1.0'
-          }
-        })
-      );
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      // For current/future seasons, only fetch a few weeks ahead
+      const currentDate = new Date();
+      const currentWeek = this.getCurrentNFLWeek(currentDate, season);
+      const maxWeek = Math.min(currentWeek + 8, 18); // Fetch up to 8 weeks ahead or week 18
+      
+      console.log(`[NFL API Client] Fetching weeks 1-${maxWeek} for ${season} season`);
+      
+      // Fetch games for each week
+      for (let week = 1; week <= maxWeek; week++) {
+        const weekGames = await this.fetchWeekGames(season, week);
+        if (weekGames.length > 0) {
+          allGames.push(...weekGames);
+          console.log(`[NFL API Client] Week ${week}: ${weekGames.length} games`);
+        }
       }
 
-      const data: ESPNScheduleResponse = await response.json();
-      
-      if (!data.events || !Array.isArray(data.events)) {
-        throw new Error('Invalid response format from ESPN API');
+      if (allGames.length === 0) {
+        throw new Error('No games found for the season');
       }
 
-      // Convert ESPN events to our format
-      const games = data.events
-        .map(event => this.convertESPNEventToNFLGame(event))
-        .filter((game): game is NFLGame => game !== null);
-
-      console.log(`[NFL API Client] Successfully fetched ${games.length} games for ${season} season`);
+      console.log(`[NFL API Client] Total: ${allGames.length} games for ${season} season`);
       
       // Cache the results
-      this.cache.set(cacheKey, { data: games, timestamp: Date.now() });
+      this.cache.set(cacheKey, { data: allGames, timestamp: Date.now() });
       
-      return games;
+      return allGames;
     } catch (error) {
       console.error(`[NFL API Client] Error fetching ${season} season:`, error);
-      
-      // Try backup endpoint for current week
-      if (error instanceof Error && error.message.includes('Circuit breaker is open')) {
-        throw error; // Don't retry if circuit breaker is open
-      }
-      
-      return this.fetchCurrentWeekSchedule(season);
+      throw error;
     }
   }
 
-  // Fetch current week schedule from backup endpoint
-  private async fetchCurrentWeekSchedule(season: number): Promise<NFLGame[]> {
-    try {
-      const url = `${this.backupUrl}/scoreboard?seasontype=2&limit=100`;
-      console.log(`[NFL API Client] Trying backup endpoint: ${url}`);
-      
-      const response = await this.retryableFetch(url, {
-        headers: {
-          'Accept': 'application/json',
-          'User-Agent': 'MLB-Sun-Tracker/1.0'
-        }
-      });
-
-      if (!response.ok) {
-        throw new Error(`Backup endpoint failed with HTTP ${response.status}`);
-      }
-
-      const data: ESPNScheduleResponse = await response.json();
-      
-      if (!data.events || !Array.isArray(data.events)) {
-        throw new Error('Invalid response format from backup ESPN API');
-      }
-
-      // Convert ESPN events to our format
-      const games = data.events
-        .map((event: ESPNEvent) => this.convertESPNEventToNFLGame(event))
-        .filter((game): game is NFLGame => game !== null);
-
-      console.log(`[NFL API Client] Backup endpoint returned ${games.length} games`);
-      return games;
-    } catch (error) {
-      console.error('[NFL API Client] Backup endpoint also failed:', error);
-      throw error;
-    }
+  // Get current NFL week based on date
+  private getCurrentNFLWeek(date: Date, season: number): number {
+    // NFL season typically starts in early September
+    const seasonStart = new Date(season, 8, 1); // September 1st
+    const weeksSinceStart = Math.floor((date.getTime() - seasonStart.getTime()) / (7 * 24 * 60 * 60 * 1000));
+    return Math.max(1, Math.min(weeksSinceStart + 1, 18));
   }
 
   // Get games for a specific venue
@@ -334,4 +280,5 @@ class NFLApiClient {
   }
 }
 
+// Export singleton instance
 export const nflApiClient = new NFLApiClient();

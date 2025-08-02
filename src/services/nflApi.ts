@@ -93,12 +93,13 @@ class NFLApiService {
     
     // NFL season runs from September to February
     // If we're in Jan-Feb, we're still in last year's season
-    // If we're in Mar-Aug, we're looking at the upcoming season
+    // If we're in Mar-Aug, show the previous season (since new season isn't available yet)
     // If we're in Sep-Dec, we're in the current season
     if (currentMonth < 2) { // January or February
       return currentYear - 1;
     } else if (currentMonth < 8) { // March through August
-      return currentYear; // Show upcoming season
+      // During offseason, show previous season's games
+      return currentYear - 1;
     }
     return currentYear;
   }

@@ -16,6 +16,7 @@ import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
+import NFLCustomGameSelector from './NFLCustomGameSelector';
 import './GameSelector.css';
 
 interface UnifiedGameSelectorProps {
@@ -455,12 +456,21 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                   {gamesLoading.loading ? (
                     <GameSelectorSkeleton />
                   ) : error ? (
-                    <div className="error-message" role="alert">
-                      {error}
-                      <button onClick={loadGames} className="retry-button" aria-label="Retry loading games">
-                        Retry
-                      </button>
-                    </div>
+                    selectedVenue.league === 'NFL' ? (
+                      <NFLCustomGameSelector
+                        selectedVenue={selectedVenue}
+                        onGameSelect={onGameSelect}
+                        initialDate={customDate}
+                        initialTime={customTime}
+                      />
+                    ) : (
+                      <div className="error-message" role="alert">
+                        {error}
+                        <button onClick={loadGames} className="retry-button" aria-label="Retry loading games">
+                          Retry
+                        </button>
+                      </div>
+                    )
                   ) : (
                     <>
                       {games.length > 0 && (
@@ -490,19 +500,19 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                   )}
                 </div>
                 {games.length === 0 && !gamesLoading.loading && !error && (
-                  <div className="no-games">
-                    {selectedVenue.league === 'NFL' ? (
-                      <>
-                        <p>NFL schedule data is currently unavailable</p>
-                        <p>Please use custom date/time for shade calculations</p>
-                      </>
-                    ) : (
-                      <>
-                        <p>{t('gameSelector.noGamesForStadium')}</p>
-                        <p>{t('gameSelector.tryCustomTime')}</p>
-                      </>
-                    )}
-                  </div>
+                  selectedVenue.league === 'NFL' ? (
+                    <NFLCustomGameSelector
+                      selectedVenue={selectedVenue}
+                      onGameSelect={onGameSelect}
+                      initialDate={customDate}
+                      initialTime={customTime}
+                    />
+                  ) : (
+                    <div className="no-games">
+                      <p>{t('gameSelector.noGamesForStadium')}</p>
+                      <p>{t('gameSelector.tryCustomTime')}</p>
+                    </div>
+                  )
                 )}
                 {games.length > 0 && (
                   <div className="games-info">
