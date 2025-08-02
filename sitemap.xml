@@ -1,393 +1,543 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://theshadium.com/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://theshadium.com/guide/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/faq</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/privacy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/terms</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/guide</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/guide/best-shaded-seats-mlb</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/guide/how-to-find-shaded-seats</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/guide/avoid-sun-baseball-games</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/seats-shade-finder</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/mlb</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/nfl</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/milb</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/milb/aaa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/milb/aa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/milb/a+</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/league/milb/a</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/angels</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://theshadium.com/guide/how-to-find-shaded-seats/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/angels</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/astros</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/astros</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/athletics</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/athletics</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/bluejays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/bluejays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/braves</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/braves</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/brewers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/brewers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/cardinals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/cardinals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/cubs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/cubs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/diamondbacks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/diamondbacks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/dodgers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/dodgers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/giants</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/giants</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/guardians</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/guardians</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/mariners</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/mariners</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/marlins</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/marlins</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/mets</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/mets</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/nationals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/nationals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/orioles</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/orioles</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/padres</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/padres</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/phillies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/phillies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/pirates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/pirates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/rangers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/rangers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/rays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/rays</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/redsox</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/redsox</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/reds</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/reds</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/rockies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/rockies</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/royals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/royals</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/tigers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/tigers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/twins</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/twins</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/whitesox</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/whitesox</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/stadium/yankees</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/yankees</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mlbsuntracker.com/venue/highmark-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://theshadium.com/guide/best-shaded-seats-mlb/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/hard-rock-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://theshadium.com/guide/avoid-sun-baseball-games/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/gillette-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://theshadium.com/faq/</loc>
-    <lastmod>2025-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://theshadium.com/privacy/</loc>
-    <lastmod>2025-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://theshadium.com/terms/</loc>
-    <lastmod>2025-07-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://theshadium.com/stadium/angels/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/metlife-stadium-jets</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Angels Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/astros/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/m-t-bank-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Astros Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/athletics/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/paycor-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Athletics Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/bluejays/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/huntington-bank-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Bluejays Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/orioles/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/acrisure-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Orioles Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/redsox/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/nrg-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Redsox Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/yankees/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/lucas-oil-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Yankees Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/rays/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/everbank-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Rays Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/whitesox/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/nissan-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Whitesox Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/guardians/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/empower-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Guardians Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/tigers/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/geha-field-arrowhead</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Tigers Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/royals/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/allegiant-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Royals Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/twins/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/sofi-stadium-chargers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Twins Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/rangers/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/at-t-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Rangers Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/mariners/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/metlife-stadium-giants</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Mariners Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/diamondbacks/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/lincoln-financial-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Diamondbacks Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/rockies/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/northwest-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Rockies Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/dodgers/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/soldier-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Dodgers Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/padres/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/ford-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Padres Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/giants/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/lambeau-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Giants Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/braves/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/us-bank-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Braves Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/marlins/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/mercedes-benz-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Marlins Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/mets/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/bank-of-america-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Mets Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/phillies/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/caesars-superdome</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Phillies Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/nationals/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/raymond-james-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Nationals Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/brewers/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/state-farm-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Brewers Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/cubs/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/sofi-stadium-rams</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Cubs Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/reds/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/levis-stadium</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Reds Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
   <url>
-    <loc>https://theshadium.com/stadium/pirates/</loc>
-    <lastmod>2025-07-31</lastmod>
+    <loc>https://mlbsuntracker.com/venue/lumen-field</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Pirates Stadium Shade Guide</image:title>
-    </image:image>
   </url>
-
-  <url>
-    <loc>https://theshadium.com/stadium/cardinals/</loc>
-    <lastmod>2025-07-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://theshadium.com/logo512.png</image:loc>
-      <image:title>Cardinals Stadium Shade Guide</image:title>
-    </image:image>
-  </url>
-
 </urlset>
