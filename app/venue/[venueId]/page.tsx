@@ -41,11 +41,11 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
       `best shaded seats ${venue.name}`,
       `${venue.name} sun exposure`,
       `where to sit in shade at ${venue.name}`,
-      `${venue.team} ${venue.sport} stadium shade`,
+      `${venue.team} ${venue.venueType} stadium shade`,
       `${venue.name} covered seats`,
-      `${venue.name} ${venue.sport} game seats`,
+      `${venue.name} ${venue.venueType} game seats`,
       `avoid sun at ${venue.name}`,
-      `${venue.city} ${venue.sport} shade`,
+      `${venue.city} ${venue.venueType} shade`,
       `${venue.league} stadium shade map`
     ],
     alternates: {
@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
     },
     other: {
       'venue:league': venue.league,
-      'venue:sport': venue.sport,
+      'venue:sport': venue.venueType,
       'venue:city': venue.city,
       'venue:state': venue.state,
     },
@@ -104,7 +104,7 @@ export async function generateMetadata({ params }: VenuePageProps): Promise<Meta
             '@id': `https://theshadium.com/venue/${venueId}`
           },
           about: {
-            '@type': venue.sport === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
+            '@type': venue.venueType === 'baseball' ? 'StadiumOrArena' : 'SportsComplex',
             name: venue.name,
             address: {
               '@type': 'PostalAddress',

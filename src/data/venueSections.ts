@@ -398,6 +398,23 @@ export const VENUE_SECTIONS: Record<string, any[]> = {
   ]
 };
 
+import { NFL_SECTIONS, generateGenericNFLSections } from './nflSections';
+
 export function getVenueSections(venueId: string): any[] {
-  return VENUE_SECTIONS[venueId] || [];
+  // First check if it's in the regular venue sections
+  if (VENUE_SECTIONS[venueId]) {
+    return VENUE_SECTIONS[venueId];
+  }
+  
+  // Then check NFL sections
+  if (NFL_SECTIONS[venueId]) {
+    const nflSections = NFL_SECTIONS[venueId];
+    // If no specific sections defined, generate generic ones
+    if (nflSections.length === 0) {
+      return generateGenericNFLSections(venueId);
+    }
+    return nflSections;
+  }
+  
+  return [];
 }

@@ -44,7 +44,8 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
 
   // Get sport-specific game times
   const getGameTimes = () => {
-    switch (venue.sport) {
+    const sport = venue.sport || venue.venueType;
+    switch (sport) {
       case 'football':
         return [
           { value: '13:00', label: '1:00 PM' },
@@ -75,7 +76,8 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
 
   // Get sport-specific content
   const getSportSpecificContent = () => {
-    switch (venue.sport) {
+    const sport = venue.sport || venue.venueType;
+    switch (sport) {
       case 'football':
         return {
           gameTypeLabel: 'NFL games',
@@ -105,12 +107,13 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
   // Get seasonal considerations based on sport
   const getSeasonalAdvice = () => {
     const baseAdvice = [];
+    const sport = venue.sport || venue.venueType;
     
-    if (venue.sport === 'football') {
+    if (sport === 'football') {
       baseAdvice.push('Early season (September-October): High sun exposure risk during day games');
       baseAdvice.push('Late season (December-January): Sun exposure less of a concern');
       baseAdvice.push('Playoff games: Weather protection becomes more important than shade');
-    } else if (venue.sport === 'soccer') {
+    } else if (sport === 'soccer') {
       baseAdvice.push('Summer season (June-August): Peak sun exposure during afternoon matches');
       baseAdvice.push('Spring/Fall: Moderate sun exposure, comfortable for most seating');
       baseAdvice.push('Weekend afternoon games: Highest shade demand');
@@ -149,7 +152,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
             <MapPinIcon size={16} />
             {venue.city}, {venue.state}
           </span>
-          <span className="league-badge">{venue.league} • {venue.sport}</span>
+          <span className="league-badge">{venue.league} • {venue.sport || venue.venueType}</span>
           <span className="roof-type">
             {venue.roof === 'fixed' ? '🏢 Fixed Roof' : 
              venue.roof === 'retractable' ? '🏟️ Retractable Roof' : 
@@ -188,7 +191,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
 
       <section className="shade-simulator">
         <h2>Shade Pattern Simulator</h2>
-        <p>See how shade changes throughout the season and day for {venue.sport} games:</p>
+        <p>See how shade changes throughout the season and day for {venue.sport || venue.venueType} games:</p>
         
         <div className="simulator-controls">
           <div className="control-group">
@@ -200,9 +203,10 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
             >
               {months.map((month, index) => {
                 // Show relevant months based on sport
-                const isRelevantMonth = venue.sport === 'football' 
+                const sport = venue.sport || venue.venueType;
+                const isRelevantMonth = sport === 'football' 
                   ? (index >= 8 || index <= 1) // Sep-Feb
-                  : venue.sport === 'soccer'
+                  : sport === 'soccer'
                   ? (index >= 2 && index <= 10) // Mar-Nov  
                   : (index >= 3 && index <= 9); // Apr-Oct for baseball
                 
@@ -264,12 +268,12 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
       )}
 
       <section className="sport-specific-advice">
-        <h2>{venue.sport.charAt(0).toUpperCase() + venue.sport.slice(1)} Shade Strategy</h2>
+        <h2>{(venue.sport || venue.venueType).charAt(0).toUpperCase() + (venue.sport || venue.venueType).slice(1)} Shade Strategy</h2>
         <div className="advice-grid">
           <div className="advice-card">
             <h3>Game Duration</h3>
             <p>
-              {venue.sport.charAt(0).toUpperCase() + venue.sport.slice(1)} games last {sportContent.durationLabel}, 
+              {(venue.sport || venue.venueType).charAt(0).toUpperCase() + (venue.sport || venue.venueType).slice(1)} games last {sportContent.durationLabel}, 
               making shade {sportContent.shadeImportance}.
             </p>
           </div>
@@ -298,7 +302,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
               <h3>🧴 Sun Protection</h3>
               <ul>
                 <li>Apply sunscreen 30 minutes before game time</li>
-                <li>Reapply every 2 hours during long {venue.sport} games</li>
+                <li>Reapply every 2 hours during long {venue.sport || venue.venueType} games</li>
                 <li>Bring a hat and sunglasses</li>
                 <li>Consider UV-protective clothing</li>
               </ul>

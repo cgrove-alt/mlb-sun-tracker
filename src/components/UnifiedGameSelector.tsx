@@ -148,76 +148,14 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'MiLB') {
-        console.log('[GameSelector] Selected MiLB venue:', selectedVenue);
-        
-        if (!selectedVenue.venueId) {
-          console.error('[GameSelector] MiLB venue missing venueId:', selectedVenue);
-          setError('Venue configuration error - missing venue ID');
-          setGames([]);
-          gamesLoading.setData([]);
-          return;
-        }
-        
-        // Get the team ID for this venue
-        const teamId = getTeamIdFromVenueId(selectedVenue.venueId);
-        
-        if (!teamId) {
-          console.error('[GameSelector] No team ID found for venue:', selectedVenue.venueId, 'in mapping');
-          setError('Unable to find team information for this venue');
-          setGames([]);
-          gamesLoading.setData([]);
-          return;
-        }
-        
-        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', selectedVenue.venueId, 'level:', selectedVenue.milbLevel);
-        
-        // Get the sport ID for this MiLB level
-        let sportId = 11; // Default to AAA
-        if (selectedVenue.milbLevel) {
-          switch (selectedVenue.milbLevel) {
-            case 'AAA':
-              sportId = MILB_LEVELS.AAA.id;
-              break;
-            case 'AA':
-              sportId = MILB_LEVELS.AA.id;
-              break;
-            case 'A+':
-              sportId = MILB_LEVELS.HIGH_A.id;
-              break;
-            case 'A':
-              sportId = MILB_LEVELS.LOW_A.id;
-              break;
-            case 'R':
-              sportId = MILB_LEVELS.ROOKIE.id;
-              break;
-            case 'ACL':
-              sportId = MILB_LEVELS.COMPLEX_AZL.id;
-              break;
-            case 'FCL':
-              sportId = MILB_LEVELS.COMPLEX_FCL.id;
-              break;
-          }
-        }
-        
-        console.log('[GameSelector] Fetching schedule with sportId:', sportId);
-        
-        const schedule = await milbApi.getTeamScheduleByLevel(
-          teamId,
-          now.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0],
-          sportId
-        );
-        
-        console.log('[GameSelector] API returned schedule:', schedule);
-        
-        const homeGames = milbApi.getHomeGamesForVenue(selectedVenue.venueId, schedule);
-        
-        console.log('[GameSelector] Found', homeGames.length, 'MiLB games for venue', selectedVenue.venueId);
-        setGames(homeGames);
-        gamesLoading.setData(homeGames);
+        // MiLB functionality temporarily disabled
+        console.log('[GameSelector] MiLB functionality temporarily disabled');
+        setError('MiLB games are temporarily unavailable');
+        setGames([]);
+        gamesLoading.setData([]);
         
         if (onGamesLoaded) {
-          onGamesLoaded(homeGames);
+          onGamesLoaded([]);
         }
       } else if (selectedVenue.league === 'NFL') {
         console.log('[GameSelector] Loading NFL games for venue:', selectedVenue.id);
@@ -284,7 +222,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     preferencesStorage.update('selectedMiLBLevel', level);
     
     // Clear selected venue when switching levels
-    if (selectedVenue && isMiLBVenue(selectedVenue) && selectedVenue.milbLevel !== level) {
+    if (selectedVenue && isMiLBVenue(selectedVenue) && selectedVenue.level !== level) {
       onVenueChange(null);
       setSelectedGameOption(null);
     }
