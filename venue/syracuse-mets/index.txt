@@ -1,0 +1,94 @@
+1:"$Sreact.fragment"
+8:I[8393,[],""]
+:HL["/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/203a54e7e4936174.css","style"]
+2:T5e9,
+  /* Reset and base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  #root {
+    min-height: 100vh;
+  }
+  
+  /* Prevent layout shift for header */
+  header {
+    height: 64px;
+  }
+  
+  /* Critical button styles */
+  button {
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  
+  /* Loading states */
+  .loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #2196f3;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Mobile-specific critical styles */
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+      touch-action: pan-y; /* Allow vertical scrolling */
+    }
+    
+    input, select, textarea {
+      font-size: 16px; /* Prevent zoom on form focus */
+    }
+    
+    /* Ensure main content is scrollable */
+    main {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+0:{"P":null,"b":"s23j3DbxPG3snwbfTq1q5","p":"","c":["","venue","syracuse-mets",""],"i":false,"f":[[["",{"children":["venue",{"children":[["venueId","syracuse-mets","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/203a54e7e4936174.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"$2"}}],["$","link",null,{"rel":"icon","href":"/favicon.ico"}],["$","link",null,{"rel":"apple-touch-icon","href":"/logo192.png"}],["$","meta",null,{"name":"theme-color","content":"#2196f3"}],["$","link",null,{"rel":"preconnect","href":"https://www.googletagmanager.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://www.googletagmanager.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://api.open-meteo.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://statsapi.mlb.com"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"The Shadium\",\"alternateName\":\"Shadium MLB Shade Finder\",\"description\":\"Find seats in the shade at any MLB stadium. Real-time sun tracking and shade calculations for all 30 MLB ballparks.\",\"url\":\"https://theshadium.com\",\"applicationCategory\":\"SportsApplication\",\"operatingSystem\":\"All\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"creator\":{\"@type\":\"Organization\",\"name\":\"The Shadium\",\"url\":\"https://theshadium.com\"},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"ratingCount\":\"256\"},\"featureList\":[\"Real-time sun tracking\",\"Shade calculations for all MLB stadiums\",\"Section-by-section shade analysis\",\"Weather integration\",\"Mobile-friendly interface\",\"30 MLB stadium coverage\"]}"}}],[["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-JXGEKF957C"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){window.dataLayer.push(arguments);}\n            window.gtag = gtag;\n            gtag('js', new Date());\n            gtag('config', 'G-JXGEKF957C');\n          "}}]]]}],"$L3"]}]]}],{"children":["venue","$L4",{"children":[["venueId","syracuse-mets","d"],"$L5",{"children":["__PAGE__","$L6",{},null,false]},null,false]},null,false]},null,false],"$L7",false]],"m":"$undefined","G":["$8",[]],"s":false,"S":true}
+9:I[2781,["869","static/chunks/styles-70eeede8bb0a6833.js","177","static/chunks/app/layout-f426c883236b6325.js"],"CSSOptimizer"]
+a:I[6045,["869","static/chunks/styles-70eeede8bb0a6833.js","177","static/chunks/app/layout-f426c883236b6325.js"],"default"]
+b:I[7555,[],""]
+c:I[1295,[],""]
+d:I[6874,["874","static/chunks/874-0ba6757e2a167ff7.js","345","static/chunks/app/not-found-9d5fdcf4f1efe52e.js"],""]
+f:I[9665,[],"OutletBoundary"]
+11:I[4911,[],"AsyncMetadataOutlet"]
+13:I[9665,[],"ViewportBoundary"]
+15:I[9665,[],"MetadataBoundary"]
+16:"$Sreact.suspense"
+3:["$","body",null,{"className":"__className_e8ce0c","children":[["$","$L9",null,{}],["$","$La",null,{}],["$","div",null,{"id":"root","children":["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"style":{"display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center","minHeight":"100vh","textAlign":"center","padding":"20px"},"children":[["$","h1",null,{"style":{"fontSize":"4rem","margin":"0 0 1rem 0"},"children":"404"}],["$","h2",null,{"style":{"fontSize":"2rem","margin":"0 0 2rem 0"},"children":"Page Not Found"}],["$","p",null,{"style":{"fontSize":"1.2rem","margin":"0 0 2rem 0","maxWidth":"600px"},"children":"Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist."}],["$","$Ld",null,{"href":"/","style":{"backgroundColor":"#2196f3","color":"white","padding":"12px 24px","borderRadius":"8px","textDecoration":"none","fontSize":"1.1rem","fontWeight":"500"},"children":"Return to Homepage"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]
+4:["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+5:["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+6:["$","$1","c",{"children":["$Le",null,["$","$Lf",null,{"children":["$L10",["$","$L11",null,{"promise":"$@12"}]]}]]}]
+7:["$","$1","h",{"children":[null,[["$","$L13",null,{"children":"$L14"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$L15",null,{"children":["$","div",null,{"hidden":true,"children":["$","$16",null,{"fallback":null,"children":"$L17"}]}]}]]}]
+18:I[2073,["869","static/chunks/styles-70eeede8bb0a6833.js","874","static/chunks/874-0ba6757e2a167ff7.js","694","static/chunks/694-099f1d2ba23e9a9b.js","453","static/chunks/app/venue/%5BvenueId%5D/page-cba9f6c6733f4322.js"],"default"]
+e:["$","$L18",null,{"venue":{"id":"syracuse-mets","name":"NBT Bank Stadium","league":"MiLB","team":"Syracuse Mets","alternateTeams":["New York Mets"],"city":"Syracuse","state":"NY","latitude":43.0781,"longitude":-76.1264,"orientation":315,"capacity":10815,"roof":"open","timezone":"America/New_York","seatingGeometry":{"bowlShape":"diamond","fieldDimensions":{"length":330,"width":330},"endZoneOrientation":"northwest-southeast","primarySeatingAngle":315,"sideline1Angle":45,"sideline2Angle":225,"endZone1Angle":315,"endZone2Angle":135},"venueType":"baseball","sport":"baseball","surface":"grass","opened":1997,"address":"Syracuse, NY","level":"AAA"},"sections":[{"id":"field-1","name":"Field Box 1","level":"field","baseAngle":340,"angleSpan":8,"covered":false,"price":"premium"},{"id":"field-2","name":"Field Box 2","level":"field","baseAngle":348,"angleSpan":8,"covered":false,"price":"premium"},{"id":"field-3","name":"Field Box 3","level":"field","baseAngle":356,"angleSpan":8,"covered":false,"price":"premium"},{"id":"field-4","name":"Field Box 4","level":"field","baseAngle":364,"angleSpan":8,"covered":false,"price":"premium"},{"id":"field-5","name":"Field Box 5","level":"field","baseAngle":372,"angleSpan":8,"covered":false,"price":"premium"},{"id":"lower-1b-1","name":"Box 100","level":"lower","baseAngle":20,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-2","name":"Box 101","level":"lower","baseAngle":30,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-3","name":"Box 102","level":"lower","baseAngle":40,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-4","name":"Box 103","level":"lower","baseAngle":50,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-5","name":"Box 104","level":"lower","baseAngle":60,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-6","name":"Box 105","level":"lower","baseAngle":70,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-7","name":"Box 106","level":"lower","baseAngle":80,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-1b-8","name":"Box 107","level":"lower","baseAngle":90,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-1","name":"Box 200","level":"lower","baseAngle":270,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-2","name":"Box 201","level":"lower","baseAngle":280,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-3","name":"Box 202","level":"lower","baseAngle":290,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-4","name":"Box 203","level":"lower","baseAngle":300,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-5","name":"Box 204","level":"lower","baseAngle":310,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-6","name":"Box 205","level":"lower","baseAngle":320,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-7","name":"Box 206","level":"lower","baseAngle":330,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"lower-3b-8","name":"Box 207","level":"lower","baseAngle":340,"angleSpan":10,"covered":false,"price":"moderate"},{"id":"reserved-1b-1","name":"Reserved 300","level":"lower","baseAngle":100,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-1b-2","name":"Reserved 301","level":"lower","baseAngle":110,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-1b-3","name":"Reserved 302","level":"lower","baseAngle":120,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-1b-4","name":"Reserved 303","level":"lower","baseAngle":130,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-1b-5","name":"Reserved 304","level":"lower","baseAngle":140,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-1b-6","name":"Reserved 305","level":"lower","baseAngle":150,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-1","name":"Reserved 400","level":"lower","baseAngle":210,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-2","name":"Reserved 401","level":"lower","baseAngle":220,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-3","name":"Reserved 402","level":"lower","baseAngle":230,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-4","name":"Reserved 403","level":"lower","baseAngle":240,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-5","name":"Reserved 404","level":"lower","baseAngle":250,"angleSpan":10,"covered":false,"price":"value"},{"id":"reserved-3b-6","name":"Reserved 405","level":"lower","baseAngle":260,"angleSpan":10,"covered":false,"price":"value"},{"id":"ga-left","name":"Left Field GA","level":"lower","baseAngle":150,"angleSpan":30,"covered":false,"price":"value"},{"id":"ga-center","name":"Berm/GA","level":"lower","baseAngle":180,"angleSpan":30,"covered":false,"price":"value"},{"id":"ga-right","name":"Right Field GA","level":"lower","baseAngle":210,"angleSpan":30,"covered":false,"price":"value"},{"id":"suite-1","name":"Suite 1","level":"suite","baseAngle":340,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-2","name":"Suite 2","level":"suite","baseAngle":350,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-3","name":"Suite 3","level":"suite","baseAngle":360,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-4","name":"Suite 4","level":"suite","baseAngle":370,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-5","name":"Suite 5","level":"suite","baseAngle":380,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-6","name":"Suite 6","level":"suite","baseAngle":390,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-7","name":"Suite 7","level":"suite","baseAngle":400,"angleSpan":10,"covered":true,"price":"luxury"},{"id":"suite-8","name":"Suite 8","level":"suite","baseAngle":410,"angleSpan":10,"covered":true,"price":"luxury"}]}]
+14:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover, user-scalable=yes"}],["$","meta","2",{"name":"theme-color","content":"#2196f3"}]]
+10:null
+12:{"metadata":[["$","title","0",{"children":"Shaded Seats at NBT Bank Stadium - Syracuse Mets | The Shadium"}],["$","meta","1",{"name":"description","content":"Find the best shaded seats at NBT Bank Stadium. Complete guide to avoiding sun exposure during Syracuse Mets games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips."}],["$","meta","2",{"name":"author","content":"The Shadium Team"}],["$","link","3",{"rel":"manifest","href":"/manifest.json","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"shaded seats at NBT Bank Stadium,NBT Bank Stadium shaded seats,NBT Bank Stadium shade guide,best shaded seats NBT Bank Stadium,NBT Bank Stadium sun exposure,where to sit in shade at NBT Bank Stadium,Syracuse Mets baseball stadium shade,NBT Bank Stadium covered seats,NBT Bank Stadium baseball game seats,avoid sun at NBT Bank Stadium,Syracuse baseball shade,MiLB stadium shade map"}],["$","meta","5",{"name":"creator","content":"The Shadium"}],["$","meta","6",{"name":"publisher","content":"The Shadium"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","meta","9",{"name":"venue:league","content":"MiLB"}],["$","meta","10",{"name":"venue:sport","content":"baseball"}],["$","meta","11",{"name":"venue:city","content":"Syracuse"}],["$","meta","12",{"name":"venue:state","content":"NY"}],["$","link","13",{"rel":"canonical","href":"https://theshadium.com/venue/syracuse-mets/"}],["$","meta","14",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","15",{"name":"structured-data","content":"{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Shaded Seats at NBT Bank Stadium - Complete Guide\",\"description\":\"Find the best shaded seats at NBT Bank Stadium. Real-time shade calculations for Syracuse Mets games.\",\"author\":{\"@type\":\"Organization\",\"name\":\"The Shadium\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"The Shadium\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://theshadium.com/logo512.png\"}},\"datePublished\":\"2024-01-01\",\"dateModified\":\"2025-08-03T00:36:48.463Z\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://theshadium.com/venue/syracuse-mets\"},\"about\":{\"@type\":\"StadiumOrArena\",\"name\":\"NBT Bank Stadium\",\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"Syracuse\"}}}"}],["$","meta","16",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","17",{"name":"apple-mobile-web-app-title","content":"The Shadium"}],["$","meta","18",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","19",{"property":"og:title","content":"Shaded Seats at NBT Bank Stadium - Syracuse Mets | The Shadium"}],["$","meta","20",{"property":"og:description","content":"Find the best shaded seats at NBT Bank Stadium. Complete guide to avoiding sun exposure during Syracuse Mets games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips."}],["$","meta","21",{"property":"og:url","content":"https://theshadium.com/venue/syracuse-mets/"}],["$","meta","22",{"property":"og:image","content":"https://theshadium.com/logo512.png"}],["$","meta","23",{"property":"og:image:width","content":"512"}],["$","meta","24",{"property":"og:image:height","content":"512"}],["$","meta","25",{"property":"og:image:alt","content":"NBT Bank Stadium Shade Guide"}],["$","meta","26",{"property":"og:type","content":"article"}],["$","meta","27",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","28",{"name":"twitter:title","content":"Shaded Seats at NBT Bank Stadium - Syracuse Mets | The Shadium"}],["$","meta","29",{"name":"twitter:description","content":"Find the best shaded seats at NBT Bank Stadium. Complete guide to avoiding sun exposure during Syracuse Mets games. Real-time shade calculations for every section, best seats for day games, covered seating areas, and sun protection tips."}],"$L19"],"error":null,"digest":"$undefined"}
+19:["$","meta","30",{"name":"twitter:image","content":"https://theshadium.com/logo512.png"}]
+17:"$12:metadata"
