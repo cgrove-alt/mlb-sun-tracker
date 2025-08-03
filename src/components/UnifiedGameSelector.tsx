@@ -6,7 +6,7 @@ import { MiLBGame, milbApi, MILB_LEVELS } from '../services/milbApi';
 import { NFLGame, nflApi } from '../services/nflApi';
 import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
-import { getTeamIdFromVenueId } from '../data/milbTeamMapping';
+import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
 import { FavoriteButton } from './FavoriteButton';
 import { useUserProfile } from '../contexts/UserProfileContext';
@@ -148,14 +148,79 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'MiLB') {
-        // MiLB functionality temporarily disabled
-        console.log('[GameSelector] MiLB functionality temporarily disabled');
-        setError('MiLB games are temporarily unavailable');
-        setGames([]);
-        gamesLoading.setData([]);
+        console.log('[GameSelector] Selected MiLB venue:', selectedVenue);
+        
+        // Get the numeric venue ID from the string ID
+        const venueId = getVenueIdFromStringId(selectedVenue.id);
+        
+        if (!venueId) {
+          console.error('[GameSelector] MiLB venue ID not found for:', selectedVenue.id);
+          setError('Venue configuration error - venue not recognized');
+          setGames([]);
+          gamesLoading.setData([]);
+          return;
+        }
+        
+        // Get the team ID for this venue
+        const teamId = getTeamIdFromVenueId(venueId);
+        
+        if (!teamId) {
+          console.error('[GameSelector] No team ID found for venue:', venueId, 'in mapping');
+          setError('Unable to find team information for this venue');
+          setGames([]);
+          gamesLoading.setData([]);
+          return;
+        }
+        
+        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', venueId, 'level:', selectedVenue.level);
+        
+        // Get the sport ID for this MiLB level
+        let sportId = 11; // Default to AAA
+        if (selectedVenue.level) {
+          switch (selectedVenue.level) {
+            case 'AAA':
+              sportId = MILB_LEVELS.AAA.id;
+              break;
+            case 'AA':
+              sportId = MILB_LEVELS.AA.id;
+              break;
+            case 'A+':
+              sportId = MILB_LEVELS.HIGH_A.id;
+              break;
+            case 'A':
+              sportId = MILB_LEVELS.LOW_A.id;
+              break;
+            case 'R':
+              sportId = MILB_LEVELS.ROOKIE.id;
+              break;
+            case 'ACL':
+              sportId = MILB_LEVELS.COMPLEX_AZL.id;
+              break;
+            case 'FCL':
+              sportId = MILB_LEVELS.COMPLEX_FCL.id;
+              break;
+          }
+        }
+        
+        console.log('[GameSelector] Fetching schedule with sportId:', sportId);
+        
+        const schedule = await milbApi.getTeamScheduleByLevel(
+          teamId,
+          now.toISOString().split('T')[0],
+          endDate.toISOString().split('T')[0],
+          sportId
+        );
+        
+        console.log('[GameSelector] API returned schedule:', schedule);
+        
+        const homeGames = milbApi.getHomeGamesForVenue(venueId, schedule);
+        
+        console.log('[GameSelector] Found', homeGames.length, 'MiLB games for venue', venueId);
+        setGames(homeGames);
+        gamesLoading.setData(homeGames);
         
         if (onGamesLoaded) {
-          onGamesLoaded([]);
+          onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'NFL') {
         console.log('[GameSelector] Loading NFL games for venue:', selectedVenue.id);
