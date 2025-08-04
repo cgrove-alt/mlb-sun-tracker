@@ -2,7 +2,8 @@
 // This is the primary interface for accessing MiLB venue data
 
 export * from './venueCorrections';
-export * from './milbVenueLayouts';
+export type { VenueLayout, VenueSection } from './milbVenueLayouts';
+export { getVenueLayout, validateVenueLayout, allMilbLayouts } from './milbVenueLayouts';
 export * from './milbVenueLayoutsExtended';
 export * from './milbVenueLayoutsAAA';
 export * from './milbVenueLayoutsAA';
@@ -11,7 +12,7 @@ export * from './milbVenueLayoutsA';
 export * from './milbVenueLayoutsMissing';
 export * from './venueLayoutIntegration';
 
-import { allMilbLayouts } from './milbVenueLayouts';
+import { allMilbLayouts, type VenueSection as VenueSectionType } from './milbVenueLayouts';
 import { allExtendedLayouts } from './milbVenueLayoutsExtended';
 import { allAAALayouts } from './milbVenueLayoutsAAA';
 import { allAALayouts } from './milbVenueLayoutsAA';
@@ -94,18 +95,6 @@ export interface VenueData {
   surface?: string;
   opened?: number;
   address: string;
-  sections: VenueSection[];
+  sections: VenueSectionType[];
   hasCustomLayout: boolean;
-}
-
-export interface VenueSection {
-  id: string;
-  name: string;
-  level: 'field' | 'lower' | 'club' | 'upper' | 'suite' | 'ga' | 'berm';
-  baseAngle: number;
-  angleSpan: number;
-  covered: boolean;
-  price: 'premium' | 'moderate' | 'value' | 'luxury';
-  rows?: number;
-  capacity?: number;
 }
