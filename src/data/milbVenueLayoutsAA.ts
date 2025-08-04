@@ -12,34 +12,48 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'Peoples Natural Gas Field',
     lastUpdated: '2024-01',
     sections: [
-      // Box Seats
-      { id: 'box-101', name: 'Box 101', level: 'field', baseAngle: 340, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'box-102', name: 'Box 102', level: 'field', baseAngle: 353, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'box-103', name: 'Box 103', level: 'field', baseAngle: 6, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'box-104', name: 'Box 104', level: 'field', baseAngle: 19, angleSpan: 13, covered: false, price: 'premium' },
+      // Diamond Club (100 Level) - behind home plate
+      { id: 'dc-101', name: 'Diamond Club 101', level: 'field', baseAngle: 355, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'dc-102', name: 'Diamond Club 102', level: 'field', baseAngle: 3, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'dc-103', name: 'Diamond Club 103', level: 'field', baseAngle: 11, angleSpan: 8, covered: false, price: 'premium' },
       
-      // Reserved Seating
-      { id: 'res-105', name: 'Reserved 105', level: 'lower', baseAngle: 32, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'res-106', name: 'Reserved 106', level: 'lower', baseAngle: 46, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'res-107', name: 'Reserved 107', level: 'lower', baseAngle: 60, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'res-108', name: 'Reserved 108', level: 'lower', baseAngle: 74, angleSpan: 14, covered: false, price: 'value' },
+      // Terrace Level (200 Level) - mid-tier seating
+      { id: 'ter-201', name: 'Terrace 201', level: 'lower', baseAngle: 19, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'ter-202', name: 'Terrace 202', level: 'lower', baseAngle: 34, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'ter-203', name: 'Terrace 203', level: 'lower', baseAngle: 49, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'ter-204', name: 'Terrace 204', level: 'lower', baseAngle: 64, angleSpan: 15, covered: false, price: 'value' },
       
-      { id: 'res-109', name: 'Reserved 109', level: 'lower', baseAngle: 286, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'res-110', name: 'Reserved 110', level: 'lower', baseAngle: 300, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'res-111', name: 'Reserved 111', level: 'lower', baseAngle: 314, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'res-112', name: 'Reserved 112', level: 'lower', baseAngle: 328, angleSpan: 14, covered: false, price: 'moderate' },
+      // Third base side
+      { id: 'ter-205', name: 'Terrace 205', level: 'lower', baseAngle: 296, angleSpan: 15, covered: false, price: 'value' },
+      { id: 'ter-206', name: 'Terrace 206', level: 'lower', baseAngle: 311, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'ter-207', name: 'Terrace 207', level: 'lower', baseAngle: 326, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'ter-208', name: 'Terrace 208', level: 'lower', baseAngle: 341, angleSpan: 15, covered: false, price: 'moderate' },
       
-      // Outfield
-      { id: 'rf-ga', name: 'Right Field GA', level: 'ga', baseAngle: 88, angleSpan: 48, covered: false, price: 'value' },
-      { id: 'lf-ga', name: 'Left Field GA', level: 'ga', baseAngle: 224, angleSpan: 48, covered: false, price: 'value' },
+      // Grandstand Level (300 Level) - upper seating
+      { id: 'gs-301', name: 'Grandstand 301', level: 'upper', baseAngle: 25, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'gs-302', name: 'Grandstand 302', level: 'upper', baseAngle: 45, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'gs-303', name: 'Grandstand 303', level: 'upper', baseAngle: 315, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'gs-304', name: 'Grandstand 304', level: 'upper', baseAngle: 335, angleSpan: 20, covered: true, price: 'value' },
       
-      // Jungle (Outfield)
-      { id: 'jungle', name: 'The Jungle', level: 'berm', baseAngle: 136, angleSpan: 88, covered: false, price: 'value' },
+      // UPMC Health Plan Home Run Junction (RF Bleachers)
+      { id: 'upmc-hrj', name: 'UPMC Home Run Junction', level: 'ga', baseAngle: 79, angleSpan: 45, covered: false, price: 'value' },
       
-      // Cove Club
-      { id: 'cove-club', name: 'Cove Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Third Base Picnic Pavilion
+      { id: 'tb-picnic', name: 'Third Base Picnic Pavilion', level: 'ga', baseAngle: 241, angleSpan: 35, covered: true, price: 'value' },
+      
+      // First Base Bleachers
+      { id: 'fb-bleachers', name: 'First Base Bleachers', level: 'ga', baseAngle: 124, angleSpan: 32, covered: false, price: 'value' },
+      
+      // Budweiser Party Deck (Left Field)
+      { id: 'bud-party', name: 'Budweiser Party Deck', level: 'club', baseAngle: 276, angleSpan: 25, covered: false, price: 'moderate' },
+      
+      // Rail Kings (Party Deck edge seating with TVs)
+      { id: 'rail-kings', name: 'Rail Kings', level: 'club', baseAngle: 266, angleSpan: 10, covered: false, price: 'moderate' },
+      
+      // Hillside Seating (behind left field bleachers)
+      { id: 'hillside', name: 'Hillside Seating', level: 'berm', baseAngle: 156, angleSpan: 85, covered: false, price: 'value' }
     ],
-    notes: 'Altoona, PA with roller coaster beyond outfield wall'
+    notes: 'Altoona, PA with Skyliner roller coaster beyond RF wall, Allegheny Mountains backdrop, double-deck design, 7,210 capacity'
   },
   
   {
@@ -47,36 +61,47 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'HODGETOWN',
     lastUpdated: '2024-01',
     sections: [
-      // Premium Infield
-      { id: 'pi-100', name: 'Premium Infield 100', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'pi-101', name: 'Premium Infield 101', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'pi-102', name: 'Premium Infield 102', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'pi-103', name: 'Premium Infield 103', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+      // Club Seats (Premium behind home plate with club access)
+      { id: 'club-101', name: 'Club Seats 101', level: 'field', baseAngle: 8, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'club-102', name: 'Club Seats 102', level: 'field', baseAngle: 18, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'club-103', name: 'Club Seats 103', level: 'field', baseAngle: 342, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'club-104', name: 'Club Seats 104', level: 'field', baseAngle: 352, angleSpan: 10, covered: false, price: 'premium' },
       
-      // Infield Box
-      { id: 'ib-104', name: 'Infield Box 104', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
-      { id: 'ib-105', name: 'Infield Box 105', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
-      { id: 'ib-106', name: 'Infield Box 106', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
-      { id: 'ib-107', name: 'Infield Box 107', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
-      { id: 'ib-108', name: 'Infield Box 108', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+      // Dugout Seats (Close to team dugouts)
+      { id: 'dug-105', name: 'Dugout Seats 105', level: 'field', baseAngle: 28, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dug-106', name: 'Dugout Seats 106', level: 'field', baseAngle: 40, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dug-107', name: 'Dugout Seats 107', level: 'field', baseAngle: 320, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dug-108', name: 'Dugout Seats 108', level: 'field', baseAngle: 332, angleSpan: 12, covered: false, price: 'premium' },
       
-      { id: 'ib-109', name: 'Infield Box 109', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
-      { id: 'ib-110', name: 'Infield Box 110', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
-      { id: 'ib-111', name: 'Infield Box 111', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
-      { id: 'ib-112', name: 'Infield Box 112', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
-      { id: 'ib-113', name: 'Infield Box 113', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+      // Field Level Seats (Wrap around field)
+      { id: 'field-201', name: 'Field Level 201', level: 'lower', baseAngle: 52, angleSpan: 16, covered: false, price: 'moderate' },
+      { id: 'field-202', name: 'Field Level 202', level: 'lower', baseAngle: 68, angleSpan: 16, covered: false, price: 'moderate' },
+      { id: 'field-203', name: 'Field Level 203', level: 'lower', baseAngle: 84, angleSpan: 16, covered: false, price: 'value' },
       
-      // Outfield Box
-      { id: 'ob-201', name: 'Outfield Box 201', level: 'ga', baseAngle: 93, angleSpan: 42, covered: false, price: 'value' },
-      { id: 'ob-202', name: 'Outfield Box 202', level: 'ga', baseAngle: 225, angleSpan: 42, covered: false, price: 'value' },
+      // Third Base Field Level
+      { id: 'field-204', name: 'Field Level 204', level: 'lower', baseAngle: 276, angleSpan: 16, covered: false, price: 'value' },
+      { id: 'field-205', name: 'Field Level 205', level: 'lower', baseAngle: 292, angleSpan: 16, covered: false, price: 'moderate' },
+      { id: 'field-206', name: 'Field Level 206', level: 'lower', baseAngle: 308, angleSpan: 16, covered: false, price: 'moderate' },
       
-      // Berm
-      { id: 'berm', name: 'Berm', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' },
+      // Fairly Group Club Level (Upper level with 360-degree concourse)
+      { id: 'fgc-301', name: 'Fairly Group Club 301', level: 'club', baseAngle: 340, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'fgc-302', name: 'Fairly Group Club 302', level: 'club', baseAngle: 360, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'fgc-303', name: 'Fairly Group Club 303', level: 'club', baseAngle: 20, angleSpan: 20, covered: true, price: 'luxury' },
       
-      // Fairly Group Club
-      { id: 'fairly-club', name: 'Fairly Group Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Party Suites (Luxury boxes with indoor/outdoor seating)
+      { id: 'party-suite-1', name: 'Party Suite 1', level: 'suite', baseAngle: 355, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'party-suite-2', name: 'Party Suite 2', level: 'suite', baseAngle: 5, angleSpan: 5, covered: true, price: 'luxury' },
+      
+      // Pepsi Party Deck (ADA accessible with unique views)
+      { id: 'pepsi-deck', name: 'Pepsi Party Deck', level: 'ga', baseAngle: 100, angleSpan: 35, covered: false, price: 'moderate' },
+      
+      // Left Field Bleachers
+      { id: 'lf-bleachers', name: 'Left Field Bleachers', level: 'ga', baseAngle: 225, angleSpan: 40, covered: false, price: 'value' },
+      
+      // Outfield Berm (General admission lawn seating)
+      { id: 'of-berm', name: 'Outfield Berm', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' }
     ],
-    notes: 'Downtown Amarillo, opened 2019, modern design'
+    notes: 'Downtown Amarillo, opened 2019, modern design, 6,631 capacity with 360-degree concourse'
   },
   
   {
@@ -84,70 +109,107 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'Dickey-Stephens Park',
     lastUpdated: '2024-01',
     sections: [
-      // Home Plate Box
-      { id: 'hpb-1', name: 'Home Plate Box 1', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'hpb-2', name: 'Home Plate Box 2', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'hpb-3', name: 'Home Plate Box 3', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'hpb-4', name: 'Home Plate Box 4', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+      // Lower Deck Green Stadium Seats (5 rows)
+      { id: 'lower-101', name: 'Lower 101', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'lower-102', name: 'Lower 102', level: 'field', baseAngle: 360, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'lower-103', name: 'Lower 103', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'lower-104', name: 'Lower 104', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'lower-105', name: 'Lower 105', level: 'field', baseAngle: 30, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-106', name: 'Lower 106', level: 'field', baseAngle: 40, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-107', name: 'Lower 107', level: 'field', baseAngle: 50, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-108', name: 'Lower 108', level: 'field', baseAngle: 60, angleSpan: 10, covered: false, price: 'value' },
       
-      // Field Box
-      { id: 'fb-101', name: 'Field Box 101', level: 'lower', baseAngle: 28, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fb-102', name: 'Field Box 102', level: 'lower', baseAngle: 42, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fb-103', name: 'Field Box 103', level: 'lower', baseAngle: 56, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fb-104', name: 'Field Box 104', level: 'lower', baseAngle: 70, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'fb-105', name: 'Field Box 105', level: 'lower', baseAngle: 84, angleSpan: 14, covered: false, price: 'value' },
+      // Third base side lower
+      { id: 'lower-109', name: 'Lower 109', level: 'field', baseAngle: 300, angleSpan: 10, covered: false, price: 'value' },
+      { id: 'lower-110', name: 'Lower 110', level: 'field', baseAngle: 310, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-111', name: 'Lower 111', level: 'field', baseAngle: 320, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-112', name: 'Lower 112', level: 'field', baseAngle: 330, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: 'lower-113', name: 'Lower 113', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'moderate' },
       
-      { id: 'fb-106', name: 'Field Box 106', level: 'lower', baseAngle: 276, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'fb-107', name: 'Field Box 107', level: 'lower', baseAngle: 290, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'fb-108', name: 'Field Box 108', level: 'lower', baseAngle: 304, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fb-109', name: 'Field Box 109', level: 'lower', baseAngle: 318, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fb-110', name: 'Field Box 110', level: 'lower', baseAngle: 332, angleSpan: 14, covered: false, price: 'moderate' },
+      // Upper Level (12 rows)
+      { id: 'upper-201', name: 'Upper 201', level: 'upper', baseAngle: 335, angleSpan: 15, covered: true, price: 'value' },
+      { id: 'upper-202', name: 'Upper 202', level: 'upper', baseAngle: 350, angleSpan: 15, covered: true, price: 'value' },
+      { id: 'upper-203', name: 'Upper 203', level: 'upper', baseAngle: 5, angleSpan: 15, covered: true, price: 'value' },
+      { id: 'upper-204', name: 'Upper 204', level: 'upper', baseAngle: 20, angleSpan: 15, covered: true, price: 'value' },
+      { id: 'upper-205', name: 'Upper 205', level: 'upper', baseAngle: 35, angleSpan: 15, covered: true, price: 'value' },
       
-      // Lawn
-      { id: 'lawn', name: 'Lawn', level: 'berm', baseAngle: 98, angleSpan: 82, covered: false, price: 'value' },
+      // 360 Concourse behind seating
+      { id: 'concourse', name: '360 Concourse', level: 'ga', baseAngle: 0, angleSpan: 360, covered: true, price: 'value' },
       
-      // Left Field Pavilion
-      { id: 'lf-pav', name: 'Left Field Pavilion', level: 'ga', baseAngle: 180, angleSpan: 76, covered: false, price: 'value' },
+      // Skyboxes (24 climate-controlled)
+      { id: 'skybox-1', name: 'Skybox 1', level: 'suite', baseAngle: 345, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'skybox-2', name: 'Skybox 2', level: 'suite', baseAngle: 350, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'skybox-3', name: 'Skybox 3', level: 'suite', baseAngle: 355, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'skybox-4', name: 'Skybox 4', level: 'suite', baseAngle: 5, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'skybox-5', name: 'Skybox 5', level: 'suite', baseAngle: 10, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'skybox-6', name: 'Skybox 6', level: 'suite', baseAngle: 15, angleSpan: 5, covered: true, price: 'luxury' },
       
-      // Arvest Suite Level
-      { id: 'suite-level', name: 'Arvest Suite Level', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Outdoor Box Seats (12 total)
+      { id: 'outdoor-box-1', name: 'Outdoor Box 1', level: 'club', baseAngle: 25, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'outdoor-box-2', name: 'Outdoor Box 2', level: 'club', baseAngle: 335, angleSpan: 8, covered: false, price: 'moderate' },
+      
+      // Berm Seating (1,500 capacity)
+      { id: 'berm-rf', name: 'Right Field Berm', level: 'berm', baseAngle: 70, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'berm-cf', name: 'Center Field Berm', level: 'berm', baseAngle: 120, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'berm-lf', name: 'Left Field Berm', level: 'berm', baseAngle: 180, angleSpan: 50, covered: false, price: 'value' },
+      
+      // Club Car Area (First base side premium)
+      { id: 'club-car', name: 'Club Car Area', level: 'club', baseAngle: 30, angleSpan: 20, covered: true, price: 'luxury' },
+      
+      // Dickey Room (First base side premium)
+      { id: 'dickey-room', name: 'Dickey Room', level: 'club', baseAngle: 50, angleSpan: 15, covered: true, price: 'luxury' }
     ],
-    notes: 'North Little Rock on Arkansas River, opened 2007'
+    notes: 'North Little Rock on Arkansas River, opened 2007, 7,300 capacity (5,800 fixed seats + 1,500 berm), features Arkansas River views'
   },
   
   {
     venueId: 'biloxi-shuckers',
-    venueName: 'MGM Park',
+    venueName: 'Keesler Federal Park',
     lastUpdated: '2024-01',
     sections: [
-      // Dugout Box
-      { id: 'dug-101', name: 'Dugout Box 101', level: 'field', baseAngle: 340, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'dug-102', name: 'Dugout Box 102', level: 'field', baseAngle: 353, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'dug-103', name: 'Dugout Box 103', level: 'field', baseAngle: 6, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'dug-104', name: 'Dugout Box 104', level: 'field', baseAngle: 19, angleSpan: 13, covered: false, price: 'premium' },
+      // Club Seating (Lower rows of sections 100-110)
+      { id: 'club-101', name: 'Club 101', level: 'field', baseAngle: 345, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'club-102', name: 'Club 102', level: 'field', baseAngle: 353, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'club-103', name: 'Club 103', level: 'field', baseAngle: 1, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'club-104', name: 'Club 104', level: 'field', baseAngle: 9, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'club-105', name: 'Club 105', level: 'field', baseAngle: 17, angleSpan: 8, covered: false, price: 'premium' },
       
-      // Field Level
-      { id: 'fl-105', name: 'Field Level 105', level: 'lower', baseAngle: 32, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fl-106', name: 'Field Level 106', level: 'lower', baseAngle: 46, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fl-107', name: 'Field Level 107', level: 'lower', baseAngle: 60, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fl-108', name: 'Field Level 108', level: 'lower', baseAngle: 74, angleSpan: 14, covered: false, price: 'value' },
+      // Box Seats (Upper rows of sections 100-110)
+      { id: 'box-101', name: 'Box 101', level: 'lower', baseAngle: 345, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-102', name: 'Box 102', level: 'lower', baseAngle: 353, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-103', name: 'Box 103', level: 'lower', baseAngle: 1, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-104', name: 'Box 104', level: 'lower', baseAngle: 9, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 17, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 25, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 33, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 41, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 319, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: 'box-110', name: 'Box 110', level: 'lower', baseAngle: 327, angleSpan: 8, covered: false, price: 'moderate' },
       
-      { id: 'fl-109', name: 'Field Level 109', level: 'lower', baseAngle: 286, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'fl-110', name: 'Field Level 110', level: 'lower', baseAngle: 300, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fl-111', name: 'Field Level 111', level: 'lower', baseAngle: 314, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'fl-112', name: 'Field Level 112', level: 'lower', baseAngle: 328, angleSpan: 14, covered: false, price: 'moderate' },
+      // Suites (12 total, each holds up to 12 people)
+      { id: 'suite-1', name: 'Suite 1', level: 'suite', baseAngle: 348, angleSpan: 4, covered: true, price: 'luxury' },
+      { id: 'suite-2', name: 'Suite 2', level: 'suite', baseAngle: 352, angleSpan: 4, covered: true, price: 'luxury' },
+      { id: 'suite-3', name: 'Suite 3', level: 'suite', baseAngle: 356, angleSpan: 4, covered: true, price: 'luxury' },
+      { id: 'suite-4', name: 'Suite 4', level: 'suite', baseAngle: 4, angleSpan: 4, covered: true, price: 'luxury' },
+      { id: 'suite-5', name: 'Suite 5', level: 'suite', baseAngle: 8, angleSpan: 4, covered: true, price: 'luxury' },
+      { id: 'suite-6', name: 'Suite 6', level: 'suite', baseAngle: 12, angleSpan: 4, covered: true, price: 'luxury' },
       
-      // GA Seating
-      { id: 'ga-rf', name: 'Right Field GA', level: 'ga', baseAngle: 88, angleSpan: 48, covered: false, price: 'value' },
-      { id: 'ga-lf', name: 'Left Field GA', level: 'ga', baseAngle: 224, angleSpan: 48, covered: false, price: 'value' },
+      // Left Field Terrace (Group seating with all-you-can-eat)
+      { id: 'lf-terrace', name: 'Left Field Terrace', level: 'ga', baseAngle: 225, angleSpan: 35, covered: false, price: 'value' },
       
-      // The Yard
-      { id: 'yard', name: 'The Yard', level: 'berm', baseAngle: 136, angleSpan: 88, covered: false, price: 'value' },
+      // Third Base Party Deck (30 people with buffet)
+      { id: 'tb-party', name: 'Third Base Party Deck', level: 'club', baseAngle: 260, angleSpan: 25, covered: false, price: 'moderate' },
       
-      // Biloxi Yacht Club
-      { id: 'yacht-club', name: 'Biloxi Yacht Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Right Field Beach Paradise (2024 renovation with tiki bar and splash pad)
+      { id: 'rf-beach', name: 'Beach Paradise', level: 'berm', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      
+      // Boardwalk (Right field with tiki bar)
+      { id: 'boardwalk', name: 'Boardwalk', level: 'ga', baseAngle: 49, angleSpan: 41, covered: false, price: 'value' },
+      
+      // General Admission Berm
+      { id: 'ga-berm', name: 'General Admission Berm', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' }
     ],
-    notes: 'Biloxi waterfront, opened 2015'
+    notes: 'Biloxi waterfront, opened 2015, renamed Keesler Federal Park in 2024, single-level seating foul pole to foul pole, 6,067 capacity with beach theme'
   },
   
   {
@@ -155,31 +217,43 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'Mirabito Stadium',
     lastUpdated: '2024-01',
     sections: [
-      // Field Level Box
-      { id: 'flb-100', name: 'Field Level Box 100', level: 'field', baseAngle: 340, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'flb-101', name: 'Field Level Box 101', level: 'field', baseAngle: 353, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'flb-102', name: 'Field Level Box 102', level: 'field', baseAngle: 6, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'flb-103', name: 'Field Level Box 103', level: 'field', baseAngle: 19, angleSpan: 13, covered: false, price: 'premium' },
+      // Home Plate Box (Premium behind home plate)
+      { id: 'hp-box-1', name: 'Home Plate Box 1', level: 'field', baseAngle: 12, angleSpan: 9, covered: false, price: 'premium' },
+      { id: 'hp-box-2', name: 'Home Plate Box 2', level: 'field', baseAngle: 21, angleSpan: 9, covered: false, price: 'premium' },
+      { id: 'hp-box-3', name: 'Home Plate Box 3', level: 'field', baseAngle: 339, angleSpan: 9, covered: false, price: 'premium' },
+      { id: 'hp-box-4', name: 'Home Plate Box 4', level: 'field', baseAngle: 348, angleSpan: 9, covered: false, price: 'premium' },
       
-      // Box Seats
-      { id: 'box-104', name: 'Box 104', level: 'lower', baseAngle: 32, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 46, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 60, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 74, angleSpan: 14, covered: false, price: 'value' },
+      // Infield Box (Down the lines)
+      { id: 'if-box-101', name: 'Infield Box 101', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-102', name: 'Infield Box 102', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-103', name: 'Infield Box 103', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-104', name: 'Infield Box 104', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'moderate' },
       
-      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 286, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 300, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-110', name: 'Box 110', level: 'lower', baseAngle: 314, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-111', name: 'Box 111', level: 'lower', baseAngle: 328, angleSpan: 14, covered: false, price: 'moderate' },
+      // Third base infield
+      { id: 'if-box-105', name: 'Infield Box 105', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-106', name: 'Infield Box 106', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-107', name: 'Infield Box 107', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'if-box-108', name: 'Infield Box 108', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
       
-      // GA Bleachers
-      { id: 'ga-rf', name: 'Right Field Bleachers', level: 'ga', baseAngle: 88, angleSpan: 48, covered: false, price: 'value' },
-      { id: 'ga-lf', name: 'Left Field Bleachers', level: 'ga', baseAngle: 224, angleSpan: 48, covered: false, price: 'value' },
+      // Reserved Grandstand (Upper level)
+      { id: 'res-201', name: 'Reserved 201', level: 'upper', baseAngle: 340, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'res-202', name: 'Reserved 202', level: 'upper', baseAngle: 0, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'res-203', name: 'Reserved 203', level: 'upper', baseAngle: 20, angleSpan: 20, covered: true, price: 'value' },
       
-      // Picnic Pavilion
-      { id: 'picnic', name: 'Picnic Pavilion', level: 'club', baseAngle: 136, angleSpan: 88, covered: true, price: 'value' }
+      // General Admission Bleachers
+      { id: 'ga-rf', name: 'Right Field GA', level: 'ga', baseAngle: 78, angleSpan: 42, covered: false, price: 'value' },
+      { id: 'ga-lf', name: 'Left Field GA', level: 'ga', baseAngle: 240, angleSpan: 42, covered: false, price: 'value' },
+      
+      // Mirabito Outfield Deck (Group seating)
+      { id: 'mirabito-deck', name: 'Mirabito Outfield Deck', level: 'club', baseAngle: 120, angleSpan: 60, covered: false, price: 'moderate' },
+      
+      // Family Fun Zone (Kids area)
+      { id: 'family-zone', name: 'Family Fun Zone', level: 'ga', baseAngle: 180, angleSpan: 40, covered: false, price: 'value' },
+      
+      // Party Pavilion (Group area)
+      { id: 'party-pavilion', name: 'Party Pavilion', level: 'club', baseAngle: 220, angleSpan: 20, covered: true, price: 'moderate' }
     ],
-    notes: 'Binghamton, NY, classic ballpark opened 1992'
+    notes: 'Binghamton, NY, classic ballpark opened 1992, intimate 6,012 capacity with traditional grandstand design'
   },
   
   {
@@ -187,38 +261,52 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'Prince George\'s Stadium',
     lastUpdated: '2024-01',
     sections: [
-      // Diamond Club
-      { id: 'dc-101', name: 'Diamond Club 101', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'dc-102', name: 'Diamond Club 102', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'dc-103', name: 'Diamond Club 103', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
-      { id: 'dc-104', name: 'Diamond Club 104', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+      // Diamond Club (Premium seating behind home plate)
+      { id: 'diamond-club-1', name: 'Diamond Club 1', level: 'field', baseAngle: 5, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'diamond-club-2', name: 'Diamond Club 2', level: 'field', baseAngle: 13, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'diamond-club-3', name: 'Diamond Club 3', level: 'field', baseAngle: 347, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'diamond-club-4', name: 'Diamond Club 4', level: 'field', baseAngle: 355, angleSpan: 8, covered: false, price: 'premium' },
       
-      // Box Seats
-      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 28, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 42, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 56, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 70, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 84, angleSpan: 14, covered: false, price: 'value' },
+      // Field Box (Along baselines)
+      { id: 'field-box-101', name: 'Field Box 101', level: 'lower', baseAngle: 21, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-102', name: 'Field Box 102', level: 'lower', baseAngle: 32, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-103', name: 'Field Box 103', level: 'lower', baseAngle: 43, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-104', name: 'Field Box 104', level: 'lower', baseAngle: 54, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-105', name: 'Field Box 105', level: 'lower', baseAngle: 65, angleSpan: 11, covered: false, price: 'value' },
       
-      { id: 'box-110', name: 'Box 110', level: 'lower', baseAngle: 276, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'box-111', name: 'Box 111', level: 'lower', baseAngle: 290, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'box-112', name: 'Box 112', level: 'lower', baseAngle: 304, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-113', name: 'Box 113', level: 'lower', baseAngle: 318, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'box-114', name: 'Box 114', level: 'lower', baseAngle: 332, angleSpan: 14, covered: false, price: 'moderate' },
+      // Third base field box
+      { id: 'field-box-106', name: 'Field Box 106', level: 'lower', baseAngle: 295, angleSpan: 11, covered: false, price: 'value' },
+      { id: 'field-box-107', name: 'Field Box 107', level: 'lower', baseAngle: 306, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-108', name: 'Field Box 108', level: 'lower', baseAngle: 317, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-109', name: 'Field Box 109', level: 'lower', baseAngle: 328, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'field-box-110', name: 'Field Box 110', level: 'lower', baseAngle: 339, angleSpan: 11, covered: false, price: 'moderate' },
       
-      // Pavilion
-      { id: 'pavilion', name: 'Pavilion', level: 'ga', baseAngle: 98, angleSpan: 44, covered: false, price: 'value' },
+      // Upper Deck Reserved
+      { id: 'upper-res-201', name: 'Upper Reserved 201', level: 'upper', baseAngle: 330, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'upper-res-202', name: 'Upper Reserved 202', level: 'upper', baseAngle: 350, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'upper-res-203', name: 'Upper Reserved 203', level: 'upper', baseAngle: 10, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'upper-res-204', name: 'Upper Reserved 204', level: 'upper', baseAngle: 30, angleSpan: 20, covered: true, price: 'value' },
       
-      // Grass Hill
-      { id: 'grass-hill', name: 'Grass Hill', level: 'berm', baseAngle: 142, angleSpan: 76, covered: false, price: 'value' },
+      // Right Field Pavilion (Group seating)
+      { id: 'rf-pavilion', name: 'Right Field Pavilion', level: 'ga', baseAngle: 76, angleSpan: 38, covered: false, price: 'value' },
+      
+      // The Grass Hill (Famous berm seating)
+      { id: 'grass-hill', name: 'The Grass Hill', level: 'berm', baseAngle: 114, angleSpan: 72, covered: false, price: 'value' },
       
       // Left Field Reserved
-      { id: 'lf-res', name: 'Left Field Reserved', level: 'ga', baseAngle: 218, angleSpan: 44, covered: false, price: 'value' },
+      { id: 'lf-reserved', name: 'Left Field Reserved', level: 'ga', baseAngle: 186, angleSpan: 44, covered: false, price: 'value' },
       
-      // Stadium Club
-      { id: 'stadium-club', name: 'Stadium Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Luxury Suites
+      { id: 'suite-1', name: 'Luxury Suite 1', level: 'suite', baseAngle: 345, angleSpan: 6, covered: true, price: 'luxury' },
+      { id: 'suite-2', name: 'Luxury Suite 2', level: 'suite', baseAngle: 351, angleSpan: 6, covered: true, price: 'luxury' },
+      { id: 'suite-3', name: 'Luxury Suite 3', level: 'suite', baseAngle: 3, angleSpan: 6, covered: true, price: 'luxury' },
+      { id: 'suite-4', name: 'Luxury Suite 4', level: 'suite', baseAngle: 9, angleSpan: 6, covered: true, price: 'luxury' },
+      { id: 'suite-5', name: 'Luxury Suite 5', level: 'suite', baseAngle: 15, angleSpan: 6, covered: true, price: 'luxury' },
+      
+      // Stadium Club (Premium dining and viewing)
+      { id: 'stadium-club', name: 'Stadium Club', level: 'club', baseAngle: 350, angleSpan: 20, covered: true, price: 'luxury' }
     ],
-    notes: 'Bowie, MD between Baltimore and Washington'
+    notes: 'Bowie, MD between Baltimore and Washington, opened 1994, 10,000 capacity, famous for grass hill berm seating'
   },
   
   {
@@ -226,34 +314,50 @@ export const aaCompleteLayouts: VenueLayout[] = [
     venueName: 'AT&T Field',
     lastUpdated: '2024-01',
     sections: [
-      // Field Box
-      { id: 'fb-100', name: 'Field Box 100', level: 'field', baseAngle: 340, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'fb-101', name: 'Field Box 101', level: 'field', baseAngle: 353, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'fb-102', name: 'Field Box 102', level: 'field', baseAngle: 6, angleSpan: 13, covered: false, price: 'premium' },
-      { id: 'fb-103', name: 'Field Box 103', level: 'field', baseAngle: 19, angleSpan: 13, covered: false, price: 'premium' },
+      // Home Plate Club (Premium behind home plate)
+      { id: 'hp-club-1', name: 'Home Plate Club 1', level: 'field', baseAngle: 15, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'hp-club-2', name: 'Home Plate Club 2', level: 'field', baseAngle: 23, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'hp-club-3', name: 'Home Plate Club 3', level: 'field', baseAngle: 337, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'hp-club-4', name: 'Home Plate Club 4', level: 'field', baseAngle: 345, angleSpan: 8, covered: false, price: 'premium' },
       
-      // Lower Box
-      { id: 'lb-104', name: 'Lower Box 104', level: 'lower', baseAngle: 32, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'lb-105', name: 'Lower Box 105', level: 'lower', baseAngle: 46, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'lb-106', name: 'Lower Box 106', level: 'lower', baseAngle: 60, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'lb-107', name: 'Lower Box 107', level: 'lower', baseAngle: 74, angleSpan: 14, covered: false, price: 'value' },
+      // Field Box (Prime infield seating)
+      { id: 'field-box-101', name: 'Field Box 101', level: 'lower', baseAngle: 31, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-102', name: 'Field Box 102', level: 'lower', baseAngle: 43, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-103', name: 'Field Box 103', level: 'lower', baseAngle: 55, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-104', name: 'Field Box 104', level: 'lower', baseAngle: 67, angleSpan: 12, covered: false, price: 'moderate' },
       
-      { id: 'lb-108', name: 'Lower Box 108', level: 'lower', baseAngle: 286, angleSpan: 14, covered: false, price: 'value' },
-      { id: 'lb-109', name: 'Lower Box 109', level: 'lower', baseAngle: 300, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'lb-110', name: 'Lower Box 110', level: 'lower', baseAngle: 314, angleSpan: 14, covered: false, price: 'moderate' },
-      { id: 'lb-111', name: 'Lower Box 111', level: 'lower', baseAngle: 328, angleSpan: 14, covered: false, price: 'moderate' },
+      // Third base field box
+      { id: 'field-box-105', name: 'Field Box 105', level: 'lower', baseAngle: 293, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-106', name: 'Field Box 106', level: 'lower', baseAngle: 305, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-107', name: 'Field Box 107', level: 'lower', baseAngle: 317, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-box-108', name: 'Field Box 108', level: 'lower', baseAngle: 329, angleSpan: 12, covered: false, price: 'moderate' },
       
-      // GA Areas
-      { id: 'ga-rf', name: 'Right Field GA', level: 'ga', baseAngle: 88, angleSpan: 48, covered: false, price: 'value' },
-      { id: 'ga-lf', name: 'Left Field GA', level: 'ga', baseAngle: 224, angleSpan: 48, covered: false, price: 'value' },
+      // Grandstand (Upper level covered seating)
+      { id: 'grandstand-201', name: 'Grandstand 201', level: 'upper', baseAngle: 325, angleSpan: 18, covered: true, price: 'value' },
+      { id: 'grandstand-202', name: 'Grandstand 202', level: 'upper', baseAngle: 343, angleSpan: 18, covered: true, price: 'value' },
+      { id: 'grandstand-203', name: 'Grandstand 203', level: 'upper', baseAngle: 1, angleSpan: 18, covered: true, price: 'value' },
+      { id: 'grandstand-204', name: 'Grandstand 204', level: 'upper', baseAngle: 19, angleSpan: 18, covered: true, price: 'value' },
+      { id: 'grandstand-205', name: 'Grandstand 205', level: 'upper', baseAngle: 37, angleSpan: 18, covered: true, price: 'value' },
       
-      // Lawn
-      { id: 'lawn', name: 'Lawn', level: 'berm', baseAngle: 136, angleSpan: 88, covered: false, price: 'value' },
+      // Tennessee Lookouts Deck (Right field party area with Tennessee River views)
+      { id: 'lookouts-deck', name: 'Tennessee Lookouts Deck', level: 'club', baseAngle: 79, angleSpan: 35, covered: false, price: 'moderate' },
       
-      // First Tennessee Pavilion
-      { id: 'ft-pavilion', name: 'First Tennessee Pavilion', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+      // Left Field Lawn (Berm seating with downtown views)
+      { id: 'lf-lawn', name: 'Left Field Lawn', level: 'berm', baseAngle: 210, angleSpan: 65, covered: false, price: 'value' },
+      
+      // Chattanooga Choo Choo Pavilion (Group area)
+      { id: 'choo-choo-pavilion', name: 'Chattanooga Choo Choo Pavilion', level: 'club', baseAngle: 275, angleSpan: 18, covered: true, price: 'moderate' },
+      
+      // Tennessee River Suites (Luxury boxes with river views)
+      { id: 'river-suite-1', name: 'Tennessee River Suite 1', level: 'suite', baseAngle: 350, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'river-suite-2', name: 'Tennessee River Suite 2', level: 'suite', baseAngle: 355, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'river-suite-3', name: 'Tennessee River Suite 3', level: 'suite', baseAngle: 5, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: 'river-suite-4', name: 'Tennessee River Suite 4', level: 'suite', baseAngle: 10, angleSpan: 5, covered: true, price: 'luxury' },
+      
+      // General Admission Bleachers
+      { id: 'ga-bleachers', name: 'General Admission Bleachers', level: 'ga', baseAngle: 114, angleSpan: 96, covered: false, price: 'value' }
     ],
-    notes: 'Downtown Chattanooga on Tennessee River'
+    notes: 'Downtown Chattanooga on Tennessee River, opened 2000, 6,160 capacity, scenic riverfront location with downtown skyline views'
   },
   
   {
