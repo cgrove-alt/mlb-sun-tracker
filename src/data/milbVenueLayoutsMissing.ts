@@ -8,10 +8,11 @@ export const missingVenueLayouts: VenueLayout[] = [
     venueName: 'Fluor Field',
     lastUpdated: '2024-01',
     sections: [
-      // Field Box
-      { id: 'fb-1', name: 'Field Box 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
-      { id: 'fb-2', name: 'Field Box 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
-      { id: 'fb-3', name: 'Field Box 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+      // Premium sections
+      { id: 'main-street-club', name: 'Main Street Club', level: 'field', baseAngle: 345, angleSpan: 30, covered: true, price: 'premium' },
+      { id: 'sec-100', name: 'Section 100', level: 'field', baseAngle: 15, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'sec-101', name: 'Section 101', level: 'field', baseAngle: 25, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'sec-102', name: 'Section 102', level: 'field', baseAngle: 35, angleSpan: 10, covered: false, price: 'moderate' },
       
       // Box Seats
       { id: 'box-4', name: 'Box 4', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
@@ -136,10 +137,11 @@ export const missingVenueLayouts: VenueLayout[] = [
     venueName: 'Classic Auto Group Park',
     lastUpdated: '2024-01',
     sections: [
-      // Field Box
-      { id: 'fb-1', name: 'Field Box 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
-      { id: 'fb-2', name: 'Field Box 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
-      { id: 'fb-3', name: 'Field Box 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+      // Premium sections
+      { id: 'classic-club', name: 'Classic Auto Group Club', level: 'field', baseAngle: 345, angleSpan: 30, covered: true, price: 'premium' },
+      { id: 'sec-100', name: 'Section 100', level: 'field', baseAngle: 15, angleSpan: 9, covered: false, price: 'moderate' },
+      { id: 'sec-101', name: 'Section 101', level: 'field', baseAngle: 24, angleSpan: 9, covered: false, price: 'moderate' },
+      { id: 'sec-102', name: 'Section 102', level: 'field', baseAngle: 33, angleSpan: 9, covered: false, price: 'moderate' },
       
       // Box Seats
       { id: 'box-4', name: 'Box 4', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
