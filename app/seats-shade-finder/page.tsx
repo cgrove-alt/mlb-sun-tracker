@@ -1,0 +1,161 @@
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { MLB_STADIUMS } from '../../src/data/stadiums';
+
+export const metadata: Metadata = {
+  title: 'Are My Seats in the Shade? MLB Stadium Shade Finder | The Shadium',
+  description: 'Find out if your seats are shaded at any MLB stadium. Check shade coverage for specific sections, find the best shaded seats, and avoid sun exposure during baseball games.',
+  keywords: [
+    'are my seats in the shade',
+    'are my seats shaded',
+    'check if seats are shaded',
+    'stadium shade finder',
+    'shaded seats checker',
+    'MLB seat shade lookup',
+    'find shaded seats',
+    'shade seat finder'
+  ],
+  alternates: {
+    canonical: 'https://theshadium.com/seats-shade-finder',
+  },
+};
+
+export default function SeatsShadeFinderPage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+          Are My Seats in the Shade? Find Out Instantly
+        </h1>
+        
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+          <p className="text-lg text-gray-700 mb-4">
+            Wondering "are my seats shaded?" We've got you covered! The Shadium provides real-time shade 
+            information for every section at all 30 MLB stadiums. Simply select your stadium below to 
+            check if your seats will be in the shade during your game.
+          </p>
+          
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+            <p className="text-blue-800">
+              <strong>Quick Tip:</strong> Shade coverage changes throughout the game. Our tool shows you 
+              exactly when your section will be shaded based on the specific game time and date.
+            </p>
+          </div>
+        </div>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+            Check If Your Seats Are Shaded by Stadium
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {MLB_STADIUMS.map((stadium) => (
+              <Link
+                key={stadium.id}
+                href={`/stadium/${stadium.id}`}
+                className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+              >
+                <h3 className="text-lg font-semibold text-blue-600 mb-1">
+                  {stadium.name}
+                </h3>
+                <p className="text-sm text-gray-600">
+                  {stadium.team} • {stadium.city}
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  Check shaded seats →
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            How to Find Out If Your Seats Are Shaded
+          </h2>
+          
+          <ol className="space-y-4 text-gray-700">
+            <li className="flex">
+              <span className="font-bold text-blue-600 mr-3">1.</span>
+              <div>
+                <strong>Select Your Stadium:</strong> Choose from our list of all 30 MLB ballparks above.
+              </div>
+            </li>
+            <li className="flex">
+              <span className="font-bold text-blue-600 mr-3">2.</span>
+              <div>
+                <strong>Pick Your Game Time:</strong> Enter the date and start time of your game for accurate shade predictions.
+              </div>
+            </li>
+            <li className="flex">
+              <span className="font-bold text-blue-600 mr-3">3.</span>
+              <div>
+                <strong>Find Your Section:</strong> Look up your specific section number to see shade coverage throughout the game.
+              </div>
+            </li>
+            <li className="flex">
+              <span className="font-bold text-blue-600 mr-3">4.</span>
+              <div>
+                <strong>View Shade Timeline:</strong> See exactly when your seats will be in shade during the game.
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            Common "Are My Seats Shaded?" Questions
+          </h2>
+          
+          <div className="space-y-6">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-lg mb-2">
+                "Are field level seats ever shaded?"
+              </h3>
+              <p className="text-gray-700">
+                Yes! Field level seats can be shaded depending on the stadium design, game time, and season. 
+                Seats behind home plate often get shade from the upper deck overhang, while seats down the 
+                baselines may get shade later in the game.
+              </p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-lg mb-2">
+                "Which side of the stadium has more shade?"
+              </h3>
+              <p className="text-gray-700">
+                Generally, the third base side gets shade first during day games as the sun moves from east 
+                to west. However, this varies by stadium orientation. Use our tool to check your specific stadium.
+              </p>
+            </div>
+            
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="font-semibold text-lg mb-2">
+                "Are upper deck seats always shaded?"
+              </h3>
+              <p className="text-gray-700">
+                Upper deck seats often have shade from the stadium overhang, but not always. Outfield upper 
+                deck sections may still get sun exposure. Check your specific section for accurate information.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div className="bg-blue-100 rounded-lg p-6 text-center">
+          <h2 className="text-2xl font-semibold text-blue-900 mb-3">
+            Ready to Check If Your Seats Are Shaded?
+          </h2>
+          <p className="text-blue-800 mb-4">
+            Select your stadium above to get started with our free shade finder tool.
+          </p>
+          <Link 
+            href="/" 
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Find Shaded Seats Now
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}

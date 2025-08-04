@@ -1,0 +1,667 @@
+.game-selector {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+  margin-bottom: var(--spacing-6);
+  width: 100%;
+  box-sizing: border-box;
+  transition: var(--transition-shadow);
+}
+
+/* Stadium option styling */
+.stadium-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 0;
+  color: #000 !important;
+}
+
+.stadium-option span {
+  color: #000 !important;
+}
+
+.stadium-option-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  color: #000 !important;
+}
+
+.stadium-option-content span {
+  color: #000 !important;
+}
+
+.favorite-indicator {
+  color: #ffd700 !important;
+  font-size: 16px;
+}
+
+.selector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.selector-header h3 {
+  margin: 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
+}
+
+.view-mode-toggle {
+  display: flex;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-1);
+  gap: var(--spacing-1);
+  box-shadow: var(--shadow-inner);
+}
+
+.toggle-btn {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: none;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-gray-600);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-all);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.toggle-btn:hover {
+  background: var(--color-gray-200);
+  transform: translateY(-1px);
+}
+
+.toggle-btn.active {
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transform: scale(1);
+}
+
+.toggle-btn:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.toggle-btn:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.apply-custom-btn:focus,
+.date-input:focus,
+.time-input:focus {
+  outline: 2px solid #1a237e;
+  outline-offset: 2px;
+}
+
+.control-group {
+  margin-bottom: 20px;
+}
+
+.control-group label {
+  display: block;
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-2);
+  color: var(--color-gray-800);
+  font-size: var(--font-size-base);
+  letter-spacing: -0.01em;
+}
+
+.stadium-select,
+.game-select {
+  font-size: 16px;
+}
+
+/* Global React-Select overrides to ensure text visibility */
+.stadium-select *,
+.game-select * {
+  color: #000 !important;
+}
+
+/* Specific overrides for selected state to keep white text */
+.stadium-select .react-select__option--is-selected,
+.game-select .react-select__option--is-selected {
+  background-color: #1a237e !important;
+  color: white !important;
+}
+
+/* React-Select styling for better readability */
+.stadium-select .react-select__control {
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  min-height: 44px;
+  box-shadow: none;
+  transition: var(--transition-colors);
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+.stadium-select .react-select__control:hover {
+  border-color: var(--color-gray-400);
+}
+
+.stadium-select .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.stadium-select .react-select__single-value {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.stadium-select .react-select__placeholder {
+  color: #666 !important;
+}
+
+.stadium-select .react-select__input-container {
+  color: #000 !important;
+}
+
+.stadium-select .react-select__input {
+  color: #000 !important;
+}
+
+.stadium-select .react-select__option {
+  color: #000 !important;
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.stadium-select .react-select__option--is-focused {
+  background-color: #f5f5f5;
+}
+
+.stadium-select .react-select__option--is-selected {
+  background-color: #1a237e;
+  color: white;
+}
+
+.stadium-select .react-select__menu {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+.stadium-select .react-select__menu-list {
+  background-color: white;
+}
+
+.stadium-select .react-select__dropdown-indicator {
+  color: #333;
+}
+
+.stadium-select .react-select__indicator-separator {
+  background-color: #ddd;
+}
+
+.game-select .react-select__control {
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  min-height: 44px;
+  box-shadow: none;
+}
+
+.game-select .react-select__control:hover {
+  border-color: #bbb;
+}
+
+.game-select .react-select__control--is-focused {
+  border-color: #1a237e;
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+.game-select .react-select__single-value {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.game-select .react-select__option {
+  color: #000 !important;
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.game-select .react-select__menu {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+}
+
+.game-select .react-select__menu-list {
+  background-color: white;
+}
+
+.game-select .react-select__option--is-focused {
+  background-color: #f5f5f5;
+}
+
+.game-select .react-select__option--is-selected {
+  background-color: #1a237e;
+  color: white !important;
+}
+
+.games-section {
+  margin-top: 20px;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-10);
+  color: var(--color-gray-600);
+  font-style: italic;
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--color-gray-300);
+}
+
+/* Refreshing state */
+.game-select.refreshing {
+  opacity: 0.6;
+  pointer-events: none;
+  position: relative;
+}
+
+.game-select.refreshing::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Error state */
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-4);
+  background-color: var(--color-error-light);
+  color: var(--color-error);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-2);
+}
+
+.retry-button {
+  padding: var(--spacing-2) var(--spacing-4);
+  background: var(--color-white);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.retry-button:hover {
+  background: var(--color-error);
+  color: var(--color-white);
+}
+
+.game-option {
+  padding: 8px 0;
+}
+
+.game-date-time {
+  font-weight: 600;
+  color: #1a237e;
+  font-size: 0.95rem;
+}
+
+.game-matchup {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.no-games {
+  text-align: center;
+  padding: var(--spacing-10) var(--spacing-5);
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: var(--radius-lg);
+  color: #856404;
+  box-shadow: var(--shadow-sm);
+}
+
+.no-games p {
+  margin: 8px 0;
+}
+
+.no-stadium {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  color: #666;
+}
+
+.games-info {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: #e8f5e8;
+  border: 1px solid #c3e6c3;
+  border-radius: 8px;
+}
+
+.games-count {
+  margin: 0;
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.custom-section {
+  margin-top: 20px;
+}
+
+.custom-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 20px;
+  align-items: end;
+  margin-bottom: 20px;
+}
+
+.date-input,
+.time-input {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  background-color: var(--color-white);
+  transition: var(--transition-colors);
+  font-weight: var(--font-weight-medium);
+}
+
+.date-input:focus,
+.time-input:focus {
+  outline: none;
+  border-color: #1a237e;
+  box-shadow: 0 0 0 3px rgba(26, 35, 126, 0.1);
+}
+
+.apply-custom-btn {
+  padding: var(--spacing-3) var(--spacing-5);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-all);
+  white-space: nowrap;
+  height: fit-content;
+  min-height: 44px;
+  touch-action: manipulation;
+  box-shadow: var(--shadow-md);
+}
+
+.apply-custom-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.apply-custom-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.apply-custom-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.custom-info {
+  padding: 16px 20px;
+  background: #e3f2fd;
+  border: 1px solid #bbdefb;
+  border-radius: 8px;
+  color: #1565c0;
+}
+
+.custom-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .game-selector {
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .selector-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .view-mode-toggle {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .toggle-btn {
+    min-height: 44px;
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  .custom-controls {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .apply-custom-btn {
+    width: 100%;
+    min-height: 48px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+  }
+  
+  .date-input,
+  .time-input {
+    min-height: 48px;
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+  
+  .control-group label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-selector {
+    padding: 16px;
+  }
+
+  .selector-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .toggle-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .stadium-select .react-select__control,
+  .game-select .react-select__control {
+    background-color: #2a2a2a;
+    border-color: #444;
+  }
+  
+  .stadium-select .react-select__single-value,
+  .game-select .react-select__single-value {
+    color: #e0e0e0;
+  }
+  
+  .stadium-select .react-select__menu,
+  .game-select .react-select__menu {
+    background-color: #2a2a2a;
+    border-color: #444;
+  }
+  
+  .stadium-select .react-select__option,
+  .game-select .react-select__option {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  .stadium-select .react-select__option--is-focused,
+  .game-select .react-select__option--is-focused {
+    background-color: #3a3a3a;
+  }
+  
+  .stadium-select .react-select__option--is-selected,
+  .game-select .react-select__option--is-selected {
+    background-color: #1a237e;
+    color: white;
+  }
+}
+
+/* Ultimate override - force all dropdown text to be visible */
+.game-selector .react-select__menu * {
+  color: #000 !important;
+}
+
+/* Keep selected items white on blue background */
+.game-selector .react-select__option--is-selected * {
+  color: white !important;
+}
+
+/* League and level selector dropdown styles */
+.league-select .react-select__control,
+.milb-level-select .react-select__control {
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  min-height: 44px;
+  box-shadow: none;
+  transition: var(--transition-colors);
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+.league-select .react-select__control:hover,
+.milb-level-select .react-select__control:hover {
+  border-color: var(--color-gray-400);
+}
+
+.league-select .react-select__control--is-focused,
+.milb-level-select .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.league-select .react-select__single-value,
+.milb-level-select .react-select__single-value {
+  color: #000 !important;
+  font-weight: 600;
+}
+
+.league-select .react-select__placeholder,
+.milb-level-select .react-select__placeholder {
+  color: #666 !important;
+}
+
+.league-select .react-select__option,
+.milb-level-select .react-select__option {
+  color: #000 !important;
+  padding: 10px 12px;
+  font-weight: 500;
+}
+
+.league-select .react-select__option--is-focused,
+.milb-level-select .react-select__option--is-focused {
+  background-color: #f5f5f5;
+}
+
+.league-select .react-select__option--is-selected,
+.milb-level-select .react-select__option--is-selected {
+  background-color: #1a237e !important;
+  color: white !important;
+}
+
+.league-select .react-select__menu,
+.milb-level-select .react-select__menu {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  background-color: white;
+}
+
+.non-mlb-notice {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  color: #856404;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.venue-select .react-select__control {
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--radius-md);
+  min-height: 44px;
+  box-shadow: none;
+  transition: var(--transition-colors);
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+.venue-select .react-select__control:hover {
+  border-color: var(--color-gray-400);
+}
+
+.venue-select .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.1);
+}
+
+.venue-select .react-select__single-value {
+  color: #000 !important;
+  font-weight: 600;
+}
+

@@ -1,0 +1,153 @@
+.weather-pattern-chart {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.weather-pattern-chart h3 {
+  font-size: 1.5rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.chart-subtitle {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.chart-container {
+  display: grid;
+  gap: 2rem;
+}
+
+.temperature-chart h4,
+.weather-stats h4,
+.weather-tips h4 {
+  font-size: 1.125rem;
+  color: #495057;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bar-chart {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  height: 180px;
+  padding: 1rem 0;
+  overflow-x: auto;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 60px;
+}
+
+.bar-wrapper {
+  height: 150px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.temp-bar {
+  width: 40px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.temp-bar:hover {
+  transform: translateY(-4px);
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1a237e;
+}
+
+.bar-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.month-stats {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+}
+
+.month-stats h5 {
+  font-size: 1rem;
+  color: #1a237e;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.stat-label {
+  color: #6c757d;
+  flex: 1;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: #495057;
+}
+
+.weather-tips {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.weather-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.weather-tips li {
+  padding: 0.5rem 0;
+  color: #495057;
+  line-height: 1.6;
+}
+
+.weather-tips strong {
+  color: #1a237e;
+}
+
+@media (max-width: 768px) {
+  .bar-chart {
+    justify-content: flex-start;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

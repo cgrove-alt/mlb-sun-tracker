@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: mlb-sun-tracker
+    runtime: node
+    rootDir: .
+    buildCommand: ./build.sh
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: NEXT_PUBLIC_GA_ID
+        value: G-JXGEKF957C
+      - key: NEXT_PUBLIC_SITE_URL
+        value: https://theshadium.com
+      - key: DEPLOY_TARGET
+        value: production
+    autoDeploy: true
+    plan: starter # Pro account - always on, better performance, no spin-down
