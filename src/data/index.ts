@@ -74,6 +74,11 @@ export function getImplementationStatus() {
   };
 }
 
+// Export new real stadium data structures
+export * from './realStadiumSections';
+export * from './stadiumSectionGenerator';
+export * from './stadiumDataIntegration';
+
 // Export types
 export interface VenueData {
   id: string;
@@ -98,4 +103,7 @@ export interface VenueData {
   address: string;
   sections: VenueSectionType[];
   hasCustomLayout: boolean;
+  layoutQuality?: any; // Quality tracking for stadium data
+  specialFeatures?: any[]; // Stadium-specific features
+  layoutNotes?: string; // Notes about the layout
 }
