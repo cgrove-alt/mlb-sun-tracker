@@ -1,0 +1,86 @@
+# Seating Section Analysis
+
+## Seating Section Data Pattern Analysis
+
+Based on the venue data extracted, all MiLB stadiums appear to use the same standardized seating section template:
+
+### Standard Seating Pattern (Used by ALL venues):
+
+**Field Level Sections (5 sections):**
+- Field Box 1: baseAngle 340°, angleSpan 8°
+- Field Box 2: baseAngle 348°, angleSpan 8° 
+- Field Box 3: baseAngle 356°, angleSpan 8°
+- Field Box 4: baseAngle 364°, angleSpan 8° ⚠️ **INVALID ANGLE**
+- Field Box 5: baseAngle 372°, angleSpan 8° ⚠️ **INVALID ANGLE**
+
+**Lower Level - First Base Side (8 sections):**
+- Box 100-107: baseAngles 20°, 30°, 40°, 50°, 60°, 70°, 80°, 90°
+
+**Lower Level - Third Base Side (8 sections):**
+- Box 200-207: baseAngles 270°, 280°, 290°, 300°, 310°, 320°, 330°, 340°
+
+**Reserved Sections - First Base Side (6 sections):**
+- Reserved 300-305: baseAngles 100°, 110°, 120°, 130°, 140°, 150°
+
+**Reserved Sections - Third Base Side (6 sections):**
+- Reserved 400-405: baseAngles 210°, 220°, 230°, 240°, 250°, 260°
+
+**General Admission Areas (3 sections):**
+- Left Field GA: baseAngle 150°, angleSpan 30°
+- Berm/GA: baseAngle 180°, angleSpan 30°
+- Right Field GA: baseAngle 210°, angleSpan 30°
+
+**Suite Level (8 sections):**
+- Suite 1-8: baseAngles 340°, 350°, 360°, 370°, 380°, 390°, 400°, 410°
+- ⚠️ **MULTIPLE INVALID ANGLES**: 360°, 370°, 380°, 390°, 400°, 410°
+
+## Critical Issues Identified:
+
+### 1. **Invalid Angle Values (> 360°)**
+**Field Level:**
+- Field Box 4: 364° (should be 4°)
+- Field Box 5: 372° (should be 12°)
+
+**Suite Level:**
+- Suite 3: 360° (should be 0°)
+- Suite 4: 370° (should be 10°)  
+- Suite 5: 380° (should be 20°)
+- Suite 6: 390° (should be 30°)
+- Suite 7: 400° (should be 40°)
+- Suite 8: 410° (should be 50°)
+
+### 2. **Standardization Issue**
+- **EVERY STADIUM** uses identical seating section layout
+- **Problem**: This ignores actual stadium-specific architecture
+- **Reality**: Each stadium has unique seating configurations
+- **Impact**: Inaccurate shade calculations and section recommendations
+
+### 3. **Missing Stadium-Specific Data**
+- No venue-specific section names or numbering
+- No consideration of actual stadium architecture
+- No accounting for covered vs. uncovered areas specific to each venue
+- No premium seating areas unique to each stadium
+
+## Angle Correction Recommendations:
+
+### Field Level Corrections:
+- Field Box 4: 364° → 4°
+- Field Box 5: 372° → 12°
+
+### Suite Level Corrections:
+- Suite 3: 360° → 0°
+- Suite 4: 370° → 10°
+- Suite 5: 380° → 20°
+- Suite 6: 390° → 30°
+- Suite 7: 400° → 40°
+- Suite 8: 410° → 50°
+
+## Major Finding:
+**TEMPLATE-BASED DATA**: All MiLB venues use identical section templates rather than venue-specific seating maps. This significantly reduces the accuracy and usefulness of the shade-finding application for specific stadiums.
+
+## Recommendations:
+1. **Fix invalid angle values** (> 360°)
+2. **Create venue-specific seating maps** for each stadium
+3. **Research actual section names and layouts** for major MiLB venues
+4. **Identify stadium-specific covered areas** and premium seating
+5. **Validate section numbering systems** used by each venue

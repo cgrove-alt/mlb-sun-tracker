@@ -1,0 +1,115 @@
+# Stadium Capacity Analysis by MiLB Level
+
+## Capacity Ranges by Level:
+
+### AAA Level Stadiums:
+**Typical Range: 8,000-16,000**
+
+**East League:**
+- Buffalo Bisons (Sahlen Field): 16,600 - HIGHEST capacity (reasonable for AAA) ✓
+- Charlotte Knights (Truist Field): 10,200 ✓
+- Columbus Clippers (Huntington Park): 10,100 ✓
+- Durham Bulls (DBAP): 10,000 ✓
+- Gwinnett Stripers (Coolray Field): 10,427 ✓
+- Indianapolis Indians (Victory Field): 14,230 ✓
+- Iowa Cubs (Principal Park): 11,500 ✓
+- Jacksonville Jumbo Shrimp (VyStar Ballpark): 11,000 ✓
+- Lehigh Valley IronPigs (Coca-Cola Park): 10,100 ✓
+- Louisville Bats (Louisville Slugger Field): 13,131 ✓
+- Memphis Redbirds (AutoZone Park): 10,000 ✓
+- Nashville Sounds (First Horizon Park): 10,000 ✓
+- Norfolk Tides (Harbor Park): 12,067 ✓
+- Omaha Storm Chasers (Werner Park): 9,023 ✓
+- Rochester Red Wings (Innovative Field): 10,840 ✓
+- Scranton RailRiders (PNC Field): 10,000 ✓
+- St. Paul Saints (CHS Field): 7,210 - Low for AAA but reasonable ✓
+- Syracuse Mets (NBT Bank Stadium): 10,815 ✓
+- Toledo Mud Hens (Fifth Third Field): 10,300 ✓
+- Worcester Red Sox (Polar Park): 9,508 ✓
+
+**West League (PCL):**
+- Albuquerque Isotopes (Isotopes Park): 13,279 ✓
+- El Paso Chihuahuas (Southwest University Park): 9,500 ✓
+- Las Vegas Aviators (Las Vegas Ballpark): 10,000 - **ISSUE**: Should be 8,196 (seated capacity)
+- Oklahoma City Dodgers (Chickasaw Bricktown Ballpark): 13,066 ✓
+- Reno Aces (Greater Nevada Field): 9,100 ✓
+- Round Rock Express (Dell Diamond): 11,631 ✓
+- Sacramento River Cats (Sutter Health Park): 14,014 ✓
+- Salt Lake Bees (The Ballpark at America First Square): 15,411 ✓
+- Sugar Land Space Cowboys (Constellation Field): 7,500 ✓
+- Tacoma Rainiers (Cheney Stadium): 6,500 - Lower end but reasonable ✓
+
+**AAA Capacity Analysis:**
+- Range: 6,500 - 16,600
+- Average: ~10,800
+- Most common: 10,000-11,000
+
+### AA Level Stadiums:
+**Typical Range: 6,000-10,000**
+
+**Eastern League:**
+- Akron RubberDucks (Canal Park): 7,630 ✓
+- Altoona Curve (Peoples Natural Gas Field): 7,210 ✓
+- Binghamton Rumble Ponies (Mirabito Stadium): 6,012 ✓
+- Bowie Baysox (Prince George's Stadium): 10,000 ✓
+- Erie SeaWolves (UPMC Park): 6,000 ✓
+- Harrisburg Senators (FNB Field): 6,187 ✓
+- Hartford Yard Goats (Dunkin' Park): 6,121 ✓
+- New Hampshire Fisher Cats (Delta Dental Stadium): 7,500 ✓
+- Portland Sea Dogs (Hadlock Field): 7,368 ✓
+- Reading Fightin Phils (FirstEnergy Stadium): 9,000 ✓
+- Richmond Flying Squirrels (The Diamond): 12,134 - Higher end but reasonable ✓
+- Somerset Patriots (TD Bank Ballpark): 6,100 ✓
+
+**Southern League:**
+- Birmingham Barons (Regions Field): 8,500 ✓
+- Biloxi Shuckers (MGM Park): 6,000 ✓
+- Chattanooga Lookouts (AT&T Field): 6,340 ✓
+- Columbus Clingstones (Synovus Park): 5,000 ✓
+- Montgomery Biscuits (Riverwalk Stadium): 7,000 ✓
+- Pensacola Blue Wahoos (Blue Wahoos Stadium): 5,038 ✓
+- Rocket City Trash Pandas (Toyota Field): 7,500 ✓
+- Knoxville Smokies (Covenant Health Park): 7,000 ✓
+
+**Texas League:**
+- Amarillo Sod Poodles (HODGETOWN): 6,631 ✓
+- Arkansas Travelers (Dickey-Stephens Park): 7,200 ✓
+- Corpus Christi Hooks (Whataburger Field): 7,014 ✓
+- Frisco RoughRiders (Riders Field): 10,316 ✓
+- Midland RockHounds (Momentum Bank Ballpark): 6,669 ✓
+- Northwest Arkansas Naturals (Arvest Ballpark): 7,305 ✓
+- San Antonio Missions (Nelson W. Wolff Municipal Stadium): 9,200 ✓
+- Springfield Cardinals (Hammons Field): 7,986 ✓
+- Tulsa Drillers (ONEOK Field): 7,833 ✓
+- Wichita Wind Surge (Riverfront Stadium): 10,025 ✓
+
+**AA Capacity Analysis:**
+- Range: 5,000 - 12,134
+- Average: ~7,200
+- Most common: 6,000-8,000
+
+### A+ Level (High-A):
+- Aberdeen IronBirds (Leidos Field at Ripken Stadium): 6,300 ✓
+
+### A Level (Single-A):
+- Asheville Tourists (McCormick Field): 4,000 ✓
+
+## Issues Identified:
+
+### 1. **Las Vegas Aviators Capacity Error**
+- **Listed**: 10,000
+- **Actual**: 8,196 (baseball seating)
+- **Status**: Data uses total capacity instead of baseball seating
+
+### 2. **Capacity Ranges Analysis**
+- **AAA**: 6,500-16,600 (appropriate range) ✓
+- **AA**: 5,000-12,134 (appropriate range) ✓ 
+- **A+**: 6,300 (reasonable) ✓
+- **A**: 4,000 (reasonable for Single-A) ✓
+
+## Summary:
+- Most capacities are reasonable for their respective levels
+- AAA stadiums generally 8,000-16,000 capacity
+- AA stadiums generally 5,000-12,000 capacity
+- Lower levels have appropriately smaller capacities
+- **ONLY MAJOR ISSUE**: Las Vegas Ballpark capacity discrepancy

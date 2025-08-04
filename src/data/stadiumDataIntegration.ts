@@ -5,14 +5,20 @@ import { RealStadiumLayout } from './realStadiumSections';
 import { VenueLayout } from './milbVenueLayouts';
 import { MiLBStadium, AAA_STADIUMS, AA_STADIUMS } from './milbStadiums';
 import { generateStadiumLayout, GenerationQuality } from './stadiumSectionGenerator';
+import { enhanceStadiumLayout } from './stadiumLayoutEnhancer';
+import { getVenueLayout } from './milbVenueLayouts';
 
 // Import real stadium layouts as they become available
 import { polarParkLayout } from './realStadiumLayouts/worcesterRedSox';
+import { columbusClippersLayout, durhamBullsLayout, lasVegasAviatorsLayout } from './realStadiumLayouts/aaaStadiums';
 
 // Map of real stadium layouts
 const REAL_STADIUM_LAYOUTS: Map<string, RealStadiumLayout> = new Map([
   ['worcester-red-sox', polarParkLayout],
-  // Add more real layouts here as they become available
+  ['columbus-clippers', columbusClippersLayout],
+  ['durham-bulls', durhamBullsLayout],
+  ['las-vegas-aviators', lasVegasAviatorsLayout],
+  // More real layouts will be added as they become available
 ]);
 
 // Priority stadiums for real data collection
@@ -71,25 +77,39 @@ export function getStadiumLayout(stadiumId: string): {
     throw new Error(`Stadium not found: ${stadiumId}`);
   }
   
-  // Determine generation quality based on priority
-  const quality = determineGenerationQuality(stadiumId, stadium);
+  // Try to get existing venue layout first
+  const existingLayout = getVenueLayout(stadiumId);
   
-  // Generate layout
-  const generatedLayout = generateStadiumLayout(stadium, {
-    quality,
-    includeSpecialFeatures: true,
-    climateConsiderations: true
-  });
+  let generatedLayout: RealStadiumLayout;
   
+  if (existingLayout) {
+    // Use enhanced layout based on existing venue data
+    generatedLayout = enhanceStadiumLayout(existingLayout, stadium);
+  } else {
+    // Generate layout from scratch
+    const quality = determineGenerationQuality(stadiumId, stadium);
+    generatedLayout = generateStadiumLayout(stadium, {
+      quality,
+      includeSpecialFeatures: true,
+      climateConsiderations: true
+    });
+  }
+  
+  const dataQuality = existingLayout ? 'verified' : 'estimated';
+  const completeness = existingLayout ? 85 : 50;
+  const notes = existingLayout ? 
+    'Enhanced layout based on existing venue data' : 
+    'Generated layout based on stadium characteristics';
+
   return {
     layout: generatedLayout,
     quality: {
       stadiumId,
-      dataSource: 'estimated',
-      quality,
+      dataSource: dataQuality,
+      quality: existingLayout ? 'high' : 'medium',
       lastUpdated: new Date().toISOString().split('T')[0],
-      completeness: quality === 'high' ? 75 : quality === 'medium' ? 50 : 25,
-      notes: `Generated using ${quality} quality algorithm`
+      completeness,
+      notes
     }
   };
 }

@@ -57,7 +57,7 @@ export function calculateSectionAngle(
 }
 
 // Price tier matrix based on league level and section type
-export const PRICE_TIERS = {
+export const PRICE_TIERS: Record<string, Record<string, 'premium' | 'moderate' | 'value' | 'luxury'>> = {
   AAA: {
     field: 'premium',
     lower: 'moderate',
@@ -91,6 +91,34 @@ export const PRICE_TIERS = {
     club: 'moderate',
     upper: 'value',
     suite: 'premium',
+    ga: 'value',
+    berm: 'value'
+  },
+  // Fallback for other levels
+  R: {
+    field: 'value',
+    lower: 'value',
+    club: 'moderate',
+    upper: 'value',
+    suite: 'moderate',
+    ga: 'value',
+    berm: 'value'
+  },
+  ACL: {
+    field: 'value',
+    lower: 'value',
+    club: 'moderate',
+    upper: 'value',
+    suite: 'moderate',
+    ga: 'value',
+    berm: 'value'
+  },
+  FCL: {
+    field: 'value',
+    lower: 'value',
+    club: 'moderate',
+    upper: 'value',
+    suite: 'moderate',
     ga: 'value',
     berm: 'value'
   }

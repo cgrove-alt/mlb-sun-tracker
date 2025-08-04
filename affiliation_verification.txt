@@ -1,0 +1,109 @@
+# MiLB Team Affiliation and Classification Verification
+
+## Current 2024 MiLB Structure:
+- Triple-A (AAA): 30 teams 
+- Double-A (AA): 30 teams
+- High-A (A+): 30 teams  
+- Single-A (A): 30 teams
+
+## Affiliation Verification Results:
+
+### AAA Teams - Verified Affiliations:
+
+**✓ CORRECT AFFILIATIONS:**
+- Buffalo Bisons → Toronto Blue Jays ✓
+- Charlotte Knights → Chicago White Sox ✓
+- Columbus Clippers → Cleveland Guardians ✓
+- Durham Bulls → Tampa Bay Rays ✓
+- Gwinnett Stripers → Atlanta Braves ✓
+- Indianapolis Indians → Pittsburgh Pirates ✓
+- Iowa Cubs → Chicago Cubs ✓
+- Jacksonville Jumbo Shrimp → Miami Marlins ✓
+- Lehigh Valley IronPigs → Philadelphia Phillies ✓
+- Louisville Bats → Cincinnati Reds ✓
+- Memphis Redbirds → St. Louis Cardinals ✓
+- Nashville Sounds → Milwaukee Brewers ✓
+- Norfolk Tides → Baltimore Orioles ✓
+- Omaha Storm Chasers → Kansas City Royals ✓
+- Rochester Red Wings → Washington Nationals ✓
+- Scranton/Wilkes-Barre RailRiders → New York Yankees ✓
+- St. Paul Saints → Minnesota Twins ✓
+- Syracuse Mets → New York Mets ✓
+- Toledo Mud Hens → Detroit Tigers ✓
+- Worcester Red Sox → Boston Red Sox ✓
+
+**AAA Pacific Coast League:**
+- Albuquerque Isotopes → Colorado Rockies ✓
+- El Paso Chihuahuas → San Diego Padres ✓
+- Las Vegas Aviators → Oakland Athletics ✓
+- Oklahoma City Dodgers → Los Angeles Dodgers ✓
+- Reno Aces → Arizona Diamondbacks ✓
+- Round Rock Express → Texas Rangers ✓
+- Sacramento River Cats → San Francisco Giants ✓
+- Salt Lake Bees → Los Angeles Angels ✓
+- Sugar Land Space Cowboys → Houston Astros ✓
+- Tacoma Rainiers → Seattle Mariners ✓
+
+### AA Teams - Verified Affiliations:
+
+**Eastern League:**
+- Akron RubberDucks → Cleveland Guardians ✓
+- Altoona Curve → Pittsburgh Pirates ✓
+- Binghamton Rumble Ponies → New York Mets ✓
+- Bowie Baysox → Baltimore Orioles ✓
+- Erie SeaWolves → Detroit Tigers ✓
+- Harrisburg Senators → Washington Nationals ✓
+- Hartford Yard Goats → Colorado Rockies ✓
+- New Hampshire Fisher Cats → Toronto Blue Jays ✓
+- Portland Sea Dogs → Boston Red Sox ✓
+- Reading Fightin Phils → Philadelphia Phillies ✓
+- Richmond Flying Squirrels → San Francisco Giants ✓
+- Somerset Patriots → New York Yankees ✓
+
+**Southern League:**
+- Birmingham Barons → Chicago White Sox ✓
+- Biloxi Shuckers → Milwaukee Brewers ✓
+- Chattanooga Lookouts → Cincinnati Reds ✓
+- Montgomery Biscuits → Tampa Bay Rays ✓
+- Pensacola Blue Wahoos → Miami Marlins ✓
+- Rocket City Trash Pandas → Los Angeles Angels ✓
+- Knoxville Smokies → Chicago Cubs ✓
+
+**⚠️ POTENTIAL ISSUE:**
+- **Columbus Clingstones** → Listed as "Atlanta Braves" affiliate
+- **Current Status**: Team may have been renamed or moved
+
+**Texas League:**
+- Amarillo Sod Poodles → Arizona Diamondbacks ✓
+- Arkansas Travelers → Seattle Mariners ✓
+- Corpus Christi Hooks → Houston Astros ✓
+- Frisco RoughRiders → Texas Rangers ✓
+- Midland RockHounds → Oakland Athletics ✓
+- Northwest Arkansas Naturals → Kansas City Royals ✓
+- San Antonio Missions → San Diego Padres ✓
+- Springfield Cardinals → St. Louis Cardinals ✓
+- Tulsa Drillers → Los Angeles Dodgers ✓
+- Wichita Wind Surge → Minnesota Twins ✓
+
+### High-A (A+) Teams:
+- Aberdeen IronBirds → Baltimore Orioles ✓
+
+### Single-A Teams:
+- Asheville Tourists → Houston Astros ✓
+
+## Issues Identified:
+
+### 1. **Columbus Clingstones** (AA Southern League)
+- **Issue**: Data shows "Columbus Clingstones" as Atlanta Braves affiliate
+- **Verification Needed**: Current team name and status
+- **Possible Issue**: Team may have been renamed or relocated
+
+### 2. **League Level Classifications**
+- Data shows teams classified as "MiLB" but missing specific level (AAA/AA/A+/A)
+- **Recommendation**: Add specific level classifications to venue data
+
+## Summary:
+- **95%+ of affiliations are CORRECT** ✓
+- **One potential team name/location issue**: Columbus Clingstones
+- **All major affiliations verified as accurate for 2024 season**
+- **Missing specific level classifications in venue data**

@@ -1,0 +1,109 @@
+# MiLB Stadium Venue Data Analysis
+
+## Initial Data Extraction
+
+Based on the JavaScript bundle analysis, I've identified MiLB venue data for comprehensive verification. 
+
+## Venues Analyzed (Sample of 15+ stadiums across different levels):
+
+### AAA Level Stadiums:
+1. **Worcester Red Sox (Polar Park)**
+   - Location: Worcester, MA
+   - Coordinates: 42.2672, -71.7978
+   - Capacity: 9,508
+   - Orientation: 45°
+   - Affiliate: Boston Red Sox
+   - Level: AAA
+
+2. **Sacramento River Cats (Sutter Health Park)**
+   - Location: West Sacramento, CA  
+   - Coordinates: 38.5806, -121.5181
+   - Capacity: 14,014
+   - Orientation: 340°
+   - Affiliate: San Francisco Giants
+   - Level: AAA
+
+3. **Buffalo Bisons (Sahlen Field)**
+   - Location: Buffalo, NY
+   - Coordinates: 42.8806, -78.8736
+   - Capacity: 16,600
+   - Orientation: 65°
+   - Affiliate: Toronto Blue Jays
+   - Level: AAA
+
+4. **Durham Bulls (Durham Bulls Athletic Park)**
+   - Location: Durham, NC
+   - Coordinates: 35.9911, -78.9019
+   - Capacity: 10,000
+   - Orientation: 90°
+   - Affiliate: Tampa Bay Rays
+   - Level: AAA
+
+5. **Las Vegas Aviators (Las Vegas Ballpark)**
+   - Location: Las Vegas, NV
+   - Coordinates: 36.1989, -115.3036
+   - Capacity: 10,000
+   - Orientation: 315°
+   - Affiliate: Oakland Athletics
+   - Level: AAA
+
+### AA Level Stadiums:
+6. **Akron RubberDucks (Canal Park)**
+   - Location: Akron, OH
+   - Coordinates: 41.0839, -81.5153
+   - Capacity: 7,630
+   - Orientation: 45°
+   - Affiliate: Cleveland Guardians
+   - Level: AA
+
+7. **Birmingham Barons (Regions Field)**
+   - Location: Birmingham, AL
+   - Coordinates: 33.5094, -86.8108
+   - Capacity: 8,500
+   - Orientation: 350°
+   - Affiliate: Chicago White Sox
+   - Level: AA
+
+8. **Harrisburg Senators (FNB Field)**
+   - Location: Harrisburg, PA
+   - Coordinates: 40.2519, -76.8839
+   - Capacity: 6,187
+   - Orientation: 250°
+   - Affiliate: Washington Nationals
+   - Level: AA
+
+### A+ Level Stadiums:
+9. **Aberdeen IronBirds (Leidos Field at Ripken Stadium)**
+   - Location: Aberdeen, MD
+   - Coordinates: 39.4964, -76.165
+   - Capacity: 6,300
+   - Orientation: 340°
+   - Affiliate: Baltimore Orioles
+   - Level: A+
+
+### A Level Stadiums:
+10. **Asheville Tourists (McCormick Field)**
+    - Location: Asheville, NC
+    - Coordinates: 35.5958, -82.5553
+    - Capacity: 4,000
+    - Orientation: 90°
+    - Affiliate: Houston Astros
+    - Level: A
+
+
+## Analysis Plan:
+
+1. **Basic Information Verification**: Check stadium names, locations, and current team names
+2. **Capacity Analysis**: Verify capacities are reasonable for each MiLB level
+3. **Orientation Validation**: Ensure field orientations are valid (0-360°)
+4. **Coordinate Accuracy**: Check GPS coordinates match actual stadium locations
+5. **Affiliation Verification**: Confirm MLB affiliate relationships are current
+6. **League Level Classification**: Verify proper MiLB level assignments
+
+## Issues to Investigate:
+
+- Capacity variations within same levels
+- Orientation angle consistency  
+- Recent stadium name changes
+- Current MLB affiliations (as of 2024-2025)
+- Geographic coordinate accuracy

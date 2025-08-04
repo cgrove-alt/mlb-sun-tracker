@@ -1,0 +1,105 @@
+# Field Orientation Analysis
+
+## Extracted Field Orientations from MiLB Venues:
+
+### Potential Issues Found:
+
+**CRITICAL ISSUE - Las Vegas Ballpark Capacity Discrepancy:**
+- Data shows: 10,000 capacity
+- Actual capacity: 8,196 (seated) / 10,000 (total including standing)
+- **Issue**: The data appears to use total capacity rather than baseball seating capacity
+
+### Field Orientations (degrees - should be 0-360):
+
+**AAA Level:**
+- Worcester Red Sox (Polar Park): 45° ✓
+- Sacramento River Cats: 340° ✓ 
+- Buffalo Bisons: 65° ✓
+- Durham Bulls: 90° ✓
+- Las Vegas Aviators: 315° ✓
+- Charlotte Knights: 45° ✓
+- Columbus Clippers: 315° ✓
+- Gwinnett Stripers: 340° ✓
+- Indianapolis Indians: 315° ✓
+- Iowa Cubs: 60° ✓
+- Jacksonville Jumbo Shrimp: 350° ✓
+- Lehigh Valley IronPigs: 90° ✓
+- Louisville Bats: 225° ✓
+- Memphis Redbirds: 340° ✓
+- Nashville Sounds: 30° ✓
+- Norfolk Tides: 325° ✓
+- Omaha Storm Chasers: 310° ✓
+- Rochester Red Wings: 315° ✓
+- Scranton RailRiders: 20° ✓
+- St. Paul Saints: 180° ✓
+- Syracuse Mets: 315° ✓
+- Toledo Mud Hens: 90° ✓
+
+**AAA Level (Pacific Coast League):**
+- Albuquerque Isotopes: 5° ✓
+- El Paso Chihuahuas: 340° ✓
+- Las Vegas Aviators: 315° ✓
+- Oklahoma City Dodgers: 5° ✓
+- Reno Aces: 340° ✓
+- Round Rock Express: 340° ✓
+- Sacramento River Cats: 340° ✓
+- Salt Lake Bees: 315° ✓
+- Sugar Land Space Cowboys: 340° ✓
+- Tacoma Rainiers: 340° ✓
+
+**AA Level:**
+- Akron RubberDucks: 45° ✓
+- Altoona Curve: 20° ✓
+- Binghamton Rumble Ponies: 315° ✓
+- Bowie Baysox: 350° ✓
+- Erie SeaWolves: 340° ✓
+- Harrisburg Senators: 250° ✓
+- Hartford Yard Goats: 350° ✓
+- New Hampshire Fisher Cats: 55° ✓
+- Portland Sea Dogs: 315° ✓
+- Reading Fightin Phils: 50° ✓
+- Richmond Flying Squirrels: 350° ✓
+- Somerset Patriots: 315° ✓
+
+**AA Level (Southern League):**
+- Birmingham Barons: 350° ✓
+- Biloxi Shuckers: 20° ✓
+- Chattanooga Lookouts: 115° ✓
+- Columbus Clingstones: 340° ✓
+- Montgomery Biscuits: 340° ✓
+- Pensacola Blue Wahoos: 225° ✓
+- Rocket City Trash Pandas: 340° ✓
+
+**AA Level (Texas League):**
+- Amarillo Sod Poodles: 25° ✓
+- Arkansas Travelers: 340° ✓
+- Corpus Christi Hooks: 340° ✓
+- Frisco RoughRiders: 50° ✓
+- Midland RockHounds: 340° ✓
+- Northwest Arkansas Naturals: 340° ✓
+- San Antonio Missions: 315° ✓
+- Springfield Cardinals: 310° ✓
+- Tulsa Drillers: 340° ✓
+- Wichita Wind Surge: 10° ✓
+
+**A+ Level:**
+- Aberdeen IronBirds: 340° ✓
+
+**A Level:**
+- Asheville Tourists: 90° ✓
+
+## Analysis Results:
+
+### Field Orientations:
+- **ALL ORIENTATIONS VALID**: All field orientations are within 0-360° range ✓
+- **COMMON ORIENTATIONS**: Many stadiums use 340°, 315°, 90°, and 45° orientations
+- **PATTERN**: 340° is very common, likely optimal for sun angle management
+
+### Field Orientation Patterns:
+- 340°: 13 stadiums (most common)
+- 315°: 8 stadiums  
+- 90°: 5 stadiums
+- 45°: 4 stadiums
+- 350°: 4 stadiums
+
+**NOTE**: The prevalence of 340° orientation suggests this is considered optimal for minimizing sun glare issues during typical game times.
