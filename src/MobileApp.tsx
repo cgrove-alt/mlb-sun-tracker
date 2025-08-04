@@ -112,7 +112,12 @@ const MobileApp: React.FC = () => {
       if (selectedVenue.league === 'MLB') {
         sections = getStadiumSections(selectedVenue.id);
       } else if (selectedVenue.league === 'MiLB') {
-        sections = generateBaseballSections(selectedVenue);
+        // Get MiLB sections - will use custom layouts if available
+        sections = getVenueSections(selectedVenue.id);
+        // Fall back to generated sections if no custom layout
+        if (!sections || sections.length === 0) {
+          sections = generateBaseballSections(selectedVenue);
+        }
       } else {
         sections = getVenueSections(selectedVenue.id);
       }

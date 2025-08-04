@@ -157,8 +157,12 @@ function UnifiedAppContent() {
           // Use existing MLB sections
           sections = getStadiumSections(selectedVenue.id);
         } else if (selectedVenue.league === 'MiLB') {
-          // Generate sections for MiLB stadiums (they're baseball stadiums like MLB)
-          sections = generateBaseballSections(selectedVenue);
+          // Get MiLB sections - will use custom layouts if available
+          sections = getVenueSections(selectedVenue.id);
+          // Fall back to generated sections if no custom layout
+          if (!sections || sections.length === 0) {
+            sections = generateBaseballSections(selectedVenue);
+          }
         } else {
           // Use generated sections for other sports
           sections = getVenueSections(selectedVenue.id);

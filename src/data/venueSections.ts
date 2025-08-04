@@ -399,6 +399,8 @@ export const VENUE_SECTIONS: Record<string, any[]> = {
 };
 
 import { NFL_SECTIONS, generateGenericNFLSections } from './nflSections';
+import { integrateVenueLayout } from './venueLayoutIntegration';
+import { ALL_UNIFIED_VENUES } from './unifiedVenues';
 
 export function getVenueSections(venueId: string): any[] {
   // First check if it's in the regular venue sections
@@ -414,6 +416,15 @@ export function getVenueSections(venueId: string): any[] {
       return generateGenericNFLSections(venueId);
     }
     return nflSections;
+  }
+  
+  // Check if this is a MiLB venue with custom layout
+  const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueId);
+  if (venue && venue.league === 'MiLB') {
+    const integratedVenue = integrateVenueLayout(venue);
+    if (integratedVenue.hasCustomLayout && integratedVenue.sections) {
+      return integratedVenue.sections;
+    }
   }
   
   return [];
