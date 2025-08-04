@@ -947,7 +947,7 @@ export const aaaCompleteLayouts: VenueLayout[] = [
       { id: 'section-219', name: 'Section 219', level: 'upper', baseAngle: 289, angleSpan: 13, covered: true, price: 'value' },
       
       // Special Areas
-      { id: 'elevator-access', name: 'Elevator Access Behind 109', level: 'access', baseAngle: 63, angleSpan: 5, covered: false, price: 'moderate' },
+      { id: 'elevator-access', name: 'Elevator Access Behind 109', level: 'field', baseAngle: 63, angleSpan: 5, covered: false, price: 'moderate' },
       { id: 'belfor-dugout-suites', name: 'BELFOR Dugout Suites', level: 'suite', baseAngle: 319, angleSpan: 21, covered: true, price: 'luxury' },
       
       // Outfield Areas
