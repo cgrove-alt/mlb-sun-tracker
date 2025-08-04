@@ -993,5 +993,129 @@ export const aVenueLayouts: VenueLayout[] = [
       { id: 'rawhide-club', name: 'Rawhide Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
     ],
     notes: 'Central Valley location, Diamondbacks affiliate'
+  },
+
+  {
+    venueId: 'west-virginia-power',
+    venueName: 'Appalachian Power Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'diamond-1', name: 'Diamond Club 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-2', name: 'Diamond Club 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-3', name: 'Diamond Club 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-1', name: 'Field Box 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-2', name: 'Field Box 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-3', name: 'Field Box 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'fb-4', name: 'Field Box 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'fb-5', name: 'Field Box 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-6', name: 'Field Box 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-7', name: 'Field Box 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Outfield Areas
+      { id: 'rf-deck', name: 'Right Field Deck', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'power-alley', name: 'Power Alley', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-terrace', name: 'Left Field Terrace', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Power Club
+      { id: 'power-club', name: 'Power Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Charleston, WV on Kanawha River, Mariners affiliate'
+  },
+
+  {
+    venueId: 'asheville-tourists-a',
+    venueName: 'McCormick Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Box Seating
+      { id: 'box-1', name: 'Box 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'box-2', name: 'Box 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'box-3', name: 'Box 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Reserved Seating
+      { id: 'res-a', name: 'Reserved A', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-b', name: 'Reserved B', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-c', name: 'Reserved C', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'res-d', name: 'Reserved D', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'res-e', name: 'Reserved E', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-f', name: 'Reserved F', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-g', name: 'Reserved G', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Mountain Views
+      { id: 'mountain-deck', name: 'Mountain View Deck', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'tourist-hill', name: 'Tourist Hill', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'blue-ridge', name: 'Blue Ridge Terrace', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Mountain Club
+      { id: 'mountain-club', name: 'Blue Ridge Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Historic ballpark in Blue Ridge Mountains, Astros affiliate'
+  },
+
+  {
+    venueId: 'greensboro-grasshoppers-a',
+    venueName: 'First National Bank Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Premium Seating
+      { id: 'premium-1', name: 'Premium 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'premium-2', name: 'Premium 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'premium-3', name: 'Premium 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // General Seating
+      { id: 'gen-1', name: 'General 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'gen-2', name: 'General 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'gen-3', name: 'General 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'gen-4', name: 'General 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'gen-5', name: 'General 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'gen-6', name: 'General 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'gen-7', name: 'General 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Outfield Areas
+      { id: 'rf-plaza', name: 'Right Field Plaza', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'grasshopper-hill', name: 'Grasshopper Hill', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-deck', name: 'Left Field Deck', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // VIP Club
+      { id: 'vip-club', name: 'VIP Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Greensboro, NC, Pirates affiliate'
+  },
+
+  {
+    venueId: 'lexington-legends',
+    venueName: 'Legends Lane Stadium',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Seats
+      { id: 'diamond-a', name: 'Diamond A', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-b', name: 'Diamond B', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-c', name: 'Diamond C', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Stadium Seating
+      { id: 'stadium-1', name: 'Stadium 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'stadium-2', name: 'Stadium 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'stadium-3', name: 'Stadium 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'stadium-4', name: 'Stadium 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'stadium-5', name: 'Stadium 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'stadium-6', name: 'Stadium 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'stadium-7', name: 'Stadium 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Legends Areas
+      { id: 'legends-deck', name: 'Legends Deck', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'bluegrass-berm', name: 'Bluegrass Berm', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'kentucky-terrace', name: 'Kentucky Terrace', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Legends Club
+      { id: 'legends-club', name: 'Legends Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Lexington, KY, Reds affiliate'
   }
 ];

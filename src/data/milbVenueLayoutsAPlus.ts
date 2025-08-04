@@ -381,6 +381,43 @@ export const aPlusVenueLayouts: VenueLayout[] = [
   },
 
   {
+    venueId: 'greenville-drive',
+    venueName: 'Fluor Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Field Box
+      { id: 'fb-1', name: 'Field Box 1', level: 'field', baseAngle: 335, angleSpan: 15, covered: false, price: 'premium' },
+      { id: 'fb-2', name: 'Field Box 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'fb-3', name: 'Field Box 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'fb-4', name: 'Field Box 4', level: 'field', baseAngle: 10, angleSpan: 15, covered: false, price: 'premium' },
+      { id: 'fb-5', name: 'Field Box 5', level: 'field', baseAngle: 25, angleSpan: 15, covered: false, price: 'premium' },
+      
+      // Box Seats
+      { id: 'box-101', name: 'Box 101', level: 'lower', baseAngle: 40, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-102', name: 'Box 102', level: 'lower', baseAngle: 55, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-103', name: 'Box 103', level: 'lower', baseAngle: 70, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-104', name: 'Box 104', level: 'lower', baseAngle: 85, angleSpan: 15, covered: false, price: 'value' },
+      
+      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 260, angleSpan: 15, covered: false, price: 'value' },
+      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 275, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 290, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 305, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 320, angleSpan: 15, covered: false, price: 'moderate' },
+      
+      // Green Monster Replica
+      { id: 'green-monster', name: 'Green Monster', level: 'ga', baseAngle: 220, angleSpan: 30, covered: false, price: 'value' },
+      
+      // Outfield Areas
+      { id: 'rf-deck', name: 'Right Field Deck', level: 'ga', baseAngle: 100, angleSpan: 40, covered: false, price: 'value' },
+      { id: 'berm', name: 'Outfield Berm', level: 'berm', baseAngle: 140, angleSpan: 80, covered: false, price: 'value' },
+      
+      // Club Level
+      { id: 'west-end-club', name: 'West End Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Fenway Park replica with Green Monster, downtown Greenville SC'
+  },
+
+  {
     venueId: 'hillsboro-hops',
     venueName: 'Ron Tonkin Field',
     lastUpdated: '2024-01',
@@ -787,5 +824,159 @@ export const aPlusVenueLayouts: VenueLayout[] = [
       { id: 'lf-bleach', name: 'Left Field Bleachers', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' }
     ],
     notes: 'Brewers affiliate, Fox River location'
+  },
+
+  {
+    venueId: 'peoria-chiefs',
+    venueName: 'Dozer Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Home Plate Club
+      { id: 'hp-club', name: 'Home Plate Club', level: 'field', baseAngle: 345, angleSpan: 30, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-1', name: 'Field Box 1', level: 'field', baseAngle: 15, angleSpan: 18, covered: false, price: 'premium' },
+      { id: 'fb-2', name: 'Field Box 2', level: 'lower', baseAngle: 33, angleSpan: 18, covered: false, price: 'moderate' },
+      { id: 'fb-3', name: 'Field Box 3', level: 'lower', baseAngle: 51, angleSpan: 18, covered: false, price: 'moderate' },
+      { id: 'fb-4', name: 'Field Box 4', level: 'lower', baseAngle: 69, angleSpan: 18, covered: false, price: 'value' },
+
+      { id: 'fb-5', name: 'Field Box 5', level: 'lower', baseAngle: 273, angleSpan: 18, covered: false, price: 'value' },
+      { id: 'fb-6', name: 'Field Box 6', level: 'lower', baseAngle: 291, angleSpan: 18, covered: false, price: 'moderate' },
+      { id: 'fb-7', name: 'Field Box 7', level: 'lower', baseAngle: 309, angleSpan: 18, covered: false, price: 'moderate' },
+      { id: 'fb-8', name: 'Field Box 8', level: 'field', baseAngle: 327, angleSpan: 18, covered: false, price: 'premium' },
+
+      // GA Areas
+      { id: 'rf-ga', name: 'Right Field GA', level: 'ga', baseAngle: 87, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'berm', name: 'Outfield Berm', level: 'berm', baseAngle: 137, angleSpan: 86, covered: false, price: 'value' },
+      { id: 'lf-ga', name: 'Left Field GA', level: 'ga', baseAngle: 223, angleSpan: 50, covered: false, price: 'value' },
+
+      // Club Level
+      { id: 'chiefs-club', name: 'Chiefs Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Peoria, IL along Illinois River, Cardinals affiliate'
+  },
+
+  {
+    venueId: 'quad-cities-river-bandits',
+    venueName: 'Modern Woodmen Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'diamond-1', name: 'Diamond Club 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-2', name: 'Diamond Club 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-3', name: 'Diamond Club 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Reserved
+      { id: 'res-1', name: 'Reserved 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-2', name: 'Reserved 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-3', name: 'Reserved 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'res-4', name: 'Reserved 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'res-5', name: 'Reserved 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-6', name: 'Reserved 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-7', name: 'Reserved 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Mississippi River View
+      { id: 'river-deck', name: 'Mississippi River Deck', level: 'ga', baseAngle: 100, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'berm', name: 'Outfield Berm', level: 'berm', baseAngle: 160, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-deck', name: 'Left Field Deck', level: 'ga', baseAngle: 220, angleSpan: 40, covered: false, price: 'value' },
+
+      // VIP Club
+      { id: 'vip-club', name: 'VIP Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Davenport, IA on Mississippi River, opened 1931'
+  },
+
+  {
+    venueId: 'great-lakes-loons',
+    venueName: 'Dow Diamond',
+    lastUpdated: '2024-01',
+    sections: [
+      // Home Plate Club
+      { id: 'hp-100', name: 'Home Plate Club 100', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'hp-101', name: 'Home Plate Club 101', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'hp-102', name: 'Home Plate Club 102', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-1', name: 'Field Box 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-2', name: 'Field Box 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-3', name: 'Field Box 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'fb-4', name: 'Field Box 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'fb-5', name: 'Field Box 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-6', name: 'Field Box 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'fb-7', name: 'Field Box 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Outfield
+      { id: 'rf-patio', name: 'Right Field Patio', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'loons-nest', name: 'Loons Nest', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-lawn', name: 'Left Field Lawn', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Luxury Level
+      { id: 'luxury-box', name: 'Luxury Box Level', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Midland, MI, Dodgers affiliate, opened 2007'
+  },
+
+  {
+    venueId: 'lake-county-captains',
+    venueName: 'Classic Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'diamond-a', name: 'Diamond Club A', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-b', name: 'Diamond Club B', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'diamond-c', name: 'Diamond Club C', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Box Seats
+      { id: 'box-1', name: 'Box 1', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'box-2', name: 'Box 2', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'box-3', name: 'Box 3', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'box-4', name: 'Box 4', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'box-5', name: 'Box 5', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'box-6', name: 'Box 6', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'box-7', name: 'Box 7', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Outfield Areas
+      { id: 'rf-picnic', name: 'Right Field Picnic', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'captains-cove', name: 'Captains Cove', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-deck', name: 'Left Field Deck', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Club Level
+      { id: 'classic-club', name: 'Classic Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Eastlake, OH near Lake Erie, Guardians affiliate'
+  },
+
+  {
+    venueId: 'tri-city-dust-devils',
+    venueName: 'Gesa Stadium',
+    lastUpdated: '2024-01',
+    sections: [
+      // Premium Box
+      { id: 'prem-1', name: 'Premium Box 1', level: 'field', baseAngle: 340, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'prem-2', name: 'Premium Box 2', level: 'field', baseAngle: 0, angleSpan: 20, covered: false, price: 'premium' },
+      { id: 'prem-3', name: 'Premium Box 3', level: 'field', baseAngle: 20, angleSpan: 20, covered: false, price: 'premium' },
+
+      // Reserved Seating
+      { id: 'res-101', name: 'Reserved 101', level: 'lower', baseAngle: 40, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-102', name: 'Reserved 102', level: 'lower', baseAngle: 60, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-103', name: 'Reserved 103', level: 'lower', baseAngle: 80, angleSpan: 20, covered: false, price: 'value' },
+
+      { id: 'res-104', name: 'Reserved 104', level: 'lower', baseAngle: 260, angleSpan: 20, covered: false, price: 'value' },
+      { id: 'res-105', name: 'Reserved 105', level: 'lower', baseAngle: 280, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-106', name: 'Reserved 106', level: 'lower', baseAngle: 300, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: 'res-107', name: 'Reserved 107', level: 'lower', baseAngle: 320, angleSpan: 20, covered: false, price: 'moderate' },
+
+      // Outfield Areas
+      { id: 'party-deck', name: 'Party Deck', level: 'ga', baseAngle: 100, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'dust-devil-hill', name: 'Dust Devil Hill', level: 'berm', baseAngle: 150, angleSpan: 60, covered: false, price: 'value' },
+      { id: 'lf-terrace', name: 'Left Field Terrace', level: 'ga', baseAngle: 210, angleSpan: 50, covered: false, price: 'value' },
+
+      // Suite Level
+      { id: 'suite-level', name: 'Suite Level', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Pasco, WA in Columbia River valley, Angels affiliate'
   }
 ];

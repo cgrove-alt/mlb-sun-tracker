@@ -11,14 +11,18 @@ import { getVenueLayout } from './milbVenueLayouts';
 // Import real stadium layouts as they become available
 import { polarParkLayout } from './realStadiumLayouts/worcesterRedSox';
 import { columbusClippersLayout, durhamBullsLayout, lasVegasAviatorsLayout } from './realStadiumLayouts/aaaStadiums';
+import { buffaloBisonsLayout, charlotteKnightsLayout } from './realStadiumLayouts/allAAAStadiums';
 
-// Map of real stadium layouts
+// Map of real stadium layouts - now includes all hand-crafted layouts
 const REAL_STADIUM_LAYOUTS: Map<string, RealStadiumLayout> = new Map([
+  // Existing hand-crafted layouts
   ['worcester-red-sox', polarParkLayout],
   ['columbus-clippers', columbusClippersLayout],
   ['durham-bulls', durhamBullsLayout],
   ['las-vegas-aviators', lasVegasAviatorsLayout],
-  // More real layouts will be added as they become available
+  ['buffalo-bisons', buffaloBisonsLayout],
+  ['charlotte-knights', charlotteKnightsLayout],
+  // Additional real layouts will be imported from the comprehensive implementation
 ]);
 
 // Priority stadiums for real data collection

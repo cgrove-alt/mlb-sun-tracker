@@ -4,8 +4,49 @@
 import { VenueLayout, VenueSection } from './milbVenueLayouts';
 
 export const aaaCompleteLayouts: VenueLayout[] = [
-  // Existing 6 stadiums from previous files would be imported here
-  // Adding the remaining 24 AAA stadiums:
+  // Las Vegas Aviators - Las Vegas Ballpark
+  {
+    venueId: 'las-vegas-aviators',
+    venueName: 'Las Vegas Ballpark',
+    lastUpdated: '2024-01',
+    sections: [
+      // Field Level Premium
+      { id: 'field-1', name: 'Field 1', level: 'field', baseAngle: 335, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-2', name: 'Field 2', level: 'field', baseAngle: 345, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-3', name: 'Field 3', level: 'field', baseAngle: 355, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-4', name: 'Field 4', level: 'field', baseAngle: 5, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-5', name: 'Field 5', level: 'field', baseAngle: 15, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-6', name: 'Field 6', level: 'field', baseAngle: 25, angleSpan: 10, covered: false, price: 'premium' },
+      
+      // Baseline Box
+      { id: 'bb-101', name: 'Baseline Box 101', level: 'lower', baseAngle: 35, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'bb-102', name: 'Baseline Box 102', level: 'lower', baseAngle: 47, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'bb-103', name: 'Baseline Box 103', level: 'lower', baseAngle: 59, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'bb-104', name: 'Baseline Box 104', level: 'lower', baseAngle: 71, angleSpan: 12, covered: false, price: 'value' },
+      
+      { id: 'bb-105', name: 'Baseline Box 105', level: 'lower', baseAngle: 289, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'bb-106', name: 'Baseline Box 106', level: 'lower', baseAngle: 301, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'bb-107', name: 'Baseline Box 107', level: 'lower', baseAngle: 313, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'bb-108', name: 'Baseline Box 108', level: 'lower', baseAngle: 325, angleSpan: 12, covered: false, price: 'moderate' },
+      
+      // Upper Reserve
+      { id: 'ur-201', name: 'Upper Reserve 201', level: 'upper', baseAngle: 335, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'ur-202', name: 'Upper Reserve 202', level: 'upper', baseAngle: 355, angleSpan: 20, covered: true, price: 'value' },
+      { id: 'ur-203', name: 'Upper Reserve 203', level: 'upper', baseAngle: 15, angleSpan: 20, covered: true, price: 'value' },
+      
+      // Outfield Areas
+      { id: 'rf-pavilion', name: 'Right Field Pavilion', level: 'ga', baseAngle: 83, angleSpan: 54, covered: false, price: 'value' },
+      { id: 'centerfield', name: 'Centerfield', level: 'ga', baseAngle: 137, angleSpan: 46, covered: false, price: 'value' },
+      { id: 'lf-pavilion', name: 'Left Field Pavilion', level: 'ga', baseAngle: 183, angleSpan: 54, covered: false, price: 'value' },
+      
+      // Pool Area (Famous Feature)
+      { id: 'pool-area', name: 'Pool & Cabana Area', level: 'ga', baseAngle: 237, angleSpan: 30, covered: false, price: 'luxury' },
+      
+      // Suites
+      { id: 'club-suites', name: 'Club Level Suites', level: 'suite', baseAngle: 335, angleSpan: 50, covered: true, price: 'luxury' }
+    ],
+    notes: 'Desert ballpark with swimming pool, opened 2019 in Summerlin'
+  },
   
   {
     venueId: 'albuquerque-isotopes',
@@ -931,6 +972,259 @@ export const aaaCompleteLayouts: VenueLayout[] = [
       { id: 'hunt-club', name: 'Huntington Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
     ],
     notes: 'Downtown Toledo on Maumee River, opened 2002'
+  },
+
+  {
+    venueId: 'buffalo-bisons',
+    venueName: 'Sahlen Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Field Level Premium
+      { id: 'field-1', name: 'Field Level 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-2', name: 'Field Level 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-3', name: 'Field Level 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-4', name: 'Field Level 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'field-5', name: 'Field Level 5', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // Lower Box
+      { id: 'lower-101', name: 'Lower Box 101', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-102', name: 'Lower Box 102', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-103', name: 'Lower Box 103', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-104', name: 'Lower Box 104', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-105', name: 'Lower Box 105', level: 'lower', baseAngle: 78, angleSpan: 12, covered: false, price: 'value' },
+
+      { id: 'lower-106', name: 'Lower Box 106', level: 'lower', baseAngle: 282, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'lower-107', name: 'Lower Box 107', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-108', name: 'Lower Box 108', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-109', name: 'Lower Box 109', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'lower-110', name: 'Lower Box 110', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Upper Reserved
+      { id: 'upper-201', name: 'Upper Reserved 201', level: 'upper', baseAngle: 340, angleSpan: 25, covered: true, price: 'value' },
+      { id: 'upper-202', name: 'Upper Reserved 202', level: 'upper', baseAngle: 5, angleSpan: 25, covered: true, price: 'value' },
+      { id: 'upper-203', name: 'Upper Reserved 203', level: 'upper', baseAngle: 30, angleSpan: 25, covered: true, price: 'value' },
+
+      // Coca-Cola Field Right Field
+      { id: 'rf-party', name: 'Right Field Party Deck', level: 'ga', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      { id: 'lf-party', name: 'Left Field Party Deck', level: 'ga', baseAngle: 225, angleSpan: 45, covered: false, price: 'value' },
+
+      // Center Field
+      { id: 'cf-berm', name: 'Center Field Berm', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' },
+
+      // Club Level
+      { id: 'rich-club', name: 'Rich Products Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Buffalo, opened 1988, renovated extensively'
+  },
+
+  {
+    venueId: 'charlotte-knights',
+    venueName: 'Truist Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Crown Club (Premium)
+      { id: 'crown-1', name: 'Crown Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'crown-2', name: 'Crown Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'crown-3', name: 'Crown Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'crown-4', name: 'Crown Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'crown-5', name: 'Crown Club 5', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-101', name: 'Field Box 101', level: 'lower', baseAngle: 30, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-102', name: 'Field Box 102', level: 'lower', baseAngle: 41, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-103', name: 'Field Box 103', level: 'lower', baseAngle: 52, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-104', name: 'Field Box 104', level: 'lower', baseAngle: 63, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-105', name: 'Field Box 105', level: 'lower', baseAngle: 74, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-106', name: 'Field Box 106', level: 'lower', baseAngle: 85, angleSpan: 11, covered: false, price: 'value' },
+
+      { id: 'fb-107', name: 'Field Box 107', level: 'lower', baseAngle: 275, angleSpan: 11, covered: false, price: 'value' },
+      { id: 'fb-108', name: 'Field Box 108', level: 'lower', baseAngle: 286, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-109', name: 'Field Box 109', level: 'lower', baseAngle: 297, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-110', name: 'Field Box 110', level: 'lower', baseAngle: 308, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-111', name: 'Field Box 111', level: 'lower', baseAngle: 319, angleSpan: 11, covered: false, price: 'moderate' },
+      { id: 'fb-112', name: 'Field Box 112', level: 'lower', baseAngle: 330, angleSpan: 11, covered: false, price: 'moderate' },
+
+      // Stadium Club Level
+      { id: 'stadium-201', name: 'Stadium Club 201', level: 'upper', baseAngle: 340, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'stadium-202', name: 'Stadium Club 202', level: 'upper', baseAngle: 0, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'stadium-203', name: 'Stadium Club 203', level: 'upper', baseAngle: 20, angleSpan: 20, covered: true, price: 'luxury' },
+
+      // Outfield Areas
+      { id: 'home-run-porch', name: 'Home Run Porch', level: 'ga', baseAngle: 96, angleSpan: 40, covered: false, price: 'value' },
+      { id: 'party-deck', name: 'Party Deck', level: 'club', baseAngle: 136, angleSpan: 60, covered: true, price: 'moderate' },
+      { id: 'lf-lawn', name: 'Left Field Lawn', level: 'berm', baseAngle: 196, angleSpan: 60, covered: false, price: 'value' },
+
+      // Suite Level
+      { id: 'suite-level', name: 'Suite Level', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Charlotte with city skyline views, opened 2014'
+  },
+
+  {
+    venueId: 'durham-bulls',
+    venueName: 'Durham Bulls Athletic Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Blue Monster Premium
+      { id: 'monster-1', name: 'Blue Monster 1', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-2', name: 'Blue Monster 2', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-3', name: 'Blue Monster 3', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-4', name: 'Blue Monster 4', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Field Level
+      { id: 'field-101', name: 'Field Level 101', level: 'lower', baseAngle: 28, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-102', name: 'Field Level 102', level: 'lower', baseAngle: 40, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-103', name: 'Field Level 103', level: 'lower', baseAngle: 52, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-104', name: 'Field Level 104', level: 'lower', baseAngle: 64, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-105', name: 'Field Level 105', level: 'lower', baseAngle: 76, angleSpan: 12, covered: false, price: 'value' },
+
+      { id: 'field-106', name: 'Field Level 106', level: 'lower', baseAngle: 284, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'field-107', name: 'Field Level 107', level: 'lower', baseAngle: 296, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-108', name: 'Field Level 108', level: 'lower', baseAngle: 308, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-109', name: 'Field Level 109', level: 'lower', baseAngle: 320, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-110', name: 'Field Level 110', level: 'lower', baseAngle: 332, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Club Level (El Toro)
+      { id: 'toro-201', name: 'El Toro Club 201', level: 'club', baseAngle: 340, angleSpan: 15, covered: true, price: 'luxury' },
+      { id: 'toro-202', name: 'El Toro Club 202', level: 'club', baseAngle: 355, angleSpan: 15, covered: true, price: 'luxury' },
+      { id: 'toro-203', name: 'El Toro Club 203', level: 'club', baseAngle: 10, angleSpan: 15, covered: true, price: 'luxury' },
+      { id: 'toro-204', name: 'El Toro Club 204', level: 'club', baseAngle: 25, angleSpan: 15, covered: true, price: 'luxury' },
+
+      // Bull City Outfield
+      { id: 'bull-city', name: 'Bull City Outfield', level: 'ga', baseAngle: 88, angleSpan: 44, covered: false, price: 'value' },
+      { id: 'hit-bull', name: 'Hit Bull Win Steak', level: 'berm', baseAngle: 132, angleSpan: 96, covered: false, price: 'value' },
+      { id: 'lf-reserved', name: 'Left Field Reserved', level: 'ga', baseAngle: 228, angleSpan: 44, covered: false, price: 'value' },
+
+      // American Tobacco Suite Level
+      { id: 'tobacco-suite', name: 'American Tobacco Suite', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Made famous by Bull Durham movie, iconic snorting bull, opened 1995'
+  },
+
+  {
+    venueId: 'norfolk-tides',
+    venueName: 'Harbor Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'diamond-1', name: 'Diamond Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-2', name: 'Diamond Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-3', name: 'Diamond Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-4', name: 'Diamond Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-5', name: 'Diamond Club 5', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-101', name: 'Field Box 101', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-102', name: 'Field Box 102', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-103', name: 'Field Box 103', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-104', name: 'Field Box 104', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-105', name: 'Field Box 105', level: 'lower', baseAngle: 78, angleSpan: 12, covered: false, price: 'value' },
+
+      { id: 'fb-106', name: 'Field Box 106', level: 'lower', baseAngle: 282, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'fb-107', name: 'Field Box 107', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-108', name: 'Field Box 108', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-109', name: 'Field Box 109', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fb-110', name: 'Field Box 110', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Harbor Club
+      { id: 'harbor-201', name: 'Harbor Club 201', level: 'club', baseAngle: 340, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'harbor-202', name: 'Harbor Club 202', level: 'club', baseAngle: 0, angleSpan: 20, covered: true, price: 'luxury' },
+      { id: 'harbor-203', name: 'Harbor Club 203', level: 'club', baseAngle: 20, angleSpan: 20, covered: true, price: 'luxury' },
+
+      // Outfield Areas
+      { id: 'rf-picnic', name: 'Right Field Picnic', level: 'ga', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      { id: 'harbor-view', name: 'Harbor View Deck', level: 'ga', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' },
+      { id: 'lf-party', name: 'Left Field Party Deck', level: 'ga', baseAngle: 225, angleSpan: 45, covered: false, price: 'value' },
+
+      // Suite Level
+      { id: 'waterfront-suite', name: 'Waterfront Suite', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Norfolk waterfront with harbor views, opened 1993'
+  },
+
+
+  {
+    venueId: 'fresno-grizzlies',
+    venueName: 'Chukchansi Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club Premium
+      { id: 'diamond-1', name: 'Diamond Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-2', name: 'Diamond Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-3', name: 'Diamond Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-4', name: 'Diamond Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'diamond-5', name: 'Diamond Club 5', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // Field Reserved
+      { id: 'fr-101', name: 'Field Reserved 101', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-102', name: 'Field Reserved 102', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-103', name: 'Field Reserved 103', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-104', name: 'Field Reserved 104', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-105', name: 'Field Reserved 105', level: 'lower', baseAngle: 78, angleSpan: 12, covered: false, price: 'value' },
+
+      { id: 'fr-106', name: 'Field Reserved 106', level: 'lower', baseAngle: 282, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'fr-107', name: 'Field Reserved 107', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-108', name: 'Field Reserved 108', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-109', name: 'Field Reserved 109', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'fr-110', name: 'Field Reserved 110', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Club Level
+      { id: 'grizzly-club', name: 'Grizzly Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' },
+
+      // Outfield Areas  
+      { id: 'rf-party', name: 'Right Field Party Deck', level: 'ga', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      { id: 'valley-view', name: 'Valley View Pavilion', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' },
+      { id: 'lf-landing', name: 'Left Field Landing', level: 'ga', baseAngle: 225, angleSpan: 45, covered: false, price: 'value' },
+
+      // Suite Level
+      { id: 'suite-level', name: 'Suite Level', level: 'suite', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Fresno, mountain views beyond outfield'
+  },
+
+  {
+    venueId: 'indianapolis-indians',
+    venueName: 'Victory Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Victory Club Premium
+      { id: 'victory-1', name: 'Victory Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'victory-2', name: 'Victory Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'victory-3', name: 'Victory Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'victory-4', name: 'Victory Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'victory-5', name: 'Victory Club 5', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // Field Level
+      { id: 'field-101', name: 'Field Level 101', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-102', name: 'Field Level 102', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-103', name: 'Field Level 103', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-104', name: 'Field Level 104', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-105', name: 'Field Level 105', level: 'lower', baseAngle: 78, angleSpan: 12, covered: false, price: 'value' },
+
+      { id: 'field-106', name: 'Field Level 106', level: 'lower', baseAngle: 282, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'field-107', name: 'Field Level 107', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-108', name: 'Field Level 108', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-109', name: 'Field Level 109', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'field-110', name: 'Field Level 110', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Upper Reserved
+      { id: 'upper-201', name: 'Upper Reserved 201', level: 'upper', baseAngle: 340, angleSpan: 25, covered: true, price: 'value' },
+      { id: 'upper-202', name: 'Upper Reserved 202', level: 'upper', baseAngle: 5, angleSpan: 25, covered: true, price: 'value' },
+      { id: 'upper-203', name: 'Upper Reserved 203', level: 'upper', baseAngle: 30, angleSpan: 25, covered: true, price: 'value' },
+
+      // Indianapolis Skyline Deck
+      { id: 'skyline-deck', name: 'Indianapolis Skyline Deck', level: 'ga', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      
+      // Victory Plaza
+      { id: 'victory-plaza', name: 'Victory Plaza', level: 'berm', baseAngle: 135, angleSpan: 90, covered: false, price: 'value' },
+
+      // Left Field Terrace
+      { id: 'lf-terrace', name: 'Left Field Terrace', level: 'ga', baseAngle: 225, angleSpan: 45, covered: false, price: 'value' },
+
+      // Indianapolis Club
+      { id: 'indy-club', name: 'Indianapolis Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Indianapolis with city skyline views, opened 1996'
   }
 ];
 

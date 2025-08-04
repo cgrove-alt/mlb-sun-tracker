@@ -854,6 +854,274 @@ export const aaCompleteLayouts: VenueLayout[] = [
       { id: 'emprise-club', name: 'Emprise Bank Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
     ],
     notes: 'Downtown Wichita on Arkansas River, opened 2021'
+  },
+
+  {
+    venueId: 'richmond-flying-squirrels',
+    venueName: 'The Diamond',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'diamond-100', name: 'Diamond Club 100', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'diamond-101', name: 'Diamond Club 101', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'diamond-102', name: 'Diamond Club 102', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'diamond-103', name: 'Diamond Club 103', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'fb-104', name: 'Field Box 104', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'fb-105', name: 'Field Box 105', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'fb-106', name: 'Field Box 106', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'fb-107', name: 'Field Box 107', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'fb-108', name: 'Field Box 108', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+
+      { id: 'fb-109', name: 'Field Box 109', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'fb-110', name: 'Field Box 110', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'fb-111', name: 'Field Box 111', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'fb-112', name: 'Field Box 112', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'fb-113', name: 'Field Box 113', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+
+      // Upper Reserved
+      { id: 'ur-201', name: 'Upper Reserved 201', level: 'upper', baseAngle: 340, angleSpan: 30, covered: true, price: 'value' },
+      { id: 'ur-202', name: 'Upper Reserved 202', level: 'upper', baseAngle: 10, angleSpan: 30, covered: true, price: 'value' },
+
+      // Flying Squirrels Landing
+      { id: 'fs-landing', name: 'Flying Squirrels Landing', level: 'ga', baseAngle: 93, angleSpan: 44, covered: false, price: 'value' },
+      
+      // Nutzy Hill
+      { id: 'nutzy-hill', name: 'Nutzy Hill', level: 'berm', baseAngle: 137, angleSpan: 86, covered: false, price: 'value' },
+
+      // Left Field Plaza
+      { id: 'lf-plaza', name: 'Left Field Plaza', level: 'ga', baseAngle: 223, angleSpan: 44, covered: false, price: 'value' },
+
+      // Richmond Club
+      { id: 'richmond-club', name: 'Richmond Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Richmond, VA, classic ballpark originally built in 1985'
+  },
+
+  {
+    venueId: 'harrisburg-senators',
+    venueName: 'FNB Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Diamond Club
+      { id: 'dc-100', name: 'Diamond Club 100', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dc-101', name: 'Diamond Club 101', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dc-102', name: 'Diamond Club 102', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'dc-103', name: 'Diamond Club 103', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Field Box
+      { id: 'box-104', name: 'Box 104', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+
+      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-110', name: 'Box 110', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-111', name: 'Box 111', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-112', name: 'Box 112', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-113', name: 'Box 113', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+
+      // City Island Party Deck
+      { id: 'ci-party', name: 'City Island Party Deck', level: 'ga', baseAngle: 93, angleSpan: 44, covered: false, price: 'value' },
+      
+      // Outfield Berm
+      { id: 'berm', name: 'Outfield Berm', level: 'berm', baseAngle: 137, angleSpan: 86, covered: false, price: 'value' },
+
+      // Left Field Picnic
+      { id: 'lf-picnic', name: 'Left Field Picnic', level: 'ga', baseAngle: 223, angleSpan: 44, covered: false, price: 'value' },
+
+      // Susquehanna Club
+      { id: 'susq-club', name: 'Susquehanna Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Harrisburg City Island on Susquehanna River, opened 1987'
+  },
+
+  {
+    venueId: 'portland-sea-dogs',
+    venueName: 'Hadlock Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Green Monster Seats
+      { id: 'monster-1', name: 'Green Monster 1', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-2', name: 'Green Monster 2', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-3', name: 'Green Monster 3', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'monster-4', name: 'Green Monster 4', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Box Seats
+      { id: 'box-101', name: 'Box 101', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-102', name: 'Box 102', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-103', name: 'Box 103', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-104', name: 'Box 104', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-105', name: 'Box 105', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+
+      { id: 'box-106', name: 'Box 106', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-107', name: 'Box 107', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'box-108', name: 'Box 108', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-109', name: 'Box 109', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'box-110', name: 'Box 110', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+
+      // Maine Monster
+      { id: 'maine-monster', name: 'Maine Monster', level: 'ga', baseAngle: 220, angleSpan: 60, covered: false, price: 'value' },
+      
+      // Shipyard Pavilion
+      { id: 'shipyard', name: 'Shipyard Pavilion', level: 'ga', baseAngle: 93, angleSpan: 44, covered: false, price: 'value' },
+
+      // Big Wave Berm
+      { id: 'big-wave', name: 'Big Wave Berm', level: 'berm', baseAngle: 137, angleSpan: 83, covered: false, price: 'value' },
+
+      // Sea Dogs Club
+      { id: 'seadogs-club', name: 'Sea Dogs Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Portland, ME with mini Green Monster replica wall, opened 1994'
+  },
+
+  {
+    venueId: 'akron-rubberducks',
+    venueName: 'Canal Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Infield Box
+      { id: 'box-100', name: 'Box 100', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'box-101', name: 'Box 101', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'box-102', name: 'Box 102', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'box-103', name: 'Box 103', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: 'box-104', name: 'Box 104', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
+
+      // First Base Reserved
+      { id: 'res-105', name: 'Reserved 105', level: 'lower', baseAngle: 30, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'res-106', name: 'Reserved 106', level: 'lower', baseAngle: 42, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'res-107', name: 'Reserved 107', level: 'lower', baseAngle: 54, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'res-108', name: 'Reserved 108', level: 'lower', baseAngle: 66, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'res-109', name: 'Reserved 109', level: 'lower', baseAngle: 78, angleSpan: 12, covered: false, price: 'value' },
+
+      // Third Base Reserved
+      { id: 'res-110', name: 'Reserved 110', level: 'lower', baseAngle: 282, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'res-111', name: 'Reserved 111', level: 'lower', baseAngle: 294, angleSpan: 12, covered: false, price: 'value' },
+      { id: 'res-112', name: 'Reserved 112', level: 'lower', baseAngle: 306, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'res-113', name: 'Reserved 113', level: 'lower', baseAngle: 318, angleSpan: 12, covered: false, price: 'moderate' },
+      { id: 'res-114', name: 'Reserved 114', level: 'lower', baseAngle: 330, angleSpan: 12, covered: false, price: 'moderate' },
+
+      // Bleachers
+      { id: 'rf-bleacher', name: 'Right Field Bleachers', level: 'ga', baseAngle: 90, angleSpan: 45, covered: false, price: 'value' },
+      { id: 'lf-bleacher', name: 'Left Field Bleachers', level: 'ga', baseAngle: 225, angleSpan: 45, covered: false, price: 'value' },
+
+      // Duck Row (Upper)
+      { id: 'duck-row', name: 'Duck Row', level: 'upper', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Akron location, oriented east-northeast'
+  },
+
+  {
+    venueId: 'birmingham-barons',
+    venueName: 'Regions Field',
+    lastUpdated: '2024-01',
+    sections: [
+      // Premium Seating
+      { id: 'sec-101', name: 'Section 101', level: 'field', baseAngle: 335, angleSpan: 15, covered: false, price: 'premium' },
+      { id: 'sec-102', name: 'Section 102', level: 'field', baseAngle: 350, angleSpan: 15, covered: false, price: 'premium' },
+      { id: 'sec-103', name: 'Section 103', level: 'field', baseAngle: 5, angleSpan: 15, covered: false, price: 'premium' },
+      { id: 'sec-104', name: 'Section 104', level: 'field', baseAngle: 20, angleSpan: 15, covered: false, price: 'premium' },
+
+      // Baseline Box
+      { id: 'sec-105', name: 'Section 105', level: 'lower', baseAngle: 35, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'sec-106', name: 'Section 106', level: 'lower', baseAngle: 50, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'sec-107', name: 'Section 107', level: 'lower', baseAngle: 65, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'sec-108', name: 'Section 108', level: 'lower', baseAngle: 80, angleSpan: 15, covered: false, price: 'value' },
+
+      { id: 'sec-109', name: 'Section 109', level: 'lower', baseAngle: 280, angleSpan: 15, covered: false, price: 'value' },
+      { id: 'sec-110', name: 'Section 110', level: 'lower', baseAngle: 295, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'sec-111', name: 'Section 111', level: 'lower', baseAngle: 310, angleSpan: 15, covered: false, price: 'moderate' },
+      { id: 'sec-112', name: 'Section 112', level: 'lower', baseAngle: 325, angleSpan: 15, covered: false, price: 'moderate' },
+
+      // Outfield
+      { id: 'rf-plaza', name: 'Right Field Plaza', level: 'ga', baseAngle: 95, angleSpan: 50, covered: false, price: 'value' },
+      { id: 'bernie-brew', name: "Bernie's Brewhouse", level: 'ga', baseAngle: 145, angleSpan: 35, covered: false, price: 'value' },
+      { id: 'lf-lawn', name: 'Left Field Lawn', level: 'berm', baseAngle: 215, angleSpan: 50, covered: false, price: 'value' },
+
+      // Club Level
+      { id: 'press-club', name: 'Press Box Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Downtown Birmingham with city skyline views, oriented north'
+  },
+
+  {
+    venueId: 'tennessee-smokies',
+    venueName: 'Smokies Stadium',
+    lastUpdated: '2024-01',
+    sections: [
+      // Home Plate Club
+      { id: 'hp-100', name: 'Home Plate Club 100', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'hp-101', name: 'Home Plate Club 101', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'hp-102', name: 'Home Plate Club 102', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'hp-103', name: 'Home Plate Club 103', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Field Level
+      { id: 'field-104', name: 'Field Level 104', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'field-105', name: 'Field Level 105', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'field-106', name: 'Field Level 106', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'field-107', name: 'Field Level 107', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'field-108', name: 'Field Level 108', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+
+      { id: 'field-109', name: 'Field Level 109', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'field-110', name: 'Field Level 110', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'field-111', name: 'Field Level 111', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'field-112', name: 'Field Level 112', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'field-113', name: 'Field Level 113', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+
+      // Mountain View Deck
+      { id: 'mountain-view', name: 'Mountain View Deck', level: 'ga', baseAngle: 93, angleSpan: 44, covered: false, price: 'value' },
+      
+      // Smoky Mountain Berm
+      { id: 'smoky-berm', name: 'Smoky Mountain Berm', level: 'berm', baseAngle: 137, angleSpan: 86, covered: false, price: 'value' },
+
+      // Left Field Terrace
+      { id: 'lf-terrace', name: 'Left Field Terrace', level: 'ga', baseAngle: 223, angleSpan: 44, covered: false, price: 'value' },
+
+      // Great Smoky Mountains Club
+      { id: 'gsm-club', name: 'Great Smoky Mountains Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Kodak, TN with Great Smoky Mountains views beyond outfield'
+  },
+
+  {
+    venueId: 'mississippi-braves',
+    venueName: 'Trustmark Park',
+    lastUpdated: '2024-01',
+    sections: [
+      // Premium Infield
+      { id: 'prem-100', name: 'Premium Infield 100', level: 'field', baseAngle: 340, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'prem-101', name: 'Premium Infield 101', level: 'field', baseAngle: 352, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'prem-102', name: 'Premium Infield 102', level: 'field', baseAngle: 4, angleSpan: 12, covered: false, price: 'premium' },
+      { id: 'prem-103', name: 'Premium Infield 103', level: 'field', baseAngle: 16, angleSpan: 12, covered: false, price: 'premium' },
+
+      // Reserved Seating
+      { id: 'res-104', name: 'Reserved 104', level: 'lower', baseAngle: 28, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'res-105', name: 'Reserved 105', level: 'lower', baseAngle: 41, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'res-106', name: 'Reserved 106', level: 'lower', baseAngle: 54, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'res-107', name: 'Reserved 107', level: 'lower', baseAngle: 67, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'res-108', name: 'Reserved 108', level: 'lower', baseAngle: 80, angleSpan: 13, covered: false, price: 'value' },
+
+      { id: 'res-109', name: 'Reserved 109', level: 'lower', baseAngle: 280, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'res-110', name: 'Reserved 110', level: 'lower', baseAngle: 293, angleSpan: 13, covered: false, price: 'value' },
+      { id: 'res-111', name: 'Reserved 111', level: 'lower', baseAngle: 306, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'res-112', name: 'Reserved 112', level: 'lower', baseAngle: 319, angleSpan: 13, covered: false, price: 'moderate' },
+      { id: 'res-113', name: 'Reserved 113', level: 'lower', baseAngle: 332, angleSpan: 13, covered: false, price: 'moderate' },
+
+      // Outfield Areas
+      { id: 'rf-pavilion', name: 'Right Field Pavilion', level: 'ga', baseAngle: 93, angleSpan: 44, covered: false, price: 'value' },
+      
+      // Mississippi Braves Berm
+      { id: 'braves-berm', name: 'Braves Berm', level: 'berm', baseAngle: 137, angleSpan: 86, covered: false, price: 'value' },
+
+      // Left Field Deck
+      { id: 'lf-deck', name: 'Left Field Deck', level: 'ga', baseAngle: 223, angleSpan: 44, covered: false, price: 'value' },
+
+      // Trustmark Club
+      { id: 'trustmark-club', name: 'Trustmark Club', level: 'club', baseAngle: 340, angleSpan: 40, covered: true, price: 'luxury' }
+    ],
+    notes: 'Pearl, MS suburb of Jackson, opened 2005'
   }
 ];
 
