@@ -10,8 +10,13 @@ import { aaaStadiumGuides2 } from './aaaStadiumGuides2';
 import { aaaStadiumGuides3 } from './aaaStadiumGuides3';
 import { aaaStadiumGuides4 } from './aaaStadiumGuides4';
 import { aaaStadiumGuides5 } from './aaaStadiumGuides5';
+import { aaaStadiumGuides6 } from './aaaStadiumGuides6';
 import { aaStadiumGuides } from './aaStadiumGuides';
 import { aaStadiumGuides2 } from './aaStadiumGuides2';
+import { aaStadiumGuides3 } from './aaStadiumGuides3';
+import { aaStadiumGuides4 } from './aaStadiumGuides4';
+import { aaStadiumGuides5 } from './aaStadiumGuides5';
+import { aaStadiumGuides6 } from './aaStadiumGuides6';
 import { aPlusStadiumGuides } from './aPlusStadiumGuides';
 import { singleAStadiumGuides } from './singleAStadiumGuides';
 import { StadiumGuide } from '../stadiumGuides';
@@ -32,13 +37,18 @@ export const allAAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaaStadiumGuides2,
   ...aaaStadiumGuides3,
   ...aaaStadiumGuides4,
-  ...aaaStadiumGuides5
+  ...aaaStadiumGuides5,
+  ...aaaStadiumGuides6
 };
 
 // Combine all AA stadium guides
 export const allAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaStadiumGuides,
-  ...aaStadiumGuides2
+  ...aaStadiumGuides2,
+  ...aaStadiumGuides3,
+  ...aaStadiumGuides4,
+  ...aaStadiumGuides5,
+  ...aaStadiumGuides6
 };
 
 // Export MiLB guides by level
