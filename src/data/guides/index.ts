@@ -12,13 +12,31 @@ import { aaaStadiumGuides4 } from './aaaStadiumGuides4';
 import { aaaStadiumGuides5 } from './aaaStadiumGuides5';
 import { aaaStadiumGuides6 } from './aaaStadiumGuides6';
 import { aaStadiumGuides } from './aaStadiumGuides';
+import { aaStadiumGuides1 } from './aaStadiumGuides1';
 import { aaStadiumGuides2 } from './aaStadiumGuides2';
 import { aaStadiumGuides3 } from './aaStadiumGuides3';
 import { aaStadiumGuides4 } from './aaStadiumGuides4';
 import { aaStadiumGuides5 } from './aaStadiumGuides5';
 import { aaStadiumGuides6 } from './aaStadiumGuides6';
+import { aaStadiumGuides7 } from './aaStadiumGuides7';
+import { aaStadiumGuides8 } from './aaStadiumGuides8';
+import { aaStadiumGuides9 } from './aaStadiumGuides9';
 import { aPlusStadiumGuides } from './aPlusStadiumGuides';
+import { aPlusStadiumGuides1 } from './aPlusStadiumGuides1';
+import { aPlusStadiumGuides2 } from './aPlusStadiumGuides2';
+import { aPlusStadiumGuides3 } from './aPlusStadiumGuides3';
+import { aPlusStadiumGuides4 } from './aPlusStadiumGuides4';
+import { aPlusStadiumGuides5 } from './aPlusStadiumGuides5';
+import { aPlusStadiumGuides6 } from './aPlusStadiumGuides6';
+import { aPlusStadiumGuides7 } from './aPlusStadiumGuides7';
+import { aPlusStadiumGuides8 } from './aPlusStadiumGuides8';
+import { aPlusStadiumGuides9 } from './aPlusStadiumGuides9';
 import { singleAStadiumGuides } from './singleAStadiumGuides';
+import { singleAStadiumGuides2 } from './singleAStadiumGuides2';
+import { singleAStadiumGuides3 } from './singleAStadiumGuides3';
+import { singleAStadiumGuides4 } from './singleAStadiumGuides4';
+import { singleAStadiumGuides5 } from './singleAStadiumGuides5';
+import { singleAStadiumGuides6 } from './singleAStadiumGuides6';
 import { StadiumGuide } from '../stadiumGuides';
 
 // Combine all MLB stadium guides
@@ -44,24 +62,48 @@ export const allAAAStadiumGuides: Record<string, StadiumGuide> = {
 // Combine all AA stadium guides
 export const allAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaStadiumGuides,
+  ...aaStadiumGuides1,
   ...aaStadiumGuides2,
   ...aaStadiumGuides3,
   ...aaStadiumGuides4,
   ...aaStadiumGuides5,
-  ...aaStadiumGuides6
+  ...aaStadiumGuides6,
+  ...aaStadiumGuides7,
+  ...aaStadiumGuides8,
+  ...aaStadiumGuides9
 };
 
-// Export MiLB guides by level
-export { aPlusStadiumGuides } from './aPlusStadiumGuides';
-export { singleAStadiumGuides } from './singleAStadiumGuides';
+// Combine all A+ stadium guides
+export const allAPlusStadiumGuides: Record<string, StadiumGuide> = {
+  ...aPlusStadiumGuides,
+  ...aPlusStadiumGuides1,
+  ...aPlusStadiumGuides2,
+  ...aPlusStadiumGuides3,
+  ...aPlusStadiumGuides4,
+  ...aPlusStadiumGuides5,
+  ...aPlusStadiumGuides6,
+  ...aPlusStadiumGuides7,
+  ...aPlusStadiumGuides8,
+  ...aPlusStadiumGuides9
+};
+
+// Combine all Single-A stadium guides
+export const allSingleAStadiumGuides: Record<string, StadiumGuide> = {
+  ...singleAStadiumGuides,
+  ...singleAStadiumGuides2,
+  ...singleAStadiumGuides3,
+  ...singleAStadiumGuides4,
+  ...singleAStadiumGuides5,
+  ...singleAStadiumGuides6
+};
 
 // Combined all stadium guides
 export const allStadiumGuides: Record<string, StadiumGuide> = {
   ...allMLBStadiumGuides,
   ...allAAAStadiumGuides,
   ...allAAStadiumGuides,
-  ...aPlusStadiumGuides,
-  ...singleAStadiumGuides
+  ...allAPlusStadiumGuides,
+  ...allSingleAStadiumGuides
 };
 
 // Helper function to get guide by stadium ID
@@ -79,9 +121,9 @@ export function getGuidesByLeague(league: 'MLB' | 'AAA' | 'AA' | 'A+' | 'A'): Re
     case 'AA':
       return allAAStadiumGuides;
     case 'A+':
-      return aPlusStadiumGuides;
+      return allAPlusStadiumGuides;
     case 'A':
-      return singleAStadiumGuides;
+      return allSingleAStadiumGuides;
     default:
       return {};
   }
