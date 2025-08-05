@@ -8,6 +8,8 @@ import { mlbStadiumGuides6 } from './mlbStadiumGuides6';
 import { aaaStadiumGuides } from './aaaStadiumGuides';
 import { aaaStadiumGuides2 } from './aaaStadiumGuides2';
 import { aaaStadiumGuides3 } from './aaaStadiumGuides3';
+import { aaaStadiumGuides4 } from './aaaStadiumGuides4';
+import { aaaStadiumGuides5 } from './aaaStadiumGuides5';
 import { aaStadiumGuides } from './aaStadiumGuides';
 import { aaStadiumGuides2 } from './aaStadiumGuides2';
 import { aPlusStadiumGuides } from './aPlusStadiumGuides';
@@ -28,7 +30,9 @@ export const allMLBStadiumGuides: Record<string, StadiumGuide> = {
 export const allAAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaaStadiumGuides,
   ...aaaStadiumGuides2,
-  ...aaaStadiumGuides3
+  ...aaaStadiumGuides3,
+  ...aaaStadiumGuides4,
+  ...aaaStadiumGuides5
 };
 
 // Combine all AA stadium guides

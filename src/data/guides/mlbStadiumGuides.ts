@@ -850,6 +850,305 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         'BART cheaper than parking'
       ]
     }
+  },
+  
+  'diamondbacks': {
+    id: 'diamondbacks',
+    name: 'Chase Field',
+    team: 'Arizona Diamondbacks',
+    opened: 1998,
+    capacity: 48633,
+    
+    overview: {
+      description: 'Chase Field, originally Bank One Ballpark, was the first stadium in the US with a retractable roof over natural grass. Located in downtown Phoenix, this climate-controlled ballpark features the famous swimming pool in right-center field and operates powerful air conditioning even with the roof open.',
+      highlights: [
+        'First US stadium with retractable roof over grass',
+        'Famous 35-person swimming pool suite',
+        'Air conditioning operates even with roof open',
+        'Second highest elevation stadium in MLB'
+      ],
+      uniqueFeatures: [
+        'Swimming pool beyond right-center field fence',
+        '9 million pounds of structural steel in roof',
+        'Retractable roof opens/closes in 4+ minutes',
+        'Massive HVAC system cools to 78°F'
+      ],
+      renovations: [
+        { year: 2019, description: 'Converted natural grass to artificial turf' },
+        { year: 2024, description: 'New LED lighting and CO12 speaker system' }
+      ],
+      previousNames: ['Bank One Ballpark (1998-2005)']
+    },
+    
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Sections 314-318', 'Sections 328-332', 'Upper deck 300-302'],
+        afternoon: ['Third base side sections', 'Sections 314-332 under roof', 'Upper deck corners'],
+        evening: ['Most sections shaded', 'Third base side optimal', 'Left field areas']
+      },
+      coveredSeating: ['All 300-level sections when roof closed', 'Back rows of 319-327', 'Corner sections 135-138, 220-223'],
+      shadeTips: [
+        'Roof typically closed when temperature exceeds 100°F',
+        'Air conditioning runs even with roof open',
+        'Third base side gets shade first in afternoon',
+        'Upper deck provides best sun protection',
+        'Stadium cooled to 78°F when roof closed'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest Services locations', 'First Aid stations'],
+        shadedConcourses: ['All concourses climate controlled', 'Main concourse fully enclosed'],
+        indoorAreas: ['Audi Quattro Lounge', 'Sedona Club', 'Sonoran Room', 'Team Shop']
+      },
+      worstSunExposure: ['Right field sections 101-110', 'First base side afternoon games', 'Field level outfield'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 85, avgHumidity: 20, rainChance: 5, typicalConditions: 'Warm and dry, roof often open', shadeTip: 'Seek upper deck or third base side' },
+        { month: 'May', avgTemp: 95, avgHumidity: 15, rainChance: 3, typicalConditions: 'Hot and very dry', shadeTip: 'Roof likely closed, any seat comfortable' },
+        { month: 'June', avgTemp: 105, avgHumidity: 12, rainChance: 2, typicalConditions: 'Extreme heat begins', shadeTip: 'Stadium climate controlled with roof closed' },
+        { month: 'July', avgTemp: 108, avgHumidity: 25, rainChance: 15, typicalConditions: 'Monsoon season, extreme heat', shadeTip: 'Stay inside - roof always closed' },
+        { month: 'August', avgTemp: 106, avgHumidity: 30, rainChance: 20, typicalConditions: 'Peak monsoon, very hot', shadeTip: 'Climate controlled environment essential' },
+        { month: 'September', avgTemp: 100, avgHumidity: 20, rainChance: 10, typicalConditions: 'Still very hot', shadeTip: 'Roof typically closed, AC running' },
+        { month: 'October', avgTemp: 88, avgHumidity: 18, rainChance: 5, typicalConditions: 'Cooler for playoffs', shadeTip: 'Roof may open, seek shade on third base side' }
+      ]
+    },
+    
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Legends Suite', perks: ['Behind home plate', 'Exclusive lounge', 'All-inclusive'], access: 'Private entrance' },
+          { name: 'Diamond Level', perks: ['Club access', 'Wide seats', 'In-seat service'], access: 'Diamond Level entrance' },
+          { name: 'Audi Quattro Lounge', perks: ['Climate controlled', 'Premium bar', 'Exclusive menu'], access: 'Club level' }
+        ],
+        suites: { 
+          levels: ['Field Level Suites', 'D-Backs Suites', 'Pool Suite', 'Dugout Suites'],
+          amenities: ['Private restrooms', 'Catering options', 'HDTV', 'Climate control', 'VIP parking']
+        },
+        specialAreas: [
+          { name: 'Pool Suite', description: 'Famous swimming pool with 35-person capacity', capacity: 35 },
+          { name: 'Batter\'s Box Suites', description: 'Field level behind home plate', capacity: 24 }
+        ]
+      },
+      budgetOptions: ['Upper deck outfield', 'Bleacher sections', 'Standing room only', '$5 Value Menu seats (select games)'],
+      familySections: ['Sections 301-305', 'Family-friendly concourse areas'],
+      standingRoom: ['SRO tickets available', 'Craft beer garden areas'],
+      partyAreas: [
+        { name: 'Pool Pavilion', capacity: '35', description: 'Swimming pool and patio', amenities: ['Pool access', 'Private bar', 'TVs'] },
+        { name: 'Draft Room', capacity: '50+', description: 'Group party space', amenities: ['Multiple TVs', 'Bar service'] }
+      ],
+      tips: [
+        { section: 'Sections 314-332', tip: 'Best value for shade and views', category: 'value' },
+        { section: 'Pool Suite', tip: 'Book early - most unique MLB experience', category: 'experience' },
+        { section: 'Upper deck third base', tip: 'Coolest seats for day games', category: 'shade' },
+        { section: 'Diamond Level', tip: 'All-inclusive food and beverage', category: 'experience' }
+      ]
+    },
+    
+    concessions: {
+      signature: [
+        'Millionaire Steak Sandwich with truffle cheese',
+        'XL Sonoran Hot Dog (footlong)',
+        'Korean Pork Belly Nachos',
+        'Apple Pie Chimichangas',
+        'Churro Sundae'
+      ],
+      local: [
+        'Gadzooks Enchiladas',
+        'Four Peaks Beer',
+        'Huss Brewing selections',
+        'Festival Street Tacos',
+        'Sonoran-style hot dogs'
+      ],
+      healthy: ['Fresh salads', 'Veggie wraps', 'Fruit cups', 'Gluten-free options'],
+      vegetarian: ['Beyond Burger', 'Veggie nachos', 'Cheese quesadillas'],
+      kidsFriendly: ['Double Header $2.99 hot dogs', 'Popcorn', 'Cotton candy', 'Ice cream'],
+      alcohol: {
+        beer: ['Four Peaks Kilt Lifter', 'Huss Brewing varieties', 'Dos Equis', 'Modelo', 'Craft beer garden selections'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Four Peaks', 'Huss Brewing', 'SanTan Brewing']
+      }
+    },
+    
+    parking: {
+      lots: [
+        { name: 'Chase Field Garage', distance: '1-3 minutes', price: '$25-30', shadedSpots: false, covered: true, tip: 'Closest to stadium, fills quickly' },
+        { name: 'Jefferson Street Garage', distance: '3-5 minutes', price: '$25-30', shadedSpots: false, covered: true },
+        { name: 'General Parking', distance: '5-10 minutes', price: '$10', shadedSpots: false, covered: false, tip: 'Best value option' },
+        { name: 'VIP Parking', distance: '1-2 minutes', price: '$35', shadedSpots: false, covered: false, tip: 'Premium location' }
+      ],
+      streetParking: { available: true, restrictions: 'Meters and time limits apply', tip: 'Very limited on game days' },
+      alternativeTransport: {
+        publicTransit: ['Valley Metro Light Rail - 3rd St/Jefferson Station', '$2 single ride or $4 day pass'],
+        rideShare: 'Uber official partner - pickup at Washington & 5th St',
+        bicycle: 'Bike racks available at multiple entrances'
+      }
+    },
+    
+    gates: [
+      { name: 'Home Plate Gate', location: '401 E Jefferson St', bestFor: ['Main entrance', 'Team shop'], openTime: '2 hours before first pitch' },
+      { name: 'Left Field Gate', location: '4th Street', bestFor: ['Pool access', 'Left field seats'], openTime: '90 minutes before' },
+      { name: 'Right Field Gate', location: '7th Street', bestFor: ['Right field seats', 'Value parking'], openTime: '90 minutes before' }
+    ],
+    
+    amenities: {
+      merchandise: [
+        { location: 'Main Team Shop - Home Plate Gate', exclusive: ['Game-used memorabilia', 'Custom jerseys'] },
+        { location: 'The Dugout Store - Section 115', exclusive: ['Authentic collection'] }
+      ],
+      firstAid: ['Section 107', 'Section 214', 'Section 316'],
+      babyChanging: ['All family restrooms', 'Guest Services'],
+      nursingRooms: ['Guest Services behind Section 115'],
+      atms: ['All concourse levels', 'Near main gates'],
+      wifi: { available: true, network: 'ChaseField-Guest', freeZones: ['All seating areas'] },
+      chargingStations: ['Club level lounges', 'Legends Suite'],
+      kidZones: [{ name: 'Baxter\'s Den', location: 'Section 139', activities: ['Games', 'Photo ops with mascot'] }]
+    },
+    
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have wheelchair accessible seating'],
+        entrance: 'All gates wheelchair accessible',
+        elevators: ['Home Plate Gate', 'Left Field Gate', 'Right Field Gate']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All concession stands'],
+      parkingSpaces: '31 ADA parking spots available'
+    },
+    
+    gameDay: {
+      tips: [
+        { title: 'Beat the Heat', description: 'Arrive early to avoid hot parking lots', category: 'weather' },
+        { title: 'Roof Status', description: 'Check social media for roof open/closed status', category: 'shade' },
+        { title: 'Light Rail', description: 'Avoid parking hassles with $2 light rail', category: 'arrival' },
+        { title: 'Happy Hour', description: 'Discounted drinks 2 hours before first pitch', category: 'food' },
+        { title: 'Pool Viewing', description: 'Visit right field to see the famous pool', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: 'Varies by team schedule',
+        firstPitch: '6:40 PM (weeknights), 1:10 PM (day games)',
+        rushHours: ['30 minutes before first pitch', 'After 7th inning']
+      },
+      security: {
+        allowedBags: 'Clear bags and small clutches only',
+        prohibitedItems: ['Outside food/drinks (except sealed water)', 'Weapons', 'Drones', 'Large bags'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    
+    neighborhood: {
+      name: 'Downtown Phoenix',
+      description: 'Located in the heart of downtown Phoenix, Chase Field is surrounded by entertainment, dining, and cultural attractions, with easy access to the Valley Metro Light Rail.',
+      beforeGame: [
+        'CityScape Phoenix - multiple restaurants and bars',
+        'Pizzeria Bianco - famous pizza',
+        'The Arrogant Butcher - upscale American',
+        'Huss Brewing - local craft beer'
+      ],
+      afterGame: [
+        'Footprint Center - catch a Suns game',
+        'Arizona Science Center',
+        'Downtown Phoenix nightlife district',
+        'Roosevelt Row arts district'
+      ],
+      radius: '0.5 mile walk to most attractions'
+    },
+    
+    transportation: {
+      address: '401 E Jefferson St, Phoenix, AZ 85004',
+      publicTransit: {
+        train: [{ lines: ['Valley Metro Light Rail'], station: '3rd Street/Jefferson', walkTime: '3 minutes' }]
+      },
+      driving: {
+        majorRoutes: ['I-10', 'I-17', 'Loop 202', 'US-60'],
+        typicalTraffic: 'Heavy congestion 1 hour before games',
+        bestApproach: 'From I-10, exit 7th Street northbound'
+      },
+      rideShare: {
+        pickupZone: 'Washington Street & 5th Street',
+        dropoffZone: 'Jefferson Street main entrance',
+        surgePricing: 'Expect 2-3x surge after games',
+        alternativeTip: 'Walk a few blocks to avoid surge pricing'
+      }
+    },
+    
+    history: {
+      timeline: [
+        { year: 1998, event: 'Stadium opens as Bank One Ballpark' },
+        { year: 1998, event: 'Mark Grace hits first home run into pool' },
+        { year: 2001, event: 'Diamondbacks win World Series in Game 7' },
+        { year: 2005, event: 'Renamed Chase Field' },
+        { year: 2011, event: 'Hosts MLB All-Star Game' },
+        { year: 2019, event: 'Natural grass replaced with artificial turf' },
+        { year: 2023, event: 'Hosts World Series Games 3-5' }
+      ],
+      notableGames: [
+        { date: '2001-11-04', description: 'Luis Gonzalez wins World Series with walk-off hit' },
+        { date: '2011-07-12', description: 'MLB All-Star Game' }
+      ],
+      traditions: [
+        { name: 'The Pool', description: 'Only MLB stadium with swimming pool' },
+        { name: 'Roof Countdown', description: 'Fans count down roof closing' }
+      ],
+      retired: [
+        { number: '20', player: 'Luis Gonzalez', year: 2010 },
+        { number: '51', player: 'Randy Johnson', year: 2015 },
+        { number: '42', player: 'Jackie Robinson', year: 1997 }
+      ]
+    },
+    
+    fanExperience: {
+      atmosphere: 'Climate-controlled comfort with unique pool party vibe and passionate fans',
+      bestExperiences: [
+        'Swimming pool suite rental',
+        'Roof opening/closing experience',
+        'Pre-game at CityScape',
+        'Craft beer garden'
+      ],
+      traditions: ['D-Baxter the Bobcat mascot', 'Roof countdown', 'Swimming pool home runs'],
+      music: 'Mix of classic rock and modern hits',
+      mascot: { name: 'D. Baxter the Bobcat', description: 'Energetic bobcat who roams the stadium' },
+      fanGroups: [{ name: 'The Bleacher Bums', section: 'Left field bleachers', description: 'Rowdy supporters group' }]
+    },
+    
+    proTips: {
+      insiderTips: [
+        'Check roof status on Twitter before games',
+        'Light rail is easier than driving',
+        'Pool suite books months in advance',
+        'Upper deck stays coolest on hot days',
+        'Happy hour drinks 2 hours before first pitch'
+      ],
+      avoidThese: [
+        'Right field seats for day games',
+        'Parking without prepaying',
+        'Arriving late - security lines get long',
+        'Outside gates during summer heat'
+      ],
+      hiddenGems: [
+        'Craft beer garden in center field',
+        'Views from upper deck behind home plate',
+        'Double Header value menu ($2.99 items)',
+        'Standing room drink rails with great views'
+      ],
+      photoSpots: [
+        'Pool overlook in right field',
+        'Home plate gate entrance',
+        'With D. Baxter the Bobcat',
+        'Legends Suite club'
+      ],
+      bestValue: [
+        'Upper deck third base side',
+        'Double Header concession stands',
+        '$10 general parking',
+        'Light rail instead of parking'
+      ]
+    }
   }
 };
 
