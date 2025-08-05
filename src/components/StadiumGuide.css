@@ -672,3 +672,342 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Comprehensive Stadium Guide Styles */
+.stadium-guide.comprehensive {
+  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.guide-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.guide-section h2 {
+  font-size: 1.75rem;
+  color: #1a237e;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.guide-section h3 {
+  font-size: 1.25rem;
+  color: #495057;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Shade Guide Section */
+.shade-by-time .time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.time-slot {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.time-slot h4 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.time-slot ul {
+  list-style: none;
+  padding: 0;
+}
+
+.time-slot li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.time-slot li:last-child {
+  border-bottom: none;
+}
+
+/* Weather Patterns */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.weather-month {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.weather-month:hover {
+  transform: translateY(-2px);
+}
+
+.weather-month h4 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.weather-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.weather-stats span {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.conditions {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.shade-tip {
+  font-size: 0.875rem;
+  color: #28a745;
+  font-style: italic;
+}
+
+/* Premium Seating */
+.premium-seating .clubs {
+  margin-top: 1rem;
+}
+
+.club-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.club-info h5 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.club-info p {
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.club-info ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* Seating Tips Grid */
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.tip-card {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  position: relative;
+  border-left: 4px solid #2196f3;
+}
+
+.tip-card.shade {
+  border-left-color: #ffc107;
+}
+
+.tip-card.view {
+  border-left-color: #28a745;
+}
+
+.tip-card.value {
+  border-left-color: #17a2b8;
+}
+
+.tip-card.experience {
+  border-left-color: #6610f2;
+}
+
+.tip-card.family {
+  border-left-color: #e83e8c;
+}
+
+.tip-card.accessibility {
+  border-left-color: #fd7e14;
+}
+
+.tip-card h4 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.category-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Parking Lots */
+.parking-lots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.lot-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.lot-info h4 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.lot-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #495057;
+  margin-bottom: 0.5rem;
+}
+
+.lot-info .tip {
+  font-size: 0.875rem;
+  color: #28a745;
+  font-style: italic;
+}
+
+/* Game Day Tips */
+.gameday-tip {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.gameday-tip.arrival {
+  border-left-color: #28a745;
+}
+
+.gameday-tip.shade {
+  border-left-color: #ffc107;
+}
+
+.gameday-tip.food {
+  border-left-color: #dc3545;
+}
+
+.gameday-tip.experience {
+  border-left-color: #6610f2;
+}
+
+.gameday-tip.departure {
+  border-left-color: #17a2b8;
+}
+
+.gameday-tip.weather {
+  border-left-color: #fd7e14;
+}
+
+.gameday-tip.family {
+  border-left-color: #e83e8c;
+}
+
+.gameday-tip h3 {
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+/* Timeline */
+.timeline-events {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline-event {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-left: 2px solid #e9ecef;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: #2196f3;
+  border-radius: 50%;
+}
+
+.timeline-event .year {
+  font-weight: 600;
+  color: #1a237e;
+  min-width: 60px;
+}
+
+.timeline-event .event {
+  color: #495057;
+}
+
+/* Retired Numbers */
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.retired-number {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.retired-number .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.retired-number .player {
+  display: block;
+  font-weight: 500;
+  color: #495057;
+  margin-top: 0.25rem;
+}
+
+.retired-number .year {
+  display: block;
+  font-size: 0.875rem;
+  color: #6c757d;
+}

@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
+import { getStadiumGuide } from '../../../src/data/guides';
+import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import StadiumGuide from '../../../src/components/StadiumGuideLazy';
 
 interface StadiumPageProps {
@@ -94,6 +96,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
 
   const sections = getStadiumSections(stadium.id);
   const amenities = getStadiumAmenities(stadium.id);
+  const guide = getStadiumGuide(stadiumId);
 
   // Structured data for better SEO
   const jsonLd = {
@@ -170,7 +173,11 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <StadiumGuide stadium={stadium} sections={sections} amenities={amenities} />
+      {guide ? (
+        <ComprehensiveStadiumGuide stadiumId={stadiumId} />
+      ) : (
+        <StadiumGuide stadium={stadium} sections={sections} amenities={amenities} />
+      )}
     </>
   );
 }
