@@ -129,11 +129,14 @@ export default function StickyTopNav() {
   // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
+      document.body.classList.add('sticky-nav-menu-open');
       document.body.style.overflow = 'hidden';
     } else {
+      document.body.classList.remove('sticky-nav-menu-open');
       document.body.style.overflow = '';
     }
     return () => {
+      document.body.classList.remove('sticky-nav-menu-open');
       document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
@@ -285,7 +288,7 @@ export default function StickyTopNav() {
         </div>
       </nav>
 
-      <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
+      <div className={`sticky-nav-mobile-menu ${isMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
         <div className="mobile-menu-content">
           <div className="mobile-search">
             <form onSubmit={handleSearchSubmit}>
@@ -378,9 +381,9 @@ export default function StickyTopNav() {
 
       {isMenuOpen && (
         <>
-          <div className="mobile-menu-overlay" onClick={closeMobileMenu} />
+          <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
           <button 
-            className="mobile-menu-close"
+            className="sticky-nav-mobile-close"
             onClick={closeMobileMenu}
             aria-label="Close menu"
           >
