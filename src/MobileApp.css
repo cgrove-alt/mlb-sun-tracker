@@ -487,7 +487,10 @@
 /* Better scroll behavior */
 .mobile-app {
   scroll-behavior: smooth;
-  overscroll-behavior: contain;
+  /* Removed overscroll-behavior: contain to fix mobile scrolling */
+  overflow-y: auto;
+  height: auto;
+  min-height: 100vh;
 }
 
 /* High contrast mode support */

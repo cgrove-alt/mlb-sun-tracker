@@ -936,7 +936,17 @@
 /* Improved scroll behavior for mobile */
 .App {
   scroll-behavior: smooth;
-  overscroll-behavior: contain;
+  /* Removed overscroll-behavior: contain to fix mobile scrolling */
+}
+
+/* Mobile-specific scrolling fixes */
+@media (max-width: 768px) {
+  .App {
+    overflow-y: auto !important;
+    overscroll-behavior-y: auto !important;
+    height: auto !important;
+    min-height: 100vh;
+  }
 }
 
 /* Better focus management for keyboard navigation */

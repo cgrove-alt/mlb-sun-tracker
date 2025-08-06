@@ -60,7 +60,9 @@ export const useSwipeGesture = (
     const deltaX = touch.clientX - startPos.current.x;
     const deltaY = touch.clientY - startPos.current.y;
 
-    if (preventScroll && Math.abs(deltaX) > Math.abs(deltaY)) {
+    // Only prevent scroll for very clear horizontal swipes
+    // to avoid blocking vertical scrolling on mobile
+    if (preventScroll && Math.abs(deltaX) > Math.abs(deltaY) * 2 && Math.abs(deltaX) > 30) {
       e.preventDefault();
     }
 

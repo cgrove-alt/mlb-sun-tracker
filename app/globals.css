@@ -18,7 +18,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
-  overscroll-behavior: none;
+  /* Removed overscroll-behavior: none to allow scrolling on mobile */
+}
+
+/* Mobile-specific scrolling fixes */
+@media (max-width: 768px) {
+  html, body {
+    overflow-y: auto !important;
+    overscroll-behavior-y: auto !important;
+    height: auto !important;
+    position: relative !important;
+  }
+  
+  body {
+    touch-action: pan-y !important;
+  }
 }
 
 /* Prevent text selection on interactive elements */

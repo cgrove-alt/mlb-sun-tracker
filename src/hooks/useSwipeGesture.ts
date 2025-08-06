@@ -110,8 +110,9 @@ export function useSwipeGesture(config: SwipeConfig) {
       const deltaX = Math.abs(touch.clientX - touchData.current.startX);
       const deltaY = Math.abs(touch.clientY - touchData.current.startY);
       
-      // If horizontal movement is greater than vertical, prevent default
-      if (deltaX > deltaY && deltaX > 10) {
+      // Only prevent default for horizontal swipes if explicitly enabled
+      // and the horizontal movement is significantly greater than vertical
+      if (preventDefault && deltaX > deltaY * 2 && deltaX > 30) {
         e.preventDefault();
       }
     }

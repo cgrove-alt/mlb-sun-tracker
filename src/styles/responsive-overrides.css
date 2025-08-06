@@ -424,6 +424,15 @@ select {
   height: 100dvh; /* Dynamic viewport height */
 }
 
+/* Mobile-specific override to prevent height trapping */
+@media (max-width: 768px) {
+  .vh-100 {
+    height: auto !important;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+}
+
 .vw-100 {
   width: 100vw;
   width: 100dvw; /* Dynamic viewport width */
