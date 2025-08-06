@@ -1,8 +1,9 @@
 // 3D Stadium Geometry Data
-// Provides 3D coordinates and obstruction data for each MLB stadium
+// Provides 3D coordinates and obstruction data for all stadium types
 
 import { Stadium } from './stadiums';
 import { StadiumSection } from './stadiumSections';
+import { getStadiumObstructions } from './stadiumObstructions';
 import { 
   Vector3D, 
   Obstruction, 
@@ -95,7 +96,7 @@ function generateSectionGeometry(
 }
 
 // Generate obstructions for a stadium
-function generateStadiumObstructions(stadium: Stadium): Obstruction[] {
+function generateStadiumObstructions(stadium: Stadium | AnyStadium): Obstruction[] {
   const obstructions: Obstruction[] = [];
   
   // Roof overhang (if applicable)
@@ -134,80 +135,37 @@ function generateStadiumObstructions(stadium: Stadium): Obstruction[] {
     }
   }
   
-  // Stadium-specific obstructions
-  const specificObstructions = getStadiumSpecificObstructions(stadium.id);
+  // Stadium-specific obstructions from comprehensive data
+  const specificObstructions = getStadiumObstructions(stadium.id);
   obstructions.push(...specificObstructions);
   
   return obstructions;
 }
 
-// Get stadium-specific obstructions
-function getStadiumSpecificObstructions(stadiumId: string): Obstruction[] {
-  const obstructions: Obstruction[] = [];
-  
-  switch (stadiumId) {
-    case 'yankees':
-      // Frieze facade
-      obstructions.push({
-        id: 'frieze-facade',
-        type: 'structure',
-        boundingBox: {
-          min: { x: -200, y: 100, z: 90 },
-          max: { x: 200, y: 120, z: 110 }
-        },
-        opacity: 0.7
-      });
-      break;
-      
-    case 'redsox':
-      // Green Monster
-      obstructions.push({
-        id: 'green-monster',
-        type: 'structure',
-        boundingBox: {
-          min: polarTo3D(225, 310, 0),
-          max: polarTo3D(270, 315, 37)
-        },
-        opacity: 1
-      });
-      break;
-      
-    case 'astros':
-      // Train track structure
-      obstructions.push({
-        id: 'train-track',
-        type: 'structure',
-        boundingBox: {
-          min: polarTo3D(270, 400, 20),
-          max: polarTo3D(315, 436, 40)
-        },
-        opacity: 0.8
-      });
-      break;
-      
-    case 'giants':
-      // Coca-Cola bottle
-      obstructions.push({
-        id: 'coke-bottle',
-        type: 'structure',
-        boundingBox: {
-          min: polarTo3D(270, 415, 0),
-          max: polarTo3D(275, 420, 80)
-        },
-        opacity: 0.9
-      });
-      break;
-  }
-  
-  return obstructions;
+// Extended to support any stadium type (MLB, MiLB, NFL)
+export interface AnyStadium {
+  id: string;
+  name: string;
+  team?: string;
+  city?: string;
+  state?: string;
+  latitude: number;
+  longitude: number;
+  orientation: number;
+  capacity?: number;
+  roof?: 'open' | 'retractable' | 'fixed';
+  timezone?: string;
+  roofHeight?: number;
+  roofOverhang?: number;
+  upperDeckHeight?: number;
 }
 
 // Cache for stadium 3D models
 const stadium3DModelCache = new Map<string, Stadium3DModel>();
 
-// Get or generate 3D model for a stadium
+// Get or generate 3D model for any stadium type
 export function getStadium3DModel(
-  stadium: Stadium,
+  stadium: Stadium | AnyStadium,
   sections: StadiumSection[]
 ): Stadium3DModel {
   // Check cache first

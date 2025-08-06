@@ -9,7 +9,7 @@ import {
   ShadeCalculator3D, 
   createSunPosition,
   SectionShadeResult
-} from './shadeCalculation3D';
+} from './shadeCalculation3DOptimized';
 import { getStadium3DModel } from '../data/stadium3DGeometry';
 
 export interface ShadedSection {
