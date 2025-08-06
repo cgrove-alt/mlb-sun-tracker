@@ -1,0 +1,412 @@
+/* Professional Design System - MLB Sun Tracker */
+/* Enhanced for professional appearance and intuitive UX */
+
+:root {
+  /* ===== 8px Grid System ===== */
+  --grid-unit: 8px;
+  --space-0: 0;
+  --space-1: calc(var(--grid-unit) * 0.5);   /* 4px */
+  --space-2: var(--grid-unit);                /* 8px */
+  --space-3: calc(var(--grid-unit) * 1.5);   /* 12px */
+  --space-4: calc(var(--grid-unit) * 2);     /* 16px */
+  --space-5: calc(var(--grid-unit) * 2.5);   /* 20px */
+  --space-6: calc(var(--grid-unit) * 3);     /* 24px */
+  --space-8: calc(var(--grid-unit) * 4);     /* 32px */
+  --space-10: calc(var(--grid-unit) * 5);    /* 40px */
+  --space-12: calc(var(--grid-unit) * 6);    /* 48px */
+  --space-16: calc(var(--grid-unit) * 8);    /* 64px */
+  --space-20: calc(var(--grid-unit) * 10);   /* 80px */
+  --space-24: calc(var(--grid-unit) * 12);   /* 96px */
+  
+  /* ===== Professional Color Palette ===== */
+  /* Primary - Deep Blue */
+  --color-primary: #0F3E7C;
+  --color-primary-light: #1E5BA8;
+  --color-primary-lighter: #3978C5;
+  --color-primary-dark: #0A2B57;
+  --color-primary-darker: #051832;
+  --color-primary-rgb: 15, 62, 124;
+  
+  /* Secondary - Grass Green */
+  --color-secondary: #2E7D32;
+  --color-secondary-light: #4CAF50;
+  --color-secondary-lighter: #81C784;
+  --color-secondary-dark: #1B5E20;
+  --color-secondary-darker: #0D3E10;
+  
+  /* Accent - Stadium Gold */
+  --color-accent: #FFB300;
+  --color-accent-light: #FFC947;
+  --color-accent-lighter: #FFD54F;
+  --color-accent-dark: #FF8F00;
+  --color-accent-darker: #E65100;
+  
+  /* Sun Exposure Levels with Gradients */
+  --color-sun-extreme: #D32F2F;
+  --color-sun-high: #FF6B35;
+  --color-sun-moderate: #FFA726;
+  --color-sun-low: #42A5F5;
+  --color-sun-minimal: #66BB6A;
+  --color-sun-none: #78909C;
+  
+  --gradient-sun-extreme: linear-gradient(135deg, #D32F2F 0%, #FF5252 100%);
+  --gradient-sun-high: linear-gradient(135deg, #FF6B35 0%, #FF8A65 100%);
+  --gradient-sun-moderate: linear-gradient(135deg, #FFA726 0%, #FFCA28 100%);
+  --gradient-sun-low: linear-gradient(135deg, #42A5F5 0%, #64B5F6 100%);
+  --gradient-sun-minimal: linear-gradient(135deg, #66BB6A 0%, #81C784 100%);
+  --gradient-sun-none: linear-gradient(135deg, #78909C 0%, #90A4AE 100%);
+  
+  /* Semantic Colors */
+  --color-success: #2E7D32;
+  --color-warning: #F57C00;
+  --color-error: #C62828;
+  --color-info: #0277BD;
+  
+  /* Neutral Palette */
+  --color-white: #FFFFFF;
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EEEEEE;
+  --color-gray-300: #E0E0E0;
+  --color-gray-400: #BDBDBD;
+  --color-gray-500: #9E9E9E;
+  --color-gray-600: #757575;
+  --color-gray-700: #616161;
+  --color-gray-800: #424242;
+  --color-gray-900: #212121;
+  --color-black: #000000;
+  
+  /* ===== Enhanced Typography Scale ===== */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Montserrat', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', monospace;
+  
+  /* Font Sizes - Type Scale */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-lg: 1.125rem;    /* 18px */
+  --font-size-xl: 1.25rem;     /* 20px */
+  --font-size-2xl: 1.5rem;     /* 24px */
+  --font-size-3xl: 1.875rem;   /* 30px */
+  --font-size-4xl: 2.25rem;    /* 36px */
+  --font-size-5xl: 3rem;       /* 48px */
+  --font-size-6xl: 3.75rem;    /* 60px */
+  --font-size-7xl: 4.5rem;     /* 72px */
+  
+  /* Font Weights */
+  --font-weight-thin: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  /* Line Heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 1.75;
+  --line-height-extra: 2;
+  
+  /* Letter Spacing */
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  
+  /* ===== Professional Shadows ===== */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Elevated Shadows */
+  --shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.08), 0 0 2px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-3: 0 8px 16px rgba(0, 0, 0, 0.08), 0 0 4px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-4: 0 16px 32px rgba(0, 0, 0, 0.08), 0 0 8px rgba(0, 0, 0, 0.04);
+  --shadow-elevation-5: 0 32px 64px rgba(0, 0, 0, 0.08), 0 0 16px rgba(0, 0, 0, 0.04);
+  
+  /* ===== Border Radius System ===== */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-4xl: 32px;
+  --radius-full: 9999px;
+  
+  /* ===== Enhanced Transitions ===== */
+  --transition-none: none;
+  --transition-fast: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Easing Functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ===== Z-Index Scale ===== */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-notification: 1080;
+  --z-top: 9999;
+  
+  /* ===== Breakpoints ===== */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1400px;
+  --breakpoint-3xl: 1600px;
+  
+  /* ===== Component Variables ===== */
+  /* Cards */
+  --card-padding: var(--space-6);
+  --card-radius: var(--radius-xl);
+  --card-shadow: var(--shadow-elevation-2);
+  --card-border: 1px solid var(--color-gray-200);
+  --card-bg: var(--color-white);
+  --card-hover-shadow: var(--shadow-elevation-3);
+  --card-hover-transform: translateY(-2px);
+  
+  /* Buttons */
+  --button-padding-x: var(--space-5);
+  --button-padding-y: var(--space-3);
+  --button-radius: var(--radius-lg);
+  --button-font-weight: var(--font-weight-semibold);
+  --button-min-height: 44px;
+  --button-shadow: var(--shadow-sm);
+  --button-hover-shadow: var(--shadow-md);
+  --button-active-shadow: var(--shadow-xs);
+  
+  /* Inputs */
+  --input-padding-x: var(--space-4);
+  --input-padding-y: var(--space-3);
+  --input-radius: var(--radius-lg);
+  --input-border: 2px solid var(--color-gray-300);
+  --input-focus-border: 2px solid var(--color-primary);
+  --input-min-height: 48px;
+  --input-bg: var(--color-white);
+  --input-placeholder: var(--color-gray-500);
+  
+  /* Navigation */
+  --nav-height: 64px;
+  --nav-shadow: var(--shadow-md);
+  --nav-bg: var(--color-white);
+  --nav-border: 1px solid var(--color-gray-200);
+  
+  /* Touch Targets */
+  --touch-target-min: 48px;
+  --touch-target-spacing: var(--space-2);
+  
+  /* Focus States */
+  --focus-ring-width: 3px;
+  --focus-ring-color: rgba(15, 62, 124, 0.5);
+  --focus-ring-offset: 2px;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: 12px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* ===== Dark Mode Variables ===== */
+[data-theme="dark"] {
+  --color-white: #0F1419;
+  --color-gray-50: #1A1F26;
+  --color-gray-100: #22282F;
+  --color-gray-200: #2A3038;
+  --color-gray-300: #363D47;
+  --color-gray-400: #4A525E;
+  --color-gray-500: #6E7681;
+  --color-gray-600: #8B939E;
+  --color-gray-700: #A8B0BA;
+  --color-gray-800: #C5CDD7;
+  --color-gray-900: #E2E8F0;
+  --color-black: #FFFFFF;
+  
+  --card-bg: var(--color-gray-100);
+  --card-border: 1px solid var(--color-gray-300);
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  
+  --input-bg: var(--color-gray-200);
+  --input-border: 2px solid var(--color-gray-400);
+  
+  --nav-bg: var(--color-gray-100);
+  --nav-border: 1px solid var(--color-gray-300);
+  
+  --glass-bg: rgba(31, 38, 47, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Utility Classes ===== */
+
+/* Spacing */
+.p-0 { padding: var(--space-0); }
+.p-1 { padding: var(--space-1); }
+.p-2 { padding: var(--space-2); }
+.p-3 { padding: var(--space-3); }
+.p-4 { padding: var(--space-4); }
+.p-5 { padding: var(--space-5); }
+.p-6 { padding: var(--space-6); }
+.p-8 { padding: var(--space-8); }
+
+.m-0 { margin: var(--space-0); }
+.m-1 { margin: var(--space-1); }
+.m-2 { margin: var(--space-2); }
+.m-3 { margin: var(--space-3); }
+.m-4 { margin: var(--space-4); }
+.m-5 { margin: var(--space-5); }
+.m-6 { margin: var(--space-6); }
+.m-8 { margin: var(--space-8); }
+
+/* Typography */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
+
+.font-thin { font-weight: var(--font-weight-thin); }
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+.font-extrabold { font-weight: var(--font-weight-extrabold); }
+.font-black { font-weight: var(--font-weight-black); }
+
+/* Shadows */
+.shadow-xs { box-shadow: var(--shadow-xs); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.shadow-none { box-shadow: none; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-fadeIn { animation: fadeIn var(--transition-base); }
+.animate-fadeInUp { animation: fadeInUp var(--transition-base); }
+.animate-slideIn { animation: slideIn var(--transition-base); }
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+
+/* Glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Focus States */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  border-color: var(--color-primary);
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,400 @@
+/* Skeleton Loader Styles */
+@import '../styles/professional-design-system.css';
+
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Shimmer Animation */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-200) 25%,
+    var(--color-gray-100) 37%,
+    var(--color-gray-200) 63%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+}
+
+/* Dark mode shimmer */
+[data-theme="dark"] .skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-gray-700) 25%,
+    var(--color-gray-600) 37%,
+    var(--color-gray-700) 63%
+  );
+}
+
+/* Text Skeleton */
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-line {
+  height: 16px;
+  border-radius: var(--radius-sm);
+  width: 100%;
+}
+
+/* Card Skeleton */
+.skeleton-card {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-xs);
+}
+
+.skeleton-card-header {
+  height: 24px;
+  width: 60%;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-4);
+}
+
+.skeleton-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.skeleton-card-footer {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.skeleton-badge {
+  height: 28px;
+  width: 80px;
+  border-radius: var(--radius-full);
+}
+
+/* Section Skeleton */
+.skeleton-section {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.skeleton-section-header {
+  margin-bottom: var(--space-5);
+}
+
+.skeleton-title {
+  height: 32px;
+  width: 40%;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+}
+
+.skeleton-subtitle {
+  height: 20px;
+  width: 60%;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.skeleton-section-item {
+  height: 120px;
+  border-radius: var(--radius-lg);
+}
+
+/* Game Skeleton */
+.skeleton-game {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.skeleton-game-teams {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.skeleton-team {
+  height: 40px;
+  width: 100px;
+  border-radius: var(--radius-md);
+}
+
+.skeleton-vs {
+  height: 20px;
+  width: 30px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-game-info {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.skeleton-date,
+.skeleton-time {
+  height: 20px;
+  width: 80px;
+  border-radius: var(--radius-sm);
+}
+
+/* Weather Skeleton */
+.skeleton-weather {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-weather-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.skeleton-weather-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-temp {
+  height: 28px;
+  width: 100px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-conditions {
+  height: 20px;
+  width: 150px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-details {
+  height: 16px;
+  width: 200px;
+  border-radius: var(--radius-sm);
+}
+
+/* Section Card Skeleton */
+.section-card-skeleton {
+  background: var(--card-bg);
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.skeleton-section-name {
+  height: 24px;
+  width: 150px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-2);
+}
+
+.skeleton-sun-badge {
+  height: 32px;
+  width: 100px;
+  border-radius: var(--radius-full);
+  margin-left: auto;
+}
+
+.skeleton-section-details {
+  margin: var(--space-4) 0;
+}
+
+.skeleton-detail-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.skeleton-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-text-small {
+  height: 16px;
+  width: 120px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-section-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.skeleton-price {
+  height: 24px;
+  width: 80px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-action {
+  height: 36px;
+  width: 100px;
+  border-radius: var(--radius-lg);
+}
+
+/* Game List Skeleton */
+.game-list-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeleton-game-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--radius-lg);
+}
+
+.skeleton-game-date {
+  width: 80px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-game-teams {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.skeleton-team-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton-vs-text {
+  width: 20px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-game-time {
+  width: 60px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+}
+
+/* Stadium Details Skeleton */
+.stadium-details-skeleton {
+  padding: var(--space-4);
+}
+
+.skeleton-stadium-header {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.skeleton-stadium-image {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-xl);
+  flex-shrink: 0;
+}
+
+.skeleton-stadium-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skeleton-stadium-name {
+  height: 32px;
+  width: 200px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-stadium-location {
+  height: 20px;
+  width: 150px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-stadium-meta {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.skeleton-stadium-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-4);
+}
+
+.skeleton-section-preview {
+  height: 150px;
+  border-radius: var(--radius-lg);
+}
+
+/* Pulse Animation Alternative */
+.skeleton-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .skeleton-section-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-stadium-header {
+    flex-direction: column;
+  }
+  
+  .skeleton-stadium-sections {
+    grid-template-columns: 1fr;
+  }
+}

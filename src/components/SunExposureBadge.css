@@ -1,0 +1,422 @@
+/* Sun Exposure Badge Styles */
+@import '../styles/professional-design-system.css';
+
+/* Base Badge Styles */
+.sun-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-base);
+  box-shadow: var(--shadow-sm);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Size Variants */
+.sun-badge--small {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.sun-badge--medium {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.sun-badge--large {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-base);
+}
+
+/* Exposure Level Styles */
+.sun-badge--extreme {
+  background: var(--gradient-sun-extreme);
+  color: white;
+  border-color: var(--color-sun-extreme);
+}
+
+.sun-badge--high {
+  background: var(--gradient-sun-high);
+  color: white;
+  border-color: var(--color-sun-high);
+}
+
+.sun-badge--moderate {
+  background: var(--gradient-sun-moderate);
+  color: var(--color-gray-900);
+  border-color: var(--color-sun-moderate);
+}
+
+.sun-badge--low {
+  background: var(--gradient-sun-low);
+  color: white;
+  border-color: var(--color-sun-low);
+}
+
+.sun-badge--minimal {
+  background: var(--gradient-sun-minimal);
+  color: white;
+  border-color: var(--color-sun-minimal);
+}
+
+.sun-badge--none {
+  background: var(--gradient-sun-none);
+  color: white;
+  border-color: var(--color-sun-none);
+}
+
+/* Badge Content */
+.sun-badge__icon {
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.sun-badge__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.sun-badge__percentage {
+  font-weight: var(--font-weight-bold);
+  font-size: 1.1em;
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.sun-badge__label {
+  font-size: 0.85em;
+  opacity: 0.95;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* Animated Badge */
+.sun-badge--animated {
+  position: relative;
+}
+
+.sun-badge--animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Compact Badge Variant */
+.sun-badge--compact {
+  padding: var(--space-1) var(--space-2);
+  min-width: 48px;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+}
+
+.sun-badge--compact .sun-badge__percentage {
+  font-size: 1em;
+}
+
+/* Detailed Badge Variant */
+.sun-badge--detailed {
+  flex-direction: column;
+  padding: var(--space-3);
+  border-radius: var(--radius-xl);
+  min-width: 160px;
+  box-shadow: var(--shadow-md);
+}
+
+.sun-badge--detailed .sun-badge__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: var(--space-2);
+}
+
+.sun-badge--detailed .sun-badge__body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-1);
+}
+
+.sun-badge--detailed .sun-badge__description {
+  font-size: var(--font-size-xs);
+  opacity: 0.9;
+  line-height: var(--line-height-snug);
+}
+
+.sun-badge--detailed .sun-badge__progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-2);
+  overflow: hidden;
+}
+
+.sun-badge--detailed .sun-badge__progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+/* Sun Indicator (Circular Progress) */
+.sun-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sun-indicator__ring {
+  width: 72px;
+  height: 72px;
+}
+
+.sun-indicator__svg {
+  transform: rotate(-90deg);
+}
+
+.sun-indicator__circle-bg {
+  fill: none;
+  stroke: var(--color-gray-200);
+  stroke-width: 3;
+}
+
+.sun-indicator__circle {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+  transition: stroke var(--transition-base);
+}
+
+.indicator--extreme .sun-indicator__circle {
+  stroke: var(--color-sun-extreme);
+}
+
+.indicator--high .sun-indicator__circle {
+  stroke: var(--color-sun-high);
+}
+
+.indicator--moderate .sun-indicator__circle {
+  stroke: var(--color-sun-moderate);
+}
+
+.indicator--low .sun-indicator__circle {
+  stroke: var(--color-sun-low);
+}
+
+.indicator--minimal .sun-indicator__circle {
+  stroke: var(--color-sun-minimal);
+}
+
+.indicator--none .sun-indicator__circle {
+  stroke: var(--color-sun-none);
+}
+
+.sun-indicator__text {
+  fill: var(--color-gray-900);
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  text-anchor: middle;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0, 100;
+  }
+}
+
+/* Sun Exposure Bar */
+.sun-exposure-bar {
+  width: 100%;
+  position: relative;
+  margin: var(--space-4) 0;
+}
+
+.sun-exposure-bar__track {
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.sun-exposure-bar__fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+  position: relative;
+}
+
+.sun-exposure-bar__fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+.sun-exposure-bar__markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-1);
+  position: relative;
+}
+
+.sun-exposure-bar__markers .marker {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.sun-exposure-bar__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.sun-exposure-bar__labels .label--shade {
+  color: var(--color-sun-minimal);
+}
+
+.sun-exposure-bar__labels .label--sun {
+  color: var(--color-sun-extreme);
+}
+
+/* Sun Exposure Legend */
+.sun-exposure-legend {
+  background: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.sun-exposure-legend__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-3);
+}
+
+.sun-exposure-legend__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.legend-item__color {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.legend-item__icon {
+  font-size: 1.2em;
+}
+
+.legend-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.legend-item__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-900);
+}
+
+.legend-item__range {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-600);
+}
+
+/* Hover Effects */
+.sun-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.sun-badge--compact:hover {
+  transform: scale(1.05);
+}
+
+/* Dark Mode */
+[data-theme="dark"] .sun-indicator__text {
+  fill: var(--color-gray-100);
+}
+
+[data-theme="dark"] .sun-indicator__circle-bg {
+  stroke: var(--color-gray-700);
+}
+
+[data-theme="dark"] .sun-exposure-bar__track {
+  background: var(--color-gray-700);
+}
+
+[data-theme="dark"] .sun-exposure-legend {
+  background: var(--color-gray-800);
+  border-color: var(--color-gray-700);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .sun-exposure-legend__items {
+    grid-template-columns: 1fr;
+  }
+  
+  .sun-badge--detailed {
+    min-width: 140px;
+  }
+}
