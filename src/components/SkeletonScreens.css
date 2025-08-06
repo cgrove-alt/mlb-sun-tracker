@@ -193,6 +193,105 @@
   align-items: center;
 }
 
+/* Venue change skeleton */
+.venue-change-skeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  padding: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  animation: venue-skeleton-fade-in 300ms ease-out;
+}
+
+@keyframes venue-skeleton-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.venue-change-skeleton .venue-change-header {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+}
+
+.venue-change-skeleton .venue-change-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.venue-change-skeleton .breadcrumb-skeleton {
+  display: flex;
+  justify-content: center;
+}
+
+.venue-change-skeleton .info-section-skeleton {
+  margin: var(--spacing-4) 0;
+}
+
+.venue-change-skeleton .info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.venue-change-skeleton .info-card-skeleton {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-gray-200);
+}
+
+.venue-change-skeleton .sections-preview-skeleton {
+  margin-top: var(--spacing-6);
+}
+
+.venue-change-skeleton .venue-loading-indicator {
+  position: absolute;
+  bottom: var(--spacing-8);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  animation: venue-loading-pulse 2s ease-in-out infinite;
+}
+
+@keyframes venue-loading-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
 /* Smooth fade transitions */
 .skeleton-fade-enter {
   opacity: 0;

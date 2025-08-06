@@ -159,3 +159,60 @@ export const SunInfoSkeleton: React.FC = () => {
     </div>
   );
 };
+
+// Venue change skeleton - comprehensive loading state during venue transitions
+export const VenueChangeSkeleton: React.FC<{ venueName?: string }> = ({ venueName }) => {
+  return (
+    <div className="venue-change-skeleton">
+      <div className="venue-change-header">
+        <Skeleton width="200px" height="28px" />
+        <Skeleton width="120px" height="20px" />
+      </div>
+      
+      <div className="venue-change-content">
+        <div className="breadcrumb-skeleton">
+          <Skeleton width="300px" height="32px" borderRadius="var(--radius-full)" />
+        </div>
+        
+        <div className="game-selector-skeleton">
+          <Skeleton width="100%" height="48px" borderRadius="var(--radius-lg)" />
+          <div style={{ marginTop: 'var(--spacing-md)' }}>
+            <Skeleton width="100%" height="48px" borderRadius="var(--radius-lg)" />
+          </div>
+        </div>
+        
+        <div className="info-section-skeleton">
+          <div className="info-cards">
+            <div className="info-card-skeleton">
+              <Skeleton width="140px" height="24px" />
+              <div style={{ marginTop: 'var(--spacing-sm)' }}>
+                <Skeleton width="100%" height="80px" borderRadius="var(--radius-lg)" />
+              </div>
+            </div>
+            <div className="info-card-skeleton">
+              <Skeleton width="160px" height="24px" />
+              <div style={{ marginTop: 'var(--spacing-sm)' }}>
+                <Skeleton width="100%" height="80px" borderRadius="var(--radius-lg)" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="sections-preview-skeleton">
+          <Skeleton width="180px" height="24px" />
+          <div style={{ marginTop: 'var(--spacing-md)' }}>
+            <SectionListSkeleton count={3} />
+          </div>
+        </div>
+      </div>
+      
+      {venueName && (
+        <div className="venue-loading-indicator">
+          <div className="loading-text">
+            Loading {venueName} data...
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};

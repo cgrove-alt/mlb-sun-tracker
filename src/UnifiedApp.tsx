@@ -15,6 +15,7 @@ import { UserProfileMenu } from './components/UserProfileMenu';
 import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
+import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { SEOHelmet } from './components/SEOHelmet';
@@ -331,23 +332,7 @@ function UnifiedAppContent() {
       <main className="App-main">
         <div className="sun-tracker-container">
           {changingVenue && (
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: 'rgba(255, 255, 255, 0.9)',
-              zIndex: 100,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <div style={{ textAlign: 'center' }}>
-                <LoadingSpinner />
-                <p style={{ marginTop: '1rem', color: '#666' }}>Loading venue data...</p>
-              </div>
-            </div>
+            <VenueChangeSkeleton venueName={selectedVenue?.name} />
           )}
           
           <Breadcrumb
