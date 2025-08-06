@@ -91,6 +91,12 @@ export default function StickyTopNav() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
+  // Function to close mobile menu
+  const closeMobileMenu = () => {
+    setIsMenuOpen(false);
+    setIsStadiumsOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -108,9 +114,7 @@ export default function StickyTopNav() {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsStadiumsOpen(false);
       }
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false);
-      }
+      // Removed the mobileMenuRef check to prevent issues with overlay clicks
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -118,9 +122,21 @@ export default function StickyTopNav() {
   }, []);
 
   useEffect(() => {
-    setIsMenuOpen(false);
-    setIsStadiumsOpen(false);
+    // Close mobile menu on route change
+    closeMobileMenu();
   }, [pathname]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
@@ -289,6 +305,7 @@ export default function StickyTopNav() {
                     key={result.id}
                     href={`/stadium/${result.id}`}
                     className="mobile-search-result"
+                    onClick={closeMobileMenu}
                   >
                     <span>{result.name}</span>
                     <span className="team-label">{result.team}</span>
@@ -299,7 +316,11 @@ export default function StickyTopNav() {
           </div>
 
           <div className="mobile-nav-links">
-            <Link href="/" className={pathname === '/' ? 'active' : ''}>
+            <Link 
+              href="/" 
+              className={pathname === '/' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
               Home
             </Link>
             
@@ -325,6 +346,7 @@ export default function StickyTopNav() {
                           key={team.id}
                           href={`/stadium/${team.id}`}
                           className="mobile-team-link"
+                          onClick={closeMobileMenu}
                         >
                           {team.name}
                         </Link>
@@ -335,18 +357,39 @@ export default function StickyTopNav() {
               )}
             </div>
 
-            <Link href="/faqs" className={pathname === '/faqs' ? 'active' : ''}>
+            <Link 
+              href="/faqs" 
+              className={pathname === '/faqs' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
               FAQs
             </Link>
             
-            <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>
+            <Link 
+              href="/contact" 
+              className={pathname === '/contact' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
               Contact
             </Link>
           </div>
         </div>
       </div>
 
-      {isMenuOpen && <div className="mobile-menu-overlay" onClick={() => setIsMenuOpen(false)} />}
+      {isMenuOpen && (
+        <>
+          <div className="mobile-menu-overlay" onClick={closeMobileMenu} />
+          <button 
+            className="mobile-menu-close"
+            onClick={closeMobileMenu}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
+        </>
+      )}
     </>
   );
 }
