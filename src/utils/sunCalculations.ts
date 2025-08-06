@@ -2,6 +2,7 @@ import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
 import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
 import { WeatherData } from '../services/weatherApi';
+import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
 import { getSunPositionNREL } from './nrelSolarPosition';
 import { getSunPositionNRELFixed } from './nrelSolarPositionFixed';
@@ -130,7 +131,12 @@ export function calculateDetailedSectionSunExposure(
   sunPosition: SunPosition,
   weather?: WeatherData
 ): SeatingSectionSun[] {
-  const sections = getStadiumSections(stadium.id);
+  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
+  let sections = getStadiumSections(stadium.id);
+  if (sections.length === 0) {
+    // Try venue sections (for MiLB and NFL venues)
+    sections = getVenueSections(stadium.id);
+  }
   const sectionSunData: SeatingSectionSun[] = [];
   
   // Safety check to prevent performance issues
@@ -297,7 +303,12 @@ export function calculateEnhancedSectionSunExposure(
   weather?: WeatherData
 ): SeatingSectionSun[] {
   const calculator = new SunCalculator(stadium);
-  const sections = getStadiumSections(stadium.id);
+  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
+  let sections = getStadiumSections(stadium.id);
+  if (sections.length === 0) {
+    // Try venue sections (for MiLB and NFL venues)
+    sections = getVenueSections(stadium.id);
+  }
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
@@ -399,7 +410,12 @@ export function calculateGameSunExposure(
   gameDuration: number = 3
 ): Map<string, number> {
   const calculator = new SunCalculator(stadium);
-  const sections = getStadiumSections(stadium.id);
+  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
+  let sections = getStadiumSections(stadium.id);
+  if (sections.length === 0) {
+    // Try venue sections (for MiLB and NFL venues)
+    sections = getVenueSections(stadium.id);
+  }
   const exposureMap = new Map<string, number>();
   
   // Safety check to prevent performance issues

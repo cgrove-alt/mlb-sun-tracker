@@ -1,6 +1,7 @@
 import { Stadium } from '../data/stadiums';
 import { getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
 import { WeatherData } from '../services/weatherApi';
+import { getVenueSections } from '../data/venueSections';
 import { processInChunks } from './performanceUtils';
 import { 
   SunPosition, 
@@ -17,7 +18,12 @@ export async function calculateDetailedSectionSunExposureOptimized(
   weather?: WeatherData,
   onProgress?: (progress: number) => void
 ): Promise<SeatingSectionSun[]> {
-  const sections = getStadiumSections(stadium.id);
+  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
+  let sections = getStadiumSections(stadium.id);
+  if (sections.length === 0) {
+    // Try venue sections (for MiLB and NFL venues)
+    sections = getVenueSections(stadium.id);
+  }
   
   // If stadium has a fixed roof, quickly return all sections as not in sun
   if (stadium.roof === 'fixed') {
