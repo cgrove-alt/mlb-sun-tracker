@@ -5,6 +5,7 @@ import GoogleAnalytics from './GoogleAnalytics';
 import GoogleAnalyticsClient from './GoogleAnalyticsClient';
 import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
+import StickyTopNav from '../components/StickyTopNav';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -187,6 +188,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <CSSOptimizer />
         <GoogleAnalyticsClient />
+        <StickyTopNav />
         <div id="root">{children}</div>
       </body>
     </html>
