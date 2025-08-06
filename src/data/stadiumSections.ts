@@ -5285,36 +5285,43 @@ export function getStadiumSections(stadiumId: string): StadiumSection[] {
 
 // Helper function to check if a section is in sun based on sun position
 export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunElevation: number): boolean {
-  // If section is covered, it's not in direct sun
-  if (section.covered) return false;
-  
   // If sun is below horizon, no sections are sunny
   if (sunElevation < 0) return false;
+  
+  // For covered sections, only high sun angles can penetrate partial canopies
+  if (section.covered && sunElevation < 30) return false;
   
   // Normalize angles to 0-360 range
   const normalizeAngle = (angle: number) => ((angle % 360) + 360) % 360;
   
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  // For baseball stadiums, we need to check if the sun is behind the section
-  // (i.e., the sun is shining from the opposite direction onto the section)
-  // The sun illuminates sections that are roughly facing it (±90 degrees)
+  // For baseball stadiums, sections get sun when the sun is BEHIND them
+  // (i.e., the sun shines on the backs of people sitting in those sections)
+  // A section facing north (0°) gets sun when the sun is in the south (180°)
   
-  // Calculate angle difference between sun and section center
+  // Calculate the opposite angle from the section (where sun needs to be to illuminate it)
   const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
-  let angleDiff = Math.abs(sunAngle - sectionCenter);
+  const oppositeAngle = normalizeAngle(sectionCenter + 180);
+  
+  // Calculate angle difference between sun and the opposite angle
+  let angleDiff = Math.abs(sunAngle - oppositeAngle);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Section is in sun if it's generally facing the sun (within ~120 degrees)
+  // Section is in sun if the sun is roughly opposite to it (within ~90 degrees)
   // This accounts for the fact that sun can illuminate sections at an angle
-  return angleDiff <= 120;
+  return angleDiff <= 90;
 }
 
 // Helper function to calculate sun exposure percentage for a section
 export function getSectionSunExposure(section: StadiumSection, sunElevation: number, sunAzimuth: number): number {
-  if (section.covered || sunElevation < 0) return 0;
+  if (sunElevation < 0) return 0;
+  
+  // For covered sections, still allow some sun exposure for high sun angles (partial canopies)
+  const coverageReduction = section.covered ? 0.3 : 1.0; // Covered sections get 30% of normal exposure
+  if (section.covered && sunElevation < 30) return 0; // Low sun blocked by canopy
   
   // Check if section is actually in sun first
   if (!isSectionInSun(section, sunAzimuth, sunElevation)) return 0;
@@ -5327,30 +5334,42 @@ export function getSectionSunExposure(section: StadiumSection, sunElevation: num
   const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  let angleDiff = Math.abs(sunAngle - sectionCenter);
+  // Sun needs to be opposite to the section to illuminate it
+  const oppositeAngle = normalizeAngle(sectionCenter + 180);
+  let angleDiff = Math.abs(sunAngle - oppositeAngle);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Angle factor: 1.0 when sun is directly behind section, decreases as angle increases
-  const angleFactor = Math.max(0, (120 - angleDiff) / 120);
+  // Angle factor: 1.0 when sun is directly opposite to section, decreases as angle increases
+  const angleFactor = Math.max(0, (90 - angleDiff) / 90);
   
   // Level-based adjustments
   let levelMultiplier = 1.0;
   if (section.level === 'field') {
     levelMultiplier = 1.0; // Field level gets full exposure
   } else if (section.level === 'lower') {
-    levelMultiplier = 0.9; // Slight reduction due to possible overhangs
+    levelMultiplier = 0.95; // Slight reduction due to possible overhangs
   } else if (section.level === 'club') {
-    levelMultiplier = 0.8; // More protection from overhangs
+    levelMultiplier = 0.85; // More protection from overhangs
   } else if (section.level === 'upper') {
-    levelMultiplier = 0.95; // Upper sections often more exposed
+    levelMultiplier = 1.0; // Upper sections often more exposed
   } else if (section.level === 'suite') {
-    levelMultiplier = 0.7; // Suites often have more protection
+    levelMultiplier = 0.75; // Suites often have more protection
   }
   
-  // Combine all factors
-  const exposure = elevationFactor * angleFactor * levelMultiplier * 100;
+  // Enhance exposure for high sun angles (midday sun is stronger)
+  let middayBoost = 1.0;
+  if (sunElevation > 60) {
+    middayBoost = 1.4; // Strong midday sun
+  } else if (sunElevation > 45) {
+    middayBoost = 1.25; // Moderate afternoon sun
+  } else if (sunElevation > 30) {
+    middayBoost = 1.1; // Lower angle sun
+  }
+  
+  // Combine all factors with adjusted formula for more realistic values
+  const exposure = elevationFactor * angleFactor * levelMultiplier * middayBoost * coverageReduction * 100;
   
   return Math.round(Math.max(0, Math.min(100, exposure)));
 }
