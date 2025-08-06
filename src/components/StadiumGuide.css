@@ -79,13 +79,20 @@
 .quick-facts h2 {
   font-size: 1.75rem;
   color: #1a237e;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+  display: block;
+  width: 100%;
 }
 
 .facts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
+  margin-top: 1.5rem;
+  justify-content: space-between;
 }
 
 .fact-card {
@@ -93,6 +100,9 @@
   padding: 1.5rem;
   border-radius: 8px;
   text-align: center;
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 250px;
 }
 
 .fact-card h3 {
@@ -620,6 +630,18 @@
   margin: 0;
 }
 
+/* Tablet Responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .facts-grid {
+    justify-content: center;
+  }
+  
+  .fact-card {
+    flex: 0 1 calc(50% - 0.75rem);
+    max-width: calc(50% - 0.75rem);
+  }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .stadium-guide {
@@ -636,7 +658,13 @@
   }
 
   .facts-grid {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .fact-card {
+    max-width: 100%;
+    width: 100%;
   }
 
   .simulator-controls {
