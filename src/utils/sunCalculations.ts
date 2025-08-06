@@ -158,10 +158,9 @@ export function calculateDetailedSectionSunExposure(
     return sectionSunData;
   }
   
-  // Account for stadium orientation
-  // Section angles are relative to home plate, but sun azimuth is compass-based
-  // We need to adjust the sun azimuth relative to stadium orientation
-  const adjustedSunAzimuth = (sunPosition.azimuthDegrees - stadium.orientation + 360) % 360;
+  // Don't adjust sun azimuth - isSectionInSun expects absolute compass degrees
+  // and the section angles are already in absolute compass coordinates
+  const sunAzimuth = sunPosition.azimuthDegrees;
   
   // Calculate weather impact on sun exposure
   let weatherMultiplier = 1.0;
@@ -197,8 +196,8 @@ export function calculateDetailedSectionSunExposure(
   }
 
   sections.forEach(section => {
-    const inSun = isSectionInSun(section, adjustedSunAzimuth, sunPosition.altitudeDegrees);
-    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, adjustedSunAzimuth);
+    const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees);
+    let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth);
     
     // Apply weather impact to sun exposure
     sunExposure = sunExposure * weatherMultiplier;
@@ -391,16 +390,9 @@ function getSectionSide(section: StadiumSection): 'home' | 'first' | 'third' | '
 
 // Helper function to calculate section angle
 function getSectionAngle(section: StadiumSection, stadiumOrientation: number): number {
-  // This is a simplified calculation - in reality, we'd need exact section coordinates
-  const baseAngles: Record<string, number> = {
-    'home': 0,
-    'first': 90,
-    'third': 270,
-    'outfield': 180
-  };
-  
-  const side = getSectionSide(section);
-  return (baseAngles[side] + stadiumOrientation) % 360;
+  // Section angles are already in absolute compass coordinates
+  // Just return the section's center angle
+  return (section.baseAngle + section.angleSpan / 2) % 360;
 }
 
 // Calculate sun exposure for entire game duration

@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Link from 'next/link';
 import './App.css';
 import { MLB_STADIUMS, Stadium } from './data/stadiums';
+import { ALL_UNIFIED_VENUES } from './data/unifiedVenues';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
@@ -29,6 +30,7 @@ import { getSunPosition, getSunDescription, getCompassDirection, calculateDetail
 import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedSunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSections } from './data/stadiumSections';
+import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
 import { MiLBGame } from './services/milbApi';
@@ -38,6 +40,25 @@ import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
 import { trackStadiumSelection, trackGameSelection, trackFilterUsage } from './utils/analytics';
+
+// Convert unified venues to Stadium format for the selector
+// Include all venues: MLB, MiLB, and NFL
+const ALL_STADIUMS: Stadium[] = ALL_UNIFIED_VENUES.map(venue => ({
+  id: venue.id,
+  name: venue.name,
+  team: venue.team,
+  latitude: venue.latitude,
+  longitude: venue.longitude,
+  orientation: venue.orientation,
+  capacity: venue.capacity,
+  roof: venue.roof || 'open',
+  roofHeight: venue.roofHeight,
+  roofOverhang: venue.roofOverhang,
+  upperDeckHeight: venue.upperDeckHeight,
+  city: venue.city,
+  state: venue.state,
+  timezone: venue.timezone
+}));
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -270,10 +291,14 @@ function AppContent() {
         if (isCancelled) return;
         setSunPosition(formattedPosition);
         
-        // Get sections
-        const sections = getStadiumSections(selectedStadium.id);
+        // Get sections - try MLB stadiums first, then check all venues (MiLB/NFL)
+        let sections = getStadiumSections(selectedStadium.id);
+        if (sections.length === 0) {
+          // Try venue sections for MiLB and NFL venues
+          sections = getVenueSections(selectedStadium.id);
+        }
         if (process.env.NODE_ENV === 'development') {
-          console.log(`[performCalculation] Got ${sections.length} sections`);
+          console.log(`[performCalculation] Got ${sections.length} sections for ${selectedStadium.id}`);
         }
         
         // Safety check - if too many sections, something's wrong
@@ -519,7 +544,7 @@ function AppContent() {
             selectedStadium={selectedStadium}
             onGameSelect={handleGameSelect}
             onStadiumChange={handleStadiumChange}
-            stadiums={MLB_STADIUMS}
+            stadiums={ALL_STADIUMS}
             onGamesLoaded={setStadiumGames}
           />
 
