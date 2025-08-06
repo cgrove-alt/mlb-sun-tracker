@@ -1,8 +1,8 @@
 /* Stadium Guide Styles */
 .stadium-guide {
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 5%;
   background: #f8f9fa;
   min-height: 100vh;
 }
@@ -29,21 +29,21 @@
 /* Stadium Header */
 .stadium-header {
   background: white;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
 .stadium-header h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 700;
   color: #1a237e;
   margin-bottom: 0.5rem;
 }
 
 .stadium-subtitle {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
   color: #495057;
   margin-bottom: 1rem;
 }
@@ -70,19 +70,19 @@
 /* Quick Facts */
 .quick-facts {
   background: white;
-  border-radius: 12px;
+  border-radius: 0.75rem;
   padding: 2rem;
   margin-bottom: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
 .quick-facts h2 {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
   color: #1a237e;
   margin-bottom: 2rem;
   margin-top: 0;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #e9ecef;
+  border-bottom: 0.125rem solid #e9ecef;
   display: block;
   width: 100%;
 }
@@ -98,11 +98,11 @@
 .fact-card {
   background: #f8f9fa;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   text-align: center;
-  flex: 1 1 200px;
-  min-width: 200px;
-  max-width: 250px;
+  flex: 1 1 12.5rem;
+  min-width: 12.5rem;
+  max-width: 15.625rem;
 }
 
 .fact-card h3 {
@@ -114,7 +114,7 @@
 }
 
 .fact-card p {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
   color: #1a237e;
   margin: 0;
@@ -159,13 +159,20 @@
 }
 
 .control-group select {
-  padding: 0.5rem 1rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 0.125rem solid #e0e0e0;
+  border-radius: 0.5rem;
   font-size: 1rem;
   background: white;
   cursor: pointer;
   transition: border-color 0.2s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3e%3cpath fill='%23495057' d='M6 9L1 4h10z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
 }
 
 .control-group select:hover {
@@ -227,7 +234,7 @@
 
 .sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 1rem;
 }
 
@@ -292,7 +299,7 @@
 
 .safety-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.5rem;
 }
 
@@ -473,7 +480,7 @@
 
 .tips-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 1.5rem;
 }
 
@@ -572,10 +579,11 @@
   background: white;
   color: #1a237e;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
   transition: all 0.2s;
+  touch-action: manipulation;
 }
 
 .cta-button:hover {
@@ -599,7 +607,7 @@
 
 .resources-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1.5rem;
 }
 
@@ -645,26 +653,65 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .stadium-guide {
-    padding: 1rem 0.5rem;
+    padding: 1rem 3%;
+  }
+
+  .stadium-header {
+    padding: 1.25rem;
+    border-radius: 0.5rem;
   }
 
   .stadium-header h1 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .stadium-subtitle {
+    font-size: 1rem;
   }
 
   .stadium-meta {
     font-size: 0.875rem;
-    gap: 1rem;
+    gap: 0.75rem;
+    flex-direction: column;
+  }
+
+  .quick-facts {
+    padding: 1.25rem;
+  }
+
+  .quick-facts h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
 
   .facts-grid {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
   
   .fact-card {
     max-width: 100%;
     width: 100%;
+    padding: 1.25rem;
+  }
+
+  .fact-card h3 {
+    font-size: 0.75rem;
+  }
+
+  .fact-card p {
+    font-size: 1.25rem;
+  }
+
+  .shade-simulator {
+    padding: 1.25rem;
+  }
+
+  .shade-simulator h2 {
+    font-size: 1.25rem;
   }
 
   .simulator-controls {
@@ -676,28 +723,207 @@
     width: 100%;
   }
 
+  .control-group label {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
   .control-group select {
     width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    min-height: 3rem;
+    touch-action: manipulation;
+  }
+
+  .weather-preview {
+    padding: 1rem;
+  }
+
+  .weather-preview h3 {
+    font-size: 1rem;
+  }
+
+  .weather-stats {
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .best-sections {
+    padding: 1.25rem;
+  }
+
+  .best-sections h2 {
+    font-size: 1.25rem;
   }
 
   .sections-grid {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .section-card {
+    padding: 1rem;
+  }
+
+  .section-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .section-details {
+    font-size: 0.75rem;
+  }
+
+  .sun-safety {
+    padding: 1.25rem;
+  }
+
+  .sun-safety h2 {
+    font-size: 1.25rem;
   }
 
   .safety-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .safety-card {
+    padding: 1rem;
+  }
+
+  .safety-card h3 {
+    font-size: 1rem;
+  }
+
+  .family-friendly {
+    padding: 1.25rem;
+  }
+
+  .family-friendly h2 {
+    font-size: 1.25rem;
+  }
+
+  .stadium-history {
+    padding: 1.25rem;
+  }
+
+  .stadium-history h2 {
+    font-size: 1.25rem;
+  }
+
+  .opened-date {
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    padding: 0.75rem;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .timeline-item .year {
+    font-size: 0.875rem;
+  }
+
+  .pro-tips {
+    padding: 1.25rem;
+  }
+
+  .pro-tips h2 {
+    font-size: 1.25rem;
   }
 
   .tips-container {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tip {
+    padding: 1rem;
+  }
+
+  .tip h3 {
+    font-size: 1rem;
+  }
+
+  .seo-content {
+    padding: 1.25rem;
+  }
+
+  .seo-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .seo-content h3 {
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+  }
+
+  .seo-content p {
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 
   .cta-section {
-    padding: 2rem 1rem;
+    padding: 2rem 1.25rem;
+    border-radius: 0.5rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .related-content {
+    padding: 1.25rem;
+  }
+
+  .related-content h2 {
+    font-size: 1.25rem;
   }
 
   .resources-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .resource-card {
+    padding: 1rem;
+  }
+
+  .resource-card h3 {
+    font-size: 1.125rem;
+  }
+
+  .resource-card p {
+    font-size: 0.875rem;
+  }
+
+  /* Touch-friendly adjustments */
+  a, button, select, .cta-button, .resource-card {
+    touch-action: manipulation;
+  }
+
+  /* Increase tap targets */
+  .breadcrumb a {
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+  }
+
+  /* Reduce animations on mobile */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
   }
 }
 

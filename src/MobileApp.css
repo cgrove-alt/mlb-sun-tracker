@@ -36,14 +36,14 @@
 .mobile-main {
   flex: 1;
   padding: var(--space-3);
-  padding-top: calc(64px + var(--space-3));
+  padding-top: calc(4rem + var(--space-3));
   padding-bottom: calc(var(--space-16) + env(safe-area-inset-bottom));
   position: relative;
   z-index: 1;
 }
 
 .mobile-content {
-  max-width: 640px;
+  max-width: min(40rem, 95vw);
   margin: 0 auto;
   width: 100%;
 }
@@ -74,7 +74,7 @@
   margin-bottom: var(--space-3);
   letter-spacing: -0.025em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: clamp(0.625rem, 2.5vw, 0.875rem);
   color: var(--color-neutral-600);
 }
 
@@ -90,8 +90,8 @@
 }
 
 .mobile-spinner {
-  width: 48px;
-  height: 48px;
+  width: 3rem;
+  height: 3rem;
   position: relative;
 }
 
@@ -99,7 +99,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 3px solid var(--color-neutral-200);
+  border: 0.1875rem solid var(--color-neutral-200);
   border-radius: 50%;
 }
 
@@ -107,7 +107,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 3px solid transparent;
+  border: 0.1875rem solid transparent;
   border-top-color: var(--color-field-green);
   border-radius: 50%;
   animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
@@ -119,23 +119,23 @@
 
 .mobile-loading p {
   color: var(--color-neutral-600);
-  font-size: var(--font-size-base);
+  font-size: clamp(0.875rem, 3.5vw, 1rem);
   font-weight: var(--font-weight-medium);
 }
 
 /* Sticky Filter Section */
 .mobile-filter-section {
   position: sticky;
-  top: 64px;
+  top: 4rem;
   z-index: var(--z-sticky);
   background: rgba(248, 250, 252, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.625rem);
+  -webkit-backdrop-filter: blur(0.625rem);
   padding: var(--space-3) 0;
   margin: calc(var(--space-2) * -1) calc(var(--space-4) * -1) var(--space-4);
   padding-left: var(--space-4);
   padding-right: var(--space-4);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 0.0625rem solid rgba(226, 232, 240, 0.8);
   transition: all var(--transition-base);
 }
 
@@ -177,7 +177,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--space-16) var(--space-6);
+  padding: clamp(2rem, 8vw, 4rem) var(--space-6);
   text-align: center;
   animation: fadeIn 0.5s var(--ease-out);
 }
@@ -194,7 +194,7 @@
 }
 
 .mobile-empty-state p {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 4vw, 1.25rem);
   color: var(--color-neutral-600);
   margin-bottom: var(--space-6);
   font-weight: var(--font-weight-medium);
@@ -206,13 +206,15 @@
   color: white;
   border: none;
   border-radius: var(--radius-lg);
-  font-size: var(--font-size-base);
+  font-size: clamp(0.875rem, 3.5vw, 1rem);
   font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
+  min-height: 2.75rem;
+  touch-action: manipulation;
 }
 
 .mobile-reset-btn::before {
@@ -238,17 +240,19 @@
 
 /* Stadium Guide Link */
 .mobile-stadium-guide-link {
-  padding: 20px;
+  padding: 1.25rem;
   background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.08);
   text-align: left;
-  border: 1px solid #f0f0f0;
+  border: 0.0625rem solid #f0f0f0;
   transition: all 0.2s ease;
+  min-height: 2.75rem;
 }
 
 .mobile-stadium-guide-link:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+  transform: translateY(-0.125rem);
 }
 
 .mobile-guide-button {
@@ -256,14 +260,16 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0;
+  padding: 0.5rem;
   background: none;
   color: var(--color-gray-900);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   transition: all 0.2s ease;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
+  min-height: 2.75rem;
+  touch-action: manipulation;
 }
 
 .mobile-guide-button:hover,
@@ -273,12 +279,12 @@
 }
 
 .guide-title {
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
 }
 
 .guide-arrow {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   flex-shrink: 0;
   opacity: 0.4;
   transition: all 0.2s ease;
@@ -286,11 +292,11 @@
 
 .mobile-guide-button:hover .guide-arrow {
   opacity: 0.8;
-  transform: translateX(4px);
+  transform: translateX(0.25rem);
 }
 
 .mobile-guide-description {
-  font-size: 14px;
+  font-size: clamp(0.8rem, 3vw, 0.875rem);
   color: #666666;
   margin: 0;
   line-height: 1.5;
@@ -302,11 +308,35 @@
   box-shadow: var(--shadow-md);
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
+/* Small mobile adjustments */
+@media screen and (max-width: 479px) {
+  .mobile-main {
+    padding: clamp(0.5rem, 3vw, 1rem);
+    padding-top: calc(4rem + clamp(0.5rem, 3vw, 1rem));
+  }
+  
+  .mobile-content {
+    max-width: 95vw;
+  }
+  
+  .mobile-section-title {
+    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+  }
+  
+  .mobile-guide-button {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+  
+  .mobile-stadium-guide-link {
+    padding: 1rem;
+  }
+}
+
+/* Tablet adjustments: 768px+ */
+@media screen and (min-width: 768px) {
   .mobile-main {
     padding: var(--space-6);
-    padding-top: calc(64px + var(--space-6));
+    padding-top: calc(4rem + var(--space-6));
   }
   
   .mobile-section {
@@ -314,7 +344,11 @@
   }
   
   .mobile-section-title {
-    font-size: var(--font-size-3xl);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+  
+  .mobile-content {
+    max-width: 48rem;
   }
 }
 
@@ -365,13 +399,13 @@
 /* Mobile Footer */
 .mobile-footer {
   background: #ffffff;
-  border-top: 1px solid #e0e0e0;
-  padding: 24px 16px;
-  margin-top: 40px;
+  border-top: 0.0625rem solid #e0e0e0;
+  padding: 1.5rem 1rem;
+  margin-top: 2.5rem;
 }
 
 .mobile-footer-content {
-  max-width: 600px;
+  max-width: min(37.5rem, 95vw);
   margin: 0 auto;
   text-align: center;
 }
@@ -380,18 +414,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .mobile-footer-link {
   color: #1a73e8;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
   font-weight: 500;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
   transition: background-color 0.2s ease;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  touch-action: manipulation;
 }
 
 .mobile-footer-link:hover,
@@ -402,13 +441,14 @@
 
 .mobile-footer-separator {
   color: #9e9e9e;
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
 }
 
 .mobile-footer-copyright {
   color: #616161;
-  font-size: 0.75rem;
+  font-size: clamp(0.625rem, 2.5vw, 0.75rem);
   margin: 0;
+  line-height: 1.5;
 }
 
 /* Dark mode footer styles */
@@ -429,4 +469,60 @@
   .mobile-footer-copyright {
     color: #9e9e9e;
   }
+}
+
+/* Modern CSS Features and Accessibility */
+@supports (width: 1cqw) {
+  .mobile-content {
+    container-type: inline-size;
+  }
+  
+  @container (max-width: 480px) {
+    .mobile-section-list {
+      gap: var(--space-2);
+    }
+  }
+}
+
+/* Better scroll behavior */
+.mobile-app {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mobile-app {
+    --color-field-green: #006600;
+    --color-neutral-600: #000000;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-app::before,
+  .mobile-spinner::after,
+  .mobile-section,
+  .mobile-section-list > * {
+    animation: none !important;
+  }
+  
+  .mobile-reset-btn::before {
+    transition: none !important;
+  }
+}
+
+/* Force GPU acceleration for better performance */
+.mobile-app::before,
+.mobile-spinner,
+.mobile-reset-btn {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize touch scrolling */
+.mobile-main,
+.mobile-section-list {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }

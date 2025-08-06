@@ -1,3 +1,6 @@
+/* Import comprehensive responsive overrides */
+@import './styles/responsive-overrides.css';
+
 * {
   box-sizing: border-box;
 }
@@ -5,6 +8,9 @@
 html {
   overflow-x: hidden;
   width: 100%;
+  font-size: 100%; /* Ensures 16px base to prevent iOS zoom */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -17,6 +23,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  line-height: 1.6;
 }
 
 code {
