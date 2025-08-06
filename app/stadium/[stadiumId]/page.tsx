@@ -4,8 +4,7 @@ import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
-import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
-import StadiumGuide from '../../../src/components/StadiumGuideLazy';
+import StadiumPageClient from './StadiumPageClient';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -168,16 +167,20 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        suppressHydrationWarning
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        suppressHydrationWarning
       />
-      {guide ? (
-        <ComprehensiveStadiumGuide stadiumId={stadiumId} />
-      ) : (
-        <StadiumGuide stadium={stadium} sections={sections} amenities={amenities} />
-      )}
+      <StadiumPageClient 
+        stadium={stadium}
+        sections={sections}
+        amenities={amenities}
+        guide={guide}
+        useComprehensive={!!guide}
+      />
     </>
   );
 }

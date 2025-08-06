@@ -19,10 +19,10 @@ const nextConfig = {
   compress: true,
   // Compiler optimizations for modern browsers
   compiler: {
-    // Don't remove console logs to ensure Google Analytics works
-    // removeConsole: isProd ? {
-    //   exclude: ['error', 'warn'],
-    // } : false,
+    // Remove console logs in production, but keep error and warn for debugging
+    removeConsole: isProd ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
   // Experimental features to reduce bundle size
   experimental: {
