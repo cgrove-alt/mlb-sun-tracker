@@ -57,6 +57,11 @@
   margin-left: 32px;
 }
 
+/* Add spacing between FAQs and Contact links */
+.nav-links .contact-link {
+  margin-left: 16px;
+}
+
 .nav-links > a {
   color: #555;
   text-decoration: none;
@@ -316,14 +321,21 @@
   background: none;
   border: none;
   cursor: pointer;
+  transition: background 0.2s ease;
+  border-radius: 4px;
+}
+
+.hamburger-menu:hover {
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .hamburger-line {
   width: 24px;
   height: 2px;
   background: #333;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
+  border-radius: 1px;
 }
 
 .hamburger-line.open:nth-child(1) {
@@ -343,11 +355,12 @@
   top: 64px;
   right: -100%;
   bottom: 0;
-  width: 85%;
-  max-width: 400px;
+  width: 80%;
+  max-width: 320px;
   background: white;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%);
   z-index: 9999;
   overflow-y: auto;
   overflow-x: hidden;
@@ -356,6 +369,7 @@
 
 .sticky-nav-mobile-menu.open {
   right: 0;
+  transform: translateX(0);
 }
 
 .sticky-nav-mobile-overlay {
@@ -433,6 +447,17 @@
   flex-direction: column;
   gap: 4px;
   flex: 1;
+}
+
+/* Add spacing between navigation sections */
+.mobile-nav-links .faqs-link {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.mobile-nav-links .contact-link {
+  margin-bottom: 20px;
 }
 
 .mobile-nav-links > a {
@@ -555,7 +580,8 @@
   display: none;
 }
 
-@media (max-width: 968px) {
+/* Mobile styles - breakpoint at 768px */
+@media (max-width: 768px) {
   .desktop-only {
     display: none;
   }

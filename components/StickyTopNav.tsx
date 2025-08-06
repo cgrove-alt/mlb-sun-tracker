@@ -234,7 +234,7 @@ export default function StickyTopNav() {
                 FAQs
               </Link>
               
-              <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>
+              <Link href="/contact" className={`contact-link ${pathname === '/contact' ? 'active' : ''}`}>
                 Contact
               </Link>
             </div>
@@ -362,7 +362,7 @@ export default function StickyTopNav() {
 
             <Link 
               href="/faqs" 
-              className={pathname === '/faqs' ? 'active' : ''}
+              className={`faqs-link ${pathname === '/faqs' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
               FAQs
@@ -370,7 +370,7 @@ export default function StickyTopNav() {
             
             <Link 
               href="/contact" 
-              className={pathname === '/contact' ? 'active' : ''}
+              className={`contact-link ${pathname === '/contact' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
               Contact
