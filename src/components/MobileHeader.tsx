@@ -10,7 +10,7 @@ interface MobileHeaderProps {
 }
 
 export const MobileHeader: React.FC<MobileHeaderProps> = ({ 
-  title = 'The Shadium',
+  title,
   showBack = false,
   onBack
 }) => {
@@ -67,11 +67,13 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
                 <path d="M19 12H5M12 19l-7-7 7-7"/>
               </svg>
             </button>
-          ) : (
+          ) : title ? (
             <div className="mobile-header-logo">
               <div className="mobile-header-icon">⚾</div>
               <h1 className="mobile-header-title">{title}</h1>
             </div>
+          ) : (
+            <div className="mobile-header-spacer" />
           )}
           
           <div className="mobile-header-actions">
@@ -144,7 +146,7 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             </div>
             
             <div className="mobile-menu-footer">
-              <p className="mobile-menu-version">The Shadium v2.0</p>
+              <p className="mobile-menu-version">v2.0</p>
             </div>
           </nav>
         </>
