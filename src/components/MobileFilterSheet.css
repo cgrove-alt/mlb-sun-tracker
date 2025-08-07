@@ -74,9 +74,10 @@
 .mobile-filter-sheet {
   position: fixed;
   inset: 0;
-  z-index: 1050; /* Use explicit value to avoid conflicts */
+  z-index: 9999; /* Very high z-index to ensure it's on top */
   display: flex;
   align-items: flex-end;
+  isolation: isolate; /* Create new stacking context */
 }
 
 .mobile-filter-overlay {
@@ -86,7 +87,7 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   animation: fadeIn var(--transition-fast);
-  z-index: 1; /* Ensure overlay is behind content */
+  z-index: 9998; /* Just below the sheet container */
 }
 
 @keyframes fadeIn {
@@ -106,7 +107,7 @@
   animation: slideUp var(--transition-base) var(--ease-out);
   box-shadow: var(--shadow-2xl);
   margin-bottom: env(safe-area-inset-bottom, 0);
-  z-index: 2; /* Ensure content is above overlay */
+  z-index: 10000; /* Ensure content is above everything */
 }
 
 @keyframes slideUp {

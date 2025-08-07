@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { SunFilterCriteria } from './SunExposureFilterFixed';
 import { SeatingSectionSun } from '../utils/sunCalculations';
+import { MobileFilterPortal } from './MobileFilterPortal';
 import './MobileFilterSheet.css';
 
 interface MobileFilterSheetProps {
@@ -18,6 +19,21 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
+
+  // Prevent body scroll when filter is open
+  React.useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = '';
+      };
+    }
+  }, [isOpen]);
+
+  // Sync local filters with current filters when they change
+  React.useEffect(() => {
+    setLocalFilters(currentFilters);
+  }, [currentFilters]);
 
   const handleApplyFilters = () => {
     onFilterChange(localFilters);
@@ -92,7 +108,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
         </div>
       </button>
 
-      {isOpen && (
+      <MobileFilterPortal isOpen={isOpen}>
         <div className="mobile-filter-sheet">
           <div className="mobile-filter-overlay" onClick={() => setIsOpen(false)} />
           <div className="mobile-filter-content" onClick={(e) => e.stopPropagation()}>
@@ -253,7 +269,7 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
             </div>
           </div>
         </div>
-      )}
+      </MobileFilterPortal>
     </>
   );
 };
