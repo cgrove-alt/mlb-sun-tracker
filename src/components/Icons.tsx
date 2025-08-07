@@ -266,6 +266,12 @@ export const ChevronUpIcon: React.FC<IconProps> = ({ size = 24, color = 'current
   </svg>
 );
 
+export const FilterIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
+
 export const UmbrellaIcon: React.FC<IconProps> = ({ size = 24, color = 'currentColor', className }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
     <path d="M22 12A10 10 0 0 0 12 2v0a10 10 0 0 0-10 10h20z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

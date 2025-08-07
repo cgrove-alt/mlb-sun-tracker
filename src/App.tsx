@@ -6,7 +6,7 @@ import { MLB_STADIUMS, Stadium } from './data/stadiums';
 import { ALL_UNIFIED_VENUES } from './data/unifiedVenues';
 import { GameSelector } from './components/GameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
+import { EnhancedSunFilter, SunFilterCriteria } from './components/EnhancedSunFilter';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
@@ -691,9 +691,10 @@ function AppContent() {
             </div>
             
             <div className="filter-and-sections-container">
-              <SunExposureFilterFixed 
+              <EnhancedSunFilter 
                 onFilterChange={handleFilterChange}
                 disabled={loadingSections}
+                isMobile={window.innerWidth < 768}
               />
               <SectionList 
                 sections={filteredSections}

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './SunExposureFilter.css';
 
-export interface SunFilterCriteria {
+// Re-export from EnhancedSunFilter for backward compatibility
+export type { SunFilterCriteria } from './EnhancedSunFilter';
+
+interface SunFilterCriteriaLegacy {
   sunPreference?: 'any' | 'sun' | 'shade';
   minExposure?: number;
   maxExposure?: number;
@@ -13,7 +16,7 @@ export interface SunFilterCriteria {
 }
 
 interface SunExposureFilterProps {
-  onFilterChange: (criteria: SunFilterCriteria) => void;
+  onFilterChange: (criteria: SunFilterCriteriaLegacy) => void;
   disabled?: boolean;
 }
 
@@ -42,7 +45,7 @@ export const SunExposureFilterFixed: React.FC<SunExposureFilterProps> = ({
     covered: 'any' | 'covered' | 'uncovered',
     priceRanges: Array<'value' | 'moderate' | 'premium' | 'luxury'>
   ) => {
-    const criteria: SunFilterCriteria = {};
+    const criteria: SunFilterCriteriaLegacy = {};
 
     // Set sun exposure criteria based on preference
     switch (preference) {
