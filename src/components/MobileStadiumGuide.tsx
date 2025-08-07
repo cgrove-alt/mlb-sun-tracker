@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Stadium } from '../data/stadiums';
 import { StadiumSection } from '../data/stadiumSections';
@@ -9,6 +9,8 @@ import { stadiumHistories } from '../data/stadiumDetails';
 import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon, InfoIcon } from './Icons';
 import { SectionShadeSEO } from './SectionShadeSEO';
 import { StadiumShadeQuestions } from './StadiumShadeQuestions';
+import { TableOfContents } from './TableOfContents';
+import { CollapsibleSection } from './CollapsibleSection';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -28,6 +30,7 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
   const [selectedTime, setSelectedTime] = useState('13:00');
   const [averageWeather, setAverageWeather] = useState<WeatherData | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const guideContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const monthlyAverages: Record<number, WeatherData> = {
@@ -73,7 +76,7 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
   };
 
   return (
-    <div className="mobile-stadium-guide">
+    <div className="mobile-stadium-guide" ref={guideContentRef}>
       <div className="mobile-stadium-header">
         <Link href="/" className="back-button">
           ← Back
@@ -88,6 +91,9 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
           </span>
         </div>
       </div>
+
+      {/* Table of Contents for Mobile */}
+      <TableOfContents containerRef={guideContentRef} />
 
       {/* Quick Facts Card */}
       <div className="mobile-card">

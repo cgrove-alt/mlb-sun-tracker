@@ -107,14 +107,20 @@
   content: '';
   position: absolute;
   inset: 0;
-  border: 0.1875rem solid transparent;
-  border-top-color: var(--color-field-green);
+  border: 0.1875rem solid var(--color-field-green);
   border-radius: 50%;
-  animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  animation: pulse-loader 1.5s ease-in-out infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+@keyframes pulse-loader {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.6;
+  }
 }
 
 .mobile-loading p {

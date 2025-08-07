@@ -80,6 +80,8 @@ function AppContent() {
   const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const [changingStadium, setChangingStadium] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
@@ -90,6 +92,41 @@ function AppContent() {
       pwaManager.cleanup();
     };
   }, []);
+
+  // Add scroll detection for header styling
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('menu-open');
+      
+      const handleClick = (e: MouseEvent) => {
+        const target = e.target as HTMLElement;
+        if (!target.closest('.mobile-nav-menu') && !target.closest('.mobile-menu-btn')) {
+          setMobileMenuOpen(false);
+        }
+      };
+
+      setTimeout(() => {
+        document.addEventListener('click', handleClick);
+      }, 0);
+      
+      return () => {
+        document.removeEventListener('click', handleClick);
+        document.body.classList.remove('menu-open');
+      };
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [mobileMenuOpen]);
 
   // Initialize performance monitoring and service worker
   useEffect(() => {
@@ -498,11 +535,11 @@ function AppContent() {
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       <OfflineIndicator />
-      <header className="App-header">
+      <header className={`App-header ${scrolled ? 'scrolled' : ''}`}>
         <div className="header-content">
           <div className="header-left">
             <h1>{t('app.title')}</h1>
-            <p>{t('app.subtitle')}</p>
+            <p className="header-subtitle">{t('app.subtitle')}</p>
             {selectedStadium && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedStadium.name}</span>
@@ -521,9 +558,74 @@ function AppContent() {
               </div>
             )}
           </div>
-          <UserProfileMenu />
+          <div className="header-right">
+            <nav className="desktop-nav" aria-label="Main navigation">
+              <a href="/" className="nav-link">Home</a>
+              <a href="/stadiums" className="nav-link">Stadiums</a>
+              <a href="/faq" className="nav-link">FAQs</a>
+              <a href="/contact" className="nav-link">Contact</a>
+            </nav>
+            <UserProfileMenu />
+            <button 
+              className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileMenuOpen(!mobileMenuOpen);
+              }}
+              aria-label="Menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay and Panel */}
+      {mobileMenuOpen && (
+        <>
+          <div 
+            className="mobile-menu-overlay" 
+            onClick={() => setMobileMenuOpen(false)} 
+            aria-hidden="true"
+          />
+          <nav className="mobile-nav-menu" role="navigation" aria-label="Mobile navigation">
+            <div className="mobile-nav-header">
+              <h2>Menu</h2>
+              <button 
+                className="mobile-nav-close"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="mobile-nav-items">
+              <a href="/" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                <span className="mobile-nav-icon">🏠</span>
+                <span>Home</span>
+              </a>
+              <a href="/stadiums" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                <span className="mobile-nav-icon">🏟️</span>
+                <span>Stadiums</span>
+              </a>
+              <a href="/faq" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                <span className="mobile-nav-icon">❓</span>
+                <span>FAQs</span>
+              </a>
+              <a href="/contact" className="mobile-nav-item" onClick={() => setMobileMenuOpen(false)}>
+                <span className="mobile-nav-icon">📧</span>
+                <span>Contact</span>
+              </a>
+            </div>
+          </nav>
+        </>
+      )}
 
       <Navigation 
         activeTab={activeTab} 

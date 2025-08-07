@@ -1,10 +1,29 @@
 /* Stadium Guide Styles */
-.stadium-guide {
-  max-width: 75rem;
+.stadium-guide-wrapper {
+  max-width: 90rem;
   margin: 0 auto;
   padding: 2rem 5%;
+  display: flex;
+  gap: 2rem;
+  position: relative;
   background: #f8f9fa;
   min-height: 100vh;
+}
+
+.stadium-guide {
+  flex: 1;
+  max-width: 65rem;
+}
+
+@media (max-width: 1024px) {
+  .stadium-guide-wrapper {
+    display: block;
+    padding: 1rem 3%;
+  }
+  
+  .stadium-guide {
+    max-width: 100%;
+  }
 }
 
 /* Breadcrumb Navigation */

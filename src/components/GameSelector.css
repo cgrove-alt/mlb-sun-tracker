@@ -473,6 +473,21 @@
     flex-direction: column;
     align-items: stretch;
   }
+  
+  /* Hide the duplicate title in mobile app context */
+  .mobile-app .selector-header h3 {
+    display: none;
+  }
+  
+  /* Adjust header when title is hidden */
+  .mobile-app .selector-header {
+    margin-bottom: 12px;
+  }
+  
+  /* Make toggle buttons more prominent when title is hidden */
+  .mobile-app .view-mode-toggle {
+    margin-top: 0;
+  }
 
   .view-mode-toggle {
     width: 100%;

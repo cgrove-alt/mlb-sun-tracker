@@ -40,7 +40,7 @@
 }
 
 .sync-icon {
-  animation: rotate 1s linear infinite;
+  animation: pulse-sync 1.5s ease-in-out infinite;
 }
 
 .cache-info {
@@ -64,12 +64,14 @@
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes pulse-sync {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
   }
 }
 
