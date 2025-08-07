@@ -35,6 +35,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const haptic = useHapticFeedback();
   const { t } = useTranslation();
   const [games, setGames] = useState<(MLBGame | MiLBGame | NFLGame)[]>([]);
+  const [isMobileContext, setIsMobileContext] = useState(false);
   const gamesLoading = useLoadingState<(MLBGame | MiLBGame | NFLGame)[]>({ minLoadingTime: 500, initialLoading: false });
   const [selectedLeague, setSelectedLeague] = useState<string>(() => {
     return preferencesStorage.get('selectedLeague', 'MLB');
@@ -55,6 +56,20 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const [error, setError] = useState<string | null>(null);
 
   const { currentProfile } = useUserProfile();
+  
+  // Check if we're in mobile context
+  useEffect(() => {
+    // Check if parent has mobile-app class
+    const checkMobileContext = () => {
+      const mobileApp = document.querySelector('.mobile-app');
+      setIsMobileContext(!!mobileApp);
+    };
+    
+    checkMobileContext();
+    // Also check on resize
+    window.addEventListener('resize', checkMobileContext);
+    return () => window.removeEventListener('resize', checkMobileContext);
+  }, []);
   
   // Get all leagues and venues
   const leagues = getAllLeagues();
@@ -349,45 +364,82 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
 
   return (
     <div className="game-selector">
-      <div className="selector-header">
-        <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
-        
-
-        {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
-          <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
-            <button
-              className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
-              onClick={() => {
-                haptic.light();
-                setViewMode('games');
-                preferencesStorage.update('viewMode', 'games');
-              }}
-              role="tab"
-              aria-selected={viewMode === 'games'}
-              aria-controls="games-panel"
-              id="games-tab"
-              tabIndex={viewMode === 'games' ? 0 : -1}
-            >
-              📅 {t('gameSelector.realGames')}
-            </button>
-            <button
-              className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
-              onClick={() => {
-                haptic.light();
-                setViewMode('custom');
-                preferencesStorage.update('viewMode', 'custom');
-              }}
-              role="tab"
-              aria-selected={viewMode === 'custom'}
-              aria-controls="custom-panel"
-              id="custom-tab"
-              tabIndex={viewMode === 'custom' ? 0 : -1}
-            >
-              🕐 {t('gameSelector.customTime')}
-            </button>
-          </div>
-        )}
-      </div>
+      {!isMobileContext && (
+        <div className="selector-header">
+          <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
+          
+          {(selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
+            <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
+              <button
+                className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
+                onClick={() => {
+                  haptic.light();
+                  setViewMode('games');
+                  preferencesStorage.update('viewMode', 'games');
+                }}
+                role="tab"
+                aria-selected={viewMode === 'games'}
+                aria-controls="games-panel"
+                id="games-tab"
+                tabIndex={viewMode === 'games' ? 0 : -1}
+              >
+                📅 {t('gameSelector.realGames')}
+              </button>
+              <button
+                className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
+                onClick={() => {
+                  haptic.light();
+                  setViewMode('custom');
+                  preferencesStorage.update('viewMode', 'custom');
+                }}
+                role="tab"
+                aria-selected={viewMode === 'custom'}
+                aria-controls="custom-panel"
+                id="custom-tab"
+                tabIndex={viewMode === 'custom' ? 0 : -1}
+              >
+                🕐 {t('gameSelector.customTime')}
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+      
+      {/* Show toggle buttons for mobile but without the header wrapper */}
+      {isMobileContext && (selectedVenue?.league === 'MLB' || selectedVenue?.league === 'MiLB') && (
+        <div className="view-mode-toggle mobile-toggle" role="tablist">
+          <button
+            className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
+            onClick={() => {
+              haptic.light();
+              setViewMode('games');
+              preferencesStorage.update('viewMode', 'games');
+            }}
+            role="tab"
+            aria-selected={viewMode === 'games'}
+            aria-controls="games-panel"
+            id="games-tab-mobile"
+            tabIndex={viewMode === 'games' ? 0 : -1}
+          >
+            📅 {t('gameSelector.realGames')}
+          </button>
+          <button
+            className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
+            onClick={() => {
+              haptic.light();
+              setViewMode('custom');
+              preferencesStorage.update('viewMode', 'custom');
+            }}
+            role="tab"
+            aria-selected={viewMode === 'custom'}
+            aria-controls="custom-panel"
+            id="custom-tab-mobile"
+            tabIndex={viewMode === 'custom' ? 0 : -1}
+          >
+            🕐 {t('gameSelector.customTime')}
+          </button>
+        </div>
+      )}
 
       {/* League Selection Dropdown */}
       <div className="control-group">

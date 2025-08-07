@@ -474,19 +474,17 @@
     align-items: stretch;
   }
   
-  /* Hide the duplicate title in mobile app context */
-  .mobile-app .selector-header h3 {
-    display: none;
+  /* Mobile toggle buttons without header styling */
+  .view-mode-toggle.mobile-toggle {
+    margin-bottom: 16px;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
   }
   
-  /* Adjust header when title is hidden */
-  .mobile-app .selector-header {
-    margin-bottom: 12px;
-  }
-  
-  /* Make toggle buttons more prominent when title is hidden */
-  .mobile-app .view-mode-toggle {
-    margin-top: 0;
+  .mobile-app .game-selector {
+    padding-top: 8px;
   }
 
   .view-mode-toggle {
