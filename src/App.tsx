@@ -26,6 +26,8 @@ import MobileApp from './MobileApp';
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
+import { pwaManager, PWAInstallManager } from './utils/pwa';
+import { PWAInstallToast } from './components/PWAInstallToast';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedSunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
@@ -81,6 +83,14 @@ function AppContent() {
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
+  // Initialize PWA manager
+  useEffect(() => {
+    pwaManager.init();
+    return () => {
+      pwaManager.cleanup();
+    };
+  }, []);
+
   // Initialize performance monitoring and service worker
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -368,6 +378,11 @@ function AppContent() {
         const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
         setFilteredSections(filtered);
         
+        // Notify PWA manager that a shade calculation was completed
+        if (filtered.length > 0) {
+          PWAInstallManager.notifyShadeCalculation();
+        }
+        
       } catch (error) {
         if (process.env.NODE_ENV === 'development') {
           console.error('[performCalculation] Error:', error);
@@ -419,6 +434,10 @@ function AppContent() {
     setFilterCriteria(criteria);
     // Save filter criteria to user profile
     updatePreferences({ filterCriteria: criteria });
+    // Notify PWA manager when filters are applied
+    if (Object.keys(criteria).length > 0) {
+      PWAInstallManager.notifyUserEngagement('filter');
+    }
     
     // Track filter usage
     if (criteria.sunPreference) {
@@ -800,6 +819,8 @@ function AppContent() {
           />
         </Suspense>
       )}
+
+      <PWAInstallToast />
 
       <footer className="App-footer">
         <div className="footer-content">
