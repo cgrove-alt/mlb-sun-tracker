@@ -2,6 +2,25 @@
 @import './styles/modern-design-system.css';
 @import './components/MobileHeader.css'; /* For menu styles */
 
+/* Skip Navigation Links for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  z-index: 10000;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .mobile-app {
   min-height: 100vh;
   background: linear-gradient(180deg, #ffffff 0%, #f5f9fc 100%);

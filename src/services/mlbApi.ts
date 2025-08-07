@@ -78,7 +78,7 @@ export class MLBApiService {
     maxRetries: 3,
     initialDelay: 500,
     onRetry: (error, retryCount) => {
-      console.log(`MLB API retry attempt ${retryCount} after error:`, error.message);
+      // Retry attempt ${retryCount} after error
     }
   });
 
@@ -102,7 +102,7 @@ export class MLBApiService {
     const sanitizedUrl = sanitizeApiUrl(url);
     
     try {
-      console.log('Fetching MLB schedule from:', sanitizedUrl);
+      // Fetching MLB schedule
       const response = await this.retryableFetch(sanitizedUrl);
       if (!response.ok) {
         console.error(`MLB API request failed with status: ${response.status}`);
@@ -125,7 +125,7 @@ export class MLBApiService {
         }
       });
       
-      console.log(`MLB API returned ${games.length} total games`);
+      // MLB API returned ${games.length} total games
       return games;
     } catch (error) {
       console.error('Error fetching MLB schedule:', error);
@@ -192,8 +192,7 @@ export class MLBApiService {
       return [];
     }
     
-    console.log(`Filtering games for stadium ${stadiumId}, team ID ${teamId}`);
-    console.log(`Total games before filtering: ${games.length}`);
+    // Filtering games for stadium and team
     
     let firstHomeGameLogged = false;
     const homeGames = games.filter(game => {
@@ -205,14 +204,14 @@ export class MLBApiService {
       
       // Log only the first home game to reduce console noise
       if (isHomeGame && !firstHomeGameLogged) {
-        console.log(`Sample home game: ${game.teams.away.team.name} @ ${game.teams.home.team.name}, status: ${game.status.statusCode}, type: ${game.gameType}`);
+        // Sample home game logged
         firstHomeGameLogged = true;
       }
       
       return isHomeGame && isNotFinished && isNotCancelled && isValidGameType;
     });
     
-    console.log(`Home games found: ${homeGames.length}`);
+    // Home games found: ${homeGames.length}
     return homeGames;
   }
 }

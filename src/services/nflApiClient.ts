@@ -106,7 +106,7 @@ class NFLApiClient {
     maxRetries: 3,
     initialDelay: 1000,
     onRetry: (error, retryCount) => {
-      console.log(`[NFL API Client] Retry attempt ${retryCount} after error:`, error.message);
+      // Retry attempt ${retryCount} after error
     }
   });
   private circuitBreaker = new CircuitBreaker(5, 60000);
@@ -214,7 +214,7 @@ class NFLApiClient {
     const cached = this.cache.get(cacheKey);
     
     if (cached && Date.now() - cached.timestamp < this.cacheTimeout) {
-      console.log(`[NFL API Client] Returning cached data for ${season} season`);
+      // Returning cached data for ${season} season
       return cached.data;
     }
 
@@ -226,14 +226,14 @@ class NFLApiClient {
       const currentWeek = this.getCurrentNFLWeek(currentDate, season);
       const maxWeek = Math.min(currentWeek + 8, 18); // Fetch up to 8 weeks ahead or week 18
       
-      console.log(`[NFL API Client] Fetching weeks 1-${maxWeek} for ${season} season`);
+      // Fetching weeks 1-${maxWeek} for ${season} season
       
       // Fetch games for each week
       for (let week = 1; week <= maxWeek; week++) {
         const weekGames = await this.fetchWeekGames(season, week);
         if (weekGames.length > 0) {
           allGames.push(...weekGames);
-          console.log(`[NFL API Client] Week ${week}: ${weekGames.length} games`);
+          // Week ${week}: ${weekGames.length} games
         }
       }
 
@@ -241,7 +241,7 @@ class NFLApiClient {
         throw new Error('No games found for the season');
       }
 
-      console.log(`[NFL API Client] Total: ${allGames.length} games for ${season} season`);
+      // Total: ${allGames.length} games for ${season} season
       
       // Cache the results
       this.cache.set(cacheKey, { data: allGames, timestamp: Date.now() });
@@ -270,13 +270,13 @@ class NFLApiClient {
   // Reset circuit breaker (for testing or manual intervention)
   resetCircuitBreaker() {
     this.circuitBreaker.reset();
-    console.log('[NFL API Client] Circuit breaker reset');
+    // Circuit breaker reset
   }
 
   // Clear cache
   clearCache() {
     this.cache.clear();
-    console.log('[NFL API Client] Cache cleared');
+    // Cache cleared
   }
 }
 

@@ -118,11 +118,11 @@ class NFLApiService {
 
     // Try to fetch real data
     try {
-      console.log(`[NFL API] Fetching real data for ${targetSeason} season`);
+      // Fetching real data for ${targetSeason} season
       games = await nflApiClient.fetchSeasonSchedule(targetSeason);
       
       if (games.length === 0) {
-        console.log(`[NFL API] No real data available for ${targetSeason} season`);
+        // No real data available for ${targetSeason} season
         throw new Error('No NFL schedule data available');
       }
     } catch (error) {

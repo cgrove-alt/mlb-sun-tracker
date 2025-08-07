@@ -14,6 +14,16 @@ import { MLBGame } from './mlbApi';
 import { MiLBGame } from './milbApi';
 import { NFLGame } from './nflApi';
 
+// Helper functions
+function getMaxUVIndex(weather: WeatherForecast): number {
+  return Math.max(weather.current.uvIndex, ...weather.hourly.map(h => h.weather.uvIndex));
+}
+
+function getAverageTemperature(weather: WeatherForecast): number {
+  const temps = weather.hourly.map(h => h.weather.temperature);
+  return temps.reduce((sum, temp) => sum + temp, 0) / temps.length;
+}
+
 export class ItineraryService {
   
   /**
@@ -36,8 +46,8 @@ export class ItineraryService {
       createdAt: new Date(),
       preferences,
       weatherContext: {
-        maxUVIndex: this.getMaxUVIndex(weather),
-        averageTemperature: this.getAverageTemperature(weather),
+        maxUVIndex: getMaxUVIndex(weather),
+        averageTemperature: getAverageTemperature(weather),
         cloudCover: weather.current.cloudCover,
         precipitationProbability: weather.current.precipitationProbability || 0
       },
@@ -776,20 +786,9 @@ export class ItineraryService {
     // Calculate detailed section sun exposure
     const sectionData = calculateDetailedSectionSunExposure(stadium, sunPosition, gameWeather);
     
-    // Debug logging to understand section matching
-    console.log('Smart Itinerary Section Calculation:', {
-      stadiumId: stadium.id,
-      gameDateTime: gameDateTime.toISOString(),
-      sunPosition: {
-        azimuth: sunPosition.azimuthDegrees,
-        altitude: sunPosition.altitudeDegrees
-      },
-      totalSections: sectionData.length,
-      preferences: {
-        prioritizeShade: preferences.prioritizeShade,
-        sunSensitivity: preferences.sunSensitivity
-      }
-    });
+    // Smart Itinerary Section Calculation debug info available
+    // Debug info: totalSections: sectionData.length,
+    // preferences: prioritizeShade, sunSensitivity
     
     // Separate sections by sun exposure and sort by desirability
     const sortByDesirability = (a: typeof sectionData[0], b: typeof sectionData[0]) => {
@@ -823,11 +822,10 @@ export class ItineraryService {
       .filter(s => !s.inSun)
       .sort(sortByDesirability);
     
-    console.log('Section categorization:', {
-      sunny: sunnySection.length,
-      partialSun: partialSunSections.length,
-      shade: shadeSections.length
-    });
+    // Section categorization debug info:
+    // sunny: sunnySection.length,
+    // partialSun: partialSunSections.length,
+    // shade: shadeSections.length
     
     let preferred: string[] = [];
     let alternatives: string[] = [];
@@ -913,15 +911,7 @@ export class ItineraryService {
     return closestHour?.weather || weather.current;
   }
 
-  // Helper methods
-  private getMaxUVIndex(weather: WeatherForecast): number {
-    return Math.max(weather.current.uvIndex, ...weather.hourly.map(h => h.weather.uvIndex));
-  }
-
-  private getAverageTemperature(weather: WeatherForecast): number {
-    const temps = weather.hourly.map(h => h.weather.temperature);
-    return temps.reduce((sum, temp) => sum + temp, 0) / temps.length;
-  }
+  // Helper methods remain as private class methods
 
   private estimateUVIndex(time: Date, weather: WeatherForecast): number {
     // Find closest hourly forecast

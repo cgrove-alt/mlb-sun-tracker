@@ -24,6 +24,7 @@ import { SunIcon, MoonIcon } from './components/Icons';
 import { UserProfileMenu } from './components/UserProfileMenu';
 import { MobileMenuPortal } from './components/MobileMenuPortal';
 import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
+import { debounce } from './utils/debounce';
 import './styles/mobile-first.css';
 import './MobileApp.css';
 
@@ -131,7 +132,7 @@ const MobileApp: React.FC = () => {
     }
   };
 
-  const calculateSections = async () => {
+  const calculateSections = React.useCallback(debounce(async () => {
     if (!gameDateTime || !selectedVenue || !selectedStadium) return;
     
     setIsCalculating(true);
@@ -225,7 +226,7 @@ const MobileApp: React.FC = () => {
     } finally {
       setIsCalculating(false);
     }
-  };
+  }, 300), [gameDateTime, selectedVenue, selectedStadium]);
 
   const handleVenueChange = useCallback((venue: UnifiedVenue | null) => {
     setSelectedVenue(venue);
@@ -250,6 +251,11 @@ const MobileApp: React.FC = () => {
 
   return (
     <div className="mobile-app">
+      {/* Skip Navigation Links for Accessibility */}
+      <a href="#main-content" className="skip-link">Skip to main content</a>
+      <a href="#venue-selector" className="skip-link">Skip to venue selector</a>
+      <a href="#results" className="skip-link">Skip to results</a>
+      
       <SEOHelmet 
         stadium={selectedStadium}
         game={selectedGame}
@@ -257,10 +263,10 @@ const MobileApp: React.FC = () => {
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       
-      <main className="mobile-main">
+      <main className="mobile-main" id="main-content">
         <div className="mobile-content">
           {/* Unified Venue and Game Selection */}
-          <section className="mobile-section">
+          <section className="mobile-section" id="venue-selector">
             <UnifiedGameSelector
               selectedVenue={selectedVenue}
               onGameSelect={handleGameSelect}
@@ -275,9 +281,22 @@ const MobileApp: React.FC = () => {
               <EmptyState 
                 type="no-stadium"
                 action={
-                  <p style={{fontSize: '0.9rem', color: '#666', margin: 0}}>
-                    Choose from MLB, MiLB, and NFL venues to analyze sun exposure patterns
-                  </p>
+                  <div style={{textAlign: 'center'}}>
+                    <p style={{fontSize: '0.9rem', color: '#666', margin: '0 0 12px 0'}}>
+                      Choose from MLB, MiLB, and NFL venues to analyze sun exposure patterns
+                    </p>
+                    <div style={{display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap'}}>
+                      <span style={{padding: '4px 8px', background: '#e3f2fd', borderRadius: '12px', fontSize: '0.8rem', color: '#1976d2'}}>
+                        ☀️ Real-time sun tracking
+                      </span>
+                      <span style={{padding: '4px 8px', background: '#f3e5f5', borderRadius: '12px', fontSize: '0.8rem', color: '#7b1fa2'}}>
+                        🏟️ 180+ venues
+                      </span>
+                      <span style={{padding: '4px 8px', background: '#e8f5e9', borderRadius: '12px', fontSize: '0.8rem', color: '#388e3c'}}>
+                        📊 Detailed analysis
+                      </span>
+                    </div>
+                  </div>
                 }
               />
             </section>
@@ -448,7 +467,7 @@ const MobileApp: React.FC = () => {
                 />
               </section>
 
-              <section className="mobile-section">
+              <section className="mobile-section" id="results">
                 <h2 className="mobile-section-title">
                   {filteredSections.length} Sections Found
                 </h2>

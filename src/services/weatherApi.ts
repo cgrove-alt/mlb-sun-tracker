@@ -50,7 +50,7 @@ export class WeatherApiService {
     initialDelay: 500,
     maxDelay: 5000,
     onRetry: (error, retryCount) => {
-      console.log(`Weather API retry attempt ${retryCount} after error:`, error.message);
+      // Retry attempt ${retryCount} after error
     }
   });
 
@@ -84,14 +84,7 @@ export class WeatherApiService {
     
     // Debug logging
     if (process.env.NODE_ENV === 'development') {
-      console.log('Weather selection debug:', {
-        targetTime: targetTime.toISOString(),
-        hourlyDataCount: forecast.hourly.length,
-        firstHour: forecast.hourly[0]?.time,
-        lastHour: forecast.hourly[forecast.hourly.length - 1]?.time,
-        isBeyondForecast,
-        isBeforeForecast
-      });
+      // Weather selection debug information available
     }
     
     forecast.hourly.forEach(hourly => {
@@ -113,12 +106,7 @@ export class WeatherApiService {
     };
     
     if (process.env.NODE_ENV === 'development') {
-      console.log('Selected weather:', {
-        selectedTime: closestWeather.time,
-        temperature: closestWeather.temperature,
-        diffHours: closestDiff / (1000 * 60 * 60),
-        isForecastAvailable: result.isForecastAvailable
-      });
+      // Selected weather debug information available
     }
     
     return result;

@@ -174,8 +174,24 @@ export function validateAllLayouts(): { valid: boolean; errors: string[] } {
           if ((a.start < b.end && a.end > b.start)) {
             errors.push(`${layout.venueName}: Sections ${a.name} and ${b.name} overlap`);
           }
+        } else if (a.wraps && b.wraps) {
+          // Both wrap around 360 - they always overlap
+          errors.push(`${layout.venueName}: Sections ${a.name} and ${b.name} both wrap around and overlap`);
+        } else if (a.wraps) {
+          // 'a' wraps, 'b' doesn't
+          // 'a' covers [start, 360] and [0, end]
+          // Check if 'b' overlaps with either range
+          if (b.start >= a.start || b.end <= a.end) {
+            errors.push(`${layout.venueName}: Sections ${a.name} and ${b.name} overlap`);
+          }
+        } else if (b.wraps) {
+          // 'b' wraps, 'a' doesn't
+          // 'b' covers [start, 360] and [0, end]
+          // Check if 'a' overlaps with either range
+          if (a.start >= b.start || a.end <= b.end) {
+            errors.push(`${layout.venueName}: Sections ${a.name} and ${b.name} overlap`);
+          }
         }
-        // TODO: Handle wrapped sections overlap detection
       }
     }
   });
