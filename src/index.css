@@ -1,6 +1,7 @@
 /* Import comprehensive responsive overrides */
 @import './styles/responsive-overrides.css';
 @import './styles/mobile-scroll-fixes.css';
+@import './styles/dropdown-fixes.css';
 
 * {
   box-sizing: border-box;

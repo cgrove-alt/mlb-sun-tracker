@@ -78,6 +78,7 @@
   display: flex;
   align-items: flex-end;
   isolation: isolate; /* Create new stacking context */
+  pointer-events: none; /* Allow clicks to pass through empty areas */
 }
 
 .mobile-filter-overlay {
@@ -88,6 +89,7 @@
   -webkit-backdrop-filter: blur(4px);
   animation: fadeIn var(--transition-fast);
   z-index: 9998; /* Just below the sheet container */
+  pointer-events: auto; /* Capture clicks to close */
 }
 
 @keyframes fadeIn {
@@ -99,7 +101,8 @@
 .mobile-filter-content {
   position: relative;
   width: 100%;
-  height: auto; /* Let content determine height */
+  max-height: 85vh; /* Limit height to allow scrolling */
+  max-height: 85dvh; /* Dynamic viewport height */
   background: var(--color-white);
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   display: flex;
@@ -108,6 +111,8 @@
   box-shadow: var(--shadow-2xl);
   margin-bottom: env(safe-area-inset-bottom, 0);
   z-index: 10000; /* Ensure content is above everything */
+  pointer-events: auto; /* Capture all interactions */
+  overflow: hidden; /* Clip content to rounded corners */
 }
 
 @keyframes slideUp {
@@ -128,6 +133,10 @@
   background: var(--gradient-field);
   color: white;
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  flex-shrink: 0; /* Don't shrink when content is long */
+  position: sticky; /* Keep header visible */
+  top: 0;
+  z-index: 1;
 }
 
 .mobile-filter-header h2 {
@@ -159,13 +168,19 @@
   transform: scale(0.95);
 }
 
-/* Ultra Compact Body - No scrolling needed */
+/* Scrollable Filter Body */
 .mobile-filter-body {
   padding: var(--space-3);
   background: var(--color-white);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overscroll-behavior: contain; /* Prevent scroll chaining */
+  max-height: calc(85vh - 120px); /* Account for header and footer */
 }
 
 /* Compact Filter Sections */
@@ -395,6 +410,10 @@
   padding: var(--space-3);
   background: var(--color-white);
   border-top: 1px solid var(--color-neutral-200);
+  flex-shrink: 0; /* Don't shrink when content is long */
+  position: sticky; /* Keep footer visible */
+  bottom: 0;
+  z-index: 1;
 }
 
 .mobile-filter-btn {
@@ -461,6 +480,15 @@
 
 /* Landscape Mode */
 @media (max-height: 500px) and (orientation: landscape) {
+  .mobile-filter-content {
+    max-height: 90vh;
+    max-height: 90dvh;
+  }
+  
+  .mobile-filter-body {
+    max-height: calc(90vh - 100px);
+  }
+  
   .mobile-filter-section {
     margin-bottom: 8px;
   }
@@ -510,9 +538,24 @@
   }
 }
 
-/* Small phones - No extra changes needed, already ultra compact */
+/* Small phones - Adjust heights for smaller screens */
 @media (max-height: 667px) {
-  /* All styles are already optimized for small screens */
+  .mobile-filter-content {
+    max-height: 80vh;
+    max-height: 80dvh;
+  }
+  
+  .mobile-filter-body {
+    max-height: calc(80vh - 120px);
+  }
+  
+  .mobile-filter-section {
+    margin-bottom: var(--space-2);
+  }
+  
+  .mobile-filter-options {
+    gap: var(--space-1);
+  }
 }
 
 /* Dark mode support */
