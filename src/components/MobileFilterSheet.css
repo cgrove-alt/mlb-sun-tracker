@@ -74,14 +74,9 @@
 .mobile-filter-sheet {
   position: fixed;
   inset: 0;
-  z-index: var(--z-modal);
+  z-index: 1050; /* Use explicit value to avoid conflicts */
   display: flex;
   align-items: flex-end;
-  pointer-events: none; /* Allow touches to pass through except on children */
-}
-
-.mobile-filter-sheet > * {
-  pointer-events: auto; /* Re-enable touches on actual content */
 }
 
 .mobile-filter-overlay {
@@ -91,6 +86,7 @@
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   animation: fadeIn var(--transition-fast);
+  z-index: 1; /* Ensure overlay is behind content */
 }
 
 @keyframes fadeIn {
@@ -110,6 +106,7 @@
   animation: slideUp var(--transition-base) var(--ease-out);
   box-shadow: var(--shadow-2xl);
   margin-bottom: env(safe-area-inset-bottom, 0);
+  z-index: 2; /* Ensure content is above overlay */
 }
 
 @keyframes slideUp {

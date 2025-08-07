@@ -49,7 +49,7 @@
 .mobile-stadium-modal {
   position: fixed;
   inset: 0;
-  z-index: var(--z-modal);
+  z-index: 1050; /* Use explicit value to match modern-design-system */
   display: flex;
   align-items: flex-end;
 }

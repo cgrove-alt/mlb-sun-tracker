@@ -51,11 +51,17 @@
   --radius-lg: 12px;
   --radius-full: 9999px;
   
-  /* Z-index scale */
-  --z-dropdown: 100;
-  --z-header: 200;
-  --z-modal: 300;
-  --z-toast: 400;
+  /* Z-index scale - removed to use values from modern-design-system.css */
+  /* Values defined in modern-design-system.css:
+     --z-dropdown: 1000;
+     --z-sticky: 1020;
+     --z-fixed: 1030;
+     --z-modal-backdrop: 1040;
+     --z-modal: 1050;
+     --z-popover: 1060;
+     --z-tooltip: 1070;
+     --z-notification: 1080;
+  */
 }
 
 /* Global reset */
