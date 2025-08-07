@@ -31,6 +31,16 @@
   overflow-x: hidden;
 }
 
+/* Fix mobile scrolling issues */
+@media (max-width: 768px) {
+  .mobile-app {
+    overflow-x: hidden;
+    overflow-y: visible; /* Allow natural scrolling */
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
 /* Animated Background Pattern */
 .mobile-app::before {
   content: '';
@@ -591,9 +601,14 @@
 .mobile-app {
   scroll-behavior: smooth;
   /* Removed overscroll-behavior: contain to fix mobile scrolling */
-  overflow-y: auto;
-  height: auto;
-  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .mobile-app {
+    overflow-y: visible; /* Allow body to handle scrolling */
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 /* High contrast mode support */
@@ -630,5 +645,11 @@
 .mobile-main,
 .mobile-section-list {
   -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
+}
+
+@media (max-width: 768px) {
+  .mobile-main,
+  .mobile-section-list {
+    overscroll-behavior-y: auto; /* Allow default overscroll */
+  }
 }

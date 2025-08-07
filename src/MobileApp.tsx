@@ -62,7 +62,10 @@ const MobileApp: React.FC = () => {
   // Close menu when clicking outside
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.classList.add('menu-open');
+      // Only prevent scroll on desktop
+      if (window.innerWidth > 768) {
+        document.body.classList.add('menu-open');
+      }
       
       const handleClick = (e: MouseEvent) => {
         const target = e.target as HTMLElement;

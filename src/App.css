@@ -245,9 +245,18 @@
   justify-content: center;
 }
 
-/* Body class when menu is open */
-body.menu-open {
-  overflow: hidden;
+/* Body class when menu is open - only on desktop */
+@media (min-width: 769px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* Allow scrolling on mobile */
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow-y: auto !important;
+  }
 }
 
 .App-header h1 {
