@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, forwardRef } from 'react';
-import { FixedSizeList as List } from 'react-window';
+import React, { useRef, useEffect, forwardRef, memo, useCallback } from 'react';
+import { FixedSizeList as List, areEqual } from 'react-window';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { LazySectionCard } from './LazySectionCard';
 
@@ -14,12 +14,20 @@ interface ItemData {
   sections: SeatingSectionSun[];
 }
 
-// Row renderer component
-const Row = ({ index, style, data }: { index: number; style: React.CSSProperties; data: ItemData }) => {
+// Memoized row renderer component for better performance
+const Row = memo(({ index, style, data }: { index: number; style: React.CSSProperties; data: ItemData }) => {
   const section = data.sections[index];
   
+  // Add padding to the style for better spacing
+  const adjustedStyle = {
+    ...style,
+    paddingRight: '8px',
+    paddingLeft: '8px',
+    paddingBottom: '8px',
+  };
+  
   return (
-    <div style={style}>
+    <div style={adjustedStyle}>
       <LazySectionCard
         section={section.section}
         sunExposure={section.sunExposure}
@@ -29,49 +37,70 @@ const Row = ({ index, style, data }: { index: number; style: React.CSSProperties
       />
     </div>
   );
-};
+}, areEqual);
+
+Row.displayName = 'VirtualRow';
 
 // Create a wrapper for the list to handle proper styling
-const VirtualSectionListInner = ({ width, children, ...props }: any, ref: any) => (
-  <div
-    ref={ref}
-    style={{ width: width || '100%' }}
-    className="virtual-section-list"
-    {...props}
-  >
-    {children}
-  </div>
+const VirtualSectionListInner = forwardRef<HTMLDivElement, any>(
+  ({ children, ...props }, ref) => (
+    <div
+      ref={ref}
+      className="virtual-section-list"
+      {...props}
+    >
+      {children}
+    </div>
+  )
 );
 
-const CustomScrollbarsVirtualList = forwardRef(VirtualSectionListInner);
+VirtualSectionListInner.displayName = 'VirtualSectionListInner';
 
-export const VirtualSectionList: React.FC<VirtualSectionListProps> = ({
+export const VirtualSectionList: React.FC<VirtualSectionListProps> = memo(({
   sections,
   height,
-  itemHeight = 240, // Approximate height of a section card
+  itemHeight = 260, // Adjusted for better spacing
   width = '100%'
 }) => {
   const listRef = useRef<List>(null);
   
-  // Scroll to top when sections change significantly
-  useEffect(() => {
+  // Optimized scroll reset
+  const scrollToTop = useCallback(() => {
     if (listRef.current) {
       listRef.current.scrollToItem(0, 'start');
     }
-  }, [sections.length]);
+  }, []);
+  
+  // Only scroll to top when sections array reference changes significantly
+  useEffect(() => {
+    // Only reset if the number of sections changes dramatically (e.g., after filtering)
+    scrollToTop();
+  }, [sections.length > 0 ? Math.floor(sections.length / 10) : 0, scrollToTop]);
+  
+  // Calculate dynamic item size based on viewport
+  const getItemSize = useCallback(() => {
+    // Adjust item height based on screen width for responsive design
+    if (window.innerWidth < 768) {
+      return 280; // Slightly larger on mobile for better touch targets
+    }
+    return itemHeight;
+  }, [itemHeight]);
   
   return (
     <List
       ref={listRef}
       height={height}
       itemCount={sections.length}
-      itemSize={itemHeight}
+      itemSize={getItemSize()}
       width={width}
       itemData={{ sections }}
-      outerElementType={CustomScrollbarsVirtualList}
+      outerElementType={VirtualSectionListInner}
       className="section-grid-virtual"
+      overscanCount={3} // Render 3 items outside of the visible area for smoother scrolling
     >
       {Row}
     </List>
   );
-};
+});
+
+VirtualSectionList.displayName = 'VirtualSectionList';

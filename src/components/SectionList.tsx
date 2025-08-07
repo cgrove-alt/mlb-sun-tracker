@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
@@ -28,8 +28,10 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
+  const [containerHeight, setContainerHeight] = useState<number>(600);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Debounce search term
   useEffect(() => {
@@ -39,6 +41,25 @@ export const SectionList: React.FC<SectionListProps> = ({
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
+
+  // Calculate container height based on viewport
+  const calculateContainerHeight = useCallback(() => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const topOffset = rect.top;
+      // Use remaining viewport height minus some padding
+      const calculatedHeight = Math.max(400, viewportHeight - topOffset - 100);
+      setContainerHeight(calculatedHeight);
+    }
+  }, []);
+
+  // Update container height on mount and resize
+  useEffect(() => {
+    calculateContainerHeight();
+    window.addEventListener('resize', calculateContainerHeight);
+    return () => window.removeEventListener('resize', calculateContainerHeight);
+  }, [calculateContainerHeight]);
 
   // Improve scroll performance with passive event listeners
   useEffect(() => {
@@ -314,12 +335,12 @@ export const SectionList: React.FC<SectionListProps> = ({
           )}
         </div>
       ) : (
-        <div className="section-list-container" role="list" aria-labelledby="sections-title">
-          {sortedSections.length > 20 ? (
+        <div className="section-list-container" role="list" aria-labelledby="sections-title" ref={containerRef}>
+          {sortedSections.length > 15 ? (
             // Use virtual scrolling for large lists
             <VirtualSectionList
               sections={sortedSections}
-              height={600}
+              height={containerHeight}
               itemHeight={260}
               width="100%"
             />
