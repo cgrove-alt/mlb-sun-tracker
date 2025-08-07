@@ -476,15 +476,32 @@
   
   /* Mobile toggle buttons without header styling */
   .view-mode-toggle.mobile-toggle {
-    margin-bottom: 16px;
+    margin: 0 16px 16px 16px;
     background: transparent;
     padding: 0;
     border: none;
     box-shadow: none;
   }
   
+  /* Ensure mobile toggles don't look like a header bar */
+  .mobile-app .view-mode-toggle {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+  
+  /* Remove card-like appearance in mobile app context */
   .mobile-app .game-selector {
-    padding-top: 8px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  
+  /* Keep spacing for content inside */
+  .mobile-app .game-selector .control-group {
+    padding: 0 16px;
   }
 
   .view-mode-toggle {
