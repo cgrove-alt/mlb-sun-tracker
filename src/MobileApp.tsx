@@ -22,7 +22,6 @@ import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
 import { UserProfileMenu } from './components/UserProfileMenu';
-import { MobileMenuPortal } from './components/MobileMenuPortal';
 import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile-first.css';
@@ -46,7 +45,6 @@ const MobileApp: React.FC = () => {
   const [weatherForecast, setWeatherForecast] = useState<any>(null);
   const [isWeatherLoading, setIsWeatherLoading] = useState(false);
   const [sunPosition, setSunPosition] = useState<any>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [isCalculating, setIsCalculating] = useState(false);
 
@@ -59,33 +57,7 @@ const MobileApp: React.FC = () => {
     }
   }, [selectedVenue]);
 
-  // Close menu when clicking outside
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      // Only prevent scroll on desktop
-      if (window.innerWidth > 768) {
-        document.body.classList.add('menu-open');
-      }
-      
-      const handleClick = (e: MouseEvent) => {
-        const target = e.target as HTMLElement;
-        if (!target.closest('.mobile-menu') && !target.closest('.mobile-menu-btn')) {
-          setMobileMenuOpen(false);
-        }
-      };
 
-      setTimeout(() => {
-        document.addEventListener('click', handleClick);
-      }, 0);
-      
-      return () => {
-        document.removeEventListener('click', handleClick);
-        document.body.classList.remove('menu-open');
-      };
-    } else {
-      document.body.classList.remove('menu-open');
-    }
-  }, [mobileMenuOpen]);
 
   // Load weather when game is selected
   useEffect(() => {
@@ -341,7 +313,7 @@ const MobileApp: React.FC = () => {
 
           {/* Games are now handled by UnifiedGameSelector */}
 
-          {/* Sun Information Banner with Hamburger Menu */}
+          {/* Sun Information Banner */}
           {gameDateTime && selectedVenue && sunPosition && (
             <section className="mobile-sun-banner">
               <div className="mobile-sun-content">
@@ -371,79 +343,10 @@ const MobileApp: React.FC = () => {
                 
                 <div className="mobile-sun-actions">
                   <UserProfileMenu />
-                  <button 
-                    className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setMobileMenuOpen(!mobileMenuOpen);
-                    }}
-                    aria-label="Menu"
-                    aria-expanded={mobileMenuOpen}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
                 </div>
               </div>
             </section>
           )}
-
-          {/* Mobile Menu Portal */}
-          <MobileMenuPortal isOpen={mobileMenuOpen}>
-            <>
-              <div 
-                className="mobile-menu-overlay" 
-                onClick={() => setMobileMenuOpen(false)} 
-                aria-hidden="true"
-              />
-              <nav className="mobile-menu" role="navigation" aria-label="Main menu">
-                <div className="mobile-menu-header">
-                  <h2>Menu</h2>
-                  <button 
-                    className="mobile-menu-close"
-                    onClick={() => setMobileMenuOpen(false)}
-                    aria-label="Close menu"
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                
-                <div className="mobile-menu-items">
-                  <a href="/" className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">🏟️</span>
-                    <span>Home</span>
-                  </a>
-                  <a href="/guide" className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">☀️</span>
-                    <span>Shade Guides</span>
-                  </a>
-                  <a href="/guide/how-to-find-shaded-seats" className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">🔍</span>
-                    <span>Find Shaded Seats</span>
-                  </a>
-                  <a href="/guide/best-shaded-seats-mlb" className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">⭐</span>
-                    <span>Best Shaded Seats</span>
-                  </a>
-                  <a href="/faq" className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">❓</span>
-                    <span>FAQ</span>
-                  </a>
-                  <button className="mobile-menu-item" onClick={() => setMobileMenuOpen(false)}>
-                    <span className="mobile-menu-icon">⚙️</span>
-                    <span>Settings</span>
-                  </button>
-                </div>
-                
-                <div className="mobile-menu-footer">
-                  <p className="mobile-menu-version">v2.0</p>
-                </div>
-              </nav>
-            </>
-          </MobileMenuPortal>
 
           {/* Weather Display */}
           {gameDateTime && weatherForecast && selectedStadium && (
