@@ -1,5 +1,6 @@
 /* Modern Mobile App Styles - 2025 Design */
 @import './styles/modern-design-system.css';
+@import './components/MobileHeader.css'; /* For menu styles */
 
 .mobile-app {
   min-height: 100vh;
@@ -127,6 +128,88 @@
   color: var(--color-neutral-600);
   font-size: clamp(0.875rem, 3.5vw, 1rem);
   font-weight: var(--font-weight-medium);
+}
+
+/* Sun Information Banner */
+.mobile-sun-banner {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-fixed);
+  background: linear-gradient(135deg, #fffbf0, #fff5e6);
+  border-bottom: 1px solid #ffe4cc;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.08);
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-sun-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  gap: var(--space-3);
+}
+
+.mobile-sun-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.mobile-sun-info svg {
+  color: #ff9800;
+  flex-shrink: 0;
+}
+
+.sun-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sun-status {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-900);
+}
+
+.sun-position {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+}
+
+.mobile-sun-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: var(--color-neutral-700);
+  cursor: pointer;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(255, 152, 0, 0.1);
+  color: var(--color-field-green);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+.mobile-menu-btn.active svg {
+  transform: rotate(90deg);
 }
 
 /* Filter Section - No longer sticky on mobile */
