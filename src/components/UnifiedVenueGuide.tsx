@@ -109,7 +109,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
   };
 
   return (
-    <div className="stadium-guide">
+    <div className="guide-page stadium-guide">
       <nav className="breadcrumb">
         <Link href="/">Home</Link>
         <span> › </span>

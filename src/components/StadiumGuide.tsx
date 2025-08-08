@@ -79,7 +79,7 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
       <StadiumSchema stadium={stadium} />
       <StadiumShadeGuideSchema stadium={stadium} />
       
-      <div className="stadium-guide-wrapper">
+      <div className="guide-page stadium-guide-wrapper">
         <TableOfContents containerRef={guideContentRef} />
         <div className="stadium-guide" ref={guideContentRef}>
         <nav className="breadcrumb">
