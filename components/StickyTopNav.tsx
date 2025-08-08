@@ -108,13 +108,17 @@ export default function StickyTopNav() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // If clicking inside the mobile menu, do not treat as outside
+      if (mobileMenuRef.current && mobileMenuRef.current.contains(event.target as Node)) {
+        return;
+      }
+      
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSearchResults(false);
       }
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsStadiumsOpen(false);
       }
-      // Removed the mobileMenuRef check to prevent issues with overlay clicks
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -340,7 +344,8 @@ export default function StickyTopNav() {
               <button
                 type="button"
                 className="mobile-stadiums-toggle"
-                onClick={() => setIsStadiumsOpen(!isStadiumsOpen)}
+                onMouseDown={(e) => e.stopPropagation()}
+                onClick={() => setIsStadiumsOpen((prev) => !prev)}
                 aria-expanded={isStadiumsOpen}
                 aria-controls="mobile-stadiums-menu"
               >
@@ -360,6 +365,7 @@ export default function StickyTopNav() {
                             key={team.id}
                             href={`/stadium/${team.id}`}
                             className="mobile-team-link"
+                            onMouseDown={(e) => e.stopPropagation()}
                             onClick={(e) => {
                               // Let the navigation proceed
                               // Close both the submenu and the main menu
