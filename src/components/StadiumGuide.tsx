@@ -103,8 +103,18 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
                '☀️ Open Air'}
             </span>
           </div>
+
+          {/* Quick jump bar */}
+          <div className="quick-jump">
+            <a href="#facts">Quick Facts</a>
+            <a href="#simulator">Shade Simulator</a>
+            <a href="#best-sections">Best Sections</a>
+            <a href="#faq">FAQ</a>
+            <a href="#amenities">Amenities</a>
+          </div>
         </header>
 
+        <section id="facts">
         <CollapsibleSection title="Stadium Quick Facts" defaultOpen={true} level="h2">
           <div className="facts-grid">
             <div className="fact-card">
@@ -125,7 +135,9 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
             </div>
           </div>
         </CollapsibleSection>
+        </section>
 
+        <section id="simulator">
         <CollapsibleSection title="Shade Pattern Simulator" defaultOpen={true} level="h2">
           <p>See how shade changes throughout the season and day:</p>
           
@@ -174,10 +186,14 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
           
           <WeatherPatternChart stadiumId={stadium.id} city={stadium.city} />
         </CollapsibleSection>
+        </section>
 
         {/* Are My Seats Shaded FAQ */}
-        <StadiumShadeQuestions stadium={stadium} />
+        <section id="faq">
+          <StadiumShadeQuestions stadium={stadium} />
+        </section>
         
+        <section id="best-sections">
         <CollapsibleSection title="Best Shaded Sections" defaultOpen={true} level="h2">
           <p>These sections typically offer the most shade coverage:</p>
           
@@ -194,6 +210,7 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
             ))}
           </div>
         </CollapsibleSection>
+        </section>
 
         {stadium.roof === 'open' && (
           <CollapsibleSection title={`Sun Safety at ${stadium.name}`} defaultOpen={false} level="h2">
@@ -233,35 +250,9 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
               </div>
             </div>
           </CollapsibleSection>
-        )}
-
-        <CollapsibleSection title="Family & Accessibility" defaultOpen={false} level="h2">
-          
-          {familyAmenities.length > 0 && (
-            <div className="amenities-list">
-              <h3>Family-Friendly Amenities</h3>
-              <ul>
-                {familyAmenities.map(amenity => (
-                  <li key={amenity.id}>
-                    <strong>{amenity.name}</strong> - {amenity.level} level
-                    {amenity.details.nursing && ' (Nursing available)'}
-                    {amenity.details.changingStation && ' (Changing stations)'}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <div className="accessibility-info">
-            <h3>Shaded Accessible Seating</h3>
-            <p>
-              {stadium.name} offers wheelchair accessible seating in shaded areas. 
-              Contact the ticket office for specific ADA seating in covered sections.
-            </p>
-          </div>
-        </CollapsibleSection>
-
-        {stadiumHistories[stadium.id] && (
+                )}
+ 
+         {stadiumHistories[stadium.id] && (
           <CollapsibleSection title="Stadium History & Shade Evolution" defaultOpen={false} level="h2">
             <div className="history-content">
               <div className="history-main">

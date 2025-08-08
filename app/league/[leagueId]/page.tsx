@@ -7,6 +7,7 @@ import {
   getLeagueInfo, 
   getAllLeagues 
 } from '../../../src/data/unifiedVenues';
+import LeagueClient from './LeagueClient';
 
 interface LeaguePageProps {
   params: Promise<{
@@ -100,47 +101,20 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           </div>
         </header>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">All {league.name} Venues</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {venues.map((venue) => (
-              <Link
-                key={venue.id}
-                href={`/venue/${venue.id}`}
-                className="venue-card block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-              >
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {venue.name}
-                  </h3>
-                  <span className={`px-2 py-1 text-xs rounded-full ${
-                    venue.roof === 'fixed' ? 'bg-green-100 text-green-800' :
-                    venue.roof === 'retractable' ? 'bg-blue-100 text-blue-800' :
-                    'bg-yellow-100 text-yellow-800'
-                  }`}>
-                    {venue.roof === 'fixed' ? '🏢 Covered' :
-                     venue.roof === 'retractable' ? '🏟️ Retractable' :
-                     '☀️ Open Air'}
-                  </span>
-                </div>
-                
-                <p className="text-gray-600 mb-2">{venue.team}</p>
-                <p className="text-sm text-gray-500 mb-4">
-                  📍 {venue.city}, {venue.state}
-                </p>
-                
-                <div className="flex justify-between items-center text-sm text-gray-500">
-                  <span>🏟️ {venue.capacity.toLocaleString()} seats</span>
-                  <span className="text-blue-600 font-medium">
-                    View Shade Guide →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <LeagueClient 
+          leagueName={league.name}
+          venues={venues.map(v => ({
+            id: v.id,
+            name: v.name,
+            team: v.team,
+            city: v.city,
+            state: v.state,
+            capacity: v.capacity,
+            roof: v.roof || 'open'
+          }))}
+        />
 
-        <section className="mb-8">
+        <section className="mb-8 mt-10">
           <h2 className="text-2xl font-semibold mb-4">
             {league.sport} Shade Tips
           </h2>
