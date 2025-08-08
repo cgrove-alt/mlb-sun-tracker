@@ -79,12 +79,23 @@ export default function BestShadedSeatsMLBPage() {
             <h2>Stadium-by-Stadium Shade Guide</h2>
             {stadiumShadeData.map((stadium, index) => (
               <div key={index} className="stadium-shade-card">
-                <h3>{stadium.name}</h3>
-                <p className="team-name">{stadium.team}</p>
-                <div className="shade-info">
-                  <h4>Best Shaded Sections:</h4>
-                  <p className="sections">{stadium.bestSections.join(", ")}</p>
-                  <p className="tip"><strong>Pro Tip:</strong> {stadium.tips}</p>
+                <div className="stadium-shade-header">
+                  <h3>{stadium.name}</h3>
+                  <p className="team-name">{stadium.team}</p>
+                </div>
+                <div className="stadium-shade-content">
+                  <div className="shade-info">
+                    <h4>Best Shaded Sections</h4>
+                    <div className="sections-wrapper">
+                      {stadium.bestSections.map((section, i) => (
+                        <span key={i} className="section-tag">{section}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="shade-tip">
+                    <h4>Pro Tips</h4>
+                    <p>{stadium.tips}</p>
+                  </div>
                 </div>
               </div>
             ))}

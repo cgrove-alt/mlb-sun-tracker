@@ -312,14 +312,16 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
       )}
 
       <section className="cta-section">
-        <h2>Plan Your Visit to {venue.name}</h2>
-        <p>
-          Ready to find the perfect shaded seats for your next {venue.team} game? 
-          Use our real-time sun tracker to see exactly which sections will be shaded.
-        </p>
-        <Link href={`/?venue=${venue.id}`} className="cta-button">
-          Check Real-Time Shade →
-        </Link>
+        <div className="cta-content">
+          <h2>Plan Your Visit to {venue.name}</h2>
+          <p>
+            Ready to find the perfect shaded seats for your next {venue.team} game? 
+            Use our real-time sun tracker to see exactly which sections will be shaded.
+          </p>
+          <Link href={`/?venue=${venue.id}`} className="cta-button">
+            Check Real-Time Shade →
+          </Link>
+        </div>
       </section>
 
       <section className="related-content">
