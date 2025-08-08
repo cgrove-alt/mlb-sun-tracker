@@ -174,8 +174,8 @@ export default function BestShadedSeatsMLBPage() {
             <h2>Additional Resources</h2>
             <ul>
               <li><Link href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats Guide</Link></li>
-              <li><Link href="/guide/shade-by-game-time">Shade Patterns by Game Time</Link></li>
-              <li><Link href="/guide/summer-baseball-tips">Summer Baseball Survival Tips</Link></li>
+              <li><Link href="/guide/avoid-sun-baseball-games">How to Avoid Sun at Baseball Games</Link></li>
+              <li><Link href="/guide">View All Stadium Guides</Link></li>
             </ul>
           </section>
         </article>

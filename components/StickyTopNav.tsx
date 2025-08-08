@@ -234,7 +234,7 @@ export default function StickyTopNav() {
                 )}
               </div>
 
-              <Link href="/faqs" className={pathname === '/faqs' ? 'active' : ''}>
+              <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>
                 FAQs
               </Link>
               
@@ -438,8 +438,8 @@ export default function StickyTopNav() {
             </Link>
 
             <Link 
-              href="/faqs" 
-              className={`faqs-link ${pathname === '/faqs' ? 'active' : ''}`}
+              href="/faq" 
+              className={`faqs-link ${pathname === '/faq' ? 'active' : ''}`}
               onClick={closeMobileMenu}
             >
               FAQs

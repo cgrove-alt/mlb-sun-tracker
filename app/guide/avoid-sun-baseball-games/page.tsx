@@ -183,8 +183,8 @@ export default function AvoidSunBaseballGamesPage() {
             <h2>Related Guides</h2>
             <ul>
               <li><Link href="/guide/best-shaded-seats-mlb">Best Shaded Seats at Every Stadium</Link></li>
-              <li><Link href="/guide/summer-day-games">Surviving Summer Day Games</Link></li>
-              <li><Link href="/guide/stadium-shade-hacks">Stadium Shade Hacks</Link></li>
+              <li><Link href="/guide/how-to-find-shaded-seats">How to Find Shaded Seats</Link></li>
+              <li><Link href="/guide">View All Guides</Link></li>
             </ul>
           </section>
         </article>
