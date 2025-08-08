@@ -5,9 +5,15 @@ export const criticalStyles = `
     scroll-behavior: smooth;
   }
   
-  /* Reserve space for sticky header to avoid CLS */
-  header {
-    height: 64px;
+  /* Reserve space for sticky top navigation without constraining all headers */
+  body {
+    padding-top: 64px;
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding-top: 56px;
+    }
   }
   
   /* Loading states */
