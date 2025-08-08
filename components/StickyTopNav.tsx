@@ -327,6 +327,15 @@ export default function StickyTopNav() {
               Home
             </Link>
             
+            {/* Quick access to All Stadiums page */}
+            <Link 
+              href="/stadiums" 
+              className={pathname === '/stadiums' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              All Stadiums
+            </Link>
+            
             <div className="mobile-stadiums-section">
               <button
                 className="mobile-stadiums-toggle"
@@ -360,6 +369,61 @@ export default function StickyTopNav() {
               )}
             </div>
 
+            {/* Guides */}
+            <Link 
+              href="/guide" 
+              className={pathname === '/guide' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Guides
+            </Link>
+            <Link 
+              href="/guide/how-to-find-shaded-seats" 
+              className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              How to Find Shaded Seats
+            </Link>
+            <Link 
+              href="/guide/best-shaded-seats-mlb" 
+              className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Best Shaded Seats (MLB)
+            </Link>
+
+            {/* Leagues */}
+            <Link 
+              href="/league/mlb" 
+              className={pathname === '/league/mlb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              MLB Stadiums
+            </Link>
+            <Link 
+              href="/league/nfl" 
+              className={pathname === '/league/nfl' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              NFL Venues
+            </Link>
+            <Link 
+              href="/league/milb" 
+              className={pathname === '/league/milb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              MiLB Stadiums
+            </Link>
+
+            {/* Tools / Other pages */}
+            <Link 
+              href="/seats-shade-finder" 
+              className={pathname === '/seats-shade-finder' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Seats Shade Finder
+            </Link>
+
             <Link 
               href="/faqs" 
               className={`faqs-link ${pathname === '/faqs' ? 'active' : ''}`}
@@ -375,23 +439,27 @@ export default function StickyTopNav() {
             >
               Contact
             </Link>
+
+            <Link 
+              href="/privacy" 
+              className={pathname === '/privacy' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Privacy
+            </Link>
+            <Link 
+              href="/terms" 
+              className={pathname === '/terms' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </div>
 
       {isMenuOpen && (
-        <>
-          <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
-          <button 
-            className="sticky-nav-mobile-close"
-            onClick={closeMobileMenu}
-            aria-label="Close menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </button>
-        </>
+        <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
       )}
     </>
   );
