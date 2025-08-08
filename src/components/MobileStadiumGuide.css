@@ -27,6 +27,8 @@
   font-size: 24px;
   margin: 0 0 8px 0;
   font-weight: 600;
+  line-height: 1.25; /* prevent overlapping when title wraps */
+  word-break: break-word;
 }
 
 .stadium-badges {
@@ -51,6 +53,11 @@
   padding: 16px;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* make sure first card clears the sticky header area on small devices */
+.mobile-stadium-header + .mobile-card {
+  margin-top: 16px;
 }
 
 .mobile-card h2 {

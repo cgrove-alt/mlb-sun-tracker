@@ -49,7 +49,7 @@ const nextConfig = {
             // Separate critical CSS
             critical: {
               name: 'critical',
-              test: /critical.*\.css$/,
+              test: /critical.*\.(css)$/,
               chunks: 'all',
               enforce: true,
               priority: 30,
@@ -58,8 +58,7 @@ const nextConfig = {
         },
       };
       
-      // Use more compatible JavaScript target
-      config.target = ['web', 'es5'];
+      // Removed legacy ES5 target to enable modern output for desktop
       
     }
     
@@ -87,6 +86,10 @@ const nextConfig = {
             value: 'on'
           },
           {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains; preload'
+          },
+          {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
           },
@@ -108,7 +111,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://site.api.espn.com; frame-ancestors 'none';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://site.api.espn.com; frame-ancestors 'none';"
           }
         ],
       },

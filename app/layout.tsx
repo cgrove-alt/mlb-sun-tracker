@@ -1,8 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import GoogleAnalytics from './GoogleAnalytics';
+// import GoogleAnalytics from './GoogleAnalytics';
 import GoogleAnalyticsClient from './GoogleAnalyticsClient';
+import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
 import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
@@ -139,18 +140,17 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#2196f3" />
         
-        {/* Critical CSS will be preloaded dynamically by CSSOptimizer */}
-        
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
         <WebApplicationSchema />
-        <GoogleAnalytics />
+        {/* Removed immediate GA script load in favor of deferred optimized loader */}
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
+        <GoogleAnalyticsOptimized />
         <GoogleAnalyticsClient />
         <StickyTopNav />
         <div id="root">{children}</div>

@@ -43,7 +43,6 @@ export default function HomePage() {
               <button 
                 onClick={handleCTAClick}
                 className="hero-cta-button"
-                aria-label="Select your stadium to find shaded seats"
               >
                 Select Your Stadium
               </button>
@@ -53,14 +52,14 @@ export default function HomePage() {
 
         {/* SEO-optimized content section */}
         <div className="sr-only">
-          <h1>Find Shaded Seats at MLB Stadiums - Are My Seats in the Shade?</h1>
+          <h2>Find Shaded Seats at MLB Stadiums - Are My Seats in the Shade?</h2>
           <p>
             Wondering "are my seats in the shade?" or "are my seats shaded?" at your favorite MLB stadium? 
             The Shadium helps you find the best shaded seats at all 30 MLB ballparks. Our real-time sun 
             tracking technology shows you exactly which sections will be in the shade during any game time.
           </p>
           
-          <h2>Check If Your Seats Are Shaded at These MLB Stadiums</h2>
+          <h3>Check If Your Seats Are Shaded at These MLB Stadiums</h3>
           <ul>
             <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium?</Link></li>
             <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium</Link></li>
@@ -69,7 +68,7 @@ export default function HomePage() {
             <li><Link href="/stadium/giants">Shaded seats at Oracle Park San Francisco</Link></li>
           </ul>
           
-          <h2>How to Know If Your Seats Are in the Shade</h2>
+          <h3>How to Know If Your Seats Are in the Shade</h3>
           <p>
             Simply select your stadium and game time to see which sections are shaded. Our advanced 
             calculations consider sun angle, stadium orientation, roof coverage, and time of day to 
@@ -94,7 +93,7 @@ export default function HomePage() {
           background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
           background-size: cover;
           background-position: center;
-          background-attachment: fixed;
+          /* Removed background-attachment: fixed for smoother scrolling */
           display: flex;
           align-items: center;
           justify-content: center;
@@ -198,26 +197,11 @@ export default function HomePage() {
           }
         }
 
-        @media (max-width: 768px) {
-          .hero-section {
-            min-height: 500px;
-            height: 80vh;
-          }
-
-          .hero-cta-button {
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-          }
-        }
-
+        /* Accessibility: reduce motion */
         @media (prefers-reduced-motion: reduce) {
-          .hero-content {
-            animation: none;
-          }
-
-          #app-section {
-            transition: none;
-          }
+          .hero-content { animation: none; }
+          .hero-cta-button { transition: none; }
+          #app-section { transition: none; }
         }
       `}</style>
     </>

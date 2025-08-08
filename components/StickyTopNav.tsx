@@ -108,13 +108,17 @@ export default function StickyTopNav() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      // If clicking inside the mobile menu, do not treat as outside
+      if (mobileMenuRef.current && mobileMenuRef.current.contains(event.target as Node)) {
+        return;
+      }
+      
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSearchResults(false);
       }
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsStadiumsOpen(false);
       }
-      // Removed the mobileMenuRef check to prevent issues with overlay clicks
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -275,7 +279,7 @@ export default function StickyTopNav() {
             </div>
 
             <button
-              className="hamburger-menu mobile-only"
+              className="hamburger-menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
@@ -327,11 +331,23 @@ export default function StickyTopNav() {
               Home
             </Link>
             
+            {/* Quick access to All Stadiums page */}
+            <Link 
+              href="/stadiums" 
+              className={pathname === '/stadiums' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              All Stadiums
+            </Link>
+            
             <div className="mobile-stadiums-section">
               <button
+                type="button"
                 className="mobile-stadiums-toggle"
-                onClick={() => setIsStadiumsOpen(!isStadiumsOpen)}
+                onMouseDown={(e) => e.stopPropagation()}
+                onClick={() => setIsStadiumsOpen((prev) => !prev)}
                 aria-expanded={isStadiumsOpen}
+                aria-controls="mobile-stadiums-menu"
               >
                 Stadiums
                 <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -339,26 +355,87 @@ export default function StickyTopNav() {
                 </svg>
               </button>
               
-              {isStadiumsOpen && (
-                <div className="mobile-stadiums-menu">
-                  {MLB_TEAMS_BY_DIVISION.map((group) => (
-                    <div key={group.division} className="mobile-division">
+                              {isStadiumsOpen && (
+                  <div id="mobile-stadiums-menu" className="mobile-stadiums-menu" role="region" aria-label="Stadiums list">
+                    {MLB_TEAMS_BY_DIVISION.map((group) => (
+                      <div key={group.division} className="mobile-division">
                       <h4 className="mobile-division-title">{group.division}</h4>
-                      {group.teams.map((team) => (
-                        <Link
-                          key={team.id}
-                          href={`/stadium/${team.id}`}
-                          className="mobile-team-link"
-                          onClick={closeMobileMenu}
-                        >
-                          {team.name}
-                        </Link>
-                      ))}
-                    </div>
+                                              {group.teams.map((team) => (
+                          <Link
+                            key={team.id}
+                            href={`/stadium/${team.id}`}
+                            className="mobile-team-link"
+                            onMouseDown={(e) => e.stopPropagation()}
+                            onClick={(e) => {
+                              // Let the navigation proceed
+                              // Close both the submenu and the main menu
+                              setIsStadiumsOpen(false);
+                              closeMobileMenu();
+                            }}
+                          >
+                            {team.name}
+                          </Link>
+                        ))}
+                      </div>
                   ))}
                 </div>
               )}
             </div>
+
+            {/* Guides */}
+            <Link 
+              href="/guide" 
+              className={pathname === '/guide' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Guides
+            </Link>
+            <Link 
+              href="/guide/how-to-find-shaded-seats" 
+              className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              How to Find Shaded Seats
+            </Link>
+            <Link 
+              href="/guide/best-shaded-seats-mlb" 
+              className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Best Shaded Seats (MLB)
+            </Link>
+
+            {/* Leagues */}
+            <Link 
+              href="/league/mlb" 
+              className={pathname === '/league/mlb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              MLB Stadiums
+            </Link>
+            <Link 
+              href="/league/nfl" 
+              className={pathname === '/league/nfl' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              NFL Venues
+            </Link>
+            <Link 
+              href="/league/milb" 
+              className={pathname === '/league/milb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              MiLB Stadiums
+            </Link>
+
+            {/* Tools / Other pages */}
+            <Link 
+              href="/seats-shade-finder" 
+              className={pathname === '/seats-shade-finder' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Seats Shade Finder
+            </Link>
 
             <Link 
               href="/faqs" 
@@ -375,23 +452,27 @@ export default function StickyTopNav() {
             >
               Contact
             </Link>
+
+            <Link 
+              href="/privacy" 
+              className={pathname === '/privacy' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Privacy
+            </Link>
+            <Link 
+              href="/terms" 
+              className={pathname === '/terms' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </div>
 
       {isMenuOpen && (
-        <>
-          <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
-          <button 
-            className="sticky-nav-mobile-close"
-            onClick={closeMobileMenu}
-            aria-label="Close menu"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-          </button>
-        </>
+        <div className="sticky-nav-mobile-overlay" onClick={closeMobileMenu} />
       )}
     </>
   );

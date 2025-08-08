@@ -103,8 +103,11 @@
   }
 }
 
+/* Avoid any visual overlap between consecutive collapsible sections */
 .collapsible-section + .collapsible-section {
-  margin-top: -1px;
+  margin-top: 0; /* remove negative margin that could cause overlap */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .collapsible-section:first-child {
