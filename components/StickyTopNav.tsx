@@ -338,9 +338,11 @@ export default function StickyTopNav() {
             
             <div className="mobile-stadiums-section">
               <button
+                type="button"
                 className="mobile-stadiums-toggle"
                 onClick={() => setIsStadiumsOpen(!isStadiumsOpen)}
                 aria-expanded={isStadiumsOpen}
+                aria-controls="mobile-stadiums-menu"
               >
                 Stadiums
                 <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -348,22 +350,27 @@ export default function StickyTopNav() {
                 </svg>
               </button>
               
-              {isStadiumsOpen && (
-                <div className="mobile-stadiums-menu">
-                  {MLB_TEAMS_BY_DIVISION.map((group) => (
-                    <div key={group.division} className="mobile-division">
+                              {isStadiumsOpen && (
+                  <div id="mobile-stadiums-menu" className="mobile-stadiums-menu" role="region" aria-label="Stadiums list">
+                    {MLB_TEAMS_BY_DIVISION.map((group) => (
+                      <div key={group.division} className="mobile-division">
                       <h4 className="mobile-division-title">{group.division}</h4>
-                      {group.teams.map((team) => (
-                        <Link
-                          key={team.id}
-                          href={`/stadium/${team.id}`}
-                          className="mobile-team-link"
-                          onClick={closeMobileMenu}
-                        >
-                          {team.name}
-                        </Link>
-                      ))}
-                    </div>
+                                              {group.teams.map((team) => (
+                          <Link
+                            key={team.id}
+                            href={`/stadium/${team.id}`}
+                            className="mobile-team-link"
+                            onClick={(e) => {
+                              // Let the navigation proceed
+                              // Close both the submenu and the main menu
+                              setIsStadiumsOpen(false);
+                              closeMobileMenu();
+                            }}
+                          >
+                            {team.name}
+                          </Link>
+                        ))}
+                      </div>
                   ))}
                 </div>
               )}
