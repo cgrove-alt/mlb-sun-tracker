@@ -311,7 +311,7 @@
 }
 
 .hamburger-menu {
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 4px;
@@ -590,9 +590,7 @@
     display: flex;
   }
   
-  .hamburger-menu {
-    display: flex;
-  }
+  /* .hamburger-menu already visible by default */
   
   .nav-search {
     display: none;

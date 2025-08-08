@@ -275,7 +275,7 @@ export default function StickyTopNav() {
             </div>
 
             <button
-              className="hamburger-menu mobile-only"
+              className="hamburger-menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
