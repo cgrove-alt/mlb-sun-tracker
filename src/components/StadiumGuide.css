@@ -54,6 +54,23 @@
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
 }
 
+/* Ensure meta row lays out correctly across devices */
+.stadium-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: #495057;
+}
+
+.stadium-meta .location,
+.stadium-meta .capacity,
+.stadium-meta .opened {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
 .stadium-header h1 {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 700;
@@ -949,6 +966,17 @@
 /* Comprehensive Stadium Guide Styles */
 .stadium-guide.comprehensive {
   background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+/* Offset in-page anchors for sticky navigation */
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+@media (max-width: 480px) {
+  section[id] {
+    scroll-margin-top: 60px;
+  }
 }
 
 .guide-section {
