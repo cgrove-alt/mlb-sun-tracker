@@ -351,7 +351,6 @@ button, a, .clickable {
   min-height: 100vh;
   background: #f8f9fa;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  padding-top: 64px; /* Add padding for the fixed header */
 }
 
 .guide-container {
@@ -945,7 +944,6 @@ section strong {
 
 @media (max-width: 768px) {
   .guide-page {
-    padding-top: 56px; /* Adjust for smaller header on mobile */
   }
 
   .guide-container {
