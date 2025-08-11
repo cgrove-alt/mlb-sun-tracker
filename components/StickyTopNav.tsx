@@ -187,51 +187,53 @@ export default function StickyTopNav() {
 
             {/* Desktop navigation links removed - using hamburger menu only */}
 
-            <div className="nav-search" ref={searchRef}>
-              <form onSubmit={handleSearchSubmit}>
-                <input
-                  type="search"
-                  placeholder="Search stadiums..."
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  onFocus={() => searchQuery && setShowSearchResults(true)}
-                  className="search-input"
-                  aria-label="Search stadiums"
-                />
-                <button type="submit" className="search-button" aria-label="Search">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M13 13L16.5 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
-                </button>
-              </form>
-              
-              {showSearchResults && (
-                <div className="search-results">
-                  {searchResults.map((result) => (
-                    <Link
-                      key={result.id}
-                      href={`/stadium/${result.id}`}
-                      className="search-result-item"
-                    >
-                      <span className="result-name">{result.name}</span>
-                      <span className="result-team">{result.team}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <div className="nav-right">
+              <div className="nav-search" ref={searchRef}>
+                <form onSubmit={handleSearchSubmit}>
+                  <input
+                    type="search"
+                    placeholder="Search stadiums..."
+                    value={searchQuery}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    onFocus={() => searchQuery && setShowSearchResults(true)}
+                    className="search-input"
+                    aria-label="Search stadiums"
+                  />
+                  <button type="submit" className="search-button" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M13 13L16.5 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                  </button>
+                </form>
+                
+                {showSearchResults && (
+                  <div className="search-results">
+                    {searchResults.map((result) => (
+                      <Link
+                        key={result.id}
+                        href={`/stadium/${result.id}`}
+                        className="search-result-item"
+                      >
+                        <span className="result-name">{result.name}</span>
+                        <span className="result-team">{result.team}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <button
-              className="hamburger-menu"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
-            >
-              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
-            </button>
+              <button
+                className="hamburger-menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
+              >
+                <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+                <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+              </button>
+            </div>
           </div>
         </div>
       </nav>

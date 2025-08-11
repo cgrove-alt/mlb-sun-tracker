@@ -27,6 +27,14 @@
   gap: 32px;
 }
 
+/* Right-aligned container for search and hamburger menu */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+}
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -601,6 +609,11 @@
   
   .nav-content {
     gap: 16px;
+  }
+  
+  .nav-right {
+    gap: 8px;
+    margin-left: auto;
   }
 }
 
