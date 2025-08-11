@@ -43,7 +43,7 @@
 
 .selector-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the toggle buttons since h3 is hidden */
   align-items: center;
   margin-bottom: 20px;
   flex-wrap: wrap;
@@ -51,6 +51,7 @@
 }
 
 .selector-header h3 {
+  display: none; /* Hide the "Choose Your Game" title to match mobile experience */
   margin: 0;
   color: var(--color-primary-dark);
   font-size: var(--font-size-2xl);
