@@ -51,8 +51,9 @@ button, a, .clickable {
   min-height: 100vh;
 }
 
-/* PWA specific styles */
+/* PWA specific styles - disabled */
 .pwa-install-prompt {
+  display: none !important; /* Hide PWA install prompt */
   position: fixed;
   bottom: 20px;
   left: 50%;

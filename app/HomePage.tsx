@@ -2,7 +2,8 @@
 
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
-import PWAInstallPrompt from '../components/PWAInstallPrompt';
+// PWAInstallPrompt disabled
+// import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import LoadingSpinner from '../components/LoadingSpinner';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
@@ -81,7 +82,8 @@ export default function HomePage() {
             <App />
           </Suspense>
         </div>
-        <PWAInstallPrompt />
+        {/* PWAInstallPrompt disabled */}
+        {/* <PWAInstallPrompt /> */}
       </main>
 
       <style jsx>{`
