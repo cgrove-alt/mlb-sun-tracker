@@ -88,7 +88,6 @@ export default function StickyTopNav() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const searchRef = useRef<HTMLDivElement>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   // Function to close mobile menu
@@ -115,9 +114,6 @@ export default function StickyTopNav() {
       
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setShowSearchResults(false);
-      }
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsStadiumsOpen(false);
       }
     };
 
@@ -189,59 +185,7 @@ export default function StickyTopNav() {
               <span className="logo-text">The Shadium</span>
             </Link>
 
-            <div className="nav-links desktop-only">
-              <Link href="/" className={pathname === '/' ? 'active' : ''}>
-                Home
-              </Link>
-              
-              <div className="dropdown-wrapper" ref={dropdownRef}>
-                <button
-                  className={`dropdown-trigger ${pathname.startsWith('/stadium') ? 'active' : ''}`}
-                  onClick={() => setIsStadiumsOpen(!isStadiumsOpen)}
-                  aria-expanded={isStadiumsOpen}
-                >
-                  Stadiums
-                  <svg className="dropdown-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                </button>
-                
-                {isStadiumsOpen && (
-                  <div className="dropdown-menu mega-menu">
-                    <div className="mega-menu-content">
-                      {MLB_TEAMS_BY_DIVISION.map((group) => (
-                        <div key={group.division} className="division-group">
-                          <h3 className="division-title">{group.division}</h3>
-                          <ul className="team-list">
-                            {group.teams.map((team) => (
-                              <li key={team.id}>
-                                <Link href={`/stadium/${team.id}`} className="team-link">
-                                  <span className="team-name">{team.name}</span>
-                                  <span className="stadium-name">{team.stadium}</span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="dropdown-footer">
-                      <Link href="/stadiums" className="view-all-link">
-                        View All Stadiums →
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <Link href="/faq" className={pathname === '/faq' ? 'active' : ''}>
-                FAQs
-              </Link>
-              
-              <Link href="/contact" className={`contact-link ${pathname === '/contact' ? 'active' : ''}`}>
-                Contact
-              </Link>
-            </div>
+            {/* Desktop navigation links removed - using hamburger menu only */}
 
             <div className="nav-search" ref={searchRef}>
               <form onSubmit={handleSearchSubmit}>
