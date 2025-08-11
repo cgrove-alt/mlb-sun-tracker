@@ -25,6 +25,11 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Hide the App-header when a stadium is selected to match mobile experience */
+.App-header.hidden-when-stadium-selected {
+  display: none;
+}
+
 .header-content {
   max-width: var(--breakpoint-xl);
   margin: 0 auto;

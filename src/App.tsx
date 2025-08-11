@@ -536,7 +536,7 @@ function AppContent() {
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       <OfflineIndicator />
-      <header className={`App-header ${scrolled ? 'scrolled' : ''}`}>
+      <header className={`App-header ${scrolled ? 'scrolled' : ''} ${selectedStadium ? 'hidden-when-stadium-selected' : ''}`}>
         <div className="header-content">
           <div className="header-left">
             <h1>{t('app.title')}</h1>

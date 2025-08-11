@@ -1,5 +1,4 @@
 .sticky-top-nav {
-  display: none; /* Hide StickyTopNav to match mobile experience */
   position: fixed;
   top: 0;
   left: 0;
