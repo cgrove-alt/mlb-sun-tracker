@@ -11,6 +11,7 @@
 }
 
 .App-header {
+  display: none; /* Hide the entire App-header banner */
   background: var(--color-white);
   padding: var(--spacing-3) var(--spacing-5);
   border-bottom: 1px solid var(--color-gray-200);
@@ -25,10 +26,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Hide the App-header when a stadium is selected to match mobile experience */
-.App-header.hidden-when-stadium-selected {
-  display: none;
-}
 
 .header-content {
   max-width: var(--breakpoint-xl);
@@ -91,9 +88,9 @@
   width: 100%;
 }
 
-/* Mobile Menu Button - Now visible on all screen sizes */
+/* Mobile Menu Button - Hidden since App-header is removed */
 .mobile-menu-btn {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -123,8 +120,9 @@
   transform: rotate(90deg);
 }
 
-/* Mobile Menu Overlay */
+/* Mobile Menu Overlay - Hidden since App-header is removed */
 .mobile-menu-overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -135,8 +133,9 @@
   animation: fadeIn 0.2s ease;
 }
 
-/* Mobile Navigation Menu */
+/* Mobile Navigation Menu - Hidden since App-header is removed */
 .mobile-nav-menu {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
