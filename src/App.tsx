@@ -26,8 +26,9 @@ import MobileApp from './MobileApp';
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
 import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
-import { pwaManager, PWAInstallManager } from './utils/pwa';
-import { PWAInstallToast } from './components/PWAInstallToast';
+// PWA functionality disabled
+// import { pwaManager, PWAInstallManager } from './utils/pwa';
+// import { PWAInstallToast } from './components/PWAInstallToast';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, calculateEnhancedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { calculateDetailedSectionSunExposureOptimized } from './utils/optimizedSunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
@@ -85,13 +86,13 @@ function AppContent() {
   const { showError } = useError();
 
   // Load preferences and URL parameters on component mount
-  // Initialize PWA manager
-  useEffect(() => {
-    pwaManager.init();
-    return () => {
-      pwaManager.cleanup();
-    };
-  }, []);
+  // PWA manager disabled
+  // useEffect(() => {
+  //   pwaManager.init();
+  //   return () => {
+  //     pwaManager.cleanup();
+  //   };
+  // }, []);
 
   // Add scroll detection for header styling
   useEffect(() => {
@@ -415,10 +416,10 @@ function AppContent() {
         const filtered = filterSectionsBySunExposure(detailedSectionData, filterCriteria);
         setFilteredSections(filtered);
         
-        // Notify PWA manager that a shade calculation was completed
-        if (filtered.length > 0) {
-          PWAInstallManager.notifyShadeCalculation();
-        }
+        // PWA notification disabled
+        // if (filtered.length > 0) {
+        //   PWAInstallManager.notifyShadeCalculation();
+        // }
         
       } catch (error) {
         if (process.env.NODE_ENV === 'development') {
@@ -471,10 +472,10 @@ function AppContent() {
     setFilterCriteria(criteria);
     // Save filter criteria to user profile
     updatePreferences({ filterCriteria: criteria });
-    // Notify PWA manager when filters are applied
-    if (Object.keys(criteria).length > 0) {
-      PWAInstallManager.notifyUserEngagement('filter');
-    }
+    // PWA notification disabled
+    // if (Object.keys(criteria).length > 0) {
+    //   PWAInstallManager.notifyUserEngagement('filter');
+    // }
     
     // Track filter usage
     if (criteria.sunPreference) {
@@ -559,12 +560,6 @@ function AppContent() {
             )}
           </div>
           <div className="header-right">
-            <nav className="desktop-nav" aria-label="Main navigation">
-              <a href="/" className="nav-link">Home</a>
-              <a href="/stadiums" className="nav-link">Stadiums</a>
-              <a href="/faq" className="nav-link">FAQs</a>
-              <a href="/contact" className="nav-link">Contact</a>
-            </nav>
             <UserProfileMenu />
             <button 
               className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
@@ -922,7 +917,8 @@ function AppContent() {
         </Suspense>
       )}
 
-      <PWAInstallToast />
+      {/* PWA Install Toast disabled */}
+      {/* <PWAInstallToast /> */}
 
       <footer className="App-footer">
         <div className="footer-content">

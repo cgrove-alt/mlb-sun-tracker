@@ -45,8 +45,8 @@
   gap: 1rem;
 }
 
-/* Desktop Navigation Links */
-.desktop-nav {
+/* Desktop Navigation Links - Removed, using hamburger menu only */
+/* .desktop-nav {
   display: none;
   gap: 2rem;
   align-items: center;
@@ -56,7 +56,7 @@
   .desktop-nav {
     display: flex;
   }
-}
+} */
 
 .nav-link {
   color: var(--color-gray-700);
@@ -86,7 +86,7 @@
   width: 100%;
 }
 
-/* Mobile Menu Button */
+/* Mobile Menu Button - Now visible on all screen sizes */
 .mobile-menu-btn {
   display: flex;
   align-items: center;
@@ -100,12 +100,6 @@
   border-radius: 8px;
   transition: all 0.2s ease;
   position: relative;
-}
-
-@media (min-width: 768px) {
-  .mobile-menu-btn {
-    display: none;
-  }
 }
 
 .mobile-menu-btn:hover {
