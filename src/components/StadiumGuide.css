@@ -17,6 +17,11 @@
   padding-top: 1rem; /* Add small padding at top */
 }
 
+/* Ensure comprehensive guides that aren't in wrapper still have proper padding */
+.stadium-guide:not(.comprehensive) {
+  padding-top: 1rem;
+}
+
 @media (max-width: 1024px) {
   .stadium-guide-wrapper {
     display: block;
@@ -86,6 +91,10 @@
   .stadium-header + .collapsible-section,
   .stadium-header + section {
     margin-top: 1rem;
+  }
+  
+  .stadium-guide.comprehensive {
+    padding-top: 4rem; /* Account for smaller nav on mobile (56px) */
   }
 }
 
@@ -690,6 +699,12 @@
     padding: 1rem 3%;
     padding-top: 1.5rem; /* Maintain top padding */
   }
+  
+  .stadium-guide.comprehensive {
+    padding-top: 4.5rem; /* Account for fixed nav on mobile */
+    padding-left: 3%;
+    padding-right: 3%;
+  }
 
   .stadium-header {
     padding: 1.25rem;
@@ -972,7 +987,11 @@
 /* Comprehensive Stadium Guide Styles */
 .stadium-guide.comprehensive {
   background: linear-gradient(to bottom, #f8f9fa, #ffffff);
-  padding-top: 2rem; /* Extra padding for comprehensive guides */
+  padding-top: 5rem; /* Account for fixed nav (64px) + extra space */
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2rem;
+  min-height: 100vh;
 }
 
 .guide-section {
