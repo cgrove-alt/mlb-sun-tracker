@@ -111,7 +111,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://site.api.espn.com; frame-ancestors 'none';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://www.google-analytics.com https://*.google-analytics.com; font-src 'self' data:; connect-src 'self' https://api.open-meteo.com https://statsapi.mlb.com https://site.api.espn.com https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://region1.google-analytics.com; frame-ancestors 'none';"
           }
         ],
       },

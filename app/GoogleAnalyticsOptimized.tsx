@@ -68,6 +68,15 @@ export default function GoogleAnalyticsOptimized() {
       (window as any).gtag('js', new Date());
       (window as any).gtag('config', GA_MEASUREMENT_ID, {
         send_page_view: true, // Enable automatic page view tracking
+        debug_mode: true, // Enable debug mode to see events in GA DebugView
+      });
+      
+      // Send a test event to verify connection
+      console.log('Sending initial test event to GA');
+      (window as any).gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href,
+        page_path: window.location.pathname
       });
     };
     

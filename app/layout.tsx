@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 // import GoogleAnalytics from './GoogleAnalytics';
-import GoogleAnalyticsClient from './GoogleAnalyticsClient';
+// import GoogleAnalyticsClient from './GoogleAnalyticsClient';
 import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
 import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
@@ -146,12 +146,25 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
         <WebApplicationSchema />
-        {/* Removed immediate GA script load in favor of deferred optimized loader */}
+        {/* Google Analytics - Immediate load for tracking */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXGEKF957C"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-JXGEKF957C', {
+                page_path: window.location.pathname,
+                debug_mode: true
+              });
+            `,
+          }}
+        />
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
         <GoogleAnalyticsOptimized />
-        <GoogleAnalyticsClient />
         <StickyTopNav />
         <div id="root">{children}</div>
       </body>
