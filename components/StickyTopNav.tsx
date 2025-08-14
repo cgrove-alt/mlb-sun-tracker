@@ -336,6 +336,15 @@ export default function StickyTopNav() {
             >
               Guides
             </Link>
+            
+            {/* Blog */}
+            <Link 
+              href="/blog" 
+              className={pathname?.startsWith('/blog') ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Blog
+            </Link>
             <Link 
               href="/guide/how-to-find-shaded-seats" 
               className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
