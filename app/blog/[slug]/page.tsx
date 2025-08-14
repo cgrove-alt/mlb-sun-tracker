@@ -9,8 +9,6 @@ import '../blog-post.css';
 marked.setOptions({
   gfm: true,
   breaks: true,
-  headerIds: true,
-  mangle: false,
 });
 
 export async function generateStaticParams() {
