@@ -2,22 +2,10 @@
 const isProd = process.env.NODE_ENV === 'production';
 const isGitHubPages = process.env.DEPLOY_TARGET === 'github-pages';
 
-// MDX configuration
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [require('remark-gfm')],
-    rehypePlugins: [
-      require('rehype-slug'),
-      [require('rehype-autolink-headings'), { behavior: 'wrap' }]
-    ],
-  },
-});
-
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
   // No basePath for custom domain
   // basePath: isProd && isGitHubPages ? '/mlb-sun-tracker' : '',
   // assetPrefix: isProd && isGitHubPages ? '/mlb-sun-tracker/' : '',
@@ -324,4 +312,4 @@ const withPWA = require('next-pwa')({
   ],
 });
 
-module.exports = withMDX(withPWA(nextConfig));
+module.exports = withPWA(nextConfig);

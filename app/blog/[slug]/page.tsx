@@ -1,11 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getPostBySlug, getAllPosts, getRelatedPosts } from '@/lib/blog';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import remarkGfm from 'remark-gfm';
 import '../blog-post.css';
 
 export async function generateStaticParams() {
@@ -15,8 +11,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -36,7 +33,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       publishedTime: post.date,
       authors: [post.author],
       images: post.image ? [post.image] : [],
-      url: `https://theshadium.com/blog/${post.slug}`,
+      url: `https://theshadium.com/blog/${slug}`,
     },
     twitter: {
       card: 'summary_large_image',
@@ -47,37 +44,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-const components = {
-  h2: ({ children }: any) => (
-    <h2 id={children?.toString().toLowerCase().replace(/\s+/g, '-')}>
-      {children}
-    </h2>
-  ),
-  h3: ({ children }: any) => (
-    <h3 id={children?.toString().toLowerCase().replace(/\s+/g, '-')}>
-      {children}
-    </h3>
-  ),
-  a: ({ href, children }: any) => {
-    if (href?.startsWith('/')) {
-      return <Link href={href}>{children}</Link>;
-    }
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    );
-  },
-};
-
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(params.slug);
+  const relatedPosts = getRelatedPosts(slug);
   
   // Generate table of contents from content
   const headings = post.content.match(/^#{2,3}\s.+$/gm) || [];
@@ -87,6 +62,9 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const id = text.toLowerCase().replace(/\s+/g, '-');
     return { level, text, id };
   });
+
+  // Convert markdown to HTML (simple version for static export)
+  const htmlContent = convertMarkdownToHtml(post.content);
 
   return (
     <main className="blog-post-page">
@@ -164,26 +142,15 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               </div>
             </aside>
 
-            <div className="post-content">
-              <MDXRemote 
-                source={post.content}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm],
-                    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]],
-                  },
-                }}
-                components={components}
-              />
-              
-              <div className="post-tags">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="post-tag">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <div className="post-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          </div>
+
+          <div className="post-tags">
+            {post.tags.map((tag) => (
+              <span key={tag} className="post-tag">
+                #{tag}
+              </span>
+            ))}
           </div>
 
           <section className="related-posts">
@@ -216,4 +183,79 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       </article>
     </main>
   );
+}
+
+// Simple markdown to HTML converter for static export
+function convertMarkdownToHtml(markdown: string): string {
+  let html = markdown;
+  
+  // Convert headers
+  html = html.replace(/^### (.*$)/gim, (match, text) => {
+    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    return `<h3 id="${id}">${text}</h3>`;
+  });
+  html = html.replace(/^## (.*$)/gim, (match, text) => {
+    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    return `<h2 id="${id}">${text}</h2>`;
+  });
+  html = html.replace(/^# (.*$)/gim, (match, text) => {
+    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+    return `<h1 id="${id}">${text}</h1>`;
+  });
+  
+  // Convert bold and italic
+  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  
+  // Convert lists - handle multi-line
+  const lines = html.split('\n');
+  let inList = false;
+  let listType = '';
+  const processedLines = [];
+  
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    if (line.match(/^\* /)) {
+      if (!inList || listType !== 'ul') {
+        if (inList) processedLines.push(`</${listType}>`);
+        processedLines.push('<ul>');
+        inList = true;
+        listType = 'ul';
+      }
+      processedLines.push(line.replace(/^\* (.+)$/, '<li>$1</li>'));
+    } else if (line.match(/^\d+\. /)) {
+      if (!inList || listType !== 'ol') {
+        if (inList) processedLines.push(`</${listType}>`);
+        processedLines.push('<ol>');
+        inList = true;
+        listType = 'ol';
+      }
+      processedLines.push(line.replace(/^\d+\. (.+)$/, '<li>$1</li>'));
+    } else {
+      if (inList) {
+        processedLines.push(`</${listType}>`);
+        inList = false;
+      }
+      processedLines.push(line);
+    }
+  }
+  if (inList) {
+    processedLines.push(`</${listType}>`);
+  }
+  
+  html = processedLines.join('\n');
+  
+  // Convert links
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+  
+  // Convert paragraphs
+  html = html.split('\n\n').map(para => {
+    if (!para.startsWith('<')) {
+      return `<p>${para}</p>`;
+    }
+    return para;
+  }).join('\n');
+  
+  return html;
 }
