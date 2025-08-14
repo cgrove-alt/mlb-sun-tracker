@@ -2,7 +2,16 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts, getRelatedPosts } from '@/lib/blog';
+import { marked } from 'marked';
 import '../blog-post.css';
+
+// Configure marked options
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+  headerIds: true,
+  mangle: false,
+});
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -59,12 +68,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const toc = headings.map((heading) => {
     const level = heading.match(/^#+/)?.[0].length || 2;
     const text = heading.replace(/^#+\s/, '');
-    const id = text.toLowerCase().replace(/\s+/g, '-');
+    const id = text.toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .trim();
     return { level, text, id };
   });
 
-  // Convert markdown to HTML (simple version for static export)
-  const htmlContent = convertMarkdownToHtml(post.content);
+  // Convert markdown to HTML using marked
+  const htmlContent = await marked.parse(post.content);
 
   return (
     <main className="blog-post-page">
@@ -81,9 +94,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           <header className="post-header">
             <div className="post-meta">
               <Link href={`/blog/category/${post.category}`} className="post-category">
-                {post.category}
+                {post.category.replace(/-/g, ' ')}
               </Link>
-              <span className="post-date">{post.date}</span>
+              <span className="post-date">{new Date(post.date).toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+              })}</span>
               <span className="post-reading-time">{post.readingTime}</span>
             </div>
             
@@ -127,16 +144,24 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     target="_blank"
                     rel="noopener noreferrer"
                     className="share-button twitter"
+                    aria-label="Share on Twitter"
                   >
-                    Twitter
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                    <span>Twitter</span>
                   </a>
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://theshadium.com/blog/${post.slug}`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="share-button facebook"
+                    aria-label="Share on Facebook"
                   >
-                    Facebook
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    <span>Facebook</span>
                   </a>
                 </div>
               </div>
@@ -147,28 +172,39 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <div className="post-tags">
             {post.tags.map((tag) => (
-              <span key={tag} className="post-tag">
+              <Link key={tag} href={`/blog/tag/${tag}`} className="post-tag">
                 #{tag}
-              </span>
+              </Link>
             ))}
           </div>
 
           <section className="related-posts">
             <h2>Related Posts</h2>
             <div className="related-posts-grid">
-              {relatedPosts.map((relatedPost) => (
-                <article key={relatedPost.slug} className="related-post-card">
-                  <h3>
-                    <Link href={`/blog/${relatedPost.slug}`}>
-                      {relatedPost.title}
-                    </Link>
-                  </h3>
-                  <p>{relatedPost.excerpt}</p>
-                  <Link href={`/blog/${relatedPost.slug}`} className="read-more">
-                    Read More →
-                  </Link>
-                </article>
-              ))}
+              {relatedPosts.length > 0 ? (
+                relatedPosts.map((relatedPost) => (
+                  <article key={relatedPost.slug} className="related-post-card">
+                    {relatedPost.image && (
+                      <Link href={`/blog/${relatedPost.slug}`} className="related-post-image">
+                        <img src={relatedPost.image} alt={relatedPost.title} />
+                      </Link>
+                    )}
+                    <div className="related-post-content">
+                      <h3>
+                        <Link href={`/blog/${relatedPost.slug}`}>
+                          {relatedPost.title}
+                        </Link>
+                      </h3>
+                      <p>{relatedPost.excerpt || relatedPost.description}</p>
+                      <Link href={`/blog/${relatedPost.slug}`} className="read-more">
+                        Read More →
+                      </Link>
+                    </div>
+                  </article>
+                ))
+              ) : (
+                <p className="no-related-posts">No related posts yet. Check back soon!</p>
+              )}
             </div>
           </section>
 
@@ -183,79 +219,4 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </article>
     </main>
   );
-}
-
-// Simple markdown to HTML converter for static export
-function convertMarkdownToHtml(markdown: string): string {
-  let html = markdown;
-  
-  // Convert headers
-  html = html.replace(/^### (.*$)/gim, (match, text) => {
-    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    return `<h3 id="${id}">${text}</h3>`;
-  });
-  html = html.replace(/^## (.*$)/gim, (match, text) => {
-    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    return `<h2 id="${id}">${text}</h2>`;
-  });
-  html = html.replace(/^# (.*$)/gim, (match, text) => {
-    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-    return `<h1 id="${id}">${text}</h1>`;
-  });
-  
-  // Convert bold and italic
-  html = html.replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>');
-  html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/\*(.+?)\*/g, '<em>$1</em>');
-  
-  // Convert lists - handle multi-line
-  const lines = html.split('\n');
-  let inList = false;
-  let listType = '';
-  const processedLines = [];
-  
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line.match(/^\* /)) {
-      if (!inList || listType !== 'ul') {
-        if (inList) processedLines.push(`</${listType}>`);
-        processedLines.push('<ul>');
-        inList = true;
-        listType = 'ul';
-      }
-      processedLines.push(line.replace(/^\* (.+)$/, '<li>$1</li>'));
-    } else if (line.match(/^\d+\. /)) {
-      if (!inList || listType !== 'ol') {
-        if (inList) processedLines.push(`</${listType}>`);
-        processedLines.push('<ol>');
-        inList = true;
-        listType = 'ol';
-      }
-      processedLines.push(line.replace(/^\d+\. (.+)$/, '<li>$1</li>'));
-    } else {
-      if (inList) {
-        processedLines.push(`</${listType}>`);
-        inList = false;
-      }
-      processedLines.push(line);
-    }
-  }
-  if (inList) {
-    processedLines.push(`</${listType}>`);
-  }
-  
-  html = processedLines.join('\n');
-  
-  // Convert links
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-  
-  // Convert paragraphs
-  html = html.split('\n\n').map(para => {
-    if (!para.startsWith('<')) {
-      return `<p>${para}</p>`;
-    }
-    return para;
-  }).join('\n');
-  
-  return html;
 }
