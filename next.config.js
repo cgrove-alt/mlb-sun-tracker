@@ -6,9 +6,9 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  // No basePath for custom domain
-  // basePath: isProd && isGitHubPages ? '/mlb-sun-tracker' : '',
-  // assetPrefix: isProd && isGitHubPages ? '/mlb-sun-tracker/' : '',
+  // Use basePath for GitHub Pages deployment
+  basePath: isGitHubPages ? '/mlb-sun-tracker' : '',
+  assetPrefix: isGitHubPages ? '/mlb-sun-tracker/' : '',
   // Static export for GitHub Pages
   output: 'export',
   // Image optimization now works with server deployment

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/generate-sitemap.js && next build",
+    "build:gh-pages": "DEPLOY_TARGET=github-pages node scripts/generate-sitemap.js && DEPLOY_TARGET=github-pages next build",
     "postbuild": "node scripts/add-cache-headers.js && node scripts/add-github-pages-cache.js && node scripts/compress-build.js",
     "start": "npx serve@latest out",
     "lint": "next lint",
@@ -13,7 +14,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "deploy": "npm run build && npx gh-pages -d out -t --nojekyll"
+    "deploy": "npm run build:gh-pages && npx gh-pages -d out -t --nojekyll"
   },
   "dependencies": {
     "@types/three": "^0.178.1",
