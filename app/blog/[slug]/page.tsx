@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <span aria-hidden="true">/</span>
             <Link href="/blog" className="hover:underline">Blog</Link>
             <span aria-hidden="true">/</span>
-            <span className="truncate max-w-[200px]">{post.title}</span>
+            <span className="truncate">{post.title}</span>
           </nav>
 
           <header className="post-header">

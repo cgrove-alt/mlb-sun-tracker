@@ -22,11 +22,21 @@ export const metadata: Metadata = {
 
 export default function SeatsShadeFinderPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-paper-soft">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <h1 className="h1 text-gray-900 mb-6 break-words md:break-normal">
-          Are My Seats in the Shade? Find Out Instantly
-        </h1>
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span>Shade Finder</span>
+        </nav>
+        
+        <div className="flex min-w-0 items-center justify-between py-4 mb-6">
+          <div className="min-w-0">
+            <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
+              Are My Seats in the Shade? Find Out Instantly
+            </h1>
+          </div>
+        </div>
         
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
           <p className="text-lg text-ink-700 mb-4 max-w-prose">

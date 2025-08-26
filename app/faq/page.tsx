@@ -130,16 +130,22 @@ export default function FAQPage() {
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
           <span aria-hidden="true">/</span>
-          <span className="truncate">FAQ</span>
+          <span>FAQ</span>
         </nav>
 
+        <div className="flex min-w-0 items-center justify-between py-4 mb-6">
+          <div className="min-w-0">
+            <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-base text-ink-700 mt-2 max-w-prose">
+              Everything you need to know about finding seats in the shade at MLB stadiums 
+              and using The Shadium to enhance your baseball experience.
+            </p>
+          </div>
+        </div>
+
         <article className="prose prose-slate max-w-prose stack">
-          <h1 className="break-words md:break-normal">Frequently Asked Questions</h1>
-          
-          <p className="lead">
-            Everything you need to know about finding seats in the shade at MLB stadiums 
-            and using The Shadium to enhance your baseball experience.
-          </p>
 
           <div className="faq-toc">
             <h2>Quick Navigation</h2>

@@ -18,16 +18,28 @@ const DIVISIONS = [
 
 export default function StadiumsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="h1 mb-4 break-words md:break-normal">All MLB Stadiums</h1>
-      <p className="text-lg text-ink-700 mb-12 max-w-prose">
-        Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
-      </p>
+    <div className="max-w-7xl mx-auto px-4 py-8">
+      <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+        <Link href="/" className="hover:underline">Home</Link>
+        <span aria-hidden="true">/</span>
+        <span>All Stadiums</span>
+      </nav>
+      
+      <div className="flex min-w-0 items-center justify-between py-4 mb-6">
+        <div className="min-w-0">
+          <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
+            All MLB Stadiums
+          </h1>
+          <p className="text-base text-ink-700 mt-2 max-w-prose">
+            Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
+          </p>
+        </div>
+      </div>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {DIVISIONS.map((division) => (
           <div key={division.name} className="rounded-xl border bg-white p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2 truncate md:whitespace-normal">
+            <h2 className="text-xl font-bold mb-4 text-ink-800 border-b pb-2 truncate md:whitespace-normal">
               {division.name}
             </h2>
             <div className="space-y-3">
@@ -42,7 +54,7 @@ export default function StadiumsPage() {
                     className="block group"
                   >
                     <div className="p-3 rounded-lg transition-all duration-200 hover:bg-orange-50 hover:shadow-md">
-                      <h3 className="font-semibold text-gray-900 group-hover:text-orange-600">
+                      <h3 className="font-semibold text-ink-900 group-hover:text-orange-600">
                         {stadium.team}
                       </h3>
                       <p className="text-sm text-ink-700">

@@ -76,18 +76,21 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
     <div className="league-page">
       <div className="container mx-auto px-4 py-8">
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
-          <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
+          <Link href="/" className="hover:underline">Home</Link>
           <span aria-hidden="true">/</span>
-          <span className="text-ink-700">{league.name}</span>
+          <span>{league.name}</span>
         </nav>
 
-        <header className="mb-8">
-          <h1 className="h1 mb-4 break-words md:break-normal">
-            {league.name} Stadium Shade Guide
-          </h1>
-          <p className="text-xl text-ink-700 mb-4 max-w-prose">
-            Find the best shaded seats at all {venues.length} {league.name} venues
-          </p>
+        <div className="flex min-w-0 items-center justify-between py-4 mb-6">
+          <div className="min-w-0">
+            <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
+              {league.name} Stadium Shade Guide
+            </h1>
+            <p className="text-base text-ink-700 mt-2 max-w-prose">
+              Find the best shaded seats at all {venues.length} {league.name} venues
+            </p>
+          </div>
+        </div>
           <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-sm">
               <div>
@@ -101,7 +104,6 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               </div>
             </div>
           </div>
-        </header>
 
         <LeagueClient 
           leagueName={league.name}
