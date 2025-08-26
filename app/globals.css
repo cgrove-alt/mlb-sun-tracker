@@ -807,17 +807,18 @@ section strong {
 }
 
 .read-more {
-  color: #2196f3;
+  color: var(--accent-700);
   text-decoration: none;
   font-weight: 600;
 }
 
 .read-more:hover {
   text-decoration: underline;
+  color: var(--accent-600);
 }
 
 .guide-cta {
-  background: #1a237e;
+  background: var(--accent-700);
   color: white;
   border-radius: 12px;
   padding: 3rem;
@@ -831,7 +832,8 @@ section strong {
 
 .guide-cta p {
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: white;
+  opacity: 1;
 }
 
 .guide-footer {
