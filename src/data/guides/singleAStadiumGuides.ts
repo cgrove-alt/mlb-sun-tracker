@@ -1,4 +1,9 @@
 import { StadiumGuide } from '../stadiumGuides';
+import { singleAStadiumGuides2 } from './singleAStadiumGuides2';
+import { singleAStadiumGuides3 } from './singleAStadiumGuides3';
+import { singleAStadiumGuides4 } from './singleAStadiumGuides4';
+import { singleAStadiumGuides5 } from './singleAStadiumGuides5';
+import { singleAStadiumGuides6 } from './singleAStadiumGuides6';
 
 export const singleAStadiumGuides: Record<string, StadiumGuide> = {
   'augusta-greenjackets': {
@@ -841,5 +846,10 @@ export const singleAStadiumGuides: Record<string, StadiumGuide> = {
         'Group packages'
       ]
     }
-  }
+  },
+  ...singleAStadiumGuides2,
+  ...singleAStadiumGuides3,
+  ...singleAStadiumGuides4,
+  ...singleAStadiumGuides5,
+  ...singleAStadiumGuides6
 };

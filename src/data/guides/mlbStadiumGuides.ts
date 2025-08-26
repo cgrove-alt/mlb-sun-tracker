@@ -1,5 +1,11 @@
 import { StadiumGuide } from '../stadiumGuides';
+import { mlbStadiumGuides2 } from './mlbStadiumGuides2';
+import { mlbStadiumGuides3 } from './mlbStadiumGuides3';
+import { mlbStadiumGuides4 } from './mlbStadiumGuides4';
+import { mlbStadiumGuides5 } from './mlbStadiumGuides5';
+import { mlbStadiumGuides6 } from './mlbStadiumGuides6';
 
+// MLB Stadium Guides - Consolidated from all 6 files into a single export
 export const mlbStadiumGuides: Record<string, StadiumGuide> = {
   'angels': {
     id: 'angels',
@@ -400,7 +406,7 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
       alternativeTransport: {
         publicTransit: ['METRORail Red Line to Convention District Station', 'Multiple bus routes'],
         rideShare: 'Texas Ave between Hamilton and Chartres',
-        bicycle: 'Bike racks at all gates'
+        bicycle: 'Bike racks available at all gates'
       }
     },
     
@@ -1149,7 +1155,12 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         'Light rail instead of parking'
       ]
     }
-  }
-};
+  },
 
-// Continue with remaining 27 MLB stadiums...
+  // Import all stadium guides from other files
+  ...mlbStadiumGuides2,
+  ...mlbStadiumGuides3,
+  ...mlbStadiumGuides4,
+  ...mlbStadiumGuides5,
+  ...mlbStadiumGuides6
+};

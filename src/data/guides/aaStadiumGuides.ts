@@ -1,4 +1,13 @@
 import { StadiumGuide } from '../stadiumGuides';
+import { aaStadiumGuides1 } from './aaStadiumGuides1';
+import { aaStadiumGuides2 } from './aaStadiumGuides2';
+import { aaStadiumGuides3 } from './aaStadiumGuides3';
+import { aaStadiumGuides4 } from './aaStadiumGuides4';
+import { aaStadiumGuides5 } from './aaStadiumGuides5';
+import { aaStadiumGuides6 } from './aaStadiumGuides6';
+import { aaStadiumGuides7 } from './aaStadiumGuides7';
+import { aaStadiumGuides8 } from './aaStadiumGuides8';
+import { aaStadiumGuides9 } from './aaStadiumGuides9';
 
 export const aaStadiumGuides: Record<string, StadiumGuide> = {
   'akron-rubberducks': {
@@ -841,7 +850,16 @@ export const aaStadiumGuides: Record<string, StadiumGuide> = {
         'Downtown parking'
       ]
     }
-  }
+  },
+  ...aaStadiumGuides1,
+  ...aaStadiumGuides2,
+  ...aaStadiumGuides3,
+  ...aaStadiumGuides4,
+  ...aaStadiumGuides5,
+  ...aaStadiumGuides6,
+  ...aaStadiumGuides7,
+  ...aaStadiumGuides8,
+  ...aaStadiumGuides9
 };
 
 export default aaStadiumGuides;
