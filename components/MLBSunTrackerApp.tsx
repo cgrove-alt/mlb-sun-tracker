@@ -20,7 +20,7 @@ import { MiLBGame } from '../src/services/milbApi';
 import { NFLGame } from '../src/services/nflApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import { I18nProvider, useTranslation, LanguageSelector } from '../src/i18n/i18nContext';
-import ErrorBoundary from './ErrorBoundary';
+import { ErrorBoundary } from '../src/components/ErrorBoundary';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();

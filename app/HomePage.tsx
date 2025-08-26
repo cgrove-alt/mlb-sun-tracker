@@ -4,12 +4,12 @@ import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 // PWAInstallPrompt disabled
 // import PWAInstallPrompt from '../components/PWAInstallPrompt';
-import LoadingSpinner from '../components/LoadingSpinner';
+import { LoadingSpinner } from '../src/components/LoadingSpinner';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 
-// Use the unified App component that supports multiple leagues
-const App = dynamic(() => import('../src/UnifiedApp'), {
+// Dynamic import of the MLB Sun Tracker app component
+const MLBSunTrackerApp = dynamic(() => import('../components/MLBSunTrackerApp'), {
   ssr: false,
   loading: () => <LoadingSpinner />,
 });
@@ -79,7 +79,7 @@ export default function HomePage() {
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
           <Suspense fallback={<LoadingSpinner />}>
-            <App />
+            <MLBSunTrackerApp />
           </Suspense>
         </div>
         {/* PWAInstallPrompt disabled */}
