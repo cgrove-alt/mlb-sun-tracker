@@ -31,7 +31,7 @@
 
 .forecast-time {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
+  color: var(--color-ink-700);
   background: rgba(255, 255, 255, 0.8);
   padding: var(--spacing-1) var(--spacing-3);
   border-radius: var(--radius-2xl);
@@ -180,7 +180,7 @@
 
 .feels-like {
   font-size: var(--font-size-sm);
-  color: var(--color-gray-600);
+  color: var(--color-ink-700);
   display: block;
   margin-top: var(--spacing-1);
   font-weight: var(--font-weight-medium);
@@ -225,7 +225,7 @@
 
 .detail-label {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
+  color: var(--color-ink-700);
   margin-bottom: var(--spacing-1);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;

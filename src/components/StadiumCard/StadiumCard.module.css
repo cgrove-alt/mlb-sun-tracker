@@ -1,0 +1,226 @@
+/* Stadium Card Component Styles */
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.card:focus-within {
+  outline: 2px solid var(--accent-600);
+  outline-offset: 2px;
+}
+
+/* Typography */
+.title {
+  color: var(--ink-800);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 0 0 4px 0;
+}
+
+.meta {
+  color: var(--ink-700);
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Metrics section */
+.metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  color: var(--ink-900);
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ui-border);
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metricLabel {
+  color: var(--ink-700);
+  font-weight: 400;
+}
+
+.metricValue {
+  color: var(--ink-900);
+  font-weight: 500;
+}
+
+/* CTA Link */
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 14px;
+  font-weight: 500;
+  color: var(--accent-600);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 12px;
+}
+
+.cta:hover {
+  text-decoration: underline;
+  color: var(--accent-700);
+}
+
+.cta:focus {
+  outline: 2px solid var(--accent-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+}
+
+.badgeOpen {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.badgeClosed {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.badgeRetractable {
+  background: #E3F2FD;
+  color: #1565C0;
+}
+
+/* Featured variant */
+.featured {
+  border-color: var(--accent-600);
+  border-width: 2px;
+}
+
+.featured .title {
+  color: var(--accent-700);
+}
+
+/* Compact variant for smaller spaces */
+.compact {
+  padding: 16px;
+}
+
+.compact .title {
+  font-size: 16px;
+}
+
+.compact .meta {
+  font-size: 13px;
+}
+
+.compact .metrics {
+  font-size: 13px;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+/* Loading state */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .card {
+    padding: 16px;
+  }
+  
+  .title {
+    font-size: 16px;
+  }
+  
+  .metrics {
+    font-size: 13px;
+    gap: 10px;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: var(--surface-dark);
+    border-color: var(--ui-border-dark);
+  }
+  
+  .title {
+    color: var(--ondark-800);
+  }
+  
+  .meta {
+    color: var(--ondark-700);
+  }
+  
+  .metrics {
+    color: var(--ondark-900);
+    border-top-color: var(--ui-border-dark);
+  }
+  
+  .metricLabel {
+    color: var(--ondark-700);
+  }
+  
+  .metricValue {
+    color: var(--ondark-900);
+  }
+}

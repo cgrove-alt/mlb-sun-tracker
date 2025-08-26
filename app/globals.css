@@ -6,6 +6,7 @@
 /* Additional Next.js specific styles */
 html {
   scroll-behavior: smooth;
+  font-feature-settings: "kern", "liga";
 }
 
 body {
@@ -17,7 +18,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+  background-color: var(--color-paper, #FFFFFF);
+  color: var(--color-ink-900, #0B1220);
   /* Removed overscroll-behavior: none to allow scrolling on mobile */
+}
+
+/* Base Typography with WCAG AA compliance */
+p, li {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-ink-900, #0B1220);
+}
+
+h1 {
+  color: var(--color-ink-800, #1B2432);
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h2 {
+  color: var(--color-ink-800, #1B2432);
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+h3, h4, h5, h6 {
+  color: var(--color-ink-800, #1B2432);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Muted text helper */
+.muted {
+  color: var(--color-ink-700, #334155);
 }
 
 /* Mobile-specific scrolling fixes */
@@ -239,7 +273,7 @@ button, a, .clickable {
 
 .stadium-info p {
   margin: 0;
-  color: #666;
+  color: var(--ink-700);
   font-size: 0.9rem;
 }
 
@@ -277,7 +311,7 @@ button, a, .clickable {
   border-radius: 8px;
   text-align: center;
   margin: 20px 0;
-  color: #666;
+  color: var(--ink-700);
 }
 
 /* Responsive adjustments */
@@ -367,7 +401,7 @@ button, a, .clickable {
   gap: 0.5rem;
   margin-bottom: 2rem;
   font-size: 0.875rem;
-  color: #666;
+  color: var(--ink-700);
   font-weight: 500;
 }
 
@@ -510,7 +544,7 @@ section strong {
 .feature-content p {
   margin: 0;
   font-size: 0.875rem;
-  color: #666;
+  color: var(--ink-700);
   line-height: 1.5;
 }
 
@@ -556,7 +590,7 @@ section strong {
 .feature-content p {
   margin: 0;
   font-size: 0.9375rem;
-  color: #666;
+  color: var(--ink-700);
   line-height: 1.6;
 }
 
@@ -644,7 +678,7 @@ section strong {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #666;
+  color: var(--ink-700);
   margin: 0 0 0.5rem 0;
 }
 
@@ -767,7 +801,7 @@ section strong {
 }
 
 .guide-card p {
-  color: #666;
+  color: var(--ink-700);
   line-height: 1.6;
   margin-bottom: 1rem;
 }

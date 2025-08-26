@@ -35,14 +35,18 @@ export default function GuidesPage() {
         <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="hover:underline">Home</Link>
           <span aria-hidden="true">/</span>
-          <span className="truncate">Guides</span>
+          <span>Guides</span>
         </nav>
 
-        <div className="guides-header">
-          <h1 className="h1 break-words md:break-normal">Baseball Shade Guides</h1>
-          <p className="lead max-w-prose">
-            Everything you need to know about finding seats in the shade and staying comfortable at MLB stadiums.
-          </p>
+        <div className="flex min-w-0 items-center justify-between py-4 mb-6">
+          <div className="min-w-0">
+            <h1 className="text-balance font-semibold text-ink-800 text-[clamp(1.75rem,2vw+1rem,2.5rem)] truncate md:whitespace-normal">
+              Baseball Shade Guides
+            </h1>
+            <p className="text-base text-ink-700 mt-2 max-w-prose">
+              Everything you need to know about finding seats in the shade and staying comfortable at MLB stadiums.
+            </p>
+          </div>
         </div>
 
         <section className="guides-grid">

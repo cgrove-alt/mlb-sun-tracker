@@ -12,12 +12,12 @@
 
 .breadcrumb {
   margin-bottom: 2rem;
-  color: #666;
+  color: var(--ink-700);
   font-size: 0.9rem;
 }
 
 .breadcrumb a {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
 }
 
@@ -33,12 +33,12 @@
 .blog-header h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #1a1a1a;
+  color: var(--ink-800);
 }
 
 .lead {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--ink-700);
   max-width: 700px;
   margin: 0 auto;
 }
@@ -98,11 +98,11 @@
   gap: 1rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--ink-700);
 }
 
 .blog-category {
-  color: #2196f3;
+  color: var(--accent-600);
   font-weight: 500;
 }
 
@@ -112,16 +112,16 @@
 }
 
 .blog-card h2 a {
-  color: #1a1a1a;
+  color: var(--ink-800);
   text-decoration: none;
 }
 
 .blog-card h2 a:hover {
-  color: #2196f3;
+  color: var(--accent-600);
 }
 
 .blog-excerpt {
-  color: #666;
+  color: var(--ink-700);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -138,11 +138,11 @@
   background: #f0f0f0;
   border-radius: 20px;
   font-size: 0.85rem;
-  color: #666;
+  color: var(--ink-700);
 }
 
 .read-more {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
   font-weight: 500;
 }
@@ -168,7 +168,7 @@
 .sidebar-widget h3 {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #1a1a1a;
+  color: var(--ink-800);
 }
 
 .category-list,
@@ -184,13 +184,13 @@
 
 .category-list a,
 .topic-list a {
-  color: #666;
+  color: var(--ink-700);
   text-decoration: none;
 }
 
 .category-list a:hover,
 .topic-list a:hover {
-  color: #2196f3;
+  color: var(--accent-600);
 }
 
 .cta-widget {
@@ -209,7 +209,7 @@
 .cta-button {
   display: inline-block;
   background: white;
-  color: #2196f3;
+  color: var(--accent-600);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;

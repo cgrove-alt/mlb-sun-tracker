@@ -293,36 +293,36 @@
   outline-offset: 2px;
 }
 
-/* Dynamic sun exposure coloring - modern palette */
+/* Dynamic sun exposure coloring - neutral palette for readability */
 .section-card[data-exposure="0"] {
   --sun-color: var(--color-sun-none);
-  background: var(--color-gray-50);
+  background: #F9FAFB; /* Very light gray */
 }
 
 .section-card[data-exposure^="1"],
 .section-card[data-exposure^="2"] {
   --sun-color: var(--color-sun-low);
-  background: #f3f9ff;
+  background: #F8FAFC; /* Almost white with slight blue tint */
 }
 
 .section-card[data-exposure^="3"],
 .section-card[data-exposure^="4"] {
   --sun-color: var(--color-sun-moderate);
-  background: #fffef7;
+  background: #FAFAF9; /* Very light neutral */
 }
 
 .section-card[data-exposure^="5"],
 .section-card[data-exposure^="6"],
 .section-card[data-exposure^="7"] {
   --sun-color: var(--color-sun-high);
-  background: #fff8f3;
+  background: #FAF9F8; /* Very light warm neutral */
 }
 
 .section-card[data-exposure^="8"],
 .section-card[data-exposure^="9"],
 .section-card[data-exposure="100"] {
   --sun-color: var(--color-sun-extreme);
-  background: #fff5f2;
+  background: #FAFAFA; /* Near white */
 }
 
 .section-header {
@@ -334,7 +334,7 @@
 
 .section-header h3 {
   margin: 0;
-  color: var(--color-primary-dark);
+  color: var(--ink-800, #1B2432); /* Dark, readable text */
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   letter-spacing: -0.02em;
