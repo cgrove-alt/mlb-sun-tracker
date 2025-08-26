@@ -19,8 +19,8 @@ const DIVISIONS = [
 export default function StadiumsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-4">All MLB Stadiums</h1>
-      <p className="text-lg text-gray-600 mb-12">
+      <h1 className="h1 mb-4">All MLB Stadiums</h1>
+      <p className="text-lg text-gray-600 mb-12 max-w-prose">
         Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
       </p>
       
@@ -73,8 +73,8 @@ export default function StadiumsPage() {
       </div>
       
       <div className="mt-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">Looking for Minor League Stadiums?</h2>
-        <p className="text-gray-600 mb-6">
+        <h2 className="h2 mb-4">Looking for Minor League Stadiums?</h2>
+        <p className="text-gray-600 mb-6 max-w-prose mx-auto">
           We also cover MiLB stadiums! Use the search feature in the navigation bar to find your favorite minor league ballpark.
         </p>
       </div>

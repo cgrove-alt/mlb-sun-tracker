@@ -24,12 +24,12 @@ export default function SeatsShadeFinderPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8 max-w-7xl">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">
+        <h1 className="h1 text-gray-900 mb-6">
           Are My Seats in the Shade? Find Out Instantly
         </h1>
         
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <p className="text-lg text-gray-700 mb-4">
+          <p className="text-lg text-gray-700 mb-4 max-w-prose">
             Wondering "are my seats shaded?" We've got you covered! The Shadium provides real-time shade 
             information for every section at all 30 MLB stadiums. Simply select your stadium below to 
             check if your seats will be in the shade during your game.
@@ -44,7 +44,7 @@ export default function SeatsShadeFinderPage() {
         </div>
 
         <section className="mb-12">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
+          <h2 className="h2 text-gray-900 mb-6">
             Check If Your Seats Are Shaded by Stadium
           </h2>
           
@@ -70,7 +70,7 @@ export default function SeatsShadeFinderPage() {
         </section>
 
         <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <h2 className="h2 text-gray-900 mb-4">
             How to Find Out If Your Seats Are Shaded
           </h2>
           

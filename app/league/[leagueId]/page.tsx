@@ -82,10 +82,10 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
         </nav>
 
         <header className="mb-8">
-          <h1 className="text-4xl font-bold mb-4">
+          <h1 className="h1 mb-4">
             {league.name} Stadium Shade Guide
           </h1>
-          <p className="text-xl text-gray-600 mb-4">
+          <p className="text-xl text-gray-600 mb-4 max-w-prose">
             Find the best shaded seats at all {venues.length} {league.name} venues
           </p>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
