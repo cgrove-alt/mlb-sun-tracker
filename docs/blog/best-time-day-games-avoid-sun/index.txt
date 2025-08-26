@@ -1,0 +1,248 @@
+1:"$Sreact.fragment"
+2:I[2781,["869","static/chunks/styles-6d34435f5fd9a27a.js","874","static/chunks/874-437a265a67d6cfee.js","764","static/chunks/764-45c37e7ba0acc573.js","177","static/chunks/app/layout-2aad40d493ec8da5.js"],"CSSOptimizer"]
+3:I[9638,["869","static/chunks/styles-6d34435f5fd9a27a.js","874","static/chunks/874-437a265a67d6cfee.js","764","static/chunks/764-45c37e7ba0acc573.js","177","static/chunks/app/layout-2aad40d493ec8da5.js"],"default"]
+4:I[8557,["869","static/chunks/styles-6d34435f5fd9a27a.js","874","static/chunks/874-437a265a67d6cfee.js","764","static/chunks/764-45c37e7ba0acc573.js","177","static/chunks/app/layout-2aad40d493ec8da5.js"],"default"]
+5:I[7555,[],""]
+6:I[1295,[],""]
+7:I[1024,["874","static/chunks/874-437a265a67d6cfee.js","345","static/chunks/app/not-found-814c885756fc1175.js"],"default"]
+9:I[9665,[],"OutletBoundary"]
+b:I[4911,[],"AsyncMetadataOutlet"]
+d:I[9665,[],"ViewportBoundary"]
+f:I[9665,[],"MetadataBoundary"]
+11:I[8393,[],""]
+:HL["/mlb-sun-tracker/_next/static/media/e4af272ccee01ff0-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/mlb-sun-tracker/_next/static/css/5d8bdf58a1c6f7f6.css","style"]
+0:{"P":null,"b":"gUMDzWAn3CNxTf7jbX-8M","p":"/mlb-sun-tracker","c":["","blog","best-time-day-games-avoid-sun",""],"i":false,"f":[[["",{"children":["blog",{"children":[["slug","best-time-day-games-avoid-sun","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/mlb-sun-tracker/_next/static/css/5d8bdf58a1c6f7f6.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"\n  /* Minimal critical styles */\n  html {\n    scroll-behavior: smooth;\n  }\n  \n  /* Reserve space for sticky header to avoid CLS */\n  header {\n    height: 64px;\n  }\n  \n  /* Loading states */\n  .loading-spinner {\n    display: inline-block;\n    width: 40px;\n    height: 40px;\n    border: 3px solid rgba(0, 0, 0, 0.1);\n    border-radius: 50%;\n    border-top-color: #2196f3;\n    animation: spin 1s ease-in-out infinite;\n  }\n  \n  @keyframes spin {\n    to { transform: rotate(360deg); }\n  }\n"}}],["$","link",null,{"rel":"icon","href":"/favicon.ico"}],["$","link",null,{"rel":"apple-touch-icon","href":"/logo192.png"}],["$","meta",null,{"name":"theme-color","content":"#2196f3"}],["$","link",null,{"rel":"preconnect","href":"https://www.googletagmanager.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://www.googletagmanager.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://api.open-meteo.com"}],["$","link",null,{"rel":"dns-prefetch","href":"https://statsapi.mlb.com"}],["$","script",null,{"type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"{\"@context\":\"https://schema.org\",\"@type\":\"WebApplication\",\"name\":\"The Shadium\",\"alternateName\":\"Shadium MLB Shade Finder\",\"description\":\"Find seats in the shade at any MLB stadium. Real-time sun tracking and shade calculations for all 30 MLB ballparks.\",\"url\":\"https://theshadium.com\",\"applicationCategory\":\"SportsApplication\",\"operatingSystem\":\"All\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\"},\"creator\":{\"@type\":\"Organization\",\"name\":\"The Shadium\",\"url\":\"https://theshadium.com\"},\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"ratingCount\":\"256\"},\"featureList\":[\"Real-time sun tracking\",\"Shade calculations for all MLB stadiums\",\"Section-by-section shade analysis\",\"Weather integration\",\"Mobile-friendly interface\",\"30 MLB stadium coverage\"]}"},"suppressHydrationWarning":true}],["$","script",null,{"async":true,"src":"https://www.googletagmanager.com/gtag/js?id=G-JXGEKF957C"}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"\n              window.dataLayer = window.dataLayer || [];\n              function gtag(){dataLayer.push(arguments);}\n              gtag('js', new Date());\n              gtag('config', 'G-JXGEKF957C', {\n                page_path: window.location.pathname,\n                debug_mode: true\n              });\n            "}}]]}],["$","body",null,{"className":"__className_8a8f33","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","div",null,{"id":"root","children":["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","$L7",null,{}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}]]}],{"children":["blog",["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","best-time-day-games-avoid-sun","d"],["$","$1","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L8",null,["$","$L9",null,{"children":["$La",["$","$Lb",null,{"promise":"$@c"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Lf",null,{"children":"$L10"}]]}],false]],"m":"$undefined","G":["$11",[]],"s":false,"S":true}
+12:"$Sreact.suspense"
+10:["$","div",null,{"hidden":true,"children":["$","$12",null,{"fallback":null,"children":"$L13"}]}]
+14:I[6874,["869","static/chunks/styles-6d34435f5fd9a27a.js","874","static/chunks/874-437a265a67d6cfee.js","953","static/chunks/app/blog/%5Bslug%5D/page-2945cdf052296cca.js"],""]
+8:["$","main",null,{"className":"blog-post-page","children":["$","article",null,{"className":"blog-post","children":["$","div",null,{"className":"post-container","children":[["$","nav",null,{"className":"breadcrumb","children":[["$","$L14",null,{"href":"/","children":"Home"}],["$","span",null,{"children":" › "}],["$","$L14",null,{"href":"/blog","children":"Blog"}],["$","span",null,{"children":" › "}],["$","span",null,{"children":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums"}]]}],["$","header",null,{"className":"post-header","children":[["$","div",null,{"className":"post-meta","children":[["$","$L14",null,{"href":"/blog/category/seasonal","className":"post-category","children":"seasonal"}],["$","span",null,{"className":"post-date","children":"December 12, 2024"}],["$","span",null,{"className":"post-reading-time","children":"5 min read"}]]}],["$","h1",null,{"children":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums"}],["$","p",null,{"className":"post-description","children":"Learn the optimal game times for maximum shade at MLB stadiums. Discover how sun patterns change throughout the day and season."}],["$","div",null,{"className":"post-author","children":["By ",["$","strong",null,{"children":"The Shadium Team"}]]}]]}],["$","div",null,{"className":"post-image","children":["$","img",null,{"src":"/images/blog/day-game-sun.jpg","alt":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums"}]}],["$","div",null,{"className":"post-layout","children":[["$","aside",null,{"className":"post-sidebar","children":[["$","div",null,{"className":"toc-widget","children":[["$","h3",null,{"children":"Table of Contents"}],["$","nav",null,{"className":"toc","children":[["$","a","0",{"href":"#understanding-sun-patterns-at-mlb-stadiums","className":"toc-item toc-level-2","children":"Understanding Sun Patterns at MLB Stadiums"}],["$","a","1",{"href":"#early-afternoon-games-1200-100-pm-start","className":"toc-item toc-level-2","children":"Early Afternoon Games (12:00-1:00 PM Start)"}],["$","a","2",{"href":"#pros","className":"toc-item toc-level-3","children":"Pros"}],["$","a","3",{"href":"#cons","className":"toc-item toc-level-3","children":"Cons"}],["$","a","4",{"href":"#best-stadiums-for-early-games","className":"toc-item toc-level-3","children":"Best Stadiums for Early Games"}],["$","a","5",{"href":"#mid-afternoon-games-300-400-pm-start","className":"toc-item toc-level-2","children":"Mid-Afternoon Games (3:00-4:00 PM Start)"}],["$","a","6",{"href":"#pros","className":"toc-item toc-level-3","children":"Pros"}],["$","a","7",{"href":"#cons","className":"toc-item toc-level-3","children":"Cons"}],["$","a","8",{"href":"#ideal-seating-areas","className":"toc-item toc-level-3","children":"Ideal Seating Areas"}],["$","a","9",{"href":"#late-afternoon-games-500-700-pm-start","className":"toc-item toc-level-2","children":"Late Afternoon Games (5:00-7:00 PM Start)"}],["$","a","10",{"href":"#pros","className":"toc-item toc-level-3","children":"Pros"}],["$","a","11",{"href":"#cons","className":"toc-item toc-level-3","children":"Cons"}],["$","a","12",{"href":"#seasonal-considerations","className":"toc-item toc-level-2","children":"Seasonal Considerations"}],["$","a","13",{"href":"#spring-april-may","className":"toc-item toc-level-3","children":"Spring (April-May)"}],["$","a","14",{"href":"#summer-june-august","className":"toc-item toc-level-3","children":"Summer (June-August)"}],["$","a","15",{"href":"#fall-september-october","className":"toc-item toc-level-3","children":"Fall (September-October)"}],["$","a","16",{"href":"#stadium-specific-recommendations","className":"toc-item toc-level-2","children":"Stadium-Specific Recommendations"}],["$","a","17",{"href":"#east-coast-stadiums","className":"toc-item toc-level-3","children":"East Coast Stadiums"}],["$","a","18",{"href":"#west-coast-stadiums","className":"toc-item toc-level-3","children":"West Coast Stadiums"}],["$","a","19",{"href":"#midwest-stadiums","className":"toc-item toc-level-3","children":"Midwest Stadiums"}],["$","a","20",{"href":"#tips-for-different-start-times","className":"toc-item toc-level-2","children":"Tips for Different Start Times"}],["$","a","21",{"href":"#100-pm-games","className":"toc-item toc-level-3","children":"1:00 PM Games"}],["$","a","22",{"href":"#400-pm-games","className":"toc-item toc-level-3","children":"4:00 PM Games"}],"$L15","$L16","$L17","$L18","$L19","$L1a","$L1b","$L1c","$L1d","$L1e","$L1f","$L20","$L21","$L22","$L23","$L24","$L25","$L26"]}]]}],"$L27"]}],"$L28"]}],"$L29","$L2a","$L2b"]}]}]}]
+15:["$","a","23",{"href":"#700-pm-games","className":"toc-item toc-level-3","children":"7:00 PM Games"}]
+16:["$","a","24",{"href":"#special-considerations","className":"toc-item toc-level-2","children":"Special Considerations"}]
+17:["$","a","25",{"href":"#getaway-day-games","className":"toc-item toc-level-3","children":"Getaway Day Games"}]
+18:["$","a","26",{"href":"#weekend-day-games","className":"toc-item toc-level-3","children":"Weekend Day Games"}]
+19:["$","a","27",{"href":"#holiday-games","className":"toc-item toc-level-3","children":"Holiday Games"}]
+1a:["$","a","28",{"href":"#technology-tools","className":"toc-item toc-level-2","children":"Technology Tools"}]
+1b:["$","a","29",{"href":"#the-shadium-sun-tracker","className":"toc-item toc-level-3","children":"The Shadium Sun Tracker"}]
+1c:["$","a","30",{"href":"#weather-apps","className":"toc-item toc-level-3","children":"Weather Apps"}]
+1d:["$","a","31",{"href":"#stadium-apps","className":"toc-item toc-level-3","children":"Stadium Apps"}]
+1e:["$","a","32",{"href":"#planning-your-day-game-experience","className":"toc-item toc-level-2","children":"Planning Your Day Game Experience"}]
+1f:["$","a","33",{"href":"#two-weeks-before","className":"toc-item toc-level-3","children":"Two Weeks Before"}]
+20:["$","a","34",{"href":"#one-week-before","className":"toc-item toc-level-3","children":"One Week Before"}]
+21:["$","a","35",{"href":"#game-day","className":"toc-item toc-level-3","children":"Game Day"}]
+22:["$","a","36",{"href":"#shade-hacks-by-start-time","className":"toc-item toc-level-2","children":"Shade Hacks by Start Time"}]
+23:["$","a","37",{"href":"#morning-games-1100-am-1230-pm","className":"toc-item toc-level-3","children":"Morning Games (11:00 AM - 12:30 PM)"}]
+24:["$","a","38",{"href":"#afternoon-games-100-pm-330-pm","className":"toc-item toc-level-3","children":"Afternoon Games (1:00 PM - 3:30 PM)"}]
+25:["$","a","39",{"href":"#evening-games-400-pm-700-pm","className":"toc-item toc-level-3","children":"Evening Games (4:00 PM - 7:00 PM)"}]
+26:["$","a","40",{"href":"#conclusion","className":"toc-item toc-level-2","children":"Conclusion"}]
+27:["$","div",null,{"className":"share-widget","children":[["$","h3",null,{"children":"Share This Post"}],["$","div",null,{"className":"share-buttons","children":[["$","a",null,{"href":"https://twitter.com/intent/tweet?text=Best%20Times%20for%20Day%20Games%3A%20How%20to%20Avoid%20the%20Sun%20at%20MLB%20Stadiums&url=https%3A%2F%2Ftheshadium.com%2Fblog%2Fbest-time-day-games-avoid-sun","target":"_blank","rel":"noopener noreferrer","className":"share-button twitter","aria-label":"Share on Twitter","children":[["$","svg",null,{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"currentColor","children":["$","path",null,{"d":"M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"}]}],["$","span",null,{"children":"Twitter"}]]}],["$","a",null,{"href":"https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftheshadium.com%2Fblog%2Fbest-time-day-games-avoid-sun","target":"_blank","rel":"noopener noreferrer","className":"share-button facebook","aria-label":"Share on Facebook","children":[["$","svg",null,{"width":"20","height":"20","viewBox":"0 0 24 24","fill":"currentColor","children":["$","path",null,{"d":"M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"}]}],["$","span",null,{"children":"Facebook"}]]}]]}]]}]
+2c:T1a5a,<h2>Understanding Sun Patterns at MLB Stadiums</h2>
+<p>The sun&#39;s position dramatically affects shade coverage at baseball stadiums. A 1:00 PM game offers completely different shade patterns than a 4:00 PM start. Understanding these patterns can help you choose the best game times for comfort.</p>
+<h2>Early Afternoon Games (12:00-1:00 PM Start)</h2>
+<h3>Pros</h3>
+<ul>
+<li>Third base side typically gets shade first</li>
+<li>Upper deck overhangs provide maximum coverage</li>
+<li>Sun is high, creating more natural shade</li>
+</ul>
+<h3>Cons</h3>
+<ul>
+<li>Peak UV exposure time</li>
+<li>Field level seats get minimal shade</li>
+<li>Outfield bleachers are completely exposed</li>
+</ul>
+<h3>Best Stadiums for Early Games</h3>
+<ol>
+<li><strong>Yankee Stadium</strong> - Extensive upper deck coverage</li>
+<li><strong>Fenway Park</strong> - Green Monster provides unique shade</li>
+<li><strong>Progressive Field</strong> - Well-designed overhangs</li>
+</ol>
+<h2>Mid-Afternoon Games (3:00-4:00 PM Start)</h2>
+<h3>Pros</h3>
+<ul>
+<li>Sun begins moving west, creating more shade</li>
+<li>First base side starts getting coverage</li>
+<li>Temperature typically cooler than noon</li>
+</ul>
+<h3>Cons</h3>
+<ul>
+<li>Sun glare can affect viewing angles</li>
+<li>Shade patterns shift during the game</li>
+<li>Some sections transition from shade to sun</li>
+</ul>
+<h3>Ideal Seating Areas</h3>
+<ul>
+<li>Sections behind home plate</li>
+<li>Third base side (especially upper levels)</li>
+<li>Club level with overhang protection</li>
+</ul>
+<h2>Late Afternoon Games (5:00-7:00 PM Start)</h2>
+<h3>Pros</h3>
+<ul>
+<li>Most shade coverage of any day game</li>
+<li>Cooler temperatures</li>
+<li>Sun sets during later innings</li>
+</ul>
+<h3>Cons</h3>
+<ul>
+<li>Sun glare in early innings</li>
+<li>Shadows can affect field visibility</li>
+<li>Rush hour traffic considerations</li>
+</ul>
+<h2>Seasonal Considerations</h2>
+<h3>Spring (April-May)</h3>
+<p><strong>Best Times</strong>: 3:00-4:00 PM starts</p>
+<ul>
+<li>Lower sun angle creates more shade</li>
+<li>Cooler temperatures reduce heat stress</li>
+<li>Third base side ideal for afternoon games</li>
+</ul>
+<h3>Summer (June-August)</h3>
+<p><strong>Best Times</strong>: 5:00-7:00 PM starts</p>
+<ul>
+<li>Avoid peak heat hours</li>
+<li>Maximum shade in later innings</li>
+<li>Consider night games when possible</li>
+</ul>
+<h3>Fall (September-October)</h3>
+<p><strong>Best Times</strong>: 1:00-2:00 PM starts</p>
+<ul>
+<li>Pleasant temperatures</li>
+<li>Lower sun angle throughout</li>
+<li>Earlier sunset times</li>
+</ul>
+<h2>Stadium-Specific Recommendations</h2>
+<h3>East Coast Stadiums</h3>
+<p><strong>Optimal Times</strong>: 4:00-7:00 PM</p>
+<ul>
+<li>Sun sets behind most stadiums</li>
+<li>Later starts avoid peak heat</li>
+<li>Examples: Yankee Stadium, Fenway Park, Citizens Bank Park</li>
+</ul>
+<h3>West Coast Stadiums</h3>
+<p><strong>Optimal Times</strong>: 1:00-4:00 PM</p>
+<ul>
+<li>Marine layer provides natural cooling</li>
+<li>Sun angle favors afternoon games</li>
+<li>Examples: Oracle Park, Petco Park, Dodger Stadium</li>
+</ul>
+<h3>Midwest Stadiums</h3>
+<p><strong>Optimal Times</strong>: 3:00-5:00 PM</p>
+<ul>
+<li>Balance between heat and shade</li>
+<li>Variable weather considerations</li>
+<li>Examples: Wrigley Field, Busch Stadium, Target Field</li>
+</ul>
+<h2>Tips for Different Start Times</h2>
+<h3>1:00 PM Games</h3>
+<ul>
+<li>Arrive early to find shaded standing areas</li>
+<li>Bring maximum sun protection</li>
+<li>Consider upper deck seats</li>
+<li>Hydrate extensively before the game</li>
+</ul>
+<h3>4:00 PM Games</h3>
+<ul>
+<li>Check sunset time for your date</li>
+<li>First base side gets late-game shade</li>
+<li>Bring sunglasses for sun glare</li>
+<li>Dress in layers for temperature changes</li>
+</ul>
+<h3>7:00 PM Games</h3>
+<ul>
+<li>Still considered &quot;day games&quot; in summer</li>
+<li>Sun sets during middle innings</li>
+<li>West-facing seats get direct sun early</li>
+<li>Best overall comfort level</li>
+</ul>
+<h2>Special Considerations</h2>
+<h3>Getaway Day Games</h3>
+<p>Many Thursday afternoon games start at 12:35 PM</p>
+<ul>
+<li>Maximum sun exposure</li>
+<li>Prioritize covered seating</li>
+<li>Consider weeknight games instead</li>
+</ul>
+<h3>Weekend Day Games</h3>
+<p>Saturday/Sunday games typically 1:00-4:00 PM</p>
+<ul>
+<li>Most crowded shade sections</li>
+<li>Arrive early for best spots</li>
+<li>Premium shaded seats sell out first</li>
+</ul>
+<h3>Holiday Games</h3>
+<p>July 4th, Memorial Day, Labor Day often day games</p>
+<ul>
+<li>Peak attendance and sun exposure</li>
+<li>Book shaded seats well in advance</li>
+<li>Consider special ticket packages with club access</li>
+</ul>
+<h2>Technology Tools</h2>
+<h3>The Shadium Sun Tracker</h3>
+<ul>
+<li>Real-time shade predictions</li>
+<li>Hour-by-hour coverage maps</li>
+<li>Specific to your game date/time</li>
+</ul>
+<h3>Weather Apps</h3>
+<ul>
+<li>Check UV index</li>
+<li>Monitor cloud cover</li>
+<li>Track temperature changes</li>
+</ul>
+<h3>Stadium Apps</h3>
+<ul>
+<li>Some offer shade information</li>
+<li>Real-time sun/shade photos</li>
+<li>Fan-submitted updates</li>
+</ul>
+<h2>Planning Your Day Game Experience</h2>
+<h3>Two Weeks Before</h3>
+<ul>
+<li>Check game time</li>
+<li>Research shade patterns</li>
+<li>Book optimal seats</li>
+</ul>
+<h3>One Week Before</h3>
+<ul>
+<li>Monitor weather forecast</li>
+<li>Confirm sun position</li>
+<li>Plan arrival time</li>
+</ul>
+<h3>Game Day</h3>
+<ul>
+<li>Check real-time conditions</li>
+<li>Arrive early</li>
+<li>Scout alternative viewing areas</li>
+</ul>
+<h2>Shade Hacks by Start Time</h2>
+<h3>Morning Games (11:00 AM - 12:30 PM)</h3>
+<ul>
+<li>Sit as high as possible</li>
+<li>West side of stadium best</li>
+<li>Bring portable shade</li>
+</ul>
+<h3>Afternoon Games (1:00 PM - 3:30 PM)</h3>
+<ul>
+<li>Third base/left field optimal</li>
+<li>Seek structural overhangs</li>
+<li>Club level worth the cost</li>
+</ul>
+<h3>Evening Games (4:00 PM - 7:00 PM)</h3>
+<ul>
+<li>First base side for late shade</li>
+<li>Behind home plate safest bet</li>
+<li>Lower levels become viable</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Choosing the right game time can make the difference between an enjoyable day at the ballpark and a miserable sun-soaked experience. While 7:00 PM starts offer the best overall comfort, earlier games can be manageable with proper planning and seat selection.</p>
+<p>Remember that shade patterns vary by stadium, season, and specific game date. Always use The Shadium&#39;s real-time tracker to verify shade coverage for your specific game before purchasing tickets.</p>
+<p>The best time for a day game ultimately depends on your priorities: maximum shade (late afternoon), cooler temperatures (evening), or traditional baseball atmosphere (early afternoon). Plan accordingly and enjoy the game!</p>
+28:["$","div",null,{"className":"post-content","dangerouslySetInnerHTML":{"__html":"$2c"}}]
+29:["$","div",null,{"className":"post-tags","children":[["$","$L14","day-games",{"href":"/blog/tag/day-games","className":"post-tag","children":["#","day-games"]}],["$","$L14","sun-patterns",{"href":"/blog/tag/sun-patterns","className":"post-tag","children":["#","sun-patterns"]}],["$","$L14","mlb",{"href":"/blog/tag/mlb","className":"post-tag","children":["#","mlb"]}],["$","$L14","shade-tips",{"href":"/blog/tag/shade-tips","className":"post-tag","children":["#","shade-tips"]}],["$","$L14","game-time",{"href":"/blog/tag/game-time","className":"post-tag","children":["#","game-time"]}]]}]
+2a:["$","section",null,{"className":"related-posts","children":[["$","h2",null,{"children":"Related Posts"}],["$","div",null,{"className":"related-posts-grid","children":[["$","article","complete-guide-shaded-seats-yankee-stadium",{"className":"related-post-card","children":[["$","$L14",null,{"href":"/blog/complete-guide-shaded-seats-yankee-stadium","className":"related-post-image","children":["$","img",null,{"src":"/images/blog/yankee-stadium-shade.jpg","alt":"Complete Guide to Shaded Seats at Yankee Stadium"}]}],["$","div",null,{"className":"related-post-content","children":[["$","h3",null,{"children":["$","$L14",null,{"href":"/blog/complete-guide-shaded-seats-yankee-stadium","children":"Complete Guide to Shaded Seats at Yankee Stadium"}]}],["$","p",null,{"children":"Discover the ultimate guide to finding shaded seats at Yankee Stadium. From the upper deck overhangs to strategic field level sections, we'll show you exactly where to sit to avoid the sun."}],["$","$L14",null,{"href":"/blog/complete-guide-shaded-seats-yankee-stadium","className":"read-more","children":"Read More →"}]]}]]}],["$","article","fenway-park-green-monster-shade-guide",{"className":"related-post-card","children":[["$","$L14",null,{"href":"/blog/fenway-park-green-monster-shade-guide","className":"related-post-image","children":["$","img",null,{"src":"/images/blog/fenway-park-shade.jpg","alt":"Fenway Park Shade Secrets: Using the Green Monster to Your Advantage"}]}],["$","div",null,{"className":"related-post-content","children":[["$","h3",null,{"children":["$","$L14",null,{"href":"/blog/fenway-park-green-monster-shade-guide","children":"Fenway Park Shade Secrets: Using the Green Monster to Your Advantage"}]}],["$","p",null,{"children":"Fenway Park's unique architecture, including the famous Green Monster, creates shade patterns unlike any other MLB stadium. Learn how to use these quirks to your advantage."}],["$","$L14",null,{"href":"/blog/fenway-park-green-monster-shade-guide","className":"read-more","children":"Read More →"}]]}]]}]]}]]}]
+2b:["$","div",null,{"className":"post-cta","children":[["$","h2",null,{"children":"Find Your Perfect Shaded Seat"}],["$","p",null,{"children":"Ready to put these tips into action? Use The Shadium's real-time sun tracker to find the best shaded seats at any MLB stadium."}],["$","$L14",null,{"href":"/","className":"cta-button primary","children":"Check Shade Coverage Now →"}]]}]
+e:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover, user-scalable=yes"}],["$","meta","2",{"name":"theme-color","content":"#2196f3"}]]
+a:null
+c:{"metadata":[["$","title","0",{"children":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums | The Shadium Blog"}],["$","meta","1",{"name":"description","content":"Learn the optimal game times for maximum shade at MLB stadiums. Discover how sun patterns change throughout the day and season."}],["$","meta","2",{"name":"author","content":"The Shadium Team"}],["$","link","3",{"rel":"manifest","href":"/manifest.json","crossOrigin":"$undefined"}],["$","meta","4",{"name":"keywords","content":"day-games,sun-patterns,mlb,shade-tips,game-time"}],["$","meta","5",{"name":"creator","content":"The Shadium"}],["$","meta","6",{"name":"publisher","content":"The Shadium"}],["$","meta","7",{"name":"robots","content":"index, follow"}],["$","meta","8",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","9",{"rel":"canonical","href":"https://theshadium.com/"}],["$","meta","10",{"name":"format-detection","content":"telephone=no, address=no, email=no"}],["$","meta","11",{"name":"google-site-verification","content":"your-actual-google-verification-code"}],["$","meta","12",{"name":"mobile-web-app-capable","content":"yes"}],["$","meta","13",{"name":"apple-mobile-web-app-title","content":"The Shadium"}],["$","meta","14",{"name":"apple-mobile-web-app-status-bar-style","content":"default"}],["$","meta","15",{"property":"og:title","content":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums"}],["$","meta","16",{"property":"og:description","content":"Learn the optimal game times for maximum shade at MLB stadiums. Discover how sun patterns change throughout the day and season."}],["$","meta","17",{"property":"og:url","content":"https://theshadium.com/blog/best-time-day-games-avoid-sun/"}],["$","meta","18",{"property":"og:image","content":"https://theshadium.com/images/blog/day-game-sun.jpg"}],["$","meta","19",{"property":"og:type","content":"article"}],["$","meta","20",{"property":"article:published_time","content":"December 12, 2024"}],["$","meta","21",{"property":"article:author","content":"The Shadium Team"}],["$","meta","22",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","23",{"name":"twitter:title","content":"Best Times for Day Games: How to Avoid the Sun at MLB Stadiums"}],["$","meta","24",{"name":"twitter:description","content":"Learn the optimal game times for maximum shade at MLB stadiums. Discover how sun patterns change throughout the day and season."}],["$","meta","25",{"name":"twitter:image","content":"https://theshadium.com/images/blog/day-game-sun.jpg"}]],"error":null,"digest":"$undefined"}
+13:"$c:metadata"
