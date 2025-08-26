@@ -6,11 +6,8 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  // Use basePath for GitHub Pages deployment
-  basePath: isGitHubPages ? '/mlb-sun-tracker' : '',
-  assetPrefix: isGitHubPages ? '/mlb-sun-tracker/' : '',
-  // Static export for GitHub Pages
-  output: 'export',
+  // Remove static export for Vercel deployment
+  // Vercel handles server-side rendering natively
   // Image optimization now works with server deployment
   images: {
     domains: ['statsapi.mlb.com', 'api.open-meteo.com'],
