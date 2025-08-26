@@ -64,6 +64,45 @@ function UnifiedAppContent() {
   // Convert unified venue to legacy stadium format for compatibility
   const legacyStadium = selectedVenue ? convertToLegacyStadium(selectedVenue) : null;
 
+  // Load venue from URL parameters on mount
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const venueParam = urlParams.get('venue');
+    const stadiumParam = urlParams.get('stadium');
+    const datetimeParam = urlParams.get('datetime');
+    
+    // Check for venue parameter (for MiLB/NFL venues)
+    if (venueParam) {
+      const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
+      if (venue) {
+        setSelectedVenue(venue);
+        trackStadiumView(venue.id);
+      }
+    }
+    // Check for stadium parameter (for MLB stadiums - backward compatibility)
+    else if (stadiumParam) {
+      const venue = ALL_UNIFIED_VENUES.find(v => v.id === stadiumParam);
+      if (venue) {
+        setSelectedVenue(venue);
+        trackStadiumView(venue.id);
+      }
+    }
+    
+    // If datetime is provided, set it
+    if (datetimeParam) {
+      try {
+        const dateTime = new Date(datetimeParam);
+        if (!isNaN(dateTime.getTime())) {
+          setGameDateTime(dateTime);
+        }
+      } catch (error) {
+        console.error('Invalid datetime parameter:', error);
+      }
+    }
+  }, []); // Only run once on mount
+
   // Load weather forecast
   const loadWeatherForecast = useCallback(async () => {
     if (!selectedVenue || !gameDateTime) {

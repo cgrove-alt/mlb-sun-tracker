@@ -318,7 +318,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
             Ready to find the perfect shaded seats for your next {venue.team} game? 
             Use our real-time sun tracker to see exactly which sections will be shaded.
           </p>
-          <Link href={`/?venue=${venue.id}`} className="cta-button">
+          <Link href={venue.league === 'MLB' ? `/?stadium=${venue.id}` : `/?venue=${venue.id}`} className="cta-button">
             Check Real-Time Shade →
           </Link>
         </div>
