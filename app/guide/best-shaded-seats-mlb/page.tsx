@@ -57,10 +57,10 @@ export default function BestShadedSeatsMLBPage() {
           <span className="truncate block max-w-[50vw]">Best Shaded Seats MLB</span>
         </nav>
 
-        <article>
+        <article className="prose prose-slate max-w-prose stack">
           <h1 className="break-words md:break-normal">Best Shaded Seats at Every MLB Stadium</h1>
           
-          <p className="lead">
+          <p className="lead max-w-prose">
             Finding seats in the shade can make or break your baseball experience, especially during hot summer day games. 
             This comprehensive guide covers the best shaded seating options at all 30 MLB stadiums.
           </p>

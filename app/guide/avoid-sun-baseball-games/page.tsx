@@ -24,10 +24,10 @@ export default function AvoidSunBaseballGamesPage() {
           <span className="truncate block max-w-[50vw]">Avoid Sun at Baseball Games</span>
         </nav>
 
-        <article>
+        <article className="prose prose-slate max-w-prose stack">
           <h1 className="break-words md:break-normal">How to Avoid Sun at Baseball Games</h1>
           
-          <p className="lead">
+          <p className="lead max-w-prose">
             Spending 3-4 hours in direct sunlight at a baseball game can lead to sunburn, dehydration, 
             and heat exhaustion. Here's your complete guide to staying safe and comfortable.
           </p>

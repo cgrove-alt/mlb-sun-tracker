@@ -28,7 +28,7 @@ export default function SeatsShadeFinderPage() {
           Are My Seats in the Shade? Find Out Instantly
         </h1>
         
-        <div className="bg-white rounded-2xl border shadow-md p-6 md:p-8 mb-8 overflow-hidden">
+        <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
           <p className="text-lg text-gray-700 mb-4 max-w-prose">
             Wondering "are my seats shaded?" We've got you covered! The Shadium provides real-time shade 
             information for every section at all 30 MLB stadiums. Simply select your stadium below to 
@@ -48,12 +48,12 @@ export default function SeatsShadeFinderPage() {
             Check If Your Seats Are Shaded by Stadium
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {MLB_STADIUMS.map((stadium) => (
               <Link
                 key={stadium.id}
                 href={`/stadium/${stadium.id}`}
-                className="block p-4 bg-white rounded-lg shadow hover:shadow-md transition-shadow border border-gray-200"
+                className="block rounded-xl border bg-white p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow"
               >
                 <h3 className="text-lg font-semibold text-blue-600 mb-1">
                   {stadium.name}
@@ -69,7 +69,7 @@ export default function SeatsShadeFinderPage() {
           </div>
         </section>
 
-        <section className="bg-white rounded-2xl border shadow-md p-6 md:p-8 mb-8 overflow-hidden">
+        <section className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden prose prose-slate max-w-prose">
           <h2 className="h2 text-gray-900 mb-4 break-words md:break-normal">
             How to Find Out If Your Seats Are Shaded
           </h2>

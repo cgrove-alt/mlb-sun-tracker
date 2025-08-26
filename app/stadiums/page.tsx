@@ -24,9 +24,9 @@ export default function StadiumsPage() {
         Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
       </p>
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {DIVISIONS.map((division) => (
-          <div key={division.name} className="bg-white rounded-2xl border shadow-lg p-6 overflow-hidden">
+          <div key={division.name} className="rounded-xl border bg-white p-4 md:p-5 shadow-sm hover:shadow-md transition-shadow overflow-hidden">
             <h2 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2 truncate md:whitespace-normal">
               {division.name}
             </h2>

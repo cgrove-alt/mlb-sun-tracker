@@ -88,8 +88,8 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           <p className="text-xl text-gray-600 mb-4 max-w-prose">
             Find the best shaded seats at all {venues.length} {league.name} venues
           </p>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-sm">
               <div>
                 <strong>Sport:</strong> {league.sport}
               </div>
@@ -120,8 +120,8 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
           <h2 className="text-2xl font-semibold mb-4">
             {league.sport} Shade Tips
           </h2>
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="rounded-xl border bg-gray-50 p-4 md:p-5 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 stack">
               <div>
                 <h3 className="text-lg font-semibold mb-2">Best Game Times for Shade</h3>
                 <ul className="space-y-1">

@@ -35,9 +35,9 @@ export default function BlogPage() {
           <span className="truncate">Blog</span>
         </nav>
 
-        <div className="blog-header">
-          <h1 className="break-words md:break-normal">The Shadium Blog</h1>
-          <p className="lead">
+        <div className="blog-header stack">
+          <h1 className="h1 break-words md:break-normal">The Shadium Blog</h1>
+          <p className="lead max-w-prose">
             Your ultimate resource for finding shade at MLB stadiums. Get expert tips, 
             stadium guides, and seasonal advice for staying cool at the ballpark.
           </p>
@@ -52,13 +52,13 @@ export default function BlogPage() {
                 </div>
               ) : (
                 posts.map((post) => (
-                  <article key={post.slug} className="blog-card">
+                  <article key={post.slug} className="blog-card rounded-xl border bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden">
                     {post.image && (
                       <Link href={`/blog/${post.slug}`} className="blog-card-image">
                         <img src={post.image} alt={post.title} loading="lazy" />
                       </Link>
                     )}
-                    <div className="blog-card-content">
+                    <div className="blog-card-content p-4 md:p-5 stack">
                       <div className="blog-meta">
                         <span className="blog-category">{post.category}</span>
                         <span className="blog-date">{post.date}</span>
@@ -86,7 +86,7 @@ export default function BlogPage() {
           </div>
 
           <aside className="blog-sidebar">
-            <div className="sidebar-widget">
+            <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
               <h3>Categories</h3>
               <ul className="category-list">
                 <li>
@@ -102,7 +102,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="sidebar-widget">
+            <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
               <h3>Popular Topics</h3>
               <ul className="topic-list">
                 <li><Link href="/blog/category/stadium-guides">Stadium Guides</Link></li>
@@ -112,7 +112,7 @@ export default function BlogPage() {
               </ul>
             </div>
 
-            <div className="sidebar-widget cta-widget">
+            <div className="sidebar-widget cta-widget rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm stack">
               <h3>Find Your Shaded Seat</h3>
               <p>Use our real-time sun tracker to find the perfect shaded seat at any MLB stadium.</p>
               <Link href="/" className="cta-button">
@@ -120,7 +120,7 @@ export default function BlogPage() {
               </Link>
             </div>
 
-            <div className="sidebar-widget">
+            <div className="sidebar-widget rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
               <h3>Newsletter</h3>
               <p>Get weekly tips on finding the best shaded seats at MLB stadiums.</p>
               <form className="newsletter-form">

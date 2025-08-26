@@ -133,7 +133,7 @@ export default function FAQPage() {
           <span className="truncate">FAQ</span>
         </nav>
 
-        <article>
+        <article className="prose prose-slate max-w-prose stack">
           <h1 className="break-words md:break-normal">Frequently Asked Questions</h1>
           
           <p className="lead">

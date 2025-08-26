@@ -24,10 +24,10 @@ export default function HowToFindShadedSeatsPage() {
           <span className="truncate block max-w-[50vw]">How to Find Shaded Seats</span>
         </nav>
 
-        <article>
+        <article className="prose prose-slate max-w-prose stack">
           <h1 className="break-words md:break-normal">How to Find Shaded Seats at Baseball Games</h1>
           
-          <p className="lead">
+          <p className="lead max-w-prose">
             Sitting in direct sunlight during a baseball game can turn an enjoyable experience into an uncomfortable one. 
             Here's your comprehensive guide to finding seats in the shade at MLB stadiums.
           </p>

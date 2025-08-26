@@ -7,13 +7,13 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Contact Us</h1>
+    <div className="max-w-4xl mx-auto px-4 py-12 stack">
+      <h1 className="h1 break-words md:break-normal">Contact Us</h1>
       
-      <div className="grid md:grid-cols-2 gap-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
-          <p className="text-gray-600 mb-6">
+      <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
+          <h2 className="h2">Get in Touch</h2>
+          <p className="text-gray-600 max-w-prose">
             Have questions, suggestions, or feedback? We'd love to hear from you! 
             Our team is dedicated to helping fans find the perfect shaded seats.
           </p>
@@ -36,9 +36,9 @@ export default function ContactPage() {
           </div>
         </div>
         
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Send us a Message</h2>
-          <form className="space-y-4">
+        <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
+          <h2 className="h2">Send us a Message</h2>
+          <form className="stack">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Name
@@ -101,9 +101,9 @@ export default function ContactPage() {
         </div>
       </div>
       
-      <div className="mt-12 p-6 bg-blue-50 rounded-lg">
-        <h3 className="text-lg font-semibold mb-2">Quick Tip</h3>
-        <p className="text-gray-700">
+      <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm stack">
+        <h3 className="text-lg font-semibold">Quick Tip</h3>
+        <p className="text-gray-700 max-w-prose">
           Before contacting support, check our FAQs page for answers to common questions about 
           using The Shadium to find shaded seats at your favorite ballpark.
         </p>
