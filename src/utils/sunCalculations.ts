@@ -5,8 +5,6 @@ import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
 import { getSunPositionNREL } from './nrelSolarPosition';
-import { getSunPositionNRELFixed } from './nrelSolarPositionFixed';
-import { getSunPositionImproved } from './sunCalcClone';
 
 export interface SunPosition {
   azimuth: number; // Sun azimuth in radians
@@ -28,21 +26,7 @@ export function getSunPosition(
   latitude: number,
   longitude: number
 ): SunPosition {
-  // Use improved sun position calculation for better accuracy
-  // while maintaining SunCalc compatibility
-  const useImproved = process.env.REACT_APP_USE_IMPROVED_SPA !== 'false'; // Default to true
-  
-  if (useImproved) {
-    try {
-      // Use improved algorithm that matches SunCalc but with better constants
-      return getSunPositionImproved(date, latitude, longitude);
-    } catch (error) {
-      console.warn('Improved sun position calculation failed, falling back to SunCalc:', error);
-      // Fall through to SunCalc implementation
-    }
-  }
-  
-  // Fallback to original SunCalc implementation
+  // Use SunCalc implementation
   const sunPos = SunCalc.getPosition(date, latitude, longitude);
   
   // Convert radians to degrees and normalize azimuth to 0-360
