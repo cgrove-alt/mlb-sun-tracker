@@ -32,7 +32,6 @@ export function CSSOptimizer() {
     // Optimize loading of non-critical CSS
     const optimizeNonCriticalCSS = () => {
       const nonCriticalCSS = [
-        'OptimizedWebGLStadium.css',
         'ErrorBoundary.css',
       ];
       
