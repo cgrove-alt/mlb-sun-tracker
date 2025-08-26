@@ -6,27 +6,23 @@ import { aPlusStadiumGuides } from './aPlusStadiumGuides';
 import { singleAStadiumGuides } from './singleAStadiumGuides';
 import { StadiumGuide } from '../stadiumGuides';
 
-// Combine all MLB stadium guides
+// Combined all stadium guides
 export const allMLBStadiumGuides: Record<string, StadiumGuide> = {
   ...mlbStadiumGuides
 };
 
-// Combine all AAA stadium guides
 export const allAAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaaStadiumGuides
 };
 
-// Combine all AA stadium guides
 export const allAAStadiumGuides: Record<string, StadiumGuide> = {
   ...aaStadiumGuides
 };
 
-// Combine all A+ stadium guides
 export const allAPlusStadiumGuides: Record<string, StadiumGuide> = {
   ...aPlusStadiumGuides
 };
 
-// Combine all Single-A stadium guides
 export const allSingleAStadiumGuides: Record<string, StadiumGuide> = {
   ...singleAStadiumGuides
 };

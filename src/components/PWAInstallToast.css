@@ -1,5 +1,5 @@
 /* PWA Install Toast Styles */
-@import '../styles/design-system.css';
+@import '../styles/main.css';
 
 .pwa-install-toast {
   position: fixed;

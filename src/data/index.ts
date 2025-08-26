@@ -4,33 +4,19 @@
 export * from './venueCorrections';
 export type { VenueLayout, VenueSection } from './milbVenueLayouts';
 export { getVenueLayout, validateVenueLayout, allMilbLayouts } from './milbVenueLayouts';
-export * from './milbVenueLayoutsExtended';
-// Use named exports for individual level files to avoid conflicts
-export { allAAALayouts } from './milbVenueLayoutsAAA';
-export { allAALayouts } from './milbVenueLayoutsAA';
-export { aPlusVenueLayouts } from './milbVenueLayoutsAPlus';
-export { aVenueLayouts } from './milbVenueLayoutsA';
-export { missingVenueLayouts } from './milbVenueLayoutsMissing';
+// Use named exports for consolidated layout files
+export { aaaVenueLayouts, aaVenueLayouts } from './milbVenueLayouts';
+export { aPlusVenueLayouts, aVenueLayouts, allLowerLevelLayouts, getLowerLevelVenueLayout } from './milbVenueLayoutsLower';
 export * from './venueLayoutIntegration';
 
-import { allMilbLayouts, type VenueSection as VenueSectionType } from './milbVenueLayouts';
-import { allExtendedLayouts } from './milbVenueLayoutsExtended';
-import { allAAALayouts } from './milbVenueLayoutsAAA';
-import { allAALayouts } from './milbVenueLayoutsAA';
-import { aPlusVenueLayouts } from './milbVenueLayoutsAPlus';
-import { aVenueLayouts } from './milbVenueLayoutsA';
-import { missingVenueLayouts } from './milbVenueLayoutsMissing';
+import { allMilbLayouts, aaaVenueLayouts, aaVenueLayouts, type VenueSection as VenueSectionType } from './milbVenueLayouts';
+import { allLowerLevelLayouts, aPlusVenueLayouts, aVenueLayouts } from './milbVenueLayoutsLower';
 import { integrateVenueLayout, getLayoutCoverage, validateAllLayouts } from './venueLayoutIntegration';
 
-// Combine all venue layouts
+// Combine all venue layouts from consolidated files
 export const allVenueLayouts = [
-  ...allMilbLayouts,
-  ...allExtendedLayouts,
-  ...allAAALayouts,
-  ...allAALayouts,
-  ...aPlusVenueLayouts,
-  ...aVenueLayouts,
-  ...missingVenueLayouts
+  ...allMilbLayouts,          // AAA and AA venues
+  ...allLowerLevelLayouts     // A+ and A venues
 ];
 
 // Main function to get processed venue data

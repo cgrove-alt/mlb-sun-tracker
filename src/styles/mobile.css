@@ -1,0 +1,681 @@
+/* MLB Sun Tracker - Consolidated Mobile Styles */
+/* All mobile-specific styles, touch targets, scroll fixes, and responsive overrides */
+
+/* ===== Mobile-First Variables ===== */
+@media (max-width: 768px) {
+  :root {
+    /* Mobile-optimized spacing */
+    --mobile-spacing-xs: 0.25rem;   /* 4px */
+    --mobile-spacing-sm: 0.5rem;    /* 8px */
+    --mobile-spacing-md: 0.75rem;   /* 12px */
+    --mobile-spacing-lg: 1rem;      /* 16px */
+    --mobile-spacing-xl: 1.25rem;   /* 20px */
+    --mobile-spacing-2xl: 1.5rem;   /* 24px */
+    
+    /* Mobile typography */
+    --mobile-font-xs: 0.75rem;      /* 12px */
+    --mobile-font-sm: 0.875rem;     /* 14px */
+    --mobile-font-base: 1rem;       /* 16px - prevents zoom on iOS */
+    --mobile-font-lg: 1.125rem;     /* 18px */
+    --mobile-font-xl: 1.25rem;      /* 20px */
+    --mobile-font-2xl: 1.5rem;      /* 24px */
+    
+    /* Touch-friendly sizes */
+    --touch-target-min: 44px;
+    --touch-target-comfortable: 48px;
+    --touch-target-large: 56px;
+    
+    /* Mobile layout */
+    --mobile-header-height: 56px;
+    --mobile-nav-height: 48px;
+    --mobile-container-padding: var(--mobile-spacing-md);
+  }
+}
+
+/* ===== Mobile Reset and Base Styles ===== */
+@media (max-width: 768px) {
+  /* Critical fixes for mobile viewports */
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    position: relative !important;
+    font-size: 16px; /* Prevents zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+  
+  body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    width: 100% !important;
+    position: relative !important;
+    /* Allow vertical scrolling, prevent horizontal */
+    touch-action: pan-y !important;
+    /* Allow default overscroll behavior */
+    overscroll-behavior-y: auto !important;
+    overscroll-behavior-x: none !important;
+    -webkit-overflow-scrolling: touch !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Ensure main containers don't trap scrolling */
+  #root,
+  #__next,
+  .App,
+  .mobile-app,
+  main,
+  .mobile-main {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    min-height: 100vh;
+    position: relative !important;
+    /* Don't trap scrolling */
+    overscroll-behavior: auto !important;
+  }
+  
+  /* Remove fixed heights that might trap scrolling */
+  .mobile-content,
+  .mobile-section,
+  .mobile-section-list {
+    height: auto !important;
+    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+  }
+}
+
+/* ===== Mobile Container and Layout ===== */
+@media (max-width: 768px) {
+  .mobile-container {
+    width: 100%;
+    padding-left: var(--mobile-container-padding);
+    padding-right: var(--mobile-container-padding);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .container {
+    padding: 0 var(--mobile-spacing-md);
+  }
+  
+  /* Stack all grids on mobile */
+  .grid,
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .sections-grid,
+  .resources-grid,
+  .safety-grid,
+  .tips-container,
+  .weather-grid,
+  .parking-lots {
+    grid-template-columns: 1fr !important;
+    gap: var(--mobile-spacing-md);
+  }
+  
+  /* Stack flex items */
+  .flex-row {
+    flex-direction: column;
+    gap: var(--mobile-spacing-md);
+  }
+}
+
+/* ===== Mobile Typography ===== */
+@media (max-width: 768px) {
+  h1 { font-size: var(--mobile-font-2xl); }
+  h2 { font-size: var(--mobile-font-xl); }
+  h3 { font-size: var(--mobile-font-lg); }
+  h4 { font-size: var(--mobile-font-base); }
+  h5 { font-size: var(--mobile-font-sm); }
+  h6 { font-size: var(--mobile-font-xs); }
+  
+  p,
+  li {
+    font-size: var(--mobile-font-base);
+    line-height: 1.6;
+  }
+  
+  .text-responsive {
+    font-size: var(--mobile-font-base);
+  }
+}
+
+/* ===== Touch-Friendly Controls ===== */
+@media (max-width: 768px) {
+  /* Buttons */
+  button,
+  .btn,
+  .button,
+  [role="button"] {
+    min-height: var(--touch-target-min);
+    min-width: var(--touch-target-min);
+    padding: var(--mobile-spacing-sm) var(--mobile-spacing-md);
+    position: relative;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Full-width buttons on very small screens */
+  @media (max-width: 479px) {
+    button,
+    .btn,
+    [role="button"] {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  /* Small buttons with extended touch area */
+  button.small,
+  .button-small {
+    min-height: 32px;
+    min-width: 32px;
+    position: relative;
+  }
+
+  button.small::before,
+  .button-small::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--touch-target-min);
+    height: var(--touch-target-min);
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  /* Links and clickable elements */
+  a,
+  .clickable,
+  [role="link"] {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--touch-target-min);
+    padding: var(--mobile-spacing-sm) var(--mobile-spacing-md);
+  }
+}
+
+/* ===== Form Controls ===== */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  textarea,
+  select {
+    min-height: var(--touch-target-comfortable);
+    padding: var(--mobile-spacing-md) var(--mobile-spacing-lg);
+    font-size: 16px; /* Prevents zoom on iOS */
+    width: 100%;
+    border-radius: var(--radius-lg);
+    touch-action: manipulation;
+  }
+  
+  /* Enhanced select styling for mobile */
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+    padding-right: 2rem;
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Ensure select options are visible */
+  select:focus {
+    outline: 2px solid var(--color-primary, #1976d2);
+    outline-offset: 2px;
+  }
+  
+  /* Checkboxes and radio buttons */
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 24px;
+    height: 24px;
+    position: relative;
+  }
+
+  /* Extended touch area for checkboxes and radios */
+  input[type="checkbox"]::before,
+  input[type="radio"]::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: var(--touch-target-comfortable);
+    height: var(--touch-target-comfortable);
+  }
+  
+  /* Labels for form controls */
+  label {
+    display: flex;
+    align-items: center;
+    min-height: var(--touch-target-comfortable);
+    cursor: pointer;
+    padding: var(--mobile-spacing-sm) 0;
+  }
+}
+
+/* ===== Mobile Cards ===== */
+@media (max-width: 768px) {
+  .card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--mobile-spacing-lg);
+    margin-bottom: var(--mobile-spacing-lg);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+    position: relative;
+  }
+  
+  .card:active {
+    transform: scale(0.98);
+  }
+  
+  /* Reduce padding on very small screens */
+  @media (max-width: 479px) {
+    .card,
+    section,
+    .panel {
+      padding: var(--mobile-spacing-md);
+    }
+  }
+}
+
+/* ===== Mobile Navigation ===== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--mobile-spacing-sm);
+  }
+  
+  nav li {
+    width: 100%;
+  }
+  
+  .nav-item,
+  .menu-item {
+    min-height: var(--touch-target-comfortable);
+    display: flex;
+    align-items: center;
+    padding: var(--mobile-spacing-md) var(--mobile-spacing-lg);
+  }
+  
+  /* Tab navigation */
+  .tab,
+  [role="tab"] {
+    min-height: var(--touch-target-comfortable);
+    padding: var(--mobile-spacing-md) var(--mobile-spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===== Modal and Overlay Fixes ===== */
+@media (max-width: 768px) {
+  /* Ensure modals/overlays don't block body scroll */
+  body.menu-open,
+  body.filter-open,
+  body.modal-open {
+    overflow-y: auto !important;
+    position: relative !important;
+    height: auto !important;
+  }
+  
+  .modal,
+  .overlay {
+    padding: var(--mobile-spacing-md);
+  }
+  
+  .modal-content {
+    width: calc(100% - var(--mobile-spacing-lg));
+    max-width: 100%;
+    margin: var(--mobile-spacing-md);
+  }
+  
+  /* Fix for containers that might clip dropdowns */
+  .mobile-card,
+  .weather-selector,
+  .simulator-controls,
+  .control-group,
+  .filter-section,
+  .mobile-filter-section,
+  .mobile-filter-body {
+    overflow: visible !important;
+    position: relative;
+    z-index: auto;
+  }
+  
+  /* Filter sheet scrolling */
+  .mobile-filter-body {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-height: calc(85vh - 120px) !important;
+  }
+  
+  /* Ensure filter content doesn't block page scroll */
+  .mobile-filter-content {
+    touch-action: pan-y !important;
+  }
+  
+  /* Ensure filter sheet doesn't block scrolling when closed */
+  .mobile-filter-sheet:not(.open) {
+    pointer-events: none !important;
+  }
+}
+
+/* ===== Touch Feedback and Interactions ===== */
+@media (hover: none) and (pointer: coarse) {
+  /* Active states for touch devices */
+  button:active,
+  .btn:active,
+  a:active,
+  .clickable:active {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  
+  /* Touch feedback for all interactive elements */
+  button,
+  a,
+  .clickable,
+  [role="button"] {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button::after,
+  a::after,
+  .clickable::after,
+  [role="button"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 300ms, height 300ms;
+  }
+  
+  button:active::after,
+  a:active::after,
+  .clickable:active::after,
+  [role="button"]:active::after {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Increase touch target for mobile-specific elements */
+  .mobile-only {
+    min-height: var(--touch-target-large);
+    min-width: var(--touch-target-large);
+  }
+}
+
+/* ===== Icon Buttons and Small Controls ===== */
+@media (max-width: 768px) {
+  /* Icon buttons */
+  .icon-button {
+    width: var(--touch-target-comfortable);
+    height: var(--touch-target-comfortable);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  /* Small icons with extended touch area */
+  .icon-button.small {
+    width: 32px;
+    height: 32px;
+  }
+
+  .icon-button.small::before {
+    content: '';
+    position: absolute;
+    width: var(--touch-target-comfortable);
+    height: var(--touch-target-comfortable);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Toggle switches */
+  .toggle-switch {
+    min-width: 60px;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .toggle-switch::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+  }
+  
+  /* Modal close buttons */
+  .modal-close,
+  .dialog-close {
+    width: var(--touch-target-comfortable);
+    height: var(--touch-target-comfortable);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Floating action buttons */
+  .fab {
+    width: var(--touch-target-large);
+    height: var(--touch-target-large);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* ===== Spacing and Layout Adjustments ===== */
+@media (max-width: 768px) {
+  /* Ensure proper spacing between touch targets */
+  .button-group > * + *,
+  .link-group > * + *,
+  .control-group > * + * {
+    margin-left: var(--mobile-spacing-sm);
+  }
+  
+  /* Touch-friendly spacing between interactive elements */
+  button + button,
+  .btn + .btn,
+  a + a {
+    margin-left: 0;
+    margin-top: var(--mobile-spacing-sm);
+  }
+  
+  /* Stack touch targets vertically on very small screens */
+  @media (max-width: 479px) {
+    .button-group,
+    .link-group,
+    .control-group {
+      flex-direction: column;
+      gap: var(--mobile-spacing-sm);
+    }
+    
+    .button-group > * + *,
+    .link-group > * + *,
+    .control-group > * + * {
+      margin-left: 0;
+      margin-top: var(--mobile-spacing-sm);
+    }
+  }
+  
+  /* Reduce margins and paddings */
+  section {
+    margin-bottom: var(--mobile-spacing-xl);
+  }
+}
+
+/* ===== Mobile Tables ===== */
+@media (max-width: 768px) {
+  table {
+    font-size: var(--mobile-font-sm);
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ===== Visibility Utilities ===== */
+@media (max-width: 768px) {
+  /* Hide desktop-only elements */
+  .desktop-only,
+  .tablet-only {
+    display: none !important;
+  }
+  
+  /* Show mobile-only elements */
+  .mobile-only {
+    display: block !important;
+  }
+  
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
+/* ===== iOS-specific fixes ===== */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
+    select {
+      -webkit-appearance: none;
+      border-radius: 0;
+      background-color: white;
+    }
+    
+    /* iOS-specific dropdown styling */
+    select:focus {
+      font-size: 16px; /* Prevent zoom */
+    }
+    
+    body {
+      -webkit-overflow-scrolling: touch !important;
+      position: relative !important;
+    }
+    
+    /* Fix iOS rubber-band scrolling */
+    .mobile-app {
+      -webkit-overflow-scrolling: touch !important;
+    }
+  }
+}
+
+/* ===== Android-specific fixes ===== */
+@media (max-width: 768px) {
+  /* Prevent pull-to-refresh from interfering */
+  body {
+    overscroll-behavior-y: contain;
+  }
+  
+  /* But allow it on the main app container */
+  .mobile-app {
+    overscroll-behavior-y: auto;
+  }
+}
+
+/* ===== Landscape mode fixes ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+  body {
+    overflow-y: auto !important;
+    height: auto !important;
+  }
+  
+  .mobile-app {
+    min-height: 100vh !important;
+    height: auto !important;
+  }
+}
+
+/* ===== Very Small Devices ===== */
+@media (max-width: 479px) {
+  :root {
+    --mobile-font-base: 0.875rem;
+    --mobile-spacing-md: 0.5rem;
+  }
+  
+  .mobile-container,
+  .container {
+    padding: 0 var(--mobile-spacing-sm);
+  }
+}
+
+/* ===== Viewport Height Fixes ===== */
+@media (max-width: 768px) {
+  /* Fix any viewport height issues */
+  .vh-100 {
+    height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+  }
+  
+  /* Safe area support for PWAs */
+  .safe-area-padding {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+}
+
+/* ===== Debug Mode ===== */
+.debug-touch-targets *[onclick],
+.debug-touch-targets button,
+.debug-touch-targets a,
+.debug-touch-targets input,
+.debug-touch-targets label,
+.debug-touch-targets [role="button"] {
+  outline: 2px dashed rgba(255, 0, 0, 0.5);
+  outline-offset: -1px;
+}
+
+.debug-touch-targets *[onclick]::before,
+.debug-touch-targets button::before,
+.debug-touch-targets a::before {
+  outline: 2px dashed rgba(0, 255, 0, 0.5);
+  outline-offset: -1px;
+}
