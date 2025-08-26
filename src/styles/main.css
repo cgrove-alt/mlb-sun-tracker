@@ -265,6 +265,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ===== Global Reduced Motion - Accessibility Support ===== */
+@media (prefers-reduced-motion: reduce) {
+  * { 
+    animation-duration: .01ms !important; 
+    animation-iteration-count: 1 !important; 
+    transition-duration: .01ms !important; 
+  }
+}
+
 /* ===== Typography ===== */
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
