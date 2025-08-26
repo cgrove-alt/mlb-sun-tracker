@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FilterDrawer, FilterTrigger } from './FilterDrawer';
+import FilterDrawer, { FilterTrigger } from './FilterDrawer';
 import type { FilterGroup } from './FilterDrawer';
 
 // Example usage of FilterDrawer component

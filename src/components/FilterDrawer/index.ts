@@ -1,4 +1,5 @@
-export { default as FilterDrawer, FilterTrigger } from './FilterDrawer';
+export { default, FilterTrigger } from './FilterDrawer';
+export { default as FilterDrawer } from './FilterDrawer';
 export type { 
   FilterDrawerProps, 
   FilterTriggerProps, 
