@@ -1,0 +1,1 @@
+export { SectionLabel, SvgSectionLabel } from './SectionLabel';

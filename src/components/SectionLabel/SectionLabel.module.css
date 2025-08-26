@@ -1,0 +1,139 @@
+/* Section Label Component - Readable on any background */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font: 500 13px/1.1 system-ui, -apple-system, 'Segoe UI', Inter, Roboto, Arial, sans-serif;
+  color: var(--ondark-900);
+  background: rgba(0, 0, 0, 0.55); /* Translucent for photography/maps */
+  backdrop-filter: saturate(115%) blur(2px);
+  -webkit-backdrop-filter: saturate(115%) blur(2px); /* Safari support */
+  
+  /* Keep readable on any background */
+  -webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.65);
+  text-shadow:
+    0 0.5px 0 rgba(0, 0, 0, 0.6),
+    0 1px 1px rgba(0, 0, 0, 0.35);
+  
+  /* Smooth rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Transitions */
+  transition: all 0.2s ease;
+}
+
+/* Solid background variant for dark cards */
+.labelSolid {
+  background: #0F172A;
+  color: var(--ondark-800);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Light background variant */
+.labelLight {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink-800);
+  -webkit-text-stroke: none;
+  text-shadow: none;
+}
+
+/* Interactive states */
+.label:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.label:focus-visible {
+  outline: 2px solid var(--accent-600);
+  outline-offset: 2px;
+}
+
+/* Size variants */
+.small {
+  padding: 1px 6px;
+  font-size: 11px;
+  border-radius: 6px;
+}
+
+.large {
+  padding: 4px 12px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+/* Status variants */
+.shaded {
+  background: rgba(34, 139, 34, 0.7); /* Forest green */
+  color: white;
+}
+
+.sunny {
+  background: rgba(255, 165, 0, 0.7); /* Orange */
+  color: white;
+}
+
+.partial {
+  background: rgba(70, 130, 180, 0.7); /* Steel blue */
+  color: white;
+}
+
+/* Icon support */
+.icon {
+  display: inline-flex;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* For use in SVG contexts */
+.svgText {
+  fill: white;
+  stroke: rgba(0, 0, 0, 0.65);
+  stroke-width: 0.8;
+  paint-order: stroke;
+  font: 600 12px/1 Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .label {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .label {
+    background: black;
+    color: white;
+    border: 2px solid white;
+    -webkit-text-stroke: none;
+    text-shadow: none;
+  }
+  
+  .labelLight {
+    background: white;
+    color: black;
+    border: 2px solid black;
+  }
+}
+
+/* Print styles */
+@media print {
+  .label {
+    background: white !important;
+    color: black !important;
+    border: 1px solid black;
+    -webkit-text-stroke: none;
+    text-shadow: none;
+  }
+}
