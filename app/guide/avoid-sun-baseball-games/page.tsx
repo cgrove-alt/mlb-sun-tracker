@@ -16,16 +16,16 @@ export default function AvoidSunBaseballGamesPage() {
   return (
     <main className="guide-page">
       <div className="guide-container">
-        <nav className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> › </span>
-          <Link href="/guide">Guides</Link>
-          <span> › </span>
-          <span>Avoid Sun at Baseball Games</span>
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true">/</span>
+          <Link href="/guide" className="hover:underline">Guides</Link>
+          <span aria-hidden="true">/</span>
+          <span className="truncate block max-w-[50vw]">Avoid Sun at Baseball Games</span>
         </nav>
 
         <article>
-          <h1>How to Avoid Sun at Baseball Games</h1>
+          <h1 className="break-words md:break-normal">How to Avoid Sun at Baseball Games</h1>
           
           <p className="lead">
             Spending 3-4 hours in direct sunlight at a baseball game can lead to sunburn, dehydration, 

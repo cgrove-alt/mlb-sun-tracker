@@ -29,14 +29,14 @@ export default function BlogPage() {
   return (
     <main className="blog-page">
       <div className="blog-container">
-        <nav className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> › </span>
-          <span>Blog</span>
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span className="truncate">Blog</span>
         </nav>
 
         <div className="blog-header">
-          <h1>The Shadium Blog</h1>
+          <h1 className="break-words md:break-normal">The Shadium Blog</h1>
           <p className="lead">
             Your ultimate resource for finding shade at MLB stadiums. Get expert tips, 
             stadium guides, and seasonal advice for staying cool at the ballpark.

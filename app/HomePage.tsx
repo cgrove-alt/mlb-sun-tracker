@@ -35,10 +35,10 @@ export default function HomePage() {
         <section className="hero-section">
           <div className="hero-overlay">
             <div className="hero-content">
-              <h1 className="hero-headline">
+              <h1 className="hero-headline h1 break-words md:break-normal">
                 Find Your Perfect Shaded Seats
               </h1>
-              <p className="hero-subheadline">
+              <p className="hero-subheadline max-w-prose">
                 Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
               </p>
               <button 

@@ -1,4 +1,6 @@
 import './globals.css';
+import '../src/styles/typography.css';
+import '../src/styles/heading-safety.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 // import GoogleAnalytics from './GoogleAnalytics';

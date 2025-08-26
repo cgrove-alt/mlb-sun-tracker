@@ -32,15 +32,15 @@ export default function GuidesPage() {
   return (
     <main className="guide-page">
       <div className="guide-container">
-        <nav className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> › </span>
-          <span>Guides</span>
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span className="truncate">Guides</span>
         </nav>
 
         <div className="guides-header">
-          <h1>Baseball Shade Guides</h1>
-          <p className="lead">
+          <h1 className="h1 break-words md:break-normal">Baseball Shade Guides</h1>
+          <p className="lead max-w-prose">
             Everything you need to know about finding seats in the shade and staying comfortable at MLB stadiums.
           </p>
         </div>
@@ -60,8 +60,8 @@ export default function GuidesPage() {
         </section>
 
         <section className="guide-cta">
-          <h2>Ready to Find Your Perfect Shaded Seat?</h2>
-          <p>Use The Shadium's real-time sun tracker to see exactly which seats will be shaded during your game.</p>
+          <h2 className="h2 break-words md:break-normal">Ready to Find Your Perfect Shaded Seat?</h2>
+          <p className="max-w-prose">Use The Shadium's real-time sun tracker to see exactly which seats will be shaded during your game.</p>
           <Link href="/" className="cta-button primary">
             Check Shade Coverage →
           </Link>
