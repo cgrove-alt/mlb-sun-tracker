@@ -19,12 +19,12 @@
   --color-accent-light: #FFC947;
   --color-accent-dark: #FF8F00;
   
-  /* Sun Exposure Colors */
-  --color-sun-none: #78909C;
-  --color-sun-low: #42A5F5;
-  --color-sun-moderate: #FFA726;
-  --color-sun-high: #FF6B35;
-  --color-sun-extreme: #D32F2F;
+  /* Sun Exposure Colors - Neutral palette for better readability */
+  --color-sun-none: #6B7280;      /* Gray - no sun */
+  --color-sun-low: #3B82F6;       /* Blue - minimal sun */
+  --color-sun-moderate: #F59E0B;  /* Amber - moderate sun */
+  --color-sun-high: #F97316;      /* Orange - high sun */
+  --color-sun-extreme: #EF4444;   /* Red - extreme sun */
   
   /* Semantic Colors */
   --color-success: #4caf50;
