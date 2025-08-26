@@ -127,10 +127,10 @@ export default function FAQPage() {
   return (
     <main className="guide-page">
       <div className="guide-container">
-        <nav className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> › </span>
-          <span>FAQ</span>
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:underline">Home</Link>
+          <span aria-hidden="true">/</span>
+          <span className="truncate">FAQ</span>
         </nav>
 
         <article>
