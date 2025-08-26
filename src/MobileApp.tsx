@@ -24,7 +24,7 @@ import { SunIcon, MoonIcon } from './components/Icons';
 import { UserProfileMenu } from './components/UserProfileMenu';
 import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
-import './styles/mobile-first.css';
+import './styles/mobile.css';
 import './MobileApp.css';
 
 // Create rate limiters for API calls

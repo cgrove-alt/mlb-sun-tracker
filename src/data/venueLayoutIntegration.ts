@@ -2,23 +2,13 @@
 // This module handles merging venue data with specific seating layouts
 
 import { VenueLayout, getVenueLayout as getLayoutFromBase, allMilbLayouts } from './milbVenueLayouts';
-import { allExtendedLayouts } from './milbVenueLayoutsExtended';
-import { allAAALayouts } from './milbVenueLayoutsAAA';
-import { allAALayouts } from './milbVenueLayoutsAA';
-import { aPlusVenueLayouts } from './milbVenueLayoutsAPlus';
-import { aVenueLayouts } from './milbVenueLayoutsA';
-import { missingVenueLayouts } from './milbVenueLayoutsMissing';
+import { aPlusVenueLayouts, aVenueLayouts, allLowerLevelLayouts } from './milbVenueLayoutsLower';
 import { applyVenueCorrections, milbLevelClassifications } from './venueCorrections';
 
 // Combine all layouts
 const allLayouts = [
-  ...allMilbLayouts,
-  ...allExtendedLayouts,
-  ...allAAALayouts,
-  ...allAALayouts,
-  ...aPlusVenueLayouts,
-  ...aVenueLayouts,
-  ...missingVenueLayouts
+  ...allMilbLayouts,  // Contains AAA and AA layouts
+  ...allLowerLevelLayouts  // Contains A+ and A layouts
 ];
 
 // Override the base getVenueLayout to search all files

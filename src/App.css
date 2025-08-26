@@ -1,5 +1,5 @@
-/* Import Design System */
-@import './styles/design-system.css';
+/* Import Main Styles */
+@import './styles/main.css';
 
 .App {
   min-height: 100vh;
@@ -321,9 +321,9 @@
 }
 
 .control-group label {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-2);
-  color: var(--color-gray-800);
+  color: #000000;
 }
 
 .stadium-select {
@@ -961,6 +961,8 @@
   .control-group label {
     font-size: 1.1rem;
     margin-bottom: 8px;
+    color: #000000;
+    font-weight: var(--font-weight-bold);
   }
 }
 

@@ -1,6 +1,6 @@
-/* Import comprehensive responsive overrides */
-@import './styles/responsive-overrides.css';
-@import './styles/mobile-scroll-fixes.css';
+/* Import consolidated design system */
+@import './styles/main.css';
+@import './styles/mobile.css';
 @import './styles/dropdown-fixes.css';
 
 * {

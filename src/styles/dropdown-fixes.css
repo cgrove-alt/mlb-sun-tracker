@@ -1,10 +1,13 @@
 /* Global Dropdown Fixes - Ensures dropdowns are visible and not cut off */
 
+/* CRITICAL FIX: Force ALL dropdowns to have dark, visible text */
 /* Fix for all select elements */
 select {
   position: relative;
   z-index: 10;
-  background-color: white;
+  background-color: white !important;
+  color: #000000 !important; /* Force pure black text color */
+  font-weight: 600 !important; /* Make text bolder */
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   background-repeat: no-repeat;
   background-position: right 0.7rem top 50%;
@@ -12,14 +15,27 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  opacity: 1 !important;
+}
+
+/* Fix for select option elements */
+select option {
+  color: #000000 !important;
+  background-color: white !important;
+  font-weight: 600 !important;
+  padding: 0.5rem !important;
+  opacity: 1 !important;
 }
 
 /* Fix for select dropdowns on mobile */
 @media (max-width: 768px) {
   select {
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px !important; /* Prevents zoom on iOS */
     min-height: 44px; /* Touch-friendly size */
     padding-right: 2rem; /* Space for arrow */
+    color: #000000 !important; /* Force pure black text color */
+    font-weight: 600 !important; /* Make text bolder for better readability */
+    opacity: 1 !important;
   }
   
   /* Ensure select options are visible */
@@ -73,7 +89,10 @@ select {
   select {
     -webkit-appearance: none;
     border-radius: 0;
-    background-color: white;
+    background-color: white !important;
+    color: #000000 !important; /* Force pure black text color */
+    opacity: 1 !important;
+    font-weight: 600 !important;
   }
   
   /* iOS-specific dropdown styling */
@@ -121,23 +140,62 @@ select {
   padding: 0.5rem 2rem 0.5rem 0.75rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: white;
+  background-color: white !important;
+  color: #000000 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
   cursor: pointer;
 }
 
-/* Dark mode support for dropdowns */
+/* Force React Select components to have dark text */
+[class*="react-select"] [class*="single-value"],
+[class*="react-select"] [class*="placeholder"],
+[class*="react-select"] [class*="input"],
+[class*="react-select"] [class*="option"],
+.react-select__single-value,
+.react-select__placeholder,
+.react-select__input,
+.react-select__option {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* Specific fixes for our custom select classes */
+.league-select *,
+.milb-level-select *,
+.venue-select *,
+.stadium-select *,
+.game-select *,
+.mobile-select,
+.weather-selector select {
+  color: #000000 !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+}
+
+/* Dark mode support for dropdowns - DISABLED to ensure readability */
 @media (prefers-color-scheme: dark) {
-  select {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #444;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e0e0e0%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  /* Keep dropdowns light even in dark mode for maximum readability */
+  select,
+  .react-select__control,
+  .react-select__menu {
+    background-color: white !important;
+    color: #000000 !important;
+    border-color: #666 !important;
+  }
+  
+  select option,
+  .react-select__option {
+    background-color: white !important;
+    color: #000000 !important;
   }
   
   .dropdown-menu,
   .profile-menu-dropdown,
   .league-nav-dropdown {
-    background: #2a2a2a;
+    background: white !important;
+    color: #000000 !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 }
