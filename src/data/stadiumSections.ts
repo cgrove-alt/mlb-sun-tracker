@@ -5129,35 +5129,35 @@ export const stadiumSections: StadiumSections[] = [
       { id: '126', name: 'Field Level 126', level: 'field', baseAngle: 320, angleSpan: 10, covered: false, price: 'premium' },
       
       // Terrace Level - Behind Home Plate
-      { id: '201', name: 'Terrace Level 201', level: 'lower', baseAngle: 340, angleSpan: 10, covered: true, price: 'premium' },
-      { id: '202', name: 'Terrace Level 202', level: 'lower', baseAngle: 350, angleSpan: 10, covered: true, price: 'premium' },
-      { id: '203', name: 'Terrace Level 203', level: 'lower', baseAngle: 0, angleSpan: 10, covered: true, price: 'premium' },
-      { id: '204', name: 'Terrace Level 204', level: 'lower', baseAngle: 10, angleSpan: 10, covered: true, price: 'premium' },
-      { id: '205', name: 'Terrace Level 205', level: 'lower', baseAngle: 20, angleSpan: 10, covered: true, price: 'premium' },
+      { id: '201', name: 'Terrace Level 201', level: 'lower', baseAngle: 340, angleSpan: 10, covered: false, price: 'premium' },
+      { id: '202', name: 'Terrace Level 202', level: 'lower', baseAngle: 350, angleSpan: 10, covered: false, price: 'premium' },
+      { id: '203', name: 'Terrace Level 203', level: 'lower', baseAngle: 0, angleSpan: 10, covered: false, price: 'premium' },
+      { id: '204', name: 'Terrace Level 204', level: 'lower', baseAngle: 10, angleSpan: 10, covered: false, price: 'premium' },
+      { id: '205', name: 'Terrace Level 205', level: 'lower', baseAngle: 20, angleSpan: 10, covered: false, price: 'premium' },
       
       // Terrace Level - First Base Side
-      { id: '206', name: 'Terrace Level 206', level: 'lower', baseAngle: 30, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '207', name: 'Terrace Level 207', level: 'lower', baseAngle: 40, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '208', name: 'Terrace Level 208', level: 'lower', baseAngle: 50, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '209', name: 'Terrace Level 209', level: 'lower', baseAngle: 60, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '210', name: 'Terrace Level 210', level: 'lower', baseAngle: 70, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '211', name: 'Terrace Level 211', level: 'lower', baseAngle: 80, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '212', name: 'Terrace Level 212', level: 'lower', baseAngle: 90, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '213', name: 'Terrace Level 213', level: 'lower', baseAngle: 100, angleSpan: 10, covered: true, price: 'value' },
-      { id: '214', name: 'Terrace Level 214', level: 'lower', baseAngle: 110, angleSpan: 10, covered: true, price: 'value' },
-      { id: '215', name: 'Terrace Level 215', level: 'lower', baseAngle: 120, angleSpan: 10, covered: true, price: 'value' },
+      { id: '206', name: 'Terrace Level 206', level: 'lower', baseAngle: 30, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '207', name: 'Terrace Level 207', level: 'lower', baseAngle: 40, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '208', name: 'Terrace Level 208', level: 'lower', baseAngle: 50, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '209', name: 'Terrace Level 209', level: 'lower', baseAngle: 60, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '210', name: 'Terrace Level 210', level: 'lower', baseAngle: 70, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '211', name: 'Terrace Level 211', level: 'lower', baseAngle: 80, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '212', name: 'Terrace Level 212', level: 'lower', baseAngle: 90, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '213', name: 'Terrace Level 213', level: 'lower', baseAngle: 100, angleSpan: 10, covered: false, price: 'value' },
+      { id: '214', name: 'Terrace Level 214', level: 'lower', baseAngle: 110, angleSpan: 10, covered: false, price: 'value' },
+      { id: '215', name: 'Terrace Level 215', level: 'lower', baseAngle: 120, angleSpan: 10, covered: false, price: 'value' },
       
       // Terrace Level - Third Base Side
-      { id: '219', name: 'Terrace Level 219', level: 'lower', baseAngle: 240, angleSpan: 10, covered: true, price: 'value' },
-      { id: '220', name: 'Terrace Level 220', level: 'lower', baseAngle: 250, angleSpan: 10, covered: true, price: 'value' },
-      { id: '221', name: 'Terrace Level 221', level: 'lower', baseAngle: 260, angleSpan: 10, covered: true, price: 'value' },
-      { id: '222', name: 'Terrace Level 222', level: 'lower', baseAngle: 270, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '223', name: 'Terrace Level 223', level: 'lower', baseAngle: 280, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '224', name: 'Terrace Level 224', level: 'lower', baseAngle: 290, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '225', name: 'Terrace Level 225', level: 'lower', baseAngle: 300, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '226', name: 'Terrace Level 226', level: 'lower', baseAngle: 310, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '227', name: 'Terrace Level 227', level: 'lower', baseAngle: 320, angleSpan: 10, covered: true, price: 'moderate' },
-      { id: '228', name: 'Terrace Level 228', level: 'lower', baseAngle: 330, angleSpan: 10, covered: true, price: 'moderate' },
+      { id: '219', name: 'Terrace Level 219', level: 'lower', baseAngle: 240, angleSpan: 10, covered: false, price: 'value' },
+      { id: '220', name: 'Terrace Level 220', level: 'lower', baseAngle: 250, angleSpan: 10, covered: false, price: 'value' },
+      { id: '221', name: 'Terrace Level 221', level: 'lower', baseAngle: 260, angleSpan: 10, covered: false, price: 'value' },
+      { id: '222', name: 'Terrace Level 222', level: 'lower', baseAngle: 270, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '223', name: 'Terrace Level 223', level: 'lower', baseAngle: 280, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '224', name: 'Terrace Level 224', level: 'lower', baseAngle: 290, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '225', name: 'Terrace Level 225', level: 'lower', baseAngle: 300, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '226', name: 'Terrace Level 226', level: 'lower', baseAngle: 310, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '227', name: 'Terrace Level 227', level: 'lower', baseAngle: 320, angleSpan: 10, covered: false, price: 'moderate' },
+      { id: '228', name: 'Terrace Level 228', level: 'lower', baseAngle: 330, angleSpan: 10, covered: false, price: 'moderate' },
       
       // Club Level (Premium sections)
       { id: 'C301', name: 'Club Level C301', level: 'club', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
@@ -5188,15 +5188,15 @@ export const stadiumSections: StadiumSections[] = [
       { id: '410', name: 'View Level 410', level: 'upper', baseAngle: 70, angleSpan: 10, covered: true, price: 'value' },
       { id: '411', name: 'View Level 411', level: 'upper', baseAngle: 80, angleSpan: 10, covered: true, price: 'value' },
       { id: '412', name: 'View Level 412', level: 'upper', baseAngle: 90, angleSpan: 10, covered: true, price: 'value' },
-      { id: '413', name: 'View Level 413', level: 'upper', baseAngle: 100, angleSpan: 10, covered: true, price: 'value' },
-      { id: '414', name: 'View Level 414', level: 'upper', baseAngle: 110, angleSpan: 10, covered: true, price: 'value' },
-      { id: '415', name: 'View Level 415', level: 'upper', baseAngle: 120, angleSpan: 10, covered: true, price: 'value' },
-      { id: '416', name: 'View Level 416', level: 'upper', baseAngle: 130, angleSpan: 10, covered: true, price: 'value' },
-      { id: '417', name: 'View Level 417', level: 'upper', baseAngle: 140, angleSpan: 10, covered: true, price: 'value' },
+      { id: '413', name: 'View Level 413', level: 'upper', baseAngle: 100, angleSpan: 10, covered: false, price: 'value' },
+      { id: '414', name: 'View Level 414', level: 'upper', baseAngle: 110, angleSpan: 10, covered: false, price: 'value' },
+      { id: '415', name: 'View Level 415', level: 'upper', baseAngle: 120, angleSpan: 10, covered: false, price: 'value' },
+      { id: '416', name: 'View Level 416', level: 'upper', baseAngle: 130, angleSpan: 10, covered: false, price: 'value' },
+      { id: '417', name: 'View Level 417', level: 'upper', baseAngle: 140, angleSpan: 10, covered: false, price: 'value' },
       
       // View Level - Third Base Side
-      { id: '421', name: 'View Level 421', level: 'upper', baseAngle: 220, angleSpan: 10, covered: true, price: 'value' },
-      { id: '422', name: 'View Level 422', level: 'upper', baseAngle: 230, angleSpan: 10, covered: true, price: 'value' },
+      { id: '421', name: 'View Level 421', level: 'upper', baseAngle: 220, angleSpan: 10, covered: false, price: 'value' },
+      { id: '422', name: 'View Level 422', level: 'upper', baseAngle: 230, angleSpan: 10, covered: false, price: 'value' },
       { id: '423', name: 'View Level 423', level: 'upper', baseAngle: 240, angleSpan: 10, covered: true, price: 'value' },
       { id: '424', name: 'View Level 424', level: 'upper', baseAngle: 250, angleSpan: 10, covered: true, price: 'value' },
       { id: '425', name: 'View Level 425', level: 'upper', baseAngle: 260, angleSpan: 10, covered: true, price: 'value' },
@@ -5288,8 +5288,12 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
   // If sun is below horizon, no sections are sunny
   if (sunElevation < 0) return false;
   
-  // For covered sections, only high sun angles can penetrate partial canopies
-  if (section.covered && sunElevation < 30) return false;
+  // For covered sections, very high sun angles can still penetrate partial canopies
+  // Club level and fully covered sections block more sun
+  if (section.covered) {
+    if (section.level === 'club' && sunElevation < 60) return false; // Club level has better coverage
+    if (sunElevation < 20) return false; // Low sun is blocked by any coverage
+  }
   
   // Normalize angles to 0-360 range
   const normalizeAngle = (angle: number) => ((angle % 360) + 360) % 360;
@@ -5319,9 +5323,18 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
 export function getSectionSunExposure(section: StadiumSection, sunElevation: number, sunAzimuth: number): number {
   if (sunElevation < 0) return 0;
   
-  // For covered sections, still allow some sun exposure for high sun angles (partial canopies)
-  const coverageReduction = section.covered ? 0.3 : 1.0; // Covered sections get 30% of normal exposure
-  if (section.covered && sunElevation < 30) return 0; // Low sun blocked by canopy
+  // For covered sections, allow varying sun exposure based on coverage level
+  let coverageReduction = 1.0;
+  if (section.covered) {
+    if (section.level === 'club') {
+      coverageReduction = 0.2; // Club level has excellent coverage
+    } else if (section.level === 'upper' && sunElevation < 45) {
+      coverageReduction = 0.4; // Upper deck with roof provides good protection
+    } else {
+      coverageReduction = 0.5; // General covered sections get partial protection
+    }
+    if (sunElevation < 20) return 0; // Very low sun blocked by any canopy
+  }
   
   // Check if section is actually in sun first
   if (!isSectionInSun(section, sunAzimuth, sunElevation)) return 0;
