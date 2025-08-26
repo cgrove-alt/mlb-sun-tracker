@@ -36,7 +36,7 @@ export default function BlogPage() {
         </nav>
 
         <div className="blog-header">
-          <h1>The Shadium Blog</h1>
+          <h1 className="break-words md:break-normal">The Shadium Blog</h1>
           <p className="lead">
             Your ultimate resource for finding shade at MLB stadiums. Get expert tips, 
             stadium guides, and seasonal advice for staying cool at the ballpark.

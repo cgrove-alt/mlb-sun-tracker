@@ -1,0 +1,96 @@
+/* Heading Safety Rails for Constrained Containers */
+
+/* Base safety for any heading in a constrained box */
+.heading-box {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* Allow wrapping on small containers */
+@container (inline-size < 420px) {
+  .heading-box {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* Safety for flex containers with titles and controls */
+.title-control-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-control-bar .title-wrapper {
+  min-width: 0; /* Prevent flex child from causing overflow */
+  flex: 1;
+}
+
+/* Badge/label headers safety */
+.badge-heading {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .badge-heading {
+    white-space: normal;
+  }
+}
+
+/* Section headers with backgrounds */
+.section-header {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Hero section safety */
+.hero-title {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+}
+
+/* Card headers safety */
+.card-header {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-header h1,
+.card-header h2,
+.card-header h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 640px) {
+  .card-header h1,
+  .card-header h2,
+  .card-header h3 {
+    white-space: normal;
+  }
+}
+
+/* Ensure no horizontal overflow on mobile */
+@media (max-width: 767px) {
+  h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+}

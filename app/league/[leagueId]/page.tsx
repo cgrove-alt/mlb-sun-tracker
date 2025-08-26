@@ -82,7 +82,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
         </nav>
 
         <header className="mb-8">
-          <h1 className="h1 mb-4">
+          <h1 className="h1 mb-4 break-words md:break-normal">
             {league.name} Stadium Shade Guide
           </h1>
           <p className="text-xl text-gray-600 mb-4 max-w-prose">

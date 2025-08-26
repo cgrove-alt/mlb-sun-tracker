@@ -134,7 +134,7 @@ export default function FAQPage() {
         </nav>
 
         <article>
-          <h1>Frequently Asked Questions</h1>
+          <h1 className="break-words md:break-normal">Frequently Asked Questions</h1>
           
           <p className="lead">
             Everything you need to know about finding seats in the shade at MLB stadiums 

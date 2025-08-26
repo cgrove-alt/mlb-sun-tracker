@@ -25,7 +25,7 @@ export default function HowToFindShadedSeatsPage() {
         </nav>
 
         <article>
-          <h1>How to Find Shaded Seats at Baseball Games</h1>
+          <h1 className="break-words md:break-normal">How to Find Shaded Seats at Baseball Games</h1>
           
           <p className="lead">
             Sitting in direct sunlight during a baseball game can turn an enjoyable experience into an uncomfortable one. 

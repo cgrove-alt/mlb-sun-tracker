@@ -58,7 +58,7 @@ export default function BestShadedSeatsMLBPage() {
         </nav>
 
         <article>
-          <h1>Best Shaded Seats at Every MLB Stadium</h1>
+          <h1 className="break-words md:break-normal">Best Shaded Seats at Every MLB Stadium</h1>
           
           <p className="lead">
             Finding seats in the shade can make or break your baseball experience, especially during hot summer day games. 

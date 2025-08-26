@@ -25,7 +25,7 @@ export default function AvoidSunBaseballGamesPage() {
         </nav>
 
         <article>
-          <h1>How to Avoid Sun at Baseball Games</h1>
+          <h1 className="break-words md:break-normal">How to Avoid Sun at Baseball Games</h1>
           
           <p className="lead">
             Spending 3-4 hours in direct sunlight at a baseball game can lead to sunburn, dehydration, 

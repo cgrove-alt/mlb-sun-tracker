@@ -19,15 +19,15 @@ const DIVISIONS = [
 export default function StadiumsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="h1 mb-4">All MLB Stadiums</h1>
+      <h1 className="h1 mb-4 break-words md:break-normal">All MLB Stadiums</h1>
       <p className="text-lg text-gray-600 mb-12 max-w-prose">
         Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
       </p>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {DIVISIONS.map((division) => (
-          <div key={division.name} className="bg-white rounded-lg shadow-lg p-6">
-            <h2 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2">
+          <div key={division.name} className="bg-white rounded-2xl border shadow-lg p-6 overflow-hidden">
+            <h2 className="text-xl font-bold mb-4 text-gray-800 border-b pb-2 truncate md:whitespace-normal">
               {division.name}
             </h2>
             <div className="space-y-3">
@@ -73,7 +73,7 @@ export default function StadiumsPage() {
       </div>
       
       <div className="mt-12 text-center">
-        <h2 className="h2 mb-4">Looking for Minor League Stadiums?</h2>
+        <h2 className="h2 mb-4 break-words md:break-normal">Looking for Minor League Stadiums?</h2>
         <p className="text-gray-600 mb-6 max-w-prose mx-auto">
           We also cover MiLB stadiums! Use the search feature in the navigation bar to find your favorite minor league ballpark.
         </p>

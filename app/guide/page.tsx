@@ -39,7 +39,7 @@ export default function GuidesPage() {
         </nav>
 
         <div className="guides-header">
-          <h1 className="h1">Baseball Shade Guides</h1>
+          <h1 className="h1 break-words md:break-normal">Baseball Shade Guides</h1>
           <p className="lead max-w-prose">
             Everything you need to know about finding seats in the shade and staying comfortable at MLB stadiums.
           </p>
@@ -60,7 +60,7 @@ export default function GuidesPage() {
         </section>
 
         <section className="guide-cta">
-          <h2 className="h2">Ready to Find Your Perfect Shaded Seat?</h2>
+          <h2 className="h2 break-words md:break-normal">Ready to Find Your Perfect Shaded Seat?</h2>
           <p className="max-w-prose">Use The Shadium's real-time sun tracker to see exactly which seats will be shaded during your game.</p>
           <Link href="/" className="cta-button primary">
             Check Shade Coverage →
