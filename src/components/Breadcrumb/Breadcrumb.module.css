@@ -1,0 +1,36 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink-700);
+  font-size: 14px;
+}
+
+.sep {
+  opacity: 0.6;
+  user-select: none;
+}
+
+.link {
+  color: var(--ink-700);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent-600);
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 2px solid var(--accent-600);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.current {
+  color: var(--ink-900);
+  font-weight: 500;
+  aria-current: page;
+}
