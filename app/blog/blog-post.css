@@ -12,19 +12,19 @@
 
 .breadcrumb {
   margin-bottom: 2rem;
-  color: #666;
+  color: var(--ink-700);
   font-size: 0.9rem;
 }
 
 .breadcrumb a {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .breadcrumb a:hover {
   text-decoration: underline;
-  color: #1976d2;
+  color: var(--accent-700);
 }
 
 .post-header {
@@ -41,12 +41,12 @@
   gap: 1.5rem;
   margin-bottom: 1rem;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--ink-700);
   flex-wrap: wrap;
 }
 
 .post-category {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
   font-weight: 500;
   text-transform: capitalize;
@@ -55,7 +55,7 @@
 
 .post-category:hover {
   text-decoration: underline;
-  color: #1976d2;
+  color: var(--accent-700);
 }
 
 .post-header h1 {
@@ -68,13 +68,13 @@
 
 .post-description {
   font-size: 1.25rem;
-  color: #666;
+  color: var(--ink-700);
   margin-bottom: 1rem;
   line-height: 1.6;
 }
 
 .post-author {
-  color: #666;
+  color: var(--ink-700);
   font-size: 0.95rem;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .toc-item {
-  color: #666;
+  color: var(--ink-700);
   text-decoration: none;
   padding: 0.25rem 0;
   border-left: 2px solid transparent;
@@ -139,7 +139,7 @@
 }
 
 .toc-item:hover {
-  color: #2196f3;
+  color: var(--accent-600);
   border-left-color: #2196f3;
 }
 
@@ -275,7 +275,7 @@
 
 /* Links */
 .post-content a {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.2s;
@@ -403,7 +403,7 @@
   background: #f0f0f0;
   border-radius: 20px;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--ink-700);
   text-decoration: none;
   transition: all 0.2s;
 }
@@ -479,11 +479,11 @@
 }
 
 .related-post-card h3 a:hover {
-  color: #2196f3;
+  color: var(--accent-600);
 }
 
 .related-post-card p {
-  color: #666;
+  color: var(--ink-700);
   margin-bottom: 1rem;
   line-height: 1.6;
   font-size: 0.95rem;
@@ -491,7 +491,7 @@
 
 .no-related-posts {
   text-align: center;
-  color: #666;
+  color: var(--ink-700);
   padding: 2rem;
   background: #f8f9fa;
   border-radius: 8px;
@@ -524,7 +524,7 @@
 .cta-button {
   display: inline-block;
   background: white;
-  color: #2196f3;
+  color: var(--accent-600);
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -540,7 +540,7 @@
 }
 
 .read-more {
-  color: #2196f3;
+  color: var(--accent-600);
   text-decoration: none;
   font-weight: 500;
   display: inline-flex;

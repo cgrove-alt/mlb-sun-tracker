@@ -1,3 +1,4 @@
+import '../src/styles/base.css'; // Import tokens and base styles first
 import './globals.css';
 import '../src/styles/typography.css';
 import '../src/styles/heading-safety.css';
