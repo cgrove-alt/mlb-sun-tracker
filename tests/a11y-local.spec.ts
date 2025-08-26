@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 test.describe('Accessibility Tests (Local)', () => {
   test('homepage passes axe accessibility checks', async ({ page }) => {
-    await page.goto('http://localhost:3000/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
     
     const accessibilityScanResults = await new AxeBuilder({ page })
@@ -37,7 +37,7 @@ test.describe('Accessibility Tests (Local)', () => {
 
     for (const path of criticalPaths) {
       await test.step(`Testing contrast on ${path}`, async () => {
-        await page.goto('http://localhost:3000' + path);
+        await page.goto(path);
         await page.waitForLoadState('networkidle');
         
         const results = await new AxeBuilder({ page })
@@ -63,7 +63,7 @@ test.describe('Accessibility Tests (Local)', () => {
   });
 
   test('navigation landmarks exist', async ({ page }) => {
-    await page.goto('http://localhost:3000/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
     
     // Check for proper landmarks
@@ -81,7 +81,7 @@ test.describe('Accessibility Tests (Local)', () => {
   });
 
   test('form labels and ARIA on contact page', async ({ page }) => {
-    await page.goto('http://localhost:3000/contact');
+    await page.goto('/contact');
     await page.waitForLoadState('networkidle');
     
     const results = await new AxeBuilder({ page })
@@ -99,7 +99,7 @@ test.describe('Accessibility Tests (Local)', () => {
   });
 
   test('focus indicators visible', async ({ page }) => {
-    await page.goto('http://localhost:3000/');
+    await page.goto('/');
     await page.waitForLoadState('networkidle');
     
     // Tab through first few interactive elements
@@ -130,7 +130,7 @@ test.describe('Accessibility Tests (Local)', () => {
   });
 
   test('heading hierarchy', async ({ page }) => {
-    await page.goto('http://localhost:3000/guide');
+    await page.goto('/guide');
     await page.waitForLoadState('networkidle');
     
     const headingIssues = await page.evaluate(() => {

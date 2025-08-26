@@ -24,7 +24,7 @@ test.describe('Visual Overflow Tests (Local)', () => {
 
     for (const path of paths) {
       await test.step(`Testing ${path}`, async () => {
-        await page.goto('http://localhost:3000' + path);
+        await page.goto(path);
         
         // Test at minimum mobile viewport (360px)
         await page.setViewportSize({ width: 360, height: 800 });
@@ -70,7 +70,7 @@ test.describe('Visual Overflow Tests (Local)', () => {
   });
 
   test('no text overflow in cards and headers', async ({ page }) => {
-    await page.goto('http://localhost:3000/stadiums');
+    await page.goto('/stadiums');
     await page.setViewportSize({ width: 360, height: 800 });
     
     await page.waitForLoadState('networkidle');

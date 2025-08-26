@@ -142,7 +142,7 @@ export default function RootLayout({
         <CriticalStyles />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
-        <meta name="theme-color" content="#2196f3" />
+        <meta name="theme-color" content="#1e40af" />
         
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
