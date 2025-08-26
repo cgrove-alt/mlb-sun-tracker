@@ -33,7 +33,11 @@
       "form_factor": "narrow"
     }
   ],
-  "categories": ["sports", "utilities", "lifestyle"],
+  "categories": [
+    "sports",
+    "utilities",
+    "lifestyle"
+  ],
   "lang": "en-US",
   "dir": "ltr"
 }
