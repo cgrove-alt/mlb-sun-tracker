@@ -424,7 +424,7 @@ p, li {
 
 .form-input::placeholder,
 .form-textarea::placeholder {
-  color: var(--color-gray-500);
+  color: var(--color-ink-700);
 }
 
 .form-select {
@@ -527,7 +527,7 @@ p, li {
 .text-success { color: var(--color-success); }
 .text-warning { color: var(--color-warning); }
 .text-error { color: var(--color-error); }
-.text-muted { color: var(--color-gray-600); }
+.text-muted { color: var(--color-ink-700); }
 
 .bg-primary { background-color: var(--color-primary); }
 .bg-secondary { background-color: var(--color-secondary); }

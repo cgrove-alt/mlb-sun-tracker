@@ -302,7 +302,7 @@
 
 .sun-exposure-bar__markers .marker {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
+  color: var(--color-ink-700);
   position: absolute;
   transform: translateX(-50%);
 }
@@ -379,7 +379,7 @@
 
 .legend-item__range {
   font-size: var(--font-size-xs);
-  color: var(--color-gray-600);
+  color: var(--color-ink-700);
 }
 
 /* Hover Effects */
