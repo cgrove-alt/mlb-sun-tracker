@@ -215,6 +215,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* Ensure all form controls have readable dark text */
+input, select, textarea, button {
+  color: var(--color-gray-900) !important;
+}
+
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
@@ -364,7 +369,7 @@ p {
   padding: var(--input-padding-y) var(--input-padding-x);
   font-family: var(--font-primary);
   font-size: var(--input-font-size);
-  color: var(--color-gray-900);
+  color: var(--color-gray-900) !important;
   background-color: var(--color-white);
   border: 2px solid var(--input-border-color);
   border-radius: var(--input-border-radius);
