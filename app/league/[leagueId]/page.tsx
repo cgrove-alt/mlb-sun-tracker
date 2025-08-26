@@ -75,17 +75,17 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
   return (
     <div className="league-page">
       <div className="container mx-auto px-4 py-8">
-        <nav className="breadcrumb mb-6">
+        <nav className="flex flex-wrap items-center gap-3 text-sm text-ink-700 mb-6" aria-label="Breadcrumb">
           <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
-          <span className="mx-2">›</span>
-          <span className="text-gray-600">{league.name}</span>
+          <span aria-hidden="true">/</span>
+          <span className="text-ink-700">{league.name}</span>
         </nav>
 
         <header className="mb-8">
           <h1 className="h1 mb-4 break-words md:break-normal">
             {league.name} Stadium Shade Guide
           </h1>
-          <p className="text-xl text-gray-600 mb-4 max-w-prose">
+          <p className="text-xl text-ink-700 mb-4 max-w-prose">
             Find the best shaded seats at all {venues.length} {league.name} venues
           </p>
           <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm">
@@ -126,7 +126,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
                 <h3 className="text-lg font-semibold mb-2">Best Game Times for Shade</h3>
                 <ul className="space-y-1">
                   {league.typicalGameTimes.map((time: string) => (
-                    <li key={time} className="text-gray-600">
+                    <li key={time} className="text-ink-700">
                       • {time} - {
                         parseInt(time.split(':')[0]) < 15 ? 'Day game (more sun exposure)' :
                         parseInt(time.split(':')[0]) < 18 ? 'Afternoon (moderate shade)' :
@@ -139,7 +139,7 @@ export default async function LeaguePage({ params }: LeaguePageProps) {
               
               <div>
                 <h3 className="text-lg font-semibold mb-2">Season Considerations</h3>
-                <ul className="space-y-1 text-gray-600">
+                <ul className="space-y-1 text-ink-700">
                   <li>• Early season ({league.season.start}): Lower sun angle</li>
                   <li>• Mid-season: Peak sun exposure risk</li>
                   <li>• Late season ({league.season.end}): Better natural shade</li>

@@ -29,7 +29,7 @@ export default function SeatsShadeFinderPage() {
         </h1>
         
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm mb-8 overflow-hidden stack">
-          <p className="text-lg text-gray-700 mb-4 max-w-prose">
+          <p className="text-lg text-ink-700 mb-4 max-w-prose">
             Wondering "are my seats shaded?" We've got you covered! The Shadium provides real-time shade 
             information for every section at all 30 MLB stadiums. Simply select your stadium below to 
             check if your seats will be in the shade during your game.
@@ -58,10 +58,10 @@ export default function SeatsShadeFinderPage() {
                 <h3 className="text-lg font-semibold text-blue-600 mb-1">
                   {stadium.name}
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-ink-700">
                   {stadium.team} • {stadium.city}
                 </p>
-                <p className="text-sm text-gray-500 mt-2">
+                <p className="text-sm text-ink-700 mt-2">
                   Check shaded seats →
                 </p>
               </Link>
@@ -74,7 +74,7 @@ export default function SeatsShadeFinderPage() {
             How to Find Out If Your Seats Are Shaded
           </h2>
           
-          <ol className="space-y-4 text-gray-700">
+          <ol className="space-y-4 text-ink-700">
             <li className="flex">
               <span className="font-bold text-blue-600 mr-3">1.</span>
               <div>
@@ -112,7 +112,7 @@ export default function SeatsShadeFinderPage() {
               <h3 className="font-semibold text-lg mb-2">
                 "Are field level seats ever shaded?"
               </h3>
-              <p className="text-gray-700">
+              <p className="text-ink-700">
                 Yes! Field level seats can be shaded depending on the stadium design, game time, and season. 
                 Seats behind home plate often get shade from the upper deck overhang, while seats down the 
                 baselines may get shade later in the game.
@@ -123,7 +123,7 @@ export default function SeatsShadeFinderPage() {
               <h3 className="font-semibold text-lg mb-2">
                 "Which side of the stadium has more shade?"
               </h3>
-              <p className="text-gray-700">
+              <p className="text-ink-700">
                 Generally, the third base side gets shade first during day games as the sun moves from east 
                 to west. However, this varies by stadium orientation. Use our tool to check your specific stadium.
               </p>
@@ -133,7 +133,7 @@ export default function SeatsShadeFinderPage() {
               <h3 className="font-semibold text-lg mb-2">
                 "Are upper deck seats always shaded?"
               </h3>
-              <p className="text-gray-700">
+              <p className="text-ink-700">
                 Upper deck seats often have shade from the stadium overhang, but not always. Outfield upper 
                 deck sections may still get sun exposure. Check your specific section for accurate information.
               </p>

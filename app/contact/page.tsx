@@ -13,7 +13,7 @@ export default function ContactPage() {
       <div className="grid md:grid-cols-2 gap-4 md:gap-6">
         <div className="rounded-xl border bg-white p-4 md:p-5 shadow-sm stack">
           <h2 className="h2">Get in Touch</h2>
-          <p className="text-gray-600 max-w-prose">
+          <p className="text-ink-700 max-w-prose">
             Have questions, suggestions, or feedback? We'd love to hear from you! 
             Our team is dedicated to helping fans find the perfect shaded seats.
           </p>
@@ -21,17 +21,17 @@ export default function ContactPage() {
           <div className="space-y-4">
             <div>
               <h3 className="font-semibold text-lg mb-2">General Inquiries</h3>
-              <p className="text-gray-600">info@theshadium.com</p>
+              <p className="text-ink-700">info@theshadium.com</p>
             </div>
             
             <div>
               <h3 className="font-semibold text-lg mb-2">Technical Support</h3>
-              <p className="text-gray-600">support@theshadium.com</p>
+              <p className="text-ink-700">support@theshadium.com</p>
             </div>
             
             <div>
               <h3 className="font-semibold text-lg mb-2">Partnership Opportunities</h3>
-              <p className="text-gray-600">partnerships@theshadium.com</p>
+              <p className="text-ink-700">partnerships@theshadium.com</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function ContactPage() {
           <h2 className="h2">Send us a Message</h2>
           <form className="stack">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-ink-900 mb-1">
                 Name
               </label>
               <input
@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-ink-900 mb-1">
                 Email
               </label>
               <input
@@ -66,7 +66,7 @@ export default function ContactPage() {
             </div>
             
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="subject" className="block text-sm font-medium text-ink-900 mb-1">
                 Subject
               </label>
               <input
@@ -79,7 +79,7 @@ export default function ContactPage() {
             </div>
             
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-ink-900 mb-1">
                 Message
               </label>
               <textarea
@@ -103,7 +103,7 @@ export default function ContactPage() {
       
       <div className="rounded-xl border bg-blue-50 p-4 md:p-5 shadow-sm stack">
         <h3 className="text-lg font-semibold">Quick Tip</h3>
-        <p className="text-gray-700 max-w-prose">
+        <p className="text-ink-700 max-w-prose">
           Before contacting support, check our FAQs page for answers to common questions about 
           using The Shadium to find shaded seats at your favorite ballpark.
         </p>

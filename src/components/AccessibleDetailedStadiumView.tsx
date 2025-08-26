@@ -230,15 +230,15 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
       {/* Stadium Info */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         <div className={`p-4 rounded-lg ${highContrastMode ? 'bg-white border-2 border-black' : 'bg-gray-50'}`}>
-          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>Team</span>
+          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>Team</span>
           <p className={`text-lg font-bold ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>{stadium.team}</p>
         </div>
         <div className={`p-4 rounded-lg ${highContrastMode ? 'bg-white border-2 border-black' : 'bg-gray-50'}`}>
-          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>Capacity</span>
+          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>Capacity</span>
           <p className={`text-lg font-bold ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>{stadium.capacity.toLocaleString()}</p>
         </div>
         <div className={`p-4 rounded-lg ${highContrastMode ? 'bg-white border-2 border-black' : 'bg-gray-50'}`}>
-          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>Roof Type</span>
+          <span className={`text-sm font-medium ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>Roof Type</span>
           <p className={`text-lg font-bold ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>
             {stadium.roof === 'open' ? 'Open Air' : stadium.roof === 'fixed' ? 'Fixed Dome' : 'Retractable'}
           </p>
@@ -274,7 +274,7 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
               <p className={`font-semibold text-lg ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>
                 Sunny
               </p>
-              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>
+              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>
                 Direct sunlight
               </p>
             </div>
@@ -289,7 +289,7 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
               <p className={`font-semibold text-lg ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>
                 Partial
               </p>
-              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>
+              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>
                 Some shade
               </p>
             </div>
@@ -304,7 +304,7 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
               <p className={`font-semibold text-lg ${highContrastMode ? 'text-black' : 'text-gray-900'}`}>
                 Shaded
               </p>
-              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-gray-600'}`}>
+              <p className={`text-sm ${highContrastMode ? 'text-black' : 'text-ink-700'}`}>
                 Full shade
               </p>
             </div>

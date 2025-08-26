@@ -20,7 +20,7 @@ export default function StadiumsPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <h1 className="h1 mb-4 break-words md:break-normal">All MLB Stadiums</h1>
-      <p className="text-lg text-gray-600 mb-12 max-w-prose">
+      <p className="text-lg text-ink-700 mb-12 max-w-prose">
         Select a stadium to view real-time shade information and find the best seats to avoid sun exposure
       </p>
       
@@ -45,13 +45,13 @@ export default function StadiumsPage() {
                       <h3 className="font-semibold text-gray-900 group-hover:text-orange-600">
                         {stadium.team}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-ink-700">
                         {stadium.name}
                       </p>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-ink-700 mt-1">
                         {stadium.city}, {stadium.state}
                       </p>
-                      <div className="flex items-center gap-4 mt-2 text-xs text-gray-500">
+                      <div className="flex items-center gap-4 mt-2 text-xs text-ink-700">
                         <span className="flex items-center gap-1">
                           <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                             <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
@@ -74,7 +74,7 @@ export default function StadiumsPage() {
       
       <div className="mt-12 text-center">
         <h2 className="h2 mb-4 break-words md:break-normal">Looking for Minor League Stadiums?</h2>
-        <p className="text-gray-600 mb-6 max-w-prose mx-auto">
+        <p className="text-ink-700 mb-6 max-w-prose mx-auto">
           We also cover MiLB stadiums! Use the search feature in the navigation bar to find your favorite minor league ballpark.
         </p>
       </div>

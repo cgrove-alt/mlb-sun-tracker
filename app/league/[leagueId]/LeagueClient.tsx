@@ -187,11 +187,11 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
         .badge-open { background: #fef3c7; color: #92400e; }
         .badge-retractable { background: #dbeafe; color: #1e40af; }
         .badge-covered { background: #dcfce7; color: #166534; }
-        .muted { color: #4b5563; margin: 6px 0; }
-        .sub { color: #6b7280; font-size: 13px; margin-bottom: 8px; }
-        .meta { display: flex; justify-content: space-between; align-items: center; color: #6b7280; font-size: 13px; }
+        .muted { color: #334155; margin: 6px 0; font-weight: 500; }
+        .sub { color: #334155; font-size: 13px; margin-bottom: 8px; }
+        .meta { display: flex; justify-content: space-between; align-items: center; color: #334155; font-size: 13px; }
         .cta { color: #2563eb; font-weight: 600; }
-        .empty { text-align: center; color: #6b7280; padding: 24px; border: 1px dashed #e5e7eb; border-radius: 12px; }
+        .empty { text-align: center; color: #334155; padding: 24px; border: 1px dashed #e5e7eb; border-radius: 12px; }
       `}</style>
     </div>
   );
