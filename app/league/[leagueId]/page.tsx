@@ -23,7 +23,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: LeaguePageProps): Promise<Metadata> {
   const { leagueId } = await params;
-  const leagueKey = leagueId.toUpperCase();
+  // Handle MiLB case sensitivity
+  const leagueKey = leagueId.toLowerCase() === 'milb' ? 'MiLB' : leagueId.toUpperCase();
   const league = getLeagueInfo(leagueKey);
   
   if (!league) {
@@ -62,7 +63,8 @@ export async function generateMetadata({ params }: LeaguePageProps): Promise<Met
 
 export default async function LeaguePage({ params }: LeaguePageProps) {
   const { leagueId } = await params;
-  const leagueKey = leagueId.toUpperCase();
+  // Handle MiLB case sensitivity
+  const leagueKey = leagueId.toLowerCase() === 'milb' ? 'MiLB' : leagueId.toUpperCase();
   const league = getLeagueInfo(leagueKey);
   const venues = getVenuesByLeague(leagueKey);
   
