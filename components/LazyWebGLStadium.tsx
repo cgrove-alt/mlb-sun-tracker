@@ -1,7 +1,7 @@
 'use client';
 
 import React, { lazy, Suspense } from 'react';
-import { LoadingSpinner } from '../src/components/LoadingSpinner';
+import LoadingSpinner from './LoadingSpinner';
 import { Stadium } from '../src/data/stadiums';
 
 // Lazy load the WebGL component only when needed

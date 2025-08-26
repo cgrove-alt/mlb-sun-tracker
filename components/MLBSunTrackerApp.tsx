@@ -15,14 +15,12 @@ import { UserProfileMenu } from '../src/components/UserProfileMenu';
 import { FavoriteButton } from '../src/components/FavoriteButton';
 import { UserProfileProvider, useUserProfile } from '../src/contexts/UserProfileContext';
 import { getSunPosition, getSunDescription, getCompassDirection, calculateDetailedSectionSunExposure, filterSectionsBySunExposure, SeatingSectionSun } from '../src/utils/sunCalculations';
-import { getShadedSections } from '../src/utils/getShadedSections';
-import { validationSystem } from '../src/validation/shadeValidation';
 import { MLBGame } from '../src/services/mlbApi';
 import { MiLBGame } from '../src/services/milbApi';
 import { NFLGame } from '../src/services/nflApi';
 import { WeatherForecast, weatherApi } from '../src/services/weatherApi';
 import { I18nProvider, useTranslation, LanguageSelector } from '../src/i18n/i18nContext';
-import { ErrorBoundary } from '../src/components/ErrorBoundary';
+import ErrorBoundary from './ErrorBoundary';
 
 function AppContent() {
   const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
@@ -125,17 +123,10 @@ function AppContent() {
           temperature: gameWeather.temperature
         } : 'No weather data');
 
-        // Use enhanced 3D shade calculations
-        const shadedSections3D = getShadedSections(selectedStadium, gameDateTime, gameWeather);
+        // Calculate detailed section data with weather impact
+        const detailedSectionData = calculateDetailedSectionSunExposure(selectedStadium, position, gameWeather);
         
-        // Convert to existing format for compatibility
-        const detailedSectionData: SeatingSectionSun[] = shadedSections3D.map(shaded => ({
-          section: shaded.section,
-          inSun: !shaded.isFullyShaded && !shaded.isPartiallyShaded,
-          sunExposure: 100 - shaded.shadePercentage,
-        }));
-        
-        console.log('3D Shade calculations completed:', detailedSectionData.length);
+        console.log('Detailed sections calculated:', detailedSectionData.length);
         setDetailedSections(detailedSectionData);
         
         // Apply current filter

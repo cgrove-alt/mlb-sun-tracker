@@ -96,10 +96,6 @@ defaults:
 
   fs.writeFileSync(path.join(outDir, '_config.yml'), configContent);
   console.log('✓ Created _config.yml for GitHub Pages configuration');
-  
-  // Create .nojekyll file to prevent Jekyll processing of _next directory
-  fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
-  console.log('✓ Created .nojekyll file for GitHub Pages');
 }
 
 addCacheHeaders();

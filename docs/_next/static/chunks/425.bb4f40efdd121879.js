@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[425],{9425:(e,a,s)=>{s.r(a),s.d(a,{default:()=>u});var d=s(5155),l=s(5028),t=s(2731);let u=(0,l.default)(()=>s.e(657).then(s.bind(s,8657)),{loadableGenerated:{webpack:()=>[8657]},loading:()=>(0,d.jsx)(t.k,{size:"large",message:"Loading stadium guide..."}),ssr:!0})}}]);
