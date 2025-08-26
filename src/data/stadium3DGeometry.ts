@@ -96,7 +96,7 @@ function generateSectionGeometry(
 }
 
 // Generate obstructions for a stadium
-function generateStadiumObstructions(stadium: Stadium | AnyStadium): Obstruction[] {
+function generateStadiumObstructions(stadium: Stadium | MiLBStadium | AnyStadium): Obstruction[] {
   const obstructions: Obstruction[] = [];
   
   // Roof overhang (if applicable)
