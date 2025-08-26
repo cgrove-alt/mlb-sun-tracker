@@ -212,6 +212,9 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       backgroundColor: state.isSelected ? '#1a237e' : state.isFocused ? '#f5f5f5' : 'white',
       fontWeight: state.isSelected ? 600 : 500,
       opacity: 1,
+      '&:hover': {
+        backgroundColor: '#f5f5f5',
+      },
     }),
     menu: (provided: any) => ({
       ...provided,
