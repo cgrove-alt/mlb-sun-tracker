@@ -4,7 +4,7 @@ import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 // PWAInstallPrompt disabled
 // import PWAInstallPrompt from '../components/PWAInstallPrompt';
-import LoadingSpinner from '../components/LoadingSpinner';
+import { LoadingSpinner } from '../src/components/LoadingSpinner';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 
