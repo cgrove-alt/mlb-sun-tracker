@@ -343,13 +343,50 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
     };
   });
 
+  // Custom styles to ensure dropdown text is always visible
+  const customSelectStyles = {
+    control: (provided: any) => ({
+      ...provided,
+      backgroundColor: 'white',
+      color: '#000',
+    }),
+    singleValue: (provided: any) => ({
+      ...provided,
+      color: '#000',
+      fontWeight: 600,
+      opacity: 1,
+    }),
+    placeholder: (provided: any) => ({
+      ...provided,
+      color: '#666',
+      fontWeight: 500,
+      opacity: 1,
+    }),
+    option: (provided: any, state: any) => ({
+      ...provided,
+      color: state.isSelected ? 'white' : '#000',
+      backgroundColor: state.isSelected ? '#1a237e' : state.isFocused ? '#f5f5f5' : 'white',
+      fontWeight: state.isSelected ? 600 : 500,
+      opacity: 1,
+    }),
+    menu: (provided: any) => ({
+      ...provided,
+      backgroundColor: 'white',
+    }),
+    input: (provided: any) => ({
+      ...provided,
+      color: '#000',
+      opacity: 1,
+    }),
+  };
+
   const formatOptionLabel = (option: any) => {
     if ('venue' in option) {
       return (
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {option.isFavorite && <span style={{ color: '#FFD700' }}>★</span>}
-            <span>{option.label}</span>
+            <span style={{ color: '#000', fontWeight: 600 }}>{option.label}</span>
           </div>
           <FavoriteButton
             stadiumId={option.venue.id}
@@ -359,7 +396,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         </div>
       );
     }
-    return option.label;
+    return <span style={{ color: '#000', fontWeight: 600 }}>{option.label}</span>;
   };
 
   return (
@@ -457,6 +494,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           className="league-select"
           aria-label="Select league"
           isSearchable={false}
+          styles={customSelectStyles}
         />
       </div>
 
@@ -477,6 +515,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
             className="milb-level-select"
             aria-label="Select MiLB level"
             isSearchable={false}
+            styles={customSelectStyles}
           />
         </div>
       )}
@@ -497,6 +536,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           formatOptionLabel={formatOptionLabel}
           blurInputOnSelect={true}
           isDisabled={!selectedLeague}
+          styles={customSelectStyles}
         />
       </div>
 
@@ -550,6 +590,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         className={`game-select ${gamesLoading.isRefreshing ? 'refreshing' : ''}`}
                         isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                         aria-label={t('gameSelector.selectGame')}
+                        styles={customSelectStyles}
                       />
                     </>
                   )}
