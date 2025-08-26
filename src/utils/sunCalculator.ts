@@ -1,6 +1,6 @@
 // sunCalculator.ts
 import SunCalc from 'suncalc';
-import { computeSunPosition } from './nrelSolarPosition';
+import { computeSunPositionFinal as computeSunPosition } from './nrelSolarPositionFinal';
 
 interface Stadium {
   id: string;
