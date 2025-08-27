@@ -1,14 +1,12 @@
-* {
-  box-sizing: border-box;
-}
-
 .leagueClient {
+  box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
 }
 
 .controls {
+  box-sizing: border-box;
   display: grid;
   gap: 12px;
   grid-template-columns: 1fr;
@@ -23,6 +21,7 @@
 }
 
 .searchInput {
+  box-sizing: border-box;
   width: 100%;
   height: 44px;
   border-radius: 8px;
@@ -44,6 +43,7 @@
 }
 
 .filterSelect {
+  box-sizing: border-box;
   height: 40px;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
@@ -52,6 +52,7 @@
 }
 
 .grid {
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
