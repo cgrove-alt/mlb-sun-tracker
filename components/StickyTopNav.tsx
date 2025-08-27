@@ -277,15 +277,6 @@ export default function StickyTopNav() {
               Home
             </Link>
             
-            {/* Quick access to MLB Stadiums page */}
-            <Link 
-              href="/league/mlb" 
-              className={pathname === '/league/mlb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              MLB Stadiums
-            </Link>
-            
             <div className="mobile-stadiums-section">
               <button
                 type="button"
@@ -337,14 +328,6 @@ export default function StickyTopNav() {
               Guides
             </Link>
             
-            {/* Blog */}
-            <Link 
-              href="/blog" 
-              className={pathname?.startsWith('/blog') ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Blog
-            </Link>
             <Link 
               href="/guide/how-to-find-shaded-seats" 
               className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
@@ -352,12 +335,22 @@ export default function StickyTopNav() {
             >
               How to Find Shaded Seats
             </Link>
+            
             <Link 
               href="/guide/best-shaded-seats-mlb" 
               className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
               onClick={closeMobileMenu}
             >
               Best Shaded Seats (MLB)
+            </Link>
+            
+            {/* Blog */}
+            <Link 
+              href="/blog" 
+              className={pathname?.startsWith('/blog') ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Blog
             </Link>
 
             {/* Leagues Section */}
