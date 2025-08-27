@@ -20,12 +20,21 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
 
-  // Prevent body scroll when filter is open - only on desktop
+  // Simple body scroll lock when filter is open
   React.useEffect(() => {
-    if (isOpen && window.innerWidth > 768) {
-      document.body.style.overflow = 'hidden';
+    if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      
+      // Add class to body for styling
+      document.body.classList.add('mobile-filter-open');
+      
       return () => {
-        document.body.style.overflow = '';
+        // Remove class from body
+        document.body.classList.remove('mobile-filter-open');
+        
+        // Restore scroll position if needed
+        window.scrollTo(0, scrollY);
       };
     }
   }, [isOpen]);
@@ -36,7 +45,15 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   }, [currentFilters]);
 
   const handleApplyFilters = () => {
-    onFilterChange(localFilters);
+    // Create a copy of filters to modify
+    const filtersToApply = { ...localFilters };
+    
+    // If maxSunExposure is 100 (no limit), remove it from filters
+    if (filtersToApply.maxSunExposure === 100) {
+      delete filtersToApply.maxSunExposure;
+    }
+    
+    onFilterChange(filtersToApply);
     setIsOpen(false);
   };
 
@@ -46,7 +63,13 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
     setIsOpen(false);
   };
 
-  const activeFilterCount = Object.keys(currentFilters).length;
+  const activeFilterCount = Object.keys(currentFilters).filter(key => {
+    // Don't count maxSunExposure if it's 100 (no limit)
+    if (key === 'maxSunExposure' && currentFilters.maxSunExposure === 100) {
+      return false;
+    }
+    return true;
+  }).length;
 
   // Calculate preview count based on local filters
   const previewCount = useMemo(() => {
@@ -63,8 +86,8 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       }
     }
     
-    // Apply max sun exposure filter
-    if (localFilters.maxSunExposure !== undefined) {
+    // Apply max sun exposure filter (only if not 100%)
+    if (localFilters.maxSunExposure !== undefined && localFilters.maxSunExposure !== 100) {
       const maxExposure = localFilters.maxSunExposure;
       filtered = filtered.filter(s => s.sunExposure <= maxExposure);
     }
@@ -117,11 +140,10 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
               <button 
                 className="mobile-filter-close"
                 onClick={() => setIsOpen(false)}
-                aria-label="Close"
+                aria-label="Close filters"
+                type="button"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+                ✕
               </button>
             </div>
 
@@ -184,6 +206,9 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     onChange={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt(e.target.value)})}
                     onInput={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt((e.target as HTMLInputElement).value)})}
                     className="mobile-filter-range"
+                    style={{
+                      '--value': `${localFilters.maxSunExposure || 100}%`
+                    } as React.CSSProperties}
                   />
                   <div className="mobile-filter-range-labels">
                     <span>0%</span>
