@@ -75,7 +75,14 @@ const MobileApp: React.FC = () => {
       setAllSections([]);
       setFilteredSections([]);
     }
-  }, [gameDateTime, selectedVenue, selectedStadium, filterCriteria]);
+  }, [gameDateTime, selectedVenue, selectedStadium]);
+  
+  // Apply filters when sections or filter criteria change
+  useEffect(() => {
+    if (allSections.length > 0) {
+      applyFilters();
+    }
+  }, [allSections, filterCriteria]);
 
   const handleGamesLoaded = (loadedGames: (MLBGame | MiLBGame | NFLGame)[]) => {
     setGames(loadedGames);
@@ -105,6 +112,37 @@ const MobileApp: React.FC = () => {
       setIsWeatherLoading(false);
     }
   };
+
+  const applyFilters = React.useCallback(() => {
+    let filtered = [...allSections];
+    
+    if (filterCriteria.sunPreference) {
+      if (filterCriteria.sunPreference === 'sun') {
+        filtered = filtered.filter(s => s.sunExposure >= 60);
+      } else if (filterCriteria.sunPreference === 'shade') {
+        filtered = filtered.filter(s => s.sunExposure <= 20);
+      }
+    }
+    
+    if (filterCriteria.maxSunExposure !== undefined && filterCriteria.maxSunExposure !== 100) {
+      const maxExposure = filterCriteria.maxSunExposure;
+      filtered = filtered.filter(s => s.sunExposure <= maxExposure);
+    }
+    
+    if (filterCriteria.seatingAreas && filterCriteria.seatingAreas.length > 0) {
+      filtered = filtered.filter(s => 
+        filterCriteria.seatingAreas!.includes(s.section.level)
+      );
+    }
+    
+    if (filterCriteria.priceRange && filterCriteria.priceRange.length > 0) {
+      filtered = filtered.filter(s => 
+        s.section.price && filterCriteria.priceRange!.includes(s.section.price)
+      );
+    }
+    
+    setFilteredSections(filtered);
+  }, [allSections, filterCriteria]);
 
   const calculateSections = React.useCallback(debounce(async () => {
     if (!gameDateTime || !selectedVenue || !selectedStadium) return;
@@ -165,38 +203,8 @@ const MobileApp: React.FC = () => {
         };
       });
     
-    // Store all sections for filter preview
-    setAllSections(results);
-    
-    // Apply filters
-    let filtered = results;
-    
-    if (filterCriteria.sunPreference) {
-      if (filterCriteria.sunPreference === 'sun') {
-        filtered = filtered.filter(s => s.sunExposure >= 60);
-      } else if (filterCriteria.sunPreference === 'shade') {
-        filtered = filtered.filter(s => s.sunExposure <= 20);
-      }
-    }
-    
-    if (filterCriteria.maxSunExposure !== undefined && filterCriteria.maxSunExposure !== 100) {
-      const maxExposure = filterCriteria.maxSunExposure;
-      filtered = filtered.filter(s => s.sunExposure <= maxExposure);
-    }
-    
-    if (filterCriteria.seatingAreas && filterCriteria.seatingAreas.length > 0) {
-      filtered = filtered.filter(s => 
-        filterCriteria.seatingAreas!.includes(s.section.level)
-      );
-    }
-    
-    if (filterCriteria.priceRange && filterCriteria.priceRange.length > 0) {
-      filtered = filtered.filter(s => 
-        s.section.price && filterCriteria.priceRange!.includes(s.section.price)
-      );
-    }
-    
-      setFilteredSections(filtered);
+      // Store all sections (unfiltered)
+      setAllSections(results);
     } finally {
       setIsCalculating(false);
     }
@@ -399,7 +407,11 @@ const MobileApp: React.FC = () => {
                     <p>No sections match your filters</p>
                     <button 
                       className="mobile-reset-btn"
-                      onClick={() => setFilterCriteria({})}
+                      onClick={() => {
+                        setFilterCriteria({});
+                        // Immediately apply empty filters
+                        setFilteredSections(allSections);
+                      }}
                     >
                       Reset Filters
                     </button>
