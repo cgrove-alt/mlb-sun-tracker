@@ -131,6 +131,9 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
       </div>
 
       <style jsx>{`
+        * {
+          box-sizing: border-box;
+        }
         .controls {
           display: grid;
           gap: 12px;
@@ -180,16 +183,26 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
           text-decoration: none;
           color: inherit;
           transition: box-shadow 0.2s, transform 0.2s;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 100%;
+          overflow: hidden;
         }
         .card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .card h3 {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          flex: 1;
+        }
         .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-        .badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+        .badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
         .badge-open { background: #fef3c7; color: #92400e; }
         .badge-retractable { background: #dbeafe; color: #1e40af; }
         .badge-covered { background: #dcfce7; color: #166534; }
-        .muted { color: #334155; margin: 6px 0; font-weight: 500; }
-        .sub { color: #334155; font-size: 13px; margin-bottom: 8px; }
-        .meta { display: flex; justify-content: space-between; align-items: center; color: #334155; font-size: 13px; }
+        .muted { color: #334155; margin: 6px 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .sub { color: #334155; font-size: 13px; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .meta { display: flex; justify-content: space-between; align-items: center; color: #334155; font-size: 13px; flex-wrap: wrap; gap: 8px; }
         .cta { color: #2563eb; font-weight: 600; }
         .empty { text-align: center; color: #334155; padding: 24px; border: 1px dashed #e5e7eb; border-radius: 12px; }
       `}</style>
