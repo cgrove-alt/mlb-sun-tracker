@@ -277,13 +277,13 @@ export default function StickyTopNav() {
               Home
             </Link>
             
-            {/* Quick access to All Stadiums page */}
+            {/* Quick access to MLB Stadiums page */}
             <Link 
-              href="/stadiums" 
-              className={pathname === '/stadiums' ? 'active' : ''}
+              href="/league/mlb" 
+              className={pathname === '/league/mlb' ? 'active' : ''}
               onClick={closeMobileMenu}
             >
-              All Stadiums
+              MLB Stadiums
             </Link>
             
             <div className="mobile-stadiums-section">
@@ -295,7 +295,7 @@ export default function StickyTopNav() {
                 aria-expanded={isStadiumsOpen}
                 aria-controls="mobile-stadiums-menu"
               >
-                Stadiums
+                MLB Teams
                 <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
                   <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
@@ -360,28 +360,31 @@ export default function StickyTopNav() {
               Best Shaded Seats (MLB)
             </Link>
 
-            {/* Leagues */}
-            <Link 
-              href="/league/mlb" 
-              className={pathname === '/league/mlb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              MLB Stadiums
-            </Link>
-            <Link 
-              href="/league/nfl" 
-              className={pathname === '/league/nfl' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              NFL Venues
-            </Link>
-            <Link 
-              href="/league/milb" 
-              className={pathname === '/league/milb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              MiLB Stadiums
-            </Link>
+            {/* Leagues Section */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">Leagues</h4>
+              <Link 
+                href="/league/mlb" 
+                className={pathname === '/league/mlb' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                MLB Stadiums
+              </Link>
+              <Link 
+                href="/league/nfl" 
+                className={pathname === '/league/nfl' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                NFL Venues
+              </Link>
+              <Link 
+                href="/league/milb" 
+                className={pathname === '/league/milb' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                MiLB Stadiums
+              </Link>
+            </div>
 
             {/* Tools / Other pages */}
             <Link 

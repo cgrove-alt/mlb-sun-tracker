@@ -556,6 +556,29 @@
   background: #ccc;
 }
 
+/* Mobile nav sections for grouping links */
+.mobile-nav-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.mobile-nav-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.mobile-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  padding: 0 16px;
+  margin-bottom: 8px;
+}
+
 .mobile-division {
   margin-bottom: 20px;
 }
