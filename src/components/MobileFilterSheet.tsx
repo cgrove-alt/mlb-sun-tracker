@@ -20,27 +20,23 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
 
-  // Lock body scroll when filter is open to prevent background scrolling
+  // Prevent background scroll when filter is open without locking body
   React.useEffect(() => {
     if (isOpen) {
-      // Save current scroll position
-      const scrollY = window.scrollY;
+      // Prevent background scrolling on touch devices
+      const preventScroll = (e: TouchEvent) => {
+        // Allow scrolling within the filter content
+        const target = e.target as HTMLElement;
+        const filterBody = target.closest('.mobile-filter-body');
+        if (!filterBody) {
+          e.preventDefault();
+        }
+      };
       
-      // Lock body scroll
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
+      document.addEventListener('touchmove', preventScroll, { passive: false });
       
       return () => {
-        // Restore body scroll
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
-        
-        // Restore scroll position
-        window.scrollTo(0, scrollY);
+        document.removeEventListener('touchmove', preventScroll);
       };
     }
   }, [isOpen]);

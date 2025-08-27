@@ -82,7 +82,7 @@
   align-items: flex-end;
   justify-content: center;
   isolation: isolate;
-  pointer-events: none;
+  pointer-events: auto; /* Allow interaction */
   overscroll-behavior: contain;
 }
 
@@ -96,6 +96,7 @@
   z-index: 9998; /* Just below the sheet container */
   pointer-events: auto; /* Capture clicks to close */
   touch-action: none; /* Prevent scroll through overlay */
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
 @keyframes fadeIn {
@@ -122,6 +123,7 @@
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
   z-index: 10000;
   pointer-events: auto;
+  overflow: hidden; /* Contain internal scrolling */
   overscroll-behavior: contain;
   touch-action: pan-y; /* Allow vertical scrolling */
 }
@@ -187,7 +189,7 @@
 
 /* Scrollable Filter Body */
 .mobile-filter-body {
-  flex: 1;
+  flex: 1 1 auto;
   padding: 16px;
   background: #ffffff;
   overflow-y: auto;
@@ -196,8 +198,13 @@
   overscroll-behavior: contain;
   scroll-behavior: smooth;
   min-height: 0; /* Critical for flexbox scrolling */
+  max-height: 100%; /* Ensure it respects parent height */
   touch-action: pan-y; /* Allow vertical scrolling */
   position: relative;
+  /* iOS scroll fix */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
 }
 
 /* Subtle scroll indicator */
@@ -733,4 +740,32 @@
   .mobile-filter-range {
     background: var(--color-neutral-700);
   }
+}
+
+/* iOS-specific scrolling fixes */
+@supports (-webkit-touch-callout: none) {
+  .mobile-filter-body {
+    -webkit-overflow-scrolling: touch !important;
+    /* Create a new stacking context for iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .mobile-filter-content {
+    /* Ensure proper containment on iOS */
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Fix iOS bounce scrolling */
+  .mobile-filter-sheet {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Ensure filter sections don't block scrolling */
+.mobile-filter-section {
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
 }
