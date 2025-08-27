@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Stadium } from '../data/stadiums';
 import { useSwipeableCarousel } from '../hooks/useSwipeGesture';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
-import { FavoriteButton } from './FavoriteButton';
-import { useUserProfile } from '../contexts/UserProfileContext';
 import './SwipeableStadiumNav.css';
 
 interface SwipeableStadiumNavProps {
@@ -17,15 +15,10 @@ export const SwipeableStadiumNav: React.FC<SwipeableStadiumNavProps> = ({
   selectedStadium,
   onStadiumSelect
 }) => {
-  const { currentProfile } = useUserProfile();
   const haptic = useHapticFeedback();
   
-  // Sort stadiums with favorites first
+  // Sort stadiums alphabetically
   const sortedStadiums = [...stadiums].sort((a, b) => {
-    const aFav = currentProfile?.favorites.stadiums.includes(a.id) || false;
-    const bFav = currentProfile?.favorites.stadiums.includes(b.id) || false;
-    if (aFav && !bFav) return -1;
-    if (!aFav && bFav) return 1;
     return a.name.localeCompare(b.name);
   });
 
@@ -103,11 +96,6 @@ export const SwipeableStadiumNav: React.FC<SwipeableStadiumNavProps> = ({
               >
                 <div className="stadium-card-header">
                   <h3>{stadium.name}</h3>
-                  <FavoriteButton
-                    stadiumId={stadium.id}
-                    stadiumName={stadium.name}
-                    size="small"
-                  />
                 </div>
                 <div className="stadium-card-content">
                   <p className="stadium-team">{stadium.team}</p>
@@ -123,11 +111,6 @@ export const SwipeableStadiumNav: React.FC<SwipeableStadiumNavProps> = ({
                     </div>
                   </div>
                 </div>
-                {currentProfile?.favorites.stadiums.includes(stadium.id) && (
-                  <div className="favorite-indicator">
-                    <span>★ Favorite</span>
-                  </div>
-                )}
               </div>
             ))}
           </div>

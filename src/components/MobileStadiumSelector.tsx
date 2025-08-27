@@ -1,7 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Stadium } from '../data/stadiums';
-import { useUserProfile } from '../contexts/UserProfileContext';
-import { FavoriteButton } from './FavoriteButton';
 import { MobileStadiumCardSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
 import './MobileStadiumSelector.css';
@@ -21,7 +19,6 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const { currentProfile } = useUserProfile();
   const loadingState = useLoadingState<Stadium[]>({ initialLoading: loading });
 
   const filteredStadiums = useMemo(() => {
@@ -33,14 +30,9 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
         stadium.city.toLowerCase().includes(query)
       )
       .sort((a, b) => {
-        // Favorites first
-        const aFav = currentProfile?.favorites.stadiums.includes(a.id) || false;
-        const bFav = currentProfile?.favorites.stadiums.includes(b.id) || false;
-        if (aFav && !bFav) return -1;
-        if (!aFav && bFav) return 1;
         return a.name.localeCompare(b.name);
       });
-  }, [stadiums, searchQuery, currentProfile]);
+  }, [stadiums, searchQuery]);
 
   const handleSelect = (stadium: Stadium) => {
     onStadiumSelect(stadium);
@@ -121,15 +113,7 @@ export const MobileStadiumSelector: React.FC<MobileStadiumSelectorProps> = ({
                         <h3>{stadium.name}</h3>
                         <p>{stadium.team} • {stadium.city}</p>
                       </div>
-                      <FavoriteButton
-                        stadiumId={stadium.id}
-                        stadiumName={stadium.name}
-                        size="small"
-                      />
                     </div>
-                    {currentProfile?.favorites.stadiums.includes(stadium.id) && (
-                      <span className="mobile-stadium-favorite-badge">★</span>
-                    )}
                   </button>
                 ))
               )}

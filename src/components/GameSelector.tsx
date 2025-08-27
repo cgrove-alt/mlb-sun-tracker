@@ -4,8 +4,6 @@ import { format } from 'date-fns';
 import { MLBGame, mlbApi } from '../services/mlbApi';
 import { Stadium } from '../data/stadiums';
 import { preferencesStorage } from '../utils/preferences';
-import { FavoriteButton } from './FavoriteButton';
-import { useUserProfile } from '../contexts/UserProfileContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
@@ -44,24 +42,16 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
   });
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-
-  const { currentProfile } = useUserProfile();
   
-  // Sort stadiums with favorites first
+  // Sort stadiums alphabetically
   const sortedStadiums = [...stadiums].sort((a, b) => {
-    const aIsFavorite = currentProfile?.favorites.stadiums.includes(a.id) || false;
-    const bIsFavorite = currentProfile?.favorites.stadiums.includes(b.id) || false;
-    
-    if (aIsFavorite && !bIsFavorite) return -1;
-    if (!aIsFavorite && bIsFavorite) return 1;
     return a.name.localeCompare(b.name);
   });
   
   const stadiumOptions = sortedStadiums.map(stadium => ({
     value: stadium.id,
     label: `${stadium.name} - ${stadium.team}`,
-    stadium: stadium,
-    isFavorite: currentProfile?.favorites.stadiums.includes(stadium.id) || false
+    stadium: stadium
   }));
 
   const loadGamesForStadium = useCallback(async () => {
@@ -277,19 +267,6 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
           placeholder={t('gameSelector.chooseStadium')}
           className="stadium-select"
           aria-label={t('gameSelector.selectStadium')}
-          formatOptionLabel={(option) => (
-            <div className="stadium-option">
-              <div className="stadium-option-content">
-                {option.isFavorite && <span className="favorite-indicator">★</span>}
-                <span>{option.label}</span>
-              </div>
-              <FavoriteButton
-                stadiumId={option.stadium.id}
-                stadiumName={option.stadium.name}
-                size="small"
-              />
-            </div>
-          )}
           styles={customSelectStyles}
         />
       </div>

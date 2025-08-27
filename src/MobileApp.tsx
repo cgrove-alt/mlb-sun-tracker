@@ -21,7 +21,6 @@ import { weatherApi } from './services/weatherApi';
 import { SunCalculator } from './utils/sunCalculator';
 import { getSunPosition, getSunDescription, getCompassDirection } from './utils/sunCalculations';
 import { SunIcon, MoonIcon } from './components/Icons';
-import { UserProfileMenu } from './components/UserProfileMenu';
 import { validateStadiumId, validateFilterCriteria, RateLimiter } from './utils/validation';
 import { debounce } from './utils/debounce';
 import './styles/mobile.css';
@@ -341,9 +340,6 @@ const MobileApp: React.FC = () => {
                   )}
                 </div>
                 
-                <div className="mobile-sun-actions">
-                  <UserProfileMenu />
-                </div>
               </div>
             </section>
           )}
