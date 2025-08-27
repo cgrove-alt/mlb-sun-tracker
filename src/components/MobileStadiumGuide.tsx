@@ -11,6 +11,7 @@ import { SectionShadeSEO } from './SectionShadeSEO';
 import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
+import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -30,6 +31,8 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
   const [selectedTime, setSelectedTime] = useState('13:00');
   const [averageWeather, setAverageWeather] = useState<WeatherData | null>(null);
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
+  const [filteredSections, setFilteredSections] = useState(sections);
   const guideContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,6 +49,29 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
     setAverageWeather(monthlyAverages[selectedMonth] || monthlyAverages[6]);
   }, [selectedMonth]);
 
+  // Filter sections based on criteria
+  useEffect(() => {
+    let filtered = [...sections];
+    
+    if (filterCriteria.sunPreference) {
+      if (filterCriteria.sunPreference === 'shade') {
+        filtered = filtered.filter(s => s.covered || s.level === 'upper');
+      } else if (filterCriteria.sunPreference === 'sun') {
+        filtered = filtered.filter(s => !s.covered && s.level !== 'upper');
+      }
+    }
+    
+    if (filterCriteria.levels && filterCriteria.levels.length > 0) {
+      filtered = filtered.filter(s => filterCriteria.levels?.includes(s.level));
+    }
+    
+    if (filterCriteria.priceRange && filterCriteria.priceRange.length > 0) {
+      filtered = filtered.filter(s => s.price && filterCriteria.priceRange?.includes(s.price));
+    }
+    
+    setFilteredSections(filtered);
+  }, [filterCriteria, sections]);
+
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
@@ -58,7 +84,7 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
     { value: '19:00', label: '7:00 PM' },
   ];
 
-  const bestShadedSections = sections
+  const bestShadedSections = filteredSections
     .filter(section => section.covered || section.level === 'upper')
     .slice(0, 5);
 
@@ -114,6 +140,13 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
           )}
         </div>
       </div>
+
+      {/* Section Filter */}
+      <EnhancedSunFilter
+        onFilterChange={setFilterCriteria}
+        disabled={false}
+        isMobile={true}
+      />
 
       {/* Best Shaded Sections */}
       <div className="mobile-card">
