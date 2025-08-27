@@ -73,7 +73,10 @@
 /* Filter Sheet Container */
 .mobile-filter-sheet {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 9999; /* Very high z-index to ensure it's on top */
   display: flex;
   align-items: flex-end;
@@ -101,15 +104,16 @@
 .mobile-filter-content {
   position: relative;
   width: 100%;
-  max-height: 85vh; /* Limit height to allow scrolling */
-  max-height: 85dvh; /* Dynamic viewport height */
+  height: 85vh; /* Fixed height for better mobile experience */
+  height: 85dvh; /* Dynamic viewport height */
+  max-height: 600px; /* Maximum height to prevent too tall on tablets */
   background: var(--color-white);
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   display: flex;
   flex-direction: column;
   animation: slideUp var(--transition-base) var(--ease-out);
   box-shadow: var(--shadow-2xl);
-  margin-bottom: env(safe-area-inset-bottom, 0);
+  padding-bottom: env(safe-area-inset-bottom, 0);
   z-index: 10000; /* Ensure content is above everything */
   pointer-events: auto; /* Capture all interactions */
   overflow: hidden; /* Clip content to rounded corners */
@@ -129,35 +133,36 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background: var(--gradient-field);
   color: white;
   border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
   flex-shrink: 0; /* Don't shrink when content is long */
-  position: sticky; /* Keep header visible */
-  top: 0;
-  z-index: 1;
+  min-height: 50px;
+  z-index: 2;
 }
 
 .mobile-filter-header h2 {
   margin: 0;
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-filter-close {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   background: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
   cursor: pointer;
   color: white;
   transition: all var(--transition-fast);
+  font-size: 20px;
 }
 
 .mobile-filter-close:hover {
@@ -170,7 +175,7 @@
 
 /* Scrollable Filter Body */
 .mobile-filter-body {
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-4);
   background: var(--color-white);
   display: flex;
   flex-direction: column;
@@ -180,7 +185,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   overscroll-behavior: contain; /* Prevent scroll chaining */
-  max-height: calc(85vh - 120px); /* Account for header and footer */
+  min-height: 0; /* Allow shrinking for flexbox */
 }
 
 /* Compact Filter Sections */
@@ -324,31 +329,62 @@
 
 .mobile-filter-range {
   width: 100%;
-  height: 4px;
+  height: 6px;
   -webkit-appearance: none;
   appearance: none;
-  background: var(--color-neutral-200);
+  background: linear-gradient(to right, 
+    var(--color-field-green) 0%, 
+    var(--color-field-green) var(--value, 0%), 
+    var(--color-neutral-200) var(--value, 0%), 
+    var(--color-neutral-200) 100%);
   border-radius: var(--radius-full);
   outline: none;
   position: relative;
+  margin: var(--space-2) 0;
 }
 
 .mobile-filter-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: var(--gradient-field);
-  border: 2px solid white;
+  border: 3px solid white;
   border-radius: var(--radius-full);
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1), var(--shadow-md);
   transition: all var(--transition-fast);
 }
 
 .mobile-filter-range::-webkit-slider-thumb:hover {
-  transform: scale(1.1);
-  box-shadow: var(--shadow-md);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1), var(--shadow-lg);
+}
+
+/* Firefox slider thumb */
+.mobile-filter-range::-moz-range-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-field);
+  border: 3px solid white;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1), var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.mobile-filter-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1), var(--shadow-lg);
+}
+
+/* Firefox range track */
+.mobile-filter-range::-moz-range-track {
+  background: var(--color-neutral-200);
+  height: 6px;
+  border-radius: var(--radius-full);
 }
 
 .mobile-filter-range-labels {
@@ -407,13 +443,13 @@
 .mobile-filter-footer {
   display: flex;
   gap: var(--space-2);
-  padding: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0));
   background: var(--color-white);
   border-top: 1px solid var(--color-neutral-200);
   flex-shrink: 0; /* Don't shrink when content is long */
-  position: sticky; /* Keep footer visible */
-  bottom: 0;
-  z-index: 1;
+  min-height: 60px;
+  z-index: 2;
 }
 
 .mobile-filter-btn {
@@ -437,10 +473,13 @@
 .mobile-filter-btn-secondary {
   background: var(--color-neutral-100);
   color: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-300);
+  font-weight: 500;
 }
 
 .mobile-filter-btn-secondary:hover {
   background: var(--color-neutral-200);
+  border-color: var(--color-neutral-400);
 }
 
 .mobile-filter-btn-primary {
@@ -451,6 +490,8 @@
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   transform: translateZ(0);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-filter-btn-primary::before {
@@ -541,20 +582,48 @@
 /* Small phones - Adjust heights for smaller screens */
 @media (max-height: 667px) {
   .mobile-filter-content {
-    max-height: 80vh;
-    max-height: 80dvh;
+    height: 90vh;
+    height: 90dvh;
+    max-height: 90vh;
+    max-height: 90dvh;
+  }
+  
+  .mobile-filter-header {
+    padding: var(--space-2) var(--space-3);
+    min-height: 44px;
   }
   
   .mobile-filter-body {
-    max-height: calc(80vh - 120px);
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+  }
+  
+  .mobile-filter-footer {
+    padding: var(--space-2) var(--space-3);
+    min-height: 50px;
   }
   
   .mobile-filter-section {
     margin-bottom: var(--space-2);
   }
   
+  .mobile-filter-section h3 {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
   .mobile-filter-options {
     gap: var(--space-1);
+  }
+  
+  .mobile-filter-option-content {
+    padding: 6px 4px;
+    font-size: 10px;
+  }
+  
+  .mobile-filter-chip {
+    padding: 4px 8px;
+    font-size: 11px;
   }
 }
 

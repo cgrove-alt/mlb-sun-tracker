@@ -117,11 +117,10 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
               <button 
                 className="mobile-filter-close"
                 onClick={() => setIsOpen(false)}
-                aria-label="Close"
+                aria-label="Close filters"
+                type="button"
               >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 18L18 6M6 6l12 12"/>
-                </svg>
+                ✕
               </button>
             </div>
 
@@ -184,6 +183,9 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
                     onChange={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt(e.target.value)})}
                     onInput={(e) => setLocalFilters({...localFilters, maxSunExposure: parseInt((e.target as HTMLInputElement).value)})}
                     className="mobile-filter-range"
+                    style={{
+                      '--value': `${localFilters.maxSunExposure || 100}%`
+                    } as React.CSSProperties}
                   />
                   <div className="mobile-filter-range-labels">
                     <span>0%</span>
