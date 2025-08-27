@@ -45,14 +45,15 @@ export default function FilterDrawer() {
         role="dialog"
         aria-modal="true"
         aria-label="Filters"
+        style={{ background: '#ffffff' }}
       >
-        <div className={s.handle} />
-        <div className={s.header}>
+        <div className={s.handle} style={{ background: '#ffffff' }} />
+        <div className={s.header} style={{ background: '#ffffff' }}>
           <div className={s.title}>Filters</div>
           <button onClick={() => setOpen(false)} aria-label="Close filters">Close</button>
         </div>
 
-        <div className={s.content}>
+        <div className={s.content} style={{ background: '#ffffff' }}>
           <div className={s.group}>
             <div className={s.label}>Roof</div>
             <div className={s.chips}>
@@ -95,7 +96,7 @@ export default function FilterDrawer() {
           </div>
         </div>
 
-        <div className={s.controls}>
+        <div className={s.controls} style={{ background: '#ffffff' }}>
           <button className={`${s.btn} ${s.secondary}`} onClick={() => set({ roof:'All', q:'', sort:'name-asc' })}>Clear</button>
           <button className={`${s.btn} ${s.primary}`} onClick={() => setOpen(false)}>Apply</button>
         </div>
