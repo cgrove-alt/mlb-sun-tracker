@@ -1,48 +1,99 @@
-# Getting Started with Create React App
+# MLB Stadium Sun Tracker - The Shadium
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🌞 Find the Best Shaded Seats at Every Stadium
 
-## Available Scripts
+Live at [theshadium.com](https://theshadium.com)
 
-In the project directory, you can run:
+A comprehensive web application for finding shaded seating at MLB, NFL, and MiLB stadiums. Built with Next.js and deployed on Vercel.
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Stadium Sun Analysis**: Real-time sun position calculations for all major stadiums
+- **Shaded Seating Recommendations**: Find the best shaded seats based on game time and date
+- **Multi-League Support**: Coverage for MLB, NFL, and MiLB venues
+- **Interactive 3D Visualizations**: WebGL-powered stadium views
+- **Mobile-First Design**: Fully responsive with touch-optimized interfaces
+- **PWA Support**: Install as an app with offline capabilities
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- **Framework**: Next.js 15.5.0 with App Router
+- **Language**: TypeScript
+- **Styling**: CSS Modules
+- **3D Graphics**: Three.js with WebGL
+- **Deployment**: Vercel
+- **Analytics**: Google Analytics 4
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Installation
 
-### `npm run build`
+```bash
+# Install dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Start development server
+npm run dev
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Build for production
+npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Start production server
+npm run start
+```
 
-### `npm run eject`
+## 🧪 Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Run accessibility tests locally
+npm run test:a11y:local
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Run visual regression tests locally
+npm run test:visual:local
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Run all tests
+npm test
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 🚢 Deployment
 
-## Learn More
+The application is deployed on Vercel with automatic deployments from the main branch.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Manual Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-# Test deployment Tue Jul 15 20:39:08 EDT 2025
-# Force deployment Tue Jul 15 21:28:08 EDT 2025
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy to Vercel
+vercel
+```
+
+See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md) for detailed deployment instructions.
+
+## 📄 Documentation
+
+- [Vercel Deployment Guide](VERCEL_DEPLOYMENT.md)
+- [SEO Optimization Guide](SEO_GUIDE.md)
+- [Venue System Documentation](VENUE_SYSTEM.md)
+- [Security Checklist](SECURITY_CHECKLIST.md)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is proprietary software. All rights reserved.
+
+## 🙏 Acknowledgments
+
+- Sun position calculations powered by SunCalc
+- Weather data from Open-Meteo API
+- Stadium data compiled from official sources
+
+---
+
+*Deployed with Vercel* • *Live at [theshadium.com](https://theshadium.com)*

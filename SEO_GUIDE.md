@@ -6,7 +6,7 @@
 - Created comprehensive sitemap at `/public/sitemap.xml`
 - Includes all 30 MLB stadium pages
 - Proper changefreq and priority settings
-- URL: https://cgrove-alt.github.io/mlb-sun-tracker/sitemap.xml
+- URL: https://theshadium.com/sitemap.xml
 
 ### 2. ✅ Robots.txt Enhancement
 - Updated `/public/robots.txt` with sitemap reference
@@ -20,7 +20,7 @@ Added two schema types to `/public/index.html`:
 
 ### 4. ✅ Canonical URL
 - Added canonical link tag to prevent duplicate content issues
-- Points to: https://cgrove-alt.github.io/mlb-sun-tracker
+- Points to: https://theshadium.com
 
 ### 5. ✅ Google Analytics 4 Setup
 - Added GA4 tracking script to `/public/index.html`
@@ -79,7 +79,7 @@ import { Helmet } from 'react-helmet-async';
 <Helmet>
   <title>{stadium.name} - MLB Stadium Sun Tracker</title>
   <meta name="description" content={`Find the best seats at ${stadium.name}. Analyze sun exposure and weather for optimal seating.`} />
-  <link rel="canonical" href={`https://cgrove-alt.github.io/mlb-sun-tracker/stadium/${stadium.slug}`} />
+  <link rel="canonical" href={`https://theshadium.com/stadium/${stadium.slug}`} />
 </Helmet>
 ```
 
@@ -145,8 +145,8 @@ Consider migrating to Next.js for better SEO with SSR/SSG.
 
 ## Important URLs
 
-- Live Site: https://cgrove-alt.github.io/mlb-sun-tracker
-- Sitemap: https://cgrove-alt.github.io/mlb-sun-tracker/sitemap.xml
+- Live Site: https://theshadium.com
+- Sitemap: https://theshadium.com/sitemap.xml
 - Google Search Console: https://search.google.com/search-console
 - Rich Results Test: https://search.google.com/test/rich-results
 - PageSpeed Insights: https://pagespeed.web.dev/

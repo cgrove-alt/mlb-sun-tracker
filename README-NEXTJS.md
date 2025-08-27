@@ -109,30 +109,38 @@ npm run type-check
 
 ## 🌐 Deployment
 
-### GitHub Pages (Static Export)
-```bash
-# Build and export static files
-npm run build
-npm run export
+### Vercel (Primary Deployment)
 
-# Deploy the 'out' directory to GitHub Pages
-```
+The application is deployed on Vercel at [theshadium.com](https://theshadium.com)
 
-### Vercel (Recommended)
 ```bash
 # Install Vercel CLI
 npm i -g vercel
 
 # Deploy to Vercel
 vercel
+
+# Deploy to production
+vercel --prod
 ```
 
+**Automatic Deployments:**
+- Push to `main` branch triggers production deployment
+- Pull requests create preview deployments
+- All deployments are zero-downtime
+
+**Environment Variables:**
+Configured in `vercel.json`:
+- `NEXT_PUBLIC_GA_ID`: Google Analytics tracking
+- `NEXT_PUBLIC_SITE_URL`: Production URL (https://theshadium.com)
+
 ### Other Platforms
-The app exports to static files and can be deployed to:
+The app can also be deployed to:
 - Netlify
 - AWS S3 + CloudFront
 - Google Cloud Storage
-- Any static hosting service
+- Railway
+- Render
 
 ## 🔧 Configuration
 
