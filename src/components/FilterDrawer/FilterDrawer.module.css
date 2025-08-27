@@ -19,8 +19,7 @@
   bottom: 0; 
   transform: translateY(100%); 
   transition: transform .28s ease;
-  background: #ffffff; 
-  background: var(--paper, #ffffff); 
+  background: #ffffff !important; 
   border-top-left-radius: 16px; 
   border-top-right-radius: 16px; 
   box-shadow: 0 -6px 24px rgba(0,0,0,.18); 
@@ -39,8 +38,9 @@
   .sheet {
     top: 0; bottom: 0; left: 0; right: auto;
     width: min(420px, 100vw);
-    border-radius: 0; border-right: 1px solid var(--ui-border);
+    border-radius: 0; border-right: 1px solid #E5E7EB;
     transform: translateX(-100%); max-height: none; box-shadow: 6px 0 24px rgba(0,0,0,.18);
+    background: #ffffff !important;
   }
   .sheetOpen { transform: translateX(0); }
   .handle { display: none; } /* Hide drag handle on desktop */
@@ -51,6 +51,7 @@
   display: flex; 
   align-items: center; 
   justify-content: center; 
+  background: #ffffff;
 }
 
 .handle::before { 
@@ -58,35 +59,35 @@
   width: 44px; 
   height: 4px; 
   border-radius: 999px; 
-  background: var(--ui-border); 
+  background: #E5E7EB; 
 }
 
 .header { 
-  padding: 0 var(--spacing-4) var(--spacing-3); 
+  padding: 0 16px 12px; 
   display: flex; 
   justify-content: space-between; 
   align-items: center; 
-  background: var(--paper, #ffffff);
+  background: #ffffff;
 }
 
 .title { 
   font-weight: 600; 
-  color: var(--ink-800); 
+  color: #1B2432; 
 }
 
 .content { 
-  padding: 0 var(--spacing-4) var(--spacing-4); 
+  padding: 0 16px 16px; 
   overflow: auto; 
-  background: var(--paper, #ffffff);
+  background: #ffffff;
 }
 
 .group { 
-  margin-top: var(--spacing-3); 
+  margin-top: 12px; 
 }
 
 .label { 
   font: 600 14px/1.2 system-ui, sans-serif; 
-  color: var(--ink-800); 
+  color: #1B2432; 
 }
 
 .chips { 
@@ -97,11 +98,11 @@
 }
 
 .chip { 
-  border: 1px solid var(--ui-border, #E5E7EB); 
+  border: 1px solid #E5E7EB; 
   border-radius: 999px; 
   padding: 8px 12px; 
-  background: var(--paper, #ffffff); 
-  color: var(--ink-800, #1B2432); 
+  background: #ffffff; 
+  color: #1B2432; 
   font: 500 14px system-ui; 
 }
 
@@ -113,11 +114,11 @@
 
 .input, .select {
   width: 100%; 
-  border: 1px solid var(--ui-border, #E5E7EB); 
+  border: 1px solid #E5E7EB; 
   border-radius: 10px;
   padding: 10px 12px; 
-  background: var(--paper, #ffffff); 
-  color: var(--ink-900, #0B1220); 
+  background: #ffffff; 
+  color: #0B1220; 
   font-size: 16px;
   min-height: 44px;
   margin-top: 8px;
@@ -126,30 +127,29 @@
 .controls { 
   position: sticky; 
   bottom: 0; 
-  padding: var(--spacing-3) var(--spacing-4) calc(var(--spacing-4) + env(safe-area-inset-bottom)); 
+  padding: 12px 16px calc(16px + env(safe-area-inset-bottom)); 
   background: #ffffff;
-  background: linear-gradient(to top, var(--paper, #ffffff), var(--paper, #ffffff)); 
   display: flex; 
   gap: 12px; 
 }
 
 .btn { 
   flex: 1; 
-  border-radius: var(--radius-3); 
+  border-radius: 12px; 
   padding: 12px; 
   font-weight: 600; 
   text-align: center; 
 }
 
 .primary { 
-  background: var(--ink-800); 
-  color: #fff; 
+  background: #1B2432; 
+  color: #ffffff; 
 }
 
 .secondary { 
-  background: var(--paper-soft, #F8FAFC); 
-  color: var(--ink-800, #1B2432); 
-  border: 1px solid var(--ui-border, #E5E7EB); 
+  background: #F8FAFC; 
+  color: #1B2432; 
+  border: 1px solid #E5E7EB; 
 }
 
 /* Body lock when open */
