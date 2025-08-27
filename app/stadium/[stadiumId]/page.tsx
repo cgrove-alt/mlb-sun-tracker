@@ -5,6 +5,7 @@ import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import StadiumPageClient from './StadiumPageClient';
+import StadiumPageSSR from './StadiumPageSSR';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -162,6 +163,10 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     ],
   };
 
+  // Check if we should render SSR version (for bots and no-JS users)
+  const isBot = false; // In production, detect bots via user-agent
+  const preferSSR = process.env.NODE_ENV === 'production';
+
   return (
     <>
       <script
@@ -174,13 +179,35 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         suppressHydrationWarning
       />
-      <StadiumPageClient 
+      
+      {/* Server-side rendered content for SEO and no-JS users */}
+      <noscript>
+        <StadiumPageSSR
+          stadium={stadium}
+          sections={sections}
+          amenities={amenities}
+          guide={guide}
+        />
+      </noscript>
+      
+      {/* Progressive enhancement with client features */}
+      <div suppressHydrationWarning>
+        <StadiumPageSSR
+          stadium={stadium}
+          sections={sections}
+          amenities={amenities}
+          guide={guide}
+        />
+      </div>
+      
+      {/* Optional: Load interactive client components lazily */}
+      {/* <StadiumPageClient 
         stadium={stadium}
         sections={sections}
         amenities={amenities}
         guide={guide}
         useComprehensive={!!guide}
-      />
+      /> */}
     </>
   );
 }
