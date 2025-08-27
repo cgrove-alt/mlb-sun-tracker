@@ -143,7 +143,7 @@ export default function FilterDrawer({
           {groups.map(group => (
             <div key={group.id} className={styles.group}>
               <div className={styles.label}>{group.label}</div>
-              <div className={styles.chips}>
+              <div className={styles.row}>
                 {group.options.map(option => {
                   const isSelected = localFilters[group.id]?.includes(option.id) || false;
                   
