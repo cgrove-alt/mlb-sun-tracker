@@ -10,9 +10,7 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {
-      "actualWorkers": 2
-    },
+    "metadata": {},
     "preserveOutput": "always",
     "reporter": [
       [
@@ -40,9 +38,7 @@
         "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 2
-        },
+        "metadata": {},
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
@@ -56,9 +52,7 @@
         "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 2
-        },
+        "metadata": {},
         "id": "firefox",
         "name": "firefox",
         "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
@@ -72,9 +66,7 @@
         "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 2
-        },
+        "metadata": {},
         "id": "webkit",
         "name": "webkit",
         "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
@@ -88,9 +80,7 @@
         "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 2
-        },
+        "metadata": {},
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
         "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
@@ -104,9 +94,7 @@
         "outputDir": "/Users/sygrovefamily/mlb-sun-tracker/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {
-          "actualWorkers": 2
-        },
+        "metadata": {},
         "id": "Mobile Safari",
         "name": "Mobile Safari",
         "testDir": "/Users/sygrovefamily/mlb-sun-tracker/tests",
@@ -132,214 +120,19 @@
       }
     }
   },
-  "suites": [
+  "suites": [],
+  "errors": [
     {
-      "title": "visual-local.spec.ts",
-      "file": "visual-local.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "Visual Overflow Tests (Local)",
-          "file": "visual-local.spec.ts",
-          "line": 3,
-          "column": 6,
-          "specs": [
-            {
-              "title": "no horizontal overflow at mobile viewport",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 20397,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Testing /",
-                          "duration": 1239
-                        },
-                        {
-                          "title": "Testing /league/mlb",
-                          "duration": 1906
-                        },
-                        {
-                          "title": "Testing /league/nfl",
-                          "duration": 883
-                        },
-                        {
-                          "title": "Testing /league/milb",
-                          "duration": 893
-                        },
-                        {
-                          "title": "Testing /seats-shade-finder",
-                          "duration": 1058
-                        },
-                        {
-                          "title": "Testing /stadiums",
-                          "duration": 869
-                        },
-                        {
-                          "title": "Testing /guide",
-                          "duration": 976
-                        },
-                        {
-                          "title": "Testing /faq",
-                          "duration": 1012
-                        },
-                        {
-                          "title": "Testing /blog",
-                          "duration": 1915
-                        },
-                        {
-                          "title": "Testing /contact",
-                          "duration": 1017
-                        },
-                        {
-                          "title": "Testing /privacy",
-                          "duration": 1018
-                        },
-                        {
-                          "title": "Testing /terms",
-                          "duration": 1005
-                        },
-                        {
-                          "title": "Testing /guide/how-to-find-shaded-seats",
-                          "duration": 1058
-                        },
-                        {
-                          "title": "Testing /guide/best-shaded-seats-mlb",
-                          "duration": 1084
-                        },
-                        {
-                          "title": "Testing /guide/avoid-sun-baseball-games",
-                          "duration": 1115
-                        },
-                        {
-                          "title": "Testing /stadium/yankees",
-                          "duration": 1993
-                        },
-                        {
-                          "title": "Testing /stadium/dodgers",
-                          "duration": 1127
-                        }
-                      ],
-                      "startTime": "2025-08-27T22:39:15.742Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "45f1badc6d8d56ccf599-bbcd08ad923cc7c47853",
-              "file": "visual-local.spec.ts",
-              "line": 4,
-              "column": 7
-            },
-            {
-              "title": "no text overflow in cards and headers",
-              "ok": false,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 1,
-                      "status": "failed",
-                      "duration": 3610,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n    at /Users/sygrovefamily/mlb-sun-tracker/tests/visual-local.spec.ts:100:38",
-                        "location": {
-                          "file": "/Users/sygrovefamily/mlb-sun-tracker/tests/visual-local.spec.ts",
-                          "column": 38,
-                          "line": 100
-                        },
-                        "snippet": "   98 |     }\n   99 |     \n> 100 |     expect(textOverflow.hasOverflow).toBeFalsy();\n      |                                      ^\n  101 |   });\n  102 | });"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/sygrovefamily/mlb-sun-tracker/tests/visual-local.spec.ts",
-                            "column": 38,
-                            "line": 100
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeFalsy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mtrue\u001b[39m\n\n   98 |     }\n   99 |     \n> 100 |     expect(textOverflow.hasOverflow).toBeFalsy();\n      |                                      ^\n  101 |   });\n  102 | });\n    at /Users/sygrovefamily/mlb-sun-tracker/tests/visual-local.spec.ts:100:38"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "Elements with overflow: [\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m,\n  \u001b[32m'A.card: 481.875px > 360px'\u001b[39m\n]\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-08-27T22:39:15.744Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/sygrovefamily/mlb-sun-tracker/test-results/visual-local-Visual-Overfl-d77f6-erflow-in-cards-and-headers-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/Users/sygrovefamily/mlb-sun-tracker/test-results/visual-local-Visual-Overfl-d77f6-erflow-in-cards-and-headers-chromium/video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "/Users/sygrovefamily/mlb-sun-tracker/test-results/visual-local-Visual-Overfl-d77f6-erflow-in-cards-and-headers-chromium/error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "/Users/sygrovefamily/mlb-sun-tracker/tests/visual-local.spec.ts",
-                        "column": 38,
-                        "line": 100
-                      }
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "45f1badc6d8d56ccf599-8c17ccf2925feaec1954",
-              "file": "visual-local.spec.ts",
-              "line": 72,
-              "column": 7
-            }
-          ]
-        }
-      ]
+      "message": "Error: Process from config.webServer exited early.",
+      "stack": "Error: Process from config.webServer exited early."
     }
   ],
-  "errors": [],
   "stats": {
-    "startTime": "2025-08-27T22:39:12.667Z",
-    "duration": 23760.001999999997,
-    "expected": 1,
+    "startTime": "2025-08-27T23:03:47.679Z",
+    "duration": 550.874,
+    "expected": 0,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }

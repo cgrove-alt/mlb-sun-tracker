@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import styles from "./LeagueClient.module.css";
 
 interface VenueItem {
   id: string;
@@ -59,30 +60,31 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
   }, [venues, query, roof, sort]);
 
   return (
-    <div className="league-client">
-      <div className="controls">
-        <div className="search">
+    <div className={styles.leagueClient}>
+      <div className={styles.controls}>
+        <div className={styles.search}>
           <input
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder={`Search ${leagueName} venues (team, city, name)`}
             aria-label={`Search ${leagueName} venues`}
+            className={styles.searchInput}
           />
         </div>
-        <div className="filters">
-          <label className="filter">
+        <div className={styles.filters}>
+          <label className={styles.filter}>
             <span>Roof</span>
-            <select value={roof} onChange={(e) => setRoof(e.target.value)}>
+            <select value={roof} onChange={(e) => setRoof(e.target.value)} className={styles.filterSelect}>
               <option value="all">All</option>
               <option value="open">Open Air</option>
               <option value="retractable">Retractable</option>
               <option value="fixed">Covered</option>
             </select>
           </label>
-          <label className="filter">
+          <label className={styles.filter}>
             <span>Sort</span>
-            <select value={sort} onChange={(e) => setSort(e.target.value)}>
+            <select value={sort} onChange={(e) => setSort(e.target.value)} className={styles.filterSelect}>
               <option value="name-asc">Name (A→Z)</option>
               <option value="name-desc">Name (Z→A)</option>
               <option value="capacity-desc">Capacity (High→Low)</option>
@@ -92,22 +94,22 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
         </div>
       </div>
 
-      <div className="grid">
+      <div className={styles.grid}>
         {filtered.map((venue) => (
           <Link
             key={venue.id}
             href={`/venue/${venue.id}`}
-            className="card"
+            className={styles.card}
           >
-            <div className="card-head">
+            <div className={styles.cardHead}>
               <h3>{venue.name}</h3>
               <span
-                className={`badge ${
+                className={`${styles.badge} ${
                   venue.roof === "fixed"
-                    ? "badge-covered"
+                    ? styles.badgeCovered
                     : venue.roof === "retractable"
-                    ? "badge-retractable"
-                    : "badge-open"
+                    ? styles.badgeRetractable
+                    : styles.badgeOpen
                 }`}
               >
                 {venue.roof === "fixed"
@@ -117,95 +119,18 @@ export default function LeagueClient({ leagueName, venues }: LeagueClientProps) 
                   : "☀️ Open Air"}
               </span>
             </div>
-            <p className="muted">{venue.team}</p>
-            <p className="sub">📍 {venue.city}, {venue.state}</p>
-            <div className="meta">
+            <p className={styles.muted}>{venue.team}</p>
+            <p className={styles.sub}>📍 {venue.city}, {venue.state}</p>
+            <div className={styles.meta}>
               <span>🏟️ {venue.capacity.toLocaleString()} seats</span>
-              <span className="cta">View Shade Guide →</span>
+              <span className={styles.cta}>View Shade Guide →</span>
             </div>
           </Link>
         ))}
         {filtered.length === 0 && (
-          <div className="empty">No venues match your filters.</div>
+          <div className={styles.empty}>No venues match your filters.</div>
         )}
       </div>
-
-      <style jsx>{`
-        * {
-          box-sizing: border-box;
-        }
-        .controls {
-          display: grid;
-          gap: 12px;
-          grid-template-columns: 1fr;
-          margin-bottom: 16px;
-        }
-        @media (min-width: 768px) {
-          .controls {
-            grid-template-columns: 1fr auto;
-            align-items: center;
-          }
-        }
-        .search input {
-          width: 100%;
-          height: 44px;
-          border-radius: 8px;
-          border: 1px solid #e5e7eb;
-          padding: 0 12px;
-          font-size: 14px;
-        }
-        .filters { display: flex; gap: 12px; flex-wrap: wrap; }
-        .filter { display: flex; align-items: center; gap: 8px; }
-        .filter select {
-          height: 40px;
-          border-radius: 8px;
-          border: 1px solid #e5e7eb;
-          padding: 0 10px;
-          background: #fff;
-        }
-        .grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 16px;
-        }
-        @media (min-width: 768px) {
-          .grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (min-width: 1024px) {
-          .grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        .card {
-          display: block;
-          background: #fff;
-          border: 1px solid #e5e7eb;
-          border-radius: 12px;
-          padding: 16px;
-          text-decoration: none;
-          color: inherit;
-          transition: box-shadow 0.2s, transform 0.2s;
-          box-sizing: border-box;
-          width: 100%;
-          max-width: 100%;
-          overflow: hidden;
-        }
-        .card:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.08); transform: translateY(-2px); }
-        .card h3 {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          flex: 1;
-        }
-        .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
-        .badge { padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
-        .badge-open { background: #fef3c7; color: #92400e; }
-        .badge-retractable { background: #dbeafe; color: #1e40af; }
-        .badge-covered { background: #dcfce7; color: #166534; }
-        .muted { color: #334155; margin: 6px 0; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .sub { color: #334155; font-size: 13px; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .meta { display: flex; justify-content: space-between; align-items: center; color: #334155; font-size: 13px; flex-wrap: wrap; gap: 8px; }
-        .cta { color: #2563eb; font-weight: 600; }
-        .empty { text-align: center; color: #334155; padding: 24px; border: 1px dashed #e5e7eb; border-radius: 12px; }
-      `}</style>
     </div>
   );
 }
