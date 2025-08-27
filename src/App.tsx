@@ -13,8 +13,6 @@ import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { Tooltip } from './components/Tooltip';
 import { ShareButton } from './components/ShareButton';
-import { UserProfileMenu } from './components/UserProfileMenu';
-import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
@@ -24,7 +22,6 @@ import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
 const SmartItinerariesPage = lazy(() => import('./components/SmartItinerariesPage').then(module => ({ default: module.SmartItinerariesPage })));
-import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 // PWA functionality disabled
 // import { pwaManager, PWAInstallManager } from './utils/pwa';
@@ -64,7 +61,6 @@ const ALL_STADIUMS: Stadium[] = ALL_UNIFIED_VENUES.map(venue => ({
 }));
 
 function AppContent() {
-  const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const { t } = useTranslation();
   const [selectedStadium, setSelectedStadium] = useState<Stadium | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
@@ -470,8 +466,6 @@ function AppContent() {
 
   const handleFilterChange = (criteria: SunFilterCriteria) => {
     setFilterCriteria(criteria);
-    // Save filter criteria to user profile
-    updatePreferences({ filterCriteria: criteria });
     // PWA notification disabled
     // if (Object.keys(criteria).length > 0) {
     //   PWAInstallManager.notifyUserEngagement('filter');
@@ -511,21 +505,16 @@ function AppContent() {
     setFilterCriteria({});
     setLoadingSections(false);
     
-    // Save selected stadium to user profile and track view
+    // Track analytics
     if (stadium) {
-      updatePreferences({ selectedStadiumId: stadium.id });
-      trackStadiumView(stadium.id);
-      // Track analytics
       trackStadiumSelection(stadium.name);
-    } else {
-      updatePreferences({ selectedStadiumId: undefined });
     }
     
     // Clear loading state after a brief delay
     setTimeout(() => {
       setChangingStadium(false);
     }, 300);
-  }, [updatePreferences, trackStadiumView]);
+  }, []);
 
   return (
     <div className="App">
@@ -544,11 +533,6 @@ function AppContent() {
             {selectedStadium && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedStadium.name}</span>
-                <FavoriteButton
-                  stadiumId={selectedStadium.id}
-                  stadiumName={selectedStadium.name}
-                  size="small"
-                />
                 <span className="game-time">{selectedStadium ? formatDateTimeWithTimezone(gameDateTime, selectedStadium.timezone) : gameDateTime.toLocaleDateString()}</span>
                 <ShareButton
                   selectedStadium={selectedStadium}
@@ -560,7 +544,6 @@ function AppContent() {
             )}
           </div>
           <div className="header-right">
-            <UserProfileMenu />
             <button 
               className={`mobile-menu-btn ${mobileMenuOpen ? 'active' : ''}`}
               onClick={(e) => {
@@ -987,9 +970,7 @@ function App() {
         <ErrorBoundary>
           <I18nProvider>
             <ErrorProvider>
-              <UserProfileProvider>
-                <MobileApp />
-              </UserProfileProvider>
+              <MobileApp />
             </ErrorProvider>
           </I18nProvider>
         </ErrorBoundary>
@@ -1002,9 +983,7 @@ function App() {
       <ErrorBoundary>
         <I18nProvider>
           <ErrorProvider>
-            <UserProfileProvider>
               <AppContent />
-            </UserProfileProvider>
           </ErrorProvider>
         </I18nProvider>
       </ErrorBoundary>

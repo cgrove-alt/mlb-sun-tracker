@@ -8,8 +8,6 @@ import { Stadium } from '../data/stadiums';
 import { UnifiedVenue, getAllLeagues, getVenuesByLeague, getLeagueInfo, getMiLBVenuesByLevel, getMiLBLevels, isMiLBVenue } from '../data/unifiedVenues';
 import { getTeamIdFromVenueId, getVenueIdFromStringId } from '../data/milbTeamMapping';
 import { preferencesStorage } from '../utils/preferences';
-import { FavoriteButton } from './FavoriteButton';
-import { useUserProfile } from '../contexts/UserProfileContext';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ } from '../utils/dateTimeUtils';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
@@ -54,8 +52,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   });
   const [selectedGameOption, setSelectedGameOption] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
-
-  const { currentProfile } = useUserProfile();
   
   // Check if we're in mobile context
   useEffect(() => {
@@ -77,21 +73,15 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   const leagueInfo = getLeagueInfo(selectedLeague);
   const milbLevels = getMiLBLevels();
   
-  // Sort venues with favorites first
+  // Sort venues alphabetically
   const sortedVenues = [...venuesInLeague].sort((a, b) => {
-    const aFavorite = currentProfile?.favorites.stadiums.includes(a.id) || false;
-    const bFavorite = currentProfile?.favorites.stadiums.includes(b.id) || false;
-    
-    if (aFavorite && !bFavorite) return -1;
-    if (!aFavorite && bFavorite) return 1;
     return a.name.localeCompare(b.name);
   });
 
   const venueOptions = sortedVenues.map(venue => ({
     value: venue.id,
     label: `${venue.name} - ${venue.team}`,
-    venue: venue,
-    isFavorite: currentProfile?.favorites.stadiums.includes(venue.id) || false
+    venue: venue
   }));
 
   const leagueOptions = leagues.map(league => {
@@ -384,21 +374,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
   };
 
   const formatOptionLabel = (option: any) => {
-    if ('venue' in option) {
-      return (
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            {option.isFavorite && <span style={{ color: '#FFD700' }}>★</span>}
-            <span style={{ color: '#000', fontWeight: 600 }}>{option.label}</span>
-          </div>
-          <FavoriteButton
-            stadiumId={option.venue.id}
-            stadiumName={option.venue.name}
-            size="small"
-          />
-        </div>
-      );
-    }
     return <span style={{ color: '#000', fontWeight: 600 }}>{option.label}</span>;
   };
 

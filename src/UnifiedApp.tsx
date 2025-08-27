@@ -11,8 +11,6 @@ import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { ShareButton } from './components/ShareButton';
-import { UserProfileMenu } from './components/UserProfileMenu';
-import { FavoriteButton } from './components/FavoriteButton';
 import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
@@ -22,7 +20,6 @@ import { SEOHelmet } from './components/SEOHelmet';
 import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
-import { UserProfileProvider, useUserProfile } from './contexts/UserProfileContext';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
@@ -41,7 +38,6 @@ import { trackStadiumSelection, trackGameSelection, trackFilterUsage } from './u
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
 
 function UnifiedAppContent() {
-  const { currentProfile, updatePreferences, trackStadiumView } = useUserProfile();
   const { t } = useTranslation();
   const [selectedVenue, setSelectedVenue] = useState<UnifiedVenue | null>(null);
   const [selectedGame, setSelectedGame] = useState<MLBGame | MiLBGame | NFLGame | null>(null);
@@ -78,7 +74,6 @@ function UnifiedAppContent() {
       const venue = ALL_UNIFIED_VENUES.find(v => v.id === venueParam);
       if (venue) {
         setSelectedVenue(venue);
-        trackStadiumView(venue.id);
       }
     }
     // Check for stadium parameter (for MLB stadiums - backward compatibility)
@@ -86,7 +81,6 @@ function UnifiedAppContent() {
       const venue = ALL_UNIFIED_VENUES.find(v => v.id === stadiumParam);
       if (venue) {
         setSelectedVenue(venue);
-        trackStadiumView(venue.id);
       }
     }
     
@@ -132,7 +126,6 @@ function UnifiedAppContent() {
     
     // Track venue view
     if (venue) {
-      trackStadiumView(venue.id);
       trackStadiumSelection(venue.id);
     }
     
@@ -321,7 +314,6 @@ function UnifiedAppContent() {
 
   const handleFilterChange = (criteria: SunFilterCriteria) => {
     setFilterCriteria(criteria);
-    updatePreferences({ filterCriteria: criteria });
     
     if (criteria.sunPreference) {
       trackFilterUsage('sun_preference', criteria.sunPreference);
@@ -345,11 +337,6 @@ function UnifiedAppContent() {
             {selectedVenue && gameDateTime && (
               <div className="quick-summary">
                 <span className="stadium-name">{selectedVenue.name}</span>
-                <FavoriteButton
-                  stadiumId={selectedVenue.id}
-                  stadiumName={selectedVenue.name}
-                  size="small"
-                />
                 <span className="game-time">
                   {formatDateTimeWithTimezone(gameDateTime, selectedVenue.timezone)}
                 </span>
@@ -363,7 +350,6 @@ function UnifiedAppContent() {
               gameDateTime={gameDateTime}
               selectedGame={selectedGame}
             />
-            <UserProfileMenu />
           </div>
         </div>
       </header>
@@ -563,9 +549,7 @@ function UnifiedApp() {
         <ErrorBoundary>
           <I18nProvider>
             <ErrorProvider>
-              <UserProfileProvider>
-                <MobileApp />
-              </UserProfileProvider>
+              <MobileApp />
             </ErrorProvider>
           </I18nProvider>
         </ErrorBoundary>
@@ -578,9 +562,7 @@ function UnifiedApp() {
       <ErrorBoundary>
         <I18nProvider>
           <ErrorProvider>
-            <UserProfileProvider>
-              <UnifiedAppContent />
-            </UserProfileProvider>
+            <UnifiedAppContent />
           </ErrorProvider>
         </I18nProvider>
       </ErrorBoundary>

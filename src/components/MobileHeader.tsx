@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { UserProfileMenu } from './UserProfileMenu';
 import { MobileMenuPortal } from './MobileMenuPortal';
 import './MobileHeader.css';
 
@@ -77,7 +76,6 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
           )}
           
           <div className="mobile-header-actions">
-            <UserProfileMenu />
             {!showBack && (
               <button 
                 className={`mobile-header-menu ${menuOpen ? 'active' : ''}`}
