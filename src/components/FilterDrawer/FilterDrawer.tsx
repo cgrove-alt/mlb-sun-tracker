@@ -1,218 +1,105 @@
-'use client';
+import React, { useEffect, useRef } from 'react';
+import s from './FilterDrawer.module.css';
+import { useFilters } from '@/src/filters/FiltersContext';
 
-import { useState, useEffect, useRef } from 'react';
-import styles from './FilterDrawer.module.css';
+const ROOF = ['All','Open Air','Retractable','Covered'] as const;
 
-export interface FilterOption {
-  id: string;
-  label: string;
-  selected: boolean;
-}
-
-export interface FilterGroup {
-  id: string;
-  label: string;
-  options: FilterOption[];
-}
-
-export interface FilterDrawerProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onApply: (filters: Record<string, string[]>) => void;
-  onClear: () => void;
-  title?: string;
-  groups: FilterGroup[];
-  className?: string;
-}
-
-export default function FilterDrawer({
-  isOpen,
-  onClose,
-  onApply,
-  onClear,
-  title = 'Filter Options',
-  groups,
-  className = ''
-}: FilterDrawerProps) {
-  const [localFilters, setLocalFilters] = useState<Record<string, string[]>>({});
+export default function FilterDrawer() {
+  const { open, setOpen, values, set } = useFilters();
   const sheetRef = useRef<HTMLDivElement>(null);
 
-  // Initialize local filters from groups
+  // ESC to close & focus trap
   useEffect(() => {
-    const initialFilters: Record<string, string[]> = {};
-    groups.forEach(group => {
-      initialFilters[group.id] = group.options
-        .filter(option => option.selected)
-        .map(option => option.id);
-    });
-    setLocalFilters(initialFilters);
-  }, [groups]);
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setOpen(false); }
+    if (open) document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [open, setOpen]);
 
-  // Handle backdrop click
-  const handleScrimClick = (e: React.MouseEvent) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
-  };
-
-  // Handle escape key
+  // Simple focus trap
   useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) {
-        onClose();
-      }
+    if (!open || !sheetRef.current) return;
+    const focusable = sheetRef.current.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    const trap = (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
     };
-
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, [isOpen, onClose]);
-
-  // Handle body scroll lock
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
-  const handleOptionToggle = (groupId: string, optionId: string) => {
-    setLocalFilters(prev => {
-      const groupFilters = prev[groupId] || [];
-      const isSelected = groupFilters.includes(optionId);
-      
-      return {
-        ...prev,
-        [groupId]: isSelected
-          ? groupFilters.filter(id => id !== optionId)
-          : [...groupFilters, optionId]
-      };
-    });
-  };
-
-  const handleApply = () => {
-    onApply(localFilters);
-    onClose();
-  };
-
-  const handleClear = () => {
-    const clearedFilters: Record<string, string[]> = {};
-    groups.forEach(group => {
-      clearedFilters[group.id] = [];
-    });
-    setLocalFilters(clearedFilters);
-    onClear();
-    onClose();
-  };
-
-  const hasActiveFilters = Object.values(localFilters).some(filters => filters.length > 0);
+    sheetRef.current.addEventListener('keydown', trap);
+    (first || sheetRef.current).focus();
+    return () => sheetRef.current?.removeEventListener('keydown', trap);
+  }, [open]);
 
   return (
     <>
-      {/* Backdrop/Scrim */}
-      <div 
-        className={`${styles.scrim} ${isOpen ? styles.scrimOpen : ''} ${className}`}
-        onClick={handleScrimClick}
-        role="presentation"
+      <div
+        className={`${s.scrim} ${open ? s.scrimOpen : ''}`}
+        aria-hidden={!open}
+        onClick={() => setOpen(false)}
       />
-
-      {/* Bottom Sheet */}
-      <div 
+      <aside
         ref={sheetRef}
-        className={`${styles.sheet} ${isOpen ? styles.sheetOpen : ''}`}
+        className={`${s.sheet} ${open ? s.sheetOpen : ''}`}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="filter-drawer-title"
+        aria-label="Filters"
       >
-        {/* Handle */}
-        <div className={styles.handle} />
-
-        {/* Header */}
-        <div className={styles.header}>
-          <h2 id="filter-drawer-title" className={styles.title}>
-            {title}
-          </h2>
+        <div className={s.handle} />
+        <div className={s.header}>
+          <div className={s.title}>Filters</div>
+          <button onClick={() => setOpen(false)} aria-label="Close filters">Close</button>
         </div>
 
-        {/* Content */}
-        <div className={styles.content}>
-          {groups.map(group => (
-            <div key={group.id} className={styles.group}>
-              <div className={styles.label}>{group.label}</div>
-              <div className={styles.row}>
-                {group.options.map(option => {
-                  const isSelected = localFilters[group.id]?.includes(option.id) || false;
-                  
-                  return (
-                    <button
-                      key={option.id}
-                      className={styles.chip}
-                      data-selected={isSelected}
-                      onClick={() => handleOptionToggle(group.id, option.id)}
-                      type="button"
-                      aria-pressed={isSelected}
-                    >
-                      {option.label}
-                    </button>
-                  );
-                })}
-              </div>
+        <div className={s.content}>
+          <div className={s.group}>
+            <div className={s.label}>Roof</div>
+            <div className={s.row}>
+              {ROOF.map(opt => (
+                <button
+                  key={opt}
+                  className={s.chip}
+                  data-selected={values.roof === opt}
+                  aria-pressed={values.roof === opt}
+                  onClick={() => set({ roof: opt })}
+                >{opt}</button>
+              ))}
             </div>
-          ))}
+          </div>
+
+          <div className={s.group}>
+            <label className={s.label} htmlFor="q">Search stadium or team</label>
+            <input
+              id="q"
+              className={s.input}
+              placeholder="Oracle Park or Giants"
+              value={values.q}
+              onChange={e => set({ q: (e.target as HTMLInputElement).value })}
+            />
+          </div>
+
+          <div className={s.group}>
+            <label className={s.label} htmlFor="sort">Sort</label>
+            <select
+              id="sort"
+              className={s.select}
+              value={values.sort}
+              onChange={e => set({ sort: (e.target as HTMLSelectElement).value as any })}
+            >
+              <option value="name-asc">Name (A→Z)</option>
+              <option value="name-desc">Name (Z→A)</option>
+              <option value="capacity-desc">Capacity (High→Low)</option>
+              <option value="capacity-asc">Capacity (Low→High)</option>
+            </select>
+          </div>
         </div>
 
-        {/* Controls */}
-        <div className={styles.controls}>
-          <button
-            className={`${styles.btn} ${styles.secondary}`}
-            onClick={handleClear}
-            type="button"
-            disabled={!hasActiveFilters}
-          >
-            Clear All
-          </button>
-          <button
-            className={`${styles.btn} ${styles.primary}`}
-            onClick={handleApply}
-            type="button"
-          >
-            Apply Filters
-          </button>
+        <div className={s.controls}>
+          <button className={`${s.btn} ${s.secondary}`} onClick={() => set({ roof:'All', q:'', sort:'name-asc' })}>Clear</button>
+          <button className={`${s.btn} ${s.primary}`} onClick={() => setOpen(false)}>Apply</button>
         </div>
-      </div>
+      </aside>
     </>
-  );
-}
-
-// Trigger button component
-export interface FilterTriggerProps {
-  onClick: () => void;
-  children: React.ReactNode;
-  className?: string;
-  activeCount?: number;
-}
-
-export function FilterTrigger({ 
-  onClick, 
-  children, 
-  className = '',
-  activeCount 
-}: FilterTriggerProps) {
-  return (
-    <button
-      className={`${styles.trigger} ${className}`}
-      onClick={onClick}
-      type="button"
-      aria-label={`Open filters${activeCount ? ` (${activeCount} active)` : ''}`}
-    >
-      {children}
-      {activeCount && activeCount > 0 && (
-        <span className="sr-only">{activeCount} filters active</span>
-      )}
-    </button>
   );
 }
