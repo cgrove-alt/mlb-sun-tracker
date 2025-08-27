@@ -55,7 +55,7 @@ export default function FilterDrawer() {
         <div className={s.content}>
           <div className={s.group}>
             <div className={s.label}>Roof</div>
-            <div className={s.row}>
+            <div className={s.chips}>
               {ROOF.map(opt => (
                 <button
                   key={opt}
