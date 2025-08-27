@@ -83,6 +83,7 @@
   justify-content: center;
   isolation: isolate;
   pointer-events: none;
+  overscroll-behavior: contain;
 }
 
 .mobile-filter-overlay {
@@ -108,9 +109,10 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 85vh;
-  height: 85dvh;
-  max-height: 600px;
+  height: 90vh;
+  height: 90dvh;
+  max-height: calc(100vh - 20px);
+  max-height: calc(100dvh - 20px);
   background: #ffffff;
   border-radius: 24px 24px 0 0;
   display: flex;
@@ -119,6 +121,7 @@
   box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.12);
   z-index: 10000;
   pointer-events: auto;
+  overscroll-behavior: contain;
 }
 
 @keyframes slideUp {
@@ -189,6 +192,7 @@
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
+  min-height: 0; /* Critical for flexbox scrolling */
 }
 
 /* Subtle scroll indicator */
@@ -573,12 +577,10 @@
 /* Landscape Mode */
 @media (max-height: 500px) and (orientation: landscape) {
   .mobile-filter-content {
-    max-height: 90vh;
-    max-height: 90dvh;
-  }
-  
-  .mobile-filter-body {
-    max-height: calc(90vh - 100px);
+    height: 95vh;
+    height: 95dvh;
+    max-height: 95vh;
+    max-height: 95dvh;
   }
   
   .mobile-filter-section {
@@ -633,8 +635,10 @@
 /* Small phones - Adjust heights for smaller screens */
 @media (max-height: 667px) {
   .mobile-filter-content {
-    max-height: 95vh;
-    max-height: 95dvh;
+    height: 95vh;
+    height: 95dvh;
+    max-height: calc(100vh - 10px);
+    max-height: calc(100dvh - 10px);
   }
   
   .mobile-filter-header {

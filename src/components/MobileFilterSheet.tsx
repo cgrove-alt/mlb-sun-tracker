@@ -20,9 +20,11 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [localFilters, setLocalFilters] = useState<SunFilterCriteria>(currentFilters);
 
-  // Prevent body scroll when filter is open - only on desktop
+  // Don't lock body scroll on mobile - the filter sheet handles its own scrolling
   React.useEffect(() => {
-    if (isOpen && window.innerWidth > 768) {
+    // Only lock body scroll on actual desktop devices (not tablets or large phones)
+    const isDesktop = window.innerWidth > 1024 && window.innerHeight > 768;
+    if (isOpen && isDesktop) {
       document.body.style.overflow = 'hidden';
       return () => {
         document.body.style.overflow = '';
