@@ -179,7 +179,7 @@ const MobileApp: React.FC = () => {
       }
     }
     
-    if (filterCriteria.maxSunExposure !== undefined) {
+    if (filterCriteria.maxSunExposure !== undefined && filterCriteria.maxSunExposure !== 100) {
       const maxExposure = filterCriteria.maxSunExposure;
       filtered = filtered.filter(s => s.sunExposure <= maxExposure);
     }

@@ -45,7 +45,15 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
   }, [currentFilters]);
 
   const handleApplyFilters = () => {
-    onFilterChange(localFilters);
+    // Create a copy of filters to modify
+    const filtersToApply = { ...localFilters };
+    
+    // If maxSunExposure is 100 (no limit), remove it from filters
+    if (filtersToApply.maxSunExposure === 100) {
+      delete filtersToApply.maxSunExposure;
+    }
+    
+    onFilterChange(filtersToApply);
     setIsOpen(false);
   };
 
@@ -55,7 +63,13 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
     setIsOpen(false);
   };
 
-  const activeFilterCount = Object.keys(currentFilters).length;
+  const activeFilterCount = Object.keys(currentFilters).filter(key => {
+    // Don't count maxSunExposure if it's 100 (no limit)
+    if (key === 'maxSunExposure' && currentFilters.maxSunExposure === 100) {
+      return false;
+    }
+    return true;
+  }).length;
 
   // Calculate preview count based on local filters
   const previewCount = useMemo(() => {
@@ -72,8 +86,8 @@ export const MobileFilterSheet: React.FC<MobileFilterSheetProps> = ({
       }
     }
     
-    // Apply max sun exposure filter
-    if (localFilters.maxSunExposure !== undefined) {
+    // Apply max sun exposure filter (only if not 100%)
+    if (localFilters.maxSunExposure !== undefined && localFilters.maxSunExposure !== 100) {
       const maxExposure = localFilters.maxSunExposure;
       filtered = filtered.filter(s => s.sunExposure <= maxExposure);
     }
