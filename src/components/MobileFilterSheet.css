@@ -77,11 +77,12 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9999; /* Very high z-index to ensure it's on top */
+  z-index: 9999;
   display: flex;
   align-items: flex-end;
-  isolation: isolate; /* Create new stacking context */
-  pointer-events: none; /* Allow clicks to pass through empty areas */
+  justify-content: center;
+  isolation: isolate;
+  pointer-events: none;
 }
 
 .mobile-filter-overlay {
@@ -102,21 +103,22 @@
 
 /* Compact Filter Content */
 .mobile-filter-content {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 85vh; /* Fixed height for better mobile experience */
-  height: 85dvh; /* Dynamic viewport height */
-  max-height: 600px; /* Maximum height to prevent too tall on tablets */
-  background: var(--color-white);
-  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+  max-height: 90vh;
+  max-height: 90dvh;
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
   display: flex;
   flex-direction: column;
   animation: slideUp var(--transition-base) var(--ease-out);
-  box-shadow: var(--shadow-2xl);
-  padding-bottom: env(safe-area-inset-bottom, 0);
-  z-index: 10000; /* Ensure content is above everything */
-  pointer-events: auto; /* Capture all interactions */
-  overflow: hidden; /* Clip content to rounded corners */
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  pointer-events: auto;
+  overflow: hidden;
 }
 
 @keyframes slideUp {
@@ -133,40 +135,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-3) var(--space-4);
-  background: var(--gradient-field);
-  color: white;
-  border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
-  flex-shrink: 0; /* Don't shrink when content is long */
-  min-height: 50px;
-  z-index: 2;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 2px solid #2a2a2a;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+  min-height: 48px;
+  position: relative;
+  z-index: 3;
 }
 
 .mobile-filter-header h2 {
   margin: 0;
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
 }
 
 .mobile-filter-close {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: var(--radius-full);
+  width: 32px;
+  height: 32px;
+  background: #f0f0f0;
+  border: 2px solid #2a2a2a;
+  border-radius: 50%;
   cursor: pointer;
-  color: white;
+  color: #1a1a1a;
   transition: all var(--transition-fast);
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
 }
 
 .mobile-filter-close:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: #e0e0e0;
+  transform: scale(1.1);
 }
 
 .mobile-filter-close:active {
@@ -175,26 +181,50 @@
 
 /* Scrollable Filter Body */
 .mobile-filter-body {
-  padding: var(--space-3) var(--space-4);
+  padding: 12px;
+  padding-bottom: 20px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: 8px;
   flex: 1;
-  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-y: auto;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  overscroll-behavior: contain; /* Prevent scroll chaining */
-  min-height: 0; /* Allow shrinking for flexbox */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  min-height: 0;
+  max-height: calc(90vh - 108px);
+  max-height: calc(90dvh - 108px);
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Add scroll shadows */
+.mobile-filter-body::before,
+.mobile-filter-body::after {
+  content: '';
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.mobile-filter-body::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.mobile-filter-body::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
 }
 
 /* Compact Filter Sections */
 .mobile-filter-section {
-  margin-bottom: var(--space-3);
-  padding: var(--space-3);
-  background: #f8f8f8;
-  border: 1px solid #d0d0d0;
-  border-radius: var(--radius-lg);
+  margin-bottom: 12px;
+  padding: 0;
 }
 
 .mobile-filter-section:last-child {
@@ -214,18 +244,20 @@
 
 .mobile-filter-section h3 {
   margin: 0 0 8px 0;
-  font-size: 14px;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 12px;
+  font-weight: 800;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #d0d0d0;
 }
 
 /* Compact Sun Preference Options */
 .mobile-filter-options {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: var(--space-2);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
 }
 
 .mobile-filter-option {
@@ -244,16 +276,16 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  padding: 10px 6px;
+  padding: 8px 4px;
   background: #ffffff;
-  border: 2px solid #4a4a4a;
-  border-radius: var(--radius-lg);
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
   text-align: center;
-  font-size: 12px;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000000;
   transition: all var(--transition-fast);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-filter-option-text {
@@ -291,11 +323,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: 14px;
+  padding: 10px;
   text-align: left;
   width: 100%;
-  border: 2px solid #5a5a5a;
-  background: #fafafa;
+  border: 2px solid #2a2a2a;
+  background: #ffffff;
 }
 
 .mobile-filter-price-options .mobile-filter-option-text {
@@ -306,11 +338,12 @@
 .mobile-filter-price-options .mobile-filter-option input[type="checkbox"] {
   position: relative;
   opacity: 1;
-  margin-right: 12px;
-  width: 22px;
-  height: 22px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
   accent-color: #2e7d32;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .mobile-filter-option:hover .mobile-filter-option-content {
@@ -322,17 +355,18 @@
 
 .mobile-filter-option.selected .mobile-filter-option-content,
 .mobile-filter-option input:checked + .mobile-filter-option-content {
-  background: linear-gradient(135deg, #2e7d32 0%, #45a049 100%);
-  border-color: #1e5e20;
+  background: #2e7d32;
+  border-color: #000000;
+  border-width: 3px;
   color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 800;
 }
 
 .mobile-filter-option-icon {
-  font-size: 24px;
+  font-size: 20px;
   transition: transform var(--transition-fast);
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
 }
 
 /* Ultra Compact Slider */
@@ -342,31 +376,32 @@
 
 .mobile-filter-range {
   width: 100%;
-  height: 8px;
+  height: 10px;
   -webkit-appearance: none;
   appearance: none;
   background: linear-gradient(to right, 
     #2e7d32 0%, 
     #2e7d32 var(--value, 0%), 
-    #d0d0d0 var(--value, 0%), 
-    #d0d0d0 100%);
-  border-radius: var(--radius-full);
+    #e0e0e0 var(--value, 0%), 
+    #e0e0e0 100%);
+  border-radius: 5px;
   outline: none;
   position: relative;
-  margin: var(--space-3) 0;
-  border: 1px solid #999;
+  margin: 12px 0;
+  border: 1px solid #2a2a2a;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-filter-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 28px;
-  height: 28px;
-  background: #2e7d32;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #2e7d32, #45a049);
   border: 3px solid white;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 1px #2a2a2a, 0 2px 8px rgba(0,0,0,0.5);
   transition: all var(--transition-fast);
 }
 
@@ -379,13 +414,13 @@
 .mobile-filter-range::-moz-range-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 28px;
-  height: 28px;
-  background: #2e7d32;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #2e7d32, #45a049);
   border: 3px solid white;
-  border-radius: var(--radius-full);
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 0 0 2px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 1px #2a2a2a, 0 2px 8px rgba(0,0,0,0.5);
   transition: all var(--transition-fast);
 }
 
@@ -396,10 +431,11 @@
 
 /* Firefox range track */
 .mobile-filter-range::-moz-range-track {
-  background: #d0d0d0;
-  height: 8px;
-  border-radius: var(--radius-full);
-  border: 1px solid #999;
+  background: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+  border: 1px solid #2a2a2a;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-filter-range-labels {
@@ -422,10 +458,10 @@
 }
 
 .mobile-filter-help-text {
-  margin: var(--space-2) 0 0 0;
-  font-size: 13px;
-  font-weight: 500;
-  color: #3a3a3a;
+  margin: 4px 0 0 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a1a1a;
   text-align: center;
 }
 
@@ -433,21 +469,21 @@
 .mobile-filter-chips {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-2);
+  gap: 6px;
 }
 
 .mobile-filter-chip {
-  padding: 8px 12px;
+  padding: 6px 10px;
   background: #ffffff;
-  border: 2px solid #4a4a4a;
-  border-radius: var(--radius-md);
-  font-size: 13px;
-  font-weight: 600;
-  color: #1a1a1a;
+  border: 2px solid #2a2a2a;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .mobile-filter-chip:hover {
@@ -458,24 +494,26 @@
 }
 
 .mobile-filter-chip.selected {
-  background: linear-gradient(135deg, #2e7d32 0%, #45a049 100%);
-  border-color: #1e5e20;
+  background: #2e7d32;
+  border-color: #000000;
+  border-width: 3px;
   color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-weight: 800;
 }
 
 /* Ultra Compact Footer */
 .mobile-filter-footer {
   display: flex;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0));
-  background: #f5f5f5;
-  border-top: 2px solid #c0c0c0;
-  flex-shrink: 0; /* Don't shrink when content is long */
+  gap: 8px;
+  padding: 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+  background: #ffffff;
+  border-top: 2px solid #2a2a2a;
+  flex-shrink: 0;
   min-height: 60px;
-  z-index: 2;
+  position: relative;
+  z-index: 3;
 }
 
 .mobile-filter-btn {
@@ -497,11 +535,11 @@
 }
 
 .mobile-filter-btn-secondary {
-  background: #f5f5f5;
-  color: #1a1a1a;
-  border: 2px solid #4a4a4a;
-  font-weight: 600;
-  font-size: 15px;
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #2a2a2a;
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .mobile-filter-btn-secondary:hover {
@@ -511,17 +549,13 @@
 }
 
 .mobile-filter-btn-primary {
-  background: linear-gradient(135deg, #2e7d32 0%, #45a049 100%);
+  background: #2e7d32;
   color: white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  font-weight: 700;
-  font-size: 15px;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  border: 1px solid #1e5e20;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 800;
+  font-size: 14px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border: 2px solid #1e5e20;
 }
 
 .mobile-filter-btn-primary::before {
@@ -613,10 +647,8 @@
 /* Small phones - Adjust heights for smaller screens */
 @media (max-height: 667px) {
   .mobile-filter-content {
-    height: 90vh;
-    height: 90dvh;
-    max-height: 90vh;
-    max-height: 90dvh;
+    max-height: 95vh;
+    max-height: 95dvh;
   }
   
   .mobile-filter-header {
