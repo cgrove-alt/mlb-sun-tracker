@@ -1,0 +1,316 @@
+.stadiumSsrPage {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 3rem 0;
+}
+
+.stadiumHero {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 3rem 0;
+}
+
+.breadcrumb {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+}
+
+.stadiumSubtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.stadiumQuickFacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+}
+
+.factLabel {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.factValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.sectionsGrid,
+.monthsGrid,
+.timeGrid,
+.tipsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sectionCard,
+.monthCard,
+.timeCard,
+.tipCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sectionRank {
+  display: inline-block;
+  background: #2196f3;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.sectionFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.sectionFeatures li {
+  padding: 0.25rem 0;
+  color: #666;
+}
+
+.covered {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.sectionNote {
+  font-size: 0.875rem;
+  color: #4caf50;
+  font-style: italic;
+}
+
+.monthPattern {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.monthRecommendations h4 {
+  font-size: 0.875rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.monthRecommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.monthRecommendations li {
+  padding: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.timeSections h4 {
+  font-size: 1rem;
+  color: #333;
+  margin: 1rem 0 0.5rem;
+}
+
+.timeSections ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeSections li {
+  padding: 0.25rem 0;
+  color: #666;
+}
+
+.sectionsTableWrapper {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.sectionsTable {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sectionsTable thead {
+  background: #f5f5f5;
+}
+
+.sectionsTable th,
+.sectionsTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sectionsTable th {
+  font-weight: 600;
+  color: #333;
+}
+
+.rating {
+  font-size: 1rem;
+}
+
+.rating5 { color: #4caf50; }
+.rating4 { color: #8bc34a; }
+.rating3 { color: #ffc107; }
+.rating2 { color: #ff9800; }
+.rating1 { color: #f44336; }
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.amenityCategory {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.amenityCategory h3 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.amenityCategory ul {
+  list-style: none;
+  padding: 0;
+}
+
+.amenityCategory li {
+  padding: 0.25rem 0;
+  color: #666;
+}
+
+.faqItem {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faqItem h3 {
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.stadiumCta {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.stadiumCta h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.stadiumCta p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btnPrimary {
+  background: white;
+  color: #2196f3;
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionsGrid,
+  .monthsGrid,
+  .timeGrid,
+  .tipsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionsTable {
+    font-size: 0.875rem;
+  }
+
+  .sectionsTable th,
+  .sectionsTable td {
+    padding: 0.5rem;
+  }
+}
