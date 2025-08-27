@@ -1,0 +1,44 @@
+/* Mobile Stepper Component - Multi-step navigation */
+
+.bar { 
+  display: flex; 
+  gap: 8px; 
+  padding: 8px var(--spacing-4); 
+  border-bottom: 1px solid var(--ui-border); 
+}
+
+.dot { 
+  flex: 1; 
+  height: 4px; 
+  border-radius: 999px; 
+  background: var(--paper-soft); 
+}
+
+.dot[data-active="true"] { 
+  background: var(--accent-600); 
+}
+
+.actions { 
+  display: flex; 
+  gap: 12px; 
+  padding: var(--spacing-3) var(--spacing-4); 
+}
+
+.btn { 
+  flex: 1; 
+  text-align: center; 
+  padding: 12px; 
+  border-radius: 12px; 
+  font-weight: 600; 
+}
+
+.next { 
+  background: var(--ink-800); 
+  color: #fff; 
+}
+
+.prev { 
+  background: var(--paper-soft); 
+  border: 1px solid var(--ui-border); 
+  color: var(--ink-800); 
+}

@@ -96,8 +96,8 @@
 /* Filter Chips */
 .filter-chips-container {
   padding: var(--spacing-3);
-  background: white;
-  border-bottom: 1px solid var(--color-gray-200);
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -387,7 +387,7 @@
 }
 
 .filter-count {
-  background: white;
+  background: #ffffff !important;
   color: var(--color-primary);
   padding: 2px 8px;
   border-radius: var(--radius-full);
@@ -421,7 +421,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: white;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
   max-height: 85vh;
   z-index: 1001;
@@ -444,10 +445,11 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--spacing-5);
-  border-bottom: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
-  background: white;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-radius: var(--radius-xl) var(--radius-xl) 0 0;
 }
 
@@ -490,12 +492,15 @@
   flex: 1;
   overflow-y: auto;
   padding: var(--spacing-5);
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .drawer-footer {
   padding: var(--spacing-5);
-  border-top: 1px solid var(--color-gray-200);
-  background: white;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   position: sticky;
   bottom: 0;
 }

@@ -13,6 +13,7 @@ import { SectionShadeSEO } from './SectionShadeSEO';
 import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
+import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
 import './StadiumGuide.css';
 
 interface StadiumGuideProps {

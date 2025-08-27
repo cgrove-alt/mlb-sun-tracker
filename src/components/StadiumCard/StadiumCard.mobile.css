@@ -1,0 +1,28 @@
+/* Stadium Card Mobile Styles */
+
+@media (max-width: 680px) {
+  .card { 
+    border-radius: 12px; 
+    padding: 16px; 
+  }
+  
+  .title { 
+    font-size: 17px; 
+    line-height: 1.25; 
+  }
+  
+  .metrics { 
+    font-size: 14px; 
+  }
+  
+  .cta { 
+    margin-top: 10px; 
+  }
+}
+
+/* Parent grid */
+.gridCards { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 16px; 
+}

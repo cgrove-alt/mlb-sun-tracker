@@ -17,7 +17,7 @@ export const criticalStyles = `
     height: 40px;
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
-    border-top-color: #2196f3;
+    border-top-color: #1e40af;
     animation: spin 1s ease-in-out infinite;
   }
   

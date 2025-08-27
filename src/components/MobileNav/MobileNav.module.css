@@ -1,0 +1,56 @@
+/* Mobile Navigation Component - Drawer-based navigation */
+
+.menuBtn { 
+  border: 1px solid var(--ui-border); 
+  border-radius: 10px; 
+  padding: 8px 12px; 
+  background: var(--paper); 
+}
+
+.drawer { 
+  position: fixed; 
+  inset: 0 25% 0 0; 
+  background: var(--paper); 
+  transform: translateX(-100%); 
+  transition: .25s ease; 
+}
+
+.open { 
+  transform: translateX(0); 
+}
+
+.scrim { 
+  position: fixed; 
+  inset: 0; 
+  background: rgba(0,0,0,.35); 
+  opacity: 0; 
+  pointer-events: none; 
+  transition: .2s; 
+}
+
+.scrimOpen { 
+  opacity: 1; 
+  pointer-events: auto; 
+}
+
+.list { 
+  padding: 20px; 
+  display: grid; 
+  gap: 12px; 
+}
+
+/* Header layout */
+.header { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 10px var(--spacing-4); 
+}
+
+.title { 
+  font-weight: 600; 
+  color: var(--ink-800); 
+  font-size: 18px; 
+  text-wrap: balance; 
+  overflow-wrap: anywhere; 
+}

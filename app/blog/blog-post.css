@@ -523,8 +523,8 @@
 
 .cta-button {
   display: inline-block;
-  background: white;
-  color: var(--accent-600);
+  background: var(--accent-700);
+  color: white !important;
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -534,7 +534,8 @@
 }
 
 .cta-button:hover {
-  background: #f8f9fa;
+  background: var(--accent-600);
+  color: white !important;
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 }

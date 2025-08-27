@@ -34,6 +34,16 @@
   --warning: #D97706;     /* 4.51:1 on white */
   --error: #DC2626;       /* 5.86:1 on white */
   --info: #0891B2;        /* 4.52:1 on white */
+  
+  /* ===== Spacing ===== */
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  
+  /* ===== Border Radius ===== */
+  --radius-2: 10px;
+  --radius-3: 12px;
 }
 
 /* Dark mode overrides */

@@ -91,7 +91,7 @@ button, a, .clickable {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: #2196f3;
+  background: var(--accent-700);
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -149,7 +149,7 @@ button, a, .clickable {
   left: 0;
   right: 0;
   bottom: 0;
-  background: #2196f3;
+  background: var(--accent-700);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -406,7 +406,7 @@ button, a, .clickable {
 }
 
 .breadcrumb a {
-  color: #2196f3;
+  color: var(--accent-700);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -596,7 +596,7 @@ section strong {
 
 .cta-box {
   background: #e3f2fd;
-  border: 2px solid #2196f3;
+  border: 2px solid var(--accent-700);
   border-radius: 8px;
   padding: 1.5rem;
   margin: 2rem 0;
@@ -606,8 +606,8 @@ section strong {
 .cta-button {
   display: inline-block;
   padding: 0.75rem 2rem;
-  background: #2196f3;
-  color: white;
+  background: var(--accent-700) !important;
+  color: white !important;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
@@ -615,17 +615,20 @@ section strong {
 }
 
 .cta-button:hover {
-  background: #1976d2;
+  background: var(--accent-600) !important;
+  color: white !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
 }
 
 .cta-button.primary {
-  background: #1a237e;
+  background: var(--accent-700) !important;
+  color: white !important;
 }
 
 .cta-button.primary:hover {
-  background: #0d47a1;
+  background: var(--accent-600) !important;
+  color: white !important;
 }
 
 /* Stadium shade cards */
@@ -783,7 +786,7 @@ section strong {
 }
 
 .guide-card.featured {
-  border: 2px solid #2196f3;
+  border: 2px solid var(--accent-700);
 }
 
 .guide-card h2 {
@@ -797,7 +800,7 @@ section strong {
 }
 
 .guide-card h2 a:hover {
-  color: #2196f3;
+  color: var(--accent-700);
 }
 
 .guide-card p {
@@ -807,17 +810,18 @@ section strong {
 }
 
 .read-more {
-  color: #2196f3;
+  color: var(--accent-700);
   text-decoration: none;
   font-weight: 600;
 }
 
 .read-more:hover {
   text-decoration: underline;
+  color: var(--accent-600);
 }
 
 .guide-cta {
-  background: #1a237e;
+  background: var(--accent-700);
   color: white;
   border-radius: 12px;
   padding: 3rem;
@@ -831,7 +835,8 @@ section strong {
 
 .guide-cta p {
   margin-bottom: 2rem;
-  opacity: 0.9;
+  color: white;
+  opacity: 1;
 }
 
 .guide-footer {
@@ -849,7 +854,7 @@ section strong {
 
 .cta-section {
   background: #e3f2fd;
-  border: 2px solid #2196f3;
+  border: 2px solid var(--accent-700);
 }
 
 /* FAQ specific styles */
@@ -876,7 +881,7 @@ section strong {
 }
 
 .faq-toc a {
-  color: #2196f3;
+  color: var(--accent-700);
   text-decoration: none;
   font-weight: 500;
 }
@@ -905,7 +910,7 @@ section strong {
 
 .faq-contact {
   background: #e3f2fd;
-  border: 2px solid #2196f3;
+  border: 2px solid var(--accent-700);
   text-align: center;
 }
 
@@ -930,7 +935,7 @@ section strong {
 }
 
 .related-resources li a {
-  color: #2196f3;
+  color: var(--accent-700);
   text-decoration: none;
   font-weight: 500;
   display: flex;

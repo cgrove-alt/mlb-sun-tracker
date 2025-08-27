@@ -1,0 +1,18 @@
+/* Skeleton Component - Loading placeholder animation */
+
+.block { 
+  height: 14px; 
+  border-radius: 8px; 
+  background: linear-gradient(90deg, #eee, #f6f6f6, #eee); 
+  background-size: 200% 100%; 
+  animation: sh 1.2s infinite linear; 
+}
+
+@keyframes sh { 
+  0% {
+    background-position: 200% 0;
+  } 
+  100% {
+    background-position: -200% 0;
+  } 
+}

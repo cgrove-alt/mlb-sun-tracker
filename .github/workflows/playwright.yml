@@ -24,9 +24,6 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
       
-      - name: Build application
-        run: npm run build
-        
       - name: Run Visual Overflow Tests
         run: npm run test:visual:local
         env:

@@ -8,8 +8,8 @@ html {
 }
 
 body { 
-  background: var(--paper);
   color: var(--ink-900);
+  background: var(--paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -20,7 +20,7 @@ body {
 
 /* ===== Base Text Elements ===== */
 p, li {
-  font-size: 16px;
+  font-size: 16px;  /* 16px+ prevents iOS focus zoom */
   line-height: 1.7;
   color: var(--ink-900);
 }
@@ -86,12 +86,18 @@ a:focus-visible {
 }
 
 /* ===== Interactive Elements ===== */
+button,
+.tap {
+  min-height: 44px;  /* WCAG target size */
+  min-width: 44px;   /* WCAG target size */
+}
+
 button, 
 input, 
 select, 
 textarea {
   font-family: inherit;
-  font-size: inherit;
+  font-size: 16px;  /* Stop iOS auto-zoom */
   line-height: inherit;
   color: var(--ink-900);
 }
@@ -149,14 +155,3 @@ code, pre {
   border: 0;
 }
 
-/* Ensure minimum touch target sizes on mobile */
-@media (pointer: coarse) {
-  button,
-  a,
-  input,
-  select,
-  textarea {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}

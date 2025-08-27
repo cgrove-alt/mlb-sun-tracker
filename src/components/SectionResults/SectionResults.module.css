@@ -1,0 +1,73 @@
+.wrap {
+  background: var(--paper);
+  border: 1px solid var(--ui-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.title {
+  color: var(--ink-800);
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
+}
+
+.badge {
+  composes: label from '../SectionLabel/SectionLabel.module.css';
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+@media (max-width: 640px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pill {
+  background: var(--paper-soft);
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--ink-900);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cta {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--accent-600);
+  font-weight: 500;
+  text-decoration: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.cta:hover {
+  text-decoration: underline;
+}
+
+.cta:focus {
+  outline: 2px solid var(--accent-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}

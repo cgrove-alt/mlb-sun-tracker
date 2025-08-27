@@ -1,0 +1,48 @@
+/* Section Accordion Component - Expandable content sections */
+
+.item { 
+  border-bottom: 1px solid var(--ui-border); 
+}
+
+.btn { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+  padding: 14px var(--spacing-4);
+  font: 600 16px/1.2 system-ui; 
+  color: var(--ink-800); 
+}
+
+.chev { 
+  transform: rotate(0deg); 
+  transition: transform .2s; 
+}
+
+.open .chev { 
+  transform: rotate(180deg); 
+}
+
+.panel { 
+  padding: 0 var(--spacing-4) var(--spacing-3); 
+  color: var(--ink-900); 
+}
+
+.ctaBar { 
+  position: sticky; 
+  bottom: 0; 
+  padding: 12px var(--spacing-4) calc(16px + env(safe-area-inset-bottom)); 
+  background: linear-gradient(to top, var(--paper), rgba(255,255,255,.92)); 
+  display: flex; 
+  gap: 12px; 
+}
+
+.primary { 
+  flex: 1; 
+  border-radius: 12px; 
+  padding: 12px; 
+  background: var(--ink-800); 
+  color: #fff; 
+  font-weight: 600; 
+  text-align: center; 
+}
