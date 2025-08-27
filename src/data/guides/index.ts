@@ -1,5 +1,6 @@
 // Import all stadium guide modules
 import { mlbStadiumGuides } from './mlbStadiumGuides';
+import { nflStadiumGuides } from './nflStadiumGuides';
 import { aaaStadiumGuides } from './aaaStadiumGuides';
 import { aaStadiumGuides } from './aaStadiumGuides';
 import { aPlusStadiumGuides } from './aPlusStadiumGuides';
@@ -9,6 +10,10 @@ import { StadiumGuide } from '../stadiumGuides';
 // Combined all stadium guides
 export const allMLBStadiumGuides: Record<string, StadiumGuide> = {
   ...mlbStadiumGuides
+};
+
+export const allNFLStadiumGuides: Record<string, StadiumGuide> = {
+  ...nflStadiumGuides
 };
 
 export const allAAAStadiumGuides: Record<string, StadiumGuide> = {
@@ -30,6 +35,7 @@ export const allSingleAStadiumGuides: Record<string, StadiumGuide> = {
 // Combined all stadium guides
 export const allStadiumGuides: Record<string, StadiumGuide> = {
   ...allMLBStadiumGuides,
+  ...allNFLStadiumGuides,
   ...allAAAStadiumGuides,
   ...allAAStadiumGuides,
   ...allAPlusStadiumGuides,
@@ -42,10 +48,12 @@ export function getStadiumGuide(stadiumId: string): StadiumGuide | undefined {
 }
 
 // Helper function to get guides by league
-export function getGuidesByLeague(league: 'MLB' | 'AAA' | 'AA' | 'A+' | 'A'): Record<string, StadiumGuide> {
+export function getGuidesByLeague(league: 'MLB' | 'NFL' | 'AAA' | 'AA' | 'A+' | 'A'): Record<string, StadiumGuide> {
   switch (league) {
     case 'MLB':
       return allMLBStadiumGuides;
+    case 'NFL':
+      return allNFLStadiumGuides;
     case 'AAA':
       return allAAAStadiumGuides;
     case 'AA':

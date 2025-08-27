@@ -1094,4 +1094,734 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         ]
       }
     },
+
+  'bluejays': {
+    id: 'bluejays',
+    name: 'Rogers Centre',
+    team: 'Toronto Blue Jays',
+    opened: 1989,
+    capacity: 49282,
+    overview: {
+      description: 'Rogers Centre, originally known as SkyDome, was the first stadium in the world with a fully retractable roof. Located in downtown Toronto, this multi-purpose facility features a hotel with field-view rooms and one of the most unique ballpark experiences in MLB.',
+      highlights: [
+        'First stadium with fully retractable roof (1989)',
+        'Hotel rooms overlooking the field',
+        'Downtown Toronto location',
+        'Multi-purpose design for baseball and events'
+      ],
+      uniqueFeatures: [
+        'Renaissance Toronto Downtown Hotel with 70 field-view rooms',
+        '348-foot CN Tower adjacent to stadium',
+        'Retractable roof opens in 20 minutes',
+        'Dirt infield only around bases (artificial turf)'
+      ],
+      renovations: [
+        { year: 2005, description: 'Renamed from SkyDome to Rogers Centre' },
+        { year: 2022, description: 'Major renovation including new video boards' }
+      ],
+      previousNames: ['SkyDome (1989-2005)']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['500 Level sections', '200 Level behind home plate'],
+        afternoon: ['500 Level provides overhead coverage', '200 Level infield'],
+        evening: ['Most sections shaded', 'Roof often closed']
+      },
+      coveredSeating: ['All seats when roof is closed', '500 Level sections', 'Club Level'],
+      shadeTips: [
+        'Roof closed for most games due to weather',
+        'Upper levels provide best shade when roof open',
+        'Air conditioning when roof is closed',
+        'Third base side gets shade first'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest Services locations'],
+        shadedConcourses: ['All concourses climate controlled'],
+        indoorAreas: ['Club Level', 'Hotel lobby', 'Team Shop']
+      },
+      worstSunExposure: ['100 Level outfield', 'First base side when roof open'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 50, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cool, roof often closed', shadeTip: 'Climate controlled comfort' },
+        { month: 'May', avgTemp: 62, avgHumidity: 65, rainChance: 20, typicalConditions: 'Mild spring weather', shadeTip: 'Roof may open for nice days' },
+        { month: 'June', avgTemp: 72, avgHumidity: 65, rainChance: 15, typicalConditions: 'Pleasant summer', shadeTip: 'Upper level for shade' },
+        { month: 'July', avgTemp: 76, avgHumidity: 65, rainChance: 10, typicalConditions: 'Warm summer', shadeTip: 'Third base side better' },
+        { month: 'August', avgTemp: 75, avgHumidity: 65, rainChance: 12, typicalConditions: 'Peak summer warmth', shadeTip: 'Seek upper level shade' },
+        { month: 'September', avgTemp: 67, avgHumidity: 65, rainChance: 18, typicalConditions: 'Cooling fall weather', shadeTip: 'Roof often closed for comfort' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Rogers Club', perks: ['All-inclusive dining', 'Premium bar', 'Indoor/outdoor seating'], access: 'Club Level' },
+          { name: 'WestJet Flight Deck', perks: ['Field level', 'Premium amenities', 'Exclusive access'], access: 'Behind home plate' }
+        ],
+        suites: {
+          levels: ['SkyBoxes', 'Theatre Boxes', 'Hotel Suites'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Hotel Rooms', description: 'Field-view hotel rooms for ultimate experience', capacity: 4 },
+          { name: 'Hard Rock Cafe', description: 'Restaurant with field view' }
+        ]
+      },
+      budgetOptions: ['500 Level sections', '200 Level outfield', 'Flexpack tickets'],
+      familySections: ['Family sections throughout'],
+      standingRoom: ['Standing room only tickets available'],
+      partyAreas: [
+        { name: 'WVRST', capacity: '100', amenities: ['Craft beer', 'Gourmet sausages', 'Standing tables'] }
+      ],
+      tips: [
+        { section: '200 Level behind plate', tip: 'Great views with some cover', category: 'value' },
+        { section: 'Hotel rooms', tip: 'Ultimate unique experience', category: 'experience' },
+        { section: '500 Level', tip: 'Budget option with full roof coverage', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Bacon on a Stick', 'Poutine', 'Tim Hortons coffee', 'Peameal bacon sandwich'],
+      local: ['Harvey\'s burgers', 'Swiss Chalet', 'Second City Pizza'],
+      healthy: ['Fresh salads', 'Veggie wraps'],
+      vegetarian: ['Beyond burgers', 'Veggie dogs'],
+      glutenFree: ['GF options at most stands'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Ice cream'],
+      alcohol: {
+        beer: ['Molson Canadian', 'Coors Light', 'Steam Whistle', 'Amsterdam'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Steam Whistle', 'Amsterdam Brewing']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Green P lots', distance: '5-10 min walk', price: '$25 CAD', shadedSpots: true, covered: true, tip: 'City parking garages' },
+        { name: 'Private lots', distance: '2-5 min walk', price: '$30-40 CAD', shadedSpots: false, covered: false }
+      ],
+      alternativeTransport: {
+        publicTransit: ['TTC Subway - Union Station', 'GO Transit trains', 'UP Express from airport'],
+        rideShare: 'Uber/Lyft pickup zones',
+        bicycle: 'Bike Share Toronto stations nearby'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Home plate entrance', bestFor: ['Field Level', 'Club Level'], openTime: '2 hours before first pitch' },
+      { name: 'Gate 5', location: 'Left field', bestFor: ['200/500 Level'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Jays Shop - Gate 1', exclusive: ['Authentic jerseys', 'Maple Leaf themed gear'] }
+      ],
+      firstAid: ['Medical stations on each level'],
+      babyChanging: ['Family rooms on all levels'],
+      atms: ['Throughout concourses'],
+      wifi: { available: true, network: 'Rogers_Centre_WiFi' },
+      kidZones: [
+        { name: 'Junior Jays Clubhouse', location: '200 Level', activities: ['Interactive games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels wheelchair accessible'],
+        entrance: 'All gates accessible',
+        elevators: ['Throughout building']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'Available in Green P lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Take Transit', description: 'Union Station is directly connected', category: 'arrival' },
+        { title: 'Try Poutine', description: 'Canadian ballpark staple', category: 'food' },
+        { title: 'Hotel Experience', description: 'Book field-view room for special occasions', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: 'Blue Jays BP 2.5 hours before',
+        firstPitch: '7:07 PM weekdays, 1:07 PM Sundays',
+        rushHours: ['5:30-6:30 PM on Union Station']
+      },
+      security: {
+        allowedBags: 'Clear bags preferred',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Downtown Toronto',
+      description: 'Heart of Toronto with attractions, dining, and entertainment',
+      beforeGame: ['CN Tower', 'Ripley\'s Aquarium', 'Steam Whistle Brewing'],
+      afterGame: ['Entertainment District', 'King Street restaurants', 'Harbourfront'],
+      radius: 'Walking distance to most downtown attractions'
+    },
+    transportation: {
+      address: '1 Blue Jays Way, Toronto, ON M5V 1J1',
+      publicTransit: {
+        subway: [{ lines: ['TTC Subway Lines 1/2'], station: 'Union Station', walkTime: 'Direct connection' }],
+        train: [{ lines: ['GO Transit', 'UP Express'], station: 'Union Station', walkTime: 'Direct connection' }]
+      },
+      driving: {
+        majorRoutes: ['Gardiner Expressway', 'Don Valley Parkway', 'Highway 401'],
+        typicalTraffic: 'Heavy downtown congestion',
+        bestApproach: 'Gardiner Expressway to downtown'
+      },
+      rideShare: {
+        pickupZone: 'Front Street West',
+        dropoffZone: 'Blue Jays Way',
+        surgePricing: '2-3x after games'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1989, event: 'Opens as SkyDome' },
+        { year: 1992, event: 'Blue Jays win World Series' },
+        { year: 1993, event: 'Blue Jays repeat as World Series champions' },
+        { year: 2005, event: 'Renamed Rogers Centre' }
+      ],
+      notableGames: [
+        { date: '1992-10-24', description: 'World Series clinching Game 6' },
+        { date: '1993-10-23', description: 'Joe Carter walk-off World Series home run' }
+      ],
+      traditions: [
+        { name: 'OK Blue Jays', description: 'Classic Blue Jays fight song' }
+      ],
+      retired: [
+        { number: '42', player: 'Jackie Robinson', year: 1997 }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Enthusiastic Canadian crowd with polite but passionate support',
+      bestExperiences: [
+        'Field-view hotel rooms',
+        'CN Tower views',
+        'Retractable roof opening',
+        'Canadian ballpark food'
+      ],
+      traditions: ['OK Blue Jays song', '7th inning stretch', 'Wave'],
+      music: 'Mix of Canadian and international hits',
+      mascot: { name: 'Ace', description: 'Blue Jay mascot' },
+      fanGroups: []
+    },
+    proTips: {
+      insiderTips: [
+        'Book hotel rooms early for field view',
+        'Union Station connection makes transit easy',
+        'Check roof status before game',
+        'Try Steam Whistle Brewery nearby'
+      ],
+      avoidThese: [
+        'Driving downtown during rush hour',
+        'Expensive parking lots',
+        'Concessions right at first pitch'
+      ],
+      hiddenGems: [
+        'Hotel lobby bar with field view',
+        'CN Tower EdgeWalk before games',
+        'Harbourfront walk after games'
+      ],
+      photoSpots: [
+        'CN Tower and stadium together',
+        'Hotel field-view rooms',
+        'Union Station interior'
+      ],
+      bestValue: [
+        '500 Level seats',
+        'TTC day pass for transit',
+        'Happy hour at nearby restaurants'
+      ]
+    }
+  },
+
+  'braves': {
+    id: 'braves',
+    name: 'Truist Park',
+    team: 'Atlanta Braves',
+    opened: 2017,
+    capacity: 41084,
+    overview: {
+      description: 'Truist Park is the newest ballpark in MLB, featuring modern amenities and traditional baseball architecture. Located in Cobb County with The Battery Atlanta entertainment district, it offers a complete entertainment experience beyond baseball.',
+      highlights: [
+        'Newest ballpark in MLB (opened 2017)',
+        'The Battery Atlanta mixed-use development',
+        'Modern design with classic ballpark feel',
+        'State-of-the-art technology throughout'
+      ],
+      uniqueFeatures: [
+        'The Battery Atlanta entertainment district',
+        'Monument Garden honoring Braves legends',
+        'Xfinity Rooftop for events',
+        'Kids\' area with playground'
+      ],
+      renovations: [],
+      previousNames: ['SunTrust Park (2017-2019)']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Sections 140-150', 'Chophouse seats', 'Upper deck 400s'],
+        afternoon: ['Third base side sections', 'Club Level', 'Sections 320-340'],
+        evening: ['Most sections shaded after 5 PM', 'First base side']
+      },
+      coveredSeating: ['Club Level sections', 'SunTrust Club', 'Delta Sky360 Club'],
+      shadeTips: [
+        'Third base side best for afternoon games',
+        'Upper deck provides shade for lower sections',
+        'Club level has permanent coverage',
+        'Avoid right field for day games'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest Services locations'],
+        shadedConcourses: ['All concourse levels'],
+        indoorAreas: ['Club areas', 'Team Store', 'Monument Garden']
+      },
+      worstSunExposure: ['Right field sections 130-139', 'Field Level 1-20'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 70, avgHumidity: 55, rainChance: 15, typicalConditions: 'Pleasant spring weather', shadeTip: 'Third base side recommended' },
+        { month: 'May', avgTemp: 78, avgHumidity: 60, rainChance: 12, typicalConditions: 'Warming up', shadeTip: 'Seek shade for day games' },
+        { month: 'June', avgTemp: 84, avgHumidity: 65, rainChance: 18, typicalConditions: 'Hot and humid', shadeTip: 'Upper deck for shade' },
+        { month: 'July', avgTemp: 87, avgHumidity: 70, rainChance: 20, typicalConditions: 'Peak summer heat and humidity', shadeTip: 'Club level recommended' },
+        { month: 'August', avgTemp: 86, avgHumidity: 70, rainChance: 18, typicalConditions: 'Very hot and humid', shadeTip: 'Evening games preferred' },
+        { month: 'September', avgTemp: 81, avgHumidity: 65, rainChance: 12, typicalConditions: 'Still warm', shadeTip: 'Afternoon shade important' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Delta Sky360 Club', perks: ['All-inclusive dining', 'Premium bar', 'Climate controlled'], access: 'Behind home plate' },
+          { name: 'SunTrust Club', perks: ['Upscale dining', 'Full bar', 'Exclusive access'], access: 'Club Level' },
+          { name: 'Chophouse', perks: ['Restaurant seating', 'Full menu', 'Field views'], access: 'Right field' }
+        ],
+        suites: {
+          levels: ['Premium Level', 'Club Level'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Xfinity Rooftop', description: 'Party deck with entertainment', capacity: 600 },
+          { name: 'Coca-Cola Corner', description: 'Family area with activities', capacity: 200 }
+        ]
+      },
+      budgetOptions: ['Upper deck 400s', 'SRO tickets', 'Outfield pavilion'],
+      familySections: ['Coca-Cola Corner', 'Kids\' areas throughout'],
+      standingRoom: ['Xfinity Rooftop', 'Various SRO locations'],
+      partyAreas: [
+        { name: 'Xfinity Rooftop', capacity: '600', amenities: ['DJ', 'Games', 'Food stations'] },
+        { name: 'Home Depot Clubhouse', capacity: '200', amenities: ['Group seating', 'TVs'] }
+      ],
+      tips: [
+        { section: 'Delta Sky360', tip: 'Premium all-inclusive experience', category: 'experience' },
+        { section: 'Upper deck 400s', tip: 'Great value with shade', category: 'value' },
+        { section: 'Chophouse', tip: 'Dine while watching the game', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Waffle House hash browns', 'H&F Burger', 'Fox Bros. BBQ', 'Kevin Gillespie\'s Gamechanger'],
+      local: ['Antico Pizza', 'The Varsity', 'Sublime Doughnuts', 'Atlanta-style wings'],
+      healthy: ['Fresh salads', 'Veggie options', 'Fruit bowls'],
+      vegetarian: ['Beyond burgers', 'Veggie dogs', 'Salads'],
+      glutenFree: ['GF options available'],
+      kidsFriendly: ['Chick-fil-A', 'Pizza', 'Ice cream'],
+      alcohol: {
+        beer: ['Sweetwater', 'Terrapin', 'Monday Night Brewing', 'Budweiser'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Sweetwater', 'Terrapin', 'Monday Night', 'SweetWater']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Green Lot', distance: '5 min walk', price: '$30', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Red Lot', distance: '8 min walk', price: '$20', shadedSpots: false, covered: false },
+        { name: 'Blue Lot', distance: '10 min walk', price: '$15', shadedSpots: true, covered: false, tip: 'Some tree coverage' }
+      ],
+      alternativeTransport: {
+        publicTransit: ['CobbLinc bus service', 'Limited MARTA connection'],
+        rideShare: 'Designated pickup/dropoff areas',
+        bicycle: 'Bike racks available'
+      }
+    },
+    gates: [
+      { name: 'Home Plate Gate', location: 'Behind home plate', bestFor: ['Field Level', 'Club Level'], openTime: '2 hours before first pitch' },
+      { name: 'Right Field Gate', location: 'Right field', bestFor: ['Pavilion', 'Chophouse'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Braves Clubhouse Store - Home Plate Gate', exclusive: ['Championship gear', 'Hank Aaron memorabilia'] }
+      ],
+      firstAid: ['Medical stations on each level'],
+      babyChanging: ['Family restrooms throughout'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'TruistPark_WiFi' },
+      kidZones: [
+        { name: 'Coca-Cola Corner', location: 'Right field', activities: ['Playground', 'Games', 'Mascot appearances'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels ADA compliant'],
+        entrance: 'All gates accessible',
+        elevators: ['Throughout stadium']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'ADA spots in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Visit The Battery', description: 'Entertainment district before/after games', category: 'experience' },
+        { title: 'Try Waffle House items', description: 'Local favorite available at stadium', category: 'food' },
+        { title: 'Monument Garden', description: 'See Braves history display', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: 'Braves BP 2.5 hours before',
+        firstPitch: '7:20 PM weekdays, 1:20 PM Sundays',
+        rushHours: ['6:00-7:00 PM for weeknight games']
+      },
+      security: {
+        allowedBags: 'Clear bags only',
+        prohibitedItems: ['Outside food/drinks', 'Backpacks', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'The Battery Atlanta',
+      description: 'Modern mixed-use development with restaurants, shops, and entertainment',
+      beforeGame: ['Antico Pizza', 'The Battery restaurants', 'Live music venues'],
+      afterGame: ['The Battery nightlife', 'TopGolf', 'Various restaurants'],
+      radius: 'Adjacent to stadium'
+    },
+    transportation: {
+      address: '755 Battery Ave SE, Atlanta, GA 30339',
+      publicTransit: {
+        bus: [{ routes: ['CobbLinc routes'], stops: ['The Battery'] }]
+      },
+      driving: {
+        majorRoutes: ['I-75', 'I-285', 'US-41'],
+        typicalTraffic: 'Heavy before/after games',
+        bestApproach: 'I-75 to Cumberland Boulevard'
+      },
+      rideShare: {
+        pickupZone: 'The Battery Atlanta',
+        dropoffZone: 'Circle 75 Parkway',
+        surgePricing: '2-4x after games'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2017, event: 'Stadium opens as SunTrust Park' },
+        { year: 2019, event: 'Renamed Truist Park' },
+        { year: 2021, event: 'Braves win World Series' }
+      ],
+      notableGames: [
+        { date: '2021-11-02', description: 'World Series Game 6 - Braves clinch championship' }
+      ],
+      traditions: [
+        { name: 'Tomahawk Chop', description: 'Iconic Braves fan tradition' },
+        { name: 'War Chant', description: 'Accompanying chant with tomahawk chop' }
+      ],
+      retired: [
+        { number: '3', player: 'Dale Murphy', year: 1994 },
+        { number: '6', player: 'Bobby Cox', year: 2010 },
+        { number: '10', player: 'Chipper Jones', year: 2013 },
+        { number: '21', player: 'Warren Spahn', year: 1965 },
+        { number: '35', player: 'Phil Niekro', year: 1984 },
+        { number: '41', player: 'Eddie Mathews', year: 1969 },
+        { number: '42', player: 'Jackie Robinson', year: 1997 },
+        { number: '44', player: 'Hank Aaron', year: 1977 }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Modern ballpark with traditional Southern hospitality',
+      bestExperiences: [
+        'The Battery Atlanta entertainment',
+        'Monument Garden history',
+        'Tomahawk Chop participation',
+        'Local food specialties'
+      ],
+      traditions: ['Tomahawk Chop', 'War Chant', '"Take Me Out to the Ballgame" with Braves twist'],
+      music: 'Mix of classic rock and Southern favorites',
+      mascot: { name: 'Blooper', description: 'Fuzzy blue mascot' },
+      fanGroups: []
+    },
+    proTips: {
+      insiderTips: [
+        'The Battery has free entertainment',
+        'Monument Garden is worth visiting',
+        'Club level has best amenities',
+        'Parking fills up early for big games'
+      ],
+      avoidThese: [
+        'I-75 traffic after games',
+        'Right field seats for day games',
+        'Expensive Battery parking'
+      ],
+      hiddenGems: [
+        'Monument Garden displays',
+        'Xfinity Rooftop views',
+        'The Battery free concerts'
+      ],
+      photoSpots: [
+        'Monument Garden with statues',
+        'Home plate gate entrance',
+        'The Battery Atlanta plaza'
+      ],
+      bestValue: [
+        'Upper deck sections',
+        'The Battery free activities',
+        'Happy hour at Battery restaurants'
+      ]
+    }
+  },
+
+  'brewers': {
+    id: 'brewers',
+    name: 'American Family Field',
+    team: 'Milwaukee Brewers',
+    opened: 2001,
+    capacity: 41900,
+    overview: {
+      description: 'American Family Field (formerly Miller Park) features a retractable roof and fan-shaped design. Known for its tailgating culture, bratwurst races, and the famous Bernie Brewer slide, it embodies Milwaukee\'s love for baseball and beer.',
+      highlights: [
+        'Retractable roof with fan-shaped design',
+        'Famous Bernie Brewer slide and chalet',
+        'Legendary tailgating culture',
+        'Bratwurst racing tradition'
+      ],
+      uniqueFeatures: [
+        'Bernie Brewer\'s Dugout with slide',
+        'Retractable roof opens like a fan in 10 minutes',
+        'Miller Park (now American Family Field) brewery legacy',
+        'Extensive tailgating lots'
+      ],
+      renovations: [
+        { year: 2021, description: 'Renamed from Miller Park to American Family Field' }
+      ],
+      previousNames: ['Miller Park (2001-2020)']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Club Level sections', 'Terrace Level 400s'],
+        afternoon: ['Third base side', 'Sections 220-240', 'Club Level'],
+        evening: ['Most sections shaded', 'Roof often closed']
+      },
+      coveredSeating: ['All seats when roof is closed', 'Club Level', 'Terrace Level overhang'],
+      shadeTips: [
+        'Roof closed for most games due to weather',
+        'Club level has permanent coverage',
+        'Third base side gets shade first',
+        'Upper deck provides shade for lower sections'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest Services locations'],
+        shadedConcourses: ['All concourses climate controlled when roof closed'],
+        indoorAreas: ['Club Level', 'Team Store', 'Bernie Brewer\'s Dugout']
+      },
+      worstSunExposure: ['Right field sections when roof open', 'Field Level 100-120'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 55, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cool spring, roof often closed', shadeTip: 'Climate controlled comfort' },
+        { month: 'May', avgTemp: 66, avgHumidity: 60, rainChance: 20, typicalConditions: 'Mild weather', shadeTip: 'Roof may open for nice days' },
+        { month: 'June', avgTemp: 76, avgHumidity: 65, rainChance: 15, typicalConditions: 'Pleasant summer', shadeTip: 'Third base side for afternoon' },
+        { month: 'July', avgTemp: 80, avgHumidity: 65, rainChance: 12, typicalConditions: 'Warm summer', shadeTip: 'Upper level for shade' },
+        { month: 'August', avgTemp: 79, avgHumidity: 68, rainChance: 12, typicalConditions: 'Peak summer warmth', shadeTip: 'Club level recommended' },
+        { month: 'September', avgTemp: 71, avgHumidity: 65, rainChance: 15, typicalConditions: 'Comfortable fall weather', shadeTip: 'Less shade needed' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Champions Club', perks: ['All-inclusive dining', 'Premium bar', 'Climate controlled'], access: 'Behind home plate' },
+          { name: 'Miller Lite Landing', perks: ['Brewery-themed club', 'Craft beer selection'], access: 'Right field' }
+        ],
+        suites: {
+          levels: ['Club Level', 'Terrace Level'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Bernie Brewer\'s Dugout', description: 'Party deck with slide replica', capacity: 80 },
+          { name: 'Friday\'s Front Row', description: 'Restaurant seating with field view' }
+        ]
+      },
+      budgetOptions: ['Terrace Level 400s', 'Bleacher sections', 'SRO tickets'],
+      familySections: ['Family sections throughout'],
+      standingRoom: ['Bernie Brewer\'s Dugout', 'Various SRO locations'],
+      partyAreas: [
+        { name: 'Bernie Brewer\'s Dugout', capacity: '80', amenities: ['Slide replica', 'Party atmosphere', 'Group seating'] }
+      ],
+      tips: [
+        { section: 'Champions Club', tip: 'Premium all-inclusive experience', category: 'experience' },
+        { section: 'Terrace Level', tip: 'Great value with roof coverage', category: 'value' },
+        { section: 'Bernie\'s Dugout', tip: 'Fun party atmosphere', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Bratwurst (multiple varieties)', 'Cheese curds', 'Lakefront Brewery beer', 'Frozen custard'],
+      local: ['Usinger\'s sausages', 'Sprecher root beer', 'Kopp\'s frozen custard'],
+      healthy: ['Salads', 'Veggie bratwurst'],
+      vegetarian: ['Veggie brats', 'Beyond burgers'],
+      glutenFree: ['GF bratwurst buns available'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Frozen custard'],
+      alcohol: {
+        beer: ['Miller Lite', 'Lakefront', 'New Glarus', 'Sprecher'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Lakefront', 'New Glarus', 'Sprecher', 'Milwaukee Brewing Co.']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Preferred Parking', distance: 'Adjacent', price: '$25', shadedSpots: false, covered: false, tip: 'Closest to gates' },
+        { name: 'General Parking', distance: '5-10 min walk', price: '$12', shadedSpots: false, covered: false },
+        { name: 'Tailgating Lots', distance: '10-15 min walk', price: '$12', shadedSpots: false, covered: false, tip: 'Best for tailgating' }
+      ],
+      alternativeTransport: {
+        publicTransit: ['MCTS bus routes', 'Brewers Line shuttle'],
+        rideShare: 'Designated pickup areas',
+        bicycle: 'Bike racks available'
+      }
+    },
+    gates: [
+      { name: 'Home Plate Gate', location: 'Behind home plate', bestFor: ['Field Level', 'Club Level'], openTime: '2 hours before first pitch' },
+      { name: 'Outfield Gates', location: 'Left/Right field', bestFor: ['Bleachers', 'Terrace Level'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Brewers Team Store - Home Plate Gate', exclusive: ['Retro jerseys', 'Bernie Brewer items'] }
+      ],
+      firstAid: ['Medical stations on each level'],
+      babyChanging: ['Family restrooms throughout'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'AmericanFamilyField_WiFi' },
+      kidZones: [
+        { name: 'Bernie\'s Dugout Kids Area', location: 'Behind home plate', activities: ['Playground', 'Bernie Brewer meet & greet'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels wheelchair accessible'],
+        entrance: 'All gates accessible',
+        elevators: ['Throughout stadium']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'Available in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Tailgate Early', description: 'Experience Milwaukee\'s tailgating culture', category: 'experience' },
+        { title: 'Watch Sausage Race', description: 'Famous between-inning entertainment', category: 'experience' },
+        { title: 'Try Local Bratwurst', description: 'Wisconsin specialty with many varieties', category: 'food' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: 'Brewers BP 2.5 hours before',
+        firstPitch: '7:10 PM weekdays, 1:10 PM Sundays',
+        rushHours: ['6:00-7:00 PM for weeknight games']
+      },
+      security: {
+        allowedBags: 'Small bags allowed',
+        prohibitedItems: ['Outside alcohol', 'Glass bottles', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Miller Valley',
+      description: 'Industrial area with limited walkable options, known for tailgating',
+      beforeGame: ['Tailgating in stadium lots', 'Nearby sports bars'],
+      afterGame: ['Water Street district (15 min drive)', 'Downtown Milwaukee'],
+      radius: 'Most dining requires driving'
+    },
+    transportation: {
+      address: '1 Brewers Way, Milwaukee, WI 53214',
+      publicTransit: {
+        bus: [{ routes: ['MCTS routes', 'Brewers Line'], stops: ['Stadium'] }]
+      },
+      driving: {
+        majorRoutes: ['I-94', 'US-41', 'I-894'],
+        typicalTraffic: 'Moderate, heavier after games',
+        bestApproach: 'I-94 to Stadium Freeway'
+      },
+      rideShare: {
+        pickupZone: 'Lot 1 designated area',
+        dropoffZone: 'Main entrance',
+        surgePricing: '2-3x after games'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2001, event: 'Miller Park opens' },
+        { year: 2021, event: 'Renamed American Family Field' }
+      ],
+      notableGames: [
+        { date: '2011-10-16', description: 'NLCS Game 6 victory' }
+      ],
+      traditions: [
+        { name: 'Bratwurst Race', description: 'Famous sausage mascot race' },
+        { name: 'Bernie Brewer', description: 'Mascot slides down chalet' }
+      ],
+      retired: [
+        { number: '1', player: 'Bud Selig', year: 2016 },
+        { number: '4', player: 'Paul Molitor', year: 1999 },
+        { number: '19', player: 'Robin Yount', year: 1994 },
+        { number: '34', player: 'Rollie Fingers', year: 1992 },
+        { number: '42', player: 'Jackie Robinson', year: 1997 },
+        { number: '44', player: 'Hank Aaron', year: 1976 }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Friendly Midwestern crowd with strong tailgating culture',
+      bestExperiences: [
+        'Tailgating before games',
+        'Bratwurst races',
+        'Bernie Brewer slide celebrations',
+        'Local beer and food'
+      ],
+      traditions: ['Bratwurst races', 'Bernie Brewer slide', 'Roll out the Barrel'],
+      music: 'Classic rock and polka influences',
+      mascot: { name: 'Bernie Brewer', description: 'German-themed mascot with famous slide' },
+      fanGroups: []
+    },
+    proTips: {
+      insiderTips: [
+        'Arrive early for tailgating experience',
+        'Try different bratwurst varieties',
+        'Roof status affects game experience',
+        'Parking lots have great pre-game atmosphere'
+      ],
+      avoidThese: [
+        'Stadium Freeway after games',
+        'Missing the sausage races',
+        'Expensive concessions without trying local specialties'
+      ],
+      hiddenGems: [
+        'Bernie Brewer\'s Dugout party deck',
+        'Local brewery selections',
+        'Tailgating lot friendships'
+      ],
+      photoSpots: [
+        'Bernie Brewer\'s chalet and slide',
+        'Retractable roof mechanism',
+        'Tailgating setup in lots'
+      ],
+      bestValue: [
+        'Terrace Level seats',
+        'Bringing tailgating food/drinks to lot',
+        'Local bratwurst varieties'
+      ]
+    }
+  }
 };
