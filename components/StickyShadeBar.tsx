@@ -3,10 +3,20 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import styles from './StickyShadeBar.module.css';
+import { MLBGame, mlbApi } from '../src/services/mlbApi';
+import { format } from 'date-fns';
+import { formatGameTimeInStadiumTZ } from '../src/utils/dateTimeUtils';
+import { MLB_STADIUMS } from '../src/data/stadiums';
 
 interface StickyShadeBarProps {
   stadiumName: string;
   stadiumId: string;
+}
+
+interface GameOption {
+  value: string;
+  label: string;
+  game: MLBGame;
 }
 
 export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBarProps) {
@@ -14,54 +24,95 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
   const pathname = usePathname();
   const searchParams = useSearchParams();
   
-  // Initialize from URL params or defaults
-  const [date, setDate] = useState(() => {
-    const paramDate = searchParams.get('date');
-    if (paramDate) return paramDate;
-    
-    const today = new Date();
-    return today.toISOString().split('T')[0];
-  });
-  
-  const [time, setTime] = useState(() => {
-    const paramTime = searchParams.get('time');
-    if (paramTime) return paramTime;
-    
-    // Default to 1:00 PM
-    return '13:00';
-  });
-  
+  const [games, setGames] = useState<MLBGame[]>([]);
+  const [selectedGame, setSelectedGame] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [section, setSection] = useState(() => {
     return searchParams.get('section') || '';
   });
+  
+  // Find the stadium data
+  const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
 
-  // Generate time options in 15-minute increments
-  const timeOptions = useCallback(() => {
-    const options = [];
-    for (let hour = 0; hour < 24; hour++) {
-      for (let minute = 0; minute < 60; minute += 15) {
-        const timeString = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`;
-        const displayTime = formatTimeDisplay(timeString);
-        options.push({ value: timeString, label: displayTime });
+  // Load games when component mounts
+  useEffect(() => {
+    const loadGames = async () => {
+      if (!stadium) {
+        setError('Stadium not found');
+        setLoading(false);
+        return;
       }
-    }
-    return options;
-  }, []);
-
-  // Format time for display (12-hour format)
-  const formatTimeDisplay = (timeString: string) => {
-    const [hour, minute] = timeString.split(':').map(Number);
-    const period = hour >= 12 ? 'PM' : 'AM';
-    const displayHour = hour === 0 ? 12 : hour > 12 ? hour - 12 : hour;
-    return `${displayHour}:${minute.toString().padStart(2, '0')} ${period}`;
-  };
+      
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const today = new Date();
+        const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days from now
+        
+        const allGames = await mlbApi.getSchedule(
+          today.toISOString().split('T')[0],
+          endDate.toISOString().split('T')[0]
+        );
+        
+        const homeGames = mlbApi.getHomeGamesForStadium(stadiumId, allGames);
+        setGames(homeGames);
+        
+        // If there's a gameId in URL params, select it
+        const gameId = searchParams.get('gameId');
+        if (gameId) {
+          setSelectedGame(gameId);
+        } else if (homeGames.length > 0) {
+          // Select first game by default
+          setSelectedGame(homeGames[0].gamePk.toString());
+        }
+      } catch (err) {
+        console.error('Error loading games:', err);
+        setError('Failed to load games');
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    loadGames();
+  }, [stadiumId, stadium, searchParams]);
+  
+  // Generate game options for dropdown
+  const gameOptions = useCallback((): GameOption[] => {
+    return games.map(game => {
+      const gameDate = new Date(game.gameDate);
+      const opponent = game.teams.away.team.name;
+      const formattedDate = format(gameDate, 'MMM d');
+      const formattedTime = stadium ? formatGameTimeInStadiumTZ(gameDate, stadium.timezone) : 
+                           format(gameDate, 'h:mm a');
+      
+      return {
+        value: game.gamePk.toString(),
+        label: `vs ${opponent} - ${formattedDate} at ${formattedTime}`,
+        game
+      };
+    });
+  }, [games, stadium]);
 
   // Handle form submission
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     
+    if (!selectedGame) return;
+    
+    // Find the selected game
+    const game = games.find(g => g.gamePk.toString() === selectedGame);
+    if (!game) return;
+    
+    // Extract date and time from game
+    const gameDate = new Date(game.gameDate);
+    const date = format(gameDate, 'yyyy-MM-dd');
+    const time = format(gameDate, 'HH:mm');
+    
     // Build query string
     const params = new URLSearchParams();
+    params.set('gameId', selectedGame);
     params.set('date', date);
     params.set('time', time);
     if (section) {
@@ -73,9 +124,9 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
     
     // Trigger shade calculation event
     window.dispatchEvent(new CustomEvent('calculateShade', {
-      detail: { date, time, section, stadiumId }
+      detail: { date, time, section, stadiumId, gameId: selectedGame }
     }));
-  }, [date, time, section, pathname, router, stadiumId]);
+  }, [selectedGame, games, section, pathname, router, stadiumId]);
 
   // Handle keyboard shortcuts
   useEffect(() => {
@@ -99,35 +150,52 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
         <div className={styles.stadiumName}>{stadiumName}</div>
         
         <div className={styles.inputs}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="shade-date" className={styles.srOnly}>Date</label>
-            <input
-              type="date"
-              id="shade-date"
-              className={styles.input}
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              aria-label="Select date for shade calculation"
-              required
-            />
-          </div>
-          
-          <div className={styles.inputGroup}>
-            <label htmlFor="shade-time" className={styles.srOnly}>Time</label>
-            <select
-              id="shade-time"
-              className={styles.input}
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              aria-label="Select time for shade calculation"
-              required
-            >
-              {timeOptions().map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
+          <div className={`${styles.inputGroup} ${styles.gameSelector}`}>
+            <label htmlFor="shade-game" className={styles.srOnly}>Select Game</label>
+            {loading ? (
+              <select 
+                id="shade-game"
+                className={styles.input}
+                disabled
+                aria-label="Loading games..."
+              >
+                <option>Loading games...</option>
+              </select>
+            ) : error ? (
+              <select 
+                id="shade-game"
+                className={styles.input}
+                disabled
+                aria-label="Error loading games"
+              >
+                <option>{error}</option>
+              </select>
+            ) : games.length === 0 ? (
+              <select 
+                id="shade-game"
+                className={styles.input}
+                disabled
+                aria-label="No games scheduled"
+              >
+                <option>No games scheduled</option>
+              </select>
+            ) : (
+              <select
+                id="shade-game"
+                className={styles.input}
+                value={selectedGame}
+                onChange={(e) => setSelectedGame(e.target.value)}
+                aria-label="Select game for shade calculation"
+                required
+              >
+                <option value="">Select a game...</option>
+                {gameOptions().map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
           
           <div className={styles.inputGroup}>
@@ -147,7 +215,8 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
         <button 
           type="submit" 
           className={styles.submitButton}
-          aria-label="Calculate shade for selected date and time"
+          disabled={!selectedGame || loading}
+          aria-label="Calculate shade for selected game"
         >
           Check Shade
         </button>
