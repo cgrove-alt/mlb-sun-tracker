@@ -6,6 +6,116 @@
 .guide-section * {
   box-sizing: border-box;
 }
+
+/* Shade Result Banner Styles */
+.shade-result-banner {
+  background: linear-gradient(135deg, #E0F2FE, #FEF3C7);
+  padding: 24px 0;
+  margin-bottom: 32px;
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.shade-result-banner .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.shade-result-banner .calculating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  color: #1F2937;
+}
+
+.shade-result-banner .spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #2563EB;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shade-result-banner .shade-result {
+  position: relative;
+  padding: 16px;
+}
+
+.shade-result-banner .shade-result h2 {
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  color: #1F2937;
+}
+
+.shade-result-banner .result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.shade-result-banner .result-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shade-result-banner .result-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.shade-result-banner .result-card p {
+  margin: 4px 0;
+  color: #6B7280;
+}
+
+.shade-result-banner .close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6B7280;
+  transition: all 0.2s;
+}
+
+.shade-result-banner .close-button:hover {
+  background: #F9FAFB;
+  color: #1F2937;
+}
 .stadium-guide-wrapper {
   max-width: 90rem;
   margin: 0 auto;

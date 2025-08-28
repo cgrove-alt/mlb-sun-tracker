@@ -1,7 +1,10 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { Stadium } from '../../../src/data/stadiums';
 import { StadiumSection } from '../../../src/data/stadiumSections';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
+import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -46,6 +49,52 @@ function getSeasonalPattern(month: number) {
 }
 
 export default function StadiumPageSSR({ stadium, sections, amenities, guide }: StadiumPageSSRProps) {
+  const [shadeResult, setShadeResult] = useState<any>(null);
+  const [isCalculating, setIsCalculating] = useState(false);
+
+  // Setup event listeners for shade calculation
+  useEffect(() => {
+    // Setup shade calculation listener
+    const cleanup = setupShadeCalculationListener();
+
+    // Listen for shade calculation results
+    const handleShadeCalculated = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setShadeResult(customEvent.detail);
+      setIsCalculating(false);
+      
+      // Scroll to shade results (if you have a results section)
+      const resultsSection = document.getElementById('shade-results');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+
+    const handleShadeCalculationStart = () => {
+      setIsCalculating(true);
+      setShadeResult(null);
+    };
+
+    const handleShadeCalculationError = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      console.error('Shade calculation error:', customEvent.detail);
+      setIsCalculating(false);
+    };
+
+    // Add event listeners
+    window.addEventListener('calculateShade', handleShadeCalculationStart);
+    window.addEventListener('shadeCalculated', handleShadeCalculated);
+    window.addEventListener('shadeCalculationError', handleShadeCalculationError);
+
+    // Cleanup
+    return () => {
+      cleanup();
+      window.removeEventListener('calculateShade', handleShadeCalculationStart);
+      window.removeEventListener('shadeCalculated', handleShadeCalculated);
+      window.removeEventListener('shadeCalculationError', handleShadeCalculationError);
+    };
+  }, []);
+
   // Pre-calculate shade data for common scenarios
   const months = [
     { num: 3, name: 'April', pattern: 'Early season - moderate sun exposure' },
@@ -78,6 +127,52 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
   return (
     <div className={styles.stadiumSsrPage}>
+      {/* Shade Calculation Result Banner */}
+      {(isCalculating || shadeResult) && (
+        <section id="shade-results" className={styles.shadeResultBanner}>
+          <div className={styles.container}>
+            {isCalculating ? (
+              <div className={styles.calculating}>
+                <div className={styles.spinner}></div>
+                <span>Calculating shade for your selected game...</span>
+              </div>
+            ) : shadeResult ? (
+              <div className={styles.shadeResult}>
+                <h2>🌤️ Shade Calculation Results</h2>
+                <div className={styles.resultGrid}>
+                  <div className={styles.resultCard}>
+                    <h3>Sun Position</h3>
+                    <p>Azimuth: {shadeResult.sunPosition?.azimuth?.toFixed(1)}°</p>
+                    <p>Altitude: {shadeResult.sunPosition?.altitude?.toFixed(1)}°</p>
+                  </div>
+                  {shadeResult.specificSection && (
+                    <div className={styles.resultCard}>
+                      <h3>Your Section</h3>
+                      <p>{shadeResult.specificSection.section.name}</p>
+                      <p>Shade: {shadeResult.specificSection.shadePercentage}%</p>
+                    </div>
+                  )}
+                  {shadeResult.weather && (
+                    <div className={styles.resultCard}>
+                      <h3>Weather</h3>
+                      <p>Temperature: {shadeResult.weather.temperature}°F</p>
+                      <p>Conditions: {shadeResult.weather.conditions}</p>
+                    </div>
+                  )}
+                </div>
+                <button 
+                  className={styles.closeButton}
+                  onClick={() => setShadeResult(null)}
+                  aria-label="Close shade results"
+                >
+                  ✕
+                </button>
+              </div>
+            ) : null}
+          </div>
+        </section>
+      )}
+
       {/* Hero Section with Stadium Info */}
       <section className={styles.stadiumHero}>
         <div className={styles.container}>

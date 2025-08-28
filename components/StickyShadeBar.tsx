@@ -51,21 +51,23 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
         const today = new Date();
         const endDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // 30 days from now
         
-        const allGames = await mlbApi.getSchedule(
-          today.toISOString().split('T')[0],
-          endDate.toISOString().split('T')[0]
-        );
+        // Use API route to avoid CORS issues
+        const response = await fetch(`/api/mlb/schedule?stadiumId=${stadiumId}&startDate=${today.toISOString().split('T')[0]}&endDate=${endDate.toISOString().split('T')[0]}`);
         
-        const homeGames = mlbApi.getHomeGamesForStadium(stadiumId, allGames);
-        setGames(homeGames);
+        if (!response.ok) {
+          throw new Error('Failed to fetch games');
+        }
+        
+        const data = await response.json();
+        setGames(data.games || []);
         
         // If there's a gameId in URL params, select it
         const gameId = searchParams.get('gameId');
         if (gameId) {
           setSelectedGame(gameId);
-        } else if (homeGames.length > 0) {
+        } else if (data.games && data.games.length > 0) {
           // Select first game by default
-          setSelectedGame(homeGames[0].gamePk.toString());
+          setSelectedGame(data.games[0].gamePk.toString());
         }
       } catch (err) {
         console.error('Error loading games:', err);
