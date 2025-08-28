@@ -21,10 +21,10 @@
   }
 }
 
-/* Desktop: Top positioning */
+/* Desktop: Top positioning - below the main nav */
 @media (min-width: 769px) {
   .stickyBar {
-    top: 0;
+    top: 60px; /* Position below the main navigation bar */
     border-bottom: 1px solid var(--color-ui-border, #E5E7EB);
     border-top: none;
     padding: 12px 16px;
