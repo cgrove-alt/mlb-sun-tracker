@@ -81,9 +81,10 @@ export class SunCalculator {
     };
   }
 
-  calculateSunPosition(date: string, time: string): SunPosition {
-    const dateTime = new Date(`${date}T${time}`);
-    const useNREL = process.env.REACT_APP_USE_NREL_SPA !== 'false'; // Default to true
+  calculateSunPosition(date: string | Date, time?: string): SunPosition {
+    // Accept either a Date object or date/time strings
+    const dateTime = date instanceof Date ? date : new Date(`${date}T${time}`);
+    const useNREL = false; // Force SunCalc for now due to timezone issues with NREL
     
     let altitude: number;
     let azimuth: number;
@@ -91,7 +92,19 @@ export class SunCalculator {
     if (useNREL) {
       try {
         // Use NREL Solar Position Algorithm
-        const timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
+        // IMPORTANT: Use the stadium's timezone, not the local machine's timezone
+        // For now, use PST/PDT offset (-7 or -8 hours) for west coast stadiums
+        // This should ideally use the stadium.timezone field
+        let timeZoneOffset = -dateTime.getTimezoneOffset() / 60;
+        
+        // Override for west coast stadiums (temporary fix)
+        // @ts-ignore - stadium.timezone exists but type def is missing
+        if (this.stadium.timezone === 'America/Los_Angeles') {
+          // Check if date is in PDT (March-November) or PST
+          const month = dateTime.getMonth();
+          timeZoneOffset = (month >= 2 && month <= 10) ? -7 : -8;
+        }
+        
         const nrelResult = computeSunPosition(
           dateTime,
           this.stadium.latitude,
@@ -182,26 +195,53 @@ export class SunCalculator {
   }
 
   private calculateSectionShadow(section: Section, sunAltitude: number, sunAzimuth: number): ShadowData {
-    const adjustedAzimuth = (sunAzimuth - this.stadiumGeometry.orientation + 360) % 360;
+    // Don't adjust azimuth - sun and section angles are already in absolute compass coordinates
     
-    const roofShadow = this.calculateRoofShadow(section, sunAltitude, adjustedAzimuth);
+    // Basic sun exposure logic: sections on same side as sun get exposure
+    const sectionAngle = this.getSectionAngle(section);
+    let angleDiff = Math.abs(sunAzimuth - sectionAngle);
+    if (angleDiff > 180) {
+      angleDiff = 360 - angleDiff;
+    }
+    
+    // If section is not on same side as sun, it's in shadow
+    let baseSunExposure = 100;
+    if (angleDiff > 90) {
+      baseSunExposure = 0; // Section on opposite side from sun
+    } else {
+      // Reduce exposure based on angle (direct sun = 100%, glancing = less)
+      baseSunExposure = 100 * Math.cos((angleDiff / 90) * Math.PI / 2);
+    }
+    
+    // Apply altitude factor (low sun = less exposure)
+    if (sunAltitude < 0) {
+      baseSunExposure = 0;
+    } else if (sunAltitude < 30) {
+      baseSunExposure *= (sunAltitude / 30);
+    }
+    
+    // Calculate shadow coverage from structures
+    const roofShadow = this.calculateRoofShadow(section, sunAltitude, sunAzimuth);
     const upperDeckShadow = section.level === 'field' || section.level === 'lower' 
-      ? this.calculateUpperDeckShadow(section, sunAltitude, adjustedAzimuth)
+      ? this.calculateUpperDeckShadow(section, sunAltitude, sunAzimuth)
       : 0;
-    const bowlShadow = this.calculateBowlShadow(section, sunAltitude, adjustedAzimuth);
+    const bowlShadow = this.calculateBowlShadow(section, sunAltitude, sunAzimuth);
     
     const totalCoverage = Math.min(100, roofShadow + upperDeckShadow + bowlShadow);
+    
+    // Final sun exposure is base exposure minus shadow coverage
+    const finalSunExposure = Math.max(0, baseSunExposure * (1 - totalCoverage / 100));
     
     return {
       sectionId: section.id,
       coverage: Math.round(totalCoverage),
-      inShadow: totalCoverage > 50,
+      inShadow: finalSunExposure < 50,
       shadowSources: {
         roof: roofShadow,
         upperDeck: upperDeckShadow,
         bowl: bowlShadow
       },
-      sunExposure: Math.max(0, 100 - totalCoverage)
+      sunExposure: Math.round(finalSunExposure)
     };
   }
 
@@ -217,35 +257,16 @@ export class SunCalculator {
       return 100; // Covered sections provide complete protection from direct sun
     }
     
-    // For retractable roofs when closed
-    if (this.stadium.roofType === 'retractable') {
-      // Calculate shadow based on roof overhang
-      const roofHeight = this.stadiumGeometry.roofHeight;
-      const shadowLength = roofHeight / Math.tan(sunAltitude * Math.PI / 180);
-      const shadowDirection = (sunAzimuth + 180) % 360;
+    // For retractable roofs, calculate overhang shadow
+    if (this.stadium.roofType === 'retractable' && this.stadiumGeometry.roofOverhang) {
+      // Simple overhang shadow calculation
+      const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
+      const overhangDepth = this.stadiumGeometry.roofOverhang;
       
-      const sectionAngle = this.getSectionAngle(section);
-      const angleDiff = Math.abs(((shadowDirection - sectionAngle + 180 + 360) % 360) - 180);
-      
-      // If sun is coming from behind the section, no shadow
-      if (angleDiff > 90) {
-        return 0;
+      if (shadowLength > 0 && shadowLength < overhangDepth * 2) {
+        // Overhang provides some shade
+        return Math.min(50, (shadowLength / overhangDepth) * 30);
       }
-      
-      // For covered sections, assume a typical overhang depth
-      const overhangDepth = section.covered ? 30 : this.stadiumGeometry.roofOverhang;
-      const effectiveShadow = Math.min(shadowLength, overhangDepth);
-      
-      // Calculate coverage based on shadow depth vs section depth
-      const sectionDepth = section.depth || 50;
-      let coverage = (effectiveShadow / sectionDepth) * 100;
-      
-      // For low sun angles, reduce effectiveness of overhang
-      if (sunAltitude < 30) {
-        coverage *= (sunAltitude / 30); // Linear reduction for low sun
-      }
-      
-      return Math.min(100, coverage);
     }
     
     return 0;
@@ -269,20 +290,22 @@ export class SunCalculator {
   }
 
   private calculateBowlShadow(section: Section, sunAltitude: number, sunAzimuth: number): number {
+    // Bowl shadow only matters for very low sun angles
     if (sunAltitude > 30) return 0;
     
-    const sectionAngle = this.getSectionAngle(section);
-    const angleDiff = Math.abs(sunAzimuth - sectionAngle);
-    
-    if (angleDiff > 90 && angleDiff < 270) {
-      const shadowFactor = (30 - sunAltitude) / 30;
-      return shadowFactor * 30;
-    }
-    
-    return 0;
+    // Low sun creates some shadow from the stadium bowl structure
+    const shadowFactor = (30 - sunAltitude) / 30;
+    return shadowFactor * 20; // Max 20% shadow from bowl at very low sun
   }
 
   private getSectionAngle(section: Section): number {
+    // section.angle already contains the absolute compass angle (baseAngle from stadiumSections data)
+    // Don't add stadium orientation - it's already included in the baseAngle
+    if (section.angle !== undefined) {
+      return section.angle;
+    }
+    
+    // Fallback for sections without explicit angle - use side-based defaults
     const baseAngle: Record<string, number> = {
       'home': 0,
       'first': 90,
@@ -291,7 +314,8 @@ export class SunCalculator {
     };
     
     const side = section.side || 'home';
-    return (baseAngle[side] || section.angle || 0) + this.stadiumGeometry.orientation;
+    // Only add orientation if using default angles (which are relative to stadium)
+    return (baseAngle[side] || 0) + this.stadiumGeometry.orientation;
   }
 
   projectShadow(origin: { x: number; y: number }, azimuth: number, length: number): { x: number; y: number } {
@@ -318,10 +342,8 @@ export class SunCalculator {
     
     for (let i = 0; i < intervals; i++) {
       const checkTime = new Date(startDate.getTime() + i * timeStep * 60000);
-      const sunPos = this.calculateSunPosition(
-        checkTime.toISOString().split('T')[0],
-        checkTime.toTimeString().split(' ')[0]
-      );
+      // Pass the Date object directly - it has the correct UTC time
+      const sunPos = this.calculateSunPosition(checkTime);
       
       if (sunPos.altitude > 0) {
         const shadows = this.calculateSectionShadow(section, sunPos.altitude, sunPos.azimuth);
