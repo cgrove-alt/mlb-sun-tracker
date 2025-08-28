@@ -5,6 +5,7 @@ import { Stadium } from '../../../src/data/stadiums';
 import { StadiumSection } from '../../../src/data/stadiumSections';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
+import { SectionList } from '../../../src/components/SectionList';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -138,35 +139,28 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
               </div>
             ) : shadeResult ? (
               <div className={styles.shadeResult}>
-                <h2>🌤️ Shade Calculation Results</h2>
-                <div className={styles.resultGrid}>
-                  <div className={styles.resultCard}>
-                    <h3>Sun Position</h3>
-                    <p>Azimuth: {shadeResult.sunPosition?.azimuth?.toFixed(1)}°</p>
-                    <p>Altitude: {shadeResult.sunPosition?.altitude?.toFixed(1)}°</p>
-                  </div>
-                  {shadeResult.specificSection && (
-                    <div className={styles.resultCard}>
-                      <h3>Your Section</h3>
-                      <p>{shadeResult.specificSection.section.name}</p>
-                      <p>Shade: {shadeResult.specificSection.shadePercentage}%</p>
-                    </div>
-                  )}
+                <div className={styles.resultHeader}>
+                  <h2>🌤️ Shade Results for {shadeResult.date} at {shadeResult.time}</h2>
                   {shadeResult.weather && (
-                    <div className={styles.resultCard}>
-                      <h3>Weather</h3>
-                      <p>Temperature: {shadeResult.weather.temperature}°F</p>
-                      <p>Conditions: {shadeResult.weather.conditions?.[0]?.description || 'Unknown'}</p>
+                    <div className={styles.weatherInfo}>
+                      <span>{shadeResult.weather.temperature}°F</span>
+                      <span>{shadeResult.weather.conditions?.[0]?.description || 'Clear'}</span>
                     </div>
                   )}
+                  <button 
+                    className={styles.closeButton}
+                    onClick={() => setShadeResult(null)}
+                    aria-label="Close shade results"
+                  >
+                    ✕
+                  </button>
                 </div>
-                <button 
-                  className={styles.closeButton}
-                  onClick={() => setShadeResult(null)}
-                  aria-label="Close shade results"
-                >
-                  ✕
-                </button>
+                {shadeResult.sectionData && (
+                  <SectionList 
+                    sections={shadeResult.sectionData}
+                    loading={false}
+                  />
+                )}
               </div>
             ) : null}
           </div>

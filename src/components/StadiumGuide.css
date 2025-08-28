@@ -9,15 +9,17 @@
 
 /* Shade Result Banner Styles */
 .shade-result-banner {
-  background: linear-gradient(135deg, #E0F2FE, #FEF3C7);
-  padding: 16px 0;
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
   position: fixed;
   top: 120px; /* Below nav (60px) + sticky bar (60px) */
   left: 0;
   right: 0;
   width: 100%;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
   z-index: 100;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   animation: slideDown 0.3s ease-out;
 }
 
@@ -37,6 +39,7 @@
   .shade-result-banner {
     top: 60px; /* Just below mobile nav */
     bottom: auto;
+    max-height: calc(100vh - 60px);
   }
 }
 
@@ -72,13 +75,41 @@
 
 .shade-result-banner .shade-result {
   position: relative;
-  padding: 16px;
+  padding: 0;
 }
 
-.shade-result-banner .shade-result h2 {
-  margin: 0 0 16px 0;
-  font-size: 24px;
+.shade-result-banner .result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #E0F2FE, #FEF3C7);
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.shade-result-banner .result-header h2 {
+  margin: 0;
+  font-size: 20px;
   color: #1F2937;
+  flex: 1;
+}
+
+.shade-result-banner .weather-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-right: 16px;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.shade-result-banner .weather-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .shade-result-banner .result-grid {
@@ -108,14 +139,12 @@
 }
 
 .shade-result-banner .close-button {
-  position: absolute;
-  top: 16px;
-  right: 16px;
   background: white;
   border: 1px solid #E5E7EB;
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
