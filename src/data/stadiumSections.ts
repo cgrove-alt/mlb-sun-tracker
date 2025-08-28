@@ -5296,21 +5296,20 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
   
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  // For baseball stadiums, sections get sun when the sun is BEHIND them
-  // (i.e., the sun shines on the backs of people sitting in those sections)
-  // A section facing north (0°) gets sun when the sun is in the south (180°)
+  // CORRECTED LOGIC: Sections get sun when the sun is IN FRONT of them
+  // A section's baseAngle represents the direction the section FACES
+  // For example, a section at baseAngle 90° faces east and gets morning sun
+  // A section at baseAngle 270° faces west and gets afternoon/evening sun
   
-  // Calculate the opposite angle from the section (where sun needs to be to illuminate it)
   const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
-  const oppositeAngle = normalizeAngle(sectionCenter + 180);
   
-  // Calculate angle difference between sun and the opposite angle
-  let angleDiff = Math.abs(sunAngle - oppositeAngle);
+  // Calculate angle difference between sun position and section facing direction
+  let angleDiff = Math.abs(sunAngle - sectionCenter);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Section is in sun if the sun is roughly opposite to it (within ~90 degrees)
+  // Section is in sun if the sun is within ~90 degrees of where it faces
   // This accounts for the fact that sun can illuminate sections at an angle
   return angleDiff <= 90;
 }
@@ -5334,14 +5333,14 @@ export function getSectionSunExposure(section: StadiumSection, sunElevation: num
   const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  // Sun needs to be opposite to the section to illuminate it
-  const oppositeAngle = normalizeAngle(sectionCenter + 180);
-  let angleDiff = Math.abs(sunAngle - oppositeAngle);
+  // CORRECTED LOGIC: Sun illuminates sections it faces directly
+  // Calculate direct angle difference between sun and section facing
+  let angleDiff = Math.abs(sunAngle - sectionCenter);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Angle factor: 1.0 when sun is directly opposite to section, decreases as angle increases
+  // Angle factor: 1.0 when sun directly faces the section, decreases as angle increases
   const angleFactor = Math.max(0, (90 - angleDiff) / 90);
   
   // Level-based adjustments
