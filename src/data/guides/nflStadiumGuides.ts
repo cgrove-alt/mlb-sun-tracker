@@ -213,14 +213,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Legendary - one of the most passionate fanbases in sports',
-      traditions: ['Table breaking', 'Bills Mafia chants', 'Tailgating culture'],
-      specialEvents: ['Season opener celebration', 'Playoff atmosphere', 'Weather game experiences'],
-      tips: [
+      bestExperiences: ['Season opener celebration', 'Playoff atmosphere', 'Weather game experiences'],
+      traditions: ['Table breaking', 'Bills Mafia chants', 'Tailgating culture']
+    },
+
+    proTips: {
+      insiderTips: [
         'Embrace the tailgating culture',
         'Dress appropriately for weather',
         'Interact with Bills Mafia - they\'re welcoming',
         'Stay hydrated in summer, stay warm in winter'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -440,14 +447,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Relaxed tropical vibe with passionate fan segments',
-      traditions: ['T-D chant', 'Aqua and orange colors', 'Perfect season references'],
-      specialEvents: ['International games', 'College Orange Bowl', 'Concert events'],
-      tips: [
+      bestExperiences: ['International games', 'College Orange Bowl', 'Concert events'],
+      traditions: ['T-D chant', 'Aqua and orange colors', 'Perfect season references']
+    },
+
+    proTips: {
+      insiderTips: [
         'Embrace the Miami lifestyle',
         'Try the local cuisine',
         'Stay hydrated all game long',
         'Enjoy the innovative stadium features'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -662,14 +676,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Professional and intense, dynasty-level expectations',
-      traditions: ['Patriots fight song', 'Red, white, blue colors', 'Championship banners'],
-      specialEvents: ['Season opener ceremonies', 'Championship celebrations'],
-      tips: [
+      bestExperiences: ['Season opener ceremonies', 'Championship celebrations'],
+      traditions: ['Patriots fight song', 'Red, white, blue colors', 'Championship banners']
+    },
+
+    proTips: {
+      insiderTips: [
         'Respect the dynasty history',
         'Dress warmly for cold weather games',
         'Explore Patriot Place before/after',
         'Appreciate the football excellence'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -885,14 +906,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Passionate but often frustrated fanbase, big-city energy',
-      traditions: ['J-E-T-S chants', 'Green and white colors', 'New York attitude'],
-      specialEvents: ['Color Rush games', 'Divisional rivalry games'],
-      tips: [
+      bestExperiences: ['Color Rush games', 'Divisional rivalry games'],
+      traditions: ['J-E-T-S chants', 'Green and white colors', 'New York attitude']
+    },
+
+    proTips: {
+      insiderTips: [
         'Embrace the New York attitude',
         'Try the local NYC food',
         'Expect passionate but frustrated fans',
         'Enjoy the big-city game experience'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -1110,14 +1138,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Loud and passionate, intimidating for visiting teams',
-      traditions: ['Ravens chant', 'Purple everywhere', 'Defense-first mentality'],
-      specialEvents: ['Ravens Walk', 'Purple Friday celebrations', 'Ray Lewis statue ceremonies'],
-      tips: [
+      bestExperiences: ['Ravens Walk', 'Purple Friday celebrations', 'Ray Lewis statue ceremonies'],
+      traditions: ['Ravens chant', 'Purple everywhere', 'Defense-first mentality']
+    },
+
+    proTips: {
+      insiderTips: [
         'Wear purple to fit in',
         'Participate in Ravens chants',
         'Try the local Maryland seafood',
         'Explore downtown Baltimore before/after'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -1333,14 +1368,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Growing passionate fanbase, playoff excitement building',
-      traditions: ['Who Dey chants', 'Orange and black', 'Jungle theme'],
-      specialEvents: ['Playoff atmosphere', 'Rivalry games', 'Joe Burrow celebrations'],
-      tips: [
+      bestExperiences: ['Playoff atmosphere', 'Rivalry games', 'Joe Burrow celebrations'],
+      traditions: ['Who Dey chants', 'Orange and black', 'Jungle theme']
+    },
+
+    proTips: {
+      insiderTips: [
         'Learn the Who Dey chant',
         'Wear orange and black',
         'Try the local Cincinnati specialties',
         'Enjoy the riverfront setting'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   },
 
@@ -1425,7 +1467,7 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
       tips: [
         { section: 'Club Level', tip: 'Essential protection from lake weather', category: 'experience' },
         { section: 'Dawg Pound', tip: 'Ultimate Browns experience but dress warmly', category: 'experience' },
-        { section: 'West sideline upper', tip: 'Protection from worst lake winds', category: 'weather' },
+        { section: 'West sideline upper', tip: 'Protection from worst lake winds', category: 'shade' },
         { section: 'Lower bowl midfield', tip: 'Best views but most weather exposure', category: 'experience' }
       ]
     },
@@ -1554,14 +1596,21 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
     },
     fanExperience: {
       atmosphere: 'Incredibly loyal despite struggles, passionate and loud',
-      traditions: ['Dawg Pound barking', 'Here We Go Brownies', 'Tailgating at Muni Lot'],
-      specialEvents: ['Season openers', 'Steelers rivalry games', 'Playoff celebrations'],
-      tips: [
+      bestExperiences: ['Season openers', 'Steelers rivalry games', 'Playoff celebrations'],
+      traditions: ['Dawg Pound barking', 'Here We Go Brownies', 'Tailgating at Muni Lot']
+    },
+
+    proTips: {
+      insiderTips: [
         'Respect the loyalty of Browns fans',
         'Experience the Dawg Pound if possible',
         'Dress for harsh lake weather',
         'Tailgate at the Muni Lot'
-      ]
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
     }
   }
 
