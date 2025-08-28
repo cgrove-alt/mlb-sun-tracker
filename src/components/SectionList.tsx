@@ -7,18 +7,21 @@ import { LazySectionCard } from './LazySectionCard';
 import { VirtualSectionList } from './VirtualSectionList';
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
+import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
 import './SectionList.css';
 
 interface SectionListProps {
   sections: SeatingSectionSun[];
   loading?: boolean;
   calculationProgress?: { completed: number; total: number } | null;
+  showFilters?: boolean;
 }
 
 export const SectionList: React.FC<SectionListProps> = ({
   sections,
   loading = false,
-  calculationProgress
+  calculationProgress,
+  showFilters = false
 }) => {
   const [sortBy, setSortBy] = useState<'name' | 'exposure' | 'level' | 'price'>(() => {
     return preferencesStorage.get('sortBy', 'exposure');
@@ -29,6 +32,12 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
   const [containerHeight, setContainerHeight] = useState<number>(600);
+  const [filters, setFilters] = useState<SectionFilterValues>({
+    shadeLevel: [],
+    sectionType: [],
+    priceRange: []
+  });
+  const [filtersExpanded, setFiltersExpanded] = useState(true);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -123,22 +132,76 @@ export const SectionList: React.FC<SectionListProps> = ({
     }
   };
 
-  // Filter sections based on debounced search term
+  // Filter sections based on debounced search term and filters
   const filteredSections = useMemo(() => {
     return sections.filter(sectionData => {
-      if (!debouncedSearchTerm) return true;
-      
-      const term = debouncedSearchTerm.toLowerCase();
       const section = sectionData.section;
       
-      return (
-        section.name.toLowerCase().includes(term) ||
-        section.id.toLowerCase().includes(term) ||
-        section.level.toLowerCase().includes(term) ||
-        (section.price && section.price.toLowerCase().includes(term))
-      );
+      // Text search filter
+      if (debouncedSearchTerm) {
+        const term = debouncedSearchTerm.toLowerCase();
+        const matchesSearch = 
+          section.name.toLowerCase().includes(term) ||
+          section.id.toLowerCase().includes(term) ||
+          section.level.toLowerCase().includes(term) ||
+          (section.price && section.price.toLowerCase().includes(term));
+        
+        if (!matchesSearch) return false;
+      }
+      
+      // Shade level filter
+      if (filters.shadeLevel.length > 0) {
+        const exposure = sectionData.sunExposure;
+        let matchesShade = false;
+        
+        for (const level of filters.shadeLevel) {
+          switch (level) {
+            case 'fully-shaded':
+              if (exposure === 0) matchesShade = true;
+              break;
+            case 'mostly-shaded':
+              if (exposure > 0 && exposure <= 25) matchesShade = true;
+              break;
+            case 'partial-shade':
+              if (exposure > 25 && exposure <= 75) matchesShade = true;
+              break;
+            case 'mostly-sunny':
+              if (exposure > 75 && exposure < 100) matchesShade = true;
+              break;
+            case 'full-sun':
+              if (exposure === 100) matchesShade = true;
+              break;
+          }
+        }
+        
+        if (!matchesShade) return false;
+      }
+      
+      // Section type filter
+      if (filters.sectionType.length > 0) {
+        let matchesType = false;
+        
+        for (const type of filters.sectionType) {
+          if (type === 'covered' && section.covered) {
+            matchesType = true;
+          } else if (type === section.level) {
+            matchesType = true;
+          }
+        }
+        
+        if (!matchesType) return false;
+      }
+      
+      // Price range filter
+      if (filters.priceRange.length > 0) {
+        if (!section.price || !filters.priceRange.includes(section.price)) {
+          return false;
+        }
+      }
+      
+      return true;
     });
-  }, [sections, debouncedSearchTerm]);
+  }, [sections, debouncedSearchTerm, filters]);
 
   const sortedSections = useMemo(() => {
     return [...filteredSections].sort((a, b) => {
@@ -233,7 +296,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             <span className="summary-item shady">
               <CloudIcon size={16} /> {shadyCount} shaded
             </span>
-            {debouncedSearchTerm && (
+            {(debouncedSearchTerm || filters.shadeLevel.length > 0 || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
               <span className="summary-item search-results">
                 <SearchIcon size={16} /> {filteredSections.length} of {sections.length} shown
               </span>
@@ -247,6 +310,15 @@ export const SectionList: React.FC<SectionListProps> = ({
             </Tooltip>
           </div>
         </div>
+        
+        {showFilters && (
+          <SectionFilters
+            filters={filters}
+            onChange={setFilters}
+            isExpanded={filtersExpanded}
+            onToggleExpand={() => setFiltersExpanded(!filtersExpanded)}
+          />
+        )}
         
         <div className="search-and-sort">
           <div className="search-section">

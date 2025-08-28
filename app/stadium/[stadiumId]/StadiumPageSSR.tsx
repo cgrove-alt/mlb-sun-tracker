@@ -159,6 +159,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                   <SectionList 
                     sections={shadeResult.sectionData}
                     loading={false}
+                    showFilters={true}
                   />
                 )}
               </div>

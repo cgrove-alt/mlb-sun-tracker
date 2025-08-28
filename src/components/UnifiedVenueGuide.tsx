@@ -190,6 +190,7 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
                   <SectionList 
                     sections={shadeResult.sectionData}
                     loading={false}
+                    showFilters={true}
                   />
                 )}
               </div>
