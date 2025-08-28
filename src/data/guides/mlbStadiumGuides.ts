@@ -3061,5 +3061,535 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         'Standing Room Only for big games'
       ]
     }
+  },
+
+  'giants': {
+    id: 'giants',
+    name: 'Oracle Park',
+    team: 'San Francisco Giants',
+    opened: 2000,
+    capacity: 41915,
+    overview: {
+      description: 'Oracle Park sits on the San Francisco Bay waterfront with stunning views and the iconic McCovey Cove beyond right field. Known for its unique dimensions, marine layer, and gourmet food offerings.',
+      highlights: [
+        'Waterfront location with Bay views',
+        'McCovey Cove beyond right field',
+        'Coca-Cola Fan Lot with giant glove',
+        'Gourmet food destination'
+      ],
+      uniqueFeatures: [
+        'Right field wall only 309 feet from home',
+        'McCovey Cove for home run splash landings',
+        '80-foot Coca-Cola bottle with slides',
+        'Garden behind center field'
+      ],
+      renovations: [
+        { year: 2016, description: 'New video board in center field' },
+        { year: 2019, description: 'Oracle naming rights and tech upgrades' },
+        { year: 2022, description: 'New premium spaces and club renovations' }
+      ],
+      previousNames: ['Pacific Bell Park', 'SBC Park', 'AT&T Park']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Upper Deck 301-316', 'Club Level 201-216', 'Field Level 101-116'],
+        afternoon: ['View Level 320-336', 'Club Level behind home plate', 'Field Club'],
+        evening: ['Most sections after 4 PM', 'Third base side', 'Behind home plate']
+      },
+      coveredSeating: ['Club Level sections', 'Field Club', 'Upper deck overhang rows'],
+      shadeTips: [
+        'Third base side gets afternoon shade first',
+        'Marine layer provides natural cooling',
+        'Club level has roof coverage',
+        'Avoid bleachers for day games'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 103', 'Section 203', 'Section 303'],
+        shadedConcourses: ['All concourse areas', 'Promenade level'],
+        indoorAreas: ['Gotham Club', 'Virgin Club', 'Team Store']
+      },
+      worstSunExposure: ['Bleachers 136-142', 'Arcade 144-150', 'View Level 334-336'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 60, avgHumidity: 65, rainChance: 20, typicalConditions: 'Cool and windy', shadeTip: 'Bring layers, wind can be strong' },
+        { month: 'May', avgTemp: 63, avgHumidity: 65, rainChance: 10, typicalConditions: 'Marine layer common', shadeTip: 'Fog provides natural shade' },
+        { month: 'June', avgTemp: 66, avgHumidity: 65, rainChance: 5, typicalConditions: 'June gloom', shadeTip: 'Often overcast naturally' },
+        { month: 'July', avgTemp: 67, avgHumidity: 65, rainChance: 2, typicalConditions: 'Mild and foggy', shadeTip: 'Fog rolls in during games' },
+        { month: 'August', avgTemp: 68, avgHumidity: 65, rainChance: 2, typicalConditions: 'Warmest month', shadeTip: 'Seek shade for day games' },
+        { month: 'September', avgTemp: 70, avgHumidity: 60, rainChance: 5, typicalConditions: 'Indian summer', shadeTip: 'Can be surprisingly warm' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Gotham Club', perks: ['All-inclusive food and drinks', 'Private entrance', 'Padded seats'], access: 'Behind home plate' },
+          { name: 'Field Club', perks: ['Field level views', 'Premium menu', 'Wait service'], access: 'Field level infield' },
+          { name: 'Virgin Club', perks: ['All-inclusive', 'Premium bar', 'Climate controlled'], access: 'Suite level' }
+        ],
+        suites: { levels: ['Suite Level', 'Party Suites'], amenities: ['Private restrooms', 'Catering', 'TV monitors', 'Climate control'] },
+        specialAreas: [
+          { name: 'Coca-Cola Fan Lot', description: 'Family area with slides and games', capacity: 100 },
+          { name: 'Garden Tables', description: 'Center field garden dining', capacity: 40 }
+        ]
+      },
+      budgetOptions: ['View Level corners', 'Bleachers', 'Standing room'],
+      familySections: ['Coca-Cola Fan Lot', 'View Level 334-336'],
+      standingRoom: ['Behind Field Level', 'Arcade area'],
+      partyAreas: [
+        { name: 'Triples Alley', capacity: '150', description: 'Right field group area', amenities: ['Bar access', 'Food service'] }
+      ],
+      tips: [
+        { section: 'Arcade 148-150', tip: 'Standing room with drink rails and Bay views', category: 'value' },
+        { section: 'View Level 334-336', tip: 'Affordable seats with full field view', category: 'value' },
+        { section: 'Club Level 210-214', tip: 'Best shade and comfort combination', category: 'shade' },
+        { section: 'Field Level 103-105', tip: 'Close to Ghirardelli hot chocolate', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Ghirardelli hot chocolate', 'Crazy Crab sandwich', 'Gilroy garlic fries', 'Cha Cha Bowl'],
+      local: ['Dungeness crab', 'Mission-style burritos', 'Local craft beers', 'Sourdough bread bowls'],
+      healthy: ['Garden salads', 'Poke bowls', 'Veggie burgers', 'Fresh fruit'],
+      vegetarian: ['Impossible burgers', 'Field Roast sausages', 'Veggie bowls'],
+      glutenFree: ['Poke bowls', 'Salads', 'GF hot dogs available'],
+      kidsFriendly: ['Kids meals', 'Ice cream', 'Cotton candy', 'Mini donuts'],
+      alcohol: {
+        beer: ['Anchor Steam', '21st Amendment', 'Lagunitas', 'Local craft selection'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Anchor Brewing', '21st Amendment', 'Speakeasy']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Lot A', distance: '0.2 miles', price: '$40', shadedSpots: false, covered: false },
+        { name: 'Pier 30/32', distance: '0.5 miles', price: '$30', shadedSpots: false, covered: false },
+        { name: 'UCSF Garage', distance: '0.3 miles', price: '$35', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: '2-hour limits, game day restrictions',
+        tip: 'Very limited, arrive early'
+      },
+      alternativeTransport: {
+        publicTransit: ['Muni Metro', 'BART to Embarcadero', 'Caltrain'],
+        rideShare: 'Drop-off zones on Third Street',
+        bicycle: 'Bike valet at Lot A'
+      }
+    },
+    gates: [
+      { name: 'Willie Mays Gate', location: 'Third and King', bestFor: ['Main entrance', 'Team store'], openTime: '2 hours before', tip: 'Statue photo op' },
+      { name: 'Lefty O\'Doul Gate', location: 'Third Street', bestFor: ['Upper deck', 'View level'], openTime: '1.5 hours before' },
+      { name: 'Marina Gate', location: 'McCovey Cove', bestFor: ['Bleachers', 'Arcade'], openTime: '1.5 hours before' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Dugout Store', exclusive: ['World Series merchandise', 'Player jerseys'] },
+        { location: 'Giants Vault', exclusive: ['Vintage items', 'Collectibles'] }
+      ],
+      firstAid: ['Section 115', 'Section 209', 'Section 315'],
+      babyChanging: ['All restroom levels'],
+      nursingRooms: ['Guest Services behind section 119'],
+      atms: ['Throughout concourses'],
+      wifi: { available: true, network: 'Giants Free WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Club level', 'Virgin Club'],
+      kidZones: [
+        { name: 'Coca-Cola Fan Lot', location: 'Left field', activities: ['Slides', 'Speed pitch', 'Mini field'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have accessible seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Behind sections 104, 120, 134']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All concession stands'],
+      parkingSpaces: 'Lot A has designated spaces'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Ferry to the game', description: 'Take ferry from Marin or East Bay', category: 'arrival' },
+        { title: 'Explore the waterfront', description: 'Walk the Embarcadero before game', category: 'experience' },
+        { title: 'Watch from McCovey Cove', description: 'Free views from kayaks or walkway', category: 'experience' },
+        { title: 'Dress in layers', description: 'Weather changes quickly', category: 'weather' },
+        { title: 'Garlic fries strategy', description: 'Buy early to avoid lines', category: 'food' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: '2.5 hours before (home team)',
+        firstPitch: '7:15 PM weekdays, 1:05 PM day games',
+        rushHours: ['30 minutes before first pitch', '7th inning stretch']
+      },
+      security: {
+        allowedBags: 'Bags 16"x16"x8" or smaller',
+        prohibitedItems: ['Outside food (except sealed water)', 'Umbrellas', 'Selfie sticks'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Mission Bay/SOMA',
+      description: 'Vibrant waterfront district with tech offices and entertainment',
+      beforeGame: ['Public House', 'MoMo\'s', 'The Yard', 'Waterbar'],
+      afterGame: ['21st Amendment Brewery', 'Local Tap', 'Pedro\'s Cantina'],
+      radius: '0.5 miles'
+    },
+    transportation: {
+      address: '24 Willie Mays Plaza, San Francisco, CA 94107',
+      publicTransit: {
+        subway: [
+          { lines: ['N Judah', 'T Third'], station: '2nd and King', walkTime: '2 minutes' }
+        ],
+        bus: [
+          { routes: ['10', '30', '45', '47'], stops: ['Multiple stops on King Street'] }
+        ],
+        train: [
+          { lines: ['Caltrain'], station: '4th and King', walkTime: '10 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-280 to King Street exit', 'US-101 to 4th Street'],
+        typicalTraffic: 'Heavy 1 hour before game',
+        bestApproach: 'From South via I-280'
+      },
+      rideShare: {
+        pickupZone: 'Second Street',
+        dropoffZone: 'Third Street near Willie Mays Plaza',
+        surgePricing: '2-3x after games',
+        alternativeTip: 'Walk to 4th Street for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2000, event: 'Oracle Park opens as Pacific Bell Park' },
+        { year: 2010, event: 'First World Series at the ballpark' },
+        { year: 2012, event: 'Second World Series championship' },
+        { year: 2014, event: 'Third World Series in five years' }
+      ],
+      notableGames: [
+        { date: '2001-10-05', description: 'Barry Bonds hits record 71st and 72nd home runs' },
+        { date: '2014-10-16', description: 'Travis Ishikawa NLCS walk-off homer' }
+      ],
+      traditions: [
+        { name: 'Splash Hits', description: 'Home runs into McCovey Cove' },
+        { name: 'Cable Car races', description: 'Mid-inning entertainment on video board' }
+      ],
+      retired: [
+        { number: '3', player: 'Bill Terry', year: 1984 },
+        { number: '4', player: 'Mel Ott', year: 1949 },
+        { number: '11', player: 'Carl Hubbell', year: 1944 },
+        { number: '20', player: 'Monte Irvin', year: 1973 },
+        { number: '24', player: 'Willie Mays', year: 1972 },
+        { number: '25', player: 'Barry Bonds', year: 2018 },
+        { number: '27', player: 'Juan Marichal', year: 1975 },
+        { number: '30', player: 'Orlando Cepeda', year: 1999 },
+        { number: '36', player: 'Gaylord Perry', year: 2005 },
+        { number: '44', player: 'Willie McCovey', year: 1980 }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Knowledgeable fans in scenic waterfront setting',
+      bestExperiences: ['McCovey Cove kayakers', 'Garlic fries', 'Cable car races', 'Seal sightings'],
+      traditions: ['Orange Friday', 'Seventh-inning stretch with Tony Bennett', 'Lou Seal antics'],
+      mascot: { name: 'Lou Seal', description: 'SF seal who emerged from the Bay' },
+      fanGroups: [
+        { name: 'Orange and Black Attack', section: 'Bleachers', description: 'Die-hard fan section' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Public House has ballpark views from rooftop',
+        'Ghirardelli hot chocolate perfect for cold nights',
+        'Walk Embarcadero after game to avoid traffic',
+        'Free standing room views from Portwalk behind right field'
+      ],
+      avoidThese: [
+        'Driving on game days',
+        'Arcade seats on hot days',
+        'Leaving during 8th inning (traffic surge)'
+      ],
+      hiddenGems: [
+        'Garden behind center field',
+        'Portwalk behind right field (free views)',
+        'Cable car in left field'
+      ],
+      photoSpots: [
+        'Willie Mays statue',
+        'McCovey Cove walkway',
+        'Coca-Cola bottle',
+        'Bay Bridge views from upper deck'
+      ],
+      bestValue: [
+        'View Level corners',
+        'Bleacher seats with atmosphere',
+        'Standing room with views'
+      ]
+    }
+  },
+
+  'padres': {
+    id: 'padres',
+    name: 'Petco Park',
+    team: 'San Diego Padres',
+    opened: 2004,
+    capacity: 40209,
+    overview: {
+      description: 'Petco Park in downtown San Diego is widely considered one of the best ballparks in baseball, featuring perfect weather, a unique sandbox, and the historic Western Metal Supply Co. building integrated into the structure.',
+      highlights: [
+        'Downtown location in East Village',
+        'Western Metal Supply Co. building in left field',
+        'The Beach sandbox beyond center field',
+        'Year-round perfect weather'
+      ],
+      uniqueFeatures: [
+        'Western Metal Supply Co. building as left field foul pole',
+        'The Beach sandbox for kids',
+        'Park at the Park grass berm',
+        'Rooftop bar with city views'
+      ],
+      renovations: [
+        { year: 2013, description: 'Moved in outfield fences' },
+        { year: 2016, description: 'New HD video boards' },
+        { year: 2022, description: 'Gallagher Square renovation' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Upper deck third base side', 'Field Level 101-108', 'Toyota Terrace'],
+        afternoon: ['Press Level sections', 'Field Level 115-124', 'Western Metal Supply'],
+        evening: ['Most sections after 5 PM', 'Third base line', 'Behind home plate']
+      },
+      coveredSeating: ['Press Level under overhang', 'Toyota Terrace', 'Premium clubs'],
+      shadeTips: [
+        'Third base side gets shade first',
+        'Upper levels provide shade to lower sections',
+        'Coastal breeze keeps temperatures comfortable',
+        'Seek Press Level for guaranteed shade'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 107', 'Section 207', 'Section 307'],
+        shadedConcourses: ['All concourse areas', 'Press Level concourse'],
+        indoorAreas: ['Omni Premier Club', 'Lexus Premier Club', 'Team Store']
+      },
+      worstSunExposure: ['Right field sections 131-135', 'Park at the Park', 'Upper deck first base 301-307'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 65, avgHumidity: 65, rainChance: 10, typicalConditions: 'Perfect baseball weather', shadeTip: 'Light shade needed' },
+        { month: 'May', avgTemp: 67, avgHumidity: 68, rainChance: 5, typicalConditions: 'May Gray marine layer', shadeTip: 'Natural cloud coverage common' },
+        { month: 'June', avgTemp: 70, avgHumidity: 70, rainChance: 2, typicalConditions: 'June Gloom continues', shadeTip: 'Morning clouds, afternoon sun' },
+        { month: 'July', avgTemp: 74, avgHumidity: 68, rainChance: 1, typicalConditions: 'Warm and sunny', shadeTip: 'Shade important for day games' },
+        { month: 'August', avgTemp: 76, avgHumidity: 66, rainChance: 1, typicalConditions: 'Peak summer heat', shadeTip: 'Essential shade for comfort' },
+        { month: 'September', avgTemp: 74, avgHumidity: 64, rainChance: 3, typicalConditions: 'Still warm', shadeTip: 'Shade recommended' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Omni Premier Club', perks: ['All-inclusive food/drinks', 'Padded seats', 'Private entrance'], access: 'Behind home plate' },
+          { name: 'Lexus Premier Club', perks: ['Field level views', 'Premium menu', 'Climate controlled'], access: 'First base line' },
+          { name: 'Western Metal Supply', perks: ['Historic building', 'Unique views', 'Private bar'], access: 'Left field corner' }
+        ],
+        suites: { levels: ['Suite Level', 'Party Suites'], amenities: ['Private restrooms', 'Catering', 'HDTV', 'Balcony seating'] },
+        specialAreas: [
+          { name: 'The Beach', description: 'Sand play area beyond center field', capacity: 50 },
+          { name: 'Gallagher Square', description: 'Grass berm with picnic area', capacity: 300 }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'Park at the Park', 'Toyota Terrace'],
+      familySections: ['The Beach', 'Park at the Park', 'Upper 301-303'],
+      standingRoom: ['Toyota Terrace', 'Rooftop areas'],
+      partyAreas: [
+        { name: 'The Loft', capacity: '50', description: 'Rooftop party space', amenities: ['Full bar', 'TVs', 'Lounge seating'] },
+        { name: 'Beach Club', capacity: '100', description: 'Party deck', amenities: ['Bar', 'Food service', 'Standing tables'] }
+      ],
+      tips: [
+        { section: 'Toyota Terrace', tip: 'All-you-can-eat value option', category: 'value' },
+        { section: 'Western Metal Building', tip: 'Unique historic setting', category: 'experience' },
+        { section: 'Press Level 205-210', tip: 'Best shade all game long', category: 'shade' },
+        { section: 'Field 119-121', tip: 'Close to visitor dugout', category: 'view' }
+      ]
+    },
+    concessions: {
+      signature: ['Fish tacos', 'Tri-tip nachos', 'Hodad\'s burgers', 'Phil\'s BBQ'],
+      local: ['California burritos', 'Carnitas fries', 'Lucha Libre tacos', 'Board and Brew sandwiches'],
+      healthy: ['Poke bowls', 'Seaside Market salads', 'Fresh fruit', 'Veggie wraps'],
+      vegetarian: ['Beyond burgers', 'Veggie tacos', 'Salad options'],
+      glutenFree: ['GF buns available', 'Nachos', 'Salads'],
+      kidsFriendly: ['Kids meals', 'Ice cream', 'Churros', 'Popcorn'],
+      alcohol: {
+        beer: ['Stone Brewing', 'Ballast Point', 'Modern Times', 'Local craft selection'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Stone', 'Ballast Point', 'Modern Times', 'Karl Strauss']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Tailgate Park', distance: 'Adjacent', price: '$35', shadedSpots: false, covered: false, tip: 'Opens 2.5 hours early for tailgating' },
+        { name: 'Lexus Premier Lot', distance: '0.1 miles', price: '$40', shadedSpots: false, covered: false },
+        { name: '6th & K Parkade', distance: '0.3 miles', price: '$20', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Meters and time limits',
+        tip: 'Limited availability on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['Trolley Green Line to Gaslamp', 'MTS buses'],
+        rideShare: 'Multiple drop-off points around ballpark',
+        bicycle: 'Bike racks at multiple entrances'
+      }
+    },
+    gates: [
+      { name: 'Home Plate Gate', location: 'Park Boulevard', bestFor: ['Main entrance', 'Team store'], openTime: '2 hours before' },
+      { name: 'East Village Gate', location: 'J Street', bestFor: ['Upper deck', 'Quick entry'], openTime: '1.5 hours before' },
+      { name: 'Gaslamp Gate', location: 'L Street', bestFor: ['Field level', 'Restaurants'], openTime: '2 hours before' },
+      { name: 'Park at the Park', location: 'Outfield', bestFor: ['Berm seating', 'Families'], openTime: '2.5 hours before' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'The Majestic Team Store', exclusive: ['Game-used items', 'Custom jerseys'] },
+        { location: 'The Beach Store', exclusive: ['Kids items', 'Beach themed gear'] }
+      ],
+      firstAid: ['Section 107', 'Section 213', 'Section 319'],
+      babyChanging: ['All family restrooms'],
+      nursingRooms: ['Guest Services Level 1 and 3'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'Padres_Free_WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Club levels', 'Toyota Terrace'],
+      kidZones: [
+        { name: 'The Beach', location: 'Beyond center field', activities: ['Sandbox', 'Playground', 'Kids concessions'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates are accessible',
+        elevators: ['All levels serviced by elevators']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots have ADA spaces'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Explore East Village', description: 'Great bars and restaurants nearby', category: 'experience' },
+        { title: 'Arrive early for beach', description: 'The Beach fills up quickly', category: 'family' },
+        { title: 'Tailgate Park party', description: 'Pre-game tailgating allowed', category: 'experience' },
+        { title: 'Stay for fireworks', description: 'Friday night fireworks shows', category: 'experience' },
+        { title: 'Gaslamp after dark', description: 'Nightlife district adjacent', category: 'departure' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before first pitch',
+        battingPractice: 'Varies by team',
+        firstPitch: '6:40 PM weekdays, 5:40 PM weekends',
+        rushHours: ['30 minutes before game', '7th inning']
+      },
+      security: {
+        allowedBags: 'Single compartment bags 7"x10" or smaller',
+        prohibitedItems: ['Outside food/drinks except water', 'Umbrellas', 'Noisemakers'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'East Village/Gaslamp Quarter',
+      description: 'Vibrant downtown districts with restaurants, bars, and nightlife',
+      beforeGame: ['Bub\'s at the Ballpark', 'Lolita\'s Mexican', 'The Tin Fish', 'Yard House'],
+      afterGame: ['Barleymash', 'The Field', 'Star Bar', 'Noble Experiment'],
+      radius: '0.5 miles'
+    },
+    transportation: {
+      address: '100 Park Boulevard, San Diego, CA 92101',
+      publicTransit: {
+        subway: [
+          { lines: ['Green Line Trolley'], station: 'Gaslamp Quarter', walkTime: '7 minutes' },
+          { lines: ['Blue/Orange Line'], station: '12th & Imperial', walkTime: '10 minutes' }
+        ],
+        bus: [
+          { routes: ['3', '11', '120', '280', '290'], stops: ['Multiple downtown stops'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-5 to 10th Avenue', 'CA-163 to 6th Avenue', 'CA-94 to Park Boulevard'],
+        typicalTraffic: 'Moderate, downtown congestion',
+        bestApproach: 'From north via 163, from south via I-5'
+      },
+      rideShare: {
+        pickupZone: 'L Street between 10th and 11th',
+        dropoffZone: 'Multiple locations around ballpark',
+        surgePricing: '2-3x after games',
+        alternativeTip: 'Walk to East Village for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2004, event: 'Petco Park opens' },
+        { year: 2016, event: 'All-Star Game hosted' },
+        { year: 2020, event: 'Playoff baseball returns' },
+        { year: 2022, event: 'Wild Card series hosted' }
+      ],
+      notableGames: [
+        { date: '2004-04-08', description: 'First game at Petco Park' },
+        { date: '2020-10-01', description: 'First playoff game in 14 years' }
+      ],
+      traditions: [
+        { name: 'Friar Faithful', description: 'Dedicated fan base' },
+        { name: 'Bells at the mission', description: 'Home run celebration' }
+      ],
+      retired: [
+        { number: '6', player: 'Steve Garvey', year: 1989 },
+        { number: '19', player: 'Tony Gwynn', year: 2004 },
+        { number: '31', player: 'Dave Winfield', year: 2001 },
+        { number: '35', player: 'Randy Jones', year: 1997 },
+        { number: '51', player: 'Trevor Hoffman', year: 2011 }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Laid-back Southern California vibe with passionate fans',
+      bestExperiences: ['The Beach sandbox', 'Park at the Park', 'Craft beer selection', 'Perfect weather'],
+      traditions: ['Swinging Friar mascot', 'Bells for home runs', 'Brown and yellow throwbacks'],
+      mascot: { name: 'Swinging Friar', description: 'Padres monk mascot since 1958' },
+      fanGroups: [
+        { name: 'The Friar Faithful', section: 'Various', description: 'Die-hard supporter group' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Park at the Park free viewing until 7:30 PM',
+        'Hodad\'s burgers are worth the line',
+        'Western Metal Supply building has best sunset views',
+        'Gallagher Square great for families'
+      ],
+      avoidThese: [
+        'Driving without pre-paid parking',
+        'Right field on sunny day games',
+        'Leaving immediately after game (traffic)'
+      ],
+      hiddenGems: [
+        'Rooftop bar at Altitude Sky Lounge',
+        'Tony Gwynn statue garden',
+        'Craft beer garden in Gallagher Square'
+      ],
+      photoSpots: [
+        'Home plate gate',
+        'Tony Gwynn statue',
+        'Western Metal Supply Co. building',
+        'The Beach with field view'
+      ],
+      bestValue: [
+        'Toyota Terrace all-you-can-eat',
+        'Park at the Park (free until 7:30)',
+        'Upper deck corners'
+      ]
+    }
   }
 };
