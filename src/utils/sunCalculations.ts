@@ -125,7 +125,8 @@ export function calculateDetailedSectionSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    if (process.env.NODE_ENV === 'development') {
+    // Log warning in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
@@ -150,7 +151,8 @@ export function calculateDetailedSectionSunExposure(
   let weatherMultiplier = 1.0;
   if (weather) {
     const { cloudCover, conditions, precipitationProbability } = weather;
-    if (process.env.NODE_ENV === 'development') {
+    // Log in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.log('Weather data applied:', { cloudCover, conditions: conditions[0]?.main, precipitationProbability });
     }
     
@@ -170,11 +172,13 @@ export function calculateDetailedSectionSunExposure(
       weatherMultiplier = 0.9; // Light clouds
     }
     
-    if (process.env.NODE_ENV === 'development') {
+    // Log in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.log('Weather multiplier applied:', weatherMultiplier);
     }
   } else {
-    if (process.env.NODE_ENV === 'development') {
+    // Log in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.log('No weather data available for sun calculations');
     }
   }
@@ -208,7 +212,7 @@ export function filterSectionsBySunExposure(
   }
 ): SeatingSectionSun[] {
   // Debug logging
-  if (process.env.NODE_ENV === 'development' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
     console.log('[Filter Debug] Criteria:', { 
       minExposure: criteria.minExposure, 
       maxExposure: criteria.maxExposure,
@@ -247,7 +251,7 @@ export function filterSectionsBySunExposure(
   });
   
   // Debug logging for results
-  if (process.env.NODE_ENV === 'development' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
     console.log('[Filter Debug] Results:', { 
       filteredCount: filteredResults.length,
       examples: filteredResults.slice(0, 3).map(s => ({ name: s.section.name, sun: s.sunExposure }))
@@ -295,7 +299,8 @@ export function calculateEnhancedSectionSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    if (process.env.NODE_ENV === 'development') {
+    // Log warning in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
@@ -396,7 +401,8 @@ export function calculateGameSunExposure(
   
   // Safety check to prevent performance issues
   if (sections.length > 250) {
-    if (process.env.NODE_ENV === 'development') {
+    // Log warning in development
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       console.warn(`[calculateGameSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
