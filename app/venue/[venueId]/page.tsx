@@ -4,6 +4,7 @@ import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifi
 import { getVenueSections } from '../../../src/data/venueSections';
 import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
 import UnifiedVenueGuide from '../../../src/components/UnifiedVenueGuide';
+import StickyShadeBar from '../../../components/StickyShadeBar';
 
 interface VenuePageProps {
   params: Promise<{
@@ -136,9 +137,21 @@ export default async function VenuePage({ params }: VenuePageProps) {
   }
 
   return (
-    <UnifiedVenueGuide 
-      venue={venue} 
-      sections={sections}
-    />
+    <>
+      {/* Show StickyShadeBar only for MLB venues */}
+      {venue.league === 'MLB' && (
+        <StickyShadeBar 
+          stadiumName={venue.name}
+          stadiumId={venue.id}
+        />
+      )}
+      
+      <div className={venue.league === 'MLB' ? 'has-sticky-shade-bar' : ''}>
+        <UnifiedVenueGuide 
+          venue={venue} 
+          sections={sections}
+        />
+      </div>
+    </>
   );
 }
