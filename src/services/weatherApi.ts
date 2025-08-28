@@ -83,7 +83,7 @@ export class WeatherApiService {
     let closestDiff = Infinity;
     
     // Debug logging
-    if (process.env.NODE_ENV === 'development') {
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       // Weather selection debug information available
     }
     
@@ -105,7 +105,7 @@ export class WeatherApiService {
       isForecastAvailable: !isBeyondForecast && !isBeforeForecast
     };
     
-    if (process.env.NODE_ENV === 'development') {
+    if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       // Selected weather debug information available
     }
     

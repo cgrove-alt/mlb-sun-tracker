@@ -85,9 +85,24 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
     return games.map(game => {
       const gameDate = new Date(game.gameDate);
       const opponent = game.teams.away.team.name;
-      const formattedDate = format(gameDate, 'MMM d');
-      const formattedTime = stadium ? formatGameTimeInStadiumTZ(gameDate, stadium.timezone) : 
-                           format(gameDate, 'h:mm a');
+      
+      let formattedDate, formattedTime;
+      try {
+        formattedDate = format(gameDate, 'MMM d');
+        formattedTime = stadium ? formatGameTimeInStadiumTZ(gameDate, stadium.timezone) : 
+                             format(gameDate, 'h:mm a');
+      } catch (error) {
+        console.error('Date formatting error in gameOptions:', error);
+        // Fallback to manual formatting
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        formattedDate = `${months[gameDate.getMonth()]} ${gameDate.getDate()}`;
+        
+        const hours = gameDate.getHours();
+        const minutes = gameDate.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const displayHours = hours % 12 || 12;
+        formattedTime = `${displayHours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+      }
       
       return {
         value: game.gamePk.toString(),
@@ -109,8 +124,23 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
     
     // Extract date and time from game
     const gameDate = new Date(game.gameDate);
-    const date = format(gameDate, 'yyyy-MM-dd');
-    const time = format(gameDate, 'HH:mm');
+    let date, time;
+    
+    try {
+      date = format(gameDate, 'yyyy-MM-dd');
+      time = format(gameDate, 'HH:mm');
+    } catch (error) {
+      console.error('Date formatting error:', error);
+      // Fallback to manual date formatting
+      const year = gameDate.getFullYear();
+      const month = String(gameDate.getMonth() + 1).padStart(2, '0');
+      const day = String(gameDate.getDate()).padStart(2, '0');
+      const hours = String(gameDate.getHours()).padStart(2, '0');
+      const minutes = String(gameDate.getMinutes()).padStart(2, '0');
+      
+      date = `${year}-${month}-${day}`;
+      time = `${hours}:${minutes}`;
+    }
     
     // Build query string
     const params = new URLSearchParams();
