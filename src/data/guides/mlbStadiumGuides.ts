@@ -1823,5 +1823,1243 @@ export const mlbStadiumGuides: Record<string, StadiumGuide> = {
         'Local bratwurst varieties'
       ]
     }
+  },
+
+  'cardinals': {
+    id: 'cardinals',
+    name: 'Busch Stadium',
+    team: 'St. Louis Cardinals',
+    opened: 2006,
+    capacity: 45494,
+    overview: {
+      description: 'Busch Stadium, the third stadium to bear the name, offers spectacular views of the Gateway Arch and downtown St. Louis skyline. Known for its classic red brick architecture and passionate Cardinals fans, the ballpark features modern amenities while honoring the team\'s rich history.',
+      highlights: [
+        'Panoramic views of Gateway Arch',
+        'Classic red brick architecture',
+        'Home to passionate Cardinals Nation',
+        'Green roof and sustainable design features'
+      ],
+      uniqueFeatures: [
+        'Arch views from upper deck',
+        'Cardinals Hall of Fame Museum',
+        'Green roof technology',
+        'Ballpark Village entertainment district'
+      ],
+      renovations: [
+        { year: 2014, description: 'Ballpark Village development' },
+        { year: 2019, description: 'Video board and sound upgrades' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Third base side sections 130-150', 'Club Level 240-250', 'Upper deck 330-350'],
+        afternoon: ['First base side sections 110-125', 'Redbird Club areas', 'Upper deck 310-325'],
+        evening: ['Most areas shaded after 5 PM', 'Infield sections', 'All club areas']
+      },
+      coveredSeating: ['Redbird Club Level', 'Cardinals Club', 'Suite areas'],
+      shadeTips: [
+        'Stadium runs northeast-southwest',
+        'Third base side gets shade first in afternoon',
+        'Upper deck provides good shade coverage',
+        'Club level offers complete coverage'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 135', 'Cardinals Clubhouse Store'],
+        shadedConcourses: ['All club level areas', 'Upper deck concourses'],
+        indoorAreas: ['Cardinals Hall of Fame', 'Team stores', 'Restaurant areas']
+      },
+      worstSunExposure: ['Bleacher sections 195-197', 'Right field lower 100-108', 'Left field pavilion'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 60, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cool spring weather', shadeTip: 'Third base side for warmth and later shade' },
+        { month: 'May', avgTemp: 71, avgHumidity: 65, rainChance: 20, typicalConditions: 'Pleasant spring', shadeTip: 'Upper deck recommended for day games' },
+        { month: 'June', avgTemp: 80, avgHumidity: 70, rainChance: 15, typicalConditions: 'Warm and humid', shadeTip: 'Club level for comfort' },
+        { month: 'July', avgTemp: 85, avgHumidity: 75, rainChance: 10, typicalConditions: 'Hot and humid', shadeTip: 'Shade essential, evening games preferred' },
+        { month: 'August', avgTemp: 83, avgHumidity: 75, rainChance: 10, typicalConditions: 'Hot and sticky', shadeTip: 'First base side for afternoon relief' },
+        { month: 'September', avgTemp: 75, avgHumidity: 65, rainChance: 15, typicalConditions: 'Pleasant fall weather', shadeTip: 'Great weather, any section works' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Redbird Club', perks: ['All-inclusive food/drinks', 'Climate control', 'Premium seating'], access: 'Club level behind home plate' },
+          { name: 'Cardinals Club', perks: ['Upscale dining', 'Bar service', 'Private entrance'], access: 'Lower club level' }
+        ],
+        suites: {
+          levels: ['Suite level and club level'],
+          amenities: ['Climate control', 'Premium catering', 'Private restrooms', 'HDTV']
+        },
+        specialAreas: [
+          { name: 'Home Plate Box', description: 'Premium field level behind home plate' },
+          { name: 'Green Seats', description: 'Historic green seats behind home plate' }
+        ]
+      },
+      budgetOptions: ['Bleacher sections 195-197', 'Upper deck corners 330-360', 'Standing room areas'],
+      familySections: ['Family sections throughout upper deck', 'Kids run bases on Sundays'],
+      standingRoom: ['Fox Sports Midwest Live! area', 'Budweiser Bowtie Bar'],
+      partyAreas: [
+        { name: 'Right Field Pavilion', capacity: '200', description: 'Group seating area', amenities: ['Group pricing', 'Food service'] }
+      ],
+      tips: [
+        { section: 'Green Seats', tip: 'Historic premium seating behind home plate', category: 'experience' },
+        { section: 'Upper deck 330-340', tip: 'Great Arch views and value', category: 'view' },
+        { section: 'Redbird Club', tip: 'All-inclusive premium experience', category: 'experience' },
+        { section: 'Bleachers', tip: 'Most affordable but full sun exposure', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Pork Steak Sandwich', 'Toasted Ravioli', 'Gooey Butter Cake', 'Budweiser'],
+      local: ['St. Paul Sandwich', 'Ted Drewes Frozen Custard', 'Imo\'s Pizza', 'Schlafly Beer'],
+      healthy: ['Salad options', 'Grilled chicken', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Imo\'s cheese pizza', 'Pretzel options'],
+      glutenFree: ['GF beer available', 'Grilled options'],
+      kidsFriendly: ['Chicken tenders', 'Hot dogs', 'Ice cream', 'Frozen custard'],
+      alcohol: {
+        beer: ['Budweiser', 'Bud Light', 'Schlafly', 'Local craft beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Schlafly', 'Urban Chestnut', 'Side Project']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Stadium East & West', distance: 'Adjacent', price: '$15-25', shadedSpots: false, covered: false, tip: 'Closest but fills up quickly' },
+        { name: 'Ballpark Village Lots', distance: '2 blocks', price: '$10-20', shadedSpots: false, covered: true, tip: 'Some covered options' },
+        { name: 'Downtown Lots', distance: '4-6 blocks', price: '$5-15', shadedSpots: false, covered: true, tip: 'Best value with short walk' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Meter parking available downtown',
+        tip: 'Limited availability, arrive early'
+      },
+      alternativeTransport: {
+        publicTransit: ['MetroLink Red Line to Stadium', 'Metro buses'],
+        rideShare: 'Pickup zone on 7th Street',
+        bicycle: 'Bike racks available at stadium'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Home plate entrance', bestFor: ['Club level', 'Green seats'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 2', location: 'First base side', bestFor: ['Lower bowl', 'Right field'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 3', location: 'Third base side', bestFor: ['Left field', 'Upper deck'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 6', location: 'Outfield entrance', bestFor: ['Bleachers', 'Standing room'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Cardinals Clubhouse Store', exclusive: ['Authentic jerseys', 'Hall of Fame items'] },
+        { location: 'Outfield stores', exclusive: ['Value merchandise'] }
+      ],
+      firstAid: ['Section 135', 'Club level', 'Upper deck guest services'],
+      babyChanging: ['All family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['All gate areas', 'Club level', 'Concourse areas'],
+      wifi: { available: true, network: 'Cardinals_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Club level areas', 'Premium seating'],
+      kidZones: [
+        { name: 'Budweiser Terrace', location: 'Upper deck', activities: ['Kids activities on select games'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels'],
+        entrance: 'All gates accessible',
+        elevators: ['Each gate area has elevator access']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All main concession areas'],
+      parkingSpaces: 'Available in all lots - reserve online'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Visit Cardinals Hall of Fame', description: 'Museum showcases team\'s rich history', category: 'experience' },
+        { title: 'Try Toasted Ravioli', description: 'St. Louis specialty not found elsewhere', category: 'food' },
+        { title: 'Check Arch Views', description: 'Upper deck offers spectacular Gateway Arch views', category: 'experience' },
+        { title: 'Explore Ballpark Village', description: 'Entertainment district adjacent to stadium', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '90 minutes before first pitch',
+        battingPractice: 'Cardinals BP 2.5 hours before game',
+        firstPitch: '7:15 PM weekdays, 6:15 PM Saturdays, 1:15 PM Sundays',
+        rushHours: ['6:30-7:00 PM for night games']
+      },
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Downtown St. Louis',
+      description: 'Historic downtown area with Gateway Arch nearby',
+      beforeGame: ['Ballpark Village', 'Broadway restaurants', 'Laclede\'s Landing'],
+      afterGame: ['Ballpark Village bars', 'Washington Avenue entertainment', 'Soulard district'],
+      radius: '1-2 miles'
+    },
+    transportation: {
+      address: '700 Clark Ave, St. Louis, MO 63102',
+      publicTransit: {
+        bus: [{ routes: ['Various Metro routes'], stops: ['Downtown St. Louis'] }],
+        train: [{ lines: ['MetroLink Red Line'], station: 'Stadium Station', walkTime: '2 minutes' }]
+      },
+      driving: {
+        majorRoutes: ['I-64 to Downtown', 'I-55 to Poplar Street Bridge', 'I-70 to I-55 South'],
+        typicalTraffic: 'Moderate downtown traffic',
+        bestApproach: 'I-64 from west, I-55 from south'
+      },
+      rideShare: {
+        pickupZone: '7th Street south of stadium',
+        dropoffZone: 'Clark Avenue entrance',
+        surgePricing: '2-3x after games',
+        alternativeTip: 'Walk to Ballpark Village for lower rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2006, event: 'New Busch Stadium opens' },
+        { year: 2006, event: 'Cardinals win World Series in inaugural year' },
+        { year: 2011, event: 'Cardinals win World Series' },
+        { year: 2014, event: 'Ballpark Village opens' }
+      ],
+      notableGames: [
+        { date: '2006-10-27', description: 'World Series clinching game' },
+        { date: '2011-10-28', description: 'Game 6 World Series comeback' },
+        { date: '2011-10-28', description: 'David Freese walk-off home run' }
+      ],
+      traditions: [
+        { name: 'Rally Squirrel', description: 'Famous squirrel that appeared during 2011 playoffs' },
+        { name: 'Red Sea', description: 'Sea of red clothing worn by Cardinals fans' },
+        { name: 'Cardinals Way', description: 'Organizational philosophy and fan culture' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Knowledgeable and passionate fanbase, strong baseball tradition',
+      bestExperiences: ['Opening Day tradition', 'Playoff atmosphere', 'Gateway Arch views'],
+      traditions: ['Red clothing', 'Cardinals Way', 'Post-game Ballpark Village']
+    },
+    proTips: {
+      insiderTips: [
+        'Wear red to fit in with Cardinals Nation',
+        'Visit Hall of Fame before game starts',
+        'Upper deck has best Arch views',
+        'Ballpark Village is great for post-game'
+      ],
+      avoidThese: [
+        'Driving during rush hour',
+        'Missing the Arch views from upper deck',
+        'Skipping local St. Louis food specialties'
+      ],
+      hiddenGems: [
+        'Cardinals Hall of Fame Museum',
+        'Green seats historical significance',
+        'Ballpark Village rooftop views'
+      ],
+      photoSpots: [
+        'Gateway Arch from upper deck',
+        'Cardinals Hall of Fame displays',
+        'Ballpark Village sign'
+      ],
+      bestValue: [
+        'Upper deck seats with Arch views',
+        'Bleacher seats for budget option',
+        'Local food specialties'
+      ]
+    }
+  },
+
+  'cubs': {
+    id: 'cubs',
+    name: 'Wrigley Field',
+    team: 'Chicago Cubs',
+    opened: 1914,
+    capacity: 41649,
+    overview: {
+      description: 'Wrigley Field, the friendly confines, is the second-oldest ballpark in Major League Baseball. Famous for its ivy-covered outfield walls, iconic marquee, and the surrounding Wrigleyville neighborhood, this historic venue offers an authentic vintage baseball experience.',
+      highlights: [
+        'Second-oldest MLB ballpark (1914)',
+        'Iconic ivy-covered outfield walls',
+        'Famous Wrigley Field marquee',
+        'Historic Wrigleyville neighborhood setting'
+      ],
+      uniqueFeatures: [
+        'Ivy-covered brick outfield walls',
+        'Manual scoreboard operated by hand',
+        'Rooftop seating across the street',
+        'Wind patterns affect gameplay significantly'
+      ],
+      renovations: [
+        { year: 2014, description: 'Major renovation project began' },
+        { year: 2019, description: 'Gallagher Way opens' },
+        { year: 2022, description: 'Final renovation phase completed' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Third base side 200-230', 'Upper deck 400-430', 'Bleachers get morning shade'],
+        afternoon: ['First base side gets relief', 'Upper deck 500-530', 'Club box areas'],
+        evening: ['Upper deck provides widespread shade', 'Lower bowl infield', 'All premium areas']
+      },
+      coveredSeating: ['Club Box Level', 'Suite areas', 'Select upper deck sections'],
+      shadeTips: [
+        'Stadium orientation affects wind and shade patterns',
+        'Afternoon games: first base side preferred',
+        'Upper deck offers best shade coverage',
+        'Bleachers offer full sun experience'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 108', 'Club Level', 'Gallagher Way'],
+        shadedConcourses: ['All upper level concourses', 'Club areas'],
+        indoorAreas: ['Cubs Store', 'Club lounges', 'Gallagher Way facilities']
+      },
+      worstSunExposure: ['Bleachers sections 100-144', 'Right field box 100-108', 'Third base upper 400-420'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 53, avgHumidity: 60, rainChance: 30, typicalConditions: 'Cool spring, windy', shadeTip: 'Third base side for warmth' },
+        { month: 'May', avgTemp: 64, avgHumidity: 65, rainChance: 25, typicalConditions: 'Pleasant spring weather', shadeTip: 'Upper deck recommended' },
+        { month: 'June', avgTemp: 74, avgHumidity: 70, rainChance: 20, typicalConditions: 'Warm, occasional storms', shadeTip: 'Club level for comfort' },
+        { month: 'July', avgTemp: 78, avgHumidity: 75, rainChance: 15, typicalConditions: 'Hot and humid', shadeTip: 'Shade essential for day games' },
+        { month: 'August', avgTemp: 77, avgHumidity: 75, rainChance: 15, typicalConditions: 'Warm and humid', shadeTip: 'First base side afternoon relief' },
+        { month: 'September', avgTemp: 69, avgHumidity: 70, rainChance: 20, typicalConditions: 'Beautiful fall weather', shadeTip: 'Perfect conditions anywhere' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: '1914 Club', perks: ['All-inclusive dining', 'Climate control', 'Premium location'], access: 'Club level behind home plate' },
+          { name: 'Catalina Club', perks: ['Exclusive restaurant', 'Bar service', 'Private entrance'], access: 'Right field club level' }
+        ],
+        suites: {
+          levels: ['Suite level and club level'],
+          amenities: ['Climate control', 'Catering', 'Private restrooms', 'Historic venue views']
+        },
+        specialAreas: [
+          { name: 'Green Mill Lounge', description: 'Speakeasy-themed premium area' },
+          { name: 'Maker\'s Mark Barrel Room', description: 'Whiskey-themed premium space' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners 500-530', 'Bleacher sections', 'Standing room areas'],
+      familySections: ['Family sections throughout upper deck', 'Kids run bases on select Sundays'],
+      standingRoom: ['Gallagher Way', 'Standing room concourse areas'],
+      partyAreas: [
+        { name: 'Bleachers', capacity: '5000', description: 'Historic general admission seating', amenities: ['Traditional experience', 'Social atmosphere'] },
+        { name: 'Gallagher Way', capacity: '2000', description: 'Pre-game and overflow viewing', amenities: ['Food trucks', 'Entertainment', 'Big screen'] }
+      ],
+      tips: [
+        { section: 'Bleachers', tip: 'Classic Wrigley experience but full sun', category: 'experience' },
+        { section: 'Upper deck behind home plate', tip: 'Best views and value combination', category: 'view' },
+        { section: '1914 Club', tip: 'Premium all-inclusive experience', category: 'experience' },
+        { section: 'First base side 200s', tip: 'Good compromise of shade and proximity', category: 'shade' }
+      ]
+    },
+    concessions: {
+      signature: ['Chicago-style Hot Dog', 'Italian Beef', 'Old Style Beer', 'Cracker Jack'],
+      local: ['Portillo\'s Italian Beef', 'Lou Malnati\'s Pizza', 'Garrett Popcorn', 'Vienna Beef Hot Dogs'],
+      healthy: ['Salad options', 'Fresh fruit', 'Veggie wraps'],
+      vegetarian: ['Veggie dogs', 'Chicago deep dish cheese pizza', 'Pretzel options'],
+      glutenFree: ['GF beer available', 'Gluten-free hot dog buns'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream', 'Cracker Jack'],
+      alcohol: {
+        beer: ['Old Style', 'Budweiser', 'Goose Island', 'Local craft beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Goose Island', 'Revolution', 'Half Acre']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Wrigley Field Lots', distance: '2-4 blocks', price: '$25-40', shadedSpots: false, covered: false, tip: 'Limited official parking' },
+        { name: 'Residential Lots', distance: '2-6 blocks', price: '$15-30', shadedSpots: false, covered: false, tip: 'Private lots throughout neighborhood' },
+        { name: 'Southport Corridor', distance: '6-8 blocks', price: '$10-20', shadedSpots: false, covered: false, tip: 'Walk through neighborhood' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Permit parking only on game days',
+        tip: 'Very limited, arrive very early'
+      },
+      alternativeTransport: {
+        publicTransit: ['Red Line to Addison', 'Bus routes 152, 80'],
+        rideShare: 'Pickup zones on side streets',
+        bicycle: 'Bike racks available throughout Wrigleyville'
+      }
+    },
+    gates: [
+      { name: 'Gate K', location: 'Home plate entrance', bestFor: ['Club level', 'Lower box'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate D', location: 'Right field', bestFor: ['Bleachers', 'Right field seating'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate N', location: 'Left field', bestFor: ['Left field seating', 'Upper deck'], openTime: '90 minutes before first pitch' },
+      { name: 'Gallagher Way', location: 'Park entrance', bestFor: ['Standing room', 'Pre-game activities'], openTime: '2 hours before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Cubs Clubhouse Shop', exclusive: ['Vintage Cubs gear', 'World Series memorabilia'] },
+        { location: 'Gallagher Way store', exclusive: ['Game day specials'] }
+      ],
+      firstAid: ['Section 108', 'Club level', 'Gallagher Way'],
+      babyChanging: ['All family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['All gate areas', 'Club level', 'Gallagher Way'],
+      wifi: { available: true, network: 'Cubs_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Club level areas', 'Premium seating'],
+      kidZones: [
+        { name: 'Gallagher Way Kids Area', location: 'Gallagher Way', activities: ['Playground', 'Interactive games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels'],
+        entrance: 'All gates accessible with assistance',
+        elevators: ['Limited due to historic nature - staff assistance available']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['Main concession areas'],
+      parkingSpaces: 'Limited - reserve well in advance'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Arrive Early', description: 'Explore historic Wrigleyville before the game', category: 'arrival' },
+        { title: 'Visit Gallagher Way', description: 'Pre-game entertainment and food trucks', category: 'experience' },
+        { title: 'Try Italian Beef', description: 'Chicago specialty at multiple stands', category: 'food' },
+        { title: 'Sing Take Me Out to the Ballgame', description: '7th inning stretch tradition with guest conductors', category: 'experience' },
+        { title: 'Explore Rooftops', description: 'Unique viewing experience across the street', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '90 minutes before first pitch',
+        battingPractice: 'Cubs BP 2.5 hours before game',
+        firstPitch: '7:05 PM weekdays, 6:05 PM Saturdays, 1:20 PM Sundays',
+        rushHours: ['6:15-6:45 PM for night games']
+      },
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Wrigleyville',
+      description: 'Historic neighborhood built around the ballpark',
+      beforeGame: ['Murphy\'s Bleachers', 'Sluggers', 'Gallagher Way', 'Local sports bars'],
+      afterGame: ['Wrigleyville bars', 'Clark Street entertainment', 'Southport Corridor'],
+      radius: '4-6 blocks of dense entertainment'
+    },
+    transportation: {
+      address: '1060 W Addison St, Chicago, IL 60613',
+      publicTransit: {
+        bus: [{ routes: ['CTA 152 Addison', 'CTA 80 Irving Park'], stops: ['Throughout Wrigleyville'] }],
+        train: [{ lines: ['CTA Red Line'], station: 'Addison', walkTime: '1 block' }]
+      },
+      driving: {
+        majorRoutes: ['Lake Shore Drive to Irving Park', 'I-90/94 to Addison', 'I-290 to Addison'],
+        typicalTraffic: 'Very heavy in Wrigleyville area',
+        bestApproach: 'Public transit strongly recommended'
+      },
+      rideShare: {
+        pickupZone: 'Side streets away from stadium',
+        dropoffZone: 'Clark Street area',
+        surgePricing: '3-5x after games',
+        alternativeTip: 'Walk several blocks away for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1914, event: 'Weeghman Park opens' },
+        { year: 1916, event: 'Cubs move to Wrigley Field' },
+        { year: 1988, event: 'First night game played' },
+        { year: 2016, event: 'Cubs win World Series, ending 108-year drought' }
+      ],
+      notableGames: [
+        { date: '1932-10-01', description: 'Babe Ruth\'s alleged called shot' },
+        { date: '1988-08-08', description: 'First night game at Wrigley' },
+        { date: '2016-11-02', description: 'World Series Game 7 victory' }
+      ],
+      traditions: [
+        { name: 'Ivy Walls', description: 'Ivy-covered outfield walls unique to Wrigley' },
+        { name: 'Take Me Out to the Ballgame', description: '7th inning stretch with guest conductors' },
+        { name: 'W Flag', description: 'Victory flag flown after Cubs wins' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Historic and nostalgic, neighborhood ballpark feel',
+      bestExperiences: ['Historic atmosphere', 'Wrigleyville bar scene', 'Ivy wall ground rules'],
+      traditions: ['7th inning stretch', 'W flag', 'Friendly confines']
+    },
+    proTips: {
+      insiderTips: [
+        'Take public transit - parking is nearly impossible',
+        'Arrive early to explore Wrigleyville',
+        'Try the bleacher experience at least once',
+        'Watch for ivy wall ground rule situations'
+      ],
+      avoidThese: [
+        'Driving to games if possible',
+        'Missing the 7th inning stretch tradition',
+        'Leaving early - traffic is bad regardless'
+      ],
+      hiddenGems: [
+        'Manual scoreboard operation',
+        'Rooftop views from across the street',
+        'Gallagher Way pre-game atmosphere'
+      ],
+      photoSpots: [
+        'Wrigley Field marquee',
+        'Ivy-covered walls',
+        'View from upper deck behind home plate'
+      ],
+      bestValue: [
+        'Upper deck seats with great views',
+        'Bleacher tickets for the experience',
+        'Gallagher Way standing room'
+      ]
+    }
+  },
+
+  'dodgers': {
+    id: 'dodgers',
+    name: 'Dodger Stadium',
+    team: 'Los Angeles Dodgers',
+    opened: 1962,
+    capacity: 56000,
+    overview: {
+      description: 'Dodger Stadium, the third-oldest ballpark in MLB, sits in the hills of Chavez Ravine with stunning views of downtown LA and the San Gabriel Mountains. Known for its mid-century modern architecture and perfect Southern California setting, it\'s an iconic venue with excellent sightlines.',
+      highlights: [
+        'Third-oldest ballpark in MLB (1962)',
+        'Spectacular views of downtown LA skyline',
+        'Mid-century modern architectural design',
+        'Largest MLB stadium by total capacity'
+      ],
+      uniqueFeatures: [
+        'Terraced parking built into hillsides',
+        'Perfect symmetrical field dimensions',
+        'Wavy roof pavilions in the outfield',
+        'Mountain and city skyline backdrop'
+      ],
+      renovations: [
+        { year: 2013, description: 'Major renovation including HD boards' },
+        { year: 2020, description: 'Centerfield plaza improvements' },
+        { year: 2022, description: 'Additional premium amenities added' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Third base side sections 140-165', 'Club level 200-230', 'Upper deck 1-30'],
+        afternoon: ['First base side sections 110-130', 'Dugout Club areas', 'Upper deck 40-55'],
+        evening: ['Most areas shaded after 5 PM', 'Lower bowl infield', 'All premium seating']
+      },
+      coveredSeating: ['Dugout Club', 'Stadium Club', 'Suite levels'],
+      shadeTips: [
+        'Stadium orientation runs northeast-southwest',
+        'Third base side gets shade first',
+        'Upper deck provides excellent shade coverage',
+        'Pavilions offer sun and party atmosphere'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 120', 'Top Deck Plaza', 'Stadium Club'],
+        shadedConcourses: ['All levels have covered areas', 'Club concourses'],
+        indoorAreas: ['Stadium Club', 'Dugout Club', 'Team stores']
+      },
+      worstSunExposure: ['Pavilions sections 300-308', 'Right field lower 100-109', 'All-You-Can-Eat section'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 68, avgHumidity: 60, rainChance: 15, typicalConditions: 'Perfect spring weather', shadeTip: 'Any section comfortable' },
+        { month: 'May', avgTemp: 71, avgHumidity: 65, rainChance: 10, typicalConditions: 'Ideal conditions', shadeTip: 'Third base side for afternoon games' },
+        { month: 'June', avgTemp: 75, avgHumidity: 68, rainChance: 5, typicalConditions: 'June gloom mornings', shadeTip: 'Upper deck recommended' },
+        { month: 'July', avgTemp: 82, avgHumidity: 65, rainChance: 1, typicalConditions: 'Hot and sunny', shadeTip: 'Shade essential for day games' },
+        { month: 'August', avgTemp: 84, avgHumidity: 65, rainChance: 1, typicalConditions: 'Peak summer heat', shadeTip: 'Evening games much more comfortable' },
+        { month: 'September', avgTemp: 80, avgHumidity: 65, rainChance: 5, typicalConditions: 'Still warm', shadeTip: 'First base side gets afternoon shade' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Dugout Club', perks: ['All-inclusive dining', 'Field level access', 'Premium location'], access: 'Behind dugouts' },
+          { name: 'Stadium Club', perks: ['Upscale restaurant', 'Bar service', 'Climate control'], access: 'Club level' },
+          { name: 'Baseline Club', perks: ['Premium seating', 'Exclusive concessions', 'Club access'], access: 'Along baselines' }
+        ],
+        suites: {
+          levels: ['Multiple suite levels available'],
+          amenities: ['Climate control', 'Catering', 'Private restrooms', 'City views']
+        },
+        specialAreas: [
+          { name: 'All-You-Can-Eat Pavilion', description: 'Right field pavilion with unlimited food' },
+          { name: 'Top Deck', description: 'Highest seating with panoramic views' }
+        ]
+      },
+      budgetOptions: ['Top Deck sections', 'Pavilion areas', 'Upper reserved corners'],
+      familySections: ['Family sections in upper deck', 'Kids run bases on Sundays'],
+      standingRoom: ['Pavilion areas', 'Concourse spaces'],
+      partyAreas: [
+        { name: 'Right Field Pavilion', capacity: '2000', description: 'Party atmosphere with all-you-can-eat option', amenities: ['Unlimited food', 'Social seating', 'Full bar'] },
+        { name: 'Left Field Pavilion', capacity: '1500', description: 'General admission party section', amenities: ['Bar service', 'Social atmosphere'] }
+      ],
+      tips: [
+        { section: 'Dugout Club', tip: 'Ultimate premium experience behind dugouts', category: 'experience' },
+        { section: 'Top Deck behind home plate', tip: 'Amazing views and great value', category: 'view' },
+        { section: 'Stadium Club', tip: 'Restaurant-quality dining with field views', category: 'experience' },
+        { section: 'Pavilions', tip: 'Party atmosphere but full sun exposure', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Dodger Dog', 'Nachos', 'Peanuts', 'Cracker Jack'],
+      local: ['King\'s Hawaiian BBQ', 'California Pizza Kitchen', 'Pink\'s Hot Dogs', 'Local food trucks'],
+      healthy: ['Fresh fruit options', 'Salads', 'Veggie wraps'],
+      vegetarian: ['Beyond Burger', 'Veggie dogs', 'Cheese pizza'],
+      glutenFree: ['GF beer available', 'Gluten-free hot dog buns'],
+      kidsFriendly: ['Mini Dodger dogs', 'Chicken tenders', 'Ice cream helmets'],
+      alcohol: {
+        beer: ['Budweiser', 'Corona', 'Local craft beers', 'Stella Artois'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Angel City', 'Golden Road', 'Arts District']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Preferred Parking', distance: 'Adjacent', price: '$25-35', shadedSpots: false, covered: false, tip: 'Closest to gates' },
+        { name: 'General Parking', distance: '5-10 min walk', price: '$10-20', shadedSpots: false, covered: false, tip: 'Good value option' },
+        { name: 'Top Deck Lots', distance: '10-15 min walk', price: '$10', shadedSpots: false, covered: false, tip: 'Cheapest but steep walk up' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking in Chavez Ravine',
+        tip: 'Stadium parking required'
+      },
+      alternativeTransport: {
+        publicTransit: ['Dodger Stadium Express from Union Station', 'Metro bus routes'],
+        rideShare: 'Designated pickup zone at Lot K',
+        bicycle: 'Limited bike parking due to hillside location'
+      }
+    },
+    gates: [
+      { name: 'Stadium Gate', location: 'Main entrance', bestFor: ['Lower level', 'Club seating'], openTime: '90 minutes before first pitch' },
+      { name: 'Left Field Gate', location: 'Left field pavilion', bestFor: ['Pavilion', 'Upper deck'], openTime: '90 minutes before first pitch' },
+      { name: 'Right Field Gate', location: 'Right field pavilion', bestFor: ['All-You-Can-Eat', 'Pavilion'], openTime: '90 minutes before first pitch' },
+      { name: 'Top Deck Gate', location: 'Upper level', bestFor: ['Top deck seating'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Dodgers Clubhouse Shop', exclusive: ['Authentic jerseys', 'World Series gear'] },
+        { location: 'Top Deck store', exclusive: ['Discounted merchandise'] }
+      ],
+      firstAid: ['Section 120', 'Stadium Club', 'Top Deck'],
+      babyChanging: ['All family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['All gate areas', 'Stadium Club', 'Pavilion areas'],
+      wifi: { available: true, network: 'Dodgers_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Stadium Club', 'Premium areas'],
+      kidZones: [
+        { name: 'Right Field Pavilion Kids Area', location: 'Right field', activities: ['Interactive games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations due to multi-level design']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All main areas'],
+      parkingSpaces: 'Available in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Arrive Early', description: 'Traffic can be heavy getting up to stadium', category: 'arrival' },
+        { title: 'Try Dodger Stadium Express', description: 'Free shuttle from Union Station', category: 'arrival' },
+        { title: 'Enjoy the Views', description: 'Stadium offers amazing city and mountain views', category: 'experience' },
+        { title: 'Traditional Dodger Dog', description: 'Stadium\'s famous signature concession', category: 'food' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '90 minutes before first pitch',
+        battingPractice: 'Dodgers BP 2.5 hours before game',
+        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
+        rushHours: ['6:15-6:45 PM for night games']
+      },
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Chavez Ravine',
+      description: 'Stadium is isolated in hillside setting',
+      beforeGame: ['Stadium concessions', 'Limited nearby options'],
+      afterGame: ['Downtown LA (15 min drive)', 'Chinatown', 'Arts District'],
+      radius: 'Stadium is isolated - plan accordingly'
+    },
+    transportation: {
+      address: '1000 Vin Scully Ave, Los Angeles, CA 90012',
+      publicTransit: {
+        bus: [{ routes: ['Dodger Stadium Express', 'Metro bus routes'], stops: ['Union Station', 'Sunset/Silver Lake'] }],
+        train: [{ lines: ['Metro Rail to Union Station'], station: 'Union Station', walkTime: 'Use Dodger Stadium Express shuttle' }]
+      },
+      driving: {
+        majorRoutes: ['I-5 to Stadium Way', 'US-101 to Alvarado', 'I-110 to Sunset'],
+        typicalTraffic: 'Heavy on stadium access roads',
+        bestApproach: 'Use GPS for current best route'
+      },
+      rideShare: {
+        pickupZone: 'Lot K designated area',
+        dropoffZone: 'Stadium gates',
+        surgePricing: '2-4x after games',
+        alternativeTip: 'Walk down hill toward Chinatown for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1962, event: 'Dodger Stadium opens' },
+        { year: 1978, event: 'Stadium hosts World Series' },
+        { year: 1988, event: 'Kirk Gibson\'s famous walk-off home run' },
+        { year: 2020, event: 'Dodgers win World Series' }
+      ],
+      notableGames: [
+        { date: '1988-10-15', description: 'Kirk Gibson\'s walk-off home run in World Series' },
+        { date: '2020-10-27', description: 'World Series Game 6 victory' },
+        { date: '1965-10-14', description: 'Sandy Koufax perfect game in World Series' }
+      ],
+      traditions: [
+        { name: 'Beach Balls', description: 'Fans bounce beach balls in stands during games' },
+        { name: 'Nancy Bea\'s Organ', description: 'Famous organist played for decades' },
+        { name: 'Tommy Lasorda', description: 'Legendary manager\'s influence on stadium culture' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Laid-back California vibe, fashionably late arrivals',
+      bestExperiences: ['Sunset views', 'Perfect weather games', 'Playoff atmosphere'],
+      traditions: ['Beach balls', 'Late arrivals', 'California casual attitude']
+    },
+    proTips: {
+      insiderTips: [
+        'Use Dodger Stadium Express from Union Station',
+        'Arrive early or accept arriving during 2nd inning',
+        'Enjoy the views - stadium has amazing sightlines',
+        'Try the All-You-Can-Eat pavilion'
+      ],
+      avoidThese: [
+        'Driving unless you have to',
+        'Expecting quick exit after games',
+        'Missing the sunset views'
+      ],
+      hiddenGems: [
+        'Top Deck panoramic views',
+        'Stadium Club restaurant quality',
+        'Perfect symmetrical field dimensions'
+      ],
+      photoSpots: [
+        'Downtown LA skyline from upper deck',
+        'San Gabriel Mountains backdrop',
+        'Dodger Stadium sign'
+      ],
+      bestValue: [
+        'Top Deck seats with amazing views',
+        'All-You-Can-Eat pavilion',
+        'Perfect weather makes any seat enjoyable'
+      ]
+    }
+  },
+
+  'yankees': {
+    id: 'yankees',
+    name: 'Yankee Stadium',
+    team: 'New York Yankees',
+    opened: 2009,
+    capacity: 47309,
+    overview: {
+      description: 'The new Yankee Stadium, opened in 2009, maintains the legacy and grandeur of the original House that Ruth Built while incorporating modern amenities and technology. Located in the South Bronx, it features Monument Park and continues the Yankees\' tradition of excellence.',
+      highlights: [
+        'Replica of the original Yankee Stadium design',
+        'Monument Park honoring Yankees legends',
+        'Great Hall entrance with team history displays',
+        '27-time World Series champion home'
+      ],
+      uniqueFeatures: [
+        'Monument Park beyond center field',
+        'Great Hall with Yankees artifacts',
+        'Pinstripe Pass social area',
+        'Right field short porch (314 feet)'
+      ],
+      renovations: [
+        { year: 2016, description: 'Additional premium seating areas' },
+        { year: 2020, description: 'Safety and technology upgrades' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Third base side sections 210-230', 'Main level 120-136', 'Grandstand 410-430'],
+        afternoon: ['First base side gets relief', 'Terrace level 310-330', 'All club areas'],
+        evening: ['Upper levels provide shade', 'Infield seats', 'Premium areas']
+      },
+      coveredSeating: ['Legends Suite Level', 'Champions Suite Level', 'All club areas'],
+      shadeTips: [
+        'Stadium runs northeast-southwest',
+        'Third base side gets shade first',
+        'Upper decks provide good coverage',
+        'Premium areas offer climate control'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Section 125', 'Great Hall', 'Monument Park'],
+        shadedConcourses: ['All club levels', 'Great Hall area'],
+        indoorAreas: ['Yankees Museum', 'Steakhouse', 'Club lounges']
+      },
+      worstSunExposure: ['Bleacher sections 201-239', 'Right field main 103-110', 'Left field bleachers'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 55, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cool spring weather', shadeTip: 'Third base side for warmth' },
+        { month: 'May', avgTemp: 66, avgHumidity: 65, rainChance: 20, typicalConditions: 'Pleasant spring', shadeTip: 'Upper deck recommended' },
+        { month: 'June', avgTemp: 75, avgHumidity: 70, rainChance: 15, typicalConditions: 'Warm and humid', shadeTip: 'Club level for comfort' },
+        { month: 'July', avgTemp: 80, avgHumidity: 75, rainChance: 12, typicalConditions: 'Hot and humid', shadeTip: 'Shade essential for day games' },
+        { month: 'August', avgTemp: 79, avgHumidity: 75, rainChance: 12, typicalConditions: 'Hot and sticky', shadeTip: 'First base side afternoon relief' },
+        { month: 'September', avgTemp: 71, avgHumidity: 70, rainChance: 15, typicalConditions: 'Beautiful fall weather', shadeTip: 'Perfect playoff weather' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Legends Suite', perks: ['All-inclusive luxury', 'Private entrance', 'Concierge service'], access: 'Field level behind home plate' },
+          { name: 'Champions Suite', perks: ['Premium dining', 'Bar service', 'Premium location'], access: 'Lower level premium' },
+          { name: 'Delta Sky360 Suite', perks: ['All-inclusive dining', 'Climate control', 'Exclusive access'], access: 'Suite level' }
+        ],
+        suites: {
+          levels: ['Multiple suite levels available'],
+          amenities: ['Climate control', 'Premium catering', 'Private restrooms', 'City views']
+        },
+        specialAreas: [
+          { name: 'Pinstripe Pass', description: 'Social area with bars and food' },
+          { name: 'Yankees Steakhouse', description: 'Premium restaurant inside stadium' }
+        ]
+      },
+      budgetOptions: ['Grandstand sections 410-440', 'Bleacher areas', 'Standing room areas'],
+      familySections: ['Family sections in grandstand', 'Kids run bases on select Sundays'],
+      standingRoom: ['Pinstripe Pass areas', 'Concourse spaces'],
+      partyAreas: [
+        { name: 'Bleacher Creatures', capacity: '2500', description: 'Right field bleacher culture', amenities: ['Roll call tradition', 'Social atmosphere'] }
+      ],
+      tips: [
+        { section: 'Legends Suite', tip: 'Ultimate luxury Yankees experience', category: 'experience' },
+        { section: 'Grandstand behind home plate', tip: 'Great views and Yankees tradition', category: 'view' },
+        { section: 'Bleachers', tip: 'Experience Bleacher Creature culture', category: 'experience' },
+        { section: 'Terrace level', tip: 'Good compromise of view and price', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Nathan\'s Famous Hot Dog', 'Lobel\'s Steak Sandwich', 'Carvel Ice Cream', 'Nuts 4 Nuts'],
+      local: ['Junior\'s Cheesecake', 'Yankee Tavern fare', 'NYC deli sandwiches', 'Local pizza'],
+      healthy: ['Fresh salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Pizza options', 'Salads'],
+      glutenFree: ['GF beer available', 'Gluten-free options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream', 'Pretzels'],
+      alcohol: {
+        beer: ['Budweiser', 'Stella Artois', 'Local craft beers', 'Corona'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Bronx Brewery', 'Other Half', 'Brooklyn Brewery']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Stadium Garages', distance: 'Adjacent', price: '$35-50', shadedSpots: false, covered: true, tip: 'Closest but expensive' },
+        { name: 'Yankee Stadium Lots', distance: '2-4 blocks', price: '$25-40', shadedSpots: false, covered: false, tip: 'Official stadium lots' },
+        { name: 'Private Lots', distance: '3-6 blocks', price: '$15-30', shadedSpots: false, covered: false, tip: 'Various private options' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Meter parking with time limits',
+        tip: 'Very limited, arrive very early'
+      },
+      alternativeTransport: {
+        publicTransit: ['4, 6, B, D trains to 161st Street', 'Multiple subway lines'],
+        rideShare: 'Designated pickup areas on side streets',
+        bicycle: 'Limited bike parking in urban setting'
+      }
+    },
+    gates: [
+      { name: 'Gate 2', location: 'Home plate entrance', bestFor: ['Premium seating', 'Great Hall'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 4', location: 'Right field', bestFor: ['Bleachers', 'Right field seating'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 6', location: 'Left field', bestFor: ['Left field seating', 'Grandstand'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate 8', location: 'Center field', bestFor: ['Monument Park access'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Yankees Clubhouse Shop', exclusive: ['Championship gear', '27 rings collection'] },
+        { location: 'Great Hall stores', exclusive: ['Premium Yankees items'] }
+      ],
+      firstAid: ['Section 125', 'Great Hall', 'Club levels'],
+      babyChanging: ['All family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['All gate areas', 'Great Hall', 'Club levels'],
+      wifi: { available: true, network: 'Yankees_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Club levels', 'Premium areas'],
+      kidZones: [
+        { name: 'Kids Clubhouse', location: 'Great Hall area', activities: ['Interactive games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations throughout']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All main areas'],
+      parkingSpaces: 'Available in stadium garages'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Visit Monument Park', description: 'Honor Yankees legends before games', category: 'experience' },
+        { title: 'Take Public Transit', description: 'Subway is fastest way to stadium', category: 'arrival' },
+        { title: 'Experience Bleacher Culture', description: 'Roll call tradition with Bleacher Creatures', category: 'experience' },
+        { title: 'Explore Great Hall', description: 'Yankees history and artifacts display', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '90 minutes before first pitch',
+        battingPractice: 'Yankees BP 2.5 hours before game',
+        firstPitch: '7:05 PM weekdays, 1:05 PM Saturdays, 1:05 PM Sundays',
+        rushHours: ['6:15-6:45 PM for night games']
+      },
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'South Bronx',
+      description: 'Urban setting with rich baseball history',
+      beforeGame: ['Yankee Tavern', 'Local sports bars', 'Great Hall'],
+      afterGame: ['Manhattan (20 min subway)', 'Local Bronx establishments'],
+      radius: '2-3 blocks of limited options'
+    },
+    transportation: {
+      address: '1 E 161st St, Bronx, NY 10451',
+      publicTransit: {
+        bus: [{ routes: ['Multiple MTA bus routes'], stops: ['Throughout Bronx and Manhattan'] }],
+        train: [{ lines: ['4, 6, B, D trains'], station: '161st Street-Yankee Stadium', walkTime: '2 minutes' }]
+      },
+      driving: {
+        majorRoutes: ['Major Deegan Expressway', 'Triborough Bridge', 'FDR Drive to Willis Ave'],
+        typicalTraffic: 'Very heavy in Bronx area',
+        bestApproach: 'Public transit strongly recommended'
+      },
+      rideShare: {
+        pickupZone: 'Side streets away from stadium',
+        dropoffZone: 'Near subway station',
+        surgePricing: '3-6x after games',
+        alternativeTip: 'Take subway - faster than cars'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2009, event: 'New Yankee Stadium opens' },
+        { year: 2009, event: 'Yankees win World Series in inaugural year' },
+        { year: 2017, event: 'Aaron Judge breaks rookie home run record' }
+      ],
+      notableGames: [
+        { date: '2009-11-04', description: 'World Series clinching game in inaugural season' },
+        { date: '2017-09-25', description: 'Aaron Judge\'s 50th home run' },
+        { date: '2019-10-18', description: 'ALCS Game 6 walk-off victory' }
+      ],
+      traditions: [
+        { name: 'Monument Park', description: 'Honor roll of Yankees legends' },
+        { name: 'Bleacher Creatures Roll Call', description: 'First inning player introductions' },
+        { name: 'New York, New York', description: 'Frank Sinatra song after victories' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'High expectations, championship tradition, sophisticated crowd',
+      bestExperiences: ['Monument Park visits', 'Bleacher Creature culture', 'Playoff atmosphere'],
+      traditions: ['Roll call', 'New York New York', '27 rings legacy']
+    },
+    proTips: {
+      insiderTips: [
+        'Take the subway - driving is a nightmare',
+        'Visit Monument Park before games',
+        'Experience the Bleacher Creatures',
+        'Great Hall has amazing Yankees history'
+      ],
+      avoidThese: [
+        'Driving to games if possible',
+        'Missing Monument Park',
+        'Ignoring the Yankees tradition and history'
+      ],
+      hiddenGems: [
+        'Yankees Museum in Great Hall',
+        'Steakhouse quality dining options',
+        'Short porch in right field'
+      ],
+      photoSpots: [
+        'Monument Park plaques',
+        'Great Hall historical displays',
+        'View from behind home plate'
+      ],
+      bestValue: [
+        'Grandstand seats behind home plate',
+        'Bleacher seats for the experience',
+        'Standing room for big games'
+      ]
+    }
+  },
+
+  'redsox': {
+    id: 'redsox',
+    name: 'Fenway Park',
+    team: 'Boston Red Sox',
+    opened: 1912,
+    capacity: 37755,
+    overview: {
+      description: 'Fenway Park, the oldest ballpark in Major League Baseball, is famous for the Green Monster, its 37-foot-tall left field wall. Located in Boston\'s Fenway-Kenmore neighborhood, this iconic venue offers an intimate and historic baseball experience with quirky features and passionate Red Sox Nation fans.',
+      highlights: [
+        'Oldest ballpark in MLB (1912)',
+        'The Green Monster - iconic 37-foot left field wall',
+        'Manual scoreboard on Green Monster',
+        'Intimate atmosphere with unique dimensions'
+      ],
+      uniqueFeatures: [
+        'Green Monster left field wall and seating',
+        'Triangle section in center field',
+        'Pesky Pole down right field line',
+        'Red seat marking Ted Williams\' longest home run'
+      ],
+      renovations: [
+        { year: 2003, description: 'Green Monster seats added' },
+        { year: 2011, description: 'Right field roof deck and pavilion' },
+        { year: 2019, description: 'Technology and concession upgrades' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Third base side Grandstand', 'Green Monster area', 'Pavilion Box 1-10'],
+        afternoon: ['First base side gets relief', 'Right Field Roof', 'Upper sections'],
+        evening: ['Most areas have some shade', 'Infield sections', 'All premium areas']
+      },
+      coveredSeating: ['Green Monster Club', 'Right Field Roof Deck', '.406 Club'],
+      shadeTips: [
+        'Intimate park means limited shade coverage',
+        'Green Monster provides unique shaded experience',
+        'Afternoon games: first base side preferred',
+        'Evening games offer best shade conditions'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Gate A', 'Green Monster concourse', 'Team store'],
+        shadedConcourses: ['Green Monster concourse', 'Upper level areas'],
+        indoorAreas: ['Team store', 'Green Monster Club', 'Premium clubs']
+      },
+      worstSunExposure: ['Bleacher sections 34-43', 'Right field box 89-96', 'Field box 3-14'],
+      monthlyPatterns: [
+        { month: 'April', avgTemp: 50, avgHumidity: 60, rainChance: 30, typicalConditions: 'Cool spring, windy', shadeTip: 'Third base side for warmth' },
+        { month: 'May', avgTemp: 61, avgHumidity: 65, rainChance: 25, typicalConditions: 'Pleasant spring weather', shadeTip: 'Upper sections recommended' },
+        { month: 'June', avgTemp: 70, avgHumidity: 70, rainChance: 20, typicalConditions: 'Warm, occasional storms', shadeTip: 'Green Monster for shade' },
+        { month: 'July', avgTemp: 76, avgHumidity: 75, rainChance: 15, typicalConditions: 'Hot and humid', shadeTip: 'Shade essential for day games' },
+        { month: 'August', avgTemp: 74, avgHumidity: 75, rainChance: 15, typicalConditions: 'Warm and humid', shadeTip: 'First base side afternoon relief' },
+        { month: 'September', avgTemp: 66, avgHumidity: 70, rainChance: 20, typicalConditions: 'Beautiful fall weather', shadeTip: 'Perfect conditions for playoff run' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Green Monster seats', perks: ['Unique view', 'Bar rail seating', 'Legendary experience'], access: 'Top of Green Monster' },
+          { name: '.406 Club', perks: ['All-inclusive dining', 'Climate control', 'Premium location'], access: 'Behind home plate' },
+          { name: 'Green Monster Club', perks: ['Exclusive club access', 'Premium amenities'], access: 'Green Monster concourse' }
+        ],
+        suites: {
+          levels: ['Suite level and premium areas'],
+          amenities: ['Climate control', 'Catering', 'Private restrooms', 'Historic venue views']
+        },
+        specialAreas: [
+          { name: 'Right Field Roof', description: 'Standing room with city views' },
+          { name: 'Pavilion Box', description: 'Premium seating along first base' }
+        ]
+      },
+      budgetOptions: ['Grandstand sections', 'Bleacher areas', 'Standing Room Only'],
+      familySections: ['Family sections in Grandstand', 'Kids activities on select days'],
+      standingRoom: ['Right Field Roof', 'Concourse areas', 'Standing Room Only tickets'],
+      partyAreas: [
+        { name: 'Right Field Roof', capacity: '274', description: 'Standing room party area', amenities: ['Bar service', 'City views', 'Social atmosphere'] }
+      ],
+      tips: [
+        { section: 'Green Monster', tip: 'Must-do Fenway experience but limited view', category: 'experience' },
+        { section: 'Grandstand behind home plate', tip: 'Classic Fenway views and history', category: 'view' },
+        { section: '.406 Club', tip: 'Premium dining with field views', category: 'experience' },
+        { section: 'Right Field Roof', tip: 'Unique party atmosphere with city views', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Fenway Frank', 'New England Clam Chowder', 'Cracker Jack', 'Boston Baked Beans'],
+      local: ['Legal Sea Foods clam chowder', 'Sweet Caroline at Fenway', 'Boston cream pie'],
+      healthy: ['Fresh salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie dogs', 'Pizza options', 'Salads'],
+      glutenFree: ['GF beer available', 'Gluten-free options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream', 'Cracker Jack'],
+      alcohol: {
+        beer: ['Sam Adams', 'Budweiser', 'Local craft beers', 'Stella Artois'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Sam Adams', 'Harpoon', 'Night Shift']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Fenway Park Lots', distance: '2-4 blocks', price: '$30-50', shadedSpots: false, covered: false, tip: 'Very limited official parking' },
+        { name: 'Private Lots', distance: '2-8 blocks', price: '$20-40', shadedSpots: false, covered: false, tip: 'Various private lots throughout area' },
+        { name: 'Boston Common Garage', distance: '15 min T ride', price: '$15-25', shadedSpots: false, covered: true, tip: 'Covered downtown parking with T access' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Resident parking only on game days',
+        tip: 'Nearly impossible, avoid driving'
+      },
+      alternativeTransport: {
+        publicTransit: ['Green Line B, C, D to Kenmore', 'Green Line B to Fenway'],
+        rideShare: 'Pickup zones several blocks away',
+        bicycle: 'Limited bike parking, urban setting'
+      }
+    },
+    gates: [
+      { name: 'Gate A', location: 'Home plate entrance', bestFor: ['Premium seating', 'Team store'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate B', location: 'Right field', bestFor: ['Grandstand', 'Bleachers'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate C', location: 'Center field', bestFor: ['Bleachers', 'Standing room'], openTime: '90 minutes before first pitch' },
+      { name: 'Gate E', location: 'Green Monster', bestFor: ['Green Monster seats'], openTime: '90 minutes before first pitch' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Team Store at Gate A', exclusive: ['Green Monster items', 'Historic Fenway gear'] },
+        { location: 'Yawkey Way Store', exclusive: ['Vintage Red Sox items'] }
+      ],
+      firstAid: ['Section 12', 'Green Monster concourse'],
+      babyChanging: ['Family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['Gate areas', 'Concourse locations'],
+      wifi: { available: true, network: 'RedSox_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Premium areas', 'Green Monster Club'],
+      kidZones: [
+        { name: 'Kids Concourse', location: 'Upper level', activities: ['Interactive games on select days'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Limited due to historic nature - staff assistance provided'],
+        entrance: 'Gate A is most accessible',
+        elevators: ['Limited - historic building constraints']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Available with assistance'],
+      accessibleConcessions: ['Main concession areas'],
+      parkingSpaces: 'Very limited - arrange in advance'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Take the T', description: 'Public transit is the only practical way', category: 'arrival' },
+        { title: 'Experience Green Monster', description: 'Unique seating experience on famous wall', category: 'experience' },
+        { title: 'Sweet Caroline', description: '8th inning tradition everyone sings along', category: 'experience' },
+        { title: 'Arrive Early', description: 'Explore historic ballpark before crowds', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '90 minutes before first pitch',
+        battingPractice: 'Red Sox BP 2.5 hours before game',
+        firstPitch: '7:10 PM weekdays, 4:05 PM Saturdays, 1:35 PM Sundays',
+        rushHours: ['6:15-6:45 PM for night games']
+      },
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: false
+      }
+    },
+    neighborhood: {
+      name: 'Fenway-Kenmore',
+      description: 'Historic neighborhood built around the ballpark',
+      beforeGame: ['Cask \'n Flagon', 'Game On!', 'Kenmore Square bars'],
+      afterGame: ['Lansdowne Street bars', 'Fenway area pubs', 'Back Bay restaurants'],
+      radius: '3-4 blocks of dense entertainment'
+    },
+    transportation: {
+      address: '4 Jersey St, Boston, MA 02215',
+      publicTransit: {
+        bus: [{ routes: ['Multiple MBTA bus routes'], stops: ['Throughout Boston area'] }],
+        train: [{ lines: ['Green Line B, C, D'], station: 'Kenmore or Fenway', walkTime: '5 minutes' }]
+      },
+      driving: {
+        majorRoutes: ['Mass Pike to Kenmore', 'Storrow Drive', 'I-93 to downtown'],
+        typicalTraffic: 'Extremely heavy in Fenway area',
+        bestApproach: 'Public transit absolutely recommended'
+      },
+      rideShare: {
+        pickupZone: 'Several blocks away from stadium',
+        dropoffZone: 'Kenmore Square area',
+        surgePricing: '4-6x after games',
+        alternativeTip: 'Take the T - much faster'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1912, event: 'Fenway Park opens' },
+        { year: 1918, event: 'Red Sox win World Series (start of Curse)' },
+        { year: 2004, event: 'Curse of the Bambino broken' },
+        { year: 2013, event: 'World Series victory after Marathon bombing' }
+      ],
+      notableGames: [
+        { date: '1975-10-21', description: 'Carlton Fisk Game 6 World Series home run' },
+        { date: '2004-10-17', description: 'ALCS Game 4 comeback begins' },
+        { date: '2013-10-30', description: 'World Series clinching game' }
+      ],
+      traditions: [
+        { name: 'Green Monster', description: 'Iconic left field wall unique to Fenway' },
+        { name: 'Sweet Caroline', description: '8th inning sing-along tradition' },
+        { name: 'Red Sox Nation', description: 'Passionate global fanbase' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Historic and passionate, knowledgeable baseball fans',
+      bestExperiences: ['Green Monster experience', 'Sweet Caroline sing-along', 'Fenway history'],
+      traditions: ['Sweet Caroline', 'Green Monster mystique', 'Dirty Water after wins']
+    },
+    proTips: {
+      insiderTips: [
+        'Public transit only - don\'t even think about driving',
+        'Green Monster seats are must-do but view is limited',
+        'Arrive early to soak in the history',
+        'Sweet Caroline at 8th inning stretch is mandatory'
+      ],
+      avoidThese: [
+        'Driving to games under any circumstances',
+        'Missing Sweet Caroline',
+        'Not exploring the ballpark history'
+      ],
+      hiddenGems: [
+        'Red seat in right field (Ted Williams home run)',
+        'Pesky Pole stories',
+        'Triangle section in center field'
+      ],
+      photoSpots: [
+        'Green Monster wall and seats',
+        'Pesky Pole down right field line',
+        'Fenway Park entrance signs'
+      ],
+      bestValue: [
+        'Grandstand seats behind home plate',
+        'Bleacher seats for classic experience',
+        'Standing Room Only for big games'
+      ]
+    }
   }
 };

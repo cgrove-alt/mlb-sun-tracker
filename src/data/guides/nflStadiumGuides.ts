@@ -1612,7 +1612,678 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
       photoSpots: [],
       bestValue: []
     }
+  },
+
+  // AFC SOUTH
+  'nissan-stadium': {
+    id: 'nissan-stadium',
+    name: 'Nissan Stadium',
+    team: 'Tennessee Titans',
+    opened: 1999,
+    capacity: 69143,
+    overview: {
+      description: 'Nissan Stadium sits on the east bank of the Cumberland River in downtown Nashville, offering views of the city skyline. The stadium features modern amenities while maintaining an intimate atmosphere, with the famous Titans sword logo and color scheme throughout.',
+      highlights: [
+        'Downtown Nashville riverfront location',
+        'Views of Cumberland River and city skyline',
+        'Modern design with intimate feel',
+        'Walking distance to Broadway entertainment district'
+      ],
+      uniqueFeatures: [
+        'Cumberland River setting',
+        'Riverfront walking trails nearby',
+        'Downtown Nashville integration',
+        'Titans blue and navy color scheme'
+      ],
+      renovations: [
+        { year: 2015, description: 'Video board and sound system upgrades' },
+        { year: 2019, description: 'Premium seating improvements' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections', 'Upper deck 300-315', 'Club level west'],
+        afternoon: ['East sideline becomes shaded', 'Sections 200-220', 'Upper deck east'],
+        evening: ['Most areas have shade coverage', 'Lower bowl infield', 'All club areas']
+      },
+      coveredSeating: ['Club level areas', 'Suite levels', 'Premium lounges'],
+      shadeTips: [
+        'Stadium runs roughly north-south',
+        'Afternoon games: east side recommended',
+        'Upper deck provides good shade coverage',
+        'River breeze can provide cooling relief'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Gate entrances', 'Pro Shop areas'],
+        shadedConcourses: ['Club level concourses', 'Upper deck areas'],
+        indoorAreas: ['Pro Shop', 'Club lounges', 'Premium areas']
+      },
+      worstSunExposure: ['Lower west sideline', 'Sections 110-130', 'Some end zone seats'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 70, rainChance: 20, typicalConditions: 'Warm and humid', shadeTip: 'East side for afternoon relief' },
+        { month: 'October', avgTemp: 64, avgHumidity: 65, rainChance: 15, typicalConditions: 'Pleasant fall weather', shadeTip: 'Great conditions, any seat works' },
+        { month: 'November', avgTemp: 52, avgHumidity: 65, rainChance: 20, typicalConditions: 'Cool and crisp', shadeTip: 'Layer up, sun exposure manageable' },
+        { month: 'December', avgTemp: 41, avgHumidity: 70, rainChance: 25, typicalConditions: 'Cold winter weather', shadeTip: 'Bundle up regardless of location' },
+        { month: 'January', avgTemp: 36, avgHumidity: 65, rainChance: 20, typicalConditions: 'Cold with possible snow', shadeTip: 'Dress for winter conditions' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Titans Club', perks: ['Climate control', 'Premium dining', 'Exclusive entrance'], access: 'Club level midfield' },
+          { name: 'Nashville SC Club', perks: ['All-inclusive service', 'Bar access', 'Premium location'], access: 'Lower club level' }
+        ],
+        suites: {
+          levels: ['Suite level with city and river views'],
+          amenities: ['Climate control', 'Catering', 'Private restrooms', 'Premium furnishing']
+        },
+        specialAreas: [
+          { name: 'Touchdown Club', description: 'End zone premium experience' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper sections', 'Some lower level end zones'],
+      familySections: ['Family sections throughout stadium', 'Kid-friendly areas'],
+      standingRoom: ['Concourse areas', 'Bar viewing spaces'],
+      partyAreas: [
+        { name: 'Titans Tower', capacity: '200', description: 'Group viewing area', amenities: ['Group seating', 'Food service'] }
+      ],
+      tips: [
+        { section: 'Club Level', tip: 'Climate control and great river views', category: 'experience' },
+        { section: 'Lower bowl midfield', tip: 'Best game views with potential river breeze', category: 'experience' },
+        { section: 'Upper deck 320-330', tip: 'Great value with city skyline views', category: 'view' },
+        { section: 'End zones', tip: 'Budget friendly with decent amenities', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Hot Chicken', 'BBQ Nachos', 'Goo Goo Clusters', 'Tennessee Whiskey selections'],
+      local: ['Prince\'s Hot Chicken', 'Nashville BBQ', 'Moon Pie', 'Jack Daniel\'s products'],
+      healthy: ['Grilled options', 'Salads', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Nashville hot cauliflower', 'Salads'],
+      glutenFree: ['GF beer available', 'Grilled options'],
+      kidsFriendly: ['Chicken tenders', 'Hot dogs', 'Mac and cheese', 'Ice cream'],
+      alcohol: {
+        beer: ['Budweiser', 'Miller', 'Local craft beers', 'Yazoo'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Yazoo', 'Blackstone', 'Tennessee Brew Works']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Stadium Lots A-G', distance: 'Adjacent', price: '$20-30', shadedSpots: false, covered: false, tip: 'Closest official parking' },
+        { name: 'Downtown Lots', distance: '3-6 blocks', price: '$10-20', shadedSpots: false, covered: true, tip: 'Some covered garage options' },
+        { name: 'Riverfront Lots', distance: '8-10 blocks', price: '$10-15', shadedSpots: false, covered: false, tip: 'Scenic walk along river' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Meter parking downtown with time limits',
+        tip: 'Limited availability near stadium'
+      },
+      alternativeTransport: {
+        publicTransit: ['WeGo bus routes', 'Music City Circuit'],
+        rideShare: 'Designated pickup areas downtown',
+        bicycle: 'Bike parking available, greenway access'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Southwest corner', bestFor: ['Lower west', 'Club level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'Southeast corner', bestFor: ['Lower east', 'Family areas'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 7', location: 'North end', bestFor: ['North end zone', 'Upper deck'], openTime: '2 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Titans Pro Shop', exclusive: ['Titans gear', 'Nashville themed items'] }
+      ],
+      firstAid: ['Gate areas', 'Club level', 'Upper concourse'],
+      babyChanging: ['Family restrooms', 'Guest services'],
+      atms: ['Gate areas', 'Concourse locations'],
+      wifi: { available: true, network: 'Titans_WiFi' },
+      kidZones: [
+        { name: 'Titans Kids Zone', location: 'Concourse area', activities: ['Interactive games', 'Activities'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['ADA sections throughout'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['Main areas'],
+      parkingSpaces: 'Available in official lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Try Nashville Hot Chicken', description: 'Local specialty available throughout stadium', category: 'food' },
+        { title: 'Explore Downtown', description: 'Broadway entertainment district nearby', category: 'experience' },
+        { title: 'Riverfront Walk', description: 'Cumberland River trails near stadium', category: 'experience' },
+        { title: 'Titans Chant', description: 'Participate in team chants', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM most Sundays, 4:25 PM late games',
+        rushHours: ['11:00 AM-12:30 PM for early games']
+      },
+      security: {
+        allowedBags: 'Clear bags only',
+        prohibitedItems: ['Coolers', 'Glass', 'Outside alcohol'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Downtown Nashville',
+      description: 'Music City entertainment district',
+      beforeGame: ['Broadway honky-tonks', 'Riverfront restaurants', 'Music venues'],
+      afterGame: ['Broadway nightlife', 'The Gulch', 'Music Row area'],
+      radius: '1-2 miles of entertainment'
+    },
+    transportation: {
+      address: '1 Titans Way, Nashville, TN 37213',
+      publicTransit: {
+        bus: [{ routes: ['WeGo bus routes'], stops: ['Downtown Nashville'] }]
+      },
+      driving: {
+        majorRoutes: ['I-65 to downtown', 'I-40 to I-65', 'I-24 to downtown'],
+        typicalTraffic: 'Heavy downtown traffic 2 hours before',
+        bestApproach: 'I-40 to I-65 South'
+      },
+      rideShare: {
+        pickupZone: 'Downtown pickup areas',
+        dropoffZone: 'Stadium vicinity',
+        surgePricing: '2-4x after games',
+        alternativeTip: 'Walk to Broadway area'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1999, event: 'Stadium opens for Titans and Oilers' },
+        { year: 2000, event: 'Titans reach Super Bowl XXXIV' },
+        { year: 2019, event: 'Stadium hosts MLS Nashville SC' }
+      ],
+      notableGames: [
+        { date: '2000-01-08', description: 'Music City Miracle playoff victory' },
+        { date: '2019-01-05', description: 'Wild Card playoff victory over Patriots' }
+      ],
+      traditions: [
+        { name: 'Titan Up', description: 'Team rallying cry and fan chant' },
+        { name: 'Two-Tone Blue', description: 'Team colors and fan identity' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Growing passionate fanbase, Nashville music energy',
+      bestExperiences: ['Downtown Nashville nightlife', 'Riverfront setting', 'Music City culture'],
+      traditions: ['Titan Up chants', 'Two-Tone Blue colors']
+    },
+    proTips: {
+      insiderTips: [
+        'Combine game with Broadway entertainment',
+        'Try authentic Nashville hot chicken',
+        'Walk along Cumberland River',
+        'Explore Music City culture'
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
+    }
+  },
+
+  'nrg-stadium': {
+    id: 'nrg-stadium',
+    name: 'NRG Stadium',
+    team: 'Houston Texans',
+    opened: 2002,
+    capacity: 72220,
+    overview: {
+      description: 'NRG Stadium was the first NFL stadium with a retractable roof and features state-of-the-art technology throughout. Located in Houston\'s sports complex, it offers climate-controlled comfort in the hot and humid Texas climate while hosting both NFL games and major events.',
+      highlights: [
+        'First NFL stadium with retractable roof',
+        'Climate-controlled environment',
+        'State-of-the-art technology and amenities',
+        'Part of Houston\'s major sports complex'
+      ],
+      uniqueFeatures: [
+        'Retractable roof system',
+        'Natural grass field with artificial lighting',
+        'Massive HD video boards',
+        'Premium club and suite offerings'
+      ],
+      renovations: [
+        { year: 2014, description: 'Technology upgrades and premium seating' },
+        { year: 2019, description: 'Additional premium amenities' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Retractable roof provides universal coverage', 'All sections climate controlled', 'No sun exposure concerns'],
+        afternoon: ['Roof closed for most games', 'All seating comfortable', 'Climate controlled throughout'],
+        evening: ['Perfect conditions with roof', 'All sections equally comfortable', 'No weather concerns']
+      },
+      coveredSeating: ['Entire stadium under retractable roof', 'All seating climate controlled'],
+      shadeTips: [
+        'Retractable roof eliminates sun/weather concerns',
+        'Stadium typically operates with roof closed',
+        'Air conditioning throughout venue',
+        'Perfect conditions regardless of outside weather'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Not needed - fully covered stadium'],
+        shadedConcourses: ['All areas climate controlled'],
+        indoorAreas: ['Entire stadium functions as indoor venue']
+      },
+      worstSunExposure: ['None - stadium fully covered'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 72, avgHumidity: 0, rainChance: 0, typicalConditions: 'Perfect climate control', shadeTip: 'Roof closed - no concerns' },
+        { month: 'October', avgTemp: 72, avgHumidity: 0, rainChance: 0, typicalConditions: 'Perfect climate control', shadeTip: 'Roof closed - no concerns' },
+        { month: 'November', avgTemp: 72, avgHumidity: 0, rainChance: 0, typicalConditions: 'Perfect climate control', shadeTip: 'Roof closed - no concerns' },
+        { month: 'December', avgTemp: 72, avgHumidity: 0, rainChance: 0, typicalConditions: 'Perfect climate control', shadeTip: 'Roof closed - no concerns' },
+        { month: 'January', avgTemp: 72, avgHumidity: 0, rainChance: 0, typicalConditions: 'Perfect climate control', shadeTip: 'Roof closed - no concerns' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Hall of Fame Club', perks: ['All-inclusive dining', 'Premium bar', 'Climate control'], access: 'Club level midfield' },
+          { name: 'Gridiron Club', perks: ['Upscale dining', 'Exclusive access', 'Premium amenities'], access: 'Lower club level' }
+        ],
+        suites: {
+          levels: ['Multiple suite levels available'],
+          amenities: ['Private restrooms', 'Catering', 'Premium furnishing', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Field Level Suites', description: 'Premium field-level experience' }
+        ]
+      },
+      budgetOptions: ['Upper deck sections', 'End zone areas', 'Some lower level corners'],
+      familySections: ['Family sections throughout', 'Kid-friendly areas'],
+      standingRoom: ['Various concourse areas', 'Bar spaces'],
+      partyAreas: [
+        { name: 'Bud Light Party Deck', capacity: '300', description: 'Party atmosphere viewing', amenities: ['Bar service', 'Social space'] }
+      ],
+      tips: [
+        { section: 'Any section', tip: 'All seats comfortable with climate control', category: 'experience' },
+        { section: 'Club Level', tip: 'Premium dining and amenities', category: 'experience' },
+        { section: 'Lower bowl', tip: 'Closest to action, still climate controlled', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Texas BBQ', 'Tex-Mex cuisine', 'Houston specialties', 'Local craft beer'],
+      local: ['Whataburger', 'Houston BBQ', 'Tex-Mex options', 'Local food trucks'],
+      healthy: ['Salad options', 'Grilled items', 'Fresh selections'],
+      vegetarian: ['Veggie options', 'Tex-Mex vegetarian'],
+      glutenFree: ['GF options available'],
+      kidsFriendly: ['Kid meals', 'Classic concessions'],
+      alcohol: {
+        beer: ['Local craft beers', 'National brands'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Saint Arnold', '8th Wonder', 'Buffalo Bayou']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Red Lots', distance: 'Adjacent', price: '$30-50', shadedSpots: false, covered: false, tip: 'Closest but most expensive' },
+        { name: 'Blue Lots', distance: '5 min walk', price: '$20-30', shadedSpots: false, covered: false, tip: 'Good middle option' },
+        { name: 'Yellow Lots', distance: '10 min walk', price: '$15-25', shadedSpots: false, covered: false, tip: 'Budget option with longer walk' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking in stadium area',
+        tip: 'Stadium parking required'
+      },
+      alternativeTransport: {
+        publicTransit: ['Metro Rail Red Line', 'Bus routes'],
+        rideShare: 'Designated pickup zones',
+        bicycle: 'Limited bike parking'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Northwest', bestFor: ['Upper deck', 'Club level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 5', location: 'Southeast', bestFor: ['Lower level', 'Premium areas'], openTime: '2 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Texans Pro Shop', exclusive: ['Texans gear', 'Houston themed items'] }
+      ],
+      firstAid: ['Multiple locations throughout'],
+      babyChanging: ['Family restrooms throughout'],
+      atms: ['Concourse areas'],
+      wifi: { available: true, network: 'NRG_WiFi' },
+      kidZones: [
+        { name: 'Texans Kids Zone', location: 'Concourse', activities: ['Interactive games'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['ADA sections throughout'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All main areas'],
+      parkingSpaces: 'Available in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Enjoy Climate Control', description: 'Perfect temperature regardless of Houston weather', category: 'experience' },
+        { title: 'Try Texas BBQ', description: 'Authentic Houston BBQ throughout stadium', category: 'food' },
+        { title: 'Explore Sports Complex', description: 'Multiple sports venues in area', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM most Sundays',
+        rushHours: ['11:00 AM-12:30 PM']
+      },
+      security: {
+        allowedBags: 'Clear bags only',
+        prohibitedItems: ['Standard NFL restrictions'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Houston Sports Complex',
+      description: 'Major sports and entertainment district',
+      beforeGame: ['Sports complex restaurants', 'Nearby entertainment'],
+      afterGame: ['Downtown Houston', 'Local sports bars'],
+      radius: '15-20 minutes to downtown'
+    },
+    transportation: {
+      address: 'One NRG Pkwy, Houston, TX 77054',
+      publicTransit: {
+        bus: [{ routes: ['Metro buses'], stops: ['Stadium area'] }]
+      },
+      driving: {
+        majorRoutes: ['I-610', 'US-288', 'I-69'],
+        typicalTraffic: 'Heavy on game days',
+        bestApproach: 'Plan extra time for traffic'
+      },
+      rideShare: {
+        pickupZone: 'Designated areas',
+        dropoffZone: 'Stadium gates',
+        surgePricing: 'Expected after games'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2002, event: 'NRG Stadium opens' },
+        { year: 2017, event: 'Hosts Super Bowl LI' }
+      ],
+      notableGames: [
+        { date: '2017-02-05', description: 'Super Bowl LI - Patriots comeback' }
+      ],
+      traditions: [
+        { name: 'Battle Red', description: 'Special Texans uniform and fan tradition' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Modern venue with growing fanbase traditions',
+      bestExperiences: ['Climate controlled comfort', 'State-of-art technology'],
+      traditions: ['Battle Red games', 'Texans chants']
+    },
+    proTips: {
+      insiderTips: [
+        'Perfect conditions regardless of weather outside',
+        'All seats offer good experience with climate control',
+        'Try local Houston food specialties'
+      ],
+      avoidThese: [],
+      hiddenGems: [],
+      photoSpots: [],
+      bestValue: []
+    }
+  },
+
+  // AFC WEST  
+  'arrowhead-stadium': {
+    id: 'arrowhead-stadium',
+    name: 'Arrowhead Stadium',
+    team: 'Kansas City Chiefs',
+    opened: 1972,
+    capacity: 76416,
+    overview: {
+      description: 'Arrowhead Stadium, known for being one of the loudest stadiums in the NFL, sits in Kansas City\'s Truman Sports Complex. Famous for its passionate Chiefs Kingdom fanbase, the stadium has held noise level records and provides an intimidating atmosphere for visiting teams.',
+      highlights: [
+        'One of the loudest stadiums in the NFL',
+        'Home to passionate Chiefs Kingdom',
+        'Holds Guinness World Record for crowd noise',
+        'Part of Truman Sports Complex with Royals'
+      ],
+      uniqueFeatures: [
+        'Arrowhead design inspiration',
+        'Record-setting crowd noise levels',
+        'Massive tailgating lots',
+        'Red Sea of Chiefs fans'
+      ],
+      renovations: [
+        { year: 2010, description: 'Major renovation preserving character while adding amenities' },
+        { year: 2019, description: 'Championship upgrades and improvements' }
+      ]
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections', 'Upper deck 300-315', 'Club level west'],
+        afternoon: ['East sideline gets relief', 'Upper deck 330-345', 'All club areas'],
+        evening: ['Upper deck provides coverage', 'Most lower bowl sections', 'Premium areas']
+      },
+      coveredSeating: ['Club level areas', 'Suite levels', 'Premium clubs'],
+      shadeTips: [
+        'Stadium runs roughly east-west',
+        'Upper deck provides good shade for lower bowl',
+        'Afternoon games: east side recommended',
+        'Tailgating lots have limited shade'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Gate entrances', 'Chiefs Pro Shop'],
+        shadedConcourses: ['Upper level concourses', 'Club areas'],
+        indoorAreas: ['Chiefs Hall of Honor', 'Pro Shop', 'Club lounges']
+      },
+      worstSunExposure: ['Lower west sideline', 'Sections 115-135', 'Some end zone lower seats'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 70, rainChance: 20, typicalConditions: 'Warm early season', shadeTip: 'East side for afternoon relief' },
+        { month: 'October', avgTemp: 63, avgHumidity: 65, rainChance: 15, typicalConditions: 'Perfect football weather', shadeTip: 'Great conditions throughout' },
+        { month: 'November', avgTemp: 50, avgHumidity: 65, rainChance: 20, typicalConditions: 'Cool and crisp', shadeTip: 'Layer up, sun manageable' },
+        { month: 'December', avgTemp: 38, avgHumidity: 70, rainChance: 25, typicalConditions: 'Cold winter weather', shadeTip: 'Bundle up regardless of seat' },
+        { month: 'January', avgTemp: 32, avgHumidity: 65, rainChance: 20, typicalConditions: 'Harsh playoff weather', shadeTip: 'Dress for arctic conditions' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Chiefs Club', perks: ['Climate control', 'Premium dining', 'Exclusive access'], access: 'Club level midfield' },
+          { name: 'Arrowhead Club', perks: ['All-inclusive service', 'Premium bar', 'VIP entrance'], access: 'Premium club level' }
+        ],
+        suites: {
+          levels: ['Suite level and club level options'],
+          amenities: ['Climate control', 'Catering', 'Private restrooms', 'Premium furnishing']
+        },
+        specialAreas: [
+          { name: 'Ford Tailgate District', description: 'Premium tailgating experience' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper sections', 'Some lower level end zones'],
+      familySections: ['Family sections throughout stadium', 'Kid-friendly areas'],
+      standingRoom: ['Concourse areas', 'Bar spaces with views'],
+      partyAreas: [
+        { name: 'Chiefs Kingdom Plaza', capacity: '500', description: 'Pre-game tailgate area', amenities: ['Food service', 'Entertainment', 'Chiefs atmosphere'] }
+      ],
+      tips: [
+        { section: 'Club Level', tip: 'Climate control essential for winter playoff games', category: 'experience' },
+        { section: 'Lower bowl', tip: 'Loudest experience - bring ear protection', category: 'experience' },
+        { section: 'Upper deck midfield', tip: 'Great views and crowd noise', category: 'view' },
+        { section: 'End zones', tip: 'Budget option with full Chiefs Kingdom experience', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Burnt Ends', 'Kansas City BBQ', 'Boulevard Beer', 'Gates BBQ'],
+      local: ['Joe\'s Kansas City BBQ', 'LC\'s Bar-B-Q', 'Winstead\'s burgers', 'Local KC specialties'],
+      healthy: ['Salad options', 'Grilled selections'],
+      vegetarian: ['Veggie options', 'Kansas City sides'],
+      glutenFree: ['GF beer available', 'Grilled options'],
+      kidsFriendly: ['Chicken tenders', 'Hot dogs', 'Mac and cheese'],
+      alcohol: {
+        beer: ['Boulevard Beer', 'Budweiser', 'Local craft beers'],
+        wine: true,
+        cocktails: false,
+        localBreweries: ['Boulevard', 'KC Bier Co', 'Crane Brewing']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Red Lots A-J', distance: 'Adjacent', price: '$25-40', shadedSpots: false, covered: false, tip: 'Premium tailgating lots' },
+        { name: 'Blue Lots', distance: '5-8 min walk', price: '$20-30', shadedSpots: false, covered: false, tip: 'Good tailgating with short walk' },
+        { name: 'Green Lots', distance: '10-15 min walk', price: '$15-25', shadedSpots: false, covered: false, tip: 'Budget option with longer walk' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking available',
+        tip: 'Stadium parking required'
+      },
+      alternativeTransport: {
+        publicTransit: ['Limited bus service', 'Special event shuttles'],
+        rideShare: 'Designated pickup zones in outer lots',
+        bicycle: 'Limited bike parking available'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Southwest', bestFor: ['Lower west', 'Club level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 5', location: 'Northeast', bestFor: ['Upper deck', 'East sideline'], openTime: '2 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Chiefs Pro Shop', exclusive: ['Chiefs Kingdom gear', 'Championship merchandise'] },
+        { location: 'Chiefs Hall of Honor', exclusive: ['Historical items'] }
+      ],
+      firstAid: ['Multiple locations', 'Club level'],
+      babyChanging: ['Family restrooms', 'Guest services'],
+      atms: ['Gate areas', 'Concourse locations'],
+      wifi: { available: true, network: 'Chiefs_WiFi' },
+      kidZones: [
+        { name: 'Chiefs Kids Zone', location: 'Concourse area', activities: ['Interactive games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['ADA sections throughout'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['Main areas'],
+      parkingSpaces: 'Available in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Arrive Early for Tailgating', description: 'Chiefs Kingdom tailgating is legendary', category: 'arrival' },
+        { title: 'Bring Ear Protection', description: 'Stadium holds noise records - it gets LOUD', category: 'experience' },
+        { title: 'Try Kansas City BBQ', description: 'Some of the best BBQ in America', category: 'food' },
+        { title: 'Wear Red', description: 'Join the Red Sea of Chiefs fans', category: 'experience' },
+        { title: 'Learn the Chant', description: 'Participate in Chiefs chants and tomahawk chop', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM most Sundays, 4:25 PM late games',
+        rushHours: ['11:00 AM-12:30 PM for early games']
+      },
+      security: {
+        allowedBags: 'Clear bags only',
+        prohibitedItems: ['Coolers', 'Glass', 'Outside alcohol'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Truman Sports Complex',
+      description: 'Sports complex shared with Kansas City Royals',
+      beforeGame: ['Tailgating lots', 'Sports complex restaurants'],
+      afterGame: ['Power & Light District downtown', 'Westport entertainment'],
+      radius: '20 minutes to downtown KC'
+    },
+    transportation: {
+      address: '1 Arrowhead Dr, Kansas City, MO 64129',
+      publicTransit: {
+        bus: [{ routes: ['Metro buses on game days'], stops: ['Downtown KC'] }]
+      },
+      driving: {
+        majorRoutes: ['I-70', 'I-435', 'US-40'],
+        typicalTraffic: 'Very heavy 2-3 hours before kickoff',
+        bestApproach: 'I-70 to stadium exits'
+      },
+      rideShare: {
+        pickupZone: 'Outer lot designated areas',
+        dropoffZone: 'Stadium entrances',
+        surgePricing: '3-5x after games',
+        alternativeTip: 'Long walk to avoid surge pricing'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1972, event: 'Arrowhead Stadium opens' },
+        { year: 2014, event: 'Sets Guinness World Record for crowd noise' },
+        { year: 2020, event: 'Chiefs win Super Bowl LIV' },
+        { year: 2023, event: 'Chiefs win Super Bowl LVII' }
+      ],
+      notableGames: [
+        { date: '2014-10-13', description: 'Record-setting 142.2 decibel crowd noise' },
+        { date: '2020-01-19', description: 'AFC Championship victory' },
+        { date: '2023-01-29', description: 'AFC Championship victory' }
+      ],
+      traditions: [
+        { name: 'Chiefs Kingdom', description: 'Passionate fanbase identity' },
+        { name: 'Tomahawk Chop', description: 'Fan celebration gesture' },
+        { name: 'Red Friday', description: 'Kansas City wears red on Fridays during season' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Intimidating and loud, one of the best home field advantages in NFL',
+      bestExperiences: ['Record-breaking crowd noise', 'Legendary tailgating', 'Championship celebrations'],
+      traditions: ['Chiefs chants', 'Tomahawk chop', 'Red Sea of fans']
+    },
+    proTips: {
+      insiderTips: [
+        'Arrive early for full tailgating experience',
+        'Bring ear protection - seriously',
+        'Try authentic Kansas City BBQ',
+        'Wear red to blend in with Chiefs Kingdom'
+      ],
+      avoidThese: [
+        'Missing the tailgating experience',
+        'Not being prepared for extreme noise levels',
+        'Leaving early - traffic is bad regardless'
+      ],
+      hiddenGems: [
+        'Chiefs Hall of Honor',
+        'Premium tailgating experiences',
+        'Record-setting crowd noise atmosphere'
+      ],
+      photoSpots: [
+        'Arrowhead Stadium exterior',
+        'Chiefs Kingdom signs',
+        'View from upper deck'
+      ],
+      bestValue: [
+        'Upper deck seats with full experience',
+        'End zone seats for budget option',
+        'Tailgating lot experience'
+      ]
+    }
   }
 
-  // The file would continue with all remaining 29 teams following this same detailed structure
+  // The file would continue with all remaining NFL teams following this same detailed structure
 };
