@@ -342,64 +342,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .mobile-stadium-guide {
-    background-color: #121212;
-  }
-
-  .mobile-card {
-    background: #1e1e1e;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  .mobile-card h2,
-  .section-header h3,
-  .shade-features h3,
-  .amenity-item h4 {
-    color: #e0e0e0;
-  }
-
-  .fact-item,
-  .section-details p,
-  .tips-list li,
-  .history-text,
-  .shade-features li,
-  .amenity-item p,
-  .cta-text {
-    color: #b0b0b0;
-  }
-
-  .section-header {
-    background: #2a2a2a;
-  }
-
-  .shaded-section-item {
-    border-color: #333;
-  }
-
-  .section-details {
-    background: #1e1e1e;
-    border-top-color: #333;
-  }
-
-  .weather-stat {
-    background: #2a2a2a;
-  }
-
-  .amenity-item {
-    background: #2a2a2a;
-  }
-
-  .mobile-select {
-    background: #2a2a2a;
-    border-color: #444;
-    color: #e0e0e0;
-  }
-
-  .tips-list li {
-    border-bottom-color: #333;
-  }
-}/* Enhanced Sun Filter Component Styles */
+/* Dark mode removed *//* Enhanced Sun Filter Component Styles */
 @import '../styles/main.css';
 
 /* Desktop Filter Container */
@@ -958,37 +901,4 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .enhanced-sun-filter,
-  .filter-drawer {
-    background: var(--color-gray-800);
-    border-color: var(--color-gray-700);
-  }
-  
-  .filter-header,
-  .drawer-header {
-    border-bottom-color: var(--color-gray-700);
-  }
-  
-  .filter-title,
-  .drawer-header h3 {
-    color: var(--color-gray-100);
-  }
-  
-  .filter-section-header:hover,
-  .filter-section-header.expanded {
-    background: var(--color-gray-700);
-  }
-  
-  .filter-option:hover {
-    background: var(--color-gray-700);
-  }
-  
-  .filter-option.selected {
-    background: rgba(var(--color-primary-rgb), 0.2);
-  }
-  
-  .custom-range-container {
-    background: var(--color-gray-700);
-  }
-}
+/* Dark mode removed */

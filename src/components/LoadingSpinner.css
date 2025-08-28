@@ -104,16 +104,4 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .loading-spinner-track {
-    stroke: #374151;
-  }
-  
-  .loading-message {
-    color: #9ca3af;
-  }
-  
-  .loading-spinner-overlay {
-    background: rgba(0, 0, 0, 0.9);
-  }
-}
+/* Dark mode removed */

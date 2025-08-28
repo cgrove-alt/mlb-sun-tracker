@@ -175,27 +175,4 @@ select option {
 }
 
 /* Dark mode support for dropdowns - DISABLED to ensure readability */
-@media (prefers-color-scheme: dark) {
-  /* Keep dropdowns light even in dark mode for maximum readability */
-  select,
-  .react-select__control,
-  .react-select__menu {
-    background-color: white !important;
-    color: #000000 !important;
-    border-color: #666 !important;
-  }
-  
-  select option,
-  .react-select__option {
-    background-color: white !important;
-    color: #000000 !important;
-  }
-  
-  .dropdown-menu,
-  .profile-menu-dropdown,
-  .league-nav-dropdown {
-    background: white !important;
-    color: #000000 !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  }
-}
+/* Dark mode removed */

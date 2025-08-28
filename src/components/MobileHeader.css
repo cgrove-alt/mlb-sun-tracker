@@ -330,48 +330,4 @@ a.mobile-menu-item:hover {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .mobile-header {
-    background: rgba(15, 23, 42, 0.85);
-    border-bottom-color: rgba(255, 255, 255, 0.08);
-  }
-  
-  .mobile-header.scrolled {
-    background: rgba(15, 23, 42, 0.95);
-  }
-  
-  .mobile-header-title {
-    color: var(--color-neutral-100);
-  }
-  
-  .mobile-header-menu {
-    color: var(--color-neutral-300);
-  }
-  
-  .mobile-header-menu:hover {
-    background: var(--color-neutral-800);
-    color: var(--color-grass-green);
-  }
-  
-  .mobile-menu {
-    background: var(--color-neutral-900);
-  }
-  
-  .mobile-menu-header {
-    border-bottom-color: var(--color-neutral-800);
-  }
-  
-  .mobile-menu-item {
-    color: var(--color-neutral-100);
-  }
-  
-  .mobile-menu-item:hover {
-    background: var(--color-neutral-800);
-    color: var(--color-grass-green);
-  }
-  
-  .mobile-menu-footer {
-    background: var(--color-neutral-950);
-    border-top-color: var(--color-neutral-800);
-  }
-}
+/* Dark mode removed */

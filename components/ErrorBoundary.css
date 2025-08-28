@@ -114,23 +114,4 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .error-boundary {
-    background: #1e1e1e;
-    color: #e0e0e0;
-  }
-  
-  .error-boundary-content p {
-    color: #b0b0b0;
-  }
-  
-  .error-details {
-    background: #2a2a2a;
-    border-color: #444;
-  }
-  
-  .error-details pre {
-    background: #333;
-    color: #e0e0e0;
-  }
-}
+/* Dark mode removed */

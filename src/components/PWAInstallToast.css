@@ -189,29 +189,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .pwa-install-toast {
-    background: var(--color-gray-800);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  }
-  
-  .toast-title {
-    color: var(--color-gray-100);
-  }
-  
-  .toast-description {
-    color: var(--color-gray-400);
-  }
-  
-  .toast-action-dismiss {
-    color: var(--color-gray-400);
-  }
-  
-  .toast-action-dismiss:hover:not(:disabled) {
-    background: var(--color-gray-700);
-    color: var(--color-gray-200);
-  }
-}
+/* Dark mode removed */
 
 /* Accessibility - Reduced motion */
 @media (prefers-reduced-motion: reduce) {

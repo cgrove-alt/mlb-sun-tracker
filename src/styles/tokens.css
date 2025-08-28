@@ -46,16 +46,4 @@
   --radius-3: 12px;
 }
 
-/* Dark mode overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #0F172A;
-    --paper-soft: #1E293B;
-    --ui-border: #334155;
-    
-    /* Swap text colors for dark mode */
-    --ink-900: #F8FAFC;
-    --ink-800: #E5E7EB;
-    --ink-700: #CBD5E1;
-  }
-}
+/* Dark mode removed - App uses light theme only */

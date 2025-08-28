@@ -315,14 +315,9 @@
 }
 
 /* Dark Mode */
-[data-theme="dark"] .fab-action__label {
-  background: var(--color-gray-800);
-  color: var(--color-gray-100);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .fab-backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
+/* Dark mode selector removed */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {

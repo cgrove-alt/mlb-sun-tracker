@@ -336,52 +336,27 @@
 }
 
 /* Dark Mode */
-[data-theme="dark"] .sticky-nav {
-  background: var(--color-gray-900);
-  border-bottom-color: var(--color-gray-800);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sticky-nav--scrolled {
-  background: rgba(15, 20, 25, 0.95);
-  border-bottom-color: var(--color-gray-700);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sticky-nav__title {
-  color: var(--color-white);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .breadcrumbs__link {
-  color: var(--color-gray-400);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .breadcrumbs__link:hover {
-  color: var(--color-primary-light);
-  background: var(--color-gray-800);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .breadcrumbs__current {
-  color: var(--color-gray-100);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sticky-nav__progress {
-  background: var(--color-gray-800);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .tab-nav {
-  background: var(--color-gray-800);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .tab-nav__tab {
-  color: var(--color-gray-400);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .tab-nav__tab:hover {
-  color: var(--color-gray-200);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .tab-nav--default .tab-nav__tab.active {
-  background: var(--color-gray-700);
-}
+/* Dark mode selector removed */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {

@@ -554,28 +554,4 @@
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
-  .filter-option {
-    background: var(--color-gray-800);
-    border-color: var(--color-gray-600);
-    color: var(--color-gray-100);
-  }
-  
-  .filter-option:hover {
-    background: var(--color-gray-700);
-  }
-  
-  .filter-option.selected {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    color: var(--color-white);
-  }
-  
-  .custom-range-container {
-    background: var(--color-gray-100);
-    border-color: var(--color-gray-600);
-  }
-  
-  .range-slider {
-    background: var(--color-gray-600);
-  }
-}
+/* Dark mode removed */

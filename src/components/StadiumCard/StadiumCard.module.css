@@ -197,30 +197,4 @@
 }
 
 /* Dark mode support (if needed) */
-@media (prefers-color-scheme: dark) {
-  .card {
-    background: var(--surface-dark);
-    border-color: var(--ui-border-dark);
-  }
-  
-  .title {
-    color: var(--ondark-800);
-  }
-  
-  .meta {
-    color: var(--ondark-700);
-  }
-  
-  .metrics {
-    color: var(--ondark-900);
-    border-top-color: var(--ui-border-dark);
-  }
-  
-  .metricLabel {
-    color: var(--ondark-700);
-  }
-  
-  .metricValue {
-    color: var(--ondark-900);
-  }
-}
+/* Dark mode removed */
