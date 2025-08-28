@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
@@ -181,11 +182,13 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         suppressHydrationWarning
       />
       
-      {/* Sticky shade calculator bar */}
-      <StickyShadeBar 
-        stadiumName={stadium.name}
-        stadiumId={stadium.id}
-      />
+      {/* Sticky shade calculator bar - wrapped in Suspense for useSearchParams */}
+      <Suspense fallback={null}>
+        <StickyShadeBar 
+          stadiumName={stadium.name}
+          stadiumId={stadium.id}
+        />
+      </Suspense>
       
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
