@@ -156,7 +156,7 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
                     <div className={styles.resultCard}>
                       <h3>Weather</h3>
                       <p>Temperature: {shadeResult.weather.temperature}°F</p>
-                      <p>Conditions: {shadeResult.weather.conditions}</p>
+                      <p>Conditions: {shadeResult.weather.conditions?.[0]?.description || 'Unknown'}</p>
                     </div>
                   )}
                 </div>
