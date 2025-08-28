@@ -23,6 +23,13 @@ body {
   /* Removed overscroll-behavior: none to allow scrolling on mobile */
 }
 
+/* Ensure league pages don't overflow on mobile */
+.league-page {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Base Typography with WCAG AA compliance */
 p, li {
   font-size: 1rem;

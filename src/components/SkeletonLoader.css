@@ -29,14 +29,7 @@
 }
 
 /* Dark mode shimmer */
-[data-theme="dark"] .skeleton-shimmer {
-  background: linear-gradient(
-    90deg,
-    var(--color-gray-700) 25%,
-    var(--color-gray-600) 37%,
-    var(--color-gray-700) 63%
-  );
-}
+/* Dark mode selector removed */
 
 /* Text Skeleton */
 .skeleton-text {

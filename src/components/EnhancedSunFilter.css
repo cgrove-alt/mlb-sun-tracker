@@ -557,37 +557,4 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .enhanced-sun-filter,
-  .filter-drawer {
-    background: var(--color-gray-800);
-    border-color: var(--color-gray-700);
-  }
-  
-  .filter-header,
-  .drawer-header {
-    border-bottom-color: var(--color-gray-700);
-  }
-  
-  .filter-title,
-  .drawer-header h3 {
-    color: var(--color-gray-100);
-  }
-  
-  .filter-section-header:hover,
-  .filter-section-header.expanded {
-    background: var(--color-gray-700);
-  }
-  
-  .filter-option:hover {
-    background: var(--color-gray-700);
-  }
-  
-  .filter-option.selected {
-    background: rgba(var(--color-primary-rgb), 0.2);
-  }
-  
-  .custom-range-container {
-    background: var(--color-gray-700);
-  }
-}
+/* Dark mode removed */

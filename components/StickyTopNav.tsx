@@ -4,84 +4,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MLB_STADIUMS } from '../src/data/stadiums';
-import { ALL_UNIFIED_VENUES } from '../src/data/unifiedVenues';
+import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
 import './StickyTopNav.css';
-
-interface TeamGroup {
-  division: string;
-  teams: Array<{
-    id: string;
-    name: string;
-    stadium: string;
-  }>;
-}
-
-const MLB_TEAMS_BY_DIVISION: TeamGroup[] = [
-  {
-    division: 'AL East',
-    teams: [
-      { id: 'orioles', name: 'Baltimore Orioles', stadium: 'Oriole Park at Camden Yards' },
-      { id: 'redsox', name: 'Boston Red Sox', stadium: 'Fenway Park' },
-      { id: 'yankees', name: 'New York Yankees', stadium: 'Yankee Stadium' },
-      { id: 'rays', name: 'Tampa Bay Rays', stadium: 'Tropicana Field' },
-      { id: 'bluejays', name: 'Toronto Blue Jays', stadium: 'Rogers Centre' },
-    ]
-  },
-  {
-    division: 'AL Central',
-    teams: [
-      { id: 'whitesox', name: 'Chicago White Sox', stadium: 'Guaranteed Rate Field' },
-      { id: 'guardians', name: 'Cleveland Guardians', stadium: 'Progressive Field' },
-      { id: 'tigers', name: 'Detroit Tigers', stadium: 'Comerica Park' },
-      { id: 'royals', name: 'Kansas City Royals', stadium: 'Kauffman Stadium' },
-      { id: 'twins', name: 'Minnesota Twins', stadium: 'Target Field' },
-    ]
-  },
-  {
-    division: 'AL West',
-    teams: [
-      { id: 'astros', name: 'Houston Astros', stadium: 'Minute Maid Park' },
-      { id: 'angels', name: 'Los Angeles Angels', stadium: 'Angel Stadium' },
-      { id: 'athletics', name: 'Oakland Athletics', stadium: 'Sutter Health Park' },
-      { id: 'mariners', name: 'Seattle Mariners', stadium: 'T-Mobile Park' },
-      { id: 'rangers', name: 'Texas Rangers', stadium: 'Globe Life Field' },
-    ]
-  },
-  {
-    division: 'NL East',
-    teams: [
-      { id: 'braves', name: 'Atlanta Braves', stadium: 'Truist Park' },
-      { id: 'marlins', name: 'Miami Marlins', stadium: 'loanDepot park' },
-      { id: 'mets', name: 'New York Mets', stadium: 'Citi Field' },
-      { id: 'phillies', name: 'Philadelphia Phillies', stadium: 'Citizens Bank Park' },
-      { id: 'nationals', name: 'Washington Nationals', stadium: 'Nationals Park' },
-    ]
-  },
-  {
-    division: 'NL Central',
-    teams: [
-      { id: 'cubs', name: 'Chicago Cubs', stadium: 'Wrigley Field' },
-      { id: 'reds', name: 'Cincinnati Reds', stadium: 'Great American Ball Park' },
-      { id: 'brewers', name: 'Milwaukee Brewers', stadium: 'American Family Field' },
-      { id: 'pirates', name: 'Pittsburgh Pirates', stadium: 'PNC Park' },
-      { id: 'cardinals', name: 'St. Louis Cardinals', stadium: 'Busch Stadium' },
-    ]
-  },
-  {
-    division: 'NL West',
-    teams: [
-      { id: 'diamondbacks', name: 'Arizona Diamondbacks', stadium: 'Chase Field' },
-      { id: 'rockies', name: 'Colorado Rockies', stadium: 'Coors Field' },
-      { id: 'dodgers', name: 'Los Angeles Dodgers', stadium: 'Dodger Stadium' },
-      { id: 'padres', name: 'San Diego Padres', stadium: 'Petco Park' },
-      { id: 'giants', name: 'San Francisco Giants', stadium: 'Oracle Park' },
-    ]
-  }
-];
 
 export default function StickyTopNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isStadiumsOpen, setIsStadiumsOpen] = useState(false);
+  const [isMLBOpen, setIsMLBOpen] = useState(false);
+  const [isNFLOpen, setIsNFLOpen] = useState(false);
+  const [isMiLBOpen, setIsMiLBOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string}>>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
@@ -90,10 +20,17 @@ export default function StickyTopNav() {
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
+  // Get venues by league
+  const mlbVenues = getVenuesByLeague('MLB');
+  const nflVenues = getVenuesByLeague('NFL');
+  const milbVenues = getVenuesByLeague('MiLB');
+
   // Function to close mobile menu
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
-    setIsStadiumsOpen(false);
+    setIsMLBOpen(false);
+    setIsNFLOpen(false);
+    setIsMiLBOpen(false);
   };
 
   useEffect(() => {
@@ -276,57 +213,6 @@ export default function StickyTopNav() {
             >
               Home
             </Link>
-            
-            {/* Quick access to All Stadiums page */}
-            <Link 
-              href="/stadiums" 
-              className={pathname === '/stadiums' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              All Stadiums
-            </Link>
-            
-            <div className="mobile-stadiums-section">
-              <button
-                type="button"
-                className="mobile-stadiums-toggle"
-                onMouseDown={(e) => e.stopPropagation()}
-                onClick={() => setIsStadiumsOpen((prev) => !prev)}
-                aria-expanded={isStadiumsOpen}
-                aria-controls="mobile-stadiums-menu"
-              >
-                Stadiums
-                <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                </svg>
-              </button>
-              
-                              {isStadiumsOpen && (
-                  <div id="mobile-stadiums-menu" className="mobile-stadiums-menu" role="region" aria-label="Stadiums list">
-                    {MLB_TEAMS_BY_DIVISION.map((group) => (
-                      <div key={group.division} className="mobile-division">
-                      <h4 className="mobile-division-title">{group.division}</h4>
-                                              {group.teams.map((team) => (
-                          <Link
-                            key={team.id}
-                            href={`/stadium/${team.id}`}
-                            className="mobile-team-link"
-                            onMouseDown={(e) => e.stopPropagation()}
-                            onClick={(e) => {
-                              // Let the navigation proceed
-                              // Close both the submenu and the main menu
-                              setIsStadiumsOpen(false);
-                              closeMobileMenu();
-                            }}
-                          >
-                            {team.name}
-                          </Link>
-                        ))}
-                      </div>
-                  ))}
-                </div>
-              )}
-            </div>
 
             {/* Guides */}
             <Link 
@@ -337,6 +223,22 @@ export default function StickyTopNav() {
               Guides
             </Link>
             
+            <Link 
+              href="/guide/how-to-find-shaded-seats" 
+              className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              How to Find Shaded Seats
+            </Link>
+            
+            <Link 
+              href="/guide/best-shaded-seats-mlb" 
+              className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
+              onClick={closeMobileMenu}
+            >
+              Best Shaded Seats (MLB)
+            </Link>
+            
             {/* Blog */}
             <Link 
               href="/blog" 
@@ -345,43 +247,101 @@ export default function StickyTopNav() {
             >
               Blog
             </Link>
-            <Link 
-              href="/guide/how-to-find-shaded-seats" 
-              className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              How to Find Shaded Seats
-            </Link>
-            <Link 
-              href="/guide/best-shaded-seats-mlb" 
-              className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Best Shaded Seats (MLB)
-            </Link>
 
-            {/* Leagues */}
-            <Link 
-              href="/league/mlb" 
-              className={pathname === '/league/mlb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              MLB Stadiums
-            </Link>
-            <Link 
-              href="/league/nfl" 
-              className={pathname === '/league/nfl' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              NFL Venues
-            </Link>
-            <Link 
-              href="/league/milb" 
-              className={pathname === '/league/milb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              MiLB Stadiums
-            </Link>
+            {/* Leagues Section with Dropdowns */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">Stadiums by League</h4>
+              
+              {/* MLB Dropdown */}
+              <div className="mobile-league-dropdown">
+                <button
+                  type="button"
+                  className="mobile-league-toggle"
+                  onClick={() => setIsMLBOpen(!isMLBOpen)}
+                  aria-expanded={isMLBOpen}
+                >
+                  MLB Stadiums ({mlbVenues.length})
+                  <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </button>
+                {isMLBOpen && (
+                  <div className="mobile-venues-menu">
+                    {mlbVenues.map((venue) => (
+                      <Link
+                        key={venue.id}
+                        href={`/venue/${venue.id}`}
+                        className="mobile-venue-link"
+                        onClick={closeMobileMenu}
+                      >
+                        {venue.name}
+                        <span className="venue-team">{venue.team}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* NFL Dropdown */}
+              <div className="mobile-league-dropdown">
+                <button
+                  type="button"
+                  className="mobile-league-toggle"
+                  onClick={() => setIsNFLOpen(!isNFLOpen)}
+                  aria-expanded={isNFLOpen}
+                >
+                  NFL Venues ({nflVenues.length})
+                  <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </button>
+                {isNFLOpen && (
+                  <div className="mobile-venues-menu">
+                    {nflVenues.map((venue) => (
+                      <Link
+                        key={venue.id}
+                        href={`/venue/${venue.id}`}
+                        className="mobile-venue-link"
+                        onClick={closeMobileMenu}
+                      >
+                        {venue.name}
+                        <span className="venue-team">{venue.team}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* MiLB Dropdown */}
+              <div className="mobile-league-dropdown">
+                <button
+                  type="button"
+                  className="mobile-league-toggle"
+                  onClick={() => setIsMiLBOpen(!isMiLBOpen)}
+                  aria-expanded={isMiLBOpen}
+                >
+                  MiLB Stadiums ({milbVenues.length})
+                  <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
+                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                </button>
+                {isMiLBOpen && (
+                  <div className="mobile-venues-menu">
+                    {milbVenues.map((venue) => (
+                      <Link
+                        key={venue.id}
+                        href={`/venue/${venue.id}`}
+                        className="mobile-venue-link"
+                        onClick={closeMobileMenu}
+                      >
+                        {venue.name}
+                        <span className="venue-team">{venue.team} ({venue.level})</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
 
             {/* Tools / Other pages */}
             <Link 

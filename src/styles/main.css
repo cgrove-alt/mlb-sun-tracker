@@ -206,27 +206,7 @@
   --focus-ring-color: rgba(15, 62, 124, 0.5);
 }
 
-/* ===== Dark Mode Variables ===== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-gray-50: #121212;
-    --color-gray-100: #1e1e1e;
-    --color-gray-200: #2e2e2e;
-    --color-gray-300: #3e3e3e;
-    --color-gray-400: #4e4e4e;
-    --color-gray-500: #6e6e6e;
-    --color-gray-600: #8e8e8e;
-    --color-gray-700: #aeaeae;
-    --color-gray-800: #cecece;
-    --color-gray-900: #eeeeee;
-    
-    --card-bg: var(--color-gray-100);
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    
-    --input-border-color: var(--color-gray-600);
-    --input-bg: var(--color-gray-200);
-  }
-}
+/* Dark Mode Variables Removed - App uses light theme only */
 
 /* ===== Global Reset ===== */
 *,

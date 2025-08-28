@@ -393,22 +393,13 @@
 }
 
 /* Dark Mode */
-[data-theme="dark"] .sun-indicator__text {
-  fill: var(--color-gray-100);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sun-indicator__circle-bg {
-  stroke: var(--color-gray-700);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sun-exposure-bar__track {
-  background: var(--color-gray-700);
-}
+/* Dark mode selector removed */
 
-[data-theme="dark"] .sun-exposure-legend {
-  background: var(--color-gray-800);
-  border-color: var(--color-gray-700);
-}
+/* Dark mode selector removed */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {

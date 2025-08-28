@@ -559,41 +559,7 @@
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  .stadium-select .react-select__control,
-  .game-select .react-select__control {
-    background-color: #2a2a2a;
-    border-color: #444;
-  }
-  
-  .stadium-select .react-select__single-value,
-  .game-select .react-select__single-value {
-    color: #e0e0e0;
-  }
-  
-  .stadium-select .react-select__menu,
-  .game-select .react-select__menu {
-    background-color: #2a2a2a;
-    border-color: #444;
-  }
-  
-  .stadium-select .react-select__option,
-  .game-select .react-select__option {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-  }
-  
-  .stadium-select .react-select__option--is-focused,
-  .game-select .react-select__option--is-focused {
-    background-color: #3a3a3a;
-  }
-  
-  .stadium-select .react-select__option--is-selected,
-  .game-select .react-select__option--is-selected {
-    background-color: #1a237e;
-    color: white;
-  }
-}
+/* Dark mode removed */
 
 /* Ultimate override - force all dropdown text to be visible */
 .game-selector .react-select__menu * {
