@@ -5296,20 +5296,20 @@ export function isSectionInSun(section: StadiumSection, sunAzimuth: number, sunE
   
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  // CORRECTED LOGIC: Sections get sun when the sun is IN FRONT of them
-  // A section's baseAngle represents the direction the section FACES
-  // For example, a section at baseAngle 90° faces east and gets morning sun
-  // A section at baseAngle 270° faces west and gets afternoon/evening sun
+  // CORRECT LOGIC: Sections get sun when they are LOCATED on the SAME SIDE as the sun
+  // baseAngle represents where the section is LOCATED around the stadium perimeter
+  // Sections face INWARD toward the field, so sun hits them from behind
+  // For example: if sun is at 180° (south), sections located around 180° get sun on spectators' backs
   
-  const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
+  const sectionLocation = normalizeAngle(section.baseAngle + section.angleSpan / 2);
   
-  // Calculate angle difference between sun position and section facing direction
-  let angleDiff = Math.abs(sunAngle - sectionCenter);
+  // Calculate angle difference between sun position and section location
+  let angleDiff = Math.abs(sunAngle - sectionLocation);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Section is in sun if the sun is within ~90 degrees of where it faces
+  // Section gets sun if it's located on the same side as the sun (within ~90 degrees)
   // This accounts for the fact that sun can illuminate sections at an angle
   return angleDiff <= 90;
 }
@@ -5330,17 +5330,17 @@ export function getSectionSunExposure(section: StadiumSection, sunElevation: num
   
   // Calculate angle-based intensity (how directly the sun hits the section)
   const normalizeAngle = (angle: number) => ((angle % 360) + 360) % 360;
-  const sectionCenter = normalizeAngle(section.baseAngle + section.angleSpan / 2);
+  const sectionLocation = normalizeAngle(section.baseAngle + section.angleSpan / 2);
   const sunAngle = normalizeAngle(sunAzimuth);
   
-  // CORRECTED LOGIC: Sun illuminates sections it faces directly
-  // Calculate direct angle difference between sun and section facing
-  let angleDiff = Math.abs(sunAngle - sectionCenter);
+  // CORRECT LOGIC: Sun hits sections from behind when they're on the same side
+  // Calculate angle difference between sun and section location
+  let angleDiff = Math.abs(sunAngle - sectionLocation);
   if (angleDiff > 180) {
     angleDiff = 360 - angleDiff;
   }
   
-  // Angle factor: 1.0 when sun directly faces the section, decreases as angle increases
+  // Angle factor: 1.0 when sun is directly behind section, decreases as angle increases
   const angleFactor = Math.max(0, (90 - angleDiff) / 90);
   
   // Level-based adjustments
