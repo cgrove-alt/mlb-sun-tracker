@@ -6,6 +6,7 @@ import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
+import StickyShadeBar from '../../../components/StickyShadeBar';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -180,6 +181,12 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         suppressHydrationWarning
       />
       
+      {/* Sticky shade calculator bar */}
+      <StickyShadeBar 
+        stadiumName={stadium.name}
+        stadiumId={stadium.id}
+      />
+      
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
         <StadiumPageSSR
@@ -191,7 +198,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       </noscript>
       
       {/* Progressive enhancement with client features */}
-      <div suppressHydrationWarning>
+      <div suppressHydrationWarning className="has-sticky-shade-bar">
         <StadiumPageSSR
           stadium={stadium}
           sections={sections}
