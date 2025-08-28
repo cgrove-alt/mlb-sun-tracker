@@ -6,9 +6,14 @@
 /* Shade Result Banner */
 .shadeResultBanner {
   background: linear-gradient(135deg, #E0F2FE, #FEF3C7);
-  padding: 24px 0;
-  margin-bottom: 32px;
-  position: relative;
+  padding: 16px 0;
+  position: fixed;
+  top: 120px; /* Below nav (60px) + sticky bar (60px) */
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   animation: slideDown 0.3s ease-out;
 }
 
@@ -20,6 +25,14 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Mobile adjustments for shade result banner */
+@media (max-width: 768px) {
+  .shadeResultBanner {
+    top: 60px; /* Just below mobile nav */
+    bottom: auto;
   }
 }
 
