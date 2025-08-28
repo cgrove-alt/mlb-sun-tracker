@@ -2,7 +2,7 @@
 
 import { getSunPosition, calculateDetailedSectionSunExposure } from '../src/utils/sunCalculations';
 import { MLB_STADIUMS } from '../src/data/stadiums';
-import { getWeatherForGame } from '../src/services/weatherApi';
+import { weatherApi } from '../src/services/weatherApi';
 
 export interface ShadeCalculationParams {
   stadiumId: string;
@@ -48,11 +48,11 @@ export async function calculateShade(params: ShadeCalculationParams): Promise<Sh
   // Get weather data (optional)
   let weather;
   try {
-    weather = await getWeatherForGame(
+    const forecast = await weatherApi.getForecast(
       stadium.latitude,
-      stadium.longitude,
-      gameDateTime
+      stadium.longitude
     );
+    weather = weatherApi.getWeatherForTime(forecast, gameDateTime);
   } catch (error) {
     console.warn('Weather data unavailable:', error);
   }
