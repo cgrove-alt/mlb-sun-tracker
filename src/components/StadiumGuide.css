@@ -6,6 +6,158 @@
 .guide-section * {
   box-sizing: border-box;
 }
+
+/* Shade Result Banner Styles */
+.shade-result-banner {
+  background: white;
+  border-bottom: 2px solid #e0e0e0;
+  position: fixed;
+  top: 120px; /* Below nav (60px) + sticky bar (60px) */
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile adjustments for shade result banner */
+@media (max-width: 768px) {
+  .shade-result-banner {
+    top: 60px; /* Just below mobile nav */
+    bottom: auto;
+    max-height: calc(100vh - 60px);
+  }
+}
+
+.shade-result-banner .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.shade-result-banner .calculating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  color: #1F2937;
+}
+
+.shade-result-banner .spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #2563EB;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shade-result-banner .shade-result {
+  position: relative;
+  padding: 0;
+}
+
+.shade-result-banner .result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #E0F2FE, #FEF3C7);
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.shade-result-banner .result-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #1F2937;
+  flex: 1;
+}
+
+.shade-result-banner .weather-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-right: 16px;
+  font-size: 14px;
+  color: #6B7280;
+}
+
+.shade-result-banner .weather-info span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shade-result-banner .result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.shade-result-banner .result-card {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shade-result-banner .result-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+.shade-result-banner .result-card p {
+  margin: 4px 0;
+  color: #6B7280;
+}
+
+.shade-result-banner .close-button {
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6B7280;
+  transition: all 0.2s;
+}
+
+.shade-result-banner .close-button:hover {
+  background: #F9FAFB;
+  color: #1F2937;
+}
 .stadium-guide-wrapper {
   max-width: 90rem;
   margin: 0 auto;
@@ -67,23 +219,32 @@
   padding: 2rem;
   margin-bottom: 2rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
-  overflow: hidden; /* Prevent content overflow */
+  overflow: visible; /* Allow content to display properly */
   word-wrap: break-word;
+  display: block; /* Ensure block display */
+  position: relative; /* Create stacking context */
+  width: 100%; /* Full width */
+  clear: both; /* Clear any floats */
 }
 
 .stadium-header h1 {
-  font-size: clamp(1.5rem, 4vw, 2rem); /* Reduce max size to prevent overlap */
+  font-size: clamp(1.25rem, 4vw, 2rem); /* Adjusted for better mobile display */
   font-weight: 700;
   color: #1a237e;
   margin-bottom: 0.5rem;
   line-height: 1.3; /* Slightly increase line height */
   word-break: break-word; /* Prevent long names from causing layout issues */
+  white-space: normal; /* Ensure text can wrap properly */
+  overflow-wrap: break-word; /* Break long words if needed */
+  hyphens: auto; /* Allow hyphenation for very long names */
 }
 
 .stadium-subtitle {
   font-size: 1.125rem;
   color: var(--color-ink-700);
   margin-bottom: 1rem;
+  display: block; /* Ensure block display */
+  width: 100%; /* Full width */
 }
 
 .stadium-meta {
@@ -92,6 +253,8 @@
   gap: 1rem;
   font-size: 0.875rem;
   color: var(--color-ink-700);
+  margin-bottom: 1rem; /* Add bottom margin */
+  width: 100%; /* Full width */
 }
 
 .stadium-meta > span {
@@ -104,7 +267,9 @@
 .stadium-header + .quick-facts,
 .stadium-header + .collapsible-section,
 .stadium-header + section {
-  margin-top: 0.75rem;
+  margin-top: 2rem; /* Increased from 0.75rem to prevent overlap */
+  display: block; /* Ensure block display */
+  clear: both; /* Clear any floats */
 }
 
 /* Tighten on very small screens and give a bit more separation */
@@ -114,12 +279,13 @@
     margin-bottom: 1.25rem;
   }
   .stadium-header h1 {
-    line-height: 1.25;
+    line-height: 1.4; /* Better spacing for wrapped text */
+    font-size: 1.375rem; /* Consistent with other mobile styles */
   }
   .stadium-header + .quick-facts,
   .stadium-header + .collapsible-section,
   .stadium-header + section {
-    margin-top: 1rem;
+    margin-top: 2.5rem; /* Increased spacing to prevent overlap on small screens */
   }
   
   .stadium-guide.comprehensive {
@@ -132,8 +298,23 @@
   background: white;
   border-radius: 0.75rem;
   padding: 2rem;
+  margin-top: 3rem !important; /* Force explicit margin-top with !important */
   margin-bottom: 2rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Ensure it's above other elements */
+  display: block !important; /* Force block display */
+  width: 100%; /* Full width */
+  clear: both; /* Clear any floats */
+  break-before: always; /* Force a break before this element */
+}
+
+.quick-facts::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  clear: both;
 }
 
 .quick-facts h2 {
@@ -143,8 +324,10 @@
   margin-top: 0; /* Avoid collapsing into previous elements */
   padding-bottom: 1rem;
   border-bottom: 0.125rem solid #e9ecef;
-  display: block;
+  display: block !important;
   width: 100%;
+  clear: both; /* Clear any floats */
+  position: relative; /* Ensure proper positioning */
 }
 
 .facts-grid {
@@ -729,6 +912,33 @@
     padding-top: 1.5rem; /* Maintain top padding */
   }
   
+  /* Fix overlapping issue on mobile */
+  .guide-page .stadium-header {
+    margin-bottom: 3rem !important; /* Force proper spacing */
+    position: relative;
+    z-index: 2;
+    display: block !important;
+  }
+  
+  .guide-page .quick-facts {
+    margin-top: 3rem !important; /* Force extra space to prevent overlap */
+    position: relative;
+    z-index: 1;
+    display: block !important;
+    clear: both !important;
+  }
+  
+  /* Force vertical stacking on mobile */
+  .guide-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .guide-page > * {
+    width: 100%;
+    display: block;
+  }
+  
   .stadium-guide.comprehensive {
     padding-top: 4.5rem; /* Account for fixed nav on mobile */
     padding-left: 3%;
@@ -741,8 +951,11 @@
   }
 
   .stadium-header h1 {
-    font-size: 1.5rem; /* Smaller on mobile to prevent overlap */
-    line-height: 1.3;
+    font-size: 1.375rem; /* Optimized size for mobile */
+    line-height: 1.4; /* Better line spacing for readability */
+    margin-bottom: 0.75rem;
+    white-space: normal;
+    overflow-wrap: break-word;
   }
 
   .stadium-subtitle {
@@ -766,6 +979,8 @@
 
   .quick-facts {
     padding: 1.25rem;
+    margin-top: 1.5rem; /* Ensure proper spacing on mobile */
+    clear: both; /* Clear any floats */
   }
 
   .quick-facts h2 {

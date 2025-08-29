@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { UnifiedVenue } from '../data/unifiedVenues';
 import { SunIcon, CloudIcon, MapPinIcon } from './Icons';
+import { setupShadeCalculationListener } from '../../utils/shadeCalculation';
+import { SectionList } from './SectionList';
 import './StadiumGuide.css';
 
 interface UnifiedVenueGuideProps {
@@ -21,6 +23,53 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth());
   const [selectedTime, setSelectedTime] = useState('13:00');
   const [averageWeather, setAverageWeather] = useState<WeatherData | null>(null);
+  const [shadeResult, setShadeResult] = useState<any>(null);
+  const [isCalculating, setIsCalculating] = useState(false);
+
+  // Setup event listeners for shade calculation (MLB venues only)
+  useEffect(() => {
+    if (venue.league !== 'MLB') return;
+
+    // Setup shade calculation listener
+    const cleanup = setupShadeCalculationListener();
+
+    // Listen for shade calculation results
+    const handleShadeCalculated = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      setShadeResult(customEvent.detail);
+      setIsCalculating(false);
+      
+      // Scroll to shade results
+      const resultsSection = document.getElementById('shade-results');
+      if (resultsSection) {
+        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    };
+
+    const handleShadeCalculationStart = () => {
+      setIsCalculating(true);
+      setShadeResult(null);
+    };
+
+    const handleShadeCalculationError = (event: Event) => {
+      const customEvent = event as CustomEvent;
+      console.error('Shade calculation error:', customEvent.detail);
+      setIsCalculating(false);
+    };
+
+    // Add event listeners
+    window.addEventListener('calculateShade', handleShadeCalculationStart);
+    window.addEventListener('shadeCalculated', handleShadeCalculated);
+    window.addEventListener('shadeCalculationError', handleShadeCalculationError);
+
+    // Cleanup
+    return () => {
+      cleanup();
+      window.removeEventListener('calculateShade', handleShadeCalculationStart);
+      window.removeEventListener('shadeCalculated', handleShadeCalculated);
+      window.removeEventListener('shadeCalculationError', handleShadeCalculationError);
+    };
+  }, [venue.league]);
 
   useEffect(() => {
     // Simulate weather data based on venue location and sport
@@ -110,6 +159,46 @@ const UnifiedVenueGuide: React.FC<UnifiedVenueGuideProps> = ({ venue, sections }
 
   return (
     <div className="guide-page stadium-guide">
+      {/* Shade Calculation Result Banner - MLB venues only */}
+      {venue.league === 'MLB' && (isCalculating || shadeResult) && (
+        <section id="shade-results" className="shade-result-banner">
+          <div className="container">
+            {isCalculating ? (
+              <div className="calculating">
+                <div className="spinner"></div>
+                <span>Calculating shade for your selected game...</span>
+              </div>
+            ) : shadeResult ? (
+              <div className="shade-result">
+                <div className="result-header">
+                  <h2>🌤️ Shade Results for {shadeResult.date} at {shadeResult.time}</h2>
+                  {shadeResult.weather && (
+                    <div className="weather-info">
+                      <span>{shadeResult.weather.temperature}°F</span>
+                      <span>{shadeResult.weather.conditions?.[0]?.description || 'Clear'}</span>
+                    </div>
+                  )}
+                  <button 
+                    className="close-button"
+                    onClick={() => setShadeResult(null)}
+                    aria-label="Close shade results"
+                  >
+                    ✕
+                  </button>
+                </div>
+                {shadeResult.sectionData && (
+                  <SectionList 
+                    sections={shadeResult.sectionData}
+                    loading={false}
+                    showFilters={true}
+                  />
+                )}
+              </div>
+            ) : null}
+          </div>
+        </section>
+      )}
+      
       <nav className="breadcrumb">
         <Link href="/">Home</Link>
         <span> › </span>

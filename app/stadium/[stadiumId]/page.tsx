@@ -1,11 +1,13 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
+import StickyShadeBar from '../../../components/StickyShadeBar';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -180,6 +182,14 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         suppressHydrationWarning
       />
       
+      {/* Sticky shade calculator bar - wrapped in Suspense for useSearchParams */}
+      <Suspense fallback={null}>
+        <StickyShadeBar 
+          stadiumName={stadium.name}
+          stadiumId={stadium.id}
+        />
+      </Suspense>
+      
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
         <StadiumPageSSR
@@ -191,7 +201,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       </noscript>
       
       {/* Progressive enhancement with client features */}
-      <div suppressHydrationWarning>
+      <div suppressHydrationWarning className="has-sticky-shade-bar">
         <StadiumPageSSR
           stadium={stadium}
           sections={sections}
