@@ -24,12 +24,13 @@ div.guide-page.stadium-guide {
   display: grid !important;
   grid-template-columns: 1fr !important;
   grid-auto-rows: auto !important;
-  gap: 1.5rem !important; /* Reduced gap for better mobile spacing */
+  gap: 1.25rem !important; /* Optimal mobile spacing */
   width: 100% !important;
   max-width: 100% !important;
   overflow-x: hidden !important;
   position: relative !important;
   isolation: isolate !important;
+  padding: 1rem !important; /* Ensure minimum padding */
 }
 
 /* Force direct children to behave */
@@ -44,17 +45,25 @@ div.guide-page.stadium-guide > * {
 /* Mobile-specific override with ULTRA specificity */
 @media screen and (max-width: 768px) {
   div.guide-page.stadium-guide {
-    gap: 1rem !important; /* Tighter gap on mobile */
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    gap: 1.5rem !important; /* Increased gap for better visual separation */
+    padding: 1rem 1rem 2rem 1rem !important; /* More bottom padding */
   }
   
   /* Ensure all sections respect boundaries */
-  div.guide-page.stadium-guide > section.quick-facts,
   div.guide-page.stadium-guide > header.stadium-header {
     display: block !important;
     margin: 0 !important;
-    padding: 1rem !important;
+    padding: 1.5rem !important; /* More padding for header */
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: 5rem !important; /* Ensure minimum height for header */
+    background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  }
+  
+  div.guide-page.stadium-guide > section.quick-facts {
+    display: block !important;
+    margin: 0 !important;
+    padding: 1.25rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -369,20 +378,32 @@ div.guide-page.stadium-guide > * {
   }
 }
 
-.stadium-header h1 {
-  font-size: clamp(1.25rem, 4vw, 2.25rem); /* Smaller on mobile */
-  font-weight: 700;
-  color: #1a237e;
-  margin-bottom: 0.5rem;
-  line-height: 1.2;
+/* CRITICAL: Ensure h1 is ALWAYS visible on ALL devices */
+.stadium-header h1,
+.guide-page .stadium-header h1,
+.guide-page.stadium-guide .stadium-header h1,
+div.guide-page.stadium-guide header.stadium-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2.25rem) !important; /* Increased minimum to 1.75rem */
+  font-weight: 700 !important;
+  color: #1a237e !important;
+  margin: 0 0 1rem 0 !important; /* Better bottom margin */
+  line-height: 1.2 !important;
   text-wrap: balance;
   overflow-wrap: break-word;
   hyphens: auto;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+  z-index: 10 !important;
+  min-height: 2rem !important; /* Ensure minimum height */
+  width: 100% !important;
 }
 
 @container stadium-header (max-width: 400px) {
   .stadium-header h1 {
-    font-size: 1.375rem;
+    font-size: 1.5rem !important; /* Ensure readable size */
+    display: block !important;
   }
 }
 
@@ -457,32 +478,51 @@ div.guide-page.stadium-guide > * {
   /* Grid gap handles spacing now */
 }
 
-/* Small mobile screens - Ultra High Specificity */
+/* Small mobile screens - ULTRA HIGH SPECIFICITY FOR H1 */
 @media (max-width: 480px) {
   .guide-page.stadium-guide {
-    gap: 0.75rem !important; /* Very tight gap for small screens */
-    padding: 0.5rem !important;
+    gap: 1.5rem !important; /* Increased gap for better separation */
+    padding: 1rem !important; /* Better padding all around */
   }
   
-  .guide-page.stadium-guide .stadium-header,
+  .guide-page.stadium-guide .stadium-header {
+    padding: 1.5rem 1.25rem !important; /* More vertical padding for header */
+    margin: 0 !important;
+    border-radius: 12px !important;
+    min-height: 6rem !important; /* Ensure space for title */
+  }
+  
   .guide-page.stadium-guide .quick-facts {
-    padding: 0.875rem !important;
+    padding: 1.25rem !important;
     margin: 0 !important;
     border-radius: 12px !important;
   }
   
-  .guide-page.stadium-guide .stadium-header h1 {
-    font-size: 1.125rem !important;
+  /* ABSOLUTE OVERRIDE FOR H1 ON MOBILE */
+  html body .guide-page.stadium-guide .stadium-header h1,
+  html body div.guide-page.stadium-guide header.stadium-header h1 {
+    font-size: 1.75rem !important; /* Larger, more prominent size */
     line-height: 1.25 !important;
-    margin-bottom: 0.375rem !important;
-    font-weight: 600 !important;
+    margin: 0 0 1rem 0 !important; /* Better spacing below */
+    font-weight: 800 !important; /* Extra bold */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #1a237e !important;
+    text-transform: none !important;
+    letter-spacing: -0.01em !important;
+    min-height: 2.25rem !important;
+    position: relative !important;
+    z-index: 20 !important;
   }
   
   .guide-page.stadium-guide .stadium-subtitle {
-    font-size: 0.8rem !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.3 !important;
+    font-size: 0.9rem !important; /* More readable */
+    margin-bottom: 0.75rem !important;
+    line-height: 1.4 !important;
     color: #475569 !important;
+    display: block !important;
+    visibility: visible !important;
   }
   
   .guide-page.stadium-guide .stadium-meta {
@@ -496,9 +536,10 @@ div.guide-page.stadium-guide > * {
   }
   
   .guide-page.stadium-guide .quick-facts h2 {
-    font-size: 1rem !important;
-    margin-bottom: 0.5rem !important;
-    padding-bottom: 0.375rem !important;
+    font-size: 1.25rem !important; /* Larger heading */
+    margin-bottom: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+    display: block !important;
   }
   
   .facts-grid {
@@ -1840,4 +1881,55 @@ div.guide-page.stadium-guide > * {
 }
 .quick-jump a:hover {
   background: #e5e7eb;
+}
+
+/* ============================================
+   FINAL CRITICAL OVERRIDE - ENSURE H1 VISIBILITY
+   This MUST be last to have maximum specificity
+   ============================================ */
+@media (max-width: 768px) {
+  /* ABSOLUTE FINAL OVERRIDE - H1 MUST BE VISIBLE */
+  h1 {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: max(1.75rem, 24px) !important;
+    min-height: 2rem !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+  
+  /* Specific stadium guide h1 override */
+  .stadium-guide h1,
+  .stadium-header h1,
+  header h1 {
+    font-size: max(1.75rem, 24px) !important;
+    color: #1a237e !important;
+    font-weight: 800 !important;
+    margin: 0 0 1rem 0 !important;
+    padding: 0 !important;
+    line-height: 1.25 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    position: relative !important;
+    z-index: 999 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transform: none !important;
+    filter: none !important;
+    min-height: 2.25rem !important;
+  }
+  
+  /* Ensure header section has enough space */
+  .stadium-header,
+  header.stadium-header {
+    min-height: 6rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
 }
