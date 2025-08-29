@@ -19,6 +19,47 @@
   --z-tooltip: 500;
 }
 
+/* CRITICAL FIX: Force grid layout with maximum specificity */
+div.guide-page.stadium-guide {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-auto-rows: auto !important;
+  gap: 2rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+/* Force direct children to behave */
+div.guide-page.stadium-guide > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  position: relative !important;
+}
+
+/* Mobile-specific override with ULTRA specificity */
+@media screen and (max-width: 768px) {
+  div.guide-page.stadium-guide {
+    gap: 1.5rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Ensure all sections respect boundaries */
+  div.guide-page.stadium-guide > section.quick-facts,
+  div.guide-page.stadium-guide > header.stadium-header {
+    display: block !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* Ensure proper box-sizing for all stadium guide elements */
 .stadium-guide *,
 .stadium-guide-wrapper *,
@@ -200,44 +241,60 @@
   container-name: stadium-guide;
 }
 
-/* Modern Grid Layout for Guide Pages */
-.guide-page {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--guide-spacing-xl);
-  width: 100%;
+/* Modern Grid Layout for Guide Pages - High Specificity Fix */
+.guide-page.stadium-guide {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important; /* Fixed gap instead of variable */
+  width: 100% !important;
   container-type: inline-size;
   container-name: guide-page;
+  position: relative;
+  isolation: isolate;
 }
 
-/* Mobile-specific layout fixes */
+/* Force all direct children to respect grid */
+.guide-page.stadium-guide > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative;
+  z-index: auto;
+}
+
+/* Mobile-specific layout fixes - Maximum specificity */
 @media (max-width: 768px) {
-  .guide-page {
+  .guide-page.stadium-guide {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    gap: var(--guide-spacing-lg) !important;
-    padding: 0 var(--guide-spacing-md);
-    width: 100%;
-    overflow-x: hidden;
+    gap: 1.5rem !important; /* Explicit mobile gap */
+    padding: 0 1rem !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+    min-height: auto !important;
   }
   
-  .guide-page > * {
-    grid-column: 1;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+  .guide-page.stadium-guide > * {
+    grid-column: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
   
-  /* Ensure sections don't overlap */
-  .guide-page > section {
-    margin-top: 0;
-    padding-top: var(--guide-spacing-lg);
-    border-top: 1px solid transparent;
+  /* Force proper spacing for sections */
+  .guide-page.stadium-guide > section,
+  .guide-page.stadium-guide > header,
+  .guide-page.stadium-guide > nav {
+    margin: 0 !important;
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
   }
   
-  .guide-page > section:first-of-type {
-    padding-top: 0;
+  /* Ensure breadcrumb doesn't interfere */
+  .guide-page.stadium-guide > .breadcrumb {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -278,23 +335,28 @@
   text-decoration: underline;
 }
 
-/* Stadium Header - Grid Item */
-.stadium-header {
+/* Stadium Header - Grid Item with Explicit Spacing */
+.guide-page.stadium-guide .stadium-header {
   background: white;
   border-radius: 0.75rem;
-  padding: var(--guide-spacing-lg);
+  padding: 1.5rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
   overflow: visible;
   word-wrap: break-word;
   container-type: inline-size;
   container-name: stadium-header;
   isolation: isolate;
+  margin: 0 !important; /* Grid gap handles spacing */
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
-  .stadium-header {
-    padding: var(--guide-spacing-md);
-    margin-bottom: 0; /* Let grid gap handle spacing */
+  .guide-page.stadium-guide .stadium-header {
+    padding: 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
+    display: block !important;
   }
 }
 
@@ -323,13 +385,16 @@
   line-height: 1.5;
 }
 
-.stadium-meta {
+.guide-page.stadium-guide .stadium-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--guide-spacing-md);
+  gap: 0.75rem;
   font-size: clamp(0.75rem, 2vw, 0.875rem);
-  color: var(--color-ink-700);
-  margin-top: var(--guide-spacing-sm);
+  color: var(--color-ink-700, #666);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  width: 100%;
+  position: relative;
 }
 
 .stadium-meta > span {
@@ -338,56 +403,95 @@
   gap: 0.25rem;
 }
 
+/* CRITICAL: Prevent league-badge from causing overflow */
+.guide-page.stadium-guide .stadium-meta .league-badge,
+.stadium-meta .league-badge {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: fit-content;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile-specific meta fixes */
+@media (max-width: 768px) {
+  .guide-page.stadium-guide .stadium-meta > span {
+    font-size: 0.7rem !important;
+    padding: 2px 6px;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+}
+
 /* Remove adjacent sibling selectors - grid gap handles spacing */
 .stadium-header + * {
   /* Grid gap handles spacing now */
 }
 
-/* Small mobile screens */
+/* Small mobile screens - Ultra High Specificity */
 @media (max-width: 480px) {
-  .guide-page {
-    gap: var(--guide-spacing-md);
-    padding: 0 var(--guide-spacing-sm);
+  .guide-page.stadium-guide {
+    gap: 1.25rem !important;
+    padding: 0 0.75rem !important;
   }
   
-  .stadium-header,
-  .quick-facts {
-    padding: var(--guide-spacing-md);
+  .guide-page.stadium-guide .stadium-header,
+  .guide-page.stadium-guide .quick-facts {
+    padding: 1rem !important;
+    margin: 0 !important;
   }
   
-  .stadium-header h1 {
-    font-size: 1.25rem;
-    line-height: 1.3;
+  .guide-page.stadium-guide .stadium-header h1 {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.5rem !important;
   }
   
-  .stadium-subtitle {
-    font-size: 0.875rem;
+  .guide-page.stadium-guide .stadium-subtitle {
+    font-size: 0.875rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+  
+  .guide-page.stadium-guide .stadium-meta {
+    margin-bottom: 0 !important;
+    font-size: 0.75rem !important;
   }
 }
 
-/* Quick Facts - Grid Item */
-.quick-facts {
+/* Quick Facts - Grid Item with Explicit Positioning */
+.guide-page.stadium-guide .quick-facts {
   background: white;
   border-radius: 0.75rem;
-  padding: var(--guide-spacing-lg);
+  padding: 1.5rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
   container-type: inline-size;
   container-name: quick-facts;
   isolation: isolate;
+  margin: 0 !important; /* Grid gap handles spacing */
+  position: relative;
+  z-index: 1;
+  display: block !important;
+  clear: both !important;
 }
 
 @media (max-width: 768px) {
-  .quick-facts {
-    padding: var(--guide-spacing-md);
+  .guide-page.stadium-guide .quick-facts {
+    padding: 1rem !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
 }
 
-.quick-facts h2 {
+.guide-page.stadium-guide .quick-facts h2 {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: #1a237e;
-  margin: 0 0 var(--guide-spacing-lg) 0;
-  padding-bottom: var(--guide-spacing-md);
+  margin: 0 0 1rem 0 !important;
+  padding-bottom: 0.75rem;
   border-bottom: 2px solid #e9ecef;
+  display: block;
+  width: 100%;
+  position: relative;
 }
 
 .facts-grid {
