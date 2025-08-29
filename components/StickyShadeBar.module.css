@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: var(--z-sticky, 1020);
+  z-index: var(--z-sticky-shade-bar, 220);
   background: var(--color-ui-surface, var(--color-white, #ffffff));
   box-shadow: var(--shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
   padding: 10px 12px;

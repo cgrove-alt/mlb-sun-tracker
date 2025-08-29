@@ -3,6 +3,12 @@
 @import url('../src/App.css');
 @import url('../components/ErrorBoundary.css');
 
+/* Import new unified design systems */
+@import url('../src/styles/z-index-system.css');
+@import url('../src/styles/typography-system.css');
+@import url('../src/styles/spacing-system.css');
+@import url('../src/styles/modern-features.css');
+
 /* Additional Next.js specific styles */
 html {
   scroll-behavior: smooth;
