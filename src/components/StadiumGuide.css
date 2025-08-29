@@ -24,7 +24,7 @@ div.guide-page.stadium-guide {
   display: grid !important;
   grid-template-columns: 1fr !important;
   grid-auto-rows: auto !important;
-  gap: 2rem !important;
+  gap: 1.5rem !important; /* Reduced gap for better mobile spacing */
   width: 100% !important;
   max-width: 100% !important;
   overflow-x: hidden !important;
@@ -44,7 +44,7 @@ div.guide-page.stadium-guide > * {
 /* Mobile-specific override with ULTRA specificity */
 @media screen and (max-width: 768px) {
   div.guide-page.stadium-guide {
-    gap: 1.5rem !important;
+    gap: 1rem !important; /* Tighter gap on mobile */
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
@@ -57,6 +57,11 @@ div.guide-page.stadium-guide > * {
     padding: 1rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
+  }
+  
+  /* Hide breadcrumb on mobile to save space */
+  div.guide-page.stadium-guide > .breadcrumb {
+    display: none !important;
   }
 }
 
@@ -337,10 +342,10 @@ div.guide-page.stadium-guide > * {
 
 /* Stadium Header - Grid Item with Explicit Spacing */
 .guide-page.stadium-guide .stadium-header {
-  background: white;
-  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: visible;
   word-wrap: break-word;
   container-type: inline-size;
@@ -349,6 +354,7 @@ div.guide-page.stadium-guide > * {
   margin: 0 !important; /* Grid gap handles spacing */
   position: relative;
   z-index: 1;
+  border: 1px solid #e2e8f0;
 }
 
 @media (max-width: 768px) {
@@ -357,17 +363,20 @@ div.guide-page.stadium-guide > * {
     margin: 0 !important;
     width: 100% !important;
     display: block !important;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 }
 
 .stadium-header h1 {
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
+  font-size: clamp(1.25rem, 4vw, 2.25rem); /* Smaller on mobile */
   font-weight: 700;
   color: #1a237e;
-  margin-bottom: var(--guide-spacing-sm);
+  margin-bottom: 0.5rem;
   line-height: 1.2;
   text-wrap: balance;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   hyphens: auto;
 }
 
@@ -379,22 +388,26 @@ div.guide-page.stadium-guide > * {
 
 .stadium-subtitle {
   font-size: clamp(0.875rem, 2.5vw, 1.125rem);
-  color: var(--color-ink-700);
-  margin-bottom: var(--guide-spacing-md);
-  display: block;
-  line-height: 1.5;
+  color: var(--color-ink-700, #666);
+  margin-bottom: 0.75rem;
+  display: block !important; /* Force display */
+  line-height: 1.4;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .guide-page.stadium-guide .stadium-meta {
-  display: flex;
+  display: flex !important; /* Force display */
   flex-wrap: wrap;
-  gap: 0.75rem;
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  gap: 0.5rem;
+  font-size: 0.75rem;
   color: var(--color-ink-700, #666);
   margin-top: 0.5rem;
   margin-bottom: 0;
   width: 100%;
   position: relative;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .stadium-meta > span {
@@ -417,10 +430,25 @@ div.guide-page.stadium-guide > * {
 /* Mobile-specific meta fixes */
 @media (max-width: 768px) {
   .guide-page.stadium-guide .stadium-meta > span {
+    display: inline-flex !important; /* Force display */
     font-size: 0.7rem !important;
-    padding: 2px 6px;
-    background: #f5f5f5;
-    border-radius: 4px;
+    padding: 3px 8px;
+    background: #f0f4f8;
+    border-radius: 12px;
+    border: 1px solid #e0e7ee;
+    white-space: nowrap;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* Ensure all meta items are visible */
+  .guide-page.stadium-guide .stadium-meta .team,
+  .guide-page.stadium-guide .stadium-meta .location,
+  .guide-page.stadium-guide .stadium-meta .league-badge,
+  .guide-page.stadium-guide .stadium-meta .roof-type {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
@@ -432,39 +460,73 @@ div.guide-page.stadium-guide > * {
 /* Small mobile screens - Ultra High Specificity */
 @media (max-width: 480px) {
   .guide-page.stadium-guide {
-    gap: 1.25rem !important;
-    padding: 0 0.75rem !important;
+    gap: 0.75rem !important; /* Very tight gap for small screens */
+    padding: 0.5rem !important;
   }
   
   .guide-page.stadium-guide .stadium-header,
   .guide-page.stadium-guide .quick-facts {
-    padding: 1rem !important;
+    padding: 0.875rem !important;
     margin: 0 !important;
+    border-radius: 12px !important;
   }
   
   .guide-page.stadium-guide .stadium-header h1 {
-    font-size: 1.25rem !important;
-    line-height: 1.3 !important;
-    margin-bottom: 0.5rem !important;
+    font-size: 1.125rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.375rem !important;
+    font-weight: 600 !important;
   }
   
   .guide-page.stadium-guide .stadium-subtitle {
-    font-size: 0.875rem !important;
-    margin-bottom: 0.75rem !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.3 !important;
+    color: #475569 !important;
   }
   
   .guide-page.stadium-guide .stadium-meta {
     margin-bottom: 0 !important;
-    font-size: 0.75rem !important;
+    gap: 0.375rem !important;
+  }
+  
+  .guide-page.stadium-guide .stadium-meta > span {
+    font-size: 0.65rem !important;
+    padding: 2px 6px !important;
+  }
+  
+  .guide-page.stadium-guide .quick-facts h2 {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.375rem !important;
+  }
+  
+  .facts-grid {
+    gap: 0.375rem !important;
+    margin-top: 0.5rem !important;
+  }
+  
+  .fact-card {
+    padding: 0.625rem !important;
+    min-height: 60px !important;
+  }
+  
+  .fact-card h3 {
+    font-size: 0.6rem !important;
+    margin-bottom: 0.125rem !important;
+  }
+  
+  .fact-card p {
+    font-size: 0.9rem !important;
   }
 }
 
 /* Quick Facts - Grid Item with Explicit Positioning */
 .guide-page.stadium-guide .quick-facts {
   background: white;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   container-type: inline-size;
   container-name: quick-facts;
   isolation: isolate;
@@ -473,6 +535,7 @@ div.guide-page.stadium-guide > * {
   z-index: 1;
   display: block !important;
   clear: both !important;
+  border: 1px solid #e2e8f0;
 }
 
 @media (max-width: 768px) {
@@ -480,51 +543,60 @@ div.guide-page.stadium-guide > * {
     padding: 1rem !important;
     margin: 0 !important;
     width: 100% !important;
+    background: linear-gradient(135deg, #fafbfc, #ffffff);
   }
 }
 
 .guide-page.stadium-guide .quick-facts h2 {
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.125rem, 3vw, 1.75rem);
   color: #1a237e;
-  margin: 0 0 1rem 0 !important;
-  padding-bottom: 0.75rem;
+  margin: 0 0 0.75rem 0 !important;
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid #e9ecef;
   display: block;
   width: 100%;
   position: relative;
+  font-weight: 600;
 }
 
 .facts-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-  justify-content: space-between;
+  display: grid !important; /* Use grid for better control */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 .fact-card {
-  background: #f8f9fa;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 1rem;
+  border-radius: 12px;
   text-align: center;
-  flex: 1 1 12.5rem;
-  min-width: 12.5rem;
-  max-width: 15.625rem;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
 }
 
 .fact-card h3 {
-  font-size: 0.875rem;
-  color: #6c757d;
-  margin-bottom: 0.5rem;
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-bottom: 0.25rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-weight: 600;
+  opacity: 0.8;
 }
 
 .fact-card p {
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  font-weight: 600;
-  color: #1a237e;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 700;
+  color: #1e293b;
   margin: 0;
+  line-height: 1.2;
 }
 
 /* Shade Simulator */
@@ -1154,15 +1226,13 @@ div.guide-page.stadium-guide > * {
   }
 
   .facts-grid {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr) !important; /* 2 columns on mobile */
+    gap: 0.5rem !important;
   }
   
   .fact-card {
-    max-width: 100%;
-    width: 100%;
-    padding: 1.25rem;
+    padding: 0.75rem !important;
+    min-height: 70px;
   }
 
   .fact-card h3 {
