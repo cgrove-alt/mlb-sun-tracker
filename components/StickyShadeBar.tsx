@@ -182,65 +182,67 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
         <div className={styles.stadiumName}>{stadiumName}</div>
         
         <div className={styles.inputs}>
-          <div className={`${styles.inputGroup} ${styles.gameSelector}`}>
-            <label htmlFor="shade-game" className={styles.srOnly}>Select Game</label>
-            {loading ? (
-              <select 
-                id="shade-game"
+          <div className={styles.inputRow}>
+            <div className={styles.inputGroup}>
+              <label htmlFor="shade-game" className={styles.srOnly}>Select Game</label>
+              {loading ? (
+                <select 
+                  id="shade-game"
+                  className={styles.input}
+                  disabled
+                  aria-label="Loading games..."
+                >
+                  <option>Loading games...</option>
+                </select>
+              ) : error ? (
+                <select 
+                  id="shade-game"
+                  className={styles.input}
+                  disabled
+                  aria-label="Error loading games"
+                >
+                  <option>{error}</option>
+                </select>
+              ) : games.length === 0 ? (
+                <select 
+                  id="shade-game"
+                  className={styles.input}
+                  disabled
+                  aria-label="No games scheduled"
+                >
+                  <option>No games scheduled</option>
+                </select>
+              ) : (
+                <select
+                  id="shade-game"
+                  className={styles.input}
+                  value={selectedGame}
+                  onChange={(e) => setSelectedGame(e.target.value)}
+                  aria-label="Select game for shade calculation"
+                  required
+                >
+                  <option value="">Select a game...</option>
+                  {gameOptions().map(option => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+            
+            <div className={styles.inputGroup}>
+              <label htmlFor="shade-section" className={styles.srOnly}>Section (optional)</label>
+              <input
+                type="text"
+                id="shade-section"
                 className={styles.input}
-                disabled
-                aria-label="Loading games..."
-              >
-                <option>Loading games...</option>
-              </select>
-            ) : error ? (
-              <select 
-                id="shade-game"
-                className={styles.input}
-                disabled
-                aria-label="Error loading games"
-              >
-                <option>{error}</option>
-              </select>
-            ) : games.length === 0 ? (
-              <select 
-                id="shade-game"
-                className={styles.input}
-                disabled
-                aria-label="No games scheduled"
-              >
-                <option>No games scheduled</option>
-              </select>
-            ) : (
-              <select
-                id="shade-game"
-                className={styles.input}
-                value={selectedGame}
-                onChange={(e) => setSelectedGame(e.target.value)}
-                aria-label="Select game for shade calculation"
-                required
-              >
-                <option value="">Select a game...</option>
-                {gameOptions().map(option => (
-                  <option key={option.value} value={option.value}>
-                    {option.label}
-                  </option>
-                ))}
-              </select>
-            )}
-          </div>
-          
-          <div className={styles.inputGroup}>
-            <label htmlFor="shade-section" className={styles.srOnly}>Section (optional)</label>
-            <input
-              type="text"
-              id="shade-section"
-              className={styles.input}
-              value={section}
-              onChange={(e) => setSection(e.target.value)}
-              placeholder="Section (optional)"
-              aria-label="Enter section number (optional)"
-            />
+                value={section}
+                onChange={(e) => setSection(e.target.value)}
+                placeholder="Section"
+                aria-label="Enter section number (optional)"
+              />
+            </div>
           </div>
         </div>
         
