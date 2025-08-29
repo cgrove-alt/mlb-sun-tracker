@@ -1,9 +1,29 @@
-/* Stadium Guide Styles */
+/* Stadium Guide Styles - Modern CSS Grid Layout */
+
+/* CSS Custom Properties for consistent spacing */
+:root {
+  --guide-spacing-xs: 4px;
+  --guide-spacing-sm: 8px;
+  --guide-spacing-md: 16px;
+  --guide-spacing-lg: 24px;
+  --guide-spacing-xl: 32px;
+  --guide-spacing-2xl: 48px;
+  --guide-spacing-3xl: 64px;
+  
+  /* Z-index scale */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-tooltip: 500;
+}
 
 /* Ensure proper box-sizing for all stadium guide elements */
 .stadium-guide *,
 .stadium-guide-wrapper *,
-.guide-section * {
+.guide-section *,
+.guide-page * {
   box-sizing: border-box;
 }
 
@@ -161,35 +181,81 @@
 .stadium-guide-wrapper {
   max-width: 90rem;
   margin: 0 auto;
-  padding: 2rem 5%;
-  padding-top: 5rem; /* Add padding for fixed nav (64px nav + extra space) */
+  padding: var(--guide-spacing-lg) 5%;
+  padding-top: calc(60px + var(--guide-spacing-lg)); /* Account for fixed nav */
   display: flex;
-  gap: 2rem;
+  gap: var(--guide-spacing-lg);
   position: relative;
   background: #f8f9fa;
   min-height: 100vh;
+  container-type: inline-size;
+  container-name: guide-wrapper;
 }
 
 .stadium-guide {
   flex: 1;
   max-width: 65rem;
-  padding-top: 1rem; /* Add small padding at top */
+  padding-top: var(--guide-spacing-md);
+  container-type: inline-size;
+  container-name: stadium-guide;
+}
+
+/* Modern Grid Layout for Guide Pages */
+.guide-page {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--guide-spacing-xl);
+  width: 100%;
+  container-type: inline-size;
+  container-name: guide-page;
+}
+
+/* Mobile-specific layout fixes */
+@media (max-width: 768px) {
+  .guide-page {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: var(--guide-spacing-lg) !important;
+    padding: 0 var(--guide-spacing-md);
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .guide-page > * {
+    grid-column: 1;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  /* Ensure sections don't overlap */
+  .guide-page > section {
+    margin-top: 0;
+    padding-top: var(--guide-spacing-lg);
+    border-top: 1px solid transparent;
+  }
+  
+  .guide-page > section:first-of-type {
+    padding-top: 0;
+  }
 }
 
 /* Ensure comprehensive guides that aren't in wrapper still have proper padding */
 .stadium-guide:not(.comprehensive) {
-  padding-top: 1rem;
+  padding-top: var(--guide-spacing-md);
 }
 
 @media (max-width: 1024px) {
   .stadium-guide-wrapper {
     display: block;
-    padding: 1rem 3%;
-    padding-top: 4rem; /* Maintain top padding for fixed nav */
+    padding: var(--guide-spacing-md) 3%;
+    padding-top: calc(60px + var(--guide-spacing-md));
   }
   
   .stadium-guide {
     max-width: 100%;
+    padding-top: var(--guide-spacing-sm);
   }
 }
 
@@ -212,49 +278,58 @@
   text-decoration: underline;
 }
 
-/* Stadium Header */
+/* Stadium Header - Grid Item */
 .stadium-header {
   background: white;
   border-radius: 0.75rem;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: var(--guide-spacing-lg);
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
-  overflow: visible; /* Allow content to display properly */
+  overflow: visible;
   word-wrap: break-word;
-  display: block; /* Ensure block display */
-  position: relative; /* Create stacking context */
-  width: 100%; /* Full width */
-  clear: both; /* Clear any floats */
+  container-type: inline-size;
+  container-name: stadium-header;
+  isolation: isolate;
+}
+
+@media (max-width: 768px) {
+  .stadium-header {
+    padding: var(--guide-spacing-md);
+    margin-bottom: 0; /* Let grid gap handle spacing */
+  }
 }
 
 .stadium-header h1 {
-  font-size: clamp(1.25rem, 4vw, 2rem); /* Adjusted for better mobile display */
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
   font-weight: 700;
   color: #1a237e;
-  margin-bottom: 0.5rem;
-  line-height: 1.3; /* Slightly increase line height */
-  word-break: break-word; /* Prevent long names from causing layout issues */
-  white-space: normal; /* Ensure text can wrap properly */
-  overflow-wrap: break-word; /* Break long words if needed */
-  hyphens: auto; /* Allow hyphenation for very long names */
+  margin-bottom: var(--guide-spacing-sm);
+  line-height: 1.2;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+@container stadium-header (max-width: 400px) {
+  .stadium-header h1 {
+    font-size: 1.375rem;
+  }
 }
 
 .stadium-subtitle {
-  font-size: 1.125rem;
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   color: var(--color-ink-700);
-  margin-bottom: 1rem;
-  display: block; /* Ensure block display */
-  width: 100%; /* Full width */
+  margin-bottom: var(--guide-spacing-md);
+  display: block;
+  line-height: 1.5;
 }
 
 .stadium-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.875rem;
+  gap: var(--guide-spacing-md);
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
   color: var(--color-ink-700);
-  margin-bottom: 1rem; /* Add bottom margin */
-  width: 100%; /* Full width */
+  margin-top: var(--guide-spacing-sm);
 }
 
 .stadium-meta > span {
@@ -263,71 +338,56 @@
   gap: 0.25rem;
 }
 
-/* Ensure the first section after the header has breathing room on all screens */
-.stadium-header + .quick-facts,
-.stadium-header + .collapsible-section,
-.stadium-header + section {
-  margin-top: 2rem; /* Increased from 0.75rem to prevent overlap */
-  display: block; /* Ensure block display */
-  clear: both; /* Clear any floats */
+/* Remove adjacent sibling selectors - grid gap handles spacing */
+.stadium-header + * {
+  /* Grid gap handles spacing now */
 }
 
-/* Tighten on very small screens and give a bit more separation */
+/* Small mobile screens */
 @media (max-width: 480px) {
-  .stadium-header {
-    padding: 1.25rem;
-    margin-bottom: 1.25rem;
-  }
-  .stadium-header h1 {
-    line-height: 1.4; /* Better spacing for wrapped text */
-    font-size: 1.375rem; /* Consistent with other mobile styles */
-  }
-  .stadium-header + .quick-facts,
-  .stadium-header + .collapsible-section,
-  .stadium-header + section {
-    margin-top: 2.5rem; /* Increased spacing to prevent overlap on small screens */
+  .guide-page {
+    gap: var(--guide-spacing-md);
+    padding: 0 var(--guide-spacing-sm);
   }
   
-  .stadium-guide.comprehensive {
-    padding-top: 4rem; /* Account for smaller nav on mobile (56px) */
+  .stadium-header,
+  .quick-facts {
+    padding: var(--guide-spacing-md);
+  }
+  
+  .stadium-header h1 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .stadium-subtitle {
+    font-size: 0.875rem;
   }
 }
 
-/* Quick Facts */
+/* Quick Facts - Grid Item */
 .quick-facts {
   background: white;
   border-radius: 0.75rem;
-  padding: 2rem;
-  margin-top: 3rem !important; /* Force explicit margin-top with !important */
-  margin-bottom: 2rem;
+  padding: var(--guide-spacing-lg);
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
-  position: relative; /* Ensure proper stacking context */
-  z-index: 1; /* Ensure it's above other elements */
-  display: block !important; /* Force block display */
-  width: 100%; /* Full width */
-  clear: both; /* Clear any floats */
-  break-before: always; /* Force a break before this element */
+  container-type: inline-size;
+  container-name: quick-facts;
+  isolation: isolate;
 }
 
-.quick-facts::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 0;
-  clear: both;
+@media (max-width: 768px) {
+  .quick-facts {
+    padding: var(--guide-spacing-md);
+  }
 }
 
 .quick-facts h2 {
-  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: #1a237e;
-  margin-bottom: 2rem;
-  margin-top: 0; /* Avoid collapsing into previous elements */
-  padding-bottom: 1rem;
-  border-bottom: 0.125rem solid #e9ecef;
-  display: block !important;
-  width: 100%;
-  clear: both; /* Clear any floats */
-  position: relative; /* Ensure proper positioning */
+  margin: 0 0 var(--guide-spacing-lg) 0;
+  padding-bottom: var(--guide-spacing-md);
+  border-bottom: 2px solid #e9ecef;
 }
 
 .facts-grid {
