@@ -259,7 +259,9 @@
 .stadium-header + .quick-facts,
 .stadium-header + .collapsible-section,
 .stadium-header + section {
-  margin-top: 0.75rem;
+  margin-top: 2rem; /* Increased from 0.75rem to prevent overlap */
+  display: block; /* Ensure block display */
+  clear: both; /* Clear any floats */
 }
 
 /* Tighten on very small screens and give a bit more separation */
@@ -275,7 +277,7 @@
   .stadium-header + .quick-facts,
   .stadium-header + .collapsible-section,
   .stadium-header + section {
-    margin-top: 1rem;
+    margin-top: 2.5rem; /* Increased spacing to prevent overlap on small screens */
   }
   
   .stadium-guide.comprehensive {
@@ -293,6 +295,9 @@
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.05);
   position: relative; /* Ensure proper stacking context */
   z-index: 1; /* Ensure it's above other elements */
+  display: block; /* Force block display */
+  width: 100%; /* Full width */
+  clear: both; /* Clear any floats */
 }
 
 .quick-facts h2 {
@@ -304,6 +309,8 @@
   border-bottom: 0.125rem solid #e9ecef;
   display: block;
   width: 100%;
+  clear: both; /* Clear any floats */
+  position: relative; /* Ensure proper positioning */
 }
 
 .facts-grid {
