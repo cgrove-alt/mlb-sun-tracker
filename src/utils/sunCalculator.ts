@@ -195,6 +195,22 @@ export class SunCalculator {
   }
 
   private calculateSectionShadow(section: Section, sunAltitude: number, sunAzimuth: number): ShadowData {
+    // CRITICAL: Check if section is covered FIRST
+    // Covered sections should ALWAYS return 0% sun exposure regardless of sun position
+    if (section.covered === true) {
+      return {
+        sectionId: section.id,
+        coverage: 100,
+        inShadow: true,
+        shadowSources: {
+          roof: 100, // Covered sections have permanent roof coverage
+          upperDeck: 0,
+          bowl: 0
+        },
+        sunExposure: 0 // ZERO sun exposure for covered sections
+      };
+    }
+    
     // Don't adjust azimuth - sun and section angles are already in absolute compass coordinates
     
     // Basic sun exposure logic: sections on same side as sun get exposure
@@ -251,21 +267,28 @@ export class SunCalculator {
     // Fixed roof stadiums always have 100% coverage
     if (this.stadium.roofType === 'fixed') return 100;
     
-    // For covered sections, they should always have complete coverage
-    if (section.covered) {
-      // Covered sections have permanent overhead coverage that blocks direct sunlight
-      return 100; // Covered sections provide complete protection from direct sun
+    // For covered sections, they MUST always have complete coverage
+    // This is a critical fix - covered sections have permanent overhead protection
+    if (section.covered === true) {
+      return 100; // Covered sections provide COMPLETE protection from direct sun
     }
     
-    // For retractable roofs, calculate overhang shadow
-    if (this.stadium.roofType === 'retractable' && this.stadiumGeometry.roofOverhang) {
-      // Simple overhang shadow calculation
-      const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
-      const overhangDepth = this.stadiumGeometry.roofOverhang;
-      
-      if (shadowLength > 0 && shadowLength < overhangDepth * 2) {
-        // Overhang provides some shade
-        return Math.min(50, (shadowLength / overhangDepth) * 30);
+    // For retractable roofs when closed, all sections are covered
+    if (this.stadium.roofType === 'retractable') {
+      // Assume roof is closed for this calculation (can be made dynamic later)
+      // For now, check if there's overhang shadow for open roof scenario
+      if (this.stadiumGeometry.roofOverhang && sunAltitude > 0) {
+        // Calculate shadow cast by roof overhang
+        const shadowLength = this.stadiumGeometry.roofHeight / Math.tan(sunAltitude * Math.PI / 180);
+        const overhangDepth = this.stadiumGeometry.roofOverhang;
+        
+        if (shadowLength > 0 && shadowLength <= overhangDepth) {
+          // Full shadow from overhang
+          return 100;
+        } else if (shadowLength > 0 && shadowLength < overhangDepth * 2) {
+          // Partial shadow from overhang
+          return Math.max(50, 100 - ((shadowLength - overhangDepth) / overhangDepth) * 50);
+        }
       }
     }
     
