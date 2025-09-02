@@ -38,6 +38,14 @@ export default function ContactPage() {
               <h3 className="font-semibold text-lg mb-2">Legal Inquiries</h3>
               <p className="text-ink-700">legal@theshadium.com</p>
             </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-2">Privacy Rights Requests</h3>
+              <p className="text-ink-700 mb-2">legal@theshadium.com</p>
+              <a href="/privacy-rights" className="inline-block text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200 transition-colors">
+                Visit Privacy Rights Center →
+              </a>
+            </div>
           </div>
         </div>
         
