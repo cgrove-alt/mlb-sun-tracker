@@ -18,6 +18,12 @@ jobs:
           node-version: 20
           cache: 'npm'
       
+      - name: Clean workspace
+        run: |
+          rm -rf pages/
+          rm -rf .next/
+          rm -rf node_modules/.cache/
+      
       - name: Install dependencies
         run: npm ci
       
