@@ -24,8 +24,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theshadium.com/'),
-  title: 'The Shadium - Find Seats in the Shade at MLB Stadiums | Avoid Sun Exposure',
-  description: 'Find seats in the shade at any MLB stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during baseball games. Real-time sun tracking for all 30 MLB ballparks.',
+  title: 'The Shadium - Find Seats in the Shade at MLB, MiLB & NFL Stadiums | Avoid Sun Exposure',
+  description: 'Find seats in the shade at any MLB, MiLB, or NFL stadium. The Shadium helps you locate shaded seating sections, avoid sun exposure, and stay cool during games. Real-time sun tracking for 250+ sports venues including all 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues.',
   keywords: [
     // Primary queries
     'are my seats in the shade',
@@ -34,7 +34,10 @@ export const metadata: Metadata = {
     'seats in the shade',
     'shaded seats',
     'MLB stadium shade',
+    'MiLB stadium shade',
+    'NFL stadium shade',
     'baseball shade seating',
+    'football stadium sun',
     
     // Question-based queries
     'will my seats be in the sun',
