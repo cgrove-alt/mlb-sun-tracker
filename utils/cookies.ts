@@ -170,8 +170,12 @@ export const COOKIE_NAMES = {
   CONSENT: 'theshadium_cookie_consent',
   GPC_HONORED: 'theshadium_gpc_honored',
   CONSENT_DATE: 'theshadium_consent_date',
-  PREFERENCES: 'theshadium_preferences'
+  PREFERENCES: 'theshadium_preferences',
+  GA_OPT_OUT: 'theshadium_ga_opt_out'
 } as const;
+
+// Google Analytics Measurement ID
+export const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
 
 /**
  * Cookie consent specific functions
@@ -231,5 +235,126 @@ export const cookieConsent = {
       expires: 365,
       sameSite: 'lax'
     });
+  }
+};
+
+/**
+ * Google Analytics specific functions
+ */
+export const googleAnalytics = {
+  /**
+   * Set Google Analytics opt-out
+   */
+  setOptOut(optOut: boolean): boolean {
+    // Set the browser-level opt-out flag
+    if (typeof window !== 'undefined') {
+      if (optOut) {
+        (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      } else {
+        delete (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`];
+      }
+    }
+    
+    // Save opt-out preference in cookie
+    const result = setCookie(COOKIE_NAMES.GA_OPT_OUT, optOut.toString(), {
+      expires: 365 * 2, // 2 years like GA cookies
+      sameSite: 'lax'
+    });
+    
+    // Clear GA cookies if opting out
+    if (optOut) {
+      this.clearCookies();
+    }
+    
+    return result;
+  },
+
+  /**
+   * Check if user has opted out of Google Analytics
+   */
+  isOptedOut(): boolean {
+    // Check cookie first
+    const optOutCookie = getCookie(COOKIE_NAMES.GA_OPT_OUT);
+    if (optOutCookie === 'true') return true;
+    
+    // Check consent preferences
+    const consent = cookieConsent.getConsent();
+    if (consent && !consent.performance) return true;
+    
+    // Check browser flag
+    if (typeof window !== 'undefined' && (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`]) {
+      return true;
+    }
+    
+    return false;
+  },
+
+  /**
+   * Clear all Google Analytics cookies
+   */
+  clearCookies(): void {
+    if (typeof document === 'undefined') return;
+    
+    const gaCookiePatterns = [
+      /^_ga$/,           // Main GA cookie
+      /^_gid$/,          // GA session cookie
+      /^_gat/,           // GA throttle cookie
+      /^_ga_/,           // GA4 cookies
+      /^_gac_/,          // GA campaign cookies
+      /^_gcl_/           // Google Ads cookies
+    ];
+    
+    document.cookie.split(';').forEach(cookie => {
+      const [name] = cookie.split('=');
+      const trimmedName = name.trim();
+      
+      if (gaCookiePatterns.some(pattern => pattern.test(trimmedName))) {
+        // Delete for current domain
+        document.cookie = `${trimmedName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+        
+        // Delete for parent domain
+        const hostname = window.location.hostname;
+        document.cookie = `${trimmedName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${hostname};`;
+        document.cookie = `${trimmedName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${hostname};`;
+        
+        // Try deleting for each subdomain level
+        const domainParts = hostname.split('.');
+        for (let i = 0; i < domainParts.length - 1; i++) {
+          const domain = domainParts.slice(i).join('.');
+          document.cookie = `${trimmedName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${domain};`;
+        }
+      }
+    });
+    
+    console.log('[GA] Google Analytics cookies cleared');
+  },
+
+  /**
+   * Get current GA status
+   */
+  getStatus(): {
+    optedOut: boolean;
+    hasGACookies: boolean;
+    consentGiven: boolean;
+  } {
+    const optedOut = this.isOptedOut();
+    const consent = cookieConsent.getConsent();
+    const consentGiven = consent ? consent.performance : false;
+    
+    // Check for GA cookies
+    let hasGACookies = false;
+    if (typeof document !== 'undefined') {
+      const cookies = document.cookie.split(';');
+      hasGACookies = cookies.some(cookie => {
+        const [name] = cookie.split('=');
+        return name.trim().match(/^(_ga|_gid|_gat|_ga_)/);
+      });
+    }
+    
+    return {
+      optedOut,
+      hasGACookies,
+      consentGiven
+    };
   }
 };

@@ -121,15 +121,29 @@ const CookieBanner: React.FC = () => {
   const applyCookiePreferences = (prefs: CookiePreferences) => {
     // Apply preferences to third-party services
     if (typeof window !== 'undefined') {
+      const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
+      
       // Google Analytics
       if (prefs.performance) {
-        // Enable GA
+        // Enable GA - remove the opt-out flag
+        delete (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`];
         (window as any).gtag = (window as any).gtag || function() {
           ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
         };
       } else {
-        // Disable GA
-        (window as any)['ga-disable-GA_MEASUREMENT_ID'] = true;
+        // Disable GA - set the opt-out flag with the actual ID
+        (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+        
+        // Clear existing GA cookies
+        document.cookie.split(';').forEach(cookie => {
+          const [name] = cookie.split('=');
+          if (name.trim().match(/^(_ga|_gid|_gat|_ga_)/)) {
+            // Delete GA cookies for all possible domains
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+          }
+        });
       }
 
       // Functional cookies
@@ -164,6 +178,13 @@ const CookieBanner: React.FC = () => {
     setPreferences(prefsWithTimestamp);
     setShowBanner(false);
     setShowPreferences(false);
+    
+    // Emit event for other components to listen to
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('cookieConsentChanged', { 
+        detail: prefsWithTimestamp 
+      }));
+    }
   };
 
   const acceptAll = () => {

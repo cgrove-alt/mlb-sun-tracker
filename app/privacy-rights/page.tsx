@@ -6,10 +6,11 @@ import styles from '../../styles/Legal.module.css';
 import DataExportButton from '../../components/DataExportButton';
 import DataDeletionButton from '../../components/DataDeletionButton';
 import DataInventory from '../../components/DataInventory';
+import GoogleAnalyticsOptOut from '../../components/GoogleAnalyticsOptOut';
 import { collectAllUserData, UserDataReport } from '../../utils/dataManagement';
 
 export default function PrivacyRightsPage() {
-  const [activeTab, setActiveTab] = useState<'export' | 'delete' | 'inventory'>('inventory');
+  const [activeTab, setActiveTab] = useState<'export' | 'delete' | 'inventory' | 'analytics'>('inventory');
   const [dataReport, setDataReport] = useState<UserDataReport | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -63,6 +64,12 @@ export default function PrivacyRightsPage() {
             onClick={() => setActiveTab('delete')}
           >
             🗑️ Delete Data
+          </button>
+          <button
+            className={`${styles.tabButton} ${activeTab === 'analytics' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('analytics')}
+          >
+            📈 Analytics Settings
           </button>
         </div>
 
@@ -160,6 +167,46 @@ export default function PrivacyRightsPage() {
                   <li>The site will treat you as a new visitor</li>
                   <li>No personal data will remain in your browser from our site</li>
                 </ul>
+              </div>
+            </section>
+          )}
+
+          {activeTab === 'analytics' && (
+            <section className={styles.section}>
+              <h2>Analytics & Tracking Settings</h2>
+              <p>
+                Control how we collect anonymous usage data to improve our service. 
+                These settings allow you to opt-out of Google Analytics tracking at any time.
+              </p>
+              
+              <GoogleAnalyticsOptOut />
+              
+              <div className={styles.infoBox} style={{ marginTop: '20px' }}>
+                <h3>About Google Analytics</h3>
+                <p>
+                  Google Analytics helps us understand how visitors use our website through 
+                  anonymous data collection. This includes:
+                </p>
+                <ul>
+                  <li>Pages visited and time spent on each page</li>
+                  <li>General geographic location (country/region level)</li>
+                  <li>Device and browser type</li>
+                  <li>How you arrived at our site</li>
+                </ul>
+                <p>
+                  <strong>We do NOT collect:</strong> Personal information, IP addresses, 
+                  or any data that could identify you individually.
+                </p>
+              </div>
+              
+              <div className={styles.infoBox} style={{ marginTop: '20px', borderColor: '#4caf50', backgroundColor: '#e8f5e9' }}>
+                <h3>Your Privacy is Protected</h3>
+                <p>
+                  • Your opt-out preference is stored permanently in a cookie<br/>
+                  • The opt-out applies immediately and stops all tracking<br/>
+                  • You can change this preference at any time<br/>
+                  • We honor Global Privacy Control (GPC) signals automatically
+                </p>
               </div>
             </section>
           )}
