@@ -1,0 +1,443 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: calc(100% - 40px);
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateX(-50%) translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.mainContent,
+.preferencesContent {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.closeButton,
+.backButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.closeButton:hover,
+.backButton:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.backButton {
+  font-size: 1rem;
+  width: auto;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.body {
+  margin-bottom: 20px;
+}
+
+.body p {
+  margin: 10px 0;
+  color: #444;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.learnMore {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+}
+
+.learnMore a {
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.learnMore a:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.customizeButton {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.customizeButton:hover {
+  background: #e0e0e0;
+  border-color: #ccc;
+}
+
+.rejectButton {
+  background: #fff;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.rejectButton:hover {
+  background: #f8f8f8;
+  border-color: #bbb;
+}
+
+.acceptButton {
+  background: #2196f3;
+  color: white;
+}
+
+.acceptButton:hover {
+  background: #1976d2;
+}
+
+.saveButton {
+  background: #4caf50;
+  color: white;
+}
+
+.saveButton:hover {
+  background: #45a049;
+}
+
+.cancelButton {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.cancelButton:hover {
+  background: #e0e0e0;
+}
+
+/* Preferences */
+.preferencesList {
+  margin: 20px 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.preferenceItem {
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.preferenceHeader {
+  margin-bottom: 8px;
+}
+
+.preferenceLabel {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.preferenceLabel strong {
+  color: #333;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.checkbox {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.required {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: #4caf50;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.optional {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: #ff9800;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.preferenceDescription {
+  margin: 0;
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-left: 30px;
+}
+
+.footer {
+  background: #f5f5f5;
+  padding: 12px 20px;
+  border-top: 1px solid #e0e0e0;
+  margin: 0 -20px -20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
+.footer a {
+  color: #2196f3;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .banner {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    max-width: none;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .mainContent,
+  .preferencesContent {
+    padding: 15px;
+  }
+
+  .header h3 {
+    font-size: 1.1rem;
+  }
+
+  .body p {
+    font-size: 0.9rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .preferencesList {
+    max-height: 250px;
+  }
+
+  .preferenceDescription {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .banner {
+    background: #2d2d2d;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .header {
+    border-bottom-color: #444;
+  }
+
+  .header h3 {
+    color: #fff;
+  }
+
+  .closeButton,
+  .backButton {
+    color: #aaa;
+  }
+
+  .closeButton:hover,
+  .backButton:hover {
+    background: #3a3a3a;
+    color: #fff;
+  }
+
+  .body p {
+    color: #ccc;
+  }
+
+  .learnMore {
+    color: #aaa !important;
+  }
+
+  .learnMore a {
+    color: #4db8ff;
+  }
+
+  .customizeButton {
+    background: #3a3a3a;
+    color: #fff;
+    border-color: #555;
+  }
+
+  .customizeButton:hover {
+    background: #444;
+    border-color: #666;
+  }
+
+  .rejectButton {
+    background: #2d2d2d;
+    color: #ccc;
+    border-color: #555;
+  }
+
+  .rejectButton:hover {
+    background: #3a3a3a;
+    border-color: #666;
+  }
+
+  .cancelButton {
+    background: #3a3a3a;
+    color: #ccc;
+  }
+
+  .cancelButton:hover {
+    background: #444;
+  }
+
+  .preferenceItem {
+    background: #3a3a3a;
+    border-color: #555;
+  }
+
+  .preferenceLabel strong {
+    color: #fff;
+  }
+
+  .preferenceDescription {
+    color: #aaa;
+  }
+
+  .footer {
+    background: #252525;
+    border-top-color: #444;
+  }
+
+  .footer p {
+    color: #aaa;
+  }
+
+  .footer a {
+    color: #4db8ff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .overlay,
+  .banner {
+    display: none;
+  }
+}

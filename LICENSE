@@ -1,0 +1,105 @@
+The Shadium™ Proprietary License
+Copyright (c) 2025 The Shadium. All rights reserved.
+
+NOTICE TO ALL PERSONS AND ENTITIES: This software and associated documentation 
+files (the "Software") constitute proprietary and confidential information owned 
+exclusively by The Shadium. The Software is protected by copyright laws and 
+international copyright treaties, as well as other intellectual property laws 
+and treaties.
+
+NO LICENSE GRANTED
+================================================================================
+This repository is made available for VIEWING PURPOSES ONLY. No license, whether 
+express or implied, is granted to use, copy, modify, distribute, sublicense, or 
+create derivative works from this Software.
+
+PROHIBITED ACTIONS
+================================================================================
+Without the prior written consent of The Shadium, you may NOT:
+
+1. Use any part of this Software for any purpose, commercial or non-commercial
+2. Copy, reproduce, or duplicate any part of this Software
+3. Modify, adapt, translate, reverse engineer, decompile, or disassemble this Software
+4. Create derivative works based on this Software
+5. Distribute, sell, rent, lease, or sublicense this Software
+6. Remove or alter any proprietary notices or labels on this Software
+7. Use any automated tools, bots, or scrapers to access or copy this Software
+8. Use this Software to compete with The Shadium or create similar services
+9. Use any algorithms, methodologies, or calculations contained in this Software
+
+INTELLECTUAL PROPERTY
+================================================================================
+The Shadium™ and Shadium™ are trademarks of The Shadium. All trademarks, service 
+marks, trade names, product names, and logos appearing in this Software are the 
+property of their respective owners.
+
+The following are proprietary to The Shadium and protected by intellectual property laws:
+- Sun position and shade calculation algorithms
+- Stadium shade analysis methodologies
+- Data compilation and presentation methods
+- All source code, including but not limited to JavaScript, TypeScript, CSS, and HTML
+- Database schemas and data structures
+- User interface designs and user experience flows
+
+PERMITTED USE
+================================================================================
+You may:
+1. View this repository on GitHub for reference purposes only
+2. Fork this repository on GitHub solely for the purpose of submitting pull requests
+   (subject to our Contributor License Agreement)
+
+CONTRIBUTIONS
+================================================================================
+Any contributions (pull requests, issues, suggestions) submitted to this repository 
+become the property of The Shadium. By submitting contributions, you agree to 
+transfer all rights, title, and interest in your contributions to The Shadium.
+
+NO WARRANTY
+================================================================================
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
+PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE SHADIUM BE 
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY ARISING FROM, OUT OF, OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+VIOLATIONS AND ENFORCEMENT
+================================================================================
+Unauthorized use of this Software may result in:
+- Immediate termination of any access rights
+- Legal action for copyright infringement
+- Claims for damages, including lost profits and legal fees
+- Injunctive relief to prevent continued violation
+
+We actively monitor for unauthorized use and will pursue all available legal remedies.
+
+CONTACT INFORMATION
+================================================================================
+For licensing inquiries or permission requests:
+Email: legal@theshadium.com
+Website: https://theshadium.com
+
+For reporting violations:
+Email: dmca@theshadium.com
+
+GOVERNING LAW
+================================================================================
+This License shall be governed by and construed in accordance with the laws of the 
+United States and the State of California, without regard to conflict of law principles.
+
+SEVERABILITY
+================================================================================
+If any provision of this License is held to be unenforceable, the remaining provisions 
+shall continue in full force and effect.
+
+ENTIRE AGREEMENT
+================================================================================
+This License constitutes the entire agreement between you and The Shadium concerning 
+the Software and supersedes all prior or contemporaneous agreements, representations, 
+warranties, and understandings.
+
+Last Updated: January 2025
+
+================================================================================
+By accessing or viewing this repository, you acknowledge that you have read, 
+understood, and agree to be bound by the terms of this License.
+================================================================================
