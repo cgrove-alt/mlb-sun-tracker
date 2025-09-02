@@ -340,13 +340,6 @@ export default function DoNotSellPage() {
           <div className={styles.contactInfo}>
             <p><strong>The Shadium Legal Team</strong></p>
             <p>Email: legal@theshadium.com</p>
-            <p>
-              Mail:<br />
-              The Shadium Privacy Rights<br />
-              Attn: CCPA Opt-Out Request<br />
-              [Physical Address]<br />
-              [City, State ZIP]
-            </p>
           </div>
         </section>
 
