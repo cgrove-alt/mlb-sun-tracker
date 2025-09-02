@@ -109,8 +109,20 @@ export default function PrivacyPage() {
           <li>SSL/HTTPS encryption for data transmission</li>
           <li>Regular security audits and updates</li>
           <li>Access controls and authentication requirements</li>
-          <li>Data minimization and retention policies</li>
+          <li>Data minimization and automatic retention policies</li>
         </ul>
+        
+        <h3 className="h3">Data Retention Periods</h3>
+        <ul>
+          <li><strong>Essential Preferences:</strong> 1 year (consent, language, theme)</li>
+          <li><strong>Stadium Favorites:</strong> 1 year</li>
+          <li><strong>Recent Activity:</strong> 90 days (searches, viewed stadiums)</li>
+          <li><strong>Session Data:</strong> 30 days (temporary browsing data)</li>
+          <li><strong>Analytics Data:</strong> 90 days (if enabled)</li>
+        </ul>
+        <p className="text-sm text-gray-600 mt-2">
+          Data is automatically deleted after these periods unless you actively use the feature.
+        </p>
 
         <div className="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
           <p>

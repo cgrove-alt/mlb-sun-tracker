@@ -14,6 +14,7 @@ import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
+import DataRetentionInitializer from '../components/DataRetentionInitializer';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -174,6 +175,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <CSSOptimizer />
         <GoogleAnalyticsOptimized />
+        <DataRetentionInitializer />
         <StickyTopNav />
         <div id="root">{children}</div>
         <Footer />

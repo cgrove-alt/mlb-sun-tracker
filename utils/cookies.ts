@@ -1,7 +1,10 @@
 /**
  * Cookie utility functions for managing browser cookies
  * Provides secure cookie operations with proper attributes
+ * Implements data retention policies for privacy compliance
  */
+
+import { getRetentionPolicy } from './dataRetention';
 
 interface CookieOptions {
   expires?: number; // Days until expiry
@@ -27,9 +30,13 @@ export function setCookie(
       ? encodeURIComponent(JSON.stringify(value))
       : encodeURIComponent(value);
 
+    // Check if there's a retention policy for this cookie
+    const retentionPolicy = getRetentionPolicy(name);
+    const defaultExpiry = retentionPolicy ? retentionPolicy.retentionDays : 365;
+    
     // Default options
     const {
-      expires = 365, // Default to 1 year
+      expires = defaultExpiry, // Use retention policy or default to 1 year
       path = '/',
       domain,
       secure = window.location.protocol === 'https:',
