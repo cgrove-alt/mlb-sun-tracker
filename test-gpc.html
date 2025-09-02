@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPC Test - The Shadium</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #2196f3;
+            padding-bottom: 10px;
+        }
+        .status-box {
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .status-box.enabled {
+            background: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+        }
+        .status-box.disabled {
+            background: #fff3e0;
+            border: 1px solid #ff9800;
+            color: #e65100;
+        }
+        .status-box.unsupported {
+            background: #f5f5f5;
+            border: 1px solid #999;
+            color: #666;
+        }
+        .test-button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #1976d2;
+        }
+        .test-button.secondary {
+            background: #757575;
+        }
+        .test-button.secondary:hover {
+            background: #616161;
+        }
+        .code-block {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        .instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .log-entry {
+            padding: 8px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-left: 3px solid #2196f3;
+            font-family: monospace;
+            font-size: 13px;
+        }
+        #logs {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 20px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Global Privacy Control (GPC) Test</h1>
+        
+        <div id="gpc-status"></div>
+        
+        <div class="instructions">
+            <h3>📝 How to Test GPC Implementation:</h3>
+            <ol>
+                <li><strong>Check Current Status:</strong> See if your browser has GPC enabled above</li>
+                <li><strong>Enable/Disable GPC:</strong> Use the browser simulation buttons below</li>
+                <li><strong>Visit The Shadium:</strong> Open the site and check if GPC is detected</li>
+                <li><strong>Verify Behavior:</strong> Confirm that analytics are blocked and preferences are auto-applied</li>
+            </ol>
+        </div>
+
+        <h3>🔧 Test Controls:</h3>
+        <div>
+            <button class="test-button" onclick="simulateGPC(true)">Simulate GPC Enabled</button>
+            <button class="test-button secondary" onclick="simulateGPC(false)">Simulate GPC Disabled</button>
+            <button class="test-button secondary" onclick="clearStorage()">Clear All Storage</button>
+            <button class="test-button" onclick="testSite()">Test The Shadium Site</button>
+        </div>
+
+        <h3>📊 Current Browser State:</h3>
+        <div class="code-block" id="browser-state"></div>
+
+        <h3>📜 Test Logs:</h3>
+        <div id="logs"></div>
+    </div>
+
+    <script>
+        // Check and display GPC status
+        function checkGPCStatus() {
+            const gpcEnabled = !!navigator.globalPrivacyControl;
+            const gpcSupported = 'globalPrivacyControl' in navigator;
+            
+            const statusDiv = document.getElementById('gpc-status');
+            
+            if (!gpcSupported) {
+                statusDiv.innerHTML = `
+                    <div class="status-box unsupported">
+                        <h2>⚠️ GPC Not Supported</h2>
+                        <p>Your browser doesn't support Global Privacy Control.</p>
+                        <p>Browsers that support GPC: Firefox, Brave, DuckDuckGo Browser</p>
+                    </div>
+                `;
+            } else if (gpcEnabled) {
+                statusDiv.innerHTML = `
+                    <div class="status-box enabled">
+                        <h2>✅ GPC is Enabled</h2>
+                        <p>Your browser is sending the Global Privacy Control signal.</p>
+                        <p>The Shadium should automatically honor your privacy preference.</p>
+                    </div>
+                `;
+            } else {
+                statusDiv.innerHTML = `
+                    <div class="status-box disabled">
+                        <h2>❌ GPC is Disabled</h2>
+                        <p>Your browser supports GPC but it's not currently enabled.</p>
+                        <p>You can enable it in your browser's privacy settings.</p>
+                    </div>
+                `;
+            }
+            
+            updateBrowserState();
+            addLog(`GPC Status Check: Supported=${gpcSupported}, Enabled=${gpcEnabled}`);
+        }
+
+        // Update browser state display
+        function updateBrowserState() {
+            const state = {
+                'GPC Enabled': !!navigator.globalPrivacyControl,
+                'GPC Supported': 'globalPrivacyControl' in navigator,
+                'Do Not Track': navigator.doNotTrack,
+                'Cookie Consent': localStorage.getItem('cookie_consent') || 'Not set',
+                'GPC Honored': localStorage.getItem('gpc_honored') || 'Not set',
+                'GPC Auto Applied': localStorage.getItem('gpc_auto_applied') || 'Not set',
+                'User Agent': navigator.userAgent.substring(0, 50) + '...'
+            };
+            
+            document.getElementById('browser-state').innerHTML = 
+                '<pre>' + JSON.stringify(state, null, 2) + '</pre>';
+        }
+
+        // Simulate GPC (for testing)
+        function simulateGPC(enabled) {
+            try {
+                if (enabled) {
+                    Object.defineProperty(navigator, 'globalPrivacyControl', {
+                        value: true,
+                        writable: true,
+                        configurable: true
+                    });
+                    addLog('✅ Simulated GPC enabled');
+                } else {
+                    Object.defineProperty(navigator, 'globalPrivacyControl', {
+                        value: false,
+                        writable: true,
+                        configurable: true
+                    });
+                    addLog('❌ Simulated GPC disabled');
+                }
+                checkGPCStatus();
+            } catch (e) {
+                addLog('⚠️ Error simulating GPC: ' + e.message);
+            }
+        }
+
+        // Clear all storage
+        function clearStorage() {
+            localStorage.clear();
+            sessionStorage.clear();
+            
+            // Clear cookies
+            document.cookie.split(";").forEach(function(c) { 
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); 
+            });
+            
+            addLog('🗑️ Cleared all storage and cookies');
+            updateBrowserState();
+        }
+
+        // Test The Shadium site
+        function testSite() {
+            const url = 'http://localhost:3003';
+            addLog(`🚀 Opening ${url} in new tab...`);
+            addLog('📋 Check the browser console for GPC-related logs');
+            window.open(url, '_blank');
+        }
+
+        // Add log entry
+        function addLog(message) {
+            const logsDiv = document.getElementById('logs');
+            const logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+            const timestamp = new Date().toLocaleTimeString();
+            logEntry.textContent = `[${timestamp}] ${message}`;
+            logsDiv.insertBefore(logEntry, logsDiv.firstChild);
+            
+            // Keep only last 20 logs
+            while (logsDiv.children.length > 20) {
+                logsDiv.removeChild(logsDiv.lastChild);
+            }
+        }
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            checkGPCStatus();
+            addLog('🔍 Test page initialized');
+            
+            // Listen for storage changes
+            window.addEventListener('storage', (e) => {
+                if (e.key && (e.key.includes('gpc') || e.key.includes('cookie'))) {
+                    addLog(`📦 Storage changed: ${e.key} = ${e.newValue}`);
+                    updateBrowserState();
+                }
+            });
+        });
+
+        // Check GPC status every 2 seconds
+        setInterval(checkGPCStatus, 2000);
+    </script>
+</body>
+</html>

@@ -2,6 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 import { useEffect, useCallback } from 'react';
+import { checkGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
+import { cookieConsent } from '../utils/cookies';
 
 const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
 
@@ -44,10 +46,58 @@ export default function GoogleAnalyticsOptimized() {
     }
   }, []);
 
+  // Listen for consent changes
+  useEffect(() => {
+    const handleConsentChange = () => {
+      const consent = cookieConsent.getConsent();
+      if (consent && !consent.performance) {
+        // User opted out - disable GA
+        (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+        console.log('[GA] Google Analytics disabled due to consent change');
+        
+        // Clear GA cookies
+        document.cookie.split(';').forEach(cookie => {
+          const [name] = cookie.split('=');
+          if (name.trim().match(/^(_ga|_gid|_gat|_ga_)/)) {
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`;
+            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`;
+          }
+        });
+      } else if (consent && consent.performance) {
+        // User opted in - remove opt-out flag
+        delete (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`];
+        console.log('[GA] Google Analytics enabled due to consent change');
+      }
+    };
+
+    // Listen for custom event that CookieBanner can emit
+    window.addEventListener('cookieConsentChanged', handleConsentChange);
+    
+    return () => {
+      window.removeEventListener('cookieConsentChanged', handleConsentChange);
+    };
+  }, []);
+
   // Load GA script after user interaction or timeout
   const loadGoogleAnalytics = useCallback(() => {
     // Check if already loaded
     if (typeof window !== 'undefined' && (window as any).gaLoaded) {
+      return;
+    }
+
+    // Check for Global Privacy Control signal
+    if (checkGlobalPrivacyControl()) {
+      console.log('[GA] Google Analytics blocked due to Global Privacy Control signal');
+      return;
+    }
+
+    // Check if user has opted out via cookie preferences
+    const consent = cookieConsent.getConsent();
+    if (consent && !consent.performance) {
+      console.log('[GA] Google Analytics blocked due to user cookie preferences');
+      // Set the opt-out flag to ensure GA doesn't run
+      (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
       return;
     }
 
@@ -87,6 +137,27 @@ export default function GoogleAnalyticsOptimized() {
   }, []);
 
   useEffect(() => {
+    // First check if GPC or cookie preferences block analytics
+    if (checkGlobalPrivacyControl()) {
+      console.log('[GA] Google Analytics initialization blocked due to GPC signal');
+      (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      return;
+    }
+
+    // Check cookie consent (not localStorage)
+    const consent = cookieConsent.getConsent();
+    if (consent && !consent.performance) {
+      console.log('[GA] Google Analytics initialization blocked due to cookie preferences');
+      (window as any)[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+      return;
+    }
+
+    // Also check if opt-out flag is already set
+    if ((window as any)[`ga-disable-${GA_MEASUREMENT_ID}`]) {
+      console.log('[GA] Google Analytics is opted out');
+      return;
+    }
+
     // Strategy 1: Load after user interaction
     const events = ['click', 'scroll', 'touchstart', 'keydown'];
     let loaded = false;

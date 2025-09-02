@@ -156,6 +156,16 @@ export default function PrivacyPage() {
           <li><strong>Deletion:</strong> Request deletion of your personal information</li>
           <li><strong>Portability:</strong> Receive your data in a portable format</li>
         </ul>
+        
+        <div className="bg-green-50 border border-green-200 p-4 rounded-lg mt-4">
+          <p className="font-semibold text-green-800 mb-2">✅ Exercise Your Rights Now</p>
+          <p className="text-green-700 mb-3">
+            Use our Privacy Rights Center to instantly view, export, or delete your data:
+          </p>
+          <Link href="/privacy-rights" className="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
+            Go to Privacy Rights Center →
+          </Link>
+        </div>
 
         <h3 className="h3">Opt-Out Options</h3>
         <ul>
