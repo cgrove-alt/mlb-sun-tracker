@@ -51,7 +51,7 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
 
   const generateShareText = () => {
     if (!selectedStadium || !gameDateTime) {
-      return 'Check out The Shadium - Find the best shaded seats at MLB stadiums!';
+      return 'Check out The Shadium - Find the best shaded seats at MLB, MiLB & NFL stadiums!';
     }
     
     // Format date and time with stadium's local timezone

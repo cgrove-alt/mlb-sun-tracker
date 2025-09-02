@@ -13,8 +13,8 @@ const Footer: React.FC = () => {
         <div className={styles.footerSection}>
           <h3 className={styles.footerTitle}>The Shadium</h3>
           <p className={styles.footerDescription}>
-            Find seats in the shade at any MLB stadium. Real-time sun tracking 
-            and shade calculations for all 30 ballparks.
+            Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking 
+            and shade calculations for 250+ sports venues.
           </p>
           <div className={styles.copyright}>
             <p>© {currentYear} The Shadium™. All rights reserved.</p>
@@ -130,9 +130,9 @@ const Footer: React.FC = () => {
         <div className={styles.disclaimer}>
           <p>
             <strong>Disclaimer:</strong> The Shadium is not affiliated with, endorsed by, or 
-            sponsored by Major League Baseball or any MLB team. All team names and venues are 
-            trademarks of their respective owners. Shade calculations are estimates only. 
-            Actual conditions may vary.
+            sponsored by Major League Baseball, Minor League Baseball, the National Football League, 
+            or any team. All team names and venues are trademarks of their respective owners. 
+            Shade calculations are estimates only. Actual conditions may vary.
           </p>
         </div>
         

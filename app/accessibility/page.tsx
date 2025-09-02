@@ -182,12 +182,6 @@ export default function AccessibilityPage() {
             <h3>Accessibility Feedback</h3>
             <p>Email: support@theshadium.com</p>
             <p>Subject Line: Accessibility Feedback</p>
-            <p>
-              Mail:<br />
-              The Shadium Accessibility Team<br />
-              [Physical Address]<br />
-              [City, State ZIP]
-            </p>
           </div>
           
           <p>

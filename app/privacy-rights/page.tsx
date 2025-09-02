@@ -7,15 +7,19 @@ import DataExportButton from '../../components/DataExportButton';
 import DataDeletionButton from '../../components/DataDeletionButton';
 import DataInventory from '../../components/DataInventory';
 import GoogleAnalyticsOptOut from '../../components/GoogleAnalyticsOptOut';
+import DataRetentionInfo from '../../components/DataRetentionInfo';
 import { collectAllUserData, UserDataReport } from '../../utils/dataManagement';
+import { initializeDataRetention } from '../../utils/dataRetention';
 
 export default function PrivacyRightsPage() {
-  const [activeTab, setActiveTab] = useState<'export' | 'delete' | 'inventory' | 'analytics'>('inventory');
+  const [activeTab, setActiveTab] = useState<'export' | 'delete' | 'inventory' | 'analytics' | 'retention'>('inventory');
   const [dataReport, setDataReport] = useState<UserDataReport | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadDataInventory();
+    // Initialize data retention cleanup
+    initializeDataRetention();
   }, []);
 
   const loadDataInventory = async () => {
@@ -70,6 +74,12 @@ export default function PrivacyRightsPage() {
             onClick={() => setActiveTab('analytics')}
           >
             📈 Analytics Settings
+          </button>
+          <button
+            className={`${styles.tabButton} ${activeTab === 'retention' ? styles.activeTab : ''}`}
+            onClick={() => setActiveTab('retention')}
+          >
+            ⏱️ Retention Policies
           </button>
         </div>
 
@@ -206,6 +216,29 @@ export default function PrivacyRightsPage() {
                   • The opt-out applies immediately and stops all tracking<br/>
                   • You can change this preference at any time<br/>
                   • We honor Global Privacy Control (GPC) signals automatically
+                </p>
+              </div>
+            </section>
+          )}
+
+          {activeTab === 'retention' && (
+            <section className={styles.section}>
+              <h2>Data Retention Policies</h2>
+              <p>
+                We automatically delete your data after specific retention periods to protect your privacy. 
+                Data that hasn't been accessed within these timeframes is permanently removed.
+              </p>
+              
+              <DataRetentionInfo />
+              
+              <div className={styles.infoBox} style={{ marginTop: '20px' }}>
+                <h3>How Retention Works</h3>
+                <p>
+                  • Data is timestamped when stored in your browser<br/>
+                  • Our system checks daily for expired data<br/>
+                  • Expired data is automatically deleted<br/>
+                  • Active use of a feature refreshes its retention period<br/>
+                  • You can always delete all data manually using the Delete Data tab
                 </p>
               </div>
             </section>
