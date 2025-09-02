@@ -182,7 +182,6 @@ export default function AccessibilityPage() {
             <h3>Accessibility Feedback</h3>
             <p>Email: support@theshadium.com</p>
             <p>Subject Line: Accessibility Feedback</p>
-            <p>Phone: 1-800-SHADIUM (1-800-742-3486)</p>
             <p>
               Mail:<br />
               The Shadium Accessibility Team<br />

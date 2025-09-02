@@ -10,7 +10,6 @@ export default function DoNotSellPage() {
     firstName: '',
     lastName: '',
     email: '',
-    phone: '',
     state: 'CA',
     confirmResident: false,
     confirmIdentity: false,
@@ -150,17 +149,6 @@ export default function DoNotSellPage() {
               </div>
               
               <div className={styles.formGroup}>
-                <label htmlFor="phone">Phone Number (Optional)</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                />
-              </div>
-              
-              <div className={styles.formGroup}>
                 <label htmlFor="state">State of Residence *</label>
                 <select
                   id="state"
@@ -270,11 +258,6 @@ export default function DoNotSellPage() {
             Send your opt-out request to:{' '}
             <a href="mailto:legal@theshadium.com">legal@theshadium.com</a>
           </p>
-          
-          <h3>Toll-Free Number</h3>
-          <p>
-            Call us at: <strong>1-800-SHADIUM (1-800-742-3486)</strong>
-          </p>
         </section>
 
         <section className={styles.section}>
@@ -328,7 +311,6 @@ export default function DoNotSellPage() {
           <div className={styles.contactInfo}>
             <p><strong>The Shadium Legal Team</strong></p>
             <p>Email: legal@theshadium.com</p>
-            <p>Phone: 1-800-SHADIUM (1-800-742-3486)</p>
             <p>
               Mail:<br />
               The Shadium Privacy Rights<br />
