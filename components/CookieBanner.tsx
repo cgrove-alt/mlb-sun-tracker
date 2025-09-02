@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/CookieBanner.module.css';
+import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -14,20 +15,48 @@ interface CookiePreferences {
 const CookieBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
+  const [showGPCNotice, setShowGPCNotice] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true, // Always true, cannot be disabled
     performance: false,
     functional: false,
     timestamp: Date.now()
   });
+  
+  const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
 
   useEffect(() => {
     // Check if user has already made a choice
     const storedConsent = localStorage.getItem('cookie_consent');
-    if (!storedConsent) {
-      // Show banner after a short delay for better UX
+    const gpcAutoApplied = localStorage.getItem('gpc_auto_applied');
+    
+    // If GPC is enabled and we haven't auto-applied preferences yet
+    if (isGPCEnabled && !gpcAutoApplied && !storedConsent) {
+      console.log('[GPC] Auto-applying privacy preferences due to GPC signal');
+      
+      // Auto-apply necessary-only preferences
+      const gpcPreferences = {
+        necessary: true,
+        performance: false,
+        functional: false,
+        timestamp: Date.now()
+      };
+      
+      // Save preferences directly
+      localStorage.setItem('cookie_consent', JSON.stringify(gpcPreferences));
+      localStorage.setItem('cookie_consent_date', new Date().toISOString());
+      localStorage.setItem('gpc_auto_applied', 'true');
+      applyCookiePreferences(gpcPreferences);
+      setPreferences(gpcPreferences);
+      
+      // Show GPC notice briefly
+      setShowGPCNotice(true);
+      setTimeout(() => setShowGPCNotice(false), 5000);
+      
+    } else if (!storedConsent && !isGPCEnabled) {
+      // Show banner after a short delay for better UX (only if GPC is not enabled)
       setTimeout(() => setShowBanner(true), 1000);
-    } else {
+    } else if (storedConsent) {
       // Load saved preferences
       try {
         const savedPrefs = JSON.parse(storedConsent);
@@ -51,7 +80,7 @@ const CookieBanner: React.FC = () => {
         delete (window as any).showCookiePreferences;
       }
     };
-  }, []);
+  }, [isGPCEnabled, isGPCSupported]);
 
   const applyCookiePreferences = (prefs: CookiePreferences) => {
     // Apply preferences to third-party services
@@ -114,6 +143,27 @@ const CookieBanner: React.FC = () => {
     savePreferences(preferences);
   };
 
+  // Show GPC notice if applicable
+  if (showGPCNotice && !showBanner) {
+    return (
+      <div className={styles.gpcNotice}>
+        <div className={styles.gpcContent}>
+          <span className={styles.gpcIcon}>🛡️</span>
+          <span className={styles.gpcText}>
+            Global Privacy Control signal detected. Your privacy preferences have been automatically set to maximum protection.
+          </span>
+          <button 
+            className={styles.gpcDismiss}
+            onClick={() => setShowGPCNotice(false)}
+            aria-label="Dismiss"
+          >
+            ✓
+          </button>
+        </div>
+      </div>
+    );
+  }
+  
   if (!showBanner) return null;
 
   return (
@@ -138,6 +188,12 @@ const CookieBanner: React.FC = () => {
                 The Shadium uses cookies to enhance your experience. We use cookies for 
                 essential website functions, analytics, and personalization.
               </p>
+              {isGPCSupported && isGPCEnabled && (
+                <p className={styles.gpcIndicator}>
+                  <span className={styles.gpcBadge}>GPC Active</span>
+                  Your browser's Global Privacy Control signal is enabled. We're honoring your privacy preference.
+                </p>
+              )}
               <p className={styles.learnMore}>
                 Learn more in our <Link href="/cookies">Cookie Policy</Link> and{' '}
                 <Link href="/privacy">Privacy Policy</Link>.

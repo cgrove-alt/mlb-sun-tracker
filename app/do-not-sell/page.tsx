@@ -3,8 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from '../../styles/Legal.module.css';
+import GPCStatusIndicator from '../../components/GPCStatusIndicator';
+import { useGlobalPrivacyControl } from '../../hooks/useGlobalPrivacyControl';
 
 export default function DoNotSellPage() {
+  const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -109,6 +112,19 @@ export default function DoNotSellPage() {
 
         <section id="opt-out-form" className={styles.section}>
           <h2>Submit Your Opt-Out Request</h2>
+          
+          {isGPCEnabled ? (
+            <div className={styles.infoBox} style={{ borderColor: '#4caf50', backgroundColor: '#e8f5e9' }}>
+              <h3 style={{ color: '#2e7d32' }}>✓ Opt-Out Already Active via GPC</h3>
+              <p style={{ color: '#2e7d32' }}>
+                Your Global Privacy Control signal is active and we're honoring your opt-out 
+                preference automatically. You don't need to submit a separate request.
+              </p>
+              <p style={{ color: '#2e7d32', marginTop: '10px' }}>
+                If you'd still like to submit a formal request for your records, you can do so below.
+              </p>
+            </div>
+          ) : null}
           
           {!formSubmitted ? (
             <form onSubmit={handleSubmit} className={styles.privacyForm}>
@@ -232,10 +248,23 @@ export default function DoNotSellPage() {
           <h2>Other Ways to Opt-Out</h2>
           
           <h3>Global Privacy Control</h3>
+          
+          {/* Show dynamic GPC status */}
+          <GPCStatusIndicator variant="detailed" />
+          
           <p>
             The Shadium honors the Global Privacy Control (GPC) signal. If your browser 
             sends a GPC signal, we will treat it as a valid opt-out request.
           </p>
+          
+          {isGPCEnabled && (
+            <div className={styles.infoBox} style={{ borderColor: '#4caf50', backgroundColor: '#e8f5e9' }}>
+              <p style={{ color: '#2e7d32' }}>
+                <strong>✓ Your GPC signal is currently active.</strong> We are automatically 
+                honoring your opt-out preference. No additional action is needed.
+              </p>
+            </div>
+          )}
           
           <h3>Cookie Preferences</h3>
           <p>

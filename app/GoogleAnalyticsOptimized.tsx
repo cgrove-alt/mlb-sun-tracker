@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { useEffect, useCallback } from 'react';
+import { checkGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
 
 const GA_MEASUREMENT_ID = 'G-JXGEKF957C';
 
@@ -51,6 +52,26 @@ export default function GoogleAnalyticsOptimized() {
       return;
     }
 
+    // Check for Global Privacy Control signal
+    if (checkGlobalPrivacyControl()) {
+      console.log('[GA] Google Analytics blocked due to Global Privacy Control signal');
+      return;
+    }
+
+    // Check if user has opted out via cookie preferences
+    const cookieConsent = localStorage.getItem('cookie_consent');
+    if (cookieConsent) {
+      try {
+        const preferences = JSON.parse(cookieConsent);
+        if (!preferences.performance) {
+          console.log('[GA] Google Analytics blocked due to user cookie preferences');
+          return;
+        }
+      } catch (e) {
+        console.error('[GA] Error parsing cookie consent:', e);
+      }
+    }
+
     // Mark as loaded to prevent duplicate loading
     (window as any).gaLoaded = true;
 
@@ -87,6 +108,25 @@ export default function GoogleAnalyticsOptimized() {
   }, []);
 
   useEffect(() => {
+    // First check if GPC or cookie preferences block analytics
+    if (checkGlobalPrivacyControl()) {
+      console.log('[GA] Google Analytics initialization blocked due to GPC signal');
+      return;
+    }
+
+    const cookieConsent = localStorage.getItem('cookie_consent');
+    if (cookieConsent) {
+      try {
+        const preferences = JSON.parse(cookieConsent);
+        if (!preferences.performance) {
+          console.log('[GA] Google Analytics initialization blocked due to cookie preferences');
+          return;
+        }
+      } catch (e) {
+        console.error('[GA] Error parsing cookie consent:', e);
+      }
+    }
+
     // Strategy 1: Load after user interaction
     const events = ['click', 'scroll', 'touchstart', 'keydown'];
     let loaded = false;
