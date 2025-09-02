@@ -222,7 +222,7 @@ export default function PrivacyPage() {
         
         <p>
           Parents and guardians who believe their child has provided us with personal information 
-          should contact us at privacy@theshadium.com.
+          should contact us at legal@theshadium.com.
         </p>
       </section>
 
@@ -255,8 +255,8 @@ export default function PrivacyPage() {
         </p>
         
         <div className="bg-gray-50 p-4 rounded-lg">
-          <p><strong>The Shadium Privacy Team</strong></p>
-          <p>Email: privacy@theshadium.com</p>
+          <p><strong>The Shadium Legal Team</strong></p>
+          <p>Email: legal@theshadium.com</p>
           <p>Subject Line: Privacy Policy Inquiry</p>
         </div>
         

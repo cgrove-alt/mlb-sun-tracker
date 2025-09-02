@@ -33,6 +33,11 @@ export default function ContactPage() {
               <h3 className="font-semibold text-lg mb-2">Partnership Opportunities</h3>
               <p className="text-ink-700">partnerships@theshadium.com</p>
             </div>
+            
+            <div>
+              <h3 className="font-semibold text-lg mb-2">Legal Inquiries</h3>
+              <p className="text-ink-700">legal@theshadium.com</p>
+            </div>
           </div>
         </div>
         

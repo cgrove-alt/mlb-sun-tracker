@@ -268,7 +268,7 @@ export default function DoNotSellPage() {
           <h3>Email</h3>
           <p>
             Send your opt-out request to:{' '}
-            <a href="mailto:privacy@theshadium.com">privacy@theshadium.com</a>
+            <a href="mailto:legal@theshadium.com">legal@theshadium.com</a>
           </p>
           
           <h3>Toll-Free Number</h3>
@@ -289,7 +289,7 @@ export default function DoNotSellPage() {
             <li>Provide us with a copy of the power of attorney or written permission</li>
           </ul>
           <p>
-            Authorized agents should contact us at privacy@theshadium.com with proof 
+            Authorized agents should contact us at legal@theshadium.com with proof 
             of authorization.
           </p>
         </section>
@@ -310,7 +310,7 @@ export default function DoNotSellPage() {
             Nevada residents have the right to opt-out of the sale of certain personal 
             information under Nevada Revised Statutes Chapter 603A. To exercise this 
             right, please submit a request using the form above or contact us at 
-            privacy@theshadium.com.
+            legal@theshadium.com.
           </p>
         </section>
 
@@ -326,8 +326,8 @@ export default function DoNotSellPage() {
         <section id="contact" className={styles.section}>
           <h2>Contact Information</h2>
           <div className={styles.contactInfo}>
-            <p><strong>The Shadium Privacy Team</strong></p>
-            <p>Email: privacy@theshadium.com</p>
+            <p><strong>The Shadium Legal Team</strong></p>
+            <p>Email: legal@theshadium.com</p>
             <p>Phone: 1-800-SHADIUM (1-800-742-3486)</p>
             <p>
               Mail:<br />

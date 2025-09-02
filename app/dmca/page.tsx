@@ -91,7 +91,7 @@ export default function DMCAPolicy() {
         <div className="bg-gray-50 p-6 rounded-lg">
           <p><strong>DMCA Agent</strong><br />
           The Shadium<br />
-          Email: dmca@theshadium.com<br />
+          Email: legal@theshadium.com<br />
           Subject Line: DMCA Takedown Notice</p>
           
           <p className="mt-4 text-sm text-gray-600">
@@ -250,7 +250,7 @@ export default function DMCAPolicy() {
         
         <div className="bg-gray-50 p-4 rounded-lg">
           <p><strong>DMCA Agent</strong></p>
-          <p>Email: dmca@theshadium.com</p>
+          <p>Email: legal@theshadium.com</p>
           <p>Subject Line: DMCA Notice</p>
         </div>
         

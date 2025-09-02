@@ -238,7 +238,7 @@ export default function CookiePolicy() {
         <h3 className="h3">Withdrawing Consent</h3>
         <p>
           You can withdraw your consent for optional cookies at any time through 
-          our cookie preferences tool or by contacting us at privacy@theshadium.com.
+          our cookie preferences tool or by contacting us at legal@theshadium.com.
         </p>
       </section>
 
@@ -265,8 +265,8 @@ export default function CookiePolicy() {
         </p>
         
         <div className="bg-gray-50 p-4 rounded-lg">
-          <p><strong>The Shadium Privacy Team</strong></p>
-          <p>Email: privacy@theshadium.com</p>
+          <p><strong>The Shadium Legal Team</strong></p>
+          <p>Email: legal@theshadium.com</p>
           <p>Subject Line: Cookie Policy Inquiry</p>
         </div>
         
