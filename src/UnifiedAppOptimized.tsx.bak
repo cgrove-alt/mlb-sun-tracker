@@ -22,9 +22,11 @@ import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
 import { trackStadiumSelection, trackGameSelection, trackFilterUsage } from './utils/analytics';
-import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
+import { getUnifiedVenueShade, ShadedVenueSection, VenueSection } from './utils/getUnifiedVenueShade';
 import { SunFilterCriteria } from './components/SunExposureFilterFixed';
-import { SeatingSectionSun } from './utils/sunCalculations';
+import { SeatingSectionSun, getSunPosition } from './utils/sunCalculations';
+import { getStadiumSections } from './data/stadiumSections';
+import { getVenueSections } from './data/venueSections';
 
 // Lazy load heavy components
 const WeatherDisplay = lazy(() => 
@@ -60,9 +62,9 @@ function UnifiedAppContentOptimized() {
   const [sunPosition, setSunPosition] = useState<any>(null);
   const [weatherForecast, setWeatherForecast] = useState<WeatherForecast | null>(null);
   const [loadingWeather, setLoadingWeather] = useState(false);
-  const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
+  const [detailedSections, setDetailedSections] = useState<any[]>([]);
   const [shadedSections, setShadedSections] = useState<ShadedVenueSection[]>([]);
-  const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
+  const [filteredSections, setFilteredSections] = useState<any[]>([]);
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
@@ -122,10 +124,9 @@ function UnifiedAppContentOptimized() {
     
     setLoadingWeather(true);
     try {
-      const forecast = await weatherApi.getWeatherForecast(
+      const forecast = await weatherApi.getForecast(
         selectedVenue.latitude,
-        selectedVenue.longitude,
-        gameDateTime
+        selectedVenue.longitude
       );
       setWeatherForecast(forecast);
     } catch (error) {
@@ -143,7 +144,8 @@ function UnifiedAppContentOptimized() {
   }, [selectedVenue, gameDateTime, loadWeatherForecast]);
 
   // Handle venue selection
-  const handleVenueSelect = useCallback((venue: UnifiedVenue) => {
+  const handleVenueSelect = useCallback((venue: UnifiedVenue | null) => {
+    if (!venue) return;
     setChangingVenue(true);
     setSelectedVenue(venue);
     setSelectedGame(null);
@@ -173,21 +175,51 @@ function UnifiedAppContentOptimized() {
       setCalculationInProgress(true);
       
       try {
-        const shadeData = await getUnifiedVenueShade(
+        // Get sections for the venue
+        let sections: VenueSection[];
+        if (selectedVenue.league === 'MLB') {
+          // For MLB, use stadium sections and add venueType
+          const stadiumSections = getStadiumSections(selectedVenue.id);
+          sections = stadiumSections.map(s => ({
+            ...s,
+            venueType: 'baseball',
+            price: s.price || 'moderate'
+          }));
+        } else {
+          // For other sports, use generated sections
+          sections = getVenueSections(selectedVenue.id);
+        }
+        
+        // Calculate shade
+        const shadeResults = getUnifiedVenueShade(
           selectedVenue,
           gameDateTime,
-          weatherForecast || undefined
+          sections,
+          weatherForecast?.current || undefined
         );
         
-        setShadedSections(shadeData.sections);
-        setSunPosition(shadeData.sunPosition);
+        setShadedSections(shadeResults);
+        
+        // Get sun position for the explanation
+        const sunPos = getSunPosition(
+          gameDateTime,
+          selectedVenue.latitude,
+          selectedVenue.longitude
+        );
+        setSunPosition(sunPos);
         
         // Convert to legacy format for compatibility
-        const legacySections = shadeData.sections.map(section => ({
-          ...section,
-          shadePercentage: section.shadeInfo?.percentageInShade || 0,
-          sunExposure: section.shadeInfo?.sunExposure || 'Unknown',
-        })) as SeatingSectionSun[];
+        const legacySections: any[] = shadeResults.map(result => ({
+          id: result.section.id,
+          name: result.section.name,
+          level: result.section.level,
+          shadePercentage: result.shadePercentage,
+          sunExposure: result.isFullyShaded ? 'Shaded' : result.isPartiallyShaded ? 'Partial Sun' : 'Full Sun',
+          covered: result.section.covered,
+          price: result.section.price,
+          section: result.section,
+          inSun: !result.isFullyShaded
+        }));
         
         setDetailedSections(legacySections);
         setFilteredSections(legacySections);
@@ -255,22 +287,12 @@ function UnifiedAppContentOptimized() {
         </div>
 
         <main className="App-main">
-          {selectedVenue && (
-            <Breadcrumb 
-              stadium={legacyStadium}
-              game={selectedGame}
-            />
-          )}
           
           <div className="controls">
             <UnifiedGameSelector
               selectedVenue={selectedVenue}
-              selectedGame={selectedGame}
-              gameDateTime={gameDateTime}
-              onVenueSelect={handleVenueSelect}
+              onVenueChange={handleVenueSelect}
               onGameSelect={handleGameSelect}
-              stadiumGames={stadiumGames}
-              setStadiumGames={setStadiumGames}
             />
           </div>
 
