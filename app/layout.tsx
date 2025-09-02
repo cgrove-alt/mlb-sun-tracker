@@ -3,12 +3,15 @@ import './globals.css';
 import '../src/styles/typography.css';
 import '../src/styles/heading-safety.css';
 import '../src/styles/vertical-rhythm.css';
+import '../src/styles/mobile-optimizations.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 // import GoogleAnalytics from './GoogleAnalytics';
 // import GoogleAnalyticsClient from './GoogleAnalyticsClient';
-import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
+// import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
+import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
 import { CriticalStyles } from './critical-styles';
+import { CriticalStylesInline } from './critical-styles-inline';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
@@ -17,8 +20,9 @@ import CookieBanner from '../components/CookieBanner';
 
 const inter = Inter({ 
   subsets: ['latin'],
-  display: 'swap', // Improve font loading
+  display: 'swap', // Improve font loading - prevents invisible text during font load
   preload: true,
+  adjustFontFallback: true, // Reduces layout shift
 });
 
 export const metadata: Metadata = {
@@ -142,6 +146,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <CriticalStyles />
+        <CriticalStylesInline />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#1e40af" />
@@ -155,25 +160,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://api.open-meteo.com" />
         <link rel="dns-prefetch" href="https://statsapi.mlb.com" />
         <WebApplicationSchema />
-        {/* Google Analytics - Immediate load for tracking */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXGEKF957C"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-JXGEKF957C', {
-                page_path: window.location.pathname,
-                debug_mode: true
-              });
-            `,
-          }}
-        />
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
-        <GoogleAnalyticsOptimized />
+        <GoogleAnalyticsLazy />
         <StickyTopNav />
         <div id="root">{children}</div>
         <Footer />
