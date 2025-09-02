@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/CookieBanner.module.css';
 import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
+import { cookieConsent, cookiesEnabled } from '../utils/cookies';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -16,6 +17,7 @@ const CookieBanner: React.FC = () => {
   const [showBanner, setShowBanner] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [showGPCNotice, setShowGPCNotice] = useState(false);
+  const [cookiesAvailable, setCookiesAvailable] = useState(true);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true, // Always true, cannot be disabled
     performance: false,
@@ -26,9 +28,37 @@ const CookieBanner: React.FC = () => {
   const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const storedConsent = localStorage.getItem('cookie_consent');
-    const gpcAutoApplied = localStorage.getItem('gpc_auto_applied');
+    // Check if cookies are enabled
+    const areCookiesEnabled = cookiesEnabled();
+    setCookiesAvailable(areCookiesEnabled);
+    
+    // Check cookies first, then localStorage as fallback
+    let storedConsent = areCookiesEnabled ? cookieConsent.getConsent() : null;
+    let gpcAutoApplied = areCookiesEnabled ? cookieConsent.isGPCHonored() : false;
+    
+    // Migration: If no cookie but localStorage exists, migrate to cookie
+    if (!storedConsent) {
+      const localStorageConsent = localStorage.getItem('cookie_consent');
+      if (localStorageConsent) {
+        try {
+          storedConsent = JSON.parse(localStorageConsent);
+          // Migrate to cookie
+          if (cookieConsent.setConsent(storedConsent)) {
+            console.log('[Cookie Migration] Migrated consent from localStorage to cookie');
+          }
+        } catch (e) {
+          console.error('Error migrating cookie consent:', e);
+        }
+      }
+    }
+    
+    // Check GPC auto-applied status
+    if (!gpcAutoApplied) {
+      gpcAutoApplied = localStorage.getItem('gpc_auto_applied') === 'true';
+      if (gpcAutoApplied) {
+        cookieConsent.setGPCHonored(true);
+      }
+    }
     
     // If GPC is enabled and we haven't auto-applied preferences yet
     if (isGPCEnabled && !gpcAutoApplied && !storedConsent) {
@@ -42,7 +72,13 @@ const CookieBanner: React.FC = () => {
         timestamp: Date.now()
       };
       
-      // Save preferences directly
+      // Save preferences to both cookie and localStorage
+      const saved = cookieConsent.setConsent(gpcPreferences);
+      if (saved) {
+        cookieConsent.setConsentDate(new Date().toISOString());
+        cookieConsent.setGPCHonored(true);
+      }
+      // Also save to localStorage as backup
       localStorage.setItem('cookie_consent', JSON.stringify(gpcPreferences));
       localStorage.setItem('cookie_consent_date', new Date().toISOString());
       localStorage.setItem('gpc_auto_applied', 'true');
@@ -59,7 +95,7 @@ const CookieBanner: React.FC = () => {
     } else if (storedConsent) {
       // Load saved preferences
       try {
-        const savedPrefs = JSON.parse(storedConsent);
+        const savedPrefs = typeof storedConsent === 'string' ? JSON.parse(storedConsent) : storedConsent;
         setPreferences(savedPrefs);
         applyCookiePreferences(savedPrefs);
       } catch (e) {
@@ -111,8 +147,19 @@ const CookieBanner: React.FC = () => {
 
   const savePreferences = (prefs: CookiePreferences) => {
     const prefsWithTimestamp = { ...prefs, timestamp: Date.now() };
+    
+    // Save to cookie (primary storage)
+    const cookieSaved = cookieConsent.setConsent(prefsWithTimestamp);
+    if (cookieSaved) {
+      cookieConsent.setConsentDate(new Date().toISOString());
+    } else {
+      console.warn('[Cookie Consent] Failed to save to cookie, using localStorage only');
+    }
+    
+    // Also save to localStorage (backup storage)
     localStorage.setItem('cookie_consent', JSON.stringify(prefsWithTimestamp));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
+    
     applyCookiePreferences(prefsWithTimestamp);
     setPreferences(prefsWithTimestamp);
     setShowBanner(false);

@@ -154,15 +154,27 @@ function collectCookiesData(): UserDataCategory {
     const cookies = document.cookie.split(';');
     cookies.forEach(cookie => {
       const [name, value] = cookie.trim().split('=');
-      if (name) {
-        data[name] = decodeURIComponent(value || '');
+      if (name && value) {
+        try {
+          // Try to decode and parse JSON values
+          const decoded = decodeURIComponent(value);
+          try {
+            data[name] = JSON.parse(decoded);
+          } catch {
+            // If not JSON, store as string
+            data[name] = decoded;
+          }
+        } catch {
+          // If decoding fails, store raw value
+          data[name] = value;
+        }
       }
     });
   }
 
   return {
     name: 'Cookies',
-    description: 'Small files stored by your browser',
+    description: 'Small files stored by your browser (including consent preferences)',
     data,
     source: 'cookies'
   };

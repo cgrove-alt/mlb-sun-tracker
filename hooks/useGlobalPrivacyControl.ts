@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { cookieConsent } from '../utils/cookies';
 
 interface GPCStatus {
   isGPCEnabled: boolean;
@@ -31,8 +32,15 @@ export function useGlobalPrivacyControl(): GPCStatus {
       // Check if the browser supports GPC (has the property, even if false)
       const gpcSupported = 'globalPrivacyControl' in navigator;
       
-      // Check if we've already honored a GPC request
-      const gpcHonored = localStorage.getItem('gpc_honored') === 'true';
+      // Check if we've already honored a GPC request (check cookie first, then localStorage)
+      let gpcHonored = cookieConsent.isGPCHonored();
+      if (!gpcHonored) {
+        // Fallback to localStorage and migrate if found
+        gpcHonored = localStorage.getItem('gpc_honored') === 'true';
+        if (gpcHonored) {
+          cookieConsent.setGPCHonored(true);
+        }
+      }
       
       // Log GPC status for debugging
       if (gpcSupported) {
@@ -51,6 +59,8 @@ export function useGlobalPrivacyControl(): GPCStatus {
 
       // If GPC is enabled and we haven't honored it yet, mark it as honored
       if (gpcEnabled && !gpcHonored) {
+        // Save to both cookie and localStorage
+        cookieConsent.setGPCHonored(true);
         localStorage.setItem('gpc_honored', 'true');
         localStorage.setItem('gpc_honored_date', new Date().toISOString());
         console.log('[GPC] Honoring Global Privacy Control signal');
