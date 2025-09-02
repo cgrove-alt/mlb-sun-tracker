@@ -27,9 +27,10 @@ export interface Obstruction {
 
 export interface SunPosition {
   azimuth: number; // Degrees from north (0-360)
-  elevation: number; // Degrees above horizon (0-90)
+  elevation: number; // Degrees above horizon (-90 to 90)
   azimuthRadians: number;
   elevationRadians: number;
+  correctedElevation?: number; // Elevation with atmospheric refraction correction
 }
 
 export interface SectionGeometry {
@@ -77,7 +78,11 @@ export class ShadeCalculator3D {
   // Calculate sun ray direction vector
   private getSunRayDirection(sunPos: SunPosition): Vector3D {
     const azimuthRad = sunPos.azimuthRadians;
-    const elevationRad = sunPos.elevationRadians;
+    // Use corrected elevation if available (includes atmospheric refraction)
+    const elevation = sunPos.correctedElevation !== undefined 
+      ? sunPos.correctedElevation 
+      : sunPos.elevation;
+    const elevationRad = degreesToRadians(elevation);
     
     // Convert spherical coordinates to Cartesian
     // Note: We negate because rays come FROM the sun
@@ -292,12 +297,43 @@ export function degreesToRadians(degrees: number): number {
   return degrees * Math.PI / 180;
 }
 
+// Calculate atmospheric refraction correction
+export function calculateRefractionCorrection(
+  elevationDegrees: number,
+  pressure: number = 1013.25, // millibars
+  temperature: number = 20 // Celsius
+): number {
+  // No refraction for elevation below -0.575 degrees
+  if (elevationDegrees < -0.575) {
+    return 0;
+  }
+  
+  // Bennett's formula for atmospheric refraction
+  // More accurate for low elevation angles
+  const h = elevationDegrees;
+  const refraction = pressure / 1010 * 283 / (273 + temperature) *
+    1.02 / Math.tan(degreesToRadians(h + 10.3 / (h + 5.11)));
+  
+  // Return refraction in degrees (converted from arcminutes)
+  return refraction / 60;
+}
+
 // Helper function to create sun position from azimuth and elevation
-export function createSunPosition(azimuthDegrees: number, elevationDegrees: number): SunPosition {
+export function createSunPosition(
+  azimuthDegrees: number, 
+  elevationDegrees: number,
+  applyRefraction: boolean = true
+): SunPosition {
+  // Apply atmospheric refraction correction for more accurate results
+  const correctedElevation = applyRefraction 
+    ? elevationDegrees + calculateRefractionCorrection(elevationDegrees)
+    : elevationDegrees;
+  
   return {
     azimuth: azimuthDegrees,
     elevation: elevationDegrees,
     azimuthRadians: degreesToRadians(azimuthDegrees),
-    elevationRadians: degreesToRadians(elevationDegrees)
+    elevationRadians: degreesToRadians(elevationDegrees),
+    correctedElevation
   };
 }

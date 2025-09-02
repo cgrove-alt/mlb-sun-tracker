@@ -24,12 +24,20 @@ export interface SeatingSectionSun {
 export function getSunPosition(
   date: Date,
   latitude: number,
-  longitude: number
+  longitude: number,
+  timezone?: string
 ): SunPosition {
-  // Use SunCalc implementation
+  // Use SunCalc implementation (for now, NREL can be toggled later)
   const sunPos = SunCalc.getPosition(date, latitude, longitude);
   
-  // Convert radians to degrees and normalize azimuth to 0-360
+  // SunCalc returns:
+  // - azimuth: angle along the horizon, measured from south to west
+  //   in radians (0 = south, Math.PI * 0.5 = west, Math.PI = north)
+  // - altitude: sun altitude above the horizon in radians
+  
+  // Convert to compass degrees (0=N, 90=E, 180=S, 270=W)
+  // SunCalc's azimuth: 0=S, π/2=W, π=N, 3π/2=E
+  // Convert to: 0=N, 90=E, 180=S, 270=W
   const azimuthDegrees = ((sunPos.azimuth * 180 / Math.PI) + 180) % 360;
   const altitudeDegrees = sunPos.altitude * 180 / Math.PI;
   
@@ -86,7 +94,7 @@ export function calculateSunnySections(
     let inSun = false;
     
     if (section.startAngle > section.endAngle) {
-      // Section crosses 0 degrees
+      // Section crosses 0 degrees (wraps around north)
       inSun = relativeSunAngle >= section.startAngle || relativeSunAngle <= section.endAngle;
     } else {
       inSun = relativeSunAngle >= section.startAngle && relativeSunAngle <= section.endAngle;
@@ -97,10 +105,18 @@ export function calculateSunnySections(
       inSun = false;
     }
     
-    // Opposite side of the stadium from the sun will be in shade
-    const oppositeAngle = (relativeSunAngle + 180) % 360;
-    if (section.startAngle <= oppositeAngle && oppositeAngle <= section.endAngle) {
-      inSun = true;
+    // Additional check: sections facing away from sun are shaded
+    // Calculate if section is on the opposite side from the sun
+    const sectionMidAngle = section.startAngle > section.endAngle 
+      ? ((section.startAngle + section.endAngle + 360) / 2) % 360
+      : (section.startAngle + section.endAngle) / 2;
+    
+    const angleDiff = Math.abs(relativeSunAngle - sectionMidAngle);
+    const normalizedDiff = angleDiff > 180 ? 360 - angleDiff : angleDiff;
+    
+    // If section is more than 90 degrees away from sun azimuth, it's likely shaded
+    if (normalizedDiff > 90) {
+      inSun = false;
     }
     
     sunnySections.set(section.name, inSun);
@@ -115,6 +131,13 @@ export function calculateDetailedSectionSunExposure(
   sunPosition: SunPosition,
   weather?: WeatherData
 ): SeatingSectionSun[] {
+  // Add atmospheric refraction correction for low sun angles
+  let correctedAltitude = sunPosition.altitudeDegrees;
+  if (sunPosition.altitudeDegrees >= -0.575 && sunPosition.altitudeDegrees < 5) {
+    // Apply refraction correction for sun near horizon
+    const refraction = 1.02 / Math.tan((sunPosition.altitudeDegrees + 10.3 / (sunPosition.altitudeDegrees + 5.11)) * Math.PI / 180);
+    correctedAltitude = sunPosition.altitudeDegrees + refraction / 60;
+  }
   // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
   let sections = getStadiumSections(stadium.id);
   if (sections.length === 0) {
