@@ -146,6 +146,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#1e40af" />
         
+        {/* Google AdSense Verification */}
+        <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
+        
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
