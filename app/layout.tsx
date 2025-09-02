@@ -12,6 +12,8 @@ import { CriticalStyles } from './critical-styles';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
+import Footer from '../components/Footer';
+import CookieBanner from '../components/CookieBanner';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -171,6 +173,8 @@ export default function RootLayout({
         <GoogleAnalyticsOptimized />
         <StickyTopNav />
         <div id="root">{children}</div>
+        <Footer />
+        <CookieBanner />
       </body>
     </html>
   );
