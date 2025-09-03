@@ -8,19 +8,26 @@
 }
 
 .skip-link {
+  /* Screen reader only pattern - completely hidden but accessible */
   position: absolute;
   left: -10000px;
-  top: 0;
+  top: auto;
   width: 1px;
   height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  
+  /* Styles that will apply when focused */
   background-color: #0F3E7C;
   color: white;
-  padding: 0.75rem 1.5rem;
   text-decoration: none;
   font-weight: 600;
   border-radius: 0 0 8px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Make skip links visible when focused */
@@ -28,13 +35,19 @@
 .skip-link:active {
   position: absolute;
   left: 0;
+  top: 0;
   width: auto;
   height: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
   overflow: visible;
   clip: auto;
+  clip-path: none;
+  white-space: normal;
   z-index: 10001;
   outline: 3px solid #FFD700;
   outline-offset: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skip-link:hover {
