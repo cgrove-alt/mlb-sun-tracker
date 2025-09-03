@@ -1,3 +1,8 @@
+/* Tailwind CSS Directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Import existing styles from CRA */
 @import url('../src/index.css');
 @import url('../src/App.css');
@@ -8,6 +13,7 @@
 @import url('../src/styles/typography-system.css');
 @import url('../src/styles/spacing-system.css');
 @import url('../src/styles/modern-features.css');
+@import url('../src/styles/modern-ui-effects.css');
 
 /* Additional Next.js specific styles */
 html {

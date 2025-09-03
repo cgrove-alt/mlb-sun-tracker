@@ -122,23 +122,25 @@
 }
 
 /* CSS Layers for Better Cascade Management */
+/* Commented out until Tailwind layers are properly configured
 @layer reset, base, tokens, layout, components, utilities;
 
 @layer tokens {
-  /* Token definitions go here */
+  // Token definitions go here
 }
 
 @layer layout {
-  /* Layout styles go here */
+  // Layout styles go here
 }
 
 @layer components {
-  /* Component styles go here */
+  // Component styles go here
 }
 
 @layer utilities {
-  /* Utility classes go here */
+  // Utility classes go here
 }
+*/
 
 /* Modern Color Functions */
 .dynamic-color {
