@@ -114,7 +114,7 @@ export default function StickyTopNav() {
 
   return (
     <>
-      <nav className={`sticky-top-nav ${isScrolled ? 'scrolled' : ''}`}>
+      <nav id="main-navigation" className={`sticky-top-nav ${isScrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Main navigation">
         <div className="nav-container">
           <div className="nav-content">
             <Link href="/" className="nav-logo">
@@ -259,6 +259,8 @@ export default function StickyTopNav() {
                   className="mobile-league-toggle"
                   onClick={() => setIsMLBOpen(!isMLBOpen)}
                   aria-expanded={isMLBOpen}
+                  aria-label="Toggle MLB stadiums menu"
+                  aria-controls="mlb-venues-menu"
                 >
                   MLB Stadiums ({mlbVenues.length})
                   <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -266,7 +268,7 @@ export default function StickyTopNav() {
                   </svg>
                 </button>
                 {isMLBOpen && (
-                  <div className="mobile-venues-menu">
+                  <div id="mlb-venues-menu" className="mobile-venues-menu" role="region" aria-label="MLB stadiums list">
                     {mlbVenues.map((venue) => (
                       <Link
                         key={venue.id}
@@ -289,6 +291,8 @@ export default function StickyTopNav() {
                   className="mobile-league-toggle"
                   onClick={() => setIsNFLOpen(!isNFLOpen)}
                   aria-expanded={isNFLOpen}
+                  aria-label="Toggle NFL venues menu"
+                  aria-controls="nfl-venues-menu"
                 >
                   NFL Venues ({nflVenues.length})
                   <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -296,7 +300,7 @@ export default function StickyTopNav() {
                   </svg>
                 </button>
                 {isNFLOpen && (
-                  <div className="mobile-venues-menu">
+                  <div id="nfl-venues-menu" className="mobile-venues-menu" role="region" aria-label="NFL venues list">
                     {nflVenues.map((venue) => (
                       <Link
                         key={venue.id}
@@ -319,6 +323,8 @@ export default function StickyTopNav() {
                   className="mobile-league-toggle"
                   onClick={() => setIsMiLBOpen(!isMiLBOpen)}
                   aria-expanded={isMiLBOpen}
+                  aria-label="Toggle MiLB stadiums menu"
+                  aria-controls="milb-venues-menu"
                 >
                   MiLB Stadiums ({milbVenues.length})
                   <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
@@ -326,7 +332,7 @@ export default function StickyTopNav() {
                   </svg>
                 </button>
                 {isMiLBOpen && (
-                  <div className="mobile-venues-menu">
+                  <div id="milb-venues-menu" className="mobile-venues-menu" role="region" aria-label="MiLB stadiums list">
                     {milbVenues.map((venue) => (
                       <Link
                         key={venue.id}

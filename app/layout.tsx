@@ -4,6 +4,7 @@ import '../src/styles/typography.css';
 import '../src/styles/heading-safety.css';
 import '../src/styles/vertical-rhythm.css';
 import '../src/styles/mobile-optimizations.css';
+import '../src/styles/accessibility-fixes.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
@@ -19,6 +20,7 @@ import { WebApplicationSchema } from '../components/SafeSchema';
 import Footer from '../components/Footer';
 import CookieBanner from '../components/CookieBanner';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
+import SkipLinks from '../components/SkipLinks';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -167,13 +169,16 @@ export default function RootLayout({
         <WebApplicationSchema />
       </head>
       <body className={inter.className}>
+        <SkipLinks />
         <CSSOptimizer />
         <Suspense fallback={null}>
           <GoogleAnalyticsLazy />
         </Suspense>
         <DataRetentionInitializer />
         <StickyTopNav />
-        <div id="root">{children}</div>
+        <main id="main-content" tabIndex={-1}>
+          <div id="root">{children}</div>
+        </main>
         <Footer />
         <CookieBanner />
       </body>

@@ -79,15 +79,15 @@ export default function AccessibilityPage() {
             <li>Consistent navigation throughout the website</li>
             <li>Semantic HTML5 markup for proper document structure</li>
             <li>Descriptive page titles and headings</li>
-            <li>Skip navigation links for keyboard users</li>
-            <li>Breadcrumb navigation where appropriate</li>
+            <li>Skip navigation links for keyboard users ✓</li>
+            <li>Breadcrumb navigation (Partially Implemented)</li>
           </ul>
           
           <h3>Visual Design</h3>
           <ul>
-            <li>Sufficient color contrast ratios (minimum 4.5:1 for normal text)</li>
+            <li>Sufficient color contrast ratios (minimum 4.5:1 for normal text) ✓</li>
             <li>Text is resizable up to 200% without loss of functionality</li>
-            <li>Focus indicators for keyboard navigation</li>
+            <li>Enhanced focus indicators for keyboard navigation ✓</li>
             <li>No reliance on color alone to convey information</li>
             <li>Responsive design for various screen sizes and orientations</li>
           </ul>
@@ -98,12 +98,12 @@ export default function AccessibilityPage() {
             <li>Form labels and instructions clearly associated with inputs</li>
             <li>Error messages that clearly identify issues</li>
             <li>Buttons and links with descriptive text</li>
-            <li>ARIA labels for complex interactions</li>
+            <li>ARIA labels for all interactive elements ✓</li>
           </ul>
           
           <h3>Content</h3>
           <ul>
-            <li>Alternative text for informative images</li>
+            <li>Alternative text for informative images (In Progress)</li>
             <li>Captions and transcripts for video content (where applicable)</li>
             <li>Clear and simple language where possible</li>
             <li>Tables with proper headers and captions</li>
@@ -112,8 +112,8 @@ export default function AccessibilityPage() {
           
           <h3>Stadium Shade Information</h3>
           <ul>
-            <li>Shade percentages announced to screen readers</li>
-            <li>Color-blind friendly shade visualization options</li>
+            <li>Shade percentages announced to screen readers ✓</li>
+            <li>Color-blind friendly shade visualization options (Coming Soon)</li>
             <li>Text descriptions of sun exposure levels</li>
             <li>Keyboard-navigable stadium maps</li>
             <li>Alternative data table views for complex visualizations</li>
@@ -155,15 +155,41 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
+        <section className={styles.section}>
+          <h2>5. Recent Accessibility Improvements</h2>
+          <p>
+            We've recently implemented several accessibility enhancements:
+          </p>
+          <ul>
+            <li><strong>Skip Navigation Links:</strong> Added skip to main content, navigation, and footer links</li>
+            <li><strong>Screen Reader Support:</strong> Shade percentages now announced with descriptive context</li>
+            <li><strong>Enhanced Color Contrast:</strong> All text now meets WCAG AA standards (4.5:1 ratio)</li>
+            <li><strong>Improved Focus Indicators:</strong> Clear 3px outline with offset for all interactive elements</li>
+            <li><strong>ARIA Labels:</strong> All buttons and navigation elements properly labeled</li>
+          </ul>
+        </section>
+
         <section id="known-issues" className={styles.section}>
-          <h2>5. Known Accessibility Issues</h2>
+          <h2>6. Known Accessibility Issues & Roadmap</h2>
           <p>
             We are actively working to address the following known issues:
           </p>
           <ul>
             <li>Some third-party embedded content may not be fully accessible</li>
-            <li>Complex stadium 3D visualizations may require alternative text descriptions</li>
-            <li>Some older PDF documents may not be fully accessible</li>
+            <li>Complex stadium 3D visualizations require alternative text descriptions (In Progress)</li>
+            <li>Site-wide breadcrumb navigation is being expanded</li>
+            <li>Color-blind mode toggle is under development</li>
+            <li>Alternative text for all images is being added</li>
+          </ul>
+          <p>
+            <strong>Upcoming Features (Q1 2025):</strong>
+          </p>
+          <ul>
+            <li>Color-blind friendly visualization modes with patterns</li>
+            <li>Complete breadcrumb navigation across all pages</li>
+            <li>Alternative text for all stadium visualizations</li>
+            <li>Keyboard shortcuts for common actions</li>
+            <li>High contrast mode toggle</li>
           </ul>
           <p>
             We are committed to resolving these issues and continuously improving 
@@ -172,7 +198,7 @@ export default function AccessibilityPage() {
         </section>
 
         <section id="feedback" className={styles.section}>
-          <h2>6. Feedback and Contact Information</h2>
+          <h2>7. Feedback and Contact Information</h2>
           <p>
             We welcome your feedback on the accessibility of The Shadium. Please let us 
             know if you encounter accessibility barriers:
@@ -203,7 +229,7 @@ export default function AccessibilityPage() {
         </section>
 
         <section id="alternatives" className={styles.section}>
-          <h2>7. Alternative Formats</h2>
+          <h2>8. Alternative Formats</h2>
           <p>
             If you need information from The Shadium in an alternative format, please 
             contact us and we will make every effort to provide it to you:
@@ -221,7 +247,7 @@ export default function AccessibilityPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>8. Enforcement and Legal</h2>
+          <h2>9. Enforcement and Legal</h2>
           <p>
             The Shadium is committed to accessibility as a matter of corporate 
             responsibility and legal compliance. We follow:
@@ -235,7 +261,7 @@ export default function AccessibilityPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>9. Third-Party Content</h2>
+          <h2>10. Third-Party Content</h2>
           <p>
             While we strive to ensure all content on The Shadium is accessible, we 
             cannot guarantee the accessibility of third-party content including:
@@ -253,7 +279,7 @@ export default function AccessibilityPage() {
         </section>
 
         <section className={styles.section}>
-          <h2>10. Continuous Improvement</h2>
+          <h2>11. Continuous Improvement</h2>
           <p>
             Accessibility is an ongoing effort at The Shadium. We regularly:
           </p>

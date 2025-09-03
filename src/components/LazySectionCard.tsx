@@ -4,6 +4,7 @@ import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { StadiumSection } from '../data/stadiumSections';
 import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon } from './Icons';
 import { Tooltip } from './Tooltip';
+import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
 interface LazySectionCardProps {
   section: StadiumSection;
@@ -52,7 +53,9 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
 
   const handleClick = () => {
     haptic.light();
-    // Add your click handler logic here
+    // Announce to screen reader when section is selected
+    const announcement = `Selected section ${section.name}. ${formatPercentageForScreenReader(roundedExposure)}`;
+    announceToScreenReader(announcement, 'polite');
   };
 
   return (
@@ -64,7 +67,7 @@ const LazySectionCardComponent: React.FC<LazySectionCardProps> = ({
       role="listitem"
       tabIndex={0}
       onClick={handleClick}
-      aria-label={`Section ${section.name}, sun for ${roundedExposure}% of game${timeInSun ? ` (about ${Math.round(timeInSun)} minutes)` : ''}, ${section.level} level${section.covered ? ', covered' : ''}`}
+      aria-label={`Section ${section.name}, ${formatPercentageForScreenReader(roundedExposure)}, ${section.level} level${section.covered ? ', covered section' : ''}`}
       style={{
         opacity: isLoaded ? 1 : 0.3,
         transform: isLoaded ? 'translateY(0)' : 'translateY(10px)',

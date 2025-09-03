@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer id="footer" className={styles.footer} role="contentinfo">
       <div className={styles.footerContent}>
         <div className={styles.footerSection}>
           <h3 className={styles.footerTitle}>The Shadium</h3>

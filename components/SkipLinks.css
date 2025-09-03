@@ -1,0 +1,53 @@
+/* Skip Links - Accessibility Feature */
+.skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background-color: #0F3E7C;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Make skip links visible when focused */
+.skip-link:focus,
+.skip-link:active {
+  position: absolute;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  z-index: 10001;
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+.skip-link:hover {
+  background-color: #1e5aa8;
+  text-decoration: underline;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .skip-link:focus,
+  .skip-link:active {
+    outline: 4px solid currentColor;
+    background-color: black;
+    color: white;
+  }
+}
