@@ -1,0 +1,261 @@
+/* Mobile Performance Optimizations */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Optimize touch targets for mobile */
+@media (max-width: 768px) {
+  /* Ensure all interactive elements are at least 48x48px */
+  button,
+  a,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [role="link"],
+  [role="tab"],
+  [role="menuitem"],
+  .clickable {
+    min-height: 48px;
+    min-width: 48px;
+    position: relative;
+  }
+
+  /* Add touch-friendly padding to small buttons */
+  button:not(.hero-cta-button),
+  a:not(.nav-link) {
+    padding: 12px 16px;
+  }
+
+  /* Optimize scrolling performance */
+  .section-list,
+  .game-list,
+  .venue-list {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    will-change: scroll-position;
+  }
+
+  /* Use CSS containment for better performance */
+  .section-card,
+  .game-card,
+  .venue-card {
+    contain: layout style paint;
+  }
+
+  /* Disable hover effects on touch devices */
+  @media (hover: none) {
+    button:hover,
+    a:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /* Optimize font sizes for readability */
+  body {
+    font-size: 16px; /* Prevents zoom on iOS */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Improve input field usability */
+  input[type="text"],
+  input[type="date"],
+  input[type="time"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px; /* Prevents zoom on focus */
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  /* Add safe areas for notched devices */
+  .App-header,
+  .App-footer,
+  .StickyTopNav {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  .App-header {
+    padding-top: calc(env(safe-area-inset-top) + 1rem);
+  }
+
+  .App-footer {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+  }
+}
+
+/* Optimize animations for mobile */
+@media (max-width: 768px) {
+  /* Use transform instead of position for animations */
+  .slide-in {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  /* Use GPU-accelerated properties */
+  .card,
+  .section-card {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Reduce shadow complexity on mobile */
+  .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Optimize images for mobile */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+    height: auto;
+    content-visibility: auto;
+  }
+
+  /* Use lower quality images on slow connections */
+  @media (prefers-reduced-data: reduce) {
+    img {
+      filter: contrast(1.1);
+    }
+  }
+}
+
+/* Virtual scrolling optimization hints */
+.virtual-list {
+  contain: strict;
+  will-change: scroll-position;
+}
+
+.virtual-list-item {
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* Optimize table scrolling on mobile */
+@media (max-width: 768px) {
+  .data-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .data-table {
+    min-width: 600px;
+  }
+
+  .data-table th,
+  .data-table td {
+    scroll-snap-align: start;
+  }
+}
+
+/* Reduce paint areas */
+.static-header,
+.static-footer {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+/* Optimize modal performance */
+.modal-backdrop {
+  will-change: opacity;
+  contain: strict;
+}
+
+.modal-content {
+  contain: layout style paint;
+  transform: translateZ(0);
+}
+
+/* Improve perceived performance with skeleton screens */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Optimize form performance */
+input:focus,
+select:focus,
+textarea:focus {
+  outline-offset: 2px;
+  outline: 2px solid var(--color-primary);
+}
+
+/* Reduce repaints during typing */
+input,
+textarea {
+  will-change: auto;
+}
+
+/* Optimize dropdown menus */
+.dropdown-menu {
+  contain: layout style paint;
+  will-change: transform, opacity;
+}
+
+/* PWA optimizations */
+@media (display-mode: standalone) {
+  /* Adjust for PWA status bar */
+  .App-header {
+    padding-top: calc(env(safe-area-inset-top) + 1.5rem);
+  }
+}
+
+/* Dark mode optimizations for OLED screens */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+  }
+
+  .card {
+    background-color: #111;
+    border: 1px solid #222;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  button,
+  a,
+  .card {
+    border: 2px solid currentColor;
+  }
+
+  button:focus,
+  a:focus {
+    outline: 3px solid currentColor;
+    outline-offset: 2px;
+  }
+}
