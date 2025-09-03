@@ -6,6 +6,7 @@ import '../src/styles/vertical-rhythm.css';
 import '../src/styles/mobile-optimizations.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Suspense } from 'react';
 // import GoogleAnalytics from './GoogleAnalytics';
 // import GoogleAnalyticsClient from './GoogleAnalyticsClient';
 // import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
@@ -163,7 +164,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <CSSOptimizer />
-        <GoogleAnalyticsLazy />
+        <Suspense fallback={null}>
+          <GoogleAnalyticsLazy />
+        </Suspense>
         <StickyTopNav />
         <div id="root">{children}</div>
         <Footer />
