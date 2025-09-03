@@ -4,6 +4,7 @@ import { Stadium } from '../data/stadiums';
 import { formatDateTimeWithTimezone, formatTimeWithTimezone } from '../utils/timeUtils';
 import { formatGameTimeInStadiumTZ, formatInTimeZone } from '../utils/dateTimeUtils';
 import { useTranslation } from '../i18n/i18nContext';
+import { AttributionNotice } from './AttributionNotice';
 import './WeatherDisplay.css';
 
 interface WeatherDisplayProps {
@@ -254,6 +255,10 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
           </div>
         </div>
       )}
+      
+      <div className="weather-attribution">
+        <AttributionNotice type="weather" compact={true} showIcon={false} />
+      </div>
     </div>
   );
 };

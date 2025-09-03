@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { AttributionNotice } from '../src/components/AttributionNotice';
 
 const FooterModern: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -61,6 +62,7 @@ const FooterModern: React.FC = () => {
                 { href: '/stadiums', label: 'All Stadiums' },
                 { href: '/faq', label: 'FAQ' },
                 { href: '/blog', label: 'Blog' },
+                { href: '/attributions', label: 'Technology' },
                 { href: '/contact', label: 'Contact Us' },
               ].map((link) => (
                 <li key={link.href}>
@@ -119,8 +121,14 @@ const FooterModern: React.FC = () => {
           </div>
         </div>
 
+        {/* Attribution Section */}
+        <div className="mt-8 pt-6 border-t border-ink-200">
+          <h4 className="font-semibold text-ink-900 mb-4">Data Sources & Attribution</h4>
+          <AttributionNotice type="all" className="mb-4" />
+        </div>
+
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-ink-200">
+        <div className="mt-8 pt-8 border-t border-ink-200">
           <div className="space-y-4">
             <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
               <p className="text-xs text-ink-600">

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Footer.module.css';
+import { AttributionNotice } from '../src/components/AttributionNotice';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -84,6 +85,11 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
+              <Link href="/attributions">
+                Technology
+              </Link>
+            </li>
+            <li>
               <Link href="/contact">
                 Contact Us
               </Link>
@@ -127,6 +133,11 @@ const Footer: React.FC = () => {
       </div>
 
       <div className={styles.footerBottom}>
+        <div className={styles.attributionSection}>
+          <h4 className={styles.sectionTitle}>Data Sources & Attribution</h4>
+          <AttributionNotice type="all" className={styles.attribution} />
+        </div>
+        
         <div className={styles.disclaimer}>
           <p>
             <strong>Disclaimer:</strong> The Shadium is not affiliated with, endorsed by, or 
