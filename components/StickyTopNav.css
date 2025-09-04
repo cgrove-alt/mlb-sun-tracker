@@ -19,8 +19,6 @@
 
 .nav-container {
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -645,9 +643,16 @@ body.sticky-nav-menu-open {
   width: 100%;
 }
 
-/* Large screens - ensure proper alignment */
+/* Large screens - add more padding for breathing room */
 @media (min-width: 1440px) {
   .nav-container {
-    padding: 0 40px;
+    padding: 0 60px;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1920px) {
+  .nav-container {
+    padding: 0 80px;
   }
 }
