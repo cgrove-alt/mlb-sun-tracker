@@ -18,14 +18,17 @@
 }
 
 .nav-container {
+  width: 100%;
   padding: 0 20px;
 }
 
 .nav-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   height: 64px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Right-aligned container for search and hamburger menu */
