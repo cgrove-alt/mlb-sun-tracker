@@ -27,8 +27,6 @@
   align-items: center;
   justify-content: space-between;
   height: 64px;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 
 /* Right-aligned container for search and hamburger menu */
