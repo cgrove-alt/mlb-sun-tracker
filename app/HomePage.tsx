@@ -33,21 +33,19 @@ export default function HomePage() {
       <main>
         {/* Hero Section */}
         <section className="hero-section">
-          <div className="hero-overlay">
-            <div className="hero-content">
-              <h1 className="hero-headline h1 break-words md:break-normal">
-                Find Your Shade
-              </h1>
-              <p className="hero-subheadline max-w-prose">
-                Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
-              </p>
-              <button 
-                onClick={handleCTAClick}
-                className="hero-cta-button"
-              >
-                Select Your Stadium
-              </button>
-            </div>
+          <div className="hero-content">
+            <h1 className="hero-headline h1 break-words md:break-normal">
+              Find Your Shade
+            </h1>
+            <p className="hero-subheadline max-w-prose">
+              Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
+            </p>
+            <button 
+              onClick={handleCTAClick}
+              className="hero-cta-button"
+            >
+              Select Your Stadium
+            </button>
           </div>
         </section>
 
@@ -100,6 +98,7 @@ export default function HomePage() {
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          padding: 2rem;
         }
         
         @keyframes gradientShift {
@@ -119,16 +118,11 @@ export default function HomePage() {
           z-index: 1;
         }
 
-        .hero-overlay {
+        .hero-content {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 1200px;
-          padding: 2rem;
-          text-align: center;
-        }
-
-        .hero-content {
+          max-width: 800px;
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
@@ -138,6 +132,7 @@ export default function HomePage() {
           color: white;
           animation: fadeInUp 1s ease-out;
           box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          text-align: center;
         }
 
         .hero-headline {
