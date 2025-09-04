@@ -726,15 +726,8 @@
     display: flex;
   }
   
-  /* .hamburger-menu already visible by default */
-  
-  .nav-search {
-    display: none;
-  }
-  
-  .nav-content {
-    gap: 16px;
-  }
+  /* Keep search visible on tablets, only hide on small mobile */
+  /* .nav-search will be hidden at 480px breakpoint */
   
   .nav-right {
     gap: 10px;
@@ -757,6 +750,11 @@
   
   .nav-content {
     height: 56px;
+  }
+  
+  /* Hide search only on small mobile */
+  .nav-search {
+    display: none;
   }
   
   .sticky-nav-mobile-menu {
