@@ -19,6 +19,8 @@
 
 .nav-container {
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 0 20px;
 }
 
@@ -58,179 +60,9 @@
   background-clip: text;
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-  flex: 1;
-  margin-left: 32px;
-}
+/* Desktop navigation links removed - cleaned up unused CSS */
 
-/* Add spacing between FAQs and Contact links */
-.nav-links .contact-link {
-  margin-left: 16px;
-}
-
-.nav-links > a {
-  color: #555;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.2s ease;
-  position: relative;
-  padding: 8px 0;
-}
-
-.nav-links > a:hover {
-  color: var(--accent-600);
-}
-
-.nav-links > a.active {
-  color: var(--accent-700);
-  font-weight: 600;
-}
-
-.nav-links > a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent-700);
-}
-
-.dropdown-wrapper {
-  position: relative;
-}
-
-.dropdown-trigger {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border: none;
-  color: #555;
-  font-weight: 500;
-  font-size: 15px;
-  cursor: pointer;
-  padding: 8px 0;
-  transition: color 0.2s ease;
-}
-
-.dropdown-trigger:hover,
-.dropdown-trigger.active {
-  color: var(--accent-600);
-}
-
-.dropdown-arrow {
-  transition: transform 0.2s ease;
-}
-
-.dropdown-trigger[aria-expanded="true"] .dropdown-arrow {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 12px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  opacity: 0;
-  animation: fadeIn 0.2s ease forwards;
-  min-width: 200px;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.mega-menu {
-  min-width: 800px;
-  max-width: 900px;
-  padding: 24px;
-}
-
-.mega-menu-content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 20px;
-}
-
-.division-group {
-  min-width: 0;
-}
-
-.division-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #999;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.team-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.team-list li {
-  margin-bottom: 2px;
-}
-
-.team-link {
-  display: flex;
-  flex-direction: column;
-  padding: 8px 12px;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.team-link:hover {
-  background: #f8f8f8;
-}
-
-.team-name {
-  color: #1a1a1a;
-  font-weight: 500;
-  font-size: 14px;
-  margin-bottom: 2px;
-}
-
-.stadium-name {
-  color: #999;
-  font-size: 12px;
-}
-
-.dropdown-footer {
-  padding-top: 16px;
-  border-top: 1px solid #f0f0f0;
-  text-align: center;
-}
-
-.view-all-link {
-  color: #ff6b35;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 14px;
-  transition: opacity 0.2s ease;
-}
-
-.view-all-link:hover {
-  opacity: 0.8;
-}
+/* Old dropdown styles removed - using hamburger menu only */
 
 .nav-search {
   position: relative;
@@ -242,7 +74,7 @@
 }
 
 .search-input {
-  width: 180px;
+  width: 200px;
   height: 40px;
   padding: 0 40px 0 16px;
   border: 1px solid #e0e0e0;
@@ -255,7 +87,7 @@
 .search-input:focus {
   border-color: #ff6b35;
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-  width: 220px;
+  width: 240px;
 }
 
 .search-button {
@@ -811,4 +643,11 @@ body.sticky-nav-menu-open {
   overflow: hidden;
   position: fixed;
   width: 100%;
+}
+
+/* Large screens - ensure proper alignment */
+@media (min-width: 1440px) {
+  .nav-container {
+    padding: 0 40px;
+  }
 }
