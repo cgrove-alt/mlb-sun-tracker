@@ -35,7 +35,7 @@
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin-left: auto;
 }
 
@@ -245,7 +245,7 @@
 }
 
 .search-input {
-  width: 240px;
+  width: 180px;
   height: 40px;
   padding: 0 40px 0 16px;
   border: 1px solid #e0e0e0;
@@ -258,7 +258,7 @@
 .search-input:focus {
   border-color: #ff6b35;
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-  width: 280px;
+  width: 220px;
 }
 
 .search-button {
@@ -738,8 +738,16 @@
   }
   
   .nav-right {
-    gap: 8px;
+    gap: 10px;
     margin-left: auto;
+  }
+  
+  .search-input {
+    width: 160px;
+  }
+  
+  .search-input:focus {
+    width: 200px;
   }
 }
 
