@@ -342,14 +342,16 @@ export default function StickyTopNav() {
               
               <Link 
                 href="/#app-section" 
-                className={pathname === '/' && window.location.hash === '#app-section' ? 'active' : ''}
+                className={pathname === '/' ? '' : ''}
                 onClick={() => {
                   closeMobileMenu();
                   // Trigger the stadium selector to show
-                  setTimeout(() => {
-                    const button = document.querySelector('.hero-cta-button') as HTMLButtonElement;
-                    if (button) button.click();
-                  }, 100);
+                  if (typeof window !== 'undefined') {
+                    setTimeout(() => {
+                      const button = document.querySelector('.hero-cta-button') as HTMLButtonElement;
+                      if (button) button.click();
+                    }, 100);
+                  }
                 }}
               >
                 Shade Finder Tool
