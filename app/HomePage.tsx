@@ -110,9 +110,7 @@ export default function HomePage() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: 
-            radial-gradient(ellipse at top, rgba(30, 60, 114, 0.3), transparent 50%),
-            radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.5), transparent 50%);
+          background: rgba(0, 0, 0, 0.2);
           z-index: 1;
         }
 
@@ -134,18 +132,19 @@ export default function HomePage() {
           font-size: clamp(2.5rem, 5vw, 4rem);
           font-weight: 800;
           margin-bottom: 1.5rem;
-          text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+          text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
           line-height: 1.2;
         }
 
         .hero-subheadline {
           font-size: clamp(1.125rem, 2.5vw, 1.5rem);
           margin-bottom: 2.5rem;
-          opacity: 0.95;
-          text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+          opacity: 1;
+          text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);
           max-width: 600px;
           margin-left: auto;
           margin-right: auto;
+          font-weight: 500;
         }
 
         .hero-cta-button {
