@@ -99,6 +99,10 @@ export default function HomePage() {
           justify-content: center;
           overflow: hidden;
           padding: 2rem;
+          /* Performance optimization */
+          will-change: background-position;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
         }
         
         @keyframes gradientShift {
@@ -259,9 +263,31 @@ export default function HomePage() {
 
         /* Mobile responsive adjustments */
         @media (max-width: 768px) {
+          /* Disable animations on mobile to prevent shimmering */
+          .hero-section {
+            animation: none;
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+          }
+          
+          /* Hide floating particles on mobile */
+          .hero-section::after {
+            display: none;
+          }
+          
+          /* Optimize backdrop filter for mobile */
           .hero-content {
             padding: 2rem 1.5rem;
             border-radius: 20px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            /* Disable entrance animation on mobile */
+            animation: none;
+            /* Add hardware acceleration */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
           }
           
           .hero-headline {
@@ -271,6 +297,18 @@ export default function HomePage() {
           .hero-cta-button {
             padding: 0.875rem 2rem;
             font-size: 1rem;
+          }
+        }
+        
+        /* Tablets - reduce animation complexity */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .hero-section {
+            animation-duration: 20s;
+          }
+          
+          .hero-section::after {
+            animation: none;
+            opacity: 0.2;
           }
         }
         
