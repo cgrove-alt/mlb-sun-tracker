@@ -26,9 +26,8 @@
 .nav-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 64px;
-  gap: 32px;
 }
 
 /* Right-aligned container for search and hamburger menu */
