@@ -10,6 +10,8 @@ import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { useTranslation } from '../i18n/i18nContext';
 import { GameSelectorSkeleton, StadiumSelectorSkeleton } from './SkeletonScreens';
 import { useLoadingState } from '../hooks/useLoadingState';
+import { ModernButton } from './ModernButton';
+import { CalendarIcon, BaseballIcon, SunIcon } from './Icons';
 import './GameSelector.css';
 
 interface GameSelectorProps {
@@ -222,8 +224,10 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       <div className="selector-header">
         <h3 id="game-selector-title">{t('gameSelector.title')}</h3>
         <div className="view-mode-toggle" role="tablist" aria-labelledby="game-selector-title">
-          <button 
-            className={`toggle-btn ${viewMode === 'games' ? 'active' : ''}`}
+          <ModernButton
+            variant={viewMode === 'games' ? 'primary' : 'secondary'}
+            size="md"
+            icon={<CalendarIcon size={18} />}
             onClick={() => {
               haptic.light();
               setViewMode('games');
@@ -235,11 +239,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             aria-controls="games-panel"
             id="games-tab"
             tabIndex={viewMode === 'games' ? 0 : -1}
+            className="rounded-r-none"
           >
-            📅 {t('gameSelector.realGames')}
-          </button>
-          <button 
-            className={`toggle-btn ${viewMode === 'custom' ? 'active' : ''}`}
+            {t('gameSelector.realGames')}
+          </ModernButton>
+          <ModernButton
+            variant={viewMode === 'custom' ? 'primary' : 'secondary'}
+            size="md"
+            icon={<SunIcon size={18} />}
             onClick={() => {
               haptic.light();
               setViewMode('custom');
@@ -251,9 +258,10 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
             aria-controls="custom-panel"
             id="custom-tab"
             tabIndex={viewMode === 'custom' ? 0 : -1}
+            className="rounded-l-none"
           >
-            🕒 {t('gameSelector.customTime')}
-          </button>
+            {t('gameSelector.customTime')}
+          </ModernButton>
         </div>
       </div>
 
@@ -282,13 +290,14 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                 ) : error ? (
                   <div className="error-message" role="alert">
                     {error}
-                    <button 
+                    <ModernButton
                       onClick={loadGamesForStadium}
-                      className="retry-button"
+                      variant="danger"
+                      size="sm"
                       aria-label="Retry loading games"
                     >
                       Retry
-                    </button>
+                    </ModernButton>
                   </div>
                 ) : (
                   <>
@@ -360,18 +369,20 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
               />
             </div>
 
-            <button 
+            <ModernButton
               onClick={() => {
                 haptic.medium();
                 handleCustomDateTime();
               }}
               onKeyDown={(e) => handleKeyDown(e, handleCustomDateTime)}
-              className="apply-custom-btn"
+              variant="primary"
+              size="md"
               disabled={!customDate || !customTime || !selectedStadium}
               aria-label={t('gameSelector.applyCustomTime')}
+              fullWidth
             >
               {t('gameSelector.applyCustomTime')}
-            </button>
+            </ModernButton>
           </div>
 
           <div className="custom-info">

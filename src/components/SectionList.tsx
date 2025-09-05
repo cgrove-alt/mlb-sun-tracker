@@ -3,7 +3,7 @@ import { SeatingSectionSun } from '../utils/sunCalculations';
 import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
-import { LazySectionCard } from './LazySectionCard';
+import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
 import { VirtualSectionList } from './VirtualSectionList';
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';

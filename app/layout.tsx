@@ -17,8 +17,8 @@ import { CriticalStylesInline } from './critical-styles-inline';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
 import { WebApplicationSchema } from '../components/SafeSchema';
-import Footer from '../components/Footer';
-import CookieBanner from '../components/CookieBanner';
+import FooterModern from '../components/FooterModern';
+import CookieBannerModern from '../components/CookieBannerModern';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
 
@@ -179,8 +179,8 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1}>
           <div id="root">{children}</div>
         </main>
-        <Footer />
-        <CookieBanner />
+        <FooterModern />
+        <CookieBannerModern />
       </body>
     </html>
   );

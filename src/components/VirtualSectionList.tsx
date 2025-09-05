@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, forwardRef, memo, useCallback } from 'react';
 import { FixedSizeList as List, areEqual } from 'react-window';
 import { SeatingSectionSun } from '../utils/sunCalculations';
-import { LazySectionCard } from './LazySectionCard';
+import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
 
 interface VirtualSectionListProps {
   sections: SeatingSectionSun[];

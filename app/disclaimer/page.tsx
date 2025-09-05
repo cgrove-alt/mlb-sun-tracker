@@ -174,20 +174,68 @@ export default function Disclaimer() {
       </section>
 
       <section id="third-party" className="stack">
-        <h2 className="h2">7. Third-Party Disclaimer</h2>
+        <h2 className="h2">7. Third-Party Services & Attributions</h2>
         <p>
-          Our service may contain links to third-party websites, services, or content. 
-          The Shadium does not endorse, control, or assume responsibility for any third-party content.
+          Our service uses data from third-party providers. The Shadium does not endorse, 
+          control, or assume responsibility for the accuracy or availability of third-party content.
         </p>
         
-        <h3 className="h3">Third-Party Services:</h3>
-        <ul>
-          <li><strong>Weather Data:</strong> Provided by external weather services</li>
-          <li><strong>Stadium Information:</strong> May be sourced from various databases</li>
-          <li><strong>Maps and Imagery:</strong> Provided by mapping services</li>
-          <li><strong>Analytics:</strong> Third-party analytics may track usage</li>
-        </ul>
+        <h3 className="h3">Data Sources & Required Attributions:</h3>
+        
+        <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-blue-900">MLB Stats API</h4>
+          <p className="text-sm mt-2">
+            Game schedules and venue data provided by MLB Advanced Media, L.P.
+          </p>
+          <p className="text-xs text-blue-700 mt-2">
+            Use of MLB content is subject to the notice posted at{' '}
+            <a 
+              href="http://gdx.mlb.com/components/copyright.txt" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              http://gdx.mlb.com/components/copyright.txt
+            </a>
+          </p>
+        </div>
+        
+        <div className="bg-green-50 border border-green-200 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-green-900">Open-Meteo Weather API</h4>
+          <p className="text-sm mt-2">
+            Weather forecasts provided under CC BY 4.0 license.
+          </p>
+          <p className="text-xs text-green-700 mt-2">
+            Weather data by{' '}
+            <a 
+              href="https://open-meteo.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Open-Meteo.com
+            </a>
+          </p>
+        </div>
+        
+        <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-amber-900">NREL Solar Position Algorithm</h4>
+          <p className="text-sm mt-2">
+            Sun position calculations based on peer-reviewed research.
+          </p>
+          <p className="text-xs text-amber-700 mt-2">
+            Reda, I.; Andreas, A. (2003). Solar Position Algorithm for Solar Radiation Applications. 
+            NREL Report No. TP-560-34302.
+          </p>
+        </div>
 
+        <p className="mt-4">
+          For complete technology attributions, visit our{' '}
+          <Link href="/attributions" className="text-blue-600 hover:underline">
+            Technology & Attributions page
+          </Link>.
+        </p>
+        
         <p>
           Users should review the terms of service and privacy policies of any third-party 
           services they choose to use through our platform.

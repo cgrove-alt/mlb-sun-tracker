@@ -33,21 +33,19 @@ export default function HomePage() {
       <main>
         {/* Hero Section */}
         <section className="hero-section">
-          <div className="hero-overlay">
-            <div className="hero-content">
-              <h1 className="hero-headline h1 break-words md:break-normal">
-                Find Your Perfect Shaded Seats
-              </h1>
-              <p className="hero-subheadline max-w-prose">
-                Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
-              </p>
-              <button 
-                onClick={handleCTAClick}
-                className="hero-cta-button"
-              >
-                Select Your Stadium
-              </button>
-            </div>
+          <div className="hero-content">
+            <h1 className="hero-headline h1 break-words md:break-normal">
+              Find Your Shade
+            </h1>
+            <p className="hero-subheadline max-w-prose">
+              Avoid the sun and enjoy the game in comfort at any MLB, NFL, or MiLB stadium
+            </p>
+            <button 
+              onClick={handleCTAClick}
+              className="hero-cta-button"
+            >
+              Select Your Stadium
+            </button>
           </div>
         </section>
 
@@ -93,14 +91,24 @@ export default function HomePage() {
           width: 100%;
           height: 100vh;
           min-height: 600px;
-          background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          background-size: cover;
-          background-position: center;
-          /* Removed background-attachment: fixed for smoother scrolling */
+          background: linear-gradient(170deg, #0f766e 0%, #0ea5e9 50%, #fbbf24 100%);
+          background-size: 200% 200%;
+          animation: gradientShift 15s ease infinite;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
+          padding: 2rem;
+          /* Performance optimization */
+          will-change: background-position;
+          transform: translateZ(0);
+          -webkit-transform: translateZ(0);
+        }
+        
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .hero-section::before {
@@ -110,67 +118,99 @@ export default function HomePage() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: 
-            radial-gradient(ellipse at top, rgba(30, 60, 114, 0.3), transparent 50%),
-            radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.5), transparent 50%);
+          background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
           z-index: 1;
         }
 
-        .hero-overlay {
+        .hero-content {
           position: relative;
           z-index: 2;
           width: 100%;
-          max-width: 1200px;
-          padding: 2rem;
+          max-width: 800px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 24px;
+          padding: 3rem 2rem;
+          color: white;
+          animation: fadeInUp 1s ease-out;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
           text-align: center;
         }
 
-        .hero-content {
-          color: white;
-          animation: fadeInUp 1s ease-out;
-        }
-
         .hero-headline {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 800;
+          font-size: clamp(2.5rem, 5vw, 4.5rem);
+          font-weight: 700;
           margin-bottom: 1.5rem;
-          text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-          line-height: 1.2;
+          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          line-height: 1.1;
+          letter-spacing: -0.02em;
         }
 
         .hero-subheadline {
-          font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-          margin-bottom: 2.5rem;
+          font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+          margin-bottom: 3rem;
           opacity: 0.95;
-          text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
           max-width: 600px;
           margin-left: auto;
           margin-right: auto;
+          font-weight: 400;
+          line-height: 1.6;
         }
 
         .hero-cta-button {
-          background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+          background: #0f766e;
           color: white;
-          border: none;
-          padding: 1.25rem 3rem;
-          font-size: 1.25rem;
+          border: 2px solid transparent;
+          padding: 1rem 2.5rem;
+          font-size: 1.125rem;
           font-weight: 600;
-          border-radius: 50px;
+          border-radius: 12px;
           cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-          text-transform: uppercase;
-          letter-spacing: 1px;
+          transition: all 0.2s ease;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+          text-transform: none;
+          letter-spacing: -0.01em;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .hero-cta-button::before {
+          content: '🏟️';
+          font-size: 1.25rem;
+        }
+        
+        .hero-cta-button::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.2);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s, height 0.6s;
         }
 
         .hero-cta-button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
-          background: linear-gradient(135deg, #ff8e53 0%, #ff6b6b 100%);
+          transform: translateY(-2px) scale(1.02);
+          background: #14b8a6;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hero-cta-button:hover::after {
+          width: 300px;
+          height: 300px;
         }
 
         .hero-cta-button:active {
-          transform: translateY(0);
+          transform: translateY(0) scale(1);
         }
 
         #app-section {
@@ -192,19 +232,94 @@ export default function HomePage() {
         @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(30px) scale(0.95);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
           }
         }
+        
+        /* Floating animation for subtle movement */
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        /* Add floating particles effect */
+        .hero-section::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+          background-size: 50px 50px;
+          animation: float 20s ease-in-out infinite;
+          opacity: 0.3;
+          z-index: 0;
+        }
 
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+          /* Disable animations on mobile to prevent shimmering */
+          .hero-section {
+            animation: none;
+            background-size: 100% 100%;
+            background-position: 50% 50%;
+          }
+          
+          /* Hide floating particles on mobile */
+          .hero-section::after {
+            display: none;
+          }
+          
+          /* Optimize backdrop filter for mobile */
+          .hero-content {
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            /* Disable entrance animation on mobile */
+            animation: none;
+            /* Add hardware acceleration */
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+          }
+          
+          .hero-headline {
+            font-size: clamp(2rem, 5vw, 3rem);
+          }
+          
+          .hero-cta-button {
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+          }
+        }
+        
+        /* Tablets - reduce animation complexity */
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .hero-section {
+            animation-duration: 20s;
+          }
+          
+          .hero-section::after {
+            animation: none;
+            opacity: 0.2;
+          }
+        }
+        
         /* Accessibility: reduce motion */
         @media (prefers-reduced-motion: reduce) {
           .hero-content { animation: none; }
           .hero-cta-button { transition: none; }
+          .hero-cta-button::after { display: none; }
           #app-section { transition: none; }
+          .hero-section { animation: none; }
+          .hero-section::after { animation: none; }
         }
       `}</style>
     </>

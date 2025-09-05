@@ -177,80 +177,56 @@ export default function StickyTopNav() {
 
       <div className={`sticky-nav-mobile-menu ${isMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
         <div className="mobile-menu-content">
-          <div className="mobile-search">
-            <form onSubmit={handleSearchSubmit}>
-              <input
-                type="search"
-                placeholder="Search stadiums..."
-                value={searchQuery}
-                onChange={(e) => handleSearch(e.target.value)}
-                className="mobile-search-input"
-                aria-label="Search stadiums"
-              />
-            </form>
-            {searchQuery && searchResults.length > 0 && (
-              <div className="mobile-search-results">
-                {searchResults.map((result) => (
-                  <Link
-                    key={result.id}
-                    href={`/stadium/${result.id}`}
-                    className="mobile-search-result"
-                    onClick={closeMobileMenu}
-                  >
-                    <span>{result.name}</span>
-                    <span className="team-label">{result.team}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
+          {/* Close button */}
+          <button
+            className="mobile-menu-close"
+            onClick={closeMobileMenu}
+            aria-label="Close menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
+          </button>
 
           <div className="mobile-nav-links">
-            <Link 
-              href="/" 
-              className={pathname === '/' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Home
-            </Link>
-
-            {/* Guides */}
-            <Link 
-              href="/guide" 
-              className={pathname === '/guide' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Guides
-            </Link>
-            
-            <Link 
-              href="/guide/how-to-find-shaded-seats" 
-              className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              How to Find Shaded Seats
-            </Link>
-            
-            <Link 
-              href="/guide/best-shaded-seats-mlb" 
-              className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Best Shaded Seats (MLB)
-            </Link>
-            
-            {/* Blog */}
-            <Link 
-              href="/blog" 
-              className={pathname?.startsWith('/blog') ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Blog
-            </Link>
-
-            {/* Leagues Section with Dropdowns */}
+            {/* FIND YOUR STADIUM Section */}
             <div className="mobile-nav-section">
-              <h4 className="mobile-section-title">Stadiums by League</h4>
+              <h4 className="mobile-section-title">
+                <span className="section-icon">🏟️</span>
+                Find Your Stadium
+              </h4>
+              
+              {/* Integrated Search */}
+              <div className="mobile-search">
+                <form onSubmit={handleSearchSubmit}>
+                  <input
+                    type="search"
+                    placeholder="Quick search..."
+                    value={searchQuery}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    className="mobile-search-input"
+                    aria-label="Search stadiums"
+                  />
+                </form>
+                {searchQuery && searchResults.length > 0 && (
+                  <div className="mobile-search-results">
+                    {searchResults.slice(0, 5).map((result) => (
+                      <Link
+                        key={result.id}
+                        href={`/stadium/${result.id}`}
+                        className="mobile-search-result"
+                        onClick={closeMobileMenu}
+                      >
+                        <span>{result.name}</span>
+                        <span className="team-label">{result.team}</span>
+                      </Link>
+                    ))}
+                    {searchResults.length > 5 && (
+                      <div className="search-more">View all {searchResults.length} results</div>
+                    )}
+                  </div>
+                )}
+              </div>
               
               {/* MLB Dropdown */}
               <div className="mobile-league-dropdown">
@@ -349,45 +325,118 @@ export default function StickyTopNav() {
               </div>
             </div>
 
-            {/* Tools / Other pages */}
-            <Link 
-              href="/seats-shade-finder" 
-              className={pathname === '/seats-shade-finder' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Seats Shade Finder
-            </Link>
+            {/* NAVIGATION Section */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">📍</span>
+                Navigation
+              </h4>
+              
+              <Link 
+                href="/" 
+                className={pathname === '/' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+              
+              <Link 
+                href="/#app-section" 
+                className={pathname === '/' ? '' : ''}
+                onClick={() => {
+                  closeMobileMenu();
+                  // Trigger the stadium selector to show
+                  if (typeof window !== 'undefined') {
+                    setTimeout(() => {
+                      const button = document.querySelector('.hero-cta-button') as HTMLButtonElement;
+                      if (button) button.click();
+                    }, 100);
+                  }
+                }}
+              >
+                Shade Finder Tool
+              </Link>
+              
+              <Link 
+                href="/stadiums" 
+                className={pathname === '/stadiums' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                All Stadiums
+              </Link>
+              
+              <Link 
+                href="/blog" 
+                className={pathname?.startsWith('/blog') ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Blog
+              </Link>
+            </div>
 
-            <Link 
-              href="/faq" 
-              className={`faqs-link ${pathname === '/faq' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              FAQs
-            </Link>
-            
-            <Link 
-              href="/contact" 
-              className={`contact-link ${pathname === '/contact' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
-              Contact
-            </Link>
+            {/* RESOURCES Section */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">📚</span>
+                Resources
+              </h4>
+              
+              <Link 
+                href="/guide/how-to-find-shaded-seats" 
+                className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                How to Find Shaded Seats
+              </Link>
+              
+              <Link 
+                href="/guide/best-shaded-seats-mlb" 
+                className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Best Shaded Seats Guide
+              </Link>
+              
+              <Link 
+                href="/faq" 
+                className={pathname === '/faq' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                FAQs
+              </Link>
+            </div>
 
-            <Link 
-              href="/privacy" 
-              className={pathname === '/privacy' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Privacy
-            </Link>
-            <Link 
-              href="/terms" 
-              className={pathname === '/terms' ? 'active' : ''}
-              onClick={closeMobileMenu}
-            >
-              Terms
-            </Link>
+            {/* ABOUT Section */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">ℹ️</span>
+                About
+              </h4>
+              
+              <Link 
+                href="/contact" 
+                className={pathname === '/contact' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Contact Us
+              </Link>
+              
+              <Link 
+                href="/privacy" 
+                className={pathname === '/privacy' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Privacy Policy
+              </Link>
+              
+              <Link 
+                href="/terms" 
+                className={pathname === '/terms' ? 'active' : ''}
+                onClick={closeMobileMenu}
+              >
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>
