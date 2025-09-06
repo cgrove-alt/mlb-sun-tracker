@@ -5,6 +5,8 @@ import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MiLBStadium } from '../data/milbStadiums';
 import { NFLStadium, NFL_STADIUMS } from '../data/nflStadiums';
 import { StadiumSection, getStadiumSections } from '../data/stadiumSections';
+import { getMiLBStadiumSections } from '../data/milbStadiumSections';
+import { getNFLStadiumSections } from '../data/nflStadiumSections';
 import { getSunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 
@@ -200,7 +202,17 @@ function getStadiumSectionsForType(stadium: UnifiedStadium): StadiumSection[] {
     return getStadiumSections(stadium.id);
   }
   
-  // For MiLB and NFL, generate generic sections
+  // For MiLB stadiums, use stadium-specific or generate generic sections
+  if (stadium.type === 'MiLB') {
+    return getMiLBStadiumSections(stadium.id);
+  }
+  
+  // For NFL stadiums, use stadium-specific or generate generic sections
+  if (stadium.type === 'NFL') {
+    return getNFLStadiumSections(stadium.id);
+  }
+  
+  // Fallback to generic sections
   return generateGenericSections(stadium);
 }
 
