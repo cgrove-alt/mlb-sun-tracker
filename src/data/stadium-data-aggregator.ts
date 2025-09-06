@@ -14,6 +14,9 @@ import { petcoParkSections } from './sections/mlb/petco-park';
 import { camdenYardsSections } from './sections/mlb/camden-yards';
 import { pncParkSections } from './sections/mlb/pnc-park';
 import { minuteMaidParkSections } from './sections/mlb/minute-maid-park';
+import { truistParkSections } from './sections/mlb/truist-park';
+import { coorsFieldSections } from './sections/mlb/coors-field';
+import { targetFieldSections } from './sections/mlb/target-field';
 // Import other MLB stadiums as they're created...
 
 // Import MiLB sections
@@ -41,6 +44,9 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'orioles': camdenYardsSections,
   'pirates': pncParkSections,
   'astros': minuteMaidParkSections,
+  'braves': truistParkSections,
+  'rockies': coorsFieldSections,
+  'twins': targetFieldSections,
   
   // MiLB
   'las-vegas-aviators': lasVegasBallparkSections,
