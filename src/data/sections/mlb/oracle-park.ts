@@ -13,7 +13,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 export const oracleParkSections: DetailedSection[] = [
@@ -26,7 +26,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 3,
     rows: generateRows(1, 12, 3, 10, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 75,
@@ -69,7 +69,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 14, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 40,
       afternoon: 85,
@@ -110,7 +110,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 14, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 65,
       afternoon: 45,
@@ -196,7 +196,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 12, 12, 14, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 95,
@@ -238,7 +238,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 8, 8, 12, 27),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 30,
@@ -281,7 +281,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 10,
     rows: generateRows(1, 10, 10, 12, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 20,
       afternoon: 90,
@@ -323,7 +323,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 75,
@@ -538,7 +538,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 18, 6, 16, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 80,
       afternoon: 35,
@@ -579,7 +579,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 16, 6, 14, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 80,
@@ -619,7 +619,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 5, 8, 10, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -661,7 +661,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 10,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -748,7 +748,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 16,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 45,
       afternoon: 80,
@@ -833,7 +833,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 20,
       afternoon: 95,
@@ -875,7 +875,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 11, 10, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 55,
       afternoon: 70,
@@ -920,7 +920,7 @@ export const oracleParkSections: DetailedSection[] = [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 14, depth: 6, rakeAngle: 0 }
     ],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 75,

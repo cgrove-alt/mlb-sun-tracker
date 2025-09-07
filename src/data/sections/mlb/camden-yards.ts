@@ -13,7 +13,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 export const camdenYardsSections: DetailedSection[] = [
@@ -70,7 +70,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 16, 4, 10, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 80,
@@ -112,7 +112,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 90,
@@ -153,7 +153,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -194,7 +194,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 14, 12, 14, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 20,
       afternoon: 95,
@@ -236,7 +236,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -278,7 +278,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 22,
     rows: generateRows(90, 98, 22, 12, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 15,
       afternoon: 90,
@@ -406,7 +406,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 10,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 80,
@@ -448,7 +448,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 8,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -533,7 +533,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 20, 6, 18, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 85,
       afternoon: 35,
@@ -574,7 +574,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 18, 6, 16, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 65,
       afternoon: 85,
@@ -614,7 +614,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 20, 6, 18, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 100,
@@ -655,7 +655,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 15, 10, 14, 31),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 40,
       afternoon: 85,
@@ -695,7 +695,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 15, 10, 14, 31),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 75,
       afternoon: 45,
@@ -822,7 +822,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 45,
       afternoon: 80,
@@ -863,7 +863,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 12,
     rows: generateRows(1, 12, 12, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 70,
@@ -908,7 +908,7 @@ export const camdenYardsSections: DetailedSection[] = [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 12, depth: 6, rakeAngle: 0 }
     ],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 75,
@@ -948,7 +948,7 @@ export const camdenYardsSections: DetailedSection[] = [
     level: 'field',
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     sunExposure: {
       morning: 40,

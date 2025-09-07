@@ -450,7 +450,7 @@ export const rogersCentreSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -30, y: 85, z: 400 },
@@ -458,7 +458,7 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 35, y: 95, z: 410 },
       { x: -35, y: 95, z: 410 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Corona Rooftop Patio
   {
@@ -469,7 +469,7 @@ export const rogersCentreSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 100, y: 90, z: 350 },
@@ -477,7 +477,7 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 135, y: 100, z: 380 },
       { x: 105, y: 100, z: 360 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // TD Park Social
   {
@@ -537,5 +537,4 @@ export const rogersCentreFeatures = {
 
 // Export section map for easy lookup
 export const rogersCentreSectionMap = new Map(
-  rogersCentreSections.map(section => [section.id, section])
-);
+  rogersCentreSections.map(section => [section.id, section]));

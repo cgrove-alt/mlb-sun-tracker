@@ -492,7 +492,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  },
+,
   
   // Recess Sports Lounge
   {
@@ -531,5 +531,4 @@ export const loanDepotParkFeatures = {
 
 // Export section map for easy lookup
 export const loanDepotParkSectionMap = new Map(
-  loanDepotParkSections.map(section => [section.id, section])
-);
+  loanDepotParkSections.map(section => [section.id, section]));

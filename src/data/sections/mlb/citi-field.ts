@@ -13,7 +13,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 export const citiFieldSections: DetailedSection[] = [
@@ -26,7 +26,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 15, 4, 10, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 80,
@@ -68,7 +68,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 17, 4, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 90,
@@ -109,7 +109,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 17, 4, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -280,7 +280,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 14,
     rows: generateRows(1, 4, 14, 8, 25),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 85,
@@ -365,7 +365,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 10,
     rows: generateRows(1, 8, 10, 12, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 95,
@@ -407,7 +407,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 6, 12, 10, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 35,
@@ -449,7 +449,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 16,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -620,7 +620,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 10, 8, 12, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 100,
@@ -662,7 +662,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 14, 6, 14, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 80,
       afternoon: 30,
@@ -703,7 +703,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 8,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 85,
@@ -789,7 +789,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 14,
     rows: generateRows(1, 6, 14, 10, 27),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 45,
       afternoon: 75,
@@ -873,7 +873,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 12, 10, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 55,
       afternoon: 70,
@@ -918,7 +918,7 @@ export const citiFieldSections: DetailedSection[] = [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 12, depth: 6, rakeAngle: 0 }
     ],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 75,

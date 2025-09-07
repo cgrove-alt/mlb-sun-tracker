@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 35, y: 40, z: 50 },
       { x: -35, y: 40, z: 50 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Field Box - First Base
   {
@@ -59,7 +61,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 123, y: 55, z: 82 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Field Box - Third Base
   {
@@ -75,7 +78,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: -123, y: 55, z: 82 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Cardinals Nation Rooftop (Center Field)
   {
@@ -86,7 +90,7 @@ export const buschStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -40, y: 120, z: 400 },
@@ -94,7 +98,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 40, y: 120, z: 430 },
       { x: -40, y: 120, z: 430 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Big Mac Land (Left Field)
   {
@@ -110,7 +115,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: -125, y: 67.5, z: 367.5 },
       { x: -155, y: 67.5, z: 327.5 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Budweiser Terrace (Right Field)
   {
@@ -126,7 +132,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 155, y: 62.5, z: 357.5 },
       { x: 125, y: 62.5, z: 327.5 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Redbird Club
   {
@@ -184,7 +191,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 45, y: 123, z: 118 },
       { x: -45, y: 123, z: 118 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Pavilion - Behind Home
   {
@@ -263,7 +271,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 130, y: 55, z: 335 },
       { x: 105, y: 55, z: 310 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Left Field Pavilion
   {
@@ -279,7 +288,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: -130, y: 117.5, z: 412.5 },
       { x: -160, y: 117.5, z: 372.5 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Right Field Pavilion
   {
@@ -295,7 +305,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 160, y: 117.5, z: 412.5 },
       { x: 130, y: 117.5, z: 372.5 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Suite Level
   {
@@ -329,7 +340,7 @@ export const buschStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -25, y: 40, z: 395 },
@@ -337,7 +348,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 25, y: 40, z: 415 },
       { x: -25, y: 40, z: 415 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Ford Plaza
   {
@@ -348,7 +360,7 @@ export const buschStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 80, y: 30, z: 360 },
@@ -356,7 +368,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: 110, y: 30, z: 395 },
       { x: 80, y: 30, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // AT&T Rooftop Deck
   {
@@ -367,7 +380,7 @@ export const buschStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -80, y: 95, z: 350 },
@@ -375,7 +388,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: -40, y: 95, z: 385 },
       { x: -80, y: 95, z: 370 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Bank of America Club
   {
@@ -407,7 +421,7 @@ export const buschStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -140, y: 28, z: 310 },
@@ -415,7 +429,8 @@ export const buschStadiumSections: DetailedSection[] = [
       { x: -110, y: 28, z: 350 },
       { x: -140, y: 28, z: 330 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false
+  },
   
   // Budweiser 703 Club (formerly Bowtie Bar)
   {
@@ -472,5 +487,4 @@ export const buschStadiumFeatures = {
 
 // Export section map for easy lookup
 export const buschStadiumSectionMap = new Map(
-  buschStadiumSections.map(section => [section.id, section])
-);
+  buschStadiumSections.map(section => [section.id, section]));

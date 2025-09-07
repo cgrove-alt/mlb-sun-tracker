@@ -517,7 +517,7 @@ export const chaseFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 85, y: 8, z: 385 },
@@ -525,7 +525,7 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 115, y: 12, z: 404 },
       { x: 85, y: 12, z: 389 }
     ] as Vector3D[],
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -541,5 +541,4 @@ export const chaseFieldFeatures = {
 
 // Export section map for easy lookup
 export const chaseFieldSectionMap = new Map(
-  chaseFieldSections.map(section => [section.id, section])
-);
+  chaseFieldSections.map(section => [section.id, section]));

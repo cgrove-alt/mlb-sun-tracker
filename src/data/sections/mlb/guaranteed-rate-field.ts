@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 33, y: 35, z: 45 },
       { x: -33, y: 35, z: 45 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Box - First Base
   {
@@ -59,7 +60,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 120, y: 55, z: 81 },
       { x: 33, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Box - Third Base
   {
@@ -75,7 +76,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -120, y: 55, z: 81 },
       { x: -33, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Fundamentals Deck (Right Field)
   {
@@ -91,7 +92,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 155, y: 52.5, z: 357.5 },
       { x: 125, y: 52.5, z: 327.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Goose Island (Right-Center Field)
   {
@@ -102,7 +103,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 80, y: 30, z: 360 },
@@ -110,7 +111,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 110, y: 30, z: 395 },
       { x: 80, y: 30, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Kraft Kave (Left Field)
   {
@@ -121,7 +122,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -130, y: 28, z: 320 },
@@ -129,7 +130,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -100, y: 28, z: 365 },
       { x: -130, y: 28, z: 345 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // FanDeck (Center Field)
   {
@@ -140,7 +141,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -30, y: 35, z: 395 },
@@ -148,7 +149,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 30, y: 35, z: 420 },
       { x: -30, y: 35, z: 420 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Club Level - Behind Home
   {
@@ -206,7 +207,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 43, y: 115, z: 110 },
       { x: -43, y: 115, z: 110 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Upper Deck - Behind Home
   {
@@ -285,7 +286,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -120, y: 70.5, z: 377.5 },
       { x: -150, y: 70.5, z: 337.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Bleachers - Right Field
   {
@@ -301,7 +302,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 150, y: 70.5, z: 377.5 },
       { x: 120, y: 70.5, z: 337.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Suite Level
   {
@@ -335,7 +336,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -90, y: 32, z: 350 },
@@ -343,7 +344,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -60, y: 32, z: 385 },
       { x: -90, y: 32, z: 370 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Exploding Scoreboard Area
   {
@@ -354,7 +355,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -25, y: 40, z: 400 },
@@ -362,7 +363,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 25, y: 40, z: 420 },
       { x: -25, y: 40, z: 420 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Xfinity Zone
   {
@@ -373,7 +374,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 100, y: 35, z: 340 },
@@ -381,7 +382,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 125, y: 35, z: 375 },
       { x: 100, y: 35, z: 360 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // The Patio (Left Field)
   {
@@ -397,7 +398,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -115, y: 42, z: 350 },
       { x: -140, y: 42, z: 330 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Champions Club
   {
@@ -452,7 +453,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -467,5 +468,4 @@ export const guaranteedRateFieldFeatures = {
 
 // Export section map for easy lookup
 export const guaranteedRateFieldSectionMap = new Map(
-  guaranteedRateFieldSections.map(section => [section.id, section])
-);
+  guaranteedRateFieldSections.map(section => [section.id, section]));

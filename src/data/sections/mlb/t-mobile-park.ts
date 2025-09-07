@@ -543,5 +543,4 @@ export const tMobileParkFeatures = {
 
 // Export section map for easy lookup
 export const tMobileParkSectionMap = new Map(
-  tMobileParkSections.map(section => [section.id, section])
-);
+  tMobileParkSections.map(section => [section.id, section]));

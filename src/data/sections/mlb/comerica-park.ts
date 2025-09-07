@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 35, y: 40, z: 50 },
       { x: -35, y: 40, z: 50 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // On Deck Circle - First Base
   {
@@ -59,7 +60,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 123, y: 52.5, z: 79.5 },
       { x: 35, y: 52.5, z: 60.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // On Deck Circle - Third Base
   {
@@ -75,7 +76,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: -123, y: 52.5, z: 79.5 },
       { x: -35, y: 52.5, z: 60.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Ferris Wheel Area (Center Field)
   {
@@ -86,7 +87,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -30, y: 15, z: 415 },
@@ -94,7 +95,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 30, y: 15, z: 440 },
       { x: -30, y: 15, z: 440 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Carousel Area (Center-Right Field)
   {
@@ -105,7 +106,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 60, y: 15, z: 390 },
@@ -113,7 +114,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 90, y: 15, z: 425 },
       { x: 60, y: 15, z: 410 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Pepsi Porch (Right Field)
   {
@@ -129,7 +130,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 155, y: 58, z: 360 },
       { x: 125, y: 58, z: 330 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Kaline's Corner (Right Field)
   {
@@ -145,7 +146,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 165, y: 47, z: 370 },
       { x: 140, y: 47, z: 345 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Club Level - Behind Home
   {
@@ -203,7 +204,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 43, y: 115, z: 110 },
       { x: -43, y: 115, z: 110 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Upper Deck - Behind Home
   {
@@ -282,7 +283,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: -125, y: 70, z: 380 },
       { x: -155, y: 70, z: 340 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Suite Level
   {
@@ -316,7 +317,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -90, y: 32, z: 360 },
@@ -324,7 +325,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: -60, y: 32, z: 395 },
       { x: -90, y: 32, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Comerica Bank Fountain
   {
@@ -335,7 +336,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -15, y: 18, z: 400 },
@@ -343,7 +344,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 15, y: 18, z: 420 },
       { x: -15, y: 18, z: 420 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Big Cat Court (Food Court)
   {
@@ -354,7 +355,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 70, y: 35, z: 370 },
@@ -362,7 +363,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 110, y: 35, z: 410 },
       { x: 70, y: 35, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Witherite's Detroit Garage
   {
@@ -373,7 +374,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -130, y: 38, z: 320 },
@@ -381,7 +382,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: -100, y: 38, z: 360 },
       { x: -130, y: 38, z: 340 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Brushfire Grill
   {
@@ -392,7 +393,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 100, y: 40, z: 340 },
@@ -400,7 +401,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 130, y: 40, z: 380 },
       { x: 100, y: 40, z: 360 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Tiger Statues Plaza
   {
@@ -411,7 +412,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -50, y: 0, z: -20 },
@@ -419,7 +420,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 50, y: 0, z: 0 },
       { x: -50, y: 0, z: 0 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Chevrolet Fountain Bar
   {
@@ -451,7 +452,7 @@ export const comericaParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 120, y: 75, z: 340 },
@@ -459,7 +460,7 @@ export const comericaParkSections: DetailedSection[] = [
       { x: 150, y: 85, z: 370 },
       { x: 120, y: 85, z: 350 }
     ] as Vector3D[],
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -474,5 +475,4 @@ export const comericaParkFeatures = {
 
 // Export section map for easy lookup
 export const comericaParkSectionMap = new Map(
-  comericaParkSections.map(section => [section.id, section])
-);
+  comericaParkSections.map(section => [section.id, section]));

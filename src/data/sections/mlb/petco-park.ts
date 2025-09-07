@@ -18,7 +18,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 // Stadium configuration with all unique features

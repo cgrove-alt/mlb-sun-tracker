@@ -457,7 +457,12 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 135, y: 60, z: 425 },
       { x: 105, y: 60, z: 405 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
+  },
   
   // Brewers Bar
   {
@@ -490,8 +495,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
     ],
     vertices3D: [
       { x: -140, y: 25, z: 320 },
@@ -499,7 +503,12 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -110, y: 35, z: 350 },
       { x: -140, y: 35, z: 330 }
     ] as Vector3D[],
-      covered: false  },
+    covered: false,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
+  },
   
   // Uecker Seats
   {
@@ -509,8 +518,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
     ],
     vertices3D: [
       { x: -5, y: 85, z: 420 },
@@ -518,7 +526,12 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 5, y: 90, z: 425 },
       { x: -5, y: 90, z: 425 }
     ] as Vector3D[],
-      covered: false  }
+    covered: false,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
+  }
 ];
 
 // Stadium features
@@ -534,5 +547,4 @@ export const americanFamilyFieldFeatures = {
 
 // Export section map for easy lookup
 export const americanFamilyFieldSectionMap = new Map(
-  americanFamilyFieldSections.map(section => [section.id, section])
-);
+  americanFamilyFieldSections.map(section => [section.id, section]));

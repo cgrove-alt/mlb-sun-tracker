@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 35, y: 45, z: 55 },
       { x: -35, y: 45, z: 55 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Diamond Box - First Base
   {
@@ -59,7 +60,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 120, y: 50, z: 76 },
       { x: 35, y: 50, z: 58 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Diamond Box - Third Base
   {
@@ -75,7 +76,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -120, y: 50, z: 76 },
       { x: -35, y: 50, z: 58 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Outfield Experience (Center Field)
   {
@@ -86,7 +87,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -40, y: 15, z: 395 },
@@ -94,7 +95,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 40, y: 15, z: 425 },
       { x: -40, y: 15, z: 425 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Craft & Draft (Left Field)
   {
@@ -105,7 +106,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -120, y: 30, z: 320 },
@@ -113,7 +114,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -90, y: 30, z: 365 },
       { x: -120, y: 30, z: 345 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Fountain Seats (Right-Center)
   {
@@ -129,7 +130,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 135, y: 40, z: 410 },
       { x: 105, y: 40, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Hy-Vee Box Level - Behind Home
   {
@@ -145,7 +146,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 45, y: 118, z: 113 },
       { x: -45, y: 118, z: 113 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Hy-Vee Box Level - First Base
   {
@@ -161,7 +162,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 125, y: 130, z: 155 },
       { x: 50, y: 130, z: 130 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Hy-Vee Box Level - Third Base
   {
@@ -177,7 +178,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -125, y: 130, z: 155 },
       { x: -50, y: 130, z: 130 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // View Level - Behind Home
   {
@@ -256,7 +257,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -120, y: 65.5, z: 367.5 },
       { x: -150, y: 65.5, z: 327.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // General Admission - Right Field
   {
@@ -272,7 +273,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 150, y: 65.5, z: 367.5 },
       { x: 120, y: 65.5, z: 327.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Suite Level
   {
@@ -306,7 +307,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 100, y: 35, z: 330 },
@@ -314,7 +315,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 130, y: 35, z: 370 },
       { x: 100, y: 35, z: 350 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Pepsi Porch
   {
@@ -325,7 +326,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -80, y: 32, z: 350 },
@@ -333,7 +334,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -50, y: 32, z: 385 },
       { x: -80, y: 32, z: 370 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Price Chopper Pavilion
   {
@@ -349,7 +350,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 110, y: 53, z: 400 },
       { x: 85, y: 53, z: 385 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Crown Vision Board Deck
   {
@@ -360,7 +361,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -20, y: 45, z: 400 },
@@ -368,7 +369,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 20, y: 45, z: 420 },
       { x: -20, y: 45, z: 420 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Dugout Suites
   {
@@ -379,7 +380,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 50, y: 5, z: 15 },
@@ -387,7 +388,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 70, y: 15, z: 28 },
       { x: 50, y: 15, z: 25 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Buck O'Neil Legacy Seat
   {
@@ -398,7 +399,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -2, y: 8, z: 30 },
@@ -406,7 +407,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: 2, y: 8, z: 32 },
       { x: -2, y: 8, z: 32 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Craft & Draft
   {
@@ -417,7 +418,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -120, y: 25, z: 340 },
@@ -425,7 +426,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
       { x: -90, y: 35, z: 370 },
       { x: -120, y: 35, z: 350 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Crown Club
   {
@@ -461,5 +462,4 @@ export const kauffmanStadiumFeatures = {
 
 // Export section map for easy lookup
 export const kauffmanStadiumSectionMap = new Map(
-  kauffmanStadiumSections.map(section => [section.id, section])
-);
+  kauffmanStadiumSections.map(section => [section.id, section]));

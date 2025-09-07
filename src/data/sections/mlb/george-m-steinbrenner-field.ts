@@ -13,7 +13,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 export const georgeSteinbrennerFieldSections: DetailedSection[] = [
@@ -26,7 +26,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 8, 4, 10, 25),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 20,
       afternoon: 85,
@@ -68,7 +68,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 10, 4, 12, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -109,7 +109,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 10, 4, 12, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -150,7 +150,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 27),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 95,
@@ -190,7 +190,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 27),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 75,
       afternoon: 45,
@@ -356,7 +356,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 14, 8, 16, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 80,
       afternoon: 40,
@@ -396,7 +396,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 14, 8, 16, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 40,
       afternoon: 100,
@@ -436,7 +436,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 85,
       afternoon: 35,
@@ -476,7 +476,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 10, 6, 12, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 70,
@@ -516,7 +516,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 100,
@@ -556,7 +556,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 6, 8, 10, 25),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 80,
@@ -597,7 +597,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 7,
     rows: generateRows(1, 8, 7, 12, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 100,
@@ -725,7 +725,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 4, 12, 8, 24),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 95,
@@ -767,7 +767,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 4, 12, 8, 24),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 75,
       afternoon: 35,
@@ -812,7 +812,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 8, depth: 6, rakeAngle: 0 }
     ],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 70,
@@ -854,7 +854,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 45,
       afternoon: 75,

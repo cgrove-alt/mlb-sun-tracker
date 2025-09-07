@@ -67,7 +67,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 0, y: 87, z: 13 },
       { x: -12, y: 87, z: 13 }
     ],
-      covered: false  },
+,
 
   {
     id: '264',
@@ -82,7 +82,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -123, y: 5, z: 34 },
       { x: -123, y: 18, z: 34 }
     ],
-      covered: false  },
+,
 
   // ========== MEZZANINE ==========
   {
@@ -184,7 +184,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -95, y: 60, z: 20 },
       { x: -110, y: 45, z: 20 }
     ],
-      covered: false  },
+,
   
   // ========== TERRACE HALL (New 2025) ==========
   {
@@ -260,8 +260,7 @@ export const progressiveFieldCapacity = progressiveFieldSections.reduce((total, 
 
 // Export section map for quick lookup
 export const progressiveFieldSectionMap = new Map(
-  progressiveFieldSections.map(section => [section.id, section])
-);
+  progressiveFieldSections.map(section => [section.id, section]));
 
 // Stadium-specific features
 export const progressiveFieldFeatures = {

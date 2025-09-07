@@ -67,7 +67,7 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: 0, y: 82, z: 10 },
       { x: -10, y: 82, z: 10 }
     ],
-      covered: false  },
+,
 
   {
     id: '235',
@@ -82,7 +82,7 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: -135, y: 5, z: 39 },
       { x: -135, y: 20, z: 39 }
     ],
-      covered: false  },
+,
 
   // ========== VIEW LEVEL ==========
   {

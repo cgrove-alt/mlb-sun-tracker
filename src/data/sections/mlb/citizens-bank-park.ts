@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 35, y: 50, z: 60 },
       { x: -35, y: 50, z: 60 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Level - First Base Line
   {
@@ -59,7 +60,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 125, y: 60, z: 85 },
       { x: 35, y: 60, z: 65 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Level - Third Base Line
   {
@@ -75,7 +76,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: -125, y: 60, z: 85 },
       { x: -35, y: 60, z: 65 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Arcade Level - Behind Home
   {
@@ -175,7 +176,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: -125, y: 55, z: 350 },
       { x: -155, y: 55, z: 310 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Ashburn Alley (Right Field)
   {
@@ -186,7 +187,7 @@ export const citizensBankParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 120, y: 12, z: 280 },
@@ -194,7 +195,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 150, y: 12, z: 340 },
       { x: 120, y: 12, z: 300 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Big Phanatic Deck
   {
@@ -210,7 +211,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 135, y: 60, z: 385 },
       { x: 105, y: 60, z: 365 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Rooftop Bleachers
   {
@@ -226,7 +227,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 165, y: 120, z: 360 },
       { x: 145, y: 120, z: 330 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // The Yard Kids Area
   {
@@ -237,7 +238,7 @@ export const citizensBankParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -160, y: 15, z: 320 },
@@ -245,7 +246,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: -140, y: 15, z: 360 },
       { x: -160, y: 15, z: 340 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Terrace Level - Behind Home
   {
@@ -365,7 +366,7 @@ export const citizensBankParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -80, y: 30, z: 380 },
@@ -373,7 +374,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: -40, y: 30, z: 410 },
       { x: -80, y: 30, z: 400 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Budweiser Roof Top
   {
@@ -384,7 +385,7 @@ export const citizensBankParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 80, y: 95, z: 360 },
@@ -392,7 +393,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 120, y: 95, z: 400 },
       { x: 80, y: 95, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Diamond Club
   {
@@ -408,7 +409,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 35, y: 40, z: 85 },
       { x: -35, y: 40, z: 85 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Hall of Fame Club
   {
@@ -440,7 +441,7 @@ export const citizensBankParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 120, y: 35, z: 340 },
@@ -448,7 +449,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: 150, y: 45, z: 370 },
       { x: 120, y: 45, z: 350 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Rooftop Bleachers
   {
@@ -464,7 +465,7 @@ export const citizensBankParkSections: DetailedSection[] = [
       { x: -115, y: 104.5, z: 364.5 },
       { x: -145, y: 104.5, z: 344.5 }
     ] as Vector3D[],
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -479,5 +480,4 @@ export const citizensBankParkFeatures = {
 
 // Export section map for easy lookup
 export const citizensBankParkSectionMap = new Map(
-  citizensBankParkSections.map(section => [section.id, section])
-);
+  citizensBankParkSections.map(section => [section.id, section]));

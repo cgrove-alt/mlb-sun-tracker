@@ -69,7 +69,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: 0, y: 88, z: 14 },
       { x: -12, y: 88, z: 14 }
     ],
-      covered: false  },
+,
 
   {
     id: '157',
@@ -84,7 +84,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: -120, y: -18, z: 19 },
       { x: -105, y: -3, z: 19 }
     ],
-      covered: false  },
+,
 
   // ========== ROCKPILE (Center Field Bleachers) ==========
   {
@@ -100,7 +100,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: 40, y: 510, z: 38 },
       { x: -40, y: 510, z: 38 }
     ],
-      covered: false  },
+,
 
   {
     id: 'U343',
@@ -147,7 +147,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: 165, y: -55, z: 48 },
       { x: 135, y: -35, z: 48 }
     ],
-      covered: false  },
+,
   
   // ========== PURPLE ROW (Mile High Marker) ==========
   {
@@ -156,7 +156,7 @@ export const coorsFieldSections: DetailedSection[] = [
     level: 'upper',
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     baseAngle: 0,
     angleSpan: 360,
@@ -169,7 +169,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: 180, y: 90, z: 200 },
       { x: -180, y: 90, z: 200 }
     ],
-      covered: false  },
+,
   
   // ========== JACK DANIELS TERRACE BAR ==========
   {
@@ -178,7 +178,7 @@ export const coorsFieldSections: DetailedSection[] = [
     level: 'upper',
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     baseAngle: 45,
     angleSpan: 30,
@@ -191,7 +191,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: 180, y: 95, z: 420 },
       { x: 150, y: 95, z: 400 }
     ],
-      covered: false  }
+
     ],
     baseAngle: 315,
     angleSpan: 35,
@@ -204,7 +204,7 @@ export const coorsFieldSections: DetailedSection[] = [
       { x: -120, y: 92, z: 420 },
       { x: -150, y: 92, z: 400 }
     ],
-      covered: false  },
+,
   
   // ========== COORS LIGHT SILVER BULLET BAR ==========
   {
@@ -213,7 +213,7 @@ export const coorsFieldSections: DetailedSection[] = [
     level: 'field',
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     baseAngle: 270,
     angleSpan: 20,

@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 35, y: 47.5, z: 57.5 },
       { x: -35, y: 47.5, z: 57.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Infield Box - First Base
   {
@@ -59,7 +60,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 120, y: 55, z: 81 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Infield Box - Third Base
   {
@@ -75,7 +76,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: -120, y: 55, z: 81 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Stars and Stripes Club
   {
@@ -107,7 +108,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 120, y: 15, z: 280 },
@@ -115,7 +116,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 150, y: 15, z: 360 },
       { x: 120, y: 15, z: 320 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Red Porch
   {
@@ -131,7 +132,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 25, y: 50, z: 410 },
       { x: -25, y: 50, z: 410 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Red Loft
   {
@@ -142,7 +143,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -15, y: 55, z: 390 },
@@ -150,7 +151,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 15, y: 55, z: 410 },
       { x: -15, y: 55, z: 410 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Gallery Level - Behind Home
   {
@@ -229,7 +230,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: -120, y: 70, z: 360 },
       { x: -150, y: 70, z: 320 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Right Field Reserved
   {
@@ -245,7 +246,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 120, y: 70, z: 360 },
       { x: 150, y: 70, z: 320 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Budweiser Brew House
   {
@@ -256,7 +257,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -80, y: 30, z: 360 },
@@ -264,7 +265,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: -40, y: 30, z: 395 },
       { x: -80, y: 30, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // District Dugout
   {
@@ -340,7 +341,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -30, y: 12, z: 400 },
@@ -348,7 +349,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 30, y: 12, z: 420 },
       { x: -30, y: 12, z: 420 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Upper Gallery - Outfield
   {
@@ -380,7 +381,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 130, y: 8, z: 200 },
@@ -388,7 +389,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 150, y: 8, z: 240 },
       { x: 130, y: 8, z: 220 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // PNC Diamond Club
   {
@@ -404,7 +405,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 40, y: 45, z: 95 },
       { x: -40, y: 45, z: 95 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Budweiser Terrace
   {
@@ -420,7 +421,7 @@ export const nationalsParkSections: DetailedSection[] = [
       { x: 35, y: 123.5, z: 418.5 },
       { x: -35, y: 123.5, z: 418.5 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Norfolk Southern Club
   {
@@ -452,7 +453,7 @@ export const nationalsParkSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -467,5 +468,4 @@ export const nationalsParkFeatures = {
 
 // Export section map for easy lookup
 export const nationalsParkSectionMap = new Map(
-  nationalsParkSections.map(section => [section.id, section])
-);
+  nationalsParkSections.map(section => [section.id, section]));

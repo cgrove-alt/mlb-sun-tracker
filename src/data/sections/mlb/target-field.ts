@@ -67,7 +67,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 0, y: 82, z: 11 },
       { x: -10, y: 82, z: 11 }
     ],
-      covered: false  },
+,
 
   {
     id: '235',
@@ -82,7 +82,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -128, y: 6, z: 35 },
       { x: -128, y: 20, z: 35 }
     ],
-      covered: false  },
+,
 
   // ========== VIEW LEVEL ==========
   {
@@ -161,7 +161,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 35, y: 415, z: 25 },
       { x: -35, y: 415, z: 25 }
     ],
-      covered: false  },
+,
   
   // ========== DELTA SKY360 LEGENDS CLUB ==========
   {
@@ -266,7 +266,7 @@ export const targetFieldSections: DetailedSection[] = [
     angleSpan: 12,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -160, y: 70, z: 340 },

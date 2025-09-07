@@ -67,7 +67,7 @@ export const truistParkSections: DetailedSection[] = [
       { x: 0, y: 92, z: 17 },
       { x: -12, y: 92, z: 17 }
     ],
-      covered: false  },
+,
 
   {
     id: '227',
@@ -82,7 +82,7 @@ export const truistParkSections: DetailedSection[] = [
       { x: 130, y: 5, z: 40 },
       { x: 130, y: 20, z: 40 }
     ],
-      covered: false  },
+,
 
   // ========== PAVILION LEVEL ==========
   {
@@ -161,7 +161,7 @@ export const truistParkSections: DetailedSection[] = [
       { x: 130, y: -35, z: 25 },
       { x: 110, y: -20, z: 25 }
     ],
-      covered: false  },
+,
 
   {
     id: 'CHOP-TERR',

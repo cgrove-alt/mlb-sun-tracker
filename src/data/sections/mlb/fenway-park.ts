@@ -13,7 +13,7 @@ const generateRows = (
     elevation: elevation + (i * 0.5),
     depth: depth - (i * 0.3),
     rakeAngle
-  }));
+  });
 };
 
 export const fenwayParkSections: DetailedSection[] = [
@@ -26,7 +26,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 3,
     rows: generateRows(1, 12, 3, 10, 28),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 20,
       afternoon: 75,
@@ -68,7 +68,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 3,
     rows: generateRows(1, 14, 3, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 85,
@@ -109,7 +109,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 3,
     rows: generateRows(1, 14, 3, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 65,
       afternoon: 45,
@@ -150,7 +150,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 37,
     rows: generateRows(1, 3, 37, 6, 22),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 80,
       afternoon: 30,
@@ -199,7 +199,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 18, 8, 16, 31),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 45,
       afternoon: 70,
@@ -290,7 +290,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 15, 6, 14, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 35,
       afternoon: 95,
@@ -372,7 +372,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 20, 8, 18, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 60,
       afternoon: 80,
@@ -412,7 +412,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 18, 8, 16, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 100,
@@ -625,7 +625,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 16,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 40,
       afternoon: 85,
@@ -666,7 +666,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 4, 12, 8, 25),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -707,7 +707,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 38,
     rows: [],
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 50,
       afternoon: 90,
@@ -749,7 +749,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 10,
     rows: generateRows(1, 5, 10, 10, 26),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 70,
       afternoon: 40,
@@ -832,7 +832,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 27),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 25,
       afternoon: 95,
@@ -873,7 +873,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 16,
     rows: generateRows(1, 13, 16, 13, 30),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 40,
       afternoon: 75,
@@ -914,7 +914,7 @@ export const fenwayParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 10, 10, 12, 29),
-    covered: false
+    covered: false,
     sunExposure: {
       morning: 55,
       afternoon: 65,

@@ -4,8 +4,8 @@
 import { Stadium } from './stadiums';
 import { StadiumSection } from './stadiumSections';
 import { getStadiumObstructions } from './stadiumObstructions';
+import { Vector3D } from '../types/stadium-complete';
 import { 
-  Vector3D, 
   Obstruction, 
   SectionGeometry, 
   Stadium3DModel,

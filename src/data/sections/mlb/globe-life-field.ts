@@ -518,7 +518,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 35, y: 38, z: 85 },
       { x: -35, y: 38, z: 85 }
     ] as Vector3D[],
-      covered: false  }
+
 ];
 
 // Stadium features
@@ -534,5 +534,4 @@ export const globeLifeFieldFeatures = {
 
 // Export section map for easy lookup
 export const globeLifeFieldSectionMap = new Map(
-  globeLifeFieldSections.map(section => [section.id, section])
-);
+  globeLifeFieldSections.map(section => [section.id, section]));

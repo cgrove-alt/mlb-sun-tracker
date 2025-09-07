@@ -22,7 +22,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false  });
+      covered: false
+    });
   }
   
   return rows;
@@ -43,7 +44,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 35, y: 35, z: 45 },
       { x: -35, y: 35, z: 45 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Level - First Base
   {
@@ -59,7 +60,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 123, y: 65, z: 92 },
       { x: 35, y: 65, z: 73 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Field Level - Third Base
   {
@@ -75,7 +76,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -123, y: 65, z: 92 },
       { x: -35, y: 65, z: 73 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Baseline Club - First Base
   {
@@ -91,7 +92,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 130, y: 106, z: 131 },
       { x: 45, y: 106, z: 111 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Baseline Club - Third Base
   {
@@ -107,7 +108,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -130, y: 106, z: 131 },
       { x: -45, y: 106, z: 111 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Loge Level - Behind Home
   {
@@ -123,7 +124,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 45, y: 176, z: 171 },
       { x: -45, y: 176, z: 171 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Loge Level - First Base
   {
@@ -139,7 +140,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 135, y: 179, z: 209 },
       { x: 50, y: 179, z: 184 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Loge Level - Third Base
   {
@@ -155,7 +156,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -135, y: 179, z: 209 },
       { x: -50, y: 179, z: 184 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Reserve Level - Behind Home
   {
@@ -171,7 +172,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 50, y: 281, z: 276 },
       { x: -50, y: 281, z: 276 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Reserve Level - First Base
   {
@@ -187,7 +188,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 140, y: 288, z: 323 },
       { x: 55, y: 288, z: 293 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Reserve Level - Third Base
   {
@@ -203,7 +204,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -140, y: 288, z: 323 },
       { x: -55, y: 288, z: 293 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Top Deck - Behind Home
   {
@@ -219,7 +220,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 55, y: 385, z: 380 },
       { x: -55, y: 385, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Top Deck - First Base
   {
@@ -235,7 +236,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 145, y: 385, z: 425 },
       { x: 60, y: 385, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Top Deck - Third Base
   {
@@ -251,7 +252,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -145, y: 385, z: 425 },
       { x: -60, y: 385, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Left Field Pavilion - Lower
   {
@@ -267,7 +268,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -135, y: 70, z: 380 },
       { x: -165, y: 70, z: 340 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Left Field Pavilion - Upper
   {
@@ -283,7 +284,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: -140, y: 120, z: 430 },
       { x: -170, y: 120, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Right Field Pavilion - Lower (All You Can Eat)
   {
@@ -299,7 +300,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 165, y: 70, z: 380 },
       { x: 135, y: 70, z: 340 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Right Field Pavilion - Upper
   {
@@ -315,7 +316,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 170, y: 120, z: 430 },
       { x: 140, y: 120, z: 390 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Coca-Cola All Season Patio
   {
@@ -326,7 +327,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: 80, y: 35, z: 360 },
@@ -334,7 +335,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 120, y: 35, z: 400 },
       { x: 80, y: 35, z: 380 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Stadium Club
   {
@@ -373,7 +374,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 75, y: 18, z: 33 },
       { x: 55, y: 18, z: 30 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Think Blue Deck
   {
@@ -384,7 +385,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
     angleSpan: 30,
     rows: [
       { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-      covered: false  }
+
     ],
     vertices3D: [
       { x: -25, y: 40, z: 395 },
@@ -392,7 +393,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
       { x: 25, y: 40, z: 415 },
       { x: -25, y: 40, z: 415 }
     ] as Vector3D[],
-      covered: false  },
+,
   
   // Tommy Lasorda's Trattoria
   {
@@ -430,5 +431,4 @@ export const dodgerStadiumFeatures = {
 
 // Export section map for easy lookup
 export const dodgerStadiumSectionMap = new Map(
-  dodgerStadiumSections.map(section => [section.id, section])
-);
+  dodgerStadiumSections.map(section => [section.id, section]));
