@@ -498,6 +498,161 @@ export const coorsFieldSections: DetailedSection[] = [
     seatWidth: 19,
     rowSpacing: 33,
     viewQuality: 'good'
+  },
+  
+  // ========== PURPLE ROW (Mile High Marker) ==========
+  {
+    id: 'PURPLE',
+    name: 'Purple Row - Mile High',
+    level: 'upper',
+    rows: [
+      { rowNumber: '20', seats: 400, elevation: 88.0, depth: 56.0, covered: false }
+    ],
+    baseAngle: 0,
+    angleSpan: 360,
+    distance: 250,
+    height: 88.0,
+    rake: 35,
+    vertices3D: [
+      { x: -180, y: 88, z: 180 },
+      { x: 180, y: 88, z: 180 },
+      { x: 180, y: 90, z: 200 },
+      { x: -180, y: 90, z: 200 }
+    ],
+    covered: false,
+    viewQuality: 'good'
+  },
+  
+  // ========== JACK DANIELS TERRACE BAR ==========
+  {
+    id: 'JDBAR',
+    name: 'Jack Daniels Terrace Bar',
+    level: 'upper',
+    rows: [
+      { rowNumber: 'SRO', seats: 150, elevation: 95.0, depth: 0, covered: false }
+    ],
+    baseAngle: 45,
+    angleSpan: 30,
+    distance: 420,
+    height: 95.0,
+    rake: 0,
+    vertices3D: [
+      { x: 150, y: 95, z: 380 },
+      { x: 180, y: 95, z: 400 },
+      { x: 180, y: 95, z: 420 },
+      { x: 150, y: 95, z: 400 }
+    ],
+    covered: false,
+    viewQuality: 'fair'
+  },
+  
+  // ========== LEGACY CLUB ==========
+  {
+    id: 'LEGACY',
+    name: 'Legacy Club',
+    level: 'suite',
+    rows: generateRows('A', 'H', 20, 75, 32, true),
+    baseAngle: 0,
+    angleSpan: 25,
+    distance: 80,
+    height: 75.0,
+    rake: 32,
+    vertices3D: [
+      { x: -30, y: 75, z: 60 },
+      { x: 30, y: 75, z: 60 },
+      { x: 35, y: 95, z: 80 },
+      { x: -35, y: 95, z: 80 }
+    ],
+    covered: true,
+    viewQuality: 'excellent'
+  },
+  
+  // ========== TOYOTA CLUBHOUSE ==========
+  {
+    id: 'TOYOTA',
+    name: 'Toyota Clubhouse',
+    level: 'field',
+    rows: generateRows('A', 'K', 22, 8, 28, false),
+    baseAngle: 0,
+    angleSpan: 20,
+    distance: 55,
+    height: 8.0,
+    rake: 28,
+    vertices3D: [
+      { x: -25, y: 8, z: 45 },
+      { x: 25, y: 8, z: 45 },
+      { x: 30, y: 35, z: 72 },
+      { x: -30, y: 35, z: 72 }
+    ],
+    covered: false,
+    viewQuality: 'excellent'
+  },
+  
+  // ========== TAVERN BALLPARK ==========
+  {
+    id: 'TAVERN',
+    name: 'Tavern Ballpark',
+    level: 'upper',
+    rows: [
+      { rowNumber: 'SRO', seats: 200, elevation: 92.0, depth: 0, covered: false }
+    ],
+    baseAngle: 315,
+    angleSpan: 35,
+    distance: 410,
+    height: 92.0,
+    rake: 0,
+    vertices3D: [
+      { x: -150, y: 92, z: 380 },
+      { x: -120, y: 92, z: 400 },
+      { x: -120, y: 92, z: 420 },
+      { x: -150, y: 92, z: 400 }
+    ],
+    covered: false,
+    viewQuality: 'fair'
+  },
+  
+  // ========== MOUNTAIN RANCH BAR & GRILLE ==========
+  {
+    id: 'MRBG',
+    name: 'Mountain Ranch Bar & Grille',
+    level: 'club',
+    rows: generateRows('A', 'F', 30, 55, 30, true),
+    baseAngle: 45,
+    angleSpan: 25,
+    distance: 180,
+    height: 55.0,
+    rake: 30,
+    vertices3D: [
+      { x: 120, y: 55, z: 140 },
+      { x: 150, y: 55, z: 160 },
+      { x: 155, y: 73, z: 178 },
+      { x: 125, y: 73, z: 158 }
+    ],
+    covered: true,
+    viewQuality: 'good'
+  },
+  
+  // ========== COORS LIGHT SILVER BULLET BAR ==========
+  {
+    id: 'SILVER',
+    name: 'Coors Light Silver Bullet Bar',
+    level: 'field',
+    rows: [
+      { rowNumber: 'Bar', seats: 75, elevation: 12.0, depth: 0, covered: false }
+    ],
+    baseAngle: 270,
+    angleSpan: 20,
+    distance: 330,
+    height: 12.0,
+    rake: 0,
+    vertices3D: [
+      { x: -160, y: 12, z: 300 },
+      { x: -140, y: 12, z: 320 },
+      { x: -140, y: 12, z: 340 },
+      { x: -160, y: 12, z: 320 }
+    ],
+    covered: false,
+    viewQuality: 'fair'
   }
 ];
 

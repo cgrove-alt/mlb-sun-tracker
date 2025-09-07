@@ -1,489 +1,1100 @@
-// Wrigley Field - Complete Section Data with 3D Geometry
-// Chicago, IL - Opened 1914 - Capacity 41,649
-// Home of the Chicago Cubs
+import { DetailedSection, RowDetail, Vector3D } from '../../../types/stadium';
 
-import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
+// Helper function to generate rows with consistent numbering
+const generateRows = (
+  startRow: number,
+  endRow: number,
+  elevation: number,
+  depth: number,
+  rakeAngle: number = 32
+): RowDetail[] => {
+  return Array.from({ length: endRow - startRow + 1 }, (_, i) => ({
+    row: `${startRow + i}`,
+    elevation: elevation + (i * 0.5),
+    depth: depth - (i * 0.3),
+    rakeAngle
+  }));
+};
 
-// Helper to generate row details
-function generateRows(
-  startRow: number | string,
-  endRow: number | string,
-  seatsPerRow: number,
-  baseElevation: number,
-  rake: number,
-  covered: boolean = false
-): RowDetail[] {
-  const rows: RowDetail[] = [];
-  const rowHeight = 2.5;
-  const rowDepth = 2.8;
-  
-  const isLetterRows = typeof startRow === 'string';
-  
-  if (isLetterRows) {
-    const startCode = (startRow as string).charCodeAt(0);
-    const endCode = (endRow as string).charCodeAt(0);
-    
-    for (let i = startCode; i <= endCode; i++) {
-      const rowNum = i - startCode;
-      rows.push({
-        rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 28 - (rowNum * 0.3) : undefined
-      });
-    }
-  } else {
-    for (let i = startRow as number; i <= (endRow as number); i++) {
-      const rowNum = i - (startRow as number);
-      rows.push({
-        rowNumber: i.toString(),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 28 - (rowNum * 0.3) : undefined
-      });
-    }
-  }
-  
-  return rows;
-}
-
-// Wrigley Field Sections
 export const wrigleyFieldSections: DetailedSection[] = [
-  // ========== FIELD BOX ==========
+  // Behind Home Plate Box
   {
-    id: '14',
-    name: 'Field Box 14',
-    level: 'field',
-    baseAngle: 0,
-    angleSpan: 8,
-    rows: generateRows('A', 'Z', 20, 0, 19, false),
-    vertices3D: [
-      { x: -12, y: 58, z: 0 },
-      { x: 0, y: 58, z: 0 },
-      { x: 0, y: 85, z: 14 },
-      { x: -12, y: 85, z: 14 }
-    ],
+    id: 'field-box-home',
+    name: 'Field Box - Home Plate',
+    category: 'premium',
+    capacity: 420,
+    type: 'fixed',
+    elevation: 3,
+    rows: generateRows(1, 14, 3, 10, 28),
     covered: false,
-    price: 'premium',
-    distance: 72,
-    height: 0,
-    rake: 19,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '108',
-    name: 'Field Box 108',
-    level: 'field',
-    baseAngle: 45,
-    angleSpan: 8,
-    rows: generateRows('A', 'Z', 20, 0, 19, false),
-    vertices3D: [
-      { x: 58, y: 58, z: 0 },
-      { x: 70, y: 70, z: 0 },
-      { x: 85, y: 85, z: 14 },
-      { x: 73, y: 73, z: 14 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 82,
-    height: 0,
-    rake: 19,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'excellent'
-  },
-
-  // ========== LOWER BOX ==========
-  {
-    id: '214',
-    name: 'Lower Box 214',
-    level: 'lower',
-    baseAngle: 0,
-    angleSpan: 9,
-    rows: generateRows(1, 35, 22, 14, 23, false),
-    vertices3D: [
-      { x: -18, y: 85, z: 14 },
-      { x: -5, y: 85, z: 14 },
-      { x: -5, y: 125, z: 38 },
-      { x: -18, y: 125, z: 38 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 105,
-    height: 14,
-    rake: 23,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '238',
-    name: 'Lower Box 238',
-    level: 'lower',
-    baseAngle: 90,
-    angleSpan: 9,
-    rows: generateRows(1, 35, 22, 14, 23, false),
-    vertices3D: [
-      { x: 85, y: 18, z: 14 },
-      { x: 85, y: 5, z: 14 },
-      { x: 125, y: 5, z: 38 },
-      { x: 125, y: 18, z: 38 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 105,
-    height: 14,
-    rake: 23,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
-  },
-
-  // ========== BLEACHERS ==========
-  {
-    id: 'BL501',
-    name: 'Bleachers 501',
-    level: 'field',
-    baseAngle: 225, // Left field
-    angleSpan: 15,
-    rows: generateRows(1, 32, 26, 6, 21, false),
-    vertices3D: [
-      { x: -150, y: 320, z: 6 },
-      { x: -120, y: 340, z: 6 },
-      { x: -110, y: 370, z: 32 },
-      { x: -140, y: 350, z: 32 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 355,
-    height: 6,
-    rake: 21,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: 'BL505',
-    name: 'Bleachers 505',
-    level: 'field',
-    baseAngle: 180, // Center field
-    angleSpan: 15,
-    rows: generateRows(1, 32, 26, 6, 21, false),
-    vertices3D: [
-      { x: -30, y: 380, z: 6 },
-      { x: 0, y: 380, z: 6 },
-      { x: 0, y: 410, z: 32 },
-      { x: -30, y: 410, z: 32 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 395,
-    height: 6,
-    rake: 21,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: 'BL509',
-    name: 'Bleachers 509',
-    level: 'field',
-    baseAngle: 135, // Right field
-    angleSpan: 15,
-    rows: generateRows(1, 32, 26, 6, 21, false),
-    vertices3D: [
-      { x: 150, y: 320, z: 6 },
-      { x: 120, y: 340, z: 6 },
-      { x: 110, y: 370, z: 32 },
-      { x: 140, y: 350, z: 32 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 353,
-    height: 6,
-    rake: 21,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  // ========== UPPER DECK ==========
-  {
-    id: '414',
-    name: 'Upper Deck 414',
-    level: 'upper',
-    baseAngle: 0,
-    angleSpan: 10,
-    rows: generateRows(1, 25, 24, 38, 28, true),
-    vertices3D: [
-      { x: -25, y: 125, z: 38 },
-      { x: -10, y: 125, z: 38 },
-      { x: -8, y: 165, z: 65 },
-      { x: -23, y: 165, z: 65 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'],
-      coveragePercentage: 56,
-      overhangDepth: 22,
-      overhangHeight: 20,
-      material: 'solid'
+    sunExposure: {
+      morning: 25,
+      afternoon: 80,
+      evening: 40
     },
-    price: 'value',
-    distance: 145,
-    height: 38,
-    rake: 28,
-    seatWidth: 18,
-    rowSpacing: 29,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '424',
-    name: 'Upper Deck 424',
-    level: 'upper',
-    baseAngle: 45,
-    angleSpan: 10,
-    rows: generateRows(1, 25, 24, 38, 28, true),
-    vertices3D: [
-      { x: 125, y: 125, z: 38 },
-      { x: 140, y: 110, z: 38 },
-      { x: 165, y: 135, z: 65 },
-      { x: 150, y: 150, z: 65 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'],
-      coveragePercentage: 56,
-      overhangDepth: 22,
-      overhangHeight: 20,
-      material: 'solid'
+    teamAreas: {
+      dugout: 'below',
+      bullpen: 'distant'
     },
-    price: 'value',
-    distance: 145,
-    height: 38,
-    rake: 28,
-    seatWidth: 18,
-    rowSpacing: 29,
-    viewQuality: 'good'
-  },
-
-  // ========== CLUB BOX ==========
-  {
-    id: 'CB18',
-    name: 'Club Box 18',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 8,
-    rows: generateRows('A', 'L', 16, 20, 18, true),
-    vertices3D: [
-      { x: -20, y: 95, z: 20 },
-      { x: -8, y: 95, z: 20 },
-      { x: -8, y: 115, z: 30 },
-      { x: -20, y: 115, z: 30 }
+    amenities: [
+      'Padded seats',
+      'Cup holders',
+      'In-seat service',
+      'Extra legroom'
     ],
-    covered: true,
-    price: 'luxury',
-    distance: 105,
-    height: 20,
-    rake: 18,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 4,
-      aisleSeats: true,
-      tunnelAccess: ['Club Entrance']
-    }
+    accessibilityRating: 4,
+    visibilityRating: 5,
+    proximityToAction: 5,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      premiumSeating: true,
+      chairbackSeats: true,
+      waitService: true,
+      behindHomeBase: true
+    },
+    vertices: [
+      { x: -25, y: 0, z: 3 },
+      { x: 25, y: 0, z: 3 },
+      { x: 25, y: 22, z: 9 },
+      { x: -25, y: 22, z: 9 }
+    ] as Vector3D[]
   },
 
-  // ========== CATALINA CLUB ==========
+  // Field Box - First Base
   {
-    id: 'CAT',
+    id: 'field-box-1b',
+    name: 'Field Box - First Base',
+    category: 'premium',
+    capacity: 480,
+    type: 'fixed',
+    elevation: 3,
+    rows: generateRows(1, 16, 3, 12, 29),
+    covered: false,
+    sunExposure: {
+      morning: 35,
+      afternoon: 90,
+      evening: 45
+    },
+    teamAreas: {
+      dugout: 'adjacent',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Padded seats',
+      'Cup holders',
+      'Close to Cubs dugout'
+    ],
+    accessibilityRating: 4,
+    visibilityRating: 5,
+    proximityToAction: 5,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      fieldLevel: true,
+      chairbackSeats: true,
+      dugoutProximity: true,
+      cubsDugout: true
+    },
+    vertices: [
+      { x: 25, y: 0, z: 3 },
+      { x: 55, y: 30, z: 3 },
+      { x: 55, y: 52, z: 10 },
+      { x: 25, y: 22, z: 10 }
+    ] as Vector3D[]
+  },
+
+  // Field Box - Third Base
+  {
+    id: 'field-box-3b',
+    name: 'Field Box - Third Base',
+    category: 'premium',
+    capacity: 480,
+    type: 'fixed',
+    elevation: 3,
+    rows: generateRows(1, 16, 3, 12, 29),
+    covered: false,
+    sunExposure: {
+      morning: 70,
+      afternoon: 50,
+      evening: 35
+    },
+    teamAreas: {
+      dugout: 'adjacent',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Padded seats',
+      'Cup holders',
+      'Close to visitor dugout'
+    ],
+    accessibilityRating: 4,
+    visibilityRating: 5,
+    proximityToAction: 5,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      fieldLevel: true,
+      chairbackSeats: true,
+      dugoutProximity: true,
+      visitorDugout: true
+    },
+    vertices: [
+      { x: -25, y: 0, z: 3 },
+      { x: -55, y: 30, z: 3 },
+      { x: -55, y: 52, z: 10 },
+      { x: -25, y: 22, z: 10 }
+    ] as Vector3D[]
+  },
+
+  // Terrace Box - First Base
+  {
+    id: 'terrace-box-1b',
+    name: 'Terrace Box - First Base',
+    category: 'standard',
+    capacity: 540,
+    type: 'fixed',
+    elevation: 8,
+    rows: generateRows(1, 18, 8, 16, 31),
+    covered: false,
+    sunExposure: {
+      morning: 40,
+      afternoon: 95,
+      evening: 50
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Standard seats',
+      'Cup holders'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 4,
+    proximityToAction: 4,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      terraceLevel: true,
+      standardSeating: true
+    },
+    vertices: [
+      { x: 55, y: 30, z: 8 },
+      { x: 75, y: 50, z: 8 },
+      { x: 75, y: 72, z: 15 },
+      { x: 55, y: 52, z: 15 }
+    ] as Vector3D[]
+  },
+
+  // Terrace Box - Third Base
+  {
+    id: 'terrace-box-3b',
+    name: 'Terrace Box - Third Base',
+    category: 'standard',
+    capacity: 540,
+    type: 'fixed',
+    elevation: 8,
+    rows: generateRows(1, 18, 8, 16, 31),
+    covered: false,
+    sunExposure: {
+      morning: 75,
+      afternoon: 45,
+      evening: 30
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Standard seats',
+      'Cup holders'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 4,
+    proximityToAction: 4,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      terraceLevel: true,
+      standardSeating: true
+    },
+    vertices: [
+      { x: -55, y: 30, z: 8 },
+      { x: -75, y: 50, z: 8 },
+      { x: -75, y: 72, z: 15 },
+      { x: -55, y: 52, z: 15 }
+    ] as Vector3D[]
+  },
+
+  // Bleachers - Left Field
+  {
+    id: 'bleachers-lf',
+    name: 'Left Field Bleachers',
+    category: 'value',
+    capacity: 720,
+    type: 'fixed',
+    elevation: 6,
+    rows: generateRows(1, 22, 6, 20, 30),
+    covered: false,
+    sunExposure: {
+      morning: 85,
+      afternoon: 35,
+      evening: 20
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Bleacher seating',
+      'Party atmosphere',
+      'Budget friendly'
+    ],
+    accessibilityRating: 2,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      bleacherSeating: true,
+      partyAtmosphere: true,
+      leftFieldView: true,
+      budgetFriendly: true
+    },
+    vertices: [
+      { x: -75, y: 50, z: 6 },
+      { x: -95, y: 70, z: 6 },
+      { x: -95, y: 92, z: 13 },
+      { x: -75, y: 72, z: 13 }
+    ] as Vector3D[]
+  },
+
+  // Bleachers - Center Field
+  {
+    id: 'bleachers-cf',
+    name: 'Center Field Bleachers',
+    category: 'value',
+    capacity: 680,
+    type: 'fixed',
+    elevation: 6,
+    rows: generateRows(1, 20, 6, 18, 30),
+    covered: false,
+    sunExposure: {
+      morning: 65,
+      afternoon: 85,
+      evening: 50
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'distant'
+    },
+    amenities: [
+      'Bleacher seating',
+      'Scoreboard view',
+      'Social atmosphere'
+    ],
+    accessibilityRating: 2,
+    visibilityRating: 3,
+    proximityToAction: 1,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      bleacherSeating: true,
+      centerFieldView: true,
+      manualScoreboard: true,
+      ivyWallView: true
+    },
+    vertices: [
+      { x: -95, y: 70, z: 6 },
+      { x: -40, y: 100, z: 6 },
+      { x: -40, y: 118, z: 12 },
+      { x: -95, y: 92, z: 12 }
+    ] as Vector3D[]
+  },
+
+  // Bleachers - Right Field
+  {
+    id: 'bleachers-rf',
+    name: 'Right Field Bleachers',
+    category: 'value',
+    capacity: 720,
+    type: 'fixed',
+    elevation: 6,
+    rows: generateRows(1, 22, 6, 20, 30),
+    covered: false,
+    sunExposure: {
+      morning: 30,
+      afternoon: 100,
+      evening: 60
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Bleacher seating',
+      'Party atmosphere',
+      'Budget friendly'
+    ],
+    accessibilityRating: 2,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      bleacherSeating: true,
+      partyAtmosphere: true,
+      rightFieldView: true,
+      budgetFriendly: true
+    },
+    vertices: [
+      { x: 75, y: 50, z: 6 },
+      { x: 95, y: 70, z: 6 },
+      { x: 95, y: 92, z: 13 },
+      { x: 75, y: 72, z: 13 }
+    ] as Vector3D[]
+  },
+
+  // Upper Deck Box - Home Plate
+  {
+    id: 'upper-box-home',
+    name: 'Upper Box - Home Plate',
+    category: 'standard',
+    capacity: 640,
+    type: 'fixed',
+    elevation: 20,
+    rows: generateRows(1, 20, 20, 18, 33),
+    covered: true,
+    coveragePercentage: 90,
+    coveredRows: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+    sunExposure: {
+      morning: 5,
+      afternoon: 15,
+      evening: 5
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'distant'
+    },
+    amenities: [
+      'Covered seating',
+      'Standard seats',
+      'Protected from elements'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      upperDeck: true,
+      coveredSeating: true,
+      pressBoxBelow: true
+    },
+    vertices: [
+      { x: -35, y: 45, z: 20 },
+      { x: 35, y: 45, z: 20 },
+      { x: 35, y: 65, z: 27 },
+      { x: -35, y: 65, z: 27 }
+    ] as Vector3D[]
+  },
+
+  // Upper Deck Reserved - First Base
+  {
+    id: 'upper-reserved-1b',
+    name: 'Upper Reserved - First Base',
+    category: 'value',
+    capacity: 580,
+    type: 'fixed',
+    elevation: 20,
+    rows: generateRows(1, 18, 20, 16, 33),
+    covered: true,
+    coveragePercentage: 70,
+    coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
+    sunExposure: {
+      morning: 15,
+      afternoon: 30,
+      evening: 10
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Partial coverage',
+      'Budget seating'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      upperDeck: true,
+      partialCoverage: true,
+      valueSeating: true
+    },
+    vertices: [
+      { x: 35, y: 45, z: 20 },
+      { x: 65, y: 65, z: 20 },
+      { x: 65, y: 83, z: 26 },
+      { x: 35, y: 65, z: 26 }
+    ] as Vector3D[]
+  },
+
+  // Upper Deck Reserved - Third Base
+  {
+    id: 'upper-reserved-3b',
+    name: 'Upper Reserved - Third Base',
+    category: 'value',
+    capacity: 580,
+    type: 'fixed',
+    elevation: 20,
+    rows: generateRows(1, 18, 20, 16, 33),
+    covered: true,
+    coveragePercentage: 70,
+    coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
+    sunExposure: {
+      morning: 20,
+      afternoon: 15,
+      evening: 10
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Partial coverage',
+      'Budget seating'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 3,
+    restroomProximity: 3,
+    features: {
+      upperDeck: true,
+      partialCoverage: true,
+      valueSeating: true
+    },
+    vertices: [
+      { x: -35, y: 45, z: 20 },
+      { x: -65, y: 65, z: 20 },
+      { x: -65, y: 83, z: 26 },
+      { x: -35, y: 65, z: 26 }
+    ] as Vector3D[]
+  },
+
+  // Catalina Club
+  {
+    id: 'catalina-club',
     name: 'Catalina Club',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 15,
-    rows: [], // Open seating area
-    vertices3D: [
-      { x: -25, y: 105, z: 25 },
-      { x: 25, y: 105, z: 25 },
-      { x: 25, y: 125, z: 25 },
-      { x: -25, y: 125, z: 25 }
-    ],
+    category: 'luxury',
+    capacity: 320,
+    type: 'club',
+    elevation: 24,
+    rows: generateRows(1, 6, 24, 10, 25),
     covered: true,
-    price: 'luxury',
-    distance: 115,
-    height: 25,
-    rake: 0,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 0,
-      aisleSeats: false,
-      tunnelAccess: ['Catalina Club Entrance']
-    }
-  },
-
-  // ========== GALLAGHER WAY (Rooftop-style) ==========
-  {
-    id: 'GW1',
-    name: 'Gallagher Way Deck',
-    level: 'standing',
-    baseAngle: 180,
-    angleSpan: 20,
-    rows: [], // Standing room
-    vertices3D: [
-      { x: -40, y: 420, z: 35 },
-      { x: 40, y: 420, z: 35 },
-      { x: 40, y: 440, z: 35 },
-      { x: -40, y: 440, z: 35 }
+    coveragePercentage: 100,
+    sunExposure: {
+      morning: 0,
+      afternoon: 0,
+      evening: 0
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Climate controlled',
+      'All-inclusive dining',
+      'Premium bar',
+      'Padded seats',
+      'Private entrance'
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 430,
-    height: 35,
-    rake: 0,
-    viewQuality: 'fair'
+    accessibilityRating: 5,
+    visibilityRating: 5,
+    proximityToAction: 3,
+    concessionProximity: 5,
+    restroomProximity: 5,
+    features: {
+      clubLevel: true,
+      allInclusive: true,
+      climateControlled: true,
+      privateEntrance: true,
+      premiumDining: true
+    },
+    vertices: [
+      { x: -40, y: 52, z: 24 },
+      { x: 40, y: 52, z: 24 },
+      { x: 40, y: 64, z: 27 },
+      { x: -40, y: 64, z: 27 }
+    ] as Vector3D[]
   },
 
-  // ========== W CLUB ==========
+  // American Airlines 1914 Club
   {
-    id: 'W1',
-    name: 'W Club',
-    level: 'club',
-    baseAngle: 315,
-    angleSpan: 10,
-    rows: generateRows('A', 'H', 14, 22, 16, true),
-    vertices3D: [
-      { x: -70, y: 70, z: 22 },
-      { x: -58, y: 58, z: 22 },
-      { x: -65, y: 65, z: 30 },
-      { x: -77, y: 77, z: 30 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 99,
-    height: 22,
-    rake: 16,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent'
-  },
-
-  // ========== AMERICAN AIRLINES 1914 CLUB ==========
-  {
-    id: 'AA1914',
+    id: 'aa-1914-club',
     name: 'American Airlines 1914 Club',
-    level: 'suite',
-    baseAngle: 0,
-    angleSpan: 12,
-    rows: [
-      { rowNumber: 'Suite', seats: 24, elevation: 30, depth: 0, covered: true, overhangHeight: 15 }
-    ],
-    vertices3D: [
-      { x: -20, y: 110, z: 30 },
-      { x: 20, y: 110, z: 30 },
-      { x: 20, y: 130, z: 30 },
-      { x: -20, y: 130, z: 30 }
-    ],
+    category: 'luxury',
+    capacity: 280,
+    type: 'club',
+    elevation: 15,
+    rows: generateRows(1, 5, 15, 10, 24),
     covered: true,
-    price: 'luxury',
-    distance: 120,
-    height: 30,
-    rake: 0,
-    seatWidth: 24,
-    rowSpacing: 42,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 24,
-      aisleSeats: false,
-      tunnelAccess: ['Premium Entrance']
-    }
+    coveragePercentage: 100,
+    sunExposure: {
+      morning: 0,
+      afternoon: 0,
+      evening: 0
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Field level club',
+      'All-inclusive dining',
+      'Premium location',
+      'Historical memorabilia'
+    ],
+    accessibilityRating: 5,
+    visibilityRating: 5,
+    proximityToAction: 4,
+    concessionProximity: 5,
+    restroomProximity: 5,
+    features: {
+      fieldLevelClub: true,
+      allInclusive: true,
+      historicalDisplays: true,
+      premiumLocation: true
+    },
+    vertices: [
+      { x: -20, y: 10, z: 15 },
+      { x: 20, y: 10, z: 15 },
+      { x: 20, y: 22, z: 18 },
+      { x: -20, y: 22, z: 18 }
+    ] as Vector3D[]
   },
 
-  // ========== BUDWEISER BLEACHERS ==========
+  // W Club
   {
-    id: 'BUD',
-    name: 'Budweiser Bleachers',
-    level: 'field',
-    baseAngle: 160,
-    angleSpan: 12,
-    rows: generateRows(1, 28, 28, 8, 20, false),
-    vertices3D: [
-      { x: 90, y: 350, z: 8 },
-      { x: 120, y: 330, z: 8 },
-      { x: 130, y: 360, z: 30 },
-      { x: 100, y: 380, z: 30 }
+    id: 'w-club',
+    name: 'W Club',
+    category: 'luxury',
+    capacity: 240,
+    type: 'club',
+    elevation: 18,
+    rows: generateRows(1, 4, 18, 8, 24),
+    covered: true,
+    coveragePercentage: 100,
+    sunExposure: {
+      morning: 0,
+      afternoon: 0,
+      evening: 0
+    },
+    teamAreas: {
+      dugout: 'adjacent',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Exclusive club',
+      'All-inclusive dining',
+      'Championship displays',
+      'Private entrance'
     ],
+    accessibilityRating: 5,
+    visibilityRating: 5,
+    proximityToAction: 4,
+    concessionProximity: 5,
+    restroomProximity: 5,
+    features: {
+      exclusiveClub: true,
+      allInclusive: true,
+      championshipDisplays: true,
+      privateEntrance: true
+    },
+    vertices: [
+      { x: 25, y: 8, z: 18 },
+      { x: 45, y: 28, z: 18 },
+      { x: 45, y: 37, z: 21 },
+      { x: 25, y: 17, z: 21 }
+    ] as Vector3D[]
+  },
+
+  // Maker's Mark Barrel Room
+  {
+    id: 'makers-mark-barrel',
+    name: "Maker's Mark Barrel Room",
+    category: 'special',
+    capacity: 150,
+    type: 'flexible',
+    elevation: 12,
+    rows: generateRows(1, 3, 12, 8, 25),
     covered: false,
-    price: 'value',
-    distance: 368,
-    height: 8,
-    rake: 20,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
+    sunExposure: {
+      morning: 75,
+      afternoon: 40,
+      evening: 25
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Bourbon bar',
+      'Standing room',
+      'Unique atmosphere'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      bourbonBar: true,
+      standingRoom: true,
+      barrelRoom: true,
+      premiumDrinks: true
+    },
+    vertices: [
+      { x: -80, y: 60, z: 12 },
+      { x: -65, y: 75, z: 12 },
+      { x: -65, y: 83, z: 14 },
+      { x: -80, y: 68, z: 14 }
+    ] as Vector3D[]
+  },
+
+  // Budweiser Bleachers
+  {
+    id: 'budweiser-bleachers',
+    name: 'Budweiser Bleachers',
+    category: 'special',
+    capacity: 380,
+    type: 'flexible',
+    elevation: 10,
+    rows: generateRows(1, 10, 10, 12, 28),
+    covered: false,
+    sunExposure: {
+      morning: 40,
+      afternoon: 95,
+      evening: 55
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Party deck',
+      'Bar service',
+      'Social atmosphere'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      partyDeck: true,
+      budweiserThemed: true,
+      barService: true,
+      socialArea: true
+    },
+    vertices: [
+      { x: 40, y: 100, z: 10 },
+      { x: 95, y: 70, z: 10 },
+      { x: 95, y: 80, z: 13 },
+      { x: 40, y: 110, z: 13 }
+    ] as Vector3D[]
+  },
+
+  // Gallagher Way Standing Room
+  {
+    id: 'gallagher-way-sro',
+    name: 'Gallagher Way Standing Room',
+    category: 'standing',
+    capacity: 600,
+    type: 'standing',
+    elevation: 8,
+    rows: [],
+    covered: false,
+    sunExposure: {
+      morning: 50,
+      afternoon: 85,
+      evening: 60
+    },
+    teamAreas: {
+      dugout: 'distant',
+      bullpen: 'distant'
+    },
+    amenities: [
+      'Video board view',
+      'Food trucks',
+      'Entertainment plaza'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 2,
+    proximityToAction: 1,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      gallagherWay: true,
+      videoBoardView: true,
+      foodTrucks: true,
+      entertainmentPlaza: true,
+      standingRoom: true
+    },
+    vertices: [
+      { x: -60, y: 110, z: 8 },
+      { x: 60, y: 110, z: 8 },
+      { x: 60, y: 125, z: 8 },
+      { x: -60, y: 125, z: 8 }
+    ] as Vector3D[]
+  },
+
+  // Sloan Park at Wrigley
+  {
+    id: 'sloan-park',
+    name: 'Sloan Park at Wrigley',
+    category: 'special',
+    capacity: 220,
+    type: 'flexible',
+    elevation: 14,
+    rows: generateRows(1, 6, 14, 10, 26),
+    covered: false,
+    sunExposure: {
+      morning: 30,
+      afternoon: 90,
+      evening: 50
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Rooftop-style seating',
+      'All-inclusive food',
+      'Bar service'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      rooftopStyle: true,
+      allInclusiveFood: true,
+      barService: true,
+      uniqueExperience: true
+    },
+    vertices: [
+      { x: 80, y: 55, z: 14 },
+      { x: 95, y: 70, z: 14 },
+      { x: 95, y: 80, z: 17 },
+      { x: 80, y: 65, z: 17 }
+    ] as Vector3D[]
+  },
+
+  // Park at Wrigley
+  {
+    id: 'park-at-wrigley',
+    name: 'Park at Wrigley',
+    category: 'special',
+    capacity: 200,
+    type: 'flexible',
+    elevation: 16,
+    rows: generateRows(1, 5, 16, 10, 26),
+    covered: false,
+    sunExposure: {
+      morning: 70,
+      afternoon: 35,
+      evening: 20
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'adjacent'
+    },
+    amenities: [
+      'Picnic area',
+      'Group seating',
+      'All-inclusive food'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 2,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      picnicArea: true,
+      groupSeating: true,
+      allInclusiveFood: true,
+      parkAtmosphere: true
+    },
+    vertices: [
+      { x: -80, y: 55, z: 16 },
+      { x: -95, y: 70, z: 16 },
+      { x: -95, y: 80, z: 19 },
+      { x: -80, y: 65, z: 19 }
+    ] as Vector3D[]
+  },
+
+  // Wintrust Scout Seats
+  {
+    id: 'wintrust-scout',
+    name: 'Wintrust Scout Seats',
+    category: 'premium',
+    capacity: 160,
+    type: 'fixed',
+    elevation: 2,
+    rows: generateRows(1, 4, 2, 6, 22),
+    covered: false,
+    sunExposure: {
+      morning: 20,
+      afternoon: 85,
+      evening: 45
+    },
+    teamAreas: {
+      dugout: 'below',
+      bullpen: 'distant'
+    },
+    amenities: [
+      'Behind home plate',
+      'Scout perspective',
+      'Padded seats',
+      'In-seat service'
+    ],
+    accessibilityRating: 4,
+    visibilityRating: 5,
+    proximityToAction: 5,
+    concessionProximity: 5,
+    restroomProximity: 4,
+    features: {
+      scoutSeats: true,
+      behindHomeBase: true,
+      premiumSeating: true,
+      waitService: true
+    },
+    vertices: [
+      { x: -15, y: -2, z: 2 },
+      { x: 15, y: -2, z: 2 },
+      { x: 15, y: 6, z: 4 },
+      { x: -15, y: 6, z: 4 }
+    ] as Vector3D[]
+  },
+
+  // Press Box Level
+  {
+    id: 'press-box',
+    name: 'Press Box',
+    category: 'media',
+    capacity: 80,
+    type: 'media',
+    elevation: 28,
+    rows: generateRows(1, 3, 28, 6, 20),
+    covered: true,
+    coveragePercentage: 100,
+    sunExposure: {
+      morning: 0,
+      afternoon: 0,
+      evening: 0
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Media facilities',
+      'High-speed internet',
+      'Power outlets',
+      'Work stations'
+    ],
+    accessibilityRating: 5,
+    visibilityRating: 5,
+    proximityToAction: 3,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      pressBox: true,
+      mediaFacilities: true,
+      broadcastBooths: true,
+      workStations: true
+    },
+    vertices: [
+      { x: -20, y: 55, z: 28 },
+      { x: 20, y: 55, z: 28 },
+      { x: 20, y: 62, z: 30 },
+      { x: -20, y: 62, z: 30 }
+    ] as Vector3D[]
+  },
+
+  // Luxury Suites
+  {
+    id: 'luxury-suites',
+    name: 'Luxury Suites',
+    category: 'luxury',
+    capacity: 400,
+    type: 'suite',
+    elevation: 22,
+    rows: generateRows(1, 2, 22, 8, 22),
+    covered: true,
+    coveragePercentage: 100,
+    sunExposure: {
+      morning: 0,
+      afternoon: 0,
+      evening: 0
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Climate controlled',
+      'Private restroom',
+      'Catering service',
+      'Premium parking',
+      'Indoor/outdoor seating'
+    ],
+    accessibilityRating: 5,
+    visibilityRating: 5,
+    proximityToAction: 3,
+    concessionProximity: 5,
+    restroomProximity: 5,
+    features: {
+      suiteLevel: true,
+      privateRestroom: true,
+      cateringAvailable: true,
+      climateControlled: true,
+      premiumParking: true
+    },
+    vertices: [
+      { x: -45, y: 48, z: 22 },
+      { x: 45, y: 48, z: 22 },
+      { x: 45, y: 58, z: 25 },
+      { x: -45, y: 58, z: 25 }
+    ] as Vector3D[]
+  },
+
+  // Terrace Reserved
+  {
+    id: 'terrace-reserved',
+    name: 'Terrace Reserved',
+    category: 'standard',
+    capacity: 460,
+    type: 'fixed',
+    elevation: 12,
+    rows: generateRows(1, 14, 12, 14, 30),
+    covered: false,
+    sunExposure: {
+      morning: 50,
+      afternoon: 75,
+      evening: 40
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'visible'
+    },
+    amenities: [
+      'Reserved seating',
+      'Standard seats'
+    ],
+    accessibilityRating: 3,
+    visibilityRating: 3,
+    proximityToAction: 3,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      terraceLevel: true,
+      reservedSeating: true,
+      standardSeating: true
+    },
+    vertices: [
+      { x: -50, y: 35, z: 12 },
+      { x: 50, y: 35, z: 12 },
+      { x: 50, y: 50, z: 17 },
+      { x: -50, y: 50, z: 17 }
+    ] as Vector3D[]
+  },
+
+  // Family Section
+  {
+    id: 'family-section',
+    name: 'Family Section',
+    category: 'special',
+    capacity: 320,
+    type: 'fixed',
+    elevation: 10,
+    rows: generateRows(1, 10, 10, 12, 29),
+    covered: false,
+    sunExposure: {
+      morning: 60,
+      afternoon: 70,
+      evening: 35
+    },
+    teamAreas: {
+      dugout: 'visible',
+      bullpen: 'distant'
+    },
+    amenities: [
+      'Alcohol-free zone',
+      'Family friendly',
+      'Kid activities nearby'
+    ],
+    accessibilityRating: 4,
+    visibilityRating: 4,
+    proximityToAction: 3,
+    concessionProximity: 4,
+    restroomProximity: 4,
+    features: {
+      familySection: true,
+      alcoholFree: true,
+      kidFriendly: true,
+      nearActivities: true
+    },
+    vertices: [
+      { x: -55, y: 40, z: 10 },
+      { x: -35, y: 50, z: 10 },
+      { x: -35, y: 63, z: 14 },
+      { x: -55, y: 53, z: 14 }
+    ] as Vector3D[]
   }
 ];
 
-// Calculate total capacity
-export const wrigleyFieldCapacity = wrigleyFieldSections.reduce((total, section) => {
-  const sectionCapacity = section.rows.reduce((sectionTotal, row) => sectionTotal + row.seats, 0);
-  return total + sectionCapacity;
-}, 0);
-
-// Export section map for quick lookup
-export const wrigleyFieldSectionMap = new Map(
-  wrigleyFieldSections.map(section => [section.id, section])
-);
-
-// Stadium-specific features
-export const wrigleyFieldFeatures = {
-  ivyWalls: {
-    material: 'boston_ivy',
-    planted: 1937,
-    height: 11.5,
-    greenSeason: 'April-October',
-    dormantSeason: 'November-March'
+// Stadium configuration
+export const wrigleyFieldConfig = {
+  stadiumName: 'Wrigley Field',
+  team: 'Chicago Cubs',
+  location: 'Chicago, Illinois',
+  capacity: 41649,
+  yearBuilt: 1914,
+  orientation: 140, // Southeast facing
+  dimensions: {
+    leftField: 355,
+    leftCenter: 368,
+    center: 400,
+    rightCenter: 368,
+    rightField: 353,
+    ivyWallHeight: 11.5
   },
-  manualScoreboard: {
-    installed: 1937,
-    height: 27,
-    width: 35,
-    centerField: true,
-    manuallyOperated: true
+  features: {
+    ivyCoveredWalls: true,
+    manualScoreboard: true,
+    bleacherSeating: true,
+    rooftopSeating: true,
+    historicBallpark: true,
+    gallagherWay: true,
+    dayGameTradition: true,
+    windPatterns: true
   },
-  rooftops: {
-    buildings: 11,
-    capacity: 3000,
-    revenue_sharing: true,
-    unique_viewing: true
+  sunExposureNotes: {
+    morning: 'Sun rises over left field, third base side gets early shade',
+    afternoon: 'Sun high overhead, bleachers get maximum exposure',
+    evening: 'Sun sets behind first base, right field gets shade first'
   },
-  marquee: {
-    installed: 1934,
-    iconic: true,
-    color: 'red',
-    manual_letters: true
-  },
-  windPatterns: {
-    lakeMichigan: true,
-    dayGame: 'blowing_out',
-    nightGame: 'blowing_in',
-    significant_impact: true
-  }
+  accessibilityFeatures: [
+    'Elevator access to all levels',
+    'Accessible seating throughout',
+    'Accessible parking nearby',
+    'Assistive listening devices available'
+  ]
 };

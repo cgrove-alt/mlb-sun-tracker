@@ -499,6 +499,156 @@ export const targetFieldSections: DetailedSection[] = [
     seatWidth: 19,
     rowSpacing: 32,
     viewQuality: 'good'
+  },
+  
+  // ========== DELTA SKY360 LEGENDS CLUB ==========
+  {
+    id: 'SKY360',
+    name: 'Delta Sky360 Legends Club',
+    level: 'club',
+    baseAngle: 180,
+    angleSpan: 30,
+    rows: generateRows('A', 'J', 24, 65, 30, true),
+    vertices3D: [
+      { x: -40, y: 65, z: 380 },
+      { x: 40, y: 65, z: 380 },
+      { x: 45, y: 95, z: 410 },
+      { x: -45, y: 95, z: 410 }
+    ],
+    covered: true,
+    price: 'luxury',
+    distance: 380,
+    height: 65,
+    rake: 30,
+    seatWidth: 22,
+    rowSpacing: 38,
+    viewQuality: 'excellent'
+  },
+  
+  // ========== BUDWEISER ROOF DECK ==========
+  {
+    id: 'BUDROOF',
+    name: 'Budweiser Roof Deck',
+    level: 'upper',
+    baseAngle: 225,
+    angleSpan: 20,
+    rows: [
+      { rowNumber: 'Fixed', seats: 120, elevation: 75, depth: 0, covered: true },
+      { rowNumber: 'SRO', seats: 130, elevation: 75, depth: 5, covered: true }
+    ],
+    vertices3D: [
+      { x: -150, y: 75, z: 320 },
+      { x: -120, y: 75, z: 340 },
+      { x: -120, y: 85, z: 350 },
+      { x: -150, y: 85, z: 330 }
+    ],
+    covered: true,
+    partialCoverage: {
+      type: 'partial',
+      coveredRows: ['Fixed', 'SRO'],
+      coveragePercentage: 60
+    },
+    price: 'premium',
+    distance: 330,
+    height: 75,
+    rake: 0,
+    viewQuality: 'good'
+  },
+  
+  // ========== TOWN BALL TAVERN ==========
+  {
+    id: 'TOWNBALL',
+    name: 'Town Ball Tavern',
+    level: 'club',
+    baseAngle: 240,
+    angleSpan: 15,
+    rows: generateRows('A', 'H', 30, 55, 28, true),
+    vertices3D: [
+      { x: -140, y: 55, z: 280 },
+      { x: -120, y: 55, z: 300 },
+      { x: -125, y: 77, z: 322 },
+      { x: -145, y: 77, z: 302 }
+    ],
+    covered: true,
+    price: 'premium',
+    distance: 290,
+    height: 55,
+    rake: 28,
+    seatWidth: 20,
+    rowSpacing: 35,
+    viewQuality: 'good'
+  },
+  
+  // ========== BAT & BARREL ==========
+  {
+    id: 'BATBARREL',
+    name: 'Bat & Barrel',
+    level: 'club',
+    baseAngle: 90,
+    angleSpan: 18,
+    rows: generateRows('A', 'F', 35, 60, 26, true),
+    vertices3D: [
+      { x: 100, y: 60, z: 120 },
+      { x: 120, y: 60, z: 130 },
+      { x: 125, y: 76, z: 146 },
+      { x: 105, y: 76, z: 136 }
+    ],
+    covered: true,
+    price: 'premium',
+    distance: 125,
+    height: 60,
+    rake: 26,
+    seatWidth: 21,
+    rowSpacing: 36,
+    viewQuality: 'excellent'
+  },
+  
+  // ========== GRAY DUCK DECK ==========
+  {
+    id: 'GRAYDUCK',
+    name: 'Gray Duck Deck',
+    level: 'upper',
+    baseAngle: 255,
+    angleSpan: 12,
+    rows: [
+      { rowNumber: 'Bar', seats: 80, elevation: 70, depth: 0, covered: false }
+    ],
+    vertices3D: [
+      { x: -160, y: 70, z: 340 },
+      { x: -145, y: 70, z: 355 },
+      { x: -145, y: 70, z: 365 },
+      { x: -160, y: 70, z: 350 }
+    ],
+    covered: false,
+    price: 'moderate',
+    distance: 350,
+    height: 70,
+    rake: 0,
+    viewQuality: 'fair'
+  },
+  
+  // ========== THOMSON REUTERS CHAMPIONS CLUB ==========
+  {
+    id: 'CHAMPIONS',
+    name: 'Thomson Reuters Champions Club',
+    level: 'field',
+    baseAngle: 0,
+    angleSpan: 22,
+    rows: generateRows('A', 'M', 26, 5, 25, false),
+    vertices3D: [
+      { x: -35, y: 5, z: 50 },
+      { x: 35, y: 5, z: 50 },
+      { x: 40, y: 35, z: 80 },
+      { x: -40, y: 35, z: 80 }
+    ],
+    covered: false,
+    price: 'luxury',
+    distance: 65,
+    height: 5,
+    rake: 25,
+    seatWidth: 22,
+    rowSpacing: 40,
+    viewQuality: 'excellent'
   }
 ];
 

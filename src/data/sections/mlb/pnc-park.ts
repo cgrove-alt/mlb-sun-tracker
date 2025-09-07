@@ -1,488 +1,754 @@
 // PNC Park - Complete Section Data with 3D Geometry
 // Pittsburgh, PA - Opened 2001 - Capacity 38,362
 // Home of the Pittsburgh Pirates
+// Beautiful ballpark with skyline and river views
 
 import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
 
-// Helper to generate row details
-function generateRows(
-  startRow: number | string,
-  endRow: number | string,
-  seatsPerRow: number,
-  baseElevation: number,
-  rake: number,
-  covered: boolean = false
-): RowDetail[] {
-  const rows: RowDetail[] = [];
-  const rowHeight = 2.5;
-  const rowDepth = 2.8;
-  
-  const isLetterRows = typeof startRow === 'string';
-  
-  if (isLetterRows) {
-    const startCode = (startRow as string).charCodeAt(0);
-    const endCode = (endRow as string).charCodeAt(0);
-    
-    for (let i = startCode; i <= endCode; i++) {
-      const rowNum = i - startCode;
-      rows.push({
-        rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 26 - (rowNum * 0.3) : undefined
-      });
-    }
-  } else {
-    for (let i = startRow as number; i <= (endRow as number); i++) {
-      const rowNum = i - (startRow as number);
-      rows.push({
-        rowNumber: i.toString(),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 26 - (rowNum * 0.3) : undefined
-      });
-    }
-  }
-  
-  return rows;
-}
+// Helper to generate row details with enhanced parameters
+const generateRows = (
+  startRow: number,
+  endRow: number,
+  elevation: number,
+  depth: number,
+  rakeAngle: number = 32
+): RowDetail[] => {
+  return Array.from({ length: endRow - startRow + 1 }, (_, i) => ({
+    row: `${startRow + i}`,
+    elevation: elevation + (i * 0.5),
+    depth: depth - (i * 0.3),
+    rakeAngle
+  }));
+};
 
-// PNC Park Sections
-export const pncParkSections: DetailedSection[] = [
-  // ========== FIELD BOX ==========
-  {
-    id: '16',
-    name: 'Field Box 16',
-    level: 'field',
-    baseAngle: 25, // Park orientation
-    angleSpan: 8,
-    rows: generateRows('A', 'Y', 20, 0, 19, false),
-    vertices3D: [
-      { x: -10, y: 58, z: 0 },
-      { x: 0, y: 58, z: 0 },
-      { x: 0, y: 85, z: 13 },
-      { x: -10, y: 85, z: 13 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 72,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '108',
-    name: 'Field Box 108',
-    level: 'field',
-    baseAngle: 70, // First base line
-    angleSpan: 8,
-    rows: generateRows('A', 'Y', 20, 0, 19, false),
-    vertices3D: [
-      { x: 58, y: 58, z: 0 },
-      { x: 72, y: 72, z: 0 },
-      { x: 85, y: 85, z: 13 },
-      { x: 71, y: 71, z: 13 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 82,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  // ========== INFIELD BOX ==========
-  {
-    id: '115',
-    name: 'Infield Box 115',
-    level: 'lower',
-    baseAngle: 25,
-    angleSpan: 9,
-    rows: generateRows(1, 30, 22, 13, 22, false),
-    vertices3D: [
-      { x: -16, y: 85, z: 13 },
-      { x: -4, y: 85, z: 13 },
-      { x: -4, y: 120, z: 33 },
-      { x: -16, y: 120, z: 33 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 103,
-    height: 13,
-    rake: 22,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '129',
-    name: 'Infield Box 129',
-    level: 'lower',
-    baseAngle: 340, // Third base line
-    angleSpan: 9,
-    rows: generateRows(1, 30, 22, 13, 22, false),
-    vertices3D: [
-      { x: -85, y: 16, z: 13 },
-      { x: -85, y: 4, z: 13 },
-      { x: -120, y: 4, z: 33 },
-      { x: -120, y: 16, z: 33 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 103,
-    height: 13,
-    rake: 22,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
-
-  // ========== GRANDSTAND ==========
-  {
-    id: '308',
-    name: 'Grandstand 308',
-    level: 'upper',
-    baseAngle: 25,
-    angleSpan: 11,
-    rows: generateRows(1, 26, 24, 33, 27, true),
-    vertices3D: [
-      { x: -25, y: 120, z: 33 },
-      { x: -10, y: 120, z: 33 },
-      { x: -8, y: 170, z: 68 },
-      { x: -23, y: 170, z: 68 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26'],
-      coveragePercentage: 54,
-      overhangDepth: 24,
-      overhangHeight: 21,
-      material: 'solid'
-    },
-    price: 'value',
-    distance: 145,
-    height: 33,
-    rake: 27,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '325',
-    name: 'Grandstand 325',
-    level: 'upper',
-    baseAngle: 115, // Right field
-    angleSpan: 11,
-    rows: generateRows(1, 26, 24, 33, 27, true),
-    vertices3D: [
-      { x: 120, y: -25, z: 33 },
-      { x: 120, y: -10, z: 33 },
-      { x: 170, y: -8, z: 68 },
-      { x: 170, y: -23, z: 68 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26'],
-      coveragePercentage: 54,
-      overhangDepth: 24,
-      overhangHeight: 21,
-      material: 'solid'
-    },
-    price: 'value',
-    distance: 145,
-    height: 33,
-    rake: 27,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'fair'
-  },
-
-  // ========== BLEACHERS ==========
-  {
-    id: '134',
-    name: 'Left Field Bleachers 134',
-    level: 'field',
-    baseAngle: 295, // Left field
-    angleSpan: 13,
-    rows: generateRows(1, 28, 26, 5, 21, false),
-    vertices3D: [
-      { x: -130, y: 280, z: 5 },
-      { x: -105, y: 305, z: 5 },
-      { x: -95, y: 335, z: 30 },
-      { x: -120, y: 310, z: 30 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 325,
-    height: 5,
-    rake: 21,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: '142',
-    name: 'Center Field Bleachers 142',
-    level: 'field',
-    baseAngle: 205, // Center field
-    angleSpan: 13,
-    rows: generateRows(1, 28, 26, 5, 21, false),
-    vertices3D: [
-      { x: -25, y: 380, z: 5 },
-      { x: 0, y: 380, z: 5 },
-      { x: 0, y: 410, z: 30 },
-      { x: -25, y: 410, z: 30 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 395,
-    height: 5,
-    rake: 21,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  // ========== RIVERWALK (Behind Right Field) ==========
-  {
-    id: 'RW',
-    name: 'Riverwalk Standing',
-    level: 'standing',
-    baseAngle: 115,
-    angleSpan: 18,
-    rows: [], // Standing room
-    vertices3D: [
-      { x: 110, y: -40, z: 0 },
-      { x: 140, y: -55, z: 0 },
-      { x: 140, y: -30, z: 0 },
-      { x: 110, y: -15, z: 0 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 320,
-    height: 0,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== PIRATES COVE ==========
-  {
-    id: 'COVE',
-    name: 'Pirates Cove',
-    level: 'field',
-    baseAngle: 160, // Right center
-    angleSpan: 10,
-    rows: [], // Picnic area
-    vertices3D: [
-      { x: 85, y: 320, z: 8 },
-      { x: 110, y: 300, z: 8 },
-      { x: 115, y: 315, z: 8 },
-      { x: 90, y: 335, z: 8 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 340,
-    height: 8,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== CLUB LEVEL ==========
-  {
-    id: 'CL212',
-    name: 'PNC Club 212',
-    level: 'club',
-    baseAngle: 25,
-    angleSpan: 10,
-    rows: generateRows('A', 'K', 16, 23, 18, true),
-    vertices3D: [
-      { x: -20, y: 100, z: 23 },
-      { x: -6, y: 100, z: 23 },
-      { x: -6, y: 125, z: 33 },
-      { x: -20, y: 125, z: 33 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 113,
-    height: 23,
-    rake: 18,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 6,
-      aisleSeats: true,
-      tunnelAccess: ['Club Level Entrance']
-    }
-  },
-
-  // ========== LEXUS CLUB ==========
-  {
-    id: 'LEX',
-    name: 'Lexus Club',
-    level: 'suite',
-    baseAngle: 25,
-    angleSpan: 10,
-    rows: [
-      { rowNumber: 'Suite', seats: 28, elevation: 28, depth: 0, covered: true, overhangHeight: 20 }
-    ],
-    vertices3D: [
-      { x: -18, y: 110, z: 28 },
-      { x: 18, y: 110, z: 28 },
-      { x: 18, y: 130, z: 28 },
-      { x: -18, y: 130, z: 28 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 120,
-    height: 28,
-    rake: 0,
-    seatWidth: 24,
-    rowSpacing: 42,
-    viewQuality: 'excellent'
-  },
-
-  // ========== HOME PLATE CLUB ==========
-  {
-    id: 'HPC',
-    name: 'Home Plate Club',
-    level: 'field',
-    baseAngle: 25,
-    angleSpan: 7,
-    rows: generateRows('A', 'E', 14, -2, 16, false), // Below field level
-    vertices3D: [
-      { x: -7, y: 50, z: -2 },
-      { x: 7, y: 50, z: -2 },
-      { x: 7, y: 60, z: 3 },
-      { x: -7, y: 60, z: 3 }
-    ],
-    covered: false,
-    price: 'luxury',
-    distance: 55,
-    height: -2,
-    rake: 16,
-    seatWidth: 24,
-    rowSpacing: 40,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 4,
-      aisleSeats: true,
-      tunnelAccess: ['Home Plate Club Entrance']
-    }
-  },
-
-  // ========== ROOFTOP STANDING ==========
-  {
-    id: 'ROOF',
-    name: 'Rooftop Deck',
-    level: 'standing',
-    baseAngle: 205,
-    angleSpan: 20,
-    rows: [], // Standing room
-    vertices3D: [
-      { x: -35, y: 410, z: 35 },
-      { x: 35, y: 410, z: 35 },
-      { x: 35, y: 430, z: 35 },
-      { x: -35, y: 430, z: 35 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 420,
-    height: 35,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== NOTCH (Right Field Corner) ==========
-  {
-    id: 'NOTCH',
-    name: 'The Notch',
-    level: 'field',
-    baseAngle: 115,
-    angleSpan: 6,
-    rows: generateRows(1, 12, 18, 10, 18, false),
-    vertices3D: [
-      { x: 105, y: -20, z: 10 },
-      { x: 115, y: -25, z: 10 },
-      { x: 120, y: -15, z: 20 },
-      { x: 110, y: -10, z: 20 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 320, // Right field corner
-    height: 10,
-    rake: 18,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  }
-];
-
-// Calculate total capacity
-export const pncParkCapacity = pncParkSections.reduce((total, section) => {
-  const sectionCapacity = section.rows.reduce((sectionTotal, row) => sectionTotal + row.seats, 0);
-  return total + sectionCapacity;
-}, 0);
-
-// Export section map for quick lookup
-export const pncParkSectionMap = new Map(
-  pncParkSections.map(section => [section.id, section])
-);
-
-// Stadium-specific features
-export const pncParkFeatures = {
-  robertoClementeBridge: {
-    pedestrianOnly: true,
-    gameDay: true,
-    yellowColor: true,
-    sixthStreetBridge: true,
-    walkableToStadium: true
-  },
-  riverwalk: {
-    location: 'right_field',
-    alleghenyRiver: true,
-    standingRoom: true,
-    uniqueViews: true
-  },
+// Stadium configuration with all unique features
+export const pncParkConfig = {
+  name: 'PNC Park',
+  team: 'Pittsburgh Pirates',
+  city: 'Pittsburgh',
+  state: 'PA',
+  opened: 2001,
+  capacity: 38362,
+  roof: 'open',
   dimensions: {
     leftField: 325,
     leftCenter: 383,
     centerField: 399,
     rightCenter: 375,
-    rightField: 320,
-    notchRightField: 320 // Unique notch in right field
+    rightField: 320
   },
-  riverfront: {
-    alleghenyRiver: true,
-    downtownSkyline: true,
-    waterTaxis: true,
-    kayakers: false // Unlike San Francisco
-  },
-  piratesCove: {
-    location: 'right_center',
-    picnicArea: true,
-    groupSeating: true,
-    familyFriendly: true
-  },
-  homeRunAlley: {
-    location: 'beyond_center',
-    standingRoom: true,
-    concessions: true
+  features: {
+    riverwalk: true,
+    skylineView: true,
+    robertoClementeWall: true,
+    jimBeamLounge: true,
+    rooftop: true
   }
 };
+
+// PNC Park Sections - Complete Implementation (25 sections)
+export const pncParkSections: DetailedSection[] = [
+  // ========== PIRATES COVE (Behind Home Plate) ==========
+  {
+    id: 'pirates-cove',
+    name: 'Pirates Cove',
+    level: 'field',
+    rows: generateRows(1, 8, -1, 14, 17),
+    sunExposure: {
+      morning: 5,
+      afternoon: 20,
+      evening: 40
+    },
+    covered: false,
+    vertices: [
+      { x: -8, y: 50, z: -1 },
+      { x: 8, y: 50, z: -1 },
+      { x: 8, y: 60, z: 4 },
+      { x: -8, y: 60, z: 4 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      piratesCove: true,
+      behindHomePlate: true,
+      premiumSeating: true,
+      closeToAction: true
+    }
+  },
+
+  // ========== FIELD BOX ==========
+  {
+    id: 'field-box-16',
+    name: 'Field Box 16',
+    level: 'field',
+    rows: generateRows(1, 25, 0, 14, 19),
+    sunExposure: {
+      morning: 10,
+      afternoon: 30,
+      evening: 45
+    },
+    covered: false,
+    vertices: [
+      { x: -10, y: 58, z: 0 },
+      { x: 0, y: 58, z: 0 },
+      { x: 0, y: 85, z: 13 },
+      { x: -10, y: 85, z: 13 }
+    ],
+    accessibility: 4,
+    viewQuality: 5,
+    features: {
+      fieldLevel: true,
+      closeToDugout: true,
+      skylineView: true
+    }
+  },
+
+  {
+    id: 'field-box-108',
+    name: 'Field Box 108',
+    level: 'field',
+    rows: generateRows(1, 25, 0, 14, 19),
+    sunExposure: {
+      morning: 15,
+      afternoon: 35,
+      evening: 40
+    },
+    covered: false,
+    vertices: [
+      { x: 58, y: 58, z: 0 },
+      { x: 72, y: 72, z: 0 },
+      { x: 85, y: 85, z: 13 },
+      { x: 71, y: 71, z: 13 }
+    ],
+    accessibility: 4,
+    viewQuality: 5,
+    features: {
+      fieldLevel: true,
+      firstBaseLine: true,
+      riverView: true
+    }
+  },
+
+  // ========== JIM BEAM LEFT FIELD LOUNGE & PORCH ==========
+  {
+    id: 'jim-beam-lounge',
+    name: 'Jim Beam Left Field Lounge',
+    level: 'lounge',
+    rows: [],
+    sunExposure: {
+      morning: 20,
+      afternoon: 45,
+      evening: 60
+    },
+    covered: true,
+    vertices: [
+      { x: -95, y: 340, z: 20 },
+      { x: -75, y: 355, z: 20 },
+      { x: -75, y: 375, z: 20 },
+      { x: -95, y: 360, z: 20 }
+    ],
+    accessibility: 5,
+    viewQuality: 4,
+    features: {
+      jimBeamLounge: true,
+      fullServiceBar: true,
+      climateControlled: true,
+      retractableGlassDoors: true,
+      capacity200: true,
+      embroidered25Stools: true,
+      flatScreen20TVs: true,
+      two52InchScreens: true
+    }
+  },
+
+  {
+    id: 'jim-beam-porch',
+    name: 'Jim Beam Porch',
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 25,
+      afternoon: 50,
+      evening: 65
+    },
+    covered: false,
+    vertices: [
+      { x: -95, y: 375, z: 20 },
+      { x: -75, y: 390, z: 20 },
+      { x: -75, y: 405, z: 20 },
+      { x: -95, y: 390, z: 20 }
+    ],
+    accessibility: 4,
+    viewQuality: 3,
+    features: {
+      jimBeamPorch: true,
+      outdoorPatio: true,
+      overlooksLeftCenter: true,
+      riverView: true,
+      alleghenyRiverView: true
+    }
+  },
+
+  // ========== THE ROOFTOP (Left Field) ==========
+  {
+    id: 'rooftop-335',
+    name: 'The Rooftop 335',
+    level: 'upper',
+    rows: generateRows(1, 12, 38, 18, 26),
+    sunExposure: {
+      morning: 30,
+      afternoon: 55,
+      evening: 70
+    },
+    covered: false,
+    vertices: [
+      { x: -85, y: 320, z: 38 },
+      { x: -65, y: 335, z: 38 },
+      { x: -65, y: 355, z: 48 },
+      { x: -85, y: 340, z: 48 }
+    ],
+    accessibility: 3,
+    viewQuality: 3,
+    features: {
+      rooftop: true,
+      groupSeating: true,
+      capacity30to70: true,
+      cateredFoodBeverage: true,
+      sections335to339: true,
+      leftFieldArea: true
+    }
+  },
+
+  // ========== RIVERWALK ==========
+  {
+    id: 'riverwalk-outfield',
+    name: 'Riverwalk Outfield Seating',
+    level: 'field',
+    rows: generateRows(1, 8, 2, 12, 15),
+    sunExposure: {
+      morning: 35,
+      afternoon: 60,
+      evening: 75
+    },
+    covered: false,
+    vertices: [
+      { x: -30, y: 400, z: 2 },
+      { x: 30, y: 400, z: 2 },
+      { x: 30, y: 420, z: 8 },
+      { x: -30, y: 420, z: 8 }
+    ],
+    accessibility: 4,
+    viewQuality: 3,
+    features: {
+      riverwalk: true,
+      outfieldSeating: true,
+      expandedIn2022: true,
+      vibrantConcessions: true,
+      selfieSpots: true,
+      kidsAreas: true,
+      giantBobbleheads: true
+    }
+  },
+
+  {
+    id: 'ahn-picnic-park',
+    name: 'AHN Picnic Park',
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 40,
+      afternoon: 65,
+      evening: 80
+    },
+    covered: false,
+    vertices: [
+      { x: 40, y: 380, z: 3 },
+      { x: 80, y: 370, z: 3 },
+      { x: 80, y: 400, z: 3 },
+      { x: 40, y: 410, z: 3 }
+    ],
+    accessibility: 4,
+    viewQuality: 3,
+    features: {
+      ahnPicnicPark: true,
+      riverwalkLocation: true,
+      capacity400: true,
+      preGameSocializing: true,
+      incredibleView: true
+    }
+  },
+
+  {
+    id: 'fat-heads-bullpen',
+    name: "Fat Head's Bullpen Bar",
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 30,
+      afternoon: 55,
+      evening: 70
+    },
+    covered: false,
+    vertices: [
+      { x: 85, y: 340, z: 5 },
+      { x: 105, y: 330, z: 5 },
+      { x: 105, y: 350, z: 5 },
+      { x: 85, y: 360, z: 5 }
+    ],
+    accessibility: 4,
+    viewQuality: 3,
+    features: {
+      fatHeadsBullpenBar: true,
+      craftBeer: true,
+      riverwalkLocation: true,
+      greatFieldView: true
+    }
+  },
+
+  // ========== THE PORCH (Center Field) ==========
+  {
+    id: 'the-porch',
+    name: 'The Porch',
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 45,
+      afternoon: 70,
+      evening: 85
+    },
+    covered: false,
+    vertices: [
+      { x: -20, y: 430, z: 15 },
+      { x: 20, y: 430, z: 15 },
+      { x: 20, y: 450, z: 15 },
+      { x: -20, y: 450, z: 15 }
+    ],
+    accessibility: 4,
+    viewQuality: 3,
+    features: {
+      thePorch: true,
+      overlooksCenterField: true,
+      barStools: true,
+      outdoorSofaSeating: true,
+      perfectAtmosphere: true
+    }
+  },
+
+  // ========== PITTSBURGH BASEBALL CLUB LEVEL ==========
+  {
+    id: 'pittsburgh-baseball-club',
+    name: 'Pittsburgh Baseball Club Level',
+    level: 'suite',
+    rows: generateRows(1, 8, 28, 16, 15),
+    sunExposure: {
+      morning: 10,
+      afternoon: 25,
+      evening: 35
+    },
+    covered: true,
+    vertices: [
+      { x: -75, y: 120, z: 28 },
+      { x: -55, y: 135, z: 28 },
+      { x: -55, y: 155, z: 34 },
+      { x: -75, y: 140, z: 34 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      pittsburghBaseballClub: true,
+      leftFieldLine: true,
+      premiumSuites: true,
+      exclusiveAccess: true
+    }
+  },
+
+  // ========== WORLD SERIES SUITES ==========
+  {
+    id: 'world-series-suites',
+    name: 'World Series Suites',
+    level: 'suite',
+    rows: generateRows(1, 1, 28, 0, 0),
+    sunExposure: {
+      morning: 5,
+      afternoon: 20,
+      evening: 30
+    },
+    covered: true,
+    vertices: [
+      { x: -65, y: 140, z: 28 },
+      { x: -45, y: 155, z: 28 },
+      { x: -45, y: 175, z: 28 },
+      { x: -65, y: 160, z: 28 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      worldSeriesSuites: true,
+      allStarSetting: true,
+      capacity40to100: true,
+      leftFieldLine: true,
+      pittsburghBaseballClubLevel: true
+    }
+  },
+
+  // ========== CLUB CAMBRIA ==========
+  {
+    id: 'club-cambria',
+    name: 'Club Cambria',
+    level: 'club',
+    rows: generateRows(1, 12, 22, 14, 18),
+    sunExposure: {
+      morning: 8,
+      afternoon: 22,
+      evening: 32
+    },
+    covered: true,
+    vertices: [
+      { x: -20, y: 95, z: 22 },
+      { x: 20, y: 95, z: 22 },
+      { x: 20, y: 115, z: 30 },
+      { x: -20, y: 115, z: 30 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      clubCambria: true,
+      climateControlled: true,
+      diningAreas: true,
+      loungeAreas: true,
+      privateBars: true,
+      flatScreenHDTVs: true
+    }
+  },
+
+  // ========== LOWER OUTFIELD BOX ==========
+  {
+    id: 'lower-outfield-133',
+    name: 'Lower Outfield Box 133',
+    level: 'field',
+    rows: generateRows(1, 20, 5, 14, 21),
+    sunExposure: {
+      morning: 35,
+      afternoon: 60,
+      evening: 75
+    },
+    covered: false,
+    vertices: [
+      { x: -80, y: 300, z: 5 },
+      { x: -60, y: 315, z: 5 },
+      { x: -60, y: 340, z: 20 },
+      { x: -80, y: 325, z: 20 }
+    ],
+    accessibility: 3,
+    viewQuality: 4,
+    features: {
+      lowerOutfield: true,
+      leftField: true,
+      valueSeating: true
+    }
+  },
+
+  // ========== BLEACHER BOX (Right Field Wall) ==========
+  {
+    id: 'bleacher-box-139',
+    name: 'Bleacher Box 139',
+    level: 'field',
+    rows: generateRows(1, 18, 8, 12, 24),
+    sunExposure: {
+      morning: 40,
+      afternoon: 65,
+      evening: 80
+    },
+    covered: false,
+    vertices: [
+      { x: 80, y: 300, z: 8 },
+      { x: 100, y: 290, z: 8 },
+      { x: 100, y: 315, z: 22 },
+      { x: 80, y: 325, z: 22 }
+    ],
+    accessibility: 3,
+    viewQuality: 3,
+    features: {
+      bleacherBox: true,
+      rightFieldWall: true,
+      robertoClementeWall: true,
+      wall21Feet: true
+    }
+  },
+
+  // ========== GRANDSTAND ==========
+  {
+    id: 'grandstand-209',
+    name: 'Grandstand 209',
+    level: 'lower',
+    rows: generateRows(1, 28, 14, 16, 23),
+    sunExposure: {
+      morning: 12,
+      afternoon: 28,
+      evening: 38
+    },
+    covered: true,
+    vertices: [
+      { x: -18, y: 85, z: 14 },
+      { x: -5, y: 85, z: 14 },
+      { x: -5, y: 120, z: 34 },
+      { x: -18, y: 120, z: 34 }
+    ],
+    accessibility: 4,
+    viewQuality: 4,
+    features: {
+      grandstand: true,
+      coveredSeating: true,
+      lowerLevel: true
+    }
+  },
+
+  {
+    id: 'grandstand-218',
+    name: 'Grandstand 218',
+    level: 'lower',
+    rows: generateRows(1, 28, 14, 16, 23),
+    sunExposure: {
+      morning: 18,
+      afternoon: 32,
+      evening: 42
+    },
+    covered: true,
+    vertices: [
+      { x: 45, y: 85, z: 14 },
+      { x: 60, y: 95, z: 14 },
+      { x: 60, y: 130, z: 34 },
+      { x: 45, y: 120, z: 34 }
+    ],
+    accessibility: 4,
+    viewQuality: 4,
+    features: {
+      grandstand: true,
+      firstBaseSide: true,
+      coveredSeating: true
+    }
+  },
+
+  // ========== UPPER DECK ==========
+  {
+    id: 'upper-deck-306',
+    name: 'Upper Deck 306',
+    level: 'upper',
+    rows: generateRows(1, 32, 34, 18, 28),
+    sunExposure: {
+      morning: 15,
+      afternoon: 30,
+      evening: 40
+    },
+    covered: true,
+    vertices: [
+      { x: -25, y: 120, z: 34 },
+      { x: -8, y: 120, z: 34 },
+      { x: -6, y: 170, z: 68 },
+      { x: -23, y: 170, z: 68 }
+    ],
+    accessibility: 3,
+    viewQuality: 3,
+    features: {
+      upperDeck: true,
+      skylineView: true,
+      coveredSeating: true
+    }
+  },
+
+  {
+    id: 'upper-deck-325',
+    name: 'Upper Deck 325',
+    level: 'upper',
+    rows: generateRows(1, 32, 34, 18, 28),
+    sunExposure: {
+      morning: 25,
+      afternoon: 45,
+      evening: 60
+    },
+    covered: false,
+    vertices: [
+      { x: -70, y: 160, z: 34 },
+      { x: -50, y: 175, z: 34 },
+      { x: -50, y: 225, z: 68 },
+      { x: -70, y: 210, z: 68 }
+    ],
+    accessibility: 3,
+    viewQuality: 3,
+    features: {
+      upperDeck: true,
+      thirdBaseLine: true,
+      openAir: true
+    }
+  },
+
+  // ========== ALL YOU CAN EAT SEATS ==========
+  {
+    id: 'all-you-can-eat',
+    name: 'All You Can Eat Seats',
+    level: 'upper',
+    rows: generateRows(1, 20, 36, 16, 27),
+    sunExposure: {
+      morning: 50,
+      afternoon: 75,
+      evening: 90
+    },
+    covered: false,
+    vertices: [
+      { x: 60, y: 340, z: 36 },
+      { x: 80, y: 330, z: 36 },
+      { x: 80, y: 360, z: 52 },
+      { x: 60, y: 370, z: 52 }
+    ],
+    accessibility: 3,
+    viewQuality: 3,
+    features: {
+      allYouCanEat: true,
+      rightFieldCorner: true,
+      unlimitedFood: true,
+      hotDogs: true,
+      nachos: true,
+      popcorn: true,
+      softDrinks: true
+    }
+  },
+
+  // ========== STANDING ROOM ONLY ==========
+  {
+    id: 'standing-room-rotunda',
+    name: 'Rotunda Standing Room',
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 20,
+      afternoon: 40,
+      evening: 55
+    },
+    covered: false,
+    vertices: [
+      { x: -40, y: 380, z: 10 },
+      { x: 40, y: 380, z: 10 },
+      { x: 40, y: 395, z: 10 },
+      { x: -40, y: 395, z: 10 }
+    ],
+    accessibility: 4,
+    viewQuality: 2,
+    features: {
+      standingRoom: true,
+      rotundaArea: true,
+      centerField: true
+    }
+  },
+
+  // ========== PIRATES CHARITIES DECK ==========
+  {
+    id: 'pirates-charities-deck',
+    name: 'Pirates Charities Deck',
+    level: 'deck',
+    rows: generateRows(1, 10, 25, 14, 20),
+    sunExposure: {
+      morning: 22,
+      afternoon: 42,
+      evening: 58
+    },
+    covered: false,
+    vertices: [
+      { x: -60, y: 200, z: 25 },
+      { x: -40, y: 215, z: 25 },
+      { x: -40, y: 235, z: 33 },
+      { x: -60, y: 220, z: 33 }
+    ],
+    accessibility: 4,
+    viewQuality: 4,
+    features: {
+      piratesCharities: true,
+      groupDeck: true,
+      fundraisingEvents: true
+    }
+  },
+
+  // ========== DIAMOND CLUB ==========
+  {
+    id: 'diamond-club',
+    name: 'Diamond Club',
+    level: 'field',
+    rows: generateRows(1, 6, -1, 12, 16),
+    sunExposure: {
+      morning: 3,
+      afternoon: 15,
+      evening: 25
+    },
+    covered: true,
+    vertices: [
+      { x: -8, y: 48, z: -1 },
+      { x: 8, y: 48, z: -1 },
+      { x: 8, y: 58, z: 3 },
+      { x: -8, y: 58, z: 3 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      diamondClub: true,
+      behindHomePlate: true,
+      premiumDining: true,
+      exclusiveAccess: true,
+      paddedSeats: true
+    }
+  },
+
+  // ========== HALL OF FAME CLUB ==========
+  {
+    id: 'hall-of-fame-club',
+    name: 'Hall of Fame Club',
+    level: 'club',
+    rows: generateRows(1, 10, 18, 14, 17),
+    sunExposure: {
+      morning: 5,
+      afternoon: 18,
+      evening: 28
+    },
+    covered: true,
+    vertices: [
+      { x: 25, y: 90, z: 18 },
+      { x: 45, y: 95, z: 18 },
+      { x: 45, y: 110, z: 26 },
+      { x: 25, y: 105, z: 26 }
+    ],
+    accessibility: 5,
+    viewQuality: 5,
+    features: {
+      hallOfFameClub: true,
+      piratesHistory: true,
+      memorabilia: true,
+      premiumLounge: true
+    }
+  },
+
+  // ========== LEGACY SQUARE ==========
+  {
+    id: 'legacy-square',
+    name: 'Legacy Square',
+    level: 'standing',
+    rows: [],
+    sunExposure: {
+      morning: 60,
+      afternoon: 85,
+      evening: 95
+    },
+    covered: false,
+    vertices: [
+      { x: -50, y: 420, z: 5 },
+      { x: -20, y: 430, z: 5 },
+      { x: -20, y: 450, z: 5 },
+      { x: -50, y: 440, z: 5 }
+    ],
+    accessibility: 4,
+    viewQuality: 2,
+    features: {
+      legacySquare: true,
+      leftFieldEntrance: true,
+      statues: true,
+      piratesLegends: true
+    }
+  }
+];

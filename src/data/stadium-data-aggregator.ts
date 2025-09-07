@@ -17,7 +17,23 @@ import { minuteMaidParkSections } from './sections/mlb/minute-maid-park';
 import { truistParkSections } from './sections/mlb/truist-park';
 import { coorsFieldSections } from './sections/mlb/coors-field';
 import { targetFieldSections } from './sections/mlb/target-field';
-// Import other MLB stadiums as they're created...
+import { greatAmericanBallParkSections } from './sections/mlb/great-american-ballpark';
+import { progressiveFieldSections } from './sections/mlb/progressive-field';
+import { citizensBankParkSections } from './sections/mlb/citizens-bank-park';
+import { nationalsParkSections } from './sections/mlb/nationals-park';
+import { globeLifeFieldSections } from './sections/mlb/globe-life-field';
+import { angelStadiumSections } from './sections/mlb/angel-stadium';
+import { americanFamilyFieldSections } from './sections/mlb/american-family-field';
+import { buschStadiumSections } from './sections/mlb/busch-stadium';
+import { chaseFieldSections } from './sections/mlb/chase-field';
+import { comericaParkSections } from './sections/mlb/comerica-park';
+import { georgeSteinbrennerFieldSections } from './sections/mlb/george-m-steinbrenner-field';
+import { guaranteedRateFieldSections } from './sections/mlb/guaranteed-rate-field';
+import { kauffmanStadiumSections } from './sections/mlb/kauffman-stadium';
+import { loanDepotParkSections } from './sections/mlb/loandepot-park';
+import { rogersCentreSections } from './sections/mlb/rogers-centre';
+import { sutterHealthParkSections } from './sections/mlb/sutter-health-park';
+import { tMobileParkSections } from './sections/mlb/t-mobile-park';
 
 // Import MiLB sections
 import { lasVegasBallparkSections } from './sections/milb/aaa/las-vegas-aviators';
@@ -47,6 +63,23 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'braves': truistParkSections,
   'rockies': coorsFieldSections,
   'twins': targetFieldSections,
+  'reds': greatAmericanBallParkSections,
+  'guardians': progressiveFieldSections,
+  'phillies': citizensBankParkSections,
+  'nationals': nationalsParkSections,
+  'rangers': globeLifeFieldSections,
+  'angels': angelStadiumSections,
+  'brewers': americanFamilyFieldSections,
+  'cardinals': buschStadiumSections,
+  'diamondbacks': chaseFieldSections,
+  'tigers': comericaParkSections,
+  'rays': georgeSteinbrennerFieldSections,
+  'white-sox': guaranteedRateFieldSections,
+  'royals': kauffmanStadiumSections,
+  'marlins': loanDepotParkSections,
+  'blue-jays': rogersCentreSections,
+  'athletics': sutterHealthParkSections,
+  'mariners': tMobileParkSections,
   
   // MiLB
   'las-vegas-aviators': lasVegasBallparkSections,

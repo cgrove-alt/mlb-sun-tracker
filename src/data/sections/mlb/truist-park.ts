@@ -516,6 +516,96 @@ export const truistParkSections: DetailedSection[] = [
     height: 20,
     rake: 0,
     viewQuality: 'fair'
+  },
+  
+  // ========== XFINITY ROOFTOP ==========
+  {
+    id: 'XFINITY',
+    name: 'Xfinity Rooftop',
+    level: 'upper',
+    baseAngle: 45,
+    angleSpan: 30,
+    rows: [],
+    vertices3D: [
+      { x: 120, y: 85, z: 380 },
+      { x: 160, y: 85, z: 400 },
+      { x: 165, y: 95, z: 410 },
+      { x: 125, y: 95, z: 390 }
+    ],
+    covered: false,
+    price: 'premium',
+    distance: 390,
+    height: 85,
+    rake: 0,
+    viewQuality: 'good'
+  },
+  
+  // ========== THE CHOPHOUSE ==========
+  {
+    id: 'CHOPHOUSE',
+    name: 'The Chophouse',
+    level: 'field',
+    baseAngle: 45,
+    angleSpan: 15,
+    rows: generateRows(1, 8, 25, 12, 26, false),
+    vertices3D: [
+      { x: 140, y: 12, z: 320 },
+      { x: 160, y: 12, z: 335 },
+      { x: 165, y: 32, z: 355 },
+      { x: 145, y: 32, z: 340 }
+    ],
+    covered: false,
+    price: 'luxury',
+    distance: 330,
+    height: 12,
+    rake: 26,
+    seatWidth: 22,
+    rowSpacing: 38,
+    viewQuality: 'excellent'
+  },
+  
+  // ========== TERRAPIN TAPROOM ==========
+  {
+    id: 'TERRAPIN',
+    name: 'Terrapin Taproom',
+    level: 'club',
+    baseAngle: 315,
+    angleSpan: 18,
+    rows: [],
+    vertices3D: [
+      { x: -140, y: 55, z: 340 },
+      { x: -120, y: 55, z: 355 },
+      { x: -120, y: 65, z: 365 },
+      { x: -140, y: 65, z: 350 }
+    ],
+    covered: true,
+    price: 'premium',
+    distance: 347,
+    height: 55,
+    rake: 0,
+    viewQuality: 'good'
+  },
+  
+  // ========== TOP OF THE CHOP ==========
+  {
+    id: 'TOPCHOP',
+    name: 'Top of the Chop',
+    level: 'upper',
+    baseAngle: 60,
+    angleSpan: 12,
+    rows: [],
+    vertices3D: [
+      { x: 100, y: 75, z: 360 },
+      { x: 115, y: 75, z: 370 },
+      { x: 115, y: 85, z: 380 },
+      { x: 100, y: 85, z: 370 }
+    ],
+    covered: false,
+    price: 'moderate',
+    distance: 365,
+    height: 75,
+    rake: 0,
+    viewQuality: 'fair'
   }
 ];
 

@@ -1,437 +1,551 @@
-// Dodger Stadium - Complete Section Data with 3D Geometry
-// Los Angeles, CA - Opened 1962 - Capacity 56,000
-// Home of the Los Angeles Dodgers
+import { DetailedSection, RowDetail, Vector3D } from '../../../types/stadium-complete';
 
-import { DetailedSection, Vector3D, RowDetail } from '../../../types/stadium-complete';
+// Dodger Stadium - Los Angeles Dodgers
+// Opened: 1962
+// Capacity: 56,000
+// Orientation: 25° (Home plate to center field)
+// Famous features: Chavez Ravine location, Think Blue sign, All You Can Eat Pavilion
 
-// Helper to generate row details
-function generateRows(
-  startRow: number | string,
-  endRow: number | string,
-  seatsPerRow: number,
-  baseElevation: number,
-  rake: number,
-  covered: boolean = false
-): RowDetail[] {
+const generateRows = (startRow: string, endRow: string, seatsPerRow: number, startElevation: number, depthPerRow: number, rakeAngle: number = 12): RowDetail[] => {
   const rows: RowDetail[] = [];
-  const rowHeight = 2.5;
-  const rowDepth = 2.8;
+  const rowLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'BB', 'CC', 'DD', 'EE', 'FF', 'GG', 'HH', 'JJ', 'KK', 'LL'];
   
-  const isLetterRows = typeof startRow === 'string';
+  const startIdx = rowLetters.indexOf(startRow);
+  const endIdx = rowLetters.indexOf(endRow);
   
-  if (isLetterRows) {
-    const startCode = (startRow as string).charCodeAt(0);
-    const endCode = (endRow as string).charCodeAt(0);
+  for (let i = startIdx; i <= endIdx; i++) {
+    const rowNum = i - startIdx;
+    const verticalRise = Math.sin(rakeAngle * Math.PI / 180) * depthPerRow * rowNum;
     
-    for (let i = startCode; i <= endCode; i++) {
-      const rowNum = i - startCode;
-      rows.push({
-        rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
-      });
-    }
-  } else {
-    for (let i = startRow as number; i <= (endRow as number); i++) {
-      const rowNum = i - (startRow as number);
-      rows.push({
-        rowNumber: i.toString(),
-        seats: seatsPerRow,
-        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
-        depth: rowNum * rowDepth,
-        covered: covered,
-        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
-      });
-    }
+    rows.push({
+      rowNumber: rowLetters[i],
+      seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
+      elevation: startElevation + verticalRise,
+      depth: rowNum * depthPerRow,
+      covered: false
+    });
   }
   
   return rows;
-}
+};
 
-// Dodger Stadium Sections
 export const dodgerStadiumSections: DetailedSection[] = [
-  // ========== FIELD LEVEL ==========
+  // Dugout Club - Behind Home Plate
   {
-    id: '1FD',
-    name: 'Field Level 1',
-    level: 'field',
-    baseAngle: 0,
-    angleSpan: 9,
-    rows: generateRows('A', 'Z', 22, 0, 20, false),
-    vertices3D: [
-      { x: -15, y: 65, z: 0 },
-      { x: 0, y: 65, z: 0 },
-      { x: 0, y: 95, z: 16 },
-      { x: -15, y: 95, z: 16 }
-    ],
+    id: 'dugout-club',
+    name: 'Dugout Club',
+    level: 'Field',
+    orientation: 'home-plate',
+    rows: generateRows('A', 'N', 24, 2, 2.5, 10),
+    vertices: [
+      { x: -30, y: 2, z: 10 },
+      { x: 30, y: 2, z: 10 },
+      { x: 35, y: 35, z: 45 },
+      { x: -35, y: 35, z: 45 }
+    ] as Vector3D[],
+    premium: true,
     covered: false,
-    price: 'premium',
-    distance: 80,
-    height: 0,
-    rake: 20,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '15FD',
-    name: 'Field Level 15',
-    level: 'field',
-    baseAngle: 45,
-    angleSpan: 9,
-    rows: generateRows('A', 'Z', 22, 0, 20, false),
-    vertices3D: [
-      { x: 65, y: 65, z: 0 },
-      { x: 80, y: 80, z: 0 },
-      { x: 95, y: 95, z: 16 },
-      { x: 80, y: 80, z: 16 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 92,
-    height: 0,
-    rake: 20,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  // ========== LOGE LEVEL ==========
-  {
-    id: '101LG',
-    name: 'Loge Level 101',
-    level: 'lower',
-    baseAngle: 0,
-    angleSpan: 10,
-    rows: generateRows('A', 'U', 24, 25, 24, false),
-    vertices3D: [
-      { x: -20, y: 100, z: 25 },
-      { x: 0, y: 100, z: 25 },
-      { x: 0, y: 140, z: 48 },
-      { x: -20, y: 140, z: 48 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 120,
-    height: 25,
-    rake: 24,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '135LG',
-    name: 'Loge Level 135',
-    level: 'lower',
-    baseAngle: 90,
-    angleSpan: 10,
-    rows: generateRows('A', 'U', 24, 25, 24, false),
-    vertices3D: [
-      { x: 100, y: 0, z: 25 },
-      { x: 100, y: 20, z: 25 },
-      { x: 140, y: 20, z: 48 },
-      { x: 140, y: 0, z: 48 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 120,
-    height: 25,
-    rake: 24,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
-
-  // ========== CLUB LEVEL ==========
-  {
-    id: 'C1',
-    name: 'Club Level 1',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 12,
-    rows: generateRows('A', 'M', 18, 48, 22, true),
-    vertices3D: [
-      { x: -25, y: 140, z: 48 },
-      { x: 0, y: 140, z: 48 },
-      { x: 0, y: 170, z: 65 },
-      { x: -25, y: 170, z: 65 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['H', 'I', 'J', 'K', 'L', 'M'],
-      coveragePercentage: 46,
-      overhangDepth: 20,
-      overhangHeight: 22,
-      material: 'solid'
-    },
-    price: 'luxury',
-    distance: 155,
-    height: 48,
-    rake: 22,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 6,
-      aisleSeats: true,
-      tunnelAccess: ['Club Entrance North', 'Club Entrance South']
+    obstructionType: 'none',
+    accessibilityRating: 5,
+    features: {
+      cushionedSeats: true,
+      inSeatService: true,
+      privateRestrooms: true,
+      exclusiveAccess: true,
+      dugoutLevel: true
     }
   },
-
-  // ========== RESERVE LEVEL ==========
+  
+  // Field Level - First Base
   {
-    id: '1RS',
-    name: 'Reserve Level 1',
-    level: 'upper',
-    baseAngle: 0,
-    angleSpan: 11,
-    rows: generateRows(1, 38, 26, 65, 28, true),
-    vertices3D: [
-      { x: -30, y: 170, z: 65 },
-      { x: -10, y: 170, z: 65 },
-      { x: -5, y: 230, z: 115 },
-      { x: -25, y: 230, z: 115 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38'],
-      coveragePercentage: 50,
-      overhangDepth: 30,
-      overhangHeight: 28,
-      material: 'solid'
-    },
-    price: 'value',
-    distance: 200,
-    height: 65,
-    rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
-  },
-
-  {
-    id: '25RS',
-    name: 'Reserve Level 25',
-    level: 'upper',
-    baseAngle: 90,
-    angleSpan: 11,
-    rows: generateRows(1, 38, 26, 65, 28, true),
-    vertices3D: [
-      { x: 170, y: 30, z: 65 },
-      { x: 170, y: 10, z: 65 },
-      { x: 230, y: 5, z: 115 },
-      { x: 230, y: 25, z: 115 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38'],
-      coveragePercentage: 50,
-      overhangDepth: 30,
-      overhangHeight: 28,
-      material: 'solid'
-    },
-    price: 'value',
-    distance: 200,
-    height: 65,
-    rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'fair'
-  },
-
-  // ========== TOP DECK ==========
-  {
-    id: '1TD',
-    name: 'Top Deck 1',
-    level: 'upper',
-    baseAngle: 0,
-    angleSpan: 12,
-    rows: generateRows(1, 16, 28, 115, 32, true),
-    vertices3D: [
-      { x: -35, y: 230, z: 115 },
-      { x: -15, y: 230, z: 115 },
-      { x: -10, y: 270, z: 145 },
-      { x: -30, y: 270, z: 145 }
-    ],
-    covered: true,
-    price: 'value',
-    distance: 250,
-    height: 115,
-    rake: 32,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  // ========== PAVILIONS ==========
-  {
-    id: 'LFP',
-    name: 'Left Field Pavilion',
-    level: 'field',
-    baseAngle: 225,
-    angleSpan: 20,
-    rows: generateRows(1, 30, 30, 8, 22, false),
-    vertices3D: [
-      { x: -180, y: 280, z: 8 },
-      { x: -140, y: 320, z: 8 },
-      { x: -130, y: 350, z: 35 },
-      { x: -170, y: 310, z: 35 }
-    ],
+    id: 'field-level-1b',
+    name: 'Field Level - First Base',
+    level: 'Field',
+    orientation: 'first-base',
+    rows: generateRows('A', 'Z', 22, 2, 2.5, 11),
+    vertices: [
+      { x: 30, y: 2, z: 10 },
+      { x: 118, y: 2, z: 29 },
+      { x: 123, y: 65, z: 92 },
+      { x: 35, y: 65, z: 73 }
+    ] as Vector3D[],
+    premium: false,
     covered: false,
-    price: 'value',
-    distance: 330,
-    height: 8,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
+    obstructionType: 'none',
+    accessibilityRating: 4
   },
-
+  
+  // Field Level - Third Base
   {
-    id: 'RFP',
-    name: 'Right Field Pavilion',
-    level: 'field',
-    baseAngle: 135,
-    angleSpan: 20,
-    rows: generateRows(1, 30, 30, 8, 22, false),
-    vertices3D: [
-      { x: 180, y: 280, z: 8 },
-      { x: 140, y: 320, z: 8 },
-      { x: 130, y: 350, z: 35 },
-      { x: 170, y: 310, z: 35 }
-    ],
+    id: 'field-level-3b',
+    name: 'Field Level - Third Base',
+    level: 'Field',
+    orientation: 'third-base',
+    rows: generateRows('A', 'Z', 22, 2, 2.5, 11),
+    vertices: [
+      { x: -30, y: 2, z: 10 },
+      { x: -118, y: 2, z: 29 },
+      { x: -123, y: 65, z: 92 },
+      { x: -35, y: 65, z: 73 }
+    ] as Vector3D[],
+    premium: false,
     covered: false,
-    price: 'value',
-    distance: 330,
-    height: 8,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
+    obstructionType: 'none',
+    accessibilityRating: 4
   },
-
-  // ========== BASELINE CLUB ==========
+  
+  // Baseline Club - First Base
   {
-    id: 'BC1',
-    name: 'Baseline Club 1',
-    level: 'club',
-    baseAngle: 45,
-    angleSpan: 8,
-    rows: generateRows('A', 'J', 16, 30, 18, true),
-    vertices3D: [
-      { x: 80, y: 80, z: 30 },
-      { x: 95, y: 65, z: 30 },
-      { x: 105, y: 75, z: 42 },
-      { x: 90, y: 90, z: 42 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 113,
-    height: 30,
-    rake: 18,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: 'BC3',
-    name: 'Baseline Club 3',
-    level: 'club',
-    baseAngle: 315,
-    angleSpan: 8,
-    rows: generateRows('A', 'J', 16, 30, 18, true),
-    vertices3D: [
-      { x: -80, y: 80, z: 30 },
-      { x: -95, y: 65, z: 30 },
-      { x: -105, y: 75, z: 42 },
-      { x: -90, y: 90, z: 42 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 113,
-    height: 30,
-    rake: 18,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent'
-  },
-
-  // ========== DUGOUT CLUB ==========
-  {
-    id: 'DG1',
-    name: 'Dugout Club 1',
-    level: 'field',
-    baseAngle: 0,
-    angleSpan: 6,
-    rows: generateRows('A', 'D', 12, -3, 15, false), // Below field level
-    vertices3D: [
-      { x: -10, y: 50, z: -3 },
-      { x: 0, y: 50, z: -3 },
-      { x: 0, y: 60, z: 2 },
-      { x: -10, y: 60, z: 2 }
-    ],
+    id: 'baseline-club-1b',
+    name: 'Baseline Club - First Base',
+    level: 'Club',
+    orientation: 'first-base',
+    rows: generateRows('A', 'L', 26, 70, 3, 12),
+    vertices: [
+      { x: 40, y: 70, z: 75 },
+      { x: 125, y: 70, z: 95 },
+      { x: 130, y: 106, z: 131 },
+      { x: 45, y: 106, z: 111 }
+    ] as Vector3D[],
+    premium: true,
     covered: false,
-    price: 'luxury',
-    distance: 55,
-    height: -3,
-    rake: 15,
-    seatWidth: 24,
-    rowSpacing: 40,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 4,
-      aisleSeats: true,
-      tunnelAccess: ['Dugout Club Entrance']
+    obstructionType: 'none',
+    accessibilityRating: 5,
+    features: {
+      climateControlled: true,
+      paddedSeats: true,
+      privateBar: true,
+      exclusiveDining: true
+    }
+  },
+  
+  // Baseline Club - Third Base
+  {
+    id: 'baseline-club-3b',
+    name: 'Baseline Club - Third Base',
+    level: 'Club',
+    orientation: 'third-base',
+    rows: generateRows('A', 'L', 26, 70, 3, 12),
+    vertices: [
+      { x: -40, y: 70, z: 75 },
+      { x: -125, y: 70, z: 95 },
+      { x: -130, y: 106, z: 131 },
+      { x: -45, y: 106, z: 111 }
+    ] as Vector3D[],
+    premium: true,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 5,
+    features: {
+      climateControlled: true,
+      paddedSeats: true,
+      privateBar: true,
+      exclusiveDining: true
+    }
+  },
+  
+  // Loge Level - Behind Home
+  {
+    id: 'loge-home',
+    name: 'Loge Level - Home Plate',
+    level: 'Loge',
+    orientation: 'home-plate',
+    rows: generateRows('A', 'V', 24, 110, 3, 13),
+    vertices: [
+      { x: -40, y: 110, z: 105 },
+      { x: 40, y: 110, z: 105 },
+      { x: 45, y: 176, z: 171 },
+      { x: -45, y: 176, z: 171 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 3
+  },
+  
+  // Loge Level - First Base
+  {
+    id: 'loge-1b',
+    name: 'Loge Level - First Base',
+    level: 'Loge',
+    orientation: 'first-base',
+    rows: generateRows('A', 'W', 25, 110, 3, 14),
+    vertices: [
+      { x: 45, y: 110, z: 115 },
+      { x: 130, y: 110, z: 140 },
+      { x: 135, y: 179, z: 209 },
+      { x: 50, y: 179, z: 184 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 3
+  },
+  
+  // Loge Level - Third Base
+  {
+    id: 'loge-3b',
+    name: 'Loge Level - Third Base',
+    level: 'Loge',
+    orientation: 'third-base',
+    rows: generateRows('A', 'W', 25, 110, 3, 14),
+    vertices: [
+      { x: -45, y: 110, z: 115 },
+      { x: -130, y: 110, z: 140 },
+      { x: -135, y: 179, z: 209 },
+      { x: -50, y: 179, z: 184 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 3
+  },
+  
+  // Reserve Level - Behind Home
+  {
+    id: 'reserve-home',
+    name: 'Reserve Level - Home Plate',
+    level: 'Reserve',
+    orientation: 'home-plate',
+    rows: generateRows('A', 'Y', 26, 180, 3.5, 15),
+    vertices: [
+      { x: -45, y: 180, z: 175 },
+      { x: 45, y: 180, z: 175 },
+      { x: 50, y: 281, z: 276 },
+      { x: -50, y: 281, z: 276 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 2
+  },
+  
+  // Reserve Level - First Base
+  {
+    id: 'reserve-1b',
+    name: 'Reserve Level - First Base',
+    level: 'Reserve',
+    orientation: 'first-base',
+    rows: generateRows('A', 'Z', 28, 180, 3.5, 16),
+    vertices: [
+      { x: 50, y: 180, z: 185 },
+      { x: 135, y: 180, z: 215 },
+      { x: 140, y: 288, z: 323 },
+      { x: 55, y: 288, z: 293 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 2
+  },
+  
+  // Reserve Level - Third Base
+  {
+    id: 'reserve-3b',
+    name: 'Reserve Level - Third Base',
+    level: 'Reserve',
+    orientation: 'third-base',
+    rows: generateRows('A', 'Z', 28, 180, 3.5, 16),
+    vertices: [
+      { x: -50, y: 180, z: 185 },
+      { x: -135, y: 180, z: 215 },
+      { x: -140, y: 288, z: 323 },
+      { x: -55, y: 288, z: 293 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 2
+  },
+  
+  // Top Deck - Behind Home
+  {
+    id: 'top-deck-home',
+    name: 'Top Deck - Home Plate',
+    level: 'Top',
+    orientation: 'home-plate',
+    rows: generateRows('A', 'LL', 30, 250, 3.5, 18),
+    vertices: [
+      { x: -50, y: 250, z: 245 },
+      { x: 50, y: 250, z: 245 },
+      { x: 55, y: 385, z: 380 },
+      { x: -55, y: 385, z: 380 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 1
+  },
+  
+  // Top Deck - First Base
+  {
+    id: 'top-deck-1b',
+    name: 'Top Deck - First Base',
+    level: 'Top',
+    orientation: 'first-base',
+    rows: generateRows('A', 'LL', 32, 250, 3.5, 19),
+    vertices: [
+      { x: 55, y: 250, z: 255 },
+      { x: 140, y: 250, z: 290 },
+      { x: 145, y: 385, z: 425 },
+      { x: 60, y: 385, z: 390 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 1
+  },
+  
+  // Top Deck - Third Base
+  {
+    id: 'top-deck-3b',
+    name: 'Top Deck - Third Base',
+    level: 'Top',
+    orientation: 'third-base',
+    rows: generateRows('A', 'LL', 32, 250, 3.5, 19),
+    vertices: [
+      { x: -55, y: 250, z: 255 },
+      { x: -140, y: 250, z: 290 },
+      { x: -145, y: 385, z: 425 },
+      { x: -60, y: 385, z: 390 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 1
+  },
+  
+  // Left Field Pavilion - Lower
+  {
+    id: 'left-pavilion-lower',
+    name: 'Left Field Pavilion - Lower',
+    level: 'Pavilion',
+    orientation: 'left-field',
+    rows: generateRows('A', 'T', 25, 20, 2.5, 20),
+    vertices: [
+      { x: -160, y: 20, z: 290 },
+      { x: -130, y: 20, z: 330 },
+      { x: -135, y: 70, z: 380 },
+      { x: -165, y: 70, z: 340 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 3
+  },
+  
+  // Left Field Pavilion - Upper
+  {
+    id: 'left-pavilion-upper',
+    name: 'Left Field Pavilion - Upper',
+    level: 'Pavilion',
+    orientation: 'left-field',
+    rows: generateRows('A', 'R', 22, 75, 2.5, 22),
+    vertices: [
+      { x: -165, y: 75, z: 345 },
+      { x: -135, y: 75, z: 385 },
+      { x: -140, y: 120, z: 430 },
+      { x: -170, y: 120, z: 390 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 2
+  },
+  
+  // Right Field Pavilion - Lower (All You Can Eat)
+  {
+    id: 'right-pavilion-ayce',
+    name: 'All You Can Eat Pavilion',
+    level: 'Pavilion',
+    orientation: 'right-field',
+    rows: generateRows('A', 'T', 25, 20, 2.5, 20),
+    vertices: [
+      { x: 130, y: 20, z: 290 },
+      { x: 160, y: 20, z: 330 },
+      { x: 165, y: 70, z: 380 },
+      { x: 135, y: 70, z: 340 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 3,
+    features: {
+      allYouCanEat: true,
+      dodgerDogs: true,
+      nachos: true,
+      popcorn: true,
+      peanuts: true,
+      softDrinks: true
+    }
+  },
+  
+  // Right Field Pavilion - Upper
+  {
+    id: 'right-pavilion-upper',
+    name: 'Right Field Pavilion - Upper',
+    level: 'Pavilion',
+    orientation: 'right-field',
+    rows: generateRows('A', 'R', 22, 75, 2.5, 22),
+    vertices: [
+      { x: 135, y: 75, z: 345 },
+      { x: 165, y: 75, z: 385 },
+      { x: 170, y: 120, z: 430 },
+      { x: 140, y: 120, z: 390 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 2
+  },
+  
+  // Coca-Cola All Season Patio
+  {
+    id: 'coca-cola-patio',
+    name: 'Coca-Cola All Season Patio',
+    level: 'Outfield',
+    orientation: 'right-center',
+    rows: [
+      { rowNumber: 'Patio', seats: 100, elevation: 35, depth: 0, covered: false }
+    ],
+    vertices: [
+      { x: 80, y: 35, z: 360 },
+      { x: 120, y: 35, z: 380 },
+      { x: 120, y: 35, z: 400 },
+      { x: 80, y: 35, z: 380 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 4,
+    features: {
+      patioSeating: true,
+      standingRoom: true,
+      drinkRails: true,
+      socialArea: true
+    }
+  },
+  
+  // Stadium Club
+  {
+    id: 'stadium-club',
+    name: 'Stadium Club',
+    level: 'Club',
+    orientation: 'home-plate',
+    rows: [
+      { rowNumber: 'Club', seats: 150, elevation: 90, depth: 0, covered: true }
+    ],
+    vertices: [
+      { x: -50, y: 90, z: 85 },
+      { x: 50, y: 90, z: 85 },
+      { x: 50, y: 100, z: 95 },
+      { x: -50, y: 100, z: 95 }
+    ] as Vector3D[],
+    premium: true,
+    covered: true,
+    obstructionType: 'suite-level',
+    accessibilityRating: 5,
+    features: {
+      climateControlled: true,
+      fullBar: true,
+      premiumDining: true,
+      privateEntrance: true,
+      loungeSeating: true
+    }
+  },
+  
+  // Lexus Dugout Club
+  {
+    id: 'lexus-dugout-club',
+    name: 'Lexus Dugout Club',
+    level: 'Field',
+    orientation: 'first-base',
+    rows: generateRows('A', 'F', 18, 3, 2.5, 8),
+    vertices: [
+      { x: 50, y: 3, z: 15 },
+      { x: 70, y: 3, z: 18 },
+      { x: 75, y: 18, z: 33 },
+      { x: 55, y: 18, z: 30 }
+    ] as Vector3D[],
+    premium: true,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 5,
+    features: {
+      dugoutLevel: true,
+      fieldAccess: true,
+      premiumSeating: true,
+      inSeatService: true,
+      meetAndGreet: true
+    }
+  },
+  
+  // Think Blue Deck
+  {
+    id: 'think-blue-deck',
+    name: 'Think Blue Deck',
+    level: 'Outfield',
+    orientation: 'center-field',
+    rows: [
+      { rowNumber: 'Deck', seats: 200, elevation: 40, depth: 0, covered: false }
+    ],
+    vertices: [
+      { x: -25, y: 40, z: 395 },
+      { x: 25, y: 40, z: 395 },
+      { x: 25, y: 40, z: 415 },
+      { x: -25, y: 40, z: 415 }
+    ] as Vector3D[],
+    premium: false,
+    covered: false,
+    obstructionType: 'none',
+    accessibilityRating: 4,
+    features: {
+      standingRoom: true,
+      partyDeck: true,
+      groupSeating: true,
+      thinkBlueSign: true
+    }
+  },
+  
+  // Tommy Lasorda's Trattoria
+  {
+    id: 'tommy-lasorda-trattoria',
+    name: "Tommy Lasorda's Trattoria",
+    level: 'Restaurant',
+    orientation: 'right-field',
+    rows: [
+      { rowNumber: 'Tables', seats: 60, elevation: 45, depth: 0, covered: true }
+    ],
+    vertices: [
+      { x: 100, y: 45, z: 340 },
+      { x: 130, y: 45, z: 360 },
+      { x: 130, y: 45, z: 380 },
+      { x: 100, y: 45, z: 360 }
+    ] as Vector3D[],
+    premium: true,
+    covered: true,
+    obstructionType: 'restaurant',
+    accessibilityRating: 4,
+    features: {
+      italianRestaurant: true,
+      fullService: true,
+      climateControlled: true,
+      reservationsRequired: true
     }
   }
 ];
 
-// Calculate total capacity
-export const dodgerStadiumCapacity = dodgerStadiumSections.reduce((total, section) => {
-  const sectionCapacity = section.rows.reduce((sectionTotal, row) => sectionTotal + row.seats, 0);
-  return total + sectionCapacity;
-}, 0);
+// Stadium features
+export const dodgerStadiumFeatures = {
+  retractableRoof: false,
+  roofHeight: 0, // Open air stadium
+  roofMaterial: {
+    opacity: 0,
+    reflectivity: 0
+  }
+};
 
-// Export section map for quick lookup
+// Export section map for easy lookup
 export const dodgerStadiumSectionMap = new Map(
   dodgerStadiumSections.map(section => [section.id, section])
 );
-
-// Stadium-specific features
-export const dodgerStadiumFeatures = {
-  wavinRows: {
-    location: 'pavilions',
-    capacity: 1800,
-    allYouCanEat: true
-  },
-  topDeck: {
-    elevation: 115, // feet
-    views: 'spectacular',
-    sunsetViews: true
-  },
-  hexagonalScoreboard: {
-    year: 1980,
-    type: 'video',
-    iconic: true
-  },
-  parking: {
-    terraced: true,
-    levels: 16,
-    colorCoded: true
-  },
-  chavezRavine: {
-    builtInto: 'hillside',
-    uniqueConstruction: true
-  }
-};
