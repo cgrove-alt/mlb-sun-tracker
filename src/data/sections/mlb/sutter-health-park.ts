@@ -36,13 +36,6 @@ export const sutterHealthParkConfig = {
     centerField: 405,
     rightCenter: 375,
     rightField: 325
-  },
-  features: {
-    temporaryMLB: true,
-    riverCats: true,
-    grassBerm: true,
-    solonClub: true,
-    legacyClub: true
   }
 };
 
@@ -59,22 +52,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 70
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -8, y: 48, z: -1 },
       { x: 8, y: 48, z: -1 },
       { x: 8, y: 58, z: 3 },
       { x: -8, y: 58, z: 3 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      athleticsDugoutClub: true,
-      behindHomePlate: true,
-      premiumSeating: true,
-      temporaryMLBUpgrade: true,
-      paddedSeats: true
-    }
+    viewQuality: 5
   },
 
   // ========== HOME PLATE BOX ==========
@@ -88,20 +74,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 50,
       evening: 75
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -25, y: 52, z: 2 },
       { x: 25, y: 52, z: 2 },
       { x: 30, y: 85, z: 14 },
       { x: -30, y: 85, z: 14 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      homePlateBox: true,
-      cushionedSeats: true,
-      closestToField: true
-    }
+    viewQuality: 5
   },
 
   // ========== FIELD BOX - FIRST BASE ==========
@@ -115,20 +96,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 55,
       evening: 70
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 25, y: 52, z: 2 },
       { x: 95, y: 52, z: 2 },
       { x: 100, y: 90, z: 18 },
       { x: 30, y: 90, z: 18 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldBox: true,
-      firstBaseLine: true,
-      closeToAction: true
-    }
+    viewQuality: 5
   },
 
   // ========== FIELD BOX - THIRD BASE ==========
@@ -142,20 +118,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -25, y: 52, z: 2 },
       { x: -95, y: 52, z: 2 },
       { x: -100, y: 90, z: 18 },
       { x: -30, y: 90, z: 18 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldBox: true,
-      thirdBaseLine: true,
-      sunsetViews: true
-    }
+    viewQuality: 5
   },
 
   // ========== SKY RIVER CASINO SOLON CLUB ==========
@@ -169,26 +140,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 35,
       evening: 60
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 60, y: 100, z: 18 },
       { x: 85, y: 110, z: 18 },
       { x: 85, y: 135, z: 26 },
       { x: 60, y: 125, z: 26 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      solonClub: true,
-      redesigned2025: true,
-      premiumSeating: true,
-      upgradedBars: true,
-      actionStationFood: true,
-      stylishTables: true,
-      capacity150: true,
-      rightFieldLine: true,
-      exclusiveBar: true
-    }
+    viewQuality: 5
   },
 
   // ========== JACKSON RANCHERIA LEGACY CLUB ==========
@@ -202,26 +162,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 30,
       evening: 55
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -60, y: 100, z: 20 },
       { x: -35, y: 115, z: 20 },
       { x: -35, y: 140, z: 28 },
       { x: -60, y: 125, z: 28 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      legacyClub: true,
-      redesigned2025: true,
-      privateBalcony: true,
-      bigScreen15Foot: true,
-      climateControlled: true,
-      comfortSeating: true,
-      complimentaryDining: true,
-      chefInspired: true,
-      awardWinningBeerWine: true
-    }
+    viewQuality: 5
   },
 
   // ========== GILT-EDGE CLUB ==========
@@ -235,27 +184,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 85
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -30, y: 360, z: 14 },
       { x: 30, y: 360, z: 14 },
       { x: 30, y: 385, z: 22 },
       { x: -30, y: 385, z: 22 }
     ],
     accessibility: 5,
-    viewQuality: 4,
-    features: {
-      giltEdgeClub: true,
-      openAirHospitality: true,
-      drinkRails: true,
-      barstoolSeating: true,
-      highPoweredFans: true,
-      modernFurniture: true,
-      greenWall: true,
-      outfieldEdge: true,
-      privateBar: true,
-      houseSelectedBeerWine: true
-    }
+    viewQuality: 4
   },
 
   // ========== PARTY DECK ==========
@@ -269,23 +206,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 70,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 70, y: 340, z: 16 },
       { x: 100, y: 330, z: 16 },
       { x: 100, y: 360, z: 16 },
       { x: 70, y: 370, z: 16 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      partyDeck: true,
-      rightField: true,
-      groupArea: true,
-      standingRoom: true,
-      socialSpace: true,
-      addedIn2005: true
-    }
+    viewQuality: 3
   },
 
   // ========== RESERVED SEATING - HOME ==========
@@ -299,20 +228,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 52,
       evening: 72
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -35, y: 85, z: 12 },
       { x: 35, y: 85, z: 12 },
       { x: 40, y: 125, z: 28 },
       { x: -40, y: 125, z: 28 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      reservedSeating: true,
-      behindHomePlate: true,
-      mainConcourse: true
-    }
+    viewQuality: 4
   },
 
   // ========== GRASS BERM (Left Field) ==========
@@ -326,22 +250,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 75,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -100, y: 330, z: 3 },
       { x: -70, y: 350, z: 3 },
       { x: -70, y: 380, z: 8 },
       { x: -100, y: 360, z: 8 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      grassBerm: true,
-      leftField: true,
-      familyFriendly: true,
-      blanketSeating: true,
-      picnicArea: true
-    }
+    viewQuality: 3
   },
 
   // ========== GRASS BERM (Right Field) ==========
@@ -355,21 +272,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 80,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 70, y: 330, z: 3 },
       { x: 100, y: 350, z: 3 },
       { x: 100, y: 380, z: 8 },
       { x: 70, y: 360, z: 8 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      grassBerm: true,
-      rightField: true,
-      lawnSeating: true,
-      valueOption: true
-    }
+    viewQuality: 3
   },
 
   // ========== RIVER CATS LANDING ==========
@@ -383,22 +294,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -60, y: 380, z: 10 },
       { x: 60, y: 380, z: 10 },
       { x: 60, y: 400, z: 10 },
       { x: -60, y: 400, z: 10 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      riverCatsLanding: true,
-      centerField: true,
-      standingRoom: true,
-      concessions: true,
-      tripleAHeritage: true
-    }
+    viewQuality: 3
   },
 
   // ========== BLEACHER RESERVED (Left) ==========
@@ -412,20 +316,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 70,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -90, y: 300, z: 8 },
       { x: -60, y: 320, z: 8 },
       { x: -60, y: 350, z: 20 },
       { x: -90, y: 330, z: 20 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      bleacherSeating: true,
-      leftField: true,
-      affordableOption: true
-    }
+    viewQuality: 3
   },
 
   // ========== BLEACHER RESERVED (Right) ==========
@@ -439,20 +338,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 75,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 60, y: 300, z: 8 },
       { x: 90, y: 320, z: 8 },
       { x: 90, y: 350, z: 20 },
       { x: 60, y: 330, z: 20 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      bleacherSeating: true,
-      rightField: true,
-      valueSeating: true
-    }
+    viewQuality: 3
   },
 
   // ========== TOYOTA TERRACE ==========
@@ -466,21 +360,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 40,
       evening: 65
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -20, y: 100, z: 22 },
       { x: 20, y: 100, z: 22 },
       { x: 20, y: 125, z: 32 },
       { x: -20, y: 125, z: 32 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      toyotaTerrace: true,
-      terraceLevel: true,
-      coveredSeating: true,
-      corporateSponsor: true
-    }
+    viewQuality: 4
   },
 
   // ========== SUITES LEVEL ==========
@@ -494,22 +382,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 25,
       evening: 50
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -50, y: 95, z: 28 },
       { x: 50, y: 95, z: 28 },
       { x: 50, y: 115, z: 28 },
       { x: -50, y: 115, z: 28 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      suitesLevel: true,
-      privateBoxes: true,
-      cateringService: true,
-      climateControlled: true,
-      exclusiveAccess: true
-    }
+    viewQuality: 5
   },
 
   // ========== COORS LIGHT LANDING ==========
@@ -523,22 +404,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -70, y: 340, z: 12 },
       { x: -40, y: 355, z: 12 },
       { x: -40, y: 375, z: 12 },
       { x: -70, y: 360, z: 12 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      coorsLightLanding: true,
-      leftField: true,
-      barArea: true,
-      standingRoom: true,
-      drinkSpecials: true
-    }
+    viewQuality: 3
   },
 
   // ========== KAISER PERMANENTE PLAZA ==========
@@ -552,22 +426,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 85,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -30, y: 405, z: 5 },
       { x: 30, y: 405, z: 5 },
       { x: 30, y: 430, z: 5 },
       { x: -30, y: 430, z: 5 }
     ],
     accessibility: 5,
-    viewQuality: 2,
-    features: {
-      kaiserPlaza: true,
-      beyondCenterField: true,
-      familyArea: true,
-      playArea: true,
-      picnicTables: true
-    }
+    viewQuality: 2
   },
 
   // ========== RALEY'S LANDING ==========
@@ -581,22 +448,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 40, y: 340, z: 12 },
       { x: 70, y: 355, z: 12 },
       { x: 70, y: 375, z: 12 },
       { x: 40, y: 360, z: 12 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      raleysLanding: true,
-      rightField: true,
-      standingRoom: true,
-      localSponsor: true,
-      groupArea: true
-    }
+    viewQuality: 3
   },
 
   // ========== CLUB RESERVED ==========
@@ -610,21 +470,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 38,
       evening: 62
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 25, y: 95, z: 16 },
       { x: 55, y: 100, z: 16 },
       { x: 55, y: 120, z: 24 },
       { x: 25, y: 115, z: 24 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      clubReserved: true,
-      firstBaseSide: true,
-      widerSeats: true,
-      clubAccess: true
-    }
+    viewQuality: 4
   },
 
   // ========== TEMPORARY A'S FEATURES ==========
@@ -638,23 +492,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 80,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -80, y: 320, z: 10 },
       { x: -50, y: 335, z: 10 },
       { x: -50, y: 355, z: 18 },
       { x: -80, y: 340, z: 18 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      asDrumlineSection: true,
-      temporaryFeature: true,
-      leftFieldBleachers: true,
-      fanSection: true,
-      drums2025: true,
-      oaklandTradition: true
-    }
+    viewQuality: 3
   },
 
   // ========== STANDING ROOM OUTFIELD ==========
@@ -668,22 +514,15 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 75,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -50, y: 390, z: 8 },
       { x: 50, y: 390, z: 8 },
       { x: 50, y: 410, z: 8 },
       { x: -50, y: 410, z: 8 }
     ],
     accessibility: 4,
-    viewQuality: 2,
-    features: {
-      standingRoom: true,
-      outfield: true,
-      generalAdmission: true,
-      flexibleCapacity: true,
-      temporaryMLBExpansion: true
-    }
+    viewQuality: 2
   },
 
   // ========== PRESS BOX LEVEL ==========
@@ -697,22 +536,14 @@ export const sutterHealthParkSections: DetailedSection[] = [
       afternoon: 20,
       evening: 40
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -20, y: 100, z: 32 },
       { x: 20, y: 100, z: 32 },
       { x: 20, y: 115, z: 36 },
       { x: -20, y: 115, z: 36 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      pressBoxLevel: true,
-      mediaSeating: true,
-      broadcastBooths: true,
-      statisticiansArea: true,
-      climateControlled: true,
-      upgradedForMLB2025: true
-    }
+    viewQuality: 5
   }
 ];

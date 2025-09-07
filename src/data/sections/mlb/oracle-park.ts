@@ -26,7 +26,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 3,
     rows: generateRows(1, 12, 3, 10, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 75,
@@ -43,24 +43,21 @@ export const oracleParkSections: DetailedSection[] = [
       'In-seat service',
       'Private entrance'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      fieldClub: true,
-      allInclusive: true,
-      premiumSeating: true,
-      waitService: true,
-      behindHomeBase: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 3 },
       { x: 25, y: 0, z: 3 },
       { x: 25, y: 20, z: 8 },
       { x: -25, y: 20, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Lower Box - First Base
@@ -72,7 +69,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 14, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 40,
       afternoon: 85,
@@ -87,23 +84,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Cup holders',
       'Close to Giants dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      giantsDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 25, y: 0, z: 4 },
       { x: 55, y: 30, z: 4 },
       { x: 55, y: 54, z: 11 },
       { x: 25, y: 24, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Lower Box - Third Base
@@ -115,7 +110,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 14, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 65,
       afternoon: 45,
@@ -130,23 +125,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Cup holders',
       'Close to visitor dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      visitorDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 4 },
       { x: -55, y: 30, z: 4 },
       { x: -55, y: 54, z: 11 },
       { x: -25, y: 24, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Gotham Club
@@ -158,7 +151,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 18,
     rows: generateRows(1, 3, 18, 8, 22),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -177,26 +170,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Private entrance',
       'Climate controlled'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      gothamClub: true,
-      speakeasy: true,
-      bowlingLanes: true,
-      arcadeGames: true,
-      billiards: true,
-      behindScoreboard: true,
-      secretEntrances: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 85, y: 75, z: 18 },
       { x: 95, y: 85, z: 18 },
       { x: 95, y: 93, z: 20 },
       { x: 85, y: 83, z: 20 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Arcade Section
@@ -208,7 +196,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 12, 12, 14, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 95,
@@ -224,24 +212,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Home run territory',
       'Standing room'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      arcadeSection: true,
-      rightFieldWall: true,
-      homeRunTerritory: true,
-      shortPorch: true,
-      bleacherSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 75, y: 55, z: 12 },
       { x: 95, y: 75, z: 12 },
       { x: 95, y: 90, z: 17 },
       { x: 75, y: 70, z: 17 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Coca-Cola Fan Lot
@@ -253,7 +238,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 8, 8, 12, 27),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 70,
       afternoon: 30,
@@ -270,25 +255,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Mini ballpark',
       'Picnic tables'
     ],
-    accessibilityRating: 4,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      cocaColaBottle: true,
-      giantSlides: true,
-      kidsArea: true,
-      miniField: true,
-      familyFriendly: true,
-      electronicDisplay: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -85, y: 70, z: 8 },
       { x: -95, y: 80, z: 8 },
       { x: -95, y: 92, z: 12 },
       { x: -85, y: 82, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // McCovey Cove Seats
@@ -300,7 +281,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 10,
     rows: generateRows(1, 10, 10, 12, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 20,
       afternoon: 90,
@@ -316,24 +297,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Standing room',
       'Promenade access'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      mccoveyCove: true,
-      waterViews: true,
-      splashHitZone: true,
-      promenade: true,
-      rightFieldView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 80, y: 65, z: 10 },
       { x: 95, y: 80, z: 10 },
       { x: 95, y: 95, z: 14 },
       { x: 80, y: 80, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Garden Area
@@ -345,7 +323,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 75,
@@ -361,24 +339,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Educational displays',
       'Sustainable features'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      gardenArea: true,
-      ediblePlants: true,
-      sustainableFeatures: true,
-      educationalDisplays: true,
-      standingRoom: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 95, z: 14 },
       { x: 40, y: 95, z: 14 },
       { x: 40, y: 105, z: 14 },
       { x: -40, y: 105, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Club Level - Home Plate
@@ -390,7 +365,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 22,
     rows: generateRows(1, 10, 22, 12, 27),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -408,24 +383,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Padded seats',
       'Private concourse'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      clubLevel: true,
-      allInclusive: true,
-      climateControlled: true,
-      privateConcourse: true,
-      premiumDining: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 45, z: 22 },
       { x: 40, y: 45, z: 22 },
       { x: 40, y: 58, z: 27 },
       { x: -40, y: 58, z: 27 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Club Level - First Base
@@ -437,7 +409,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 22,
     rows: generateRows(1, 8, 22, 10, 27),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -454,23 +426,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Premium bar',
       'Padded seats'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      clubLevel: true,
-      allInclusiveFood: true,
-      premiumBar: true,
-      paddedSeats: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 40, y: 45, z: 22 },
       { x: 65, y: 65, z: 22 },
       { x: 65, y: 76, z: 26 },
       { x: 40, y: 58, z: 26 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Club Level - Third Base
@@ -482,7 +452,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'club',
     elevation: 22,
     rows: generateRows(1, 8, 22, 10, 27),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -499,23 +469,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Premium bar',
       'Padded seats'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      clubLevel: true,
-      allInclusiveFood: true,
-      premiumBar: true,
-      paddedSeats: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 45, z: 22 },
       { x: -65, y: 65, z: 22 },
       { x: -65, y: 76, z: 26 },
       { x: -40, y: 58, z: 26 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // View Level - Behind Home
@@ -527,7 +495,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 28,
     rows: generateRows(1, 22, 28, 20, 34),
-    covered: true,
+    covered: true
     coveragePercentage: 80,
     coveredRows: ['14', '15', '16', '17', '18', '19', '20', '21', '22'],
     sunExposure: {
@@ -544,23 +512,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Partial coverage',
       'Budget friendly'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      viewLevel: true,
-      upperDeck: true,
-      partialCoverage: true,
-      valueSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -35, y: 55, z: 28 },
       { x: 35, y: 55, z: 28 },
       { x: 35, y: 78, z: 36 },
       { x: -35, y: 78, z: 36 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Bleachers - Left Field
@@ -572,7 +538,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 18, 6, 16, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 80,
       afternoon: 35,
@@ -587,23 +553,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Budget friendly',
       'Social atmosphere'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      leftFieldView: true,
-      budgetFriendly: true,
-      socialAtmosphere: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -75, y: 55, z: 6 },
       { x: -95, y: 75, z: 6 },
       { x: -95, y: 93, z: 12 },
       { x: -75, y: 73, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Bleachers - Center Field
@@ -615,7 +579,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 16, 6, 14, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 80,
@@ -629,22 +593,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Bleacher seating',
       'Batter\'s eye view'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      centerFieldView: true,
-      battersEyeView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -95, y: 75, z: 6 },
       { x: -40, y: 105, z: 6 },
       { x: -40, y: 120, z: 11 },
       { x: -95, y: 93, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Toyota Fan Zone
@@ -656,7 +619,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 5, 8, 10, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -672,24 +635,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Whiffle ball',
       'Fish tank display'
     ],
-    accessibilityRating: 4,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      toyotaFanZone: true,
-      miniField: true,
-      kidsActivities: true,
-      fishTank: true,
-      whiffleBall: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 40, y: 105, z: 8 },
       { x: 60, y: 105, z: 8 },
       { x: 60, y: 115, z: 10 },
       { x: 40, y: 115, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Bullpen Board Walk
@@ -701,7 +661,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 10,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -718,24 +678,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Standing room',
       'Bar service'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      bullpenBoardWalk: true,
-      freeArcadeGames: true,
-      skeeball: true,
-      classicArcade: true,
-      standingRoom: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 70, y: 50, z: 10 },
       { x: 85, y: 65, z: 10 },
       { x: 85, y: 73, z: 10 },
       { x: 70, y: 58, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Luxury Suites
@@ -747,7 +704,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'suite',
     elevation: 24,
     rows: generateRows(1, 2, 24, 8, 22),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -765,24 +722,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Premium parking',
       'Indoor/outdoor seating'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      suiteLevel: true,
-      privateRestroom: true,
-      cateringAvailable: true,
-      climateControlled: true,
-      premiumParking: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -50, y: 48, z: 24 },
       { x: 50, y: 48, z: 24 },
       { x: 50, y: 58, z: 27 },
       { x: -50, y: 58, z: 27 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Promenade Standing Room
@@ -794,7 +748,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'standing',
     elevation: 16,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 45,
       afternoon: 80,
@@ -810,23 +764,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Bay views',
       'Various locations'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      bayViews: true,
-      promenade: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -70, y: 40, z: 16 },
       { x: 70, y: 40, z: 16 },
       { x: 70, y: 48, z: 16 },
       { x: -70, y: 48, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Press Box Level
@@ -838,7 +790,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'media',
     elevation: 32,
     rows: generateRows(1, 3, 32, 6, 20),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -855,23 +807,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Power outlets',
       'Work stations'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      pressBox: true,
-      mediaFacilities: true,
-      broadcastBooths: true,
-      workStations: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 60, z: 32 },
       { x: 20, y: 60, z: 32 },
       { x: 20, y: 67, z: 34 },
       { x: -20, y: 67, z: 34 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Viewing Deck - Right Field
@@ -883,7 +833,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 20,
       afternoon: 95,
@@ -899,24 +849,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Bay Bridge views',
       'Social area'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      viewingDeck: true,
-      bayBridgeViews: true,
-      standingRoom: true,
-      socialArea: true,
-      tablesAvailable: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 80, y: 70, z: 18 },
       { x: 95, y: 85, z: 18 },
       { x: 95, y: 95, z: 21 },
       { x: 80, y: 80, z: 21 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Family Section
@@ -928,7 +875,7 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 11, 10, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 55,
       afternoon: 70,
@@ -944,23 +891,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Kid activities nearby',
       'Lou Seal visits'
     ],
-    accessibilityRating: 4,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      familySection: true,
-      alcoholFree: true,
-      kidFriendly: true,
-      louSealVisits: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -55, y: 38, z: 10 },
       { x: -35, y: 48, z: 10 },
       { x: -35, y: 60, z: 14 },
       { x: -55, y: 50, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Wheelchair Accessible Areas
@@ -972,9 +917,10 @@ export const oracleParkSections: DetailedSection[] = [
     type: 'accessible',
     elevation: 14,
     rows: [
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 14, depth: 6, rakeAngle: 0 }
     ],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 75,
@@ -990,23 +936,21 @@ export const oracleParkSections: DetailedSection[] = [
       'Accessible restrooms',
       'Wide concourses'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      wheelchairAccessible: true,
-      companionSeats: true,
-      levelAccess: true,
-      accessibleRestrooms: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -60, y: 32, z: 14 },
       { x: 60, y: 32, z: 14 },
       { x: 60, y: 38, z: 14 },
       { x: -60, y: 38, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Public House
@@ -1015,76 +959,5 @@ export const oracleParkSections: DetailedSection[] = [
     name: 'Public House',
     level: 'field',
     rows: [
-      { rowNumber: 'Bar', seats: 120, elevation: 18, depth: 0, covered: false },
-      { rowNumber: 'Tables', seats: 80, elevation: 20, depth: 8, covered: false }
-    ],
-    sunExposure: {
-      morning: 40,
-      afternoon: 55,
-      evening: 65
-    },
-    covered: false,
-    vertices: [
-      { x: -25, y: 18, z: 410 },
-      { x: 25, y: 18, z: 410 },
-      { x: 30, y: 26, z: 420 },
-      { x: -30, y: 26, z: 420 }
-    ],
-    accessibility: 4,
-    viewQuality: 3,
-    features: {
-      publicHouse: true,
-      behindCenterField: true,
-      gastropub: true,
-      localCraftBeers: true,
-      artisanalFood: true,
-      mccoveyCoveViews: true,
-      sanFranciscoStyle: true,
-      standingRoom: true,
-      seatedAreas: true
-    }
-  }
-];
-
-// Stadium configuration
-export const oracleParkConfig = {
-  stadiumName: 'Oracle Park',
-  team: 'San Francisco Giants',
-  location: 'San Francisco, California',
-  capacity: 41915,
-  yearBuilt: 2000,
-  orientation: 87, // East facing
-  dimensions: {
-    leftField: 339,
-    leftCenter: 364,
-    center: 399,
-    rightCenter: 421,
-    rightField: 309,
-    rightFieldWallHeight: 24
-  },
-  features: {
-    mccoveyCove: true,
-    cocaColaBottle: true,
-    giantSlides: true,
-    gothamClub: true,
-    arcadeSection: true,
-    gardenArea: true,
-    toyotaFanZone: true,
-    bullpenBoardWalk: true,
-    splashHits: true,
-    bayViews: true,
-    fishTank: true
-  },
-  sunExposureNotes: {
-    morning: 'Sun rises over left field, third base side in shade',
-    afternoon: 'Sun high overhead, maximum exposure in right field sections',
-    evening: 'Sun sets over the bay behind home plate, center field gets shade first'
-  },
-  accessibilityFeatures: [
-    'Elevator access to all levels',
-    'Accessible seating throughout',
-    'Accessible parking with shuttle service',
-    'Assistive listening devices available',
-    'Service animal relief areas'
-  ]
-};
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false

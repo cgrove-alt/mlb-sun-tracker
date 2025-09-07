@@ -22,8 +22,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false
-    });
+      covered: false  });
   }
   
   return rows;
@@ -34,190 +33,144 @@ export const nationalsParkSections: DetailedSection[] = [
   {
     id: 'presidents-club',
     name: 'Presidents Club',
-    level: 'Field',
-    orientation: 'home-plate',
+    level: 'field',
+    baseAngle: 0,
+    angleSpan: 30,
     rows: generateRows('A', 'S', 24, 2, 2.5, 10),
-    vertices: [
+    vertices3D: [
       { x: -30, y: 2, z: 10 },
       { x: 30, y: 2, z: 10 },
       { x: 35, y: 47.5, z: 57.5 },
       { x: -35, y: 47.5, z: 57.5 }
     ] as Vector3D[],
-    premium: true,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      cushionedSeats: true,
-      inSeatService: true,
-      privateRestrooms: true,
-      exclusiveAccess: true,
-      capitolViews: true
-    }
-  },
+      covered: false  },
   
   // Infield Box - First Base
   {
     id: 'infield-box-1b',
     name: 'Infield Box - First Base',
-    level: 'Field',
-    orientation: 'first-base',
+    level: 'field',
+    baseAngle: 45,
+    angleSpan: 30,
     rows: generateRows('A', 'V', 22, 2, 2.5, 11),
-    vertices: [
+    vertices3D: [
       { x: 30, y: 2, z: 10 },
       { x: 115, y: 2, z: 28 },
       { x: 120, y: 55, z: 81 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4
-  },
+      covered: false  },
   
   // Infield Box - Third Base
   {
     id: 'infield-box-3b',
     name: 'Infield Box - Third Base',
-    level: 'Field',
-    orientation: 'third-base',
+    level: 'field',
+    baseAngle: 315,
+    angleSpan: 30,
     rows: generateRows('A', 'V', 22, 2, 2.5, 11),
-    vertices: [
+    vertices3D: [
       { x: -30, y: 2, z: 10 },
       { x: -115, y: 2, z: 28 },
       { x: -120, y: 55, z: 81 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4
-  },
+      covered: false  },
   
   // Stars and Stripes Club
   {
     id: 'stars-stripes-club',
     name: 'Stars and Stripes Club',
-    level: 'Club',
-    orientation: 'first-base',
+    level: 'club',
+    baseAngle: 45,
+    angleSpan: 30,
     rows: generateRows('A', 'N', 28, 75, 3, 12),
-    vertices: [
+    vertices3D: [
       { x: 40, y: 75, z: 70 },
       { x: 125, y: 75, z: 90 },
       { x: 130, y: 117, z: 132 },
       { x: 45, y: 117, z: 112 }
     ] as Vector3D[],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      climateControlled: true,
-      paddedSeats: true,
-      privateBar: true,
-      exclusiveDining: true,
-      wideSeats: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Scoreboard Walk
   {
     id: 'scoreboard-walk',
     name: 'Scoreboard Walk',
-    level: 'Outfield',
-    orientation: 'right-field',
+    level: 'field',
+    baseAngle: 90,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'SRO', seats: 300, elevation: 15, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
-    vertices: [
+    vertices3D: [
       { x: 120, y: 15, z: 280 },
       { x: 150, y: 15, z: 320 },
       { x: 150, y: 15, z: 360 },
       { x: 120, y: 15, z: 320 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      scoreboardViews: true
-    }
-  },
+      covered: false  },
   
   // Red Porch
   {
     id: 'red-porch',
     name: 'Red Porch',
-    level: 'Outfield',
-    orientation: 'center-field',
+    level: 'field',
+    baseAngle: 135,
+    angleSpan: 30,
     rows: generateRows('A', 'J', 20, 25, 2.5, 20),
-    vertices: [
+    vertices3D: [
       { x: -20, y: 25, z: 385 },
       { x: 20, y: 25, z: 385 },
       { x: 25, y: 50, z: 410 },
       { x: -25, y: 50, z: 410 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3,
-    features: {
-      picnicTables: true,
-      standingRoom: true,
-      casualSeating: true,
-      redTheme: true
-    }
-  },
+      covered: false  },
   
   // Red Loft
   {
     id: 'red-loft',
     name: 'Red Loft',
-    level: 'Outfield',
-    orientation: 'center-field',
+    level: 'field',
+    baseAngle: 135,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'Loft', seats: 50, elevation: 55, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
-    vertices: [
+    vertices3D: [
       { x: -15, y: 55, z: 390 },
       { x: 15, y: 55, z: 390 },
       { x: 15, y: 55, z: 410 },
       { x: -15, y: 55, z: 410 }
     ] as Vector3D[],
-    premium: true,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      loftSeating: true,
-      groupArea: true,
-      privateBar: true
-    }
-  },
+      covered: false  },
   
   // Gallery Level - Behind Home
   {
     id: 'gallery-home',
     name: 'Gallery - Home Plate',
     level: 'Gallery',
-    orientation: 'home-plate',
+    baseAngle: 0,
+    angleSpan: 30,
     rows: generateRows('A', 'Y', 26, 120, 3.5, 15),
-    vertices: [
+    vertices3D: [
       { x: -45, y: 120, z: 115 },
       { x: 45, y: 120, z: 115 },
       { x: 50, y: 207.5, z: 202.5 },
       { x: -50, y: 207.5, z: 202.5 }
     ] as Vector3D[],
-    premium: false,
     covered: true,
     partialCoverage: {
       coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y'],
       coveragePercent: 25
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 3
+    }
   },
   
   // Gallery Level - First Base
@@ -225,22 +178,20 @@ export const nationalsParkSections: DetailedSection[] = [
     id: 'gallery-1b',
     name: 'Gallery - First Base',
     level: 'Gallery',
-    orientation: 'first-base',
+    baseAngle: 45,
+    angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 120, 3.5, 16),
-    vertices: [
+    vertices3D: [
       { x: 50, y: 120, z: 125 },
       { x: 135, y: 120, z: 155 },
       { x: 140, y: 220, z: 255 },
       { x: 55, y: 220, z: 225 }
     ] as Vector3D[],
-    premium: false,
     covered: true,
     partialCoverage: {
       coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
       coveragePercent: 20
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // Gallery Level - Third Base
@@ -248,350 +199,260 @@ export const nationalsParkSections: DetailedSection[] = [
     id: 'gallery-3b',
     name: 'Gallery - Third Base',
     level: 'Gallery',
-    orientation: 'third-base',
+    baseAngle: 315,
+    angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 120, 3.5, 16),
-    vertices: [
+    vertices3D: [
       { x: -50, y: 120, z: 125 },
       { x: -135, y: 120, z: 155 },
       { x: -140, y: 220, z: 255 },
       { x: -55, y: 220, z: 225 }
     ] as Vector3D[],
-    premium: false,
     covered: true,
     partialCoverage: {
       coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
       coveragePercent: 20
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // Left Field Reserved
   {
     id: 'left-field-reserved',
     name: 'Left Field Reserved',
-    level: 'Outfield',
-    orientation: 'left-field',
+    level: 'field',
+    baseAngle: 225,
+    angleSpan: 30,
     rows: generateRows('A', 'T', 24, 20, 2.5, 18),
-    vertices: [
+    vertices3D: [
       { x: -145, y: 20, z: 270 },
       { x: -115, y: 20, z: 310 },
       { x: -120, y: 70, z: 360 },
       { x: -150, y: 70, z: 320 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // Right Field Reserved
   {
     id: 'right-field-reserved',
     name: 'Right Field Reserved',
-    level: 'Outfield',
-    orientation: 'right-field',
+    level: 'field',
+    baseAngle: 90,
+    angleSpan: 30,
     rows: generateRows('A', 'T', 24, 20, 2.5, 18),
-    vertices: [
+    vertices3D: [
       { x: 145, y: 20, z: 270 },
       { x: 115, y: 20, z: 310 },
       { x: 120, y: 70, z: 360 },
       { x: 150, y: 70, z: 320 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // Budweiser Brew House
   {
     id: 'budweiser-brew-house',
     name: 'Budweiser Brew House',
-    level: 'Outfield',
-    orientation: 'left-center',
+    level: 'field',
+    baseAngle: 0,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'Bar', seats: 100, elevation: 30, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
-    vertices: [
+    vertices3D: [
       { x: -80, y: 30, z: 360 },
       { x: -40, y: 30, z: 375 },
       { x: -40, y: 30, z: 395 },
       { x: -80, y: 30, z: 380 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      standingRoom: true,
-      fullBar: true,
-      drinkRails: true,
-      socialArea: true
-    }
-  },
+      covered: false  },
   
   // District Dugout
   {
     id: 'district-dugout',
     name: 'District Dugout',
-    level: 'Field',
-    orientation: 'third-base',
+    level: 'field',
+    baseAngle: 315,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'Dugout', seats: 30, elevation: 3, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
-    vertices: [
+    vertices3D: [
       { x: -80, y: 3, z: 15 },
       { x: -60, y: 3, z: 20 },
       { x: -60, y: 8, z: 20 },
       { x: -80, y: 8, z: 15 }
     ] as Vector3D[],
-    premium: true,
     covered: true,
-    obstructionType: 'dugout-club',
-    accessibilityRating: 5,
-    features: {
-      dugoutView: true,
-      premiumSeating: true,
-      inSeatService: true,
-      exclusiveAccess: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // PNC Diamond Club
   {
     id: 'pnc-diamond-club',
     name: 'PNC Diamond Club',
-    level: 'Club',
-    orientation: 'home-plate',
+    level: 'club',
+    baseAngle: 0,
+    angleSpan: 30,
     rows: generateRows('A', 'L', 30, 65, 3.5, 12),
-    vertices: [
+    vertices3D: [
       { x: -35, y: 65, z: 60 },
       { x: 35, y: 65, z: 60 },
       { x: 40, y: 107, z: 102 },
       { x: -40, y: 107, z: 102 }
     ] as Vector3D[],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      climateControlled: true,
-      premiumDining: true,
-      privateEntrance: true,
-      wideSeats: true,
-      allInclusive: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Norfolk Southern Club
   {
     id: 'norfolk-southern-club',
     name: 'Norfolk Southern Club',
-    level: 'Club',
-    orientation: 'third-base',
+    level: 'club',
+    baseAngle: 315,
+    angleSpan: 30,
     rows: generateRows('A', 'M', 25, 85, 3.5, 13),
-    vertices: [
+    vertices3D: [
       { x: -45, y: 85, z: 85 },
       { x: -130, y: 85, z: 105 },
       { x: -135, y: 130.5, z: 150.5 },
       { x: -50, y: 130.5, z: 130.5 }
     ] as Vector3D[],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      climateControlled: true,
-      businessClass: true,
-      privateBar: true,
-      networkingArea: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Center Field Plaza
   {
     id: 'center-field-plaza',
     name: 'Center Field Plaza',
-    level: 'Outfield',
-    orientation: 'center-field',
+    level: 'field',
+    baseAngle: 135,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'SRO', seats: 200, elevation: 12, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
-    vertices: [
+    vertices3D: [
       { x: -30, y: 12, z: 400 },
       { x: 30, y: 12, z: 400 },
       { x: 30, y: 12, z: 420 },
       { x: -30, y: 12, z: 420 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      standingRoom: true,
-      plazaArea: true,
-      foodTrucks: true,
-      familyFriendly: true
-    }
-  },
+      covered: false  },
   
   // Upper Gallery - Outfield
   {
     id: 'upper-gallery-outfield',
     name: 'Upper Gallery - Outfield',
     level: 'Gallery',
-    orientation: 'left-field',
+    baseAngle: 225,
+    angleSpan: 30,
     rows: generateRows('A', 'U', 22, 125, 3.5, 18),
-    vertices: [
+    vertices3D: [
       { x: -150, y: 125, z: 280 },
       { x: -120, y: 125, z: 320 },
       { x: -125, y: 198.5, z: 393.5 },
       { x: -155, y: 198.5, z: 353.5 }
     ] as Vector3D[],
-    premium: false,
     covered: true,
     partialCoverage: {
       coveredRows: ['P', 'R', 'S', 'T', 'U'],
       coveragePercent: 25
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // The Bullpen
   {
     id: 'the-bullpen',
     name: 'The Bullpen',
-    level: 'Field',
-    orientation: 'right-field',
+    level: 'field',
+    baseAngle: 90,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'Picnic', seats: 80, elevation: 8, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
-    vertices: [
+    vertices3D: [
       { x: 130, y: 8, z: 200 },
       { x: 150, y: 8, z: 220 },
       { x: 150, y: 8, z: 240 },
       { x: 130, y: 8, z: 220 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      picnicArea: true,
-      bullpenView: true,
-      groupSeating: true,
-      casualAtmosphere: true
-    }
-  },
+      covered: false  },
   
   // PNC Diamond Club
   {
     id: 'pnc-diamond-club',
     name: 'PNC Diamond Club',
-    level: 'Field',
-    orientation: 'home-plate',
+    level: 'field',
+    baseAngle: 0,
+    angleSpan: 30,
     rows: generateRows('A', 'P', 26, 5, 2.5, 26),
-    vertices: [
+    vertices3D: [
       { x: -35, y: 5, z: 55 },
       { x: 35, y: 5, z: 55 },
       { x: 40, y: 45, z: 95 },
       { x: -40, y: 45, z: 95 }
     ] as Vector3D[],
-    premium: true,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      diamondClub: true,
-      airConditioned: true,
-      outdoorPatio: true,
-      premiumDining: true,
-      sections119to126: true
-    }
-  },
+      covered: false  },
   
   // Budweiser Terrace
   {
     id: 'budweiser-terrace',
     name: 'Budweiser Terrace',
-    level: 'Terrace',
-    orientation: 'center-field',
+    level: 'upper',
+    baseAngle: 135,
+    angleSpan: 30,
     rows: generateRows('A', 'K', 40, 85, 3.5, 32),
-    vertices: [
+    vertices3D: [
       { x: -30, y: 85, z: 380 },
       { x: 30, y: 85, z: 380 },
       { x: 35, y: 123.5, z: 418.5 },
       { x: -35, y: 123.5, z: 418.5 }
     ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      budweiserTerrace: true,
-      sections237to243: true,
-      centerFieldView: true,
-      eventSpace: true
-    }
-  },
+      covered: false  },
   
   // Norfolk Southern Club
   {
     id: 'norfolk-southern-club',
     name: 'Norfolk Southern Club',
-    level: 'Club',
-    orientation: 'first-base',
+    level: 'club',
+    baseAngle: 45,
+    angleSpan: 30,
     rows: generateRows('A', 'M', 30, 60, 3, 30),
-    vertices: [
+    vertices3D: [
       { x: 50, y: 60, z: 100 },
       { x: 90, y: 60, z: 130 },
       { x: 95, y: 99, z: 169 },
       { x: 55, y: 99, z: 139 }
     ] as Vector3D[],
-    premium: true,
     covered: true,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      norfolkSouthernClub: true,
-      riverViews: true,
-      vaultedCeilings: true,
-      mezzanineLevel: true,
-      loungeSeating: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Budweiser Brewhouse (formerly Red Porch)
   {
     id: 'budweiser-brewhouse',
     name: 'Budweiser Brewhouse',
-    level: 'Outfield',
-    orientation: 'center-field',
+    level: 'field',
+    baseAngle: 135,
+    angleSpan: 30,
     rows: [
-      { rowNumber: 'Bar', seats: 120, elevation: 25, depth: 0, covered: false },
-      { rowNumber: 'Patio', seats: 80, elevation: 28, depth: 5, covered: false }
-    ],
-    vertices: [
-      { x: -20, y: 25, z: 400 },
-      { x: 20, y: 25, z: 400 },
-      { x: 25, y: 33, z: 410 },
-      { x: -25, y: 33, z: 410 }
-    ] as Vector3D[],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      budweiserBrewhouse: true,
-      formerRedPorch: true,
-      section100Above: true,
-      budLightLoft: true,
-      patioSeating: true,
-      hdTVs: true
-    }
-  }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
 ];
 
 // Stadium features

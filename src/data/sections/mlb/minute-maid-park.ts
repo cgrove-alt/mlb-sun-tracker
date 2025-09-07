@@ -36,13 +36,6 @@ export const minuteMaidParkConfig = {
     centerField: 409,
     rightCenter: 373,
     rightField: 326
-  },
-  features: {
-    crawfordBoxes: true,
-    unionStation: true,
-    trainFeature: true,
-    retractableRoof: true,
-    formerTalsHill: true
   }
 };
 
@@ -59,24 +52,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -8, y: 52, z: -2 },
       { x: 8, y: 52, z: -2 },
       { x: 8, y: 62, z: 3 },
       { x: -8, y: 62, z: 3 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      diamondClub: true,
-      inSeatService: true,
-      paddedSeats: true,
-      climateControlledLounge: true,
-      fullServiceBar: true,
-      pizzaOven: true,
-      privateRestrooms: true
-    }
+    viewQuality: 5
   },
 
   // ========== FIELD BOX ==========
@@ -92,20 +76,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -10, y: 60, z: 0 },
       { x: 0, y: 60, z: 0 },
       { x: 0, y: 88, z: 14 },
       { x: -10, y: 88, z: 14 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      closeToDugout: true,
-      retractableRoof: true
-    }
+    viewQuality: 5
   },
 
   {
@@ -120,20 +99,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 60, y: 60, z: 0 },
       { x: 74, y: 74, z: 0 },
       { x: 88, y: 88, z: 14 },
       { x: 74, y: 74, z: 14 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      firstBaseLine: true,
-      retractableRoof: true
-    }
+    viewQuality: 5
   },
 
   // ========== CRAWFORD BOXES (Left Field) ==========
@@ -149,22 +123,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 5
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 300, z: 8 },
       { x: -80, y: 315, z: 8 },
       { x: -75, y: 340, z: 28 },
       { x: -95, y: 325, z: 28 }
     ],
     accessibility: 3,
-    viewQuality: 4,
-    features: {
-      crawfordBoxes: true,
-      shortPorch: true,
-      leftFieldCorner: true,
-      iconicSection: true,
-      distance315Feet: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -179,21 +146,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 5
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -80, y: 315, z: 8 },
       { x: -60, y: 325, z: 8 },
       { x: -55, y: 350, z: 28 },
       { x: -75, y: 340, z: 28 }
     ],
     accessibility: 3,
-    viewQuality: 4,
-    features: {
-      crawfordBoxes: true,
-      shortPorch: true,
-      leftField: true,
-      iconicSection: true
-    }
+    viewQuality: 4
   },
 
   // ========== INSPERITY CLUB (Sections 70-75) ==========
@@ -207,25 +168,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -22, y: 105, z: 25 },
       { x: -8, y: 105, z: 25 },
       { x: -8, y: 130, z: 36 },
       { x: -22, y: 130, z: 36 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      insperityClub: true,
-      allInclusiveGourmet: true,
-      theaterSeating: true,
-      inSeatService: true,
-      privateBar: true,
-      climateControlled: true,
-      formerMediaSection: true,
-      sections70to75: true
-    }
+    viewQuality: 5
   },
 
   // ========== GALLAGHER CLUB (Left Field Line) ==========
@@ -239,25 +190,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -95, y: 150, z: 32 },
       { x: -75, y: 165, z: 32 },
       { x: -75, y: 185, z: 38 },
       { x: -95, y: 170, z: 38 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      gallagherClub: true,
-      membersOnly: true,
-      plushLounge: true,
-      inClubWaitService: true,
-      gourmetFood: true,
-      leftFieldLine: true,
-      newestPremiumArea: true,
-      capacity350: true
-    }
+    viewQuality: 5
   },
 
   // ========== BULLPEN BOX ==========
@@ -271,21 +212,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 10,
       evening: 20
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 85, y: 340, z: 2 },
       { x: 100, y: 330, z: 2 },
       { x: 100, y: 350, z: 18 },
       { x: 85, y: 360, z: 18 }
     ],
     accessibility: 3,
-    viewQuality: 4,
-    features: {
-      bullpenBox: true,
-      nearAstrosBullpen: true,
-      rightFieldCorner: true,
-      sections155to156: true
-    }
+    viewQuality: 4
   },
 
   // ========== HOME RUN ALLEY (Left Field Concourse) ==========
@@ -299,22 +234,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 10
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 320, z: 15 },
       { x: -70, y: 340, z: 15 },
       { x: -70, y: 355, z: 15 },
       { x: -100, y: 335, z: 15 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      homeRunAlley: true,
-      leftFieldArchways: true,
-      unionStationConnection: true,
-      narrowConcourse: true,
-      railwayFeature: true
-    }
+    viewQuality: 3
   },
 
   // ========== UNION STATION LOBBY ==========
@@ -328,26 +256,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -120, y: 280, z: 0 },
       { x: -90, y: 300, z: 0 },
       { x: -90, y: 320, z: 0 },
       { x: -120, y: 300, z: 0 }
     ],
     accessibility: 5,
-    viewQuality: 2,
-    features: {
-      unionStation: true,
-      historicArchitecture: true,
-      built1911: true,
-      corinthianColumns: true,
-      originalMarble: true,
-      teamStore: true,
-      cafe: true,
-      tourStartPoint: true,
-      capacity500Seated: true
-    }
+    viewQuality: 2
   },
 
   // ========== MEZZANINE ==========
@@ -363,19 +280,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -18, y: 88, z: 14 },
       { x: -5, y: 88, z: 14 },
       { x: -5, y: 125, z: 36 },
       { x: -18, y: 125, z: 36 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      mezzanineLevel: true,
-      retractableRoof: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -390,20 +303,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 88, y: -18, z: 14 },
       { x: 88, y: -5, z: 14 },
       { x: 125, y: -5, z: 36 },
       { x: 125, y: -18, z: 36 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      mezzanineLevel: true,
-      rightField: true,
-      retractableRoof: true
-    }
+    viewQuality: 4
   },
 
   // ========== TERRACE DECK ==========
@@ -417,20 +325,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -28, y: 115, z: 24 },
       { x: -10, y: 115, z: 24 },
       { x: -8, y: 150, z: 40 },
       { x: -26, y: 150, z: 40 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      terraceDeck: true,
-      sections305to338: true,
-      retractableRoof: true
-    }
+    viewQuality: 3
   },
 
   // ========== VIEW DECK ==========
@@ -446,21 +349,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -28, y: 125, z: 36 },
       { x: -10, y: 125, z: 36 },
       { x: -8, y: 180, z: 75 },
       { x: -26, y: 180, z: 75 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      viewDeck: true,
-      sections405to438: true,
-      upperLevel: true,
-      retractableRoof: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -475,20 +372,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -125, y: 28, z: 36 },
       { x: -125, y: 10, z: 36 },
       { x: -180, y: 8, z: 75 },
       { x: -180, y: 26, z: 75 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      viewDeck: true,
-      thirdBaseLine: true,
-      retractableRoof: true
-    }
+    viewQuality: 3
   },
 
   // ========== HOME RUN PUMP (Center Field) ==========
@@ -504,21 +396,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 5,
       evening: 15
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -30, y: 430, z: 12 },
       { x: 30, y: 430, z: 12 },
       { x: 30, y: 450, z: 12 },
       { x: -30, y: 450, z: 12 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      homeRunPump: true,
-      centerField: true,
-      standingRoom: true,
-      barArea: true
-    }
+    viewQuality: 3
   },
 
   // ========== TORCHY'S TACOS DECK (Left Field) ==========
@@ -534,21 +420,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 15
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -95, y: 340, z: 30 },
       { x: -75, y: 355, z: 30 },
       { x: -75, y: 370, z: 30 },
       { x: -95, y: 355, z: 30 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      torchysTacos: true,
-      partyDeck: true,
-      leftField: true,
-      foodAndBeverage: true
-    }
+    viewQuality: 3
   },
 
   // ========== DUGOUT BOX ==========
@@ -562,21 +442,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -45, y: 45, z: -1 },
       { x: -30, y: 50, z: -1 },
       { x: -30, y: 65, z: 6 },
       { x: -45, y: 60, z: 6 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      dugoutBox: true,
-      nearThirdBaseDugout: true,
-      fieldLevel: true,
-      premiumSeating: true
-    }
+    viewQuality: 5
   },
 
   // ========== SUITE LEVEL ==========
@@ -592,23 +466,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -20, y: 115, z: 32 },
       { x: 20, y: 115, z: 32 },
       { x: 20, y: 135, z: 32 },
       { x: -20, y: 135, z: 32 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      suiteLevel: true,
-      luxuryBoxes: true,
-      privateRestrooms: true,
-      cateringService: true,
-      climateControlled: true,
-      total63Suites: true
-    }
+    viewQuality: 5
   },
 
   // ========== TRAIN DECK (Above Left Field Wall) ==========
@@ -624,25 +490,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 10
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 315, z: 35 },
       { x: -85, y: 325, z: 35 },
       { x: -85, y: 335, z: 35 },
       { x: -100, y: 325, z: 35 }
     ],
     accessibility: 3,
-    viewQuality: 4,
-    features: {
-      trainDeck: true,
-      iconicTrain: true,
-      leftFieldWall: true,
-      standingRoom: true,
-      vintage1860sReplica: true,
-      conductorBobbyDynamite: true,
-      runsOnHomeruns: true,
-      length800Feet: true
-    }
+    viewQuality: 4
   },
 
   // ========== BUDWEISER BREW HOUSE ==========
@@ -658,22 +514,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 5,
       evening: 10
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 100, y: -30, z: 15 },
       { x: 120, y: -40, z: 15 },
       { x: 120, y: -25, z: 15 },
       { x: 100, y: -15, z: 15 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      budweiserBrewHouse: true,
-      barArea: true,
-      standingRoom: true,
-      rightField: true,
-      beerGarden: true
-    }
+    viewQuality: 3
   },
 
   // ========== CLUB TIER I ==========
@@ -687,21 +536,15 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 0,
       evening: 0
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -15, y: 95, z: 22 },
       { x: 15, y: 95, z: 22 },
       { x: 15, y: 115, z: 32 },
       { x: -15, y: 115, z: 32 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      clubTier1: true,
-      premiumAmenities: true,
-      widerSeats: true,
-      exclusiveAccess: true
-    }
+    viewQuality: 5
   },
 
   // ========== FORMER TAL'S HILL MEMORIAL AREA ==========
@@ -715,22 +558,14 @@ export const minuteMaidParkSections: DetailedSection[] = [
       afternoon: 15,
       evening: 20
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -20, y: 420, z: 8 },
       { x: 20, y: 420, z: 8 },
       { x: 20, y: 436, z: 10 },
       { x: -20, y: 436, z: 10 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      formerTalsHill: true,
-      existed2000to2016: true,
-      centerField: true,
-      hadFlagpole: true,
-      removed2016: true,
-      distance436Feet: true
-    }
+    viewQuality: 3
   }
 ];

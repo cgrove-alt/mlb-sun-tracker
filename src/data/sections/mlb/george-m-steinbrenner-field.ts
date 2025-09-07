@@ -26,7 +26,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 8, 4, 10, 25),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 20,
       afternoon: 85,
@@ -42,23 +42,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'In-seat service',
       'Extra legroom'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      premiumSeating: true,
-      chairbackSeats: true,
-      waitService: true,
-      behindHomeBase: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 0, z: 4 },
       { x: 20, y: 0, z: 4 },
       { x: 20, y: 15, z: 8 },
       { x: -20, y: 15, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // First Base Field Boxes
@@ -70,7 +68,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 10, 4, 12, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -85,23 +83,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Cup holders',
       'Close to action'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      raysHomeDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 20, y: 0, z: 4 },
       { x: 50, y: 30, z: 4 },
       { x: 50, y: 45, z: 8 },
       { x: 20, y: 15, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Third Base Field Boxes
@@ -113,7 +109,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 10, 4, 12, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -128,23 +124,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Cup holders',
       'Close to action'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      visitorDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 0, z: 4 },
       { x: -50, y: 30, z: 4 },
       { x: -50, y: 45, z: 8 },
       { x: -20, y: 15, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Baseline Box Seats - First Base
@@ -156,7 +150,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 27),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 35,
       afternoon: 95,
@@ -170,21 +164,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Standard seats',
       'Cup holders'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 4,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      baselineView: true,
-      standardSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 50, y: 30, z: 6 },
       { x: 70, y: 50, z: 6 },
       { x: 70, y: 65, z: 10 },
       { x: 50, y: 45, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Baseline Box Seats - Third Base
@@ -196,7 +190,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 27),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 75,
       afternoon: 45,
@@ -210,21 +204,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Standard seats',
       'Cup holders'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 4,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      baselineView: true,
-      standardSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -50, y: 30, z: 6 },
       { x: -70, y: 50, z: 6 },
       { x: -70, y: 65, z: 10 },
       { x: -50, y: 45, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Reserved Grandstand - Behind Home
@@ -236,7 +230,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 16, 10, 18, 30),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -252,22 +246,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Standard seats',
       'Shade all day'
     ],
-    accessibilityRating: 4,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      coveredSeating: true,
-      pressBoxBelow: true,
-      centerFieldView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 15, z: 10 },
       { x: 25, y: 15, z: 10 },
       { x: 25, y: 35, z: 16 },
       { x: -25, y: 35, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Reserved Grandstand - First Base
@@ -279,7 +272,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 18, 10, 20, 30),
-    covered: true,
+    covered: true
     coveragePercentage: 80,
     coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
     sunExposure: {
@@ -295,21 +288,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Partial coverage',
       'Standard seats'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      partialCoverage: true,
-      grandstandSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 25, y: 15, z: 10 },
       { x: 55, y: 45, z: 10 },
       { x: 55, y: 65, z: 16 },
       { x: 25, y: 35, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Reserved Grandstand - Third Base
@@ -321,7 +314,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 18, 10, 20, 30),
-    covered: true,
+    covered: true
     coveragePercentage: 80,
     coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
     sunExposure: {
@@ -337,21 +330,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Partial coverage',
       'Standard seats'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      partialCoverage: true,
-      grandstandSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 15, z: 10 },
       { x: -55, y: 45, z: 10 },
       { x: -55, y: 65, z: 16 },
       { x: -25, y: 35, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Left Field Reserved
@@ -363,7 +356,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 14, 8, 16, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 80,
       afternoon: 40,
@@ -377,22 +370,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Standard seats',
       'Outfield view'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      outfieldSeating: true,
-      bullpenView: true,
-      valueSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -70, y: 50, z: 8 },
       { x: -85, y: 65, z: 8 },
       { x: -85, y: 80, z: 12 },
       { x: -70, y: 65, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Right Field Reserved
@@ -404,7 +396,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 8,
     rows: generateRows(1, 14, 8, 16, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 40,
       afternoon: 100,
@@ -418,22 +410,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Standard seats',
       'Outfield view'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      outfieldSeating: true,
-      bullpenView: true,
-      valueSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 70, y: 50, z: 8 },
       { x: 85, y: 65, z: 8 },
       { x: 85, y: 80, z: 12 },
       { x: 70, y: 65, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Outfield Bleachers - Left
@@ -445,7 +436,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 85,
       afternoon: 35,
@@ -459,22 +450,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Bleacher seating',
       'Budget friendly'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      generalAdmission: true,
-      budgetFriendly: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -85, y: 65, z: 6 },
       { x: -95, y: 75, z: 6 },
       { x: -95, y: 88, z: 10 },
       { x: -85, y: 80, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Outfield Bleachers - Center
@@ -486,7 +476,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 10, 6, 12, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 70,
@@ -500,22 +490,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Bleacher seating',
       'Batter\'s eye view'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      battersEyeView: true,
-      generalAdmission: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -95, y: 75, z: 6 },
       { x: -40, y: 95, z: 6 },
       { x: -40, y: 105, z: 9 },
       { x: -95, y: 88, z: 9 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Outfield Bleachers - Right
@@ -527,7 +516,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 12, 6, 14, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 35,
       afternoon: 100,
@@ -541,22 +530,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Bleacher seating',
       'Budget friendly'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      generalAdmission: true,
-      budgetFriendly: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 85, y: 65, z: 6 },
       { x: 95, y: 75, z: 6 },
       { x: 95, y: 88, z: 10 },
       { x: 85, y: 80, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Batter's Eye Deck
@@ -568,7 +556,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 6, 8, 10, 25),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 80,
@@ -583,23 +571,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Drink rails',
       'Social area'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      battersEyeDeck: true,
-      socialArea: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 95, z: 8 },
       { x: 40, y: 95, z: 8 },
       { x: 40, y: 105, z: 10 },
       { x: -40, y: 105, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Right Field Pavilion
@@ -611,7 +597,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 7,
     rows: generateRows(1, 8, 7, 12, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 100,
@@ -626,23 +612,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Picnic tables',
       'Party deck'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      groupSeating: true,
-      picnicArea: true,
-      partyDeck: true,
-      bullpenView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 95, y: 75, z: 7 },
       { x: 40, y: 95, z: 7 },
       { x: 40, y: 105, z: 10 },
       { x: 95, y: 88, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Luxury Suites
@@ -654,7 +638,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'suite',
     elevation: 20,
     rows: generateRows(1, 2, 20, 8, 22),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -672,24 +656,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Premium parking',
       'Indoor/outdoor seating'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      suiteLevel: true,
-      privateRestroom: true,
-      cateringAvailable: true,
-      climateControlled: true,
-      premiumParking: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -30, y: 25, z: 20 },
       { x: 30, y: 25, z: 20 },
       { x: 30, y: 35, z: 22 },
       { x: -30, y: 35, z: 22 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Press Box Level
@@ -701,7 +682,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'media',
     elevation: 25,
     rows: generateRows(1, 3, 25, 6, 20),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -718,23 +699,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Power outlets',
       'Work stations'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      pressBox: true,
-      mediaFacilities: true,
-      broadcastBooths: true,
-      workStations: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -15, y: 30, z: 25 },
       { x: 15, y: 30, z: 25 },
       { x: 15, y: 36, z: 27 },
       { x: -15, y: 36, z: 27 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Party Deck - First Base
@@ -746,7 +725,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 4, 12, 8, 24),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 95,
@@ -762,23 +741,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Group friendly',
       'Bar service'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      partyDeck: true,
-      standingRoom: true,
-      groupArea: true,
-      barService: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 55, y: 45, z: 12 },
       { x: 70, y: 60, z: 12 },
       { x: 70, y: 68, z: 14 },
       { x: 55, y: 53, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Party Deck - Third Base
@@ -790,7 +767,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 4, 12, 8, 24),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 75,
       afternoon: 35,
@@ -806,23 +783,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Group friendly',
       'Bar service'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      partyDeck: true,
-      standingRoom: true,
-      groupArea: true,
-      barService: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -55, y: 45, z: 12 },
       { x: -70, y: 60, z: 12 },
       { x: -70, y: 68, z: 14 },
       { x: -55, y: 53, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Wheelchair Accessible - Main Level
@@ -834,9 +809,10 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'accessible',
     elevation: 8,
     rows: [
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 8, depth: 6, rakeAngle: 0 }
     ],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 70,
@@ -852,23 +828,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Accessible restrooms',
       'Wide concourses'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      wheelchairAccessible: true,
-      companionSeats: true,
-      levelAccess: true,
-      accessibleRestrooms: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 20, z: 8 },
       { x: 40, y: 20, z: 8 },
       { x: 40, y: 26, z: 8 },
       { x: -40, y: 26, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Standing Room Only
@@ -880,7 +854,7 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 45,
       afternoon: 75,
@@ -895,23 +869,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Various locations',
       'First-come basis'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      flexibleLocation: true,
-      generalAdmission: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -60, y: 40, z: 14 },
       { x: 60, y: 40, z: 14 },
       { x: 60, y: 46, z: 14 },
       { x: -60, y: 46, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Seminole Hard Rock Cabanas
@@ -923,9 +895,9 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 15,
     rows: [
-      { rowNumber: 'Cabana', seats: 20, elevation: 15, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
-    covered: true,
+    covered: true
     sunExposure: {
       morning: 20,
       afternoon: 30,
@@ -942,25 +914,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'Premium seating',
       'Private cabana space'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 4,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      hardRockCabanas: true,
-      privateLounges: true,
-      cocktailService: true,
-      groupSpaces: true,
-      exceptionalViews: true,
-      mostUniquePremium: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 85, y: 15, z: 120 },
       { x: 115, y: 15, z: 140 },
       { x: 115, y: 25, z: 150 },
       { x: 85, y: 25, z: 130 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Bullpen Club Rooftop Deck
@@ -972,10 +940,9 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 25,
     rows: [
-      { rowNumber: 'Reserved', seats: 100, elevation: 25, depth: 0, covered: true },
-      { rowNumber: 'SRO', seats: 100, elevation: 25, depth: 5, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
-    covered: true,
+    covered: true
     sunExposure: {
       morning: 30,
       afternoon: 40,
@@ -995,26 +962,21 @@ export const georgeSteinbrennerFieldSections: DetailedSection[] = [
       'High-top tables',
       'Social sitting areas'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      bullpenRooftop: true,
-      allInclusive: true,
-      threeHourBuffet: true,
-      elevatorAccess: true,
-      firstBaseSide: true,
-      beautifulViews: true,
-      dexImagingAbove: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 90, y: 25, z: 80 },
       { x: 120, y: 25, z: 100 },
       { x: 120, y: 35, z: 110 },
       { x: 90, y: 35, z: 90 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   }
 ];
 
@@ -1033,16 +995,6 @@ export const georgeSteinbrennerFieldConfig = {
     center: 408,
     rightCenter: 385,
     rightField: 314
-  },
-  features: {
-    springTrainingFacility: true,
-    temporaryMLBHome: true,
-    renovatedFor2025: true,
-    naturalGrass: true,
-    openAir: true,
-    partialRoof: true,
-    intimateAtmosphere: true,
-    yankeesSpringHome: true
   },
   sunExposureNotes: {
     morning: 'Sun rises over right field, affecting first base side',

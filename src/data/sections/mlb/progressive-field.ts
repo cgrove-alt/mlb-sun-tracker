@@ -67,85 +67,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 0, y: 87, z: 13 },
       { x: -12, y: 87, z: 13 }
     ],
-    covered: false,
-    price: 'premium',
-    distance: 74,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '144',
-    name: 'Field Box 144',
-    level: 'field',
-    baseAngle: 105, // First base line
-    angleSpan: 8,
-    rows: generateRows('A', 'X', 20, 0, 19, false),
-    vertices3D: [
-      { x: 60, y: -12, z: 0 },
-      { x: 74, y: -26, z: 0 },
-      { x: 87, y: -13, z: 13 },
-      { x: 73, y: 1, z: 13 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 83,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '163',
-    name: 'Field Box 163',
-    level: 'field',
-    baseAngle: 15, // Third base line
-    angleSpan: 8,
-    rows: generateRows('A', 'X', 20, 0, 19, false),
-    vertices3D: [
-      { x: -60, y: 12, z: 0 },
-      { x: -74, y: 26, z: 0 },
-      { x: -87, y: 13, z: 13 },
-      { x: -73, y: -1, z: 13 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 83,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  // ========== LOWER BOX ==========
-  {
-    id: '245',
-    name: 'Lower Box 245',
-    level: 'lower',
-    baseAngle: 60,
-    angleSpan: 9,
-    rows: generateRows(1, 30, 22, 13, 23, false),
-    vertices3D: [
-      { x: -18, y: 87, z: 13 },
-      { x: -5, y: 87, z: 13 },
-      { x: -5, y: 123, z: 34 },
-      { x: -18, y: 123, z: 34 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 105,
-    height: 13,
-    rake: 23,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
+      covered: false  },
 
   {
     id: '264',
@@ -160,15 +82,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -123, y: 5, z: 34 },
       { x: -123, y: 18, z: 34 }
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 105,
-    height: 13,
-    rake: 23,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
+      covered: false  },
 
   // ========== MEZZANINE ==========
   {
@@ -247,7 +161,6 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -13, y: 195, z: 82 },
       { x: -30, y: 195, z: 82 }
     ],
-    covered: true,
     price: 'value',
     distance: 173,
     height: 50,
@@ -271,273 +184,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -95, y: 60, z: 20 },
       { x: -110, y: 45, z: 20 }
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 325,
-    height: 20,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== BLEACHERS ==========
-  {
-    id: '180',
-    name: 'Left Field Bleachers 180',
-    level: 'field',
-    baseAngle: 330,
-    angleSpan: 14,
-    rows: generateRows(1, 30, 28, 6, 22, false),
-    vertices3D: [
-      { x: -130, y: 50, z: 6 },
-      { x: -155, y: 35, z: 6 },
-      { x: -170, y: 55, z: 33 },
-      { x: -145, y: 70, z: 33 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 325,
-    height: 6,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: '185',
-    name: 'Center Field Bleachers 185',
-    level: 'field',
-    baseAngle: 240, // Center field
-    angleSpan: 14,
-    rows: generateRows(1, 30, 28, 6, 22, false),
-    vertices3D: [
-      { x: -30, y: -370, z: 6 },
-      { x: 30, y: -370, z: 6 },
-      { x: 30, y: -405, z: 33 },
-      { x: -30, y: -405, z: 33 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 388,
-    height: 6,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: '187',
-    name: 'Right Field Bleachers 187',
-    level: 'field',
-    baseAngle: 150,
-    angleSpan: 14,
-    rows: generateRows(1, 30, 28, 6, 22, false),
-    vertices3D: [
-      { x: 130, y: -50, z: 6 },
-      { x: 155, y: -65, z: 6 },
-      { x: 170, y: -45, z: 33 },
-      { x: 145, y: -30, z: 33 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 325,
-    height: 6,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  // ========== HERITAGE PARK (Center Field) ==========
-  {
-    id: 'HERITAGE',
-    name: 'Heritage Park',
-    level: 'standing',
-    baseAngle: 240,
-    angleSpan: 18,
-    rows: [], // Standing area with historical displays
-    vertices3D: [
-      { x: -35, y: -405, z: 10 },
-      { x: 35, y: -405, z: 10 },
-      { x: 35, y: -425, z: 10 },
-      { x: -35, y: -425, z: 10 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 415,
-    height: 10,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== TERRACE CLUB ==========
-  {
-    id: 'TERR',
-    name: 'Terrace Club',
-    level: 'club',
-    baseAngle: 60,
-    angleSpan: 10,
-    rows: generateRows('A', 'L', 16, 24, 18, true),
-    vertices3D: [
-      { x: -22, y: 105, z: 24 },
-      { x: -8, y: 105, z: 24 },
-      { x: -8, y: 130, z: 35 },
-      { x: -22, y: 130, z: 35 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 118,
-    height: 24,
-    rake: 18,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 6,
-      aisleSeats: true,
-      tunnelAccess: ['Terrace Club Entrance']
-    }
-  },
-
-  // ========== SUITE LEVEL ==========
-  {
-    id: 'SUITE',
-    name: 'Suite Level',
-    level: 'suite',
-    baseAngle: 60,
-    angleSpan: 12,
-    rows: [
-      { rowNumber: 'Suite', seats: 30, elevation: 30, depth: 0, covered: true, overhangHeight: 22 }
-    ],
-    vertices3D: [
-      { x: -20, y: 115, z: 30 },
-      { x: 20, y: 115, z: 30 },
-      { x: 20, y: 135, z: 30 },
-      { x: -20, y: 135, z: 30 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 125,
-    height: 30,
-    rake: 0,
-    seatWidth: 24,
-    rowSpacing: 42,
-    viewQuality: 'excellent'
-  },
-
-  // ========== KIDS CLUBHOUSE ==========
-  {
-    id: 'KIDS',
-    name: 'Kids Clubhouse',
-    level: 'standing',
-    baseAngle: 105,
-    angleSpan: 10,
-    rows: [], // Kids play area
-    vertices3D: [
-      { x: 90, y: -15, z: 8 },
-      { x: 105, y: -25, z: 8 },
-      { x: 105, y: -10, z: 8 },
-      { x: 90, y: 0, z: 8 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 330,
-    height: 8,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== DISTRICT TICKET ==========
-  {
-    id: 'DIST',
-    name: 'District Ticket',
-    level: 'standing',
-    baseAngle: 240,
-    angleSpan: 15,
-    rows: [], // Affordable standing room
-    vertices3D: [
-      { x: -30, y: -380, z: 35 },
-      { x: 30, y: -380, z: 35 },
-      { x: 30, y: -395, z: 35 },
-      { x: -30, y: -395, z: 35 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 388,
-    height: 35,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== SNOW DAYS BAR ==========
-  {
-    id: 'SNOW',
-    name: 'Snow Days Bar',
-    level: 'standing',
-    baseAngle: 150,
-    angleSpan: 8,
-    rows: [], // Bar area
-    vertices3D: [
-      { x: 115, y: -35, z: 22 },
-      { x: 130, y: -45, z: 22 },
-      { x: 130, y: -30, z: 22 },
-      { x: 115, y: -20, z: 22 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 335,
-    height: 22,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== BUDWEISER PARTY DECK ==========
-  {
-    id: 'BUD',
-    name: 'Budweiser Party Deck',
-    level: 'upper',
-    baseAngle: 330,
-    angleSpan: 12,
-    rows: [], // Group party area
-    vertices3D: [
-      { x: -145, y: 40, z: 38 },
-      { x: -165, y: 25, z: 38 },
-      { x: -165, y: 45, z: 38 },
-      { x: -145, y: 60, z: 38 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 345,
-    height: 38,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-  
-  // ========== BLUE MOON TERRACE GARDEN (New 2025) ==========
-  {
-    id: 'BLUEMOON',
-    name: 'Blue Moon Terrace Garden',
-    level: 'upper',
-    baseAngle: 225,
-    angleSpan: 20,
-    rows: generateRows(1, 10, 35, 75, 30, false),
-    vertices3D: [
-      { x: -120, y: 75, z: 280 },
-      { x: -90, y: 75, z: 300 },
-      { x: -95, y: 105, z: 330 },
-      { x: -125, y: 105, z: 310 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 290,
-    height: 75,
-    rake: 30,
-    seatWidth: 20,
-    rowSpacing: 36,
-    viewQuality: 'good'
-  },
+      covered: false  },
   
   // ========== TERRACE HALL (New 2025) ==========
   {
@@ -553,7 +200,6 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -90, y: 87, z: 302 },
       { x: -115, y: 87, z: 282 }
     ],
-    covered: true,
     price: 'luxury',
     distance: 270,
     height: 65,
@@ -571,7 +217,7 @@ export const progressiveFieldSections: DetailedSection[] = [
     baseAngle: 255,
     angleSpan: 12,
     rows: [
-      { rowNumber: 'Box', seats: 80, elevation: 55, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
     vertices3D: [
       { x: -130, y: 55, z: 240 },
@@ -579,12 +225,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -110, y: 65, z: 265 },
       { x: -130, y: 65, z: 250 }
     ],
-    covered: true,
-    price: 'luxury',
-    distance: 247,
-    height: 55,
-    rake: 0,
-    viewQuality: 'excellent'
+    price: 'luxury'
   },
   
   // ========== ECHO VICTORY CLUB ==========
@@ -601,7 +242,6 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 35, y: 86, z: 96 },
       { x: -35, y: 86, z: 96 }
     ],
-    covered: true,
     price: 'luxury',
     distance: 70,
     height: 60,

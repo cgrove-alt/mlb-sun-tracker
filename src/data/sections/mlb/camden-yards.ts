@@ -26,7 +26,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'club',
     elevation: 20,
     rows: generateRows(1, 10, 20, 12, 26),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -44,24 +44,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Padded seats',
       'Private entrance'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      clubLevel: true,
-      allInclusive: true,
-      climateControlled: true,
-      privateEntrance: true,
-      premiumDining: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 40, z: 20 },
       { x: 25, y: 40, z: 20 },
       { x: 25, y: 53, z: 25 },
       { x: -25, y: 53, z: 25 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Field Box - Behind Home Plate
@@ -73,7 +70,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 16, 4, 10, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 80,
@@ -89,23 +86,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'In-seat service',
       'Extra legroom'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      premiumSeating: true,
-      chairbackSeats: true,
-      waitService: true,
-      behindHomeBase: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 4 },
       { x: 25, y: 0, z: 4 },
       { x: 25, y: 24, z: 10 },
       { x: -25, y: 24, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Lower Box - First Base
@@ -117,7 +112,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 35,
       afternoon: 90,
@@ -132,23 +127,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Cup holders',
       'Close to Orioles dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      oriolesDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 25, y: 0, z: 4 },
       { x: 55, y: 30, z: 4 },
       { x: 55, y: 54, z: 11 },
       { x: 25, y: 24, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Lower Box - Third Base
@@ -160,7 +153,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 18, 4, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -175,23 +168,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Cup holders',
       'Close to visitor dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      visitorDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 4 },
       { x: -55, y: 30, z: 4 },
       { x: -55, y: 54, z: 11 },
       { x: -25, y: 24, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Eutaw Street Reserved
@@ -203,7 +194,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 14, 12, 14, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 20,
       afternoon: 95,
@@ -219,24 +210,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Bronze baseball markers',
       'Standing room available'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      eutawStreet: true,
-      warehouseViews: true,
-      bronzeBaseballs: true,
-      historicLocation: true,
-      rightFieldView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 85, y: 70, z: 12 },
       { x: 95, y: 80, z: 12 },
       { x: 95, y: 95, z: 17 },
       { x: 85, y: 85, z: 17 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Coors Light Roof Deck
@@ -248,7 +236,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -264,24 +252,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Reserved seating',
       'Overlooks field and Eutaw Street'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      roofDeck: true,
-      fullBar: true,
-      highTopTables: true,
-      battersEyeLocation: true,
-      dualViews: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 95, z: 18 },
       { x: 40, y: 95, z: 18 },
       { x: 40, y: 106, z: 21 },
       { x: -40, y: 106, z: 21 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Eutaw Street Rooftop Palace
@@ -293,7 +278,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 22,
     rows: generateRows(90, 98, 22, 12, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 15,
       afternoon: 90,
@@ -309,24 +294,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Eutaw Street adjacent',
       'Unique perspective'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      rooftopPalace: true,
-      eutawStreetAdjacent: true,
-      barAtmosphere: true,
-      elevatedPlatform: true,
-      sections90to98: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 88, y: 75, z: 22 },
       { x: 98, y: 85, z: 22 },
       { x: 98, y: 97, z: 26 },
       { x: 88, y: 87, z: 26 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // B&O Warehouse Club
@@ -338,7 +320,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'club',
     elevation: 16,
     rows: generateRows(1, 8, 16, 10, 25),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -355,24 +337,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Climate controlled',
       'Premium bar'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      warehouseClub: true,
-      historicBuilding: true,
-      allInclusive: true,
-      climateControlled: true,
-      longestBrickBuilding: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 90, y: 60, z: 16 },
       { x: 100, y: 70, z: 16 },
       { x: 100, y: 80, z: 19 },
       { x: 90, y: 70, z: 19 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Camden Club
@@ -384,7 +363,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'club',
     elevation: 8,
     rows: generateRows(1, 10, 8, 12, 24),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -401,23 +380,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Premium location',
       'Private entrance'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 4,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      fieldLevelClub: true,
-      allInclusive: true,
-      premiumLocation: true,
-      privateEntrance: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 5, z: 8 },
       { x: 20, y: 5, z: 8 },
       { x: 20, y: 18, z: 12 },
       { x: -20, y: 18, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Flag Court Plaza
@@ -429,7 +406,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 10,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 80,
@@ -445,24 +422,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Food trucks',
       'Social atmosphere'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      flagCourt: true,
-      standingRoom: true,
-      foodTrucks: true,
-      socialArea: true,
-      flagDisplays: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -50, y: 100, z: 10 },
       { x: 50, y: 100, z: 10 },
       { x: 50, y: 112, z: 10 },
       { x: -50, y: 112, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Boog's BBQ Area
@@ -474,7 +448,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 8,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 90,
@@ -490,24 +464,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Eutaw Street location',
       'Meet Boog Powell'
     ],
-    accessibilityRating: 3,
     visibilityRating: 2,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 3,
-    features: {
-      boogsBBQ: true,
-      eutawStreet: true,
-      standingRoom: true,
-      boogPowell: true,
-      iconicFood: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 82, y: 65, z: 8 },
       { x: 92, y: 75, z: 8 },
       { x: 92, y: 83, z: 8 },
       { x: 82, y: 73, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Upper Deck - Behind Home
@@ -519,7 +490,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 26,
     rows: generateRows(1, 24, 26, 20, 34),
-    covered: true,
+    covered: true
     coveragePercentage: 70,
     coveredRows: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24'],
     sunExposure: {
@@ -536,23 +507,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Partial coverage',
       'Budget friendly'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      upperDeck: true,
-      partialCoverage: true,
-      valueSeating: true,
-      pressBoxBelow: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -35, y: 55, z: 26 },
       { x: 35, y: 55, z: 26 },
       { x: 35, y: 80, z: 35 },
       { x: -35, y: 80, z: 35 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Left Field Bleachers
@@ -564,7 +533,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 20, 6, 18, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 85,
       afternoon: 35,
@@ -579,23 +548,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Budget friendly',
       'Social atmosphere'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      leftFieldView: true,
-      budgetFriendly: true,
-      socialAtmosphere: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -75, y: 55, z: 6 },
       { x: -95, y: 75, z: 6 },
       { x: -95, y: 95, z: 13 },
       { x: -75, y: 75, z: 13 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Center Field Bleachers
@@ -607,7 +574,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 18, 6, 16, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 65,
       afternoon: 85,
@@ -621,22 +588,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Bleacher seating',
       'Batter\'s eye view'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      centerFieldView: true,
-      battersEyeView: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -95, y: 75, z: 6 },
       { x: -40, y: 105, z: 6 },
       { x: -40, y: 122, z: 12 },
       { x: -95, y: 95, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Right Field Bleachers
@@ -648,7 +614,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 20, 6, 18, 30),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 100,
@@ -663,23 +629,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Warehouse views',
       'Budget friendly'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      bleacherSeating: true,
-      rightFieldView: true,
-      warehouseViews: true,
-      budgetFriendly: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 40, y: 105, z: 6 },
       { x: 95, y: 75, z: 6 },
       { x: 95, y: 95, z: 13 },
       { x: 40, y: 122, z: 13 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Terrace Box - First Base
@@ -691,7 +655,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 15, 10, 14, 31),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 40,
       afternoon: 85,
@@ -705,21 +669,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Standard seats',
       'Cup holders'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      terraceLevel: true,
-      standardSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 55, y: 30, z: 10 },
       { x: 75, y: 50, z: 10 },
       { x: 75, y: 68, z: 16 },
       { x: 55, y: 48, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Terrace Box - Third Base
@@ -731,7 +695,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 15, 10, 14, 31),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 75,
       afternoon: 45,
@@ -745,21 +709,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Standard seats',
       'Cup holders'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      terraceLevel: true,
-      standardSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -55, y: 30, z: 10 },
       { x: -75, y: 50, z: 10 },
       { x: -75, y: 68, z: 16 },
       { x: -55, y: 48, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Luxury Suites
@@ -771,7 +735,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'suite',
     elevation: 24,
     rows: generateRows(1, 2, 24, 8, 22),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -789,24 +753,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Premium parking',
       'Indoor/outdoor seating'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      suiteLevel: true,
-      privateRestroom: true,
-      cateringAvailable: true,
-      climateControlled: true,
-      premiumParking: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -50, y: 50, z: 24 },
       { x: 50, y: 50, z: 24 },
       { x: 50, y: 60, z: 27 },
       { x: -50, y: 60, z: 27 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Press Box Level
@@ -818,7 +779,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'media',
     elevation: 30,
     rows: generateRows(1, 3, 30, 6, 20),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -835,23 +796,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Power outlets',
       'Work stations'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      pressBox: true,
-      mediaFacilities: true,
-      broadcastBooths: true,
-      workStations: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 58, z: 30 },
       { x: 20, y: 58, z: 30 },
       { x: 20, y: 65, z: 32 },
       { x: -20, y: 65, z: 32 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Standing Room - Concourse
@@ -863,7 +822,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'standing',
     elevation: 14,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 45,
       afternoon: 80,
@@ -878,23 +837,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Various locations',
       'First-come basis'
     ],
-    accessibilityRating: 2,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      flexibleLocation: true,
-      concourseLevel: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -70, y: 40, z: 14 },
       { x: 70, y: 40, z: 14 },
       { x: 70, y: 48, z: 14 },
       { x: -70, y: 48, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Family Section
@@ -906,7 +863,7 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 12,
     rows: generateRows(1, 12, 12, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 70,
@@ -922,23 +879,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Kid activities nearby',
       'Oriole Bird visits'
     ],
-    accessibilityRating: 4,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      familySection: true,
-      alcoholFree: true,
-      kidFriendly: true,
-      orioleBirdVisits: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -60, y: 35, z: 12 },
       { x: -40, y: 45, z: 12 },
       { x: -40, y: 58, z: 16 },
       { x: -60, y: 48, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Wheelchair Accessible Areas
@@ -950,9 +905,10 @@ export const camdenYardsSections: DetailedSection[] = [
     type: 'accessible',
     elevation: 12,
     rows: [
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 12, depth: 6, rakeAngle: 0 }
     ],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 75,
@@ -968,23 +924,21 @@ export const camdenYardsSections: DetailedSection[] = [
       'Accessible restrooms',
       'Wide concourses'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      wheelchairAccessible: true,
-      companionSeats: true,
-      levelAccess: true,
-      accessibleRestrooms: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -65, y: 30, z: 12 },
       { x: 65, y: 30, z: 12 },
       { x: 65, y: 36, z: 12 },
       { x: -65, y: 36, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // The Yard
@@ -993,29 +947,23 @@ export const camdenYardsSections: DetailedSection[] = [
     name: 'The Yard',
     level: 'field',
     rows: [
-      { rowNumber: 'Party', seats: 150, elevation: 12, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     sunExposure: {
       morning: 40,
       afternoon: 60,
       evening: 50
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 100, y: 12, z: 380 },
       { x: 130, y: 12, z: 400 },
       { x: 130, y: 22, z: 410 },
       { x: 100, y: 22, z: 390 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      theYard: true,
-      new2025: true,
-      groupPartyArea: true,
-      socialGames: true,
-      standingRoom: true
-    }
+    viewQuality: 3
   }
 ];
 
@@ -1034,17 +982,6 @@ export const camdenYardsConfig = {
     rightCenter: 373,
     rightField: 318,
     warehouseDistance: 439
-  },
-  features: {
-    eutawStreet: true,
-    bAndOWarehouse: true,
-    longestBrickBuilding: true,
-    coorsLightRoofDeck: true,
-    boogsBBQ: true,
-    bronzeBaseballs: true,
-    flagCourt: true,
-    rooftopPalace: true,
-    historicArchitecture: true
   },
   sunExposureNotes: {
     morning: 'Sun rises over left field, third base side gets early shade',

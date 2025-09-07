@@ -36,13 +36,6 @@ export const pncParkConfig = {
     centerField: 399,
     rightCenter: 375,
     rightField: 320
-  },
-  features: {
-    riverwalk: true,
-    skylineView: true,
-    robertoClementeWall: true,
-    jimBeamLounge: true,
-    rooftop: true
   }
 };
 
@@ -59,21 +52,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 20,
       evening: 40
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -8, y: 50, z: -1 },
       { x: 8, y: 50, z: -1 },
       { x: 8, y: 60, z: 4 },
       { x: -8, y: 60, z: 4 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      piratesCove: true,
-      behindHomePlate: true,
-      premiumSeating: true,
-      closeToAction: true
-    }
+    viewQuality: 5
   },
 
   // ========== FIELD BOX ==========
@@ -87,20 +74,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 30,
       evening: 45
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -10, y: 58, z: 0 },
       { x: 0, y: 58, z: 0 },
       { x: 0, y: 85, z: 13 },
       { x: -10, y: 85, z: 13 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      closeToDugout: true,
-      skylineView: true
-    }
+    viewQuality: 5
   },
 
   {
@@ -113,20 +95,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 35,
       evening: 40
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 58, y: 58, z: 0 },
       { x: 72, y: 72, z: 0 },
       { x: 85, y: 85, z: 13 },
       { x: 71, y: 71, z: 13 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      firstBaseLine: true,
-      riverView: true
-    }
+    viewQuality: 5
   },
 
   // ========== JIM BEAM LEFT FIELD LOUNGE & PORCH ==========
@@ -140,25 +117,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 60
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -95, y: 340, z: 20 },
       { x: -75, y: 355, z: 20 },
       { x: -75, y: 375, z: 20 },
       { x: -95, y: 360, z: 20 }
     ],
     accessibility: 5,
-    viewQuality: 4,
-    features: {
-      jimBeamLounge: true,
-      fullServiceBar: true,
-      climateControlled: true,
-      retractableGlassDoors: true,
-      capacity200: true,
-      embroidered25Stools: true,
-      flatScreen20TVs: true,
-      two52InchScreens: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -171,22 +138,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 50,
       evening: 65
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -95, y: 375, z: 20 },
       { x: -75, y: 390, z: 20 },
       { x: -75, y: 405, z: 20 },
       { x: -95, y: 390, z: 20 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      jimBeamPorch: true,
-      outdoorPatio: true,
-      overlooksLeftCenter: true,
-      riverView: true,
-      alleghenyRiverView: true
-    }
+    viewQuality: 3
   },
 
   // ========== THE ROOFTOP (Left Field) ==========
@@ -200,23 +160,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 55,
       evening: 70
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -85, y: 320, z: 38 },
       { x: -65, y: 335, z: 38 },
       { x: -65, y: 355, z: 48 },
       { x: -85, y: 340, z: 48 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      rooftop: true,
-      groupSeating: true,
-      capacity30to70: true,
-      cateredFoodBeverage: true,
-      sections335to339: true,
-      leftFieldArea: true
-    }
+    viewQuality: 3
   },
 
   // ========== RIVERWALK ==========
@@ -230,24 +182,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 75
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -30, y: 400, z: 2 },
       { x: 30, y: 400, z: 2 },
       { x: 30, y: 420, z: 8 },
       { x: -30, y: 420, z: 8 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      riverwalk: true,
-      outfieldSeating: true,
-      expandedIn2022: true,
-      vibrantConcessions: true,
-      selfieSpots: true,
-      kidsAreas: true,
-      giantBobbleheads: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -260,22 +203,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 40, y: 380, z: 3 },
       { x: 80, y: 370, z: 3 },
       { x: 80, y: 400, z: 3 },
       { x: 40, y: 410, z: 3 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      ahnPicnicPark: true,
-      riverwalkLocation: true,
-      capacity400: true,
-      preGameSocializing: true,
-      incredibleView: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -288,21 +224,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 55,
       evening: 70
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 85, y: 340, z: 5 },
       { x: 105, y: 330, z: 5 },
       { x: 105, y: 350, z: 5 },
       { x: 85, y: 360, z: 5 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      fatHeadsBullpenBar: true,
-      craftBeer: true,
-      riverwalkLocation: true,
-      greatFieldView: true
-    }
+    viewQuality: 3
   },
 
   // ========== THE PORCH (Center Field) ==========
@@ -316,22 +246,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 70,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -20, y: 430, z: 15 },
       { x: 20, y: 430, z: 15 },
       { x: 20, y: 450, z: 15 },
       { x: -20, y: 450, z: 15 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      thePorch: true,
-      overlooksCenterField: true,
-      barStools: true,
-      outdoorSofaSeating: true,
-      perfectAtmosphere: true
-    }
+    viewQuality: 3
   },
 
   // ========== PITTSBURGH BASEBALL CLUB LEVEL ==========
@@ -345,21 +268,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 25,
       evening: 35
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -75, y: 120, z: 28 },
       { x: -55, y: 135, z: 28 },
       { x: -55, y: 155, z: 34 },
       { x: -75, y: 140, z: 34 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      pittsburghBaseballClub: true,
-      leftFieldLine: true,
-      premiumSuites: true,
-      exclusiveAccess: true
-    }
+    viewQuality: 5
   },
 
   // ========== WORLD SERIES SUITES ==========
@@ -373,22 +290,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 20,
       evening: 30
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -65, y: 140, z: 28 },
       { x: -45, y: 155, z: 28 },
       { x: -45, y: 175, z: 28 },
       { x: -65, y: 160, z: 28 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      worldSeriesSuites: true,
-      allStarSetting: true,
-      capacity40to100: true,
-      leftFieldLine: true,
-      pittsburghBaseballClubLevel: true
-    }
+    viewQuality: 5
   },
 
   // ========== CLUB CAMBRIA ==========
@@ -402,23 +312,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 22,
       evening: 32
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -20, y: 95, z: 22 },
       { x: 20, y: 95, z: 22 },
       { x: 20, y: 115, z: 30 },
       { x: -20, y: 115, z: 30 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      clubCambria: true,
-      climateControlled: true,
-      diningAreas: true,
-      loungeAreas: true,
-      privateBars: true,
-      flatScreenHDTVs: true
-    }
+    viewQuality: 5
   },
 
   // ========== LOWER OUTFIELD BOX ==========
@@ -432,20 +334,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 75
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -80, y: 300, z: 5 },
       { x: -60, y: 315, z: 5 },
       { x: -60, y: 340, z: 20 },
       { x: -80, y: 325, z: 20 }
     ],
     accessibility: 3,
-    viewQuality: 4,
-    features: {
-      lowerOutfield: true,
-      leftField: true,
-      valueSeating: true
-    }
+    viewQuality: 4
   },
 
   // ========== BLEACHER BOX (Right Field Wall) ==========
@@ -459,21 +356,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 80, y: 300, z: 8 },
       { x: 100, y: 290, z: 8 },
       { x: 100, y: 315, z: 22 },
       { x: 80, y: 325, z: 22 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      bleacherBox: true,
-      rightFieldWall: true,
-      robertoClementeWall: true,
-      wall21Feet: true
-    }
+    viewQuality: 3
   },
 
   // ========== GRANDSTAND ==========
@@ -487,20 +378,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 28,
       evening: 38
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -18, y: 85, z: 14 },
       { x: -5, y: 85, z: 14 },
       { x: -5, y: 120, z: 34 },
       { x: -18, y: 120, z: 34 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      grandstand: true,
-      coveredSeating: true,
-      lowerLevel: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -513,20 +399,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 32,
       evening: 42
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 45, y: 85, z: 14 },
       { x: 60, y: 95, z: 14 },
       { x: 60, y: 130, z: 34 },
       { x: 45, y: 120, z: 34 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      grandstand: true,
-      firstBaseSide: true,
-      coveredSeating: true
-    }
+    viewQuality: 4
   },
 
   // ========== UPPER DECK ==========
@@ -540,20 +421,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 30,
       evening: 40
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -25, y: 120, z: 34 },
       { x: -8, y: 120, z: 34 },
       { x: -6, y: 170, z: 68 },
       { x: -23, y: 170, z: 68 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      upperDeck: true,
-      skylineView: true,
-      coveredSeating: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -566,20 +442,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 60
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -70, y: 160, z: 34 },
       { x: -50, y: 175, z: 34 },
       { x: -50, y: 225, z: 68 },
       { x: -70, y: 210, z: 68 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      upperDeck: true,
-      thirdBaseLine: true,
-      openAir: true
-    }
+    viewQuality: 3
   },
 
   // ========== ALL YOU CAN EAT SEATS ==========
@@ -593,24 +464,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 75,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 60, y: 340, z: 36 },
       { x: 80, y: 330, z: 36 },
       { x: 80, y: 360, z: 52 },
       { x: 60, y: 370, z: 52 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      allYouCanEat: true,
-      rightFieldCorner: true,
-      unlimitedFood: true,
-      hotDogs: true,
-      nachos: true,
-      popcorn: true,
-      softDrinks: true
-    }
+    viewQuality: 3
   },
 
   // ========== STANDING ROOM ONLY ==========
@@ -624,20 +486,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 40,
       evening: 55
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -40, y: 380, z: 10 },
       { x: 40, y: 380, z: 10 },
       { x: 40, y: 395, z: 10 },
       { x: -40, y: 395, z: 10 }
     ],
     accessibility: 4,
-    viewQuality: 2,
-    features: {
-      standingRoom: true,
-      rotundaArea: true,
-      centerField: true
-    }
+    viewQuality: 2
   },
 
   // ========== PIRATES CHARITIES DECK ==========
@@ -651,20 +508,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 42,
       evening: 58
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -60, y: 200, z: 25 },
       { x: -40, y: 215, z: 25 },
       { x: -40, y: 235, z: 33 },
       { x: -60, y: 220, z: 33 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      piratesCharities: true,
-      groupDeck: true,
-      fundraisingEvents: true
-    }
+    viewQuality: 4
   },
 
   // ========== DIAMOND CLUB ==========
@@ -678,22 +530,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 15,
       evening: 25
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -8, y: 48, z: -1 },
       { x: 8, y: 48, z: -1 },
       { x: 8, y: 58, z: 3 },
       { x: -8, y: 58, z: 3 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      diamondClub: true,
-      behindHomePlate: true,
-      premiumDining: true,
-      exclusiveAccess: true,
-      paddedSeats: true
-    }
+    viewQuality: 5
   },
 
   // ========== HALL OF FAME CLUB ==========
@@ -707,21 +552,15 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 18,
       evening: 28
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 25, y: 90, z: 18 },
       { x: 45, y: 95, z: 18 },
       { x: 45, y: 110, z: 26 },
       { x: 25, y: 105, z: 26 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      hallOfFameClub: true,
-      piratesHistory: true,
-      memorabilia: true,
-      premiumLounge: true
-    }
+    viewQuality: 5
   },
 
   // ========== LEGACY SQUARE ==========
@@ -735,20 +574,14 @@ export const pncParkSections: DetailedSection[] = [
       afternoon: 85,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -50, y: 420, z: 5 },
       { x: -20, y: 430, z: 5 },
       { x: -20, y: 450, z: 5 },
       { x: -50, y: 440, z: 5 }
     ],
     accessibility: 4,
-    viewQuality: 2,
-    features: {
-      legacySquare: true,
-      leftFieldEntrance: true,
-      statues: true,
-      piratesLegends: true
-    }
+    viewQuality: 2
   }
 ];

@@ -26,7 +26,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 15, 4, 10, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 80,
@@ -42,23 +42,21 @@ export const citiFieldSections: DetailedSection[] = [
       'In-seat service',
       'Extra legroom'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      premiumSeating: true,
-      chairbackSeats: true,
-      waitService: true,
-      behindHomeBase: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 4 },
       { x: 25, y: 0, z: 4 },
       { x: 25, y: 23, z: 10 },
       { x: -25, y: 23, z: 10 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Field Level Box - First Base
@@ -70,7 +68,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 17, 4, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 35,
       afternoon: 90,
@@ -85,23 +83,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Cup holders',
       'Close to Mets dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      metsDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 25, y: 0, z: 4 },
       { x: 55, y: 30, z: 4 },
       { x: 55, y: 53, z: 11 },
       { x: 25, y: 23, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Field Level Box - Third Base
@@ -113,7 +109,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 4,
     rows: generateRows(1, 17, 4, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 70,
       afternoon: 50,
@@ -128,23 +124,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Cup holders',
       'Close to visitor dugout'
     ],
-    accessibilityRating: 4,
     visibilityRating: 5,
     proximityToAction: 5,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      fieldLevel: true,
-      chairbackSeats: true,
-      dugoutProximity: true,
-      visitorDugout: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -25, y: 0, z: 4 },
       { x: -55, y: 30, z: 4 },
       { x: -55, y: 53, z: 11 },
       { x: -25, y: 23, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Metropolitan Club
@@ -156,7 +150,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'club',
     elevation: 18,
     rows: generateRows(1, 6, 18, 10, 25),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -174,24 +168,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Padded seats',
       'Private entrance'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      clubLevel: true,
-      allInclusive: true,
-      climateControlled: true,
-      privateEntrance: true,
-      premiumDining: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 35, z: 18 },
       { x: 40, y: 35, z: 18 },
       { x: 40, y: 47, z: 22 },
       { x: -40, y: 47, z: 22 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Delta Sky360 Club
@@ -203,7 +194,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'club',
     elevation: 8,
     rows: generateRows(1, 8, 8, 12, 24),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -220,23 +211,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Premium location',
       'Climate controlled'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 4,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      fieldLevelClub: true,
-      allInclusive: true,
-      deltaThemed: true,
-      premiumLocation: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 5, z: 8 },
       { x: 20, y: 5, z: 8 },
       { x: 20, y: 18, z: 12 },
       { x: -20, y: 18, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Caesars Club
@@ -248,7 +237,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'club',
     elevation: 20,
     rows: generateRows(1, 5, 20, 10, 24),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -265,23 +254,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Premium bar',
       'Private entrance'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      sportsbook: true,
-      allInclusive: true,
-      caesarsThemed: true,
-      privateEntrance: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 30, y: 40, z: 20 },
       { x: 50, y: 50, z: 20 },
       { x: 50, y: 60, z: 23 },
       { x: 30, y: 50, z: 23 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Jim Beam Highball Club
@@ -293,7 +280,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 14,
     rows: generateRows(1, 4, 14, 8, 25),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 30,
       afternoon: 85,
@@ -309,23 +296,21 @@ export const citiFieldSections: DetailedSection[] = [
       'High-top tables',
       'Social atmosphere'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      bourbonBar: true,
-      standingRoom: true,
-      highballClub: true,
-      socialArea: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 70, y: 55, z: 14 },
       { x: 85, y: 70, z: 14 },
       { x: 85, y: 78, z: 17 },
       { x: 70, y: 63, z: 17 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Foxwoods Club
@@ -337,7 +322,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'club',
     elevation: 22,
     rows: generateRows(1, 6, 22, 10, 25),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -354,23 +339,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Premium bar',
       'Climate controlled'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      gamingThemed: true,
-      allInclusive: true,
-      foxwoodsPartnership: true,
-      climateControlled: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -30, y: 40, z: 22 },
       { x: -50, y: 50, z: 22 },
       { x: -50, y: 60, z: 25 },
       { x: -30, y: 50, z: 25 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Coca-Cola Corner
@@ -382,7 +365,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 10,
     rows: generateRows(1, 8, 10, 12, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 35,
       afternoon: 95,
@@ -398,23 +381,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Group seating',
       'Themed concessions'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      familyArea: true,
-      interactiveGames: true,
-      cocaColaThemed: true,
-      groupSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 85, y: 70, z: 10 },
       { x: 95, y: 80, z: 10 },
       { x: 95, y: 92, z: 14 },
       { x: 85, y: 82, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Piazza 31
@@ -426,7 +407,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 12,
     rows: generateRows(1, 6, 12, 10, 26),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 70,
       afternoon: 35,
@@ -442,23 +423,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Bar service',
       'Memorabilia displays'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      piazzaTribute: true,
-      standingRoom: true,
-      memorabiliaDisplays: true,
-      number31Theme: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -85, y: 70, z: 12 },
       { x: -95, y: 80, z: 12 },
       { x: -95, y: 90, z: 15 },
       { x: -85, y: 80, z: 15 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Shea Bridge
@@ -470,7 +449,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 16,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 85,
@@ -486,23 +465,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Food trucks nearby',
       'City skyline views'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      sheaBridge: true,
-      standingRoom: true,
-      historicReplica: true,
-      skylineViews: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -40, y: 90, z: 16 },
       { x: 40, y: 90, z: 16 },
       { x: 40, y: 98, z: 16 },
       { x: -40, y: 98, z: 16 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Excelsior Level - Home Plate
@@ -514,7 +491,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 18,
     rows: generateRows(1, 20, 18, 18, 32),
-    covered: true,
+    covered: true
     coveragePercentage: 80,
     coveredRows: ['12', '13', '14', '15', '16', '17', '18', '19', '20'],
     sunExposure: {
@@ -531,22 +508,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Standard seats',
       'Good sightlines'
     ],
-    accessibilityRating: 3,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      excelsiorLevel: true,
-      coveredSeating: true,
-      pressBoxNearby: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -35, y: 45, z: 18 },
       { x: 35, y: 45, z: 18 },
       { x: 35, y: 65, z: 25 },
       { x: -35, y: 65, z: 25 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Promenade Level - First Base
@@ -558,7 +534,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 25,
     rows: generateRows(1, 18, 25, 16, 33),
-    covered: true,
+    covered: true
     coveragePercentage: 90,
     coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
     sunExposure: {
@@ -575,23 +551,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Covered from elements',
       'Budget friendly'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      promenadeLevel: true,
-      upperDeck: true,
-      coveredSeating: true,
-      valueSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 35, y: 50, z: 25 },
       { x: 65, y: 70, z: 25 },
       { x: 65, y: 88, z: 31 },
       { x: 35, y: 68, z: 31 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Promenade Level - Third Base
@@ -603,7 +577,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 25,
     rows: generateRows(1, 18, 25, 16, 33),
-    covered: true,
+    covered: true
     coveragePercentage: 90,
     coveredRows: ['10', '11', '12', '13', '14', '15', '16', '17', '18'],
     sunExposure: {
@@ -620,23 +594,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Covered from elements',
       'Budget friendly'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      promenadeLevel: true,
-      upperDeck: true,
-      coveredSeating: true,
-      valueSeating: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -35, y: 50, z: 25 },
       { x: -65, y: 70, z: 25 },
       { x: -65, y: 88, z: 31 },
       { x: -35, y: 68, z: 31 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Pepsi Porch - Right Field
@@ -648,7 +620,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 8,
     rows: generateRows(1, 10, 8, 12, 28),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 25,
       afternoon: 100,
@@ -664,23 +636,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Pepsi products',
       'Social atmosphere'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 4,
     restroomProximity: 3,
-    features: {
-      pepsiPorch: true,
-      outfieldSeating: true,
-      groupArea: true,
-      socialAtmosphere: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 75, y: 60, z: 8 },
       { x: 95, y: 80, z: 8 },
       { x: 95, y: 95, z: 13 },
       { x: 75, y: 75, z: 13 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Left Field Landing
@@ -692,7 +662,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 6,
     rows: generateRows(1, 14, 6, 14, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 80,
       afternoon: 30,
@@ -707,22 +677,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Budget friendly',
       'Group friendly'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 2,
     concessionProximity: 3,
     restroomProximity: 3,
-    features: {
-      leftFieldView: true,
-      outfieldSeating: true,
-      budgetFriendly: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -75, y: 60, z: 6 },
       { x: -95, y: 80, z: 6 },
       { x: -95, y: 95, z: 11 },
       { x: -75, y: 75, z: 11 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Center Field Plaza
@@ -734,7 +703,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'standing',
     elevation: 8,
     rows: [],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 60,
       afternoon: 85,
@@ -750,23 +719,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Kids activities',
       'Home Run Apple view'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 1,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      standingRoom: true,
-      homeRunApple: true,
-      foodCourt: true,
-      kidsActivities: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -50, y: 100, z: 8 },
       { x: 50, y: 100, z: 8 },
       { x: 50, y: 115, z: 8 },
       { x: -50, y: 115, z: 8 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Sterling Level Suites
@@ -778,7 +745,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'suite',
     elevation: 24,
     rows: generateRows(1, 2, 24, 8, 22),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -796,24 +763,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Premium parking',
       'Indoor/outdoor seating'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      suiteLevel: true,
-      privateRestroom: true,
-      cateringAvailable: true,
-      climateControlled: true,
-      premiumParking: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -45, y: 48, z: 24 },
       { x: 45, y: 48, z: 24 },
       { x: 45, y: 58, z: 27 },
       { x: -45, y: 58, z: 27 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Paciolan Pavilion
@@ -825,7 +789,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'flexible',
     elevation: 14,
     rows: generateRows(1, 6, 14, 10, 27),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 45,
       afternoon: 75,
@@ -840,22 +804,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Picnic tables',
       'All-inclusive packages'
     ],
-    accessibilityRating: 3,
     visibilityRating: 3,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 4,
-    features: {
-      groupPavilion: true,
-      picnicTables: true,
-      allInclusivePackages: true
-    },
-    vertices: [
+    vertices3D: [
       { x: 55, y: 45, z: 14 },
       { x: 70, y: 60, z: 14 },
       { x: 70, y: 70, z: 17 },
       { x: 55, y: 55, z: 17 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Press Box Level
@@ -867,7 +830,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'media',
     elevation: 30,
     rows: generateRows(1, 3, 30, 6, 20),
-    covered: true,
+    covered: true
     coveragePercentage: 100,
     sunExposure: {
       morning: 0,
@@ -884,23 +847,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Power outlets',
       'Work stations'
     ],
-    accessibilityRating: 5,
     visibilityRating: 5,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      pressBox: true,
-      mediaFacilities: true,
-      broadcastBooths: true,
-      workStations: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -20, y: 55, z: 30 },
       { x: 20, y: 55, z: 30 },
       { x: 20, y: 62, z: 32 },
       { x: -20, y: 62, z: 32 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Family Section
@@ -912,7 +873,7 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'fixed',
     elevation: 10,
     rows: generateRows(1, 12, 10, 12, 29),
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 55,
       afternoon: 70,
@@ -928,23 +889,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Kid activities nearby',
       'Mr. Met visits'
     ],
-    accessibilityRating: 4,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 4,
     restroomProximity: 4,
-    features: {
-      familySection: true,
-      alcoholFree: true,
-      kidFriendly: true,
-      mrMetVisits: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -55, y: 35, z: 10 },
       { x: -35, y: 45, z: 10 },
       { x: -35, y: 58, z: 14 },
       { x: -55, y: 48, z: 14 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
 
   // Wheelchair Accessible Areas
@@ -956,9 +915,10 @@ export const citiFieldSections: DetailedSection[] = [
     type: 'accessible',
     elevation: 12,
     rows: [
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
       { row: 'WC', elevation: 12, depth: 6, rakeAngle: 0 }
     ],
-    covered: false,
+    covered: false
     sunExposure: {
       morning: 50,
       afternoon: 75,
@@ -974,23 +934,21 @@ export const citiFieldSections: DetailedSection[] = [
       'Accessible restrooms',
       'Wide concourses'
     ],
-    accessibilityRating: 5,
     visibilityRating: 4,
     proximityToAction: 3,
     concessionProximity: 5,
     restroomProximity: 5,
-    features: {
-      wheelchairAccessible: true,
-      companionSeats: true,
-      levelAccess: true,
-      accessibleRestrooms: true
-    },
-    vertices: [
+    vertices3D: [
       { x: -60, y: 30, z: 12 },
       { x: 60, y: 30, z: 12 },
       { x: 60, y: 36, z: 12 },
       { x: -60, y: 36, z: 12 }
-    ] as Vector3D[]
+    ] as Vector3D[],
+    covered: true,
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Porsche Grille
@@ -1004,29 +962,15 @@ export const citiFieldSections: DetailedSection[] = [
       afternoon: 45,
       evening: 60
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -110, y: 65, z: 320 },
       { x: -80, y: 65, z: 340 },
       { x: -85, y: 98, z: 373 },
       { x: -115, y: 98, z: 353 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      porscheGrille: true,
-      leftFieldExcelsior: true,
-      seats350: true,
-      fineDining: true,
-      contemporaryAmerican: true,
-      marketTable: true,
-      antipasstoBar: true,
-      alFornoTable: true,
-      brickOvenPizza: true,
-      fullFieldViews: true,
-      exclusiveAccess: true,
-      myriadRestaurantGroup: true
-    }
+    viewQuality: 5
   }
 ];
 
@@ -1045,16 +989,6 @@ export const citiFieldConfig = {
     rightCenter: 383,
     rightField: 330,
     homeRunAppleHeight: 18
-  },
-  features: {
-    homeRunApple: true,
-    sheaBridgeReplica: true,
-    jackieRobinsonRotunda: true,
-    metsHallOfFame: true,
-    fanWalk: true,
-    cocaColaCorner: true,
-    metropolitanClub: true,
-    deltaSky360: true
   },
   sunExposureNotes: {
     morning: 'Sun rises over right field, third base side gets shade',

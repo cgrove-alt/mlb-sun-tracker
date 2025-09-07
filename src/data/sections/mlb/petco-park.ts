@@ -36,13 +36,6 @@ export const petcoParkConfig = {
     centerField: 396,
     rightCenter: 391,
     rightField: 322
-  },
-  features: {
-    westernMetalBuilding: true,
-    gallagherSquare: true,
-    toyotaBeach: true,
-    sandlot: true,
-    parkAtThePark: true
   }
 };
 
@@ -59,22 +52,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 35,
       evening: 65
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -8, y: 52, z: -1 },
       { x: 8, y: 52, z: -1 },
       { x: 8, y: 62, z: 4 },
       { x: -8, y: 62, z: 4 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      lexusPremierClub: true,
-      behindHomePlate: true,
-      inSeatService: true,
-      paddedSeats: true,
-      exclusiveLounge: true
-    }
+    viewQuality: 5
   },
 
   // ========== FIELD LEVEL ==========
@@ -88,20 +74,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 40,
       evening: 70
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -12, y: 62, z: 0 },
       { x: 0, y: 62, z: 0 },
       { x: 0, y: 92, z: 16 },
       { x: -12, y: 92, z: 16 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      closeToDugout: true,
-      downtownView: true
-    }
+    viewQuality: 5
   },
 
   {
@@ -114,20 +95,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 65
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 62, y: 62, z: 0 },
       { x: 77, y: 77, z: 0 },
       { x: 92, y: 92, z: 16 },
       { x: 77, y: 77, z: 16 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      fieldLevel: true,
-      firstBaseLine: true,
-      sunsetViews: true
-    }
+    viewQuality: 5
   },
 
   // ========== WESTERN METAL SUPPLY BUILDING ==========
@@ -141,23 +117,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 55,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -100, y: 334, z: 18 },
       { x: -85, y: 344, z: 18 },
       { x: -85, y: 354, z: 22 },
       { x: -100, y: 344, z: 22 }
     ],
     accessibility: 4,
-    viewQuality: 5,
-    features: {
-      theRail: true,
-      westernMetalBuilding: true,
-      greenMonsterStyle: true,
-      balconySeating: true,
-      exclusiveArea: true,
-      historicBuilding: true
-    }
+    viewQuality: 5
   },
 
   {
@@ -170,24 +138,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 50,
       evening: 75
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 334, z: 45 },
       { x: -80, y: 349, z: 45 },
       { x: -80, y: 364, z: 45 },
       { x: -100, y: 349, z: 45 }
     ],
     accessibility: 5,
-    viewQuality: 4,
-    features: {
-      budweiserLoft: true,
-      westernMetalBuilding: true,
-      fifthLevel: true,
-      premiumFurniture: true,
-      games: true,
-      grandStaircase: true,
-      renovated2025: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -200,22 +159,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -100, y: 334, z: 55 },
       { x: -75, y: 354, z: 55 },
       { x: -75, y: 369, z: 55 },
       { x: -100, y: 349, z: 55 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      westernMetalRooftop: true,
-      loungeSeating: true,
-      drinks: true,
-      openToAllFans: true,
-      renovated2025: true
-    }
+    viewQuality: 4
   },
 
   {
@@ -228,22 +180,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 90
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 336, z: 28 },
       { x: -90, y: 346, z: 28 },
       { x: -90, y: 356, z: 32 },
       { x: -100, y: 346, z: 32 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      foulPoleSuite: true,
-      westernMetalBuilding: true,
-      leftFieldFoulPole: true,
-      historic: true,
-      corner336Feet: true
-    }
+    viewQuality: 5
   },
 
   // ========== GALLAGHER SQUARE (formerly Park at the Park) ==========
@@ -257,23 +202,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 75,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -30, y: 420, z: 3 },
       { x: 30, y: 420, z: 3 },
       { x: 30, y: 460, z: 12 },
       { x: -30, y: 460, z: 12 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      gallagherSquare: true,
-      terracedLawnSeating: true,
-      affordableTickets: true,
-      renovated2024: true,
-      communityPark: true,
-      grassyBerm: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -286,21 +223,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 70,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -20, y: 440, z: 15 },
       { x: 20, y: 440, z: 15 },
       { x: 20, y: 455, z: 20 },
       { x: -20, y: 455, z: 20 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      tonyGwynnTerrace: true,
-      fanViewingDeck: true,
-      gallagherSquare: true,
-      amphitheaterStyle: true
-    }
+    viewQuality: 3
   },
 
   {
@@ -313,23 +244,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 80,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 35, y: 430, z: 5 },
       { x: 55, y: 430, z: 5 },
       { x: 55, y: 450, z: 5 },
       { x: 35, y: 450, z: 5 }
     ],
     accessibility: 5,
-    viewQuality: 2,
-    features: {
-      playground: true,
-      dogPark: true,
-      sportsFacilities: true,
-      pickleballCourts: true,
-      publicArt: true,
-      familyArea: true
-    }
+    viewQuality: 2
   },
 
   // ========== TOYOTA BEACH ==========
@@ -343,24 +266,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 80, y: 380, z: 8 },
       { x: 100, y: 370, z: 8 },
       { x: 100, y: 395, z: 8 },
       { x: 80, y: 405, z: 8 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      toyotaBeach: true,
-      rightCenterField: true,
-      beachLifestyle: true,
-      adirondackChairs: true,
-      highTopTables: true,
-      openSeating: true,
-      socialSpace: true
-    }
+    viewQuality: 3
   },
 
   // ========== ESTRELLA JALISCO LANDING ==========
@@ -374,24 +288,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 65,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -80, y: 380, z: 12 },
       { x: -60, y: 395, z: 12 },
       { x: -60, y: 415, z: 18 },
       { x: -80, y: 400, z: 18 }
     ],
     accessibility: 4,
-    viewQuality: 3,
-    features: {
-      estrellaJaliscoLanding: true,
-      leftField: true,
-      belowScoreboard: true,
-      twoLevels: true,
-      multipleBuffets: true,
-      drinkRailSeating: true,
-      livelyAtmosphere: true
-    }
+    viewQuality: 3
   },
 
   // ========== PACIFICO PORCH ==========
@@ -405,24 +310,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 70
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -95, y: 350, z: 14 },
       { x: -75, y: 365, z: 14 },
       { x: -75, y: 380, z: 20 },
       { x: -95, y: 365, z: 20 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      pacificoPorch: true,
-      nextToWesternMetal: true,
-      fieldLevelGroup: true,
-      shade: true,
-      twoPorches: true,
-      buffetStation: true,
-      thirdLevel: true
-    }
+    viewQuality: 4
   },
 
   // ========== CITY CRUISES HOME RUN DECK ==========
@@ -436,23 +332,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 55,
       evening: 80
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 85, y: 322, z: 10 },
       { x: 105, y: 312, z: 10 },
       { x: 105, y: 337, z: 20 },
       { x: 85, y: 347, z: 20 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      cityCruisesHomeRunDeck: true,
-      rightFieldWall: true,
-      middleOfAction: true,
-      semiPrivate: true,
-      openAir: true,
-      groupEvents: true
-    }
+    viewQuality: 4
   },
 
   // ========== SUNSET PATIO ==========
@@ -466,22 +354,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 40,
       evening: 75
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 70, y: 100, z: 18 },
       { x: 90, y: 110, z: 18 },
       { x: 90, y: 130, z: 18 },
       { x: 70, y: 120, z: 18 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      sunsetPatio: true,
-      overlooksFirstBase: true,
-      downtownViews: true,
-      semiPrivate: true,
-      mixAndMingle: true
-    }
+    viewQuality: 4
   },
 
   // ========== SKYLINE PATIO ==========
@@ -495,22 +376,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 70
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -70, y: 100, z: 18 },
       { x: -50, y: 115, z: 18 },
       { x: -50, y: 135, z: 18 },
       { x: -70, y: 120, z: 18 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      skylinePatio: true,
-      overlooksThirdBase: true,
-      gorgeousDowntownViews: true,
-      semiPrivate: true,
-      ballparkSeating: true
-    }
+    viewQuality: 4
   },
 
   // ========== FIELD CLUB ==========
@@ -524,21 +398,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 30,
       evening: 55
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -25, y: 75, z: 8 },
       { x: 25, y: 75, z: 8 },
       { x: 25, y: 95, z: 16 },
       { x: -25, y: 95, z: 16 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      fieldClub: true,
-      premiumSeating: true,
-      clubAccess: true,
-      widerSeats: true
-    }
+    viewQuality: 5
   },
 
   // ========== PRESS CLUB ==========
@@ -552,20 +420,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 35,
       evening: 60
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -18, y: 92, z: 14 },
       { x: -5, y: 92, z: 14 },
       { x: -5, y: 130, z: 36 },
       { x: -18, y: 130, z: 36 }
     ],
     accessibility: 4,
-    viewQuality: 4,
-    features: {
-      pressClub: true,
-      lowerLevel: true,
-      coveredSeating: true
-    }
+    viewQuality: 4
   },
 
   // ========== TERRACE LEVEL ==========
@@ -579,20 +442,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 42,
       evening: 68
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: 15, y: 110, z: 22 },
       { x: 35, y: 115, z: 22 },
       { x: 35, y: 145, z: 40 },
       { x: 15, y: 140, z: 40 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      terraceLevel: true,
-      coveredSeating: true,
-      valuePrice: true
-    }
+    viewQuality: 3
   },
 
   // ========== UPPER DECK ==========
@@ -606,20 +464,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 50,
       evening: 75
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -30, y: 130, z: 38 },
       { x: -10, y: 130, z: 38 },
       { x: -8, y: 185, z: 75 },
       { x: -28, y: 185, z: 75 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      upperDeck: true,
-      downtownSkyline: true,
-      openAir: true
-    }
+    viewQuality: 3
   },
 
   // ========== CLUB SUITES ==========
@@ -633,22 +486,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 25,
       evening: 45
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -40, y: 105, z: 26 },
       { x: 40, y: 105, z: 26 },
       { x: 40, y: 125, z: 26 },
       { x: -40, y: 125, z: 26 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      clubSuites: true,
-      privateRestrooms: true,
-      cateringService: true,
-      climateControlled: true,
-      exclusiveAccess: true
-    }
+    viewQuality: 5
   },
 
   // ========== THE BEACH BLEACHERS ==========
@@ -662,21 +508,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 70,
       evening: 90
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: 60, y: 360, z: 6 },
       { x: 80, y: 350, z: 6 },
       { x: 80, y: 380, z: 22 },
       { x: 60, y: 390, z: 22 }
     ],
     accessibility: 3,
-    viewQuality: 3,
-    features: {
-      beachBleachers: true,
-      rightField: true,
-      sunnySeating: true,
-      affordableOption: true
-    }
+    viewQuality: 3
   },
 
   // ========== STANDING ROOM AREAS ==========
@@ -690,21 +530,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 60,
       evening: 85
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -60, y: 400, z: 10 },
       { x: -30, y: 410, z: 10 },
       { x: -30, y: 425, z: 10 },
       { x: -60, y: 415, z: 10 }
     ],
     accessibility: 4,
-    viewQuality: 2,
-    features: {
-      craftPier: true,
-      standingRoom: true,
-      localBrews: true,
-      socialArea: true
-    }
+    viewQuality: 2
   },
 
   // ========== SANDLOT ==========
@@ -718,22 +552,15 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 85,
       evening: 95
     },
-    covered: false,
-    vertices: [
+    covered: false
+    vertices3D: [
       { x: -10, y: 470, z: 3 },
       { x: 10, y: 470, z: 3 },
       { x: 10, y: 490, z: 3 },
       { x: -10, y: 490, z: 3 }
     ],
     accessibility: 5,
-    viewQuality: 2,
-    features: {
-      sandlot: true,
-      wiffleballField: true,
-      kidsArea: true,
-      beyondCenterField: true,
-      interactiveBaseball: true
-    }
+    viewQuality: 2
   },
 
   // ========== ENTERTAINMENT SUITE (Western Metal) ==========
@@ -747,21 +574,14 @@ export const petcoParkSections: DetailedSection[] = [
       afternoon: 45,
       evening: 70
     },
-    covered: true,
-    vertices: [
+    covered: true
+    vertices3D: [
       { x: -100, y: 334, z: 35 },
       { x: -82, y: 348, z: 35 },
       { x: -82, y: 362, z: 35 },
       { x: -100, y: 348, z: 35 }
     ],
     accessibility: 5,
-    viewQuality: 5,
-    features: {
-      entertainmentSuite: true,
-      westernMetalBuilding: true,
-      renovated2025: true,
-      premiumHospitality: true,
-      historicVenue: true
-    }
+    viewQuality: 5
   }
 ];

@@ -67,92 +67,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 0, y: 82, z: 11 },
       { x: -10, y: 82, z: 11 }
     ],
-    covered: false,
-    price: 'luxury',
-    distance: 70,
-    height: 0,
-    rake: 18,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 4,
-      aisleSeats: true,
-      tunnelAccess: ['Champions Club Entrance']
-    }
-  },
-
-  // ========== FIELD BOX ==========
-  {
-    id: '14',
-    name: 'Field Box 14',
-    level: 'field',
-    baseAngle: 0,
-    angleSpan: 9,
-    rows: generateRows('A', 'Y', 20, 0, 19, false),
-    vertices3D: [
-      { x: -15, y: 65, z: 0 },
-      { x: -3, y: 65, z: 0 },
-      { x: -3, y: 92, z: 14 },
-      { x: -15, y: 92, z: 14 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 79,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  {
-    id: '121',
-    name: 'Field Box 121',
-    level: 'field',
-    baseAngle: 45, // First base line
-    angleSpan: 9,
-    rows: generateRows('A', 'Y', 20, 0, 19, false),
-    vertices3D: [
-      { x: 65, y: 65, z: 0 },
-      { x: 79, y: 79, z: 0 },
-      { x: 92, y: 92, z: 14 },
-      { x: 78, y: 78, z: 14 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 92,
-    height: 0,
-    rake: 19,
-    seatWidth: 20,
-    rowSpacing: 34,
-    viewQuality: 'excellent'
-  },
-
-  // ========== HOME PLATE TERRACE ==========
-  {
-    id: '209',
-    name: 'Home Plate Terrace 209',
-    level: 'lower',
-    baseAngle: 0,
-    angleSpan: 10,
-    rows: generateRows(1, 30, 22, 14, 23, false),
-    vertices3D: [
-      { x: -20, y: 92, z: 14 },
-      { x: -6, y: 92, z: 14 },
-      { x: -6, y: 128, z: 35 },
-      { x: -20, y: 128, z: 35 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 110,
-    height: 14,
-    rake: 23,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
+      covered: false  },
 
   {
     id: '235',
@@ -167,15 +82,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -128, y: 6, z: 35 },
       { x: -128, y: 20, z: 35 }
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 110,
-    height: 14,
-    rake: 23,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
+      covered: false  },
 
   // ========== VIEW LEVEL ==========
   {
@@ -254,252 +161,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 35, y: 415, z: 25 },
       { x: -35, y: 415, z: 25 }
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 405,
-    height: 25,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== BLEACHERS ==========
-  {
-    id: '133',
-    name: 'Left Field Bleachers 133',
-    level: 'field',
-    baseAngle: 270, // Left field
-    angleSpan: 14,
-    rows: generateRows(1, 32, 28, 6, 22, false),
-    vertices3D: [
-      { x: -140, y: -60, z: 6 },
-      { x: -165, y: -75, z: 6 },
-      { x: -175, y: -50, z: 32 },
-      { x: -150, y: -35, z: 32 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 339,
-    height: 6,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  {
-    id: '136',
-    name: 'Right Field Bleachers 136',
-    level: 'field',
-    baseAngle: 90,
-    angleSpan: 14,
-    rows: generateRows(1, 32, 28, 6, 22, false),
-    vertices3D: [
-      { x: 140, y: -60, z: 6 },
-      { x: 165, y: -75, z: 6 },
-      { x: 175, y: -50, z: 32 },
-      { x: 150, y: -35, z: 32 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 328,
-    height: 6,
-    rake: 22,
-    seatWidth: 18,
-    rowSpacing: 28,
-    viewQuality: 'fair'
-  },
-
-  // ========== TOWN BALL TAVERN ==========
-  {
-    id: 'TBT',
-    name: 'Town Ball Tavern',
-    level: 'standing',
-    baseAngle: 135, // Right field corner
-    angleSpan: 12,
-    rows: [], // Bar/standing area
-    vertices3D: [
-      { x: 110, y: -30, z: 18 },
-      { x: 130, y: -45, z: 18 },
-      { x: 130, y: -30, z: 18 },
-      { x: 110, y: -15, z: 18 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 340,
-    height: 18,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== METROPOLITAN CLUB ==========
-  {
-    id: 'METRO',
-    name: 'Metropolitan Club',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 10,
-    rows: generateRows('A', 'L', 16, 24, 18, true),
-    vertices3D: [
-      { x: -22, y: 105, z: 24 },
-      { x: -8, y: 105, z: 24 },
-      { x: -8, y: 130, z: 35 },
-      { x: -22, y: 130, z: 35 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 118,
-    height: 24,
-    rake: 18,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent',
-    accessibility: {
-      wheelchairAccessible: true,
-      companionSeats: 6,
-      aisleSeats: true,
-      tunnelAccess: ['Metropolitan Club Entrance']
-    }
-  },
-
-  // ========== DELTA SKY360 CLUB ==========
-  {
-    id: 'DELTA',
-    name: 'Delta Sky360 Club',
-    level: 'suite',
-    baseAngle: 0,
-    angleSpan: 12,
-    rows: [
-      { rowNumber: 'Suite', seats: 30, elevation: 30, depth: 0, covered: true, overhangHeight: 22 }
-    ],
-    vertices3D: [
-      { x: -20, y: 115, z: 30 },
-      { x: 20, y: 115, z: 30 },
-      { x: 20, y: 135, z: 30 },
-      { x: -20, y: 135, z: 30 }
-    ],
-    covered: true,
-    price: 'luxury',
-    distance: 125,
-    height: 30,
-    rake: 0,
-    seatWidth: 24,
-    rowSpacing: 42,
-    viewQuality: 'excellent'
-  },
-
-  // ========== GATE 34 (Standing Room) ==========
-  {
-    id: 'G34',
-    name: 'Gate 34',
-    level: 'standing',
-    baseAngle: 180,
-    angleSpan: 15,
-    rows: [], // Standing room
-    vertices3D: [
-      { x: -30, y: 415, z: 8 },
-      { x: 30, y: 415, z: 8 },
-      { x: 30, y: 430, z: 8 },
-      { x: -30, y: 430, z: 8 }
-    ],
-    covered: false,
-    price: 'value',
-    distance: 423,
-    height: 8,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== TWINS PUB ==========
-  {
-    id: 'PUB',
-    name: 'Twins Pub',
-    level: 'standing',
-    baseAngle: 315,
-    angleSpan: 10,
-    rows: [], // Bar area
-    vertices3D: [
-      { x: -90, y: 30, z: 20 },
-      { x: -75, y: 45, z: 20 },
-      { x: -75, y: 60, z: 20 },
-      { x: -90, y: 45, z: 20 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 105,
-    height: 20,
-    rake: 0,
-    viewQuality: 'good'
-  },
-
-  // ========== BUDWEISER ROOF DECK ==========
-  {
-    id: 'BUD',
-    name: 'Budweiser Roof Deck',
-    level: 'standing',
-    baseAngle: 270, // Left field
-    angleSpan: 12,
-    rows: [], // Rooftop party deck
-    vertices3D: [
-      { x: -150, y: -40, z: 38 },
-      { x: -170, y: -55, z: 38 },
-      { x: -170, y: -35, z: 38 },
-      { x: -150, y: -20, z: 38 }
-    ],
-    covered: false,
-    price: 'premium',
-    distance: 350,
-    height: 38,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-
-  // ========== SKYLINE DECK ==========
-  {
-    id: 'SKY',
-    name: 'Skyline Deck',
-    level: 'upper',
-    baseAngle: 0,
-    angleSpan: 8,
-    rows: generateRows(1, 12, 24, 45, 20, true),
-    vertices3D: [
-      { x: -18, y: 140, z: 45 },
-      { x: -6, y: 140, z: 45 },
-      { x: -6, y: 160, z: 55 },
-      { x: -18, y: 160, z: 55 }
-    ],
-    covered: true,
-    price: 'premium',
-    distance: 150,
-    height: 45,
-    rake: 20,
-    seatWidth: 20,
-    rowSpacing: 35,
-    viewQuality: 'excellent'
-  },
-
-  // ========== FAMILY SECTION ==========
-  {
-    id: 'FAM',
-    name: 'Family Section',
-    level: 'lower',
-    baseAngle: 45,
-    angleSpan: 8,
-    rows: generateRows(1, 20, 22, 18, 21, false),
-    vertices3D: [
-      { x: 85, y: 85, z: 18 },
-      { x: 98, y: 98, z: 18 },
-      { x: 110, y: 110, z: 32 },
-      { x: 97, y: 97, z: 32 }
-    ],
-    covered: false,
-    price: 'moderate',
-    distance: 120,
-    height: 18,
-    rake: 21,
-    seatWidth: 19,
-    rowSpacing: 32,
-    viewQuality: 'good'
-  },
+      covered: false  },
   
   // ========== DELTA SKY360 LEGENDS CLUB ==========
   {
@@ -515,7 +177,6 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 45, y: 95, z: 410 },
       { x: -45, y: 95, z: 410 }
     ],
-    covered: true,
     price: 'luxury',
     distance: 380,
     height: 65,
@@ -533,8 +194,7 @@ export const targetFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 20,
     rows: [
-      { rowNumber: 'Fixed', seats: 120, elevation: 75, depth: 0, covered: true },
-      { rowNumber: 'SRO', seats: 130, elevation: 75, depth: 5, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
     vertices3D: [
       { x: -150, y: 75, z: 320 },
@@ -548,11 +208,7 @@ export const targetFieldSections: DetailedSection[] = [
       coveredRows: ['Fixed', 'SRO'],
       coveragePercentage: 60
     },
-    price: 'premium',
-    distance: 330,
-    height: 75,
-    rake: 0,
-    viewQuality: 'good'
+    price: 'premium'
   },
   
   // ========== TOWN BALL TAVERN ==========
@@ -569,7 +225,6 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -125, y: 77, z: 322 },
       { x: -145, y: 77, z: 302 }
     ],
-    covered: true,
     price: 'premium',
     distance: 290,
     height: 55,
@@ -593,7 +248,6 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 125, y: 76, z: 146 },
       { x: 105, y: 76, z: 136 }
     ],
-    covered: true,
     price: 'premium',
     distance: 125,
     height: 60,
@@ -611,7 +265,8 @@ export const targetFieldSections: DetailedSection[] = [
     baseAngle: 255,
     angleSpan: 12,
     rows: [
-      { rowNumber: 'Bar', seats: 80, elevation: 70, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: -160, y: 70, z: 340 },
@@ -619,91 +274,4 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -145, y: 70, z: 365 },
       { x: -160, y: 70, z: 350 }
     ],
-    covered: false,
-    price: 'moderate',
-    distance: 350,
-    height: 70,
-    rake: 0,
-    viewQuality: 'fair'
-  },
-  
-  // ========== THOMSON REUTERS CHAMPIONS CLUB ==========
-  {
-    id: 'CHAMPIONS',
-    name: 'Thomson Reuters Champions Club',
-    level: 'field',
-    baseAngle: 0,
-    angleSpan: 22,
-    rows: generateRows('A', 'M', 26, 5, 25, false),
-    vertices3D: [
-      { x: -35, y: 5, z: 50 },
-      { x: 35, y: 5, z: 50 },
-      { x: 40, y: 35, z: 80 },
-      { x: -40, y: 35, z: 80 }
-    ],
-    covered: false,
-    price: 'luxury',
-    distance: 65,
-    height: 5,
-    rake: 25,
-    seatWidth: 22,
-    rowSpacing: 40,
-    viewQuality: 'excellent'
-  }
-];
-
-// Calculate total capacity
-export const targetFieldCapacity = targetFieldSections.reduce((total, section) => {
-  const sectionCapacity = section.rows.reduce((sectionTotal, row) => sectionTotal + row.seats, 0);
-  return total + sectionCapacity;
-}, 0);
-
-// Export section map for quick lookup
-export const targetFieldSectionMap = new Map(
-  targetFieldSections.map(section => [section.id, section])
-);
-
-// Stadium-specific features
-export const targetFieldFeatures = {
-  orientation: {
-    degrees: 0, // Unique north-facing orientation
-    sunset: 'behind_third_base',
-    lateAfternoonSun: 'minimized',
-    unique: 'only_north_facing_MLB'
-  },
-  overlook: {
-    location: 'center_field',
-    standingRoom: true,
-    drinkRails: true,
-    socialSpace: true
-  },
-  townBallTavern: {
-    location: 'right_field',
-    twoLevels: true,
-    outdoorPatio: true,
-    yearRound: false
-  },
-  dimensions: {
-    leftField: 339,
-    leftCenter: 377,
-    centerField: 404,
-    rightCenter: 367,
-    rightField: 328
-  },
-  gate34: {
-    location: 'center_field',
-    standingRoom: true,
-    affordableOption: true
-  },
-  limestone: {
-    localMaterial: 'Kasota_limestone',
-    color: 'golden',
-    minnesotan: true
-  },
-  climate: {
-    heated: false,
-    outdoorStadium: true,
-    coldWeather: true,
-    aprilSnow: 'possible'
-  }
-};
+      covered: false

@@ -22,8 +22,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false
-    });
+      covered: false  });
   }
   
   return rows;
@@ -42,17 +41,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 35, y: 47.5, z: 57.5 },
       { x: -35, y: 47.5, z: 57.5 }
     ],
-    premium: true,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      cushionedSeats: true,
-      inSeatService: true,
-      privateRestrooms: true,
-      exclusiveAccess: true
-    }
-  },
+      covered: false  },
   
   // Field Box - First Base
   {
@@ -66,11 +55,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 123, y: 55, z: 82 },
       { x: 35, y: 55, z: 63 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4
-  },
+      covered: false  },
   
   // Field Box - Third Base
   {
@@ -84,11 +69,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -123, y: 55, z: 82 },
       { x: -35, y: 55, z: 63 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4
-  },
+      covered: false  },
   
   // Club Level - Behind Home
   {
@@ -102,20 +83,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 45, y: 117, z: 107 },
       { x: -45, y: 117, z: 107 }
     ],
-    premium: true,
     covered: true,
     partialCoverage: {
       type: 'partial' as const,
       coveredRows: ['K', 'L', 'M', 'N'],
       coveragePercentage: 30
-    },
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      widePaddedSeats: true,
-      inSeatService: true,
-      privateEntrance: true,
-      exclusiveDining: true
     }
   },
   
@@ -131,11 +103,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 130, y: 138, z: 168 },
       { x: 45, y: 138, z: 143 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // Terrace Level - Third Base
   {
@@ -149,11 +117,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -130, y: 138, z: 168 },
       { x: -45, y: 138, z: 143 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // The Rock - Left Field
   {
@@ -167,19 +131,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -105, y: 57.5, z: 382.5 },
       { x: -135, y: 57.5, z: 352.5 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'rock-feature',
-    obstructedView: {
-      type: 'partial',
-      description: 'Rock waterfall feature may affect some views'
-    },
-    accessibilityRating: 3,
-    features: {
-      waterfallFeature: true,
-      uniqueLandmark: true
-    }
-  },
+      covered: false  },
   
   // Right Field Pavilion
   {
@@ -193,11 +145,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 155, y: 70, z: 370 },
       { x: 125, y: 70, z: 330 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // Left Field Pavilion
   {
@@ -211,11 +159,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -125, y: 70, z: 370 },
       { x: -155, y: 70, z: 330 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3
-  },
+      covered: false  },
   
   // View Level - Behind Home
   {
@@ -229,15 +173,12 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 55, y: 220, z: 210 },
       { x: -55, y: 220, z: 210 }
     ],
-    premium: false,
     covered: true,
     partialCoverage: {
       type: 'partial' as const,
       coveredRows: ['U', 'V', 'W', 'X', 'Y', 'Z'],
       coveragePercentage: 25
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // View Level - First Base
@@ -252,15 +193,12 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 145, y: 225, z: 255 },
       { x: 60, y: 225, z: 225 }
     ],
-    premium: false,
     covered: true,
     partialCoverage: {
       type: 'partial' as const,
       coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
       coveragePercentage: 20
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // View Level - Third Base
@@ -275,15 +213,12 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -145, y: 225, z: 255 },
       { x: -60, y: 225, z: 225 }
     ],
-    premium: false,
     covered: true,
     partialCoverage: {
       type: 'partial' as const,
       coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
       coveragePercentage: 20
-    },
-    obstructionType: 'upper-deck',
-    accessibilityRating: 2
+    }
   },
   
   // Bullpen Overlook
@@ -292,7 +227,8 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Bullpen Overlook',
     level: 'field',
     rows: [
-      { rowNumber: 'Bench', seats: 40, elevation: 8, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: -140, y: 8, z: 200 },
@@ -300,15 +236,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -120, y: 8, z: 240 },
       { x: -140, y: 8, z: 220 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      bullpenView: true,
-      casualSeating: true
-    }
-  },
+      covered: false  },
   
   // Coors Light Strike Zone
   {
@@ -316,7 +244,8 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Coors Light Strike Zone',
     level: 'field',
     rows: [
-      { rowNumber: 'SRO', seats: 150, elevation: 30, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: 80, y: 30, z: 360 },
@@ -324,16 +253,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 120, y: 30, z: 400 },
       { x: 80, y: 30, z: 380 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      standingRoom: true,
-      drinkRails: true,
-      socialArea: true
-    }
-  },
+      covered: false  },
   
   // Bud Light Social Patio
   {
@@ -341,7 +261,8 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Bud Light Social Patio',
     level: 'field',
     rows: [
-      { rowNumber: 'Patio', seats: 100, elevation: 35, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: -80, y: 35, z: 350 },
@@ -349,17 +270,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -40, y: 35, z: 385 },
       { x: -80, y: 35, z: 370 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 4,
-    features: {
-      patioSeating: true,
-      standingRoom: true,
-      fullBar: true,
-      tvMonitors: true
-    }
-  },
+      covered: false  },
   
   // Trout Tower
   {
@@ -373,15 +284,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 25, y: 60, z: 410 },
       { x: -25, y: 60, z: 410 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 3,
-    features: {
-      towerSeating: true,
-      elevatedViews: true
-    }
-  },
+      covered: false  },
   
   // Knothole Club (Family Area)
   {
@@ -389,7 +292,8 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Knothole Club',
     level: 'field',
     rows: [
-      { rowNumber: 'Family', seats: 75, elevation: 15, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: 140, y: 15, z: 320 },
@@ -397,16 +301,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 160, y: 15, z: 360 },
       { x: 140, y: 15, z: 340 }
     ],
-    premium: false,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      familyArea: true,
-      playground: true,
-      kidsFriendly: true
-    }
-  },
+      covered: false  },
   
   // Suite Level
   {
@@ -414,7 +309,7 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Suite Level',
     level: 'suite',
     rows: [
-      { rowNumber: 'Suite', seats: 20, elevation: 90, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
     vertices3D: [
       { x: -60, y: 90, z: 85 },
@@ -422,16 +317,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 60, y: 100, z: 95 },
       { x: -60, y: 100, z: 95 }
     ],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      privateSuite: true,
-      cateringAvailable: true,
-      privateRestrooms: true,
-      dedicatedAttendant: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Lexus Diamond Club Restaurant
@@ -446,18 +336,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 40, y: 88, z: 83 },
       { x: -40, y: 88, z: 83 }
     ],
-    premium: true,
     covered: true,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      exclusiveDining: true,
-      climateControlled: true,
-      premiumBar: true,
-      inSeatService: true,
-      privateEntrance: true,
-      changingMenus: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Don Julio Club
@@ -472,21 +355,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 50, y: 133, z: 123 },
       { x: -50, y: 133, z: 123 }
     ],
-    premium: true,
     covered: true,
     partialCoverage: {
       type: 'partial' as const,
       coveredRows: ['L', 'M', 'N', 'P'],
       coveragePercentage: 25
-    },
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      openAirViewing: true,
-      loungeInterior: true,
-      liberalLegRoom: true,
-      uniqueDishes: true,
-      tequilaBar: true
     }
   },
   
@@ -496,7 +369,8 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Dugout Suites',
     level: 'field',
     rows: [
-      { rowNumber: 'Suite', seats: 12, elevation: 3, depth: 0, covered: false }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      covered: false  }
     ],
     vertices3D: [
       { x: -25, y: 3, z: 5 },
@@ -504,18 +378,7 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 25, y: 6, z: 8 },
       { x: -25, y: 6, z: 8 }
     ],
-    premium: true,
-    covered: false,
-    obstructionType: 'none',
-    accessibilityRating: 5,
-    features: {
-      dugoutLevel: true,
-      fiftyFeetFromBatter: true,
-      privateSuite: true,
-      diamondClubAccess: true,
-      fieldLevel: true
-    }
-  },
+      covered: false  },
   
   // Triple Play Suites
   {
@@ -523,7 +386,7 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Triple Play Suites',
     level: 'suite',
     rows: [
-      { rowNumber: 'Suite', seats: 18, elevation: 95, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
     vertices3D: [
       { x: 65, y: 95, z: 90 },
@@ -531,17 +394,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: 120, y: 105, z: 120 },
       { x: 65, y: 105, z: 100 }
     ],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      addedIn2018: true,
-      plushLeatherSeating: true,
-      climateControlled: true,
-      capacity18Guests: true,
-      executiveLevel: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   },
   
   // Legends Suites
@@ -550,7 +407,7 @@ export const angelStadiumSections: DetailedSection[] = [
     name: 'Legends Suites',
     level: 'upper',
     rows: [
-      { rowNumber: 'Suite', seats: 16, elevation: 88, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
     ],
     vertices3D: [
       { x: -65, y: 88, z: 90 },
@@ -558,16 +415,11 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -120, y: 98, z: 120 },
       { x: -65, y: 98, z: 100 }
     ],
-    premium: true,
     covered: true,
-    obstructionType: 'suite-level',
-    accessibilityRating: 5,
-    features: {
-      seating8Guests: true,
-      standingRoom16: true,
-      terraceLevelSuite: true,
-      behindHomePlate: true
-    }
+    distance: 50,
+    height: 20, 
+    rake: 25,
+    viewQuality: 'good'
   }
 ];
 
