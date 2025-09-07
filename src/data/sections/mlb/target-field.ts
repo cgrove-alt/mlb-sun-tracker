@@ -50,8 +50,7 @@ function generateRows(
   
   return rows;
 }
-
-// Target Field Sections
+  // Target Field Sections
 export const targetFieldSections: DetailedSection[] = [
   // ========== CHAMPIONS CLUB (Behind Home Plate) ==========
   {
@@ -66,9 +65,12 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 0, y: 58, z: 0 },
       { x: 0, y: 82, z: 11 },
       { x: -10, y: 82, z: 11 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 58,
+    height: 0,
+    rake: 17
+  },
   {
     id: '235',
     name: 'Home Plate Terrace 235',
@@ -81,9 +83,12 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -92, y: 6, z: 14 },
       { x: -128, y: 6, z: 35 },
       { x: -128, y: 20, z: 35 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== VIEW LEVEL ==========
   {
     id: '301',
@@ -97,7 +102,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -10, y: 128, z: 35 },
       { x: -8, y: 180, z: 72 },
       { x: -26, y: 180, z: 72 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -106,7 +111,7 @@ export const targetFieldSections: DetailedSection[] = [
       overhangDepth: 25,
       overhangHeight: 22,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 154,
     height: 35,
@@ -115,7 +120,6 @@ export const targetFieldSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'good'
   },
-
   {
     id: '327',
     name: 'View Level 327',
@@ -128,7 +132,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 128, y: 10, z: 35 },
       { x: 180, y: 8, z: 72 },
       { x: 180, y: 26, z: 72 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -137,7 +141,7 @@ export const targetFieldSections: DetailedSection[] = [
       overhangDepth: 25,
       overhangHeight: 22,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 154,
     height: 35,
@@ -146,7 +150,6 @@ export const targetFieldSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'fair'
   },
-
   // ========== OVERLOOK (Center Field) ==========
   {
     id: 'OVER',
@@ -160,9 +163,12 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 35, y: 395, z: 25 },
       { x: 35, y: 415, z: 25 },
       { x: -35, y: 415, z: 25 }
-    ],
-,
-  
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== DELTA SKY360 LEGENDS CLUB ==========
   {
     id: 'SKY360',
@@ -176,7 +182,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 40, y: 65, z: 380 },
       { x: 45, y: 95, z: 410 },
       { x: -45, y: 95, z: 410 }
-    ],
+    ] as Vector3D[],
     price: 'luxury',
     distance: 380,
     height: 65,
@@ -185,7 +191,6 @@ export const targetFieldSections: DetailedSection[] = [
     rowSpacing: 38,
     viewQuality: 'excellent'
   },
-  
   // ========== BUDWEISER ROOF DECK ==========
   {
     id: 'BUDROOF',
@@ -194,23 +199,22 @@ export const targetFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 20,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -150, y: 75, z: 320 },
       { x: -120, y: 75, z: 340 },
       { x: -120, y: 85, z: 350 },
       { x: -150, y: 85, z: 330 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
       coveredRows: ['Fixed', 'SRO'],
       coveragePercentage: 60
-    },
+  },
     price: 'premium'
   },
-  
   // ========== TOWN BALL TAVERN ==========
   {
     id: 'TOWNBALL',
@@ -224,7 +228,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -120, y: 55, z: 300 },
       { x: -125, y: 77, z: 322 },
       { x: -145, y: 77, z: 302 }
-    ],
+    ] as Vector3D[],
     price: 'premium',
     distance: 290,
     height: 55,
@@ -233,7 +237,6 @@ export const targetFieldSections: DetailedSection[] = [
     rowSpacing: 35,
     viewQuality: 'good'
   },
-  
   // ========== BAT & BARREL ==========
   {
     id: 'BATBARREL',
@@ -247,7 +250,7 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 120, y: 60, z: 130 },
       { x: 125, y: 76, z: 146 },
       { x: 105, y: 76, z: 136 }
-    ],
+    ] as Vector3D[],
     price: 'premium',
     distance: 125,
     height: 60,
@@ -256,7 +259,6 @@ export const targetFieldSections: DetailedSection[] = [
     rowSpacing: 36,
     viewQuality: 'excellent'
   },
-  
   // ========== GRAY DUCK DECK ==========
   {
     id: 'GRAYDUCK',
@@ -265,13 +267,22 @@ export const targetFieldSections: DetailedSection[] = [
     baseAngle: 255,
     angleSpan: 12,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -160, y: 70, z: 340 },
       { x: -145, y: 70, z: 355 },
       { x: -145, y: 70, z: 365 },
       { x: -160, y: 70, z: 350 }
-    ],
-      covered: false
+    ] as Vector3D[],
+    covered: false,
+    distance: 360,
+    height: 70,
+    rake: 0
+  }
+];
+
+// Export section map for easy lookup
+export const targetFieldSectionMap = new Map(
+  targetFieldSections.map(section => [section.id, section])
+);

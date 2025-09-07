@@ -50,8 +50,7 @@ function generateRows(
   
   return rows;
 }
-
-// Truist Park Sections
+  // Truist Park Sections
 export const truistParkSections: DetailedSection[] = [
   // ========== FIELD LEVEL ==========
   {
@@ -66,9 +65,12 @@ export const truistParkSections: DetailedSection[] = [
       { x: 0, y: 62, z: 0 },
       { x: 0, y: 92, z: 17 },
       { x: -12, y: 92, z: 17 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 68,
+    height: 0,
+    rake: 20
+  },
   {
     id: '227',
     name: 'Terrace Level 227',
@@ -81,9 +83,12 @@ export const truistParkSections: DetailedSection[] = [
       { x: 92, y: 5, z: 17 },
       { x: 130, y: 5, z: 40 },
       { x: 130, y: 20, z: 40 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== PAVILION LEVEL ==========
   {
     id: '313',
@@ -97,7 +102,7 @@ export const truistParkSections: DetailedSection[] = [
       { x: -12, y: 130, z: 40 },
       { x: -10, y: 185, z: 78 },
       { x: -28, y: 185, z: 78 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -106,7 +111,7 @@ export const truistParkSections: DetailedSection[] = [
       overhangDepth: 26,
       overhangHeight: 23,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 158,
     height: 40,
@@ -115,7 +120,6 @@ export const truistParkSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'good'
   },
-
   {
     id: '345',
     name: 'Pavilion Level 345',
@@ -128,7 +132,7 @@ export const truistParkSections: DetailedSection[] = [
       { x: 130, y: -12, z: 40 },
       { x: 185, y: -10, z: 78 },
       { x: 185, y: -28, z: 78 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -137,7 +141,7 @@ export const truistParkSections: DetailedSection[] = [
       overhangDepth: 26,
       overhangHeight: 23,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 158,
     height: 40,
@@ -146,7 +150,6 @@ export const truistParkSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'fair'
   },
-
   // ========== CHOPHOUSE (Right Field) ==========
   {
     id: 'CHOP',
@@ -160,9 +163,12 @@ export const truistParkSections: DetailedSection[] = [
       { x: 120, y: -45, z: 8 },
       { x: 130, y: -35, z: 25 },
       { x: 110, y: -20, z: 25 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 320,
+    height: 8,
+    rake: 19
+  },
   {
     id: 'CHOP-TERR',
     name: 'Chophouse Terrace',
@@ -175,5 +181,15 @@ export const truistParkSections: DetailedSection[] = [
       { x: 130, y: -55, z: 25 },
       { x: 130, y: -40, z: 25 },
       { x: 110, y: -25, z: 25 }
-    ],
-      covered: false
+    ] as Vector3D[],
+    covered: false,
+    distance: 335,
+    height: 25,
+    rake: 0
+  }
+];
+
+// Export section map for easy lookup
+export const truistParkSectionMap = new Map(
+  truistParkSections.map(section => [section.id, section])
+);

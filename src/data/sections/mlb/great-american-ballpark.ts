@@ -66,9 +66,12 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: 0, y: 58, z: 0 },
       { x: 0, y: 82, z: 10 },
       { x: -10, y: 82, z: 10 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 65,
+    height: 0,
+    rake: 17
+  },
   {
     id: '235',
     name: 'Terrace 235',
@@ -81,9 +84,12 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: -95, y: 5, z: 16 },
       { x: -135, y: 5, z: 39 },
       { x: -135, y: 20, z: 39 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== VIEW LEVEL ==========
   {
     id: '404',
@@ -97,7 +103,7 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: -12, y: 135, z: 39 },
       { x: -10, y: 190, z: 78 },
       { x: -28, y: 190, z: 78 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -115,7 +121,6 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'good'
   },
-
   {
     id: '432',
     name: 'View Level 432',
@@ -128,7 +133,7 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: 135, y: -12, z: 39 },
       { x: 190, y: -10, z: 78 },
       { x: 190, y: -28, z: 78 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -146,7 +151,6 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'fair'
   },
-
   // ========== RIVERBOAT DECK (Center Field) ==========
   {
     id: 'RIVER',
@@ -160,5 +164,15 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: 40, y: -400, z: 25 },
       { x: 40, y: -420, z: 25 },
       { x: -40, y: -420, z: 25 }
-    ],
-      covered: false
+    ] as Vector3D[],
+    covered: false,
+    distance: 420,
+    height: 25,
+    rake: 0
+  }
+];
+
+// Export section map for easy lookup
+export const greatAmericanBallparkSectionMap = new Map(
+  greatAmericanBallparkSections.map(section => [section.id, section])
+);

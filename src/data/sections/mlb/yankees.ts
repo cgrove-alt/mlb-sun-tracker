@@ -22,13 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false
+
     });
   }
   
   return rows;
-};
-
+  }
 export const yankeeStadiumSections: DetailedSection[] = [
   // Legends Suite - Behind Home Plate
   {
@@ -44,8 +43,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 35, y: 40, z: 50 },
       { x: -35, y: 40, z: 50 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Field Level - First Base
   {
     id: 'field-level-1b',
@@ -60,8 +62,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 123, y: 55, z: 82 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Field Level - Third Base
   {
     id: 'field-level-3b',
@@ -76,8 +81,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: -123, y: 55, z: 82 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Jim Beam Suite Deck
   {
     id: 'jim-beam-suite',
@@ -86,8 +94,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 120, y: 35, z: 300 },
@@ -95,8 +102,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 150, y: 45, z: 340 },
       { x: 120, y: 45, z: 310 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Main Level - Behind Home
   {
     id: 'main-level-home',
@@ -111,8 +121,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 45, y: 123, z: 118 },
       { x: -45, y: 123, z: 118 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Main Level - First Base
   {
     id: 'main-level-1b',
@@ -127,8 +140,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 130, y: 141, z: 171 },
       { x: 50, y: 141, z: 146 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Main Level - Third Base
   {
     id: 'main-level-3b',
@@ -143,8 +159,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: -130, y: 141, z: 171 },
       { x: -50, y: 141, z: 146 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Toyota Terrace Level - Behind Home
   {
     id: 'terrace-level-home',
@@ -159,13 +178,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 50, y: 219, z: 214 },
       { x: -50, y: 219, z: 214 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['S', 'T', 'U', 'V', 'W', 'X'],
-      coveragePercent: 25
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Toyota Terrace Level - First Base
   {
     id: 'terrace-level-1b',
@@ -180,13 +197,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 140, y: 223, z: 258 },
       { x: 55, y: 223, z: 228 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y'],
-      coveragePercent: 20
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Toyota Terrace Level - Third Base
   {
     id: 'terrace-level-3b',
@@ -201,13 +216,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: -140, y: 223, z: 258 },
       { x: -55, y: 223, z: 228 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y'],
-      coveragePercent: 20
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Grandstand Level - Behind Home
   {
     id: 'grandstand-home',
@@ -222,13 +235,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 55, y: 280, z: 275 },
       { x: -55, y: 280, z: 275 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['U', 'V', 'W', 'X', 'Y', 'Z'],
-      coveragePercent: 20
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Bleacher Creatures (Right Field)
   {
     id: 'bleacher-creatures',
@@ -243,8 +254,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 165, y: 72.5, z: 382.5 },
       { x: 135, y: 72.5, z: 342.5 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Judge's Chambers (Right Field)
   {
     id: 'judges-chambers',
@@ -259,8 +273,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 170, y: 45, z: 355 },
       { x: 150, y: 45, z: 330 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Left Field Bleachers
   {
     id: 'left-field-bleachers',
@@ -275,8 +292,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: -135, y: 72.5, z: 382.5 },
       { x: -165, y: 72.5, z: 342.5 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Monument Park
   {
     id: 'monument-park',
@@ -285,8 +305,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 8, z: 408 },
@@ -294,8 +313,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 30, y: 8, z: 420 },
       { x: -30, y: 8, z: 420 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Mohegan Sun Sports Bar
   {
     id: 'mohegan-sun-bar',
@@ -304,8 +326,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -40, y: 35, z: 390 },
@@ -313,8 +334,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 40, y: 35, z: 410 },
       { x: -40, y: 35, z: 410 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Mastercard Batter's Eye Deck
   {
     id: 'batters-eye-deck',
@@ -323,8 +347,8 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
+  }
     ],
     vertices3D: [
       { x: -25, y: 40, z: 400 },
@@ -332,8 +356,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 25, y: 40, z: 420 },
       { x: -25, y: 40, z: 420 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Delta Sky360 Suite
   {
     id: 'delta-sky360',
@@ -342,7 +369,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -60, y: 90, z: 85 },
@@ -350,13 +377,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 60, y: 100, z: 95 },
       { x: -60, y: 100, z: 95 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Audi Yankees Club
   {
     id: 'audi-club',
@@ -371,13 +396,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 135, y: 114, z: 134 },
       { x: 45, y: 114, z: 109 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Pepsi Lounge
   {
     id: 'pepsi-lounge',
@@ -392,13 +415,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: -135, y: 114, z: 134 },
       { x: -45, y: 114, z: 109 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Ford Field MVP Club
   {
     id: 'ford-mvp-club',
@@ -413,8 +434,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 95, y: 25, z: 45 },
       { x: 65, y: 25, z: 40 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Judge's Chambers
   {
     id: 'judges-chambers',
@@ -423,9 +447,8 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-,
-  
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
+  },
   // Bleacher Creatures
   {
     id: 'bleacher-creatures',
@@ -440,7 +463,11 @@ export const yankeeStadiumSections: DetailedSection[] = [
       { x: 165, y: 111.8, z: 386.8 },
       { x: 135, y: 111.8, z: 356.8 }
     ] as Vector3D[],
-
+    covered: false,
+    distance: 295,
+    height: 35,
+    rake: 34
+  }
 ];
 
 // Stadium features
@@ -455,4 +482,5 @@ export const yankeeStadiumFeatures = {
 
 // Export section map for easy lookup
 export const yankeeStadiumSectionMap = new Map(
-  yankeeStadiumSections.map(section => [section.id, section]));
+  yankeeStadiumSections.map(section => [section.id, section])
+);

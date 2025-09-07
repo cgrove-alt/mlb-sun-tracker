@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const rogersCentreSections: DetailedSection[] = [
   // Premium Dugout - Behind Home Plate
   {
@@ -44,13 +43,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 35, y: 45, z: 55 },
       { x: -35, y: 45, z: 55 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Level Infield - First Base
   {
     id: 'field-level-1b',
@@ -65,13 +62,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 125, y: 57.5, z: 85.5 },
       { x: 35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Level Infield - Third Base
   {
     id: 'field-level-3b',
@@ -86,13 +81,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -125, y: 57.5, z: 85.5 },
       { x: -35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // TD Comfort Club
   {
     id: 'td-comfort-club',
@@ -107,13 +100,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 135, y: 114, z: 134 },
       { x: 45, y: 114, z: 109 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 100 Level - Behind Home
   {
     id: '100-level-home',
@@ -128,13 +119,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 45, y: 123, z: 123 },
       { x: -45, y: 123, z: 123 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 200 Level - First Base
   {
     id: '200-level-1b',
@@ -149,13 +138,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 140, y: 166, z: 186 },
       { x: 50, y: 166, z: 161 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 200 Level - Third Base
   {
     id: '200-level-3b',
@@ -170,13 +157,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -140, y: 166, z: 186 },
       { x: -50, y: 166, z: 161 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Renaissance Hotel Windows
   {
     id: 'renaissance-hotel',
@@ -185,7 +170,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 100, z: 400 },
@@ -193,13 +178,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 30, y: 120, z: 420 },
       { x: -30, y: 120, z: 420 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 500 Level - Upper Deck Home
   {
     id: '500-level-home',
@@ -214,13 +197,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 60, y: 275, z: 270 },
       { x: -60, y: 275, z: 270 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 500 Level - First Base
   {
     id: '500-level-1b',
@@ -235,13 +216,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 155, y: 282, z: 322 },
       { x: 65, y: 282, z: 287 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // 500 Level - Third Base
   {
     id: '500-level-3b',
@@ -256,13 +235,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -155, y: 282, z: 322 },
       { x: -65, y: 282, z: 287 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // WestJet Flight Deck
   {
     id: 'westjet-flight-deck',
@@ -271,7 +248,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -40, y: 35, z: 380 },
@@ -279,13 +256,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 40, y: 35, z: 410 },
       { x: -40, y: 35, z: 410 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Outfield District - Left Field
   {
     id: 'outfield-district-lf',
@@ -300,13 +275,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -120, y: 65, z: 360 },
       { x: -150, y: 65, z: 320 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Outfield District - Right Field
   {
     id: 'outfield-district-rf',
@@ -321,13 +294,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 120, y: 65, z: 360 },
       { x: 150, y: 65, z: 320 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Corona Rooftop Patio
   {
     id: 'corona-rooftop-patio',
@@ -336,7 +307,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 80, y: 95, z: 350 },
@@ -344,13 +315,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 120, y: 95, z: 390 },
       { x: 80, y: 95, z: 370 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Sportsnet Grill
   {
     id: 'sportsnet-grill',
@@ -359,7 +328,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -25, y: 40, z: 390 },
@@ -367,13 +336,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 25, y: 40, z: 415 },
       { x: -25, y: 40, z: 415 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -382,7 +349,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -65, y: 110, z: 105 },
@@ -390,13 +357,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 65, y: 120, z: 115 },
       { x: -65, y: 120, z: 115 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // CN Tower Club
   {
     id: 'cn-tower-club',
@@ -411,13 +376,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -145, y: 129, z: 154 },
       { x: -55, y: 129, z: 129 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Action Zone (Kids Area)
   {
     id: 'action-zone',
@@ -426,7 +389,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -100, y: 20, z: 340 },
@@ -434,13 +397,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -70, y: 20, z: 375 },
       { x: -100, y: 20, z: 360 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // WestJet Flight Deck
   {
     id: 'westjet-flight-deck',
@@ -449,8 +410,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 85, z: 400 },
@@ -458,8 +418,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 35, y: 95, z: 410 },
       { x: -35, y: 95, z: 410 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Corona Rooftop Patio
   {
     id: 'corona-rooftop',
@@ -468,8 +431,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 100, y: 90, z: 350 },
@@ -477,8 +439,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 135, y: 100, z: 380 },
       { x: 105, y: 100, z: 360 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // TD Park Social
   {
     id: 'td-park-social',
@@ -493,13 +458,11 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: -75, y: 89, z: 184 },
       { x: -95, y: 89, z: 164 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Renaissance Hotel Windows
   {
     id: 'hotel-windows',
@@ -508,7 +471,7 @@ export const rogersCentreSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -40, y: 120, z: 420 },
@@ -516,11 +479,10 @@ export const rogersCentreSections: DetailedSection[] = [
       { x: 40, y: 135, z: 435 },
       { x: -40, y: 135, z: 435 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   }
 ];
 
@@ -534,7 +496,6 @@ export const rogersCentreFeatures = {
   },
   climateControlled: true
 };
-
-// Export section map for easy lookup
+  // Export section map for easy lookup
 export const rogersCentreSectionMap = new Map(
   rogersCentreSections.map(section => [section.id, section]));

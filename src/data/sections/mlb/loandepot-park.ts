@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const loanDepotParkSections: DetailedSection[] = [
   // Backstop Club - Behind Home Plate
   {
@@ -44,13 +43,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 33, y: 35, z: 45 },
       { x: -33, y: 35, z: 45 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Reserved - First Base
   {
     id: 'field-reserved-1b',
@@ -65,13 +62,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 120, y: 52.5, z: 78.5 },
       { x: 33, y: 52.5, z: 60.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Reserved - Third Base
   {
     id: 'field-reserved-3b',
@@ -86,13 +81,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -120, y: 52.5, z: 78.5 },
       { x: -33, y: 52.5, z: 60.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Clevelander Club (Left Field)
   {
     id: 'clevelander-club',
@@ -101,7 +94,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -130, y: 25, z: 330 },
@@ -109,13 +102,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -100, y: 35, z: 370 },
       { x: -130, y: 35, z: 340 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bobblehead Museum
   {
     id: 'bobblehead-museum',
@@ -124,7 +115,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -15, y: 40, z: 395 },
@@ -132,13 +123,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 15, y: 40, z: 410 },
       { x: -15, y: 40, z: 410 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Vista Level - Behind Home
   {
     id: 'vista-home',
@@ -153,13 +142,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 43, y: 115, z: 112 },
       { x: -43, y: 115, z: 112 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Vista Level - First Base
   {
     id: 'vista-1b',
@@ -174,13 +161,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 125, y: 130, z: 157 },
       { x: 48, y: 130, z: 132 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Vista Level - Third Base
   {
     id: 'vista-3b',
@@ -195,13 +180,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -125, y: 130, z: 157 },
       { x: -48, y: 130, z: 132 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Legends Club
   {
     id: 'legends-club',
@@ -216,13 +199,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 130, y: 111, z: 126 },
       { x: 53, y: 111, z: 106 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Behind Home
   {
     id: 'upper-home',
@@ -237,13 +218,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 50, y: 226, z: 221 },
       { x: -50, y: 226, z: 221 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - First Base
   {
     id: 'upper-1b',
@@ -258,13 +237,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 135, y: 233, z: 268 },
       { x: 55, y: 233, z: 238 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Third Base
   {
     id: 'upper-3b',
@@ -279,13 +256,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -135, y: 233, z: 268 },
       { x: -55, y: 233, z: 238 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Home Run Porch (Right Field)
   {
     id: 'home-run-porch',
@@ -300,13 +275,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 150, y: 53, z: 355 },
       { x: 125, y: 53, z: 325 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // East Plaza
   {
     id: 'east-plaza',
@@ -315,7 +288,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 80, y: 35, z: 365 },
@@ -323,13 +296,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 110, y: 35, z: 400 },
       { x: 80, y: 35, z: 385 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // West Plaza
   {
     id: 'west-plaza',
@@ -338,7 +309,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -110, y: 35, z: 365 },
@@ -346,13 +317,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -80, y: 35, z: 400 },
       { x: -110, y: 35, z: 385 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -361,7 +330,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -55, y: 95, z: 90 },
@@ -369,13 +338,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 55, y: 105, z: 100 },
       { x: -55, y: 105, z: 100 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Budweiser Bowtie Bar
   {
     id: 'budweiser-bowtie',
@@ -384,7 +351,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 38, z: 390 },
@@ -392,13 +359,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 30, y: 38, z: 410 },
       { x: -30, y: 38, z: 410 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // The Bermuda Triangle
   {
     id: 'bermuda-triangle',
@@ -413,13 +378,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 15, y: 49.5, z: 422.5 },
       { x: -15, y: 49.5, z: 422.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Home Plate Club
   {
     id: 'home-plate-club',
@@ -434,13 +397,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 40, y: 111, z: 106 },
       { x: -40, y: 111, z: 106 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Baseline Box - First Base
   {
     id: 'baseline-box-1b',
@@ -455,13 +416,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: 80, y: 25, z: 42 },
       { x: 60, y: 25, z: 38 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Baseline Box - Third Base
   {
     id: 'baseline-box-3b',
@@ -476,13 +435,11 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -80, y: 25, z: 42 },
       { x: -60, y: 25, z: 38 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bullpen Bar & Grill (replaced Clevelander)
   {
     id: 'bullpen-bar-grill',
@@ -491,9 +448,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-,
-  
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false },
   // Recess Sports Lounge
   {
     id: 'recess-sports-lounge',
@@ -502,7 +457,7 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -115, y: 6, z: 320 },
@@ -510,11 +465,10 @@ export const loanDepotParkSections: DetailedSection[] = [
       { x: -85, y: 11, z: 345 },
       { x: -115, y: 11, z: 325 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   }
 ];
 

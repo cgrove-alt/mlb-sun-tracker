@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const globeLifeFieldSections: DetailedSection[] = [
   // Premium Level - Behind Home Plate
   {
@@ -44,13 +43,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 35, y: 45, z: 55 },
       { x: -35, y: 45, z: 55 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Box - First Base
   {
     id: 'field-box-1b',
@@ -65,13 +62,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 123, y: 57.5, z: 84.5 },
       { x: 35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Box - Third Base
   {
     id: 'field-box-3b',
@@ -86,13 +81,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -123, y: 57.5, z: 84.5 },
       { x: -35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Karbach Sky Porch
   {
     id: 'karbach-sky-porch',
@@ -107,13 +100,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -120, y: 131, z: 356 },
       { x: -150, y: 131, z: 316 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Texas Sized Video Board Porch
   {
     id: 'video-board-porch',
@@ -122,7 +113,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 80, y: 35, z: 360 },
@@ -130,13 +121,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 120, y: 35, z: 400 },
       { x: 80, y: 35, z: 380 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Concourse - Behind Home
   {
     id: 'main-concourse-home',
@@ -151,13 +140,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 45, y: 126, z: 126 },
       { x: -45, y: 126, z: 126 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Concourse - First Base
   {
     id: 'main-concourse-1b',
@@ -172,13 +159,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 130, y: 138, z: 173 },
       { x: 50, y: 138, z: 148 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Concourse - Third Base
   {
     id: 'main-concourse-3b',
@@ -193,13 +178,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -130, y: 138, z: 173 },
       { x: -50, y: 138, z: 148 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Captain Morgan Club
   {
     id: 'captain-morgan-club',
@@ -214,13 +197,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 140, y: 129, z: 149 },
       { x: 55, y: 129, z: 129 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Fox Sports Club
   {
     id: 'fox-sports-club',
@@ -235,13 +216,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -140, y: 129, z: 149 },
       { x: -55, y: 129, z: 129 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Box - Behind Home
   {
     id: 'upper-box-home',
@@ -256,13 +235,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 55, y: 238, z: 228 },
       { x: -55, y: 238, z: 228 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Box - First Base
   {
     id: 'upper-box-1b',
@@ -277,13 +254,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 145, y: 245, z: 275 },
       { x: 60, y: 245, z: 245 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Box - Third Base
   {
     id: 'upper-box-3b',
@@ -298,13 +273,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -145, y: 245, z: 275 },
       { x: -60, y: 245, z: 245 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Home Run Porch
   {
     id: 'home-run-porch',
@@ -319,13 +292,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -125, y: 52.5, z: 337.5 },
       { x: -155, y: 52.5, z: 297.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Texas Outfield Deck
   {
     id: 'texas-outfield-deck',
@@ -334,7 +305,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -25, y: 40, z: 390 },
@@ -342,13 +313,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 25, y: 40, z: 415 },
       { x: -25, y: 40, z: 415 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Rangers Republic Bar
   {
     id: 'rangers-republic-bar',
@@ -357,7 +326,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 40, y: 35, z: 375 },
@@ -365,13 +334,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 80, y: 35, z: 405 },
       { x: 40, y: 35, z: 395 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Shed Group Area
   {
     id: 'the-shed',
@@ -386,13 +353,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 120, y: 55, z: 345 },
       { x: 150, y: 55, z: 305 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -401,7 +366,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -60, y: 100, z: 100 },
@@ -409,13 +374,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 60, y: 110, z: 110 },
       { x: -60, y: 110, z: 110 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Champions Club
   {
     id: 'champions-club',
@@ -430,13 +393,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 45, y: 123, z: 118 },
       { x: -45, y: 123, z: 118 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Hyundai Club
   {
     id: 'hyundai-club',
@@ -445,7 +406,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -80, y: 45, z: 350 },
@@ -453,13 +414,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -40, y: 45, z: 385 },
       { x: -80, y: 45, z: 370 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Karbach Sky Porch
   {
     id: 'karbach-sky-porch',
@@ -468,7 +427,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -140, y: 75, z: 320 },
@@ -476,13 +435,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -110, y: 85, z: 350 },
       { x: -140, y: 85, z: 330 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Captain Morgan Club
   {
     id: 'captain-morgan-club',
@@ -497,13 +454,11 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: -75, y: 90, z: 170 },
       { x: -95, y: 90, z: 150 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Texas Sized Club
   {
     id: 'texas-sized-club',
@@ -518,9 +473,12 @@ export const globeLifeFieldSections: DetailedSection[] = [
       { x: 35, y: 38, z: 85 },
       { x: -35, y: 38, z: 85 }
     ] as Vector3D[],
-
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  }
 ];
-
 // Stadium features
 export const globeLifeFieldFeatures = {
   retractableRoof: true,

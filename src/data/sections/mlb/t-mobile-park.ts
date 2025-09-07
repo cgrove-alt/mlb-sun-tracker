@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const tMobileParkSections: DetailedSection[] = [
   // Diamond Club - Behind Home Plate
   {
@@ -44,13 +43,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 35, y: 45, z: 55 },
       { x: -35, y: 45, z: 55 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Level - First Base
   {
     id: 'field-level-1b',
@@ -65,13 +62,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 123, y: 57.5, z: 84.5 },
       { x: 35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Level - Third Base
   {
     id: 'field-level-3b',
@@ -86,13 +81,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -123, y: 57.5, z: 84.5 },
       { x: -35, y: 57.5, z: 65.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // The 'Pen (Left-Center Field)
   {
     id: 'the-pen',
@@ -101,7 +94,8 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
+  }
     ],
     vertices3D: [
       { x: -100, y: 25, z: 350 },
@@ -109,13 +103,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -60, y: 25, z: 395 },
       { x: -100, y: 25, z: 375 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Edgar's Cantina (Left Field)
   {
     id: 'edgars-cantina',
@@ -124,7 +116,8 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
+  }
     ],
     vertices3D: [
       { x: -120, y: 30, z: 320 },
@@ -132,13 +125,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -90, y: 30, z: 365 },
       { x: -120, y: 30, z: 345 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Hit It Here Cafe (Right Field)
   {
     id: 'hit-it-here-cafe',
@@ -147,7 +138,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 120, y: 35, z: 320 },
@@ -155,13 +146,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 150, y: 35, z: 365 },
       { x: 120, y: 35, z: 345 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Level - Behind Home
   {
     id: 'main-level-home',
@@ -176,13 +165,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 45, y: 123, z: 123 },
       { x: -45, y: 123, z: 123 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Level - First Base
   {
     id: 'main-level-1b',
@@ -197,13 +184,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 130, y: 144, z: 174 },
       { x: 50, y: 144, z: 149 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Main Level - Third Base
   {
     id: 'main-level-3b',
@@ -218,13 +203,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -130, y: 144, z: 174 },
       { x: -50, y: 144, z: 149 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Club Level - Behind Home
   {
     id: 'club-level-home',
@@ -239,13 +222,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 45, y: 121, z: 116 },
       { x: -45, y: 121, z: 116 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Terrace Club
   {
     id: 'terrace-club',
@@ -260,13 +241,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 135, y: 124, z: 144 },
       { x: 55, y: 124, z: 124 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Behind Home
   {
     id: 'upper-level-home',
@@ -281,13 +260,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 55, y: 254, z: 249 },
       { x: -55, y: 254, z: 249 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - First Base
   {
     id: 'upper-level-1b',
@@ -302,13 +279,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 145, y: 261, z: 296 },
       { x: 60, y: 261, z: 266 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Third Base
   {
     id: 'upper-level-3b',
@@ -323,13 +298,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -145, y: 261, z: 296 },
       { x: -60, y: 261, z: 266 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Center Field Landing
   {
     id: 'center-field-landing',
@@ -338,7 +311,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -25, y: 35, z: 400 },
@@ -346,13 +319,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 25, y: 35, z: 420 },
       { x: -25, y: 35, z: 420 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Left Field Bleachers
   {
     id: 'left-field-bleachers',
@@ -367,13 +338,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -125, y: 70, z: 380 },
       { x: -155, y: 70, z: 340 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Right Field Bleachers
   {
     id: 'right-field-bleachers',
@@ -388,13 +357,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 155, y: 70, z: 380 },
       { x: 125, y: 70, z: 340 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -403,7 +370,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -60, y: 110, z: 105 },
@@ -411,13 +378,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 60, y: 120, z: 115 },
       { x: -60, y: 120, z: 115 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Lookout Landing (Center Field Bar)
   {
     id: 'lookout-landing',
@@ -426,7 +391,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -40, y: 40, z: 390 },
@@ -434,13 +399,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 40, y: 40, z: 410 },
       { x: -40, y: 40, z: 410 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // All-Star Club
   {
     id: 'all-star-club',
@@ -455,13 +418,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -135, y: 124, z: 144 },
       { x: -55, y: 124, z: 124 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Northwest Gate Social Deck
   {
     id: 'northwest-gate-deck',
@@ -470,7 +431,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -80, y: 30, z: 365 },
@@ -478,13 +439,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -50, y: 30, z: 400 },
       { x: -80, y: 30, z: 385 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Protime Sports Grill
   {
     id: 'protime-sports-grill',
@@ -493,7 +452,7 @@ export const tMobileParkSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 80, y: 45, z: 360 },
@@ -501,13 +460,11 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: 110, y: 45, z: 395 },
       { x: 80, y: 45, z: 380 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // King's Court (Felix Hernandez Section)
   {
     id: 'kings-court',
@@ -522,11 +479,10 @@ export const tMobileParkSections: DetailedSection[] = [
       { x: -115, y: 37.5, z: 297.5 },
       { x: -135, y: 37.5, z: 277.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   }
 ];
 
@@ -540,7 +496,6 @@ export const tMobileParkFeatures = {
   },
   climateControlled: true
 };
-
-// Export section map for easy lookup
+  // Export section map for easy lookup
 export const tMobileParkSectionMap = new Map(
   tMobileParkSections.map(section => [section.id, section]));

@@ -50,8 +50,7 @@ function generateRows(
   
   return rows;
 }
-
-// Progressive Field Sections
+  // Progressive Field Sections
 export const progressiveFieldSections: DetailedSection[] = [
   // ========== FIELD BOX ==========
   {
@@ -66,9 +65,12 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 0, y: 60, z: 0 },
       { x: 0, y: 87, z: 13 },
       { x: -12, y: 87, z: 13 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 62,
+    height: 0,
+    rake: 18
+  },
   {
     id: '264',
     name: 'Lower Box 264',
@@ -81,9 +83,12 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -87, y: 5, z: 13 },
       { x: -123, y: 5, z: 34 },
       { x: -123, y: 18, z: 34 }
-    ],
-,
-
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== MEZZANINE ==========
   {
     id: '441',
@@ -97,7 +102,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -10, y: 123, z: 34 },
       { x: -8, y: 175, z: 69 },
       { x: -26, y: 175, z: 69 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -106,7 +111,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       overhangDepth: 24,
       overhangHeight: 21,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 149,
     height: 34,
@@ -115,7 +120,6 @@ export const progressiveFieldSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'good'
   },
-
   {
     id: '467',
     name: 'Mezzanine 467',
@@ -128,7 +132,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 123, y: -10, z: 34 },
       { x: 175, y: -8, z: 69 },
       { x: 175, y: -26, z: 69 }
-    ],
+    ] as Vector3D[],
     covered: true,
     partialCoverage: {
       type: 'partial',
@@ -137,7 +141,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       overhangDepth: 24,
       overhangHeight: 21,
       material: 'solid'
-    },
+  },
     price: 'value',
     distance: 149,
     height: 34,
@@ -146,7 +150,6 @@ export const progressiveFieldSections: DetailedSection[] = [
     rowSpacing: 30,
     viewQuality: 'fair'
   },
-
   // ========== UPPER BOX ==========
   {
     id: '541',
@@ -160,7 +163,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -15, y: 150, z: 50 },
       { x: -13, y: 195, z: 82 },
       { x: -30, y: 195, z: 82 }
-    ],
+    ] as Vector3D[],
     price: 'value',
     distance: 173,
     height: 50,
@@ -169,7 +172,6 @@ export const progressiveFieldSections: DetailedSection[] = [
     rowSpacing: 29,
     viewQuality: 'good'
   },
-
   // ========== CORNER BAR (Left Field) ==========
   {
     id: 'CORNER',
@@ -183,9 +185,12 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -95, y: 45, z: 20 },
       { x: -95, y: 60, z: 20 },
       { x: -110, y: 45, z: 20 }
-    ],
-,
-  
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // ========== TERRACE HALL (New 2025) ==========
   {
     id: 'TERRACEHALL',
@@ -199,7 +204,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -85, y: 65, z: 280 },
       { x: -90, y: 87, z: 302 },
       { x: -115, y: 87, z: 282 }
-    ],
+    ] as Vector3D[],
     price: 'luxury',
     distance: 270,
     height: 65,
@@ -208,7 +213,6 @@ export const progressiveFieldSections: DetailedSection[] = [
     rowSpacing: 38,
     viewQuality: 'excellent'
   },
-  
   // ========== NORTH COAST SOCIAL BOXES (New 2025) ==========
   {
     id: 'NORTHCOAST',
@@ -217,17 +221,16 @@ export const progressiveFieldSections: DetailedSection[] = [
     baseAngle: 255,
     angleSpan: 12,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -130, y: 55, z: 240 },
       { x: -110, y: 55, z: 255 },
       { x: -110, y: 65, z: 265 },
       { x: -130, y: 65, z: 250 }
-    ],
+    ] as Vector3D[],
     price: 'luxury'
   },
-  
   // ========== ECHO VICTORY CLUB ==========
   {
     id: 'ECHOVICTORY',
@@ -241,7 +244,7 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 30, y: 60, z: 70 },
       { x: 35, y: 86, z: 96 },
       { x: -35, y: 86, z: 96 }
-    ],
+    ] as Vector3D[],
     price: 'luxury',
     distance: 70,
     height: 60,
@@ -306,4 +309,4 @@ export const progressiveFieldFeatures = {
     walkable: true,
     cityViews: true
   }
-};
+  }

@@ -22,13 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-      covered: false
+
     });
   }
   
   return rows;
-};
-
+  }
 export const guaranteedRateFieldSections: DetailedSection[] = [
   // Scout Seats - Behind Home Plate
   {
@@ -44,8 +43,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 33, y: 35, z: 45 },
       { x: -33, y: 35, z: 45 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Field Box - First Base
   {
     id: 'field-box-1b',
@@ -60,8 +62,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 120, y: 55, z: 81 },
       { x: 33, y: 55, z: 63 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Field Box - Third Base
   {
     id: 'field-box-3b',
@@ -76,8 +81,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -120, y: 55, z: 81 },
       { x: -33, y: 55, z: 63 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Fundamentals Deck (Right Field)
   {
     id: 'fundamentals-deck',
@@ -92,8 +100,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 155, y: 52.5, z: 357.5 },
       { x: 125, y: 52.5, z: 327.5 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Goose Island (Right-Center Field)
   {
     id: 'goose-island',
@@ -102,8 +113,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 80, y: 30, z: 360 },
@@ -111,8 +121,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 110, y: 30, z: 395 },
       { x: 80, y: 30, z: 380 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Kraft Kave (Left Field)
   {
     id: 'kraft-kave',
@@ -121,8 +134,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -130, y: 28, z: 320 },
@@ -130,8 +142,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -100, y: 28, z: 365 },
       { x: -130, y: 28, z: 345 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // FanDeck (Center Field)
   {
     id: 'fandeck',
@@ -140,8 +155,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 35, z: 395 },
@@ -149,8 +163,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 30, y: 35, z: 420 },
       { x: -30, y: 35, z: 420 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Club Level - Behind Home
   {
     id: 'club-level-home',
@@ -165,13 +182,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 43, y: 111, z: 106 },
       { x: -43, y: 111, z: 106 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['J', 'K', 'L', 'M'],
-      coveragePercent: 30
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Magellan Club
   {
     id: 'magellan-club',
@@ -186,13 +201,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 125, y: 108, z: 131 },
       { x: 48, y: 108, z: 108 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['J', 'K', 'L'],
-      coveragePercent: 25
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Lower Box - Behind Home
   {
     id: 'lower-box-home',
@@ -207,8 +220,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 43, y: 115, z: 110 },
       { x: -43, y: 115, z: 110 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Upper Deck - Behind Home
   {
     id: 'upper-deck-home',
@@ -223,13 +239,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 50, y: 219, z: 214 },
       { x: -50, y: 219, z: 214 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['S', 'T', 'U', 'V', 'W', 'X'],
-      coveragePercent: 25
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Upper Deck - First Base
   {
     id: 'upper-deck-1b',
@@ -244,13 +258,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 135, y: 223, z: 258 },
       { x: 55, y: 223, z: 228 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y'],
-      coveragePercent: 20
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Upper Deck - Third Base
   {
     id: 'upper-deck-3b',
@@ -265,13 +277,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -135, y: 223, z: 258 },
       { x: -55, y: 223, z: 228 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y'],
-      coveragePercent: 20
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Bleachers - Left Field
   {
     id: 'bleachers-lf',
@@ -286,8 +296,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -120, y: 70.5, z: 377.5 },
       { x: -150, y: 70.5, z: 337.5 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Bleachers - Right Field
   {
     id: 'bleachers-rf',
@@ -302,8 +315,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 150, y: 70.5, z: 377.5 },
       { x: 120, y: 70.5, z: 337.5 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Suite Level
   {
     id: 'suite-level',
@@ -312,7 +328,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -55, y: 90, z: 85 },
@@ -320,13 +336,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 55, y: 100, z: 95 },
       { x: -55, y: 100, z: 95 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Revolution Brewing Tap Room
   {
     id: 'revolution-tap-room',
@@ -335,8 +349,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -90, y: 32, z: 350 },
@@ -344,8 +357,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -60, y: 32, z: 385 },
       { x: -90, y: 32, z: 370 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Exploding Scoreboard Area
   {
     id: 'exploding-scoreboard',
@@ -354,8 +370,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -25, y: 40, z: 400 },
@@ -363,8 +378,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 25, y: 40, z: 420 },
       { x: -25, y: 40, z: 420 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Xfinity Zone
   {
     id: 'xfinity-zone',
@@ -373,8 +391,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 100, y: 35, z: 340 },
@@ -382,8 +399,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 125, y: 35, z: 375 },
       { x: 100, y: 35, z: 360 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // The Patio (Left Field)
   {
     id: 'the-patio',
@@ -398,8 +418,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -115, y: 42, z: 350 },
       { x: -140, y: 42, z: 330 }
     ] as Vector3D[],
-,
-  
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Champions Club
   {
     id: 'champions-club',
@@ -414,13 +437,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: -125, y: 108, z: 131 },
       { x: -48, y: 108, z: 108 }
     ] as Vector3D[],
-    covered: true,
-    partialCoverage: {
-      coveredRows: ['J', 'K', 'L'],
-      coveragePercent: 25
-    }
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
   },
-  
   // Stadium Club Restaurant
   {
     id: 'stadium-club-restaurant',
@@ -429,7 +450,7 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -40, y: 85, z: 80 },
@@ -437,13 +458,11 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
       { x: 40, y: 95, z: 90 },
       { x: -40, y: 95, z: 90 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Miller Lite Landing (formerly Goose Island)
   {
     id: 'miller-lite-landing',
@@ -452,8 +471,19 @@ export const guaranteedRateFieldSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+    ],
+    vertices3D: [
+      { x: 100, y: 20, z: 320 },
+      { x: 130, y: 20, z: 340 },
+      { x: 130, y: 30, z: 340 },
+      { x: 100, y: 30, z: 320 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 330,
+    height: 20,
+    rake: 0
+  }
 ];
 
 // Stadium features
@@ -465,7 +495,7 @@ export const guaranteedRateFieldFeatures = {
     reflectivity: 0.3
   }
 };
-
 // Export section map for easy lookup
 export const guaranteedRateFieldSectionMap = new Map(
-  guaranteedRateFieldSections.map(section => [section.id, section]));
+  guaranteedRateFieldSections.map(section => [section.id, section])
+);

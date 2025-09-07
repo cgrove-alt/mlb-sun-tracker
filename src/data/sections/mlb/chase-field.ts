@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const chaseFieldSections: DetailedSection[] = [
   // Diamond Level - Behind Home Plate
   {
@@ -44,13 +43,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 35, y: 40, z: 50 },
       { x: -35, y: 40, z: 50 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Infield Box - First Base
   {
     id: 'infield-box-1b',
@@ -65,13 +62,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 123, y: 55, z: 82 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Infield Box - Third Base
   {
     id: 'infield-box-3b',
@@ -86,13 +81,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -123, y: 55, z: 82 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Swimming Pool Suite (Right-Center Field)
   {
     id: 'swimming-pool',
@@ -101,21 +94,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: 100, y: 25, z: 385 },
       { x: 130, y: 25, z: 400 },
       { x: 130, y: 35, z: 410 },
       { x: 100, y: 35, z: 395 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Friday's Front Row Grill
   {
     id: 'fridays-front-row',
@@ -124,21 +115,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
+  ],
     vertices3D: [
       { x: -20, y: 30, z: 390 },
       { x: 20, y: 30, z: 390 },
       { x: 20, y: 30, z: 410 },
       { x: -20, y: 30, z: 410 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Club Level - Behind Home
   {
     id: 'club-level-home',
@@ -153,13 +142,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 45, y: 117, z: 112 },
       { x: -45, y: 117, z: 112 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Club Level - First Base
   {
     id: 'club-level-1b',
@@ -174,13 +161,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 130, y: 123, z: 148 },
       { x: 50, y: 123, z: 123 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Club Level - Third Base
   {
     id: 'club-level-3b',
@@ -195,18 +180,16 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -130, y: 123, z: 148 },
       { x: -50, y: 123, z: 123 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Behind Home
   {
     id: 'upper-level-home',
     name: 'Upper Level - Home Plate',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 26, 130, 3.5, 15),
@@ -216,18 +199,16 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 50, y: 231, z: 226 },
       { x: -50, y: 231, z: 226 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - First Base
   {
     id: 'upper-level-1b',
     name: 'Upper Level - First Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'Z', 28, 130, 3.5, 16),
@@ -237,18 +218,16 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 140, y: 238, z: 273 },
       { x: 55, y: 238, z: 243 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Upper Level - Third Base
   {
     id: 'upper-level-3b',
     name: 'Upper Level - Third Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'Z', 28, 130, 3.5, 16),
@@ -258,13 +237,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -140, y: 238, z: 273 },
       { x: -55, y: 238, z: 243 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bleachers - Left Field
   {
     id: 'bleachers-lf',
@@ -279,13 +256,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -125, y: 72.5, z: 372.5 },
       { x: -155, y: 72.5, z: 332.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bleachers - Right Field
   {
     id: 'bleachers-rf',
@@ -300,13 +275,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 155, y: 72.5, z: 372.5 },
       { x: 125, y: 72.5, z: 332.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // The Draft Room
   {
     id: 'draft-room',
@@ -315,21 +288,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: -80, y: 35, z: 350 },
       { x: -40, y: 35, z: 365 },
       { x: -40, y: 35, z: 385 },
       { x: -80, y: 35, z: 370 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Sandlot (Kids Area)
   {
     id: 'sandlot',
@@ -338,21 +309,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: -140, y: 15, z: 310 },
       { x: -110, y: 15, z: 330 },
       { x: -110, y: 15, z: 350 },
       { x: -140, y: 15, z: 330 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -361,21 +330,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: -60, y: 95, z: 90 },
       { x: 60, y: 95, z: 90 },
       { x: 60, y: 105, z: 100 },
       { x: -60, y: 105, z: 100 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Cox Terrace
   {
     id: 'cox-terrace',
@@ -390,13 +357,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 115, y: 60, z: 405 },
       { x: 85, y: 60, z: 390 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Coors Light Strike Zone
   {
     id: 'coors-strike-zone',
@@ -405,21 +370,19 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: -30, y: 25, z: 400 },
       { x: 30, y: 25, z: 400 },
       { x: 30, y: 25, z: 420 },
       { x: -30, y: 25, z: 420 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Legends Suite
   {
     id: 'legends-suite',
@@ -434,13 +397,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -135, y: 113, z: 133 },
       { x: -55, y: 113, z: 113 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bullpen Reserve
   {
     id: 'bullpen-reserve',
@@ -455,13 +416,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: -115, y: 23, z: 235 },
       { x: -135, y: 23, z: 215 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // PetSmart Patio
   {
     id: 'petsmart-patio',
@@ -470,44 +429,40 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: -100, y: 30, z: 340 },
       { x: -70, y: 30, z: 355 },
       { x: -70, y: 30, z: 375 },
       { x: -100, y: 30, z: 360 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
-  // Draft Room
+  // Draft Room Concourse
   {
-    id: 'draft-room',
-    name: 'Draft Room',
-    level: 'Concourse',
+    id: 'draft-room-concourse',
+    name: 'Draft Room Concourse',
+    level: 'club',
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-    ],
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+  ],
     vertices3D: [
       { x: 110, y: 25, z: 320 },
       { x: 140, y: 25, z: 340 },
       { x: 140, y: 35, z: 350 },
       { x: 110, y: 35, z: 330 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Sandbar (Pool Area)
   {
     id: 'sandbar',
@@ -516,8 +471,7 @@ export const chaseFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
-
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 85, y: 8, z: 385 },
@@ -525,7 +479,11 @@ export const chaseFieldSections: DetailedSection[] = [
       { x: 115, y: 12, z: 404 },
       { x: 85, y: 12, z: 389 }
     ] as Vector3D[],
-
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  }
 ];
 
 // Stadium features

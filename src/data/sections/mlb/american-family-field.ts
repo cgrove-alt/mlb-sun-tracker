@@ -27,8 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-};
-
+  }
 export const americanFamilyFieldSections: DetailedSection[] = [
   // Field Diamond Box - Behind Home
   {
@@ -44,13 +43,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 35, y: 47.5, z: 57.5 },
       { x: -35, y: 47.5, z: 57.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Infield Box - First Base
   {
     id: 'field-infield-1b',
@@ -65,13 +62,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 123, y: 55, z: 82 },
       { x: 35, y: 55, z: 63 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Field Infield Box - Third Base
   {
     id: 'field-infield-3b',
@@ -86,13 +81,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -123, y: 55, z: 82 },
       { x: -35, y: 55, z: 63 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Bernie's Dugout (Left Field)
   {
     id: 'bernies-dugout',
@@ -107,13 +100,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -115, y: 52.5, z: 347.5 },
       { x: -145, y: 52.5, z: 307.5 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // The Loft (Center Field)
   {
     id: 'the-loft',
@@ -122,7 +113,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -30, y: 40, z: 390 },
@@ -130,13 +121,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 30, y: 40, z: 415 },
       { x: -30, y: 40, z: 415 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Loge Level - Behind Home
   {
     id: 'loge-level-home',
@@ -151,13 +140,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 45, y: 123, z: 123 },
       { x: -45, y: 123, z: 123 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Loge Level - First Base
   {
     id: 'loge-level-1b',
@@ -172,13 +159,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 130, y: 141, z: 171 },
       { x: 50, y: 141, z: 146 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Loge Level - Third Base
   {
     id: 'loge-level-3b',
@@ -193,13 +178,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -130, y: 141, z: 171 },
       { x: -50, y: 141, z: 146 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Club Level
   {
     id: 'club-level',
@@ -214,13 +197,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 140, y: 127, z: 147 },
       { x: 55, y: 127, z: 127 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Terrace Level - Behind Home
   {
     id: 'terrace-level-home',
@@ -235,13 +216,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 55, y: 243, z: 238 },
       { x: -55, y: 243, z: 238 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Terrace Level - First Base
   {
     id: 'terrace-level-1b',
@@ -256,13 +235,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 145, y: 250, z: 285 },
       { x: 60, y: 250, z: 255 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Terrace Level - Third Base
   {
     id: 'terrace-level-3b',
@@ -277,13 +254,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -145, y: 250, z: 285 },
       { x: -60, y: 250, z: 255 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // ATI Club (Right Field)
   {
     id: 'ati-club',
@@ -292,7 +267,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 120, y: 35, z: 300 },
@@ -300,13 +275,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 150, y: 35, z: 350 },
       { x: 120, y: 35, z: 320 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Johnson Controls Deck
   {
     id: 'johnson-controls-deck',
@@ -315,7 +288,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -80, y: 30, z: 350 },
@@ -323,13 +296,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -40, y: 30, z: 385 },
       { x: -80, y: 30, z: 370 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Brewers Bar
   {
     id: 'brewers-bar',
@@ -338,7 +309,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 40, y: 35, z: 365 },
@@ -346,13 +317,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 80, y: 35, z: 395 },
       { x: 40, y: 35, z: 385 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Uecker Seats (Obstructed View)
   {
     id: 'uecker-seats',
@@ -367,13 +336,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -150, y: 190, z: 235 },
       { x: -160, y: 190, z: 225 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Suite Level
   {
     id: 'suite-level',
@@ -382,7 +349,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 0,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -60, y: 100, z: 95 },
@@ -390,13 +357,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 60, y: 110, z: 105 },
       { x: -60, y: 110, z: 105 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Restaurant Row
   {
     id: 'restaurant-row',
@@ -405,7 +370,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 315,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -50, y: 90, z: 90 },
@@ -413,13 +378,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -130, y: 90, z: 130 },
       { x: -50, y: 90, z: 110 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Kids Zone
   {
     id: 'kids-zone',
@@ -428,7 +391,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: 140, y: 15, z: 320 },
@@ -436,13 +399,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: 160, y: 15, z: 360 },
       { x: 140, y: 15, z: 340 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Aurora Pavilion
   {
     id: 'aurora-pavilion',
@@ -459,11 +420,9 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     ] as Vector3D[],
     covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Brewers Bar
   {
     id: 'brewers-bar',
@@ -472,7 +431,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 315,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -90, y: 55, z: 140 },
@@ -480,13 +439,11 @@ export const americanFamilyFieldSections: DetailedSection[] = [
       { x: -70, y: 65, z: 170 },
       { x: -90, y: 65, z: 150 }
     ] as Vector3D[],
-    covered: true,
+    covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Johnsonville Party Deck
   {
     id: 'johnsonville-deck',
@@ -495,7 +452,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -140, y: 25, z: 320 },
@@ -505,11 +462,9 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     ] as Vector3D[],
     covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   },
-  
   // Uecker Seats
   {
     id: 'uecker-seats',
@@ -518,7 +473,7 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     baseAngle: 135,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
     ],
     vertices3D: [
       { x: -5, y: 85, z: 420 },
@@ -528,9 +483,8 @@ export const americanFamilyFieldSections: DetailedSection[] = [
     ] as Vector3D[],
     covered: false,
     distance: 50,
-    height: 20, 
-    rake: 25,
-    viewQuality: 'good'
+    height: 20,
+    rake: 25
   }
 ];
 
