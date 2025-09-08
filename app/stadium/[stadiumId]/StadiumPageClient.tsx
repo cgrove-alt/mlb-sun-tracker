@@ -1,8 +1,10 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
+import { Suspense, useMemo } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
+import { calculateDetailedSectionSunExposure, getSunPosition } from '../../../src/utils/sunCalculations';
+import { MLB_STADIUMS } from '../../../src/data/stadiums';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -58,6 +60,41 @@ export default function StadiumPageClient({
     hasGuide: !!guide
   });
 
+  // Calculate sections with sun exposure data for recommendations
+  const sectionsWithSunData = useMemo(() => {
+    try {
+      // Find the full stadium data for calculations
+      const fullStadium = MLB_STADIUMS.find(s => s.id === stadium.id);
+      if (!fullStadium) {
+        console.error('Stadium not found for sun calculations:', stadium.id);
+        return [];
+      }
+
+      // Calculate sun position for current time (13:00 default game time)
+      const gameDateTime = new Date();
+      gameDateTime.setHours(13, 0, 0, 0); // 1:00 PM game time
+      
+      const sunPosition = getSunPosition(
+        gameDateTime, 
+        fullStadium.latitude, 
+        fullStadium.longitude, 
+        fullStadium.timezone
+      );
+
+      // Calculate detailed sun exposure for all sections
+      const sectionsWithSun = calculateDetailedSectionSunExposure(
+        fullStadium, 
+        sunPosition
+      );
+
+      console.log('Calculated sun data for', sectionsWithSun.length, 'sections');
+      return sectionsWithSun;
+    } catch (error) {
+      console.error('Failed to calculate sun data:', error);
+      return [];
+    }
+  }, [stadium.id]); // Only recalculate if stadium changes
+
   return (
     <>
       <Suspense fallback={<LoadingSpinner />}>
@@ -82,12 +119,24 @@ export default function StadiumPageClient({
             <p>Loading AI Recommendations...</p>
           </div>
         }>
-          <SeatRecommendationsSection 
-            sections={sections}
-            stadiumId={stadium.id}
-            gameTime="13:00"
-            gameDate={new Date()}
-          />
+          {sectionsWithSunData.length > 0 ? (
+            <SeatRecommendationsSection 
+              sections={sectionsWithSunData}
+              stadiumId={stadium.id}
+              gameTime="13:00"
+              gameDate={new Date()}
+            />
+          ) : (
+            <div className="text-center p-8 bg-gray-50 rounded-lg">
+              <div className="text-gray-600 mb-2">
+                ⚠️ AI Recommendations Unavailable
+              </div>
+              <p className="text-sm text-gray-500">
+                Sun exposure data could not be calculated for this stadium. 
+                Basic section information is still available above.
+              </p>
+            </div>
+          )}
         </Suspense>
       </div>
 
