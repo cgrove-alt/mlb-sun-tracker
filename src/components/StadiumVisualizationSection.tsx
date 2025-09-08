@@ -3,6 +3,8 @@
  * Integrates the 3D viewer into stadium pages with dynamic loading
  */
 
+'use client';
+
 import React, { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { Stadium } from '../data/stadiums';

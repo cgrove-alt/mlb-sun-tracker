@@ -3,6 +3,8 @@
  * Collects user preferences for seat recommendations
  */
 
+'use client';
+
 import React, { useState } from 'react';
 import { UserPreferences } from '../services/seatRecommendationEngine';
 

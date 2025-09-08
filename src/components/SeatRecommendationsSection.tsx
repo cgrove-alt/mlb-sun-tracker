@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useCallback, useMemo } from 'react';
 import { SeatRecommendationEngine, UserPreferences } from '../services/seatRecommendationEngine';
 import { SeatingSectionSun } from '../utils/sunCalculations';
