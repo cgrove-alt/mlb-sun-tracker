@@ -53,7 +53,35 @@ import { sofiStadiumSections } from './sections/nfl/sofi-stadium';
 
 // Import obstructions
 import { yankeeStadiumObstructions } from './obstructions/mlb/yankees-obstructions';
-// Import other obstructions as they're created...
+import { redsoxObstructions } from './obstructions/mlb/redsox-obstructions';
+import { dodgersObstructions } from './obstructions/mlb/dodgers-obstructions';
+import { cubsObstructions } from './obstructions/mlb/cubs-obstructions';
+import { metsObstructions } from './obstructions/mlb/mets-obstructions';
+import { giantsObstructions } from './obstructions/mlb/giants-obstructions';
+import { padresObstructions } from './obstructions/mlb/padres-obstructions';
+import { oriolesObstructions } from './obstructions/mlb/orioles-obstructions';
+import { piratesObstructions } from './obstructions/mlb/pirates-obstructions';
+import { astrosObstructions } from './obstructions/mlb/astros-obstructions';
+import { bravesObstructions } from './obstructions/mlb/braves-obstructions';
+import { rockiesObstructions } from './obstructions/mlb/rockies-obstructions';
+import { twinsObstructions } from './obstructions/mlb/twins-obstructions';
+import { redsObstructions } from './obstructions/mlb/reds-obstructions';
+import { guardiansObstructions } from './obstructions/mlb/guardians-obstructions';
+import { philliesObstructions } from './obstructions/mlb/phillies-obstructions';
+import { nationalsObstructions } from './obstructions/mlb/nationals-obstructions';
+import { rangersObstructions } from './obstructions/mlb/rangers-obstructions';
+import { angelsObstructions } from './obstructions/mlb/angels-obstructions';
+import { brewersObstructions } from './obstructions/mlb/brewers-obstructions';
+import { cardinalsObstructions } from './obstructions/mlb/cardinals-obstructions';
+import { diamondbacksObstructions } from './obstructions/mlb/diamondbacks-obstructions';
+import { tigersObstructions } from './obstructions/mlb/tigers-obstructions';
+import { whitesoxObstructions } from './obstructions/mlb/whitesox-obstructions';
+import { royalsObstructions } from './obstructions/mlb/royals-obstructions';
+import { marlinsObstructions } from './obstructions/mlb/marlins-obstructions';
+import { bluejaysObstructions } from './obstructions/mlb/bluejays-obstructions';
+import { athleticsObstructions } from './obstructions/mlb/athletics-obstructions';
+import { marinersObstructions } from './obstructions/mlb/mariners-obstructions';
+import { raysObstructions } from './obstructions/mlb/rays-obstructions';
 
 // Section data registry
 const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
@@ -102,6 +130,35 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
 const OBSTRUCTION_REGISTRY: Record<string, Obstruction3D[]> = {
   // MLB
   'yankees': yankeeStadiumObstructions,
+  'red-sox': redsoxObstructions,
+  'dodgers': dodgersObstructions,
+  'cubs': cubsObstructions,
+  'mets': metsObstructions,
+  'giants': giantsObstructions,
+  'padres': padresObstructions,
+  'orioles': oriolesObstructions,
+  'pirates': piratesObstructions,
+  'astros': astrosObstructions,
+  'braves': bravesObstructions,
+  'rockies': rockiesObstructions,
+  'twins': twinsObstructions,
+  'reds': redsObstructions,
+  'guardians': guardiansObstructions,
+  'phillies': philliesObstructions,
+  'nationals': nationalsObstructions,
+  'rangers': rangersObstructions,
+  'angels': angelsObstructions,
+  'brewers': brewersObstructions,
+  'cardinals': cardinalsObstructions,
+  'diamondbacks': diamondbacksObstructions,
+  'tigers': tigersObstructions,
+  'white-sox': whitesoxObstructions,
+  'royals': royalsObstructions,
+  'marlins': marlinsObstructions,
+  'blue-jays': bluejaysObstructions,
+  'athletics': athleticsObstructions,
+  'mariners': marinersObstructions,
+  'rays': raysObstructions,
   
   // MiLB - to be added
   // NFL - to be added

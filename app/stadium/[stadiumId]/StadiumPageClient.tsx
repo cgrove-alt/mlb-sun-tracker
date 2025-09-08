@@ -20,6 +20,14 @@ const StadiumGuide = dynamic(
   }
 );
 
+const StadiumVisualizationSection = dynamic(
+  () => import('../../../components/StadiumVisualizationSection'),
+  {
+    loading: () => <LoadingSpinner />,
+    ssr: false,
+  }
+);
+
 interface StadiumPageClientProps {
   stadium: any;
   sections: any[];
@@ -36,18 +44,31 @@ export default function StadiumPageClient({
   useComprehensive = false 
 }: StadiumPageClientProps) {
   return (
-    <Suspense fallback={<LoadingSpinner />}>
-      {useComprehensive ? (
-        <ComprehensiveStadiumGuide 
-          stadiumId={stadium.id}
-        />
-      ) : (
-        <StadiumGuide 
-          stadium={stadium}
-          sections={sections}
-          amenities={amenities}
-        />
-      )}
-    </Suspense>
+    <>
+      <Suspense fallback={<LoadingSpinner />}>
+        {useComprehensive ? (
+          <ComprehensiveStadiumGuide 
+            stadiumId={stadium.id}
+          />
+        ) : (
+          <StadiumGuide 
+            stadium={stadium}
+            sections={sections}
+            amenities={amenities}
+          />
+        )}
+      </Suspense>
+      
+      {/* Add 3D Visualization Section */}
+      <Suspense fallback={<LoadingSpinner />}>
+        <div className="mt-8">
+          <StadiumVisualizationSection 
+            stadium={stadium}
+            defaultDate={new Date()}
+            defaultTime="13:00"
+          />
+        </div>
+      </Suspense>
+    </>
   );
 }
