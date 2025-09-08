@@ -21,7 +21,7 @@ const StadiumGuide = dynamic(
 );
 
 const StadiumVisualizationSection = dynamic(
-  () => import('../../../components/StadiumVisualizationSection'),
+  () => import('../../../src/components/StadiumVisualizationSection'),
   {
     loading: () => <LoadingSpinner />,
     ssr: false,

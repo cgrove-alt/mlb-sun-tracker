@@ -5,13 +5,13 @@
 
 import React, { useState, useMemo } from 'react';
 import dynamic from 'next/dynamic';
-import { Stadium } from '../src/data/stadiums';
-import { getSunPosition } from '../src/utils/sunCalculations';
-import { getStadiumCompleteData } from '../src/data/stadium-data-aggregator';
+import { Stadium } from '../data/stadiums';
+import { getSunPosition } from '../utils/sunCalculations';
+import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
 
 // Dynamic import for 3D viewer to reduce initial bundle size
 const StadiumSunPathViewer = dynamic(
-  () => import('../src/components/StadiumSunPathViewer'),
+  () => import('./StadiumSunPathViewer'),
   {
     ssr: false,
     loading: () => (
@@ -38,24 +38,42 @@ export const StadiumVisualizationSection: React.FC<StadiumVisualizationSectionPr
 }) => {
   const [show3D, setShow3D] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   // Get stadium data with sections and obstructions
   const stadiumData = useMemo(() => {
-    return getStadiumCompleteData(stadium.id, 'MLB');
+    try {
+      console.log('Getting stadium data for:', stadium.id);
+      const data = getStadiumCompleteData(stadium.id, 'MLB');
+      console.log('Stadium data loaded:', { 
+        sections: data.sections?.length || 0, 
+        obstructions: data.obstructions?.length || 0 
+      });
+      return data;
+    } catch (err) {
+      console.error('Error loading stadium data:', err);
+      setError('Failed to load stadium data');
+      return { sections: [], obstructions: [] };
+    }
   }, [stadium.id]);
 
   // Calculate current sun position for preview
   const sunPosition = useMemo(() => {
-    const [hours, minutes] = defaultTime.split(':').map(Number);
-    const dateTime = new Date(defaultDate);
-    dateTime.setHours(hours, minutes, 0, 0);
-    
-    return getSunPosition(
-      dateTime,
-      stadium.latitude,
-      stadium.longitude,
-      stadium.timezone
-    );
+    try {
+      const [hours, minutes] = defaultTime.split(':').map(Number);
+      const dateTime = new Date(defaultDate);
+      dateTime.setHours(hours, minutes, 0, 0);
+      
+      return getSunPosition(
+        dateTime,
+        stadium.latitude,
+        stadium.longitude,
+        stadium.timezone
+      );
+    } catch (err) {
+      console.error('Error calculating sun position:', err);
+      return { azimuthDegrees: 0, altitudeDegrees: 0 };
+    }
   }, [defaultDate, defaultTime, stadium]);
 
   const handleShow3D = () => {
@@ -85,6 +103,20 @@ export const StadiumVisualizationSection: React.FC<StadiumVisualizationSectionPr
           initialDate={defaultDate}
           initialTime={defaultTime}
         />
+      </div>
+    );
+  }
+
+  // Add debug logging
+  console.log('StadiumVisualizationSection rendering for:', stadium?.name || 'unknown');
+
+  if (error) {
+    return (
+      <div className="stadium-visualization-section bg-red-50 rounded-lg p-8 mb-8">
+        <div className="text-center">
+          <h2 className="text-xl font-bold text-red-600 mb-2">Unable to Load 3D Visualization</h2>
+          <p className="text-red-500">{error}</p>
+        </div>
       </div>
     );
   }
