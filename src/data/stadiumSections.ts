@@ -6,6 +6,8 @@ export interface StadiumSection {
   angleSpan: number; // How many degrees this section spans
   rows?: number; // Number of rows in section
   covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
   price?: 'value' | 'moderate' | 'premium' | 'luxury';
 }
 
@@ -37,13 +39,13 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'yankees',
     sections: [
       // Field Level (100 Level) - Legends and Field MVP
-      { id: '011', name: 'Legends 11', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '012', name: 'Legends 12', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '013', name: 'Legends 13', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '014A', name: 'Legends 14A', level: 'field', baseAngle: 20, angleSpan: 5, covered: true, price: 'luxury' },
-      { id: '014B', name: 'Legends 14B', level: 'field', baseAngle: 25, angleSpan: 5, covered: true, price: 'luxury' },
-      { id: '015A', name: 'Legends 15A', level: 'field', baseAngle: 30, angleSpan: 5, covered: true, price: 'luxury' },
-      { id: '015B', name: 'Legends 15B', level: 'field', baseAngle: 35, angleSpan: 5, covered: true, price: 'luxury' },
+      { id: '011', name: 'Legends 11', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '012', name: 'Legends 12', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '013', name: 'Legends 13', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '014A', name: 'Legends 14A', level: 'field', baseAngle: 20, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '014B', name: 'Legends 14B', level: 'field', baseAngle: 25, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '015A', name: 'Legends 15A', level: 'field', baseAngle: 30, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '015B', name: 'Legends 15B', level: 'field', baseAngle: 35, angleSpan: 5, covered: false, price: 'luxury' },
       { id: '016', name: 'Legends 16', level: 'field', baseAngle: 40, angleSpan: 10, covered: false, price: 'luxury' },
       { id: '017A', name: 'Legends 17A', level: 'field', baseAngle: 50, angleSpan: 5, covered: false, price: 'luxury' },
       { id: '017B', name: 'Legends 17B', level: 'field', baseAngle: 55, angleSpan: 5, covered: false, price: 'luxury' },
@@ -56,10 +58,10 @@ export const stadiumSections: StadiumSections[] = [
       { id: '024', name: 'Legends 24', level: 'field', baseAngle: 120, angleSpan: 10, covered: false, price: 'luxury' },
       { id: '025', name: 'Legends 25', level: 'field', baseAngle: 130, angleSpan: 10, covered: false, price: 'luxury' },
       { id: '026', name: 'Legends 26', level: 'field', baseAngle: 140, angleSpan: 10, covered: false, price: 'luxury' },
-      { id: '027A', name: 'Legends 27A', level: 'field', baseAngle: 320, angleSpan: 5, covered: true, price: 'luxury' },
-      { id: '027B', name: 'Legends 27B', level: 'field', baseAngle: 325, angleSpan: 5, covered: true, price: 'luxury' },
-      { id: '028', name: 'Legends 28', level: 'field', baseAngle: 330, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '029', name: 'Legends 29', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: '027A', name: 'Legends 27A', level: 'field', baseAngle: 320, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '027B', name: 'Legends 27B', level: 'field', baseAngle: 325, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '028', name: 'Legends 28', level: 'field', baseAngle: 330, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '029', name: 'Legends 29', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field MVP Sections
       { id: '115', name: 'Field MVP 115', level: 'field', baseAngle: 30, angleSpan: 8, covered: false, price: 'premium' },
@@ -176,11 +178,11 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'redsox',
     sections: [
       // Field Box (Behind Home Plate)
-      { id: 'FB15', name: 'Field Box 15', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB16', name: 'Field Box 16', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB17', name: 'Field Box 17', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB18', name: 'Field Box 18', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB19', name: 'Field Box 19', level: 'field', baseAngle: 20, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'FB15', name: 'Field Box 15', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB16', name: 'Field Box 16', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB17', name: 'Field Box 17', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB18', name: 'Field Box 18', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB19', name: 'Field Box 19', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Dugout Box (Behind Dugouts)
       { id: 'DGB45', name: 'Dugout Box 45', level: 'field', baseAngle: 30, angleSpan: 8, covered: false, price: 'luxury' },
@@ -302,10 +304,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'dodgers',
     sections: [
       // Field Level - Dugout Club (Behind Home Plate)
-      { id: '1DG', name: 'Dugout Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '2DG', name: 'Dugout Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '3DG', name: 'Dugout Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: '4DG', name: 'Dugout Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: '1DG', name: 'Dugout Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '2DG', name: 'Dugout Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '3DG', name: 'Dugout Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '4DG', name: 'Dugout Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Level - Baseline Club
       { id: '27BL', name: 'Baseline Club 27', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
@@ -466,10 +468,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'cubs',
     sections: [
       // Field Box - Behind Home Plate
-      { id: 'FB14', name: 'Field Box 14', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB15', name: 'Field Box 15', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB16', name: 'Field Box 16', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FB17', name: 'Field Box 17', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'FB14', name: 'Field Box 14', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB15', name: 'Field Box 15', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB16', name: 'Field Box 16', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FB17', name: 'Field Box 17', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Box - Third Base Line
       { id: 'FB1', name: 'Field Box 1', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
@@ -641,10 +643,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'giants',
     sections: [
       // Field Club - Behind Home Plate
-      { id: 'FC115', name: 'Field Club 115', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FC116', name: 'Field Club 116', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FC117', name: 'Field Club 117', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'FC118', name: 'Field Club 118', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'FC115', name: 'Field Club 115', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC116', name: 'Field Club 116', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC117', name: 'Field Club 117', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC118', name: 'Field Club 118', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Dugout Club
       { id: 'DC119', name: 'Dugout Club 119', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'luxury' },
@@ -821,10 +823,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'padres',
     sections: [
       // Premier Club - Behind Home Plate
-      { id: 'PC100', name: 'Premier Club 100', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'PC101', name: 'Premier Club 101', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'PC102', name: 'Premier Club 102', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'PC103', name: 'Premier Club 103', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'PC100', name: 'Premier Club 100', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC101', name: 'Premier Club 101', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC102', name: 'Premier Club 102', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC103', name: 'Premier Club 103', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Box - Third Base Line
       { id: 'FB104', name: 'Field Box 104', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
@@ -974,10 +976,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'rockies',
     sections: [
       // Infield Box - Behind Home Plate
-      { id: 'IB119', name: 'Infield Box 119', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'IB120', name: 'Infield Box 120', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'IB121', name: 'Infield Box 121', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'IB122', name: 'Infield Box 122', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'IB119', name: 'Infield Box 119', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'IB120', name: 'Infield Box 120', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'IB121', name: 'Infield Box 121', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'IB122', name: 'Infield Box 122', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Infield Box - Third Base Line
       { id: 'IB123', name: 'Infield Box 123', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
@@ -1183,10 +1185,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'diamondbacks',
     sections: [
       // Dugout Box - Behind Home Plate
-      { id: 'DGB', name: 'Dugout Box B', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DGC', name: 'Dugout Box C', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DGD', name: 'Dugout Box D', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DGE', name: 'Dugout Box E', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'DGB', name: 'Dugout Box B', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DGC', name: 'Dugout Box C', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DGD', name: 'Dugout Box D', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DGE', name: 'Dugout Box E', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Infield Box - Third Base Line
       { id: 'IB104', name: 'Infield Box 104', level: 'field', baseAngle: 20, angleSpan: 8, covered: true, price: 'premium' },
@@ -1503,9 +1505,9 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'astros',
     sections: [
       // Diamond Club (Behind Home Plate)
-      { id: 'DC3', name: 'Diamond Club 3', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DC4', name: 'Diamond Club 4', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DC5', name: 'Diamond Club 5', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'DC3', name: 'Diamond Club 3', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DC4', name: 'Diamond Club 4', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DC5', name: 'Diamond Club 5', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Box
       { id: 'FB103', name: 'Field Box 103', level: 'field', baseAngle: 20, angleSpan: 8, covered: true, price: 'premium' },
@@ -1601,10 +1603,10 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'mariners',
     sections: [
       // Diamond Club (Behind Home Plate)
-      { id: 'DC17', name: 'Diamond Club 17', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DC18', name: 'Diamond Club 18', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DC19', name: 'Diamond Club 19', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DC20', name: 'Diamond Club 20', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'DC17', name: 'Diamond Club 17', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DC18', name: 'Diamond Club 18', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DC19', name: 'Diamond Club 19', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DC20', name: 'Diamond Club 20', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Level
       { id: 'FL135', name: 'Field Level 135', level: 'field', baseAngle: 20, angleSpan: 8, covered: true, price: 'premium' },
@@ -1782,9 +1784,9 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'rangers',
     sections: [
       // Field Level MVP Box
-      { id: 'MVP3', name: 'MVP Box 3', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'MVP4', name: 'MVP Box 4', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'MVP5', name: 'MVP Box 5', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'MVP3', name: 'MVP Box 3', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'MVP4', name: 'MVP Box 4', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'MVP5', name: 'MVP Box 5', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Level
       { id: 'FL8', name: 'Field Level 8', level: 'field', baseAngle: 20, angleSpan: 8, covered: true, price: 'premium' },
@@ -1977,11 +1979,11 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'brewers',
     sections: [
       // Field Level - Diamond Box
-      { id: 'DB11', name: 'Diamond Box 11', level: 'field', baseAngle: 340, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DB12', name: 'Diamond Box 12', level: 'field', baseAngle: 350, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DB13', name: 'Diamond Box 13', level: 'field', baseAngle: 0, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DB14', name: 'Diamond Box 14', level: 'field', baseAngle: 10, angleSpan: 10, covered: true, price: 'luxury' },
-      { id: 'DB15', name: 'Diamond Box 15', level: 'field', baseAngle: 20, angleSpan: 10, covered: true, price: 'luxury' },
+      { id: 'DB11', name: 'Diamond Box 11', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DB12', name: 'Diamond Box 12', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DB13', name: 'Diamond Box 13', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DB14', name: 'Diamond Box 14', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'DB15', name: 'Diamond Box 15', level: 'field', baseAngle: 20, angleSpan: 10, covered: false, price: 'luxury' },
       
       // Field Level - Infield Box
       { id: 'IB16', name: 'Infield Box 16', level: 'field', baseAngle: 30, angleSpan: 8, covered: true, price: 'premium' },
@@ -2365,11 +2367,11 @@ export const stadiumSections: StadiumSections[] = [
     stadiumId: 'marlins',
     sections: [
       // Field Level - Home Plate Club
-      { id: '1', name: 'Home Plate Club 1', level: 'field', baseAngle: 345, angleSpan: 8, covered: true, price: 'luxury' },
-      { id: '2', name: 'Home Plate Club 2', level: 'field', baseAngle: 353, angleSpan: 8, covered: true, price: 'luxury' },
-      { id: '3', name: 'Home Plate Club 3', level: 'field', baseAngle: 1, angleSpan: 8, covered: true, price: 'luxury' },
-      { id: '4', name: 'Home Plate Club 4', level: 'field', baseAngle: 9, angleSpan: 8, covered: true, price: 'luxury' },
-      { id: '5', name: 'Home Plate Club 5', level: 'field', baseAngle: 17, angleSpan: 8, covered: true, price: 'luxury' },
+      { id: '1', name: 'Home Plate Club 1', level: 'field', baseAngle: 345, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '2', name: 'Home Plate Club 2', level: 'field', baseAngle: 353, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '3', name: 'Home Plate Club 3', level: 'field', baseAngle: 1, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '4', name: 'Home Plate Club 4', level: 'field', baseAngle: 9, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '5', name: 'Home Plate Club 5', level: 'field', baseAngle: 17, angleSpan: 8, covered: false, price: 'luxury' },
       
       // Field Level - Field Box
       { id: '6', name: 'Field Box 6', level: 'field', baseAngle: 25, angleSpan: 8, covered: false, price: 'premium' },

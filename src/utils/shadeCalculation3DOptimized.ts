@@ -1,8 +1,8 @@
 // Optimized 3D Shade Calculation Engine
 // Performance-optimized version with spatial indexing and parallel processing
 
+import { Vector3D } from '../types/stadium-complete';
 import { 
-  Vector3D, 
   Seat, 
   Obstruction, 
   SunPosition, 

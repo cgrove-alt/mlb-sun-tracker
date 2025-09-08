@@ -1,7 +1,8 @@
 // Comprehensive Stadium Obstruction Data
 // Covers MLB, MiLB, and NFL stadiums with detailed 3D obstruction models
 
-import { Obstruction, Vector3D } from '../utils/shadeCalculation3D';
+import { Vector3D } from '../types/stadium-complete';
+import { Obstruction } from '../utils/shadeCalculation3D';
 
 // Helper to convert polar coordinates to 3D
 function polarTo3D(

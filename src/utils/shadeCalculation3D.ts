@@ -1,11 +1,7 @@
 // 3D Shade Calculation Engine with Ray-Casting
 // Provides precise shade detection using 3D geometry and obstruction modeling
 
-export interface Vector3D {
-  x: number;
-  y: number;
-  z: number;
-}
+import { Vector3D } from '../types/stadium-complete';
 
 export interface Seat {
   id: string;
