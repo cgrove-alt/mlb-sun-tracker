@@ -28,6 +28,14 @@ const StadiumVisualizationSection = dynamic(
   }
 );
 
+const SeatRecommendationsSection = dynamic(
+  () => import('../../../src/components/SeatRecommendationsSection'),
+  {
+    loading: () => <LoadingSpinner />,
+    ssr: false,
+  }
+);
+
 interface StadiumPageClientProps {
   stadium: any;
   sections: any[];
@@ -66,6 +74,23 @@ export default function StadiumPageClient({
         )}
       </Suspense>
       
+      {/* AI Seat Recommendations Section */}
+      <div className="mt-8" style={{ display: 'block' }}>
+        <Suspense fallback={
+          <div className="text-center p-8">
+            <LoadingSpinner />
+            <p>Loading AI Recommendations...</p>
+          </div>
+        }>
+          <SeatRecommendationsSection 
+            sections={sections}
+            stadiumId={stadium.id}
+            gameTime="13:00"
+            gameDate={new Date()}
+          />
+        </Suspense>
+      </div>
+
       {/* 3D Visualization Section - Always render */}
       <div className="mt-8" style={{ display: 'block' }}>
         <Suspense fallback={
