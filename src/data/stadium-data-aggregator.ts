@@ -4,39 +4,47 @@
 import { DetailedSection, Obstruction3D, StadiumComplete } from '../types/stadium-complete';
 
 // Import MLB sections
-import { yankeeStadiumSections } from './sections/mlb/yankees';
+import { yankeesSections } from './sections/mlb/yankees';
 import { fenwayParkSections } from './sections/mlb/fenway-park';
-import { dodgerStadiumSections } from './sections/mlb/dodger-stadium';
+import { dodgersSections } from './sections/mlb/dodgers';
 import { wrigleyFieldSections } from './sections/mlb/wrigley-field';
-import { citiFieldSections } from './sections/mlb/citi-field';
+import { metsSections } from './sections/mlb/mets';
 import { oracleParkSections } from './sections/mlb/oracle-park';
-import { petcoParkSections } from './sections/mlb/petco-park';
-import { camdenYardsSections } from './sections/mlb/camden-yards';
+import { padresSections } from './sections/mlb/padres';
+import { oriolesSections } from './sections/mlb/orioles';
 import { pncParkSections } from './sections/mlb/pnc-park';
-import { minuteMaidParkSections } from './sections/mlb/minute-maid-park';
+import { astrosSections } from './sections/mlb/astros';
 import { truistParkSections } from './sections/mlb/truist-park';
-import { coorsFieldSections } from './sections/mlb/coors-field';
-import { targetFieldSections } from './sections/mlb/target-field';
+import { rockiesSections } from './sections/mlb/rockies';
+import { twinsSections } from './sections/mlb/twins';
 import { greatAmericanBallparkSections } from './sections/mlb/great-american-ballpark';
-import { progressiveFieldSections } from './sections/mlb/progressive-field';
-import { citizensBankParkSections } from './sections/mlb/citizens-bank-park';
-import { nationalsParkSections } from './sections/mlb/nationals-park';
-import { globeLifeFieldSections } from './sections/mlb/globe-life-field';
-import { angelStadiumSections } from './sections/mlb/angel-stadium';
-import { americanFamilyFieldSections } from './sections/mlb/american-family-field';
-import { buschStadiumSections } from './sections/mlb/busch-stadium';
-import { chaseFieldSections } from './sections/mlb/chase-field';
-import { comericaParkSections } from './sections/mlb/comerica-park';
+import { guardiansSections } from './sections/mlb/guardians';
+import { philliesSections } from './sections/mlb/phillies';
+import { nationalsSections } from './sections/mlb/nationals';
+import { rangersSections } from './sections/mlb/rangers';
+import { angelsSections } from './sections/mlb/angels';
+import { brewersSections } from './sections/mlb/brewers';
+import { buschstadiumSections } from './sections/mlb/busch-stadium';
+import { diamondbacksSections } from './sections/mlb/diamondbacks';
+import { tigersSections } from './sections/mlb/tigers';
 import { georgeMSteinbrennerFieldSections } from './sections/mlb/george-m-steinbrenner-field';
-import { guaranteedRateFieldSections } from './sections/mlb/guaranteed-rate-field';
-import { kauffmanStadiumSections } from './sections/mlb/kauffman-stadium';
-import { loanDepotParkSections } from './sections/mlb/loandepot-park';
-import { rogersCentreSections } from './sections/mlb/rogers-centre';
-import { sutterHealthParkSections } from './sections/mlb/sutter-health-park';
-import { tMobileParkSections } from './sections/mlb/t-mobile-park';
+import { whitesoxSections } from './sections/mlb/whitesox';
+import { royalsSections } from './sections/mlb/royals';
+import { marlinsSections } from './sections/mlb/marlins';
+import { bluejaysSections } from './sections/mlb/bluejays';
+import { athleticsSections } from './sections/mlb/athletics';
+import { marinersSections } from './sections/mlb/mariners';
+import { raysSections } from './sections/mlb/rays';
+import { cubsSections } from './sections/mlb/cubs';
+import { giantsSections } from './sections/mlb/giants';
+import { redsoxSections } from './sections/mlb/redsox';
+import { redsSections } from './sections/mlb/reds';
+import { cardinalsSections } from './sections/mlb/cardinals';
+import { bravesSections } from './sections/mlb/braves';
+import { piratesSections } from './sections/mlb/pirates';
 
 // Import MiLB sections
-import { lasVegasBallparkSections } from './sections/milb/aaa/las-vegas-aviators';
+import { lasvegasaviatorsSections } from './sections/milb/aaa/las-vegas-aviators';
 // Import other MiLB stadiums as they're created...
 
 // Import NFL sections
@@ -50,39 +58,39 @@ import { yankeeStadiumObstructions } from './obstructions/mlb/yankees-obstructio
 // Section data registry
 const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   // MLB
-  'yankees': yankeeStadiumSections,
-  'red-sox': fenwayParkSections,
-  'dodgers': dodgerStadiumSections,
-  'cubs': wrigleyFieldSections,
-  'mets': citiFieldSections,
-  'giants': oracleParkSections,
-  'padres': petcoParkSections,
-  'orioles': camdenYardsSections,
-  'pirates': pncParkSections,
-  'astros': minuteMaidParkSections,
-  'braves': truistParkSections,
-  'rockies': coorsFieldSections,
-  'twins': targetFieldSections,
-  'reds': greatAmericanBallparkSections,
-  'guardians': progressiveFieldSections,
-  'phillies': citizensBankParkSections,
-  'nationals': nationalsParkSections,
-  'rangers': globeLifeFieldSections,
-  'angels': angelStadiumSections,
-  'brewers': americanFamilyFieldSections,
-  'cardinals': buschStadiumSections,
-  'diamondbacks': chaseFieldSections,
-  'tigers': comericaParkSections,
-  'rays': georgeMSteinbrennerFieldSections,
-  'white-sox': guaranteedRateFieldSections,
-  'royals': kauffmanStadiumSections,
-  'marlins': loanDepotParkSections,
-  'blue-jays': rogersCentreSections,
-  'athletics': sutterHealthParkSections,
-  'mariners': tMobileParkSections,
+  'yankees': yankeesSections,
+  'red-sox': redsoxSections || fenwayParkSections,
+  'dodgers': dodgersSections,
+  'cubs': cubsSections || wrigleyFieldSections,
+  'mets': metsSections,
+  'giants': giantsSections || oracleParkSections,
+  'padres': padresSections,
+  'orioles': oriolesSections,
+  'pirates': piratesSections || pncParkSections,
+  'astros': astrosSections,
+  'braves': bravesSections || truistParkSections,
+  'rockies': rockiesSections,
+  'twins': twinsSections,
+  'reds': redsSections || greatAmericanBallparkSections,
+  'guardians': guardiansSections,
+  'phillies': philliesSections,
+  'nationals': nationalsSections,
+  'rangers': rangersSections,
+  'angels': angelsSections,
+  'brewers': brewersSections,
+  'cardinals': cardinalsSections || buschstadiumSections,
+  'diamondbacks': diamondbacksSections,
+  'tigers': tigersSections,
+  'rays': raysSections || georgeMSteinbrennerFieldSections,
+  'white-sox': whitesoxSections,
+  'royals': royalsSections,
+  'marlins': marlinsSections,
+  'blue-jays': bluejaysSections,
+  'athletics': athleticsSections,
+  'mariners': marinersSections,
   
   // MiLB
-  'las-vegas-aviators': lasVegasBallparkSections,
+  'las-vegas-aviators': lasvegasaviatorsSections,
   
   // NFL
   'sofi-stadium': sofiStadiumSections,

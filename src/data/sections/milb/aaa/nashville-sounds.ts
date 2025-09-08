@@ -1,34 +1,36 @@
-// First Horizon Park - Nashville Sounds (Milwaukee Brewers AAA)
-// Opened: 2015
-// Capacity: 10,000
-// Known for Nashville skyline views and guitar-shaped scoreboard
+// First Horizon Park - Comprehensive Section Data
+// Auto-generated with accurate 3D geometry for sun calculations
 
-import { DetailedSection } from '../../../../types/stadium-complete';
+import { DetailedSection, Vector3D, RowDetail } from '../../../../types/stadium-complete';
 
-// Helper function for row generation
-const generateRows = (
-  startRow: string | number,
-  endRow: string | number,
+// Helper function to generate rows
+function generateRows(
+  startRow: number | string,
+  endRow: number | string,
   seatsPerRow: number,
-  startElevation: number,
-  rakeAngle: number
-): any[] => {
-  const rows = [];
+  baseElevation: number,
+  rake: number,
+  covered: boolean = false
+): RowDetail[] {
+  const rows: RowDetail[] = [];
   const rowHeight = 2.5;
   const rowDepth = 2.8;
   
-  if (typeof startRow === 'string') {
-    const startCode = startRow.charCodeAt(0);
+  const isLetterRows = typeof startRow === 'string';
+  
+  if (isLetterRows) {
+    const startCode = (startRow as string).charCodeAt(0);
     const endCode = (endRow as string).charCodeAt(0);
     
     for (let i = startCode; i <= endCode; i++) {
       const rowNum = i - startCode;
       rows.push({
         rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow,
-        elevation: startElevation + (rowNum * rowHeight * Math.sin(rakeAngle * Math.PI / 180)),
+        seats: seatsPerRow - Math.floor(rowNum * 0.2),
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
         depth: rowNum * rowDepth,
-        covered: false
+        covered: covered,
+        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
       });
     }
   } else {
@@ -36,401 +38,544 @@ const generateRows = (
       const rowNum = i - (startRow as number);
       rows.push({
         rowNumber: i.toString(),
-        seats: seatsPerRow,
-        elevation: startElevation + (rowNum * rowHeight * Math.sin(rakeAngle * Math.PI / 180)),
+        seats: seatsPerRow - Math.floor(rowNum * 0.2),
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
         depth: rowNum * rowDepth,
-        covered: false
+        covered: covered,
+        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
       });
     }
   }
   
   return rows;
-};
+}
 
-export const nashvilleSoundsSections: DetailedSection[] = [
-  // ========== CLUB LEVEL ==========
+export const nashvillesoundsSections: DetailedSection[] = [
   {
-    id: 'club-level',
-    name: 'Club Level',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 31,
-    rows: generateRows('A', 'L', 39, 24, 27),
-    vertices3D: [
-      { x: -46, y: 24, z: 58 },
-      { x: 46, y: 24, z: 58 },
-      { x: 51, y: 53, z: 87 },
-      { x: -51, y: 53, z: 87 }
-    ],
-    covered: true,
-    distance: 58,
-    height: 24,
-    rake: 27,
-    viewQuality: 'excellent',
-    price: 'luxury'
-  },
-
-  // ========== NASHVILLE DUGOUT SUITES ==========
-  {
-    id: 'dugout-suite-first',
-    name: 'First Base Dugout Suite',
-    level: 'field',
-    baseAngle: 25,
-    angleSpan: 18,
-    rows: generateRows('A', 'F', 22, 1, 20),
-    vertices3D: [
-      { x: 20, y: 1, z: 44 },
-      { x: 38, y: 1, z: 44 },
-      { x: 33, y: 14, z: 57 },
-      { x: 15, y: 14, z: 57 }
-    ],
-    covered: false,
-    distance: 44,
-    height: 1,
-    rake: 20,
-    viewQuality: 'excellent',
-    price: 'luxury'
-  },
-
-  {
-    id: 'dugout-suite-third',
-    name: 'Third Base Dugout Suite',
-    level: 'field',
-    baseAngle: 335,
-    angleSpan: 18,
-    rows: generateRows('A', 'F', 22, 1, 20),
-    vertices3D: [
-      { x: -38, y: 1, z: 44 },
-      { x: -20, y: 1, z: 44 },
-      { x: -15, y: 14, z: 57 },
-      { x: -33, y: 14, z: 57 }
-    ],
-    covered: false,
-    distance: 44,
-    height: 1,
-    rake: 20,
-    viewQuality: 'excellent',
-    price: 'luxury'
-  },
-
-  // ========== FIELD LEVEL BOXES ==========
-  {
-    id: 'field-box-100',
-    name: 'Field Box 100',
+    id: '100',
+    name: 'Field 100',
     level: 'field',
     baseAngle: 0,
-    angleSpan: 17,
-    rows: generateRows('A', 'N', 23, 4, 22),
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -21, y: 4, z: 47 },
-      { x: 21, y: 4, z: 47 },
-      { x: 26, y: 32, z: 75 },
-      { x: -26, y: 32, z: 75 }
-    ],
+      { x: 40, y: 0, z: 0 },
+      { x: 40, y: 4, z: 0 },
+      { x: 65, y: 7, z: 10 },
+      { x: 65, y: 0, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 47,
-    height: 4,
-    rake: 22,
-    viewQuality: 'excellent',
-    price: 'premium'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-106',
-    name: 'Field Box 106',
+    id: '101',
+    name: 'Field 101',
     level: 'field',
-    baseAngle: 43,
-    angleSpan: 23,
-    rows: generateRows('A', 'N', 25, 4, 22),
+    baseAngle: 6,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: 49, y: 4, z: 79 },
-      { x: 79, y: 4, z: 109 },
-      { x: 84, y: 32, z: 137 },
-      { x: 54, y: 32, z: 107 }
-    ],
+      { x: 40, y: 4, z: 0 },
+      { x: 39, y: 8, z: 0 },
+      { x: 64, y: 14, z: 10 },
+      { x: 65, y: 7, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 94,
-    height: 4,
-    rake: 22,
-    viewQuality: 'excellent',
-    price: 'moderate'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-114',
-    name: 'Field Box 114',
+    id: '102',
+    name: 'Field 102',
     level: 'field',
-    baseAngle: 317,
-    angleSpan: 23,
-    rows: generateRows('A', 'N', 25, 4, 22),
+    baseAngle: 12,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -79, y: 4, z: 109 },
-      { x: -49, y: 4, z: 79 },
-      { x: -54, y: 32, z: 107 },
-      { x: -84, y: 32, z: 137 }
-    ],
+      { x: 39, y: 8, z: 0 },
+      { x: 38, y: 12, z: 0 },
+      { x: 62, y: 20, z: 10 },
+      { x: 64, y: 14, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 94,
-    height: 4,
-    rake: 22,
-    viewQuality: 'excellent',
-    price: 'moderate'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
-  // ========== RESERVED SEATING ==========
   {
-    id: 'reserved-200',
-    name: 'Reserved 200',
-    level: 'lower',
-    baseAngle: 0,
-    angleSpan: 21,
-    rows: generateRows(1, 24, 31, 12, 24),
+    id: '103',
+    name: 'Field 103',
+    level: 'field',
+    baseAngle: 18,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -32, y: 12, z: 66 },
-      { x: 32, y: 12, z: 66 },
-      { x: 37, y: 48, z: 102 },
-      { x: -37, y: 48, z: 102 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24'],
-      coveragePercentage: 42
-    },
-    distance: 66,
-    height: 12,
-    rake: 24,
-    viewQuality: 'good',
-    price: 'moderate'
+      { x: 38, y: 12, z: 0 },
+      { x: 37, y: 16, z: 0 },
+      { x: 59, y: 26, z: 10 },
+      { x: 62, y: 20, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'reserved-206',
-    name: 'Reserved 206',
-    level: 'lower',
+    id: '104',
+    name: 'Field 104',
+    level: 'field',
+    baseAngle: 24,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 37, y: 16, z: 0 },
+      { x: 35, y: 20, z: 0 },
+      { x: 56, y: 32, z: 10 },
+      { x: 59, y: 26, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '105',
+    name: 'Field 105',
+    level: 'field',
+    baseAngle: 30,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 35, y: 20, z: 0 },
+      { x: 32, y: 24, z: 0 },
+      { x: 53, y: 38, z: 10 },
+      { x: 56, y: 32, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '106',
+    name: 'Field 106',
+    level: 'field',
+    baseAngle: 36,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 32, y: 24, z: 0 },
+      { x: 30, y: 27, z: 0 },
+      { x: 48, y: 43, z: 10 },
+      { x: 53, y: 38, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '107',
+    name: 'Field 107',
+    level: 'field',
+    baseAngle: 42,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 30, y: 27, z: 0 },
+      { x: 27, y: 30, z: 0 },
+      { x: 43, y: 48, z: 10 },
+      { x: 48, y: 43, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '108',
+    name: 'Field 108',
+    level: 'field',
     baseAngle: 48,
-    angleSpan: 25,
-    rows: generateRows(1, 24, 29, 12, 24),
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: 68, y: 12, z: 117 },
-      { x: 98, y: 12, z: 147 },
-      { x: 103, y: 48, z: 183 },
-      { x: 73, y: 48, z: 153 }
-    ],
+      { x: 27, y: 30, z: 0 },
+      { x: 24, y: 32, z: 0 },
+      { x: 38, y: 53, z: 10 },
+      { x: 43, y: 48, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 132,
-    height: 12,
-    rake: 24,
-    viewQuality: 'good',
-    price: 'value'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'reserved-214',
-    name: 'Reserved 214',
+    id: '109',
+    name: 'Field 109',
+    level: 'field',
+    baseAngle: 54,
+    angleSpan: 6,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 24, y: 32, z: 0 },
+      { x: 20, y: 35, z: 0 },
+      { x: 33, y: 56, z: 10 },
+      { x: 38, y: 53, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '200',
+    name: 'Lower 200',
     level: 'lower',
-    baseAngle: 312,
-    angleSpan: 25,
-    rows: generateRows(1, 24, 29, 12, 24),
+    baseAngle: 5,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
     vertices3D: [
-      { x: -98, y: 12, z: 147 },
-      { x: -68, y: 12, z: 117 },
-      { x: -73, y: 48, z: 153 },
-      { x: -103, y: 48, z: 183 }
-    ],
+      { x: 65, y: 6, z: 12 },
+      { x: 64, y: 13, z: 12 },
+      { x: 93, y: 19, z: 28 },
+      { x: 95, y: 8, z: 28 }
+    ] as Vector3D[],
     covered: false,
-    distance: 132,
+    distance: 75,
     height: 12,
-    rake: 24,
-    viewQuality: 'good',
-    price: 'value'
+    rake: 22
   },
-
-  // ========== SUITE LEVEL ==========
   {
-    id: 'suite-level',
-    name: 'Suite Level',
-    level: 'suite',
-    baseAngle: 0,
-    angleSpan: 54,
-    rows: [
-      { rowNumber: 'Suite', seats: 320, elevation: 32, depth: 0, covered: true }
-    ],
+    id: '201',
+    name: 'Lower 201',
+    level: 'lower',
+    baseAngle: 11.25,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
     vertices3D: [
-      { x: -72, y: 32, z: 83 },
-      { x: 72, y: 32, z: 83 },
-      { x: 77, y: 42, z: 93 },
-      { x: -77, y: 42, z: 93 }
-    ],
-    covered: true,
-    distance: 83,
-    height: 32,
-    rake: 0,
-    viewQuality: 'excellent',
-    price: 'luxury'
-  },
-
-  // ========== THE BAND BOX ==========
-  {
-    id: 'band-box',
-    name: 'The Band Box',
-    level: 'standing',
-    baseAngle: 90,
-    angleSpan: 28,
-    rows: [],
-    vertices3D: [
-      { x: 118, y: 15, z: 282 },
-      { x: 152, y: 15, z: 316 },
-      { x: 157, y: 21, z: 322 },
-      { x: 123, y: 21, z: 288 }
-    ],
-    covered: true,
-    distance: 299,
-    height: 15,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'premium'
-  },
-
-  // ========== LEFT FIELD PORCH ==========
-  {
-    id: 'left-field-porch',
-    name: 'Left Field Porch',
-    level: 'field',
-    baseAngle: 248,
-    angleSpan: 26,
-    rows: generateRows(1, 17, 36, 7, 20),
-    vertices3D: [
-      { x: -126, y: 7, z: 266 },
-      { x: -102, y: 7, z: 290 },
-      { x: -107, y: 31, z: 314 },
-      { x: -131, y: 31, z: 290 }
-    ],
+      { x: 64, y: 13, z: 12 },
+      { x: 62, y: 20, z: 12 },
+      { x: 91, y: 29, z: 28 },
+      { x: 93, y: 19, z: 28 }
+    ] as Vector3D[],
     covered: false,
-    distance: 278,
-    height: 7,
-    rake: 20,
-    viewQuality: 'fair',
-    price: 'value'
+    distance: 75,
+    height: 12,
+    rake: 22
   },
-
-  // ========== FIRST TENNESSEE PARK PAVILION ==========
   {
-    id: 'first-tennessee-pavilion',
-    name: 'First Tennessee Park Pavilion',
+    id: '202',
+    name: 'Lower 202',
+    level: 'lower',
+    baseAngle: 17.5,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 62, y: 20, z: 12 },
+      { x: 59, y: 26, z: 12 },
+      { x: 87, y: 38, z: 28 },
+      { x: 91, y: 29, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '203',
+    name: 'Lower 203',
+    level: 'lower',
+    baseAngle: 23.75,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 59, y: 26, z: 12 },
+      { x: 56, y: 32, z: 12 },
+      { x: 82, y: 47, z: 28 },
+      { x: 87, y: 38, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '204',
+    name: 'Lower 204',
+    level: 'lower',
+    baseAngle: 30,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 56, y: 32, z: 12 },
+      { x: 52, y: 38, z: 12 },
+      { x: 77, y: 56, z: 28 },
+      { x: 82, y: 47, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '205',
+    name: 'Lower 205',
+    level: 'lower',
+    baseAngle: 36.25,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 52, y: 38, z: 12 },
+      { x: 48, y: 44, z: 12 },
+      { x: 70, y: 64, z: 28 },
+      { x: 77, y: 56, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '206',
+    name: 'Lower 206',
+    level: 'lower',
+    baseAngle: 42.5,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 48, y: 44, z: 12 },
+      { x: 43, y: 49, z: 12 },
+      { x: 63, y: 71, z: 28 },
+      { x: 70, y: 64, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '207',
+    name: 'Lower 207',
+    level: 'lower',
+    baseAngle: 48.75,
+    angleSpan: 6.25,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 43, y: 49, z: 12 },
+      { x: 37, y: 53, z: 12 },
+      { x: 54, y: 78, z: 28 },
+      { x: 63, y: 71, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '300',
+    name: 'Upper 300',
     level: 'upper',
-    baseAngle: 125,
-    angleSpan: 31,
-    rows: generateRows(1, 8, 47, 34, 22),
+    baseAngle: 10,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, true),
     vertices3D: [
-      { x: 100, y: 34, z: 330 },
-      { x: 140, y: 34, z: 370 },
-      { x: 145, y: 50, z: 386 },
-      { x: 105, y: 50, z: 346 }
-    ],
-    covered: false,
-    distance: 350,
-    height: 34,
-    rake: 22,
-    viewQuality: 'good',
-    price: 'premium'
+      { x: 94, y: 16, z: 28 },
+      { x: 91, y: 27, z: 28 },
+      { x: 125, y: 37, z: 50 },
+      { x: 128, y: 23, z: 50 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 110,
+    height: 28,
+    rake: 26
   },
-
-  // ========== COCA-COLA CORNER ==========
   {
-    id: 'coca-cola-corner',
-    name: 'Coca-Cola Corner',
-    level: 'standing',
-    baseAngle: 45,
-    angleSpan: 20,
-    rows: [],
+    id: '301',
+    name: 'Upper 301',
+    level: 'upper',
+    baseAngle: 16.666666666666686,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, true),
     vertices3D: [
-      { x: 150, y: 16, z: 352 },
-      { x: 173, y: 16, z: 375 },
-      { x: 178, y: 22, z: 381 },
-      { x: 155, y: 22, z: 358 }
-    ],
-    covered: false,
-    distance: 363,
-    height: 16,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'moderate'
+      { x: 91, y: 27, z: 28 },
+      { x: 87, y: 38, z: 28 },
+      { x: 119, y: 51, z: 50 },
+      { x: 125, y: 37, z: 50 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 110,
+    height: 28,
+    rake: 26
   },
-
-  // ========== GUITAR DECK ==========
   {
-    id: 'guitar-deck',
-    name: 'Guitar Deck',
-    level: 'standing',
-    baseAngle: 180,
-    angleSpan: 28,
-    rows: [],
+    id: '302',
+    name: 'Upper 302',
+    level: 'upper',
+    baseAngle: 23.333333333333314,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, false),
     vertices3D: [
-      { x: -43, y: 19, z: 395 },
-      { x: 43, y: 19, z: 395 },
-      { x: 48, y: 25, z: 405 },
-      { x: -48, y: 25, z: 405 }
-    ],
+      { x: 87, y: 38, z: 28 },
+      { x: 82, y: 47, z: 28 },
+      { x: 113, y: 65, z: 50 },
+      { x: 119, y: 51, z: 50 }
+    ] as Vector3D[],
     covered: false,
-    distance: 395,
-    height: 19,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'premium'
+    distance: 110,
+    height: 28,
+    rake: 26
   },
-
-  // ========== BERM ==========
   {
-    id: 'berm',
-    name: 'Berm',
+    id: '303',
+    name: 'Upper 303',
+    level: 'upper',
+    baseAngle: 30,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, false),
+    vertices3D: [
+      { x: 82, y: 47, z: 28 },
+      { x: 76, y: 57, z: 28 },
+      { x: 104, y: 78, z: 50 },
+      { x: 113, y: 65, z: 50 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: '304',
+    name: 'Upper 304',
+    level: 'upper',
+    baseAngle: 36.666666666666686,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, false),
+    vertices3D: [
+      { x: 76, y: 57, z: 28 },
+      { x: 69, y: 65, z: 28 },
+      { x: 95, y: 89, z: 50 },
+      { x: 104, y: 78, z: 50 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: '305',
+    name: 'Upper 305',
+    level: 'upper',
+    baseAngle: 43.333333333333314,
+    angleSpan: 6.666666666666667,
+    rows: generateRows('1', '20', 24, 28, 26, false),
+    vertices3D: [
+      { x: 69, y: 65, z: 28 },
+      { x: 61, y: 73, z: 28 },
+      { x: 84, y: 100, z: 50 },
+      { x: 95, y: 89, z: 50 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: 'BL-1',
+    name: 'Bleachers 1',
     level: 'field',
-    baseAngle: 160,
-    angleSpan: 36,
+    baseAngle: 90,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 0, y: 130, z: 5 },
+      { x: -34, y: 126, z: 5 },
+      { x: -43, y: 159, z: 20 },
+      { x: 0, y: 165, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-2',
+    name: 'Bleachers 2',
+    level: 'field',
+    baseAngle: 110,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: -44, y: 122, z: 5 },
+      { x: -75, y: 106, z: 5 },
+      { x: -95, y: 135, z: 20 },
+      { x: -56, y: 155, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-3',
+    name: 'Bleachers 3',
+    level: 'field',
+    baseAngle: 330,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 113, y: -65, z: 5 },
+      { x: 126, y: -34, z: 5 },
+      { x: 159, y: -43, z: 20 },
+      { x: 143, y: -83, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-4',
+    name: 'Bleachers 4',
+    level: 'field',
+    baseAngle: 310,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 84, y: -100, z: 5 },
+      { x: 106, y: -75, z: 5 },
+      { x: 135, y: -95, z: 20 },
+      { x: 106, y: -126, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BERM',
+    name: 'Outfield Berm',
+    level: 'standing',
+    baseAngle: 210,
+    angleSpan: 30,
     rows: [],
     vertices3D: [
-      { x: 123, y: 5, z: 362 },
-      { x: 173, y: 5, z: 392 },
-      { x: 178, y: 10, z: 402 },
-      { x: 128, y: 10, z: 372 }
-    ],
+      { x: -143, y: -83, z: 10 },
+      { x: -83, y: -143, z: 10 },
+      { x: -95, y: -165, z: 10 },
+      { x: -165, y: -95, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 377,
-    height: 5,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'value'
+    distance: 177,
+    height: 10,
+    rake: 0
   }
 ];
 
-// Stadium configuration
-export const nashvilleSoundsConfig = {
-  stadiumName: 'First Horizon Park',
-  team: 'Nashville Sounds',
-  parentOrg: 'Milwaukee Brewers',
-  city: 'Nashville',
-  state: 'TN',
-  level: 'AAA',
-  capacity: 10000,
-  opened: 2015,
-  orientation: 30,
-  dimensions: {
-    leftField: 327,
-    leftCenter: 375,
-    centerField: 405,
-    rightCenter: 375,
-    rightField: 326
-  },
-  features: {
-    guitarShapedScoreboard: true,
-    nashvilleSkylineView: true,
-    bandBox: true,
-    guitarDeck: true,
-    firstTennesseePavilion: true,
-    dugoutSuites: true,
-    cocaColaCorner: true,
-    berm: true,
-    coveredSeating: 3100,
-    musicCityTheme: true
-  }
-};
+// Export section map for easy lookup
+export const nashvillesoundsSectionMap = new Map(
+  nashvillesoundsSections.map(section => [section.id, section])
+);

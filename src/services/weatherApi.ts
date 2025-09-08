@@ -325,6 +325,60 @@ export class WeatherApiService {
     };
   }
 
+  // Public methods for testing and enhanced functionality
+  async getCurrentWeather(latitude: number, longitude: number): Promise<WeatherData> {
+    try {
+      const forecast = await this.getForecast(latitude, longitude);
+      return forecast.current;
+    } catch (error) {
+      console.warn('Failed to fetch current weather, returning fallback data:', error);
+      return this.getMockWeather().current;
+    }
+  }
+  
+  async getWeatherForecast(latitude: number, longitude: number): Promise<WeatherForecast> {
+    try {
+      return await this.getForecast(latitude, longitude);
+    } catch (error) {
+      console.warn('Failed to fetch weather forecast, returning fallback data:', error);
+      return this.getMockWeather();
+    }
+  }
+  
+  mapWeatherCode(code: number): WeatherCondition {
+    return this.getWeatherCondition(code, true);
+  }
+  
+  calculateSunExposureMultiplier(cloudCover: number, precipitation: number): number {
+    // Heavy precipitation blocks most sun
+    if (precipitation > 0) {
+      return Math.max(0.1, 0.2 - precipitation * 0.02);
+    }
+    
+    // Cloud cover reduces sun exposure
+    if (cloudCover >= 100) return 0.1;
+    if (cloudCover >= 75) return 0.25;
+    if (cloudCover >= 50) return 0.5;
+    if (cloudCover >= 25) return 0.75;
+    return 1.0;
+  }
+  
+  getUVRecommendation(uvIndex: number): string {
+    if (uvIndex >= 11) {
+      return 'Extreme UV! Avoid sun exposure. Use maximum protection including sunscreen SPF 50+, hat, and UV-blocking clothing.';
+    }
+    if (uvIndex >= 8) {
+      return 'Very high UV. Extra protection needed. Use sunscreen SPF 30+, seek shade during midday hours.';
+    }
+    if (uvIndex >= 6) {
+      return 'High UV. Protection required. Use sunscreen SPF 30+, wear hat and sunglasses.';
+    }
+    if (uvIndex >= 3) {
+      return 'Moderate UV. Consider protection if outside for extended periods. Sunscreen SPF 15+ recommended.';
+    }
+    return 'Low UV. Minimal protection needed for most skin types.';
+  }
+
   private getMockWeather(): WeatherForecast {
     const mockWeather: WeatherData = {
       temperature: 75,
