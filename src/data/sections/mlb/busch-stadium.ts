@@ -27,6 +27,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
+};
+
 export const buschStadiumSections: DetailedSection[] = [
   // Green Seats - Behind Home Plate
   {

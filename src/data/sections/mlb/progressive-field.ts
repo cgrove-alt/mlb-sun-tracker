@@ -104,21 +104,9 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -26, y: 175, z: 69 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27'],
-      coveragePercentage: 52,
-      overhangDepth: 24,
-      overhangHeight: 21,
-      material: 'solid'
-  },
-    price: 'value',
     distance: 149,
     height: 34,
     rake: 27,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
   },
   {
     id: '467',
@@ -134,21 +122,9 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 175, y: -26, z: 69 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27'],
-      coveragePercentage: 52,
-      overhangDepth: 24,
-      overhangHeight: 21,
-      material: 'solid'
-  },
-    price: 'value',
     distance: 149,
     height: 34,
     rake: 27,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'fair'
   },
   // ========== UPPER BOX ==========
   {
@@ -164,13 +140,10 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -13, y: 195, z: 82 },
       { x: -30, y: 195, z: 82 }
     ] as Vector3D[],
-    price: 'value',
+    covered: false,
     distance: 173,
     height: 50,
-    rake: 29,
-    seatWidth: 18,
-    rowSpacing: 29,
-    viewQuality: 'good'
+    rake: 29
   },
   // ========== CORNER BAR (Left Field) ==========
   {
@@ -205,13 +178,10 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -90, y: 87, z: 302 },
       { x: -115, y: 87, z: 282 }
     ] as Vector3D[],
-    price: 'luxury',
+    covered: false,
     distance: 270,
     height: 65,
-    rake: 28,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent'
+    rake: 28
   },
   // ========== NORTH COAST SOCIAL BOXES (New 2025) ==========
   {
@@ -229,7 +199,10 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: -110, y: 65, z: 265 },
       { x: -130, y: 65, z: 250 }
     ] as Vector3D[],
-    price: 'luxury'
+    covered: false,
+    distance: 260,
+    height: 55,
+    rake: 0
   },
   // ========== ECHO VICTORY CLUB ==========
   {
@@ -245,13 +218,10 @@ export const progressiveFieldSections: DetailedSection[] = [
       { x: 35, y: 86, z: 96 },
       { x: -35, y: 86, z: 96 }
     ] as Vector3D[],
-    price: 'luxury',
+    covered: false,
     distance: 70,
     height: 60,
-    rake: 26,
-    seatWidth: 22,
-    rowSpacing: 40,
-    viewQuality: 'excellent'
+    rake: 26
   }
 ];
 

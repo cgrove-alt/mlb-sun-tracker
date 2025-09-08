@@ -27,7 +27,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
+
 export const americanFamilyFieldSections: DetailedSection[] = [
   // Field Diamond Box - Behind Home
   {

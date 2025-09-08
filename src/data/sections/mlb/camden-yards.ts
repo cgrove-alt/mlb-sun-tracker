@@ -19,6 +19,8 @@ const generateRows = (
     depth: i * rowDepth,
     covered: false
   }));
+};
+
 export const camdenYardsSections: DetailedSection[] = [
   // Lower Box - Home Plate
   {
@@ -38,7 +40,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 50,
     height: 15,
     rake: 28,
-    viewQuality: 'excellent'
   },
   
   // Lower Box - First Base
@@ -59,7 +60,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 65,
     height: 18,
     rake: 28,
-    viewQuality: 'excellent'
   },
   
   // Lower Box - Third Base
@@ -80,7 +80,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 65,
     height: 18,
     rake: 28,
-    viewQuality: 'excellent'
   },
   
   // Club Box - Home
@@ -101,7 +100,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 55,
     height: 25,
     rake: 26,
-    viewQuality: 'excellent'
   },
   
   // Upper Deck - Home
@@ -121,12 +119,7 @@ export const camdenYardsSections: DetailedSection[] = [
     covered: true,
     distance: 160,
     height: 75,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'BB', 'CC'],
-      coveragePercentage: 40
-    }
+    rake: 32
   },
   
   // Upper Deck - First Base
@@ -146,12 +139,7 @@ export const camdenYardsSections: DetailedSection[] = [
     covered: true,
     distance: 175,
     height: 78,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'BB', 'CC'],
-      coveragePercentage: 35
-    }
+    rake: 32
   },
   
   // Upper Deck - Third Base
@@ -171,12 +159,7 @@ export const camdenYardsSections: DetailedSection[] = [
     covered: true,
     distance: 175,
     height: 78,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['U', 'V', 'W', 'X', 'Y', 'Z', 'AA', 'BB', 'CC'],
-      coveragePercentage: 35
-    }
+    rake: 32
   },
   
   // Bleachers - Left Field
@@ -197,7 +180,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 320,
     height: 12,
     rake: 18,
-    viewQuality: 'good'
   },
   
   // Bleachers - Right Field
@@ -218,7 +200,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 320,
     height: 12,
     rake: 18,
-    viewQuality: 'good'
   },
   
   // The Warehouse Premium
@@ -239,7 +220,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 300,
     height: 8,
     rake: 15,
-    viewQuality: 'fair'
   },
   
   // Eutaw Street Standing Room
@@ -262,7 +242,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 285,
     height: 5,
     rake: 0,
-    viewQuality: 'fair'
   },
   
   // Suites Level
@@ -285,7 +264,6 @@ export const camdenYardsSections: DetailedSection[] = [
     distance: 95,
     height: 45,
     rake: 10,
-    viewQuality: 'excellent'
   }
 ];
 

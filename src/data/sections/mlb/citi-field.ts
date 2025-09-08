@@ -17,9 +17,9 @@ const generateRows = (
     seats: seatsPerRow,
     elevation: startElevation + (i * 0.5),
     depth: i * depthPerRow,
-
+    covered: false
   }));
-  }
+};
 export const citiFieldSections: DetailedSection[] = [
   // Field Level Box - Behind Home Plate
   {

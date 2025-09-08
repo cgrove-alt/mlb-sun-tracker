@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const dodgerStadiumSections: DetailedSection[] = [
   // Dugout Club - Behind Home Plate
   {
@@ -242,7 +242,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
   {
     id: 'top-deck-home',
     name: 'Top Deck - Home Plate',
-    level: 'Top',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'LL', 30, 250, 3.5, 18),
@@ -261,7 +261,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
   {
     id: 'top-deck-1b',
     name: 'Top Deck - First Base',
-    level: 'Top',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'LL', 32, 250, 3.5, 19),
@@ -280,7 +280,7 @@ export const dodgerStadiumSections: DetailedSection[] = [
   {
     id: 'top-deck-3b',
     name: 'Top Deck - Third Base',
-    level: 'Top',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'LL', 32, 250, 3.5, 19),
@@ -457,12 +457,11 @@ export const dodgerStadiumSections: DetailedSection[] = [
   {
     id: 'tommy-lasorda-trattoria',
     name: "Tommy Lasorda's Trattoria",
-    level: 'Restaurant',
+    level: 'club',
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
-  }
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
     ],
     vertices3D: [
       { x: 100, y: 45, z: 340 },

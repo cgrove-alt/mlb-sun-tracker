@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const citizensBankParkSections: DetailedSection[] = [
   // Field Level - Behind Home Plate
   {
@@ -255,7 +255,7 @@ export const citizensBankParkConfig = {
     center: 401,
     rightField: 330
   }
-  }
+};
 
 // Export section map for easy lookup
 export const citizensBankParkSectionMap = new Map(

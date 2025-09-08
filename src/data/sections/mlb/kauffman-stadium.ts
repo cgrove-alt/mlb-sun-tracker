@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const kauffmanStadiumSections: DetailedSection[] = [
   // Crown Club - Behind Home Plate
   {
@@ -208,7 +208,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
   {
     id: 'view-level-home',
     name: 'View Level - Home Plate',
-    level: 'View',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 135, 3.5, 16),
@@ -227,7 +227,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
   {
     id: 'view-level-1b',
     name: 'View Level - First Base',
-    level: 'View',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 28, 135, 3.5, 17),
@@ -246,7 +246,7 @@ export const kauffmanStadiumSections: DetailedSection[] = [
   {
     id: 'view-level-3b',
     name: 'View Level - Third Base',
-    level: 'View',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 28, 135, 3.5, 17),

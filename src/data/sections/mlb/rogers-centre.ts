@@ -27,7 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
 export const rogersCentreSections: DetailedSection[] = [
   // Premium Dugout - Behind Home Plate
   {
@@ -109,7 +109,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '100-level-home',
     name: '100 Level - Home Plate',
-    level: '100',
+    level: 'lower',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'U', 24, 60, 3, 13),
@@ -128,7 +128,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '200-level-1b',
     name: '200 Level - First Base',
-    level: '200',
+    level: 'club',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 85, 3, 14),
@@ -147,7 +147,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '200-level-3b',
     name: '200 Level - Third Base',
-    level: '200',
+    level: 'club',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 85, 3, 14),
@@ -166,7 +166,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: 'renaissance-hotel',
     name: 'Renaissance Hotel Windows',
-    level: 'Hotel',
+    level: 'suite',
     baseAngle: 135,
     angleSpan: 30,
     rows: [
@@ -187,7 +187,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '500-level-home',
     name: '500 Level - Home Plate',
-    level: '500',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 170, 3.5, 18),
@@ -206,7 +206,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '500-level-1b',
     name: '500 Level - First Base',
-    level: '500',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'BB', 30, 170, 3.5, 19),
@@ -225,7 +225,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: '500-level-3b',
     name: '500 Level - Third Base',
-    level: '500',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'BB', 30, 170, 3.5, 19),
@@ -303,7 +303,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: 'corona-rooftop-patio',
     name: 'Corona Rooftop Patio',
-    level: 'Rooftop',
+    level: 'standing',
     baseAngle: 0,
     angleSpan: 30,
     rows: [
@@ -324,7 +324,7 @@ export const rogersCentreSections: DetailedSection[] = [
   {
     id: 'sportsnet-grill',
     name: 'Sportsnet Grill',
-    level: 'Restaurant',
+    level: 'club',
     baseAngle: 135,
     angleSpan: 30,
     rows: [

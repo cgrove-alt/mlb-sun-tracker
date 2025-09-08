@@ -27,7 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
 export const loanDepotParkSections: DetailedSection[] = [
   // Backstop Club - Behind Home Plate
   {
@@ -111,7 +111,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'bobblehead-museum',
     name: 'Bobblehead Museum',
-    level: 'Concourse',
+    level: 'standing',
     baseAngle: 135,
     angleSpan: 30,
     rows: [
@@ -132,7 +132,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'vista-home',
     name: 'Vista - Home Plate',
-    level: 'Vista',
+    level: 'club',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'S', 22, 58, 3, 13),
@@ -151,7 +151,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'vista-1b',
     name: 'Vista - First Base',
-    level: 'Vista',
+    level: 'club',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'U', 24, 58, 3, 14),
@@ -170,7 +170,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'vista-3b',
     name: 'Vista - Third Base',
-    level: 'Vista',
+    level: 'club',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'U', 24, 58, 3, 14),
@@ -208,7 +208,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'upper-home',
     name: 'Upper Level - Home Plate',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'W', 25, 135, 3.5, 16),
@@ -227,7 +227,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'upper-1b',
     name: 'Upper Level - First Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'X', 27, 135, 3.5, 17),
@@ -246,7 +246,7 @@ export const loanDepotParkSections: DetailedSection[] = [
   {
     id: 'upper-3b',
     name: 'Upper Level - Third Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'X', 27, 135, 3.5, 17),
@@ -448,7 +448,19 @@ export const loanDepotParkSections: DetailedSection[] = [
     baseAngle: 225,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false },
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: false }
+    ],
+    vertices3D: [
+      { x: -115, y: 6, z: 315 },
+      { x: -85, y: 6, z: 335 },
+      { x: -85, y: 11, z: 340 },
+      { x: -115, y: 11, z: 320 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 20,
+    rake: 25
+  },
   // Recess Sports Lounge
   {
     id: 'recess-sports-lounge',

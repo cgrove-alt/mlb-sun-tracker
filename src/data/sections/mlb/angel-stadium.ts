@@ -27,6 +27,8 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
+};
+
 export const angelStadiumSections: DetailedSection[] = [
   // Diamond Club - Behind Home Plate
   {
@@ -103,11 +105,6 @@ export const angelStadiumSections: DetailedSection[] = [
       { x: -45, y: 117, z: 107 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['K', 'L', 'M', 'N'],
-      coveragePercentage: 30
-    },
     distance: 80,
     height: 75,
     rake: 28
@@ -230,12 +227,7 @@ export const angelStadiumSections: DetailedSection[] = [
     covered: true,
     distance: 170,
     height: 110,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['U', 'V', 'W', 'X', 'Y', 'Z'],
-      coveragePercentage: 25
-    }
+    rake: 32
   },
   
   // View Level - First Base
@@ -255,12 +247,7 @@ export const angelStadiumSections: DetailedSection[] = [
     covered: true,
     distance: 175,
     height: 120,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
-      coveragePercentage: 20
-    }
+    rake: 32
   },
   
   // View Level - Third Base
@@ -280,12 +267,7 @@ export const angelStadiumSections: DetailedSection[] = [
     covered: true,
     distance: 175,
     height: 120,
-    rake: 32,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['V', 'W', 'X', 'Y', 'Z', 'AA'],
-      coveragePercentage: 20
-    }
+    rake: 32
   },
   
   // Bullpen Overlook
@@ -416,7 +398,6 @@ export const angelStadiumSections: DetailedSection[] = [
     distance: 95,
     height: 85, 
     rake: 25,
-    viewQuality: 'good'
   },
   
   // Lexus Diamond Club Restaurant
@@ -437,7 +418,6 @@ export const angelStadiumSections: DetailedSection[] = [
     distance: 70,
     height: 50, 
     rake: 25,
-    viewQuality: 'good'
   },
   
   // Don Julio Club
@@ -457,12 +437,7 @@ export const angelStadiumSections: DetailedSection[] = [
     covered: true,
     distance: 110,
     height: 75,
-    rake: 30,
-    partialCoverage: {
-      type: 'partial' as const,
-      coveredRows: ['L', 'M', 'N', 'P'],
-      coveragePercentage: 25
-    }
+    rake: 30
   },
   
   // Dugout Suites
@@ -507,7 +482,6 @@ export const angelStadiumSections: DetailedSection[] = [
     distance: 100,
     height: 90, 
     rake: 25,
-    viewQuality: 'good'
   },
   
   // Legends Suites
@@ -530,7 +504,6 @@ export const angelStadiumSections: DetailedSection[] = [
     distance: 100,
     height: 90, 
     rake: 25,
-    viewQuality: 'good'
   }
 ];
 
@@ -546,4 +519,5 @@ export const angelStadiumFeatures = {
 
 // Export section map for easy lookup
 export const angelStadiumSectionMap = new Map(
-  angelStadiumSections.map(section => [section.id, section]));
+  angelStadiumSections.map(section => [section.id, section])
+);

@@ -17,7 +17,7 @@ import { minuteMaidParkSections } from './sections/mlb/minute-maid-park';
 import { truistParkSections } from './sections/mlb/truist-park';
 import { coorsFieldSections } from './sections/mlb/coors-field';
 import { targetFieldSections } from './sections/mlb/target-field';
-import { greatAmericanBallParkSections } from './sections/mlb/great-american-ballpark';
+import { greatAmericanBallparkSections } from './sections/mlb/great-american-ballpark';
 import { progressiveFieldSections } from './sections/mlb/progressive-field';
 import { citizensBankParkSections } from './sections/mlb/citizens-bank-park';
 import { nationalsParkSections } from './sections/mlb/nationals-park';
@@ -27,7 +27,7 @@ import { americanFamilyFieldSections } from './sections/mlb/american-family-fiel
 import { buschStadiumSections } from './sections/mlb/busch-stadium';
 import { chaseFieldSections } from './sections/mlb/chase-field';
 import { comericaParkSections } from './sections/mlb/comerica-park';
-import { georgeSteinbrennerFieldSections } from './sections/mlb/george-m-steinbrenner-field';
+import { georgeMSteinbrennerFieldSections } from './sections/mlb/george-m-steinbrenner-field';
 import { guaranteedRateFieldSections } from './sections/mlb/guaranteed-rate-field';
 import { kauffmanStadiumSections } from './sections/mlb/kauffman-stadium';
 import { loanDepotParkSections } from './sections/mlb/loandepot-park';
@@ -63,7 +63,7 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'braves': truistParkSections,
   'rockies': coorsFieldSections,
   'twins': targetFieldSections,
-  'reds': greatAmericanBallParkSections,
+  'reds': greatAmericanBallparkSections,
   'guardians': progressiveFieldSections,
   'phillies': citizensBankParkSections,
   'nationals': nationalsParkSections,
@@ -73,7 +73,7 @@ const SECTION_REGISTRY: Record<string, DetailedSection[]> = {
   'cardinals': buschStadiumSections,
   'diamondbacks': chaseFieldSections,
   'tigers': comericaParkSections,
-  'rays': georgeSteinbrennerFieldSections,
+  'rays': georgeMSteinbrennerFieldSections,
   'white-sox': guaranteedRateFieldSections,
   'royals': kauffmanStadiumSections,
   'marlins': loanDepotParkSections,

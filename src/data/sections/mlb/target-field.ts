@@ -104,21 +104,9 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -26, y: 180, z: 72 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'],
-      coveragePercentage: 54,
-      overhangDepth: 25,
-      overhangHeight: 22,
-      material: 'solid'
-  },
-    price: 'value',
     distance: 154,
     height: 35,
     rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
   },
   {
     id: '327',
@@ -134,21 +122,9 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 180, y: 26, z: 72 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28'],
-      coveragePercentage: 54,
-      overhangDepth: 25,
-      overhangHeight: 22,
-      material: 'solid'
-  },
-    price: 'value',
     distance: 154,
     height: 35,
     rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'fair'
   },
   // ========== OVERLOOK (Center Field) ==========
   {
@@ -183,13 +159,10 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 45, y: 95, z: 410 },
       { x: -45, y: 95, z: 410 }
     ] as Vector3D[],
-    price: 'luxury',
+    covered: true,
     distance: 380,
     height: 65,
-    rake: 30,
-    seatWidth: 22,
-    rowSpacing: 38,
-    viewQuality: 'excellent'
+    rake: 30
   },
   // ========== BUDWEISER ROOF DECK ==========
   {
@@ -208,12 +181,9 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -150, y: 85, z: 330 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['Fixed', 'SRO'],
-      coveragePercentage: 60
-  },
-    price: 'premium'
+    distance: 330,
+    height: 75,
+    rake: 0
   },
   // ========== TOWN BALL TAVERN ==========
   {
@@ -229,13 +199,10 @@ export const targetFieldSections: DetailedSection[] = [
       { x: -125, y: 77, z: 322 },
       { x: -145, y: 77, z: 302 }
     ] as Vector3D[],
-    price: 'premium',
+    covered: false,
     distance: 290,
     height: 55,
-    rake: 28,
-    seatWidth: 20,
-    rowSpacing: 35,
-    viewQuality: 'good'
+    rake: 28
   },
   // ========== BAT & BARREL ==========
   {
@@ -251,13 +218,10 @@ export const targetFieldSections: DetailedSection[] = [
       { x: 125, y: 76, z: 146 },
       { x: 105, y: 76, z: 136 }
     ] as Vector3D[],
-    price: 'premium',
+    covered: false,
     distance: 125,
     height: 60,
-    rake: 26,
-    seatWidth: 21,
-    rowSpacing: 36,
-    viewQuality: 'excellent'
+    rake: 26
   },
   // ========== GRAY DUCK DECK ==========
   {

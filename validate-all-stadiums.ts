@@ -2,7 +2,7 @@
 // Tests all MLB, MiLB, and NFL stadiums for accurate sun calculations
 
 import { MLB_STADIUMS } from './src/data/stadiums';
-import { MILB_STADIUMS } from './src/data/milbStadiums';
+import { AAA_STADIUMS, AA_STADIUMS, HIGH_A_STADIUMS, LOW_A_STADIUMS } from './src/data/milbStadiums';
 import { NFL_STADIUMS } from './src/data/nflStadiums';
 import { getUnifiedShadedSections } from './src/utils/unifiedStadiumShade';
 import { getMiLBStadiumSections } from './src/data/milbStadiumSections';
@@ -101,9 +101,8 @@ async function testSunCalculations(
     };
     
     // Get shaded sections
-    const shadedSections = await getUnifiedShadedSections(
+    const shadedSections = getUnifiedShadedSections(
       unifiedStadium,
-      sections,
       testDate
     );
     
@@ -170,6 +169,7 @@ async function validateAllStadiums() {
   
   // Validate MiLB Stadiums (sample - top 10)
   console.log('Validating MiLB Stadiums...');
+  const MILB_STADIUMS = [...AAA_STADIUMS, ...AA_STADIUMS, ...HIGH_A_STADIUMS, ...LOW_A_STADIUMS];
   const milbSample = MILB_STADIUMS.slice(0, 10);
   for (const stadium of milbSample) {
     const sections = getMiLBStadiumSections(stadium.id);

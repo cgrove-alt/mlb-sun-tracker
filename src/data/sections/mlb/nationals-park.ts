@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const nationalsParkSections: DetailedSection[] = [
   // Presidents Club - Behind Home Plate
   {
@@ -170,7 +170,7 @@ export const nationalsParkSections: DetailedSection[] = [
   {
     id: 'gallery-home',
     name: 'Gallery - Home Plate',
-    level: 'Gallery',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 26, 120, 3.5, 15),
@@ -189,7 +189,7 @@ export const nationalsParkSections: DetailedSection[] = [
   {
     id: 'gallery-1b',
     name: 'Gallery - First Base',
-    level: 'Gallery',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 120, 3.5, 16),
@@ -208,7 +208,7 @@ export const nationalsParkSections: DetailedSection[] = [
   {
     id: 'gallery-3b',
     name: 'Gallery - Third Base',
-    level: 'Gallery',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 120, 3.5, 16),
@@ -366,7 +366,7 @@ export const nationalsParkSections: DetailedSection[] = [
   {
     id: 'upper-gallery-outfield',
     name: 'Upper Gallery - Outfield',
-    level: 'Gallery',
+    level: 'upper',
     baseAngle: 225,
     angleSpan: 30,
     rows: generateRows('A', 'U', 22, 125, 3.5, 18),

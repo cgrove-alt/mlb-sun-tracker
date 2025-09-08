@@ -105,21 +105,9 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: -28, y: 190, z: 78 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'],
-      coveragePercentage: 52,
-      overhangDepth: 26,
-      overhangHeight: 23,
-      material: 'solid'
-    },
-    price: 'value',
     distance: 163,
     height: 39,
     rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'good'
   },
   {
     id: '432',
@@ -135,21 +123,9 @@ export const greatAmericanBallparkSections: DetailedSection[] = [
       { x: 190, y: -28, z: 78 }
     ] as Vector3D[],
     covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29'],
-      coveragePercentage: 52,
-      overhangDepth: 26,
-      overhangHeight: 23,
-      material: 'solid'
-    },
-    price: 'value',
     distance: 163,
     height: 39,
     rake: 28,
-    seatWidth: 18,
-    rowSpacing: 30,
-    viewQuality: 'fair'
   },
   // ========== RIVERBOAT DECK (Center Field) ==========
   {

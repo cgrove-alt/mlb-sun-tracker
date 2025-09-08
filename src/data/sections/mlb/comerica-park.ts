@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const comericaParkSections: DetailedSection[] = [
   // Tiger Den - Behind Home Plate
   {
@@ -227,7 +227,7 @@ export const comericaParkSections: DetailedSection[] = [
   {
     id: 'upper-deck-home',
     name: 'Upper Deck - Home Plate',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 130, 3.5, 16),
@@ -246,7 +246,7 @@ export const comericaParkSections: DetailedSection[] = [
   {
     id: 'upper-deck-1b',
     name: 'Upper Deck - First Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 28, 130, 3.5, 17),
@@ -265,7 +265,7 @@ export const comericaParkSections: DetailedSection[] = [
   {
     id: 'upper-deck-3b',
     name: 'Upper Deck - Third Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 28, 130, 3.5, 17),
@@ -366,7 +366,7 @@ export const comericaParkSections: DetailedSection[] = [
   {
     id: 'big-cat-court',
     name: 'Big Cat Court',
-    level: 'Concourse',
+    level: 'standing',
     baseAngle: 0,
     angleSpan: 30,
     rows: [

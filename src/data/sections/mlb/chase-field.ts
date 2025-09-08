@@ -27,7 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
 export const chaseFieldSections: DetailedSection[] = [
   // Diamond Level - Behind Home Plate
   {

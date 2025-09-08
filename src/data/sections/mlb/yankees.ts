@@ -22,12 +22,12 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
       seats: seatsPerRow - Math.floor(rowNum * 0.3), // Slight reduction in upper rows
       elevation: startElevation + verticalRise,
       depth: rowNum * depthPerRow,
-
+      covered: false
     });
   }
   
   return rows;
-  }
+};
 export const yankeeStadiumSections: DetailedSection[] = [
   // Legends Suite - Behind Home Plate
   {
@@ -111,7 +111,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
   {
     id: 'main-level-home',
     name: 'Main Level - Home Plate',
-    level: 'Main',
+    level: 'club',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'U', 24, 60, 3, 13),
@@ -130,7 +130,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
   {
     id: 'main-level-1b',
     name: 'Main Level - First Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'W', 25, 60, 3, 14),
@@ -149,7 +149,7 @@ export const yankeeStadiumSections: DetailedSection[] = [
   {
     id: 'main-level-3b',
     name: 'Main Level - Third Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'W', 25, 60, 3, 14),
@@ -447,7 +447,18 @@ export const yankeeStadiumSections: DetailedSection[] = [
     baseAngle: 90,
     angleSpan: 30,
     rows: [
-      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true
+      { rowNumber: "1", seats: 100, elevation: 20, depth: 0, covered: true }
+    ],
+    vertices3D: [
+      { x: 140, y: 15, z: 250 },
+      { x: 170, y: 15, z: 270 },
+      { x: 170, y: 20, z: 275 },
+      { x: 140, y: 20, z: 255 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 260,
+    height: 15,
+    rake: 0
   },
   // Bleacher Creatures
   {

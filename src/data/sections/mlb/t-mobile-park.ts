@@ -27,7 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
 export const tMobileParkSections: DetailedSection[] = [
   // Diamond Club - Behind Home Plate
   {
@@ -155,7 +155,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'main-level-home',
     name: 'Main Level - Home Plate',
-    level: 'Main',
+    level: 'club',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'U', 24, 60, 3, 13),
@@ -174,7 +174,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'main-level-1b',
     name: 'Main Level - First Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 60, 3, 14),
@@ -193,7 +193,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'main-level-3b',
     name: 'Main Level - Third Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 60, 3, 14),
@@ -250,7 +250,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'upper-level-home',
     name: 'Upper Level - Home Plate',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 27, 150, 3.5, 16),
@@ -269,7 +269,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'upper-level-1b',
     name: 'Upper Level - First Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'Z', 29, 150, 3.5, 17),
@@ -288,7 +288,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'upper-level-3b',
     name: 'Upper Level - Third Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'Z', 29, 150, 3.5, 17),
@@ -448,7 +448,7 @@ export const tMobileParkSections: DetailedSection[] = [
   {
     id: 'protime-sports-grill',
     name: 'Protime Sports Grill',
-    level: 'Restaurant',
+    level: 'club',
     baseAngle: 0,
     angleSpan: 30,
     rows: [

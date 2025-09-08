@@ -27,7 +27,7 @@ const generateRows = (startRow: string, endRow: string, seatsPerRow: number, sta
   }
   
   return rows;
-  }
+};
 export const globeLifeFieldSections: DetailedSection[] = [
   // Premium Level - Behind Home Plate
   {
@@ -90,7 +90,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'karbach-sky-porch',
     name: 'Karbach Sky Porch',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 225,
     angleSpan: 30,
     rows: generateRows('A', 'L', 30, 95, 3, 20),
@@ -130,7 +130,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'main-concourse-home',
     name: 'Main Concourse - Home Plate',
-    level: 'Main',
+    level: 'club',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'V', 24, 60, 3, 13),
@@ -149,7 +149,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'main-concourse-1b',
     name: 'Main Concourse - First Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 60, 3, 14),
@@ -168,7 +168,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'main-concourse-3b',
     name: 'Main Concourse - Third Base',
-    level: 'Main',
+    level: 'club',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'X', 26, 60, 3, 14),
@@ -225,7 +225,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'upper-box-home',
     name: 'Upper Box - Home Plate',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 0,
     angleSpan: 30,
     rows: generateRows('A', 'Y', 26, 140, 3.5, 16),
@@ -244,7 +244,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'upper-box-1b',
     name: 'Upper Box - First Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 45,
     angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 140, 3.5, 17),
@@ -263,7 +263,7 @@ export const globeLifeFieldSections: DetailedSection[] = [
   {
     id: 'upper-box-3b',
     name: 'Upper Box - Third Base',
-    level: 'Upper',
+    level: 'upper',
     baseAngle: 315,
     angleSpan: 30,
     rows: generateRows('A', 'AA', 28, 140, 3.5, 17),
