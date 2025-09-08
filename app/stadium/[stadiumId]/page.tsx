@@ -202,22 +202,14 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       
       {/* Progressive enhancement with client features */}
       <div suppressHydrationWarning className="has-sticky-shade-bar">
-        <StadiumPageSSR
+        <StadiumPageClient 
           stadium={stadium}
           sections={sections}
           amenities={amenities}
           guide={guide}
+          useComprehensive={!!guide}
         />
       </div>
-      
-      {/* Optional: Load interactive client components lazily */}
-      {/* <StadiumPageClient 
-        stadium={stadium}
-        sections={sections}
-        amenities={amenities}
-        guide={guide}
-        useComprehensive={!!guide}
-      /> */}
     </>
   );
 }
