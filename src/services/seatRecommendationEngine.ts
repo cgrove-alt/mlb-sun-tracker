@@ -281,7 +281,7 @@ export class SeatRecommendationEngine {
       switch (priority) {
         case 'shade':
           if (section.covered) score += 20;
-          if (section.hasOverhang) score += 10;
+          if (section.partialCoverage?.overhangDepth) score += 10;
           break;
         
         case 'food':
@@ -388,10 +388,11 @@ export class SeatRecommendationEngine {
     
     // Check if section has rows with enough consecutive seats
     const hasGroupSeating = section.rows.some(row => row.seats >= groupSize);
+    const totalCapacity = section.rows.reduce((sum, row) => sum + row.seats, 0);
     
     if (hasGroupSeating) {
-      if (section.capacity >= groupSize * 10) return 15; // Plenty of options
-      if (section.capacity >= groupSize * 5) return 10;  // Good options
+      if (totalCapacity >= groupSize * 10) return 15; // Plenty of options
+      if (totalCapacity >= groupSize * 5) return 10;  // Good options
       return 5; // Limited options
     }
     
@@ -556,19 +557,22 @@ export class SeatRecommendationEngine {
     const avoidRows: number[] = [];
     
     section.rows.forEach(row => {
+      const rowNum = parseInt(row.rowNumber, 10);
+      if (isNaN(rowNum)) return;
+      
       // Best rows: middle elevation, not too far back
-      if (row.rowNumber >= 5 && row.rowNumber <= 15) {
-        bestRows.push(row.rowNumber);
+      if (rowNum >= 5 && rowNum <= 15) {
+        bestRows.push(rowNum);
       }
       
       // Avoid very back rows if not budget conscious
-      if (preferences.budgetRange !== 'budget' && row.rowNumber > 25) {
-        avoidRows.push(row.rowNumber);
+      if (preferences.budgetRange !== 'budget' && rowNum > 25) {
+        avoidRows.push(rowNum);
       }
       
       // Avoid front rows if concerned about foul balls
-      if (preferences.hasChildren && row.rowNumber <= 3) {
-        avoidRows.push(row.rowNumber);
+      if (preferences.hasChildren && rowNum <= 3) {
+        avoidRows.push(rowNum);
       }
     });
     

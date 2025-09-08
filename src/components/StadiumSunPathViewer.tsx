@@ -297,9 +297,9 @@ export const StadiumSunPathViewer: React.FC<StadiumSunPathViewerProps> = ({
           <h3>Selected Section: {selectedSectionData.name}</h3>
           <div className="section-details">
             <p>Level: {selectedSectionData.level}</p>
-            <p>Capacity: {selectedSectionData.capacity} seats</p>
+            <p>Capacity: {selectedSectionData.rows.reduce((sum, row) => sum + row.seats, 0)} seats</p>
             <p>Covered: {selectedSectionData.covered ? 'Yes' : 'No'}</p>
-            <p>Elevation: {selectedSectionData.elevation}ft</p>
+            <p>Height: {selectedSectionData.height}ft</p>
             <p>Angle: {selectedSectionData.baseAngle}° - {(selectedSectionData.baseAngle + selectedSectionData.angleSpan) % 360}°</p>
           </div>
           <button 

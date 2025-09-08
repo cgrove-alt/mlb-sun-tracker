@@ -2,7 +2,7 @@
 import '@testing-library/jest-dom';
 
 // Mock environment variables
-process.env.NODE_ENV = 'test';
+(process.env as any).NODE_ENV = 'test';
 
 // Mock fetch for API calls
 global.fetch = jest.fn();

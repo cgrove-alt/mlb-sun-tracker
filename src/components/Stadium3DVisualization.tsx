@@ -298,7 +298,9 @@ export const Stadium3DVisualization: React.FC<Stadium3DVisualizationProps> = ({
       mesh.receiveShadow = true;
       mesh.userData = { sectionId: section.id, sectionName: section.name };
       
-      sceneRef.current.add(mesh);
+      if (sceneRef.current) {
+        sceneRef.current.add(mesh);
+      }
       sectionMeshesRef.current.set(section.id, mesh);
     });
   }, [sections, materials]);
@@ -416,8 +418,7 @@ export const Stadium3DVisualization: React.FC<Stadium3DVisualizationProps> = ({
       // Add sun sphere at current position
       const sunGeometry = new THREE.SphereGeometry(10, 32, 32);
       const sunMaterial = new THREE.MeshBasicMaterial({ 
-        color: 0xffff00,
-        emissive: 0xffff00
+        color: 0xffff00
       });
       const sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
       

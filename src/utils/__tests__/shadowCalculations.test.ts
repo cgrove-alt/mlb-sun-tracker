@@ -20,19 +20,33 @@ const createMockSection = (id: string, covered: boolean = false): DetailedSectio
   level: 'lower',
   baseAngle: 180,
   angleSpan: 30,
-  radius: 100,
-  elevation: 10,
-  rows: [],
-  capacity: 500,
-  hasRailing: true,
-  hasOverhang: false,
-  covered,
+  rows: [
+    {
+      rowNumber: '1',
+      seats: 20,
+      elevation: 10,
+      depth: 5,
+      covered: false
+    },
+    {
+      rowNumber: '2',
+      seats: 20,
+      elevation: 12,
+      depth: 7,
+      covered: false
+    }
+  ],
   vertices3D: [
     { x: -10, y: 10, z: 90 },
     { x: 10, y: 10, z: 90 },
     { x: 10, y: 20, z: 110 },
     { x: -10, y: 20, z: 110 }
-  ]
+  ],
+  covered,
+  distance: 100,
+  height: 10,
+  rake: 30,
+  viewQuality: 'good'
 });
 
 // Mock obstruction for testing
