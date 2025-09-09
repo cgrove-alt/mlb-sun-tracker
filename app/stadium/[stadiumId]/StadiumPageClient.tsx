@@ -98,21 +98,28 @@ export default function StadiumPageClient({
 
   return (
     <>
-      <Suspense fallback={<LoadingSpinner />}>
-        {useComprehensive ? (
-          <ComprehensiveStadiumGuide 
-            stadiumId={stadium.id}
-          />
-        ) : (
-          <StadiumGuide 
-            stadium={stadium}
-            sections={sections}
-            amenities={amenities}
-          />
-        )}
-      </Suspense>
+      {/* Stadium Guide - with smaller loading state */}
+      <div className="stadium-guide-wrapper">
+        <Suspense fallback={
+          <div className="flex justify-center items-center p-8">
+            <LoadingSpinner message="Loading stadium guide..." />
+          </div>
+        }>
+          {useComprehensive ? (
+            <ComprehensiveStadiumGuide 
+              stadiumId={stadium.id}
+            />
+          ) : (
+            <StadiumGuide 
+              stadium={stadium}
+              sections={sections}
+              amenities={amenities}
+            />
+          )}
+        </Suspense>
+      </div>
       
-      {/* AI Seat Recommendations Section */}
+      {/* AI Seat Recommendations Section - Outside Suspense */}
       <div className="mt-8" style={{ display: 'block' }}>
         {sectionsWithSunData.length > 0 ? (
           <SeatRecommendationsSection 
@@ -134,7 +141,7 @@ export default function StadiumPageClient({
         )}
       </div>
 
-      {/* 3D Visualization Section - Always render */}
+      {/* 3D Visualization Section - Outside Suspense */}
       <div className="mt-8" style={{ display: 'block' }}>
         <StadiumVisualizationSection 
           stadium={stadium}
