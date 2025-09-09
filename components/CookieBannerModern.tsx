@@ -80,7 +80,8 @@ const CookieBannerModern: React.FC = () => {
       setShowGPCNotice(true);
       setTimeout(() => setShowGPCNotice(false), 5000);
       
-    } else if (!storedConsent && !isGPCEnabled) {
+    } else if (!storedConsent) {
+      // Show banner if no consent stored (regardless of GPC)
       setTimeout(() => setShowBanner(true), 1000);
     } else if (storedConsent) {
       try {
