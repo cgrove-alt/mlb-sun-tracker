@@ -13,7 +13,7 @@ export default function StickyTopNav() {
   const [isNFLOpen, setIsNFLOpen] = useState(false);
   const [isMiLBOpen, setIsMiLBOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string}>>([]);
+  const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string; league?: string}>>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -98,7 +98,8 @@ export default function StickyTopNav() {
       .map(venue => ({
         id: venue.id,
         name: venue.name,
-        team: venue.team
+        team: venue.team,
+        league: venue.league // Include league for routing
       }));
     
     setSearchResults(results);
@@ -108,7 +109,10 @@ export default function StickyTopNav() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchResults.length > 0) {
-      window.location.href = `/stadium/${searchResults[0].id}`;
+      const venue = searchResults[0];
+      // Use /stadium route for MLB, /venue for others
+      const route = venue.league === 'MLB' ? 'stadium' : 'venue';
+      window.location.href = `/${route}/${venue.id}`;
     }
   };
 
@@ -146,16 +150,20 @@ export default function StickyTopNav() {
                 
                 {showSearchResults && (
                   <div className="search-results">
-                    {searchResults.map((result) => (
-                      <Link
-                        key={result.id}
-                        href={`/stadium/${result.id}`}
-                        className="search-result-item"
-                      >
-                        <span className="result-name">{result.name}</span>
-                        <span className="result-team">{result.team}</span>
-                      </Link>
-                    ))}
+                    {searchResults.map((result) => {
+                      // Use /stadium route for MLB, /venue for others
+                      const route = result.league === 'MLB' ? 'stadium' : 'venue';
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${route}/${result.id}`}
+                          className="search-result-item"
+                        >
+                          <span className="result-name">{result.name}</span>
+                          <span className="result-team">{result.team}</span>
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -248,7 +256,7 @@ export default function StickyTopNav() {
                     {mlbVenues.map((venue) => (
                       <Link
                         key={venue.id}
-                        href={`/venue/${venue.id}`}
+                        href={`/stadium/${venue.id}`}
                         className="mobile-venue-link"
                         onClick={closeMobileMenu}
                       >
