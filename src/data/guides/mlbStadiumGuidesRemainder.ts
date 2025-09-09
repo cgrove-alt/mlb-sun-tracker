@@ -76,7 +76,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
       standingRoom: ['Handlebar', 'Riverfront Club', 'Outfield areas'],
       partyAreas: [
         { name: 'Riverfront Club', capacity: '200', amenities: ['Buffet', 'Bar service'] },
-        { name: 'Party Pavilion', description: 'Left field group area', capacity: '150' }
+        { name: 'Party Pavilion', description: 'Left field group area', capacity: '150', amenities: ['Group seating', 'Private area'] }
       ],
       tips: [
         { section: 'Diamond Seats A-F', tip: 'Ultimate luxury experience', category: 'experience' },
@@ -97,7 +97,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['MadTree', 'Rhinegeist', "Taft's", 'Braxton']
-      }
+      },
     },
     parking: {
       lots: [
@@ -114,7 +114,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['Cincinnati Bell Connector streetcar', 'Metro buses'],
         rideShare: 'Joe Nuxhall Way designated zones',
         bicycle: 'Red Bike stations nearby'
-      }
+      },
     },
     gates: [
       { name: 'Crosley Terrace', location: 'Home plate', bestFor: ['Main entrance'], openTime: '2 hours before', tip: 'Historic entrance' },
@@ -154,31 +154,41 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
     },
     transportation: {
       address: '100 Joe Nuxhall Way, Cincinnati, OH 45202',
-      publicTransit: ['Cincinnati Bell Connector', 'Metro buses'],
-      taxi: 'Taxi stand on Pete Rose Way',
-      rideshare: 'Joe Nuxhall Way'
+      publicTransit: {
+        bus: [
+          { routes: ['Multiple routes'], stops: ['Near stadium'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Taxi stand on Pete Rose Way'
+      },
+      rideShare: {
+        pickupZone: 'Joe Nuxhall Way',
+        dropoffZone: 'Joe Nuxhall Way',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2.5 hours before first pitch',
-        recommendedArrival: '90 minutes early'
-      },
-      gatesOpen: '2 hours before (Crosley), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3 hours',
-      rushHours: ['45 minutes before first pitch', 'Post-game on Pete Rose Way'],
-      tips: [
-        { title: 'Hall of Fame', description: 'Free with game ticket', category: 'experience' },
-        { title: 'Riverfront', description: 'Walk along river before game', category: 'experience' },
-        { title: 'Local Classics', description: 'Try Skyline Chili', category: 'food' },
-        { title: 'Fireworks Fridays', description: 'Stay after Friday games', category: 'experience' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 7:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'The Banks',
       description: 'Riverfront entertainment district between stadiums',
@@ -239,7 +249,28 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '24', player: 'Tony Perez', year: 2000 },
         { number: '42', player: 'Jackie Robinson', year: 1997 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   },
 
   'rockies': {
@@ -317,7 +348,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
       standingRoom: ['The Rooftop', 'Outfield areas', 'Bridge Bar'],
       partyAreas: [
         { name: 'The Rooftop', capacity: '200', amenities: ['Full bar', 'Food service'] },
-        { name: 'Outfield Plaza', description: 'Group areas', capacity: '150' }
+        { name: 'Outfield Plaza', description: 'Group areas', capacity: '150', amenities: ['Open space', 'Food trucks'] }
       ],
       tips: [
         { section: 'Club Level 218-230', tip: 'Best shade and amenities', category: 'experience' },
@@ -338,7 +369,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['Blue Moon', 'Great Divide', 'Oskar Blues', 'Odell']
-      }
+      },
     },
     parking: {
       lots: [
@@ -355,7 +386,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['RTD Light Rail - Union Station', 'Free Mall Ride'],
         rideShare: '22nd and Blake designated zones',
         bicycle: 'B-Cycle stations throughout'
-      }
+      },
     },
     gates: [
       { name: 'Gate A', location: 'Home plate', bestFor: ['Lower level'], openTime: '2 hours before', tip: 'Main entrance' },
@@ -396,31 +427,41 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
     },
     transportation: {
       address: '2001 Blake Street, Denver, CO 80205',
-      publicTransit: ['Union Station (15 min walk)', 'RTD buses'],
-      taxi: 'Taxi stand on Blake Street',
-      rideshare: '22nd and Blake Street'
+      publicTransit: {
+        train: [
+          { lines: ['RTD A Line'], station: 'Union Station', walkTime: '15 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Taxi stand on Blake Street'
+      },
+      rideShare: {
+        pickupZone: '22nd and Blake Street',
+        dropoffZone: '22nd and Blake Street',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2.5 hours before first pitch',
-        recommendedArrival: '90 minutes early'
-      },
-      gatesOpen: '2 hours before (Gate A), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3+ hours (high scoring)',
-      rushHours: ['45 minutes before first pitch', 'Blake Street after game'],
-      tips: [
-        { title: 'Altitude Effects', description: 'Stay hydrated, pace alcohol consumption', category: 'health' },
-        { title: 'Purple Row', description: 'Sit in row 20 upper deck for mile-high experience', category: 'experience' },
-        { title: 'The Rooftop', description: 'Arrive early for best spots', category: 'experience' },
-        { title: 'Ball Flies', description: 'Expect high scores and long balls', category: 'experience' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'LoDo (Lower Downtown)',
       description: 'Historic warehouse district with breweries and nightlife',
@@ -474,7 +515,28 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '33', player: 'Larry Walker', year: 2020 },
         { number: '42', player: 'Jackie Robinson', year: 1997 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   },
 
   'royals': {
@@ -552,7 +614,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
       standingRoom: ['Craft & Draft', 'Outfield areas', 'Pepsi Porch'],
       partyAreas: [
         { name: 'Pepsi Party Porch', capacity: '250', amenities: ['All-inclusive food/drinks'] },
-        { name: 'Outfield Experience', description: 'Group entertainment area', capacity: '200' }
+        { name: 'Outfield Experience', description: 'Group entertainment area', capacity: '200', amenities: ['Entertainment', 'Food service'] }
       ],
       tips: [
         { section: 'Diamond Club 115-130', tip: 'Best overall experience', category: 'experience' },
@@ -573,7 +635,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['Boulevard', 'KC Bier Co', 'Crane', 'Torn Label']
-      }
+      },
     },
     parking: {
       lots: [
@@ -590,7 +652,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['Limited bus service on game days'],
         rideShare: 'Designated zones near Gate A',
         bicycle: 'Bike racks available'
-      }
+      },
     },
     gates: [
       { name: 'Gate A', location: 'Home plate', bestFor: ['Lower level', 'Diamond Club'], openTime: '2 hours before', tip: 'Main entrance' },
@@ -631,31 +693,41 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
     },
     transportation: {
       address: '1 Royal Way, Kansas City, MO 64129',
-      publicTransit: ['Limited RideKC bus service'],
-      taxi: 'Limited availability',
-      rideshare: 'Gate A designated area'
+      publicTransit: {
+        bus: [
+          { routes: ['Multiple routes'], stops: ['Near stadium'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Limited availability'
+      },
+      rideShare: {
+        pickupZone: 'Gate A designated area',
+        dropoffZone: 'Gate A designated area',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2.5 hours before first pitch',
-        recommendedArrival: '60 minutes early'
-      },
-      gatesOpen: '2 hours before (Gate A), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3 hours',
-      rushHours: ['45 minutes before first pitch', 'Post-game exodus'],
-      tips: [
-        { title: 'Fountains', description: 'Best views from sections 245-250', category: 'experience' },
-        { title: 'KC BBQ', description: 'Multiple authentic options', category: 'food' },
-        { title: 'Outfield Experience', description: 'Open 2 hours before first pitch', category: 'family' },
-        { title: 'Hall of Fame', description: 'Free with game ticket', category: 'experience' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'Truman Sports Complex',
       description: 'Sports complex shared with Arrowhead Stadium',
@@ -711,7 +783,28 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '20', player: 'Frank White', year: 1995 },
         { number: '42', player: 'Jackie Robinson', year: 1997 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   },
 
   'tigers': {
@@ -789,7 +882,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
       standingRoom: ['Pepsi Porch', 'Outfield concourse', 'Beer Hall'],
       partyAreas: [
         { name: 'Labatt Blue Light Jungle', capacity: '150', amenities: ['All-inclusive packages'] },
-        { name: 'Pepsi Porch', description: 'Right field party deck', capacity: '100' }
+        { name: 'Pepsi Porch', description: 'Right field party deck', capacity: '100', amenities: ['Party deck', 'Bar service'] }
       ],
       tips: [
         { section: 'Tiger Club 120-130', tip: 'Premium experience behind plate', category: 'experience' },
@@ -810,7 +903,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['Founders', "Bell's", 'Atwater', 'Detroit Beer Co']
-      }
+      },
     },
     parking: {
       lots: [
@@ -827,7 +920,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['QLine streetcar', 'DDOT buses', 'People Mover'],
         rideShare: 'Montcalm Street designated zones',
         bicycle: 'MoGo bike share stations'
-      }
+      },
     },
     gates: [
       { name: 'Gate A', location: 'Behind home plate', bestFor: ['Main entrance'], openTime: '2 hours before', tip: 'Tiger statues here' },
@@ -868,31 +961,41 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
     },
     transportation: {
       address: '2100 Woodward Avenue, Detroit, MI 48201',
-      publicTransit: ['QLine Montcalm stop', 'People Mover Grand Circus'],
-      taxi: 'Taxi stand on Montcalm Street',
-      rideshare: 'Montcalm Street'
+      publicTransit: {
+        bus: [
+          { routes: ['DDOT routes'], stops: ['Near stadium'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Taxi stand on Montcalm Street'
+      },
+      rideShare: {
+        pickupZone: 'Montcalm Street',
+        dropoffZone: 'Montcalm Street',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2 hours before first pitch',
-        recommendedArrival: '90 minutes early'
-      },
-      gatesOpen: '2 hours before (Gate A), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3 hours',
-      rushHours: ['45 minutes before first pitch', 'Woodward after game'],
-      tips: [
-        { title: 'Tiger Statues', description: 'Photo ops at main entrance', category: 'experience' },
-        { title: 'Ferris Wheel', description: 'Ride before game for views', category: 'family' },
-        { title: 'Coney Dogs', description: 'Detroit tradition', category: 'food' },
-        { title: 'Walk of Fame', description: 'Tigers history around park', category: 'experience' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'Downtown Detroit',
       description: 'Revitalized downtown with theaters, casinos, and restaurants',
@@ -953,7 +1056,28 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '42', player: 'Jackie Robinson', year: 1997 },
         { number: '47', player: 'Jack Morris', year: 2018 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   },
 
   'twins': {
@@ -1031,7 +1155,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
       standingRoom: ['Overlook', 'Budweiser Roof Deck', 'Town Ball Tavern'],
       partyAreas: [
         { name: 'Budweiser Roof Deck', capacity: '200', amenities: ['All-inclusive packages'] },
-        { name: 'Town Ball Tavern', description: 'Restaurant with field views', capacity: '150' }
+        { name: 'Town Ball Tavern', description: 'Restaurant with field views', capacity: '150', amenities: ['Full restaurant', 'Field views'] }
       ],
       tips: [
         { section: 'Champions Club', tip: 'Best amenities and views', category: 'experience' },
@@ -1052,7 +1176,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['Summit', 'Surly', 'Fulton', 'Indeed', 'Bauhaus']
-      }
+      },
     },
     parking: {
       lots: [
@@ -1069,7 +1193,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['Blue/Green Line Target Field Station', 'Multiple bus routes'],
         rideShare: '5th Street designated zones',
         bicycle: 'Nice Ride stations throughout'
-      }
+      },
     },
     gates: [
       { name: 'Gate 3', location: 'Home plate plaza', bestFor: ['Main entrance'], openTime: '2 hours before', tip: 'Minnie and Paul statue' },
@@ -1110,31 +1234,41 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
     },
     transportation: {
       address: '1 Twins Way, Minneapolis, MN 55403',
-      publicTransit: ['Target Field Station (Blue/Green Lines)', 'Northstar Commuter Rail'],
-      taxi: 'Taxi stand on 5th Street',
-      rideshare: '5th Street North'
+      publicTransit: {
+        train: [
+          { lines: ['Blue/Green Lines'], station: 'Target Field', walkTime: '0 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Taxi stand on 5th Street'
+      },
+      rideShare: {
+        pickupZone: '5th Street North',
+        dropoffZone: '5th Street North',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2.5 hours before first pitch',
-        recommendedArrival: '90 minutes early'
-      },
-      gatesOpen: '2 hours before (Gate 3), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3 hours',
-      rushHours: ['45 minutes before first pitch', '7th Avenue after game'],
-      tips: [
-        { title: 'Light Rail', description: 'Direct to stadium, avoid parking', category: 'arrival' },
-        { title: 'Target Plaza', description: 'Pre-game gathering spot', category: 'experience' },
-        { title: 'Local Brews', description: 'Great Minnesota beer selection', category: 'food' },
-        { title: 'TC Bear', description: 'Mascot races and antics', category: 'family' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'North Loop',
       description: 'Trendy warehouse district with restaurants and nightlife',
@@ -1194,7 +1328,28 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '36', player: 'Jim Kaat', year: 2022 },
         { number: '42', player: 'Jackie Robinson', year: 1997 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   },
 
   'whitesox': {
@@ -1293,7 +1448,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         wine: true,
         cocktails: true,
         localBreweries: ['Goose Island', 'Revolution', 'Half Acre', 'Lagunitas']
-      }
+      },
     },
     parking: {
       lots: [
@@ -1310,7 +1465,7 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         publicTransit: ['Red Line to Sox-35th Station', 'Multiple bus routes'],
         rideShare: '35th Street designated zones',
         bicycle: 'Divvy stations nearby'
-      }
+      },
     },
     gates: [
       { name: 'Gate 1', location: 'Home plate', bestFor: ['Lower level'], openTime: '2 hours before', tip: 'Main entrance' },
@@ -1359,30 +1514,36 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
           { routes: ['#24', '#35'], stops: ['35th Street'] }
         ]
       },
-      taxi: 'Taxi stand on 35th Street',
-      rideshare: '35th Street'
+      driving: {
+        majorRoutes: ['Local roads'],
+        typicalTraffic: 'Moderate on game days',
+        bestApproach: 'Taxi stand on 35th Street'
+      },
+      rideShare: {
+        pickupZone: '35th Street',
+        dropoffZone: '35th Street',
+        surgePricing: 'Common during games'
+      },
     },
     gameDay: {
-      parkingLots: {
-        open: '2 hours before first pitch',
-        recommendedArrival: '60 minutes early'
-      },
-      gatesOpen: '2 hours before (Gate 1), 90 minutes (others)',
-      alcoholSales: 'End of 7th inning',
-      typicalGameTime: '3 hours',
-      rushHours: ['45 minutes before first pitch', '35th Street after game'],
-      tips: [
-        { title: 'Red Line', description: 'Direct to stadium', category: 'arrival' },
-        { title: 'Exploding Scoreboard', description: 'Home run fireworks show', category: 'experience' },
-        { title: 'Polish Sausage', description: 'South Side tradition', category: 'food' },
-        { title: 'Tailgating', description: 'Popular in lots', category: 'experience' }
-      ],
       typicalSchedule: {
-        gatesOpen: '5:10 PM for 7:10 PM games',
-        firstPitch: '7:10 PM weekdays, 6:10 PM Saturdays, 1:10 PM Sundays',
-        rushHours: ['6:30-7:00 PM', '12:30-1:00 PM for day games']
+        gatesOpen: '90 minutes before first pitch',
+        firstPitch: '7:10 PM weekdays, various weekend times',
+        rushHours: ['30 minutes before first pitch', 'End of game']
+      },
+      tips: [
+        { title: 'Early Arrival', description: 'Gates open 90 minutes before first pitch', category: 'arrival' },
+        { title: 'Sun Protection', description: 'Bring sunscreen for day games', category: 'shade' },
+        { title: 'Local Food', description: 'Try the stadium signature items', category: 'food' },
+        { title: 'Beat Traffic', description: 'Leave early or stay late to avoid congestion', category: 'departure' }
+      ],
+      security: {
+        allowedBags: 'Soft-sided bags under 16"x16"x8"',
+        prohibitedItems: ['Hard coolers', 'Glass bottles', 'Weapons', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: false
       }
-    },
+      },
     neighborhood: {
       name: 'Bridgeport',
       description: 'Historic South Side neighborhood',
@@ -1445,6 +1606,27 @@ export const mlbStadiumGuidesRemainder: Record<string, StadiumGuide> = {
         { number: '56', player: 'Mark Buehrle', year: 2017 },
         { number: '72', player: 'Carlton Fisk', year: 1997 }
       ]
-    }
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere with passionate fans',
+      bestExperiences: [
+        'Pre-game festivities on the plaza',
+        'Signature food and drink options',
+        'Team traditions and chants'
+      ],
+      traditions: [
+        'Seventh inning stretch',
+        'Rally songs and chants',
+        'Mascot interactions'
+      ],
+      music: 'Classic ballpark organ and modern hits',
+      mascot: {
+        name: 'Team Mascot',
+        description: 'Beloved character entertaining fans'
+      },
+      fanGroups: [
+        { name: 'Supporter Section', section: 'Bleachers', description: 'Dedicated fan section' }
+      ]
+    },
   }
 };
