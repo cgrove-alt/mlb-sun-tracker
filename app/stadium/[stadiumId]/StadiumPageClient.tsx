@@ -22,6 +22,7 @@ const StadiumGuide = dynamic(
   }
 );
 
+// Dynamic imports with proper default export handling
 const StadiumVisualizationSection = dynamic(
   () => import('../../../src/components/StadiumVisualizationSection'),
   {
@@ -113,47 +114,33 @@ export default function StadiumPageClient({
       
       {/* AI Seat Recommendations Section */}
       <div className="mt-8" style={{ display: 'block' }}>
-        <Suspense fallback={
-          <div className="text-center p-8">
-            <LoadingSpinner />
-            <p>Loading AI Recommendations...</p>
-          </div>
-        }>
-          {sectionsWithSunData.length > 0 ? (
-            <SeatRecommendationsSection 
-              sections={sectionsWithSunData}
-              stadiumId={stadium.id}
-              gameTime="13:00"
-              gameDate={new Date()}
-            />
-          ) : (
-            <div className="text-center p-8 bg-gray-50 rounded-lg">
-              <div className="text-gray-600 mb-2">
-                ⚠️ AI Recommendations Unavailable
-              </div>
-              <p className="text-sm text-gray-500">
-                Sun exposure data could not be calculated for this stadium. 
-                Basic section information is still available above.
-              </p>
+        {sectionsWithSunData.length > 0 ? (
+          <SeatRecommendationsSection 
+            sections={sectionsWithSunData}
+            stadiumId={stadium.id}
+            gameTime="13:00"
+            gameDate={new Date()}
+          />
+        ) : (
+          <div className="text-center p-8 bg-gray-50 rounded-lg">
+            <div className="text-gray-600 mb-2">
+              ⚠️ AI Recommendations Unavailable
             </div>
-          )}
-        </Suspense>
+            <p className="text-sm text-gray-500">
+              Sun exposure data could not be calculated for this stadium. 
+              Basic section information is still available above.
+            </p>
+          </div>
+        )}
       </div>
 
       {/* 3D Visualization Section - Always render */}
       <div className="mt-8" style={{ display: 'block' }}>
-        <Suspense fallback={
-          <div className="text-center p-8">
-            <LoadingSpinner />
-            <p>Loading 3D Visualization...</p>
-          </div>
-        }>
-          <StadiumVisualizationSection 
-            stadium={stadium}
-            defaultDate={new Date()}
-            defaultTime="13:00"
-          />
-        </Suspense>
+        <StadiumVisualizationSection 
+          stadium={stadium}
+          defaultDate={new Date()}
+          defaultTime="13:00"
+        />
       </div>
     </>
   );
