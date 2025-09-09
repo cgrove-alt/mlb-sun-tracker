@@ -76,7 +76,7 @@ export const mlbStadiumGuidesExtended: Record<string, StadiumGuide> = {
       standingRoom: ['The Corner Bar', 'District Ticket Window'],
       partyAreas: [
         { name: 'Budweiser Bow Wow Seats', capacity: '75', amenities: ['Group seating', 'All-inclusive food'] },
-        { name: 'Sugardale Club', description: 'Left field group area', capacity: '150' }
+        { name: 'Sugardale Club', description: 'Left field group area', capacity: '150', amenities: ['Group seating', 'Food packages'] }
       ],
       tips: [
         { section: 'Club 1-20', tip: 'Best shade and amenities combination', category: 'shade' },
