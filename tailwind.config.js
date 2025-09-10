@@ -9,31 +9,31 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Ink color palette (grays/blacks)
+        // Ink color palette (grays/blacks) - matching existing CSS variables
         ink: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
           700: '#374151',
-          800: '#1f2937',
-          900: '#111827',
+          800: '#1F2937',
+          900: '#0B1220', // Darkest for high contrast
         },
-        // Primary color palette (blues)
+        // Primary color palette (blues) - matching brand colors
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#3B82F6', // Main brand blue
+          600: '#2563EB',
+          700: '#1D4ED8',
+          800: '#1E40AF',
+          900: '#0F3E7C', // Deep blue
         },
       },
       animation: {
