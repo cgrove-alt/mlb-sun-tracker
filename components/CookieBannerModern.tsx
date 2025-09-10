@@ -38,7 +38,7 @@ const CookieBannerModern: React.FC = () => {
         
         if (cookieValue) {
           const consent = JSON.parse(decodeURIComponent(cookieValue.split('=')[1]));
-          console.log('[CookieBanner] Found cookie consent:', consent);
+          // Found cookie consent
           return consent;
         }
         
@@ -46,11 +46,11 @@ const CookieBannerModern: React.FC = () => {
         const localConsent = localStorage.getItem('cookie_consent');
         if (localConsent) {
           const consent = JSON.parse(localConsent);
-          console.log('[CookieBanner] Found localStorage consent:', consent);
+          // Found localStorage consent
           return consent;
         }
         
-        console.log('[CookieBanner] No consent found');
+        // No consent found
         return null;
       } catch (e) {
         console.error('[CookieBanner] Error checking consent:', e);
@@ -64,7 +64,7 @@ const CookieBannerModern: React.FC = () => {
     const gpcApplied = localStorage.getItem('gpc_auto_applied') === 'true';
     
     if (isGPCEnabled && !gpcApplied && !existingConsent) {
-      console.log('[GPC] Auto-applying privacy preferences due to GPC signal');
+      // Auto-applying privacy preferences due to GPC signal
       
       const gpcPreferences = {
         necessary: true,
@@ -90,9 +90,9 @@ const CookieBannerModern: React.FC = () => {
       
     } else if (!existingConsent) {
       // Show banner if no consent stored (regardless of GPC)
-      console.log('[CookieBanner] No consent found, showing banner in 1 second');
+      // No consent found, showing banner in 1 second
       setTimeout(() => {
-        console.log('[CookieBanner] Setting showBanner to true');
+        // Setting showBanner to true
         setShowBanner(true);
       }, 1000);
     } else {
@@ -100,7 +100,7 @@ const CookieBannerModern: React.FC = () => {
       try {
         setPreferences(existingConsent);
         applyCookiePreferences(existingConsent);
-        console.log('[CookieBanner] Applied existing preferences');
+        // Applied existing preferences
       } catch (e) {
         console.error('Error loading preferences:', e);
         setTimeout(() => setShowBanner(true), 1000);
@@ -213,7 +213,7 @@ const CookieBannerModern: React.FC = () => {
     );
   }
 
-  console.log('[CookieBanner] Render state:', { showBanner, showPreferences });
+  // Render state checked
   
   if (!showBanner && !showPreferences) return null;
 
