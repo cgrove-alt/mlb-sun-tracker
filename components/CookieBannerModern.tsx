@@ -28,34 +28,42 @@ const CookieBannerModern: React.FC = () => {
   const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
 
   useEffect(() => {
-    const areCookiesEnabled = cookiesEnabled();
-    setCookiesAvailable(areCookiesEnabled);
-    
-    let storedConsent = areCookiesEnabled ? cookieConsent.getConsent() : null;
-    let gpcAutoApplied = areCookiesEnabled ? cookieConsent.isGPCHonored() : false;
-    
-    if (!storedConsent) {
-      const localStorageConsent = localStorage.getItem('cookie_consent');
-      if (localStorageConsent) {
-        try {
-          storedConsent = JSON.parse(localStorageConsent);
-          if (cookieConsent.setConsent(storedConsent)) {
-            console.log('[Cookie Migration] Migrated consent from localStorage to cookie');
-          }
-        } catch (e) {
-          console.error('Error migrating cookie consent:', e);
+    // Check for existing consent in cookies or localStorage
+    const checkForConsent = () => {
+      try {
+        // Check cookies first
+        const cookieValue = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('cookie_consent='));
+        
+        if (cookieValue) {
+          const consent = JSON.parse(decodeURIComponent(cookieValue.split('=')[1]));
+          console.log('[CookieBanner] Found cookie consent:', consent);
+          return consent;
         }
+        
+        // Check localStorage as fallback
+        const localConsent = localStorage.getItem('cookie_consent');
+        if (localConsent) {
+          const consent = JSON.parse(localConsent);
+          console.log('[CookieBanner] Found localStorage consent:', consent);
+          return consent;
+        }
+        
+        console.log('[CookieBanner] No consent found');
+        return null;
+      } catch (e) {
+        console.error('[CookieBanner] Error checking consent:', e);
+        return null;
       }
-    }
+    };
     
-    if (!gpcAutoApplied) {
-      gpcAutoApplied = localStorage.getItem('gpc_auto_applied') === 'true';
-      if (gpcAutoApplied) {
-        cookieConsent.setGPCHonored(true);
-      }
-    }
+    const existingConsent = checkForConsent();
     
-    if (isGPCEnabled && !gpcAutoApplied && !storedConsent) {
+    // Check if GPC was already applied
+    const gpcApplied = localStorage.getItem('gpc_auto_applied') === 'true';
+    
+    if (isGPCEnabled && !gpcApplied && !existingConsent) {
       console.log('[GPC] Auto-applying privacy preferences due to GPC signal');
       
       const gpcPreferences = {
@@ -80,14 +88,19 @@ const CookieBannerModern: React.FC = () => {
       setShowGPCNotice(true);
       setTimeout(() => setShowGPCNotice(false), 5000);
       
-    } else if (!storedConsent) {
+    } else if (!existingConsent) {
       // Show banner if no consent stored (regardless of GPC)
-      setTimeout(() => setShowBanner(true), 1000);
-    } else if (storedConsent) {
+      console.log('[CookieBanner] No consent found, showing banner in 1 second');
+      setTimeout(() => {
+        console.log('[CookieBanner] Setting showBanner to true');
+        setShowBanner(true);
+      }, 1000);
+    } else {
+      // Apply existing preferences
       try {
-        const savedPrefs = typeof storedConsent === 'string' ? JSON.parse(storedConsent) : storedConsent;
-        setPreferences(savedPrefs);
-        applyCookiePreferences(savedPrefs);
+        setPreferences(existingConsent);
+        applyCookiePreferences(existingConsent);
+        console.log('[CookieBanner] Applied existing preferences');
       } catch (e) {
         console.error('Error loading preferences:', e);
         setTimeout(() => setShowBanner(true), 1000);
@@ -200,6 +213,8 @@ const CookieBannerModern: React.FC = () => {
     );
   }
 
+  console.log('[CookieBanner] Render state:', { showBanner, showPreferences });
+  
   if (!showBanner && !showPreferences) return null;
 
   return (
