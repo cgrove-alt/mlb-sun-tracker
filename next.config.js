@@ -3,9 +3,6 @@ const nextConfig = {
   // Enable React strict mode for better debugging
   reactStrictMode: true,
   
-  // Use SWC for faster builds
-  swcMinify: true,
-  
   // Optimize production builds
   compiler: {
     // Remove console logs in production
@@ -81,7 +78,6 @@ const nextConfig = {
   
   // Experimental features for better performance
   experimental: {
-    optimizeCss: true,
     optimizePackageImports: ['three'],
   },
   

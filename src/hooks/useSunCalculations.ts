@@ -60,7 +60,9 @@ export function useSunCalculations({
             // Limit cache size
             if (calculationCache.size > 50) {
               const firstKey = calculationCache.keys().next().value;
-              calculationCache.delete(firstKey);
+              if (firstKey !== undefined) {
+                calculationCache.delete(firstKey);
+              }
             }
             
             setData(payload);
