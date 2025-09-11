@@ -6,6 +6,17 @@
   overflow: visible !important;
 }
 
+/* Strong, page-scoped neutralizers for main sections */
+:global(main .section),
+:global(main [data-test="overview-section"]),
+:global(main .guide-section) {
+  margin-top: 0 !important;
+  transform: none !important;
+  top: auto !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
 /* Kill ALL negative margins everywhere */
 .killOverhang *,
 .killOverhang *::before,

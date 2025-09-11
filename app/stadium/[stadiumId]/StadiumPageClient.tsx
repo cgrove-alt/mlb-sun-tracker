@@ -3,8 +3,8 @@
 import dynamic from 'next/dynamic';
 import { Suspense, useMemo } from 'react';
 import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
-import { calculateDetailedSectionSunExposure, getSunPosition } from '../../../src/utils/sunCalculations';
-import { MLB_STADIUMS } from '../../../src/data/stadiums';
+import { getSunPosition } from '../../../src/utils/sunCalculations';
+import { useSunCalculations } from '../../../src/hooks/useSunCalculations';
 
 const ComprehensiveStadiumGuide = dynamic(
   () => import('../../../src/components/ComprehensiveStadiumGuide'),
@@ -61,40 +61,29 @@ export default function StadiumPageClient({
     hasGuide: !!guide
   });
 
-  // Calculate sections with sun exposure data for recommendations
-  const sectionsWithSunData = useMemo(() => {
-    try {
-      // Find the full stadium data for calculations
-      const fullStadium = MLB_STADIUMS.find(s => s.id === stadium.id);
-      if (!fullStadium) {
-        console.error('Stadium not found for sun calculations:', stadium.id);
-        return [];
-      }
-
-      // Calculate sun position for current time (13:00 default game time)
-      const gameDateTime = new Date();
-      gameDateTime.setHours(13, 0, 0, 0); // 1:00 PM game time
-      
-      const sunPosition = getSunPosition(
-        gameDateTime, 
-        fullStadium.latitude, 
-        fullStadium.longitude, 
-        fullStadium.timezone
-      );
-
-      // Calculate detailed sun exposure for all sections
-      const sectionsWithSun = calculateDetailedSectionSunExposure(
-        fullStadium, 
-        sunPosition
-      );
-
-      console.log('Calculated sun data for', sectionsWithSun.length, 'sections');
-      return sectionsWithSun;
-    } catch (error) {
-      console.error('Failed to calculate sun data:', error);
-      return [];
-    }
-  }, [stadium.id]); // Only recalculate if stadium changes
+  // Calculate sun position once
+  const sunPosition = useMemo(() => {
+    const gameDateTime = new Date();
+    gameDateTime.setHours(13, 0, 0, 0); // 1:00 PM game time
+    
+    return getSunPosition(
+      gameDateTime,
+      stadium.latitude || 40.7128,
+      stadium.longitude || -74.0060,
+      stadium.timezone || 'America/New_York'
+    );
+  }, [stadium.id]);
+  
+  // Use Web Worker for sun calculations
+  const { 
+    data: sectionsWithSunData, 
+    isLoading: isCalculating 
+  } = useSunCalculations({
+    stadium,
+    sunPosition,
+    sections,
+    enabled: !!sections.length,
+  });
 
   return (
     <>
@@ -121,7 +110,11 @@ export default function StadiumPageClient({
       
       {/* AI Seat Recommendations Section - Outside Suspense */}
       <div className="mt-8" style={{ display: 'block' }}>
-        {sectionsWithSunData.length > 0 ? (
+        {isCalculating ? (
+          <div className="flex justify-center items-center p-8">
+            <LoadingSpinner message="Calculating sun exposure..." />
+          </div>
+        ) : sectionsWithSunData && sectionsWithSunData.length > 0 ? (
           <SeatRecommendationsSection 
             sections={sectionsWithSunData}
             stadiumId={stadium.id}

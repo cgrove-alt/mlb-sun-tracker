@@ -47,6 +47,13 @@
   line-height: 1.1;
   color: var(--ink-900, #0f172a); /* ensure not using white, dark fallback */
   font-size: clamp(28px, 3vw, 44px);
+  
+  /* Kill any inherited text effects */
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important;
+  -webkit-text-fill-color: currentColor !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
 }
 
 /* Lighter secondary line */

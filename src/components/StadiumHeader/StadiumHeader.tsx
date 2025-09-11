@@ -32,7 +32,7 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
         </nav>
       )}
 
-      <h1 className={styles.title}>{name}</h1>
+      <h1 className={styles.title} data-test="stadium-h1">{name}</h1>
 
       {team && <p className={styles.subtitle}>{team}</p>}
 

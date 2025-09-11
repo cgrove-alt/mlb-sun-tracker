@@ -90,7 +90,7 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
         </nav>
 
         <header className="stadium-header">
-          <h1>Shaded Seats at {stadium.name}</h1>
+          <h2 className="stadium-title">Shaded Seats at {stadium.name}</h2>
           <p className="stadium-subtitle">Find the Best Seats in the Shade for {stadium.team} Games</p>
           <div className="stadium-meta">
             <span className="team">{stadium.team}</span>
