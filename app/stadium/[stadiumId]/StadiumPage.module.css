@@ -30,6 +30,7 @@
   margin: 0;
   position: relative;
   z-index: 1;
+  isolation: isolate;  /* Prevent style bleeding */
 }
 
 /* Content wrapper for guide */
