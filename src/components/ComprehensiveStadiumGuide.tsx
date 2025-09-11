@@ -11,6 +11,7 @@ import {
   CloudIcon, 
   DropletIcon 
 } from './Icons';
+import StadiumHeader from './StadiumHeader/StadiumHeader';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -34,30 +35,14 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
 
   return (
     <div className="stadium-guide comprehensive">
-      <nav className="breadcrumb">
-        <Link href="/">Home</Link>
-        <span> › </span>
-        <Link href="/stadiums">Stadiums</Link>
-        <span> › </span>
-        <span>{guide.name}</span>
-      </nav>
-
-      <header className="stadium-header">
-        <h1>{guide.name}</h1>
-        <p className="stadium-subtitle">{guide.team}</p>
-        <div className="stadium-meta">
-          <span className="location">
-            <MapPinIcon size={16} />
-            {guide.neighborhood.name}
-          </span>
-          <span className="capacity">
-            Capacity: {guide.capacity.toLocaleString()}
-          </span>
-          <span className="opened">
-            Opened: {guide.opened}
-          </span>
-        </div>
-      </header>
+      <StadiumHeader
+        name={guide.name}
+        team={guide.team}
+        capacity={guide.capacity}
+        opened={guide.opened}
+        neighborhood={guide.neighborhood.name}
+        showBreadcrumb={true}
+      />
 
       {/* Overview Section */}
       <section className="guide-section">

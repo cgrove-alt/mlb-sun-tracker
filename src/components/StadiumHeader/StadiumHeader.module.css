@@ -1,0 +1,112 @@
+/* Stadium Header Module Styles */
+
+.headerWrap {
+  display: grid;
+  gap: var(--guide-spacing-sm, 8px);
+  padding-block: var(--guide-spacing-lg, 24px);
+  width: 100%;
+}
+
+/* Flatten the breadcrumb - no container styling */
+.breadcrumb {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--ink-700, #334155);
+  font-size: clamp(12px, 1.1vw, 14px);
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb a {
+  color: var(--accent-600, #1D4ED8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-700, #1E40AF);
+  text-decoration: underline;
+}
+
+.breadcrumb span {
+  color: var(--ink-700, #334155);
+}
+
+/* Strong but not oversized title */
+.title {
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink-900, #0B1220);
+  font-size: clamp(28px, 3vw, 44px);
+}
+
+/* Lighter secondary line */
+.subtitle {
+  margin: 2px 0 0 0;
+  font-weight: 500;
+  color: var(--ink-700, #334155);
+  line-height: 1.3;
+  font-size: clamp(16px, 1.6vw, 22px);
+}
+
+/* Stadium metadata */
+.stadiumMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--ink-700, #334155);
+}
+
+.stadiumMeta span {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* Spacer between header and first content */
+.headerSpacer {
+  height: var(--guide-spacing-md, 16px);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .headerWrap {
+    padding-block: var(--guide-spacing-md, 16px);
+    gap: var(--guide-spacing-xs, 4px);
+  }
+  
+  .title {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  
+  .subtitle {
+    font-size: clamp(14px, 4.2vw, 18px);
+  }
+  
+  .breadcrumb {
+    font-size: 12px;
+  }
+  
+  .stadiumMeta {
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* If any parent uses Card styling, neutralize it */
+.breadcrumb :global(.card),
+.breadcrumb :global(.Card) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
