@@ -414,3 +414,48 @@ The MLB sun tracker now features:
 ```
 
 All features implemented with **no shortcuts**, following CLAUDE.md guidelines for simple, incremental changes. Every calculation validated against real-world data.
+
+---
+
+# Stadium Guide Typography Fix
+
+## Completed Tasks
+✅ Analyze current typography styles in CSS files
+✅ Check StadiumGuide.css for missing heading styles  
+✅ Add proper h1, h2, h3 typography styles for comprehensive guide
+✅ Test formatting across all stadium guides
+✅ Write review summary
+
+## Review
+
+### Problem
+The stadium guide titles (like "Rogers Centre" and "Overview") were not displaying with proper formatting. They appeared as plain text without heading styles.
+
+### Root Cause
+The ComprehensiveStadiumGuide component uses the class `stadium-guide comprehensive`, but the CSS file had no typography styles specifically targeting headings within this component structure. The existing h1 styles only targeted `.stadium-header h1` which didn't match the comprehensive guide's DOM structure.
+
+### Solution
+Added comprehensive typography styles to StadiumGuide.css specifically for the `.stadium-guide.comprehensive` component:
+
+1. **Main Stadium Title (h1)**: Large, bold heading with proper sizing (2rem to 3rem)
+2. **Section Headings (h2)**: Medium-sized headings with bottom border for visual separation
+3. **Subsection Headings (h3-h5)**: Progressively smaller headings with appropriate hierarchy
+4. **Stadium Header Section**: Added background, padding, and shadow for better visual structure
+5. **Stadium Meta Information**: Proper flex layout for capacity, location, and opening date
+
+### Changes Made
+- Added complete typography hierarchy for `.stadium-guide.comprehensive` headings
+- Added styling for the stadium header section with proper background and spacing
+- Ensured section headings within guide sections have proper overrides
+- Maintained backward compatibility with non-comprehensive guide styles
+- All heading sizes use responsive `clamp()` functions for mobile/desktop adaptation
+
+### Result
+All stadium guide pages now display properly formatted titles and section headings with:
+- Clear visual hierarchy
+- Professional typography
+- Responsive sizing
+- Consistent color scheme
+- Proper spacing and margins
+
+Build tested successfully - no errors or warnings.
