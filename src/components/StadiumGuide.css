@@ -1537,14 +1537,20 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 /* Comprehensive Stadium Guide Styles */
 .stadium-guide.comprehensive {
   background: linear-gradient(to bottom, #f8f9fa, #ffffff);
-  padding-top: 5rem; /* Account for fixed nav (64px) + extra space */
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-top: 2rem; /* Reduced since wrapper already accounts for nav */
+  padding-left: 0; /* Remove double padding - wrapper already has padding */
+  padding-right: 0; /* Remove double padding - wrapper already has padding */
   padding-bottom: 2rem;
   min-height: 100vh;
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: 1200px; /* Constrain max width for better readability */
+  margin: 0 auto; /* Center the content */
   overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Breadcrumb in comprehensive guide */
+.stadium-guide.comprehensive .breadcrumb {
+  margin: 0 1rem 2rem 1rem; /* Add horizontal margin to align with content */
 }
 
 /* Typography for Comprehensive Stadium Guide Headers */
@@ -1552,8 +1558,9 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   background: linear-gradient(135deg, #ffffff, #f8fafc);
   padding: 2rem;
   border-radius: 12px;
-  margin-bottom: 2rem;
+  margin: 0 1rem 2rem 1rem; /* Add horizontal margin to match sections */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center; /* Center all text content in header */
 }
 
 .stadium-guide.comprehensive .stadium-header h1 {
@@ -1581,6 +1588,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   margin-top: 1rem;
   font-size: 0.95rem;
   color: #607d8b;
+  justify-content: center; /* Center the meta items */
 }
 
 .stadium-guide.comprehensive .stadium-meta span {
@@ -1630,7 +1638,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
   border-radius: 16px;
   padding: 2rem;
-  margin-bottom: 2.5rem;
+  margin: 0 1rem 2.5rem 1rem; /* Add horizontal margin since container padding removed */
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden; /* Prevent content overflow */
