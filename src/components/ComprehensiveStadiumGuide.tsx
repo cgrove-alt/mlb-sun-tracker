@@ -22,8 +22,12 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
   
   if (!guide) {
     return (
-      <div className="stadium-guide">
-        <p>Stadium guide not found for ID: {stadiumId}</p>
+      <div className="stadium-guide comprehensive">
+        <div className="guide-section">
+          <h2>Stadium Guide Not Available</h2>
+          <p>We're still working on the comprehensive guide for this stadium.</p>
+          <p className="text-sm text-gray-600 mt-2">Stadium ID: {stadiumId}</p>
+        </div>
       </div>
     );
   }

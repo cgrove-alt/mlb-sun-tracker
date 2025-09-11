@@ -1,10 +1,11 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
+import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import StickyShadeBar from '../../../components/StickyShadeBar';
@@ -90,7 +91,25 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
 
 export default async function StadiumPage({ params }: StadiumPageProps) {
   const { stadiumId } = await params;
-  const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+  
+  // Check if this slug needs redirect to canonical ID
+  if (needsRedirect(stadiumId)) {
+    const canonicalId = getCanonicalStadiumId(stadiumId);
+    if (canonicalId) {
+      redirect(`/stadium/${canonicalId}`);
+    }
+  }
+  
+  // Try to find stadium by ID or by using slug mapping
+  let stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+  
+  // If not found directly, try using the slug mapping
+  if (!stadium) {
+    const canonicalId = getCanonicalStadiumId(stadiumId);
+    if (canonicalId) {
+      stadium = MLB_STADIUMS.find(s => s.id === canonicalId);
+    }
+  }
   
   if (!stadium) {
     notFound();
@@ -98,7 +117,8 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
 
   const sections = getStadiumSections(stadium.id);
   const amenities = getStadiumAmenities(stadium.id);
-  const guide = getStadiumGuide(stadiumId);
+  // Use the stadium's canonical ID for guide lookup
+  const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
 
   // Structured data for better SEO
   const jsonLd = {
