@@ -21,6 +21,18 @@ interface ComprehensiveStadiumGuideProps {
 const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId }) => {
   const guide = getStadiumGuide(stadiumId);
   
+  // Debug logging
+  if (typeof window !== 'undefined' && guide) {
+    console.log('ComprehensiveStadiumGuide data:', {
+      stadiumId,
+      name: guide.name,
+      team: guide.team,
+      opened: guide.opened,
+      capacity: guide.capacity,
+      neighborhood: guide.neighborhood?.name
+    });
+  }
+  
   if (!guide) {
     return (
       <div className="stadium-guide comprehensive">

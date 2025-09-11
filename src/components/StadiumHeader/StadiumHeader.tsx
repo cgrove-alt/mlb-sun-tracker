@@ -20,50 +20,93 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
   neighborhood,
   showBreadcrumb = true 
 }) => {
+  // Debug logging to verify props
+  if (typeof window !== 'undefined') {
+    console.log('StadiumHeader props:', { name, team, capacity, opened, neighborhood });
+  }
+
+  // Ensure clean string values
+  const cleanName = String(name || '').trim();
+  const cleanTeam = team ? String(team).trim() : undefined;
+  const cleanNeighborhood = neighborhood ? String(neighborhood).trim() : undefined;
+  const cleanOpened = opened ? String(opened).trim() : undefined;
+
   return (
     <header className={styles.headerWrap} data-stadium-header="true">
       {showBreadcrumb && (
-        <nav aria-label="Breadcrumb" className={styles.breadcrumb}>
+        <nav aria-label="Breadcrumb" className={styles.breadcrumb} key="breadcrumb">
           <Link href="/">Home</Link>
           <span aria-hidden="true">›</span>
           <Link href="/stadiums">Stadiums</Link>
           <span aria-hidden="true">›</span>
-          <span>{name}</span>
+          <span>{cleanName}</span>
         </nav>
       )}
 
-      <h1 className={styles.title} data-test="stadium-h1" aria-label={`${name} stadium`}>
-        {name}
+      {/* H1 - ONLY stadium name, nothing else */}
+      <h1 
+        className={styles.title} 
+        data-test="stadium-h1" 
+        aria-label={`${cleanName} stadium`}
+        key="title"
+      >
+        {cleanName}
       </h1>
 
-      {team && (
-        <p className={styles.subtitle} aria-label={`Home of ${team}`}>
-          {team}
+      {/* Team subtitle - completely separate element */}
+      {cleanTeam && (
+        <p 
+          className={styles.subtitle} 
+          aria-label={`Home of ${cleanTeam}`}
+          key="team"
+        >
+          {cleanTeam}
         </p>
       )}
 
-      {(neighborhood || capacity || opened) && (
-        <div className={styles.stadiumMeta} role="list" aria-label="Stadium information">
-          {neighborhood && (
-            <span className={styles.metaItem} role="listitem" aria-label={`Location: ${neighborhood}`}>
+      {/* Stadium metadata - completely separate container */}
+      {(cleanNeighborhood || capacity || cleanOpened) && (
+        <div 
+          className={styles.stadiumMeta} 
+          role="list" 
+          aria-label="Stadium information"
+          key="metadata"
+        >
+          {cleanNeighborhood && (
+            <span 
+              className={styles.metaItem} 
+              role="listitem" 
+              aria-label={`Location: ${cleanNeighborhood}`}
+              key="location"
+            >
               <MapPinIcon size={16} aria-hidden="true" />
-              {neighborhood}
+              <span>{cleanNeighborhood}</span>
             </span>
           )}
           {capacity && (
-            <span className={styles.metaItem} role="listitem" aria-label={`Capacity: ${capacity.toLocaleString()}`}>
-              Capacity: {capacity.toLocaleString()}
+            <span 
+              className={styles.metaItem} 
+              role="listitem" 
+              aria-label={`Capacity: ${capacity.toLocaleString()}`}
+              key="capacity"
+            >
+              <span>Capacity: {capacity.toLocaleString()}</span>
             </span>
           )}
-          {opened && (
-            <span className={styles.metaItem} role="listitem" aria-label={`Opened in ${opened}`}>
-              Opened: {opened}
+          {cleanOpened && (
+            <span 
+              className={styles.metaItem} 
+              role="listitem" 
+              aria-label={`Opened in ${cleanOpened}`}
+              key="opened"
+            >
+              <span>Opened: {cleanOpened}</span>
             </span>
           )}
         </div>
       )}
 
-      <div className={styles.headerSpacer} aria-hidden="true" />
+      <div className={styles.headerSpacer} aria-hidden="true" key="spacer" />
     </header>
   );
 };
