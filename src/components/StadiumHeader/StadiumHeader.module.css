@@ -1,8 +1,7 @@
 /* Stadium Header Module Styles */
 
 .headerWrap {
-  position: relative;
-  z-index: 2;               /* keep header above normal flow items */
+  position: static;         /* static positioning - no z-index games */
   display: grid;
   gap: var(--guide-spacing-sm, 8px);
   padding-block: var(--guide-spacing-lg, 24px);

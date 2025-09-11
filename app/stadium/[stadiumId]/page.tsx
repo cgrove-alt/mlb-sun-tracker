@@ -9,6 +9,8 @@ import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadium
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import StickyShadeBar from '../../../components/StickyShadeBar';
+import styles from './StadiumPage.module.css';
+import killOverhang from './KillOverhang.module.css';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -190,7 +192,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   const preferSSR = process.env.NODE_ENV === 'production';
 
   return (
-    <>
+    <div className={`${styles.pageContainer} ${killOverhang.killOverhang}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -202,26 +204,30 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         suppressHydrationWarning
       />
       
-      {/* Sticky shade calculator bar - wrapped in Suspense for useSearchParams */}
-      <Suspense fallback={null}>
-        <StickyShadeBar 
-          stadiumName={stadium.name}
-          stadiumId={stadium.id}
-        />
-      </Suspense>
+      {/* Sticky shade calculator bar in grid */}
+      <div className={styles.stickyContainer}>
+        <Suspense fallback={null}>
+          <StickyShadeBar 
+            stadiumName={stadium.name}
+            stadiumId={stadium.id}
+          />
+        </Suspense>
+      </div>
       
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
-        <StadiumPageSSR
-          stadium={stadium}
-          sections={sections}
-          amenities={amenities}
-          guide={guide}
-        />
+        <div className={styles.contentSection}>
+          <StadiumPageSSR
+            stadium={stadium}
+            sections={sections}
+            amenities={amenities}
+            guide={guide}
+          />
+        </div>
       </noscript>
       
-      {/* Progressive enhancement with client features */}
-      <div suppressHydrationWarning className="has-sticky-shade-bar">
+      {/* Main content in grid */}
+      <div className={styles.contentWrapper} suppressHydrationWarning>
         <StadiumPageClient 
           stadium={stadium}
           sections={sections}
@@ -230,6 +236,6 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           useComprehensive={!!guide}
         />
       </div>
-    </>
+    </div>
   );
 }

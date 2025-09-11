@@ -100,11 +100,9 @@ div.guide-page.stadium-guide > * {
 
 @keyframes slideDown {
   from {
-    transform: translateY(-100%);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
     opacity: 1;
   }
 }
@@ -777,7 +775,6 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 
 .section-card:hover {
   border-color: #2196f3;
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
 }
 
@@ -1128,7 +1125,6 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 
 .cta-button:hover {
   background: #e3f2fd;
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -1164,7 +1160,6 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 
 .resource-card:hover {
   border-color: #2196f3;
-  transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
 }
 
@@ -1604,19 +1599,16 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   transition: box-shadow 0.2s ease;
   position: relative;
   z-index: 1; /* Below header which is z-index: 2 */
-  transform: none !important; /* Prevent any transform that could cause overlap */
 }
 
 .guide-section:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
-  /* Removed transform to prevent upward movement on hover */
 }
 
 /* Ensure first section has proper spacing from header */
 .guide-section:first-child,
 .stadium-guide.comprehensive > .guide-section:first-of-type {
   margin-top: var(--guide-spacing-lg, 20px) !important;
-  transform: none !important;
 }
 
 /* General card overlap prevention */
@@ -1627,7 +1619,6 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   position: relative;
   z-index: 1;
   margin-top: var(--guide-spacing-lg, 20px) !important;
-  transform: none !important;
 }
 
 /* Override for sections within comprehensive guide */
@@ -1719,7 +1710,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 }
 
 .weather-month:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .weather-month h4 {
@@ -1931,7 +1922,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   position: absolute;
   left: -6px;
   top: 50%;
-  transform: translateY(-50%);
+  margin-top: -5px; /* Half of height for vertical centering */
   width: 10px;
   height: 10px;
   background: #2196f3;
