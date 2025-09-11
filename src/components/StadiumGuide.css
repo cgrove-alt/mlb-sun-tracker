@@ -1548,27 +1548,36 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 
 /* Breadcrumb in comprehensive guide */
 .stadium-guide.comprehensive .breadcrumb {
-  margin: 0 0 2rem 0; /* Remove horizontal margin, use container padding */
+  margin: 0 0 0.5rem 0; /* Reduced bottom margin to bring title closer */
 }
 
 /* Typography for Comprehensive Stadium Guide Headers */
 .stadium-guide.comprehensive .stadium-header {
-  background: linear-gradient(135deg, #ffffff, #f8fafc);
-  padding: 2rem;
-  border-radius: 12px;
-  margin: 0 0 2rem 0; /* Remove horizontal margin, use container padding */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  text-align: center; /* Center all text content in header */
+  /* Remove container box - no background, padding, border, or shadow */
+  margin: 0 0 2rem 0; /* Keep bottom margin for spacing to next section */
+  text-align: left; /* Default left alignment for desktop */
 }
 
 .stadium-guide.comprehensive .stadium-header h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 800;
-  color: #1a237e;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.1;
+  font-size: 2rem; /* Desktop size */
+  font-weight: 700;
+  color: var(--text-primary, #1a1a1a); /* Use CSS variable with fallback */
+  margin: 1rem 0 1.5rem 0; /* 1rem top, 1.5rem bottom */
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-align: left; /* Left align on desktop */
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .stadium-guide.comprehensive .stadium-header {
+    text-align: center; /* Center alignment on mobile */
+  }
+  
+  .stadium-guide.comprehensive .stadium-header h1 {
+    font-size: 1.5rem; /* Mobile size */
+    text-align: center; /* Center align on mobile */
+  }
 }
 
 .stadium-guide.comprehensive .stadium-subtitle {
@@ -1577,6 +1586,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   color: #546e7a;
   margin: 0 0 1rem 0;
   letter-spacing: -0.01em;
+  text-align: left; /* Left align on desktop */
 }
 
 .stadium-guide.comprehensive .stadium-meta {
@@ -1586,7 +1596,18 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   margin-top: 1rem;
   font-size: 0.95rem;
   color: #607d8b;
-  justify-content: center; /* Center the meta items */
+  justify-content: flex-start; /* Left align the meta items on desktop */
+}
+
+/* Update mobile styles for subtitle and meta */
+@media (max-width: 768px) {
+  .stadium-guide.comprehensive .stadium-subtitle {
+    text-align: center; /* Center on mobile */
+  }
+  
+  .stadium-guide.comprehensive .stadium-meta {
+    justify-content: center; /* Center meta items on mobile */
+  }
 }
 
 .stadium-guide.comprehensive .stadium-meta span {
