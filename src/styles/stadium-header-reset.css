@@ -17,9 +17,7 @@ header.stadium-header,
   
   /* Reset any problematic styles */
   position: relative !important;
-  z-index: 1 !important;
-  isolation: isolate !important;
-  contain: layout style !important;
+  overflow: visible !important;
 }
 
 /* Force H1 elements to be completely separate */
@@ -63,9 +61,8 @@ h1[data-test="stadium-h1"] {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   
-  /* Contain the content */
-  contain: layout style !important;
-  content-visibility: auto !important;
+  /* Ensure visibility */
+  overflow: visible !important;
 }
 
 /* Force P elements (subtitle) to be separate */

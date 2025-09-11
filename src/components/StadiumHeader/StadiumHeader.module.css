@@ -9,9 +9,6 @@
   padding: 24px !important;
   width: 100% !important;
   overflow: visible !important;
-  isolation: isolate !important;
-  z-index: 1 !important;
-  contain: layout style !important;
   box-sizing: border-box !important;
 }
 
@@ -95,10 +92,7 @@
   /* Ensure minimum height */
   min-height: 50px !important;
   height: auto !important;
-  
-  /* Content control */
-  contain: layout style !important;
-  content-visibility: auto !important;
+  overflow: visible !important;
 }
 
 /* Subtitle - COMPLETELY SEPARATE */
@@ -249,8 +243,8 @@
 .headerWrap > p,
 .headerWrap > div,
 .headerWrap > nav {
-  isolation: isolate !important;
-  contain: layout !important;
+  position: relative !important;
+  overflow: visible !important;
 }
 
 /* Emergency override for any lingering issues */
