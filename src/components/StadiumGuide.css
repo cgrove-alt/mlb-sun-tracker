@@ -241,7 +241,7 @@ div.guide-page.stadium-guide > * {
   display: flex;
   gap: var(--guide-spacing-lg);
   position: relative;
-  background: #f8f9fa;
+  /* Removed background - let comprehensive guide handle its own background */
   min-height: 100vh;
   container-type: inline-size;
   container-name: guide-wrapper;
@@ -1537,20 +1537,18 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 /* Comprehensive Stadium Guide Styles */
 .stadium-guide.comprehensive {
   background: linear-gradient(to bottom, #f8f9fa, #ffffff);
-  padding-top: 2rem; /* Reduced since wrapper already accounts for nav */
-  padding-left: 0; /* Remove double padding - wrapper already has padding */
-  padding-right: 0; /* Remove double padding - wrapper already has padding */
-  padding-bottom: 2rem;
+  padding: 2rem 1.5rem; /* Add consistent padding all around */
   min-height: 100vh;
   box-sizing: border-box;
   max-width: 1200px; /* Constrain max width for better readability */
   margin: 0 auto; /* Center the content */
   overflow-x: hidden; /* Prevent horizontal overflow */
+  border-radius: 8px; /* Add subtle rounding to the container */
 }
 
 /* Breadcrumb in comprehensive guide */
 .stadium-guide.comprehensive .breadcrumb {
-  margin: 0 1rem 2rem 1rem; /* Add horizontal margin to align with content */
+  margin: 0 0 2rem 0; /* Remove horizontal margin, use container padding */
 }
 
 /* Typography for Comprehensive Stadium Guide Headers */
@@ -1558,7 +1556,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   background: linear-gradient(135deg, #ffffff, #f8fafc);
   padding: 2rem;
   border-radius: 12px;
-  margin: 0 1rem 2rem 1rem; /* Add horizontal margin to match sections */
+  margin: 0 0 2rem 0; /* Remove horizontal margin, use container padding */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   text-align: center; /* Center all text content in header */
 }
@@ -1638,7 +1636,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
   background: linear-gradient(135deg, #ffffff 0%, #fafbfc 100%);
   border-radius: 16px;
   padding: 2rem;
-  margin: 0 1rem 2.5rem 1rem; /* Add horizontal margin since container padding removed */
+  margin: 0 0 2.5rem 0; /* Remove horizontal margin, use container padding */
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.06);
   overflow: hidden; /* Prevent content overflow */
