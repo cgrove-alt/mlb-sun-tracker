@@ -47,9 +47,9 @@ h1[data-test="stadium-h1"] {
   position: relative !important;
   
   /* Minimum height to prevent collapse */
-  min-height: 48px !important;
+  min-height: 62px !important;  /* Increased for 44px font with 1.4 line-height */
   height: auto !important;
-  line-height: 1.2 !important;
+  line-height: 1.4 !important;  /* Match the component CSS */
   
   /* Reset any transforms or effects */
   transform: none !important;

@@ -25,7 +25,7 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
   /* Allow positive bottom margins for spacing */
-  min-height: 0 !important;
+  /* REMOVED min-height: 0 - was breaking header text display */
 }
 
 /* Kill ALL transforms */
