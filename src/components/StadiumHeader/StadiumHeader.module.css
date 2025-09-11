@@ -1,10 +1,13 @@
 /* Stadium Header Module Styles */
 
 .headerWrap {
+  position: relative;
+  z-index: 2;               /* keep header above normal flow items */
   display: grid;
   gap: var(--guide-spacing-sm, 8px);
   padding-block: var(--guide-spacing-lg, 24px);
   width: 100%;
+  overflow: visible;        /* prevent clipping */
 }
 
 /* Flatten the breadcrumb - no container styling */
@@ -43,7 +46,7 @@
   letter-spacing: -0.01em;
   font-weight: 800;
   line-height: 1.1;
-  color: var(--ink-900, #0B1220);
+  color: var(--ink-900, #0f172a); /* ensure not using white, dark fallback */
   font-size: clamp(28px, 3vw, 44px);
 }
 
