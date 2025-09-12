@@ -39,14 +39,14 @@ h1[data-test="stadium-h1"] {
   white-space: normal !important;
   word-break: normal !important;
   overflow: visible !important;
-  text-overflow: clip !important;
+  text-overflow: visible !important; /* Changed from clip to visible */
   
   /* Clear any floats or positioning */
   clear: both !important;
   float: none !important;
   position: relative !important;
   
-  /* Minimum height to prevent collapse */
+  /* Minimum height to prevent collapse - adjusted for actual text size */
   min-height: 62px !important;  /* Increased for 44px font with 1.4 line-height */
   height: auto !important;
   line-height: 1.4 !important;  /* Match the component CSS */
@@ -61,7 +61,9 @@ h1[data-test="stadium-h1"] {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   
-  /* Ensure visibility */
+  /* Force visibility */
+  visibility: visible !important;
+  opacity: 1 !important;
   overflow: visible !important;
 }
 
@@ -158,8 +160,8 @@ header.stadium-header > *,
   .stadium-header h1,
   .headerWrap h1,
   h1[data-test="stadium-h1"] {
-    font-size: 28px !important;
-    min-height: 36px !important;
+    /* Let module CSS handle font-size, just ensure min-height */
+    min-height: 45px !important; /* Sufficient for mobile font sizes */
     margin-bottom: 12px !important;
   }
   

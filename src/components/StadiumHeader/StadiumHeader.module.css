@@ -53,7 +53,7 @@
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0 0 8px 0 !important; /* Reduced bottom margin to bring subtitle closer */
+  margin: 0 0 16px 0 !important; /* Proper bottom margin for spacing */
   padding: 0 !important;
   
   /* Typography */
@@ -67,11 +67,11 @@
   white-space: normal !important;
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
-  text-overflow: clip !important;
+  text-overflow: visible !important; /* Changed from clip to visible */
   
   /* Positioning */
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 10 !important; /* Increased z-index to ensure visibility */
   clear: both !important;
   float: none !important;
   
@@ -81,19 +81,23 @@
   outline: none !important;
   box-shadow: none !important;
   
-  /* Kill ALL text effects */
+  /* Kill problematic text effects but ensure visibility */
   text-shadow: none !important;
   -webkit-text-stroke: 0 !important;
-  -webkit-text-fill-color: currentColor !important;
+  /* Removed -webkit-text-fill-color that could cause issues */
   filter: none !important;
   mix-blend-mode: normal !important;
   transform: none !important;
   text-transform: none !important;
   
-  /* Ensure minimum height */
-  min-height: 50px !important;
+  /* Ensure proper height for text visibility */
+  min-height: 62px !important; /* Calculated: 44px * 1.4 line-height */
   height: auto !important;
   overflow: visible !important;
+  
+  /* Force visibility */
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Subtitle - COMPLETELY SEPARATE */
@@ -201,8 +205,8 @@
   
   .title {
     font-size: 32px !important;
-    min-height: 38px !important;
-    margin-bottom: 10px !important;
+    min-height: 45px !important; /* Calculated: 32px * 1.4 line-height */
+    margin-bottom: 12px !important;
   }
   
   .subtitle {
@@ -260,6 +264,13 @@
 
 /* Small mobile breakpoint for better breadcrumb/metadata layout */
 @media (max-width: 576px) {
+  /* Ensure title is visible on small screens */
+  .title {
+    font-size: 28px !important;
+    min-height: 40px !important; /* Calculated: 28px * 1.4 line-height */
+    margin-bottom: 12px !important;
+  }
+  
   .breadcrumb {
     font-size: 11px !important;
     margin-bottom: 20px !important; /* Extra space before title */

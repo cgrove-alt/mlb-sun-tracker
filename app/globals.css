@@ -1244,7 +1244,8 @@ section strong {
 
 /* Mobile-specific H1 adjustments for small screens */
 @media (max-width: 600px) {
-  h1 {
+  /* General h1 styles - stadium headers use their own module styles */
+  h1:not([data-test="stadium-h1"]) {
     font-size: 2.2rem !important; /* ~35px */
     line-height: 1.3 !important;
     margin-top: 0.5em !important; /* Add space from breadcrumb */
