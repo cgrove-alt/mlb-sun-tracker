@@ -1260,6 +1260,11 @@ div.guide-page.stadium-guide header.stadium-header h1 {
     padding: 1.25rem;
   }
   
+  .guide-section:first-child,
+  .stadium-guide.comprehensive > .guide-section:first-of-type {
+    margin-top: 1.5rem; /* Slightly less space on mobile */
+  }
+  
   .guide-section h2 {
     font-size: 1.25rem;
   }
@@ -1617,7 +1622,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 /* Ensure first section has proper spacing from header */
 .guide-section:first-child,
 .stadium-guide.comprehensive > .guide-section:first-of-type {
-  margin-top: var(--guide-spacing-lg, 20px) !important;
+  margin-top: 2rem; /* Increased spacing to prevent overlap with header */
 }
 
 /* General card overlap prevention - NO TRANSFORMS */
@@ -1627,7 +1632,7 @@ div.guide-page.stadium-guide header.stadium-header h1 {
 .heroOverlap {
   position: relative;
   z-index: 1;
-  margin-top: var(--guide-spacing-lg, 20px) !important;
+  margin-top: 2rem; /* Consistent spacing between sections */
   transform: none !important;
 }
 

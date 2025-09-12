@@ -7,6 +7,7 @@
   flex-direction: column !important;
   gap: 12px !important;
   padding: 24px !important;
+  margin-bottom: 2rem !important; /* Add proper spacing below header */
   width: 100% !important;
   overflow: visible !important;
   box-sizing: border-box !important;
@@ -195,6 +196,7 @@
   .headerWrap {
     padding: 16px !important;
     gap: 8px !important;
+    margin-bottom: 1.5rem !important; /* Slightly less space on mobile */
   }
   
   .title {
