@@ -32,7 +32,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   background-color: var(--color-paper, #FFFFFF);
-  color: var(--color-ink-900, #0B1220);
+  color: #333333; /* Darker default text color */
   /* Removed overscroll-behavior: none to allow scrolling on mobile */
 }
 
@@ -47,7 +47,7 @@ body {
 p, li {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--color-ink-900, #0B1220);
+  color: #333333; /* Darker for better contrast on white */
 }
 
 h1 {
@@ -504,7 +504,7 @@ section h3 {
 section p {
   font-size: 1rem;
   line-height: 1.7;
-  color: #37474f;
+  color: #333333; /* Darker for better readability */
   margin: 0 0 1.25rem;
 }
 
@@ -517,7 +517,7 @@ section li {
   margin-bottom: 0.75rem;
   line-height: 1.7;
   font-size: 1rem;
-  color: #37474f;
+  color: #333333; /* Consistent dark text */
 }
 
 section li::marker {
@@ -1182,6 +1182,49 @@ section strong {
   .shade-tip {
     padding: 0.5rem;
     font-size: 0.75rem;
+  }
+}
+
+/* Unified Card Design System */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-no-shadow {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Consistent card spacing */
+.card + .card,
+.card-no-shadow + .card,
+.card + .card-no-shadow {
+  margin-top: 2rem;
+}
+
+/* Container padding to prevent edge touching on mobile */
+.page-container {
+  padding: 0 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .card,
+  .card-no-shadow {
+    padding: 24px;
+  }
+  
+  .page-container {
+    padding: 0 24px;
   }
 }
 
