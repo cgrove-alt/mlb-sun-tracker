@@ -344,6 +344,7 @@ export default function StickyTopNav() {
                 href="/" 
                 className={pathname === '/' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/' ? 'page' : undefined}
               >
                 Home
               </Link>
@@ -367,8 +368,9 @@ export default function StickyTopNav() {
               
               <Link 
                 href="/stadiums" 
-                className={pathname === '/stadiums' ? 'active' : ''}
+                className={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'page' : undefined}
               >
                 All Stadiums
               </Link>
@@ -377,6 +379,7 @@ export default function StickyTopNav() {
                 href="/blog" 
                 className={pathname?.startsWith('/blog') ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname?.startsWith('/blog') ? 'page' : undefined}
               >
                 Blog
               </Link>
@@ -393,6 +396,7 @@ export default function StickyTopNav() {
                 href="/guide/how-to-find-shaded-seats" 
                 className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/guide/how-to-find-shaded-seats' ? 'page' : undefined}
               >
                 How to Find Shaded Seats
               </Link>
@@ -401,6 +405,7 @@ export default function StickyTopNav() {
                 href="/guide/best-shaded-seats-mlb" 
                 className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/guide/best-shaded-seats-mlb' ? 'page' : undefined}
               >
                 Best Shaded Seats Guide
               </Link>
@@ -409,6 +414,7 @@ export default function StickyTopNav() {
                 href="/faq" 
                 className={pathname === '/faq' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/faq' ? 'page' : undefined}
               >
                 FAQs
               </Link>
@@ -425,6 +431,7 @@ export default function StickyTopNav() {
                 href="/contact" 
                 className={pathname === '/contact' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/contact' ? 'page' : undefined}
               >
                 Contact Us
               </Link>
@@ -433,6 +440,7 @@ export default function StickyTopNav() {
                 href="/privacy" 
                 className={pathname === '/privacy' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/privacy' ? 'page' : undefined}
               >
                 Privacy Policy
               </Link>
@@ -441,6 +449,7 @@ export default function StickyTopNav() {
                 href="/terms" 
                 className={pathname === '/terms' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/terms' ? 'page' : undefined}
               >
                 Terms of Service
               </Link>

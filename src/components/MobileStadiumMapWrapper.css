@@ -1,0 +1,278 @@
+/* Mobile Stadium Map Wrapper Styles */
+
+.stadium-map-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none; /* We handle touch events manually */
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.stadium-map-content {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* Zoom Controls */
+.zoom-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.zoom-btn {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2196f3;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.zoom-btn:hover:not(:disabled) {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.zoom-btn:active:not(:disabled) {
+  transform: scale(0.95);
+  background: #2196f3;
+  color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.7);
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.zoom-btn.zoom-reset {
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.zoom-btn.zoom-reset:active:not(:disabled) {
+  background: #ff9800;
+  color: white;
+}
+
+/* Zoom Level Indicator */
+.zoom-level {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Mobile Gesture Tooltip */
+.mobile-tooltip {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 20;
+  animation: fadeInOut 4s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.tooltip-icon {
+  font-size: 18px;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .zoom-controls {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
+  }
+  
+  .zoom-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    border-width: 2px;
+  }
+  
+  .zoom-level {
+    top: 12px;
+    left: 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .mobile-tooltip {
+    bottom: 16px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1024px) {
+  .zoom-controls {
+    top: 24px;
+    right: 24px;
+    gap: 12px;
+  }
+  
+  .zoom-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+  
+  .zoom-level {
+    top: 24px;
+    left: 24px;
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+}
+
+/* Focus styles for accessibility */
+.zoom-btn:focus-visible {
+  outline: 3px solid #2196f3;
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .zoom-btn {
+    border-width: 3px;
+    font-weight: 900;
+  }
+  
+  .zoom-level {
+    border: 2px solid white;
+  }
+  
+  .mobile-tooltip {
+    border: 2px solid white;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .stadium-map-content {
+    transition: none;
+  }
+  
+  .zoom-btn {
+    transition: none;
+  }
+  
+  .mobile-tooltip {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .tooltip-icon {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .stadium-map-container {
+    background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+  }
+  
+  .zoom-btn {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: #64b5f6;
+    color: #64b5f6;
+  }
+  
+  .zoom-btn:hover:not(:disabled) {
+    background: rgba(40, 40, 40, 0.95);
+  }
+  
+  .zoom-btn:active:not(:disabled) {
+    background: #64b5f6;
+    color: #000;
+  }
+  
+  .zoom-btn.zoom-reset {
+    border-color: #ffb74d;
+    color: #ffb74d;
+  }
+  
+  .zoom-btn.zoom-reset:active:not(:disabled) {
+    background: #ffb74d;
+    color: #000;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import styles from './StadiumHeader.module.css';
 import { MapPinIcon } from '../Icons';
 
@@ -31,16 +32,16 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
   const cleanNeighborhood = neighborhood ? String(neighborhood).trim() : undefined;
   const cleanOpened = opened ? String(opened).trim() : undefined;
 
+  const breadcrumbItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Stadiums', href: '/stadiums' },
+    { label: cleanName }
+  ];
+
   return (
     <header className={styles.headerWrap} data-stadium-header="true">
       {showBreadcrumb && (
-        <nav aria-label="Breadcrumb" className={styles.breadcrumb} key="breadcrumb">
-          <Link href="/">Home</Link>
-          <span aria-hidden="true">›</span>
-          <Link href="/stadiums">Stadiums</Link>
-          <span aria-hidden="true">›</span>
-          <span>{cleanName}</span>
-        </nav>
+        <Breadcrumb items={breadcrumbItems} className="breadcrumb-nav" />
       )}
 
       {/* H1 - ONLY stadium name, nothing else */}

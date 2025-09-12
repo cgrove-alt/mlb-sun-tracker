@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { DetailedStadium, SeatSection } from '../data/detailedStadiums';
 import { SunPosition } from '../utils/sunCalculations';
 import { useTranslation } from '../i18n/i18nContext';
+import { MobileStadiumMapWrapper } from './MobileStadiumMapWrapper';
 import './DetailedStadiumView.css';
 
 interface DetailedStadiumViewProps {
@@ -630,7 +631,9 @@ export const DetailedStadiumView: React.FC<DetailedStadiumViewProps> = ({
         )}
       </div>
 
-      {renderStadium()}
+      <MobileStadiumMapWrapper>
+        {renderStadium()}
+      </MobileStadiumMapWrapper>
 
       <div className="section-details">
         <h4>Seating Sections</h4>

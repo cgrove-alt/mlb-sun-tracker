@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DetailedStadium, SeatSection } from '../data/detailedStadiums';
 import { SunPosition } from '../utils/sunCalculations';
 import { useTranslation } from '../i18n/i18nContext';
+import { MobileStadiumMapWrapper } from './MobileStadiumMapWrapper';
 
 interface AccessibleDetailedStadiumViewProps {
   stadium: DetailedStadium;
@@ -256,7 +257,9 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
       )}
 
       {/* Stadium Map */}
-      {renderGenericDetailedStadium()}
+      <MobileStadiumMapWrapper>
+        {renderGenericDetailedStadium()}
+      </MobileStadiumMapWrapper>
 
       {/* Legend */}
       <div className={`mt-8 p-6 rounded-lg ${highContrastMode ? 'bg-white border-2 border-black' : 'bg-gray-50'}`}>

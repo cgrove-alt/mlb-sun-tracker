@@ -271,6 +271,7 @@
   line-height: 1.6;
 }
 
+/* Mobile optimizations for better tap targets */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
@@ -278,9 +279,87 @@
 
   .stadiumsGrid {
     grid-template-columns: 1fr;
+    gap: 12px; /* Tighter gap for mobile */
+  }
+
+  /* Large tappable stadium cards on mobile */
+  .stadiumCard {
+    padding: 20px;
+    min-height: 100px; /* Ensure good tap target height */
+    touch-action: manipulation; /* Prevent zoom on double-tap */
+    -webkit-tap-highlight-color: rgba(33, 150, 243, 0.1);
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.15s ease;
+  }
+
+  .stadiumCard:active {
+    transform: scale(0.98);
+    background: #f0f4f8;
+    border-color: #2196f3;
+  }
+
+  /* Larger text for mobile readability */
+  .stadiumHeader h4 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .teamBadge {
+    font-size: 0.875rem;
+    padding: 6px 12px;
+  }
+
+  .detail {
+    font-size: 0.9375rem; /* 15px for better readability */
+    padding: 0.375rem 0;
+  }
+
+  .viewGuide {
+    font-size: 1rem;
+    padding: 12px 0;
+    font-weight: 700;
+  }
+
+  /* Popular cards - make them more tappable */
+  .popularCard {
+    padding: 20px;
+    min-height: 80px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(33, 150, 243, 0.1);
+  }
+
+  .popularCard:active {
+    transform: scale(0.98);
+    background: #f0f4f8;
+  }
+
+  .popularCard h3 {
+    font-size: 1.125rem;
+  }
+
+  .team {
+    font-size: 0.9375rem;
+  }
+
+  .cardStats {
+    font-size: 0.9375rem;
   }
 
   .infoGrid {
     grid-template-columns: 1fr;
+  }
+
+  /* Ensure shade stats are readable */
+  .shadeStats {
+    padding: 1.25rem 0;
+  }
+
+  .shadeStat strong {
+    font-size: 1.5rem;
+  }
+
+  .shadeStat span {
+    font-size: 0.8125rem;
   }
 }

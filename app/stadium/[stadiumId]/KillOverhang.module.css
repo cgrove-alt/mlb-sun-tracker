@@ -7,9 +7,9 @@
 }
 
 /* Strong, page-scoped neutralizers for main sections */
-.killOverhang :global(main .section),
-.killOverhang :global(main [data-test="overview-section"]),
-.killOverhang :global(main .guide-section) {
+.killOverhang :global(main) :global(.section),
+.killOverhang :global(main) :global([data-test="overview-section"]),
+.killOverhang :global(main) :global(.guide-section) {
   margin-top: 0 !important;
   transform: none !important;
   top: auto !important;

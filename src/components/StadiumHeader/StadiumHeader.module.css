@@ -6,8 +6,8 @@
   display: flex !important;
   flex-direction: column !important;
   gap: 12px !important;
-  padding: 24px !important;
-  margin-bottom: 2rem !important; /* Add proper spacing below header */
+  padding: 20px !important; /* Reduced from 24px */
+  margin-bottom: 24px !important; /* Standardized spacing */
   width: 100% !important;
   overflow: visible !important;
   box-sizing: border-box !important;
@@ -53,7 +53,7 @@
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0 0 16px 0 !important; /* Proper bottom margin for spacing */
+  margin: 0 0 20px 0 !important; /* Standardized bottom margin */
   padding: 0 !important;
   
   /* Typography */
@@ -105,7 +105,7 @@
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0.25em 0 1em 0 !important; /* Small top margin, larger bottom */
+  margin: 0 0 16px 0 !important; /* Standardized bottom margin */
   padding: 0 !important;
   
   /* Typography - distinct subtitle styling */
@@ -140,9 +140,9 @@
   /* Force block display */
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 20px !important;
+  gap: 16px !important; /* Standardized gap */
   width: 100% !important;
-  margin: 0 0 12px 0 !important;
+  margin: 0 0 16px 0 !important; /* Standardized margin */
   padding: 0 !important;
   
   /* Typography */
@@ -200,19 +200,19 @@
   .headerWrap {
     padding: 16px !important;
     gap: 8px !important;
-    margin-bottom: 1.5rem !important; /* Slightly less space on mobile */
+    margin-bottom: 20px !important; /* Standardized mobile spacing */
   }
   
   .title {
     font-size: 32px !important;
     min-height: 45px !important; /* Calculated: 32px * 1.4 line-height */
-    margin-bottom: 12px !important;
+    margin-bottom: 16px !important; /* Standardized mobile margin */
   }
   
   .subtitle {
     font-size: 1.125rem !important; /* 18px on mobile */
     min-height: 24px !important;
-    margin: 0.2em 0 0.8em 0 !important; /* Proportional spacing */
+    margin: 0 0 12px 0 !important; /* Standardized mobile margin */
   }
   
   .breadcrumb {
@@ -223,7 +223,7 @@
   .stadiumMeta {
     gap: 12px !important;
     font-size: 14px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important; /* Standardized mobile margin */
   }
 }
 

@@ -132,7 +132,7 @@ export const StadiumCard: React.FC<StadiumCardProps> = ({
           <span className={styles.metricValue}>{formatCapacity(capacity)}</span>
         </span>
       </div>
-      <Link href={href} className={styles.cta} onClick={onClick}>
+      <Link href={href} className="cta-btn cta-btn-sm" onClick={onClick}>
         View Shade Guide →
       </Link>
     </>

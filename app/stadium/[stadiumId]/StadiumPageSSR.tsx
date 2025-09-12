@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';
 import { StadiumSection } from '../../../src/data/stadiumSections';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
@@ -171,8 +172,12 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Hero Section with Stadium Info */}
       <section className={styles.stadiumHero}>
         <div className={styles.container}>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <a href="/">Home</a> › <a href="/stadiums">Stadiums</a> › <span>{stadium.name}</span>
+          <nav className="breadcrumb-nav" aria-label="Breadcrumb">
+            <Link href="/">Home</Link>
+            <span className="breadcrumb-separator">/</span>
+            <Link href="/stadiums">Stadiums</Link>
+            <span className="breadcrumb-separator">/</span>
+            <span className="breadcrumb-current">{stadium.name}</span>
           </nav>
           
           <h1 className={styles.title}>{stadium.name} Shade Guide</h1>

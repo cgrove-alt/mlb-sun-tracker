@@ -180,7 +180,7 @@ export default function AvoidSunBaseballGamesPage() {
               Don't let sun exposure ruin your baseball experience. Use The Shadium to find the perfect 
               shaded seats for any MLB game.
             </p>
-            <Link href="/" className="cta-button primary">
+            <Link href="/" className="cta-btn">
               Find Shaded Seats Now →
             </Link>
           </div>

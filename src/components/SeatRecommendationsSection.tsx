@@ -108,7 +108,9 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
         else if (sunExposure < 75) reasoning.push('Mostly sunny exposure');
         else reasoning.push('Full sun exposure');
         
-        if (section.price === preferences.budgetRange) {
+        // Check price with null safety
+        const sectionPrice = section.price || 'moderate';
+        if (sectionPrice === preferences.budgetRange) {
           reasoning.push(`Matches your ${preferences.budgetRange} budget`);
         }
         
