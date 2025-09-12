@@ -255,3 +255,39 @@
   content: none !important;
   display: none !important;
 }
+
+/* Small mobile breakpoint for better breadcrumb/metadata layout */
+@media (max-width: 576px) {
+  .breadcrumb {
+    font-size: 11px !important;
+    margin-bottom: 20px !important; /* Extra space before title */
+    padding-bottom: 8px !important; /* Internal padding */
+    border-bottom: 1px solid #e5e7eb !important; /* Visual separator */
+  }
+  
+  .stadiumMeta {
+    flex-direction: column !important; /* Stack items vertically */
+    align-items: flex-start !important; /* Left-align all items */
+    gap: 8px !important; /* Reduced gap between items */
+    margin-bottom: 16px !important;
+    font-size: 13px !important; /* Slightly smaller text */
+  }
+  
+  .metaItem {
+    display: block !important; /* Each item on its own line */
+    width: 100% !important; /* Full width */
+    text-align: left !important; /* Left-aligned text */
+    padding: 4px 0 !important; /* Vertical padding */
+    border-bottom: 1px solid #f3f4f6 !important; /* Subtle separator */
+  }
+  
+  .metaItem:last-child {
+    border-bottom: none !important; /* No border on last item */
+  }
+  
+  /* Ensure "Opened: year" stands out */
+  .metaItem:last-of-type {
+    font-weight: 500 !important; /* Slightly bolder */
+    margin-top: 4px !important; /* Extra top spacing */
+  }
+}
