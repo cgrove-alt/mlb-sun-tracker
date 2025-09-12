@@ -489,15 +489,15 @@ section h2 {
   font-size: clamp(1.375rem, 3vw, 1.75rem);
   font-weight: 700;
   color: #1a237e;
-  margin: 0 0 1.5rem;
+  margin: 2em 0 1.5rem; /* Added top margin for better section separation */
   line-height: 1.3;
 }
 
 section h3 {
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-  font-weight: 600;
-  color: #333;
-  margin: 2rem 0 1rem;
+  font-weight: 500; /* Reduced weight for subtler appearance */
+  color: #475569; /* Darker gray for better hierarchy */
+  margin: 2.5rem 0 1rem; /* Increased top margin */
   line-height: 1.4;
 }
 
@@ -1192,5 +1192,18 @@ section strong {
     line-height: 1.3 !important;
     margin-top: 0.5em !important; /* Add space from breadcrumb */
     text-align: left !important; /* Ensure left-aligned */
+  }
+  
+  /* Reduce section heading sizes on mobile */
+  section h2 {
+    font-size: 1.25rem !important; /* 20px */
+    margin-top: 1.5em !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  section h3 {
+    font-size: 1.1rem !important; /* ~17.6px */
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
   }
 }
