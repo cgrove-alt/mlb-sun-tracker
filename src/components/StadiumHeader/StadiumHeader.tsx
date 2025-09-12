@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import styles from './StadiumHeader.module.css';
-import { MapPinIcon } from '../Icons';
 
 interface StadiumHeaderProps {
   name: string;
@@ -43,50 +42,6 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
       {showBreadcrumb && (
         <Breadcrumb items={breadcrumbItems} className="breadcrumb-nav" />
       )}
-
-      {/* Stadium metadata - completely separate container */}
-      {(cleanNeighborhood || capacity || cleanOpened) && (
-        <div 
-          className={styles.stadiumMeta} 
-          role="list" 
-          aria-label="Stadium information"
-          key="metadata"
-        >
-          {cleanNeighborhood && (
-            <span 
-              className={styles.metaItem} 
-              role="listitem" 
-              aria-label={`Location: ${cleanNeighborhood}`}
-              key="location"
-            >
-              <MapPinIcon size={16} aria-hidden="true" />
-              <span>{cleanNeighborhood}</span>
-            </span>
-          )}
-          {capacity && (
-            <span 
-              className={styles.metaItem} 
-              role="listitem" 
-              aria-label={`Capacity: ${capacity.toLocaleString()}`}
-              key="capacity"
-            >
-              <span>Capacity: {capacity.toLocaleString()}</span>
-            </span>
-          )}
-          {cleanOpened && (
-            <span 
-              className={styles.metaItem} 
-              role="listitem" 
-              aria-label={`Opened in ${cleanOpened}`}
-              key="opened"
-            >
-              <span>Opened: {cleanOpened}</span>
-            </span>
-          )}
-        </div>
-      )}
-
-      <div className={styles.headerSpacer} aria-hidden="true" key="spacer" />
     </header>
   );
 };

@@ -181,28 +181,6 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
           </nav>
           
           <p className={styles.stadiumSubtitle}>Complete guide to finding shaded seats</p>
-          
-          <div className={styles.stadiumQuickFacts}>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Location:</span>
-              <span className={styles.factValue}>{stadium.city}, {stadium.state}</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Orientation:</span>
-              <span className={styles.factValue}>{stadium.orientation}°</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Roof Type:</span>
-              <span className={styles.factValue}>
-                {stadium.roof === 'open' ? 'Open Air' : 
-                 stadium.roof === 'retractable' ? 'Retractable Roof' : 'Fixed Roof'}
-              </span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Capacity:</span>
-              <span className={styles.factValue}>{stadium.capacity?.toLocaleString() || 'N/A'}</span>
-            </div>
-          </div>
         </div>
       </section>
 
