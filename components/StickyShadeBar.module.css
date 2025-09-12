@@ -254,3 +254,47 @@ input[type="date"].input {
 }
 
 /* Padding adjustments for the sticky bar are applied via the has-sticky-shade-bar class in the page */
+
+/* Mobile-specific responsive layout (small screens) */
+@media (max-width: 600px) {
+  .form {
+    gap: 10px; /* Increased gap for better spacing */
+  }
+  
+  .inputRow {
+    display: flex !important; /* Change from grid to flex */
+    flex-direction: column !important; /* Stack vertically */
+    gap: 8px !important; /* Touch-friendly spacing between elements */
+    width: 100% !important;
+  }
+  
+  .inputGroup {
+    width: 100% !important; /* Full width for all inputs */
+  }
+  
+  .input {
+    width: 100% !important;
+    min-height: 44px !important; /* Touch-friendly minimum height */
+    height: 44px !important;
+    padding: 10px 12px !important; /* Increased padding for easier tapping */
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+  
+  select.input {
+    padding-right: 40px !important; /* Account for dropdown arrow */
+  }
+  
+  .submitButton {
+    width: 100% !important;
+    min-height: 44px !important; /* Touch-friendly button height */
+    height: 44px !important;
+    margin-top: 10px !important; /* Extra spacing before button */
+    font-size: 16px !important; /* Larger text for mobile */
+    font-weight: 600 !important; /* Bolder for better visibility */
+  }
+  
+  .stadiumName {
+    font-size: 14px !important; /* Slightly smaller stadium name */
+    margin-bottom: 8px !important; /* More space below stadium name */
+  }
+}
