@@ -44,17 +44,6 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
         <Breadcrumb items={breadcrumbItems} className="breadcrumb-nav" />
       )}
 
-      {/* Team subtitle - completely separate element */}
-      {cleanTeam && (
-        <p 
-          className={styles.subtitle} 
-          aria-label={`Home of ${cleanTeam}`}
-          key="team"
-        >
-          {cleanTeam}
-        </p>
-      )}
-
       {/* Stadium metadata - completely separate container */}
       {(cleanNeighborhood || capacity || cleanOpened) && (
         <div 

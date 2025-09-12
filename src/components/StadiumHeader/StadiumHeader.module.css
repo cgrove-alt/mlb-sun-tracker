@@ -142,7 +142,7 @@
   flex-wrap: wrap !important;
   gap: 16px !important; /* Standardized gap */
   width: 100% !important;
-  margin: 0 0 16px 0 !important; /* Standardized margin */
+  margin: 16px 0 16px 0 !important; /* Added top margin since no subtitle above */
   padding: 0 !important;
   
   /* Typography */
