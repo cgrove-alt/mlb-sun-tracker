@@ -52,7 +52,7 @@
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0 0 12px 0 !important;
+  margin: 0 0 8px 0 !important; /* Reduced bottom margin to bring subtitle closer */
   padding: 0 !important;
   
   /* Typography */
@@ -100,14 +100,14 @@
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0 0 12px 0 !important;
+  margin: 0.25em 0 1em 0 !important; /* Small top margin, larger bottom */
   padding: 0 !important;
   
-  /* Typography */
-  font-size: 22px !important;
-  font-weight: 500 !important;
+  /* Typography - distinct subtitle styling */
+  font-size: 1.5rem !important; /* 24px - clearly smaller than title */
+  font-weight: 400 !important; /* Normal weight for subtitle */
   line-height: 1.3 !important;
-  color: #334155 !important;
+  color: #666666 !important; /* Lighter gray for subtitle feel */
   
   /* Positioning */
   position: relative !important;
@@ -204,9 +204,9 @@
   }
   
   .subtitle {
-    font-size: 18px !important;
+    font-size: 1.125rem !important; /* 18px on mobile */
     min-height: 24px !important;
-    margin-bottom: 10px !important;
+    margin: 0.2em 0 0.8em 0 !important; /* Proportional spacing */
   }
   
   .breadcrumb {
