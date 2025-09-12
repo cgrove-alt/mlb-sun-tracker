@@ -18,6 +18,7 @@
 
 /* Additional Next.js specific styles */
 html {
+  font-size: 16px; /* Explicit base font size for accessibility */
   scroll-behavior: smooth;
   font-feature-settings: "kern", "liga";
 }
@@ -46,7 +47,7 @@ body {
 /* Base Typography with WCAG AA compliance */
 p, li {
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.5; /* Optimal line-height for readability */
   color: #333333; /* Darker for better contrast on white */
 }
 
@@ -503,7 +504,7 @@ section h3 {
 
 section p {
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.5; /* Consistent line-height */
   color: #333333; /* Darker for better readability */
   margin: 0 0 1.25rem;
 }
@@ -515,7 +516,7 @@ section ul, section ol {
 
 section li {
   margin-bottom: 0.75rem;
-  line-height: 1.7;
+  line-height: 1.5; /* Consistent line-height */
   font-size: 1rem;
   color: #333333; /* Consistent dark text */
 }
@@ -710,7 +711,7 @@ section strong {
 }
 
 .shade-info h4, .shade-tip h4 {
-  font-size: 0.75rem;
+  font-size: 0.875rem; /* 14px minimum for accessibility */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -730,7 +731,7 @@ section strong {
   color: #1a237e;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: 0.875rem; /* 14px minimum for readability */
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-weight: 500;
   line-height: 1.4;
@@ -1123,7 +1124,7 @@ section strong {
   }
 
   .section-tag {
-    font-size: 0.6875rem;
+    font-size: 0.875rem; /* 14px minimum on mobile */
     padding: 0.25rem 0.375rem;
   }
 
@@ -1135,7 +1136,7 @@ section strong {
 
   .breadcrumb {
     margin-bottom: 1.25rem;
-    font-size: 0.8125rem;
+    font-size: 0.875rem; /* 14px minimum */
   }
 }
 
@@ -1181,7 +1182,7 @@ section strong {
 
   .shade-tip {
     padding: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 0.875rem; /* 14px minimum for readability */
   }
 }
 
@@ -1215,6 +1216,19 @@ section strong {
   padding: 0 16px;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+/* Content container for optimal reading width */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.content-wide {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 @media (min-width: 768px) {
