@@ -180,7 +180,6 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
             <span className="breadcrumb-current">{stadium.name}</span>
           </nav>
           
-          <h1 className={styles.title}>{stadium.name} Shade Guide</h1>
           <p className={styles.stadiumSubtitle}>Complete guide to finding shaded seats at {stadium.team} games</p>
           
           <div className={styles.stadiumQuickFacts}>

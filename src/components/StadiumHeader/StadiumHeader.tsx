@@ -44,16 +44,6 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
         <Breadcrumb items={breadcrumbItems} className="breadcrumb-nav" />
       )}
 
-      {/* H1 - ONLY stadium name, nothing else */}
-      <h1 
-        className={styles.title} 
-        data-test="stadium-h1" 
-        aria-label={`${cleanName} stadium`}
-        key="title"
-      >
-        {cleanName}
-      </h1>
-
       {/* Team subtitle - completely separate element */}
       {cleanTeam && (
         <p 

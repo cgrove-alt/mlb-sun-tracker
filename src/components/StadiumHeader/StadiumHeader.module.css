@@ -100,12 +100,12 @@
   opacity: 1 !important;
 }
 
-/* Subtitle - COMPLETELY SEPARATE */
+/* Subtitle - Now acts as primary title since h1 is removed */
 .subtitle {
   /* Force block display and separation */
   display: block !important;
   width: 100% !important;
-  margin: 0 0 16px 0 !important; /* Standardized bottom margin */
+  margin: 16px 0 16px 0 !important; /* Added top margin since no h1 above */
   padding: 0 !important;
   
   /* Typography - distinct subtitle styling */
