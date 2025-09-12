@@ -12,6 +12,7 @@ import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
 import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
+import StadiumHeader from './StadiumHeader/StadiumHeader';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -103,20 +104,14 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
 
   return (
     <div className="mobile-stadium-guide" ref={guideContentRef}>
-      <div className="mobile-stadium-header">
-        <Link href="/" className="back-button">
-          ← Back
-        </Link>
-        <h1>{stadium.name}</h1>
-        <div className="stadium-badges">
-          <span className="team-badge">{stadium.team}</span>
-          <span className="roof-badge">
-            {stadium.roof === 'fixed' ? 'Fixed Roof' : 
-             stadium.roof === 'retractable' ? 'Retractable' : 
-             'Open Air'}
-          </span>
-        </div>
-      </div>
+      <StadiumHeader 
+        name={stadium.name} 
+        team={stadium.team} 
+        capacity={stadium.capacity} 
+        opened={undefined} // This data isn't in the Stadium interface
+        neighborhood={`${stadium.city}, ${stadium.state}`}
+        showBreadcrumb={true} 
+      />
 
       {/* Table of Contents for Mobile */}
       <TableOfContents containerRef={guideContentRef} />
