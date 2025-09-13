@@ -7,6 +7,9 @@ import { StadiumSection } from '../../../src/data/stadiumSections';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
 import { SectionList } from '../../../src/components/SectionList';
+import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
+import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
+import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -172,15 +175,36 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Hero Section with Stadium Info */}
       <section className={styles.stadiumHero}>
         <div className={styles.container}>
-          <nav className="breadcrumb-nav" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span className="breadcrumb-separator">/</span>
-            <Link href="/stadiums">Stadiums</Link>
-            <span className="breadcrumb-separator">/</span>
-            <span className="breadcrumb-current">{stadium.name}</span>
-          </nav>
-          
-          <p className={styles.stadiumSubtitle}>Complete guide to finding shaded seats</p>
+          {(() => {
+            const stadiumHistory = stadiumHistories[stadium.id];
+            const titleData: StadiumTitleData = {
+              purpose: 'shade-guide',
+              stadium: {
+                name: stadium.name,
+                id: stadium.id
+              },
+              team: {
+                name: stadium.team,
+                league: 'MLB'
+              },
+              quickFacts: {
+                location: {
+                  city: stadium.city,
+                  state: stadium.state
+                },
+                capacity: stadium.capacity,
+                orientation: stadium.orientation,
+                roofType: stadium.roof,
+                yearBuilt: stadiumHistory?.opened
+              }
+            };
+            return (
+              <StadiumTitleBlock
+                data={titleData}
+                showBreadcrumb={true}
+              />
+            );
+          })()}
         </div>
       </section>
 

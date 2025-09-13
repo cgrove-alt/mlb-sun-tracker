@@ -12,7 +12,8 @@ import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
 import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
-import StadiumHeader from './StadiumHeader/StadiumHeader';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -102,15 +103,35 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
     setExpandedSection(expandedSection === sectionId ? null : sectionId);
   };
 
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: stadium.name,
+      id: stadium.id
+    },
+    team: {
+      name: stadium.team,
+      league: 'MLB'
+    },
+    quickFacts: {
+      location: {
+        city: stadium.city,
+        state: stadium.state
+      },
+      capacity: stadium.capacity,
+      orientation: stadium.orientation,
+      roofType: stadium.roof,
+      yearBuilt: stadiumHistory?.opened
+    }
+  };
+
   return (
     <div className="mobile-stadium-guide" ref={guideContentRef}>
-      <StadiumHeader 
-        name={stadium.name} 
-        team={stadium.team} 
-        capacity={stadium.capacity} 
-        opened={undefined} // This data isn't in the Stadium interface
-        neighborhood={`${stadium.city}, ${stadium.state}`}
-        showBreadcrumb={true} 
+      <StadiumTitleBlock
+        data={titleData}
+        showBreadcrumb={true}
+        compact={true}
       />
 
       {/* Table of Contents for Mobile */}

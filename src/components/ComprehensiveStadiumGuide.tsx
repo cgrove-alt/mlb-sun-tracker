@@ -4,14 +4,15 @@ import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
 import { getStadiumGuide } from '../data/guides';
 import Link from 'next/link';
-import { 
-  MapPinIcon, 
-  ClockIcon, 
-  SunIcon, 
-  CloudIcon, 
-  DropletIcon 
+import {
+  MapPinIcon,
+  ClockIcon,
+  SunIcon,
+  CloudIcon,
+  DropletIcon
 } from './Icons';
-import StadiumHeader from './StadiumHeader/StadiumHeader';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -45,14 +46,33 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
     );
   }
 
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: guide.name,
+      id: stadiumId
+    },
+    team: {
+      name: guide.team,
+      league: 'MLB' // Comprehensive guides are currently only for MLB
+    },
+    quickFacts: {
+      location: {
+        city: guide.neighborhood.name.split(',')[0] || guide.neighborhood.name,
+        state: guide.neighborhood.name.split(',')[1]?.trim() || ''
+      },
+      capacity: guide.capacity,
+      orientation: 0, // This would need to come from stadium data
+      roofType: 'open', // This would need to come from stadium data
+      yearBuilt: guide.opened
+    }
+  };
+
   return (
     <div className="stadium-guide comprehensive">
-      <StadiumHeader
-        name={guide.name}
-        team={guide.team}
-        capacity={guide.capacity}
-        opened={guide.opened}
-        neighborhood={guide.neighborhood.name}
+      <StadiumTitleBlock
+        data={titleData}
         showBreadcrumb={true}
       />
 

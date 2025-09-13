@@ -14,7 +14,8 @@ import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
 import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
-import StadiumHeader from './StadiumHeader/StadiumHeader';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './StadiumGuide.css';
 
 interface StadiumGuideProps {
@@ -70,27 +71,48 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
     .slice(0, 5);
 
   const sunscreenStations = amenities?.amenities.filter(a => a.type === 'sunscreen_kiosk') || [];
-  const familyAmenities = amenities?.amenities.filter(a => 
-    a.type === 'family_area' || 
+  const familyAmenities = amenities?.amenities.filter(a =>
+    a.type === 'family_area' ||
     a.type === 'nursing_station' ||
     a.details.familyRestroom
   ) || [];
+
+  const stadiumHistory = stadiumHistories[stadium.id];
+
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: stadium.name,
+      id: stadium.id
+    },
+    team: {
+      name: stadium.team,
+      league: 'MLB'
+    },
+    quickFacts: {
+      location: {
+        city: stadium.city,
+        state: stadium.state
+      },
+      capacity: stadium.capacity,
+      orientation: stadium.orientation,
+      roofType: stadium.roof,
+      yearBuilt: stadiumHistory?.opened
+    }
+  };
 
   return (
     <>
       <StadiumSchema stadium={stadium} />
       <StadiumShadeGuideSchema stadium={stadium} />
-      
+
       <div className="guide-page stadium-guide-wrapper">
         <TableOfContents containerRef={guideContentRef} />
         <div className="stadium-guide" ref={guideContentRef}>
-        <StadiumHeader 
-          name={stadium.name} 
-          team={stadium.team} 
-          capacity={stadium.capacity} 
-          opened={undefined} // This data isn't in the Stadium interface
-          neighborhood={`${stadium.city}, ${stadium.state}`}
-          showBreadcrumb={true} 
+        <StadiumTitleBlock
+          data={titleData}
+          showBreadcrumb={true}
         />
 
         {/* Quick jump bar */}

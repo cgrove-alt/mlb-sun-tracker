@@ -12,13 +12,13 @@ interface StadiumHeaderProps {
   showBreadcrumb?: boolean;
 }
 
-const StadiumHeader: React.FC<StadiumHeaderProps> = ({ 
-  name, 
-  team, 
-  capacity, 
-  opened, 
+const StadiumHeader: React.FC<StadiumHeaderProps> = ({
+  name,
+  team,
+  capacity,
+  opened,
   neighborhood,
-  showBreadcrumb = true 
+  showBreadcrumb = true
 }) => {
   // Debug logging to verify props
   if (typeof window !== 'undefined') {
@@ -27,9 +27,6 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
 
   // Ensure clean string values
   const cleanName = String(name || '').trim();
-  const cleanTeam = team ? String(team).trim() : undefined;
-  const cleanNeighborhood = neighborhood ? String(neighborhood).trim() : undefined;
-  const cleanOpened = opened ? String(opened).trim() : undefined;
 
   const breadcrumbItems = [
     { label: 'Home', href: '/' },
