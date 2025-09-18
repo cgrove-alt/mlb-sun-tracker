@@ -3,11 +3,11 @@
 /* Component Classes */
   /* Glass Morphism Effects */
   .glass {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-glass;
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
   }
   
   .glass-dark {
-    @apply bg-gray-900/80 backdrop-blur-md border border-white/10 shadow-glass;
+    @apply bg-gray-900/80 backdrop-blur-md border border-white/10 shadow-lg;
   }
   
   .glass-card {
@@ -15,7 +15,7 @@
   }
   
   .glass-card:hover {
-    @apply bg-white/90 shadow-card-hover transform -translate-y-1;
+    @apply bg-white/90 shadow-xl transform -translate-y-1;
   }
   
   /* Neumorphism Effects */
@@ -93,7 +93,7 @@
   
   .form-floating input,
   .form-floating select {
-    @apply block w-full px-4 pb-2 pt-6 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-accent-500 focus:border-transparent;
+    @apply block w-full px-4 pb-2 pt-6 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
   }
   
   .form-floating label {
@@ -105,7 +105,7 @@
   }
   
   .form-floating input:focus ~ label {
-    @apply top-2 text-xs text-accent-600;
+    @apply top-2 text-xs text-primary-600;
   }
   
   /* Skeleton Loading */
@@ -168,16 +168,16 @@
   
   /* Focus Styles */
   .focus-ring {
-    @apply focus:outline-none focus:ring-4 focus:ring-accent-500/20 focus:border-accent-500;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary-500/20 focus:border-primary-500;
   }
   
   /* Loading Spinner */
   .spinner {
-    @apply inline-block w-8 h-8 border-4 border-gray-200 border-t-accent-600 rounded-full animate-spin;
+    @apply inline-block w-8 h-8 border-4 border-gray-200 border-t-primary-600 rounded-full animate-spin;
   }
   
   .spinner-small {
-    @apply inline-block w-4 h-4 border-2 border-gray-200 border-t-accent-600 rounded-full animate-spin;
+    @apply inline-block w-4 h-4 border-2 border-gray-200 border-t-primary-600 rounded-full animate-spin;
   }
   
   /* Badge Styles */
@@ -207,7 +207,7 @@
   }
   
   .chip-active {
-    @apply bg-accent-600 text-white;
+    @apply bg-primary-600 text-white;
   }
   
   /* Divider */

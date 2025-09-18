@@ -1,0 +1,176 @@
+/* GLOBAL STADIUM HEADER RESET - ABSOLUTE TEXT SEPARATION */
+
+/* Target any element that might be a stadium header */
+[data-stadium-header="true"],
+header.stadium-header,
+.stadium-header,
+.headerWrap {
+  /* Force flexbox column layout */
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  
+  /* Ensure proper spacing */
+  gap: 12px !important;
+  padding: 24px !important;
+  
+  /* Reset any problematic styles */
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Force H1 elements to be completely separate */
+[data-stadium-header="true"] h1,
+header.stadium-header h1,
+.stadium-header h1,
+.headerWrap h1,
+h1[data-test="stadium-h1"] {
+  /* CRITICAL: Block display with full width */
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  
+  /* Force spacing */
+  margin: 0 0 16px 0 !important;
+  padding: 0 !important;
+  
+  /* Ensure text doesn't merge */
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow: visible !important;
+  text-overflow: visible !important; /* Changed from clip to visible */
+  
+  /* Clear any floats or positioning */
+  clear: both !important;
+  float: none !important;
+  position: relative !important;
+  
+  /* Minimum height to prevent collapse - adjusted for actual text size */
+  min-height: 62px !important;  /* Increased for 44px font with 1.4 line-height */
+  height: auto !important;
+  line-height: 1.4 !important;  /* Match the component CSS */
+  
+  /* Reset any transforms or effects */
+  transform: none !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+  
+  /* Ensure clean rendering */
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  
+  /* Force visibility */
+  visibility: visible !important;
+  opacity: 1 !important;
+  overflow: visible !important;
+}
+
+/* Force P elements (subtitle) to be separate */
+[data-stadium-header="true"] p,
+header.stadium-header p,
+.stadium-header p,
+.headerWrap p {
+  /* Block display */
+  display: block !important;
+  width: 100% !important;
+  
+  /* Force spacing */
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  
+  /* Clear positioning */
+  clear: both !important;
+  float: none !important;
+  position: relative !important;
+  
+  /* Minimum height */
+  min-height: 24px !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  
+  /* Reset transforms */
+  transform: none !important;
+}
+
+/* Force metadata container to be separate */
+[data-stadium-header="true"] .stadiumMeta,
+header.stadium-header .stadiumMeta,
+.stadium-header .stadium-meta,
+.headerWrap .stadiumMeta {
+  /* Flex display for metadata items */
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  
+  /* Full width */
+  width: 100% !important;
+  
+  /* Force spacing */
+  margin: 0 0 12px 0 !important;
+  padding: 0 !important;
+  
+  /* Clear positioning */
+  clear: both !important;
+  float: none !important;
+  position: relative !important;
+  
+  /* Minimum height */
+  min-height: 24px !important;
+  height: auto !important;
+}
+
+/* Ensure no pseudo-elements can cause overlap */
+[data-stadium-header="true"] *::before,
+[data-stadium-header="true"] *::after,
+header.stadium-header *::before,
+header.stadium-header *::after,
+.stadium-header *::before,
+.stadium-header *::after,
+.headerWrap *::before,
+.headerWrap *::after {
+  position: relative !important;
+  z-index: -1 !important;
+}
+
+/* Emergency fallback - force all direct children to stack */
+[data-stadium-header="true"] > *,
+header.stadium-header > *,
+.stadium-header > *,
+.headerWrap > * {
+  display: block !important;
+  position: relative !important;
+  clear: both !important;
+  margin-bottom: 8px !important;
+}
+
+/* Mobile responsive reset */
+@media (max-width: 768px) {
+  [data-stadium-header="true"],
+  header.stadium-header,
+  .stadium-header,
+  .headerWrap {
+    padding: 16px !important;
+    gap: 8px !important;
+  }
+  
+  [data-stadium-header="true"] h1,
+  header.stadium-header h1,
+  .stadium-header h1,
+  .headerWrap h1,
+  h1[data-test="stadium-h1"] {
+    /* Let module CSS handle font-size, just ensure min-height */
+    min-height: 45px !important; /* Sufficient for mobile font sizes */
+    margin-bottom: 12px !important;
+  }
+  
+  [data-stadium-header="true"] p,
+  header.stadium-header p,
+  .stadium-header p,
+  .headerWrap p {
+    font-size: 16px !important;
+    min-height: 20px !important;
+    margin-bottom: 10px !important;
+  }
+}

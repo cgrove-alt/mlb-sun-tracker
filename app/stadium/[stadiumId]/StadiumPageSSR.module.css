@@ -156,13 +156,13 @@
 }
 
 .section {
-  padding: 3rem 0;
+  padding: 32px 0; /* Standardized padding */
 }
 
 .stadiumHero {
   background: white;
   border-bottom: 1px solid #e0e0e0;
-  padding: 3rem 0;
+  padding: 32px 0; /* Standardized padding */
 }
 
 .breadcrumb {
@@ -191,8 +191,8 @@
 .stadiumQuickFacts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 16px; /* Standardized gap */
+  padding: 20px; /* Standardized padding */
   background: #f5f5f5;
   border-radius: 8px;
 }
@@ -220,8 +220,8 @@
 .tipsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 20px; /* Standardized gap */
+  margin-top: 24px; /* Standardized margin */
 }
 
 .sectionCard,
@@ -229,7 +229,7 @@
 .timeCard,
 .tipCard {
   background: white;
-  padding: 1.5rem;
+  padding: 20px; /* Standardized padding */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -349,13 +349,13 @@
 .amenitiesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 20px; /* Standardized gap */
+  margin-top: 24px; /* Standardized margin */
 }
 
 .amenityCategory {
   background: white;
-  padding: 1.5rem;
+  padding: 20px; /* Standardized padding */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -377,8 +377,8 @@
 
 .faqItem {
   background: white;
-  padding: 1.5rem;
-  margin-bottom: 1rem;
+  padding: 20px; /* Standardized padding */
+  margin-bottom: 16px; /* Standardized margin */
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -392,7 +392,7 @@
   background: linear-gradient(135deg, #2196f3, #1976d2);
   color: white;
   text-align: center;
-  padding: 4rem 0;
+  padding: 40px 0; /* Standardized padding */
 }
 
 .stadiumCta h2 {
@@ -440,6 +440,14 @@
 }
 
 @media (max-width: 768px) {
+  .section {
+    padding: 20px 0; /* Reduced mobile padding */
+  }
+  
+  .stadiumHero {
+    padding: 20px 0; /* Reduced mobile padding */
+  }
+  
   .title {
     font-size: 2rem;
   }
@@ -449,6 +457,26 @@
   .timeGrid,
   .tipsGrid {
     grid-template-columns: 1fr;
+    gap: 16px; /* Reduced mobile gap */
+    margin-top: 20px; /* Reduced mobile margin */
+  }
+  
+  .sectionCard,
+  .monthCard,
+  .timeCard,
+  .tipCard,
+  .amenityCategory,
+  .faqItem {
+    padding: 16px; /* Reduced mobile padding */
+  }
+  
+  .stadiumQuickFacts {
+    padding: 16px; /* Reduced mobile padding */
+    gap: 12px; /* Reduced mobile gap */
+  }
+  
+  .stadiumCta {
+    padding: 24px 0; /* Reduced mobile padding */
   }
 
   .sectionsTable {

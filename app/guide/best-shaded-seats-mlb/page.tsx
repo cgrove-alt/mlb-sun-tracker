@@ -170,7 +170,7 @@ export default function BestShadedSeatsMLBPage() {
               Stadium layouts and sun angles change throughout the season. Use The Shadium to see 
               exactly which seats will be shaded for your specific game.
             </p>
-            <Link href="/" className="cta-button primary">
+            <Link href="/" className="cta-btn">
               Check Shade for Your Game →
             </Link>
           </section>

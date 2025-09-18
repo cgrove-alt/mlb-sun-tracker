@@ -6,7 +6,8 @@ export default function Loading() {
       display: 'flex', 
       justifyContent: 'center', 
       alignItems: 'center', 
-      minHeight: '100vh',
+      minHeight: '200px',
+      padding: '40px 0',
       background: '#f8f9fa'
     }}>
       <LoadingSpinner size="large" message="Loading stadium guide..." />

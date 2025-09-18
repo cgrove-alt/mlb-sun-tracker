@@ -12,6 +12,8 @@ import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
 import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './MobileStadiumGuide.css';
 
 interface MobileStadiumGuideProps {
@@ -101,22 +103,36 @@ const MobileStadiumGuide: React.FC<MobileStadiumGuideProps> = ({ stadium, sectio
     setExpandedSection(expandedSection === sectionId ? null : sectionId);
   };
 
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: stadium.name,
+      id: stadium.id
+    },
+    team: {
+      name: stadium.team,
+      league: 'MLB'
+    },
+    quickFacts: {
+      location: {
+        city: stadium.city,
+        state: stadium.state
+      },
+      capacity: stadium.capacity,
+      orientation: stadium.orientation,
+      roofType: stadium.roof,
+      yearBuilt: stadiumHistory?.opened
+    }
+  };
+
   return (
     <div className="mobile-stadium-guide" ref={guideContentRef}>
-      <div className="mobile-stadium-header">
-        <Link href="/" className="back-button">
-          ← Back
-        </Link>
-        <h1>{stadium.name}</h1>
-        <div className="stadium-badges">
-          <span className="team-badge">{stadium.team}</span>
-          <span className="roof-badge">
-            {stadium.roof === 'fixed' ? 'Fixed Roof' : 
-             stadium.roof === 'retractable' ? 'Retractable' : 
-             'Open Air'}
-          </span>
-        </div>
-      </div>
+      <StadiumTitleBlock
+        data={titleData}
+        showBreadcrumb={true}
+        compact={true}
+      />
 
       {/* Table of Contents for Mobile */}
       <TableOfContents containerRef={guideContentRef} />

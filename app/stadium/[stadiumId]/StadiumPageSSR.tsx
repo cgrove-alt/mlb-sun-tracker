@@ -1,11 +1,15 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';
 import { StadiumSection } from '../../../src/data/stadiumSections';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
 import { SectionList } from '../../../src/components/SectionList';
+import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
+import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
+import { stadiumHistories } from '../../../src/data/stadiumDetails';
 import styles from './StadiumPageSSR.module.css';
 
 interface StadiumPageSSRProps {
@@ -171,34 +175,36 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
       {/* Hero Section with Stadium Info */}
       <section className={styles.stadiumHero}>
         <div className={styles.container}>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <a href="/">Home</a> › <a href="/stadiums">Stadiums</a> › <span>{stadium.name}</span>
-          </nav>
-          
-          <h1 className={styles.title}>{stadium.name} Shade Guide</h1>
-          <p className={styles.stadiumSubtitle}>Complete guide to finding shaded seats at {stadium.team} games</p>
-          
-          <div className={styles.stadiumQuickFacts}>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Location:</span>
-              <span className={styles.factValue}>{stadium.city}, {stadium.state}</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Orientation:</span>
-              <span className={styles.factValue}>{stadium.orientation}°</span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Roof Type:</span>
-              <span className={styles.factValue}>
-                {stadium.roof === 'open' ? 'Open Air' : 
-                 stadium.roof === 'retractable' ? 'Retractable Roof' : 'Fixed Roof'}
-              </span>
-            </div>
-            <div className={styles.fact}>
-              <span className={styles.factLabel}>Capacity:</span>
-              <span className={styles.factValue}>{stadium.capacity?.toLocaleString() || 'N/A'}</span>
-            </div>
-          </div>
+          {(() => {
+            const stadiumHistory = stadiumHistories[stadium.id];
+            const titleData: StadiumTitleData = {
+              purpose: 'shade-guide',
+              stadium: {
+                name: stadium.name,
+                id: stadium.id
+              },
+              team: {
+                name: stadium.team,
+                league: 'MLB'
+              },
+              quickFacts: {
+                location: {
+                  city: stadium.city,
+                  state: stadium.state
+                },
+                capacity: stadium.capacity,
+                orientation: stadium.orientation,
+                roofType: stadium.roof,
+                yearBuilt: stadiumHistory?.opened
+              }
+            };
+            return (
+              <StadiumTitleBlock
+                data={titleData}
+                showBreadcrumb={true}
+              />
+            );
+          })()}
         </div>
       </section>
 

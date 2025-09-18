@@ -1,0 +1,132 @@
+/* Stadium Page Grid Layout - NO OVERLAPS, NO Z-INDEX GAMES */
+
+.pageContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 2rem; /* Consistent with card spacing */
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 16px; /* Prevent edge touching */
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Each grid item is self-contained */
+.pageContainer > * {
+  margin: 0 !important;
+  position: static !important;
+  transform: none !important;
+  z-index: auto !important;
+}
+
+/* Header section specifically */
+.headerSection {
+  grid-column: 1;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 8px; /* Unified 8px radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+  margin: 0;
+  position: relative;
+  z-index: 1;
+  isolation: isolate;  /* Prevent style bleeding */
+}
+
+/* Content wrapper for guide */
+.contentWrapper {
+  grid-column: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual content sections */
+.contentSection {
+  grid-column: 1;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sticky shade bar container */
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  grid-column: 1;
+  margin: 0;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .pageContainer {
+    gap: 1.5rem;
+    padding: 16px; /* Consistent mobile padding */
+  }
+  
+  .headerSection {
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .contentWrapper {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pageContainer {
+    gap: 2rem;
+    padding: 0 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  
+  .headerSection {
+    padding: 20px;
+  }
+}
+
+/* Desktop adjustments */
+@media (min-width: 1025px) {
+  .pageContainer {
+    gap: 2rem;
+    padding: 0 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  
+  .headerSection {
+    padding: 24px;
+  }
+  
+  .contentWrapper {
+    gap: 2rem;
+  }
+}
+
+/* Kill all transforms and negative margins globally within page */
+.pageContainer * {
+  transform: none !important;
+}
+
+.pageContainer *:hover {
+  transform: none !important;
+}
+
+/* Ensure no section can overlap */
+.pageContainer section,
+.pageContainer article,
+.pageContainer div[class*="section"],
+.pageContainer div[class*="guide"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}

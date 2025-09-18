@@ -14,9 +14,11 @@
 @import url('../src/styles/spacing-system.css');
 @import url('../src/styles/modern-features.css');
 @import url('../src/styles/modern-ui-effects.css');
+@import url('../src/styles/stadium-header-reset.css');
 
 /* Additional Next.js specific styles */
 html {
+  font-size: 16px; /* Explicit base font size for accessibility */
   scroll-behavior: smooth;
   font-feature-settings: "kern", "liga";
 }
@@ -31,7 +33,7 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   background-color: var(--color-paper, #FFFFFF);
-  color: var(--color-ink-900, #0B1220);
+  color: #333333; /* Darker default text color */
   /* Removed overscroll-behavior: none to allow scrolling on mobile */
 }
 
@@ -42,30 +44,67 @@ body {
   overflow-x: hidden;
 }
 
-/* Base Typography with WCAG AA compliance */
-p, li {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--color-ink-900, #0B1220);
+/* =================================================================
+   STANDARDIZED SPACING SYSTEM
+   Base: 8px grid for consistent vertical rhythm
+   ================================================================= */
+
+/* Section Spacing */
+.section {
+  margin: 40px 0;
+  padding: 32px 0;
 }
 
+/* Container Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Base Typography with WCAG AA compliance and standardized spacing */
+p {
+  font-size: 1rem;
+  line-height: 1.6; /* Improved readability */
+  color: #333333;
+  margin: 0 0 16px 0; /* Consistent bottom margin */
+}
+
+li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+/* Standardized Heading Margins */
 h1 {
   color: var(--color-ink-800, #1B2432);
   font-weight: 600;
   line-height: 1.25;
   text-wrap: balance;
+  margin: 0 0 24px 0; /* Consistent bottom margin */
 }
 
 h2 {
   color: var(--color-ink-800, #1B2432);
   font-weight: 600;
   line-height: 1.375;
+  margin: 32px 0 16px 0; /* Top margin for section separation */
 }
 
-h3, h4, h5, h6 {
+h3 {
   color: var(--color-ink-800, #1B2432);
   font-weight: 500;
   line-height: 1.4;
+  margin: 24px 0 12px 0;
+}
+
+h4, h5, h6 {
+  color: var(--color-ink-800, #1B2432);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 16px 0 8px 0;
 }
 
 /* Muted text helper */
@@ -73,7 +112,7 @@ h3, h4, h5, h6 {
   color: var(--color-ink-700, #334155);
 }
 
-/* Mobile-specific scrolling fixes */
+/* Mobile-specific scrolling fixes and spacing adjustments */
 @media (max-width: 768px) {
   html, body {
     overflow-y: auto !important;
@@ -84,6 +123,38 @@ h3, h4, h5, h6 {
   
   body {
     touch-action: pan-y !important;
+  }
+  
+  /* Reduced spacing on mobile */
+  .section {
+    margin: 24px 0;
+    padding: 20px 0;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  /* Reduced heading margins on mobile */
+  h1 {
+    margin-bottom: 16px;
+  }
+  
+  h2 {
+    margin: 24px 0 12px 0;
+  }
+  
+  h3 {
+    margin: 20px 0 10px 0;
+  }
+  
+  h4, h5, h6 {
+    margin: 12px 0 8px 0;
+  }
+  
+  /* Reduced paragraph spacing on mobile */
+  p {
+    margin-bottom: 12px;
   }
 }
 
@@ -242,7 +313,7 @@ button, a, .clickable {
 
 .update-available p {
   margin: 0 0 12px 0;
-  font-size: 14px;
+  font-size: 16px; /* Better readability */
   opacity: 0.9;
 }
 
@@ -255,7 +326,7 @@ button, a, .clickable {
   cursor: pointer;
   font-weight: 500;
   margin-right: 8px;
-  font-size: 14px;
+  font-size: 16px; /* Better readability */
 }
 
 .update-available button:hover {
@@ -306,7 +377,7 @@ button, a, .clickable {
 .stadium-info p {
   margin: 0;
   color: var(--ink-700);
-  font-size: 0.9rem;
+  font-size: 1rem; /* 16px for better readability */
 }
 
 .sun-indicator {
@@ -367,11 +438,11 @@ button, a, .clickable {
   }
   
   .stadium-info p {
-    font-size: 0.8rem;
+    font-size: 1rem; /* 16px minimum for readability */
   }
   
   .sun-position {
-    font-size: 0.8rem;
+    font-size: 1rem; /* 16px minimum for readability */
   }
 }
 
@@ -423,7 +494,7 @@ button, a, .clickable {
 .guide-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 32px 20px; /* Standardized padding */
   position: relative;
 }
 
@@ -432,7 +503,7 @@ button, a, .clickable {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 0.875rem;
+  font-size: 1rem; /* 16px for better readability */
   color: var(--ink-700);
   font-weight: 500;
 }
@@ -451,15 +522,15 @@ article {
   background: white;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin-bottom: 2rem;
+  padding: 32px; /* Standardized padding */
+  margin-bottom: 32px; /* Consistent margin */
 }
 
 article h1 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
   color: #1a237e;
-  margin: 0 0 1.5rem;
+  margin: 0 0 24px; /* Standardized margin */
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
@@ -467,14 +538,14 @@ article h1 {
 article .lead {
   font-size: clamp(1rem, 3vw, 1.25rem);
   color: #495057;
-  margin-bottom: 2rem;
+  margin-bottom: 32px; /* Standardized margin */
   line-height: 1.6;
   font-weight: 400;
 }
 
 section {
-  margin-top: 3rem;
-  padding-top: 2rem;
+  margin-top: 40px; /* Standardized margin */
+  padding-top: 32px; /* Standardized padding */
   border-top: 1px solid #f0f0f0;
 }
 
@@ -488,35 +559,35 @@ section h2 {
   font-size: clamp(1.375rem, 3vw, 1.75rem);
   font-weight: 700;
   color: #1a237e;
-  margin: 0 0 1.5rem;
+  margin: 32px 0 16px; /* Standardized margins */
   line-height: 1.3;
 }
 
 section h3 {
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
-  font-weight: 600;
-  color: #333;
-  margin: 2rem 0 1rem;
+  font-weight: 500;
+  color: #475569;
+  margin: 24px 0 12px; /* Standardized margins */
   line-height: 1.4;
 }
 
 section p {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #37474f;
-  margin: 0 0 1.25rem;
+  line-height: 1.6; /* Improved line-height */
+  color: #333333;
+  margin: 0 0 16px; /* Standardized margin */
 }
 
 section ul, section ol {
-  margin: 1.25rem 0;
-  padding-left: 1.25rem;
+  margin: 16px 0; /* Standardized margin */
+  padding-left: 20px; /* Consistent padding */
 }
 
 section li {
-  margin-bottom: 0.75rem;
-  line-height: 1.7;
+  margin-bottom: 8px; /* Standardized margin */
+  line-height: 1.6; /* Improved line-height */
   font-size: 1rem;
-  color: #37474f;
+  color: #333333;
 }
 
 section li::marker {
@@ -532,18 +603,18 @@ section strong {
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0;
+  margin: 24px 0; /* Standardized margin */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  gap: 16px; /* Standardized gap */
 }
 
 .feature-list li {
   display: flex;
-  gap: 1rem;
+  gap: 16px; /* Standardized gap */
   align-items: flex-start;
   margin: 0;
-  padding: 1rem;
+  padding: 16px; /* Standardized padding */
   background: #f8f9fa;
   border-radius: 8px;
   border: 1px solid #e9ecef;
@@ -575,7 +646,7 @@ section strong {
 
 .feature-content p {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 1rem; /* 16px for better readability */
   color: var(--ink-700);
   line-height: 1.5;
 }
@@ -621,7 +692,7 @@ section strong {
 
 .feature-content p {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: 1rem; /* 16px for better readability */
   color: var(--ink-700);
   line-height: 1.6;
 }
@@ -630,8 +701,8 @@ section strong {
   background: #e3f2fd;
   border: 2px solid var(--accent-700);
   border-radius: 8px;
-  padding: 1.5rem;
-  margin: 2rem 0;
+  padding: 24px; /* Standardized padding */
+  margin: 32px 0; /* Standardized margin */
   text-align: center;
 }
 
@@ -694,7 +765,7 @@ section strong {
 
 .team-name {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.875rem;
+  font-size: 1rem; /* 16px for better readability */
   margin: 0.25rem 0 0 0;
   line-height: 1.4;
 }
@@ -709,7 +780,7 @@ section strong {
 }
 
 .shade-info h4, .shade-tip h4 {
-  font-size: 0.75rem;
+  font-size: 1rem; /* 16px for better readability */ /* 14px minimum for accessibility */
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -729,7 +800,7 @@ section strong {
   color: #1a237e;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
-  font-size: 0.75rem;
+  font-size: 1rem; /* 16px for better readability */ /* 14px minimum for readability */
   font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
   font-weight: 500;
   line-height: 1.4;
@@ -740,7 +811,7 @@ section strong {
   background: #fff8e1;
   border-radius: 6px;
   padding: 0.75rem;
-  font-size: 0.875rem;
+  font-size: 1rem; /* 16px for better readability */
   color: #5d4037;
   line-height: 1.5;
   position: relative;
@@ -787,14 +858,14 @@ section strong {
 
   .shade-tip {
     padding: 1rem;
-    font-size: 0.9375rem;
+    font-size: 1rem; /* 16px for better readability */
   }
 }
 
 /* Guide index page */
 .guides-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 40px; /* Standardized margin */
 }
 
 .guides-grid {
@@ -1054,8 +1125,9 @@ section strong {
   }
 
   section p {
-    font-size: 0.9375rem;
+    font-size: 1rem; /* 16px minimum */
     margin-bottom: 1rem;
+    line-height: 1.6;
   }
 
   section ul, section ol {
@@ -1064,8 +1136,9 @@ section strong {
   }
 
   section li {
-    font-size: 0.9375rem;
+    font-size: 1rem; /* 16px minimum */
     margin-bottom: 0.5rem;
+    line-height: 1.6;
   }
 
   .feature-list {
@@ -1084,12 +1157,12 @@ section strong {
   }
 
   .feature-content strong {
-    font-size: 0.9375rem;
+    font-size: 1rem; /* 16px for better readability */
     margin-bottom: 0.25rem;
   }
 
   .feature-content p {
-    font-size: 0.8125rem;
+    font-size: 1rem; /* 16px for better readability */ /* 15px minimum for secondary content */
   }
 
   .stadium-grid {
@@ -1109,7 +1182,7 @@ section strong {
   }
 
   .team-name {
-    font-size: 0.8125rem;
+    font-size: 1rem; /* 16px for better readability */ /* 15px minimum */
   }
 
   .stadium-shade-content {
@@ -1122,7 +1195,7 @@ section strong {
   }
 
   .section-tag {
-    font-size: 0.6875rem;
+    font-size: 1rem; /* 16px for better readability */ /* 14px minimum on mobile */
     padding: 0.25rem 0.375rem;
   }
 
@@ -1134,7 +1207,7 @@ section strong {
 
   .breadcrumb {
     margin-bottom: 1.25rem;
-    font-size: 0.8125rem;
+    font-size: 1rem; /* 16px for better readability */ /* 14px minimum */
   }
 }
 
@@ -1153,7 +1226,8 @@ section strong {
   }
 
   article .lead {
-    font-size: 0.9375rem;
+    font-size: 1rem; /* 16px minimum */
+    line-height: 1.6;
   }
 
   section {
@@ -1180,6 +1254,364 @@ section strong {
 
   .shade-tip {
     padding: 0.5rem;
-    font-size: 0.75rem;
+    font-size: 1rem; /* 16px for better readability */ /* 14px minimum for readability */
+  }
+}
+
+/* Unified Card Design System */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-no-shadow {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Consistent card spacing */
+.card + .card,
+.card-no-shadow + .card,
+.card + .card-no-shadow {
+  margin-top: 2rem;
+}
+
+/* Container padding to prevent edge touching on mobile */
+.page-container {
+  padding: 0 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Content container for optimal reading width */
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Stadium guide text content constraints for readability */
+.stadium-guide p,
+.stadium-guide li {
+  max-width: 65ch; /* Optimal ~60-75 characters per line */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Wider containers should have centered text blocks */
+@media (min-width: 1024px) {
+  .stadium-guide-wrapper p,
+  .stadium-guide-wrapper li,
+  .guide-page p,
+  .guide-page li {
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.content-wide {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .card,
+  .card-no-shadow {
+    padding: 24px;
+  }
+  
+  .page-container {
+    padding: 0 24px;
+  }
+}
+
+/* Call-to-Action Button Styles */
+.cta-btn {
+  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.51:1 contrast) */
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cta-btn:hover {
+  background: #ff7700;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 136, 0, 0.3);
+}
+
+.cta-btn:focus {
+  outline: 2px solid #b35900; /* Changed from #ff8800 for consistency */
+  outline-offset: 2px;
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary CTA Button */
+.cta-btn-secondary {
+  background: #2196f3;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn-secondary:hover {
+  background: #1976d2;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.cta-btn-secondary:focus {
+  outline: 2px solid #2196f3;
+  outline-offset: 2px;
+}
+
+/* Outline/Ghost CTA Button */
+.cta-btn-outline {
+  background: transparent;
+  color: #b35900; /* Changed from #ff8800 for WCAG AA compliance */
+  padding: 12px 24px;
+  border: 2px solid #b35900; /* Changed from #ff8800 for consistency */
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 44px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.cta-btn-outline:hover {
+  background: #b35900; /* Changed from #ff8800 for WCAG AA compliance (4.51:1 contrast) */
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 136, 0, 0.2);
+}
+
+.cta-btn-outline:focus {
+  outline: 2px solid #b35900; /* Changed from #ff8800 for consistency */
+  outline-offset: 2px;
+}
+
+/* Small CTA Button Variant */
+.cta-btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-height: 36px;
+}
+
+/* Large CTA Button Variant */
+.cta-btn-lg {
+  padding: 16px 32px;
+  font-size: 18px;
+  min-height: 52px;
+}
+
+/* Full Width CTA Button (mobile) */
+.cta-btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Disabled State */
+.cta-btn:disabled,
+.cta-btn-secondary:disabled,
+.cta-btn-outline:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cta-btn:disabled:hover,
+.cta-btn-secondary:disabled:hover,
+.cta-btn-outline:disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .cta-btn,
+  .cta-btn-secondary,
+  .cta-btn-outline {
+    padding: 14px 24px;
+    font-size: 16px;
+    min-height: 48px;
+  }
+  
+  .cta-btn-sm {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-height: 40px;
+  }
+  
+  .cta-btn-lg {
+    padding: 18px 32px;
+    font-size: 18px;
+    min-height: 56px;
+  }
+}
+
+/* Breadcrumb Navigation Styles */
+.breadcrumb-nav {
+  font-size: 0.875rem; /* 14px */
+  color: #6B7280; /* gray-500 */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.breadcrumb-nav a {
+  color: #3B82F6; /* blue-500 */
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.breadcrumb-nav a:hover {
+  color: #2563EB; /* blue-600 */
+  text-decoration: underline;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.breadcrumb-nav a:focus {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+.breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: #9CA3AF; /* gray-400 */
+  user-select: none;
+}
+
+.breadcrumb-current {
+  color: #1F2937; /* gray-800 */
+  font-weight: 500;
+}
+
+/* Mobile adjustments for breadcrumbs */
+@media (max-width: 768px) {
+  .breadcrumb-nav {
+    font-size: 0.8125rem; /* 13px */
+    margin-bottom: 0.75rem;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 0.375rem;
+  }
+}
+
+/* Mobile-specific typography improvements for readability */
+@media (max-width: 600px) {
+  /* Ensure base font size stays at 16px on mobile for accessibility */
+  html {
+    font-size: 16px !important;
+  }
+  
+  /* Ensure body text is at least 16px on mobile */
+  body {
+    font-size: 1rem !important; /* 16px minimum */
+    line-height: 1.6 !important; /* Slightly increased for mobile readability */
+  }
+  
+  /* Ensure paragraph and list text is readable */
+  p, li {
+    font-size: 1rem !important; /* 16px minimum */
+    line-height: 1.6 !important;
+  }
+  
+  /* Fix small text sizes that harm readability */
+  .stadium-info p,
+  .sun-position,
+  section p,
+  section li,
+  article p,
+  article li {
+    font-size: 1rem !important; /* 16px minimum */
+    line-height: 1.6 !important;
+  }
+  
+  /* Secondary text can be slightly smaller but still readable */
+  .feature-content p,
+  .meta-info,
+  .timestamp {
+    font-size: 0.9375rem !important; /* 15px minimum */
+    line-height: 1.5 !important;
+  }
+  
+  /* Keep smaller sizes only for tags and badges */
+  .section-tag,
+  .badge,
+  .chip {
+    font-size: 0.875rem !important; /* 14px for decorative elements */
+  }
+}
+
+@media (max-width: 600px) {
+  /* General h1 styles - stadium headers use their own module styles */
+  h1:not([data-test="stadium-h1"]) {
+    font-size: 2.2rem !important; /* ~35px */
+    line-height: 1.3 !important;
+    margin-top: 0.5em !important; /* Add space from breadcrumb */
+    text-align: left !important; /* Ensure left-aligned */
+  }
+  
+  /* Reduce section heading sizes on mobile */
+  section h2 {
+    font-size: 1.25rem !important; /* 20px */
+    margin-top: 1.5em !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  section h3 {
+    font-size: 1.1rem !important; /* ~17.6px */
+    margin-top: 1.75rem !important;
+    margin-bottom: 0.75rem !important;
   }
 }

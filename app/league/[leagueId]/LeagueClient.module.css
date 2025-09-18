@@ -174,3 +174,84 @@
   border: 1px dashed #e5e7eb;
   border-radius: 12px;
 }
+
+/* Mobile optimizations for better tap targets */
+@media (max-width: 768px) {
+  /* Make cards large tappable buttons on mobile */
+  .card {
+    padding: 20px;
+    min-height: 100px; /* Ensure 48px+ tap target */
+    touch-action: manipulation; /* Prevent zoom on double-tap */
+    -webkit-tap-highlight-color: rgba(33, 150, 243, 0.1);
+    cursor: pointer;
+    border: 2px solid #e5e7eb;
+    transition: all 0.15s ease;
+  }
+
+  .card:active {
+    transform: scale(0.98);
+    background: #f0f4f8;
+    border-color: #2563eb;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+  }
+
+  /* Larger text for mobile readability */
+  .card h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    white-space: normal; /* Allow wrapping on mobile */
+  }
+
+  .muted {
+    font-size: 1rem;
+    margin: 8px 0;
+    white-space: normal;
+  }
+
+  .sub {
+    font-size: 0.9375rem; /* 15px */
+    white-space: normal;
+  }
+
+  .meta {
+    font-size: 0.875rem; /* 14px */
+    gap: 12px;
+  }
+
+  .cta {
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+    text-align: center;
+  }
+
+  /* Make badges more prominent on mobile */
+  .badge {
+    padding: 6px 12px;
+    font-size: 0.8125rem; /* 13px */
+    font-weight: 700;
+  }
+
+  /* Ensure search and filter controls are easy to use */
+  .searchInput {
+    height: 48px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 0 16px;
+  }
+
+  .filterSelect {
+    height: 44px;
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 0 12px;
+    min-width: 100px;
+  }
+
+  .filters {
+    gap: 16px;
+  }
+
+  /* Single column grid on mobile */
+  .grid {
+    gap: 12px;
+  }
+}

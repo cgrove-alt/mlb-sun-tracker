@@ -2707,5 +2707,5339 @@ export const nflStadiumGuides: Record<string, StadiumGuide> = {
         'Group tickets'
       ]
     }
+  },
+
+  // Additional NFL Stadiums - Comprehensive Implementation
+
+  // NFC WEST - Arizona Cardinals
+  'state-farm-stadium': {
+    id: 'state-farm-stadium',
+    name: 'State Farm Stadium',
+    team: 'Arizona Cardinals',
+    opened: 2006,
+    capacity: 63400,
+    overview: {
+      description: 'State Farm Stadium in Glendale is a marvel of modern engineering with its retractable roof and roll-out natural grass field. The venue hosts the Cardinals, major college football games, and has been a Super Bowl host multiple times.',
+      highlights: [
+        'Retractable roof opens in 12 minutes',
+        'Roll-out natural grass field',
+        'Climate controlled environment',
+        'Host of Super Bowl XLIX and LVII'
+      ],
+      uniqueFeatures: [
+        'First stadium with retractable field and roof',
+        'Field rolls outside on 546 steel wheels',
+        'Grass gets natural sunlight when rolled out',
+        'Translucent roof panels for natural lighting'
+      ],
+      renovations: [
+        { year: 2017, description: 'Video board upgrades' },
+        { year: 2020, description: 'COVID-19 safety modifications' },
+        { year: 2023, description: 'Premium seating renovations' }
+      ],
+      previousNames: ['University of Phoenix Stadium']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Retractable roof typically closed', 'All sections shaded', 'Climate controlled'],
+        afternoon: ['Roof closed for comfort', 'Complete shade coverage', '72°F maintained'],
+        evening: ['Roof may be open in good weather', 'Upper deck shaded', 'Lower bowl exposed when open']
+      },
+      coveredSeating: ['All seats covered when roof closed', 'Permanent coverage in club levels', 'Suite level always covered'],
+      shadeTips: [
+        'Roof is typically closed for day games due to heat',
+        'October-November games may have open roof',
+        'Climate control maintains 72°F when closed',
+        'No sun exposure concerns when roof is closed'
+      ],
+      sunProtection: {
+        sunscreenStations: ['All gate entrances', 'Guest services'],
+        shadedConcourses: ['All concourses climate controlled', 'Indoor club areas'],
+        indoorAreas: ['Team shop', 'Restaurants', 'Club lounges', 'All concourses']
+      },
+      worstSunExposure: ['Lower bowl when roof open', 'Sections 101-107 afternoon sun', 'End zones with open roof'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 95, avgHumidity: 30, rainChance: 10, typicalConditions: 'Very hot, roof closed', shadeTip: 'Enjoy climate control' },
+        { month: 'October', avgTemp: 82, avgHumidity: 25, rainChance: 8, typicalConditions: 'Warm, roof may open', shadeTip: 'Upper deck preferred if open' },
+        { month: 'November', avgTemp: 68, avgHumidity: 30, rainChance: 10, typicalConditions: 'Perfect weather, roof often open', shadeTip: 'Any seat comfortable' },
+        { month: 'December', avgTemp: 58, avgHumidity: 40, rainChance: 15, typicalConditions: 'Cool, roof varies', shadeTip: 'Dress in layers' },
+        { month: 'January', avgTemp: 56, avgHumidity: 45, rainChance: 20, typicalConditions: 'Mild winter', shadeTip: 'Light jacket if roof open' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Flight Lounge', perks: ['All-inclusive dining', 'Premium bar', 'Field-level views'], access: 'Sections 1-8' },
+          { name: 'Red Zone Club', perks: ['Buffet dining', 'Private bar', 'Climate controlled'], access: 'End zone plaza level' }
+        ],
+        suites: {
+          levels: ['Lower suite level', 'Upper suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Big Red Cabana', description: 'Pool deck party area', capacity: 250 }
+        ]
+      },
+      budgetOptions: ['Upper deck corners 401-408', 'Upper end zones 430-440', 'Standing room areas'],
+      familySections: ['Sections 415-420 designated family zone', 'No alcohol service'],
+      standingRoom: ['Flight Deck standing areas', 'Concourse viewing areas'],
+      partyAreas: [
+        { name: 'Flight Deck', capacity: '350', description: 'Standing room party deck', amenities: ['Bar service', 'Food trucks', 'TVs'] },
+        { name: 'Draft Room', capacity: '150', description: 'Sports bar atmosphere', amenities: ['Multiple TVs', 'Full bar', 'High-top seating'] }
+      ],
+      tips: [
+        { section: 'Lower bowl 110-130', tip: 'Best views, climate controlled', category: 'experience' },
+        { section: 'Upper deck 401-408', tip: 'Good value with full field view', category: 'value' },
+        { section: 'Club sections', tip: 'All-inclusive food and beverage', category: 'value' },
+        { section: 'Flight Deck', tip: 'Social atmosphere, standing room', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Sonoran hot dog', 'Carne asada nachos', 'Street tacos', 'Churros'],
+      local: ['Four Peaks beer', 'SanTan Brewing', 'Carolinas Mexican Food', 'Pork Shop'],
+      healthy: ['Power greens salad', 'Grilled chicken wraps', 'Fresh fruit', 'Veggie bowls'],
+      vegetarian: ['Black bean tacos', 'Veggie quesadillas', 'Impossible burgers', 'Salads'],
+      glutenFree: ['GF beer options', 'Corn tortilla tacos', 'Grilled meats'],
+      kidsFriendly: ['Pizza', 'Chicken tenders', 'Mac and cheese', 'Ice cream'],
+      alcohol: {
+        beer: ['Four Peaks', 'SanTan', 'Budweiser', 'Modelo', 'Local craft selection'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Four Peaks', 'SanTan', 'Huss Brewing', 'Arizona Wilderness']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Red Lot', distance: '0.2 miles', price: '$30', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Green Lot', distance: '0.3 miles', price: '$25', shadedSpots: false, covered: false, tip: 'Good value option' },
+        { name: 'Yellow Lot', distance: '0.4 miles', price: '$20', shadedSpots: false, covered: false, tip: 'Best for tailgating' },
+        { name: 'Brown Lot', distance: '0.5 miles', price: '$15', shadedSpots: false, covered: false, tip: 'RV parking available' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking near stadium',
+        tip: 'Use official lots or park and ride'
+      },
+      alternativeTransport: {
+        publicTransit: ['Valley Metro bus from Phoenix'],
+        rideShare: 'Designated pickup zones, expect surge pricing',
+        bicycle: 'Limited bike racks available'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'North', bestFor: ['Red Lot', 'Lower bowl north'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 2', location: 'Northeast', bestFor: ['Club level', 'Premium seating'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'East', bestFor: ['General admission', 'Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 4', location: 'Southeast', bestFor: ['Green Lot', 'Lower bowl east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 5', location: 'South', bestFor: ['Yellow Lot', 'End zone seating'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 6', location: 'West', bestFor: ['Premium parking', 'Suite level'], openTime: '2 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Cardinals Team Store - Main entrance', exclusive: ['Game-worn jerseys', 'Limited editions'] },
+        { location: 'Merchandise stands throughout' }
+      ],
+      firstAid: ['All gate entrances', 'Club level center', 'Upper deck sections'],
+      babyChanging: ['All family restrooms', 'Guest services areas'],
+      nursingRooms: ['Guest services on all levels'],
+      atms: ['All gate entrances', 'Concourse intersections', 'Club level'],
+      wifi: { available: true, network: 'Cardinals_WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Club level lounges', 'Flight Deck area'],
+      kidZones: [
+        { name: 'Cardinals Kids Zone', location: 'Plaza level', activities: ['Interactive games', 'Photo ops', 'Face painting'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels', 'Field level platforms', 'Club level sections'],
+        entrance: 'All gates have ADA access',
+        elevators: ['Available at all gate entrances', 'Multiple locations per level']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels have ADA restrooms', 'Family restrooms available'],
+      accessibleConcessions: ['All concession stands', 'Lowered counters available'],
+      parkingSpaces: 'ADA parking in all lots near entrances - prepurchase recommended'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Beat the Heat', description: 'Roof typically closed in summer - enjoy AC', category: 'weather' },
+        { title: 'Arrive Early', description: 'Westgate district has pre-game entertainment', category: 'arrival' },
+        { title: 'Try Sonoran Hot Dog', description: 'Local specialty worth trying', category: 'food' },
+        { title: 'Red Out Games', description: 'Wear red for special promotional games', category: 'experience' },
+        { title: 'Stay After', description: 'Let traffic clear while exploring Westgate', category: 'departure' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM or 4:05/4:25 PM Sundays',
+        rushHours: ['11:00 AM-12:30 PM for early games', '2:00-3:30 PM for late games']
+      },
+      security: {
+        allowedBags: 'Clear bags 12"x6"x12" or smaller',
+        prohibitedItems: ['Outside food/drink', 'Umbrellas', 'Cameras with long lenses', 'Weapons'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Westgate Entertainment District',
+      description: 'Premier entertainment complex adjacent to stadium',
+      beforeGame: ['Tanger Outlets shopping', 'TopGolf', 'Yard House for drinks', 'Desert Diamond Casino'],
+      afterGame: ['Multiple restaurants and bars', 'AMC Theatre', 'Live music venues'],
+      radius: '0.5 miles of walkable entertainment'
+    },
+    transportation: {
+      address: '1 Cardinals Drive, Glendale, AZ 85305',
+      publicTransit: {
+        bus: [{ routes: ['Valley Metro Express'], stops: ['Downtown Phoenix', 'Tempe'] }]
+      },
+      driving: {
+        majorRoutes: ['Loop 101', 'I-10 to Loop 101', 'Northern Avenue'],
+        typicalTraffic: 'Heavy congestion 2 hours before kickoff',
+        bestApproach: 'Loop 101 from north or south, avoid local roads'
+      },
+      rideShare: {
+        pickupZone: 'Designated zones at Westgate',
+        dropoffZone: 'East side of stadium',
+        surgePricing: '2-3x normal rates',
+        alternativeTip: 'Walk to nearby hotels for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2006, event: 'Stadium opens as University of Phoenix Stadium' },
+        { year: 2008, event: 'Hosts Super Bowl XLII' },
+        { year: 2015, event: 'Hosts Super Bowl XLIX' },
+        { year: 2018, event: 'Renamed State Farm Stadium' },
+        { year: 2023, event: 'Hosts Super Bowl LVII' }
+      ],
+      notableGames: [
+        { date: '2008-02-03', description: 'Super Bowl XLII - Giants upset undefeated Patriots' },
+        { date: '2009-01-11', description: 'Cardinals NFC Championship victory' },
+        { date: '2015-02-01', description: 'Super Bowl XLIX - Patriots vs Seahawks classic' }
+      ],
+      traditions: [
+        { name: 'Red Sea Rising', description: 'Fans create sea of red on game days' },
+        { name: 'Big Red Run', description: 'Mascot entrance tradition' },
+        { name: 'Bird Gang', description: 'Fan chant and identity' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Loud and energetic with roof closed, sea of red throughout stadium',
+      bestExperiences: [
+        'Red Out promotional games',
+        'Pat Tillman tributes',
+        'Ring of Honor ceremonies',
+        'Big Red mascot interactions'
+      ],
+      traditions: [
+        'Rise Up Red Sea chant',
+        'Bird Gang identity',
+        'Cardinals fight song'
+      ],
+      mascot: {
+        name: 'Big Red',
+        description: 'Large red cardinal with energetic personality'
+      },
+      fanGroups: [
+        { name: 'Bird Gang', description: 'Passionate Cardinals supporters', section: 'Throughout stadium' },
+        { name: 'Red Sea', description: 'Collective fan identity' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Book parking in advance online for discounts',
+        'Arrive early to enjoy Westgate district',
+        'Download Cardinals app for mobile tickets',
+        'Best food options on plaza level'
+      ],
+      avoidThese: [
+        'Driving on Loop 101 within 30 minutes of kickoff',
+        'Buying parking on game day',
+        'Leaving immediately after game ends'
+      ],
+      hiddenGems: [
+        'Flight Deck for social atmosphere',
+        'Pat Tillman memorial',
+        'Great Lawn pregame activities'
+      ],
+      photoSpots: [
+        'Cardinals logo at main entrance',
+        'Ring of Honor display',
+        'View from upper deck with roof open',
+        'Westgate plaza fountain'
+      ],
+      bestValue: [
+        'Upper deck sidelines for views',
+        'Standing room on Flight Deck',
+        'Pregame at Westgate instead of paying stadium prices'
+      ]
+    }
+  },
+
+  // NFC SOUTH - Atlanta Falcons
+  'mercedes-benz-stadium': {
+    id: 'mercedes-benz-stadium',
+    name: 'Mercedes-Benz Stadium',
+    team: 'Atlanta Falcons',
+    opened: 2017,
+    capacity: 71000,
+    overview: {
+      description: 'Mercedes-Benz Stadium is an architectural masterpiece featuring a unique retractable roof that opens like a camera aperture. This state-of-the-art venue in downtown Atlanta sets new standards for fan experience and sustainability.',
+      highlights: [
+        'Revolutionary eight-panel retractable roof',
+        '360-degree HD video halo board',
+        'LEED Platinum certified',
+        'Fan-friendly concession pricing'
+      ],
+      uniqueFeatures: [
+        'Roof opens like camera aperture in 8 minutes',
+        '58-foot tall halo video board',
+        'Window wall with city skyline views',
+        'First stadium with fan-first menu pricing'
+      ],
+      renovations: [
+        { year: 2019, description: 'Additional club spaces added' },
+        { year: 2021, description: 'Technology upgrades' },
+        { year: 2023, description: '5G network installation' }
+      ],
+      previousNames: []
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['Roof typically closed', 'All sections climate controlled', 'Complete shade coverage'],
+        afternoon: ['Roof closed for comfort', '72°F maintained', 'No sun exposure'],
+        evening: ['Roof may open for night games', 'Upper deck remains shaded', 'Lower bowl gets some exposure']
+      },
+      coveredSeating: ['All seats covered with roof closed', '100% coverage standard operation', 'Permanent overhang on upper levels'],
+      shadeTips: [
+        'Roof closed for most day games',
+        'Climate control maintains comfort',
+        'October-November may have open roof',
+        'Window wall provides filtered light'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services locations', 'First aid stations'],
+        shadedConcourses: ['All concourses climate controlled', 'Window wall has UV filtering'],
+        indoorAreas: ['All areas climate controlled', 'Multiple club spaces', 'Restaurants and bars']
+      },
+      worstSunExposure: ['Lower bowl sections 101-105 if roof open', 'Field level end zones', 'Minimal concern due to roof'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid, roof closed', shadeTip: 'Enjoy AC' },
+        { month: 'October', avgTemp: 72, avgHumidity: 65, rainChance: 25, typicalConditions: 'Pleasant, roof may open', shadeTip: 'Perfect conditions' },
+        { month: 'November', avgTemp: 61, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cool, roof varies', shadeTip: 'Bring light jacket' },
+        { month: 'December', avgTemp: 51, avgHumidity: 70, rainChance: 35, typicalConditions: 'Chilly, roof usually closed', shadeTip: 'Indoor comfort' },
+        { month: 'January', avgTemp: 47, avgHumidity: 70, rainChance: 40, typicalConditions: 'Cold for Atlanta', shadeTip: 'Climate controlled comfort' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Mercedes-Benz Club', perks: ['All-inclusive F&B', 'Padded seats', 'Private entry'], access: 'Sideline club level' },
+          { name: 'SunTrust Club', perks: ['Field-level views', 'Premium dining', 'In-seat service'], access: 'Behind home bench' },
+          { name: 'Delta Sky360 Club', perks: ['All-inclusive premium', 'Field access', 'VIP parking'], access: 'Field level corners' }
+        ],
+        suites: {
+          levels: ['100 level suites', '200 level suites', 'Super suites'],
+          amenities: ['Private restrooms', 'Dedicated entrance', 'Catering', 'Premium parking']
+        },
+        specialAreas: [
+          { name: 'The Perch', description: 'Bar and social area behind end zone', capacity: 200 },
+          { name: 'Molly B\'s', description: 'Sports bar inside stadium', capacity: 150 }
+        ]
+      },
+      budgetOptions: ['300 level corners', 'Standing room areas', 'The Perch bar rail'],
+      familySections: ['Sections 319-321 family zone', 'Alcohol-free sections'],
+      standingRoom: ['100 Yard Club', 'The Perch', 'Bar rail positions'],
+      partyAreas: [
+        { name: '100 Yard Club', capacity: '250', description: 'Field-level bar', amenities: ['Multiple bars', 'Food stations', 'Field views'] },
+        { name: 'The Perch', capacity: '200', description: 'End zone social space', amenities: ['Full bar', 'Games', 'TVs'] }
+      ],
+      tips: [
+        { section: 'Club sections', tip: 'All-inclusive F&B saves money', category: 'value' },
+        { section: '200 level sidelines', tip: 'Best value for views', category: 'value' },
+        { section: '100 level corners', tip: 'Close to action, good angles', category: 'experience' },
+        { section: '300 level', tip: 'Affordable with good sightlines', category: 'value' }
+      ]
+    },
+    concessions: {
+      signature: ['Fan-first pricing ($2 hot dogs)', 'Fox Bros BBQ', 'Chick-fil-A', 'H&F Burger'],
+      local: ['Varsity hot dogs', 'King of Pops', 'Delia\'s Chicken Sausage', 'Atlanta Bread Company'],
+      healthy: ['Fresh salads', 'Grilled options', 'Fruit cups', 'Veggie wraps'],
+      vegetarian: ['Impossible burgers', 'Veggie pizzas', 'Salad bar', 'Falafel'],
+      glutenFree: ['GF beer', 'GF pizza', 'Grilled proteins', 'Salads'],
+      kidsFriendly: ['$2 hot dogs', 'Pizza slices', 'Popcorn', 'Cotton candy'],
+      alcohol: {
+        beer: ['$5 domestic', '$7 craft', 'SweetWater', 'Terrapin', 'Local selections'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['SweetWater', 'Monday Night', 'Terrapin', 'Creature Comforts']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Red Deck', distance: '0.3 miles', price: '$40', shadedSpots: true, covered: true, tip: 'Covered garage' },
+        { name: 'Silver Deck', distance: '0.4 miles', price: '$35', shadedSpots: true, covered: true, tip: 'Multi-level garage' },
+        { name: 'Blue Lot', distance: '0.5 miles', price: '$30', shadedSpots: false, covered: false, tip: 'Surface lot, RV parking' },
+        { name: 'Gulch Lots', distance: '0.3 miles', price: '$60', shadedSpots: false, covered: false, tip: 'Premium tailgating spot' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking on game days',
+        tip: 'Use MARTA or official lots'
+      },
+      alternativeTransport: {
+        publicTransit: ['MARTA direct to stadium', 'Multiple bus routes'],
+        rideShare: 'Designated zones, expect surge pricing',
+        bicycle: 'Bike racks available at several entrances'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'Northeast', bestFor: ['Mercedes-Benz Club', 'Lower bowl'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 2', location: 'Northwest', bestFor: ['Upper deck', 'NCR sections'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'Southwest', bestFor: ['Field level', 'West side'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 4', location: 'Southeast', bestFor: ['East side', 'MARTA entrance'], openTime: '2 hours before kickoff' },
+      { name: 'Club Entrances', location: 'Various', bestFor: ['Premium seating', 'Suite holders'], openTime: '2.5 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Falcons Team Store - Main level', exclusive: ['Authentic jerseys', 'Game-worn items'] },
+        { location: 'Atlanta United Store', exclusive: ['Soccer merchandise'] },
+        { location: 'Kiosks throughout' }
+      ],
+      firstAid: ['All gate areas', 'Club level center', 'Field level'],
+      babyChanging: ['All family restrooms', 'Nursing rooms'],
+      nursingRooms: ['Multiple locations on all levels'],
+      atms: ['All gates', 'Concourse corners', 'Club level'],
+      wifi: { available: true, network: 'MBS_WiFi', freeZones: ['Entire stadium'] },
+      chargingStations: ['Club areas', '100 Yard Club', 'Delta Sky360'],
+      kidZones: [
+        { name: 'Kids Zone', location: '200 level', activities: ['Games', 'Face painting', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have designated wheelchair sections', 'Field level platforms'],
+        entrance: 'All gates fully accessible',
+        elevators: ['Multiple elevators at each gate', 'Express elevators to upper levels']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels', 'Extra-wide stalls available'],
+      accessibleConcessions: ['All concession stands', 'Lowered service counters'],
+      parkingSpaces: 'ADA parking in all garages near elevators'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Take MARTA', description: 'Direct access avoids all traffic', category: 'arrival' },
+        { title: 'Fan-First Pricing', description: '$2 hot dogs and $5 beer', category: 'food' },
+        { title: 'Explore All Levels', description: 'Each level has unique features', category: 'experience' },
+        { title: 'Window Wall Views', description: 'Check out city skyline from west side', category: 'experience' },
+        { title: 'Stay After', description: 'Let crowds clear before leaving', category: 'departure' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM or 4:25 PM Sundays, primetime varies',
+        rushHours: ['11:00 AM-12:30 PM for 1 PM games', '2:30-4:00 PM for late games']
+      },
+      security: {
+        allowedBags: 'Clear bags 12"x6"x12" or smaller',
+        prohibitedItems: ['Outside food/beverage', 'Weapons', 'Drones', 'Umbrellas'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Downtown Atlanta',
+      description: 'Urban center with numerous attractions and dining',
+      beforeGame: ['Georgia Aquarium', 'World of Coca-Cola', 'Centennial Olympic Park', 'CNN Center'],
+      afterGame: ['Downtown bars and restaurants', 'The Varsity', 'Stats Brewpub'],
+      radius: '1 mile of attractions and dining'
+    },
+    transportation: {
+      address: '1 AMB Drive NW, Atlanta, GA 30313',
+      publicTransit: {
+        subway: [{ lines: ['MARTA Red/Gold Lines'], station: 'Vine City/Dome', walkTime: '5 minutes' }],
+        bus: [{ routes: ['Multiple routes'], stops: ['CNN Center', 'Five Points'] }]
+      },
+      driving: {
+        majorRoutes: ['I-75/85', 'I-20', 'Northside Drive'],
+        typicalTraffic: 'Heavy congestion 2 hours before and after',
+        bestApproach: 'I-75/85 from north, I-20 from east/west'
+      },
+      rideShare: {
+        pickupZone: 'Designated zones on all four sides',
+        dropoffZone: 'Multiple dropoff points',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Walk a few blocks for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 2017, event: 'Stadium opens' },
+        { year: 2018, event: 'College Football Championship and MLS Cup' },
+        { year: 2019, event: 'Super Bowl LIII - Patriots defeat Rams' },
+        { year: 2020, event: 'Final Four scheduled (COVID cancelled)' },
+        { year: 2022, event: 'College Football Championship' }
+      ],
+      notableGames: [
+        { date: '2019-02-03', description: 'Super Bowl LIII' },
+        { date: '2018-12-08', description: 'Atlanta United wins MLS Cup' },
+        { date: '2018-01-08', description: 'College Football Championship' }
+      ],
+      traditions: [
+        { name: 'Rise Up', description: 'Team rallying cry and fan chant' },
+        { name: 'ATL', description: 'City pride chant' },
+        { name: 'Freddie Falcon', description: 'Mascot traditions and entrance' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Electric atmosphere, very loud with roof closed',
+      bestExperiences: [
+        'Saints rivalry games',
+        'Rise Up rally towels',
+        'Falcon screech on third downs',
+        'Samuel L. Jackson hype videos'
+      ],
+      traditions: [
+        'ATL chants',
+        'Dirty Birds celebration',
+        'In Brotherhood We Trust'
+      ],
+      mascot: {
+        name: 'Freddie Falcon',
+        description: 'High-flying falcon mascot with acrobatic entrance'
+      },
+      fanGroups: [
+        { name: 'Falcon Faithful', description: 'Die-hard season ticket holders' },
+        { name: 'ATL Brigade', description: 'Organized supporter group' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Take MARTA to avoid all parking hassles',
+        'Arrive early for fan-first food prices',
+        'Download Mercedes-Benz Stadium app',
+        'Explore all levels - each has unique features'
+      ],
+      avoidThese: [
+        'Driving downtown on game day',
+        'Leaving immediately after game',
+        'Missing the window wall views'
+      ],
+      hiddenGems: [
+        '100 Yard Club field-level bar',
+        'Molly B\'s sports bar',
+        'Window wall sunset views'
+      ],
+      photoSpots: [
+        'Falcon statue outside',
+        'Window wall with city skyline',
+        'Field-level from 100 Yard Club',
+        'Halo board from upper deck'
+      ],
+      bestValue: [
+        'Fan-first concession pricing',
+        '200 level sidelines',
+        'Standing room at The Perch'
+      ]
+    }
+  },
+
+  // AFC NORTH - Baltimore Ravens
+  'mt-bank-stadium': {
+    id: 'mt-bank-stadium',
+    name: 'M&T Bank Stadium',
+    team: 'Baltimore Ravens',
+    opened: 1998,
+    capacity: 71008,
+    overview: {
+      description: 'M&T Bank Stadium sits in the heart of Baltimore\'s Inner Harbor area, known for passionate fans and one of the best game-day experiences in the NFL. The horseshoe-shaped design creates an intimidating atmosphere for visiting teams.',
+      highlights: [
+        'Downtown Baltimore location',
+        'Walking distance to Inner Harbor',
+        'Renowned tailgating scene',
+        'Two Super Bowl championships celebrated here'
+      ],
+      uniqueFeatures: [
+        'Open-air horseshoe design',
+        'Club level wraps entire stadium',
+        'Camden Yards adjacent',
+        'Ravens Walk pregame tradition'
+      ],
+      renovations: [
+        { year: 2007, description: 'Upper deck expansion' },
+        { year: 2014, description: 'HD video boards installed' },
+        { year: 2019, description: 'Sound system upgrade' },
+        { year: 2023, description: 'Premium seating renovations' }
+      ],
+      previousNames: ['Ravens Stadium', 'PSINet Stadium']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections 140-150', 'Upper deck west side 540-550', 'Club level west'],
+        afternoon: ['East sideline gets shade after 2 PM', 'Sections 110-130', 'Upper deck 510-530'],
+        evening: ['Most sections shaded by 4 PM', 'Lower bowl fully shaded', 'End zones get late shade']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites covered', 'No other permanent coverage'],
+      shadeTips: [
+        'Stadium runs north-south',
+        'West side gets morning shade',
+        'East side better for afternoon games',
+        'Upper deck provides some overhead protection'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services', 'First aid stations'],
+        shadedConcourses: ['Club level concourse', 'Suite level'],
+        indoorAreas: ['Ravens team store', 'Club lounges', 'Restaurant areas']
+      },
+      worstSunExposure: ['Lower bowl east side sections 106-118 (1 PM games)', 'End zone sections 120-124', 'Upper deck east 506-518'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 65, rainChance: 30, typicalConditions: 'Warm and humid', shadeTip: 'West side for early games' },
+        { month: 'October', avgTemp: 63, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect football weather', shadeTip: 'Any section comfortable' },
+        { month: 'November', avgTemp: 52, avgHumidity: 60, rainChance: 30, typicalConditions: 'Cool and crisp', shadeTip: 'Sun helps warmth' },
+        { month: 'December', avgTemp: 41, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cold, possible snow', shadeTip: 'Bundle up regardless' },
+        { month: 'January', avgTemp: 36, avgHumidity: 65, rainChance: 30, typicalConditions: 'Frigid playoff weather', shadeTip: 'Warmth over shade' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Club Level', perks: ['Wide concourse', 'Upscale concessions', 'Padded seats'], access: '200 level entire stadium' },
+          { name: 'Founders Club', perks: ['All-inclusive F&B', 'Field views', 'VIP entrance'], access: 'Behind Ravens bench' }
+        ],
+        suites: {
+          levels: ['Suite level between club and upper deck'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Terrace Suites', description: 'Open-air suites with patio', capacity: 30 },
+          { name: 'Ravens Flock Zone', description: 'Party deck area', capacity: 150 }
+        ]
+      },
+      budgetOptions: ['Upper deck end zones 501-504, 551-554', 'Upper corners', 'Standing room'],
+      familySections: ['Sections 513-515 designated family zone'],
+      standingRoom: ['Behind upper deck sections', 'Budweiser Terrace'],
+      partyAreas: [
+        { name: 'Budweiser Terrace', capacity: '200', description: 'Rooftop bar area', amenities: ['Full bar', 'TVs', 'Standing tables'] },
+        { name: 'Miller Lite Flightdeck', capacity: '150', description: 'End zone party area', amenities: ['Bar service', 'High-tops'] }
+      ],
+      tips: [
+        { section: 'Lower sidelines 106-110, 140-144', tip: 'Best views of action', category: 'experience' },
+        { section: 'Club level', tip: 'Weather protection and amenities', category: 'experience' },
+        { section: 'Upper deck sidelines', tip: 'Great value with full field view', category: 'value' },
+        { section: 'Lower corners', tip: 'Close to field, good angles', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['Chesapeake crab cakes', 'Pit beef sandwiches', 'Boardwalk fries', 'Berger cookies'],
+      local: ['Boog\'s BBQ', 'Gino\'s Burgers', 'Polock Johnny\'s sausages', 'Attman\'s Deli'],
+      healthy: ['Crab soup', 'Grilled chicken', 'Salads', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Soft pretzels', 'Nachos'],
+      glutenFree: ['Crab cakes (no filler)', 'GF beer', 'Grilled options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Pizza', 'Soft serve'],
+      alcohol: {
+        beer: ['Natty Boh', 'Flying Dog', 'Heavy Seas', 'Budweiser', 'Miller Lite'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Flying Dog', 'Heavy Seas', 'Union Craft', 'Peabody Heights']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'Lot A', distance: 'Adjacent', price: '$50', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Lot B/C', distance: '0.2 miles', price: '$40', shadedSpots: false, covered: false, tip: 'Best tailgating' },
+        { name: 'Lot H', distance: '0.3 miles', price: '$35', shadedSpots: false, covered: false, tip: 'Good value' },
+        { name: 'Downtown garages', distance: '0.5+ miles', price: '$20-30', shadedSpots: true, covered: true, tip: 'Weather protected' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Limited street parking, residents only',
+        tip: 'Use official lots or Light Rail'
+      },
+      alternativeTransport: {
+        publicTransit: ['Light Rail to Hamburg/Stadium', 'MTA bus routes'],
+        rideShare: 'Designated zones, expect surge pricing',
+        bicycle: 'Bike racks available at stadium'
+      }
+    },
+    gates: [
+      { name: 'Gate A', location: 'Northwest', bestFor: ['Lot A', 'Lower bowl west'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'North', bestFor: ['Russell Street', 'Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate C', location: 'Northeast', bestFor: ['Hamburg Street', 'Club level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate D', location: 'Southeast', bestFor: ['Lot H', 'Lower bowl east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate E', location: 'Southwest', bestFor: ['Camden Yards', 'South end zone'], openTime: '2 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'Ravens Team Store - Gate A', exclusive: ['Ray Lewis jerseys', 'Championship merchandise'] },
+        { location: 'Merchandise kiosks throughout' }
+      ],
+      firstAid: ['All gate locations', 'Club level center', 'Upper deck sections'],
+      babyChanging: ['All family restrooms', 'Club level restrooms'],
+      nursingRooms: ['Guest services near Gate A', 'Club level'],
+      atms: ['All gate entrances', 'Concourse corners', 'Club level'],
+      wifi: { available: true, network: 'Ravens_WiFi', freeZones: ['All seating areas'] },
+      chargingStations: ['Club level', 'Budweiser Terrace'],
+      kidZones: [
+        { name: 'Ravens Kids Zone', location: 'Plaza level', activities: ['Face painting', 'Games', 'Photo ops'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['Designated areas on all levels', 'Field level platforms'],
+        entrance: 'All gates ADA accessible',
+        elevators: ['Available at each gate', 'Express elevators to upper levels']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels have ADA restrooms'],
+      accessibleConcessions: ['All concession stands accessible'],
+      parkingSpaces: 'ADA parking in all lots - prepurchase recommended'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Take Light Rail', description: 'Direct access, avoid parking hassles', category: 'arrival' },
+        { title: 'Try Crab Cakes', description: 'Baltimore\'s signature stadium food', category: 'food' },
+        { title: 'Join Seven Nation Army', description: 'Iconic chant on third downs', category: 'experience' },
+        { title: 'Dress for Weather', description: 'Layers in fall, heavy gear in winter', category: 'weather' },
+        { title: 'Stay for Ravens Walk', description: 'Post-game player interactions', category: 'departure' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM or 4:25 PM Sundays, primetime varies',
+        rushHours: ['11:00 AM-12:30 PM for 1 PM games', '2:30-4:00 PM for late games']
+      },
+      security: {
+        allowedBags: 'Clear bags 12"x6"x12" or smaller',
+        prohibitedItems: ['Outside food/drink', 'Umbrellas', 'Noisemakers', 'Weapons'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Downtown Baltimore/Camden Yards',
+      description: 'Urban sports complex near Inner Harbor',
+      beforeGame: ['Inner Harbor attractions', 'National Aquarium', 'Federal Hill bars'],
+      afterGame: ['Pickles Pub', 'Sliders Bar & Grille', 'Downtown nightlife'],
+      radius: '1 mile to Inner Harbor attractions'
+    },
+    transportation: {
+      address: '1101 Russell Street, Baltimore, MD 21230',
+      publicTransit: {
+        train: [{ lines: ['Light Rail Purple Line'], station: 'Hamburg St/Stadium', walkTime: '2 minutes' }],
+        bus: [{ routes: ['MTA CityLink', 'LocalLink'], stops: ['Russell Street', 'Camden Yards'] }]
+      },
+      driving: {
+        majorRoutes: ['I-95', 'I-395', 'Route 295'],
+        typicalTraffic: 'Heavy 2 hours before kickoff',
+        bestApproach: 'I-395 to Russell Street'
+      },
+      rideShare: {
+        pickupZone: 'Lot H designated area',
+        dropoffZone: 'Russell Street entrance',
+        surgePricing: '3-5x after games',
+        alternativeTip: 'Walk to Inner Harbor for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1998, event: 'Stadium opens as Ravens Stadium' },
+        { year: 1999, event: 'Renamed PSINet Stadium' },
+        { year: 2003, event: 'Becomes M&T Bank Stadium' },
+        { year: 2001, event: 'Super Bowl XXXV Champions' },
+        { year: 2013, event: 'Super Bowl XLVII Champions' }
+      ],
+      notableGames: [
+        { date: '2001-01-28', description: 'Super Bowl XXXV victory' },
+        { date: '2013-02-03', description: 'Super Bowl XLVII victory' },
+        { date: '2013-01-12', description: 'Mile High Miracle playoff game' }
+      ],
+      traditions: [
+        { name: 'Ravens Walk', description: 'Team arrival walkthrough with fans' },
+        { name: 'Purple Friday', description: 'Fans wear purple on Fridays' },
+        { name: 'Seven Nation Army', description: 'Stadium-wide chant tradition' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'One of NFL\'s loudest stadiums, passionate fanbase',
+      bestExperiences: [
+        'Seven Nation Army chant',
+        'Ravens Walk pre-game',
+        'Marching Ravens band performance',
+        'Purple Friday atmosphere'
+      ],
+      traditions: [
+        'Ray Lewis dance',
+        'Ed Reed ball hawk celebration',
+        'Purple Reign chant'
+      ],
+      mascot: {
+        name: 'Poe',
+        description: 'Ravens mascot named after Edgar Allan Poe'
+      },
+      fanGroups: [
+        { name: 'Ravens Flock', description: 'Official fan organization' },
+        { name: 'Purple Army', description: 'Dedicated superfans', section: 'Throughout stadium' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Take Light Rail to avoid all parking hassles',
+        'Tailgate in Lot B/C for best atmosphere',
+        'Arrive early for Ravens Walk',
+        'Try the crab cakes - best in NFL'
+      ],
+      avoidThese: [
+        'Driving on I-395 within hour of kickoff',
+        'Leaving immediately after game',
+        'Street parking - very limited'
+      ],
+      hiddenGems: [
+        'Budweiser Terrace rooftop bar',
+        'Ravens Walk player interactions',
+        'Boog\'s BBQ stand'
+      ],
+      photoSpots: [
+        'Johnny Unitas statue',
+        'Ray Lewis statue',
+        'Downtown skyline from upper deck',
+        'Ravens logo at main entrance'
+      ],
+      bestValue: [
+        'Upper deck sidelines for views',
+        'Standing room options',
+        'Downtown garage parking'
+      ]
+    }
+  },
+
+  // NFC SOUTH - Carolina Panthers
+  'bank-of-america-stadium': {
+    id: 'bank-of-america-stadium',
+    name: 'Bank of America Stadium',
+    team: 'Carolina Panthers',
+    opened: 1996,
+    capacity: 75523,
+    overview: {
+      description: 'Bank of America Stadium in Uptown Charlotte combines modern amenities with southern hospitality. The open-air design creates an intimate atmosphere despite being one of the NFL\'s larger venues.',
+      highlights: [
+        'Downtown Charlotte location',
+        'Renovated with state-of-the-art video boards',
+        'Home of Keep Pounding tradition',
+        'Hosts college football championship games'
+      ],
+      uniqueFeatures: [
+        'Distinctive blue seats throughout',
+        'Six-story escalator system',
+        'Panther statues at entrances',
+        'Views of Charlotte skyline'
+      ],
+      renovations: [
+        { year: 2014, description: 'Video board upgrades' },
+        { year: 2016, description: 'Escalator and concourse improvements' },
+        { year: 2021, description: 'Audio system upgrade' }
+      ],
+      previousNames: ['Ericsson Stadium']
+    },
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections 331-345', 'Club level west side', 'Upper deck west'],
+        afternoon: ['East sideline gets shade after 2 PM', 'Sections 301-315', 'Upper deck east'],
+        evening: ['Most seating shaded by 4 PM', 'Lower bowl in shade', 'End zones shaded']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites are enclosed', 'No permanent roof coverage'],
+      shadeTips: [
+        'Stadium runs north-south',
+        'West side best for early games',
+        'East side better for late afternoon',
+        'Upper deck provides minimal overhang protection'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services locations'],
+        shadedConcourses: ['Club level concourse', 'Suite level'],
+        indoorAreas: ['Club lounges', 'The Vault team store', 'Restaurants']
+      },
+      worstSunExposure: ['Lower bowl east side sections 101-111 for 1 PM games', 'End zone sections 120-130'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 81, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek shade on west side' },
+        { month: 'October', avgTemp: 69, avgHumidity: 65, rainChance: 30, typicalConditions: 'Pleasant fall weather', shadeTip: 'Comfortable in most sections' },
+        { month: 'November', avgTemp: 58, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cool and crisp', shadeTip: 'Sun provides warmth' },
+        { month: 'December', avgTemp: 48, avgHumidity: 65, rainChance: 35, typicalConditions: 'Chilly, possible rain', shadeTip: 'Dress in layers' },
+        { month: 'January', avgTemp: 43, avgHumidity: 65, rainChance: 35, typicalConditions: 'Cold for Carolina', shadeTip: 'Bundle up regardless' }
+      ]
+    },
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Silver Club', perks: ['All-inclusive F&B', 'Padded seats', 'Private entrance'], access: 'Sideline club level' },
+          { name: 'Black Club', perks: ['Field views', 'Premium dining', 'VIP parking'], access: 'End zone club' }
+        ],
+        suites: {
+          levels: ['Lower suite level', 'Upper suite level'],
+          amenities: ['Private restrooms', 'Catering', 'HDTV', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Gridiron Club', description: 'Field-level club behind visitor bench', capacity: 200 }
+        ]
+      },
+      budgetOptions: ['Upper deck corners 501-508, 545-552', 'Upper end zones', 'Standing room'],
+      familySections: ['Sections 520-522 designated family zone'],
+      standingRoom: ['Concourse areas', 'Budweiser Deck'],
+      partyAreas: [
+        { name: 'Bud Light Party Zone', capacity: '300', description: 'End zone party deck', amenities: ['Full bar', 'Standing tables', 'TVs'] }
+      ],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views of action', category: 'experience' },
+        { section: 'Club level', tip: 'Weather protection and amenities', category: 'value' },
+        { section: 'Upper deck sidelines', tip: 'Full field view at lower cost', category: 'value' },
+        { section: 'Lower corners', tip: 'Great angles close to field', category: 'experience' }
+      ]
+    },
+    concessions: {
+      signature: ['BBQ nachos', 'Pulled pork sandwiches', 'Bojangles chicken', 'Cheerwine'],
+      local: ['Bojangles', 'Carolina BBQ', 'Local craft beers', 'Sweet tea'],
+      healthy: ['Grilled options', 'Salads', 'Fresh fruit', 'Veggie wraps'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Salads', 'Nachos'],
+      glutenFree: ['GF beer', 'Grilled proteins', 'Salads'],
+      kidsFriendly: ['Chicken tenders', 'Hot dogs', 'Pizza', 'Ice cream'],
+      alcohol: {
+        beer: ['Bud Light', 'Miller Lite', 'Local craft selection', 'Yuengling'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['NoDa Brewing', 'Olde Mecklenburg', 'Birdsong', 'Triple C']
+      }
+    },
+    parking: {
+      lots: [
+        { name: 'North Lots', distance: '0.3 miles', price: '$40', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Cedar Yard', distance: '0.4 miles', price: '$30', shadedSpots: false, covered: false, tip: 'Good tailgating' },
+        { name: 'Downtown Decks', distance: '0.5-1 mile', price: '$20-30', shadedSpots: true, covered: true, tip: 'Covered parking' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered parking, game day restrictions',
+        tip: 'Very limited, arrive early'
+      },
+      alternativeTransport: {
+        publicTransit: ['LYNX Light Rail Blue Line', 'Multiple bus routes'],
+        rideShare: 'Designated zones, expect surge pricing',
+        bicycle: 'B-cycle stations nearby'
+      }
+    },
+    gates: [
+      { name: 'Gate 1', location: 'North', bestFor: ['North lots', 'Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'Northeast', bestFor: ['Club level', 'East side'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 5', location: 'Southeast', bestFor: ['South lots', 'Lower bowl'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 7', location: 'Southwest', bestFor: ['Light rail entrance', 'West side'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 9', location: 'Northwest', bestFor: ['Premium parking', 'Suites'], openTime: '2.5 hours before kickoff' }
+    ],
+    amenities: {
+      merchandise: [
+        { location: 'The Vault - Main store', exclusive: ['Game-worn items', 'Limited editions'] },
+        { location: 'Merchandise stands throughout' }
+      ],
+      firstAid: ['All gate locations', 'Club level', 'Upper deck'],
+      babyChanging: ['All family restrooms'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['All gates', 'Concourse corners'],
+      wifi: { available: true, network: 'Panthers_WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Club level', 'The Vault'],
+      kidZones: [
+        { name: 'Panthers Den', location: 'North gate area', activities: ['Games', 'Face painting'] }
+      ]
+    },
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have designated areas', 'Field level platforms'],
+        entrance: 'All gates ADA accessible',
+        elevators: ['Available at all gates']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'ADA parking in all lots'
+    },
+    gameDay: {
+      tips: [
+        { title: 'Take Light Rail', description: 'Direct access via Blue Line', category: 'arrival' },
+        { title: 'Try Carolina BBQ', description: 'Local specialty at multiple stands', category: 'food' },
+        { title: 'Keep Pounding', description: 'Join the tradition and chant', category: 'experience' },
+        { title: 'Explore Uptown', description: 'Walk around before/after game', category: 'experience' },
+        { title: 'Check Weather', description: 'Rain common in fall/winter', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00 PM or 4:05/4:25 PM Sundays',
+        rushHours: ['11:00 AM-12:30 PM', '2:30-4:00 PM']
+      },
+      security: {
+        allowedBags: 'Clear bags 12"x6"x12" or smaller',
+        prohibitedItems: ['Outside food/drink', 'Umbrellas', 'Weapons'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+    neighborhood: {
+      name: 'Uptown Charlotte',
+      description: 'Downtown business and entertainment district',
+      beforeGame: ['NASCAR Hall of Fame', 'Discovery Place', 'Mint Museum'],
+      afterGame: ['Epicentre entertainment complex', 'Numerous bars and restaurants'],
+      radius: '0.5 mile walking distance'
+    },
+    transportation: {
+      address: '800 South Mint Street, Charlotte, NC 28202',
+      publicTransit: {
+        train: [{ lines: ['LYNX Blue Line'], station: 'Stonewall Station', walkTime: '5 minutes' }],
+        bus: [{ routes: ['Multiple routes'], stops: ['Transportation Center'] }]
+      },
+      driving: {
+        majorRoutes: ['I-77', 'I-277', 'US-74'],
+        typicalTraffic: 'Heavy 2 hours before game',
+        bestApproach: 'I-277 loop to Mint Street'
+      },
+      rideShare: {
+        pickupZone: 'Cedar Street designated area',
+        dropoffZone: 'Multiple locations around stadium',
+        surgePricing: '2-4x on game days',
+        alternativeTip: 'Walk a few blocks for better rates'
+      }
+    },
+    history: {
+      timeline: [
+        { year: 1996, event: 'Stadium opens as Ericsson Stadium' },
+        { year: 2004, event: 'Renamed Bank of America Stadium' },
+        { year: 2004, event: 'Super Bowl XXXVIII hosted' },
+        { year: 2015, event: 'NFC Championship season' },
+        { year: 2019, event: 'MLS Charlotte FC announced as tenant' }
+      ],
+      notableGames: [
+        { date: '2004-02-01', description: 'Super Bowl XXXVIII - Patriots vs Panthers' },
+        { date: '2016-01-24', description: 'NFC Championship vs Cardinals' },
+        { date: '2003-01-03', description: 'First playoff game in franchise history' }
+      ],
+      traditions: [
+        { name: 'Keep Pounding', description: 'Team motto and drum tradition' },
+        { name: 'Panther Growl', description: 'Stadium sound on third downs' },
+        { name: 'Black and Blue', description: 'Fan dress code' }
+      ]
+    },
+    fanExperience: {
+      atmosphere: 'Loud and passionate, especially for division games',
+      bestExperiences: [
+        'Keep Pounding drum ceremony',
+        'Panther growl on third downs',
+        'Sir Purr mascot antics',
+        'Roaring Riot fan group'
+      ],
+      traditions: [
+        'Keep Pounding chant',
+        'Sweet Caroline singalong',
+        'Panther Blue Friday'
+      ],
+      mascot: {
+        name: 'Sir Purr',
+        description: 'Black panther mascot with playful personality'
+      },
+      fanGroups: [
+        { name: 'Roaring Riot', description: 'Official fan club with chapters worldwide' },
+        { name: 'Black and Blue Crew', description: 'Die-hard supporters group' }
+      ]
+    },
+    proTips: {
+      insiderTips: [
+        'Take LYNX Light Rail to avoid parking',
+        'Explore Uptown before the game',
+        'Try Bojangles chicken - local favorite',
+        'Arrive early for Keep Pounding ceremony'
+      ],
+      avoidThese: [
+        'Driving without prepaid parking',
+        'Leaving immediately after game',
+        'Missing the drumline performance'
+      ],
+      hiddenGems: [
+        'The Vault team store',
+        'Gridiron Club field access',
+        'Upper deck corner views of skyline'
+      ],
+      photoSpots: [
+        'Panther statues at gates',
+        'Charlotte skyline from upper deck',
+        'Keep Pounding drum',
+        'Field view from north end zone'
+      ],
+      bestValue: [
+        'Upper deck sidelines',
+        'Standing room options',
+        'Park at light rail station'
+      ]
+    }
+  },
+
+  'soldier-field': {
+    id: 'soldier-field',
+    name: 'Soldier Field',
+    team: 'Chicago Bears',
+    opened: 1924,
+    capacity: 61500,
+
+    overview: {
+      description: 'Historic lakefront stadium home to the Chicago Bears since 1971. Known for its neoclassical columns and modern renovation.',
+      highlights: [
+        'Smallest stadium in the NFL by capacity',
+        'National Historic Landmark',
+        'Stunning lakefront location',
+        'Museum Campus South location'
+      ],
+      uniqueFeatures: [
+        'Preserved historic colonnades',
+        'UFO-like modern seating bowl',
+        'Lakefront views',
+        'Downtown skyline backdrop'
+      ],
+      renovations: [
+        { year: 2003, description: 'Major renovation preserving historic facade while modernizing interior' },
+        { year: 2022, description: 'New video boards and sound system upgrades' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['300-level west side', 'Club seats west'],
+        afternoon: ['300-level east side', 'United Club east'],
+        evening: ['Most sections shaded by 4pm']
+      },
+      coveredSeating: ['United Club', 'PNC Club', 'Suites'],
+      shadeTips: [
+        'Lake winds provide cooling but increase sun exposure',
+        'Upper deck provides more shade coverage',
+        'West side best for afternoon games'
+      ],
+      sunProtection: {
+        shadedConcourses: ['United Club level', 'Suite level'],
+        indoorAreas: ['United Club', 'PNC Club', 'Bears Den']
+      },
+      worstSunExposure: ['100-level east side', 'Field level sections'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 70, avgHumidity: 65, rainChance: 30, typicalConditions: 'Pleasant with lake breeze', shadeTip: 'Sun sets behind west stands' },
+        { month: 'October', avgTemp: 55, avgHumidity: 60, rainChance: 35, typicalConditions: 'Cool and windy', shadeTip: 'Lower sun angle provides more shade' },
+        { month: 'November', avgTemp: 40, avgHumidity: 65, rainChance: 40, typicalConditions: 'Cold with lake effect', shadeTip: 'Limited sun exposure' },
+        { month: 'December', avgTemp: 30, avgHumidity: 70, rainChance: 35, typicalConditions: 'Very cold, possible snow', shadeTip: 'Bundle up, sun not a factor' },
+        { month: 'January', avgTemp: 25, avgHumidity: 70, rainChance: 30, typicalConditions: 'Frigid with wind chill', shadeTip: 'Minimal sun, maximum layers' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'United Club', perks: ['Indoor/outdoor seating', 'Premium food', 'Private bars'], access: 'United Club ticket holders only' },
+          { name: 'PNC Club', perks: ['Field level views', 'All-inclusive food/drinks', 'Padded seats'], access: 'PNC Club members' }
+        ],
+        suites: {
+          levels: ['200-level', '300-level'],
+          amenities: ['Private restrooms', 'Catering', 'Climate control', 'TV monitors']
+        },
+        specialAreas: [
+          { name: 'Bears Den', description: 'Premium field-level experience', capacity: 200 },
+          { name: 'Midway Club', description: 'All-inclusive club experience' }
+        ]
+      },
+      budgetOptions: ['400-level corners', 'End zone upper deck'],
+      familySections: ['Family Zone sections'],
+      tips: [
+        { section: '100-level sidelines', tip: 'Closest to action but exposed to elements', category: 'experience' },
+        { section: '300-level', tip: 'Better protection from weather', category: 'shade' },
+        { section: 'North end zone', tip: 'See Bears enter/exit field', category: 'experience' },
+        { section: 'United Club', tip: 'Climate-controlled option for cold games', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Italian beef', 'Polish sausage', 'Garrett Popcorn'],
+      local: ['Portillo\'s hot dogs', 'Lou Malnati\'s pizza', 'Chicago-style hot dogs'],
+      healthy: ['Salads', 'Veggie wraps', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Nachos', 'Pretzels'],
+      kidsFriendly: ['Hot dogs', 'Popcorn', 'Cotton candy'],
+      alcohol: {
+        beer: ['Goose Island', 'Revolution Brewing', 'Miller Lite', 'Budweiser'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Goose Island', 'Revolution', 'Half Acre']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Waldron Deck', distance: '0.3 miles', price: '$50-60', shadedSpots: false, covered: true, tip: 'Closest parking structure' },
+        { name: 'Adler Lot', distance: '0.5 miles', price: '$30-40', shadedSpots: false, covered: false },
+        { name: 'Museum Campus Lots', distance: '0.2-0.5 miles', price: '$40-50', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered parking, special event restrictions',
+        tip: 'Very limited on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['CTA Red/Orange/Green Lines to Roosevelt', 'Multiple bus routes'],
+        rideShare: 'Drop-off at Museum Campus Drive',
+        bicycle: 'Lakefront Trail access, bike racks available'
+      }
+    },
+
+    gates: [
+      { name: 'Gate 0', location: 'Southwest', bestFor: ['General admission', 'Waldron Deck parking'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 10', location: 'Southeast', bestFor: ['100-level east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 14', location: 'North', bestFor: ['United Club', 'Suites'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Bears Team Store', exclusive: ['Game-worn jerseys', 'Autographed items'] },
+        { location: 'Various concourse stands' }
+      ],
+      firstAid: ['Each level near sections 120, 220, 320'],
+      babyChanging: ['Family restrooms all levels'],
+      atms: ['Near all main concourse entrances'],
+      wifi: { available: true, network: 'SoldierField-WiFi' },
+      chargingStations: ['United Club', 'PNC Club']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have designated areas'],
+        entrance: 'All gates accessible',
+        elevators: ['All corners of stadium']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All concession stands'],
+      parkingSpaces: 'Waldron Deck and all lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Dress for lake weather', description: 'Temperatures feel 10-15 degrees colder with wind', category: 'weather' },
+        { title: 'Arrive early for tailgating', description: 'Limited space fills quickly', category: 'arrival' },
+        { title: 'Use public transit', description: 'Parking is expensive and limited', category: 'arrival' },
+        { title: 'Layer up for cold games', description: 'Stadium is exposed to lake winds', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: 'Noon or 3:25pm typically',
+        rushHours: ['1 hour before kickoff', '30 minutes after game']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Cameras with lenses over 6"'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Museum Campus',
+      description: 'Part of Chicago\'s Museum Campus with Field Museum, Shedd Aquarium, and Adler Planetarium',
+      beforeGame: ['Field Museum', 'Shedd Aquarium', 'Northerly Island'],
+      afterGame: ['South Loop restaurants', 'Grant Park', 'Millennium Park'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '1410 Special Olympics Drive, Chicago, IL 60605',
+      publicTransit: {
+        subway: [
+          { lines: ['Red', 'Orange', 'Green'], station: 'Roosevelt', walkTime: '10 minutes' }
+        ],
+        bus: [
+          { routes: ['146', '130'], stops: ['Museum Campus'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['Lake Shore Drive', 'I-55', 'I-90/94'],
+        typicalTraffic: 'Heavy congestion 2 hours before game',
+        bestApproach: 'From south via Lake Shore Drive'
+      },
+      rideShare: {
+        pickupZone: 'Museum Campus Drive',
+        dropoffZone: 'Museum Campus Drive',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Walk to Roosevelt after game to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1924, event: 'Stadium opens as Municipal Grant Park Stadium' },
+        { year: 1925, event: 'Renamed Soldier Field' },
+        { year: 1971, event: 'Bears move from Wrigley Field' },
+        { year: 1985, event: 'Bears win Super Bowl XX' },
+        { year: 2003, event: 'Major renovation completed' }
+      ],
+      notableGames: [
+        { date: '1985 Season', description: 'Perfect home record during Super Bowl season' },
+        { date: '2006 NFC Championship', description: 'Bears defeat Saints to reach Super Bowl' }
+      ],
+      traditions: [
+        { name: 'Bear Down Chant', description: 'Team fight song sung after scores' },
+        { name: 'Bear Weather', description: 'Embracing cold game conditions' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Historic and passionate despite challenging weather conditions',
+      bestExperiences: ['Tailgating by the lake', 'Singing Bear Down', 'Cold weather football'],
+      traditions: ['Bear Down chant', 'Honoring former players', 'Cold weather pride'],
+      mascot: { name: 'Staley Da Bear', description: 'Named after team founder A.E. Staley' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Parking at Millennium Park garages and walking is often cheaper',
+        'United Club worth it for cold weather games',
+        'Tailgating spots go fast - arrive 4 hours early'
+      ],
+      avoidThese: [
+        'Driving on Lake Shore Drive after games',
+        'Underdressing for weather',
+        'Waldron Deck exit immediately after game'
+      ],
+      hiddenGems: [
+        'Museum Campus views before game',
+        'Bears history displays in United Club',
+        'Skyline views from upper deck'
+      ],
+      photoSpots: [
+        'Soldier Field sign with columns',
+        'Lakefront with stadium backdrop',
+        'View of skyline from upper deck'
+      ],
+      bestValue: [
+        '400-level for budget-conscious fans',
+        'Public transit over parking',
+        'Eat before entering stadium'
+      ]
+    }
+  },
+
+  'ford-field': {
+    id: 'ford-field',
+    name: 'Ford Field',
+    team: 'Detroit Lions',
+    opened: 2002,
+    capacity: 65000,
+
+    overview: {
+      description: 'State-of-the-art indoor stadium in downtown Detroit, home to the Lions since 2002. Features a unique warehouse design that incorporates the historic Hudson\'s warehouse.',
+      highlights: [
+        'Climate-controlled indoor facility',
+        'Downtown Detroit location',
+        'Incorporates historic Hudson\'s warehouse',
+        'Host of Super Bowl XL and multiple major events'
+      ],
+      uniqueFeatures: [
+        'Translucent roof panels for natural light',
+        'Warehouse windows overlooking field',
+        'South end zone opens to downtown',
+        'Largest video boards in NFL when installed'
+      ],
+      renovations: [
+        { year: 2017, description: 'New video boards and sound system' },
+        { year: 2023, description: 'Premium seating renovations and club upgrades' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections - indoor stadium'],
+        afternoon: ['All sections - indoor stadium'],
+        evening: ['All sections - indoor stadium']
+      },
+      coveredSeating: ['Entire stadium is covered'],
+      shadeTips: [
+        'No sun exposure - completely indoor venue',
+        'Climate controlled at 68-72 degrees year-round',
+        'Natural light through roof panels but no direct sun'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses indoor'],
+        indoorAreas: ['Entire stadium is indoor']
+      },
+      worstSunExposure: ['None - indoor stadium'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 72, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Indoor comfort year-round' },
+        { month: 'October', avgTemp: 72, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'No weather concerns' },
+        { month: 'November', avgTemp: 72, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Perfect indoor conditions' },
+        { month: 'December', avgTemp: 72, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Warm inside while cold outside' },
+        { month: 'January', avgTemp: 72, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Escape winter weather inside' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Club Level', perks: ['Wide padded seats', 'Upscale dining', 'Private entrances'], access: 'Club ticket required' },
+          { name: 'Champions Club', perks: ['Field level views', 'All-inclusive food/drinks', 'VIP parking'], access: 'Premium membership' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Super suites'],
+          amenities: ['Private restrooms', 'Catering', 'HDTVs', 'Lounge seating']
+        },
+        specialAreas: [
+          { name: 'The Gridiron Club', description: 'Field-level premium experience', capacity: 300 },
+          { name: 'Corner Club', description: 'All-inclusive corner seating' }
+        ]
+      },
+      budgetOptions: ['Upper bowl end zones', '300-level corners'],
+      familySections: ['Family Fun Zone sections'],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views of the action', category: 'view' },
+        { section: 'Club level', tip: 'Perfect balance of view and amenities', category: 'experience' },
+        { section: 'Upper corners', tip: 'Great value with good sightlines', category: 'value' },
+        { section: 'End zone lower', tip: 'Close to Lions tunnel', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Coney dogs', 'Little Caesars pizza', 'Better Made chips'],
+      local: ['Buddy\'s Pizza', 'Slows Bar BQ', 'Detroit-style pizza'],
+      healthy: ['Salads', 'Grilled chicken', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Cauliflower wings', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Popcorn', 'Cotton candy'],
+      alcohol: {
+        beer: ['Founders', 'Bell\'s', 'Bud Light', 'Miller Lite'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Founders', 'Bell\'s', 'Atwater Brewery']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Ford Field Garage', distance: 'Connected', price: '$40-50', shadedSpots: true, covered: true, tip: 'Direct indoor access to stadium' },
+        { name: 'Greektown Casino', distance: '0.3 miles', price: '$20-30', shadedSpots: false, covered: true },
+        { name: 'Cobo Roof Deck', distance: '0.5 miles', price: '$20-30', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered, event restrictions apply',
+        tip: 'Very limited on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['People Mover to Broadway Station', 'DDOT buses'],
+        rideShare: 'Drop-off on Brush Street',
+        bicycle: 'Bike racks at Gate A'
+      }
+    },
+
+    gates: [
+      { name: 'Gate A', location: 'Brush Street', bestFor: ['General admission', 'Main entrance'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'Adams Street', bestFor: ['Club level', 'Suites'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate C', location: 'Montcalm Street', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate G', location: 'Parking garage', bestFor: ['Garage parking'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Lions Team Store', exclusive: ['Custom jerseys', 'Game-worn items'] },
+        { location: 'Multiple concourse locations' }
+      ],
+      firstAid: ['Each level near sections 114, 214, 314'],
+      babyChanging: ['All family restrooms'],
+      atms: ['All main concourses'],
+      wifi: { available: true, network: 'FordField-WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Club level', 'Main concourses']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates are accessible',
+        elevators: ['All corners and mid-sections']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every section'],
+      accessibleConcessions: ['All concession stands'],
+      parkingSpaces: 'Ford Field Garage and all lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Park in connected garage', description: 'Stay warm with indoor access', category: 'arrival' },
+        { title: 'Explore downtown before game', description: 'Many bars and restaurants nearby', category: 'experience' },
+        { title: 'No weather gear needed', description: 'Climate controlled environment', category: 'weather' },
+        { title: 'Arrive early for traditions', description: 'See team entrance and warmups', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm or 4:25pm typically',
+        rushHours: ['1 hour before kickoff', 'Immediately after game']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Cameras with detachable lenses', 'Noisemakers'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Downtown Detroit',
+      description: 'Heart of Detroit\'s entertainment district with restaurants, bars, and attractions',
+      beforeGame: ['Greektown restaurants', 'Campus Martius Park', 'Detroit RiverWalk'],
+      afterGame: ['Greektown Casino', 'Downtown bars', 'Late-night restaurants'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '2000 Brush Street, Detroit, MI 48226',
+      publicTransit: {
+        subway: [
+          { lines: ['People Mover'], station: 'Broadway', walkTime: '2 minutes' }
+        ],
+        bus: [
+          { routes: ['DDOT routes'], stops: ['Woodward Avenue'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-75', 'I-375', 'M-10'],
+        typicalTraffic: 'Heavy downtown congestion on game days',
+        bestApproach: 'I-75 to I-375 exit'
+      },
+      rideShare: {
+        pickupZone: 'Brush Street',
+        dropoffZone: 'Adams Avenue',
+        surgePricing: '2-4x on game days',
+        alternativeTip: 'Walk to Greektown after game to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2002, event: 'Stadium opens' },
+        { year: 2006, event: 'Hosts Super Bowl XL' },
+        { year: 2024, event: 'Hosts NFC Championship Game' },
+        { year: 2024, event: 'Hosts NFL Draft' }
+      ],
+      notableGames: [
+        { date: '2023 NFC Championship', description: 'Lions\' first conference championship game at Ford Field' },
+        { date: '2014', description: 'Calvin Johnson sets receiving record' }
+      ],
+      traditions: [
+        { name: 'Gridiron Heroes', description: 'Honoring Michigan high school teams' },
+        { name: 'Pride of the Lions', description: 'Drumline performances' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Electric indoor environment with passionate fanbase',
+      bestExperiences: ['Thunderstick rallies', 'Lions roar after touchdowns', 'Light shows'],
+      traditions: ['Forward Down the Field fight song', 'Roar chant', 'Pride traditions'],
+      mascot: { name: 'Roary', description: 'Energetic lion mascot since 1996' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Park at Greektown Casino and enjoy pre-game meal',
+        'Eastern Market tailgating on Sundays',
+        'Check out the Hudson\'s warehouse windows'
+      ],
+      avoidThese: [
+        'Street parking meters have event rates',
+        'Leaving immediately after game ends',
+        'Driving without pre-paid parking'
+      ],
+      hiddenGems: [
+        'Ford Field Tours on non-game days',
+        'Champions Club field access',
+        'Detroit Lions museum displays'
+      ],
+      photoSpots: [
+        'Giant Lions logo at main entrance',
+        'Field view from warehouse windows',
+        'Downtown skyline from upper concourse'
+      ],
+      bestValue: [
+        'Upper bowl between 20-yard lines',
+        'Park at casino garages',
+        'Eat in Greektown before game'
+      ]
+    }
+  },
+
+  'lambeau-field': {
+    id: 'lambeau-field',
+    name: 'Lambeau Field',
+    team: 'Green Bay Packers',
+    opened: 1957,
+    capacity: 81441,
+
+    overview: {
+      description: 'The legendary "Frozen Tundra" and one of the most historic venues in all of sports. Home to the Packers since 1957, it\'s the oldest continuously occupied stadium in the NFL.',
+      highlights: [
+        'Historic "Frozen Tundra"',
+        'Oldest continuously occupied NFL stadium',
+        'Title Town atmosphere',
+        'Fan-owned team\'s home'
+      ],
+      uniqueFeatures: [
+        'Lambeau Leap tradition',
+        'Outdoor bowl design',
+        'Atrium with Packers Hall of Fame',
+        'Title Town district'
+      ],
+      renovations: [
+        { year: 2003, description: 'Major renovation adding Atrium' },
+        { year: 2013, description: 'South end zone expansion adding 7,000 seats' },
+        { year: 2023, description: 'Video board upgrades' }
+      ],
+      previousNames: ['City Stadium (1957-1965)']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections', 'Sections 100-124'],
+        afternoon: ['East sideline sections', 'Sections 132-144'],
+        evening: ['Most sections shaded after 4pm']
+      },
+      coveredSeating: ['Club seats have overhead coverage', 'Suites only'],
+      shadeTips: [
+        'Limited shade in outdoor stadium',
+        'Sun less important than cold protection',
+        'December games have minimal sun exposure',
+        'Upper deck provides slight weather protection'
+      ],
+      sunProtection: {
+        shadedConcourses: ['Atrium area', 'Club level concourses'],
+        indoorAreas: ['Atrium', 'Hall of Fame', 'Club lounges', '1919 Kitchen & Tap']
+      },
+      worstSunExposure: ['South end zone', 'Lower bowl west side for early games'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 65, avgHumidity: 70, rainChance: 30, typicalConditions: 'Pleasant fall weather', shadeTip: 'East side for afternoon shade' },
+        { month: 'October', avgTemp: 50, avgHumidity: 70, rainChance: 35, typicalConditions: 'Crisp autumn conditions', shadeTip: 'Layer up, sun manageable' },
+        { month: 'November', avgTemp: 35, avgHumidity: 75, rainChance: 35, typicalConditions: 'Cold with possible snow', shadeTip: 'Weather protection priority' },
+        { month: 'December', avgTemp: 25, avgHumidity: 75, rainChance: 30, typicalConditions: 'Frozen Tundra conditions', shadeTip: 'Bundle up completely' },
+        { month: 'January', avgTemp: 18, avgHumidity: 75, rainChance: 25, typicalConditions: 'Extreme cold possible', shadeTip: 'Survival mode, forget the sun' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Champions Club', perks: ['Indoor/outdoor seating', 'All-inclusive dining', 'Field access'], access: 'Premium membership' },
+          { name: 'Captain\'s Club', perks: ['Sideline views', 'Upscale dining', 'Climate-controlled'], access: 'Club ticket holders' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field level suites'],
+          amenities: ['Private restrooms', 'Catering', 'Heating', 'TVs']
+        },
+        specialAreas: [
+          { name: 'South End Zone Clubs', description: 'Multiple club spaces with unique experiences' },
+          { name: 'Johnsonville Tailgate Village', description: 'Indoor tailgating experience' }
+        ]
+      },
+      budgetOptions: ['700-level corners', 'South end zone upper deck'],
+      familySections: ['Family sections available'],
+      standingRoom: ['Standing room platforms on concourses'],
+      tips: [
+        { section: 'Bowl seating', tip: 'Classic Lambeau experience', category: 'experience' },
+        { section: 'Club seats', tip: 'Climate-controlled refuge from cold', category: 'experience' },
+        { section: 'North end zone', tip: 'See Lambeau Leap up close', category: 'experience' },
+        { section: '700-level', tip: 'Affordable with good views', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Bratwurst', 'Cheese curds', 'Beer cheese soup', 'Frozen custard'],
+      local: ['Wisconsin cheese', 'Johnsonville brats', 'Usinger\'s sausages', 'Kroll\'s burgers'],
+      healthy: ['Grilled chicken', 'Salads', 'Veggie options'],
+      vegetarian: ['Cheese curds', 'Mac and cheese', 'Veggie burgers'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Pretzels', 'Hot chocolate'],
+      alcohol: {
+        beer: ['Spotted Cow', 'Miller Lite', 'Leinenkugel\'s', 'Local craft beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['New Glarus', 'Leinenkugel\'s', 'Titletown Brewing']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Lambeau Field Lot', distance: 'Adjacent', price: '$40', shadedSpots: false, covered: false, tip: 'Opens 5 hours before game' },
+        { name: 'Residential Yards', distance: '0.2-1 mile', price: '$20-40', shadedSpots: false, covered: false, tip: 'Local tradition' },
+        { name: 'Oneida Casino', distance: '1 mile', price: '$20', shadedSpots: false, covered: false, tip: 'Shuttle service provided' }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Residential permits required',
+        tip: 'Most street spots are resident-only'
+      },
+      alternativeTransport: {
+        publicTransit: ['Green Bay Metro buses on game days'],
+        rideShare: 'Drop-off at Oneida Street',
+        bicycle: 'Bike racks available'
+      }
+    },
+
+    gates: [
+      { name: 'Oneida Nation Gate', location: 'West', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'American Family Insurance Gate', location: 'North', bestFor: ['North seating'], openTime: '2 hours before kickoff' },
+      { name: 'Miller Brewing Gate', location: 'South', bestFor: ['South seating', 'Atrium access'], openTime: '2 hours before kickoff' },
+      { name: 'Verizon Gate', location: 'East', bestFor: ['East seating'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Packers Pro Shop', exclusive: ['Shareholder items', 'Exclusive jerseys'] },
+        { location: 'Multiple locations throughout' }
+      ],
+      firstAid: ['All levels at multiple locations'],
+      babyChanging: ['Family restrooms all levels'],
+      atms: ['All concourse areas'],
+      wifi: { available: true, network: 'Lambeau-Field-WiFi' },
+      chargingStations: ['Club levels', 'Atrium'],
+      kidZones: [
+        { name: 'Packers FAN Zone', location: 'Atrium', activities: ['Interactive games', 'Photo ops'] }
+      ]
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have wheelchair seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['All levels'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots have ADA parking'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Dress in layers', description: 'Weather can be extreme', category: 'weather' },
+        { title: 'Arrive early for tailgating', description: 'Part of the Lambeau experience', category: 'arrival' },
+        { title: 'Visit Titletown District', description: 'Entertainment complex next door', category: 'experience' },
+        { title: 'Take stadium tour', description: 'Available on non-game days', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: 'Noon, 3:25pm, or primetime',
+        rushHours: ['90 minutes before kickoff', '30 minutes after game']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Noisemakers'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Ashwaubenon',
+      description: 'Residential neighborhood transformed on game days into massive tailgating party',
+      beforeGame: ['Titletown District', 'Stadium View Bar', 'Kroll\'s West'],
+      afterGame: ['Titletown bars', 'Stadium View', 'Local restaurants'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '1265 Lombardi Avenue, Green Bay, WI 54304',
+      publicTransit: {
+        bus: [
+          { routes: ['Game day shuttles'], stops: ['Multiple downtown locations'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['US-41', 'WI-172', 'Lombardi Avenue'],
+        typicalTraffic: 'Heavy congestion 2 hours before and after',
+        bestApproach: 'Multiple routes, arrive early'
+      },
+      rideShare: {
+        pickupZone: 'Oneida Street',
+        dropoffZone: 'Oneida Street',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Book shuttles from hotels instead'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1957, event: 'Stadium opens as City Stadium' },
+        { year: 1965, event: 'Renamed Lambeau Field' },
+        { year: 1967, event: 'Ice Bowl game' },
+        { year: 1996, event: 'Brett Favre leads to Super Bowl victory' },
+        { year: 2011, event: 'Aaron Rodgers Super Bowl championship' }
+      ],
+      notableGames: [
+        { date: 'Dec 31, 1967', description: 'Ice Bowl - NFL Championship' },
+        { date: 'Jan 12, 2008', description: 'NFC Championship in snow' },
+        { date: 'Jan 11, 2015', description: 'Playoff victory over Cowboys' }
+      ],
+      traditions: [
+        { name: 'Lambeau Leap', description: 'Players jump into stands after TDs' },
+        { name: 'Cheesehead hats', description: 'Iconic fan headwear' }
+      ],
+      retired: [
+        { number: '3', player: 'Tony Canadeo', year: 1952 },
+        { number: '4', player: 'Brett Favre', year: 2015 },
+        { number: '14', player: 'Don Hutson', year: 1951 },
+        { number: '15', player: 'Bart Starr', year: 1973 },
+        { number: '66', player: 'Ray Nitschke', year: 1972 },
+        { number: '92', player: 'Reggie White', year: 2005 }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Historic and electric with dedicated fanbase',
+      bestExperiences: ['Lambeau Leap', 'Tailgating traditions', 'Go Pack Go chant'],
+      traditions: ['Cheesehead wearing', 'Lambeau Leap', 'Title Town pride'],
+      mascot: { name: 'None', description: 'Packers have no official mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Stadium tours worth it on non-game days',
+        'Titletown District year-round destination',
+        'Residential lawn parking is tradition'
+      ],
+      avoidThese: [
+        'Underdressing for cold games',
+        'Leaving during 3rd quarter',
+        'Forgetting hand warmers'
+      ],
+      hiddenGems: [
+        'Packers Hall of Fame in Atrium',
+        'Curly\'s Pub in Atrium (open year-round)',
+        'Johnsonville Tailgate Village'
+      ],
+      photoSpots: [
+        'Lombardi statue',
+        'Lambeau Field letters',
+        'Frozen Tundra sign',
+        'Titletown District'
+      ],
+      bestValue: [
+        'South end zone seats',
+        'Standing room tickets',
+        'Park on residential lawns'
+      ]
+    }
+  },
+
+  'sofi-stadium': {
+    id: 'sofi-stadium',
+    name: 'SoFi Stadium',
+    team: 'Los Angeles Rams',
+    opened: 2020,
+    capacity: 70240,
+
+    overview: {
+      description: 'Ultra-modern stadium with revolutionary design featuring a translucent canopy roof and open-air environment. Home to both Rams and Chargers, it hosted Super Bowl LVI.',
+      highlights: [
+        'Largest video board in sports (Oculus)',
+        'Indoor-outdoor design with canopy roof',
+        'Host of Super Bowl LVI and future events',
+        'Part of Hollywood Park development'
+      ],
+      uniqueFeatures: [
+        '70,000 sq ft dual-sided Oculus video board',
+        'ETFE translucent roof panels',
+        'Open air sides for California breeze',
+        'Stadium bowl 100 feet below ground'
+      ],
+      renovations: []
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections covered by canopy'],
+        afternoon: ['All sections covered by canopy'],
+        evening: ['All sections covered by canopy']
+      },
+      coveredSeating: ['Entire seating bowl covered by canopy'],
+      shadeTips: [
+        'Canopy provides shade but allows natural light',
+        'Open sides allow breeze and indirect light',
+        'No rain exposure under canopy',
+        'Temperature controlled by natural ventilation'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses covered'],
+        indoorAreas: ['Club lounges', 'Premium areas', 'YouTube Theater']
+      },
+      worstSunExposure: ['Field level seats may get indirect sun from sides'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 65, rainChance: 5, typicalConditions: 'Perfect weather', shadeTip: 'Canopy provides comfort' },
+        { month: 'October', avgTemp: 72, avgHumidity: 60, rainChance: 10, typicalConditions: 'Ideal conditions', shadeTip: 'Natural ventilation keeps cool' },
+        { month: 'November', avgTemp: 68, avgHumidity: 55, rainChance: 15, typicalConditions: 'Comfortable', shadeTip: 'Light jacket for evening' },
+        { month: 'December', avgTemp: 62, avgHumidity: 60, rainChance: 20, typicalConditions: 'Mild weather', shadeTip: 'Protected from rain' },
+        { month: 'January', avgTemp: 60, avgHumidity: 65, rainChance: 25, typicalConditions: 'Cool but pleasant', shadeTip: 'Bring layers for comfort' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'SoFi Stadium Club', perks: ['Field level', 'All-inclusive', 'Private entrance'], access: 'Premium membership' },
+          { name: 'Founders Club', perks: ['Midfield views', 'Upscale dining', 'VIP parking'], access: 'Founders members' }
+        ],
+        suites: {
+          levels: ['Multiple suite levels'],
+          amenities: ['Private restrooms', 'Catering', 'Balcony seating', 'Living room setup']
+        },
+        specialAreas: [
+          { name: 'Field Club', description: 'Field level behind teams', capacity: 500 },
+          { name: 'Beach Club', description: 'Unique California vibe club' }
+        ]
+      },
+      budgetOptions: ['500-level corners', 'End zone upper deck'],
+      familySections: ['Designated family zones'],
+      tips: [
+        { section: 'Lower bowl', tip: 'Incredible views with Oculus overhead', category: 'view' },
+        { section: '200-level', tip: 'Best value with great sightlines', category: 'value' },
+        { section: 'Club seats', tip: 'Premium experience worth the cost', category: 'experience' },
+        { section: '500-level', tip: 'Still great views in modern stadium', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['LA street tacos', 'California rolls', 'Craft cocktails'],
+      local: ['In-N-Out style burgers', 'Mexican food', 'Asian fusion', 'California cuisine'],
+      healthy: ['Acai bowls', 'Salads', 'Sushi', 'Vegan options'],
+      vegetarian: ['Impossible burgers', 'Veggie bowls', 'Plant-based options'],
+      kidsFriendly: ['Pizza', 'Hot dogs', 'Chicken tenders', 'Ice cream'],
+      alcohol: {
+        beer: ['Local craft beers', 'Mexican beers', 'Domestic options'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Golden Road', 'Angel City', 'Modern Times']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Pink Zone', distance: 'Adjacent', price: '$50-70', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Orange Zone', distance: '0.25 miles', price: '$40-50', shadedSpots: false, covered: false },
+        { name: 'Green Zone', distance: '0.5 miles', price: '$30-40', shadedSpots: false, covered: false },
+        { name: 'Forum Parking', distance: '0.3 miles', price: '$25-35', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking available',
+        tip: 'All parking is in designated lots'
+      },
+      alternativeTransport: {
+        publicTransit: ['Metro K Line to Downtown Inglewood station'],
+        rideShare: 'Designated zones for pickup/dropoff',
+        bicycle: 'Bike valet service available'
+      }
+    },
+
+    gates: [
+      { name: 'Entry 1', location: 'Northwest', bestFor: ['Pink lot parking'], openTime: '2 hours before kickoff' },
+      { name: 'Entry 3', location: 'Northeast', bestFor: ['Orange lot parking'], openTime: '2 hours before kickoff' },
+      { name: 'Entry 5', location: 'Southeast', bestFor: ['Club access'], openTime: '2.5 hours before kickoff' },
+      { name: 'Entry 7', location: 'Southwest', bestFor: ['Green lot parking'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Rams Team Store', exclusive: ['Custom jerseys', 'Limited editions'] },
+        { location: 'Multiple concourse locations' }
+      ],
+      firstAid: ['All levels at designated locations'],
+      babyChanging: ['All family restrooms'],
+      nursingRooms: ['Guest services locations'],
+      atms: ['Throughout concourses'],
+      wifi: { available: true, network: 'SoFi-Stadium-WiFi', freeZones: ['All areas'] },
+      chargingStations: ['All levels', 'Club areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels with ADA seating'],
+        entrance: 'All entries accessible',
+        elevators: ['Multiple banks throughout']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every section'],
+      accessibleConcessions: ['All locations'],
+      parkingSpaces: 'All parking zones'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Arrive early', description: 'Traffic and parking take time', category: 'arrival' },
+        { title: 'Download app', description: 'Mobile tickets and ordering', category: 'experience' },
+        { title: 'Explore the plaza', description: 'Entertainment and activities', category: 'experience' },
+        { title: 'Stay hydrated', description: 'California sun even under canopy', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:05pm or 4:25pm typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Professional cameras', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Hollywood Park',
+      description: 'New entertainment district with retail, dining, offices, and residences',
+      beforeGame: ['Casino', 'Restaurants at Hollywood Park', 'The Forum'],
+      afterGame: ['Hollywood Park nightlife', 'Casino', 'LAX area hotels'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '1001 Stadium Drive, Inglewood, CA 90301',
+      publicTransit: {
+        subway: [
+          { lines: ['K Line'], station: 'Downtown Inglewood', walkTime: '20 minutes' }
+        ],
+        bus: [
+          { routes: ['Multiple Metro buses'], stops: ['Manchester/Prairie'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-405', 'I-105', 'Century Boulevard'],
+        typicalTraffic: 'Heavy congestion, arrive very early',
+        bestApproach: 'Multiple routes, use traffic apps'
+      },
+      rideShare: {
+        pickupZone: 'Designated rideshare lots',
+        dropoffZone: 'Entry plaza areas',
+        surgePricing: '4-6x on game days',
+        alternativeTip: 'Use Metro K Line to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2020, event: 'Stadium opens' },
+        { year: 2022, event: 'Hosts Super Bowl LVI (Rams victory)' },
+        { year: 2023, event: 'Hosts College Football Championship' },
+        { year: 2026, event: 'Will host World Cup matches' },
+        { year: 2028, event: 'Will host Olympics opening ceremony' }
+      ],
+      notableGames: [
+        { date: 'Feb 13, 2022', description: 'Rams win Super Bowl LVI at home' },
+        { date: 'Jan 30, 2022', description: 'Rams defeat 49ers in NFC Championship' }
+      ],
+      traditions: [
+        { name: 'Rams House', description: 'Home field advantage chant' },
+        { name: 'Whose House', description: 'Fan call and response' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Modern NFL experience with California flair',
+      bestExperiences: ['Oculus video board experience', 'Pre-game plaza', 'Premium amenities'],
+      traditions: ['Whose House? Rams House!', 'LA Rams chant', 'Celebrity sightings'],
+      mascot: { name: 'Rampage', description: 'Rams mascot ram' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Park and explore Hollywood Park district',
+        'Mobile ordering saves significant time',
+        'Plaza opens early with entertainment'
+      ],
+      avoidThese: [
+        'Driving without pre-paid parking',
+        'Last-minute arrival',
+        'Cash-only (stadium is cashless)'
+      ],
+      hiddenGems: [
+        'YouTube Theater for other events',
+        'Lake Park views',
+        'Upper deck center best value views'
+      ],
+      photoSpots: [
+        'Stadium exterior architecture',
+        'Oculus from field level',
+        'Hollywood Park Lake',
+        'Entry plaza sculptures'
+      ],
+      bestValue: [
+        '500-level sidelines',
+        'Green lot parking with early arrival',
+        'Metro K Line transportation'
+      ]
+    }
+  },
+
+  'us-bank-stadium': {
+    id: 'us-bank-stadium',
+    name: 'U.S. Bank Stadium',
+    team: 'Minnesota Vikings',
+    opened: 2016,
+    capacity: 66860,
+
+    overview: {
+      description: 'Modern indoor stadium with innovative ETFE roof allowing natural light. Features the largest transparent roof in North America and dramatic angular architecture.',
+      highlights: [
+        'Largest transparent ETFE roof in North America',
+        'Climate-controlled indoor facility',
+        'Host of Super Bowl LII',
+        'Dramatic ship-like architecture'
+      ],
+      uniqueFeatures: [
+        '60% transparent ETFE roof',
+        'Five massive pivoting glass doors',
+        'Legacy Ship design honoring Nordic heritage',
+        'Snow melt system on roof'
+      ],
+      renovations: []
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections - indoor stadium'],
+        afternoon: ['All sections - indoor stadium'],
+        evening: ['All sections - indoor stadium']
+      },
+      coveredSeating: ['Entire stadium is covered'],
+      shadeTips: [
+        'ETFE roof provides natural light without UV exposure',
+        'Climate controlled at 70 degrees year-round',
+        'No weather concerns indoors',
+        'Natural light creates outdoor feel'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses indoor'],
+        indoorAreas: ['Entire stadium is indoor']
+      },
+      worstSunExposure: ['None - indoor stadium with UV filtering'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 70, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Perfect indoor conditions' },
+        { month: 'October', avgTemp: 70, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Consistent comfort' },
+        { month: 'November', avgTemp: 70, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'No weather impact' },
+        { month: 'December', avgTemp: 70, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Warm while Minnesota freezes' },
+        { month: 'January', avgTemp: 70, avgHumidity: 50, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Escape harsh winter outside' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Mystic Lake Club', perks: ['Field level', 'All-inclusive', 'Private entrance'], access: 'Premium membership' },
+          { name: 'Delta Sky360 Club', perks: ['Sideline views', 'Upscale dining', 'Lounge access'], access: 'Club ticket holders' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'HDTVs', 'Lounge furniture']
+        },
+        specialAreas: [
+          { name: 'Hyundai Club', description: 'End zone club experience', capacity: 400 },
+          { name: 'Truss Bar', description: 'Unique bar suspended above field' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper level'],
+      familySections: ['Family sections available'],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views of action', category: 'view' },
+        { section: 'Club level', tip: 'Premium amenities and comfort', category: 'experience' },
+        { section: 'Upper deck between 20s', tip: 'Great value with good sightlines', category: 'value' },
+        { section: 'End zone lower', tip: 'See Viking ship and horn', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Jucy Lucy burgers', 'Wild rice soup', 'Nordic waffles'],
+      local: ['Matt\'s Bar burgers', 'Kramarczuk\'s sausages', 'Summit beer'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Plant-based options', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Summit', 'Surly', 'Grain Belt', 'Domestic options'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Summit', 'Surly', 'Fulton', 'Indeed']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Stadium Ramps', distance: 'Connected', price: '$30-40', shadedSpots: true, covered: true, tip: 'Direct skyway access' },
+        { name: 'Downtown Ramps', distance: '0.2-0.5 miles', price: '$15-25', shadedSpots: true, covered: true },
+        { name: 'Surface Lots', distance: '0.3-0.8 miles', price: '$20-30', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered, event restrictions',
+        tip: 'Very limited on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['Green/Blue Line to Stadium Village', 'Multiple bus routes'],
+        rideShare: 'Chicago Avenue drop-off',
+        bicycle: 'Nice Ride stations nearby'
+      }
+    },
+
+    gates: [
+      { name: 'Gate 1', location: 'Northwest', bestFor: ['Club level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 2', location: 'Southwest', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'Southeast', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 4', location: 'Northeast', bestFor: ['Premium areas'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Vikings Locker Room', exclusive: ['Custom jerseys', 'Signed memorabilia'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels at multiple locations'],
+      babyChanging: ['All family restrooms'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'USBankStadium-WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Throughout concourses']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple banks throughout']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All ramps have ADA spaces'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Use skyways', description: 'Connected indoor walkways from parking', category: 'arrival' },
+        { title: 'Explore the ship', description: 'Viking ship and Gjallarhorn pregame', category: 'experience' },
+        { title: 'Arrive early', description: 'See pivoting doors open', category: 'experience' },
+        { title: 'Light rail recommended', description: 'Avoid parking hassles', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: 'Noon or 3:25pm typically',
+        rushHours: ['90 minutes before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Cameras with detachable lenses'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Downtown East',
+      description: 'Urban entertainment district in downtown Minneapolis',
+      beforeGame: ['The Commons park', 'Downtown bars', 'Nicollet Mall'],
+      afterGame: ['Downtown nightlife', 'North Loop restaurants', 'Warehouse District'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '401 Chicago Avenue, Minneapolis, MN 55415',
+      publicTransit: {
+        subway: [
+          { lines: ['Green Line', 'Blue Line'], station: 'Stadium Village', walkTime: '5 minutes' }
+        ],
+        bus: [
+          { routes: ['Multiple Metro Transit routes'], stops: ['Chicago Avenue'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-35W', 'I-94', 'I-394'],
+        typicalTraffic: 'Heavy downtown congestion',
+        bestApproach: 'Multiple routes available'
+      },
+      rideShare: {
+        pickupZone: 'Chicago Avenue',
+        dropoffZone: 'Portland Avenue',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Use light rail to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2016, event: 'Stadium opens' },
+        { year: 2018, event: 'Hosts Super Bowl LII' },
+        { year: 2019, event: 'Hosts NCAA Final Four' }
+      ],
+      notableGames: [
+        { date: 'Jan 14, 2018', description: 'Minneapolis Miracle playoff win' },
+        { date: '2017', description: 'First playoff game in new stadium' }
+      ],
+      traditions: [
+        { name: 'Skol Chant', description: 'Viking clap and chant' },
+        { name: 'Gjallarhorn', description: 'Norse horn blown before games' },
+        { name: 'Viking Ship', description: 'Team entrance through ship' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Loud indoor environment with Norse themes',
+      bestExperiences: ['Skol chant', 'Gjallarhorn ceremony', 'Viking ship entrance'],
+      traditions: ['Skol Vikings song', 'Purple Pride', 'Norse mythology themes'],
+      mascot: { name: 'Viktor the Viking', description: 'Viking warrior mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Skyway system connects to many parking ramps',
+        'Mills Fleet Farm Gate has shortest lines',
+        'Legacy Ship viewing area worth visiting'
+      ],
+      avoidThese: [
+        'Driving without pre-paid parking',
+        'Street parking meters',
+        'Leaving right at game end'
+      ],
+      hiddenGems: [
+        'Truss Bar unique viewing angle',
+        'Legacy Museum displays',
+        'Observation deck views'
+      ],
+      photoSpots: [
+        'Viking ship',
+        'Gjallarhorn',
+        'Legacy Gate exterior',
+        'Downtown skyline from concourse'
+      ],
+      bestValue: [
+        'Upper deck between 20-yard lines',
+        'Light rail transportation',
+        'Park in outer ramps and walk'
+      ]
+    }
+  },
+
+  'caesars-superdome': {
+    id: 'caesars-superdome',
+    name: 'Caesars Superdome',
+    team: 'New Orleans Saints',
+    opened: 1975,
+    capacity: 73208,
+
+    overview: {
+      description: 'Iconic domed stadium in downtown New Orleans, home to the Saints since 1975. Symbol of the city\'s resilience after Hurricane Katrina.',
+      highlights: [
+        'Largest fixed dome structure in the world',
+        'Historic venue with Super Bowl history',
+        'Symbol of New Orleans resilience',
+        'Recently renovated with modern amenities'
+      ],
+      uniqueFeatures: [
+        'Iconic dome design',
+        'Downtown location near French Quarter',
+        'Multi-purpose venue',
+        'Hurricane Katrina survivor and symbol'
+      ],
+      renovations: [
+        { year: 2006, description: 'Post-Katrina restoration' },
+        { year: 2011, description: 'Major renovation and modernization' },
+        { year: 2020, description: '$450 million renovation completed' }
+      ],
+      previousNames: ['Louisiana Superdome', 'Mercedes-Benz Superdome']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections - indoor dome'],
+        afternoon: ['All sections - indoor dome'],
+        evening: ['All sections - indoor dome']
+      },
+      coveredSeating: ['Entire stadium is covered'],
+      shadeTips: [
+        'Complete indoor facility with dome',
+        'Climate controlled environment',
+        'No sun or weather exposure',
+        'Consistent temperature year-round'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses indoor'],
+        indoorAreas: ['Entire stadium is indoor']
+      },
+      worstSunExposure: ['None - indoor dome'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 72, avgHumidity: 55, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Cool relief from humid heat' },
+        { month: 'October', avgTemp: 72, avgHumidity: 55, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Perfect indoor comfort' },
+        { month: 'November', avgTemp: 72, avgHumidity: 55, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Consistent conditions' },
+        { month: 'December', avgTemp: 72, avgHumidity: 55, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Comfortable year-round' },
+        { month: 'January', avgTemp: 72, avgHumidity: 55, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Indoor comfort maintained' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Mercedes-Benz Club', perks: ['Field level', 'All-inclusive', 'Premium bars'], access: 'Club membership' },
+          { name: 'Loge Level Club', perks: ['Midfield views', 'Upscale dining', 'Private entrance'], access: 'Loge ticket holders' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Super suites'],
+          amenities: ['Private restrooms', 'Catering', 'TVs', 'Balcony seating']
+        },
+        specialAreas: [
+          { name: 'Bunker Club', description: 'Field-level club behind end zone', capacity: 350 },
+          { name: 'Champions Square Club', description: 'Premium outdoor/indoor experience' }
+        ]
+      },
+      budgetOptions: ['Terrace level corners', 'End zone upper deck'],
+      familySections: ['Family friendly sections available'],
+      tips: [
+        { section: 'Plaza level sidelines', tip: 'Best overall views', category: 'view' },
+        { section: 'Loge level', tip: 'Premium experience with great sightlines', category: 'experience' },
+        { section: 'Terrace corners', tip: 'Good value seats', category: 'value' },
+        { section: 'End zone lower', tip: 'Close to Saints entrance', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Po\'boys', 'Jambalaya', 'Beignets', 'Crawfish bread'],
+      local: ['Muffulettas', 'Red beans and rice', 'Gumbo', 'Pralines'],
+      healthy: ['Salads', 'Grilled options', 'Fresh seafood'],
+      vegetarian: ['Veggie po\'boys', 'Red beans and rice', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Abita', 'Parish Brewing', 'NOLA Brewing', 'Domestic beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Abita', 'Parish', 'NOLA', 'Urban South']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Superdome Garage', distance: 'Adjacent', price: '$40-50', shadedSpots: true, covered: true, tip: 'Closest option' },
+        { name: 'Champions Square', distance: '0.1 miles', price: '$30-40', shadedSpots: false, covered: false },
+        { name: 'Downtown Garages', distance: '0.3-0.5 miles', price: '$20-30', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered, limited availability',
+        tip: 'Not recommended on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['Streetcar lines', 'RTA buses'],
+        rideShare: 'Designated zones on Poydras',
+        bicycle: 'Blue Bikes stations nearby'
+      }
+    },
+
+    gates: [
+      { name: 'Gate A', location: 'Poydras Street', bestFor: ['Plaza level'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'Ramp entrance', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate C', location: 'Champions Square', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Gate D', location: 'Girod Street', bestFor: ['Upper levels'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Saints Team Store', exclusive: ['Custom jerseys', 'Autographed items'] },
+        { location: 'Multiple concourse shops' }
+      ],
+      firstAid: ['All levels near main concourses'],
+      babyChanging: ['All family restrooms'],
+      atms: ['Throughout stadium'],
+      wifi: { available: true, network: 'Superdome-WiFi' },
+      chargingStations: ['Club levels', 'Main concourses']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have wheelchair seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All locations'],
+      parkingSpaces: 'Garage and surface lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Visit Champions Square', description: 'Pre-game festival atmosphere', category: 'experience' },
+        { title: 'Arrive early', description: 'Traffic and parking challenging', category: 'arrival' },
+        { title: 'Stay downtown', description: 'Walk to game from hotels', category: 'arrival' },
+        { title: 'Explore French Quarter', description: 'Before or after game', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: 'Noon or 3:25pm typically',
+        rushHours: ['2 hours before', '30 minutes after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Video cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Central Business District',
+      description: 'Downtown New Orleans near French Quarter and entertainment districts',
+      beforeGame: ['Champions Square', 'Nearby bars', 'French Quarter'],
+      afterGame: ['Bourbon Street', 'Downtown restaurants', 'Harrah\'s Casino'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '1500 Sugar Bowl Drive, New Orleans, LA 70112',
+      publicTransit: {
+        bus: [
+          { routes: ['RTA buses'], stops: ['Poydras Street'] }
+        ],
+        train: [
+          { lines: ['Streetcar'], station: 'Poydras', walkTime: '5 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-10', 'US-90', 'Poydras Street'],
+        typicalTraffic: 'Heavy congestion downtown',
+        bestApproach: 'I-10 to Superdome exit'
+      },
+      rideShare: {
+        pickupZone: 'Girod Street',
+        dropoffZone: 'Poydras Street',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Walk to Canal Street after game'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1975, event: 'Stadium opens' },
+        { year: 1978, event: 'Hosts first Super Bowl' },
+        { year: 2005, event: 'Serves as shelter during Hurricane Katrina' },
+        { year: 2006, event: 'Reopens after restoration' },
+        { year: 2010, event: 'Saints win Super Bowl XLIV' },
+        { year: 2020, event: 'Major renovation completed' }
+      ],
+      notableGames: [
+        { date: 'Sept 25, 2006', description: 'Emotional reopening after Katrina' },
+        { date: 'Jan 24, 2010', description: 'NFC Championship victory' }
+      ],
+      traditions: [
+        { name: 'Who Dat Nation', description: 'Saints fan chant and identity' },
+        { name: 'Halftime Second Line', description: 'New Orleans parade tradition' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Loud, passionate, and uniquely New Orleans',
+      bestExperiences: ['Who Dat chant', 'Second line parades', 'Champions Square parties'],
+      traditions: ['Who Dat', 'Black and Gold pride', 'Fleur-de-lis everywhere'],
+      mascot: { name: 'Gumbo and Sir Saint', description: 'Saint Bernard dog mascots' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Champions Square opens 4 hours early',
+        'Walk from French Quarter hotels',
+        'Club level worth it for amenities'
+      ],
+      avoidThese: [
+        'Driving if staying downtown',
+        'Leaving valuables in car',
+        'Missing Champions Square pregame'
+      ],
+      hiddenGems: [
+        'Bunker Club field views',
+        'Saints Hall of Fame',
+        'Champions Square concerts'
+      ],
+      photoSpots: [
+        'Champions Square entrance',
+        'Who Dat Nation signs',
+        'Field view from plaza level',
+        'Dome exterior at night'
+      ],
+      bestValue: [
+        'Terrace level between 20s',
+        'Park at casino and walk',
+        'Streetcar transportation'
+      ]
+    }
+  },
+
+  'metlife-stadium': {
+    id: 'metlife-stadium',
+    name: 'MetLife Stadium',
+    team: 'New York Giants',
+    opened: 2010,
+    capacity: 82500,
+
+    overview: {
+      description: 'Massive outdoor stadium in the Meadowlands, shared by Giants and Jets. One of the most expensive stadiums ever built, it hosted Super Bowl XLVIII.',
+      highlights: [
+        'Largest NFL stadium by regular capacity',
+        'Shared by two NFL teams',
+        'Host of Super Bowl XLVIII',
+        'State-of-the-art facility'
+      ],
+      uniqueFeatures: [
+        'Color-changing exterior lights for each team',
+        'Four massive HD video boards',
+        'Open-air design',
+        'Sustainable features including solar ring'
+      ],
+      renovations: [
+        { year: 2023, description: 'Video board and technology upgrades' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections', 'Sections 111-149'],
+        afternoon: ['East sideline sections', 'Sections 207-249'],
+        evening: ['Most sections shaded after 4pm']
+      },
+      coveredSeating: ['Club seats have overhead coverage', 'Suites only'],
+      shadeTips: [
+        'Open-air stadium with limited coverage',
+        'Upper deck provides some shade to lower levels',
+        'West side best for afternoon games',
+        'Consider weather more than sun'
+      ],
+      sunProtection: {
+        shadedConcourses: ['Club level concourses', 'Suite level'],
+        indoorAreas: ['Clubs', 'Suites', 'MetLife Central']
+      },
+      worstSunExposure: ['Lower bowl east side early games', 'End zones'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 70, avgHumidity: 65, rainChance: 30, typicalConditions: 'Pleasant fall weather', shadeTip: 'West side for afternoon shade' },
+        { month: 'October', avgTemp: 58, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cool autumn days', shadeTip: 'Sun less intense' },
+        { month: 'November', avgTemp: 48, avgHumidity: 65, rainChance: 35, typicalConditions: 'Cold and windy', shadeTip: 'Bundle up for weather' },
+        { month: 'December', avgTemp: 38, avgHumidity: 65, rainChance: 35, typicalConditions: 'Winter conditions', shadeTip: 'Cold more concern than sun' },
+        { month: 'January', avgTemp: 32, avgHumidity: 60, rainChance: 30, typicalConditions: 'Potential snow/ice', shadeTip: 'Dress for extreme cold' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Coaches Club', perks: ['Field level', 'All-inclusive food/drinks', 'Padded seats'], access: 'Premium membership' },
+          { name: 'Mezzanine Clubs', perks: ['Prime sideline views', 'Upscale dining', 'Climate-controlled'], access: 'Club ticket holders' }
+        ],
+        suites: {
+          levels: ['Lower suite level', 'Upper suite level'],
+          amenities: ['Private restrooms', 'Catering', 'HDTVs', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'MetLife 50 Club', description: 'Ultra-premium midfield experience' },
+          { name: 'Commissioner\'s Club', description: 'Exclusive field-level club' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper level'],
+      familySections: ['Designated family sections'],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views but expensive', category: 'view' },
+        { section: 'Mezzanine level', tip: 'Great sightlines and coverage', category: 'experience' },
+        { section: 'Upper deck 50-yard line', tip: 'Best value for views', category: 'value' },
+        { section: 'End zone lower', tip: 'See team entrances', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['New York deli sandwiches', 'Nathan\'s hot dogs', 'NY pizza'],
+      local: ['Taylor Ham sandwiches', 'Bagels', 'Pretzels', 'Italian specialties'],
+      healthy: ['Salads', 'Grilled chicken', 'Sushi', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Salads', 'Pasta'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Pizza', 'Popcorn'],
+      alcohol: {
+        beer: ['Local craft beers', 'Bud Light', 'Miller Lite', 'Premium imports'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Brooklyn Brewery', 'Blue Point', 'Sixpoint']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Yellow Lot', distance: 'Adjacent', price: '$40', shadedSpots: false, covered: false, tip: 'Closest for general parking' },
+        { name: 'Orange Lot', distance: '0.2 miles', price: '$40', shadedSpots: false, covered: false, tip: 'Good tailgating lot' },
+        { name: 'Blue/Green Lots', distance: '0.3-0.5 miles', price: '$40', shadedSpots: false, covered: false },
+        { name: 'Permit Lots', distance: 'Various', price: 'Season pass only', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking available',
+        tip: 'All parking in designated lots'
+      },
+      alternativeTransport: {
+        publicTransit: ['NJ Transit train to Meadowlands', 'Bus service from Port Authority'],
+        rideShare: 'Designated pickup/dropoff zones',
+        bicycle: 'Not recommended due to highway access'
+      }
+    },
+
+    gates: [
+      { name: 'MetLife Gate', location: 'West', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Verizon Gate', location: 'North', bestFor: ['Upper levels'], openTime: '2 hours before kickoff' },
+      { name: 'Pepsi Gate', location: 'East', bestFor: ['Lower bowl'], openTime: '2 hours before kickoff' },
+      { name: 'Bud Light Gate', location: 'South', bestFor: ['Club levels'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Giants Team Store', exclusive: ['Exclusive jerseys', 'Commemorative items'] },
+        { location: 'Multiple locations throughout' }
+      ],
+      firstAid: ['All levels at section bases'],
+      babyChanging: ['Family restrooms all levels'],
+      atms: ['All main concourses'],
+      wifi: { available: true, network: 'MetLife-Stadium-WiFi' },
+      chargingStations: ['Club levels', 'Select concourse areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['All stadium corners']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every section'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots have ADA spaces'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Arrive very early', description: 'Parking and traffic are challenging', category: 'arrival' },
+        { title: 'Tailgate tradition', description: 'Huge tailgating scene', category: 'experience' },
+        { title: 'NJ Transit train', description: 'Avoid parking hassles', category: 'arrival' },
+        { title: 'Layer clothing', description: 'Weather can change quickly', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm or 4:25pm typically',
+        rushHours: ['3 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Meadowlands Sports Complex',
+      description: 'Sports and entertainment complex in East Rutherford',
+      beforeGame: ['American Dream mall', 'Local restaurants on Route 3'],
+      afterGame: ['American Dream', 'NYC nightlife (30 min away)'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '1 MetLife Stadium Drive, East Rutherford, NJ 07073',
+      publicTransit: {
+        train: [
+          { lines: ['NJ Transit'], station: 'Meadowlands', walkTime: '5 minutes' }
+        ],
+        bus: [
+          { routes: ['351 from Port Authority'], stops: ['Stadium'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['NJ Turnpike', 'Route 3', 'Route 120'],
+        typicalTraffic: 'Severe congestion on game days',
+        bestApproach: 'Multiple routes, arrive 3+ hours early'
+      },
+      rideShare: {
+        pickupZone: 'Lot J',
+        dropoffZone: 'Designated areas',
+        surgePricing: '4-6x on game days',
+        alternativeTip: 'Take train to Secaucus and rideshare from there'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2010, event: 'Stadium opens' },
+        { year: 2014, event: 'Hosts Super Bowl XLVIII' },
+        { year: 2026, event: 'Will host World Cup matches' }
+      ],
+      notableGames: [
+        { date: '2011 Season', description: 'Giants Super Bowl XLVI championship run' },
+        { date: '2007 Season', description: 'Giants upset Patriots in Super Bowl' }
+      ],
+      traditions: [
+        { name: 'Big Blue', description: 'Giants nickname and identity' },
+        { name: 'Defense chants', description: 'Famous Giants defense tradition' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Passionate NY/NJ sports atmosphere',
+      bestExperiences: ['Massive tailgating scene', 'NY sports energy', 'Defense chants'],
+      traditions: ['Let\'s Go Giants', 'Defense chants', 'Big Blue pride'],
+      mascot: { name: 'None', description: 'Giants have no official mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Train is easiest transportation option',
+        'Tailgating starts 5 hours before game',
+        'American Dream mall nearby for pre-game'
+      ],
+      avoidThese: [
+        'Arriving less than 2 hours early',
+        'Leaving immediately at game end',
+        'Forgetting cash for lots'
+      ],
+      hiddenGems: [
+        'MetLife Central interactive area',
+        'Legacy Club historical displays',
+        'Ring of Honor plaza'
+      ],
+      photoSpots: [
+        'MetLife Stadium exterior sign',
+        'Legacy Club displays',
+        'NYC skyline from upper deck',
+        'Stadium exterior with team colors'
+      ],
+      bestValue: [
+        'Upper deck between 30s',
+        'NJ Transit train tickets',
+        'Tailgate instead of concessions'
+      ]
+    }
+  },
+
+  'levis-stadium': {
+    id: 'levis-stadium',
+    name: 'Levi\'s Stadium',
+    team: 'San Francisco 49ers',
+    opened: 2014,
+    capacity: 68500,
+
+    overview: {
+      description: 'High-tech stadium in Santa Clara featuring sustainable design and Silicon Valley innovation. Known for extreme heat issues that have been partially addressed.',
+      highlights: [
+        'LEED Gold certified green building',
+        'High-tech amenities and WiFi',
+        'Host of Super Bowl 50',
+        'Silicon Valley\'s stadium'
+      ],
+      uniqueFeatures: [
+        'Stadium app for ordering and replays',
+        'Solar panels and green roof',
+        '49ers Museum',
+        'Luxury suites with field access'
+      ],
+      renovations: [
+        { year: 2016, description: 'Added shade structures to east side' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West side sections', 'Visitor side'],
+        afternoon: ['Club level west', 'Upper deck west after 3pm'],
+        evening: ['Most west side sections by 4pm']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites', 'Toyota Gate Deck'],
+      shadeTips: [
+        'East side gets brutal afternoon sun',
+        'Home side (west) much more comfortable',
+        'September games can exceed 100°F in sun',
+        'Shade canopies added but still hot'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services locations'],
+        shadedConcourses: ['Club level', 'Suite level'],
+        indoorAreas: ['49ers Museum', 'Club lounges', 'Bourbon Steak & Pub']
+      },
+      worstSunExposure: ['Entire east side lower bowl', 'Sections 101-142'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 80, avgHumidity: 50, rainChance: 5, typicalConditions: 'Very hot and sunny', shadeTip: 'Avoid east side at all costs' },
+        { month: 'October', avgTemp: 72, avgHumidity: 55, rainChance: 15, typicalConditions: 'Warm and sunny', shadeTip: 'West side recommended' },
+        { month: 'November', avgTemp: 62, avgHumidity: 65, rainChance: 25, typicalConditions: 'Mild and pleasant', shadeTip: 'Sun less intense' },
+        { month: 'December', avgTemp: 55, avgHumidity: 70, rainChance: 30, typicalConditions: 'Cool with chance of rain', shadeTip: 'Weather not a major factor' },
+        { month: 'January', avgTemp: 54, avgHumidity: 70, rainChance: 30, typicalConditions: 'Cool and possibly wet', shadeTip: 'Bring rain gear' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'United Club', perks: ['All-inclusive food/drinks', 'Padded seats', 'Climate control'], access: 'Premium membership' },
+          { name: 'Yahoo Fantasy Football Lounge', perks: ['Field level', 'Exclusive access', 'Premium bar'], access: 'Special ticket holders' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'Climate control', 'TVs']
+        },
+        specialAreas: [
+          { name: 'Michael Mina\'s Tailgate', description: 'Chef-driven tailgate experience' },
+          { name: 'Citrix Owners Club', description: 'Ultra-exclusive club' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper level'],
+      familySections: ['Family sections available'],
+      tips: [
+        { section: 'West sideline', tip: 'Shade and home team side', category: 'shade' },
+        { section: 'Club level', tip: 'Climate-controlled refuge', category: 'experience' },
+        { section: 'Upper deck west', tip: 'Better shade and value', category: 'value' },
+        { section: 'Avoid sections 101-142', tip: 'Brutal sun exposure', category: 'shade' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Dungeness crab sandwiches', 'Garlic fries', 'Local wines'],
+      local: ['Mission-style burritos', 'Sourdough bread bowls', 'Craft beers', 'Wine selection'],
+      healthy: ['Sushi', 'Salads', 'Vegan options', 'Gluten-free items'],
+      vegetarian: ['Impossible burgers', 'Veggie burritos', 'Plant-based options'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Ice cream'],
+      alcohol: {
+        beer: ['Anchor Steam', 'Lagunitas', 'Local craft selection'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Anchor', 'Lagunitas', '21st Amendment']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Red Lot 1', distance: 'Adjacent', price: '$30-50', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Blue Lots', distance: '0.3 miles', price: '$30-40', shadedSpots: false, covered: false },
+        { name: 'Green Lots', distance: '0.5 miles', price: '$30', shadedSpots: false, covered: false },
+        { name: 'Great America lots', distance: '0.4 miles', price: '$25', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Residential permits required',
+        tip: 'Very limited, not recommended'
+      },
+      alternativeTransport: {
+        publicTransit: ['VTA Light Rail to Great America station', 'Caltrain to Mountain View + shuttle'],
+        rideShare: 'Designated zones at multiple gates',
+        bicycle: 'Bike valet available'
+      }
+    },
+
+    gates: [
+      { name: 'Intel Gate', location: 'North', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Dignity Health Gate', location: 'South', bestFor: ['Club access'], openTime: '2.5 hours before kickoff' },
+      { name: 'Toyota Gate', location: 'East', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Pepsi Gate', location: 'West', bestFor: ['Lower bowl west'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: '49ers Team Store', exclusive: ['Custom jerseys', 'Vintage items'] },
+        { location: 'The Faithful Mile marketplace' }
+      ],
+      firstAid: ['All levels near section entries'],
+      babyChanging: ['All family restrooms'],
+      nursingRooms: ['Guest services areas'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'LevisStadium-WiFi', freeZones: ['All areas'] },
+      chargingStations: ['Throughout stadium'],
+      kidZones: [
+        { name: 'Kids Zone', location: 'Toyota Gate', activities: ['Games', 'Face painting'] }
+      ]
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All locations'],
+      parkingSpaces: 'All lots have ADA parking'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Hydrate constantly', description: 'Heat can be extreme', category: 'weather' },
+        { title: 'Wear sunscreen', description: 'UV exposure very high', category: 'weather' },
+        { title: 'Use app for ordering', description: 'Avoid concession lines', category: 'experience' },
+        { title: 'Consider night games', description: 'Much cooler than day games', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:25pm or 4:25pm typically',
+        rushHours: ['90 minutes before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Drones'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Santa Clara',
+      description: 'Tech hub in Silicon Valley, near Great America theme park',
+      beforeGame: ['San Pedro Square (San Jose)', 'Santana Row', 'Great America'],
+      afterGame: ['Downtown San Jose', 'Mountain View Castro Street'],
+      radius: '2 miles'
+    },
+
+    transportation: {
+      address: '4900 Marie P DeBartolo Way, Santa Clara, CA 95054',
+      publicTransit: {
+        subway: [
+          { lines: ['VTA Light Rail'], station: 'Great America', walkTime: '10 minutes' }
+        ],
+        train: [
+          { lines: ['Caltrain'], station: 'Mountain View', walkTime: 'Shuttle required' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['US-101', 'CA-237', 'I-880'],
+        typicalTraffic: 'Heavy Silicon Valley traffic',
+        bestApproach: 'Multiple routes, use traffic apps'
+      },
+      rideShare: {
+        pickupZone: 'Multiple designated areas',
+        dropoffZone: 'Gate-specific zones',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'VTA light rail to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2014, event: 'Stadium opens' },
+        { year: 2016, event: 'Hosts Super Bowl 50' },
+        { year: 2019, event: 'Hosts College Football Championship' },
+        { year: 2026, event: 'Will host World Cup matches' }
+      ],
+      notableGames: [
+        { date: '2019-2023', description: 'Multiple playoff victories' },
+        { date: '2019, 2021, 2022', description: 'NFC Championship Games' }
+      ],
+      traditions: [
+        { name: 'The Faithful', description: '49ers fan identity' },
+        { name: 'Quest for Six', description: 'Pursuit of 6th Super Bowl' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Tech-savvy crowd with passionate core fans',
+      bestExperiences: ['49ers Museum', 'App integration', 'Gourmet concessions'],
+      traditions: ['Niner Empire chants', 'Gold Rush cheerleaders', 'Sourdough Sam'],
+      mascot: { name: 'Sourdough Sam', description: 'Gold miner mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'West side tickets worth extra cost',
+        'Download app before arriving',
+        '49ers Museum worth visiting'
+      ],
+      avoidThese: [
+        'East side seats in September',
+        'Driving without pre-paid parking',
+        'Forgetting sunscreen and water'
+      ],
+      hiddenGems: [
+        'Bourbon Steak & Pub',
+        'Museum game-worn jerseys',
+        'Rooftop gardens'
+      ],
+      photoSpots: [
+        '49ers Museum displays',
+        'Bay Area views from upper deck',
+        'Faithful Mile plaza',
+        'Solar panel bridge'
+      ],
+      bestValue: [
+        'Upper deck west side',
+        'VTA light rail transport',
+        'Green lot parking'
+      ]
+    }
+  },
+
+  'lumen-field': {
+    id: 'lumen-field',
+    name: 'Lumen Field',
+    team: 'Seattle Seahawks',
+    opened: 2002,
+    capacity: 68740,
+
+    overview: {
+      description: 'One of the loudest stadiums in the NFL, featuring a partial roof that covers 70% of seats while keeping field open. Known for the "12th Man" fan tradition.',
+      highlights: [
+        'Loudest crowd roar Guinness World Record',
+        'Partial roof covering 70% of seats',
+        'The 12th Man tradition',
+        'Sustainable design features'
+      ],
+      uniqueFeatures: [
+        'Roof design amplifies crowd noise',
+        'Open north end for mountain views',
+        'Real grass field with undersoil heating',
+        'Hawks Nest cantilever seating'
+      ],
+      renovations: [
+        { year: 2023, description: 'New video boards and sound system upgrades' }
+      ],
+      previousNames: ['Seahawks Stadium', 'Qwest Field', 'CenturyLink Field']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline under roof', 'Sections 111-149'],
+        afternoon: ['Most sections under roof coverage', 'Club level'],
+        evening: ['East side benefits from shade']
+      },
+      coveredSeating: ['70% of seats covered by roof', 'All club and suite levels'],
+      shadeTips: [
+        'Roof covers most seats but field is open',
+        'North end zone exposed to elements',
+        'Rain protection more important than sun',
+        'Seattle weather often overcast anyway'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses covered'],
+        indoorAreas: ['Club lounges', 'Suites', 'Delta Sky360 Club']
+      },
+      worstSunExposure: ['North end zone sections', 'Hawks Nest'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 65, avgHumidity: 65, rainChance: 25, typicalConditions: 'Mild and dry', shadeTip: 'Perfect weather usually' },
+        { month: 'October', avgTemp: 55, avgHumidity: 75, rainChance: 40, typicalConditions: 'Cool with rain possible', shadeTip: 'Roof coverage important' },
+        { month: 'November', avgTemp: 48, avgHumidity: 80, rainChance: 55, typicalConditions: 'Rainy season begins', shadeTip: 'Stay under roof' },
+        { month: 'December', avgTemp: 42, avgHumidity: 80, rainChance: 60, typicalConditions: 'Wet and cool', shadeTip: 'Dress for rain' },
+        { month: 'January', avgTemp: 45, avgHumidity: 80, rainChance: 55, typicalConditions: 'Rainy and cool', shadeTip: 'Waterproof gear essential' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Delta Sky360 Club', perks: ['All-inclusive food/drinks', 'Padded seats', 'Indoor/outdoor access'], access: 'Club membership' },
+          { name: 'Toyota Fan Deck', perks: ['Standing room', 'Bar service', 'Social atmosphere'], access: 'Special tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'HDTVs', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Hawks Nest', description: 'Cantilevered seating over north end zone', capacity: 3000 },
+          { name: 'Toyota Fan Deck', description: 'Party deck with views' }
+        ]
+      },
+      budgetOptions: ['300-level corners', 'Hawks Nest'],
+      familySections: ['Family sections available'],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views and atmosphere', category: 'experience' },
+        { section: 'Club level', tip: 'Covered and comfortable', category: 'shade' },
+        { section: 'Hawks Nest', tip: 'Loudest and most intense', category: 'experience' },
+        { section: '300-level', tip: 'Great value with roof coverage', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Ivar\'s fish and chips', 'Dungeness crab', 'Pike Place Market items'],
+      local: ['Seattle dogs', 'Beecher\'s mac and cheese', 'Top Pot doughnuts', 'Din Tai Fung'],
+      healthy: ['Salads', 'Sushi', 'Fresh seafood', 'Veggie options'],
+      vegetarian: ['Veggie burgers', 'Field Roast sausages', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Elysian', 'Georgetown', 'Fremont Brewing', 'Mac & Jack\'s'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Elysian', 'Georgetown', 'Fremont', 'Redhook']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'North Lot', distance: 'Adjacent', price: '$40-50', shadedSpots: false, covered: false, tip: 'Closest to stadium' },
+        { name: 'Stadium Garage', distance: '0.2 miles', price: '$25-35', shadedSpots: true, covered: true },
+        { name: 'SODO lots', distance: '0.5-1 mile', price: '$20-30', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered, 2-hour limits',
+        tip: 'Very limited on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['Link Light Rail to Stadium Station', 'Sounder Train', 'Multiple bus routes'],
+        rideShare: 'Designated zones on Occidental',
+        bicycle: 'Bike racks and Pronto stations'
+      }
+    },
+
+    gates: [
+      { name: 'Toyota Gate', location: 'North', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Southwest Gate', location: 'Southwest', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Southeast Gate', location: 'Southeast', bestFor: ['Lower bowl'], openTime: '2 hours before kickoff' },
+      { name: 'Muckleshoot Gate', location: 'South', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Pro Shop', exclusive: ['12th Man items', 'Custom jerseys'] },
+        { location: 'Multiple team stores' }
+      ],
+      firstAid: ['All levels near stairs'],
+      babyChanging: ['All family restrooms'],
+      atms: ['All concourse levels'],
+      wifi: { available: true, network: 'LumenField-WiFi' },
+      chargingStations: ['Club level', 'Main concourses']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['All corners of stadium']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots have ADA parking'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Bring ear protection', description: 'Stadium gets extremely loud', category: 'experience' },
+        { title: 'Take light rail', description: 'Easiest transportation option', category: 'arrival' },
+        { title: 'Dress in layers', description: 'Seattle weather changes quickly', category: 'weather' },
+        { title: 'Arrive early', description: 'Experience the March to the Match', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:25pm or 4:25pm typically',
+        rushHours: ['90 minutes before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Noisemakers'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'SODO (South of Downtown)',
+      description: 'Industrial area south of downtown with stadiums and warehouses',
+      beforeGame: ['Pioneer Square bars', 'International District restaurants'],
+      afterGame: ['Capitol Hill nightlife', 'Belltown bars'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '800 Occidental Avenue S, Seattle, WA 98134',
+      publicTransit: {
+        subway: [
+          { lines: ['Link Light Rail'], station: 'Stadium', walkTime: '5 minutes' }
+        ],
+        train: [
+          { lines: ['Sounder'], station: 'King Street', walkTime: '10 minutes' }
+        ],
+        bus: [
+          { routes: ['Multiple routes'], stops: ['4th Avenue S'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-5', 'I-90', 'SR-99'],
+        typicalTraffic: 'Heavy congestion downtown',
+        bestApproach: 'I-5 or I-90 to downtown exits'
+      },
+      rideShare: {
+        pickupZone: 'Occidental Avenue',
+        dropoffZone: 'Utah Avenue',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Light rail to avoid surge'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2002, event: 'Stadium opens' },
+        { year: 2013, event: 'Sets crowd noise record at 137.6 dB' },
+        { year: 2014, event: 'Seahawks win Super Bowl XLVIII' },
+        { year: 2020, event: 'Stadium renamed to Lumen Field' }
+      ],
+      notableGames: [
+        { date: 'Jan 8, 2011', description: 'Beast Quake run by Marshawn Lynch' },
+        { date: 'Jan 19, 2014', description: 'NFC Championship victory' }
+      ],
+      traditions: [
+        { name: '12th Man', description: 'Fans as the 12th player' },
+        { name: 'Raise the 12 Flag', description: 'Pre-game flag raising ceremony' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Deafeningly loud with passionate 12th Man',
+      bestExperiences: ['12 Flag ceremony', 'Blue Friday spirit', 'Sea of blue and green'],
+      traditions: ['12th Man', 'Blue Friday', 'SEA-HAWKS chant'],
+      mascot: { name: 'Blitz and Boom', description: 'Blue seahawk mascots' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Light rail is by far the best transportation',
+        'Occidental Promenade for pre-game atmosphere',
+        'Bring earplugs - seriously loud'
+      ],
+      avoidThese: [
+        'Driving and parking near stadium',
+        'Leaving right at game end',
+        'North end zone in rain'
+      ],
+      hiddenGems: [
+        'Toyota Fan Deck for social atmosphere',
+        'Pro Shop for exclusive 12th Man gear',
+        'Views of Mount Rainier on clear days'
+      ],
+      photoSpots: [
+        '12th Man flag',
+        'Stadium with city skyline',
+        'Hawks Nest view',
+        'Occidental Promenade'
+      ],
+      bestValue: [
+        '300-level sidelines',
+        'Hawks Nest for atmosphere',
+        'Light rail transportation'
+      ]
+    }
+  },
+
+  'raymond-james-stadium': {
+    id: 'raymond-james-stadium',
+    name: 'Raymond James Stadium',
+    team: 'Tampa Bay Buccaneers',
+    opened: 1998,
+    capacity: 65618,
+
+    overview: {
+      description: 'Pirate-themed stadium featuring a 103-foot pirate ship that fires cannons after scores. Home to the Buccaneers and host of multiple Super Bowls.',
+      highlights: [
+        'Authentic pirate ship with cannons',
+        'Host of Super Bowls XXXV, XLIII, LV',
+        'Buccaneer Cove entertainment area',
+        'Recently renovated with new amenities'
+      ],
+      uniqueFeatures: [
+        '103-foot pirate ship replica',
+        'Cannons fire after Bucs scores',
+        'Buccaneer Cove in north end zone',
+        'Tampa Bay views from upper deck'
+      ],
+      renovations: [
+        { year: 2016, description: 'New video boards and club renovations' },
+        { year: 2023, description: 'Premium seating and concourse upgrades' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline sections', 'Visitor side'],
+        afternoon: ['Club level west side', 'Upper deck west'],
+        evening: ['Most sections by 4pm except east side']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites only'],
+      shadeTips: [
+        'Florida sun is intense year-round',
+        'West side recommended for day games',
+        'Upper deck provides some shade to lower levels',
+        'September games can be extremely hot'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services locations'],
+        shadedConcourses: ['Club level', 'Upper concourses'],
+        indoorAreas: ['Club lounges', 'Suites', 'Hall of Fame Club']
+      },
+      worstSunExposure: ['East sideline lower bowl', 'Sections 101-149'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 85, avgHumidity: 75, rainChance: 45, typicalConditions: 'Hot and humid', shadeTip: 'Seek shade, hydrate constantly' },
+        { month: 'October', avgTemp: 78, avgHumidity: 70, rainChance: 25, typicalConditions: 'Warm and humid', shadeTip: 'West side still important' },
+        { month: 'November', avgTemp: 72, avgHumidity: 70, rainChance: 20, typicalConditions: 'Pleasant weather', shadeTip: 'More comfortable conditions' },
+        { month: 'December', avgTemp: 66, avgHumidity: 70, rainChance: 20, typicalConditions: 'Mild and nice', shadeTip: 'Ideal football weather' },
+        { month: 'January', avgTemp: 64, avgHumidity: 70, rainChance: 25, typicalConditions: 'Cool and comfortable', shadeTip: 'Perfect conditions' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Hall of Fame Club', perks: ['All-inclusive food/drinks', 'Padded seats', 'A/C access'], access: 'Premium membership' },
+          { name: 'East Stadium Club', perks: ['Field views', 'Upscale dining', 'Climate-controlled'], access: 'Club tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'A/C', 'HDTVs']
+        },
+        specialAreas: [
+          { name: 'Buccaneer Cove', description: 'Pirate ship party deck', capacity: 300 },
+          { name: 'Party Deck', description: 'Social viewing area' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper level'],
+      familySections: ['Family sections available'],
+      tips: [
+        { section: 'West sideline', tip: 'Better shade for day games', category: 'shade' },
+        { section: 'Buccaneer Cove', tip: 'Unique pirate ship experience', category: 'experience' },
+        { section: 'Club level', tip: 'A/C access crucial in heat', category: 'shade' },
+        { section: 'Upper deck west', tip: 'Good value with some shade', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Cuban sandwiches', 'Grouper sandwiches', 'Pirate\'s Booty'],
+      local: ['Cuban food', 'Tampa-style pizza', 'Florida seafood', 'Cigar City items'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Salads', 'Plant-based options'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Cigar City', 'Yuengling', 'Bud Light', 'Local craft beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Cigar City', 'Coppertail', '3 Daughters']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Stadium Lots', distance: 'Adjacent', price: '$30-40', shadedSpots: false, covered: false, tip: 'Opens 4 hours before game' },
+        { name: 'Off-site Lots', distance: '0.5-1 mile', price: '$20-30', shadedSpots: false, covered: false },
+        { name: 'Ybor City', distance: '2 miles', price: '$10-20', shadedSpots: false, covered: false, tip: 'Shuttle available' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking near stadium',
+        tip: 'All parking in lots only'
+      },
+      alternativeTransport: {
+        publicTransit: ['HART buses', 'Gameday shuttles from Ybor'],
+        rideShare: 'Designated pickup/dropoff zones',
+        bicycle: 'Limited bike racks'
+      }
+    },
+
+    gates: [
+      { name: 'Gate A', location: 'North', bestFor: ['Buccaneer Cove'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'Northeast', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate C', location: 'East', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate D', location: 'South', bestFor: ['General admission'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Bucs Team Store', exclusive: ['Super Bowl merch', 'Pirate gear'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'RayJay-WiFi' },
+      chargingStations: ['Club level', 'Select areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Arrive early', description: 'Parking fills up fast', category: 'arrival' },
+        { title: 'Hydrate constantly', description: 'Florida heat is intense', category: 'weather' },
+        { title: 'Visit pirate ship', description: 'Unique photo opportunity', category: 'experience' },
+        { title: 'Wear sunscreen', description: 'Sun exposure is extreme', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm or 4:25pm typically',
+        rushHours: ['2 hours before', '30 minutes after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Weapons'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'North Tampa',
+      description: 'Suburban area with nearby attractions and entertainment',
+      beforeGame: ['Westshore area restaurants', 'International Plaza shopping'],
+      afterGame: ['Ybor City nightlife', 'SoHo district bars'],
+      radius: '2 miles'
+    },
+
+    transportation: {
+      address: '4201 N Dale Mabry Highway, Tampa, FL 33607',
+      publicTransit: {
+        bus: [
+          { routes: ['HART routes'], stops: ['Dale Mabry Highway'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-275', 'Dale Mabry Highway', 'Veterans Expressway'],
+        typicalTraffic: 'Heavy on Dale Mabry',
+        bestApproach: 'Multiple routes available'
+      },
+      rideShare: {
+        pickupZone: 'Designated lots',
+        dropoffZone: 'West side',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Park in Ybor and take shuttle'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1998, event: 'Stadium opens' },
+        { year: 2003, event: 'Buccaneers win Super Bowl XXXVII' },
+        { year: 2021, event: 'Buccaneers win Super Bowl LV at home' },
+        { year: 2021, event: 'Tom Brady era begins' }
+      ],
+      notableGames: [
+        { date: 'Feb 7, 2021', description: 'Super Bowl LV victory at home' },
+        { date: 'Jan 26, 2003', description: 'NFC Championship victory' }
+      ],
+      traditions: [
+        { name: 'Firing the Cannons', description: 'Cannons fire after Bucs TDs' },
+        { name: 'Siege the Day', description: 'Team rallying cry' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Pirate-themed party atmosphere in Florida sunshine',
+      bestExperiences: ['Pirate ship experience', 'Cannon fire', 'Buccaneer Cove'],
+      traditions: ['Fire the Cannons', 'Raise the Flags', 'Siege the Day'],
+      mascot: { name: 'Captain Fear', description: 'Pirate mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'West side worth extra cost for shade',
+        'Buccaneer Cove great for groups',
+        'Arrive very early for parking'
+      ],
+      avoidThese: [
+        'East side in September heat',
+        'Leaving without hydrating',
+        'Dale Mabry traffic after game'
+      ],
+      hiddenGems: [
+        'Pirate ship deck views',
+        'Hall of Fame displays',
+        'Upper deck bay views'
+      ],
+      photoSpots: [
+        'Pirate ship',
+        'With Captain Fear',
+        'Stadium exterior',
+        'Cannons firing'
+      ],
+      bestValue: [
+        'Upper deck west side',
+        'Ybor parking with shuttle',
+        'Buccaneer Cove experience'
+      ]
+    }
+  },
+
+  'northwest-stadium': {
+    id: 'northwest-stadium',
+    name: 'Northwest Stadium',
+    team: 'Washington Commanders',
+    opened: 1997,
+    capacity: 67617,
+
+    overview: {
+      description: 'Stadium in Landover, Maryland serving the Washington D.C. area. Recently rebranded with the Commanders name change and undergoing cultural transformation.',
+      highlights: [
+        'Serves the nation\'s capital region',
+        'Recent rebrand to Commanders',
+        'Large capacity stadium',
+        'Metro accessible from D.C.'
+      ],
+      uniqueFeatures: [
+        'Club level rings entire stadium',
+        'Dream Seats behind benches',
+        'Multiple party decks',
+        'D.C. skyline views from upper deck'
+      ],
+      renovations: [
+        { year: 2022, description: 'Rebranding to Commanders' },
+        { year: 2023, description: 'New video boards and concourse improvements' }
+      ],
+      previousNames: ['Jack Kent Cooke Stadium', 'FedExField']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline', 'Visitors side'],
+        afternoon: ['Upper deck west side', 'Club level west'],
+        evening: ['Most sections shaded by 4pm']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites only'],
+      shadeTips: [
+        'Open-air stadium with no roof',
+        'Upper deck provides shade to some lower sections',
+        'September games can be very hot',
+        'West side best for afternoon games'
+      ],
+      sunProtection: {
+        shadedConcourses: ['Club level', 'Suite level'],
+        indoorAreas: ['Club lounges', 'Suites']
+      },
+      worstSunExposure: ['Lower bowl east side', 'Dream Seats'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 70, rainChance: 30, typicalConditions: 'Warm and humid', shadeTip: 'West side recommended' },
+        { month: 'October', avgTemp: 63, avgHumidity: 65, rainChance: 30, typicalConditions: 'Pleasant fall weather', shadeTip: 'Comfortable conditions' },
+        { month: 'November', avgTemp: 52, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cool autumn days', shadeTip: 'Layer clothing' },
+        { month: 'December', avgTemp: 42, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cold weather', shadeTip: 'Bundle up' },
+        { month: 'January', avgTemp: 36, avgHumidity: 60, rainChance: 30, typicalConditions: 'Winter cold', shadeTip: 'Dress warmly' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Club Level', perks: ['All-inclusive options', 'Wider seats', 'Private entrances'], access: 'Club tickets' },
+          { name: 'Dream Seats', perks: ['Field level behind benches', 'Premium service'], access: 'Premium tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Owner\'s suites'],
+          amenities: ['Private restrooms', 'Catering', 'Climate control', 'TVs']
+        },
+        specialAreas: [
+          { name: 'Party Decks', description: 'Group areas with bars' },
+          { name: 'Touchdown Club', description: 'Premium field-level club' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper level'],
+      familySections: ['Designated family areas'],
+      tips: [
+        { section: 'Club level', tip: 'Best amenities and views', category: 'experience' },
+        { section: 'Upper deck west', tip: 'Good value with shade', category: 'value' },
+        { section: 'Dream Seats', tip: 'Closest to action', category: 'experience' },
+        { section: 'Lower bowl corners', tip: 'Decent views, fair price', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['D.C. half-smoke', 'Chesapeake crab items', 'Mumbo sauce'],
+      local: ['Ben\'s Chili Bowl', 'Maryland crab', 'Virginia ham', 'D.C. favorites'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Salads', 'Plant-based options'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Local craft beers', 'Bud Light', 'Miller Lite'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['DC Brau', 'Port City', 'Flying Dog']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Stadium Lots', distance: 'Adjacent', price: '$40-50', shadedSpots: false, covered: false, tip: 'Cash only at some lots' },
+        { name: 'Green Lot', distance: '0.3 miles', price: '$35', shadedSpots: false, covered: false },
+        { name: 'Metro Lots', distance: 'At Metro station', price: '$15-25', shadedSpots: false, covered: false, tip: 'Walk or shuttle to stadium' }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking available',
+        tip: 'All parking in designated lots'
+      },
+      alternativeTransport: {
+        publicTransit: ['Metro Blue/Silver Line to Morgan Boulevard'],
+        rideShare: 'Designated zones',
+        bicycle: 'Limited bike racks'
+      }
+    },
+
+    gates: [
+      { name: 'Gate A', location: 'Northwest', bestFor: ['Upper deck'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'Northeast', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate C', location: 'Southeast', bestFor: ['Lower bowl'], openTime: '2 hours before kickoff' },
+      { name: 'Gate D', location: 'Southwest', bestFor: ['General admission'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Commanders Team Store', exclusive: ['New branding items'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'Stadium-WiFi' },
+      chargingStations: ['Select locations']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Take Metro', description: 'Avoid parking hassles', category: 'arrival' },
+        { title: 'Arrive early', description: 'Traffic and parking challenging', category: 'arrival' },
+        { title: 'Check weather', description: 'No roof coverage', category: 'weather' },
+        { title: 'Explore tailgating', description: 'Big tailgating culture', category: 'experience' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm or 4:25pm typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Landover',
+      description: 'Suburban Maryland location outside Washington D.C.',
+      beforeGame: ['D.C. restaurants', 'National Harbor'],
+      afterGame: ['D.C. nightlife', 'Arlington bars'],
+      radius: '5 miles'
+    },
+
+    transportation: {
+      address: '1600 Northwest Stadium Drive, Landover, MD 20785',
+      publicTransit: {
+        subway: [
+          { lines: ['Blue/Silver Line'], station: 'Morgan Boulevard', walkTime: '15 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-495 Capital Beltway', 'Route 214', 'I-95'],
+        typicalTraffic: 'Heavy beltway congestion',
+        bestApproach: 'Multiple routes from D.C. area'
+      },
+      rideShare: {
+        pickupZone: 'Designated areas',
+        dropoffZone: 'Various gates',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Metro to Morgan Boulevard'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1997, event: 'Stadium opens' },
+        { year: 1999, event: 'Hosts first playoff game' },
+        { year: 2020, event: 'Team begins rebrand process' },
+        { year: 2022, event: 'Becomes Washington Commanders' }
+      ],
+      notableGames: [
+        { date: 'Multiple', description: 'Playoff games in 2000s' }
+      ],
+      traditions: [
+        { name: 'Hail to the Commanders', description: 'Fight song' },
+        { name: 'Burgundy and Gold', description: 'Team colors tradition' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Passionate D.C. area fanbase',
+      bestExperiences: ['Tailgating scene', 'D.C. sports culture'],
+      traditions: ['Fight song', 'Burgundy and Gold'],
+      mascot: { name: 'Major Tuddy', description: 'Hog mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Metro is best transportation option',
+        'Tailgating lots open early',
+        'Club level worth it for amenities'
+      ],
+      avoidThese: [
+        'Driving if possible',
+        'Leaving right at game end',
+        'Cash-only lots without cash'
+      ],
+      hiddenGems: [
+        'Upper deck D.C. skyline views',
+        'Dream Seats experience',
+        'Metro convenience'
+      ],
+      photoSpots: [
+        'Stadium exterior',
+        'Team signage',
+        'Field from Dream Seats'
+      ],
+      bestValue: [
+        'Upper deck between 20s',
+        'Metro parking',
+        'Standing room tickets'
+      ]
+    }
+  },
+
+  'empower-field': {
+    id: 'empower-field',
+    name: 'Empower Field at Mile High',
+    team: 'Denver Broncos',
+    opened: 2001,
+    capacity: 76125,
+
+    overview: {
+      description: 'Stadium at 5,280 feet elevation known for giving the Broncos a significant home-field advantage. Features panoramic Rocky Mountain views.',
+      highlights: [
+        'Mile High altitude advantage',
+        'Rocky Mountain views',
+        'Thunder the horse mascot live',
+        'Sold out every game since 1970'
+      ],
+      uniqueFeatures: [
+        'Exactly one mile above sea level markers',
+        'Ring of Fame circling stadium',
+        'Thunder\'s stable on field',
+        'South stands create intense noise'
+      ],
+      renovations: [
+        { year: 2023, description: 'New scoreboard and video boards' }
+      ],
+      previousNames: ['Invesco Field at Mile High', 'Sports Authority Field at Mile High']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline', 'Sections 301-344'],
+        afternoon: ['West side upper deck', 'Club level west'],
+        evening: ['Most sections by 4pm except east lower bowl']
+      },
+      coveredSeating: ['Club level has overhead coverage', 'Suites only'],
+      shadeTips: [
+        'High altitude means intense UV exposure',
+        'Sun feels hotter at elevation',
+        'West side essential for afternoon games',
+        'Sunscreen absolutely necessary'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services'],
+        shadedConcourses: ['Club level', 'Upper concourses'],
+        indoorAreas: ['United Club', 'Suites', 'Club lounges']
+      },
+      worstSunExposure: ['East sideline lower bowl', 'South stands'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 70, avgHumidity: 40, rainChance: 25, typicalConditions: 'Sunny and warm', shadeTip: 'High UV at altitude' },
+        { month: 'October', avgTemp: 55, avgHumidity: 45, rainChance: 20, typicalConditions: 'Cool and sunny', shadeTip: 'Perfect football weather' },
+        { month: 'November', avgTemp: 42, avgHumidity: 50, rainChance: 20, typicalConditions: 'Cold with possible snow', shadeTip: 'Layer up' },
+        { month: 'December', avgTemp: 32, avgHumidity: 50, rainChance: 25, typicalConditions: 'Winter conditions', shadeTip: 'Bundle for cold' },
+        { month: 'January', avgTemp: 30, avgHumidity: 50, rainChance: 25, typicalConditions: 'Cold and snowy possible', shadeTip: 'Full winter gear' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'United Club', perks: ['All-inclusive food/drinks', 'Padded seats', 'Indoor access'], access: 'Premium membership' },
+          { name: 'Colorado Club', perks: ['Sideline views', 'Upscale dining'], access: 'Club tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites'],
+          amenities: ['Private restrooms', 'Catering', 'Climate control', 'TVs']
+        },
+        specialAreas: [
+          { name: 'Thunder\'s Terrace', description: 'Party deck with field views' },
+          { name: 'Bud Light Landing', description: 'Social area in south stands' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'South stands upper'],
+      familySections: ['Family sections available'],
+      standingRoom: ['South stands party areas'],
+      tips: [
+        { section: 'West sideline', tip: 'Best shade and home side', category: 'shade' },
+        { section: 'South stands', tip: 'Loudest and most energetic', category: 'experience' },
+        { section: 'Club level', tip: 'Indoor refuge from weather', category: 'experience' },
+        { section: 'Upper deck', tip: 'Great mountain views', category: 'view' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Rocky Mountain oysters', 'Green chile', 'Bison burgers'],
+      local: ['Colorado craft beers', 'Green chile everything', 'Elk sausages', 'Local BBQ'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Salads', 'Plant-based options'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Nachos'],
+      alcohol: {
+        beer: ['Coors', 'New Belgium', 'Great Divide', 'Odell'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['New Belgium', 'Great Divide', 'Odell', 'Avery']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Stadium Lots', distance: 'Adjacent', price: '$30-40', shadedSpots: false, covered: false, tip: 'Tailgating allowed' },
+        { name: 'Pepsi Center Lots', distance: '0.5 miles', price: '$20-30', shadedSpots: false, covered: false },
+        { name: 'Downtown Lots', distance: '1 mile', price: '$10-20', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Permit zones on game days',
+        tip: 'Very limited near stadium'
+      },
+      alternativeTransport: {
+        publicTransit: ['RTD Light Rail C, E, W lines', 'Broncos Ride buses'],
+        rideShare: 'Designated zones',
+        bicycle: 'Bike valet available'
+      }
+    },
+
+    gates: [
+      { name: 'Gate 1', location: 'Northwest', bestFor: ['Upper deck north'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 2', location: 'Northeast', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate 4', location: 'Southeast', bestFor: ['Lower bowl east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 6', location: 'Southwest', bestFor: ['Lower bowl west'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Broncos Team Store', exclusive: ['Mile High merchandise', 'Ring of Fame items'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'Broncos-WiFi' },
+      chargingStations: ['Club level', 'Select areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['All stadium corners']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Hydrate extra', description: 'Altitude affects hydration', category: 'weather' },
+        { title: 'Arrive early for altitude', description: 'Give body time to adjust', category: 'arrival' },
+        { title: 'Watch Thunder run', description: 'After Broncos TDs', category: 'experience' },
+        { title: 'Sunscreen essential', description: 'UV intense at altitude', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '2:25pm or 6:20pm MT typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Noisemakers'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Sun Valley',
+      description: 'Near downtown Denver with mountain views',
+      beforeGame: ['LoDo bars', 'RiNo breweries', 'Downtown restaurants'],
+      afterGame: ['LoDo nightlife', '16th Street Mall', 'Larimer Square'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '1701 Bryant Street, Denver, CO 80204',
+      publicTransit: {
+        subway: [
+          { lines: ['C, E, W Lines'], station: 'Mile High', walkTime: '10 minutes' }
+        ],
+        bus: [
+          { routes: ['BroncosRide'], stops: ['Multiple park-n-rides'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-25', 'US-6', 'Colfax Avenue'],
+        typicalTraffic: 'Heavy on I-25 and downtown',
+        bestApproach: 'Multiple routes available'
+      },
+      rideShare: {
+        pickupZone: 'Federal Boulevard',
+        dropoffZone: 'Bryant Street',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Light rail recommended'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2001, event: 'Stadium opens' },
+        { year: 2013, event: 'Hosts AFC Championship' },
+        { year: 2016, event: 'Broncos win Super Bowl 50' },
+        { year: 2023, event: 'Major scoreboard upgrade' }
+      ],
+      notableGames: [
+        { date: 'Jan 24, 2016', description: 'AFC Championship victory for Super Bowl 50' },
+        { date: 'Jan 12, 2013', description: 'Mile High Miracle game vs Ravens' }
+      ],
+      traditions: [
+        { name: 'Thunder', description: 'Live horse runs after TDs' },
+        { name: 'IN-COM-PLETE', description: 'Crowd chant on opponent incompletions' },
+        { name: 'Orange Crush', description: 'Defense tradition' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Loud and passionate at altitude',
+      bestExperiences: ['Thunder running', 'Mountain views', 'Orange sea of fans'],
+      traditions: ['IN-COM-PLETE chant', 'Orange Friday', 'Mile High Salute'],
+      mascot: { name: 'Miles and Thunder', description: 'Horse mascots' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Altitude is real - hydrate and take it easy',
+        'Light rail best transportation option',
+        'South stands for party atmosphere'
+      ],
+      avoidThese: [
+        'Underestimating altitude effects',
+        'East side in afternoon sun',
+        'Driving without pre-paid parking'
+      ],
+      hiddenGems: [
+        'Ring of Fame walk',
+        'Thunder\'s stable viewing',
+        'Mountain views from upper deck'
+      ],
+      photoSpots: [
+        'With Thunder the horse',
+        'Mile High marker',
+        'Rocky Mountain backdrop',
+        'Ring of Fame plaza'
+      ],
+      bestValue: [
+        'South stands for atmosphere',
+        'Upper deck for views',
+        'Light rail transportation'
+      ]
+    }
+  },
+
+  'lucas-oil-stadium': {
+    id: 'lucas-oil-stadium',
+    name: 'Lucas Oil Stadium',
+    team: 'Indianapolis Colts',
+    opened: 2008,
+    capacity: 70000,
+
+    overview: {
+      description: 'Retractable roof stadium in downtown Indianapolis known for its unique window wall that opens to the city skyline. Hosts the NFL Combine annually.',
+      highlights: [
+        'Retractable roof and window wall',
+        'Downtown Indianapolis location',
+        'Host of Super Bowl XLVI',
+        'Annual NFL Combine venue'
+      ],
+      uniqueFeatures: [
+        'North window wall opens completely',
+        'Retractable roof opens in 9 minutes',
+        'Field level suites',
+        'Connected to Convention Center'
+      ],
+      renovations: [
+        { year: 2023, description: 'New video boards and ribbon displays' }
+      ]
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections - retractable roof'],
+        afternoon: ['All sections - retractable roof'],
+        evening: ['All sections - retractable roof']
+      },
+      coveredSeating: ['Entire stadium when roof closed'],
+      shadeTips: [
+        'Roof typically closed for weather comfort',
+        'When open, provides outdoor atmosphere',
+        'Climate controlled when closed',
+        'Window wall provides natural light'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses covered'],
+        indoorAreas: ['Entire stadium when closed', 'Club lounges']
+      },
+      worstSunExposure: ['South end zone when roof open'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 70, avgHumidity: 65, rainChance: 30, typicalConditions: 'Comfortable', shadeTip: 'Roof often open' },
+        { month: 'October', avgTemp: 58, avgHumidity: 65, rainChance: 30, typicalConditions: 'Cool', shadeTip: 'Perfect conditions' },
+        { month: 'November', avgTemp: 45, avgHumidity: 65, rainChance: 35, typicalConditions: 'Cold', shadeTip: 'Roof usually closed' },
+        { month: 'December', avgTemp: 35, avgHumidity: 70, rainChance: 35, typicalConditions: 'Winter', shadeTip: 'Climate controlled' },
+        { month: 'January', avgTemp: 30, avgHumidity: 70, rainChance: 30, typicalConditions: 'Cold', shadeTip: 'Indoor comfort' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Quarterback Club', perks: ['All-inclusive', 'Field views', 'Premium bar'], access: 'Club membership' },
+          { name: 'Touchdown Club', perks: ['Sideline views', 'Upscale dining'], access: 'Club tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field suites', 'Loge boxes'],
+          amenities: ['Private restrooms', 'Catering', 'HDTVs', 'Climate control']
+        },
+        specialAreas: [
+          { name: 'Terrace Suites', description: 'Open-air suites when roof open' },
+          { name: 'Field Level Suites', description: 'Closest to action' }
+        ]
+      },
+      budgetOptions: ['Upper level corners', 'End zone upper deck'],
+      familySections: ['Family zones available'],
+      tips: [
+        { section: 'Lower bowl', tip: 'Best views and atmosphere', category: 'view' },
+        { section: 'Club level', tip: 'Premium amenities and comfort', category: 'experience' },
+        { section: 'Upper level sidelines', tip: 'Good value seats', category: 'value' },
+        { section: 'Terrace level', tip: 'Unique perspective', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Pork tenderloin sandwich', 'St. Elmo shrimp cocktail', 'Sugar cream pie'],
+      local: ['Indiana corn', 'Hoosier favorites', 'Local BBQ'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie burgers', 'Salads', 'Plant-based options'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders', 'Popcorn'],
+      alcohol: {
+        beer: ['Sun King', 'Upland', 'Three Floyds', 'Domestic options'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Sun King', 'Upland', 'Flat12']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'South Lot', distance: 'Adjacent', price: '$40', shadedSpots: false, covered: false },
+        { name: 'Downtown Garages', distance: '0.2-0.5 miles', price: '$20-30', shadedSpots: true, covered: true },
+        { name: 'Circle Centre', distance: '0.3 miles', price: '$15-25', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Metered, event restrictions',
+        tip: 'Limited on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['IndyGo buses'],
+        rideShare: 'Multiple designated zones',
+        bicycle: 'Pacers Bikeshare stations'
+      }
+    },
+
+    gates: [
+      { name: 'Gate 1', location: 'Southwest', bestFor: ['Lower bowl west'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 2', location: 'Southeast', bestFor: ['Lower bowl east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 5', location: 'North', bestFor: ['Club level'], openTime: '2.5 hours before kickoff' },
+      { name: 'Gate 6', location: 'Northeast', bestFor: ['Upper levels'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Colts Pro Shop', exclusive: ['Custom jerseys', 'Exclusive items'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'LucasOil-WiFi' },
+      chargingStations: ['Select locations']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Explore downtown', description: 'Walk to many attractions', category: 'experience' },
+        { title: 'Arrive early', description: 'Downtown traffic', category: 'arrival' },
+        { title: 'Check roof status', description: 'Dress accordingly', category: 'weather' },
+        { title: 'Stay downtown', description: 'Walk to stadium', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm typically',
+        rushHours: ['90 minutes before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Downtown Indianapolis',
+      description: 'Heart of downtown with restaurants, bars, and attractions',
+      beforeGame: ['Mass Ave district', 'Monument Circle', 'Wholesale District'],
+      afterGame: ['Broad Ripple nightlife', 'Mass Ave bars'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '500 South Capitol Avenue, Indianapolis, IN 46225',
+      publicTransit: {
+        bus: [
+          { routes: ['IndyGo routes'], stops: ['Capitol Avenue'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-65', 'I-70', 'I-465'],
+        typicalTraffic: 'Downtown congestion',
+        bestApproach: 'Multiple highway access points'
+      },
+      rideShare: {
+        pickupZone: 'South Street',
+        dropoffZone: 'Multiple locations',
+        surgePricing: '2-4x on game days',
+        alternativeTip: 'Walk from downtown hotels'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2008, event: 'Stadium opens' },
+        { year: 2010, event: 'Hosts NCAA Final Four' },
+        { year: 2012, event: 'Hosts Super Bowl XLVI' }
+      ],
+      notableGames: [
+        { date: '2006 Season', description: 'Colts win Super Bowl XLI' },
+        { date: '2014 Playoffs', description: 'Historic comeback vs Chiefs' }
+      ],
+      traditions: [
+        { name: 'Blue Crew', description: 'Passionate fan section' },
+        { name: 'Colts Mascot Blue', description: 'Beloved horse mascot' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Loud indoor environment with Midwest hospitality',
+      bestExperiences: ['Roof opening ceremony', 'Blue Crew energy', 'Downtown atmosphere'],
+      traditions: ['C-O-L-T-S chant', 'Blue Friday', 'Horseshoe pride'],
+      mascot: { name: 'Blue', description: 'Blue horse mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Downtown hotels within walking distance',
+        'Convention Center parking connected',
+        'Mass Ave district before games'
+      ],
+      avoidThese: [
+        'Driving without pre-paid parking',
+        'Missing downtown attractions',
+        'Leaving immediately after game'
+      ],
+      hiddenGems: [
+        'Window wall views',
+        'Roof opening experience',
+        'Connected Convention Center'
+      ],
+      photoSpots: [
+        'Lucas Oil exterior sign',
+        'Field from window wall',
+        'Downtown skyline views'
+      ],
+      bestValue: [
+        'Upper level sidelines',
+        'Downtown garage parking',
+        'Walking from downtown'
+      ]
+    }
+  },
+
+  'everbank-stadium': {
+    id: 'everbank-stadium',
+    name: 'EverBank Stadium',
+    team: 'Jacksonville Jaguars',
+    opened: 1995,
+    capacity: 67838,
+
+    overview: {
+      description: 'Recently renovated stadium featuring the world\'s largest video boards and unique pools and cabanas in the north end zone.',
+      highlights: [
+        'World\'s largest video boards',
+        'Swimming pools and cabanas',
+        'Daily\'s Place amphitheater attached',
+        'Major renovations completed'
+      ],
+      uniqueFeatures: [
+        'Two swimming pools in stadium',
+        'Cabana seating',
+        'Party decks',
+        'Dog park for fans'
+      ],
+      renovations: [
+        { year: 2023, description: 'Stadium of the Future renovations completed' },
+        { year: 2014, description: 'Video boards and pools added' }
+      ],
+      previousNames: ['Jacksonville Municipal Stadium', 'Alltel Stadium', 'TIAA Bank Field']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline', 'Shaded club areas'],
+        afternoon: ['West side upper deck', 'Club seats west'],
+        evening: ['Most sections by 4pm']
+      },
+      coveredSeating: ['Club seats have coverage', 'Cabanas', 'Suites'],
+      shadeTips: [
+        'Florida sun extremely intense',
+        'September games can be brutal',
+        'West side essential for day games',
+        'New shade structures help'
+      ],
+      sunProtection: {
+        sunscreenStations: ['Guest services'],
+        shadedConcourses: ['Club level', 'New covered areas'],
+        indoorAreas: ['Club lounges', 'Suites', 'Daily\'s Place']
+      },
+      worstSunExposure: ['East sideline lower bowl', 'South end zone'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 82, avgHumidity: 75, rainChance: 45, typicalConditions: 'Hot and humid', shadeTip: 'Seek shade desperately' },
+        { month: 'October', avgTemp: 75, avgHumidity: 70, rainChance: 25, typicalConditions: 'Warm', shadeTip: 'Still need sun protection' },
+        { month: 'November', avgTemp: 68, avgHumidity: 70, rainChance: 20, typicalConditions: 'Pleasant', shadeTip: 'More comfortable' },
+        { month: 'December', avgTemp: 60, avgHumidity: 70, rainChance: 25, typicalConditions: 'Mild', shadeTip: 'Ideal weather' },
+        { month: 'January', avgTemp: 58, avgHumidity: 70, rainChance: 25, typicalConditions: 'Cool', shadeTip: 'Perfect conditions' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'US Assure Club', perks: ['All-inclusive', 'Climate control', 'Premium views'], access: 'Club membership' },
+          { name: 'Terrace Suite', perks: ['Private space', 'Outdoor terrace'], access: 'Suite holders' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field level suites'],
+          amenities: ['Private restrooms', 'Catering', 'A/C', 'TVs']
+        },
+        specialAreas: [
+          { name: 'Pools', description: 'Swimming pools with stadium view', capacity: 250 },
+          { name: 'Cabanas', description: 'Private poolside cabanas' }
+        ]
+      },
+      budgetOptions: ['Upper deck corners', 'End zone upper'],
+      familySections: ['Family zones available'],
+      tips: [
+        { section: 'West sideline', tip: 'Essential for shade', category: 'shade' },
+        { section: 'Pools/Cabanas', tip: 'Unique experience', category: 'experience' },
+        { section: 'Club seats', tip: 'A/C access crucial', category: 'shade' },
+        { section: 'Upper west', tip: 'Better shade and value', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Bold City BBQ', 'Mayport shrimp', 'Bono\'s BBQ'],
+      local: ['Jacksonville favorites', 'Florida seafood', 'Southern cuisine'],
+      healthy: ['Salads', 'Grilled options', 'Fresh fruit'],
+      vegetarian: ['Veggie options', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Chicken tenders'],
+      alcohol: {
+        beer: ['Bold City', 'Intuition Ale', 'Budweiser'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Bold City', 'Intuition', 'Aardwolf']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Stadium Lots', distance: 'Adjacent', price: '$30-40', shadedSpots: false, covered: false },
+        { name: 'Sports Complex', distance: '0.3 miles', price: '$20-30', shadedSpots: false, covered: false },
+        { name: 'Downtown', distance: '1 mile', price: '$10-20', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking',
+        tip: 'Use designated lots only'
+      },
+      alternativeTransport: {
+        publicTransit: ['Gameday Express shuttles'],
+        rideShare: 'Designated zones',
+        bicycle: 'Limited options'
+      }
+    },
+
+    gates: [
+      { name: 'Gate 1', location: 'West', bestFor: ['West seating'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 3', location: 'North', bestFor: ['Pools/Cabanas'], openTime: '2 hours before kickoff' },
+      { name: 'Gate 4', location: 'East', bestFor: ['East seating'], openTime: '2 hours before kickoff' },
+      { name: 'Club Gates', location: 'Various', bestFor: ['Club members'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Jaguars Team Store', exclusive: ['Pool merchandise', 'Custom items'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'Stadium-WiFi' },
+      chargingStations: ['Select areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Hydrate constantly', description: 'Florida heat intense', category: 'weather' },
+        { title: 'Sunscreen essential', description: 'Reapply often', category: 'weather' },
+        { title: 'Check out pools', description: 'Unique NFL experience', category: 'experience' },
+        { title: 'Arrive early', description: 'Beat the heat', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm typically',
+        rushHours: ['90 minutes before', '30 minutes after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Sports Complex',
+      description: 'Stadium district near downtown Jacksonville',
+      beforeGame: ['Jacksonville Landing area', 'Downtown restaurants'],
+      afterGame: ['Riverside bars', 'Beach bars (20 min)'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '1 EverBank Stadium Drive, Jacksonville, FL 32202',
+      publicTransit: {
+        bus: [
+          { routes: ['Gameday Express'], stops: ['Multiple locations'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-95', 'US-1', 'I-10'],
+        typicalTraffic: 'Moderate congestion',
+        bestApproach: 'Multiple routes available'
+      },
+      rideShare: {
+        pickupZone: 'Lot J',
+        dropoffZone: 'Various gates',
+        surgePricing: '2-4x on game days',
+        alternativeTip: 'Park downtown and walk'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 1995, event: 'Stadium opens' },
+        { year: 2005, event: 'Hosts Super Bowl XXXIX' },
+        { year: 2017, event: 'AFC Championship Game appearance' },
+        { year: 2023, event: 'Stadium of the Future completed' }
+      ],
+      notableGames: [
+        { date: '2017 Playoffs', description: 'Playoff victories over Bills and Steelers' }
+      ],
+      traditions: [
+        { name: 'DUUUVAL', description: 'County chant' },
+        { name: 'Pools Party', description: 'Unique pool deck experience' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Laid-back Florida vibe with passionate fans',
+      bestExperiences: ['Pool party atmosphere', 'DUUUVAL chant', 'Video board shows'],
+      traditions: ['DUUUVAL', 'Teal pride', 'Jag Rag towels'],
+      mascot: { name: 'Jaxson de Ville', description: 'Energetic jaguar mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Pools require separate ticket',
+        'West side worth extra cost',
+        'Daily\'s Place for pre-game entertainment'
+      ],
+      avoidThese: [
+        'East side in September',
+        'Forgetting sunscreen',
+        'Underestimating heat'
+      ],
+      hiddenGems: [
+        'Daily\'s Place amphitheater',
+        'Dog park for pets',
+        'Bud Zone party deck'
+      ],
+      photoSpots: [
+        'Pools with field view',
+        'Giant video boards',
+        'Jaguar statue',
+        'Stadium exterior'
+      ],
+      bestValue: [
+        'Upper deck west',
+        'Standing room areas',
+        'Downtown parking'
+      ]
+    }
+  },
+
+  'allegiant-stadium': {
+    id: 'allegiant-stadium',
+    name: 'Allegiant Stadium',
+    team: 'Las Vegas Raiders',
+    opened: 2020,
+    capacity: 65000,
+
+    overview: {
+      description: 'Ultra-modern domed stadium in Las Vegas featuring a translucent roof and retractable field tray. The "Death Star" serves as entertainment destination.',
+      highlights: [
+        'Translucent ETFE roof',
+        'Retractable natural grass field',
+        'Las Vegas Strip location',
+        'Al Davis Memorial Torch'
+      ],
+      uniqueFeatures: [
+        'Field slides in/out on tray',
+        'Largest 3D printed structure (Al Davis torch)',
+        'Strip views from concourses',
+        'Black exterior "Death Star" design'
+      ],
+      renovations: []
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections - domed stadium'],
+        afternoon: ['All sections - domed stadium'],
+        evening: ['All sections - domed stadium']
+      },
+      coveredSeating: ['Entire stadium is covered'],
+      shadeTips: [
+        'Fully enclosed dome stadium',
+        'Climate controlled at 72 degrees',
+        'No weather concerns',
+        'Translucent roof provides natural light'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses indoor'],
+        indoorAreas: ['Entire stadium is indoor']
+      },
+      worstSunExposure: ['None - indoor stadium'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 72, avgHumidity: 30, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Perfect indoor conditions' },
+        { month: 'October', avgTemp: 72, avgHumidity: 30, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Consistent comfort' },
+        { month: 'November', avgTemp: 72, avgHumidity: 30, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'No weather impact' },
+        { month: 'December', avgTemp: 72, avgHumidity: 30, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Escape desert cold' },
+        { month: 'January', avgTemp: 72, avgHumidity: 30, rainChance: 0, typicalConditions: 'Climate controlled', shadeTip: 'Indoor comfort' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Twitch Lounge', perks: ['Gaming lounge', 'Field views', 'Broadcast studio'], access: 'Special access' },
+          { name: 'Modelo Cantina Club', perks: ['All-inclusive', 'Mexican cuisine'], access: 'Club tickets' }
+        ],
+        suites: {
+          levels: ['Suite level', 'Field level suites', 'Party suites'],
+          amenities: ['Private restrooms', 'Catering', 'Private bars', 'TVs']
+        },
+        specialAreas: [
+          { name: 'Wynn Field Club', description: 'Nightclub atmosphere at field level' },
+          { name: 'Coors Light Landing', description: 'Party deck' }
+        ]
+      },
+      budgetOptions: ['Upper level corners', 'End zone upper'],
+      familySections: ['Designated family areas'],
+      tips: [
+        { section: 'Lower bowl', tip: 'Best views of Al Davis Torch', category: 'experience' },
+        { section: 'Club seats', tip: 'Vegas-style luxury', category: 'experience' },
+        { section: 'Upper level', tip: 'Still great in modern stadium', category: 'value' },
+        { section: 'Wynn Field Club', tip: 'Unique party experience', category: 'experience' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Vegas celebrity chef items', 'Craft cocktails', 'Premium options'],
+      local: ['Fuku Burger', 'Pizzeria Monzu', 'Ferraro\'s', 'BBQ Mexicana'],
+      healthy: ['Salads', 'Sushi', 'Fresh options'],
+      vegetarian: ['Plant-based options', 'Veggie burgers'],
+      kidsFriendly: ['Pizza', 'Hot dogs', 'Chicken tenders'],
+      alcohol: {
+        beer: ['Local craft beers', 'Premium imports', 'Domestic options'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Able Baker', 'Tenaya Creek', 'Ellis Island']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Official Lots', distance: 'Adjacent', price: '$40-75', shadedSpots: false, covered: false },
+        { name: 'Mandalay Bay', distance: '0.5 miles', price: '$25-40', shadedSpots: true, covered: true },
+        { name: 'Luxor', distance: '0.5 miles', price: '$25-40', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking',
+        tip: 'All parking in lots/garages'
+      },
+      alternativeTransport: {
+        publicTransit: ['RTC buses', 'Game day shuttles from Strip'],
+        rideShare: 'Designated pickup/dropoff zones',
+        bicycle: 'Not recommended'
+      }
+    },
+
+    gates: [
+      { name: 'Allegiant Gates', location: 'Various', bestFor: ['General admission'], openTime: '2 hours before kickoff' },
+      { name: 'Premium Gates', location: 'Various', bestFor: ['Club/Suite access'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'The Raider Image', exclusive: ['Vegas-themed Raiders gear'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'AllegiantStadium-WiFi' },
+      chargingStations: ['Throughout stadium']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple banks']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All locations'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Book rideshare early', description: 'High demand on game days', category: 'arrival' },
+        { title: 'Explore stadium', description: 'Many unique features', category: 'experience' },
+        { title: 'Visit Al Davis Torch', description: 'Pregame ceremony', category: 'experience' },
+        { title: 'Stay on Strip', description: 'Walk or shuttle to game', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:25pm or 5:20pm PT typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Las Vegas Strip Area',
+      description: 'Near the south end of the Las Vegas Strip',
+      beforeGame: ['Strip casinos', 'Restaurants everywhere'],
+      afterGame: ['Strip nightlife', 'Casino entertainment'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '3333 Al Davis Way, Las Vegas, NV 89118',
+      publicTransit: {
+        bus: [
+          { routes: ['RTC routes'], stops: ['Las Vegas Blvd'] }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-15', 'Las Vegas Blvd', 'Russell Road'],
+        typicalTraffic: 'Heavy Strip traffic always',
+        bestApproach: 'Russell Road from I-15'
+      },
+      rideShare: {
+        pickupZone: 'Lot C',
+        dropoffZone: 'Hacienda Avenue',
+        surgePricing: '4-6x on game days',
+        alternativeTip: 'Walk to nearby casino after game'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2020, event: 'Stadium opens' },
+        { year: 2020, event: 'Raiders relocate from Oakland' },
+        { year: 2024, event: 'Hosts Super Bowl LVIII' }
+      ],
+      notableGames: [
+        { date: '2021', description: 'First playoff game in Las Vegas' }
+      ],
+      traditions: [
+        { name: 'Al Davis Torch', description: 'Eternal flame memorial' },
+        { name: 'Raider Nation', description: 'Legendary fanbase' },
+        { name: 'Black Hole', description: 'Rowdy fan section' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Vegas entertainment meets Raider Nation intensity',
+      bestExperiences: ['Al Davis Torch ceremony', 'Black Hole section', 'Vegas atmosphere'],
+      traditions: ['Raider Nation', 'Commitment to Excellence', 'Black Hole'],
+      mascot: { name: 'Raider Rusher', description: 'Raider mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Combine with Vegas weekend trip',
+        'Book accommodations early',
+        'Pregame at casino sportsbooks'
+      ],
+      avoidThese: [
+        'Driving on Strip',
+        'Leaving right at game end',
+        'Forgetting Vegas is expensive'
+      ],
+      hiddenGems: [
+        'Twitch Lounge for gamers',
+        'Al Davis memorial',
+        'Strip views from concourses'
+      ],
+      photoSpots: [
+        'Al Davis Torch',
+        'Stadium exterior "Death Star"',
+        'Strip views',
+        'Field from clubs'
+      ],
+      bestValue: [
+        'Upper level still great',
+        'Casino parking and shuttle',
+        'Pregame on Strip'
+      ]
+    }
+  },
+
+  'sofi-stadium-chargers': {
+    id: 'sofi-stadium-chargers',
+    name: 'SoFi Stadium',
+    team: 'Los Angeles Chargers',
+    opened: 2020,
+    capacity: 70240,
+
+    overview: {
+      description: 'Shares ultra-modern SoFi Stadium with the Rams. Features the same revolutionary design with translucent canopy roof and open-air environment.',
+      highlights: [
+        'Shared with LA Rams',
+        'Largest video board in sports (Oculus)',
+        'Indoor-outdoor design',
+        'Hollywood Park location'
+      ],
+      uniqueFeatures: [
+        '70,000 sq ft dual-sided Oculus',
+        'ETFE translucent roof',
+        'Open air sides',
+        'Stadium bowl 100 feet below ground'
+      ],
+      renovations: []
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['All sections covered by canopy'],
+        afternoon: ['All sections covered by canopy'],
+        evening: ['All sections covered by canopy']
+      },
+      coveredSeating: ['Entire seating bowl covered by canopy'],
+      shadeTips: [
+        'Canopy provides shade but allows natural light',
+        'Open sides allow breeze',
+        'No rain exposure under canopy',
+        'Temperature controlled by natural ventilation'
+      ],
+      sunProtection: {
+        shadedConcourses: ['All concourses covered'],
+        indoorAreas: ['Club lounges', 'Premium areas']
+      },
+      worstSunExposure: ['Minimal - field level may get indirect sun'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 75, avgHumidity: 65, rainChance: 5, typicalConditions: 'Perfect weather', shadeTip: 'Ideal conditions' },
+        { month: 'October', avgTemp: 72, avgHumidity: 60, rainChance: 10, typicalConditions: 'Comfortable', shadeTip: 'Natural ventilation' },
+        { month: 'November', avgTemp: 68, avgHumidity: 55, rainChance: 15, typicalConditions: 'Mild', shadeTip: 'Light jacket evening' },
+        { month: 'December', avgTemp: 62, avgHumidity: 60, rainChance: 20, typicalConditions: 'Cool', shadeTip: 'Protected from rain' },
+        { month: 'January', avgTemp: 60, avgHumidity: 65, rainChance: 25, typicalConditions: 'Cool', shadeTip: 'Bring layers' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'SoFi Stadium Club', perks: ['Field level', 'All-inclusive'], access: 'Premium membership' },
+          { name: 'Founders Club', perks: ['Midfield views', 'Upscale dining'], access: 'Founders members' }
+        ],
+        suites: {
+          levels: ['Multiple suite levels'],
+          amenities: ['Private restrooms', 'Catering', 'Balcony seating']
+        },
+        specialAreas: [
+          { name: 'Field Club', description: 'Field level behind teams' },
+          { name: 'Beach Club', description: 'California vibe club' }
+        ]
+      },
+      budgetOptions: ['500-level corners', 'End zone upper'],
+      familySections: ['Family zones available'],
+      tips: [
+        { section: 'Lower bowl', tip: 'Amazing Oculus views', category: 'view' },
+        { section: '200-level', tip: 'Best value seats', category: 'value' },
+        { section: 'Club seats', tip: 'Premium experience', category: 'experience' },
+        { section: '500-level', tip: 'Still great in modern stadium', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['LA street tacos', 'California cuisine', 'Craft cocktails'],
+      local: ['In-N-Out style', 'Mexican food', 'Asian fusion'],
+      healthy: ['Acai bowls', 'Salads', 'Sushi', 'Vegan'],
+      vegetarian: ['Impossible burgers', 'Plant-based options'],
+      kidsFriendly: ['Pizza', 'Hot dogs', 'Chicken tenders'],
+      alcohol: {
+        beer: ['Local craft beers', 'Mexican beers'],
+        wine: true,
+        cocktails: true,
+        localBreweries: ['Golden Road', 'Angel City', 'Modern Times']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Pink Zone', distance: 'Adjacent', price: '$50-70', shadedSpots: false, covered: false },
+        { name: 'Orange Zone', distance: '0.25 miles', price: '$40-50', shadedSpots: false, covered: false },
+        { name: 'Green Zone', distance: '0.5 miles', price: '$30-40', shadedSpots: false, covered: false }
+      ],
+      streetParking: {
+        available: false,
+        restrictions: 'No street parking',
+        tip: 'All parking in lots'
+      },
+      alternativeTransport: {
+        publicTransit: ['Metro K Line'],
+        rideShare: 'Designated zones',
+        bicycle: 'Bike valet available'
+      }
+    },
+
+    gates: [
+      { name: 'Entry 1', location: 'Northwest', bestFor: ['Pink lot'], openTime: '2 hours before kickoff' },
+      { name: 'Entry 3', location: 'Northeast', bestFor: ['Orange lot'], openTime: '2 hours before kickoff' },
+      { name: 'Entry 5', location: 'Southeast', bestFor: ['Club access'], openTime: '2.5 hours before kickoff' },
+      { name: 'Entry 7', location: 'Southwest', bestFor: ['Green lot'], openTime: '2 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Chargers Team Store', exclusive: ['Bolt gear'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      nursingRooms: ['Guest services'],
+      atms: ['Throughout'],
+      wifi: { available: true, network: 'SoFi-Stadium-WiFi' },
+      chargingStations: ['All levels']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels ADA seating'],
+        entrance: 'All entries accessible',
+        elevators: ['Multiple banks']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every section'],
+      accessibleConcessions: ['All locations'],
+      parkingSpaces: 'All zones'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Arrive very early', description: 'LA traffic plus parking', category: 'arrival' },
+        { title: 'Download app', description: 'Mobile ordering saves time', category: 'experience' },
+        { title: 'Explore plaza', description: 'Entertainment outside', category: 'experience' },
+        { title: 'Use Metro', description: 'Avoid parking hassle', category: 'arrival' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:05pm or 4:25pm typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Professional cameras'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'Hollywood Park',
+      description: 'New entertainment district in Inglewood',
+      beforeGame: ['Casino', 'Hollywood Park restaurants'],
+      afterGame: ['Hollywood Park nightlife', 'LAX area'],
+      radius: '0.5 miles'
+    },
+
+    transportation: {
+      address: '1001 Stadium Drive, Inglewood, CA 90301',
+      publicTransit: {
+        subway: [
+          { lines: ['K Line'], station: 'Downtown Inglewood', walkTime: '20 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-405', 'I-105', 'Century Blvd'],
+        typicalTraffic: 'Severe LA traffic',
+        bestApproach: 'Multiple routes, arrive early'
+      },
+      rideShare: {
+        pickupZone: 'Rideshare lots',
+        dropoffZone: 'Entry plazas',
+        surgePricing: '4-6x game days',
+        alternativeTip: 'Metro K Line'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2020, event: 'Move to SoFi Stadium' },
+        { year: 2017, event: 'Relocate from San Diego' }
+      ],
+      notableGames: [
+        { date: '2018', description: 'Playoff appearance' }
+      ],
+      traditions: [
+        { name: 'Bolt Up', description: 'Team rallying cry' },
+        { name: 'Powder Blue', description: 'Iconic uniform color' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Growing LA fanbase in state-of-the-art venue',
+      bestExperiences: ['Oculus experience', 'LA weather', 'Modern amenities'],
+      traditions: ['Bolt Up', 'Powder blue pride'],
+      mascot: { name: 'Boltman', description: 'Unofficial superfan mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Same as Rams game experience',
+        'Mobile ordering essential',
+        'Plaza opens early'
+      ],
+      avoidThese: [
+        'Driving without prepaid parking',
+        'Last-minute arrival',
+        'Cash (cashless venue)'
+      ],
+      hiddenGems: [
+        'YouTube Theater events',
+        'Lake Park',
+        'Upper center views'
+      ],
+      photoSpots: [
+        'Stadium architecture',
+        'Oculus from field level',
+        'Hollywood Park Lake'
+      ],
+      bestValue: [
+        '500-level sidelines',
+        'Green lot parking',
+        'Metro transportation'
+      ]
+    }
+  },
+
+  'acrisure-stadium': {
+    id: 'acrisure-stadium',
+    name: 'Acrisure Stadium',
+    team: 'Pittsburgh Steelers',
+    opened: 2001,
+    capacity: 68400,
+
+    overview: {
+      description: 'Open-air stadium on the North Shore of Pittsburgh with stunning city skyline views. Home to the six-time Super Bowl champion Steelers.',
+      highlights: [
+        'Pittsburgh skyline views',
+        'Six Super Bowl championships',
+        'Terrible Towel tradition',
+        'North Shore location'
+      ],
+      uniqueFeatures: [
+        'Open south end for city views',
+        'Great Hall entrance',
+        'Steelers Hall of Fame',
+        'Riverside location'
+      ],
+      renovations: [
+        { year: 2023, description: 'New video boards and updates' }
+      ],
+      previousNames: ['Heinz Field']
+    },
+
+    shadeGuide: {
+      bestShadedSections: {
+        morning: ['West sideline', 'Sections 507-534'],
+        afternoon: ['West side upper deck', 'Club seats west'],
+        evening: ['Most sections by 4pm']
+      },
+      coveredSeating: ['Club seats partial coverage', 'Suites only'],
+      shadeTips: [
+        'Open-air stadium with no roof',
+        'Upper deck provides some shade',
+        'West side best for sun protection',
+        'Weather more concern than sun'
+      ],
+      sunProtection: {
+        shadedConcourses: ['Club level', 'Great Hall'],
+        indoorAreas: ['Club lounges', 'Suites', 'Hall of Fame']
+      },
+      worstSunExposure: ['East sideline lower bowl', 'South end zone'],
+      monthlyPatterns: [
+        { month: 'September', avgTemp: 68, avgHumidity: 70, rainChance: 35, typicalConditions: 'Pleasant', shadeTip: 'West side for afternoon' },
+        { month: 'October', avgTemp: 56, avgHumidity: 70, rainChance: 35, typicalConditions: 'Cool fall weather', shadeTip: 'Layer clothing' },
+        { month: 'November', avgTemp: 45, avgHumidity: 70, rainChance: 40, typicalConditions: 'Cold and wet possible', shadeTip: 'Weather protection important' },
+        { month: 'December', avgTemp: 35, avgHumidity: 70, rainChance: 40, typicalConditions: 'Winter conditions', shadeTip: 'Bundle up' },
+        { month: 'January', avgTemp: 30, avgHumidity: 70, rainChance: 35, typicalConditions: 'Cold and snowy', shadeTip: 'Full winter gear' }
+      ]
+    },
+
+    seatingGuide: {
+      premiumSeating: {
+        clubs: [
+          { name: 'Club Lounge', perks: ['All-inclusive options', 'Padded seats', 'Indoor access'], access: 'Club tickets' },
+          { name: 'Champions Club', perks: ['Field level', 'Premium dining'], access: 'Premium membership' }
+        ],
+        suites: {
+          levels: ['Suite level'],
+          amenities: ['Private restrooms', 'Catering', 'Climate control', 'TVs']
+        },
+        specialAreas: [
+          { name: 'North Club', description: 'End zone club experience' },
+          { name: 'Hall of Honor Club', description: 'Steelers history themed' }
+        ]
+      },
+      budgetOptions: ['Upper level corners', 'End zone upper'],
+      familySections: ['Family sections available'],
+      tips: [
+        { section: 'Lower bowl sidelines', tip: 'Best views and atmosphere', category: 'view' },
+        { section: 'South end zone', tip: 'City skyline views', category: 'view' },
+        { section: 'Club level', tip: 'Weather protection', category: 'experience' },
+        { section: 'Upper level', tip: 'Great value, still good views', category: 'value' }
+      ]
+    },
+
+    concessions: {
+      signature: ['Primanti Bros sandwiches', 'Pierogies', 'Kielbasa'],
+      local: ['Pittsburgh favorites', 'Iron City beer', 'Isaly\'s chipped ham'],
+      healthy: ['Salads', 'Grilled options'],
+      vegetarian: ['Veggie options', 'Salads'],
+      kidsFriendly: ['Hot dogs', 'Pizza', 'Popcorn'],
+      alcohol: {
+        beer: ['Iron City', 'Yuengling', 'Local craft beers'],
+        wine: true,
+        cocktails: false,
+        localBreweries: ['Penn Brewery', 'Church Brew Works']
+      }
+    },
+
+    parking: {
+      lots: [
+        { name: 'Gold Lots', distance: 'Adjacent', price: '$40-50', shadedSpots: false, covered: false },
+        { name: 'Red Lots', distance: '0.3 miles', price: '$35-40', shadedSpots: false, covered: false },
+        { name: 'Downtown Garages', distance: '1 mile', price: '$20-30', shadedSpots: true, covered: true }
+      ],
+      streetParking: {
+        available: true,
+        restrictions: 'Limited, permit zones',
+        tip: 'Very difficult on game days'
+      },
+      alternativeTransport: {
+        publicTransit: ['T Light Rail to North Side Station'],
+        rideShare: 'Designated zones',
+        bicycle: 'Three Rivers Heritage Trail'
+      }
+    },
+
+    gates: [
+      { name: 'Gate A', location: 'Southeast', bestFor: ['Lower bowl east'], openTime: '2 hours before kickoff' },
+      { name: 'Gate B', location: 'Southwest', bestFor: ['Lower bowl west'], openTime: '2 hours before kickoff' },
+      { name: 'Gate C', location: 'North', bestFor: ['Upper levels'], openTime: '2 hours before kickoff' },
+      { name: 'Club Gate', location: 'West', bestFor: ['Club members'], openTime: '2.5 hours before kickoff' }
+    ],
+
+    amenities: {
+      merchandise: [
+        { location: 'Steelers Pro Shop', exclusive: ['Championship merchandise'] },
+        { location: 'Multiple locations' }
+      ],
+      firstAid: ['All levels'],
+      babyChanging: ['Family restrooms'],
+      atms: ['All concourses'],
+      wifi: { available: true, network: 'Stadium-WiFi' },
+      chargingStations: ['Select areas']
+    },
+
+    accessibility: {
+      wheelchairAccess: {
+        available: true,
+        sections: ['All levels have ADA seating'],
+        entrance: 'All gates accessible',
+        elevators: ['Multiple locations']
+      },
+      assistiveListening: true,
+      signageAndBraille: true,
+      serviceAnimals: true,
+      companionSeats: true,
+      accessibleRestrooms: ['Every level'],
+      accessibleConcessions: ['All stands'],
+      parkingSpaces: 'All lots'
+    },
+
+    gameDay: {
+      tips: [
+        { title: 'Bring Terrible Towel', description: 'Essential Steelers tradition', category: 'experience' },
+        { title: 'Arrive early', description: 'Traffic crosses bridges', category: 'arrival' },
+        { title: 'Visit Great Hall', description: 'Steelers history displays', category: 'experience' },
+        { title: 'Layer clothing', description: 'Weather changes quickly', category: 'weather' }
+      ],
+      typicalSchedule: {
+        gatesOpen: '2 hours before kickoff',
+        firstPitch: '1:00pm typically',
+        rushHours: ['2 hours before', 'Immediately after']
+      },
+      security: {
+        allowedBags: 'Clear bags only, 12"x6"x12"',
+        prohibitedItems: ['Outside food/drinks', 'Umbrellas'],
+        metalDetectors: true,
+        clearBagPolicy: true
+      }
+    },
+
+    neighborhood: {
+      name: 'North Shore',
+      description: 'Pittsburgh\'s North Shore with restaurants and attractions',
+      beforeGame: ['Rivers Casino', 'North Shore restaurants', 'Andy Warhol Museum'],
+      afterGame: ['Strip District', 'Downtown Pittsburgh', 'South Side'],
+      radius: '1 mile'
+    },
+
+    transportation: {
+      address: '100 Art Rooney Avenue, Pittsburgh, PA 15212',
+      publicTransit: {
+        subway: [
+          { lines: ['T Red/Blue/Gold'], station: 'North Side', walkTime: '5 minutes' }
+        ]
+      },
+      driving: {
+        majorRoutes: ['I-279', 'Route 28', 'I-376'],
+        typicalTraffic: 'Heavy, bridges bottleneck',
+        bestApproach: 'Multiple bridges, arrive early'
+      },
+      rideShare: {
+        pickupZone: 'Art Rooney Ave',
+        dropoffZone: 'Various locations',
+        surgePricing: '3-5x on game days',
+        alternativeTip: 'Walk to downtown after'
+      }
+    },
+
+    history: {
+      timeline: [
+        { year: 2001, event: 'Stadium opens' },
+        { year: 2006, event: 'Steelers win Super Bowl XL' },
+        { year: 2009, event: 'Steelers win Super Bowl XLIII' },
+        { year: 2011, event: 'Hosts AFC Championship' }
+      ],
+      notableGames: [
+        { date: 'Multiple', description: 'Six Super Bowl championships' },
+        { date: '2008 AFC Championship', description: 'Victory over Ravens' }
+      ],
+      traditions: [
+        { name: 'Terrible Towel', description: 'Iconic yellow rally towel' },
+        { name: 'Steeler Nation', description: 'Worldwide fanbase' },
+        { name: 'Renegade', description: 'Third down song' }
+      ]
+    },
+
+    fanExperience: {
+      atmosphere: 'Blue-collar passion with championship tradition',
+      bestExperiences: ['Terrible Towel twirl', 'Renegade on third down', 'Steel City pride'],
+      traditions: ['Terrible Towel', 'Here We Go Steelers', 'Black and Gold'],
+      mascot: { name: 'Steely McBeam', description: 'Steel worker mascot' }
+    },
+
+    proTips: {
+      insiderTips: [
+        'Light rail best transportation',
+        'Great Hall worth visiting',
+        'Primanti Bros is must-try'
+      ],
+      avoidThese: [
+        'Driving if possible',
+        'Forgetting Terrible Towel',
+        'Underestimating weather'
+      ],
+      hiddenGems: [
+        'Hall of Fame in Great Hall',
+        'City views from south end',
+        'Rivers Casino nearby'
+      ],
+      photoSpots: [
+        'City skyline from stadium',
+        'Great Hall displays',
+        'Three rivers confluence',
+        'Steel curtain banner'
+      ],
+      bestValue: [
+        'Upper level between 20s',
+        'Light rail transport',
+        'North Shore parking'
+      ]
+    }
   }
 };

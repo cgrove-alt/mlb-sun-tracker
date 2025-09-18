@@ -1,13 +1,16 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSections } from '../../../src/data/stadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
+import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import StickyShadeBar from '../../../components/StickyShadeBar';
+import styles from './StadiumPage.module.css';
+import killOverhang from './KillOverhang.module.css';
 
 interface StadiumPageProps {
   params: Promise<{
@@ -90,7 +93,25 @@ export async function generateMetadata({ params }: StadiumPageProps): Promise<Me
 
 export default async function StadiumPage({ params }: StadiumPageProps) {
   const { stadiumId } = await params;
-  const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+  
+  // Check if this slug needs redirect to canonical ID
+  if (needsRedirect(stadiumId)) {
+    const canonicalId = getCanonicalStadiumId(stadiumId);
+    if (canonicalId) {
+      redirect(`/stadium/${canonicalId}`);
+    }
+  }
+  
+  // Try to find stadium by ID or by using slug mapping
+  let stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+  
+  // If not found directly, try using the slug mapping
+  if (!stadium) {
+    const canonicalId = getCanonicalStadiumId(stadiumId);
+    if (canonicalId) {
+      stadium = MLB_STADIUMS.find(s => s.id === canonicalId);
+    }
+  }
   
   if (!stadium) {
     notFound();
@@ -98,7 +119,8 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
 
   const sections = getStadiumSections(stadium.id);
   const amenities = getStadiumAmenities(stadium.id);
-  const guide = getStadiumGuide(stadiumId);
+  // Use the stadium's canonical ID for guide lookup
+  const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
 
   // Structured data for better SEO
   const jsonLd = {
@@ -170,7 +192,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   const preferSSR = process.env.NODE_ENV === 'production';
 
   return (
-    <>
+    <div className={`${styles.pageContainer} ${killOverhang.killOverhang}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -182,42 +204,38 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         suppressHydrationWarning
       />
       
-      {/* Sticky shade calculator bar - wrapped in Suspense for useSearchParams */}
-      <Suspense fallback={null}>
-        <StickyShadeBar 
-          stadiumName={stadium.name}
-          stadiumId={stadium.id}
-        />
-      </Suspense>
+      {/* Sticky shade calculator bar in grid */}
+      <div className={styles.stickyContainer}>
+        <Suspense fallback={null}>
+          <StickyShadeBar 
+            stadiumName={stadium.name}
+            stadiumId={stadium.id}
+          />
+        </Suspense>
+      </div>
       
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
-        <StadiumPageSSR
-          stadium={stadium}
-          sections={sections}
-          amenities={amenities}
-          guide={guide}
-        />
+        <div className={styles.contentSection}>
+          <StadiumPageSSR
+            stadium={stadium}
+            sections={sections}
+            amenities={amenities}
+            guide={guide}
+          />
+        </div>
       </noscript>
       
-      {/* Progressive enhancement with client features */}
-      <div suppressHydrationWarning className="has-sticky-shade-bar">
-        <StadiumPageSSR
+      {/* Main content in grid */}
+      <div className={styles.contentWrapper} suppressHydrationWarning>
+        <StadiumPageClient 
           stadium={stadium}
           sections={sections}
           amenities={amenities}
           guide={guide}
+          useComprehensive={!!guide}
         />
       </div>
-      
-      {/* Optional: Load interactive client components lazily */}
-      {/* <StadiumPageClient 
-        stadium={stadium}
-        sections={sections}
-        amenities={amenities}
-        guide={guide}
-        useComprehensive={!!guide}
-      /> */}
-    </>
+    </div>
   );
 }

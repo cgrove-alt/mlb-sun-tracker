@@ -362,13 +362,39 @@
   padding-left: 20px;
 }
 
+/* Enhanced active state styling - prominent visual indication */
 .mobile-nav-links > a.active,
 .mobile-nav-section > a.active {
-  background: rgba(15, 118, 110, 0.08);
-  color: #0f766e !important;
-  font-weight: 500;
-  border-left: 3px solid #0f766e;
-  padding-left: 16px;
+  background: linear-gradient(135deg, #ff6b35, #f77737);
+  color: #ffffff !important;
+  font-weight: 700;
+  border-left: 4px solid #ff4500;
+  padding-left: 20px; /* Adjusted for border */
+  cursor: default;
+  pointer-events: none; /* Prevent clicking on active page */
+  position: relative;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+}
+
+/* Remove hover effect on active items */
+.mobile-nav-links > a.active:hover,
+.mobile-nav-section > a.active:hover {
+  background: linear-gradient(135deg, #ff6b35, #f77737);
+  transform: none;
+  color: #ffffff !important;
+}
+
+/* Add "Current Page" indicator for accessibility */
+.mobile-nav-links > a.active::after,
+.mobile-nav-section > a.active::after {
+  content: "•";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  font-size: 20px;
+  opacity: 0.8;
 }
 
 .mobile-league-dropdown {

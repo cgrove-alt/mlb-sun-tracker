@@ -4,13 +4,15 @@ import React from 'react';
 import { StadiumGuide } from '../data/stadiumGuides';
 import { getStadiumGuide } from '../data/guides';
 import Link from 'next/link';
-import { 
-  MapPinIcon, 
-  ClockIcon, 
-  SunIcon, 
-  CloudIcon, 
-  DropletIcon 
+import {
+  MapPinIcon,
+  ClockIcon,
+  SunIcon,
+  CloudIcon,
+  DropletIcon
 } from './Icons';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
@@ -20,40 +22,59 @@ interface ComprehensiveStadiumGuideProps {
 const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId }) => {
   const guide = getStadiumGuide(stadiumId);
   
+  // Debug logging
+  if (typeof window !== 'undefined' && guide) {
+    console.log('ComprehensiveStadiumGuide data:', {
+      stadiumId,
+      name: guide.name,
+      team: guide.team,
+      opened: guide.opened,
+      capacity: guide.capacity,
+      neighborhood: guide.neighborhood?.name
+    });
+  }
+  
   if (!guide) {
     return (
-      <div className="stadium-guide">
-        <p>Stadium guide not found for ID: {stadiumId}</p>
+      <div className="stadium-guide comprehensive">
+        <div className="guide-section">
+          <h2>Stadium Guide Not Available</h2>
+          <p>We're still working on the comprehensive guide for this stadium.</p>
+          <p className="text-sm text-gray-600 mt-2">Stadium ID: {stadiumId}</p>
+        </div>
       </div>
     );
   }
 
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: guide.name,
+      id: stadiumId
+    },
+    team: {
+      name: guide.team,
+      league: 'MLB' // Comprehensive guides are currently only for MLB
+    },
+    quickFacts: {
+      location: {
+        city: guide.neighborhood.name.split(',')[0] || guide.neighborhood.name,
+        state: guide.neighborhood.name.split(',')[1]?.trim() || ''
+      },
+      capacity: guide.capacity,
+      orientation: 0, // This would need to come from stadium data
+      roofType: 'open', // This would need to come from stadium data
+      yearBuilt: guide.opened
+    }
+  };
+
   return (
     <div className="stadium-guide comprehensive">
-      <nav className="breadcrumb">
-        <Link href="/">Home</Link>
-        <span> › </span>
-        <Link href="/stadiums">Stadiums</Link>
-        <span> › </span>
-        <span>{guide.name}</span>
-      </nav>
-
-      <header className="stadium-header">
-        <h1>{guide.name}</h1>
-        <p className="stadium-subtitle">{guide.team}</p>
-        <div className="stadium-meta">
-          <span className="location">
-            <MapPinIcon size={16} />
-            {guide.neighborhood.name}
-          </span>
-          <span className="capacity">
-            Capacity: {guide.capacity.toLocaleString()}
-          </span>
-          <span className="opened">
-            Opened: {guide.opened}
-          </span>
-        </div>
-      </header>
+      <StadiumTitleBlock
+        data={titleData}
+        showBreadcrumb={true}
+      />
 
       {/* Overview Section */}
       <section className="guide-section">

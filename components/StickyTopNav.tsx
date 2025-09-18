@@ -13,7 +13,7 @@ export default function StickyTopNav() {
   const [isNFLOpen, setIsNFLOpen] = useState(false);
   const [isMiLBOpen, setIsMiLBOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string}>>([]);
+  const [searchResults, setSearchResults] = useState<Array<{id: string; name: string; team: string; league?: string}>>([]);
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
@@ -98,7 +98,8 @@ export default function StickyTopNav() {
       .map(venue => ({
         id: venue.id,
         name: venue.name,
-        team: venue.team
+        team: venue.team,
+        league: venue.league // Include league for routing
       }));
     
     setSearchResults(results);
@@ -108,7 +109,10 @@ export default function StickyTopNav() {
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchResults.length > 0) {
-      window.location.href = `/stadium/${searchResults[0].id}`;
+      const venue = searchResults[0];
+      // Use /stadium route for MLB, /venue for others
+      const route = venue.league === 'MLB' ? 'stadium' : 'venue';
+      window.location.href = `/${route}/${venue.id}`;
     }
   };
 
@@ -146,16 +150,20 @@ export default function StickyTopNav() {
                 
                 {showSearchResults && (
                   <div className="search-results">
-                    {searchResults.map((result) => (
-                      <Link
-                        key={result.id}
-                        href={`/stadium/${result.id}`}
-                        className="search-result-item"
-                      >
-                        <span className="result-name">{result.name}</span>
-                        <span className="result-team">{result.team}</span>
-                      </Link>
-                    ))}
+                    {searchResults.map((result) => {
+                      // Use /stadium route for MLB, /venue for others
+                      const route = result.league === 'MLB' ? 'stadium' : 'venue';
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${route}/${result.id}`}
+                          className="search-result-item"
+                        >
+                          <span className="result-name">{result.name}</span>
+                          <span className="result-team">{result.team}</span>
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>
@@ -248,7 +256,7 @@ export default function StickyTopNav() {
                     {mlbVenues.map((venue) => (
                       <Link
                         key={venue.id}
-                        href={`/venue/${venue.id}`}
+                        href={`/stadium/${venue.id}`}
                         className="mobile-venue-link"
                         onClick={closeMobileMenu}
                       >
@@ -336,6 +344,7 @@ export default function StickyTopNav() {
                 href="/" 
                 className={pathname === '/' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/' ? 'page' : undefined}
               >
                 Home
               </Link>
@@ -359,8 +368,9 @@ export default function StickyTopNav() {
               
               <Link 
                 href="/stadiums" 
-                className={pathname === '/stadiums' ? 'active' : ''}
+                className={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'page' : undefined}
               >
                 All Stadiums
               </Link>
@@ -369,6 +379,7 @@ export default function StickyTopNav() {
                 href="/blog" 
                 className={pathname?.startsWith('/blog') ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname?.startsWith('/blog') ? 'page' : undefined}
               >
                 Blog
               </Link>
@@ -385,6 +396,7 @@ export default function StickyTopNav() {
                 href="/guide/how-to-find-shaded-seats" 
                 className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/guide/how-to-find-shaded-seats' ? 'page' : undefined}
               >
                 How to Find Shaded Seats
               </Link>
@@ -393,6 +405,7 @@ export default function StickyTopNav() {
                 href="/guide/best-shaded-seats-mlb" 
                 className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/guide/best-shaded-seats-mlb' ? 'page' : undefined}
               >
                 Best Shaded Seats Guide
               </Link>
@@ -401,6 +414,7 @@ export default function StickyTopNav() {
                 href="/faq" 
                 className={pathname === '/faq' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/faq' ? 'page' : undefined}
               >
                 FAQs
               </Link>
@@ -417,6 +431,7 @@ export default function StickyTopNav() {
                 href="/contact" 
                 className={pathname === '/contact' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/contact' ? 'page' : undefined}
               >
                 Contact Us
               </Link>
@@ -425,6 +440,7 @@ export default function StickyTopNav() {
                 href="/privacy" 
                 className={pathname === '/privacy' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/privacy' ? 'page' : undefined}
               >
                 Privacy Policy
               </Link>
@@ -433,6 +449,7 @@ export default function StickyTopNav() {
                 href="/terms" 
                 className={pathname === '/terms' ? 'active' : ''}
                 onClick={closeMobileMenu}
+                aria-current={pathname === '/terms' ? 'page' : undefined}
               >
                 Terms of Service
               </Link>

@@ -1,0 +1,100 @@
+/* Kill Overhang Utility - Neutralizes ALL negative margins and transforms */
+
+.killOverhang {
+  /* Force reset all positioning */
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Strong, page-scoped neutralizers for main sections */
+.killOverhang :global(main) :global(.section),
+.killOverhang :global(main) :global([data-test="overview-section"]),
+.killOverhang :global(main) :global(.guide-section) {
+  margin-top: 0 !important;
+  transform: none !important;
+  top: auto !important;
+  position: static !important;
+  z-index: auto !important;
+}
+
+/* Kill ALL negative margins everywhere */
+.killOverhang *,
+.killOverhang *::before,
+.killOverhang *::after {
+  margin-top: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  /* Allow positive bottom margins for spacing */
+  /* REMOVED min-height: 0 - was breaking header text display */
+}
+
+/* Kill ALL transforms */
+.killOverhang *,
+.killOverhang *:hover,
+.killOverhang *:focus,
+.killOverhang *:active {
+  transform: none !important;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow !important;
+  /* Explicitly exclude transform from transitions */
+}
+
+/* Force static positioning on problematic elements */
+.killOverhang .guide-section,
+.killOverhang [class*="guide-section"],
+.killOverhang .overview,
+.killOverhang [class*="overview"],
+.killOverhang .card,
+.killOverhang [class*="card"] {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+/* Ensure headers don't have z-index tricks */
+.killOverhang h1,
+.killOverhang h2,
+.killOverhang h3,
+.killOverhang header,
+.killOverhang [class*="header"] {
+  position: relative !important;
+  z-index: 1 !important;
+  margin-top: 0 !important;
+  transform: none !important;
+}
+
+/* Override any --overhang custom properties */
+.killOverhang {
+  --overhang: 0 !important;
+  --overhang-top: 0 !important;
+  --overhang-bottom: 0 !important;
+  --overhang-left: 0 !important;
+  --overhang-right: 0 !important;
+  --card-overhang: 0 !important;
+  --section-overhang: 0 !important;
+}
+
+/* Specific overrides for common problem patterns */
+.killOverhang [style*="margin-top: -"],
+.killOverhang [style*="margin-left: -"],
+.killOverhang [style*="margin-right: -"],
+.killOverhang [style*="transform: translateY"] {
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* Ensure hover states don't introduce transforms */
+.killOverhang *:hover {
+  margin-top: 0 !important;
+  transform: none !important;
+  /* Allow box-shadow changes for hover feedback */
+  transition: box-shadow 0.2s ease, background-color 0.2s ease !important;
+}
+
+/* Mobile specific overrides */
+@media (max-width: 768px) {
+  .killOverhang * {
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+}

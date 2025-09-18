@@ -1,34 +1,36 @@
-// Dunkin' Park - Hartford Yard Goats (Colorado Rockies AA)
-// Opened: 2017
-// Capacity: 6,121
-// Known for downtown Hartford skyline and modern amenities
+// Dunkin' Park - Comprehensive Section Data
+// Auto-generated with accurate 3D geometry for sun calculations
 
-import { DetailedSection } from '../../../../types/stadium-complete';
+import { DetailedSection, Vector3D, RowDetail } from '../../../../types/stadium-complete';
 
-// Helper function for row generation
-const generateRows = (
-  startRow: string | number,
-  endRow: string | number,
+// Helper function to generate rows
+function generateRows(
+  startRow: number | string,
+  endRow: number | string,
   seatsPerRow: number,
-  startElevation: number,
-  rakeAngle: number
-): any[] => {
-  const rows = [];
+  baseElevation: number,
+  rake: number,
+  covered: boolean = false
+): RowDetail[] {
+  const rows: RowDetail[] = [];
   const rowHeight = 2.5;
   const rowDepth = 2.8;
   
-  if (typeof startRow === 'string') {
-    const startCode = startRow.charCodeAt(0);
+  const isLetterRows = typeof startRow === 'string';
+  
+  if (isLetterRows) {
+    const startCode = (startRow as string).charCodeAt(0);
     const endCode = (endRow as string).charCodeAt(0);
     
     for (let i = startCode; i <= endCode; i++) {
       const rowNum = i - startCode;
       rows.push({
         rowNumber: String.fromCharCode(i),
-        seats: seatsPerRow,
-        elevation: startElevation + (rowNum * rowHeight * Math.sin(rakeAngle * Math.PI / 180)),
+        seats: seatsPerRow - Math.floor(rowNum * 0.2),
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
         depth: rowNum * rowDepth,
-        covered: false
+        covered: covered,
+        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
       });
     }
   } else {
@@ -36,330 +38,436 @@ const generateRows = (
       const rowNum = i - (startRow as number);
       rows.push({
         rowNumber: i.toString(),
-        seats: seatsPerRow,
-        elevation: startElevation + (rowNum * rowHeight * Math.sin(rakeAngle * Math.PI / 180)),
+        seats: seatsPerRow - Math.floor(rowNum * 0.2),
+        elevation: baseElevation + (rowNum * rowHeight * Math.sin(rake * Math.PI / 180)),
         depth: rowNum * rowDepth,
-        covered: false
+        covered: covered,
+        overhangHeight: covered ? 30 - (rowNum * 0.3) : undefined
       });
     }
   }
   
   return rows;
-};
+}
 
-export const hartfordYardGoatsSections: DetailedSection[] = [
-  // ========== GOAT CLUB ==========
+export const hartfordyardgoatsSections: DetailedSection[] = [
   {
-    id: 'goat-club',
-    name: 'Goat Club',
-    level: 'club',
-    baseAngle: 0,
-    angleSpan: 24,
-    rows: generateRows('A', 'H', 28, 19, 23),
+    id: '100',
+    name: 'Field 100',
+    level: 'field',
+    baseAngle: 320,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -34, y: 19, z: 50 },
-      { x: 34, y: 19, z: 50 },
-      { x: 39, y: 37, z: 68 },
-      { x: -39, y: 37, z: 68 }
-    ],
-    covered: true,
+      { x: 31, y: -26, z: 0 },
+      { x: 34, y: -21, z: 0 },
+      { x: 55, y: -35, z: 10 },
+      { x: 50, y: -42, z: 10 }
+    ] as Vector3D[],
+    covered: false,
     distance: 50,
-    height: 19,
-    rake: 23,
-    viewQuality: 'excellent',
-    price: 'luxury'
+    height: 0,
+    rake: 18
   },
-
-  // ========== FIELD BOXES ==========
   {
-    id: 'field-box-100',
-    name: 'Field Box 100',
+    id: '101',
+    name: 'Field 101',
     level: 'field',
-    baseAngle: 0,
-    angleSpan: 21,
-    rows: generateRows('A', 'J', 18, 5, 18),
+    baseAngle: 327.5,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -25, y: 5, z: 40 },
-      { x: 25, y: 5, z: 40 },
-      { x: 30, y: 22, z: 57 },
-      { x: -30, y: 22, z: 57 }
-    ],
+      { x: 34, y: -21, z: 0 },
+      { x: 36, y: -17, z: 0 },
+      { x: 59, y: -27, z: 10 },
+      { x: 55, y: -35, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 40,
-    height: 5,
-    rake: 18,
-    viewQuality: 'excellent',
-    price: 'premium'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-106',
-    name: 'Field Box 106',
+    id: '102',
+    name: 'Field 102',
     level: 'field',
-    baseAngle: 21,
-    angleSpan: 23,
-    rows: generateRows('A', 'J', 19, 5, 18),
+    baseAngle: 335,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: 25, y: 5, z: 40 },
-      { x: 44, y: 5, z: 48 },
-      { x: 49, y: 22, z: 65 },
-      { x: 30, y: 22, z: 57 }
-    ],
+      { x: 36, y: -17, z: 0 },
+      { x: 38, y: -12, z: 0 },
+      { x: 62, y: -20, z: 10 },
+      { x: 59, y: -27, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 44,
-    height: 5,
-    rake: 18,
-    viewQuality: 'excellent',
-    price: 'premium'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-107',
-    name: 'Field Box 107',
+    id: '103',
+    name: 'Field 103',
     level: 'field',
-    baseAngle: 339,
-    angleSpan: 23,
-    rows: generateRows('A', 'J', 19, 5, 18),
+    baseAngle: 342.5,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -44, y: 5, z: 48 },
-      { x: -25, y: 5, z: 40 },
-      { x: -30, y: 22, z: 57 },
-      { x: -49, y: 22, z: 65 }
-    ],
+      { x: 38, y: -12, z: 0 },
+      { x: 39, y: -7, z: 0 },
+      { x: 64, y: -11, z: 10 },
+      { x: 62, y: -20, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 44,
-    height: 5,
-    rake: 18,
-    viewQuality: 'excellent',
-    price: 'premium'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-112',
-    name: 'Field Box 112',
+    id: '104',
+    name: 'Field 104',
     level: 'field',
-    baseAngle: 53,
-    angleSpan: 24,
-    rows: generateRows('A', 'J', 20, 5, 18),
+    baseAngle: 350,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: 53, y: 5, z: 72 },
-      { x: 79, y: 5, z: 98 },
-      { x: 84, y: 22, z: 115 },
-      { x: 58, y: 22, z: 89 }
-    ],
+      { x: 39, y: -7, z: 0 },
+      { x: 40, y: -2, z: 0 },
+      { x: 65, y: -3, z: 10 },
+      { x: 64, y: -11, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 85,
-    height: 5,
-    rake: 18,
-    viewQuality: 'excellent',
-    price: 'moderate'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
   {
-    id: 'field-box-120',
-    name: 'Field Box 120',
+    id: '105',
+    name: 'Field 105',
     level: 'field',
-    baseAngle: 307,
-    angleSpan: 24,
-    rows: generateRows('A', 'J', 20, 5, 18),
+    baseAngle: 357.5,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
     vertices3D: [
-      { x: -79, y: 5, z: 98 },
-      { x: -53, y: 5, z: 72 },
-      { x: -58, y: 22, z: 89 },
-      { x: -84, y: 22, z: 115 }
-    ],
+      { x: 40, y: -2, z: 0 },
+      { x: 40, y: 3, z: 0 },
+      { x: 65, y: 6, z: 10 },
+      { x: 65, y: -3, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 85,
-    height: 5,
-    rake: 18,
-    viewQuality: 'excellent',
-    price: 'moderate'
+    distance: 50,
+    height: 0,
+    rake: 18
   },
-
-  // ========== RESERVED SEATING ==========
   {
-    id: 'reserved-200',
-    name: 'Reserved 200',
+    id: '106',
+    name: 'Field 106',
+    level: 'field',
+    baseAngle: 5,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 40, y: 3, z: 0 },
+      { x: 39, y: 9, z: 0 },
+      { x: 63, y: 14, z: 10 },
+      { x: 65, y: 6, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '107',
+    name: 'Field 107',
+    level: 'field',
+    baseAngle: 12.5,
+    angleSpan: 7.5,
+    rows: generateRows('A', 'P', 20, 0, 18, false),
+    vertices3D: [
+      { x: 39, y: 9, z: 0 },
+      { x: 38, y: 14, z: 0 },
+      { x: 61, y: 22, z: 10 },
+      { x: 63, y: 14, z: 10 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 50,
+    height: 0,
+    rake: 18
+  },
+  {
+    id: '200',
+    name: 'Lower 200',
     level: 'lower',
-    baseAngle: 0,
-    angleSpan: 27,
-    rows: generateRows(1, 14, 24, 16, 20),
+    baseAngle: 325,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
     vertices3D: [
-      { x: -27, y: 16, z: 55 },
-      { x: 27, y: 16, z: 55 },
-      { x: 32, y: 33, z: 72 },
-      { x: -32, y: 33, z: 72 }
-    ],
-    covered: true,
-    partialCoverage: {
-      type: 'partial',
-      coveredRows: ['8', '9', '10', '11', '12', '13', '14'],
-      coveragePercentage: 50
-    },
-    distance: 55,
-    height: 16,
-    rake: 20,
-    viewQuality: 'good',
-    price: 'moderate'
-  },
-
-  {
-    id: 'reserved-206',
-    name: 'Reserved 206',
-    level: 'lower',
-    baseAngle: 58,
-    angleSpan: 26,
-    rows: generateRows(1, 14, 22, 16, 20),
-    vertices3D: [
-      { x: 62, y: 16, z: 106 },
-      { x: 88, y: 16, z: 132 },
-      { x: 93, y: 33, z: 149 },
-      { x: 67, y: 33, z: 123 }
-    ],
+      { x: 53, y: -37, z: 12 },
+      { x: 58, y: -29, z: 12 },
+      { x: 85, y: -43, z: 28 },
+      { x: 78, y: -54, z: 28 }
+    ] as Vector3D[],
     covered: false,
-    distance: 119,
-    height: 16,
-    rake: 20,
-    viewQuality: 'good',
-    price: 'value'
+    distance: 75,
+    height: 12,
+    rake: 22
   },
-
   {
-    id: 'reserved-214',
-    name: 'Reserved 214',
+    id: '201',
+    name: 'Lower 201',
     level: 'lower',
-    baseAngle: 302,
-    angleSpan: 26,
-    rows: generateRows(1, 14, 22, 16, 20),
+    baseAngle: 333.33333333333326,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
     vertices3D: [
-      { x: -88, y: 16, z: 132 },
-      { x: -62, y: 16, z: 106 },
-      { x: -67, y: 33, z: 123 },
-      { x: -93, y: 33, z: 149 }
-    ],
+      { x: 58, y: -29, z: 12 },
+      { x: 62, y: -20, z: 12 },
+      { x: 90, y: -30, z: 28 },
+      { x: 85, y: -43, z: 28 }
+    ] as Vector3D[],
     covered: false,
-    distance: 119,
-    height: 16,
-    rake: 20,
-    viewQuality: 'good',
-    price: 'value'
+    distance: 75,
+    height: 12,
+    rake: 22
   },
-
-  // ========== HARTFORD OVERLOOK ==========
   {
-    id: 'hartford-overlook',
-    name: 'Hartford Overlook',
+    id: '202',
+    name: 'Lower 202',
+    level: 'lower',
+    baseAngle: 341.66666666666674,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 62, y: -20, z: 12 },
+      { x: 64, y: -11, z: 12 },
+      { x: 94, y: -16, z: 28 },
+      { x: 90, y: -30, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '203',
+    name: 'Lower 203',
+    level: 'lower',
+    baseAngle: 350,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 64, y: -11, z: 12 },
+      { x: 65, y: -2, z: 12 },
+      { x: 95, y: -3, z: 28 },
+      { x: 94, y: -16, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '204',
+    name: 'Lower 204',
+    level: 'lower',
+    baseAngle: 358.33333333333326,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 65, y: -2, z: 12 },
+      { x: 65, y: 8, z: 12 },
+      { x: 94, y: 11, z: 28 },
+      { x: 95, y: -3, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '205',
+    name: 'Lower 205',
+    level: 'lower',
+    baseAngle: 6.6666666666667425,
+    angleSpan: 8.333333333333334,
+    rows: generateRows('1', '25', 22, 12, 22, false),
+    vertices3D: [
+      { x: 65, y: 8, z: 12 },
+      { x: 63, y: 17, z: 12 },
+      { x: 92, y: 25, z: 28 },
+      { x: 94, y: 11, z: 28 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 75,
+    height: 12,
+    rake: 22
+  },
+  {
+    id: '300',
+    name: 'Upper 300',
     level: 'upper',
-    baseAngle: 95,
-    angleSpan: 25,
-    rows: generateRows(1, 5, 34, 25, 19),
+    baseAngle: 330,
+    angleSpan: 10,
+    rows: generateRows('1', '20', 24, 28, 26, true),
     vertices3D: [
-      { x: 76, y: 25, z: 260 },
-      { x: 106, y: 25, z: 290 },
-      { x: 111, y: 35, z: 300 },
-      { x: 81, y: 35, z: 270 }
-    ],
-    covered: false,
-    distance: 275,
-    height: 25,
-    rake: 19,
-    viewQuality: 'good',
-    price: 'premium'
-  },
-
-  // ========== BILLY GOAT BAR ==========
-  {
-    id: 'billy-goat-bar',
-    name: 'Billy Goat Bar',
-    level: 'standing',
-    baseAngle: 90,
-    angleSpan: 22,
-    rows: [],
-    vertices3D: [
-      { x: 90, y: 9, z: 230 },
-      { x: 115, y: 9, z: 255 },
-      { x: 120, y: 15, z: 261 },
-      { x: 95, y: 15, z: 236 }
-    ],
+      { x: 82, y: -48, z: 28 },
+      { x: 89, y: -32, z: 28 },
+      { x: 122, y: -44, z: 50 },
+      { x: 113, y: -65, z: 50 }
+    ] as Vector3D[],
     covered: true,
-    distance: 242,
-    height: 9,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'premium'
+    distance: 110,
+    height: 28,
+    rake: 26
   },
-
-  // ========== LEFT FIELD LAWN ==========
   {
-    id: 'left-field-lawn',
-    name: 'Left Field Lawn',
+    id: '301',
+    name: 'Upper 301',
+    level: 'upper',
+    baseAngle: 340,
+    angleSpan: 10,
+    rows: generateRows('1', '20', 24, 28, 26, true),
+    vertices3D: [
+      { x: 89, y: -32, z: 28 },
+      { x: 94, y: -16, z: 28 },
+      { x: 128, y: -23, z: 50 },
+      { x: 122, y: -44, z: 50 }
+    ] as Vector3D[],
+    covered: true,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: '302',
+    name: 'Upper 302',
+    level: 'upper',
+    baseAngle: 350,
+    angleSpan: 10,
+    rows: generateRows('1', '20', 24, 28, 26, false),
+    vertices3D: [
+      { x: 94, y: -16, z: 28 },
+      { x: 95, y: -0, z: 28 },
+      { x: 130, y: -0, z: 50 },
+      { x: 128, y: -23, z: 50 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: '303',
+    name: 'Upper 303',
+    level: 'upper',
+    baseAngle: 0,
+    angleSpan: 10,
+    rows: generateRows('1', '20', 24, 28, 26, false),
+    vertices3D: [
+      { x: 95, y: 0, z: 28 },
+      { x: 94, y: 16, z: 28 },
+      { x: 128, y: 23, z: 50 },
+      { x: 130, y: 0, z: 50 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 110,
+    height: 28,
+    rake: 26
+  },
+  {
+    id: 'BL-1',
+    name: 'Bleachers 1',
     level: 'field',
-    baseAngle: 228,
-    angleSpan: 35,
+    baseAngle: 50,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 84, y: 100, z: 5 },
+      { x: 55, y: 118, z: 5 },
+      { x: 70, y: 150, z: 20 },
+      { x: 106, y: 126, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-2',
+    name: 'Bleachers 2',
+    level: 'field',
+    baseAngle: 70,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 44, y: 122, z: 5 },
+      { x: 11, y: 130, z: 5 },
+      { x: 14, y: 164, z: 20 },
+      { x: 56, y: 155, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-3',
+    name: 'Bleachers 3',
+    level: 'field',
+    baseAngle: 290,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: 44, y: -122, z: 5 },
+      { x: 75, y: -106, z: 5 },
+      { x: 95, y: -135, z: 20 },
+      { x: 56, y: -155, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BL-4',
+    name: 'Bleachers 4',
+    level: 'field',
+    baseAngle: 270,
+    angleSpan: 15,
+    rows: generateRows('A', 'N', 22, 5, 18, false),
+    vertices3D: [
+      { x: -0, y: -130, z: 5 },
+      { x: 34, y: -126, z: 5 },
+      { x: 43, y: -159, z: 20 },
+      { x: -0, y: -165, z: 20 }
+    ] as Vector3D[],
+    covered: false,
+    distance: 145,
+    height: 5,
+    rake: 18
+  },
+  {
+    id: 'BERM',
+    name: 'Outfield Berm',
+    level: 'standing',
+    baseAngle: 170,
+    angleSpan: 30,
     rows: [],
     vertices3D: [
-      { x: -95, y: 5, z: 218 },
-      { x: -72, y: 5, z: 241 },
-      { x: -77, y: 10, z: 251 },
-      { x: -100, y: 10, z: 228 }
-    ],
+      { x: -162, y: 29, z: 10 },
+      { x: -155, y: -56, z: 10 },
+      { x: -179, y: -65, z: 10 },
+      { x: -187, y: 33, z: 10 }
+    ] as Vector3D[],
     covered: false,
-    distance: 229,
-    height: 5,
-    rake: 0,
-    viewQuality: 'fair',
-    price: 'value'
-  },
-
-  // ========== KIDS ZONE ==========
-  {
-    id: 'kids-zone',
-    name: 'Kids Zone',
-    level: 'field',
-    baseAngle: 48,
-    angleSpan: 18,
-    rows: generateRows(1, 5, 21, 7, 15),
-    vertices3D: [
-      { x: 118, y: 7, z: 238 },
-      { x: 136, y: 7, z: 256 },
-      { x: 141, y: 15, z: 264 },
-      { x: 123, y: 15, z: 246 }
-    ],
-    covered: false,
-    distance: 247,
-    height: 7,
-    rake: 15,
-    viewQuality: 'fair',
-    price: 'value'
+    distance: 177,
+    height: 10,
+    rake: 0
   }
 ];
 
-// Stadium configuration
-export const hartfordYardGoatsConfig = {
-  stadiumName: "Dunkin' Park",
-  team: 'Hartford Yard Goats',
-  parentOrg: 'Colorado Rockies',
-  city: 'Hartford',
-  state: 'CT',
-  level: 'AA',
-  capacity: 6121,
-  opened: 2017,
-  orientation: 25,
-  dimensions: {
-    leftField: 325,
-    leftCenter: 363,
-    centerField: 400,
-    rightCenter: 363,
-    rightField: 315
-  },
-  features: {
-    downtownHartfordSkyline: true,
-    modernAmenities: true,
-    goatClub: true,
-    hartfordOverlook: true,
-    billyGoatBar: true,
-    leftFieldLawn: true,
-    kidsZone: true,
-    coveredSeating: 1700
-  }
-};
+// Export section map for easy lookup
+export const hartfordyardgoatsSectionMap = new Map(
+  hartfordyardgoatsSections.map(section => [section.id, section])
+);

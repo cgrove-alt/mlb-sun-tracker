@@ -522,24 +522,24 @@ p, li {
 .transition-slow { transition: var(--transition-slow); }
 
 /* Color utilities */
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
+/* .text-primary - removed, conflicts with Tailwind */
+/* .text-secondary - removed, conflicts with Tailwind */
 .text-success { color: var(--color-success); }
 .text-warning { color: var(--color-warning); }
 .text-error { color: var(--color-error); }
-.text-muted { color: var(--color-ink-700); }
-.text-ink-900 { color: var(--color-ink-900); }
-.text-ink-800 { color: var(--color-ink-800); }
-.text-ink-700 { color: var(--color-ink-700); }
-.text-ondark-900 { color: var(--color-ondark-900); }
-.text-ondark-800 { color: var(--color-ondark-800); }
-.text-ondark-700 { color: var(--color-ondark-700); }
+/* .text-muted - removed, conflicts with Tailwind */
+/* .text-ink-900 - removed, conflicts with Tailwind */
+/* .text-ink-800 - removed, conflicts with Tailwind */
+/* .text-ink-700 - removed, conflicts with Tailwind */
+/* .text-ondark-900 - removed, not used */
+/* .text-ondark-800 - removed, not used */
+/* .text-ondark-700 - removed, not used */
 
 /* Semantic helper */
 .muted { color: var(--color-ink-700); }
 
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
+/* .bg-primary - removed, conflicts with Tailwind */
+/* .bg-secondary - removed, conflicts with Tailwind */
 .bg-success { background-color: var(--color-success); }
 .bg-warning { background-color: var(--color-warning); }
 .bg-error { background-color: var(--color-error); }

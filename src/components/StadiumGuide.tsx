@@ -14,6 +14,8 @@ import { StadiumShadeQuestions } from './StadiumShadeQuestions';
 import { TableOfContents } from './TableOfContents';
 import { CollapsibleSection } from './CollapsibleSection';
 import { EnhancedSunFilter, SunFilterCriteria } from './EnhancedSunFilter';
+import StadiumTitleBlock from './StadiumTitleBlock';
+import { StadiumTitleData } from './StadiumTitleBlock';
 import './StadiumGuide.css';
 
 interface StadiumGuideProps {
@@ -69,51 +71,58 @@ const StadiumGuide: React.FC<StadiumGuideProps> = ({ stadium, sections, amenitie
     .slice(0, 5);
 
   const sunscreenStations = amenities?.amenities.filter(a => a.type === 'sunscreen_kiosk') || [];
-  const familyAmenities = amenities?.amenities.filter(a => 
-    a.type === 'family_area' || 
+  const familyAmenities = amenities?.amenities.filter(a =>
+    a.type === 'family_area' ||
     a.type === 'nursing_station' ||
     a.details.familyRestroom
   ) || [];
+
+  const stadiumHistory = stadiumHistories[stadium.id];
+
+  // Prepare data for StadiumTitleBlock
+  const titleData: StadiumTitleData = {
+    purpose: 'shade-guide',
+    stadium: {
+      name: stadium.name,
+      id: stadium.id
+    },
+    team: {
+      name: stadium.team,
+      league: 'MLB'
+    },
+    quickFacts: {
+      location: {
+        city: stadium.city,
+        state: stadium.state
+      },
+      capacity: stadium.capacity,
+      orientation: stadium.orientation,
+      roofType: stadium.roof,
+      yearBuilt: stadiumHistory?.opened
+    }
+  };
 
   return (
     <>
       <StadiumSchema stadium={stadium} />
       <StadiumShadeGuideSchema stadium={stadium} />
-      
+
       <div className="guide-page stadium-guide-wrapper">
         <TableOfContents containerRef={guideContentRef} />
         <div className="stadium-guide" ref={guideContentRef}>
-        <nav className="breadcrumb">
-          <Link href="/">Home</Link>
-          <span> › </span>
-          <span>{stadium.name}</span>
-        </nav>
+        <StadiumTitleBlock
+          data={titleData}
+          showBreadcrumb={true}
+        />
 
-        <header className="stadium-header">
-          <h1>Shaded Seats at {stadium.name}</h1>
-          <p className="stadium-subtitle">Find the Best Seats in the Shade for {stadium.team} Games</p>
-          <div className="stadium-meta">
-            <span className="team">{stadium.team}</span>
-            <span className="location">
-              <MapPinIcon size={16} />
-              {stadium.city}, {stadium.state}
-            </span>
-            <span className="roof-type">
-              {stadium.roof === 'fixed' ? '🏢 Fixed Roof' : 
-               stadium.roof === 'retractable' ? '🏟️ Retractable Roof' : 
-               '☀️ Open Air'}
-            </span>
-          </div>
-
-          {/* Quick jump bar */}
-          <div className="quick-jump">
-            <a href="#facts">Quick Facts</a>
-            <a href="#simulator">Shade Simulator</a>
-            <a href="#best-sections">Best Sections</a>
-            <a href="#faq">FAQ</a>
-            <a href="#amenities">Amenities</a>
-          </div>
-        </header>
+        {/* Quick jump bar */}
+        <div className="quick-jump">
+          <a href="#facts">Quick Facts</a>
+          <a href="#simulator">Shade Simulator</a>
+          <a href="#best-sections">Best Sections</a>
+          <a href="#faq">FAQ</a>
+          <a href="#amenities">Amenities</a>
+        </div>
 
         <section id="facts">
         <CollapsibleSection title="Stadium Quick Facts" defaultOpen={true} level="h2">
