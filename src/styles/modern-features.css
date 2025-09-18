@@ -1,0 +1,293 @@
+/* Modern CSS Features - Container Queries, Logical Properties, and More */
+
+/* Container Query Support */
+@supports (container-type: inline-size) {
+  /* Container definitions are already in components */
+  
+  /* Container query breakpoints */
+  @container guide-page (max-width: 480px) {
+    .container-sm\:text-sm {
+      font-size: var(--font-size-sm);
+    }
+    
+    .container-sm\:p-3 {
+      padding: var(--space-3);
+    }
+  }
+  
+  @container stadium-header (max-width: 400px) {
+    .container-xs\:text-base {
+      font-size: var(--font-size-base);
+    }
+  }
+}
+
+/* Logical Properties for Better Internationalization */
+.logical-padding {
+  padding-inline: var(--space-4);
+  padding-block: var(--space-3);
+}
+
+.logical-margin {
+  margin-inline: auto;
+  margin-block: var(--space-4);
+}
+
+.border-start {
+  border-inline-start: 1px solid var(--color-ui-border);
+}
+
+.border-end {
+  border-inline-end: 1px solid var(--color-ui-border);
+}
+
+/* CSS Grid Enhancements */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: var(--space-4);
+}
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-section-gap);
+}
+
+/* Aspect Ratio for Cards and Images */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-card {
+  aspect-ratio: 3 / 2;
+}
+
+.aspect-golden {
+  aspect-ratio: 1.618 / 1;
+}
+
+/* CSS Containment for Performance */
+.contain-layout {
+  contain: layout;
+}
+
+.contain-paint {
+  contain: paint;
+}
+
+.contain-strict {
+  contain: strict;
+}
+
+.contain-content {
+  contain: content;
+}
+
+/* Scroll Snap for Better Mobile UX */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-y {
+  scroll-snap-type: y proximity;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
+
+.snap-center {
+  scroll-snap-align: center;
+}
+
+.snap-end {
+  scroll-snap-align: end;
+}
+
+/* Subgrid Support */
+@supports (grid-template-rows: subgrid) {
+  .subgrid {
+    display: grid;
+    grid-template-rows: subgrid;
+  }
+}
+
+/* CSS Layers for Better Cascade Management */
+/* Commented out until Tailwind layers are properly configured
+@layer reset, base, tokens, layout, components, utilities;
+
+@layer tokens {
+  // Token definitions go here
+}
+
+@layer layout {
+  // Layout styles go here
+}
+
+@layer components {
+  // Component styles go here
+}
+
+@layer utilities {
+  // Utility classes go here
+}
+*/
+
+/* Modern Color Functions */
+.dynamic-color {
+  color: color-mix(in srgb, var(--color-primary) 80%, white);
+}
+
+.contrast-bg {
+  background: color-contrast(var(--color-primary) vs white, black);
+}
+
+/* CSS Nesting (if supported) */
+@supports selector(&) {
+  .card {
+    padding: var(--space-4);
+    
+    & .card-header {
+      margin-bottom: var(--space-3);
+      
+      & h3 {
+        margin: 0;
+      }
+    }
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/* View Transitions API */
+@supports (view-transition-name: none) {
+  ::view-transition-old(root) {
+    animation: fade-out 0.3s ease-out;
+  }
+  
+  ::view-transition-new(root) {
+    animation: fade-in 0.3s ease-in;
+  }
+  
+  @keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+/* Modern Pseudo-elements */
+.has-tooltip:has(.tooltip) {
+  position: relative;
+}
+
+.field:has(input:invalid) {
+  border-color: var(--color-error);
+}
+
+.nav-item:has(> .active) {
+  font-weight: bold;
+}
+
+/* Improved Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.focus-within\:ring:focus-within {
+  box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.2);
+}
+
+/* Better Print Styles */
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .break-before {
+    break-before: page;
+  }
+  
+  .break-after {
+    break-after: page;
+  }
+  
+  .avoid-break {
+    break-inside: avoid;
+  }
+}
+
+/* Preference Queries */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #0052CC;
+    --color-error: #CC0000;
+    --color-success: #008000;
+  }
+  
+  * {
+    border-width: 2px !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark mode tokens if needed in future */
+}
+
+/* Environment Variables for Safe Areas */
+.safe-area-inset {
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-bottom {
+  padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+}
+
+/* Clamp for Responsive Values */
+.responsive-width {
+  width: clamp(200px, 50vw, 600px);
+}
+
+.responsive-font {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+}
+
+.responsive-spacing {
+  padding: clamp(var(--space-3), 3vw, var(--space-6));
+}

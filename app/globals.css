@@ -8,7 +8,14 @@
 @import url('../src/App.css');
 @import url('../components/ErrorBoundary.css');
 
-/* Unified design systems removed - consolidated into base styles */
+/* Import critical design system files */
+@import url('../src/styles/tokens.css');
+@import url('../src/styles/base.css');
+@import url('../src/styles/main.css');
+@import url('../src/styles/typography-system.css');
+@import url('../src/styles/spacing-system.css');
+@import url('../src/styles/z-index-system.css');
+@import url('../src/styles/modern-features.css');
 
 /* Additional Next.js specific styles */
 html {
