@@ -1,6 +1,5 @@
 /* Interactive Empty States Styles */
-@import '../styles/main.css';
-@import '../styles/animations.css';
+/* animations.css removed - animations inlined */
 
 /* Base Empty State */
 .empty-state {

@@ -1,7 +1,5 @@
 /* Import consolidated design system */
-@import './styles/main.css';
 @import './styles/mobile.css';
-@import './styles/dropdown-fixes.css';
 
 * {
   box-sizing: border-box;

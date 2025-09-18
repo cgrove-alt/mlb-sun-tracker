@@ -5,11 +5,17 @@ export const CriticalStylesInline = () => {
     *, *::before, *::after {
       box-sizing: border-box;
     }
-    
+
     html {
       overflow-x: hidden;
       font-size: 16px;
       -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    /* Reserve space for sticky header to avoid CLS */
+    header {
+      height: 64px;
     }
     
     body {
@@ -113,6 +119,20 @@ export const CriticalStylesInline = () => {
       justify-content: center;
       min-height: 400px;
       gap: 1rem;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top-color: #1e40af;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
     }
 
     /* Mobile critical styles */

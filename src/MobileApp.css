@@ -1,5 +1,4 @@
 /* Modern Mobile App Styles - 2025 Design */
-@import './styles/main.css';
 @import './components/MobileHeader.css'; /* For menu styles */
 
 /* Skip Navigation Links for Accessibility */

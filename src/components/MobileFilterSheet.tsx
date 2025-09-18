@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { SunFilterCriteria } from './SunExposureFilterFixed';
+import { SunFilterCriteria } from './EnhancedSunFilter';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { MobileFilterPortal } from './MobileFilterPortal';
 import './MobileFilterSheet.css';

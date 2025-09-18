@@ -5,7 +5,7 @@ import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { SunExposureFilterFixed, SunFilterCriteria } from './components/SunExposureFilterFixed';
+import { EnhancedSunFilter, SunFilterCriteria } from './components/EnhancedSunFilter';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
@@ -486,7 +486,7 @@ function UnifiedAppContent() {
 
               {sunPosition && sunPosition.altitudeDegrees > 0 && (
                 <>
-                  <SunExposureFilterFixed
+                  <EnhancedSunFilter
                     onFilterChange={handleFilterChange}
                   />
                   
