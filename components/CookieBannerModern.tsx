@@ -240,11 +240,11 @@ const CookieBannerModern: React.FC = () => {
                   </p>
                   <p className="text-xs text-ink-500">
                     Learn more in our{' '}
-                    <Link href="/cookies" className="text-primary-500 hover:text-primary-600 underline">
+                    <Link href="/cookies" className="text-primary-600 hover:text-primary-700 underline">
                       Cookie Policy
                     </Link>
                     {' '}and{' '}
-                    <Link href="/privacy" className="text-primary-500 hover:text-primary-600 underline">
+                    <Link href="/privacy" className="text-primary-600 hover:text-primary-700 underline">
                       Privacy Policy
                     </Link>.
                   </p>
