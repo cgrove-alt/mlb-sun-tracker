@@ -74,7 +74,7 @@ export default function SeatsShadeFinderPage() {
                 <p className="text-sm text-ink-700">
                   {stadium.team} • {stadium.city}
                 </p>
-                <span className="inline-block text-sm font-semibold text-white bg-orange-600 hover:bg-orange-700 px-3 py-1 rounded mt-2 transition-colors">
+                <span className="inline-block text-sm font-semibold text-white bg-orange-700 hover:bg-orange-800 px-3 py-1 rounded mt-2 transition-colors">
                   Check shaded seats →
                 </span>
               </Link>
