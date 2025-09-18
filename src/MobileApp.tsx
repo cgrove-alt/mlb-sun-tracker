@@ -11,7 +11,7 @@ import { SeatingSectionSun } from './utils/sunCalculations';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { MobileGameScheduler } from './components/MobileGameScheduler';
 import { MobileFilterSheet } from './components/MobileFilterSheet';
-import { SunFilterCriteria } from './components/SunExposureFilterFixed';
+import { SunFilterCriteria } from './components/EnhancedSunFilter';
 import { MobileSectionCard } from './components/MobileSectionCard';
 import { WeatherDisplay } from './components/WeatherDisplay';
 import { EmptyState } from './components/EmptyStates';

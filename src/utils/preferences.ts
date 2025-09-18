@@ -1,4 +1,4 @@
-import { SunFilterCriteria } from '../components/SunExposureFilterFixed';
+import { SunFilterCriteria } from '../components/EnhancedSunFilter';
 
 export interface UserPreferences {
   selectedStadiumId?: string;

@@ -5,12 +5,12 @@ import { Stadium } from './stadiums';
 import { StadiumSection } from './stadiumSections';
 import { getStadiumObstructions } from './stadiumObstructions';
 import { Vector3D } from '../types/stadium-complete';
-import { 
-  Obstruction, 
-  SectionGeometry, 
+import {
+  Obstruction,
+  SectionGeometry,
   Stadium3DModel,
-  Seat 
-} from '../utils/shadeCalculation3D';
+  Seat
+} from '../utils/shadeCalculation3DOptimized';
 
 // Constants for typical stadium dimensions (in feet)
 const FIELD_LEVEL_Z = 0;

@@ -14,14 +14,6 @@ const ComprehensiveStadiumGuide = dynamic(
   }
 );
 
-const StadiumGuide = dynamic(
-  () => import('../../../src/components/StadiumGuideLazy'),
-  {
-    loading: () => <LoadingSpinner />,
-    ssr: false,
-  }
-);
-
 // Dynamic imports with proper default export handling
 const StadiumVisualizationSection = dynamic(
   () => import('../../../src/components/StadiumVisualizationSection'),
@@ -94,17 +86,9 @@ export default function StadiumPageClient({
             <LoadingSpinner message="Loading stadium guide..." />
           </div>
         }>
-          {useComprehensive ? (
-            <ComprehensiveStadiumGuide 
-              stadiumId={stadium.id}
-            />
-          ) : (
-            <StadiumGuide 
-              stadium={stadium}
-              sections={sections}
-              amenities={amenities}
-            />
-          )}
+          <ComprehensiveStadiumGuide
+            stadiumId={stadium.id}
+          />
         </Suspense>
       </div>
       

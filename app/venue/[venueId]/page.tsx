@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { getVenueSections } from '../../../src/data/venueSections';
 import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
-import UnifiedVenueGuide from '../../../src/components/UnifiedVenueGuide';
+import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
 import StickyShadeBar from '../../../components/StickyShadeBar';
 
 interface VenuePageProps {
@@ -150,9 +150,8 @@ export default async function VenuePage({ params }: VenuePageProps) {
       )}
       
       <div className={venue.league === 'MLB' ? 'has-sticky-shade-bar' : ''}>
-        <UnifiedVenueGuide 
-          venue={venue} 
-          sections={sections}
+        <ComprehensiveStadiumGuide
+          stadiumId={venue.id}
         />
       </div>
     </>

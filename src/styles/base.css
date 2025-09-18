@@ -1,5 +1,5 @@
 /* Base Typography and Global Styles */
-@import './tokens.css';
+/* tokens.css removed - variables inlined */
 
 /* ===== Typography Foundations ===== */
 html { 

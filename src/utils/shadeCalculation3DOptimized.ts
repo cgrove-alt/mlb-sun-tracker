@@ -2,17 +2,66 @@
 // Performance-optimized version with spatial indexing and parallel processing
 
 import { Vector3D } from '../types/stadium-complete';
-import { 
-  Seat, 
-  Obstruction, 
-  SunPosition, 
-  SectionGeometry, 
-  Stadium3DModel,
-  ShadeResult,
-  SectionShadeResult
-} from './shadeCalculation3D';
 
-export type { SectionShadeResult } from './shadeCalculation3D';
+// Core interfaces for 3D shade calculation
+export interface Seat {
+  id: string;
+  sectionId: string;
+  row: number;
+  seatNumber: number;
+  position: Vector3D;
+}
+
+export interface Obstruction {
+  id: string;
+  type: 'roof' | 'upper_deck' | 'overhang' | 'scoreboard' | 'structure';
+  boundingBox: {
+    min: Vector3D;
+    max: Vector3D;
+  };
+  opacity?: number; // 0-1, where 1 is fully opaque
+}
+
+export interface SunPosition {
+  azimuth: number; // Degrees from north (0-360)
+  elevation: number; // Degrees above horizon (-90 to 90)
+  azimuthRadians: number;
+  elevationRadians: number;
+  correctedElevation?: number; // Elevation with atmospheric refraction correction
+}
+
+export interface SectionGeometry {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  vertices: Vector3D[]; // Polygonal boundary of section
+  seats: Seat[];
+  baseAngle: number;
+  angleSpan: number;
+}
+
+export interface Stadium3DModel {
+  id: string;
+  sections: SectionGeometry[];
+  obstructions: Obstruction[];
+  origin: Vector3D; // Stadium center point (typically home plate)
+  orientation: number; // Degrees from north
+}
+
+export interface ShadeResult {
+  seatId: string;
+  inShade: boolean;
+  obstructedBy?: string[]; // IDs of obstructions blocking sun
+  shadeFraction: number; // 0-1, percentage of seat in shade
+}
+
+export interface SectionShadeResult {
+  sectionId: string;
+  percentageInShade: number;
+  seatsInShade: number;
+  totalSeats: number;
+  seatResults: ShadeResult[];
+}
 
 interface BVHNode {
   min: Vector3D;

@@ -8,11 +8,7 @@ import '../src/styles/accessibility-fixes.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Suspense } from 'react';
-// import GoogleAnalytics from './GoogleAnalytics';
-// import GoogleAnalyticsClient from './GoogleAnalyticsClient';
-// import GoogleAnalyticsOptimized from './GoogleAnalyticsOptimized';
 import GoogleAnalyticsLazy from '../components/GoogleAnalyticsLazy';
-import { CriticalStyles } from './critical-styles';
 import { CriticalStylesInline } from './critical-styles-inline';
 import { CSSOptimizer } from '../components/CSSOptimizer';
 import StickyTopNav from '../components/StickyTopNav';
@@ -152,7 +148,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <CriticalStyles />
         <CriticalStylesInline />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
