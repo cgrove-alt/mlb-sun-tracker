@@ -256,9 +256,9 @@ export class EnhancedShadeCalculator {
     
     for (const axis of ['x', 'y', 'z'] as const) {
       const invD = 1 / direction[axis];
-      const t0 = (box.min[axis] - origin[axis]) * invD;
-      const t1 = (box.max[axis] - origin[axis]) * invD;
-      
+      let t0 = (box.min[axis] - origin[axis]) * invD;
+      let t1 = (box.max[axis] - origin[axis]) * invD;
+
       if (invD < 0) {
         [t0, t1] = [t1, t0];
       }

@@ -130,6 +130,9 @@ export class ShadeValidationSystem {
         windSpeed: 5,
         windDirection: 0,
         visibility: 10,
+        feelsLike: photo.weather.temperature,
+        pressure: 1013,
+        uvIndex: 5,
       }
     );
     
@@ -203,15 +206,15 @@ export class ShadeValidationSystem {
     
     // Calculate accuracy by time of day
     const accuracyByTimeOfDay = new Map<string, number>();
-    for (const [time, errors] of errorsByTime) {
+    Array.from(errorsByTime.entries()).forEach(([time, errors]) => {
       accuracyByTimeOfDay.set(time, 100 - this.mean(errors));
-    }
-    
+    });
+
     // Calculate accuracy by stadium
     const accuracyByStadium = new Map<string, number>();
-    for (const [stadium, errors] of errorsByStadium) {
+    Array.from(errorsByStadium.entries()).forEach(([stadium, errors]) => {
       accuracyByStadium.set(stadium, 100 - this.mean(errors));
-    }
+    });
     
     return {
       totalPhotos: this.validationData.length,
@@ -248,15 +251,15 @@ export class ShadeValidationSystem {
     report += `- 99th percentile: ${metrics.percentileErrors.p99.toFixed(2)}%\n\n`;
     
     report += `## Accuracy by Time of Day\n`;
-    for (const [time, accuracy] of metrics.accuracyByTimeOfDay) {
+    Array.from(metrics.accuracyByTimeOfDay.entries()).forEach(([time, accuracy]) => {
       report += `- ${time}: ${accuracy.toFixed(2)}%\n`;
-    }
+    });
     report += '\n';
-    
+
     report += `## Accuracy by Stadium\n`;
-    for (const [stadium, accuracy] of metrics.accuracyByStadium) {
+    Array.from(metrics.accuracyByStadium.entries()).forEach(([stadium, accuracy]) => {
       report += `- ${stadium}: ${accuracy.toFixed(2)}%\n`;
-    }
+    });
     report += '\n';
     
     report += `## Detailed Results\n`;

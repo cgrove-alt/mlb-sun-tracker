@@ -1450,7 +1450,7 @@ export function getMiLBDimensionsWithFallback(stadiumId: string, level: string):
   if (specific) return specific;
   
   // Fall back to standard dimensions based on level
-  let standardLevel = 'A';
+  let standardLevel: 'A' | 'AA' | 'AAA' | 'A+' = 'A';
   if (level === 'AAA') standardLevel = 'AAA';
   else if (level === 'AA') standardLevel = 'AA';
   else if (level === 'A+') standardLevel = 'A+';

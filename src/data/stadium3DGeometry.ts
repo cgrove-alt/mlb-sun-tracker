@@ -2,6 +2,7 @@
 // Provides 3D coordinates and obstruction data for all stadium types
 
 import { Stadium } from './stadiums';
+import { MiLBStadium } from './milbStadiums';
 import { StadiumSection } from './stadiumSections';
 import { getStadiumObstructions } from './stadiumObstructions';
 import { 
@@ -95,6 +96,24 @@ function generateSectionGeometry(
   };
 }
 
+// Extended to support any stadium type (MLB, MiLB, NFL)
+export interface AnyStadium {
+  id: string;
+  name: string;
+  team?: string;
+  city?: string;
+  state?: string;
+  latitude: number;
+  longitude: number;
+  orientation: number;
+  capacity?: number;
+  roof?: 'open' | 'retractable' | 'fixed';
+  timezone?: string;
+  roofHeight?: number;
+  roofOverhang?: number;
+  upperDeckHeight?: number;
+}
+
 // Generate obstructions for a stadium
 function generateStadiumObstructions(stadium: Stadium | MiLBStadium | AnyStadium): Obstruction[] {
   const obstructions: Obstruction[] = [];
@@ -140,24 +159,6 @@ function generateStadiumObstructions(stadium: Stadium | MiLBStadium | AnyStadium
   obstructions.push(...specificObstructions);
   
   return obstructions;
-}
-
-// Extended to support any stadium type (MLB, MiLB, NFL)
-export interface AnyStadium {
-  id: string;
-  name: string;
-  team?: string;
-  city?: string;
-  state?: string;
-  latitude: number;
-  longitude: number;
-  orientation: number;
-  capacity?: number;
-  roof?: 'open' | 'retractable' | 'fixed';
-  timezone?: string;
-  roofHeight?: number;
-  roofOverhang?: number;
-  upperDeckHeight?: number;
 }
 
 // Cache for stadium 3D models

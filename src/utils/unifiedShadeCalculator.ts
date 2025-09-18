@@ -2,7 +2,7 @@
 // Provides consistent 3D shade calculations across all baseball venues
 
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
-import { MiLBStadium, MILB_STADIUMS } from '../data/milbStadiums';
+import { MiLBStadium, ALL_MILB_STADIUMS } from '../data/milbStadiums';
 import { getStadiumDimensions } from '../data/stadiumGeometryDetailed';
 import { getMiLBDimensionsWithFallback } from '../data/milbStadiumGeometry';
 import { EnhancedShadeCalculator, EnhancedShadeResult } from './shadeCalculation3DEnhanced';
@@ -296,7 +296,9 @@ export class UnifiedShadeCalculator {
     // Clean old cache entries if needed
     if (this.calculationCache.size > 100) {
       const firstKey = this.calculationCache.keys().next().value;
-      this.calculationCache.delete(firstKey);
+      if (firstKey) {
+        this.calculationCache.delete(firstKey);
+      }
     }
     
     return result;
@@ -318,7 +320,7 @@ export class UnifiedShadeCalculator {
   
   // Calculate all MiLB stadiums
   public calculateAllMiLB(dateTime: Date, weather?: any): UnifiedShadeResult[] {
-    return this.calculateMultipleVenues(MILB_STADIUMS, dateTime, weather);
+    return this.calculateMultipleVenues(ALL_MILB_STADIUMS, dateTime, weather);
   }
   
   // Helper methods

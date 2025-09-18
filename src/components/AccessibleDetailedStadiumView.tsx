@@ -352,11 +352,11 @@ export const AccessibleDetailedStadiumView: React.FC<AccessibleDetailedStadiumVi
                 <div className={`
                   inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold
                   ${highContrastMode
-                    ? sunStatus === 'sunny' ? 'bg-yellow-400 text-black' 
-                      : sunStatus === 'partial' ? 'bg-orange-500 text-white' 
+                    ? sunStatus === 'sunny' ? 'bg-yellow-400 text-black'
+                      : sunStatus === 'partial' ? 'bg-orange-700 text-white'
                       : 'bg-gray-600 text-white'
-                    : sunStatus === 'sunny' ? 'bg-yellow-200 text-yellow-900' 
-                      : sunStatus === 'partial' ? 'bg-orange-200 text-orange-900' 
+                    : sunStatus === 'sunny' ? 'bg-yellow-200 text-yellow-900'
+                      : sunStatus === 'partial' ? 'bg-orange-200 text-orange-900'
                       : 'bg-gray-200 text-gray-900'
                   }
                 `}>
