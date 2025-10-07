@@ -17,6 +17,7 @@ import FooterModern from '../components/FooterModern';
 import CookieBannerModern from '../components/CookieBannerModern';
 import DataRetentionInitializer from '../components/DataRetentionInitializer';
 import SkipLinks from '../components/SkipLinks';
+import ServiceWorkerRegistration from '../components/ServiceWorkerRegistration';
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -169,6 +170,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <GoogleAnalyticsLazy />
         </Suspense>
+        <ServiceWorkerRegistration />
         <DataRetentionInitializer />
         <StickyTopNav />
         <main id="main-content" tabIndex={-1}>
