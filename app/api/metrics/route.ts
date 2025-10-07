@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { analytics } from '@/lib/analytics';
 
-// In-memory storage for development (use a proper database in production)
+// In-memory storage for development only
 const metricsStore: any[] = [];
 const MAX_METRICS = 1000;
 
@@ -8,39 +9,117 @@ export async function POST(request: NextRequest) {
   try {
     const metrics = await request.json();
 
-    // Add server timestamp
-    const enrichedMetrics = {
-      ...metrics,
-      serverTimestamp: Date.now(),
-      ip: request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown',
-      country: request.headers.get('x-vercel-ip-country') || 'unknown',
-      city: request.headers.get('x-vercel-ip-city') || 'unknown',
-    };
+    // Get geo data from Vercel headers
+    const country = request.headers.get('x-vercel-ip-country') || 'unknown';
+    const city = request.headers.get('x-vercel-ip-city') || 'unknown';
+    const userAgent = request.headers.get('user-agent') || 'unknown';
 
-    // Store metrics (in production, send to analytics service)
-    metricsStore.push(enrichedMetrics);
+    // Track each metric to analytics service
+    const metricPromises = [];
 
-    // Keep only recent metrics in memory
-    if (metricsStore.length > MAX_METRICS) {
-      metricsStore.splice(0, metricsStore.length - MAX_METRICS);
+    if (metrics.LCP) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'LCP',
+        value: metrics.LCP,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
+
+      // Warn on poor LCP
+      if (metrics.LCP > 2500) {
+        console.warn(`Poor LCP: ${metrics.LCP}ms for ${metrics.url} (${country}/${city})`);
+      }
     }
 
-    // Log important metrics
-    if (metrics.LCP && metrics.LCP > 2500) {
-      console.warn('Poor LCP detected:', metrics.LCP, 'ms for', metrics.url);
+    if (metrics.FID) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'FID',
+        value: metrics.FID,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
     }
 
-    if (metrics.CLS && metrics.CLS > 0.1) {
-      console.warn('Poor CLS detected:', metrics.CLS, 'for', metrics.url);
+    if (metrics.INP) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'INP',
+        value: metrics.INP,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
+
+      // Warn on poor INP (replaces FID)
+      if (metrics.INP > 200) {
+        console.warn(`Poor INP: ${metrics.INP}ms for ${metrics.url} (${country}/${city})`);
+      }
     }
 
-    // In production, send to analytics service like Google Analytics, Datadog, etc.
-    if (process.env.NODE_ENV === 'production') {
-      // Example: Send to Google Analytics Measurement Protocol
-      // await sendToGoogleAnalytics(enrichedMetrics);
+    if (metrics.CLS) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'CLS',
+        value: metrics.CLS,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
 
-      // Example: Send to custom analytics database
-      // await saveToDatabase(enrichedMetrics);
+      // Warn on poor CLS
+      if (metrics.CLS > 0.1) {
+        console.warn(`Poor CLS: ${metrics.CLS} for ${metrics.url} (${country}/${city})`);
+      }
+    }
+
+    if (metrics.FCP) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'FCP',
+        value: metrics.FCP,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
+    }
+
+    if (metrics.TTFB) {
+      metricPromises.push(analytics.trackMetric({
+        name: 'TTFB',
+        value: metrics.TTFB,
+        url: metrics.url || 'unknown',
+        timestamp: Date.now(),
+        userAgent,
+        country,
+        city,
+      }));
+    }
+
+    // Send all metrics in parallel
+    await Promise.allSettled(metricPromises);
+
+    // Store in memory for development/debugging
+    if (process.env.NODE_ENV === 'development') {
+      metricsStore.push({
+        ...metrics,
+        serverTimestamp: Date.now(),
+        country,
+        city,
+      });
+
+      // Keep only recent metrics in memory
+      if (metricsStore.length > MAX_METRICS) {
+        metricsStore.splice(0, metricsStore.length - MAX_METRICS);
+      }
     }
 
     return NextResponse.json(

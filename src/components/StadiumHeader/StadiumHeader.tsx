@@ -21,9 +21,7 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
   showBreadcrumb = true
 }) => {
   // Debug logging to verify props
-  if (typeof window !== 'undefined') {
-    console.log('StadiumHeader props:', { name, team, capacity, opened, neighborhood });
-  }
+  // Props are validated via TypeScript types
 
   // Ensure clean string values
   const cleanName = String(name || '').trim();

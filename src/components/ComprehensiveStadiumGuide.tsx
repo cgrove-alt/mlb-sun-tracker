@@ -24,14 +24,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
   
   // Debug logging
   if (typeof window !== 'undefined' && guide) {
-    console.log('ComprehensiveStadiumGuide data:', {
-      stadiumId,
-      name: guide.name,
-      team: guide.team,
-      opened: guide.opened,
-      capacity: guide.capacity,
-      neighborhood: guide.neighborhood?.name
-    });
+
   }
   
   if (!guide) {

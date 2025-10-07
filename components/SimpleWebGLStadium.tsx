@@ -1,8 +1,6 @@
 'use client';
 
-console.log('SIMPLE: SimpleWebGLStadium module loading...');
-
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 import { Stadium } from '../src/data/stadiums';
 
 interface SimpleWebGLStadiumProps {
@@ -13,30 +11,23 @@ interface SimpleWebGLStadiumProps {
   onSectionClick?: (sectionId: string) => void;
 }
 
+/**
+ * Legacy placeholder component - NOT IN USE
+ * The actual 3D visualization is handled by StadiumSunPathViewer
+ * This can be safely removed in a future cleanup
+ */
 export default function SimpleWebGLStadium({
   stadium,
   sunPosition,
-  gameDateTime,
-  selectedSections = [],
-  onSectionClick,
 }: SimpleWebGLStadiumProps) {
-  console.log('SIMPLE: SimpleWebGLStadium function called');
-  console.log('SIMPLE: SimpleWebGLStadium rendering');
-  
-  const [debugInfo, setDebugInfo] = useState('');
-  
-  useEffect(() => {
-    console.log('SIMPLE: SimpleWebGLStadium useEffect executed');
-    setDebugInfo('SimpleWebGLStadium useEffect executed at ' + new Date().toLocaleTimeString());
-  }, []);
-  
   return (
-    <div style={{ padding: '20px', background: '#9c27b0', color: 'white', margin: '20px 0' }}>
-      <p>SIMPLE: SimpleWebGLStadium component is working!</p>
-      <p>SIMPLE: Stadium: {stadium?.name}</p>
-      <p>SIMPLE: Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
-      <p style={{ color: 'yellow', fontWeight: 'bold' }}>DEBUG: {debugInfo}</p>
-      <p>SIMPLE: This version has NO Three.js imports</p>
+    <div style={{ padding: '20px', background: '#f0f0f0', color: '#333', margin: '20px 0', borderRadius: '8px' }}>
+      <p><strong>3D Visualization Placeholder</strong></p>
+      <p>Stadium: {stadium?.name}</p>
+      <p>Sun Position: {sunPosition?.azimuthDegrees}°/{sunPosition?.altitudeDegrees}°</p>
+      <p style={{ fontSize: '12px', color: '#666', marginTop: '10px' }}>
+        Note: Full 3D visualization is loaded via StadiumVisualizationSection
+      </p>
     </div>
   );
 }

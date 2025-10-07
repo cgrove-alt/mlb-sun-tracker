@@ -40,10 +40,7 @@ export const OfflineIndicator: React.FC = () => {
     // Check initial state - only show indicator if actually offline
     const initialOfflineState = isOffline();
     if (process.env.NODE_ENV === 'development') {
-      console.log('[OfflineIndicator] Initial state:', { 
-        offline: initialOfflineState, 
-        navigatorOnLine: navigator.onLine 
-      });
+
     }
     
     if (initialOfflineState) {
@@ -86,13 +83,13 @@ export const OfflineIndicator: React.FC = () => {
   // Don't show indicator if translations are still loading or if we shouldn't show it
   if (!showIndicator || translationsLoading) {
     if (process.env.NODE_ENV === 'development') {
-      console.log('[OfflineIndicator] Not showing:', { showIndicator, translationsLoading });
+
     }
     return null;
   }
   
   if (process.env.NODE_ENV === 'development') {
-    console.log('[OfflineIndicator] Rendering:', { offline, syncPending, showIndicator });
+
   }
 
   return (

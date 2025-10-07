@@ -125,9 +125,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-actual-google-verification-code', // Replace with your actual code
-  },
+  // Uncomment and add your Google Search Console verification code when ready
+  // verification: {
+  //   google: 'your-verification-code-here',
+  // },
 };
 
 export function generateViewport() {

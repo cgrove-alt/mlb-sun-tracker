@@ -54,12 +54,11 @@ class PWAInstallManager implements PWAManager {
     
     // Store the event for later use
     this.deferredPrompt = e as BeforeInstallPromptEvent;
-    
-    console.log('PWA install prompt deferred, waiting for user action');
+
   };
 
   private handleAppInstalled = (): void => {
-    console.log('PWA was installed');
+
     sessionStorage.setItem(this.installKey, 'true');
     this.cleanup();
   };
@@ -115,9 +114,7 @@ class PWAInstallManager implements PWAManager {
       
       // Wait for the user's choice
       const { outcome } = await this.deferredPrompt.userChoice;
-      
-      console.log(`User ${outcome} the PWA install prompt`);
-      
+
       if (outcome === 'accepted') {
         sessionStorage.setItem(this.installKey, 'true');
       } else {

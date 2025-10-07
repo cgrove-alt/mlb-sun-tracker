@@ -44,16 +44,16 @@ const leaguePages = [
   'league/milb/a'
 ];
 
-const baseUrl = 'https://mlbsuntracker.com';
+const baseUrl = 'https://theshadium.com';
 
-// Generate sitemap entries
-let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+// Generate main sitemap with static pages and league pages
+let mainSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
 // Add static pages
 staticPages.forEach(page => {
   const priority = page === '' ? '1.0' : page.startsWith('guide') ? '0.8' : '0.5';
-  sitemap += `
+  mainSitemap += `
   <url>
     <loc>${baseUrl}/${page}</loc>
     <changefreq>${page === '' ? 'daily' : 'weekly'}</changefreq>
@@ -63,7 +63,7 @@ staticPages.forEach(page => {
 
 // Add league pages
 leaguePages.forEach(page => {
-  sitemap += `
+  mainSitemap += `
   <url>
     <loc>${baseUrl}/${page}</loc>
     <changefreq>weekly</changefreq>
@@ -71,18 +71,25 @@ leaguePages.forEach(page => {
   </url>`;
 });
 
+mainSitemap += `
+</urlset>`;
+
+// Generate stadiums sitemap with all venue pages
+let stadiumsSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
 // Add MLB stadium pages (both old and new URLs)
 mlbVenues.forEach(venue => {
   // Old URL structure
-  sitemap += `
+  stadiumsSitemap += `
   <url>
     <loc>${baseUrl}/stadium/${venue}</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>`;
-  
+
   // New URL structure
-  sitemap += `
+  stadiumsSitemap += `
   <url>
     <loc>${baseUrl}/venue/${venue}</loc>
     <changefreq>weekly</changefreq>
@@ -92,7 +99,7 @@ mlbVenues.forEach(venue => {
 
 // Add NFL venue pages
 nflVenues.forEach(venue => {
-  sitemap += `
+  stadiumsSitemap += `
   <url>
     <loc>${baseUrl}/venue/${venue}</loc>
     <changefreq>weekly</changefreq>
@@ -100,10 +107,9 @@ nflVenues.forEach(venue => {
   </url>`;
 });
 
-
 // Add MiLB venue pages
 milbVenues.forEach(venue => {
-  sitemap += `
+  stadiumsSitemap += `
   <url>
     <loc>${baseUrl}/venue/${venue}</loc>
     <changefreq>weekly</changefreq>
@@ -111,23 +117,74 @@ milbVenues.forEach(venue => {
   </url>`;
 });
 
-sitemap += `
+stadiumsSitemap += `
 </urlset>`;
 
-// Write sitemap
-const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
-fs.writeFileSync(sitemapPath, sitemap);
+// Generate guides sitemap
+let guidesSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+// Add guide pages (already included in staticPages but separated here for the guides sitemap)
+const guidePaths = staticPages.filter(page => page.startsWith('guide'));
+guidePaths.forEach(page => {
+  guidesSitemap += `
+  <url>
+    <loc>${baseUrl}/${page}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+});
+
+// Add blog guide page
+guidesSitemap += `
+  <url>
+    <loc>${baseUrl}/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>`;
+
+guidesSitemap += `
+</urlset>`;
+
+// Generate sitemap index
+const sitemapIndex = `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${baseUrl}/sitemap.xml</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-stadiums.xml</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>${baseUrl}/sitemap-guides.xml</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+  </sitemap>
+</sitemapindex>`;
+
+// Write sitemaps
+const publicDir = path.join(__dirname, '../public');
+fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), mainSitemap);
+fs.writeFileSync(path.join(publicDir, 'sitemap-stadiums.xml'), stadiumsSitemap);
+fs.writeFileSync(path.join(publicDir, 'sitemap-guides.xml'), guidesSitemap);
+fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), sitemapIndex);
 
 // Calculate stats
-const totalUrls = staticPages.length + leaguePages.length + 
-                 (mlbVenues.length * 2) + // MLB has both /stadium and /venue URLs
-                 nflVenues.length + 
-                 milbVenues.length;
+const mainUrls = staticPages.length + leaguePages.length;
+const stadiumUrls = (mlbVenues.length * 2) + nflVenues.length + milbVenues.length;
+const guideUrls = guidePaths.length + 1; // +1 for /blog
+const totalUrls = mainUrls + stadiumUrls + guideUrls;
 
-console.log(`✓ Sitemap generated with ${totalUrls} URLs`);
-console.log(`  - ${mlbVenues.length} MLB stadiums`);
-console.log(`  - ${nflVenues.length} NFL venues`);
-console.log(`  - ${milbVenues.length} MiLB stadiums`);
-console.log(`  - ${staticPages.length} static pages`);
-console.log(`  - ${leaguePages.length} league/level pages`);
-console.log(`✓ Saved to: ${sitemapPath}`);
+console.log(`✓ Sitemaps generated with ${totalUrls} total URLs`);
+console.log(`  Main sitemap: ${mainUrls} URLs (static + league pages)`);
+console.log(`  Stadiums sitemap: ${stadiumUrls} URLs`);
+console.log(`    - ${mlbVenues.length} MLB stadiums (x2 for old/new URLs)`);
+console.log(`    - ${nflVenues.length} NFL venues`);
+console.log(`    - ${milbVenues.length} MiLB stadiums`);
+console.log(`  Guides sitemap: ${guideUrls} URLs`);
+console.log(`✓ Saved to: ${publicDir}/`);
+console.log(`  - sitemap.xml`);
+console.log(`  - sitemap-stadiums.xml`);
+console.log(`  - sitemap-guides.xml`);
+console.log(`  - sitemap-index.xml`);

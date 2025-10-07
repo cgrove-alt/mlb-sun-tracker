@@ -45,12 +45,9 @@ export const StadiumVisualizationSection: React.FC<StadiumVisualizationSectionPr
   // Get stadium data with sections and obstructions
   const stadiumData = useMemo(() => {
     try {
-      console.log('Getting stadium data for:', stadium.id);
+
       const data = getStadiumCompleteData(stadium.id, 'MLB');
-      console.log('Stadium data loaded:', { 
-        sections: data.sections?.length || 0, 
-        obstructions: data.obstructions?.length || 0 
-      });
+
       return data;
     } catch (err) {
       console.error('Error loading stadium data:', err);
@@ -110,7 +107,6 @@ export const StadiumVisualizationSection: React.FC<StadiumVisualizationSectionPr
   }
 
   // Add debug logging
-  console.log('StadiumVisualizationSection rendering for:', stadium?.name || 'unknown');
 
   if (error) {
     return (

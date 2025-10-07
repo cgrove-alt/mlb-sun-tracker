@@ -1049,7 +1049,6 @@ export const aaaVenueLayouts: VenueLayout[] = [
     notes: 'Downtown Norfolk waterfront with harbor views, opened 1993'
   },
 
-
   {
     venueId: 'fresno-grizzlies',
     venueName: 'Chukchansi Park',
@@ -2252,7 +2251,6 @@ export function validateVenueLayout(layout: VenueLayout): string[] {
     if (section.baseAngle + section.angleSpan > 360) {
       // This is OK as long as we handle wraparound correctly
       // Just note it for awareness
-      console.log(`${layout.venueName} - ${section.name}: Wraps around 360° (${section.baseAngle}° + ${section.angleSpan}°)`);
     }
   });
   

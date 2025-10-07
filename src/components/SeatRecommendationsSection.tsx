@@ -1,11 +1,13 @@
 'use client';
 
-import React, { useState, useCallback, useMemo } from 'react';
-import { SeatRecommendationEngine, UserPreferences } from '../services/seatRecommendationEngine';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
+import { SeatRecommendationEngine, UserPreferences, RecommendationContext } from '../services/seatRecommendationEngine';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { SeatPreferencesForm } from './SeatPreferencesForm';
 import { LoadingSpinner } from './LoadingSpinner';
 import { MLB_STADIUMS } from '../data/stadiums';
+import { getStadiumCompleteData } from '../data/stadium-data-aggregator';
+import { weatherApi, WeatherData } from '../services/weatherApi';
 
 interface SeatRecommendationsSectionProps {
   sections: SeatingSectionSun[];
@@ -33,112 +35,94 @@ export const SeatRecommendationsSection: React.FC<SeatRecommendationsSectionProp
   });
   const [showPreferences, setShowPreferences] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
 
-  // Helper functions for scoring
-  const scoreSunPreference = (sunExposure: number, preference: string): number => {
-    switch (preference) {
-      case 'love-sun': return sunExposure >= 75 ? 100 : sunExposure >= 50 ? 70 : 30;
-      case 'prefer-sun': return sunExposure >= 50 ? 90 : sunExposure >= 25 ? 70 : 40;
-      case 'neutral': return sunExposure <= 75 && sunExposure >= 25 ? 80 : 60;
-      case 'prefer-shade': return sunExposure <= 25 ? 90 : sunExposure <= 50 ? 70 : 40;
-      case 'need-shade': return sunExposure === 0 ? 100 : sunExposure <= 25 ? 70 : 20;
-      default: return 50;
-    }
-  };
+  // Fetch weather data for game
+  useEffect(() => {
+    const fetchWeather = async () => {
+      try {
+        const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+        if (stadium) {
+          // Get forecast and extract weather for game time
+          const forecast = await weatherApi.getWeatherForecast(
+            stadium.latitude,
+            stadium.longitude
+          );
+          const gameDateTime = new Date(gameDate);
+          const [hours, minutes] = gameTime.split(':').map(Number);
+          gameDateTime.setHours(hours, minutes, 0, 0);
 
-  const scorePriceMatch = (sectionPrice: string, budgetRange: string): number => {
-    if (budgetRange === 'any') return 80;
-    if (sectionPrice === budgetRange) return 100;
-    
-    const priceOrder = { value: 1, moderate: 2, premium: 3, luxury: 4 };
-    const sectionLevel = priceOrder[sectionPrice as keyof typeof priceOrder] || 2;
-    const prefLevel = priceOrder[budgetRange as keyof typeof priceOrder] || 2;
-    
-    const diff = Math.abs(sectionLevel - prefLevel);
-    return diff === 0 ? 100 : diff === 1 ? 70 : diff === 2 ? 40 : 20;
-  };
-
-  const scoreLevelPreference = (sectionLevel: string, viewPreference: string): number => {
-    if (viewPreference === 'any') return 80;
-    
-    // Map view preferences to level preferences
-    const levelMappings = {
-      'home-plate': ['lower', 'club'],
-      'first-base': ['lower', 'field', 'club'],
-      'third-base': ['lower', 'field', 'club'],
-      'outfield': ['upper', 'field']
+          const weatherData = weatherApi.getWeatherForTime(forecast, gameDateTime);
+          setWeather(weatherData);
+        }
+      } catch (error) {
+        console.error('Failed to fetch weather:', error);
+        // Use default weather if fetch fails
+        setWeather({
+          temperature: 72,
+          feelsLike: 72,
+          pressure: 1013,
+          humidity: 50,
+          cloudCover: 30,
+          visibility: 10000,
+          windSpeed: 5,
+          windDirection: 180,
+          precipitationProbability: 0,
+          uvIndex: 5,
+          conditions: [{ id: 800, main: 'Clear', description: 'clear sky', icon: '01d' }]
+        });
+      }
     };
-    
-    const preferredLevels = levelMappings[viewPreference as keyof typeof levelMappings] || ['lower'];
-    return preferredLevels.includes(sectionLevel) ? 100 : 60;
-  };
+    fetchWeather();
+  }, [stadiumId, gameDate, gameTime]);
 
   const recommendations = useMemo(() => {
-    if (!sections || sections.length === 0) return [];
+    if (!sections || sections.length === 0 || !weather) return [];
 
     try {
       setIsLoading(true);
-      
-      // Create simple recommendations based on sun exposure and preferences
-      const scored = sections.map(sectionData => {
-        const section = sectionData.section;
-        const sunExposure = sectionData.sunExposure;
-        let score = 0;
-        let reasoning = [];
-        
-        // Sun preference scoring
-        const sunScore = scoreSunPreference(sunExposure, preferences.sunPreference);
-        score += sunScore * 0.35;
-        
-        // Budget scoring  
-        const priceScore = scorePriceMatch(section.price || 'moderate', preferences.budgetRange);
-        score += priceScore * 0.25;
-        
-        // Level preference
-        const levelScore = scoreLevelPreference(section.level, preferences.viewPreference);
-        score += levelScore * 0.20;
-        
-        // Amenities base score
-        score += 20;
-        
-        // Generate reasoning
-        if (sunExposure === 0) reasoning.push('Perfect shade coverage');
-        else if (sunExposure < 25) reasoning.push('Mostly shaded during game');
-        else if (sunExposure < 50) reasoning.push('Balanced sun and shade');
-        else if (sunExposure < 75) reasoning.push('Mostly sunny exposure');
-        else reasoning.push('Full sun exposure');
-        
-        // Check price with null safety
-        const sectionPrice = section.price || 'moderate';
-        if (sectionPrice === preferences.budgetRange) {
-          reasoning.push(`Matches your ${preferences.budgetRange} budget`);
-        }
-        
-        return {
-          sectionId: section.id,
-          sectionName: section.name,
-          score: Math.min(100, score),
-          reasoning: reasoning.join('. ') + '.',
-          sunExposure,
-          level: section.level,
-          priceRange: section.price || 'moderate',
-          pros: reasoning,
-          cons: [],
-          amenityHighlights: ['view', 'shade'].filter(a => 
-            preferences.amenityPriorities.includes(a as any)
-          )
-        };
-      });
-      
-      // Sort by score and return top 6
-      return scored.sort((a, b) => b.score - a.score).slice(0, 6);
+
+      // Get stadium data
+      const stadium = MLB_STADIUMS.find(s => s.id === stadiumId);
+      if (!stadium) return [];
+
+      // Get complete stadium data with sections and obstructions
+      const { sections: detailedSections, obstructions } = getStadiumCompleteData(stadiumId, 'MLB');
+
+      // Create recommendation context
+      const context: RecommendationContext = {
+        stadium,
+        sections: detailedSections,
+        obstructions,
+        gameDate,
+        gameTime,
+        weather
+      };
+
+      // Use the AI recommendation engine
+      const engine = new SeatRecommendationEngine();
+      const aiRecommendations = engine.recommendSeats(preferences, context);
+
+      // Map AI recommendations to UI format
+      return aiRecommendations.slice(0, 6).map(rec => ({
+        sectionId: rec.sectionId,
+        sectionName: rec.sectionName,
+        score: rec.score,
+        reasoning: rec.reasoning.join(' '),
+        sunExposure: rec.estimatedSunExposure,
+        level: detailedSections.find(s => s.id === rec.sectionId)?.level || 'lower',
+        priceRange: rec.priceCategory,
+        pros: rec.pros,
+        cons: rec.cons,
+        amenityHighlights: preferences.amenityPriorities.slice(0, 3)
+      }));
     } catch (error) {
-      console.error('Failed to generate recommendations:', error);
+      console.error('Failed to generate AI recommendations:', error);
       return [];
     } finally {
       setIsLoading(false);
     }
-  }, [sections, preferences, gameTime, gameDate, stadiumId]);
+  }, [sections, preferences, gameTime, gameDate, stadiumId, weather]);
 
   const handlePreferencesChange = useCallback((newPreferences: UserPreferences) => {
     setPreferences(newPreferences);

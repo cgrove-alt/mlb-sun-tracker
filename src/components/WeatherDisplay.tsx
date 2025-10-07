@@ -50,14 +50,6 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({
   
   // Debug logging
   if (process.env.NODE_ENV === 'development') {
-    console.log('Weather Display Debug:', {
-      gameTime: gameTime?.toISOString() || 'No game time',
-      selectedWeatherTime: relevantWeather.time,
-      temperature: relevantWeather.temperature,
-      conditions: relevantWeather.conditions[0]?.main,
-      isForecastAvailable,
-      daysUntilGame
-    });
   }
 
   const getWeatherIcon = (condition: string, iconCode: string): string => {

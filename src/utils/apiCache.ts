@@ -113,12 +113,10 @@ export function withCache<T extends (...args: any[]) => Promise<any>>(
     // Try to get from cache first
     const cached = apiCache.get(key);
     if (cached !== null) {
-      console.log(`Cache hit for ${key}`);
       return cached;
     }
 
     // Call the original function
-    console.log(`Cache miss for ${key}, calling API`);
     try {
       const result = await fn(...args);
       
