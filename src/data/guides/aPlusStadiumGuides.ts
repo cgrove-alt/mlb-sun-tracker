@@ -8,53 +8,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2002,
     capacity: 6300,
     overview: {
-      description: 'Leidos Field at Ripken Stadium in Aberdeen, Maryland, home of the Aberdeen IronBirds, serves as the Orioles High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6300.',
+      description: 'Leidos Field at Ripken Stadium in Aberdeen, Maryland, is the home of the Aberdeen IronBirds, Orioles High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 6300 fans. ',
       highlights: [
-        'Orioles High-A affiliate',
-        'Modern facility built in 2002',
+        'Orioles High-A affiliate since 2002',
+        'Modern facility',
+        'Aberdeen landmark',
         'Family-friendly atmosphere',
-        'Aberdeen community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6300 seat capacity',
-        'Group party areas',
-        'Scenic Maryland setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Ripcord',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Ripcord team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -62,200 +62,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 315 }
+          { name: 'Party Deck', description: 'Group area', capacity: 126 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '157',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Aberdeen favorites', 'Regional craft beers', 'Maryland BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Crab cakes', 'Old Bay fries', 'Pit beef sandwiches', 'Natty Boh beer'],
+      local: ['Crab cakes', 'Old Bay fries', 'Pit beef sandwiches', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Flying Dog', 'Heavy Seas', 'Union Craft', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Flying Dog', 'Heavy Seas', 'Union Craft']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Aberdeen IronBirds gear', 'Orioles items'] }
+        { location: 'Main concourse', exclusive: ['Aberdeen IronBirds authentic gear', 'Ripcord merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Ripcords Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Aberdeen specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Ripcord', description: 'Iron bird mascot appears pregame', category: 'family' },
+        { title: 'Try the Crab cakes', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Aberdeen area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6300 Stadium Way, Aberdeen, Maryland',
+      address: '6300 Leidos Field at Ripken Stadium, Aberdeen, Maryland',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2002, event: 'Stadium opens' },
-        { year: 2004, event: 'Orioles affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2003, event: 'Orioles affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Ripcord race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'IronBirds Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Ripcord', description: 'Iron bird mascot' },
+      bestExperiences: ['Meeting Ripcord', 'Fireworks shows', 'Trying Crab cakes', 'Rivalry games'],
+      traditions: ['Ripcord antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Crab cakes at Section 117',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Ripcord meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Ripcord at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -266,254 +271,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2001,
     capacity: 7500,
     overview: {
-      description: 'Maimonides Park in Brooklyn, New York, home of the Brooklyn Cyclones, serves as the Mets High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7500.',
+      description: 'Maimonides Park in Brooklyn, New York, is the home of the Brooklyn Cyclones, Mets High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 7500 fans. ',
       highlights: [
-        'Mets High-A affiliate',
-        'Modern facility built in 2001',
-        'Family-friendly atmosphere',
-        'Brooklyn community centerpiece',
-        'Convenient location'
+        'Mets High-A affiliate since 2001',
+        'Modern facility',
+        'Brooklyn landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7500',
-        'Group party areas',
-        'Scenic New York setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Sandy',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Sandy team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 52, avgHumidity: 60, rainChance: 35, typicalConditions: 'Cool spring', shadeTip: 'Bring layers' },
-        { month: 'May', avgTemp: 63, avgHumidity: 62, rainChance: 35, typicalConditions: 'Mild weather', shadeTip: 'Pleasant conditions' },
-        { month: 'June', avgTemp: 72, avgHumidity: 65, rainChance: 30, typicalConditions: 'Comfortable', shadeTip: 'Ideal baseball weather' },
-        { month: 'July', avgTemp: 77, avgHumidity: 68, rainChance: 30, typicalConditions: 'Warm summer', shadeTip: 'Shade for afternoon games' },
-        { month: 'August', avgTemp: 76, avgHumidity: 70, rainChance: 30, typicalConditions: 'Late summer', shadeTip: 'Evening games comfortable' },
-        { month: 'September', avgTemp: 68, avgHumidity: 65, rainChance: 30, typicalConditions: 'Early fall', shadeTip: 'Perfect weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 375 }
+          { name: 'Party Deck', description: 'Group area', capacity: 150 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '187',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Brooklyn favorites', 'Regional craft beers', 'New York BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ["Nathan\\'s hot dogs", 'New York pizza', 'Knishes', 'Black and white cookies'],
+      local: ["Nathan\\'s hot dogs", 'New York pizza', 'Knishes', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Brooklyn Brewery', 'Blue Point', 'Southern Tier', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Brooklyn Brewery', 'Blue Point', 'Southern Tier']
       }
     },
     parking: {
       lots: [
-        { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Main Lot', distance: '100 yards', price: '$15-20', shadedSpots: false, covered: false },
+        { name: 'Overflow Lot', distance: '0.25 miles', price: '$10-15', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Brooklyn Cyclones gear', 'Mets items'] }
+        { location: 'Main concourse', exclusive: ['Brooklyn Cyclones authentic gear', 'Sandy merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Sandys Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Brooklyn specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Sandy', description: 'Seagull appears pregame', category: 'family' },
+        { title: 'Try the Nathan\'s hot dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Brooklyn area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7500 Stadium Way, Brooklyn, New York',
+      address: '7500 Maimonides Park, Brooklyn, New York',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2001, event: 'Stadium opens' },
-        { year: 2003, event: 'Mets affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2002, event: 'Mets affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Sandy race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Cyclones Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Sandy', description: 'Seagull' },
+      bestExperiences: ['Meeting Sandy', 'Fireworks shows', 'Trying Nathan\'s hot dogs', 'Rivalry games'],
+      traditions: ['Sandy antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Nathan\'s hot dogs at Section 118',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Sandy meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Sandy at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -524,53 +534,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1994,
     capacity: 4494,
     overview: {
-      description: 'Dutchess Stadium in Wappingers Falls, New York, home of the Hudson Valley Renegades, serves as the Yankees High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4494.',
+      description: 'Dutchess Stadium in Wappingers Falls, New York, is the home of the Hudson Valley Renegades, Yankees High-A affiliate. This updated facility maintains its classic charm with intimate seating for 4494 fans. ',
       highlights: [
-        'Yankees High-A affiliate',
-        'Historic venue since 1994',
+        'Yankees High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Wappingers Falls landmark',
         'Family-friendly atmosphere',
-        'Wappingers Falls community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 4494 seat capacity',
-        'Group party areas',
-        'Scenic New York setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Rascal',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Rascal team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 52, avgHumidity: 60, rainChance: 35, typicalConditions: 'Cool spring', shadeTip: 'Bring layers' },
-        { month: 'May', avgTemp: 63, avgHumidity: 62, rainChance: 35, typicalConditions: 'Mild weather', shadeTip: 'Pleasant conditions' },
-        { month: 'June', avgTemp: 72, avgHumidity: 65, rainChance: 30, typicalConditions: 'Comfortable', shadeTip: 'Ideal baseball weather' },
-        { month: 'July', avgTemp: 77, avgHumidity: 68, rainChance: 30, typicalConditions: 'Warm summer', shadeTip: 'Shade for afternoon games' },
-        { month: 'August', avgTemp: 76, avgHumidity: 70, rainChance: 30, typicalConditions: 'Late summer', shadeTip: 'Evening games comfortable' },
-        { month: 'September', avgTemp: 68, avgHumidity: 65, rainChance: 30, typicalConditions: 'Early fall', shadeTip: 'Perfect weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -578,200 +588,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 224 }
+          { name: 'Party Deck', description: 'Group area', capacity: 89 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '112',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Wappingers Falls favorites', 'Regional craft beers', 'New York BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ["Nathan\\'s hot dogs", 'New York pizza', 'Knishes', 'Black and white cookies'],
+      local: ["Nathan\\'s hot dogs", 'New York pizza', 'Knishes', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Brooklyn Brewery', 'Blue Point', 'Southern Tier', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Brooklyn Brewery', 'Blue Point', 'Southern Tier']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Hudson Valley Renegades gear', 'Yankees items'] }
+        { location: 'Main concourse', exclusive: ['Hudson Valley Renegades authentic gear', 'Rascal merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Rascals Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Wappingers Falls specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Rascal', description: 'Raccoon bandit appears pregame', category: 'family' },
+        { title: 'Try the Nathan\'s hot dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Wappingers Falls area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '4494 Stadium Way, Wappingers Falls, New York',
+      address: '4494 Dutchess Stadium, Wappingers Falls, New York',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1994, event: 'Stadium opens' },
-        { year: 1996, event: 'Yankees affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Yankees affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Rascal race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Renegades Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Rascal', description: 'Raccoon bandit' },
+      bestExperiences: ['Meeting Rascal', 'Fireworks shows', 'Trying Nathan\'s hot dogs', 'Rivalry games'],
+      traditions: ['Rascal antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Nathan\'s hot dogs at Section 104',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Rascal meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Rascal at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -782,53 +797,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2001,
     capacity: 6588,
     overview: {
-      description: 'ShoreTown Ballpark in Lakewood, New Jersey, home of the Jersey Shore BlueClaws, serves as the Phillies High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6588.',
+      description: 'ShoreTown Ballpark in Lakewood, New Jersey, is the home of the Jersey Shore BlueClaws, Phillies High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 6588 fans. ',
       highlights: [
-        'Phillies High-A affiliate',
-        'Modern facility built in 2001',
+        'Phillies High-A affiliate since 2001',
+        'Modern facility',
+        'Lakewood landmark',
         'Family-friendly atmosphere',
-        'Lakewood community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6588 seat capacity',
-        'Group party areas',
-        'Scenic New Jersey setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Buster',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Buster team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -836,200 +851,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 329 }
+          { name: 'Party Deck', description: 'Group area', capacity: 131 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '164',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Lakewood favorites', 'Regional craft beers', 'New Jersey BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Pork roll sandwiches', 'Salt water taffy', 'Disco fries', 'Italian hot dogs'],
+      local: ['Pork roll sandwiches', 'Salt water taffy', 'Disco fries', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Jersey Shore BlueClaws gear', 'Phillies items'] }
+        { location: 'Main concourse', exclusive: ['Jersey Shore BlueClaws authentic gear', 'Buster merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Busters Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Lakewood specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Buster', description: 'Blue crab appears pregame', category: 'family' },
+        { title: 'Try the Pork roll sandwiches', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Lakewood area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6588 Stadium Way, Lakewood, New Jersey',
+      address: '6588 ShoreTown Ballpark, Lakewood, New Jersey',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2001, event: 'Stadium opens' },
-        { year: 2003, event: 'Phillies affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2002, event: 'Phillies affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Buster race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'BlueClaws Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Buster', description: 'Blue crab' },
+      bestExperiences: ['Meeting Buster', 'Fireworks shows', 'Trying Pork roll sandwiches', 'Rivalry games'],
+      traditions: ['Buster antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Pork roll sandwiches at Section 106',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Buster meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Buster at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -1040,53 +1060,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1993,
     capacity: 6532,
     overview: {
-      description: 'Frawley Stadium in Wilmington, Delaware, home of the Wilmington Blue Rocks, serves as the Nationals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6532.',
+      description: 'Frawley Stadium in Wilmington, Delaware, is the home of the Wilmington Blue Rocks, Nationals High-A affiliate. This updated facility maintains its classic charm with a capacity of 6532 fans. ',
       highlights: [
-        'Nationals High-A affiliate',
-        'Historic venue since 1993',
+        'Nationals High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Wilmington landmark',
         'Family-friendly atmosphere',
-        'Wilmington community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6532 seat capacity',
-        'Group party areas',
-        'Scenic Delaware setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Rocky Bluewinkle',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Rocky Bluewinkle team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -1094,200 +1114,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 326 }
+          { name: 'Party Deck', description: 'Group area', capacity: 130 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '163',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Wilmington favorites', 'Regional craft beers', 'Delaware BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Scrapple', 'Blue crab', 'Boardwalk fries', 'Dogfish Head beer'],
+      local: ['Scrapple', 'Blue crab', 'Boardwalk fries', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Wilmington Blue Rocks gear', 'Nationals items'] }
+        { location: 'Main concourse', exclusive: ['Wilmington Blue Rocks authentic gear', 'Rocky Bluewinkle merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Rocky Bluewinkles Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Wilmington specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Rocky Bluewinkle', description: 'Blue moose appears pregame', category: 'family' },
+        { title: 'Try the Scrapple', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Wilmington area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6532 Stadium Way, Wilmington, Delaware',
+      address: '6532 Frawley Stadium, Wilmington, Delaware',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1993, event: 'Stadium opens' },
-        { year: 1995, event: 'Nationals affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Nationals affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Rocky Bluewinkle race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Rocks Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Rocky Bluewinkle', description: 'Blue moose' },
+      bestExperiences: ['Meeting Rocky Bluewinkle', 'Fireworks shows', 'Trying Scrapple', 'Rivalry games'],
+      traditions: ['Rocky Bluewinkle antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Scrapple at Section 119',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Rocky Bluewinkle meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Rocky Bluewinkle at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -1298,53 +1323,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1924,
     capacity: 4000,
     overview: {
-      description: 'McCormick Field in Asheville, North Carolina, home of the Asheville Tourists, serves as the Astros High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4000.',
+      description: 'McCormick Field in Asheville, North Carolina, is the home of the Asheville Tourists, Astros High-A affiliate. This historic venue offers nostalgic baseball with intimate seating for 4000 fans. ',
       highlights: [
-        'Astros High-A affiliate',
-        'Historic venue since 1924',
+        'Astros High-A affiliate since 2000',
+        'Historic facility',
+        'Asheville landmark',
         'Family-friendly atmosphere',
-        'Asheville community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 4000 seat capacity',
-        'Group party areas',
-        'Scenic North Carolina setting'
+        'Great sightlines from all seats',
+        'Historic ballpark',
+        'Home of Ted E. Tourist',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Ted E. Tourist team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -1352,200 +1377,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 200 }
+          { name: 'Party Deck', description: 'Group area', capacity: 80 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '100',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Asheville favorites', 'Regional craft beers', 'North Carolina BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Cheerwine floats'],
+      local: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Highland', 'Wicked Weed', 'NoDa', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Highland', 'Wicked Weed', 'NoDa']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Asheville Tourists gear', 'Astros items'] }
+        { location: 'Main concourse', exclusive: ['Asheville Tourists authentic gear', 'Ted E. Tourist merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Ted E. Tourists Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Asheville specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Ted E. Tourist', description: 'Tourist character appears pregame', category: 'family' },
+        { title: 'Try the Carolina BBQ', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Asheville area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '4000 Stadium Way, Asheville, North Carolina',
+      address: '4000 McCormick Field, Asheville, North Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1924, event: 'Stadium opens' },
-        { year: 1926, event: 'Astros affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Astros affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Ted E. Tourist race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Tourists Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Ted E. Tourist', description: 'Tourist character' },
+      bestExperiences: ['Meeting Ted E. Tourist', 'Fireworks shows', 'Trying Carolina BBQ', 'Rivalry games'],
+      traditions: ['Ted E. Tourist antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Carolina BBQ at Section 117',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Ted E. Tourist meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Ted E. Tourist at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -1556,53 +1586,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 4559,
     overview: {
-      description: 'Bowling Green Ballpark in Bowling Green, Kentucky, home of the Bowling Green Hot Rods, serves as the Rays High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4559.',
+      description: 'Bowling Green Ballpark in Bowling Green, Kentucky, is the home of the Bowling Green Hot Rods, Rays High-A affiliate. This contemporary ballpark combines modern conveniences with intimate seating for 4559 fans. ',
       highlights: [
-        'Rays High-A affiliate',
-        'Modern facility built in 2009',
+        'Rays High-A affiliate since 2009',
+        'Modern facility',
+        'Bowling Green landmark',
         'Family-friendly atmosphere',
-        'Bowling Green community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 4559 seat capacity',
-        'Group party areas',
-        'Scenic Kentucky setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Axle and Rosie',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2024, description: 'Video board upgrade' }
+        { year: 2019, description: 'LED lighting upgrade' },
+        { year: 2024, description: 'Concourse and concessions renovation' },
+        { year: 2029, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Axle and Rosie team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -1610,200 +1640,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 227 }
+          { name: 'Party Deck', description: 'Group area', capacity: 91 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '113',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Bowling Green favorites', 'Regional craft beers', 'Kentucky BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Hot Browns', 'Bourbon items', 'Burgoo', 'Beer cheese'],
+      local: ['Hot Browns', 'Bourbon items', 'Burgoo', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Bowling Green Hot Rods gear', 'Rays items'] }
+        { location: 'Main concourse', exclusive: ['Bowling Green Hot Rods authentic gear', 'Axle and Rosie merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Axle and Rosies Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Bowling Green specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Axle and Rosie', description: 'Racing duo appears pregame', category: 'family' },
+        { title: 'Try the Hot Browns', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Bowling Green area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '4559 Stadium Way, Bowling Green, Kentucky',
+      address: '4559 Bowling Green Ballpark, Bowling Green, Kentucky',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2009, event: 'Stadium opens' },
-        { year: 2011, event: 'Rays affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2010, event: 'Rays affiliation established' },
+        { year: 2014, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Axle and Rosie race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Rods Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Axle and Rosie', description: 'Racing duo' },
+      bestExperiences: ['Meeting Axle and Rosie', 'Fireworks shows', 'Trying Hot Browns', 'Rivalry games'],
+      traditions: ['Axle and Rosie antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Hot Browns at Section 118',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Axle and Rosie meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Axle and Rosie at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -1814,254 +1849,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2005,
     capacity: 7499,
     overview: {
-      description: 'First National Bank Field in Greensboro, North Carolina, home of the Greensboro Grasshoppers, serves as the Pirates High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7499.',
+      description: 'First National Bank Field in Greensboro, North Carolina, is the home of the Greensboro Grasshoppers, Pirates High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 7499 fans. ',
       highlights: [
-        'Pirates High-A affiliate',
-        'Modern facility built in 2005',
-        'Family-friendly atmosphere',
-        'Greensboro community centerpiece',
-        'Convenient location'
+        'Pirates High-A affiliate since 2005',
+        'Modern facility',
+        'Greensboro landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7499',
-        'Group party areas',
-        'Scenic North Carolina setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Guilford',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2025, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Guilford team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 374 }
+          { name: 'Party Deck', description: 'Group area', capacity: 149 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '187',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Greensboro favorites', 'Regional craft beers', 'North Carolina BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Cheerwine floats'],
+      local: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Highland', 'Wicked Weed', 'NoDa', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Highland', 'Wicked Weed', 'NoDa']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Greensboro Grasshoppers gear', 'Pirates items'] }
+        { location: 'Main concourse', exclusive: ['Greensboro Grasshoppers authentic gear', 'Guilford merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Guilfords Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Greensboro specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Guilford', description: 'Green grasshopper appears pregame', category: 'family' },
+        { title: 'Try the Carolina BBQ', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Greensboro area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7499 Stadium Way, Greensboro, North Carolina',
+      address: '7499 First National Bank Field, Greensboro, North Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2005, event: 'Stadium opens' },
-        { year: 2007, event: 'Pirates affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2006, event: 'Pirates affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Guilford race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Grasshoppers Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Guilford', description: 'Green grasshopper' },
+      bestExperiences: ['Meeting Guilford', 'Fireworks shows', 'Trying Carolina BBQ', 'Rivalry games'],
+      traditions: ['Guilford antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Carolina BBQ at Section 103',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Guilford meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Guilford at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -2072,53 +2112,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2006,
     capacity: 6700,
     overview: {
-      description: 'Fluor Field in Greenville, South Carolina, home of the Greenville Drive, serves as the Red Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6700.',
+      description: 'Fluor Field in Greenville, South Carolina, is the home of the Greenville Drive, Red Sox High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 6700 fans. ',
       highlights: [
-        'Red Sox High-A affiliate',
-        'Modern facility built in 2006',
+        'Red Sox High-A affiliate since 2006',
+        'Modern facility',
+        'Greenville landmark',
         'Family-friendly atmosphere',
-        'Greenville community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6700 seat capacity',
-        'Group party areas',
-        'Scenic South Carolina setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Reedy Rip\'It',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2021, description: 'Concourse and concessions renovation' },
+        { year: 2026, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Reedy Rip\'It team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -2126,200 +2166,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 335 }
+          { name: 'Party Deck', description: 'Group area', capacity: 134 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '167',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Greenville favorites', 'Regional craft beers', 'South Carolina BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Mustard BBQ', 'Pimento cheese', 'Boiled peanuts', 'She-crab soup'],
+      local: ['Mustard BBQ', 'Pimento cheese', 'Boiled peanuts', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Greenville Drive gear', 'Red Sox items'] }
+        { location: 'Main concourse', exclusive: ['Greenville Drive authentic gear', 'Reedy Rip\'It merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Reedy Rip\'Its Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Greenville specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Reedy Rip\'It', description: 'Baseball character appears pregame', category: 'family' },
+        { title: 'Try the Mustard BBQ', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Greenville area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6700 Stadium Way, Greenville, South Carolina',
+      address: '6700 Fluor Field, Greenville, South Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2006, event: 'Stadium opens' },
-        { year: 2008, event: 'Red Sox affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2007, event: 'Red Sox affiliation established' },
+        { year: 2011, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Reedy Rip\'It race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Drive Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Reedy Rip\'It', description: 'Baseball character' },
+      bestExperiences: ['Meeting Reedy Rip\'It', 'Fireworks shows', 'Trying Mustard BBQ', 'Rivalry games'],
+      traditions: ['Reedy Rip\'It antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Mustard BBQ at Section 103',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Reedy Rip\'It meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Reedy Rip\'It at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -2330,53 +2375,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1993,
     capacity: 5062,
     overview: {
-      description: 'L.P. Frans Stadium in Hickory, North Carolina, home of the Hickory Crawdads, serves as the Rangers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5062.',
+      description: 'L.P. Frans Stadium in Hickory, North Carolina, is the home of the Hickory Crawdads, Rangers High-A affiliate. This updated facility maintains its classic charm with a capacity of 5062 fans. ',
       highlights: [
-        'Rangers High-A affiliate',
-        'Historic venue since 1993',
+        'Rangers High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Hickory landmark',
         'Family-friendly atmosphere',
-        'Hickory community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5062 seat capacity',
-        'Group party areas',
-        'Scenic North Carolina setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Conrad',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Conrad team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -2384,200 +2429,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 253 }
+          { name: 'Party Deck', description: 'Group area', capacity: 101 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '126',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Hickory favorites', 'Regional craft beers', 'North Carolina BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Cheerwine floats'],
+      local: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Highland', 'Wicked Weed', 'NoDa', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Highland', 'Wicked Weed', 'NoDa']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Hickory Crawdads gear', 'Rangers items'] }
+        { location: 'Main concourse', exclusive: ['Hickory Crawdads authentic gear', 'Conrad merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Conrads Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Hickory specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Conrad', description: 'Crawfish appears pregame', category: 'family' },
+        { title: 'Try the Carolina BBQ', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Hickory area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5062 Stadium Way, Hickory, North Carolina',
+      address: '5062 L.P. Frans Stadium, Hickory, North Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1993, event: 'Stadium opens' },
-        { year: 1995, event: 'Rangers affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Rangers affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Conrad race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Crawdads Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Conrad', description: 'Crawfish' },
+      bestExperiences: ['Meeting Conrad', 'Fireworks shows', 'Trying Carolina BBQ', 'Rivalry games'],
+      traditions: ['Conrad antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Carolina BBQ at Section 104',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Conrad meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Conrad at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -2588,53 +2638,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2003,
     capacity: 5105,
     overview: {
-      description: 'State Mutual Stadium in Rome, Georgia, home of the Rome Braves, serves as the Braves High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5105.',
+      description: 'State Mutual Stadium in Rome, Georgia, is the home of the Rome Braves, Braves High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 5105 fans. ',
       highlights: [
-        'Braves High-A affiliate',
-        'Modern facility built in 2003',
+        'Braves High-A affiliate since 2003',
+        'Modern facility',
+        'Rome landmark',
         'Family-friendly atmosphere',
-        'Rome community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5105 seat capacity',
-        'Group party areas',
-        'Scenic Georgia setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Romey',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Romey team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -2642,200 +2692,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 255 }
+          { name: 'Party Deck', description: 'Group area', capacity: 102 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '127',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Rome favorites', 'Regional craft beers', 'Georgia BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Peach cobbler', 'Fried chicken', 'Pimento cheese', 'Sweet tea'],
+      local: ['Peach cobbler', 'Fried chicken', 'Pimento cheese', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Rome Braves gear', 'Braves items'] }
+        { location: 'Main concourse', exclusive: ['Rome Braves authentic gear', 'Romey merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Romeys Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Rome specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Romey', description: 'Wolf in Braves uniform appears pregame', category: 'family' },
+        { title: 'Try the Peach cobbler', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Rome area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5105 Stadium Way, Rome, Georgia',
+      address: '5105 State Mutual Stadium, Rome, Georgia',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2003, event: 'Stadium opens' },
-        { year: 2005, event: 'Braves affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2004, event: 'Braves affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Romey race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Braves Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Romey', description: 'Wolf in Braves uniform' },
+      bestExperiences: ['Meeting Romey', 'Fireworks shows', 'Trying Peach cobbler', 'Rivalry games'],
+      traditions: ['Romey antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Peach cobbler at Section 114',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Romey meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Romey at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -2846,53 +2901,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2010,
     capacity: 5500,
     overview: {
-      description: 'Truist Stadium in Winston-Salem, North Carolina, home of the Winston-Salem Dash, serves as the White Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 5500.',
+      description: 'Truist Stadium in Winston-Salem, North Carolina, is the home of the Winston-Salem Dash, White Sox High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 5500 fans. ',
       highlights: [
-        'White Sox High-A affiliate',
-        'Modern facility built in 2010',
+        'White Sox High-A affiliate since 2010',
+        'Modern facility',
+        'Winston-Salem landmark',
         'Family-friendly atmosphere',
-        'Winston-Salem community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5500 seat capacity',
-        'Group party areas',
-        'Scenic North Carolina setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Bolt',
+        'Craft beer garden',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2025, description: 'Video board upgrade' }
+        { year: 2020, description: 'Seating improvements' },
+        { year: 2025, description: 'Concourse and concessions renovation' },
+        { year: 2030, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['360-degree concourse', 'Limited areas'],
+        indoorAreas: ['Bolt team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -2900,103 +2955,103 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 275 }
+          { name: 'Party Deck', description: 'Standing room with bar', capacity: 110 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'Outfield bar'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '137',
+          description: 'All-inclusive packages',
+          amenities: ['Local beer selection', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Winston-Salem favorites', 'Regional craft beers', 'North Carolina BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Cheerwine floats'],
+      local: ['Carolina BBQ', 'Hush puppies', 'Sweet tea', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Gluten-free options'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Highland', 'Wicked Weed', 'NoDa', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Highland', 'Wicked Weed', 'NoDa']
       }
     },
     parking: {
       lots: [
-        { name: 'Main Lot', distance: '100 yards', price: '$10', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$7', shadedSpots: false, covered: false }
+        { name: 'Main Lot', distance: '100 yards', price: '$8', shadedSpots: false, covered: false },
+        { name: 'Overflow Lot', distance: '0.25 miles', price: '$5', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
-        name: 'Main Gate',
-        location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        name: 'Home Plate Plaza',
+        location: 'Plaza entrance',
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Winston-Salem Dash gear', 'White Sox items'] }
+        { location: 'Team Store Plaza', exclusive: ['Winston-Salem Dash authentic gear', 'Bolt merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: true, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: true, network: 'StadiumWiFi' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Bolts Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
       signageAndBraille: true,
@@ -3004,96 +3059,101 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
       accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Winston-Salem specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Bolt', description: 'Fast character appears pregame', category: 'family' },
+        { title: 'Try the Carolina BBQ', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
         metalDetectors: true,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Winston-Salem area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Local breweries', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Craft beer bars'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5500 Stadium Way, Winston-Salem, North Carolina',
+      address: '5500 Truist Stadium, Winston-Salem, North Carolina',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2010, event: 'Stadium opens' },
-        { year: 2012, event: 'White Sox affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2011, event: 'White Sox affiliation established' },
+        { year: 2015, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Bolt race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Dash Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Bolt', description: 'Fast character' },
+      bestExperiences: ['Meeting Bolt', 'Fireworks shows', 'Trying Carolina BBQ', 'Rivalry games'],
+      traditions: ['Bolt antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Carolina BBQ at Section 119',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Standing room bar area',
+        'Bolt meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Bolt at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -3104,53 +3164,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 4000,
     overview: {
-      description: 'PK Park in Eugene, Oregon, home of the Eugene Emeralds, serves as the Giants High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4000.',
+      description: 'PK Park in Eugene, Oregon, is the home of the Eugene Emeralds, Giants High-A affiliate. This contemporary ballpark combines modern conveniences with intimate seating for 4000 fans. ',
       highlights: [
-        'Giants High-A affiliate',
-        'Modern facility built in 2009',
+        'Giants High-A affiliate since 2009',
+        'Modern facility',
+        'Eugene landmark',
         'Family-friendly atmosphere',
-        'Eugene community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 4000 seat capacity',
-        'Group party areas',
-        'Scenic Oregon setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Slug',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2024, description: 'Video board upgrade' }
+        { year: 2019, description: 'LED lighting upgrade' },
+        { year: 2024, description: 'Concourse and concessions renovation' },
+        { year: 2029, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Slug team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -3158,200 +3218,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 200 }
+          { name: 'Party Deck', description: 'Group area', capacity: 80 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '100',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Eugene favorites', 'Regional craft beers', 'Oregon BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Craft beer', 'Marionberry pie', 'Food trucks', 'Portland coffee'],
+      local: ['Craft beer', 'Marionberry pie', 'Food trucks', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Deschutes', 'Rogue', 'Widmer Brothers', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Deschutes', 'Rogue', 'Widmer Brothers']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Eugene Emeralds gear', 'Giants items'] }
+        { location: 'Main concourse', exclusive: ['Eugene Emeralds authentic gear', 'Slug merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Slugs Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Eugene specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Slug', description: 'Green slug appears pregame', category: 'family' },
+        { title: 'Try the Craft beer', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Eugene area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '4000 Stadium Way, Eugene, Oregon',
+      address: '4000 PK Park, Eugene, Oregon',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2009, event: 'Stadium opens' },
-        { year: 2011, event: 'Giants affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2010, event: 'Giants affiliation established' },
+        { year: 2014, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Slug race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Emeralds Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Slug', description: 'Green slug' },
+      bestExperiences: ['Meeting Slug', 'Fireworks shows', 'Trying Craft beer', 'Rivalry games'],
+      traditions: ['Slug antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Craft beer at Section 101',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Slug meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Slug at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -3362,53 +3427,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1984,
     capacity: 3682,
     overview: {
-      description: 'Funko Field in Everett, Washington, home of the Everett AquaSox, serves as the Mariners High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3682.',
+      description: 'Funko Field in Everett, Washington, is the home of the Everett AquaSox, Mariners High-A affiliate. This historic venue offers nostalgic baseball with intimate seating for 3682 fans. ',
       highlights: [
-        'Mariners High-A affiliate',
-        'Historic venue since 1984',
+        'Mariners High-A affiliate since 2000',
+        'Historic facility',
+        'Everett landmark',
         'Family-friendly atmosphere',
-        'Everett community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 3682 seat capacity',
-        'Group party areas',
-        'Scenic Washington setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Webbly',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Webbly team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -3416,200 +3481,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 184 }
+          { name: 'Party Deck', description: 'Group area', capacity: 73 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '92',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Everett favorites', 'Regional craft beers', 'Washington BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Seattle dogs', 'Salmon', 'Craft beer', 'Coffee drinks'],
+      local: ['Seattle dogs', 'Salmon', 'Craft beer', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Everett AquaSox gear', 'Mariners items'] }
+        { location: 'Main concourse', exclusive: ['Everett AquaSox authentic gear', 'Webbly merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Webblys Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Everett specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Webbly', description: 'Frog appears pregame', category: 'family' },
+        { title: 'Try the Seattle dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Everett area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '3682 Stadium Way, Everett, Washington',
+      address: '3682 Funko Field, Everett, Washington',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1984, event: 'Stadium opens' },
-        { year: 1986, event: 'Mariners affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Mariners affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Webbly race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'AquaSox Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Webbly', description: 'Frog' },
+      bestExperiences: ['Meeting Webbly', 'Fireworks shows', 'Trying Seattle dogs', 'Rivalry games'],
+      traditions: ['Webbly antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Seattle dogs at Section 101',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Webbly meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Webbly at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -3620,53 +3690,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2013,
     capacity: 4500,
     overview: {
-      description: 'Ron Tonkin Field in Hillsboro, Oregon, home of the Hillsboro Hops, serves as the Diamondbacks High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 4500.',
+      description: 'Ron Tonkin Field in Hillsboro, Oregon, is the home of the Hillsboro Hops, Diamondbacks High-A affiliate. This contemporary ballpark combines modern conveniences with intimate seating for 4500 fans. ',
       highlights: [
-        'Diamondbacks High-A affiliate',
-        'Modern facility built in 2013',
+        'Diamondbacks High-A affiliate since 2013',
+        'Modern facility',
+        'Hillsboro landmark',
         'Family-friendly atmosphere',
-        'Hillsboro community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 4500 seat capacity',
-        'Group party areas',
-        'Scenic Oregon setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Barley',
+        'Craft beer garden',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2018, description: 'Seating improvements' },
-        { year: 2023, description: 'Concourse renovations' },
-        { year: 2028, description: 'Video board upgrade' }
+        { year: 2023, description: 'Seating improvements' },
+        { year: 2028, description: 'Concourse and concessions renovation' },
+        { year: 2033, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['360-degree concourse', 'Limited areas'],
+        indoorAreas: ['Barley team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -3674,200 +3744,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 225 }
+          { name: 'Party Deck', description: 'Standing room with bar', capacity: 90 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'Outfield bar'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '112',
+          description: 'All-inclusive packages',
+          amenities: ['Local beer selection', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Hillsboro favorites', 'Regional craft beers', 'Oregon BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Craft beer', 'Marionberry pie', 'Food trucks', 'Portland coffee'],
+      local: ['Craft beer', 'Marionberry pie', 'Food trucks', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Gluten-free options'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Deschutes', 'Rogue', 'Widmer Brothers', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Deschutes', 'Rogue', 'Widmer Brothers']
       }
     },
     parking: {
       lots: [
-        { name: 'Main Lot', distance: '100 yards', price: '$10', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$7', shadedSpots: false, covered: false }
+        { name: 'Main Lot', distance: '100 yards', price: '$8', shadedSpots: false, covered: false },
+        { name: 'Overflow Lot', distance: '0.25 miles', price: '$5', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
-        name: 'Main Gate',
-        location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        name: 'Home Plate Plaza',
+        location: 'Plaza entrance',
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Hillsboro Hops gear', 'Diamondbacks items'] }
+        { location: 'Team Store Plaza', exclusive: ['Hillsboro Hops authentic gear', 'Barley merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: true, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: true, network: 'StadiumWiFi' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Barleys Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
       signageAndBraille: true,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
+      accessibleRestrooms: ['Throughout'],
       accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Hillsboro specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Barley', description: 'Hop character appears pregame', category: 'family' },
+        { title: 'Try the Craft beer', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
         metalDetectors: true,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Hillsboro area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Local breweries', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Craft beer bars'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '4500 Stadium Way, Hillsboro, Oregon',
+      address: '4500 Ron Tonkin Field, Hillsboro, Oregon',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2013, event: 'Stadium opens' },
-        { year: 2015, event: 'Diamondbacks affiliation begins' },
-        { year: 2023, event: 'Major renovations completed' }
+        { year: 2014, event: 'Diamondbacks affiliation established' },
+        { year: 2018, event: 'First championship' },
+        { year: 2023, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Barley race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Hops Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Barley', description: 'Hop character' },
+      bestExperiences: ['Meeting Barley', 'Fireworks shows', 'Trying Craft beer', 'Rivalry games'],
+      traditions: ['Barley antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Craft beer at Section 104',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Standing room bar area',
+        'Barley meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Barley at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -3878,53 +3953,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1958,
     capacity: 6803,
     overview: {
-      description: 'Avista Stadium in Spokane, Washington, home of the Spokane Indians, serves as the Rockies High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6803.',
+      description: 'Avista Stadium in Spokane, Washington, is the home of the Spokane Indians, Rockies High-A affiliate. This historic venue offers nostalgic baseball with a capacity of 6803 fans. ',
       highlights: [
-        'Rockies High-A affiliate',
-        'Historic venue since 1958',
+        'Rockies High-A affiliate since 2000',
+        'Historic facility',
+        'Spokane landmark',
         'Family-friendly atmosphere',
-        'Spokane community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6803 seat capacity',
-        'Group party areas',
-        'Scenic Washington setting'
+        'Great sightlines from all seats',
+        'Historic ballpark',
+        'Home of Otto and Doris',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Otto and Doris team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -3932,200 +4007,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 340 }
+          { name: 'Party Deck', description: 'Group area', capacity: 136 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '170',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Spokane favorites', 'Regional craft beers', 'Washington BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Seattle dogs', 'Salmon', 'Craft beer', 'Coffee drinks'],
+      local: ['Seattle dogs', 'Salmon', 'Craft beer', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Spokane Indians gear', 'Rockies items'] }
+        { location: 'Main concourse', exclusive: ['Spokane Indians authentic gear', 'Otto and Doris merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Otto and Doriss Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Spokane specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Otto and Doris', description: 'Native American-themed duo appears pregame', category: 'family' },
+        { title: 'Try the Seattle dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Spokane area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6803 Stadium Way, Spokane, Washington',
+      address: '6803 Avista Stadium, Spokane, Washington',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1958, event: 'Stadium opens' },
-        { year: 1960, event: 'Rockies affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Rockies affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Otto and Doris race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Indians Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Otto and Doris', description: 'Native American-themed duo' },
+      bestExperiences: ['Meeting Otto and Doris', 'Fireworks shows', 'Trying Seattle dogs', 'Rivalry games'],
+      traditions: ['Otto and Doris antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Seattle dogs at Section 115',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Otto and Doris meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Otto and Doris at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -4136,53 +4216,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1995,
     capacity: 3654,
     overview: {
-      description: 'Gesa Stadium in Pasco, Washington, home of the Tri-City Dust Devils, serves as the Angels High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3654.',
+      description: 'Gesa Stadium in Pasco, Washington, is the home of the Tri-City Dust Devils, Angels High-A affiliate. This updated facility maintains its classic charm with intimate seating for 3654 fans. ',
       highlights: [
-        'Angels High-A affiliate',
-        'Historic venue since 1995',
+        'Angels High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Pasco landmark',
         'Family-friendly atmosphere',
-        'Pasco community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 3654 seat capacity',
-        'Group party areas',
-        'Scenic Washington setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Dusty',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Dusty team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -4190,200 +4270,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 182 }
+          { name: 'Party Deck', description: 'Group area', capacity: 73 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '91',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Pasco favorites', 'Regional craft beers', 'Washington BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Seattle dogs', 'Salmon', 'Craft beer', 'Coffee drinks'],
+      local: ['Seattle dogs', 'Salmon', 'Craft beer', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Tri-City Dust Devils gear', 'Angels items'] }
+        { location: 'Main concourse', exclusive: ['Tri-City Dust Devils authentic gear', 'Dusty merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Dustys Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Pasco specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Dusty', description: 'Dust devil character appears pregame', category: 'family' },
+        { title: 'Try the Seattle dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Pasco area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '3654 Stadium Way, Pasco, Washington',
+      address: '3654 Gesa Stadium, Pasco, Washington',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1995, event: 'Stadium opens' },
-        { year: 1997, event: 'Angels affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Angels affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Dusty race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Devils Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Dusty', description: 'Dust devil character' },
+      bestExperiences: ['Meeting Dusty', 'Fireworks shows', 'Trying Seattle dogs', 'Rivalry games'],
+      traditions: ['Dusty antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Seattle dogs at Section 116',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Dusty meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Dusty at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -4394,53 +4479,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1951,
     capacity: 6500,
     overview: {
-      description: 'Nat Bailey Stadium in Vancouver, British Columbia, home of the Vancouver Canadians, serves as the Blue Jays High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6500.',
+      description: 'Nat Bailey Stadium in Vancouver, British Columbia, is the home of the Vancouver Canadians, Blue Jays High-A affiliate. This historic venue offers nostalgic baseball with a capacity of 6500 fans. ',
       highlights: [
-        'Blue Jays High-A affiliate',
-        'Historic venue since 1951',
+        'Blue Jays High-A affiliate since 2000',
+        'Historic facility',
+        'Vancouver landmark',
         'Family-friendly atmosphere',
-        'Vancouver community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 6500 seat capacity',
-        'Group party areas',
-        'Scenic British Columbia setting'
+        'Great sightlines from all seats',
+        'Historic ballpark',
+        'Home of Bob Brown Bear',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Bob Brown Bear team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -4448,200 +4533,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 325 }
+          { name: 'Party Deck', description: 'Group area', capacity: 130 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '162',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Vancouver favorites', 'Regional craft beers', 'British Columbia BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Poutine', 'BC salmon', 'Nanaimo bars', 'Canadian beer'],
+      local: ['Poutine', 'BC salmon', 'Nanaimo bars', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Vancouver Canadians gear', 'Blue Jays items'] }
+        { location: 'Main concourse', exclusive: ['Vancouver Canadians authentic gear', 'Bob Brown Bear merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Bob Brown Bears Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Vancouver specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Bob Brown Bear', description: 'Canadian bear appears pregame', category: 'family' },
+        { title: 'Try the Poutine', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Vancouver area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '6500 Stadium Way, Vancouver, British Columbia',
+      address: '6500 Nat Bailey Stadium, Vancouver, British Columbia',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1951, event: 'Stadium opens' },
-        { year: 1953, event: 'Blue Jays affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Blue Jays affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Bob Brown Bear race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Canadians Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Bob Brown Bear', description: 'Canadian bear' },
+      bestExperiences: ['Meeting Bob Brown Bear', 'Fireworks shows', 'Trying Poutine', 'Rivalry games'],
+      traditions: ['Bob Brown Bear antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Poutine at Section 118',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Bob Brown Bear meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Bob Brown Bear at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -4652,53 +4742,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2021,
     capacity: 3850,
     overview: {
-      description: 'ABC Supply Stadium in Beloit, Wisconsin, home of the Beloit Sky Carp, serves as the Marlins High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 3850.',
+      description: 'ABC Supply Stadium in Beloit, Wisconsin, is the home of the Beloit Sky Carp, Marlins High-A affiliate. This brand new facility features modern amenities with intimate seating for 3850 fans. ',
       highlights: [
-        'Marlins High-A affiliate',
-        'Modern facility built in 2021',
+        'Marlins High-A affiliate since 2021',
+        'State-Of-The-Art facility',
+        'Beloit landmark',
         'Family-friendly atmosphere',
-        'Beloit community centerpiece',
-        'Convenient location'
+        'Intimate setting'
       ],
       uniqueFeatures: [
-        'Brand new stadium',
-        'Local food specialties',
-        'Intimate 3850 seat capacity',
-        'Group party areas',
-        'Scenic Wisconsin setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Splash',
+        'Craft beer garden',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2026, description: 'Seating improvements' },
-        { year: 2031, description: 'Concourse renovations' },
-        { year: 2036, description: 'Video board upgrade' }
+        { year: 2031, description: 'Seating improvements' },
+        { year: 2036, description: 'Concourse and concessions renovation' },
+        { year: 2041, description: 'Premium areas upgrade' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
+        shadedConcourses: ['360-degree concourse', 'Limited areas'],
+        indoorAreas: ['Splash team store', 'Concession stands'],
         sunscreenStations: ['Guest services', 'First aid stations']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -4706,200 +4796,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['All-inclusive food and drinks', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 192 }
+          { name: 'Rooftop Deck', description: 'Standing room with bar', capacity: 77 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Drink rails', 'Outfield bar'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Beer Garden',
+          capacity: '96',
+          description: 'Craft beer focus',
+          amenities: ['Local beer selection', 'Reserved seating', 'TVs and games']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Rooftop', tip: 'Social atmosphere', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Beloit favorites', 'Regional craft beers', 'Wisconsin BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Bratwurst', 'Cheese curds', 'Milwaukee beer', 'Frozen custard'],
+      local: ['Bratwurst', 'Cheese curds', 'Milwaukee beer', 'Local craft selections'],
+      healthy: ['Veggie wraps', 'Fresh salads', 'Gluten-free options'],
+      vegetarian: ['Beyond burgers', 'Pizza', 'Cauliflower wings'],
+      glutenFree: ['Dedicated GF stand'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
-        cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        beer: ['New Glarus', 'Lakefront', 'MKE Brewing', 'Domestic options'],
+        wine: false,
+        cocktails: true,
+        localBreweries: ['New Glarus', 'Lakefront', 'MKE Brewing']
       }
     },
     parking: {
       lots: [
-        { name: 'Main Lot', distance: '100 yards', price: '$10', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$7', shadedSpots: false, covered: false }
+        { name: 'Main Lot', distance: '100 yards', price: '$8', shadedSpots: true, covered: false },
+        { name: 'Overflow Lot', distance: '0.25 miles', price: '$5', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Use parking apps'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Dedicated pickup zone',
+        bicycle: 'Bike valet'
       }
     },
     gates: [
       {
-        name: 'Main Gate',
-        location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        name: 'Home Plate Plaza',
+        location: 'Plaza entrance',
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Beloit Sky Carp gear', 'Marlins items'] }
+        { location: 'Team Store Plaza', exclusive: ['Beloit Sky Carp authentic gear', 'Splash merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['All restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: true, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: true, network: 'StadiumWiFi' },
+      chargingStations: ['Throughout concourse'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Splashs Playground',
+          location: 'Left field corner',
+          activities: ['Interactive games', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
       signageAndBraille: true,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
+      accessibleRestrooms: ['Throughout'],
       accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Beloit specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Splash', description: 'Flying fish appears pregame', category: 'family' },
+        { title: 'Try the Bratwurst', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
+        allowedBags: 'Clear bags only',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Drones'],
         metalDetectors: true,
         clearBagPolicy: true
       }
     },
     neighborhood: {
       name: 'Beloit area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Local breweries', 'Food trucks', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Craft beer bars'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '3850 Stadium Way, Beloit, Wisconsin',
+      address: '3850 ABC Supply Stadium, Beloit, Wisconsin',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Dedicated zone',
+        dropoffZone: 'Plaza entrance',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2021, event: 'Stadium opens' },
-        { year: 2023, event: 'Marlins affiliation begins' },
-        { year: 2031, event: 'Major renovations completed' }
+        { year: 2022, event: 'Marlins affiliation established' },
+        { year: 2026, event: 'First championship' },
+        { year: 2031, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Splash race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Carp Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Splash', description: 'Flying fish' },
+      bestExperiences: ['Meeting Splash', 'Fireworks shows', 'Trying Bratwurst', 'Rivalry games'],
+      traditions: ['Splash antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Download the app for deals',
+        'Best Bratwurst at Section 118',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Craft beer garden',
+        'Stadium entrance plaza',
+        'Standing room bar area',
+        'Splash meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Splash at Kids zone',
+        'Team logo at entrance',
+        'Instagram wall'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Happy hour deals',
+        'Season memberships'
       ]
     }
   },
@@ -4910,53 +5005,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1949,
     capacity: 5300,
     overview: {
-      description: 'Veterans Memorial Stadium in Cedar Rapids, Iowa, home of the Cedar Rapids Kernels, serves as the Twins High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5300.',
+      description: 'Veterans Memorial Stadium in Cedar Rapids, Iowa, is the home of the Cedar Rapids Kernels, Twins High-A affiliate. This historic venue offers nostalgic baseball with a capacity of 5300 fans. ',
       highlights: [
-        'Twins High-A affiliate',
-        'Historic venue since 1949',
+        'Twins High-A affiliate since 2000',
+        'Historic facility',
+        'Cedar Rapids landmark',
         'Family-friendly atmosphere',
-        'Cedar Rapids community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5300 seat capacity',
-        'Group party areas',
-        'Scenic Iowa setting'
+        'Great sightlines from all seats',
+        'Historic ballpark',
+        'Home of Mr. Shucks',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Mr. Shucks team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -4964,200 +5059,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 265 }
+          { name: 'Party Deck', description: 'Group area', capacity: 106 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '132',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Cedar Rapids favorites', 'Regional craft beers', 'Iowa BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Pork tenderloin', 'Sweet corn', 'Maid-Rites', "Casey\\'s pizza"],
+      local: ['Pork tenderloin', 'Sweet corn', 'Maid-Rites', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Cedar Rapids Kernels gear', 'Twins items'] }
+        { location: 'Main concourse', exclusive: ['Cedar Rapids Kernels authentic gear', 'Mr. Shucks merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Mr. Shuckss Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Cedar Rapids specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Mr. Shucks', description: 'Corn cob appears pregame', category: 'family' },
+        { title: 'Try the Pork tenderloin', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Cedar Rapids area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5300 Stadium Way, Cedar Rapids, Iowa',
+      address: '5300 Veterans Memorial Stadium, Cedar Rapids, Iowa',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1949, event: 'Stadium opens' },
-        { year: 1951, event: 'Twins affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Twins affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Mr. Shucks race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Kernels Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Mr. Shucks', description: 'Corn cob' },
+      bestExperiences: ['Meeting Mr. Shucks', 'Fireworks shows', 'Trying Pork tenderloin', 'Rivalry games'],
+      traditions: ['Mr. Shucks antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Pork tenderloin at Section 119',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Mr. Shucks meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Mr. Shucks at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -5168,254 +5268,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2000,
     capacity: 7230,
     overview: {
-      description: 'Day Air Ballpark in Dayton, Ohio, home of the Dayton Dragons, serves as the Reds High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7230.',
+      description: 'Day Air Ballpark in Dayton, Ohio, is the home of the Dayton Dragons, Reds High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 7230 fans. ',
       highlights: [
-        'Reds High-A affiliate',
-        'Modern facility built in 2000',
-        'Family-friendly atmosphere',
-        'Dayton community centerpiece',
-        'Convenient location'
+        'Reds High-A affiliate since 2000',
+        'Modern facility',
+        'Dayton landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7230',
-        'Group party areas',
-        'Scenic Ohio setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Heater and Gem',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Heater and Gem team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 361 }
+          { name: 'Party Deck', description: 'Group area', capacity: 144 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '180',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Dayton favorites', 'Regional craft beers', 'Ohio BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Cincinnati chili', 'Pierogies', 'Stadium mustard', 'Buckeye candy'],
+      local: ['Cincinnati chili', 'Pierogies', 'Stadium mustard', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Great Lakes', 'Platform', "Fat Head\\'s", 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Great Lakes', 'Platform', "Fat Head\\'s"]
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Dayton Dragons gear', 'Reds items'] }
+        { location: 'Main concourse', exclusive: ['Dayton Dragons authentic gear', 'Heater and Gem merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Heater and Gems Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Dayton specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Heater and Gem', description: 'Dragon duo appears pregame', category: 'family' },
+        { title: 'Try the Cincinnati chili', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Dayton area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7230 Stadium Way, Dayton, Ohio',
+      address: '7230 Day Air Ballpark, Dayton, Ohio',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2000, event: 'Stadium opens' },
-        { year: 2002, event: 'Reds affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2001, event: 'Reds affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Heater and Gem race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Dragons Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Heater and Gem', description: 'Dragon duo' },
+      bestExperiences: ['Meeting Heater and Gem', 'Fireworks shows', 'Trying Cincinnati chili', 'Rivalry games'],
+      traditions: ['Heater and Gem antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Cincinnati chili at Section 100',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Heater and Gem meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Heater and Gem at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -5426,53 +5531,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 8100,
     overview: {
-      description: 'Parkview Field in Fort Wayne, Indiana, home of the Fort Wayne TinCaps, serves as the Padres High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 8100.',
+      description: 'Parkview Field in Fort Wayne, Indiana, is the home of the Fort Wayne TinCaps, Padres High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 8100 fans. ',
       highlights: [
-        'Padres High-A affiliate',
-        'Modern facility built in 2009',
-        'Family-friendly atmosphere',
-        'Fort Wayne community centerpiece',
-        'Convenient location'
+        'Padres High-A affiliate since 2009',
+        'Modern facility',
+        'Fort Wayne landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 8100',
-        'Group party areas',
-        'Scenic Indiana setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Johnny',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2024, description: 'Video board upgrade' }
+        { year: 2019, description: 'LED lighting upgrade' },
+        { year: 2024, description: 'Concourse and concessions renovation' },
+        { year: 2029, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['Suite level', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Suites and club seats'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Club level'],
+        indoorAreas: ['Johnny team store', 'Club lounge'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -5480,200 +5585,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 405 }
+          { name: 'Party Deck', description: 'Group area', capacity: 162 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Lower level corners'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '202',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Fort Wayne favorites', 'Regional craft beers', 'Indiana BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Pork tenderloin', 'Sugar cream pie', 'Corn dogs', 'Indianapolis beer'],
+      local: ['Pork tenderloin', 'Sugar cream pie', 'Corn dogs', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'General Parking', distance: '200 yards', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
-        openTime: '1 hour before first pitch'
+        bestFor: ['All seating', 'ADA accessible'],
+        openTime: '90 minutes early'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'VIP Entrance',
+        location: 'Club level access',
+        bestFor: ['Premium seating', 'Season ticket holders'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Fort Wayne TinCaps gear', 'Padres items'] }
+        { location: 'Main concourse', exclusive: ['Fort Wayne TinCaps authentic gear', 'Johnny merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
-      atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      firstAid: ['Behind home plate', 'Club level'],
+      babyChanging: ['Family restrooms'],
+      atms: ['Multiple locations', 'Concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Johnnys Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Multiple locations']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Fort Wayne specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Johnny', description: 'Apple character appears pregame', category: 'family' },
+        { title: 'Try the Pork tenderloin', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
-        gatesOpen: '1 hour before',
+        gatesOpen: '90 minutes early',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Fort Wayne area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '8100 Stadium Way, Fort Wayne, Indiana',
+      address: '8100 Parkview Field, Fort Wayne, Indiana',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Heavy on game days',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Common postgame',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2009, event: 'Stadium opens' },
-        { year: 2011, event: 'Padres affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2010, event: 'Padres affiliation established' },
+        { year: 2014, event: 'First championship' },
+        { year: 2020, event: 'Attendance record set' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Johnny race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'TinCaps Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Electric on weekends',
+      mascot: { name: 'Johnny', description: 'Apple character' },
+      bestExperiences: ['Meeting Johnny', 'Fireworks shows', 'Trying Pork tenderloin', 'Rivalry games'],
+      traditions: ['Johnny antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Pork tenderloin at Section 102',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Parking lot traffic postgame',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Johnny meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Johnny at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -5684,53 +5794,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2007,
     capacity: 5500,
     overview: {
-      description: 'Dow Diamond in Midland, Michigan, home of the Great Lakes Loons, serves as the Dodgers High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5500.',
+      description: 'Dow Diamond in Midland, Michigan, is the home of the Great Lakes Loons, Dodgers High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 5500 fans. ',
       highlights: [
-        'Dodgers High-A affiliate',
-        'Modern facility built in 2007',
+        'Dodgers High-A affiliate since 2007',
+        'Modern facility',
+        'Midland landmark',
         'Family-friendly atmosphere',
-        'Midland community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5500 seat capacity',
-        'Group party areas',
-        'Scenic Michigan setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Rall E. Camel',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2022, description: 'Concourse and concessions renovation' },
+        { year: 2027, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Rall E. Camel team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -5738,200 +5848,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 275 }
+          { name: 'Party Deck', description: 'Group area', capacity: 110 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '137',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Midland favorites', 'Regional craft beers', 'Michigan BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Mackinac fudge'],
+      local: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Founders', "Bell\\'s", 'Shorts', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Founders', "Bell\\'s", 'Shorts']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Great Lakes Loons gear', 'Dodgers items'] }
+        { location: 'Main concourse', exclusive: ['Great Lakes Loons authentic gear', 'Rall E. Camel merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Rall E. Camels Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Midland specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Rall E. Camel', description: 'Camel on skates appears pregame', category: 'family' },
+        { title: 'Try the Coney dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Midland area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5500 Stadium Way, Midland, Michigan',
+      address: '5500 Dow Diamond, Midland, Michigan',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2007, event: 'Stadium opens' },
-        { year: 2009, event: 'Dodgers affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2008, event: 'Dodgers affiliation established' },
+        { year: 2012, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Rall E. Camel race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Loons Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Rall E. Camel', description: 'Camel on skates' },
+      bestExperiences: ['Meeting Rall E. Camel', 'Fireworks shows', 'Trying Coney dogs', 'Rivalry games'],
+      traditions: ['Rall E. Camel antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Coney dogs at Section 103',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Rall E. Camel meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Rall E. Camel at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -5942,254 +6057,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2003,
     capacity: 7273,
     overview: {
-      description: 'Classic Park in Eastlake, Ohio, home of the Lake County Captains, serves as the Guardians High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7273.',
+      description: 'Classic Park in Eastlake, Ohio, is the home of the Lake County Captains, Guardians High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 7273 fans. ',
       highlights: [
-        'Guardians High-A affiliate',
-        'Modern facility built in 2003',
-        'Family-friendly atmosphere',
-        'Eastlake community centerpiece',
-        'Convenient location'
+        'Guardians High-A affiliate since 2003',
+        'Modern facility',
+        'Eastlake landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7273',
-        'Group party areas',
-        'Scenic Ohio setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Skipper',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Skipper team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 363 }
+          { name: 'Party Deck', description: 'Group area', capacity: 145 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '181',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Eastlake favorites', 'Regional craft beers', 'Ohio BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Cincinnati chili', 'Pierogies', 'Stadium mustard', 'Buckeye candy'],
+      local: ['Cincinnati chili', 'Pierogies', 'Stadium mustard', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Great Lakes', 'Platform', "Fat Head\\'s", 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Great Lakes', 'Platform', "Fat Head\\'s"]
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Lake County Captains gear', 'Guardians items'] }
+        { location: 'Main concourse', exclusive: ['Lake County Captains authentic gear', 'Skipper merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Skippers Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Eastlake specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Skipper', description: 'Sea captain appears pregame', category: 'family' },
+        { title: 'Try the Cincinnati chili', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Eastlake area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7273 Stadium Way, Eastlake, Ohio',
+      address: '7273 Classic Park, Eastlake, Ohio',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2003, event: 'Stadium opens' },
-        { year: 2005, event: 'Guardians affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2004, event: 'Guardians affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Skipper race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Captains Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Skipper', description: 'Sea captain' },
+      bestExperiences: ['Meeting Skipper', 'Fireworks shows', 'Trying Cincinnati chili', 'Rivalry games'],
+      traditions: ['Skipper antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Cincinnati chili at Section 108',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Skipper meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Skipper at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -6200,53 +6320,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1996,
     capacity: 11000,
     overview: {
-      description: 'Jackson Field in Lansing, Michigan, home of the Lansing Lugnuts, serves as the Athletics High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 11000.',
+      description: 'Jackson Field in Lansing, Michigan, is the home of the Lansing Lugnuts, Athletics High-A affiliate. This updated facility maintains its classic charm with a capacity of 11000 fans. ',
       highlights: [
-        'Athletics High-A affiliate',
-        'Historic venue since 1996',
-        'Family-friendly atmosphere',
-        'Lansing community centerpiece',
-        'Convenient location'
+        'Athletics High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Lansing landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 11000',
-        'Group party areas',
-        'Scenic Michigan setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Big Lug',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['Suite level', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Suites and club seats'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Club level'],
+        indoorAreas: ['Big Lug team store', 'Club lounge'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -6254,200 +6374,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Private entrance'],
             access: 'Behind home plate'
           }
         ],
         suites: {
-          levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          levels: ['Two suite levels'],
+          amenities: ['Catering options', 'Private restrooms', 'In-suite attendant']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 550 }
+          { name: 'Party Deck', description: 'Group area', capacity: 220 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Lower level corners'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '275',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Lansing favorites', 'Regional craft beers', 'Michigan BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Mackinac fudge'],
+      local: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Founders', "Bell\\'s", 'Shorts', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Founders', "Bell\\'s", 'Shorts']
       }
     },
     parking: {
       lots: [
-        { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'VIP Lot', distance: '50 yards', price: '$5', shadedSpots: false, covered: false },
+        { name: 'General Parking', distance: '200 yards', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
-        publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        publicTransit: ['Light rail'],
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
-        openTime: '1 hour before first pitch'
+        bestFor: ['All seating', 'General admission'],
+        openTime: '90 minutes early'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'VIP Entrance',
+        location: 'Club level access',
+        bestFor: ['Premium seating', 'Season ticket holders'],
+        openTime: '2 hours early'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Lansing Lugnuts gear', 'Athletics items'] }
+        { location: 'Main concourse', exclusive: ['Lansing Lugnuts authentic gear', 'Big Lug merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
-      atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      firstAid: ['Behind home plate', 'Club level'],
+      babyChanging: ['Family restrooms'],
+      atms: ['Multiple locations', 'Concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Big Lugs Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Multiple locations']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '50+ spaces'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Lansing specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Big Lug', description: 'Giant nut and bolt appears pregame', category: 'family' },
+        { title: 'Try the Coney dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
-        gatesOpen: '1 hour before',
+        gatesOpen: '90 minutes early',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Lansing area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '11000 Stadium Way, Lansing, Michigan',
+      address: '11000 Jackson Field, Lansing, Michigan',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Heavy on game days',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Common postgame',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1996, event: 'Stadium opens' },
-        { year: 1998, event: 'Athletics affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Athletics affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Attendance record set' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Big Lug race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Lugnuts Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Electric on weekends',
+      mascot: { name: 'Big Lug', description: 'Giant nut and bolt' },
+      bestExperiences: ['Meeting Big Lug', 'Fireworks shows', 'Trying Coney dogs', 'Rivalry games'],
+      traditions: ['Big Lug antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Coney dogs at Section 108',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Parking lot traffic postgame',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Big Lug meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Big Lug at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -6458,254 +6583,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2002,
     capacity: 7500,
     overview: {
-      description: 'Dozer Park in Peoria, Illinois, home of the Peoria Chiefs, serves as the Cardinals High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7500.',
+      description: 'Dozer Park in Peoria, Illinois, is the home of the Peoria Chiefs, Cardinals High-A affiliate. This contemporary ballpark combines modern conveniences with a capacity of 7500 fans. ',
       highlights: [
-        'Cardinals High-A affiliate',
-        'Modern facility built in 2002',
-        'Family-friendly atmosphere',
-        'Peoria community centerpiece',
-        'Convenient location'
+        'Cardinals High-A affiliate since 2002',
+        'Modern facility',
+        'Peoria landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7500',
-        'Group party areas',
-        'Scenic Illinois setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Homer',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Covered concourse provides relief',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Homer team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'First base line lower'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Party Deck', description: 'Group area', capacity: 375 }
+          { name: 'Party Deck', description: 'Group area', capacity: 150 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '187',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Peoria favorites', 'Regional craft beers', 'Illinois BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
-      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
+      signature: ['Chicago dogs', 'Italian beef', 'Deep dish pizza', 'Garrett popcorn'],
+      local: ['Chicago dogs', 'Italian beef', 'Deep dish pizza', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
+      kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Dippin Dots'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
         available: false,
-        restrictions: 'Limited availability',
-        tip: 'Arrive early for best parking'
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'ADA accessible'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Peoria Chiefs gear', 'Cardinals items'] }
+        { location: 'Main concourse', exclusive: ['Peoria Chiefs authentic gear', 'Homer merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Homers Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Speed pitch', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'All gates ADA compliant',
+        elevators: ['Main entrance']
       },
       assistiveListening: true,
-      signageAndBraille: true,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Peoria specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Homer', description: 'Chief character appears pregame', category: 'family' },
+        { title: 'Try the Chicago dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Peoria area',
-      description: 'Urban setting with dining options',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7500 Stadium Way, Peoria, Illinois',
+      address: '7500 Dozer Park, Peoria, Illinois',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 2002, event: 'Stadium opens' },
-        { year: 2004, event: 'Cardinals affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2003, event: 'Cardinals affiliation established' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Homer race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Chiefs Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Homer', description: 'Chief character' },
+      bestExperiences: ['Meeting Homer', 'Fireworks shows', 'Trying Chicago dogs', 'Rivalry games'],
+      traditions: ['Homer antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Chicago dogs at Section 112',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Homer meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Homer at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -6716,254 +6846,259 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1931,
     capacity: 7140,
     overview: {
-      description: 'Modern Woodmen Park in Davenport, Iowa, home of the Quad Cities River Bandits, serves as the Royals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7140.',
+      description: 'Modern Woodmen Park in Davenport, Iowa, is the home of the Quad Cities River Bandits, Royals High-A affiliate. This historic venue offers nostalgic baseball with a capacity of 7140 fans. ',
       highlights: [
-        'Royals High-A affiliate',
-        'Historic venue since 1931',
-        'Family-friendly atmosphere',
-        'Davenport community centerpiece',
-        'Convenient location'
+        'Royals High-A affiliate since 2000',
+        'Historic facility',
+        'Davenport landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 7140',
-        'Group party areas',
-        'Scenic Iowa setting'
+        'Great sightlines from all seats',
+        'Historic ballpark',
+        'Home of Rascal',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Rascal team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
       premiumSeating: {
         clubs: [
           {
-            name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            name: 'Home Plate Club',
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 357 }
+          { name: 'Party Deck', description: 'Group area', capacity: 142 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '178',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Davenport favorites', 'Regional craft beers', 'Iowa BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Pork tenderloin', 'Sweet corn', 'Maid-Rites', "Casey\\'s pizza"],
+      local: ['Pork tenderloin', 'Sweet corn', 'Maid-Rites', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Local craft beer', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'Side Gate',
+        location: 'First base side',
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Quad Cities River Bandits gear', 'Royals items'] }
+        { location: 'Main concourse', exclusive: ['Quad Cities River Bandits authentic gear', 'Rascal merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Rascals Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Davenport specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Rascal', description: 'Raccoon bandit appears pregame', category: 'family' },
+        { title: 'Try the Pork tenderloin', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Davenport area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '7140 Stadium Way, Davenport, Iowa',
+      address: '7140 Modern Woodmen Park, Davenport, Iowa',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1931, event: 'Stadium opens' },
-        { year: 1933, event: 'Royals affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Royals affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Rascal race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Bandits Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Intimate and friendly',
+      mascot: { name: 'Rascal', description: 'Raccoon bandit' },
+      bestExperiences: ['Meeting Rascal', 'Fireworks shows', 'Trying Pork tenderloin', 'Rivalry games'],
+      traditions: ['Rascal antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Pork tenderloin at Section 113',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Rascal meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Rascal at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -6974,53 +7109,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1987,
     capacity: 5000,
     overview: {
-      description: 'Four Winds Field in South Bend, Indiana, home of the South Bend Cubs, serves as the Cubs High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5000.',
+      description: 'Four Winds Field in South Bend, Indiana, is the home of the South Bend Cubs, Cubs High-A affiliate. This historic venue offers nostalgic baseball with a capacity of 5000 fans. ',
       highlights: [
-        'Cubs High-A affiliate',
-        'Historic venue since 1987',
+        'Cubs High-A affiliate since 2000',
+        'Historic facility',
+        'South Bend landmark',
         'Family-friendly atmosphere',
-        'South Bend community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5000 seat capacity',
-        'Group party areas',
-        'Scenic Indiana setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Stu',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Stu team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['General admission', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -7028,200 +7163,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 250 }
+          { name: 'Party Deck', description: 'Group area', capacity: 100 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '125',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['South Bend favorites', 'Regional craft beers', 'Indiana BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Pork tenderloin', 'Sugar cream pie', 'Corn dogs', 'Indianapolis beer'],
+      local: ['Pork tenderloin', 'Sugar cream pie', 'Corn dogs', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['Local craft beer', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['Local craft beer']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['South Bend Cubs gear', 'Cubs items'] }
+        { location: 'Main concourse', exclusive: ['South Bend Cubs authentic gear', 'Stu merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Stus Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['Designated areas'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
-      accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleRestrooms: ['Throughout'],
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample South Bend specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Stu', description: 'Bear cub appears pregame', category: 'family' },
+        { title: 'Try the Pork tenderloin', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'South Bend area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5000 Stadium Way, South Bend, Indiana',
+      address: '5000 Four Winds Field, South Bend, Indiana',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1987, event: 'Stadium opens' },
-        { year: 1989, event: 'Cubs affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Cubs affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Stu race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Cubs Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Stu', description: 'Bear cub' },
+      bestExperiences: ['Meeting Stu', 'Fireworks shows', 'Trying Pork tenderloin', 'Rivalry games'],
+      traditions: ['Stu antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Pork tenderloin at Section 115',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Stu meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Stu at Kids zone',
+        'Team logo at entrance',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -7232,53 +7372,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1994,
     capacity: 9281,
     overview: {
-      description: 'LMCU Ballpark in Comstock Park, Michigan, home of the West Michigan Whitecaps, serves as the Tigers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 9281.',
+      description: 'LMCU Ballpark in Comstock Park, Michigan, is the home of the West Michigan Whitecaps, Tigers High-A affiliate. This updated facility maintains its classic charm with a capacity of 9281 fans. ',
       highlights: [
-        'Tigers High-A affiliate',
-        'Historic venue since 1994',
-        'Family-friendly atmosphere',
-        'Comstock Park community centerpiece',
-        'Convenient location'
+        'Tigers High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Comstock Park landmark',
+        'Great gameday atmosphere',
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Large capacity of 9281',
-        'Group party areas',
-        'Scenic Michigan setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Crash',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Club level'],
+        afternoon: ['Suite level', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Club level overhang', 'Suites and club seats'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Indoor club areas available'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Club level'],
+        indoorAreas: ['Crash team store', 'Club lounge'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -7286,200 +7426,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Champions Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 464 }
+          { name: 'Party Deck', description: 'Group area', capacity: 185 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Lawn seating', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Lower level corners'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '232',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Lawn', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Comstock Park favorites', 'Regional craft beers', 'Michigan BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Mackinac fudge'],
+      local: ['Coney dogs', 'Better Made chips', 'Faygo pop', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
+        beer: ['Founders', "Bell\\'s", 'Shorts', 'Domestic options'],
         wine: true,
-        cocktails: true,
-        localBreweries: ['Regional breweries featured']
+        cocktails: false,
+        localBreweries: ['Founders', "Bell\\'s", 'Shorts']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'General Parking', distance: '200 yards', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
-        openTime: '1 hour before first pitch'
+        bestFor: ['All seating', 'General admission'],
+        openTime: '90 minutes early'
       },
       {
-        name: 'VIP Gate',
-        location: 'Club entrance',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        name: 'VIP Entrance',
+        location: 'Club level access',
+        bestFor: ['Premium seating', 'Season ticket holders'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['West Michigan Whitecaps gear', 'Tigers items'] }
+        { location: 'Main concourse', exclusive: ['West Michigan Whitecaps authentic gear', 'Crash merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
-      atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      firstAid: ['Behind home plate', 'Club level'],
+      babyChanging: ['Family restrooms'],
+      atms: ['Multiple locations', 'Concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Crashs Playground',
+          location: 'Beyond outfield',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Multiple locations']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Comstock Park specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Walk around the park before the game', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Crash', description: 'Lake monster appears pregame', category: 'family' },
+        { title: 'Try the Coney dogs', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
-        gatesOpen: '1 hour before',
+        gatesOpen: '90 minutes early',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Comstock Park area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '9281 Stadium Way, Comstock Park, Michigan',
+      address: '9281 LMCU Ballpark, Comstock Park, Michigan',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Heavy on game days',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Common postgame',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1994, event: 'Stadium opens' },
-        { year: 1996, event: 'Tigers affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Tigers affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Attendance record set' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Crash race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
-      atmosphere: 'Electric atmosphere',
-      mascot: { name: 'Whitecaps Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      atmosphere: 'Electric on weekends',
+      mascot: { name: 'Crash', description: 'Lake monster' },
+      bestExperiences: ['Meeting Crash', 'Fireworks shows', 'Trying Coney dogs', 'Rivalry games'],
+      traditions: ['Crash antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Walk around the park before the game',
+        'Join the fan club',
+        'Best Coney dogs at Section 119',
+        'Pregame happy hour'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Parking lot traffic postgame',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Park entrance sign',
+        'Picnic area pregame',
+        'Crash meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Park entrance sign',
+        'With Crash at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Lawn seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   },
@@ -7490,53 +7635,53 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1995,
     capacity: 5500,
     overview: {
-      description: 'Neuroscience Group Field in Grand Chute, Wisconsin, home of the Wisconsin Timber Rattlers, serves as the Brewers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5500.',
+      description: 'Neuroscience Group Field in Grand Chute, Wisconsin, is the home of the Wisconsin Timber Rattlers, Brewers High-A affiliate. This updated facility maintains its classic charm with a capacity of 5500 fans. ',
       highlights: [
-        'Brewers High-A affiliate',
-        'Historic venue since 1995',
+        'Brewers High-A affiliate since 2000',
+        'Renovated Classic facility',
+        'Grand Chute landmark',
         'Family-friendly atmosphere',
-        'Grand Chute community centerpiece',
-        'Convenient location'
+        'Spacious concourses'
       ],
       uniqueFeatures: [
-        'Well-maintained facility',
-        'Local food specialties',
-        'Intimate 5500 seat capacity',
-        'Group party areas',
-        'Scenic Wisconsin setting'
+        'Great sightlines from all seats',
+        'Modern amenities',
+        'Home of Whiffer and Fang',
+        'Classic concessions',
+        'Kids zone and playground'
       ],
       renovations: [
-        { year: 2015, description: 'Seating improvements' },
-        { year: 2020, description: 'Concourse renovations' },
-        { year: 2023, description: 'Video board upgrade' }
+        { year: 2018, description: 'LED lighting upgrade' },
+        { year: 2020, description: 'Concourse and concessions renovation' },
+        { year: 2023, description: 'Video board installation' }
       ]
     },
     shadeGuide: {
       bestShadedSections: {
-        morning: ['Third base side', 'Sections under overhang'],
-        afternoon: ['First base side upper deck', 'Club level'],
-        evening: ['Most sections after sunset']
+        morning: ['Third base side sections', 'Upper rows'],
+        afternoon: ['First base upper deck', 'Behind home plate upper'],
+        evening: ['Most seats after 6:30pm']
       },
-      coveredSeating: ['Club level', 'Upper deck overhang', 'Premium boxes'],
+      coveredSeating: ['Limited coverage', 'Picnic pavilions'],
       shadeTips: [
-        'Third base side recommended for day games',
-        'Upper deck provides coverage',
-        'Evening games most comfortable',
-        'Limited covered seating'
+        'Check weather forecast before choosing seats',
+        'Find shade under stands',
+        'Afternoon games can be pleasant',
+        'Weather can change quickly'
       ],
       sunProtection: {
-        shadedConcourses: ['Main concourse', 'Upper level walkways'],
-        indoorAreas: ['Team store', 'Club lounges'],
-        sunscreenStations: ['Guest services', 'First aid stations']
+        shadedConcourses: ['Main concourse', 'Limited areas'],
+        indoorAreas: ['Whiffer and Fang team store', 'Concession stands'],
+        sunscreenStations: ['Guest services', 'Fan assistance']
       },
-      worstSunExposure: ['First base side lower deck', 'Outfield bleachers'],
+      worstSunExposure: ['Outfield bleachers', 'Field level seats'],
       monthlyPatterns: [
-        { month: 'April', avgTemp: 58, avgHumidity: 62, rainChance: 35, typicalConditions: 'Spring weather', shadeTip: 'Variable conditions' },
-        { month: 'May', avgTemp: 68, avgHumidity: 65, rainChance: 40, typicalConditions: 'Warming up', shadeTip: 'Comfortable evenings' },
-        { month: 'June', avgTemp: 77, avgHumidity: 68, rainChance: 35, typicalConditions: 'Summer begins', shadeTip: 'Shade helpful' },
-        { month: 'July', avgTemp: 82, avgHumidity: 70, rainChance: 35, typicalConditions: 'Hot and humid', shadeTip: 'Seek covered areas' },
-        { month: 'August', avgTemp: 80, avgHumidity: 72, rainChance: 35, typicalConditions: 'Late summer heat', shadeTip: 'Evening games best' },
-        { month: 'September', avgTemp: 72, avgHumidity: 68, rainChance: 30, typicalConditions: 'Cooling down', shadeTip: 'Pleasant baseball weather' }
+        { month: 'April', avgTemp: 60, avgHumidity: 55, rainChance: 35, typicalConditions: 'Cool and sometimes rainy, layer up', shadeTip: 'Bring layers and rain gear' },
+        { month: 'May', avgTemp: 70, avgHumidity: 60, rainChance: 25, typicalConditions: 'Perfect baseball weather, mild temperatures', shadeTip: 'Ideal conditions, any seat works' },
+        { month: 'June', avgTemp: 80, avgHumidity: 65, rainChance: 20, typicalConditions: 'Warm days, comfortable evenings', shadeTip: 'Seek shade for day games' },
+        { month: 'July', avgTemp: 85, avgHumidity: 70, rainChance: 30, typicalConditions: 'Hot and humid, stay hydrated', shadeTip: 'Choose covered seating if possible' },
+        { month: 'August', avgTemp: 85, avgHumidity: 70, rainChance: 35, typicalConditions: 'Peak summer heat, evening games preferred', shadeTip: 'Avoid direct sun exposure' },
+        { month: 'September', avgTemp: 75, avgHumidity: 60, rainChance: 25, typicalConditions: 'Cooling down, great for afternoon games', shadeTip: 'Perfect weather for any seating' }
       ]
     },
     seatingGuide: {
@@ -7544,200 +7689,205 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
         clubs: [
           {
             name: 'Home Plate Club',
-            perks: ['Padded seats', 'Wait service', 'Climate control'],
+            perks: ['Wait service', 'Climate controlled', 'Premium parking'],
             access: 'Behind home plate'
           }
         ],
         suites: {
           levels: ['Suite level'],
-          amenities: ['Catering', 'Private restrooms', 'HVAC']
+          amenities: ['Catering options', 'Private restrooms', 'HDTV']
         },
         specialAreas: [
-          { name: 'Picnic Area', description: 'Group area', capacity: 275 }
+          { name: 'Party Deck', description: 'Group area', capacity: 110 }
         ]
       },
-      budgetOptions: ['General admission', 'Bleacher seats', 'Standing room'],
-      familySections: ['Sections 201-205', 'Family zone'],
-      standingRoom: ['Concourse', 'Outfield areas'],
+      budgetOptions: ['Bleacher seats', 'Standing room', 'Group rates'],
+      familySections: ['Family deck', 'Kids zone nearby'],
+      standingRoom: ['Concourse', 'First base line'],
       partyAreas: [
         {
-          name: 'Group Pavilion',
-          capacity: '150',
-          description: 'All-inclusive group area',
-          amenities: ['Buffet', 'Private bar', 'Covered seating']
+          name: 'Picnic Pavilion',
+          capacity: '137',
+          description: 'All-inclusive packages',
+          amenities: ['Buffet', 'Reserved seating', 'Covered area']
         }
       ],
       tips: [
-        { section: 'Behind home plate', tip: 'Best views of the action', category: 'view' },
-        { section: 'Third base side', tip: 'Better shade for day games', category: 'shade' },
-        { section: 'Outfield', tip: 'Budget-friendly options', category: 'value' },
-        { section: 'Club level', tip: 'Premium amenities', category: 'experience' }
+        { section: 'Behind home plate', tip: 'Best views but most expensive', category: 'view' },
+        { section: 'Third base line', tip: 'Check weather forecast before choosing seats', category: 'shade' },
+        { section: 'Bleachers', tip: 'Best value for families', category: 'value' },
+        { section: 'Upper deck', tip: 'Great for groups', category: 'experience' }
       ]
     },
     concessions: {
-      signature: ['Stadium hot dogs', 'Local specialty', 'Signature nachos'],
-      local: ['Grand Chute favorites', 'Regional craft beers', 'Wisconsin BBQ'],
-      healthy: ['Grilled chicken', 'Salads', 'Fresh fruit'],
-      vegetarian: ['Veggie burgers', 'Pizza', 'Salads'],
-      glutenFree: ['GF options available'],
+      signature: ['Bratwurst', 'Cheese curds', 'Milwaukee beer', 'Frozen custard'],
+      local: ['Bratwurst', 'Cheese curds', 'Milwaukee beer', 'Local craft selections'],
+      healthy: ['Grilled chicken', 'Fresh salads', 'Fruit cups'],
+      vegetarian: ['Veggie burgers', 'Pizza', 'Nachos'],
+      glutenFree: ['Limited options'],
       kidsFriendly: ['Hot dogs', 'Chicken tenders', 'Ice cream'],
       alcohol: {
-        beer: ['Domestic beers', 'Local craft selection'],
-        wine: true,
+        beer: ['New Glarus', 'Lakefront', 'MKE Brewing', 'Domestic options'],
+        wine: false,
         cocktails: false,
-        localBreweries: ['Regional breweries featured']
+        localBreweries: ['New Glarus', 'Lakefront', 'MKE Brewing']
       }
     },
     parking: {
       lots: [
         { name: 'Main Lot', distance: '100 yards', price: '$5', shadedSpots: false, covered: false },
-        { name: 'Overflow Lot', distance: '0.25 miles', price: '$3', shadedSpots: false, covered: false }
+        { name: 'Overflow Lot', distance: '0.25 miles', price: 'Free', shadedSpots: false, covered: false }
       ],
       streetParking: {
-        available: true,
-        restrictions: 'Metered parking',
-        tip: 'Arrive early for best parking'
+        available: false,
+        restrictions: 'Residential permit required',
+        tip: 'Arrive early for best spots'
       },
       alternativeTransport: {
         publicTransit: ['Local bus service'],
-        rideShare: 'Uber/Lyft pickup zone',
-        bicycle: 'Bike racks available'
+        rideShare: 'Street pickup',
+        bicycle: 'Bike racks'
       }
     },
     gates: [
       {
         name: 'Main Gate',
         location: 'Home plate entrance',
-        bestFor: ['All seating areas'],
+        bestFor: ['All seating', 'General admission'],
         openTime: '1 hour before first pitch'
       },
       {
         name: 'Side Gate',
         location: 'First base side',
-        bestFor: ['Premium seating', 'Suites'],
-        openTime: '90 minutes before first pitch'
+        bestFor: ['Premium seating', 'Groups'],
+        openTime: 'With main gates'
       }
     ],
     amenities: {
       merchandise: [
-        { location: 'Main concourse', exclusive: ['Wisconsin Timber Rattlers gear', 'Brewers items'] }
+        { location: 'Main concourse', exclusive: ['Wisconsin Timber Rattlers authentic gear', 'Whiffer and Fang merchandise'] }
       ],
-      firstAid: ['Behind home plate', 'Third base concourse'],
-      babyChanging: ['All family restrooms'],
+      firstAid: ['Behind home plate', 'Guest services'],
+      babyChanging: ['Family restrooms'],
       atms: ['Main entrance', 'Concourse'],
-      wifi: { available: false, network: 'Stadium_WiFi' },
-      chargingStations: ['Club level', 'Main concourse'],
+      wifi: { available: false, network: '' },
+      chargingStations: ['Club level'],
       kidZones: [
         {
-          name: 'Fun Zone',
-          location: 'Left field',
-          activities: ['Playground', 'Games', 'Face painting']
+          name: 'Whiffer and Fangs Playground',
+          location: 'Left field corner',
+          activities: ['Playground', 'Batting cages', 'Face painting']
         }
       ]
     },
     accessibility: {
       wheelchairAccess: {
         available: true,
-        sections: ['All levels have ADA seating'],
-        entrance: 'All gates are accessible',
-        elevators: ['Available at main entrance']
+        sections: ['All levels via elevators'],
+        entrance: 'Main gate accessible',
+        elevators: ['Main entrance']
       },
-      assistiveListening: true,
-      signageAndBraille: true,
+      assistiveListening: false,
+      signageAndBraille: false,
       serviceAnimals: true,
       companionSeats: true,
       accessibleRestrooms: ['Every level'],
-      accessibleConcessions: ['All stands'],
-      parkingSpaces: 'Designated ADA parking'
+      accessibleConcessions: ['Main concourse'],
+      parkingSpaces: '20+ designated spots'
     },
     gameDay: {
       tips: [
-        { title: 'Arrive early', description: 'Parking fills up quickly', category: 'arrival' },
-        { title: 'Bring sunscreen', description: 'Recommended for afternoon games', category: 'weather' },
-        { title: 'Try local food', description: 'Sample Grand Chute specialties', category: 'food' },
-        { title: 'Kids activities', description: 'Fun Zone opens early', category: 'family' }
+        { title: 'Check out the team store for exclusive merchandise', description: 'Insider tip', category: 'arrival' },
+        { title: 'Meet Whiffer and Fang', description: 'Rattlesnake duo appears pregame', category: 'family' },
+        { title: 'Try the Bratwurst', description: 'Local favorite', category: 'food' },
+        { title: 'Happy hour', description: 'Thursdays', category: 'experience' }
       ],
       typicalSchedule: {
         gatesOpen: '1 hour before',
         battingPractice: 'Select dates',
-        firstPitch: '6:35 PM weekdays',
-        rushHours: ['30 minutes before first pitch']
+        firstPitch: '6:35 PM',
+        rushHours: ['30 min before game']
       },
       security: {
-        allowedBags: 'Small bags and purses',
-        prohibitedItems: ['Outside food/drink', 'Weapons', 'Drones'],
-        metalDetectors: true,
+        allowedBags: 'Small bags',
+        prohibitedItems: ['Outside food/drinks', 'Weapons', 'Professional cameras'],
+        metalDetectors: false,
         clearBagPolicy: false
       }
     },
     neighborhood: {
       name: 'Grand Chute area',
-      description: 'Traditional ballpark neighborhood',
-      beforeGame: ['Local restaurants', 'Sports bars', 'Parks'],
-      afterGame: ['Nightlife district', 'Family restaurants'],
-      radius: '0.5 mile walk'
+      description: 'Suburban location with nearby amenities',
+      beforeGame: ['Sports bars', 'Restaurants', 'Nearby parks'],
+      afterGame: ['Family restaurants', 'Local favorites'],
+      radius: 'Short drive'
     },
     transportation: {
-      address: '5500 Stadium Way, Grand Chute, Wisconsin',
+      address: '5500 Neuroscience Group Field, Grand Chute, Wisconsin',
       publicTransit: {
         bus: [
           { routes: ['Local routes'], stops: ['Stadium stop'] }
         ]
       },
       driving: {
-        majorRoutes: ['Interstate access', 'State highways'],
-        typicalTraffic: 'Moderate on game days',
-        bestApproach: 'From downtown via main roads'
+        majorRoutes: ['Highway access'],
+        typicalTraffic: 'Moderate',
+        bestApproach: 'Follow stadium signs'
       },
       rideShare: {
-        pickupZone: 'Designated area near main gate',
-        dropoffZone: 'Main entrance',
-        surgePricing: 'Common after games',
-        alternativeTip: 'Walk to nearby streets for better rates'
+        pickupZone: 'Main gate area',
+        dropoffZone: 'Main gate',
+        surgePricing: 'Occasional',
+        alternativeTip: 'Schedule in advance'
       }
     },
     history: {
       timeline: [
         { year: 1995, event: 'Stadium opens' },
-        { year: 1997, event: 'Brewers affiliation begins' },
-        { year: 2020, event: 'Major renovations completed' }
+        { year: 2000, event: 'Brewers affiliation begins' },
+        { year: 2010, event: 'First championship' },
+        { year: 2020, event: 'Fan experience upgrades' }
       ],
       traditions: [
-        { name: 'Seventh inning stretch', description: 'Local traditions' },
-        { name: 'Mascot race', description: 'Fan favorite between innings' }
+        { name: 'Whiffer and Fang race', description: 'Between innings entertainment' },
+        { name: 'Fireworks Fridays', description: 'Summer tradition' }
       ]
     },
     fanExperience: {
       atmosphere: 'Intimate and friendly',
-      mascot: { name: 'Rattlers Mascot', description: 'Beloved team mascot' },
-      bestExperiences: ['Mascot race', 'Between-inning games', 'Fireworks nights'],
-      traditions: ['Rally chants', 'Theme nights', 'Seventh-inning stretch']
+      mascot: { name: 'Whiffer and Fang', description: 'Rattlesnake duo' },
+      bestExperiences: ['Meeting Whiffer and Fang', 'Fireworks shows', 'Trying Bratwurst', 'Rivalry games'],
+      traditions: ['Whiffer and Fang antics', 'Rally traditions', 'Thursday specials']
     },
     proTips: {
       insiderTips: [
-        'Buy tickets in advance for weekend games',
-        'Arrive early to explore the stadium',
-        'Park in overflow lot for easier exit'
+        'Check out the team store for exclusive merchandise',
+        'Join the fan club',
+        'Best Bratwurst at Section 119',
+        'Early bird specials'
       ],
       avoidThese: [
-        'Weekend parking rush',
-        'Long concession lines at peak times',
-        'Leaving immediately after game ends'
+        'Long concession lines at peak',
+        'Sun in right field afternoon',
+        'Crowded kids zone on Sundays'
       ],
       hiddenGems: [
-        'Secret menu items at concessions',
-        'Best photo spot behind section 110',
-        'Free parking on nearby streets'
+        'Secret menu at concessions',
+        'Stadium entrance plaza',
+        'Picnic area pregame',
+        'Whiffer and Fang meet and greet location'
       ],
       photoSpots: [
-        'Main entrance sign',
-        'View from upper deck',
-        'With team mascot'
+        'Stadium entrance plaza',
+        'With Whiffer and Fang at Kids zone',
+        'Sunset from upper deck',
+        'Historic photos display'
       ],
       bestValue: [
-        'General admission tickets',
         'Group packages',
-        'Season ticket deals'
+        'Bleacher seats',
+        'Family packs',
+        'Flex plans'
       ]
     }
   }
