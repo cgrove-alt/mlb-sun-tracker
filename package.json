@@ -41,7 +41,8 @@
     "react-window-infinite-loader": "^1.0.10",
     "reading-time": "^1.5.0",
     "suncalc": "^1.9.0",
-    "three": "^0.178.0"
+    "three": "^0.178.0",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.2",
