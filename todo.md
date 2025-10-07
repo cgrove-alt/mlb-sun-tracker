@@ -275,13 +275,29 @@ KV_REST_API_TOKEN=your-kv-token
   - Replaced all scoring logic with `SeatRecommendationEngine.recommendSeats()`
   - Fixed TypeScript errors (WeatherData fields, WeatherCondition.id)
 
-### 2. Cleaned Up 3D Visualization Debug Stub
-- ✅ Removed debug console.logs from SimpleWebGLStadium.tsx
-- ✅ Added documentation that real 3D viz is in StadiumSunPathViewer
-- ✅ Converted to clean placeholder component
+### 2. Removed 3D Visualization Feature
+- ✅ Removed all 3D visualization components (unprofessional/confusing)
+- ✅ Kept all shadow calculation logic (used by AI recommendations)
+- ✅ Kept all 3D geometry data (needed for ray-casting)
+- ✅ Removed visualization UI from stadium pages
+
+**Rationale:**
+- 3D visualization looked like abstract shapes, not realistic stadiums
+- Geometry data was designed for shadow math, not visual realism
+- Core value is accurate sun exposure data, not 3D graphics
+- Removing improves UX by eliminating confusion
+- Reduces bundle size and maintenance burden
+
+**Files Removed:**
+- `src/components/Stadium3DVisualization.tsx` - Three.js visualization component
+- `src/components/StadiumSunPathViewer.tsx` - Sun path viewer wrapper
+- `src/components/StadiumVisualizationSection.tsx` - Main visualization section
+- `components/SimpleWebGLStadium.tsx` - Debug stub component
+- `src/components/Lazy3DVisualization.tsx` - Lazy loading wrapper
+- `src/components/LazyThreeScene.tsx` - Three.js scene loader
 
 **Files Modified:**
-- `components/SimpleWebGLStadium.tsx` - Cleaned debug stub with proper documentation
+- `app/stadium/[stadiumId]/StadiumPageClient.tsx` - Removed 3D viz section
 
 ### 3. AI Engine Features Now Active
 The sophisticated AI engine now evaluates 8+ factors:
