@@ -8,7 +8,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2002,
     capacity: 6300,
     overview: {
-      description: 'Leidos Field at Ripken Stadium in Aberdeen, Maryland, home of the Aberdeen IronBirds, serves as the Orioles High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,300.',
+      description: 'Leidos Field at Ripken Stadium in Aberdeen, Maryland, home of the Aberdeen IronBirds, serves as the Orioles High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6300.',
       highlights: [
         'Orioles High-A affiliate',
         'Modern facility built in 2002',
@@ -266,7 +266,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2001,
     capacity: 7500,
     overview: {
-      description: 'Maimonides Park in Brooklyn, New York, home of the Brooklyn Cyclones, serves as the Mets High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,500.',
+      description: 'Maimonides Park in Brooklyn, New York, home of the Brooklyn Cyclones, serves as the Mets High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7500.',
       highlights: [
         'Mets High-A affiliate',
         'Modern facility built in 2001',
@@ -524,7 +524,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1994,
     capacity: 4494,
     overview: {
-      description: 'Dutchess Stadium in Wappingers Falls, New York, home of the Hudson Valley Renegades, serves as the Yankees High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4,494.',
+      description: 'Dutchess Stadium in Wappingers Falls, New York, home of the Hudson Valley Renegades, serves as the Yankees High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4494.',
       highlights: [
         'Yankees High-A affiliate',
         'Historic venue since 1994',
@@ -782,7 +782,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2001,
     capacity: 6588,
     overview: {
-      description: 'ShoreTown Ballpark in Lakewood, New Jersey, home of the Jersey Shore BlueClaws, serves as the Phillies High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,588.',
+      description: 'ShoreTown Ballpark in Lakewood, New Jersey, home of the Jersey Shore BlueClaws, serves as the Phillies High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6588.',
       highlights: [
         'Phillies High-A affiliate',
         'Modern facility built in 2001',
@@ -1040,7 +1040,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1993,
     capacity: 6532,
     overview: {
-      description: 'Frawley Stadium in Wilmington, Delaware, home of the Wilmington Blue Rocks, serves as the Nationals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,532.',
+      description: 'Frawley Stadium in Wilmington, Delaware, home of the Wilmington Blue Rocks, serves as the Nationals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6532.',
       highlights: [
         'Nationals High-A affiliate',
         'Historic venue since 1993',
@@ -1298,7 +1298,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1924,
     capacity: 4000,
     overview: {
-      description: 'McCormick Field in Asheville, North Carolina, home of the Asheville Tourists, serves as the Astros High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4,000.',
+      description: 'McCormick Field in Asheville, North Carolina, home of the Asheville Tourists, serves as the Astros High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4000.',
       highlights: [
         'Astros High-A affiliate',
         'Historic venue since 1924',
@@ -1556,7 +1556,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 4559,
     overview: {
-      description: 'Bowling Green Ballpark in Bowling Green, Kentucky, home of the Bowling Green Hot Rods, serves as the Rays High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4,559.',
+      description: 'Bowling Green Ballpark in Bowling Green, Kentucky, home of the Bowling Green Hot Rods, serves as the Rays High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4559.',
       highlights: [
         'Rays High-A affiliate',
         'Modern facility built in 2009',
@@ -1814,7 +1814,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2005,
     capacity: 7499,
     overview: {
-      description: 'First National Bank Field in Greensboro, North Carolina, home of the Greensboro Grasshoppers, serves as the Pirates High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,499.',
+      description: 'First National Bank Field in Greensboro, North Carolina, home of the Greensboro Grasshoppers, serves as the Pirates High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7499.',
       highlights: [
         'Pirates High-A affiliate',
         'Modern facility built in 2005',
@@ -2072,7 +2072,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2006,
     capacity: 6700,
     overview: {
-      description: 'Fluor Field in Greenville, South Carolina, home of the Greenville Drive, serves as the Red Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,700.',
+      description: 'Fluor Field in Greenville, South Carolina, home of the Greenville Drive, serves as the Red Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6700.',
       highlights: [
         'Red Sox High-A affiliate',
         'Modern facility built in 2006',
@@ -2330,7 +2330,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1993,
     capacity: 5062,
     overview: {
-      description: 'L.P. Frans Stadium in Hickory, North Carolina, home of the Hickory Crawdads, serves as the Rangers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,062.',
+      description: 'L.P. Frans Stadium in Hickory, North Carolina, home of the Hickory Crawdads, serves as the Rangers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5062.',
       highlights: [
         'Rangers High-A affiliate',
         'Historic venue since 1993',
@@ -2588,7 +2588,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2003,
     capacity: 5105,
     overview: {
-      description: 'State Mutual Stadium in Rome, Georgia, home of the Rome Braves, serves as the Braves High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,105.',
+      description: 'State Mutual Stadium in Rome, Georgia, home of the Rome Braves, serves as the Braves High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5105.',
       highlights: [
         'Braves High-A affiliate',
         'Modern facility built in 2003',
@@ -2846,7 +2846,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2010,
     capacity: 5500,
     overview: {
-      description: 'Truist Stadium in Winston-Salem, North Carolina, home of the Winston-Salem Dash, serves as the White Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 5,500.',
+      description: 'Truist Stadium in Winston-Salem, North Carolina, home of the Winston-Salem Dash, serves as the White Sox High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 5500.',
       highlights: [
         'White Sox High-A affiliate',
         'Modern facility built in 2010',
@@ -3104,7 +3104,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 4000,
     overview: {
-      description: 'PK Park in Eugene, Oregon, home of the Eugene Emeralds, serves as the Giants High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4,000.',
+      description: 'PK Park in Eugene, Oregon, home of the Eugene Emeralds, serves as the Giants High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 4000.',
       highlights: [
         'Giants High-A affiliate',
         'Modern facility built in 2009',
@@ -3362,7 +3362,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1984,
     capacity: 3682,
     overview: {
-      description: 'Funko Field in Everett, Washington, home of the Everett AquaSox, serves as the Mariners High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3,682.',
+      description: 'Funko Field in Everett, Washington, home of the Everett AquaSox, serves as the Mariners High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3682.',
       highlights: [
         'Mariners High-A affiliate',
         'Historic venue since 1984',
@@ -3620,7 +3620,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2013,
     capacity: 4500,
     overview: {
-      description: 'Ron Tonkin Field in Hillsboro, Oregon, home of the Hillsboro Hops, serves as the Diamondbacks High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 4,500.',
+      description: 'Ron Tonkin Field in Hillsboro, Oregon, home of the Hillsboro Hops, serves as the Diamondbacks High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 4500.',
       highlights: [
         'Diamondbacks High-A affiliate',
         'Modern facility built in 2013',
@@ -3878,7 +3878,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1958,
     capacity: 6803,
     overview: {
-      description: 'Avista Stadium in Spokane, Washington, home of the Spokane Indians, serves as the Rockies High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,803.',
+      description: 'Avista Stadium in Spokane, Washington, home of the Spokane Indians, serves as the Rockies High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6803.',
       highlights: [
         'Rockies High-A affiliate',
         'Historic venue since 1958',
@@ -4136,7 +4136,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1995,
     capacity: 3654,
     overview: {
-      description: 'Gesa Stadium in Pasco, Washington, home of the Tri-City Dust Devils, serves as the Angels High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3,654.',
+      description: 'Gesa Stadium in Pasco, Washington, home of the Tri-City Dust Devils, serves as the Angels High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 3654.',
       highlights: [
         'Angels High-A affiliate',
         'Historic venue since 1995',
@@ -4394,7 +4394,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1951,
     capacity: 6500,
     overview: {
-      description: 'Nat Bailey Stadium in Vancouver, British Columbia, home of the Vancouver Canadians, serves as the Blue Jays High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6,500.',
+      description: 'Nat Bailey Stadium in Vancouver, British Columbia, home of the Vancouver Canadians, serves as the Blue Jays High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 6500.',
       highlights: [
         'Blue Jays High-A affiliate',
         'Historic venue since 1951',
@@ -4652,7 +4652,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2021,
     capacity: 3850,
     overview: {
-      description: 'ABC Supply Stadium in Beloit, Wisconsin, home of the Beloit Sky Carp, serves as the Marlins High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 3,850.',
+      description: 'ABC Supply Stadium in Beloit, Wisconsin, home of the Beloit Sky Carp, serves as the Marlins High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with state-of-the-art amenities and a capacity of 3850.',
       highlights: [
         'Marlins High-A affiliate',
         'Modern facility built in 2021',
@@ -4910,7 +4910,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1949,
     capacity: 5300,
     overview: {
-      description: 'Veterans Memorial Stadium in Cedar Rapids, Iowa, home of the Cedar Rapids Kernels, serves as the Twins High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,300.',
+      description: 'Veterans Memorial Stadium in Cedar Rapids, Iowa, home of the Cedar Rapids Kernels, serves as the Twins High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5300.',
       highlights: [
         'Twins High-A affiliate',
         'Historic venue since 1949',
@@ -5168,7 +5168,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2000,
     capacity: 7230,
     overview: {
-      description: 'Day Air Ballpark in Dayton, Ohio, home of the Dayton Dragons, serves as the Reds High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,230.',
+      description: 'Day Air Ballpark in Dayton, Ohio, home of the Dayton Dragons, serves as the Reds High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7230.',
       highlights: [
         'Reds High-A affiliate',
         'Modern facility built in 2000',
@@ -5426,7 +5426,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2009,
     capacity: 8100,
     overview: {
-      description: 'Parkview Field in Fort Wayne, Indiana, home of the Fort Wayne TinCaps, serves as the Padres High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 8,100.',
+      description: 'Parkview Field in Fort Wayne, Indiana, home of the Fort Wayne TinCaps, serves as the Padres High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 8100.',
       highlights: [
         'Padres High-A affiliate',
         'Modern facility built in 2009',
@@ -5684,7 +5684,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2007,
     capacity: 5500,
     overview: {
-      description: 'Dow Diamond in Midland, Michigan, home of the Great Lakes Loons, serves as the Dodgers High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,500.',
+      description: 'Dow Diamond in Midland, Michigan, home of the Great Lakes Loons, serves as the Dodgers High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5500.',
       highlights: [
         'Dodgers High-A affiliate',
         'Modern facility built in 2007',
@@ -5942,7 +5942,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2003,
     capacity: 7273,
     overview: {
-      description: 'Classic Park in Eastlake, Ohio, home of the Lake County Captains, serves as the Guardians High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,273.',
+      description: 'Classic Park in Eastlake, Ohio, home of the Lake County Captains, serves as the Guardians High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7273.',
       highlights: [
         'Guardians High-A affiliate',
         'Modern facility built in 2003',
@@ -6200,7 +6200,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1996,
     capacity: 11000,
     overview: {
-      description: 'Jackson Field in Lansing, Michigan, home of the Lansing Lugnuts, serves as the Athletics High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 11,000.',
+      description: 'Jackson Field in Lansing, Michigan, home of the Lansing Lugnuts, serves as the Athletics High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 11000.',
       highlights: [
         'Athletics High-A affiliate',
         'Historic venue since 1996',
@@ -6458,7 +6458,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 2002,
     capacity: 7500,
     overview: {
-      description: 'Dozer Park in Peoria, Illinois, home of the Peoria Chiefs, serves as the Cardinals High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,500.',
+      description: 'Dozer Park in Peoria, Illinois, home of the Peoria Chiefs, serves as the Cardinals High-A affiliate. This modern ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7500.',
       highlights: [
         'Cardinals High-A affiliate',
         'Modern facility built in 2002',
@@ -6716,7 +6716,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1931,
     capacity: 7140,
     overview: {
-      description: 'Modern Woodmen Park in Davenport, Iowa, home of the Quad Cities River Bandits, serves as the Royals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7,140.',
+      description: 'Modern Woodmen Park in Davenport, Iowa, home of the Quad Cities River Bandits, serves as the Royals High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 7140.',
       highlights: [
         'Royals High-A affiliate',
         'Historic venue since 1931',
@@ -6974,7 +6974,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1987,
     capacity: 5000,
     overview: {
-      description: 'Four Winds Field in South Bend, Indiana, home of the South Bend Cubs, serves as the Cubs High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,000.',
+      description: 'Four Winds Field in South Bend, Indiana, home of the South Bend Cubs, serves as the Cubs High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5000.',
       highlights: [
         'Cubs High-A affiliate',
         'Historic venue since 1987',
@@ -7232,7 +7232,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1994,
     capacity: 9281,
     overview: {
-      description: 'LMCU Ballpark in Comstock Park, Michigan, home of the West Michigan Whitecaps, serves as the Tigers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 9,281.',
+      description: 'LMCU Ballpark in Comstock Park, Michigan, home of the West Michigan Whitecaps, serves as the Tigers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 9281.',
       highlights: [
         'Tigers High-A affiliate',
         'Historic venue since 1994',
@@ -7490,7 +7490,7 @@ export const aPlusStadiumGuides: Record<string, StadiumGuide> = {
     opened: 1995,
     capacity: 5500,
     overview: {
-      description: 'Neuroscience Group Field in Grand Chute, Wisconsin, home of the Wisconsin Timber Rattlers, serves as the Brewers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5,500.',
+      description: 'Neuroscience Group Field in Grand Chute, Wisconsin, home of the Wisconsin Timber Rattlers, serves as the Brewers High-A affiliate. This classic ballpark offers an intimate Minor League Baseball experience with traditional amenities and a capacity of 5500.',
       highlights: [
         'Brewers High-A affiliate',
         'Historic venue since 1995',
