@@ -1,14 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { 
-  exportUserData, 
-  downloadDataAsFile, 
+import {
+  exportUserData,
+  downloadDataAsFile,
   logPrivacyRequest,
   UserDataReport,
   collectAllUserData
 } from '../utils/dataManagement';
-import styles from '../styles/PrivacyComponents.module.css';
 
 interface DataExportButtonProps {
   dataReport?: UserDataReport | null;
@@ -56,9 +55,9 @@ const DataExportButton: React.FC<DataExportButtonProps> = ({
   };
 
   return (
-    <div className={styles.exportContainer}>
-      <div className={styles.formatSelector}>
-        <label className={styles.formatLabel}>
+    <div className="my-5">
+      <div className="flex flex-col gap-3 mb-5">
+        <label className="flex items-start p-3 border-2 border-gray-200 rounded-lg cursor-pointer transition-all hover:border-blue-500 hover:bg-[rgba(33,150,243,0.05)]">
           <input
             type="radio"
             name="exportFormat"
@@ -66,14 +65,15 @@ const DataExportButton: React.FC<DataExportButtonProps> = ({
             checked={exportFormat === 'json'}
             onChange={(e) => setExportFormat(e.target.value as 'json')}
             disabled={exporting}
+            className="mr-3 mt-1"
           />
-          <span className={styles.formatOption}>
-            <strong>JSON</strong>
-            <small>Machine-readable format for data portability</small>
+          <span className="flex flex-col gap-1">
+            <strong className="text-base text-neutral-800">JSON</strong>
+            <small className="text-[0.85rem] text-gray-600">Machine-readable format for data portability</small>
           </span>
         </label>
-        
-        <label className={styles.formatLabel}>
+
+        <label className="flex items-start p-3 border-2 border-gray-200 rounded-lg cursor-pointer transition-all hover:border-blue-500 hover:bg-[rgba(33,150,243,0.05)]">
           <input
             type="radio"
             name="exportFormat"
@@ -81,10 +81,11 @@ const DataExportButton: React.FC<DataExportButtonProps> = ({
             checked={exportFormat === 'html'}
             onChange={(e) => setExportFormat(e.target.value as 'html')}
             disabled={exporting}
+            className="mr-3 mt-1"
           />
-          <span className={styles.formatOption}>
-            <strong>HTML Report</strong>
-            <small>Human-readable report for viewing</small>
+          <span className="flex flex-col gap-1">
+            <strong className="text-base text-neutral-800">HTML Report</strong>
+            <small className="text-[0.85rem] text-gray-600">Human-readable report for viewing</small>
           </span>
         </label>
       </div>
@@ -92,11 +93,11 @@ const DataExportButton: React.FC<DataExportButtonProps> = ({
       <button
         onClick={handleExport}
         disabled={exporting}
-        className={`${styles.exportButton} ${exporting ? styles.loading : ''}`}
+        className="w-full px-6 py-3.5 bg-[linear-gradient(135deg,#2196f3_0%,#1976d2_100%)] text-white border-0 rounded-lg text-lg font-semibold cursor-pointer transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed hover:bg-[linear-gradient(135deg,#1976d2_0%,#1565c0_100%)] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(33,150,243,0.3)]"
       >
         {exporting ? (
           <>
-            <span className={styles.spinner}></span>
+            <span className="w-6 h-6 border-[3px] border-white/30 border-t-white rounded-full animate-spin"></span>
             Preparing Export...
           </>
         ) : (
@@ -106,13 +107,13 @@ const DataExportButton: React.FC<DataExportButtonProps> = ({
         )}
       </button>
 
-      <div className={styles.exportInfo}>
-        <p>
-          <strong>What's included:</strong> All locally stored preferences, settings, 
+      <div className="mt-5 p-4 bg-gray-100 rounded-lg">
+        <p className="my-2 text-[0.9rem] text-gray-600">
+          <strong>What's included:</strong> All locally stored preferences, settings,
           and usage data from your browser.
         </p>
-        <p>
-          <strong>Privacy:</strong> This export happens entirely in your browser. 
+        <p className="my-2 text-[0.9rem] text-gray-600">
+          <strong>Privacy:</strong> This export happens entirely in your browser.
           No data is sent to our servers.
         </p>
       </div>

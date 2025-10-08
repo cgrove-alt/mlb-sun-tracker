@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { UserDataReport } from '../utils/dataManagement';
-import styles from '../styles/PrivacyComponents.module.css';
 
 interface DataInventoryProps {
   dataReport: UserDataReport | null;
@@ -12,11 +11,11 @@ interface DataInventoryProps {
 const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) => {
   if (!dataReport) {
     return (
-      <div className={styles.inventoryContainer}>
-        <div className={styles.emptyState}>
+      <div className="my-5">
+        <div className="text-center p-8 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
           <p>No data inventory available. Click refresh to load your data.</p>
           {onRefresh && (
-            <button onClick={onRefresh} className={styles.refreshButton}>
+            <button onClick={onRefresh} className="mt-4 px-6 py-2.5 bg-blue-600 text-white border-0 rounded-lg text-base font-semibold cursor-pointer transition-colors hover:bg-blue-700">
               🔄 Refresh Data
             </button>
           )}
@@ -39,32 +38,32 @@ const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) 
   };
 
   return (
-    <div className={styles.inventoryContainer}>
+    <div className="my-5">
       {/* Summary Card */}
-      <div className={styles.summaryCard}>
+      <div className="bg-white border border-gray-300 rounded-lg p-5 mb-5 shadow-sm">
         <h3>📊 Data Summary</h3>
-        <div className={styles.summaryGrid}>
-          <div className={styles.summaryItem}>
-            <span className={styles.summaryLabel}>Total Items:</span>
-            <span className={styles.summaryValue}>{dataReport.summary.totalItems}</span>
+        <div className="grid grid-cols-1 gap-3 my-5 md:grid-cols-2">
+          <div className="flex justify-between items-center p-3 bg-gray-50 rounded border border-gray-200">
+            <span className="font-medium text-gray-700 text-sm">Total Items:</span>
+            <span className="font-bold text-blue-600 text-base">{dataReport.summary.totalItems}</span>
           </div>
-          <div className={styles.summaryItem}>
-            <span className={styles.summaryLabel}>Data Size:</span>
-            <span className={styles.summaryValue}>{formatBytes(dataReport.summary.totalSize)}</span>
+          <div className="flex justify-between items-center p-3 bg-gray-50 rounded border border-gray-200">
+            <span className="font-medium text-gray-700 text-sm">Data Size:</span>
+            <span className="font-bold text-blue-600 text-base">{formatBytes(dataReport.summary.totalSize)}</span>
           </div>
-          <div className={styles.summaryItem}>
-            <span className={styles.summaryLabel}>Sources:</span>
-            <span className={styles.summaryValue}>{dataReport.summary.sources.join(', ')}</span>
+          <div className="flex justify-between items-center p-3 bg-gray-50 rounded border border-gray-200">
+            <span className="font-medium text-gray-700 text-sm">Sources:</span>
+            <span className="font-bold text-blue-600 text-base">{dataReport.summary.sources.join(', ')}</span>
           </div>
-          <div className={styles.summaryItem}>
-            <span className={styles.summaryLabel}>Last Updated:</span>
-            <span className={styles.summaryValue}>
+          <div className="flex justify-between items-center p-3 bg-gray-50 rounded border border-gray-200">
+            <span className="font-medium text-gray-700 text-sm">Last Updated:</span>
+            <span className="font-bold text-blue-600 text-base">
               {new Date(dataReport.timestamp).toLocaleString()}
             </span>
           </div>
         </div>
         {onRefresh && (
-          <button onClick={onRefresh} className={styles.refreshButton}>
+          <button onClick={onRefresh} className="mt-4 px-6 py-2.5 bg-blue-600 text-white border-0 rounded-lg text-base font-semibold cursor-pointer transition-colors hover:bg-blue-700">
             🔄 Refresh Inventory
           </button>
         )}
@@ -72,28 +71,28 @@ const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) 
 
       {/* Data Categories */}
       {dataReport.categories.map((category, index) => (
-        <div key={index} className={styles.categoryCard}>
-          <div className={styles.categoryHeader}>
+        <div key={index} className="bg-white border border-gray-300 rounded-lg p-5 mb-5 shadow-sm">
+          <div className="flex justify-between items-start mb-4 flex-wrap gap-2">
             <h3>{category.name}</h3>
-            <span className={styles.categoryBadge}>{category.source}</span>
+            <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold uppercase tracking-wide">{category.source}</span>
           </div>
-          <p className={styles.categoryDescription}>{category.description}</p>
-          
+          <p className="text-gray-600 text-[0.95rem] leading-relaxed mb-4">{category.description}</p>
+
           {Object.keys(category.data).length > 0 ? (
-            <div className={styles.dataTable}>
-              <table>
-                <thead>
+            <div className="overflow-x-auto border border-gray-200 rounded-lg">
+              <table className="w-full border-collapse">
+                <thead className="bg-gray-50">
                   <tr>
-                    <th>Data Key</th>
-                    <th>Value</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 border-b border-gray-300">Data Key</th>
+                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-700 border-b border-gray-300">Value</th>
                   </tr>
                 </thead>
                 <tbody>
                   {Object.entries(category.data).map(([key, value]) => (
-                    <tr key={key}>
-                      <td className={styles.dataKey}>{key}</td>
-                      <td className={styles.dataValue}>
-                        <pre>{formatValue(value)}</pre>
+                    <tr key={key} className="border-b border-gray-200 last:border-b-0">
+                      <td className="px-4 py-3 font-mono text-sm text-gray-900 align-top bg-gray-50 font-medium">{key}</td>
+                      <td className="px-4 py-3 font-mono text-xs text-gray-700">
+                        <pre className="m-0 whitespace-pre-wrap break-words max-w-full">{formatValue(value)}</pre>
                       </td>
                     </tr>
                   ))}
@@ -101,7 +100,7 @@ const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) 
               </table>
             </div>
           ) : (
-            <div className={styles.noData}>
+            <div className="text-center p-5 bg-gray-50 rounded border border-gray-200 text-gray-500 italic">
               <p>No data stored in this category</p>
             </div>
           )}
@@ -109,10 +108,10 @@ const DataInventory: React.FC<DataInventoryProps> = ({ dataReport, onRefresh }) 
       ))}
 
       {/* Privacy Notice */}
-      <div className={styles.privacyNotice}>
+      <div className="p-4 bg-blue-50 border-l-4 border-blue-500 rounded text-[0.9rem] text-blue-900">
         <p>
-          <strong>Privacy Note:</strong> This inventory shows all data stored locally in your 
-          browser by The Shadium. We do not have access to this data on our servers. All data 
+          <strong>Privacy Note:</strong> This inventory shows all data stored locally in your
+          browser by The Shadium. We do not have access to this data on our servers. All data
           shown here is stored on your device.
         </p>
       </div>

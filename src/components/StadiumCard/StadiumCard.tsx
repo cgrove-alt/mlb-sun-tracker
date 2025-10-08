@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './StadiumCard.module.css';
 
 interface StadiumCardProps {
   /** Stadium name */
@@ -89,9 +88,9 @@ export const StadiumCard: React.FC<StadiumCardProps> = ({
   const getRoofBadge = () => {
     switch (roof) {
       case 'closed':
-        return <span className={`${styles.badge} ${styles.badgeClosed}`}>Dome</span>;
+        return <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold uppercase tracking-wider ml-2 bg-orange-100 text-orange-800">Dome</span>;
       case 'retractable':
-        return <span className={`${styles.badge} ${styles.badgeRetractable}`}>Retractable</span>;
+        return <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold uppercase tracking-wider ml-2 bg-blue-100 text-blue-800">Retractable</span>;
       default:
         return null; // Open stadiums don't need a badge
     }
@@ -103,33 +102,32 @@ export const StadiumCard: React.FC<StadiumCardProps> = ({
 
   const location = state ? `${city}, ${state}` : city;
 
-  const cardClasses = [
-    styles.card,
-    featured && styles.featured,
-    compact && styles.compact,
-    loading && styles.loading,
-    className,
-  ]
+  const baseClasses = 'bg-paper border border-ui-border rounded-xl p-5 shadow-sm transition-all duration-200 relative flex flex-col hover:shadow-md hover:-translate-y-0.5 focus-within:outline focus-within:outline-2 focus-within:outline-accent-600 focus-within:outline-offset-2 sm:p-4';
+  const featuredClasses = featured ? 'border-accent-600 border-2' : '';
+  const compactClasses = compact ? '!p-4' : '';
+  const loadingClasses = loading ? 'relative overflow-hidden after:content-[""] after:absolute after:inset-0 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)] after:animate-[shimmer_2s_infinite]' : '';
+
+  const cardClasses = [baseClasses, featuredClasses, compactClasses, loadingClasses, className]
     .filter(Boolean)
     .join(' ');
 
   const cardContent = (
     <>
-      <h3 className={styles.title}>
+      <h3 className={`text-ink-800 font-semibold text-lg leading-tight text-balance m-0 mb-1 ${featured ? 'text-accent-700' : ''} ${compact ? 'text-base' : ''}`}>
         {name}
         {getRoofBadge()}
       </h3>
-      <p className={styles.meta}>
+      <p className={`text-ink-700 m-0 text-sm leading-normal ${compact ? 'text-[13px]' : ''}`}>
         {team} • {location}
       </p>
-      <div className={styles.metrics}>
-        <span className={styles.metric}>
-          <span className={styles.metricLabel}>Roof:</span>
-          <span className={styles.metricValue}>{roof}</span>
+      <div className={`flex flex-wrap gap-3 mt-2.5 text-ink-900 text-sm pt-2.5 border-t border-ui-border ${compact ? 'text-[13px] pt-2 mt-2' : ''}`}>
+        <span className="flex items-center gap-1">
+          <span className="text-ink-700 font-normal">Roof:</span>
+          <span className="text-ink-900 font-medium">{roof}</span>
         </span>
-        <span className={styles.metric}>
-          <span className={styles.metricLabel}>Capacity:</span>
-          <span className={styles.metricValue}>{formatCapacity(capacity)}</span>
+        <span className="flex items-center gap-1">
+          <span className="text-ink-700 font-normal">Capacity:</span>
+          <span className="text-ink-900 font-medium">{formatCapacity(capacity)}</span>
         </span>
       </div>
       <Link href={href} className="cta-btn cta-btn-sm" onClick={onClick}>
@@ -180,14 +178,14 @@ export const StadiumCardGrid: React.FC<{ children: React.ReactNode }> = ({ child
  */
 export const StadiumCardSkeleton: React.FC = () => {
   return (
-    <div className={`${styles.card} ${styles.loading}`}>
-      <div style={{ height: '24px', background: '#f0f0f0', borderRadius: '4px', marginBottom: '8px' }} />
-      <div style={{ height: '16px', background: '#f0f0f0', borderRadius: '4px', marginBottom: '16px', width: '70%' }} />
-      <div style={{ display: 'flex', gap: '12px' }}>
-        <div style={{ height: '14px', background: '#f0f0f0', borderRadius: '4px', width: '60px' }} />
-        <div style={{ height: '14px', background: '#f0f0f0', borderRadius: '4px', width: '80px' }} />
+    <div className="bg-paper border border-ui-border rounded-xl p-5 shadow-sm relative flex flex-col overflow-hidden after:content-[''] after:absolute after:inset-0 after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.5),transparent)] after:animate-[shimmer_2s_infinite] sm:p-4">
+      <div className="h-6 bg-gray-100 rounded mb-2" />
+      <div className="h-4 bg-gray-100 rounded mb-4 w-[70%]" />
+      <div className="flex gap-3">
+        <div className="h-3.5 bg-gray-100 rounded w-[60px]" />
+        <div className="h-3.5 bg-gray-100 rounded w-[80px]" />
       </div>
-      <div style={{ height: '20px', background: '#f0f0f0', borderRadius: '4px', marginTop: 'auto', width: '120px' }} />
+      <div className="h-5 bg-gray-100 rounded mt-auto w-[120px]" />
     </div>
   );
 };

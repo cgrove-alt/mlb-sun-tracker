@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './MobileNav.module.css';
 
 export interface NavItem {
   id: string;
@@ -130,7 +129,7 @@ export default function MobileNav({
     <>
       <button
         ref={menuBtnRef}
-        className={`${styles.menuBtn} ${className}`}
+        className={`border border-gray-200 rounded-lg px-3 py-2 bg-white ${className}`}
         onClick={handleOpen}
         type="button"
         aria-label={menuLabel}
@@ -154,7 +153,7 @@ export default function MobileNav({
       </button>
 
       <div
-        className={`${styles.scrim} ${isOpen ? styles.scrimOpen : ''}`}
+        className={`fixed inset-0 bg-black/35 transition-opacity duration-200 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={handleClose}
         aria-hidden="true"
       />
@@ -162,13 +161,13 @@ export default function MobileNav({
       <nav
         id="mobile-nav-drawer"
         ref={drawerRef}
-        className={`${styles.drawer} ${isOpen ? styles.open : ''}`}
+        className={`fixed inset-y-0 left-0 right-1/4 bg-white transition-transform duration-300 ease-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
         aria-label="Mobile navigation"
         aria-hidden={!isOpen}
       >
         {renderHeader ? renderHeader() : (
-          <div className={styles.header}>
-            <h2 className={styles.title}>{title}</h2>
+          <div className="flex items-center justify-between px-4 py-2.5">
+            <h2 className="font-semibold text-ink-800 text-lg text-balance break-anywhere">{title}</h2>
             <button
               onClick={handleClose}
               type="button"
@@ -192,8 +191,8 @@ export default function MobileNav({
           </div>
         )}
 
-        <div className={styles.list}>
-          {items.map(item => 
+        <div className="p-5 grid gap-3">
+          {items.map(item =>
             renderMenuItem ? renderMenuItem(item) : defaultRenderMenuItem(item)
           )}
         </div>
@@ -216,7 +215,7 @@ export function MenuTrigger({
 }) {
   return (
     <button
-      className={`${styles.menuBtn} ${className}`}
+      className={`border border-gray-200 rounded-lg px-3 py-2 bg-white ${className}`}
       onClick={onClick}
       type="button"
       aria-label={label}

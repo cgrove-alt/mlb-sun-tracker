@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
-import styles from './StadiumHeader.module.css';
 
 interface StadiumHeaderProps {
   name: string;
@@ -33,7 +32,10 @@ const StadiumHeader: React.FC<StadiumHeaderProps> = ({
   ];
 
   return (
-    <header className={styles.headerWrap} data-stadium-header="true">
+    <header
+      className="!relative !flex !flex-col !gap-3 !p-5 !mb-6 !w-full !overflow-visible !box-border sm:!p-4 sm:!gap-2 sm:!mb-5 [&>*]:!relative [&>*]:!block [&>*]:!clear-both [&>*+*]:!mt-2 [&_*]:!relative [&>h1]:!relative [&>h1]:!overflow-visible [&>p]:!relative [&>p]:!overflow-visible [&>div]:!relative [&>div]:!overflow-visible [&>nav]:!relative [&>nav]:!overflow-visible"
+      data-stadium-header="true"
+    >
       {showBreadcrumb && (
         <Breadcrumb items={breadcrumbItems} className="breadcrumb-nav" />
       )}

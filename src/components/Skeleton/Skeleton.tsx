@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './Skeleton.module.css';
 
 export interface SkeletonProps {
   width?: string | number;
@@ -22,36 +21,38 @@ export default function Skeleton({
   count = 1,
   inline = false
 }: SkeletonProps) {
-  const getVariantStyles = (): React.CSSProperties => {
+  const getVariantClass = () => {
     switch (variant) {
       case 'circular':
-        return {
-          borderRadius: '50%',
-          width: height,
-          height: height
-        };
+        return 'rounded-full';
       case 'rectangular':
-        return {
-          borderRadius: '4px'
-        };
+        return 'rounded';
       case 'text':
       default:
-        return {
-          borderRadius: '8px'
-        };
+        return 'rounded-lg';
     }
   };
 
   const getAnimationClass = () => {
     if (animation === 'none') return '';
-    return styles.block;
+    return 'bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-[length:200%_100%] animate-skeleton';
+  };
+
+  const getVariantDimensions = (): React.CSSProperties => {
+    if (variant === 'circular') {
+      return {
+        width: height,
+        height: height
+      };
+    }
+    return {};
   };
 
   const skeletonStyle: React.CSSProperties = {
-    width: width || '100%',
+    width: variant === 'circular' ? height : (width || '100%'),
     height: typeof height === 'number' ? `${height}px` : height,
     display: inline ? 'inline-block' : 'block',
-    ...getVariantStyles(),
+    ...getVariantDimensions(),
     ...style
   };
 
@@ -61,7 +62,7 @@ export default function Skeleton({
         {Array.from({ length: count }).map((_, index) => (
           <div
             key={index}
-            className={`${getAnimationClass()} ${className}`}
+            className={`${getVariantClass()} ${getAnimationClass()} ${className}`}
             style={{
               ...skeletonStyle,
               marginBottom: index < count - 1 ? '8px' : 0
@@ -76,7 +77,7 @@ export default function Skeleton({
 
   return (
     <div
-      className={`${getAnimationClass()} ${className}`}
+      className={`${getVariantClass()} ${getAnimationClass()} ${className}`}
       style={skeletonStyle}
       aria-hidden="true"
       role="presentation"

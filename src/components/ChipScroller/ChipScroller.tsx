@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef, useEffect, useState } from 'react';
-import styles from './ChipScroller.module.css';
 
 export interface ChipOption {
   id: string;
@@ -59,12 +58,12 @@ export default function ChipScroller({
   useEffect(() => {
     if (!scrollerRef.current) return;
     
-    const selectedIndex = multiple 
+    const selectedIndex = multiple
       ? options.findIndex(opt => selectedIds.includes(opt.id))
       : options.findIndex(opt => opt.id === selectedId);
-    
+
     if (selectedIndex > -1) {
-      const items = scrollerRef.current.querySelectorAll(`.${styles.item}`);
+      const items = scrollerRef.current.querySelectorAll('[data-chip-item]');
       const selectedItem = items[selectedIndex] as HTMLElement;
       
       if (selectedItem) {
@@ -97,33 +96,33 @@ export default function ChipScroller({
   };
 
   const getChipClassName = (option: ChipOption) => {
-    const classes = [styles.item, chipClassName];
-    
-    const isSelected = multiple 
+    const classes = ['scroll-snap-start', chipClassName];
+
+    const isSelected = multiple
       ? selectedIds.includes(option.id)
       : option.id === selectedId || option.selected;
-    
+
     if (isSelected) {
       classes.push(selectedChipClassName);
     }
-    
+
     if (option.disabled) {
       classes.push(disabledChipClassName);
     }
-    
+
     return classes.filter(Boolean).join(' ');
   };
 
   return (
-    <div 
+    <div
       ref={scrollerRef}
-      className={`${styles.row} ${className}`}
+      className={`flex gap-2 overflow-x-auto px-4 scrollbar-none snap-x snap-proximity [-webkit-overflow-scrolling:touch] [mask-image:linear-gradient(to_right,transparent,black_24px),linear-gradient(to_left,transparent,black_24px)] [mask-composite:exclude] ${className}`}
       role="group"
       aria-label={ariaLabel}
       data-can-scroll={canScroll}
     >
       {options.map((option) => {
-        const isSelected = multiple 
+        const isSelected = multiple
           ? selectedIds.includes(option.id)
           : option.id === selectedId || option.selected;
 
@@ -136,6 +135,7 @@ export default function ChipScroller({
             aria-pressed={isSelected}
             aria-disabled={option.disabled}
             type="button"
+            data-chip-item
           >
             {option.icon && <span className="chip-icon">{option.icon}</span>}
             <span className="chip-label">{option.label}</span>
@@ -166,7 +166,7 @@ export function Chip({
 }: ChipProps) {
   return (
     <button
-      className={`${styles.item} ${className}`}
+      className={`scroll-snap-start ${className}`}
       onClick={onClick}
       disabled={disabled}
       aria-pressed={selected}

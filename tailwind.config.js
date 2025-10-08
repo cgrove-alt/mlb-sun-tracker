@@ -74,6 +74,15 @@ module.exports = {
           soft: '#F8FAFC',
           dark: '#0F172A',
         },
+        // Sun exposure colors
+        sun: {
+          none: '#6B7280',      // Gray - no sun
+          minimal: '#10B981',   // Green - full shade
+          low: '#3B82F6',       // Blue - mostly shade
+          moderate: '#F59E0B',  // Amber - partial sun
+          high: '#F97316',      // Orange - high sun
+          extreme: '#EF4444',   // Red - full sun
+        },
       },
       borderColor: {
         DEFAULT: '#E5E7EB',
@@ -93,6 +102,11 @@ module.exports = {
         'share-menu-slide': 'shareMenuSlideIn 0.2s ease-out forwards',
         'pulse-install': 'pulseInstall 1.2s ease-in-out infinite',
         'toast-slide-up': 'toastSlideUp 0.3s ease-out forwards',
+        'fade-in-scale': 'fadeInScale 300ms ease-out both',
+        'modal-fade-in': 'fadeIn 0.2s ease-out',
+        'shimmer': 'shimmer 2s infinite',
+        'skeleton': 'skeleton 1.2s infinite linear',
+        'blink': 'blink 1.5s ease-in-out infinite',
       },
       keyframes: {
         slideUp: {
@@ -151,6 +165,22 @@ module.exports = {
         toastSlideUp: {
           '0%': { bottom: '-100px', opacity: '0' },
           '100%': { bottom: '1.25rem', opacity: '1' },
+        },
+        fadeInScale: {
+          '0%': { opacity: '0', transform: 'translateY(10px) scale(0.95)' },
+          '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        skeleton: {
+          '0%': { backgroundPosition: '200% 0' },
+          '100%': { backgroundPosition: '-200% 0' },
+        },
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.3' },
         },
       },
     },

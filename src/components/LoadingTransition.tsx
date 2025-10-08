@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './LoadingTransition.css';
 
 interface LoadingTransitionProps {
   loading: boolean;

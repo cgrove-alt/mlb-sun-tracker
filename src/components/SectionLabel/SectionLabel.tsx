@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './SectionLabel.module.css';
 
 interface SectionLabelProps {
   /** The text content of the label */
@@ -59,32 +58,44 @@ export const SectionLabel: React.FC<SectionLabelProps> = ({
   tabIndex,
   ariaLabel,
 }) => {
-  const classNames = [
-    styles.label,
-    variant === 'solid' && styles.labelSolid,
-    variant === 'light' && styles.labelLight,
-    size === 'small' && styles.small,
-    size === 'large' && styles.large,
-    status === 'shaded' && styles.shaded,
-    status === 'sunny' && styles.sunny,
-    status === 'partial' && styles.partial,
-    className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  const getVariantClasses = () => {
+    if (variant === 'solid') {
+      return 'bg-[#0F172A] text-gray-200';
+    }
+    if (variant === 'light') {
+      return 'bg-white/90 text-ink-800 [text-shadow:none] [-webkit-text-stroke:0]';
+    }
+    // default
+    return 'bg-black/55 text-white backdrop-blur-sm backdrop-saturate-115 [-webkit-backdrop-filter:saturate(115%)_blur(2px)] [-webkit-text-stroke:0.35px_rgba(0,0,0,0.65)] [text-shadow:0_0.5px_0_rgba(0,0,0,0.6),0_1px_1px_rgba(0,0,0,0.35)]';
+  };
+
+  const getSizeClasses = () => {
+    if (size === 'small') return 'py-px px-1.5 text-[11px] rounded-md';
+    if (size === 'large') return 'py-1 px-3 text-[15px] rounded-[10px]';
+    return 'py-0.5 px-2 text-xs rounded-lg';
+  };
+
+  const getStatusClasses = () => {
+    if (status === 'shaded') return '!bg-[rgba(34,139,34,0.7)] !text-white';
+    if (status === 'sunny') return '!bg-[rgba(255,165,0,0.7)] !text-white';
+    if (status === 'partial') return '!bg-[rgba(70,130,180,0.7)] !text-white';
+    return '';
+  };
 
   const isInteractive = onClick || tabIndex !== undefined;
 
+  const baseClasses = 'inline-flex items-center font-semibold leading-tight antialiased select-none transition-all duration-200 hover:-translate-y-px hover:shadow-[0_2px_8px_rgba(0,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-700 focus-visible:outline-offset-2 contrast-more:!bg-black contrast-more:!text-white contrast-more:border-2 contrast-more:border-white contrast-more:[text-shadow:none] contrast-more:[-webkit-text-stroke:0] print:!bg-white print:!text-black print:border print:border-black print:[text-shadow:none] print:[-webkit-text-stroke:0] motion-reduce:transition-none';
+
   return (
     <span
-      className={classNames}
+      className={`${baseClasses} ${getVariantClasses()} ${getSizeClasses()} ${getStatusClasses()} ${className}`}
       onClick={onClick}
       tabIndex={isInteractive ? tabIndex ?? 0 : undefined}
       role={isInteractive ? 'button' : undefined}
       aria-label={ariaLabel}
       style={onClick ? { cursor: 'pointer' } : undefined}
     >
-      {icon && <span className={styles.icon}>{icon}</span>}
+      {icon && <span className="inline-flex w-3.5 h-3.5 flex-shrink-0">{icon}</span>}
       {children}
     </span>
   );
@@ -113,7 +124,7 @@ export const SvgSectionLabel: React.FC<{
     <text
       x={x}
       y={y}
-      className={`${styles.svgText} ${className}`}
+      className={`fill-white stroke-black/65 [stroke-width:0.8] [paint-order:stroke] font-semibold text-xs ${className}`}
       textAnchor="middle"
       dominantBaseline="middle"
     >

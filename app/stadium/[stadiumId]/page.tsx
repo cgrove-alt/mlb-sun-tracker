@@ -9,7 +9,6 @@ import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadium
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import StickyShadeBar from '../../../components/StickyShadeBar';
-import styles from './StadiumPage.module.css';
 import killOverhang from './KillOverhang.module.css';
 
 interface StadiumPageProps {
@@ -192,7 +191,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   const preferSSR = process.env.NODE_ENV === 'production';
 
   return (
-    <div className={`${styles.pageContainer} ${killOverhang.killOverhang}`}>
+    <div className={`grid grid-cols-1 auto-rows-auto gap-8 w-full max-w-[1280px] px-4 mx-auto relative isolate [&>*]:!m-0 [&>*]:!static [&>*]:!transform-none [&>*]:!z-auto sm:gap-6 sm:px-4 md:gap-8 md:px-5 lg:gap-8 lg:px-6 [&_*]:!transform-none [&_*:hover]:!transform-none [&_section]:!mt-0 [&_section]:!mb-0 [&_section]:!relative [&_section]:!z-[1] [&_article]:!mt-0 [&_article]:!mb-0 [&_article]:!relative [&_article]:!z-[1] [&_div[class*='section']]:!mt-0 [&_div[class*='section']]:!mb-0 [&_div[class*='section']]:!relative [&_div[class*='section']]:!z-[1] [&_div[class*='guide']]:!mt-0 [&_div[class*='guide']]:!mb-0 [&_div[class*='guide']]:!relative [&_div[class*='guide']]:!z-[1] ${killOverhang.killOverhang}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -203,20 +202,20 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         suppressHydrationWarning
       />
-      
+
       {/* Sticky shade calculator bar in grid */}
-      <div className={styles.stickyContainer}>
+      <div className="sticky top-0 z-[100] grid-col-1 m-0">
         <Suspense fallback={null}>
-          <StickyShadeBar 
+          <StickyShadeBar
             stadiumName={stadium.name}
             stadiumId={stadium.id}
           />
         </Suspense>
       </div>
-      
+
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
-        <div className={styles.contentSection}>
+        <div className="grid-col-1 m-0 p-0 relative z-[1]">
           <StadiumPageSSR
             stadium={stadium}
             sections={sections}
@@ -225,10 +224,10 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
           />
         </div>
       </noscript>
-      
+
       {/* Main content in grid */}
-      <div className={styles.contentWrapper} suppressHydrationWarning>
-        <StadiumPageClient 
+      <div className="grid-col-1 grid grid-cols-1 gap-6 m-0 p-0 lg:gap-8" suppressHydrationWarning>
+        <StadiumPageClient
           stadium={stadium}
           sections={sections}
           amenities={amenities}

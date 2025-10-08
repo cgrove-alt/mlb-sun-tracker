@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useId } from 'react';
-import styles from './SectionAccordion.module.css';
 
 export interface AccordionItem {
   id: string;
@@ -64,7 +63,7 @@ export default function SectionAccordion({
       </div>
       
       {renderCTA && (
-        <div className={styles.ctaBar}>
+        <div className="sticky bottom-0 px-4 py-3 pb-[calc(1rem+env(safe-area-inset-bottom))] bg-gradient-to-t from-white to-white/95 flex gap-3">
           {renderCTA()}
         </div>
       )}
@@ -83,38 +82,38 @@ function AccordionPanel({ item, isOpen, onToggle }: AccordionPanelProps) {
   const triggerId = useId();
 
   return (
-    <div className={`${styles.item} ${isOpen ? styles.open : ''}`}>
+    <div className="border-b border-gray-200">
       <button
         id={triggerId}
-        className={styles.btn}
+        className="flex justify-between items-center w-full px-4 py-3.5 font-semibold text-base text-ink-800"
         onClick={onToggle}
         aria-expanded={isOpen}
         aria-controls={panelId}
         type="button"
       >
         <span>{item.title}</span>
-        <svg 
-          className={styles.chev}
-          width="20" 
-          height="20" 
-          viewBox="0 0 20 20" 
+        <svg
+          className={`transition-transform duration-200 ${isOpen ? 'rotate-180' : 'rotate-0'}`}
+          width="20"
+          height="20"
+          viewBox="0 0 20 20"
           fill="none"
           aria-hidden="true"
         >
-          <path 
-            d="M5 7.5L10 12.5L15 7.5" 
-            stroke="currentColor" 
-            strokeWidth="2" 
-            strokeLinecap="round" 
+          <path
+            d="M5 7.5L10 12.5L15 7.5"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
             strokeLinejoin="round"
           />
         </svg>
       </button>
-      
+
       {isOpen && (
         <div
           id={panelId}
-          className={styles.panel}
+          className="px-4 pb-3 text-ink-900"
           role="region"
           aria-labelledby={triggerId}
         >
@@ -137,7 +136,10 @@ export function AccordionCTA({
 }) {
   return (
     <button
-      className={variant === 'primary' ? styles.primary : styles.secondary}
+      className={variant === 'primary'
+        ? 'flex-1 rounded-xl px-3 py-3 bg-ink-800 text-white font-semibold text-center'
+        : 'flex-1 rounded-xl px-3 py-3 bg-gray-50 border border-gray-200 text-ink-800 font-semibold text-center'
+      }
       onClick={onClick}
       type="button"
     >

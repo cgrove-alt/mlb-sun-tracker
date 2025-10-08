@@ -1,6 +1,5 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import styles from '../../styles/Legal.module.css';
 
 export const metadata: Metadata = {
   title: 'Accessibility Statement | The Shadium',
@@ -13,64 +12,64 @@ export const metadata: Metadata = {
 
 export default function AccessibilityPage() {
   return (
-    <div className={styles.legalContainer}>
-      <div className={styles.legalContent}>
-        <h1>Accessibility Statement</h1>
-        <p className={styles.lastUpdated}>Last Updated: January 2025</p>
-        <p className={styles.effectiveDate}>WCAG 2.1 Level AA Compliance</p>
+    <div className="min-h-screen pt-20 pb-10 px-5 bg-[linear-gradient(135deg,#f5f7fa_0%,#c3cfe2_100%)]">
+      <div className="max-w-[900px] mx-auto bg-white rounded-xl p-10 shadow-[0_4px_20px_rgba(0,0,0,0.1)]">
+        <h1 className="text-[2.5rem] text-[#1a1a1a] mb-2.5 border-b-[3px] border-blue-500 pb-4">Accessibility Statement</h1>
+        <p className="text-gray-600 text-[0.95rem] my-1">Last Updated: January 2025</p>
+        <p className="text-gray-600 text-[0.95rem] my-1">WCAG 2.1 Level AA Compliance</p>
 
-        <div className={styles.tableOfContents}>
-          <h2>Quick Navigation</h2>
-          <ul>
-            <li><a href="#commitment">Our Commitment</a></li>
-            <li><a href="#standards">Accessibility Standards</a></li>
-            <li><a href="#features">Accessibility Features</a></li>
-            <li><a href="#compatibility">Browser Compatibility</a></li>
-            <li><a href="#known-issues">Known Issues</a></li>
-            <li><a href="#feedback">Feedback & Contact</a></li>
-            <li><a href="#alternatives">Alternative Formats</a></li>
+        <div className="bg-gray-50 rounded-lg p-5 my-8">
+          <h2 className="text-[1.3rem] text-[#333] mb-4">Quick Navigation</h2>
+          <ul className="list-none p-0">
+            <li className="my-2"><a href="#commitment" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Our Commitment</a></li>
+            <li className="my-2"><a href="#standards" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Accessibility Standards</a></li>
+            <li className="my-2"><a href="#features" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Accessibility Features</a></li>
+            <li className="my-2"><a href="#compatibility" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Browser Compatibility</a></li>
+            <li className="my-2"><a href="#known-issues" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Known Issues</a></li>
+            <li className="my-2"><a href="#feedback" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Feedback & Contact</a></li>
+            <li className="my-2"><a href="#alternatives" className="text-blue-500 no-underline transition-colors hover:text-[#1976d2] hover:underline">Alternative Formats</a></li>
           </ul>
         </div>
 
-        <section id="commitment" className={styles.section}>
-          <h2>1. Our Commitment to Accessibility</h2>
-          <p>
-            The Shadium is committed to ensuring digital accessibility for people with 
-            disabilities. We are continually improving the user experience for everyone 
+        <section id="commitment" className="my-10 pt-5">
+          <h2 className="text-[1.8rem] text-[#1a1a1a] mb-5 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-6 before:bg-blue-500">1. Our Commitment to Accessibility</h2>
+          <p className="leading-[1.8] text-[#444] my-4">
+            The Shadium is committed to ensuring digital accessibility for people with
+            disabilities. We are continually improving the user experience for everyone
             and applying the relevant accessibility standards.
           </p>
-          <p>
-            We believe that all users, regardless of ability, should have equal access 
-            to information about stadium seating and sun exposure. Our goal is to provide 
-            an inclusive experience that allows everyone to find the perfect seats for 
+          <p className="leading-[1.8] text-[#444] my-4">
+            We believe that all users, regardless of ability, should have equal access
+            to information about stadium seating and sun exposure. Our goal is to provide
+            an inclusive experience that allows everyone to find the perfect seats for
             their needs.
           </p>
         </section>
 
-        <section id="standards" className={styles.section}>
-          <h2>2. Accessibility Standards</h2>
-          <p>
-            The Shadium strives to conform to the Web Content Accessibility Guidelines 
-            (WCAG) 2.1 Level AA standards. These guidelines explain how to make web 
-            content more accessible for people with disabilities and more user-friendly 
+        <section id="standards" className="my-10 pt-5">
+          <h2 className="text-[1.8rem] text-[#1a1a1a] mb-5 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-6 before:bg-blue-500">2. Accessibility Standards</h2>
+          <p className="leading-[1.8] text-[#444] my-4">
+            The Shadium strives to conform to the Web Content Accessibility Guidelines
+            (WCAG) 2.1 Level AA standards. These guidelines explain how to make web
+            content more accessible for people with disabilities and more user-friendly
             for everyone.
           </p>
-          
-          <h3>Conformance Status</h3>
-          <p>
+
+          <h3 className="text-[1.3rem] text-[#333] my-6">Conformance Status</h3>
+          <p className="leading-[1.8] text-[#444] my-4">
             We aim to meet WCAG 2.1 Level AA standards, which means our website should be:
           </p>
-          <ul>
-            <li><strong>Perceivable:</strong> Information and UI components are presentable in ways users can perceive</li>
-            <li><strong>Operable:</strong> UI components and navigation are operable via keyboard and other methods</li>
-            <li><strong>Understandable:</strong> Information and UI operation are understandable</li>
-            <li><strong>Robust:</strong> Content is robust enough for interpretation by assistive technologies</li>
+          <ul className="my-4 pl-6">
+            <li className="leading-[1.8] text-[#444] my-2"><strong className="text-[#1a1a1a] font-semibold">Perceivable:</strong> Information and UI components are presentable in ways users can perceive</li>
+            <li className="leading-[1.8] text-[#444] my-2"><strong className="text-[#1a1a1a] font-semibold">Operable:</strong> UI components and navigation are operable via keyboard and other methods</li>
+            <li className="leading-[1.8] text-[#444] my-2"><strong className="text-[#1a1a1a] font-semibold">Understandable:</strong> Information and UI operation are understandable</li>
+            <li className="leading-[1.8] text-[#444] my-2"><strong className="text-[#1a1a1a] font-semibold">Robust:</strong> Content is robust enough for interpretation by assistive technologies</li>
           </ul>
         </section>
 
-        <section id="features" className={styles.section}>
-          <h2>3. Accessibility Features</h2>
-          <p>
+        <section id="features" className="my-10 pt-5">
+          <h2 className="text-[1.8rem] text-[#1a1a1a] mb-5 relative pl-4 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-6 before:bg-blue-500">3. Accessibility Features</h2>
+          <p className="leading-[1.8] text-[#444] my-4">
             The Shadium includes the following accessibility features to improve your experience:
           </p>
           
@@ -120,7 +119,7 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <section id="compatibility" className={styles.section}>
+        <section id="compatibility" className="my-10 pt-5">
           <h2>4. Browser and Assistive Technology Compatibility</h2>
           <p>
             The Shadium is designed to be compatible with the following assistive technologies:
@@ -155,7 +154,7 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className="my-10 pt-5">
           <h2>5. Recent Accessibility Improvements</h2>
           <p>
             We've recently implemented several accessibility enhancements:
@@ -169,7 +168,7 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <section id="known-issues" className={styles.section}>
+        <section id="known-issues" className="my-10 pt-5">
           <h2>6. Known Accessibility Issues & Roadmap</h2>
           <p>
             We are actively working to address the following known issues:
@@ -197,17 +196,17 @@ export default function AccessibilityPage() {
           </p>
         </section>
 
-        <section id="feedback" className={styles.section}>
+        <section id="feedback" className="my-10 pt-5">
           <h2>7. Feedback and Contact Information</h2>
           <p>
             We welcome your feedback on the accessibility of The Shadium. Please let us 
             know if you encounter accessibility barriers:
           </p>
           
-          <div className={styles.contactInfo}>
-            <h3>Accessibility Feedback</h3>
-            <p>Email: support@theshadium.com</p>
-            <p>Subject Line: Accessibility Feedback</p>
+          <div className="bg-gray-50 border-l-4 border-blue-500 p-5 my-5 rounded">
+            <h3 className="text-[1.3rem] text-[#333] my-6">Accessibility Feedback</h3>
+            <p className="my-2 text-[#333]">Email: support@theshadium.com</p>
+            <p className="my-2 text-[#333]">Subject Line: Accessibility Feedback</p>
           </div>
           
           <p>
@@ -228,7 +227,7 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <section id="alternatives" className={styles.section}>
+        <section id="alternatives" className="my-10 pt-5">
           <h2>8. Alternative Formats</h2>
           <p>
             If you need information from The Shadium in an alternative format, please 
@@ -246,7 +245,7 @@ export default function AccessibilityPage() {
           </p>
         </section>
 
-        <section className={styles.section}>
+        <section className="my-10 pt-5">
           <h2>9. Enforcement and Legal</h2>
           <p>
             The Shadium is committed to accessibility as a matter of corporate 
@@ -260,7 +259,7 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <section className={styles.section}>
+        <section className="my-10 pt-5">
           <h2>10. Third-Party Content</h2>
           <p>
             While we strive to ensure all content on The Shadium is accessible, we 
@@ -278,7 +277,7 @@ export default function AccessibilityPage() {
           </p>
         </section>
 
-        <section className={styles.section}>
+        <section className="my-10 pt-5">
           <h2>11. Continuous Improvement</h2>
           <p>
             Accessibility is an ongoing effort at The Shadium. We regularly:
@@ -292,10 +291,10 @@ export default function AccessibilityPage() {
           </ul>
         </section>
 
-        <div className={styles.acceptanceNotice}>
-          <p>
-            <strong>Thank you for using The Shadium. We are committed to providing 
-            an accessible experience for all users and appreciate your patience as 
+        <div className="bg-[#e3f2fd] border-2 border-blue-500 rounded-lg p-5 my-10 text-center">
+          <p className="m-0 text-[#1565c0] font-medium">
+            <strong>Thank you for using The Shadium. We are committed to providing
+            an accessible experience for all users and appreciate your patience as
             we continue to improve.</strong>
           </p>
         </div>

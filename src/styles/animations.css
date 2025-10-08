@@ -853,3 +853,128 @@
     transition-duration: 0.1ms !important;
   }
 }
+/* ===== React Transition Group Classes (LoadingTransition) ===== */
+.loading-transition-container {
+  position: relative;
+  min-height: inherit;
+}
+
+.loading-transition-content {
+  width: 100%;
+}
+
+.loading-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.loading-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.loading-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.loading-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+.crossfade-enter {
+  opacity: 0;
+}
+
+.crossfade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.crossfade-exit {
+  opacity: 1;
+}
+
+.crossfade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.staggered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.staggered-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.staggered-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.staggered-item-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.staggered-item-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 200ms ease-in, transform 200ms ease-in;
+}
+
+.skeleton-transition {
+  position: relative;
+  min-height: inherit;
+}
+
+.skeleton-transition-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.skeleton-transition-layer.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.skeleton-transition-layer.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .loading-transition-enter,
+  .staggered-item-enter {
+    transform: translateY(5px);
+  }
+  
+  .loading-transition-exit-active,
+  .staggered-item-exit-active {
+    transform: translateY(-5px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-transition-enter-active,
+  .loading-transition-exit-active,
+  .crossfade-enter-active,
+  .crossfade-exit-active,
+  .staggered-item-enter-active,
+  .staggered-item-exit-active,
+  .skeleton-transition-layer {
+    transition: opacity 150ms ease-in-out !important;
+    transform: none !important;
+  }
+}
