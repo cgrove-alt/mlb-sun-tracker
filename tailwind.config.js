@@ -82,6 +82,9 @@ module.exports = {
       animation: {
         'slide-up': 'slideUp 0.3s ease-out',
         'slide-in': 'slideIn 0.3s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out forwards',
+        'pulse': 'pulse 2s ease-in-out infinite',
+        'pulse-sync': 'pulseSync 1.5s ease-in-out infinite',
       },
       keyframes: {
         slideUp: {
@@ -91,6 +94,18 @@ module.exports = {
         slideIn: {
           '0%': { transform: 'translateX(100%)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.6' },
+        },
+        pulseSync: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.2)', opacity: '0.6' },
         },
       },
     },

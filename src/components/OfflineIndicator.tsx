@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from '../i18n/i18nContext';
 import { isOffline, getCacheInfo } from '../utils/serviceWorkerRegistration';
-import './OfflineIndicator.css';
 
 export const OfflineIndicator: React.FC = () => {
   const { t, isLoading: translationsLoading } = useTranslation();
@@ -92,28 +91,34 @@ export const OfflineIndicator: React.FC = () => {
 
   }
 
+  const getBgColor = () => {
+    if (syncPending) return 'bg-orange-500';
+    if (offline) return 'bg-error';
+    return 'bg-success';
+  };
+
   return (
-    <div className={`offline-indicator ${offline ? 'offline' : 'online'} ${syncPending ? 'syncing' : ''}`}>
-      <div className="offline-indicator-content">
+    <div className={`fixed top-0 left-0 right-0 z-[9999] ${getBgColor()} text-white py-2 px-4 md:py-1.5 md:px-3 text-center text-sm md:text-xs font-medium shadow-md animate-slide-down`}>
+      <div className="flex items-center justify-center gap-2 max-w-screen-xl mx-auto">
         {offline ? (
           <>
-            <span className="offline-icon">📵</span>
-            <span className="offline-text">{t('offline.message') || "You're offline - Using cached data"}</span>
+            <span className="text-lg md:text-base animate-pulse">📵</span>
+            <span>{t('offline.message') || "You're offline - Using cached data"}</span>
             {cacheInfo && (
-              <span className="cache-info">
+              <span className="text-xs opacity-90 ml-2 hidden md:inline">
                 {t('offline.cacheUsage', { percentage: cacheInfo.percentage.toFixed(1) }) || `Cache: ${cacheInfo.percentage.toFixed(1)}%`}
               </span>
             )}
           </>
         ) : syncPending ? (
           <>
-            <span className="sync-icon">🔄</span>
-            <span className="sync-text">{t('offline.syncing') || 'Syncing your data...'}</span>
+            <span className="text-lg md:text-base animate-pulse-sync">🔄</span>
+            <span>{t('offline.syncing') || 'Syncing your data...'}</span>
           </>
         ) : (
           <>
-            <span className="online-icon">✅</span>
-            <span className="online-text">{t('offline.backOnline') || 'Back online!'}</span>
+            <span className="text-lg md:text-base animate-pulse">✅</span>
+            <span>{t('offline.backOnline') || 'Back online!'}</span>
           </>
         )}
       </div>
