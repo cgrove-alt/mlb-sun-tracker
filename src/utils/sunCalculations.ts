@@ -329,7 +329,7 @@ export function calculateEnhancedSectionSunExposure(
   
   // If stadium has a fixed roof, no sections get sun
   if (stadium.roof === 'fixed') {
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       inSun: false,
       sunExposure: 0
@@ -339,7 +339,7 @@ export function calculateEnhancedSectionSunExposure(
   // Calculate shadows for all sections
   const shadowData = calculator.calculateShadows(
     sunPos,
-    sections.map(s => ({
+    stadiumSections.map(s => ({
       ...s,
       side: getSectionSide(s),
       angle: getSectionAngle(s, stadium.orientation)
