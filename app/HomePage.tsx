@@ -48,32 +48,116 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SEO-optimized content section */}
-        <div className="sr-only">
-          <h2>Find Shaded Seats at MLB, MiLB & NFL Stadiums - Are My Seats in the Shade?</h2>
-          <p>
-            Wondering "are my seats in the shade?" or "are my seats shaded?" at your favorite sports venue? 
-            The Shadium helps you find the best shaded seats at over 250 stadiums including all 30 MLB ballparks, 
-            120 MiLB stadiums, and 32 NFL venues. Our real-time sun tracking technology shows you exactly which 
-            sections will be in the shade during any game time.
-          </p>
-          
-          <h3>Check If Your Seats Are Shaded at These Popular Venues</h3>
-          <ul>
-            <li><Link href="/stadium/yankees">Are my seats shaded at Yankee Stadium? (MLB)</Link></li>
-            <li><Link href="/stadium/dodgers">Find shaded seats at Dodger Stadium (MLB)</Link></li>
-            <li><Link href="/venue/metlife-stadium">Shaded sections at MetLife Stadium (NFL)</Link></li>
-            <li><Link href="/venue/las-vegas-ballpark">Las Vegas Ballpark shade finder (MiLB)</Link></li>
-            <li><Link href="/venue/sofi-stadium">SoFi Stadium sun exposure guide (NFL)</Link></li>
-          </ul>
-          
-          <h3>How to Know If Your Seats Are in the Shade</h3>
-          <p>
-            Simply select your stadium from our database of 250+ MLB, MiLB, and NFL venues and choose your 
-            game time to see which sections are shaded. Our advanced calculations consider sun angle, stadium 
-            orientation, roof coverage, and time of day to show you exactly where the shade will be during your game.
-          </p>
-        </div>
+        {/* How It Works Section */}
+        <section className="how-it-works">
+          <div className="container-narrow">
+            <h2>How It Works</h2>
+            <div className="steps-grid">
+              <div className="step">
+                <div className="step-number">1</div>
+                <div className="step-icon">🏟️</div>
+                <h3>Select Your Stadium</h3>
+                <p>Choose from 250+ MLB, MiLB, and NFL venues across North America</p>
+              </div>
+              <div className="step">
+                <div className="step-number">2</div>
+                <div className="step-icon">☀️</div>
+                <h3>Pick Game Time</h3>
+                <p>Select a real game or any custom date and time</p>
+              </div>
+              <div className="step">
+                <div className="step-number">3</div>
+                <div className="step-icon">🎯</div>
+                <h3>Find Perfect Seats</h3>
+                <p>Get real-time shade analysis for every section</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Stadiums Preview */}
+        <section className="popular-preview">
+          <div className="container-narrow">
+            <h2>Popular Stadium Guides</h2>
+            <p className="section-subtitle">Explore detailed shade guides for fan-favorite venues</p>
+            <div className="preview-grid">
+              <Link href="/stadium/yankees" className="preview-card">
+                <div className="preview-header">
+                  <h3>Yankee Stadium</h3>
+                  <span className="league-badge">MLB</span>
+                </div>
+                <p className="team-name">New York Yankees</p>
+                <div className="preview-stats">
+                  <span className="stat">☀️ Open Air</span>
+                  <span className="stat">🛡️ Covered Sections</span>
+                </div>
+                <span className="view-guide-link">View Shade Guide →</span>
+              </Link>
+
+              <Link href="/stadium/dodgers" className="preview-card">
+                <div className="preview-header">
+                  <h3>Dodger Stadium</h3>
+                  <span className="league-badge">MLB</span>
+                </div>
+                <p className="team-name">Los Angeles Dodgers</p>
+                <div className="preview-stats">
+                  <span className="stat">☀️ Open Air</span>
+                  <span className="stat">🌄 Great Views</span>
+                </div>
+                <span className="view-guide-link">View Shade Guide →</span>
+              </Link>
+
+              <Link href="/stadium/cubs" className="preview-card">
+                <div className="preview-header">
+                  <h3>Wrigley Field</h3>
+                  <span className="league-badge">MLB</span>
+                </div>
+                <p className="team-name">Chicago Cubs</p>
+                <div className="preview-stats">
+                  <span className="stat">☀️ Open Air</span>
+                  <span className="stat">🏛️ Historic</span>
+                </div>
+                <span className="view-guide-link">View Shade Guide →</span>
+              </Link>
+            </div>
+            <div className="view-all-link">
+              <Link href="/stadiums">View All 250+ Venues →</Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Shadium Section */}
+        <section className="why-shadium">
+          <div className="container-narrow">
+            <h2>Why Use The Shadium?</h2>
+            <p className="lead-text">
+              Wondering "are my seats in the shade?" The Shadium uses real-time sun tracking to show you exactly which sections will be shaded during your game. No more guessing, no more uncomfortable sun exposure.
+            </p>
+
+            <div className="benefits-grid">
+              <div className="benefit">
+                <div className="benefit-icon">⚡</div>
+                <h3>Real-Time Calculations</h3>
+                <p>Advanced sun position algorithms calculate shade for any date, time, and stadium</p>
+              </div>
+              <div className="benefit">
+                <div className="benefit-icon">🎯</div>
+                <h3>Section-Level Detail</h3>
+                <p>Every section analyzed with sun exposure percentage and timing</p>
+              </div>
+              <div className="benefit">
+                <div className="benefit-icon">🏟️</div>
+                <h3>250+ Venues</h3>
+                <p>All 30 MLB ballparks, 120 MiLB stadiums, and 32 NFL venues covered</p>
+              </div>
+              <div className="benefit">
+                <div className="benefit-icon">📱</div>
+                <h3>Mobile Optimized</h3>
+                <p>Perfect for on-the-go planning and game day decisions</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
           <Suspense fallback={<LoadingSpinner />}>
@@ -87,8 +171,8 @@ export default function HomePage() {
         .hero-section {
           position: relative;
           width: 100%;
-          height: 100vh;
-          min-height: 600px;
+          height: 60vh;
+          min-height: 500px;
           background: linear-gradient(170deg, #0f766e 0%, #0ea5e9 50%, #fbbf24 100%);
           background-size: 200% 200%;
           animation: gradientShift 15s ease infinite;
@@ -318,6 +402,271 @@ export default function HomePage() {
           #app-section { transition: none; }
           .hero-section { animation: none; }
           .hero-section::after { animation: none; }
+        }
+
+        /* Container Styles */
+        .container-narrow {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 2rem;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+          padding: 4rem 0;
+          background: white;
+        }
+
+        .how-it-works h2 {
+          text-align: center;
+          font-size: clamp(2rem, 4vw, 2.5rem);
+          margin-bottom: 3rem;
+          color: #1a237e;
+        }
+
+        .steps-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .step {
+          text-align: center;
+          padding: 2rem;
+          background: #f8f9fa;
+          border-radius: 16px;
+          position: relative;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .step:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step-number {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          width: 2rem;
+          height: 2rem;
+          background: #0f766e;
+          color: white;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          font-size: 0.875rem;
+        }
+
+        .step-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .step h3 {
+          color: #1a237e;
+          font-size: 1.25rem;
+          margin-bottom: 0.75rem;
+        }
+
+        .step p {
+          color: #666;
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        /* Popular Preview Section */
+        .popular-preview {
+          padding: 4rem 0;
+          background: #f8f9fa;
+        }
+
+        .popular-preview h2 {
+          text-align: center;
+          font-size: clamp(2rem, 4vw, 2.5rem);
+          margin-bottom: 0.5rem;
+          color: #1a237e;
+        }
+
+        .section-subtitle {
+          text-align: center;
+          color: #666;
+          font-size: 1.125rem;
+          margin-bottom: 3rem;
+        }
+
+        .preview-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .preview-card {
+          background: white;
+          border-radius: 12px;
+          padding: 1.5rem;
+          text-decoration: none;
+          color: inherit;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .preview-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+          border-color: #0f766e;
+        }
+
+        .preview-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 0.5rem;
+        }
+
+        .preview-header h3 {
+          color: #1a237e;
+          font-size: 1.25rem;
+          margin: 0;
+          font-weight: 600;
+        }
+
+        .league-badge {
+          background: #0f766e;
+          color: white;
+          padding: 0.25rem 0.75rem;
+          border-radius: 12px;
+          font-size: 0.75rem;
+          font-weight: 600;
+        }
+
+        .team-name {
+          color: #666;
+          font-size: 0.95rem;
+          margin-bottom: 1rem;
+        }
+
+        .preview-stats {
+          display: flex;
+          gap: 0.75rem;
+          margin-bottom: 1rem;
+          flex-wrap: wrap;
+        }
+
+        .preview-stats .stat {
+          background: #f0f4ff;
+          padding: 0.375rem 0.75rem;
+          border-radius: 8px;
+          font-size: 0.875rem;
+          color: #1a237e;
+        }
+
+        .view-guide-link {
+          color: #0f766e;
+          font-weight: 600;
+          font-size: 0.95rem;
+          margin-top: auto;
+        }
+
+        .view-all-link {
+          text-align: center;
+          margin-top: 2rem;
+        }
+
+        .view-all-link a {
+          color: #0f766e;
+          font-weight: 600;
+          font-size: 1.125rem;
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        .view-all-link a:hover {
+          color: #14b8a6;
+          text-decoration: underline;
+        }
+
+        /* Why Shadium Section */
+        .why-shadium {
+          padding: 4rem 0;
+          background: white;
+        }
+
+        .why-shadium h2 {
+          text-align: center;
+          font-size: clamp(2rem, 4vw, 2.5rem);
+          margin-bottom: 1rem;
+          color: #1a237e;
+        }
+
+        .lead-text {
+          text-align: center;
+          color: #666;
+          font-size: 1.125rem;
+          line-height: 1.7;
+          max-width: 800px;
+          margin: 0 auto 3rem;
+        }
+
+        .benefits-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 2rem;
+        }
+
+        .benefit {
+          text-align: center;
+          padding: 1.5rem;
+        }
+
+        .benefit-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .benefit h3 {
+          color: #1a237e;
+          font-size: 1.125rem;
+          margin-bottom: 0.75rem;
+          font-weight: 600;
+        }
+
+        .benefit p {
+          color: #666;
+          font-size: 0.95rem;
+          line-height: 1.6;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+          .container-narrow {
+            padding: 0 1.5rem;
+          }
+
+          .how-it-works,
+          .popular-preview,
+          .why-shadium {
+            padding: 3rem 0;
+          }
+
+          .steps-grid {
+            gap: 1.5rem;
+          }
+
+          .step {
+            padding: 1.5rem;
+          }
+
+          .preview-grid,
+          .benefits-grid {
+            gap: 1.5rem;
+          }
         }
       `}</style>
     </>
