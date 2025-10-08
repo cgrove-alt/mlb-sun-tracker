@@ -1,16 +1,13 @@
-import { LoadingSpinner } from '../../../src/components/LoadingSpinner';
+import { VenueChangeSkeleton } from '../../../src/components/SkeletonScreens';
 
 export default function Loading() {
   return (
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'center', 
-      alignItems: 'center', 
-      minHeight: '200px',
-      padding: '40px 0',
-      background: '#f8f9fa'
+    <div style={{
+      minHeight: '100vh',
+      padding: '20px',
+      background: 'var(--color-paper, #FFFFFF)'
     }}>
-      <LoadingSpinner size="large" message="Loading stadium guide..." />
+      <VenueChangeSkeleton venueName="stadium" />
     </div>
   );
 }
