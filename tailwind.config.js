@@ -87,6 +87,7 @@ module.exports = {
         'pulse-sync': 'pulseSync 1.5s ease-in-out infinite',
         'pulse-spinner': 'pulseSpinner 1.4s ease-in-out infinite',
         'dash': 'dash 1.4s ease-in-out infinite',
+        'tooltip-fade-in': 'tooltipFadeIn 0.2s ease-out forwards',
       },
       keyframes: {
         slideUp: {
@@ -117,6 +118,10 @@ module.exports = {
           '0%': { strokeDasharray: '1 125', strokeDashoffset: '0' },
           '50%': { strokeDasharray: '90 125', strokeDashoffset: '-35' },
           '100%': { strokeDasharray: '90 125', strokeDashoffset: '-124' },
+        },
+        tooltipFadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
     },
