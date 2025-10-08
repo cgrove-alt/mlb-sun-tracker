@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import './CollapsibleSection.css';
 
 interface CollapsibleSectionProps {
   title: string;
@@ -52,18 +51,20 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
 
   const headingId = id || title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
 
+  const titleSizeClass = level === 'h2' ? 'text-xl md:text-lg' : 'text-lg md:text-base';
+
   return (
-    <div className={`collapsible-section ${className} ${isOpen ? 'open' : ''}`}>
-      <HeadingTag id={headingId} className="collapsible-header">
+    <div className={`mb-4 border border-gray-200 rounded-lg overflow-hidden bg-white first:rounded-t-lg last:rounded-b-lg [&+&]:rounded-t-none [&+&]:mt-0 ${className}`}>
+      <HeadingTag id={headingId} className="m-0 text-inherit">
         <button
-          className="collapsible-trigger"
+          className={`flex items-center justify-between w-full py-4 px-5 md:py-3.5 md:px-4 bg-transparent border-0 text-inherit text-inherit font-inherit text-left cursor-pointer transition-colors duration-200 hover:bg-gray-50 ${isOpen ? 'bg-gray-100' : ''}`}
           onClick={handleToggle}
           aria-expanded={isOpen}
           aria-controls={`${headingId}-content`}
         >
-          <span className="collapsible-title">{title}</span>
+          <span className={`flex-1 ${titleSizeClass} font-semibold text-gray-900`}>{title}</span>
           <svg
-            className="collapsible-icon"
+            className={`flex-shrink-0 w-5 h-5 text-gray-500 transition-transform duration-300 motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`}
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -79,11 +80,11 @@ export const CollapsibleSection: React.FC<CollapsibleSectionProps> = ({
       </HeadingTag>
       <div
         id={`${headingId}-content`}
-        className="collapsible-content"
+        className="overflow-hidden transition-[height] duration-300 motion-reduce:transition-none"
         style={{ height }}
         ref={contentRef}
       >
-        <div className="collapsible-inner">
+        <div className="px-5 pb-5 md:px-4 md:pb-4">
           {children}
         </div>
       </div>
@@ -129,7 +130,7 @@ export const CollapsibleGroup: React.FC<CollapsibleGroupProps> = ({
   });
 
   return (
-    <div className="collapsible-group">
+    <div className="flex flex-col gap-3">
       {enhancedChildren}
     </div>
   );
