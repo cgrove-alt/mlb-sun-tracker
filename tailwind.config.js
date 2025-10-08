@@ -85,6 +85,8 @@ module.exports = {
         'slide-down': 'slideDown 0.3s ease-out forwards',
         'pulse': 'pulse 2s ease-in-out infinite',
         'pulse-sync': 'pulseSync 1.5s ease-in-out infinite',
+        'pulse-spinner': 'pulseSpinner 1.4s ease-in-out infinite',
+        'dash': 'dash 1.4s ease-in-out infinite',
       },
       keyframes: {
         slideUp: {
@@ -106,6 +108,15 @@ module.exports = {
         pulseSync: {
           '0%, 100%': { transform: 'scale(1)', opacity: '1' },
           '50%': { transform: 'scale(1.2)', opacity: '0.6' },
+        },
+        pulseSpinner: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.1)', opacity: '0.7' },
+        },
+        dash: {
+          '0%': { strokeDasharray: '1 125', strokeDashoffset: '0' },
+          '50%': { strokeDasharray: '90 125', strokeDashoffset: '-35' },
+          '100%': { strokeDasharray: '90 125', strokeDashoffset: '-124' },
         },
       },
     },
