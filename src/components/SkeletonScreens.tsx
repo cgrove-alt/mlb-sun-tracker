@@ -160,6 +160,46 @@ export const SunInfoSkeleton: React.FC = () => {
   );
 };
 
+// Homepage skeleton - loading state for initial app load
+export const HomePageSkeleton: React.FC = () => {
+  return (
+    <div className="homepage-skeleton" style={{
+      padding: '20px',
+      minHeight: '60vh',
+      background: 'var(--color-paper, #FFFFFF)'
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <div style={{ margin: '0 auto 16px', display: 'flex', justifyContent: 'center' }}>
+            <Skeleton width="300px" height="48px" />
+          </div>
+          <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+            <Skeleton width="400px" height="24px" />
+          </div>
+        </div>
+
+        <div style={{ marginBottom: '24px' }}>
+          <Skeleton width="100%" height="60px" borderRadius="var(--radius-lg)" />
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
+          {[1, 2, 3].map(i => (
+            <div key={i}>
+              <Skeleton width="100%" height="120px" borderRadius="var(--radius-lg)" />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '24px' }}>
+          <div className="loading-text" style={{ color: 'var(--color-text-secondary, #666)' }}>
+            Loading stadium selector...
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Venue change skeleton - comprehensive loading state during venue transitions
 export const VenueChangeSkeleton: React.FC<{ venueName?: string }> = ({ venueName }) => {
   return (
@@ -168,19 +208,19 @@ export const VenueChangeSkeleton: React.FC<{ venueName?: string }> = ({ venueNam
         <Skeleton width="200px" height="28px" />
         <Skeleton width="120px" height="20px" />
       </div>
-      
+
       <div className="venue-change-content">
         <div className="breadcrumb-skeleton">
           <Skeleton width="300px" height="32px" borderRadius="var(--radius-full)" />
         </div>
-        
+
         <div className="game-selector-skeleton">
           <Skeleton width="100%" height="48px" borderRadius="var(--radius-lg)" />
           <div style={{ marginTop: 'var(--spacing-md)' }}>
             <Skeleton width="100%" height="48px" borderRadius="var(--radius-lg)" />
           </div>
         </div>
-        
+
         <div className="info-section-skeleton">
           <div className="info-cards">
             <div className="info-card-skeleton">
@@ -197,7 +237,7 @@ export const VenueChangeSkeleton: React.FC<{ venueName?: string }> = ({ venueNam
             </div>
           </div>
         </div>
-        
+
         <div className="sections-preview-skeleton">
           <Skeleton width="180px" height="24px" />
           <div style={{ marginTop: 'var(--spacing-md)' }}>
@@ -205,7 +245,7 @@ export const VenueChangeSkeleton: React.FC<{ venueName?: string }> = ({ venueNam
           </div>
         </div>
       </div>
-      
+
       {venueName && (
         <div className="venue-loading-indicator">
           <div className="loading-text">

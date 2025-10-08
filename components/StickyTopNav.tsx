@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
+import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 import './StickyTopNav.css';
 
 export default function StickyTopNav() {
@@ -19,6 +20,7 @@ export default function StickyTopNav() {
   const pathname = usePathname();
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const haptic = useHapticFeedback();
 
   // Get venues by league
   const mlbVenues = getVenuesByLeague('MLB');
@@ -170,6 +172,7 @@ export default function StickyTopNav() {
                           key={result.id}
                           href={`/${route}/${result.id}`}
                           className="search-result-item"
+                          onClick={() => haptic.tap()}
                         >
                           <div className="result-header">
                             <span className="result-name">{result.name}</span>
@@ -187,7 +190,10 @@ export default function StickyTopNav() {
 
               <button
                 className="hamburger-menu"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => {
+                  haptic.tap();
+                  setIsMenuOpen(!isMenuOpen);
+                }}
                 aria-label="Toggle menu"
                 aria-expanded={isMenuOpen}
               >
@@ -226,7 +232,10 @@ export default function StickyTopNav() {
                     key={stadium.id}
                     href={`/stadium/${stadium.id}`}
                     className="popular-stadium-card"
-                    onClick={closeMobileMenu}
+                    onClick={() => {
+                      haptic.tap();
+                      closeMobileMenu();
+                    }}
                   >
                     <span className="stadium-name">{stadium.team}</span>
                     <span className="stadium-venue">{stadium.name}</span>

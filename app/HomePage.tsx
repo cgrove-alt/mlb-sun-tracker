@@ -3,14 +3,14 @@
 import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
-import { LoadingSpinner } from '../src/components/LoadingSpinner';
+import { HomePageSkeleton } from '../src/components/SkeletonScreens';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 
 // Use the unified App component that supports multiple leagues
 const App = dynamic(() => import('../src/UnifiedApp'), {
   ssr: false,
-  loading: () => <LoadingSpinner />,
+  loading: () => <HomePageSkeleton />,
 });
 
 export default function HomePage() {
@@ -76,7 +76,7 @@ export default function HomePage() {
         </div>
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
-          <Suspense fallback={<LoadingSpinner />}>
+          <Suspense fallback={<HomePageSkeleton />}>
             <App />
           </Suspense>
         </div>

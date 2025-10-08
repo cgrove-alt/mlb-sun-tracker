@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ModernButton } from '../src/components/ModernButton';
 import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
 import { cookieConsent, cookiesEnabled } from '../utils/cookies';
+import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -24,8 +25,9 @@ const CookieBannerModern: React.FC = () => {
     functional: false,
     timestamp: Date.now()
   });
-  
+
   const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
+  const haptic = useHapticFeedback();
 
   useEffect(() => {
     // Check for existing consent in cookies or localStorage
@@ -160,18 +162,19 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleAcceptAll = () => {
+    haptic.success();
     const newPreferences = {
       necessary: true,
       performance: true,
       functional: true,
       timestamp: Date.now()
     };
-    
+
     const saved = cookieConsent.setConsent(newPreferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(newPreferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
     
@@ -182,21 +185,22 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleRejectAll = () => {
+    haptic.tap();
     const newPreferences = {
       necessary: true,
       performance: false,
       functional: false,
       timestamp: Date.now()
     };
-    
+
     const saved = cookieConsent.setConsent(newPreferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(newPreferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
-    
+
     applyCookiePreferences(newPreferences);
     setPreferences(newPreferences);
     setShowBanner(false);
@@ -204,14 +208,15 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleSavePreferences = () => {
+    haptic.success();
     const saved = cookieConsent.setConsent(preferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(preferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
-    
+
     applyCookiePreferences(preferences);
     setShowBanner(false);
     setShowPreferences(false);
