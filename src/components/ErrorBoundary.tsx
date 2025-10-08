@@ -1,6 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { ErrorIcon } from './Icons';
-import './ErrorBoundary.css';
 
 interface Props {
   children: ReactNode;
@@ -176,40 +175,49 @@ export class ErrorBoundary extends Component<Props, State> {
       const { retryCount } = this.state;
       const errorMessage = this.getErrorMessage();
       
+      const containerClasses = `
+        flex items-center justify-center p-10 md:p-6 animate-fade-in
+        ${level === 'page' ? 'min-h-[80vh] my-0 rounded-none' : level === 'section' ? 'min-h-[300px]' : 'min-h-[200px]'}
+        ${isolate ? 'bg-white border border-gray-200 shadow-sm' : 'bg-gray-50'}
+        ${level !== 'page' ? 'rounded-xl my-5' : ''}
+      `.trim().replace(/\s+/g, ' ');
+
       return (
-        <div className={`error-boundary-container error-boundary-${level} ${isolate ? 'error-boundary-isolated' : ''}`}>
-          <div className="error-boundary-content">
-            <div className="error-icon">
-              <ErrorIcon size={level === 'page' ? 64 : 48} color="var(--color-error)" />
+        <div className={containerClasses}>
+          <div className="text-center max-w-[500px]">
+            <div className="mb-6">
+              <ErrorIcon size={level === 'page' ? 64 : 48} color="#DC2626" />
             </div>
-            <h2 className="error-title">
+            <h2 className="text-gray-900 text-2xl md:text-xl mb-4 font-semibold">
               {level === 'page' ? 'Page Error' : 'Oops! Something went wrong'}
             </h2>
-            <p className="error-message">
+            <p className="text-gray-600 text-lg md:text-base leading-relaxed mb-6">
               {errorMessage}
             </p>
-            
+
             {retryCount > 0 && retryCount < 3 && (
-              <p className="error-retry-info">
+              <p className="text-primary-700 text-sm font-medium mb-4 animate-pulse-error">
                 Retrying automatically... (Attempt {retryCount} of 3)
               </p>
             )}
-            
+
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <details className="error-details">
-                <summary>Error Details (Development Only)</summary>
-                <pre className="error-stack">
+              <details className="my-6 text-left bg-white p-4 rounded-lg border border-gray-300">
+                <summary className="cursor-pointer text-gray-700 font-medium p-2 select-none hover:text-blue-600">
+                  Error Details (Development Only)
+                </summary>
+                <pre className="mt-4 p-4 bg-gray-50 rounded overflow-x-auto font-mono text-sm leading-normal text-error">
                   {this.state.error.toString()}
                   {this.state.errorInfo && this.state.errorInfo.componentStack}
                 </pre>
               </details>
             )}
-            
-            <div className="error-actions">
+
+            <div className="flex gap-4 justify-center flex-wrap md:flex-col md:w-full">
               {level === 'page' ? (
                 <button
                   onClick={() => window.location.reload()}
-                  className="error-btn primary"
+                  className="py-3 px-6 rounded-lg text-base font-medium cursor-pointer transition-all min-w-[120px] border-0 inline-block bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-md hover:translate-y-[-2px] hover:shadow-lg active:translate-y-0 md:w-full"
                 >
                   Refresh Page
                 </button>
@@ -217,7 +225,7 @@ export class ErrorBoundary extends Component<Props, State> {
                 <>
                   <button
                     onClick={this.handleReset}
-                    className="error-btn primary"
+                    className="py-3 px-6 rounded-lg text-base font-medium cursor-pointer transition-all min-w-[120px] border-0 inline-block bg-gradient-to-br from-primary-500 to-primary-700 text-white shadow-md hover:translate-y-[-2px] hover:shadow-lg active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed md:w-full"
                     disabled={retryCount > 0 && retryCount < 3}
                   >
                     Try Again
@@ -225,7 +233,7 @@ export class ErrorBoundary extends Component<Props, State> {
                   {level === 'section' && (
                     <button
                       onClick={() => window.location.reload()}
-                      className="error-btn secondary"
+                      className="py-3 px-6 rounded-lg text-base font-medium cursor-pointer transition-all min-w-[120px] border-0 inline-block bg-gray-200 text-gray-700 shadow-sm hover:bg-gray-300 hover:translate-y-[-1px] hover:shadow-md active:translate-y-0 md:w-full"
                     >
                       Refresh Page
                     </button>

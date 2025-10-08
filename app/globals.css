@@ -6,7 +6,6 @@
 /* Import existing styles from CRA */
 @import url('../src/index.css');
 @import url('../src/App.css');
-@import url('../components/ErrorBoundary.css');
 
 /* Import critical design system files */
 @import url('../src/styles/tokens.css');

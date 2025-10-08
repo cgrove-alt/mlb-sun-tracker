@@ -88,6 +88,8 @@ module.exports = {
         'pulse-spinner': 'pulseSpinner 1.4s ease-in-out infinite',
         'dash': 'dash 1.4s ease-in-out infinite',
         'tooltip-fade-in': 'tooltipFadeIn 0.2s ease-out forwards',
+        'fade-in': 'fadeIn 300ms ease-in-out',
+        'pulse-error': 'pulseError 2s ease-in-out infinite',
       },
       keyframes: {
         slideUp: {
@@ -122,6 +124,14 @@ module.exports = {
         tooltipFadeIn: {
           '0%': { opacity: '0', transform: 'scale(0.8)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulseError: {
+          '0%, 100%': { opacity: '0.7' },
+          '50%': { opacity: '1' },
         },
       },
     },
