@@ -90,6 +90,7 @@ module.exports = {
         'tooltip-fade-in': 'tooltipFadeIn 0.2s ease-out forwards',
         'fade-in': 'fadeIn 300ms ease-in-out',
         'pulse-error': 'pulseError 2s ease-in-out infinite',
+        'share-menu-slide': 'shareMenuSlideIn 0.2s ease-out forwards',
       },
       keyframes: {
         slideUp: {
@@ -132,6 +133,10 @@ module.exports = {
         pulseError: {
           '0%, 100%': { opacity: '0.7' },
           '50%': { opacity: '1' },
+        },
+        shareMenuSlideIn: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

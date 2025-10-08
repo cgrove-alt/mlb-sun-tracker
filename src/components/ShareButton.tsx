@@ -5,7 +5,6 @@ import { MiLBGame } from '../services/milbApi';
 import { NFLGame } from '../services/nflApi';
 import { Tooltip } from './Tooltip';
 import { formatDateTimeWithTimezone } from '../utils/timeUtils';
-import './ShareButton.css';
 
 interface ShareButtonProps {
   selectedStadium: Stadium | null;
@@ -144,10 +143,17 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
   const hasContent = selectedStadium && gameDateTime;
 
   return (
-    <div className={`share-button-container ${className}`}>
+    <div className={`relative inline-block ${className}`}>
       <Tooltip content={hasContent ? "Share this stadium sun analysis" : "Select a stadium and time to share"}>
         <button
-          className={`share-button ${!hasContent ? 'disabled' : ''}`}
+          className={`
+            bg-gradient-to-br from-success to-[#20c997] text-white border-0 rounded-lg py-3 px-4 text-sm font-semibold cursor-pointer
+            transition-all flex items-center gap-2 min-w-[100px] justify-center shadow-md min-h-[44px] touch-manipulation
+            ${hasContent ? 'hover:-translate-y-0.5 hover:shadow-lg hover:from-[#218838] hover:to-[#1abc9c] active:scale-[0.98] focus:outline focus:outline-2 focus:outline-success focus:outline-offset-2' : 'bg-gray-600 cursor-not-allowed opacity-60 shadow-none'}
+            contrast-more:border-2 contrast-more:border-white
+            motion-reduce:transition-none motion-reduce:hover:translate-y-0
+            md:py-2 md:px-3 md:text-xs md:min-w-[80px]
+          `.trim().replace(/\s+/g, ' ')}
           onClick={toggleMenu}
           onKeyDown={(e) => handleKeyDown(e, toggleMenu)}
           disabled={!hasContent}
@@ -158,12 +164,16 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
           🔗 Share
         </button>
       </Tooltip>
-      
+
       {isMenuOpen && hasContent && (
-        <div className="share-menu" role="menu" aria-label="Share options">
+        <div
+          className="absolute top-full right-0 bg-white border border-gray-300 rounded-lg shadow-xl z-[1000] min-w-[160px] mt-2 py-2 animate-share-menu-slide motion-reduce:opacity-100 motion-reduce:animate-none contrast-more:border-2 contrast-more:border-black md:right-0 md:left-0 md:min-w-0 md:mt-1"
+          role="menu"
+          aria-label="Share options"
+        >
           {typeof navigator.share === 'function' && (
             <button
-              className="share-menu-item"
+              className="w-full bg-transparent border-0 py-3 px-4 text-left cursor-pointer transition-colors flex items-center gap-2 text-sm text-gray-800 min-h-[44px] touch-manipulation font-medium hover:bg-gray-100 hover:translate-x-0.5 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-[-2px] focus:bg-primary-100 contrast-more:hover:bg-black contrast-more:hover:text-white md:py-3 md:px-4 md:text-sm"
               onClick={shareNative}
               onKeyDown={(e) => handleKeyDown(e, shareNative)}
               role="menuitem"
@@ -171,36 +181,36 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
               📱 Share
             </button>
           )}
-          
+
           <button
-            className="share-menu-item"
+            className="w-full bg-transparent border-0 py-3 px-4 text-left cursor-pointer transition-colors flex items-center gap-2 text-sm text-gray-800 min-h-[44px] touch-manipulation font-medium hover:bg-gray-100 hover:translate-x-0.5 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-[-2px] focus:bg-primary-100 contrast-more:hover:bg-black contrast-more:hover:text-white md:py-3 md:px-4 md:text-sm"
             onClick={copyToClipboard}
             onKeyDown={(e) => handleKeyDown(e, copyToClipboard)}
             role="menuitem"
           >
             📋 {showCopyFeedback ? 'Copied!' : 'Copy Link'}
           </button>
-          
+
           <button
-            className="share-menu-item"
+            className="w-full bg-transparent border-0 py-3 px-4 text-left cursor-pointer transition-colors flex items-center gap-2 text-sm text-gray-800 min-h-[44px] touch-manipulation font-medium hover:bg-gray-100 hover:translate-x-0.5 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-[-2px] focus:bg-primary-100 contrast-more:hover:bg-black contrast-more:hover:text-white md:py-3 md:px-4 md:text-sm"
             onClick={shareViaEmail}
             onKeyDown={(e) => handleKeyDown(e, shareViaEmail)}
             role="menuitem"
           >
             📧 Email
           </button>
-          
+
           <button
-            className="share-menu-item"
+            className="w-full bg-transparent border-0 py-3 px-4 text-left cursor-pointer transition-colors flex items-center gap-2 text-sm text-gray-800 min-h-[44px] touch-manipulation font-medium hover:bg-gray-100 hover:translate-x-0.5 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-[-2px] focus:bg-primary-100 contrast-more:hover:bg-black contrast-more:hover:text-white md:py-3 md:px-4 md:text-sm"
             onClick={shareViaTwitter}
             onKeyDown={(e) => handleKeyDown(e, shareViaTwitter)}
             role="menuitem"
           >
             🐦 Twitter
           </button>
-          
+
           <button
-            className="share-menu-item"
+            className="w-full bg-transparent border-0 py-3 px-4 text-left cursor-pointer transition-colors flex items-center gap-2 text-sm text-gray-800 min-h-[44px] touch-manipulation font-medium hover:bg-gray-100 hover:translate-x-0.5 focus:outline focus:outline-2 focus:outline-primary focus:outline-offset-[-2px] focus:bg-primary-100 contrast-more:hover:bg-black contrast-more:hover:text-white md:py-3 md:px-4 md:text-sm"
             onClick={shareViaFacebook}
             onKeyDown={(e) => handleKeyDown(e, shareViaFacebook)}
             role="menuitem"
@@ -209,11 +219,11 @@ export const ShareButton: React.FC<ShareButtonProps> = ({
           </button>
         </div>
       )}
-      
+
       {/* Backdrop to close menu when clicking outside */}
       {isMenuOpen && (
-        <div 
-          className="share-menu-backdrop"
+        <div
+          className="fixed inset-0 bg-transparent z-[999]"
           onClick={() => setIsMenuOpen(false)}
           onKeyDown={(e) => {
             if (e.key === 'Escape') {
