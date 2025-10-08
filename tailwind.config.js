@@ -91,6 +91,8 @@ module.exports = {
         'fade-in': 'fadeIn 300ms ease-in-out',
         'pulse-error': 'pulseError 2s ease-in-out infinite',
         'share-menu-slide': 'shareMenuSlideIn 0.2s ease-out forwards',
+        'pulse-install': 'pulseInstall 1.2s ease-in-out infinite',
+        'toast-slide-up': 'toastSlideUp 0.3s ease-out forwards',
       },
       keyframes: {
         slideUp: {
@@ -141,6 +143,14 @@ module.exports = {
         slideDown: {
           '0%': { opacity: '0', transform: 'translateY(-10px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        pulseInstall: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.2)', opacity: '0.5' },
+        },
+        toastSlideUp: {
+          '0%': { bottom: '-100px', opacity: '0' },
+          '100%': { bottom: '1.25rem', opacity: '1' },
         },
       },
     },
