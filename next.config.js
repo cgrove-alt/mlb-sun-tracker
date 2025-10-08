@@ -29,14 +29,6 @@ const nextConfig = {
               test: /node_modules/,
               priority: 20,
             },
-            // Split Three.js into separate chunk
-            three: {
-              name: 'three',
-              test: /[\\/]node_modules[\\/]three[\\/]/,
-              chunks: 'all',
-              priority: 30,
-              enforce: true,
-            },
             // Split large data files
             data: {
               name: 'data',
@@ -78,7 +70,7 @@ const nextConfig = {
   
   // Experimental features for better performance
   experimental: {
-    optimizePackageImports: ['three'],
+    // Three.js removed from codebase
   },
   
   // Output configuration
