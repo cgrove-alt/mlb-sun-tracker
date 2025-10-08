@@ -65,6 +65,21 @@
   }
 }
 
+/* Sun Dial Container */
+.sunDialContainer {
+  display: none; /* Hidden on mobile */
+  flex-shrink: 0;
+}
+
+@media (min-width: 769px) {
+  .sunDialContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+  }
+}
+
 .inputs {
   display: flex;
   flex-direction: column;

@@ -1,12 +1,14 @@
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import styles from './StickyShadeBar.module.css';
 import { MLBGame, mlbApi } from '../src/services/mlbApi';
 import { format } from 'date-fns';
 import { formatGameTimeInStadiumTZ } from '../src/utils/dateTimeUtils';
 import { MLB_STADIUMS } from '../src/data/stadiums';
+import { getSunPosition } from '../src/utils/sunCalculations';
+import { SunPositionDial } from '../src/components/SunPositionDial';
 
 interface StickyShadeBarProps {
   stadiumName: string;
@@ -160,6 +162,23 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
     }));
   }, [selectedGame, games, section, pathname, router, stadiumId]);
 
+  // Calculate sun position for selected game
+  const sunPosition = useMemo(() => {
+    if (!selectedGame || !stadium) return null;
+
+    const game = games.find(g => g.gamePk.toString() === selectedGame);
+    if (!game) return null;
+
+    const gameDate = new Date(game.gameDate);
+
+    return getSunPosition(
+      gameDate,
+      stadium.latitude || 40.7128,
+      stadium.longitude || -74.0060,
+      stadium.timezone || 'America/New_York'
+    );
+  }, [selectedGame, games, stadium]);
+
   // Handle keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -180,6 +199,19 @@ export default function StickyShadeBar({ stadiumName, stadiumId }: StickyShadeBa
     <div className={styles.stickyBar}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <div className={styles.stadiumName}>{stadiumName}</div>
+
+        {/* Sun Position Dial */}
+        {sunPosition && selectedGame && (
+          <div className={styles.sunDialContainer}>
+            <SunPositionDial
+              altitude={sunPosition.altitude}
+              azimuth={sunPosition.azimuth}
+              gameTime={games.find(g => g.gamePk.toString() === selectedGame)?.gameDate ? new Date(games.find(g => g.gamePk.toString() === selectedGame)!.gameDate) : undefined}
+              size={120}
+              showLabels={false}
+            />
+          </div>
+        )}
         
         <div className={styles.inputs}>
           <div className={styles.inputRow}>
