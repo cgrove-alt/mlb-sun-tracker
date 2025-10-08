@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import './TableOfContents.css';
 
 interface TocItem {
   id: string;
@@ -104,17 +103,21 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
   }
 
   const tocContent = (
-    <nav className="toc-nav" aria-label="Table of contents">
-      <ul className="toc-list">
+    <nav className="text-sm" aria-label="Table of contents">
+      <ul className="list-none m-0 p-0">
         {headings.map((heading) => (
-          <li 
-            key={heading.id} 
-            className={`toc-item toc-level-${heading.level} ${activeId === heading.id ? 'active' : ''}`}
+          <li
+            key={heading.id}
+            className={heading.level === 3 ? 'ml-5' : 'm-0'}
           >
-            <a 
+            <a
               href={`#${heading.id}`}
               onClick={(e) => handleClick(e, heading.id)}
-              className="toc-link"
+              className={`
+                block py-1.5 px-2 text-gray-600 no-underline border-l-2 border-l-transparent transition-all
+                hover:text-gray-900 hover:bg-gray-50 hover:border-l-gray-300
+                ${activeId === heading.id ? 'text-primary-700 bg-blue-50 border-l-primary-700 font-medium' : ''}
+              `.trim().replace(/\s+/g, ' ')}
             >
               {heading.text}
             </a>
@@ -126,28 +129,28 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
 
   if (isMobile) {
     return (
-      <div className="toc-mobile">
-        <button 
-          className="toc-toggle"
+      <div className="my-4 relative">
+        <button
+          className="flex items-center justify-between w-full py-3 px-4 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm font-medium cursor-pointer transition-all hover:bg-gray-50 hover:border-gray-300"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-label="Toggle table of contents"
         >
-          <span className="toc-toggle-text">Contents</span>
-          <svg 
-            className={`toc-toggle-icon ${isOpen ? 'open' : ''}`}
-            width="20" 
-            height="20" 
+          <span className="flex items-center gap-2">Contents</span>
+          <svg
+            className={`transition-transform ${isOpen ? 'rotate-180' : ''}`}
+            width="20"
+            height="20"
             viewBox="0 0 20 20"
           >
-            <path 
-              fill="currentColor" 
+            <path
+              fill="currentColor"
               d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
             />
           </svg>
         </button>
         {isOpen && (
-          <div className="toc-dropdown">
+          <div className="absolute top-[calc(100%+0.5rem)] left-0 right-0 z-50 bg-white border border-gray-200 rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.1)] max-h-[400px] overflow-y-auto animate-slide-down [&_.toc-nav]:p-3 [&_.toc-link]:py-2 [&_.toc-link]:px-3 [&_.toc-link]:rounded [&_.toc-link:hover]:bg-gray-100 [&_.toc-item.active_.toc-link]:bg-blue-50 [&_.toc-item.active_.toc-link]:text-primary-700 [&_.toc-item.active_.toc-link]:font-medium">
             {tocContent}
           </div>
         )}
@@ -156,8 +159,8 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
   }
 
   return (
-    <aside className="toc-sidebar">
-      <h2 className="toc-title">On This Page</h2>
+    <aside className="sticky top-[100px] w-[250px] max-h-[calc(100vh-120px)] overflow-y-auto p-6 bg-white border border-gray-200 rounded-lg shadow-sm xl:w-[220px] lg:hidden scrollbar-thin scrollbar-track-gray-100 scrollbar-thumb-gray-400 hover:scrollbar-thumb-gray-600">
+      <h2 className="text-base font-semibold text-gray-900 m-0 mb-4 pb-2 border-b border-gray-200">On This Page</h2>
       {tocContent}
     </aside>
   );
