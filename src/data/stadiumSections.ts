@@ -33,11 +33,7 @@ function generateStandardSections(prefix: string, startAngle: number, anglePerSe
   return sections;
 }
 
-/**
- * @internal - Do not import this directly to avoid bundling 2.9 MB of data
- * Use getStadiumSectionsAsync() from './getStadiumSections' instead
- */
-const stadiumSections: StadiumSections[] = [
+export const stadiumSections: StadiumSections[] = [
   // Yankee Stadium
   {
     stadiumId: 'yankees',
@@ -5284,13 +5280,9 @@ const stadiumSections: StadiumSections[] = [
 ];
 
 // Helper function to get sections for a specific stadium
-/**
- * @deprecated Use getStadiumSectionsAsync from './getStadiumSections' instead
- * This synchronous version has been deprecated to avoid bundling all section data (2.9 MB)
- */
 export function getStadiumSections(stadiumId: string): StadiumSection[] {
-  console.warn(`getStadiumSections() is deprecated. Use getStadiumSectionsAsync() from './getStadiumSections' instead for stadium: ${stadiumId}`);
-  return [];
+  const stadiumData = stadiumSections.find(s => s.stadiumId === stadiumId);
+  return stadiumData ? stadiumData.sections : [];
 }
 
 // Helper function to check if a section is in sun based on sun position
