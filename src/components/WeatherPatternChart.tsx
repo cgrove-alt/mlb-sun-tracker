@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { SunIcon, CloudIcon, DropletIcon, WindIcon } from './Icons';
-import './WeatherPatternChart.css';
 
 interface MonthlyWeatherPattern {
   month: string;
@@ -73,79 +72,79 @@ const WeatherPatternChartComponent: React.FC<WeatherPatternChartProps> = ({ stad
   const maxDays = 31;
   
   return (
-    <div className="weather-pattern-chart">
-      <h3>Typical Weather Patterns - Baseball Season</h3>
-      <p className="chart-subtitle">Average conditions during day games in {city}</p>
-      
-      <div className="chart-container">
-        <div className="temperature-chart">
-          <h4><SunIcon size={16} /> Average Temperature</h4>
-          <div className="bar-chart">
+    <div className="bg-gray-50 rounded-xl p-8 mt-8">
+      <h3 className="text-2xl text-primary-900 mb-2">Typical Weather Patterns - Baseball Season</h3>
+      <p className="text-gray-600 mb-8">Average conditions during day games in {city}</p>
+
+      <div className="grid gap-8">
+        <div>
+          <h4 className="text-lg text-gray-700 mb-4 flex items-center gap-2"><SunIcon size={16} /> Average Temperature</h4>
+          <div className="flex gap-4 items-end h-[180px] py-4 overflow-x-auto md:justify-start">
             {patterns.map((pattern, idx) => (
-              <div key={idx} className="bar-group">
-                <div className="bar-wrapper">
-                  <div 
-                    className="temp-bar"
-                    style={{ 
+              <div key={idx} className="flex flex-col items-center gap-2 min-w-[60px]">
+                <div className="h-[150px] flex items-end">
+                  <div
+                    className="w-10 rounded-t relative transition-all duration-300 hover:-translate-y-1"
+                    style={{
                       height: `${(pattern.avgTemp / maxTemp) * 150}px`,
                       background: pattern.avgTemp > 80 ? '#ff6b6b' : pattern.avgTemp > 70 ? '#ffd93d' : '#4ecdc4'
                     }}
                   >
-                    <span className="bar-value">{pattern.avgTemp}°</span>
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 font-semibold text-sm text-primary-900">{pattern.avgTemp}°</span>
                   </div>
                 </div>
-                <span className="bar-label">{pattern.month}</span>
+                <span className="text-sm text-gray-600 font-medium">{pattern.month}</span>
               </div>
             ))}
           </div>
         </div>
-        
-        <div className="weather-stats">
-          <h4>Monthly Breakdown</h4>
-          <div className="stats-grid">
+
+        <div>
+          <h4 className="text-lg text-gray-700 mb-4">Monthly Breakdown</h4>
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(120px,1fr))] gap-4 md:grid-cols-2">
             {patterns.map((pattern, idx) => (
-              <div key={idx} className="month-stats">
-                <h5>{pattern.month}</h5>
-                <div className="stat-row">
+              <div key={idx} className="bg-white rounded-lg p-4 border border-gray-200">
+                <h5 className="text-base text-primary-900 mb-3 font-semibold">{pattern.month}</h5>
+                <div className="flex items-center gap-2 mb-2 text-sm">
                   <SunIcon size={14} />
-                  <span className="stat-label">Sunny Days:</span>
-                  <span className="stat-value">{pattern.sunnyDays}</span>
+                  <span className="text-gray-600 flex-1">Sunny Days:</span>
+                  <span className="font-semibold text-gray-700">{pattern.sunnyDays}</span>
                 </div>
-                <div className="stat-row">
+                <div className="flex items-center gap-2 mb-2 text-sm">
                   <DropletIcon size={14} />
-                  <span className="stat-label">Rainy Days:</span>
-                  <span className="stat-value">{pattern.rainyDays}</span>
+                  <span className="text-gray-600 flex-1">Rainy Days:</span>
+                  <span className="font-semibold text-gray-700">{pattern.rainyDays}</span>
                 </div>
-                <div className="stat-row">
+                <div className="flex items-center gap-2 text-sm">
                   <WindIcon size={14} />
-                  <span className="stat-label">Wind:</span>
-                  <span className="stat-value">{pattern.avgWindSpeed} mph</span>
+                  <span className="text-gray-600 flex-1">Wind:</span>
+                  <span className="font-semibold text-gray-700">{pattern.avgWindSpeed} mph</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        
-        <div className="weather-tips">
-          <h4>Weather Tips</h4>
-          <ul>
-            <li>
-              <strong>Hottest Months:</strong> {
+
+        <div className="bg-blue-50 rounded-lg p-6">
+          <h4 className="text-lg text-gray-700 mb-4">Weather Tips</h4>
+          <ul className="list-none p-0 m-0">
+            <li className="py-2 text-gray-700 leading-relaxed">
+              <strong className="text-primary-900">Hottest Months:</strong> {
                 patterns
                   .filter(p => p.avgTemp === maxTemp)
                   .map(p => p.month)
                   .join(', ')
               } - Extra sun protection needed
             </li>
-            <li>
-              <strong>Most Sunny Days:</strong> {
+            <li className="py-2 text-gray-700 leading-relaxed">
+              <strong className="text-primary-900">Most Sunny Days:</strong> {
                 patterns
                   .reduce((max, p) => p.sunnyDays > max.sunnyDays ? p : max)
                   .month
               } - Highest chance of clear skies
             </li>
-            <li>
-              <strong>Rain Risk:</strong> {
+            <li className="py-2 text-gray-700 leading-relaxed">
+              <strong className="text-primary-900">Rain Risk:</strong> {
                 patterns
                   .filter(p => p.rainyDays > 8)
                   .map(p => p.month)
