@@ -89,24 +89,12 @@ export default function HomePage() {
           width: 100%;
           height: 100vh;
           min-height: 600px;
-          background: linear-gradient(170deg, #0f766e 0%, #0ea5e9 50%, #fbbf24 100%);
-          background-size: 200% 200%;
-          animation: gradientShift 15s ease infinite;
+          background: linear-gradient(135deg, #0f766e 0%, #0891b2 100%);
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
           padding: 2rem;
-          /* Performance optimization */
-          will-change: background-position;
-          transform: translateZ(0);
-          -webkit-transform: translateZ(0);
-        }
-        
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
         }
 
         .hero-section::before {
@@ -159,9 +147,9 @@ export default function HomePage() {
         }
 
         .hero-cta-button {
-          background: #0f766e;
-          color: white;
-          border: 2px solid transparent;
+          background: white;
+          color: #0f766e;
+          border: none;
           padding: 1rem 2.5rem;
           font-size: 1.125rem;
           font-weight: 600;
@@ -169,42 +157,13 @@ export default function HomePage() {
           cursor: pointer;
           transition: all 0.2s ease;
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-          text-transform: none;
           letter-spacing: -0.01em;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .hero-cta-button::before {
-          content: '🏟️';
-          font-size: 1.25rem;
-        }
-        
-        .hero-cta-button::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 0;
-          height: 0;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.2);
-          transform: translate(-50%, -50%);
-          transition: width 0.6s, height 0.6s;
         }
 
         .hero-cta-button:hover {
-          transform: translateY(-2px) scale(1.02);
-          background: #14b8a6;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
-        .hero-cta-button:hover::after {
-          width: 300px;
-          height: 300px;
+          transform: translateY(-2px);
+          background: #f8fafc;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
         }
 
         .hero-cta-button:active {

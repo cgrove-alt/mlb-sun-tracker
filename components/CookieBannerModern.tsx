@@ -246,11 +246,6 @@ const CookieBannerModern: React.FC = () => {
 
   return (
     <>
-      {/* Glass morphism overlay */}
-      {(showBanner || showPreferences) && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40" />
-      )}
-
       {/* Main Banner */}
       {showBanner && !showPreferences && (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 animate-slide-up">
@@ -304,8 +299,13 @@ const CookieBannerModern: React.FC = () => {
 
       {/* Preferences Modal */}
       {showPreferences && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <>
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            onClick={() => setShowPreferences(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto">
             <div className="p-6">
               <h2 className="text-2xl font-bold text-ink-900 mb-4">Cookie Preferences</h2>
               
@@ -398,7 +398,8 @@ const CookieBannerModern: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </>
   );
