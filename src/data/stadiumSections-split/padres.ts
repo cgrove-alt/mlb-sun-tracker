@@ -1,0 +1,186 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = {
+    stadiumId: 'padres',
+    sections: [
+      // Premier Club - Behind Home Plate
+      { id: 'PC100', name: 'Premier Club 100', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC101', name: 'Premier Club 101', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC102', name: 'Premier Club 102', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'PC103', name: 'Premier Club 103', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      
+      // Field Box - Third Base Line
+      { id: 'FB104', name: 'Field Box 104', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB105', name: 'Field Box 105', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB106', name: 'Field Box 106', level: 'field', baseAngle: 36, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB107', name: 'Field Box 107', level: 'field', baseAngle: 44, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB108', name: 'Field Box 108', level: 'field', baseAngle: 52, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB109', name: 'Field Box 109', level: 'field', baseAngle: 60, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB110', name: 'Field Box 110', level: 'field', baseAngle: 68, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB111', name: 'Field Box 111', level: 'field', baseAngle: 76, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB112', name: 'Field Box 112', level: 'field', baseAngle: 84, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB113', name: 'Field Box 113', level: 'field', baseAngle: 92, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB114', name: 'Field Box 114', level: 'field', baseAngle: 100, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB115', name: 'Field Box 115', level: 'field', baseAngle: 108, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB116', name: 'Field Box 116', level: 'field', baseAngle: 116, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB117', name: 'Field Box 117', level: 'field', baseAngle: 124, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Field Box - First Base Line
+      { id: 'FB118', name: 'Field Box 118', level: 'field', baseAngle: 332, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB119', name: 'Field Box 119', level: 'field', baseAngle: 324, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB120', name: 'Field Box 120', level: 'field', baseAngle: 316, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB121', name: 'Field Box 121', level: 'field', baseAngle: 308, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB122', name: 'Field Box 122', level: 'field', baseAngle: 300, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB123', name: 'Field Box 123', level: 'field', baseAngle: 292, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB124', name: 'Field Box 124', level: 'field', baseAngle: 284, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB125', name: 'Field Box 125', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB126', name: 'Field Box 126', level: 'field', baseAngle: 268, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB127', name: 'Field Box 127', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB128', name: 'Field Box 128', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB129', name: 'Field Box 129', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB130', name: 'Field Box 130', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Toyota Terrace Level
+      { id: 'TT200', name: 'Toyota Terrace 200', level: 'lower', baseAngle: 340, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT201', name: 'Toyota Terrace 201', level: 'lower', baseAngle: 346, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT202', name: 'Toyota Terrace 202', level: 'lower', baseAngle: 352, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT203', name: 'Toyota Terrace 203', level: 'lower', baseAngle: 358, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT204', name: 'Toyota Terrace 204', level: 'lower', baseAngle: 4, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT205', name: 'Toyota Terrace 205', level: 'lower', baseAngle: 10, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT206', name: 'Toyota Terrace 206', level: 'lower', baseAngle: 16, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT207', name: 'Toyota Terrace 207', level: 'lower', baseAngle: 22, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT208', name: 'Toyota Terrace 208', level: 'lower', baseAngle: 28, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT209', name: 'Toyota Terrace 209', level: 'lower', baseAngle: 34, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT210', name: 'Toyota Terrace 210', level: 'lower', baseAngle: 40, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT211', name: 'Toyota Terrace 211', level: 'lower', baseAngle: 46, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT212', name: 'Toyota Terrace 212', level: 'lower', baseAngle: 52, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT213', name: 'Toyota Terrace 213', level: 'lower', baseAngle: 58, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT214', name: 'Toyota Terrace 214', level: 'lower', baseAngle: 64, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT215', name: 'Toyota Terrace 215', level: 'lower', baseAngle: 70, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT216', name: 'Toyota Terrace 216', level: 'lower', baseAngle: 76, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT217', name: 'Toyota Terrace 217', level: 'lower', baseAngle: 82, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT218', name: 'Toyota Terrace 218', level: 'lower', baseAngle: 88, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT219', name: 'Toyota Terrace 219', level: 'lower', baseAngle: 94, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT220', name: 'Toyota Terrace 220', level: 'lower', baseAngle: 100, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT221', name: 'Toyota Terrace 221', level: 'lower', baseAngle: 106, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT222', name: 'Toyota Terrace 222', level: 'lower', baseAngle: 112, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT223', name: 'Toyota Terrace 223', level: 'lower', baseAngle: 118, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT224', name: 'Toyota Terrace 224', level: 'lower', baseAngle: 124, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT225', name: 'Toyota Terrace 225', level: 'lower', baseAngle: 130, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT226', name: 'Toyota Terrace 226', level: 'lower', baseAngle: 230, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT227', name: 'Toyota Terrace 227', level: 'lower', baseAngle: 236, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT228', name: 'Toyota Terrace 228', level: 'lower', baseAngle: 242, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT229', name: 'Toyota Terrace 229', level: 'lower', baseAngle: 248, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT230', name: 'Toyota Terrace 230', level: 'lower', baseAngle: 254, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT231', name: 'Toyota Terrace 231', level: 'lower', baseAngle: 260, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT232', name: 'Toyota Terrace 232', level: 'lower', baseAngle: 266, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT233', name: 'Toyota Terrace 233', level: 'lower', baseAngle: 272, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT234', name: 'Toyota Terrace 234', level: 'lower', baseAngle: 278, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT235', name: 'Toyota Terrace 235', level: 'lower', baseAngle: 284, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT236', name: 'Toyota Terrace 236', level: 'lower', baseAngle: 290, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT237', name: 'Toyota Terrace 237', level: 'lower', baseAngle: 296, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT238', name: 'Toyota Terrace 238', level: 'lower', baseAngle: 302, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT239', name: 'Toyota Terrace 239', level: 'lower', baseAngle: 308, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'TT240', name: 'Toyota Terrace 240', level: 'lower', baseAngle: 314, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT241', name: 'Toyota Terrace 241', level: 'lower', baseAngle: 320, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT242', name: 'Toyota Terrace 242', level: 'lower', baseAngle: 326, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: 'TT243', name: 'Toyota Terrace 243', level: 'lower', baseAngle: 332, angleSpan: 6, covered: true, price: 'moderate' },
+      
+      // Upper Deck
+      { id: 'UD300', name: 'Upper Deck 300', level: 'upper', baseAngle: 340, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD301', name: 'Upper Deck 301', level: 'upper', baseAngle: 345, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD302', name: 'Upper Deck 302', level: 'upper', baseAngle: 350, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD303', name: 'Upper Deck 303', level: 'upper', baseAngle: 355, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD304', name: 'Upper Deck 304', level: 'upper', baseAngle: 0, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD305', name: 'Upper Deck 305', level: 'upper', baseAngle: 5, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD306', name: 'Upper Deck 306', level: 'upper', baseAngle: 10, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD307', name: 'Upper Deck 307', level: 'upper', baseAngle: 15, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD308', name: 'Upper Deck 308', level: 'upper', baseAngle: 20, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD309', name: 'Upper Deck 309', level: 'upper', baseAngle: 25, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD310', name: 'Upper Deck 310', level: 'upper', baseAngle: 30, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD311', name: 'Upper Deck 311', level: 'upper', baseAngle: 35, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD312', name: 'Upper Deck 312', level: 'upper', baseAngle: 40, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD313', name: 'Upper Deck 313', level: 'upper', baseAngle: 45, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD314', name: 'Upper Deck 314', level: 'upper', baseAngle: 50, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD315', name: 'Upper Deck 315', level: 'upper', baseAngle: 55, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD316', name: 'Upper Deck 316', level: 'upper', baseAngle: 60, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD317', name: 'Upper Deck 317', level: 'upper', baseAngle: 65, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD318', name: 'Upper Deck 318', level: 'upper', baseAngle: 70, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD319', name: 'Upper Deck 319', level: 'upper', baseAngle: 75, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD320', name: 'Upper Deck 320', level: 'upper', baseAngle: 80, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD321', name: 'Upper Deck 321', level: 'upper', baseAngle: 85, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD322', name: 'Upper Deck 322', level: 'upper', baseAngle: 90, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD323', name: 'Upper Deck 323', level: 'upper', baseAngle: 95, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD324', name: 'Upper Deck 324', level: 'upper', baseAngle: 100, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD325', name: 'Upper Deck 325', level: 'upper', baseAngle: 260, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD326', name: 'Upper Deck 326', level: 'upper', baseAngle: 265, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD327', name: 'Upper Deck 327', level: 'upper', baseAngle: 270, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD328', name: 'Upper Deck 328', level: 'upper', baseAngle: 275, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD329', name: 'Upper Deck 329', level: 'upper', baseAngle: 280, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD330', name: 'Upper Deck 330', level: 'upper', baseAngle: 285, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD331', name: 'Upper Deck 331', level: 'upper', baseAngle: 290, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD332', name: 'Upper Deck 332', level: 'upper', baseAngle: 295, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD333', name: 'Upper Deck 333', level: 'upper', baseAngle: 300, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD334', name: 'Upper Deck 334', level: 'upper', baseAngle: 305, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD335', name: 'Upper Deck 335', level: 'upper', baseAngle: 310, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD336', name: 'Upper Deck 336', level: 'upper', baseAngle: 315, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'UD337', name: 'Upper Deck 337', level: 'upper', baseAngle: 320, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD338', name: 'Upper Deck 338', level: 'upper', baseAngle: 325, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD339', name: 'Upper Deck 339', level: 'upper', baseAngle: 330, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'UD340', name: 'Upper Deck 340', level: 'upper', baseAngle: 335, angleSpan: 5, covered: true, price: 'value' },
+      
+      // Park at the Park
+      { id: 'PARK131', name: 'Park at the Park 131', level: 'field', baseAngle: 132, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK132', name: 'Park at the Park 132', level: 'field', baseAngle: 140, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK133', name: 'Park at the Park 133', level: 'field', baseAngle: 148, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK134', name: 'Park at the Park 134', level: 'field', baseAngle: 156, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK135', name: 'Park at the Park 135', level: 'field', baseAngle: 164, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK136', name: 'Park at the Park 136', level: 'field', baseAngle: 172, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK137', name: 'Park at the Park 137', level: 'field', baseAngle: 180, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK138', name: 'Park at the Park 138', level: 'field', baseAngle: 188, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK139', name: 'Park at the Park 139', level: 'field', baseAngle: 196, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK140', name: 'Park at the Park 140', level: 'field', baseAngle: 204, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK141', name: 'Park at the Park 141', level: 'field', baseAngle: 212, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK142', name: 'Park at the Park 142', level: 'field', baseAngle: 220, angleSpan: 8, covered: false, price: 'value' },
+      { id: 'PARK143', name: 'Park at the Park 143', level: 'field', baseAngle: 228, angleSpan: 8, covered: false, price: 'value' },
+      
+      // Beach Bleachers (Left Field)
+      { id: 'BEACH', name: 'Beach Bleachers', level: 'upper', baseAngle: 105, angleSpan: 25, covered: false, price: 'value' },
+      
+      // Western Metal Supply Co. Building
+      { id: 'WMSC', name: 'Western Metal Supply Co. Building', level: 'club', baseAngle: 130, angleSpan: 10, covered: true, price: 'premium' },
+    ]
+  };

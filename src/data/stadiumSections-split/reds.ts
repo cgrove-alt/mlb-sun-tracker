@@ -1,0 +1,212 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = {
+    stadiumId: 'reds',
+    sections: [
+      // Diamond Seats
+      { id: '16', name: 'Diamond Seats 16', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '17', name: 'Diamond Seats 17', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '18', name: 'Diamond Seats 18', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '19', name: 'Diamond Seats 19', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      
+      // Field Box
+      { id: '20', name: 'Field Box 20', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '21', name: 'Field Box 21', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '22', name: 'Field Box 22', level: 'field', baseAngle: 36, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '23', name: 'Field Box 23', level: 'field', baseAngle: 44, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '24', name: 'Field Box 24', level: 'field', baseAngle: 52, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '25', name: 'Field Box 25', level: 'field', baseAngle: 60, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '26', name: 'Field Box 26', level: 'field', baseAngle: 68, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '27', name: 'Field Box 27', level: 'field', baseAngle: 76, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '28', name: 'Field Box 28', level: 'field', baseAngle: 84, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '29', name: 'Field Box 29', level: 'field', baseAngle: 92, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '30', name: 'Field Box 30', level: 'field', baseAngle: 100, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '31', name: 'Field Box 31', level: 'field', baseAngle: 108, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '32', name: 'Field Box 32', level: 'field', baseAngle: 116, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '33', name: 'Field Box 33', level: 'field', baseAngle: 124, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '34', name: 'Field Box 34', level: 'field', baseAngle: 132, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '35', name: 'Field Box 35', level: 'field', baseAngle: 140, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '36', name: 'Field Box 36', level: 'field', baseAngle: 148, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '37', name: 'Field Box 37', level: 'field', baseAngle: 156, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '38', name: 'Field Box 38', level: 'field', baseAngle: 164, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '39', name: 'Field Box 39', level: 'field', baseAngle: 172, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '40', name: 'Field Box 40', level: 'field', baseAngle: 180, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '41', name: 'Field Box 41', level: 'field', baseAngle: 188, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '42', name: 'Field Box 42', level: 'field', baseAngle: 196, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '43', name: 'Field Box 43', level: 'field', baseAngle: 204, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '44', name: 'Field Box 44', level: 'field', baseAngle: 212, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '45', name: 'Field Box 45', level: 'field', baseAngle: 220, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '46', name: 'Field Box 46', level: 'field', baseAngle: 228, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '47', name: 'Field Box 47', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '48', name: 'Field Box 48', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '49', name: 'Field Box 49', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '50', name: 'Field Box 50', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '51', name: 'Field Box 51', level: 'field', baseAngle: 268, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '52', name: 'Field Box 52', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '53', name: 'Field Box 53', level: 'field', baseAngle: 284, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '54', name: 'Field Box 54', level: 'field', baseAngle: 292, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '55', name: 'Field Box 55', level: 'field', baseAngle: 300, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '56', name: 'Field Box 56', level: 'field', baseAngle: 308, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '57', name: 'Field Box 57', level: 'field', baseAngle: 316, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '58', name: 'Field Box 58', level: 'field', baseAngle: 324, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '59', name: 'Field Box 59', level: 'field', baseAngle: 332, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Infield Box
+      { id: '116', name: 'Infield Box 116', level: 'lower', baseAngle: 340, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '117', name: 'Infield Box 117', level: 'lower', baseAngle: 348, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '118', name: 'Infield Box 118', level: 'lower', baseAngle: 356, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '119', name: 'Infield Box 119', level: 'lower', baseAngle: 4, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '120', name: 'Infield Box 120', level: 'lower', baseAngle: 12, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '121', name: 'Infield Box 121', level: 'lower', baseAngle: 20, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '122', name: 'Infield Box 122', level: 'lower', baseAngle: 26, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '123', name: 'Infield Box 123', level: 'lower', baseAngle: 32, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '124', name: 'Infield Box 124', level: 'lower', baseAngle: 38, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '125', name: 'Infield Box 125', level: 'lower', baseAngle: 44, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '126', name: 'Infield Box 126', level: 'lower', baseAngle: 50, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '127', name: 'Infield Box 127', level: 'lower', baseAngle: 56, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '128', name: 'Infield Box 128', level: 'lower', baseAngle: 62, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '129', name: 'Infield Box 129', level: 'lower', baseAngle: 68, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '130', name: 'Infield Box 130', level: 'lower', baseAngle: 74, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '131', name: 'Infield Box 131', level: 'lower', baseAngle: 80, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '132', name: 'Infield Box 132', level: 'lower', baseAngle: 86, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '133', name: 'Infield Box 133', level: 'lower', baseAngle: 92, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '134', name: 'Infield Box 134', level: 'lower', baseAngle: 98, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '135', name: 'Infield Box 135', level: 'lower', baseAngle: 104, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '136', name: 'Infield Box 136', level: 'lower', baseAngle: 110, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '137', name: 'Infield Box 137', level: 'lower', baseAngle: 116, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '138', name: 'Infield Box 138', level: 'lower', baseAngle: 122, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '139', name: 'Infield Box 139', level: 'lower', baseAngle: 128, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '140', name: 'Infield Box 140', level: 'lower', baseAngle: 134, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '141', name: 'Infield Box 141', level: 'lower', baseAngle: 140, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '142', name: 'Infield Box 142', level: 'lower', baseAngle: 146, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '143', name: 'Infield Box 143', level: 'lower', baseAngle: 152, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '144', name: 'Infield Box 144', level: 'lower', baseAngle: 158, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '145', name: 'Infield Box 145', level: 'lower', baseAngle: 164, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '146', name: 'Infield Box 146', level: 'lower', baseAngle: 170, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '147', name: 'Infield Box 147', level: 'lower', baseAngle: 176, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '148', name: 'Infield Box 148', level: 'lower', baseAngle: 182, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '149', name: 'Infield Box 149', level: 'lower', baseAngle: 188, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '150', name: 'Infield Box 150', level: 'lower', baseAngle: 194, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '151', name: 'Infield Box 151', level: 'lower', baseAngle: 200, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '152', name: 'Infield Box 152', level: 'lower', baseAngle: 206, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '153', name: 'Infield Box 153', level: 'lower', baseAngle: 212, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '154', name: 'Infield Box 154', level: 'lower', baseAngle: 218, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '155', name: 'Infield Box 155', level: 'lower', baseAngle: 224, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '156', name: 'Infield Box 156', level: 'lower', baseAngle: 230, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '157', name: 'Infield Box 157', level: 'lower', baseAngle: 236, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '158', name: 'Infield Box 158', level: 'lower', baseAngle: 242, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '159', name: 'Infield Box 159', level: 'lower', baseAngle: 248, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '160', name: 'Infield Box 160', level: 'lower', baseAngle: 254, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '161', name: 'Infield Box 161', level: 'lower', baseAngle: 260, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '162', name: 'Infield Box 162', level: 'lower', baseAngle: 266, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '163', name: 'Infield Box 163', level: 'lower', baseAngle: 272, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '164', name: 'Infield Box 164', level: 'lower', baseAngle: 278, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '165', name: 'Infield Box 165', level: 'lower', baseAngle: 284, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '166', name: 'Infield Box 166', level: 'lower', baseAngle: 290, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '167', name: 'Infield Box 167', level: 'lower', baseAngle: 296, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '168', name: 'Infield Box 168', level: 'lower', baseAngle: 302, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '169', name: 'Infield Box 169', level: 'lower', baseAngle: 308, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '170', name: 'Infield Box 170', level: 'lower', baseAngle: 314, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '171', name: 'Infield Box 171', level: 'lower', baseAngle: 320, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '172', name: 'Infield Box 172', level: 'lower', baseAngle: 326, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '173', name: 'Infield Box 173', level: 'lower', baseAngle: 332, angleSpan: 6, covered: false, price: 'moderate' },
+      
+      // Pavilion
+      { id: '416', name: 'Pavilion 416', level: 'upper', baseAngle: 340, angleSpan: 8, covered: true, price: 'value' },
+      { id: '417', name: 'Pavilion 417', level: 'upper', baseAngle: 348, angleSpan: 8, covered: true, price: 'value' },
+      { id: '418', name: 'Pavilion 418', level: 'upper', baseAngle: 356, angleSpan: 8, covered: true, price: 'value' },
+      { id: '419', name: 'Pavilion 419', level: 'upper', baseAngle: 4, angleSpan: 8, covered: true, price: 'value' },
+      { id: '420', name: 'Pavilion 420', level: 'upper', baseAngle: 12, angleSpan: 8, covered: true, price: 'value' },
+      { id: '421', name: 'Pavilion 421', level: 'upper', baseAngle: 20, angleSpan: 6, covered: false, price: 'value' },
+      { id: '422', name: 'Pavilion 422', level: 'upper', baseAngle: 26, angleSpan: 6, covered: false, price: 'value' },
+      { id: '423', name: 'Pavilion 423', level: 'upper', baseAngle: 32, angleSpan: 6, covered: false, price: 'value' },
+      { id: '424', name: 'Pavilion 424', level: 'upper', baseAngle: 38, angleSpan: 6, covered: false, price: 'value' },
+      { id: '425', name: 'Pavilion 425', level: 'upper', baseAngle: 44, angleSpan: 6, covered: false, price: 'value' },
+      { id: '426', name: 'Pavilion 426', level: 'upper', baseAngle: 50, angleSpan: 6, covered: false, price: 'value' },
+      { id: '427', name: 'Pavilion 427', level: 'upper', baseAngle: 56, angleSpan: 6, covered: false, price: 'value' },
+      { id: '428', name: 'Pavilion 428', level: 'upper', baseAngle: 62, angleSpan: 6, covered: false, price: 'value' },
+      { id: '429', name: 'Pavilion 429', level: 'upper', baseAngle: 68, angleSpan: 6, covered: false, price: 'value' },
+      { id: '430', name: 'Pavilion 430', level: 'upper', baseAngle: 74, angleSpan: 6, covered: false, price: 'value' },
+      { id: '431', name: 'Pavilion 431', level: 'upper', baseAngle: 80, angleSpan: 6, covered: false, price: 'value' },
+      { id: '432', name: 'Pavilion 432', level: 'upper', baseAngle: 86, angleSpan: 6, covered: false, price: 'value' },
+      { id: '433', name: 'Pavilion 433', level: 'upper', baseAngle: 92, angleSpan: 6, covered: false, price: 'value' },
+      { id: '434', name: 'Pavilion 434', level: 'upper', baseAngle: 98, angleSpan: 6, covered: false, price: 'value' },
+      { id: '435', name: 'Pavilion 435', level: 'upper', baseAngle: 104, angleSpan: 6, covered: false, price: 'value' },
+      { id: '436', name: 'Pavilion 436', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value' },
+      { id: '437', name: 'Pavilion 437', level: 'upper', baseAngle: 116, angleSpan: 6, covered: false, price: 'value' },
+      { id: '438', name: 'Pavilion 438', level: 'upper', baseAngle: 122, angleSpan: 6, covered: false, price: 'value' },
+      { id: '439', name: 'Pavilion 439', level: 'upper', baseAngle: 128, angleSpan: 6, covered: false, price: 'value' },
+      { id: '440', name: 'Pavilion 440', level: 'upper', baseAngle: 134, angleSpan: 6, covered: false, price: 'value' },
+      { id: '441', name: 'Pavilion 441', level: 'upper', baseAngle: 140, angleSpan: 6, covered: false, price: 'value' },
+      { id: '442', name: 'Pavilion 442', level: 'upper', baseAngle: 146, angleSpan: 6, covered: false, price: 'value' },
+      { id: '443', name: 'Pavilion 443', level: 'upper', baseAngle: 152, angleSpan: 6, covered: false, price: 'value' },
+      
+      // View Level
+      { id: '516', name: 'View Level 516', level: 'upper', baseAngle: 340, angleSpan: 8, covered: true, price: 'value' },
+      { id: '517', name: 'View Level 517', level: 'upper', baseAngle: 348, angleSpan: 8, covered: true, price: 'value' },
+      { id: '518', name: 'View Level 518', level: 'upper', baseAngle: 356, angleSpan: 8, covered: true, price: 'value' },
+      { id: '519', name: 'View Level 519', level: 'upper', baseAngle: 4, angleSpan: 8, covered: true, price: 'value' },
+      { id: '520', name: 'View Level 520', level: 'upper', baseAngle: 12, angleSpan: 8, covered: true, price: 'value' },
+      { id: '521', name: 'View Level 521', level: 'upper', baseAngle: 20, angleSpan: 6, covered: false, price: 'value' },
+      { id: '522', name: 'View Level 522', level: 'upper', baseAngle: 26, angleSpan: 6, covered: false, price: 'value' },
+      { id: '523', name: 'View Level 523', level: 'upper', baseAngle: 32, angleSpan: 6, covered: false, price: 'value' },
+      { id: '524', name: 'View Level 524', level: 'upper', baseAngle: 38, angleSpan: 6, covered: false, price: 'value' },
+      { id: '525', name: 'View Level 525', level: 'upper', baseAngle: 44, angleSpan: 6, covered: false, price: 'value' },
+      { id: '526', name: 'View Level 526', level: 'upper', baseAngle: 50, angleSpan: 6, covered: false, price: 'value' },
+      { id: '527', name: 'View Level 527', level: 'upper', baseAngle: 56, angleSpan: 6, covered: false, price: 'value' },
+      { id: '528', name: 'View Level 528', level: 'upper', baseAngle: 62, angleSpan: 6, covered: false, price: 'value' },
+      { id: '529', name: 'View Level 529', level: 'upper', baseAngle: 68, angleSpan: 6, covered: false, price: 'value' },
+      { id: '530', name: 'View Level 530', level: 'upper', baseAngle: 74, angleSpan: 6, covered: false, price: 'value' },
+      { id: '531', name: 'View Level 531', level: 'upper', baseAngle: 80, angleSpan: 6, covered: false, price: 'value' },
+      { id: '532', name: 'View Level 532', level: 'upper', baseAngle: 86, angleSpan: 6, covered: false, price: 'value' },
+      { id: '533', name: 'View Level 533', level: 'upper', baseAngle: 92, angleSpan: 6, covered: false, price: 'value' },
+      { id: '534', name: 'View Level 534', level: 'upper', baseAngle: 98, angleSpan: 6, covered: false, price: 'value' },
+      { id: '535', name: 'View Level 535', level: 'upper', baseAngle: 104, angleSpan: 6, covered: false, price: 'value' },
+      { id: '536', name: 'View Level 536', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value' },
+      { id: '537', name: 'View Level 537', level: 'upper', baseAngle: 116, angleSpan: 6, covered: false, price: 'value' },
+      { id: '538', name: 'View Level 538', level: 'upper', baseAngle: 122, angleSpan: 6, covered: false, price: 'value' },
+      { id: '539', name: 'View Level 539', level: 'upper', baseAngle: 128, angleSpan: 6, covered: false, price: 'value' },
+      { id: '540', name: 'View Level 540', level: 'upper', baseAngle: 134, angleSpan: 6, covered: false, price: 'value' },
+      { id: '541', name: 'View Level 541', level: 'upper', baseAngle: 140, angleSpan: 6, covered: false, price: 'value' },
+      { id: '542', name: 'View Level 542', level: 'upper', baseAngle: 146, angleSpan: 6, covered: false, price: 'value' },
+      { id: '543', name: 'View Level 543', level: 'upper', baseAngle: 152, angleSpan: 6, covered: false, price: 'value' },
+      
+      // Moon Deck
+      { id: '601', name: 'Moon Deck 601', level: 'upper', baseAngle: 150, angleSpan: 20, covered: false, price: 'value' },
+      { id: '602', name: 'Moon Deck 602', level: 'upper', baseAngle: 170, angleSpan: 20, covered: false, price: 'value' },
+      { id: '603', name: 'Moon Deck 603', level: 'upper', baseAngle: 190, angleSpan: 20, covered: false, price: 'value' },
+    ]
+  };

@@ -1,4 +1,4 @@
-import { stadiumSections, type StadiumSection } from './stadiumSections';
+import type { StadiumSection } from './stadiumSections';
 
 export interface StadiumSections {
   stadiumId: string;
@@ -6,12 +6,19 @@ export interface StadiumSections {
 }
 
 /**
- * Get stadium sections data asynchronously
- * Currently uses the main stadiumSections array but keeps async interface for future optimization
+ * Get stadium sections data asynchronously with dynamic imports
+ * Only loads the specific stadium's section data, avoiding bundling all 5MB+ of sections
  */
 export async function getStadiumSectionsAsync(stadiumId: string): Promise<StadiumSection[]> {
-  const stadiumData = stadiumSections.find(s => s.stadiumId === stadiumId);
-  return stadiumData ? stadiumData.sections : [];
+  try {
+    // Dynamic import from split files - only bundles what's needed
+    const module = await import(`./stadiumSections-split/${stadiumId}.ts`);
+    const data = module.stadiumSections;
+    return data.sections || [];
+  } catch (error) {
+    console.warn(`No section data found for stadium: ${stadiumId}`);
+    return [];
+  }
 }
 
 /**

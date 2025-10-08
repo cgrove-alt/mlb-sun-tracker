@@ -1,0 +1,173 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = // Yankee Stadium
+  {
+    stadiumId: 'yankees',
+    sections: [
+      // Field Level (100 Level) - Legends and Field MVP
+      { id: '011', name: 'Legends 11', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '012', name: 'Legends 12', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '013', name: 'Legends 13', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '014A', name: 'Legends 14A', level: 'field', baseAngle: 20, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '014B', name: 'Legends 14B', level: 'field', baseAngle: 25, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '015A', name: 'Legends 15A', level: 'field', baseAngle: 30, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '015B', name: 'Legends 15B', level: 'field', baseAngle: 35, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '016', name: 'Legends 16', level: 'field', baseAngle: 40, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '017A', name: 'Legends 17A', level: 'field', baseAngle: 50, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '017B', name: 'Legends 17B', level: 'field', baseAngle: 55, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '018', name: 'Legends 18', level: 'field', baseAngle: 60, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '019', name: 'Legends 19', level: 'field', baseAngle: 70, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '020', name: 'Legends 20', level: 'field', baseAngle: 80, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '021', name: 'Legends 21', level: 'field', baseAngle: 90, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '022', name: 'Legends 22', level: 'field', baseAngle: 100, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '023', name: 'Legends 23', level: 'field', baseAngle: 110, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '024', name: 'Legends 24', level: 'field', baseAngle: 120, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '025', name: 'Legends 25', level: 'field', baseAngle: 130, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '026', name: 'Legends 26', level: 'field', baseAngle: 140, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '027A', name: 'Legends 27A', level: 'field', baseAngle: 320, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '027B', name: 'Legends 27B', level: 'field', baseAngle: 325, angleSpan: 5, covered: false, price: 'luxury' },
+      { id: '028', name: 'Legends 28', level: 'field', baseAngle: 330, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '029', name: 'Legends 29', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      
+      // Field MVP Sections
+      { id: '115', name: 'Field MVP 115', level: 'field', baseAngle: 30, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '116', name: 'Field MVP 116', level: 'field', baseAngle: 38, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '117', name: 'Field MVP 117', level: 'field', baseAngle: 46, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '118', name: 'Field MVP 118', level: 'field', baseAngle: 54, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '125', name: 'Field MVP 125', level: 'field', baseAngle: 306, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '126', name: 'Field MVP 126', level: 'field', baseAngle: 314, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '127A', name: 'Field MVP 127A', level: 'field', baseAngle: 322, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Main Level (200 Level)
+      { id: '210', name: 'Main 210', level: 'lower', baseAngle: 350, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '211', name: 'Main 211', level: 'lower', baseAngle: 358, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '212', name: 'Main 212', level: 'lower', baseAngle: 6, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '213', name: 'Main 213', level: 'lower', baseAngle: 14, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '214A', name: 'Main 214A', level: 'lower', baseAngle: 22, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '214B', name: 'Main 214B', level: 'lower', baseAngle: 30, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '215', name: 'Main 215', level: 'lower', baseAngle: 38, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '216', name: 'Main 216', level: 'lower', baseAngle: 46, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '217', name: 'Main 217', level: 'lower', baseAngle: 54, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '218', name: 'Main 218', level: 'lower', baseAngle: 62, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '219', name: 'Main 219', level: 'lower', baseAngle: 70, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '220', name: 'Main 220', level: 'lower', baseAngle: 78, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '221', name: 'Main 221', level: 'lower', baseAngle: 86, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '222', name: 'Main 222', level: 'lower', baseAngle: 94, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '223', name: 'Main 223', level: 'lower', baseAngle: 102, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '224', name: 'Main 224', level: 'lower', baseAngle: 110, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '225', name: 'Main 225', level: 'lower', baseAngle: 118, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '226', name: 'Main 226', level: 'lower', baseAngle: 126, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '227A', name: 'Main 227A', level: 'lower', baseAngle: 306, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '227B', name: 'Main 227B', level: 'lower', baseAngle: 314, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '228', name: 'Main 228', level: 'lower', baseAngle: 322, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '229', name: 'Main 229', level: 'lower', baseAngle: 330, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '230', name: 'Main 230', level: 'lower', baseAngle: 338, angleSpan: 8, covered: true, price: 'moderate' },
+      { id: '231', name: 'Main 231', level: 'lower', baseAngle: 346, angleSpan: 8, covered: true, price: 'moderate' },
+      
+      // Terrace Level (300 Level)
+      { id: '305', name: 'Terrace 305', level: 'upper', baseAngle: 350, angleSpan: 7, covered: true, price: 'value' },
+      { id: '306', name: 'Terrace 306', level: 'upper', baseAngle: 357, angleSpan: 7, covered: true, price: 'value' },
+      { id: '307A', name: 'Terrace 307A', level: 'upper', baseAngle: 4, angleSpan: 7, covered: true, price: 'value' },
+      { id: '307B', name: 'Terrace 307B', level: 'upper', baseAngle: 11, angleSpan: 7, covered: true, price: 'value' },
+      { id: '308', name: 'Terrace 308', level: 'upper', baseAngle: 18, angleSpan: 7, covered: true, price: 'value' },
+      { id: '309', name: 'Terrace 309', level: 'upper', baseAngle: 25, angleSpan: 7, covered: true, price: 'value' },
+      { id: '310', name: 'Terrace 310', level: 'upper', baseAngle: 32, angleSpan: 7, covered: false, price: 'value' },
+      { id: '311', name: 'Terrace 311', level: 'upper', baseAngle: 39, angleSpan: 7, covered: false, price: 'value' },
+      { id: '312', name: 'Terrace 312', level: 'upper', baseAngle: 46, angleSpan: 7, covered: false, price: 'value' },
+      { id: '313', name: 'Terrace 313', level: 'upper', baseAngle: 53, angleSpan: 7, covered: false, price: 'value' },
+      { id: '314', name: 'Terrace 314', level: 'upper', baseAngle: 60, angleSpan: 7, covered: false, price: 'value' },
+      { id: '315', name: 'Terrace 315', level: 'upper', baseAngle: 67, angleSpan: 7, covered: false, price: 'value' },
+      { id: '316', name: 'Terrace 316', level: 'upper', baseAngle: 74, angleSpan: 7, covered: false, price: 'value' },
+      { id: '317', name: 'Terrace 317', level: 'upper', baseAngle: 81, angleSpan: 7, covered: false, price: 'value' },
+      { id: '318', name: 'Terrace 318', level: 'upper', baseAngle: 88, angleSpan: 7, covered: false, price: 'value' },
+      { id: '319', name: 'Terrace 319', level: 'upper', baseAngle: 95, angleSpan: 7, covered: false, price: 'value' },
+      { id: '320', name: 'Terrace 320', level: 'upper', baseAngle: 102, angleSpan: 7, covered: false, price: 'value' },
+      { id: '321', name: 'Terrace 321', level: 'upper', baseAngle: 109, angleSpan: 7, covered: false, price: 'value' },
+      { id: '322', name: 'Terrace 322', level: 'upper', baseAngle: 116, angleSpan: 7, covered: false, price: 'value' },
+      { id: '323', name: 'Terrace 323', level: 'upper', baseAngle: 123, angleSpan: 7, covered: false, price: 'value' },
+      { id: '324', name: 'Terrace 324', level: 'upper', baseAngle: 130, angleSpan: 7, covered: false, price: 'value' },
+      { id: '325', name: 'Terrace 325', level: 'upper', baseAngle: 298, angleSpan: 7, covered: false, price: 'value' },
+      { id: '326', name: 'Terrace 326', level: 'upper', baseAngle: 305, angleSpan: 7, covered: false, price: 'value' },
+      { id: '327A', name: 'Terrace 327A', level: 'upper', baseAngle: 312, angleSpan: 7, covered: false, price: 'value' },
+      { id: '327B', name: 'Terrace 327B', level: 'upper', baseAngle: 319, angleSpan: 7, covered: true, price: 'value' },
+      { id: '328', name: 'Terrace 328', level: 'upper', baseAngle: 326, angleSpan: 7, covered: true, price: 'value' },
+      { id: '329', name: 'Terrace 329', level: 'upper', baseAngle: 333, angleSpan: 7, covered: true, price: 'value' },
+      { id: '330', name: 'Terrace 330', level: 'upper', baseAngle: 340, angleSpan: 7, covered: true, price: 'value' },
+      { id: '331', name: 'Terrace 331', level: 'upper', baseAngle: 347, angleSpan: 7, covered: true, price: 'value' },
+      
+      // Grandstand Level (400 Level)
+      { id: '405', name: 'Grandstand 405', level: 'upper', baseAngle: 350, angleSpan: 6, covered: true, price: 'value' },
+      { id: '406', name: 'Grandstand 406', level: 'upper', baseAngle: 356, angleSpan: 6, covered: true, price: 'value' },
+      { id: '407A', name: 'Grandstand 407A', level: 'upper', baseAngle: 2, angleSpan: 6, covered: true, price: 'value' },
+      { id: '407B', name: 'Grandstand 407B', level: 'upper', baseAngle: 8, angleSpan: 6, covered: true, price: 'value' },
+      { id: '408', name: 'Grandstand 408', level: 'upper', baseAngle: 14, angleSpan: 6, covered: true, price: 'value' },
+      { id: '409', name: 'Grandstand 409', level: 'upper', baseAngle: 20, angleSpan: 6, covered: true, price: 'value' },
+      { id: '410', name: 'Grandstand 410', level: 'upper', baseAngle: 26, angleSpan: 6, covered: true, price: 'value' },
+      { id: '411', name: 'Grandstand 411', level: 'upper', baseAngle: 32, angleSpan: 6, covered: false, price: 'value' },
+      { id: '412', name: 'Grandstand 412', level: 'upper', baseAngle: 38, angleSpan: 6, covered: false, price: 'value' },
+      { id: '413', name: 'Grandstand 413', level: 'upper', baseAngle: 44, angleSpan: 6, covered: false, price: 'value' },
+      { id: '414A', name: 'Grandstand 414A', level: 'upper', baseAngle: 50, angleSpan: 6, covered: false, price: 'value' },
+      { id: '414B', name: 'Grandstand 414B', level: 'upper', baseAngle: 56, angleSpan: 6, covered: false, price: 'value' },
+      { id: '415', name: 'Grandstand 415', level: 'upper', baseAngle: 62, angleSpan: 6, covered: false, price: 'value' },
+      { id: '416', name: 'Grandstand 416', level: 'upper', baseAngle: 68, angleSpan: 6, covered: false, price: 'value' },
+      { id: '417', name: 'Grandstand 417', level: 'upper', baseAngle: 74, angleSpan: 6, covered: false, price: 'value' },
+      { id: '418', name: 'Grandstand 418', level: 'upper', baseAngle: 80, angleSpan: 6, covered: false, price: 'value' },
+      { id: '419', name: 'Grandstand 419', level: 'upper', baseAngle: 86, angleSpan: 6, covered: false, price: 'value' },
+      { id: '420', name: 'Grandstand 420', level: 'upper', baseAngle: 92, angleSpan: 6, covered: false, price: 'value' },
+      { id: '420A', name: 'Grandstand 420A', level: 'upper', baseAngle: 98, angleSpan: 6, covered: false, price: 'value' },
+      { id: '420B', name: 'Grandstand 420B', level: 'upper', baseAngle: 104, angleSpan: 6, covered: false, price: 'value' },
+      { id: '421', name: 'Grandstand 421', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value' },
+      { id: '422', name: 'Grandstand 422', level: 'upper', baseAngle: 116, angleSpan: 6, covered: false, price: 'value' },
+      { id: '423', name: 'Grandstand 423', level: 'upper', baseAngle: 122, angleSpan: 6, covered: false, price: 'value' },
+      { id: '424', name: 'Grandstand 424', level: 'upper', baseAngle: 298, angleSpan: 6, covered: false, price: 'value' },
+      { id: '425', name: 'Grandstand 425', level: 'upper', baseAngle: 304, angleSpan: 6, covered: false, price: 'value' },
+      { id: '426', name: 'Grandstand 426', level: 'upper', baseAngle: 310, angleSpan: 6, covered: false, price: 'value' },
+      { id: '427A', name: 'Grandstand 427A', level: 'upper', baseAngle: 316, angleSpan: 6, covered: false, price: 'value' },
+      { id: '427B', name: 'Grandstand 427B', level: 'upper', baseAngle: 322, angleSpan: 6, covered: true, price: 'value' },
+      { id: '428', name: 'Grandstand 428', level: 'upper', baseAngle: 328, angleSpan: 6, covered: true, price: 'value' },
+      { id: '429', name: 'Grandstand 429', level: 'upper', baseAngle: 334, angleSpan: 6, covered: true, price: 'value' },
+      { id: '430', name: 'Grandstand 430', level: 'upper', baseAngle: 340, angleSpan: 6, covered: true, price: 'value' },
+      { id: '431', name: 'Grandstand 431', level: 'upper', baseAngle: 346, angleSpan: 6, covered: true, price: 'value' },
+      
+      // Bleachers
+      { id: '201', name: 'Bleachers 201', level: 'upper', baseAngle: 135, angleSpan: 15, covered: false, price: 'value' },
+      { id: '202', name: 'Bleachers 202', level: 'upper', baseAngle: 150, angleSpan: 15, covered: false, price: 'value' },
+      { id: '203', name: 'Bleachers 203', level: 'upper', baseAngle: 165, angleSpan: 15, covered: false, price: 'value' },
+      { id: '204', name: 'Bleachers 204', level: 'upper', baseAngle: 180, angleSpan: 15, covered: false, price: 'value' },
+      { id: '205', name: 'Bleachers 205', level: 'upper', baseAngle: 195, angleSpan: 15, covered: false, price: 'value' },
+      { id: '206', name: 'Bleachers 206', level: 'upper', baseAngle: 210, angleSpan: 15, covered: false, price: 'value' },
+    ]
+  };

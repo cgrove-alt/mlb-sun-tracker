@@ -1,0 +1,213 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = {
+    stadiumId: 'giants',
+    sections: [
+      // Field Club - Behind Home Plate
+      { id: 'FC115', name: 'Field Club 115', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC116', name: 'Field Club 116', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC117', name: 'Field Club 117', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: 'FC118', name: 'Field Club 118', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      
+      // Dugout Club
+      { id: 'DC119', name: 'Dugout Club 119', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC120', name: 'Dugout Club 120', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC121', name: 'Dugout Club 121', level: 'field', baseAngle: 36, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC122', name: 'Dugout Club 122', level: 'field', baseAngle: 44, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC123', name: 'Dugout Club 123', level: 'field', baseAngle: 52, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC114', name: 'Dugout Club 114', level: 'field', baseAngle: 332, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC113', name: 'Dugout Club 113', level: 'field', baseAngle: 324, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC112', name: 'Dugout Club 112', level: 'field', baseAngle: 316, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC111', name: 'Dugout Club 111', level: 'field', baseAngle: 308, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: 'DC110', name: 'Dugout Club 110', level: 'field', baseAngle: 300, angleSpan: 8, covered: false, price: 'luxury' },
+      
+      // Field Box
+      { id: 'FB124', name: 'Field Box 124', level: 'field', baseAngle: 60, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB125', name: 'Field Box 125', level: 'field', baseAngle: 68, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB126', name: 'Field Box 126', level: 'field', baseAngle: 76, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB127', name: 'Field Box 127', level: 'field', baseAngle: 84, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB128', name: 'Field Box 128', level: 'field', baseAngle: 92, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB129', name: 'Field Box 129', level: 'field', baseAngle: 100, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB130', name: 'Field Box 130', level: 'field', baseAngle: 108, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB131', name: 'Field Box 131', level: 'field', baseAngle: 116, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB132', name: 'Field Box 132', level: 'field', baseAngle: 124, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB109', name: 'Field Box 109', level: 'field', baseAngle: 292, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB108', name: 'Field Box 108', level: 'field', baseAngle: 284, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB107', name: 'Field Box 107', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB106', name: 'Field Box 106', level: 'field', baseAngle: 268, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB105', name: 'Field Box 105', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB104', name: 'Field Box 104', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB103', name: 'Field Box 103', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'premium' },
+      { id: 'FB102', name: 'Field Box 102', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Lower Box
+      { id: 'LB133', name: 'Lower Box 133', level: 'lower', baseAngle: 132, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB134', name: 'Lower Box 134', level: 'lower', baseAngle: 138, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB135', name: 'Lower Box 135', level: 'lower', baseAngle: 144, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB136', name: 'Lower Box 136', level: 'lower', baseAngle: 150, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB137', name: 'Lower Box 137', level: 'lower', baseAngle: 156, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB138', name: 'Lower Box 138', level: 'lower', baseAngle: 162, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB139', name: 'Lower Box 139', level: 'lower', baseAngle: 168, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB140', name: 'Lower Box 140', level: 'lower', baseAngle: 174, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB141', name: 'Lower Box 141', level: 'lower', baseAngle: 180, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB142', name: 'Lower Box 142', level: 'lower', baseAngle: 186, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB143', name: 'Lower Box 143', level: 'lower', baseAngle: 192, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB144', name: 'Lower Box 144', level: 'lower', baseAngle: 198, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB145', name: 'Lower Box 145', level: 'lower', baseAngle: 204, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB146', name: 'Lower Box 146', level: 'lower', baseAngle: 210, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB147', name: 'Lower Box 147', level: 'lower', baseAngle: 216, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB148', name: 'Lower Box 148', level: 'lower', baseAngle: 222, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: 'LB101', name: 'Lower Box 101', level: 'lower', baseAngle: 228, angleSpan: 6, covered: false, price: 'moderate' },
+      
+      // Club Level
+      { id: 'CL201', name: 'Club Level 201', level: 'club', baseAngle: 340, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL202', name: 'Club Level 202', level: 'club', baseAngle: 346, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL203', name: 'Club Level 203', level: 'club', baseAngle: 352, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL204', name: 'Club Level 204', level: 'club', baseAngle: 358, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL205', name: 'Club Level 205', level: 'club', baseAngle: 4, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL206', name: 'Club Level 206', level: 'club', baseAngle: 10, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL207', name: 'Club Level 207', level: 'club', baseAngle: 16, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL208', name: 'Club Level 208', level: 'club', baseAngle: 22, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL209', name: 'Club Level 209', level: 'club', baseAngle: 28, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL210', name: 'Club Level 210', level: 'club', baseAngle: 34, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL211', name: 'Club Level 211', level: 'club', baseAngle: 40, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL212', name: 'Club Level 212', level: 'club', baseAngle: 46, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL213', name: 'Club Level 213', level: 'club', baseAngle: 52, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL214', name: 'Club Level 214', level: 'club', baseAngle: 58, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL215', name: 'Club Level 215', level: 'club', baseAngle: 64, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL216', name: 'Club Level 216', level: 'club', baseAngle: 70, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL217', name: 'Club Level 217', level: 'club', baseAngle: 76, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL218', name: 'Club Level 218', level: 'club', baseAngle: 82, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL219', name: 'Club Level 219', level: 'club', baseAngle: 88, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL220', name: 'Club Level 220', level: 'club', baseAngle: 94, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL221', name: 'Club Level 221', level: 'club', baseAngle: 272, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL222', name: 'Club Level 222', level: 'club', baseAngle: 278, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL223', name: 'Club Level 223', level: 'club', baseAngle: 284, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL224', name: 'Club Level 224', level: 'club', baseAngle: 290, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL225', name: 'Club Level 225', level: 'club', baseAngle: 296, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL226', name: 'Club Level 226', level: 'club', baseAngle: 302, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL227', name: 'Club Level 227', level: 'club', baseAngle: 308, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL228', name: 'Club Level 228', level: 'club', baseAngle: 314, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL229', name: 'Club Level 229', level: 'club', baseAngle: 320, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL230', name: 'Club Level 230', level: 'club', baseAngle: 326, angleSpan: 6, covered: true, price: 'premium' },
+      { id: 'CL231', name: 'Club Level 231', level: 'club', baseAngle: 332, angleSpan: 6, covered: true, price: 'premium' },
+      
+      // View Box
+      { id: 'VB301', name: 'View Box 301', level: 'upper', baseAngle: 340, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB302', name: 'View Box 302', level: 'upper', baseAngle: 345, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB303', name: 'View Box 303', level: 'upper', baseAngle: 350, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB304', name: 'View Box 304', level: 'upper', baseAngle: 355, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB305', name: 'View Box 305', level: 'upper', baseAngle: 0, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB306', name: 'View Box 306', level: 'upper', baseAngle: 5, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB307', name: 'View Box 307', level: 'upper', baseAngle: 10, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB308', name: 'View Box 308', level: 'upper', baseAngle: 15, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB309', name: 'View Box 309', level: 'upper', baseAngle: 20, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB310', name: 'View Box 310', level: 'upper', baseAngle: 25, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB311', name: 'View Box 311', level: 'upper', baseAngle: 30, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB312', name: 'View Box 312', level: 'upper', baseAngle: 35, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB313', name: 'View Box 313', level: 'upper', baseAngle: 40, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB314', name: 'View Box 314', level: 'upper', baseAngle: 45, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB315', name: 'View Box 315', level: 'upper', baseAngle: 50, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB316', name: 'View Box 316', level: 'upper', baseAngle: 55, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB317', name: 'View Box 317', level: 'upper', baseAngle: 60, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB318', name: 'View Box 318', level: 'upper', baseAngle: 65, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB319', name: 'View Box 319', level: 'upper', baseAngle: 70, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB320', name: 'View Box 320', level: 'upper', baseAngle: 75, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB321', name: 'View Box 321', level: 'upper', baseAngle: 80, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB322', name: 'View Box 322', level: 'upper', baseAngle: 85, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB323', name: 'View Box 323', level: 'upper', baseAngle: 90, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB324', name: 'View Box 324', level: 'upper', baseAngle: 95, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB325', name: 'View Box 325', level: 'upper', baseAngle: 100, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB326', name: 'View Box 326', level: 'upper', baseAngle: 105, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB327', name: 'View Box 327', level: 'upper', baseAngle: 255, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB328', name: 'View Box 328', level: 'upper', baseAngle: 260, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB329', name: 'View Box 329', level: 'upper', baseAngle: 265, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB330', name: 'View Box 330', level: 'upper', baseAngle: 270, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB331', name: 'View Box 331', level: 'upper', baseAngle: 275, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB332', name: 'View Box 332', level: 'upper', baseAngle: 280, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB333', name: 'View Box 333', level: 'upper', baseAngle: 285, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB334', name: 'View Box 334', level: 'upper', baseAngle: 290, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB335', name: 'View Box 335', level: 'upper', baseAngle: 295, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB336', name: 'View Box 336', level: 'upper', baseAngle: 300, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB337', name: 'View Box 337', level: 'upper', baseAngle: 305, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB338', name: 'View Box 338', level: 'upper', baseAngle: 310, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB339', name: 'View Box 339', level: 'upper', baseAngle: 315, angleSpan: 5, covered: false, price: 'value' },
+      { id: 'VB340', name: 'View Box 340', level: 'upper', baseAngle: 320, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB341', name: 'View Box 341', level: 'upper', baseAngle: 325, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB342', name: 'View Box 342', level: 'upper', baseAngle: 330, angleSpan: 5, covered: true, price: 'value' },
+      { id: 'VB343', name: 'View Box 343', level: 'upper', baseAngle: 335, angleSpan: 5, covered: true, price: 'value' },
+      
+      // View Reserved
+      { id: 'VR344', name: 'View Reserved 344', level: 'upper', baseAngle: 110, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR345', name: 'View Reserved 345', level: 'upper', baseAngle: 116, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR346', name: 'View Reserved 346', level: 'upper', baseAngle: 122, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR347', name: 'View Reserved 347', level: 'upper', baseAngle: 128, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR348', name: 'View Reserved 348', level: 'upper', baseAngle: 134, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR349', name: 'View Reserved 349', level: 'upper', baseAngle: 140, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR350', name: 'View Reserved 350', level: 'upper', baseAngle: 146, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR351', name: 'View Reserved 351', level: 'upper', baseAngle: 152, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR352', name: 'View Reserved 352', level: 'upper', baseAngle: 158, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR353', name: 'View Reserved 353', level: 'upper', baseAngle: 164, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR354', name: 'View Reserved 354', level: 'upper', baseAngle: 170, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR355', name: 'View Reserved 355', level: 'upper', baseAngle: 176, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR356', name: 'View Reserved 356', level: 'upper', baseAngle: 182, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR357', name: 'View Reserved 357', level: 'upper', baseAngle: 188, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR358', name: 'View Reserved 358', level: 'upper', baseAngle: 194, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR359', name: 'View Reserved 359', level: 'upper', baseAngle: 200, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR360', name: 'View Reserved 360', level: 'upper', baseAngle: 206, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR361', name: 'View Reserved 361', level: 'upper', baseAngle: 212, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR362', name: 'View Reserved 362', level: 'upper', baseAngle: 218, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR363', name: 'View Reserved 363', level: 'upper', baseAngle: 224, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR364', name: 'View Reserved 364', level: 'upper', baseAngle: 230, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR365', name: 'View Reserved 365', level: 'upper', baseAngle: 236, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR366', name: 'View Reserved 366', level: 'upper', baseAngle: 242, angleSpan: 6, covered: false, price: 'value' },
+      { id: 'VR367', name: 'View Reserved 367', level: 'upper', baseAngle: 248, angleSpan: 6, covered: false, price: 'value' },
+      
+      // Bleachers
+      { id: 'BL149', name: 'Bleachers 149', level: 'upper', baseAngle: 140, angleSpan: 10, covered: false, price: 'value' },
+      { id: 'BL150', name: 'Bleachers 150', level: 'upper', baseAngle: 150, angleSpan: 10, covered: false, price: 'value' },
+      { id: 'BL151', name: 'Bleachers 151', level: 'upper', baseAngle: 160, angleSpan: 10, covered: false, price: 'value' },
+      { id: 'BL152', name: 'Bleachers 152', level: 'upper', baseAngle: 170, angleSpan: 10, covered: false, price: 'value' },
+      
+      // Arcade
+      { id: 'ARC148', name: 'Arcade 148', level: 'lower', baseAngle: 220, angleSpan: 15, covered: false, price: 'value' },
+      { id: 'ARC147', name: 'Arcade 147', level: 'lower', baseAngle: 205, angleSpan: 15, covered: false, price: 'value' },
+      { id: 'ARC146', name: 'Arcade 146', level: 'lower', baseAngle: 190, angleSpan: 15, covered: false, price: 'value' },
+      
+      // Coca-Cola Fan Lot
+      { id: 'CCFL', name: 'Coca-Cola Fan Lot', level: 'upper', baseAngle: 135, angleSpan: 20, covered: false, price: 'value' },
+    ]
+  };

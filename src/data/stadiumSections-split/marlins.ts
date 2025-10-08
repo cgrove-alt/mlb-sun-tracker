@@ -1,0 +1,198 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = {
+    stadiumId: 'marlins',
+    sections: [
+      // Field Level - Home Plate Club
+      { id: '1', name: 'Home Plate Club 1', level: 'field', baseAngle: 345, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '2', name: 'Home Plate Club 2', level: 'field', baseAngle: 353, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '3', name: 'Home Plate Club 3', level: 'field', baseAngle: 1, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '4', name: 'Home Plate Club 4', level: 'field', baseAngle: 9, angleSpan: 8, covered: false, price: 'luxury' },
+      { id: '5', name: 'Home Plate Club 5', level: 'field', baseAngle: 17, angleSpan: 8, covered: false, price: 'luxury' },
+      
+      // Field Level - Field Box
+      { id: '6', name: 'Field Box 6', level: 'field', baseAngle: 25, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '7', name: 'Field Box 7', level: 'field', baseAngle: 33, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '8', name: 'Field Box 8', level: 'field', baseAngle: 41, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '9', name: 'Field Box 9', level: 'field', baseAngle: 49, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '10', name: 'Field Box 10', level: 'field', baseAngle: 57, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '11', name: 'Field Box 11', level: 'field', baseAngle: 65, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '12', name: 'Field Box 12', level: 'field', baseAngle: 73, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '13', name: 'Field Box 13', level: 'field', baseAngle: 81, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '14', name: 'Field Box 14', level: 'field', baseAngle: 89, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '15', name: 'Field Box 15', level: 'field', baseAngle: 97, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '16', name: 'Field Box 16', level: 'field', baseAngle: 105, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Field Level - Outfield
+      { id: '17', name: 'Left Field 17', level: 'field', baseAngle: 113, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '18', name: 'Left Field 18', level: 'field', baseAngle: 121, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '19', name: 'Left Field 19', level: 'field', baseAngle: 129, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '20', name: 'Center Field 20', level: 'field', baseAngle: 170, angleSpan: 20, covered: false, price: 'moderate' },
+      { id: '21', name: 'Right Field 21', level: 'field', baseAngle: 220, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '22', name: 'Right Field 22', level: 'field', baseAngle: 228, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '23', name: 'Right Field 23', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '24', name: 'Right Field 24', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '25', name: 'Right Field 25', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '26', name: 'Right Field 26', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '27', name: 'Right Field 27', level: 'field', baseAngle: 268, angleSpan: 8, covered: false, price: 'moderate' },
+      { id: '28', name: 'Right Field 28', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'moderate' },
+      
+      // 100 Level - Lower Bowl
+      { id: '101', name: 'Lower Bowl 101', level: 'lower', baseAngle: 340, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '102', name: 'Lower Bowl 102', level: 'lower', baseAngle: 348, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '103', name: 'Lower Bowl 103', level: 'lower', baseAngle: 356, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '104', name: 'Lower Bowl 104', level: 'lower', baseAngle: 4, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '105', name: 'Lower Bowl 105', level: 'lower', baseAngle: 12, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '106', name: 'Lower Bowl 106', level: 'lower', baseAngle: 20, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '107', name: 'Lower Bowl 107', level: 'lower', baseAngle: 26, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '108', name: 'Lower Bowl 108', level: 'lower', baseAngle: 32, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '109', name: 'Lower Bowl 109', level: 'lower', baseAngle: 38, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '110', name: 'Lower Bowl 110', level: 'lower', baseAngle: 44, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '111', name: 'Lower Bowl 111', level: 'lower', baseAngle: 50, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '112', name: 'Lower Bowl 112', level: 'lower', baseAngle: 56, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '113', name: 'Lower Bowl 113', level: 'lower', baseAngle: 62, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '114', name: 'Lower Bowl 114', level: 'lower', baseAngle: 68, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '115', name: 'Lower Bowl 115', level: 'lower', baseAngle: 74, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '116', name: 'Lower Bowl 116', level: 'lower', baseAngle: 80, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '117', name: 'Lower Bowl 117', level: 'lower', baseAngle: 86, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '118', name: 'Lower Bowl 118', level: 'lower', baseAngle: 92, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '119', name: 'Lower Bowl 119', level: 'lower', baseAngle: 98, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '120', name: 'Lower Bowl 120', level: 'lower', baseAngle: 104, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '121', name: 'Lower Bowl 121', level: 'lower', baseAngle: 110, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '122', name: 'Lower Bowl 122', level: 'lower', baseAngle: 116, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '123', name: 'Lower Bowl 123', level: 'lower', baseAngle: 122, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '124', name: 'Lower Bowl 124', level: 'lower', baseAngle: 128, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '125', name: 'Lower Bowl 125', level: 'lower', baseAngle: 134, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '126', name: 'Lower Bowl 126', level: 'lower', baseAngle: 140, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '127', name: 'Lower Bowl 127', level: 'lower', baseAngle: 146, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '128', name: 'Lower Bowl 128', level: 'lower', baseAngle: 152, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '129', name: 'Lower Bowl 129', level: 'lower', baseAngle: 158, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '130', name: 'Lower Bowl 130', level: 'lower', baseAngle: 164, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '131', name: 'Lower Bowl 131', level: 'lower', baseAngle: 170, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '132', name: 'Lower Bowl 132', level: 'lower', baseAngle: 176, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '133', name: 'Lower Bowl 133', level: 'lower', baseAngle: 182, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '134', name: 'Lower Bowl 134', level: 'lower', baseAngle: 188, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '135', name: 'Lower Bowl 135', level: 'lower', baseAngle: 194, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '136', name: 'Lower Bowl 136', level: 'lower', baseAngle: 200, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '137', name: 'Lower Bowl 137', level: 'lower', baseAngle: 206, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '138', name: 'Lower Bowl 138', level: 'lower', baseAngle: 212, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '139', name: 'Lower Bowl 139', level: 'lower', baseAngle: 218, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '140', name: 'Lower Bowl 140', level: 'lower', baseAngle: 224, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '141', name: 'Lower Bowl 141', level: 'lower', baseAngle: 230, angleSpan: 6, covered: true, price: 'moderate' },
+      
+      // 200 Level - Club Level
+      { id: '201', name: 'Club Level 201', level: 'club', baseAngle: 340, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '202', name: 'Club Level 202', level: 'club', baseAngle: 348, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '203', name: 'Club Level 203', level: 'club', baseAngle: 356, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '204', name: 'Club Level 204', level: 'club', baseAngle: 4, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '205', name: 'Club Level 205', level: 'club', baseAngle: 12, angleSpan: 8, covered: true, price: 'premium' },
+      { id: '206', name: 'Club Level 206', level: 'club', baseAngle: 20, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '207', name: 'Club Level 207', level: 'club', baseAngle: 26, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '208', name: 'Club Level 208', level: 'club', baseAngle: 32, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '209', name: 'Club Level 209', level: 'club', baseAngle: 38, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '210', name: 'Club Level 210', level: 'club', baseAngle: 44, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '211', name: 'Club Level 211', level: 'club', baseAngle: 50, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '212', name: 'Club Level 212', level: 'club', baseAngle: 56, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '213', name: 'Club Level 213', level: 'club', baseAngle: 62, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '214', name: 'Club Level 214', level: 'club', baseAngle: 68, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '215', name: 'Club Level 215', level: 'club', baseAngle: 74, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '216', name: 'Club Level 216', level: 'club', baseAngle: 80, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '217', name: 'Club Level 217', level: 'club', baseAngle: 86, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '218', name: 'Club Level 218', level: 'club', baseAngle: 92, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '219', name: 'Club Level 219', level: 'club', baseAngle: 98, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '220', name: 'Club Level 220', level: 'club', baseAngle: 104, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '221', name: 'Club Level 221', level: 'club', baseAngle: 110, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '222', name: 'Club Level 222', level: 'club', baseAngle: 116, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '223', name: 'Club Level 223', level: 'club', baseAngle: 122, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '224', name: 'Club Level 224', level: 'club', baseAngle: 128, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '225', name: 'Club Level 225', level: 'club', baseAngle: 134, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '226', name: 'Club Level 226', level: 'club', baseAngle: 140, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '227', name: 'Club Level 227', level: 'club', baseAngle: 146, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '228', name: 'Club Level 228', level: 'club', baseAngle: 152, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '229', name: 'Club Level 229', level: 'club', baseAngle: 158, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '230', name: 'Club Level 230', level: 'club', baseAngle: 164, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '231', name: 'Club Level 231', level: 'club', baseAngle: 170, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '232', name: 'Club Level 232', level: 'club', baseAngle: 176, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '233', name: 'Club Level 233', level: 'club', baseAngle: 182, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '234', name: 'Club Level 234', level: 'club', baseAngle: 188, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '235', name: 'Club Level 235', level: 'club', baseAngle: 194, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '236', name: 'Club Level 236', level: 'club', baseAngle: 200, angleSpan: 6, covered: true, price: 'premium' },
+      { id: '237', name: 'Club Level 237', level: 'club', baseAngle: 206, angleSpan: 6, covered: true, price: 'premium' },
+      
+      // 300 Level - Upper Deck
+      { id: '301', name: 'Upper Deck 301', level: 'upper', baseAngle: 340, angleSpan: 8, covered: true, price: 'value' },
+      { id: '302', name: 'Upper Deck 302', level: 'upper', baseAngle: 348, angleSpan: 8, covered: true, price: 'value' },
+      { id: '303', name: 'Upper Deck 303', level: 'upper', baseAngle: 356, angleSpan: 8, covered: true, price: 'value' },
+      { id: '304', name: 'Upper Deck 304', level: 'upper', baseAngle: 4, angleSpan: 8, covered: true, price: 'value' },
+      { id: '305', name: 'Upper Deck 305', level: 'upper', baseAngle: 12, angleSpan: 8, covered: true, price: 'value' },
+      { id: '306', name: 'Upper Deck 306', level: 'upper', baseAngle: 20, angleSpan: 6, covered: true, price: 'value' },
+      { id: '307', name: 'Upper Deck 307', level: 'upper', baseAngle: 26, angleSpan: 6, covered: true, price: 'value' },
+      { id: '308', name: 'Upper Deck 308', level: 'upper', baseAngle: 32, angleSpan: 6, covered: true, price: 'value' },
+      { id: '309', name: 'Upper Deck 309', level: 'upper', baseAngle: 38, angleSpan: 6, covered: true, price: 'value' },
+      { id: '310', name: 'Upper Deck 310', level: 'upper', baseAngle: 44, angleSpan: 6, covered: true, price: 'value' },
+      { id: '311', name: 'Upper Deck 311', level: 'upper', baseAngle: 50, angleSpan: 6, covered: true, price: 'value' },
+      { id: '312', name: 'Upper Deck 312', level: 'upper', baseAngle: 56, angleSpan: 6, covered: true, price: 'value' },
+      { id: '313', name: 'Upper Deck 313', level: 'upper', baseAngle: 62, angleSpan: 6, covered: true, price: 'value' },
+      { id: '314', name: 'Upper Deck 314', level: 'upper', baseAngle: 68, angleSpan: 6, covered: true, price: 'value' },
+      { id: '315', name: 'Upper Deck 315', level: 'upper', baseAngle: 74, angleSpan: 6, covered: true, price: 'value' },
+      { id: '316', name: 'Upper Deck 316', level: 'upper', baseAngle: 80, angleSpan: 6, covered: true, price: 'value' },
+      { id: '317', name: 'Upper Deck 317', level: 'upper', baseAngle: 86, angleSpan: 6, covered: true, price: 'value' },
+      { id: '318', name: 'Upper Deck 318', level: 'upper', baseAngle: 92, angleSpan: 6, covered: true, price: 'value' },
+      { id: '319', name: 'Upper Deck 319', level: 'upper', baseAngle: 98, angleSpan: 6, covered: true, price: 'value' },
+      { id: '320', name: 'Upper Deck 320', level: 'upper', baseAngle: 104, angleSpan: 6, covered: true, price: 'value' },
+      { id: '321', name: 'Upper Deck 321', level: 'upper', baseAngle: 110, angleSpan: 6, covered: true, price: 'value' },
+      { id: '322', name: 'Upper Deck 322', level: 'upper', baseAngle: 116, angleSpan: 6, covered: true, price: 'value' },
+      { id: '323', name: 'Upper Deck 323', level: 'upper', baseAngle: 122, angleSpan: 6, covered: true, price: 'value' },
+      { id: '324', name: 'Upper Deck 324', level: 'upper', baseAngle: 128, angleSpan: 6, covered: true, price: 'value' },
+      { id: '325', name: 'Upper Deck 325', level: 'upper', baseAngle: 134, angleSpan: 6, covered: true, price: 'value' },
+      { id: '326', name: 'Upper Deck 326', level: 'upper', baseAngle: 140, angleSpan: 6, covered: true, price: 'value' },
+      { id: '327', name: 'Upper Deck 327', level: 'upper', baseAngle: 146, angleSpan: 6, covered: true, price: 'value' },
+      { id: '328', name: 'Upper Deck 328', level: 'upper', baseAngle: 152, angleSpan: 6, covered: true, price: 'value' },
+      { id: '329', name: 'Upper Deck 329', level: 'upper', baseAngle: 158, angleSpan: 6, covered: true, price: 'value' },
+      { id: '330', name: 'Upper Deck 330', level: 'upper', baseAngle: 164, angleSpan: 6, covered: true, price: 'value' },
+      { id: '331', name: 'Upper Deck 331', level: 'upper', baseAngle: 170, angleSpan: 6, covered: true, price: 'value' },
+      { id: '332', name: 'Upper Deck 332', level: 'upper', baseAngle: 176, angleSpan: 6, covered: true, price: 'value' },
+      { id: '333', name: 'Upper Deck 333', level: 'upper', baseAngle: 182, angleSpan: 6, covered: true, price: 'value' },
+      { id: '334', name: 'Upper Deck 334', level: 'upper', baseAngle: 188, angleSpan: 6, covered: true, price: 'value' },
+      { id: '335', name: 'Upper Deck 335', level: 'upper', baseAngle: 194, angleSpan: 6, covered: true, price: 'value' },
+      { id: '336', name: 'Upper Deck 336', level: 'upper', baseAngle: 200, angleSpan: 6, covered: true, price: 'value' },
+      { id: '337', name: 'Upper Deck 337', level: 'upper', baseAngle: 206, angleSpan: 6, covered: true, price: 'value' },
+      { id: '338', name: 'Upper Deck 338', level: 'upper', baseAngle: 212, angleSpan: 6, covered: true, price: 'value' },
+      { id: '339', name: 'Upper Deck 339', level: 'upper', baseAngle: 218, angleSpan: 6, covered: true, price: 'value' },
+      { id: '340', name: 'Upper Deck 340', level: 'upper', baseAngle: 224, angleSpan: 6, covered: true, price: 'value' },
+      { id: '341', name: 'Upper Deck 341', level: 'upper', baseAngle: 230, angleSpan: 6, covered: true, price: 'value' },
+    ]
+  };

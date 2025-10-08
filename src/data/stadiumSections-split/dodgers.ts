@@ -1,0 +1,197 @@
+export interface StadiumSection {
+  id: string;
+  name: string;
+  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
+  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
+  angleSpan: number; // How many degrees this section spans
+  rows?: number; // Number of rows in section
+  covered: boolean; // Whether section has overhead coverage
+  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
+  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
+  price?: 'value' | 'moderate' | 'premium' | 'luxury';
+}
+
+export interface StadiumSections {
+  stadiumId: string;
+  sections: StadiumSection[];
+}
+
+// Helper function to generate sections for a standard stadium layout
+function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
+  const sections: StadiumSection[] = [];
+  for (let i = 0; i < count; i++) {
+    sections.push({
+      id: `${prefix}${i + 1}`,
+      name: `Section ${prefix}${i + 1}`,
+      level,
+      baseAngle: startAngle + (i * anglePerSection),
+      angleSpan: anglePerSection,
+      covered,
+      price: level === 'field' ? 'premium' : level === 'upper' ? 'value' : 'moderate'
+    });
+  }
+  return sections;
+}
+
+export const stadiumSections = {
+    stadiumId: 'dodgers',
+    sections: [
+      // Field Level - Dugout Club (Behind Home Plate)
+      { id: '1DG', name: 'Dugout Club 1', level: 'field', baseAngle: 340, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '2DG', name: 'Dugout Club 2', level: 'field', baseAngle: 350, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '3DG', name: 'Dugout Club 3', level: 'field', baseAngle: 0, angleSpan: 10, covered: false, price: 'luxury' },
+      { id: '4DG', name: 'Dugout Club 4', level: 'field', baseAngle: 10, angleSpan: 10, covered: false, price: 'luxury' },
+      
+      // Field Level - Baseline Club
+      { id: '27BL', name: 'Baseline Club 27', level: 'field', baseAngle: 20, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '29BL', name: 'Baseline Club 29', level: 'field', baseAngle: 28, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '31BL', name: 'Baseline Club 31', level: 'field', baseAngle: 36, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '33BL', name: 'Baseline Club 33', level: 'field', baseAngle: 44, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '35BL', name: 'Baseline Club 35', level: 'field', baseAngle: 52, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '37BL', name: 'Baseline Club 37', level: 'field', baseAngle: 60, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '39BL', name: 'Baseline Club 39', level: 'field', baseAngle: 68, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '41BL', name: 'Baseline Club 41', level: 'field', baseAngle: 76, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '42BL', name: 'Baseline Club 42', level: 'field', baseAngle: 84, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '44BL', name: 'Baseline Club 44', level: 'field', baseAngle: 92, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '46BL', name: 'Baseline Club 46', level: 'field', baseAngle: 100, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '26BL', name: 'Baseline Club 26', level: 'field', baseAngle: 332, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '28BL', name: 'Baseline Club 28', level: 'field', baseAngle: 324, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '30BL', name: 'Baseline Club 30', level: 'field', baseAngle: 316, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '32BL', name: 'Baseline Club 32', level: 'field', baseAngle: 308, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '34BL', name: 'Baseline Club 34', level: 'field', baseAngle: 300, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '36BL', name: 'Baseline Club 36', level: 'field', baseAngle: 292, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '38BL', name: 'Baseline Club 38', level: 'field', baseAngle: 284, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '40BL', name: 'Baseline Club 40', level: 'field', baseAngle: 276, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Field Level - Field Box
+      { id: '48FD', name: 'Field Box 48', level: 'field', baseAngle: 108, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '50FD', name: 'Field Box 50', level: 'field', baseAngle: 116, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '52FD', name: 'Field Box 52', level: 'field', baseAngle: 124, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '54FD', name: 'Field Box 54', level: 'field', baseAngle: 132, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '51FD', name: 'Field Box 51', level: 'field', baseAngle: 228, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '53FD', name: 'Field Box 53', level: 'field', baseAngle: 236, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '55FD', name: 'Field Box 55', level: 'field', baseAngle: 244, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '47FD', name: 'Field Box 47', level: 'field', baseAngle: 252, angleSpan: 8, covered: false, price: 'premium' },
+      { id: '49FD', name: 'Field Box 49', level: 'field', baseAngle: 260, angleSpan: 8, covered: false, price: 'premium' },
+      
+      // Loge Level
+      { id: '101LG', name: 'Loge Box 101', level: 'lower', baseAngle: 340, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '102LG', name: 'Loge Box 102', level: 'lower', baseAngle: 346, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '103LG', name: 'Loge Box 103', level: 'lower', baseAngle: 352, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '104LG', name: 'Loge Box 104', level: 'lower', baseAngle: 358, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '105LG', name: 'Loge Box 105', level: 'lower', baseAngle: 4, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '106LG', name: 'Loge Box 106', level: 'lower', baseAngle: 10, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '107LG', name: 'Loge Box 107', level: 'lower', baseAngle: 16, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '108LG', name: 'Loge Box 108', level: 'lower', baseAngle: 22, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '109LG', name: 'Loge Box 109', level: 'lower', baseAngle: 28, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '110LG', name: 'Loge Box 110', level: 'lower', baseAngle: 34, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '111LG', name: 'Loge Box 111', level: 'lower', baseAngle: 40, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '112LG', name: 'Loge Box 112', level: 'lower', baseAngle: 46, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '113LG', name: 'Loge Box 113', level: 'lower', baseAngle: 52, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '114LG', name: 'Loge Box 114', level: 'lower', baseAngle: 58, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '115LG', name: 'Loge Box 115', level: 'lower', baseAngle: 64, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '116LG', name: 'Loge Box 116', level: 'lower', baseAngle: 70, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '117LG', name: 'Loge Box 117', level: 'lower', baseAngle: 76, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '118LG', name: 'Loge Box 118', level: 'lower', baseAngle: 82, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '119LG', name: 'Loge Box 119', level: 'lower', baseAngle: 88, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '120LG', name: 'Loge Box 120', level: 'lower', baseAngle: 94, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '121LG', name: 'Loge Box 121', level: 'lower', baseAngle: 100, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '122LG', name: 'Loge Box 122', level: 'lower', baseAngle: 106, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '123LG', name: 'Loge Box 123', level: 'lower', baseAngle: 112, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '124LG', name: 'Loge Box 124', level: 'lower', baseAngle: 118, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '125LG', name: 'Loge Box 125', level: 'lower', baseAngle: 124, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '126LG', name: 'Loge Box 126', level: 'lower', baseAngle: 236, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '127LG', name: 'Loge Box 127', level: 'lower', baseAngle: 242, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '128LG', name: 'Loge Box 128', level: 'lower', baseAngle: 248, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '129LG', name: 'Loge Box 129', level: 'lower', baseAngle: 254, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '130LG', name: 'Loge Box 130', level: 'lower', baseAngle: 260, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '131LG', name: 'Loge Box 131', level: 'lower', baseAngle: 266, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '132LG', name: 'Loge Box 132', level: 'lower', baseAngle: 272, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '133LG', name: 'Loge Box 133', level: 'lower', baseAngle: 278, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '134LG', name: 'Loge Box 134', level: 'lower', baseAngle: 284, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '135LG', name: 'Loge Box 135', level: 'lower', baseAngle: 290, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '136LG', name: 'Loge Box 136', level: 'lower', baseAngle: 296, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '137LG', name: 'Loge Box 137', level: 'lower', baseAngle: 302, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '138LG', name: 'Loge Box 138', level: 'lower', baseAngle: 308, angleSpan: 6, covered: false, price: 'moderate' },
+      { id: '139LG', name: 'Loge Box 139', level: 'lower', baseAngle: 314, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '140LG', name: 'Loge Box 140', level: 'lower', baseAngle: 320, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '141LG', name: 'Loge Box 141', level: 'lower', baseAngle: 326, angleSpan: 6, covered: true, price: 'moderate' },
+      { id: '142LG', name: 'Loge Box 142', level: 'lower', baseAngle: 332, angleSpan: 6, covered: true, price: 'moderate' },
+      
+      // Reserve Level
+      { id: '1RS', name: 'Reserve 1', level: 'upper', baseAngle: 340, angleSpan: 5, covered: true, price: 'value' },
+      { id: '2RS', name: 'Reserve 2', level: 'upper', baseAngle: 345, angleSpan: 5, covered: true, price: 'value' },
+      { id: '3RS', name: 'Reserve 3', level: 'upper', baseAngle: 350, angleSpan: 5, covered: true, price: 'value' },
+      { id: '4RS', name: 'Reserve 4', level: 'upper', baseAngle: 355, angleSpan: 5, covered: true, price: 'value' },
+      { id: '5RS', name: 'Reserve 5', level: 'upper', baseAngle: 0, angleSpan: 5, covered: true, price: 'value' },
+      { id: '6RS', name: 'Reserve 6', level: 'upper', baseAngle: 5, angleSpan: 5, covered: true, price: 'value' },
+      { id: '7RS', name: 'Reserve 7', level: 'upper', baseAngle: 10, angleSpan: 5, covered: true, price: 'value' },
+      { id: '8RS', name: 'Reserve 8', level: 'upper', baseAngle: 15, angleSpan: 5, covered: true, price: 'value' },
+      { id: '9RS', name: 'Reserve 9', level: 'upper', baseAngle: 20, angleSpan: 5, covered: false, price: 'value' },
+      { id: '10RS', name: 'Reserve 10', level: 'upper', baseAngle: 25, angleSpan: 5, covered: false, price: 'value' },
+      { id: '11RS', name: 'Reserve 11', level: 'upper', baseAngle: 30, angleSpan: 5, covered: false, price: 'value' },
+      { id: '12RS', name: 'Reserve 12', level: 'upper', baseAngle: 35, angleSpan: 5, covered: false, price: 'value' },
+      { id: '13RS', name: 'Reserve 13', level: 'upper', baseAngle: 40, angleSpan: 5, covered: false, price: 'value' },
+      { id: '14RS', name: 'Reserve 14', level: 'upper', baseAngle: 45, angleSpan: 5, covered: false, price: 'value' },
+      { id: '15RS', name: 'Reserve 15', level: 'upper', baseAngle: 50, angleSpan: 5, covered: false, price: 'value' },
+      { id: '16RS', name: 'Reserve 16', level: 'upper', baseAngle: 55, angleSpan: 5, covered: false, price: 'value' },
+      { id: '17RS', name: 'Reserve 17', level: 'upper', baseAngle: 60, angleSpan: 5, covered: false, price: 'value' },
+      { id: '18RS', name: 'Reserve 18', level: 'upper', baseAngle: 65, angleSpan: 5, covered: false, price: 'value' },
+      { id: '19RS', name: 'Reserve 19', level: 'upper', baseAngle: 70, angleSpan: 5, covered: false, price: 'value' },
+      { id: '20RS', name: 'Reserve 20', level: 'upper', baseAngle: 75, angleSpan: 5, covered: false, price: 'value' },
+      { id: '21RS', name: 'Reserve 21', level: 'upper', baseAngle: 80, angleSpan: 5, covered: false, price: 'value' },
+      { id: '22RS', name: 'Reserve 22', level: 'upper', baseAngle: 85, angleSpan: 5, covered: false, price: 'value' },
+      { id: '23RS', name: 'Reserve 23', level: 'upper', baseAngle: 90, angleSpan: 5, covered: false, price: 'value' },
+      { id: '24RS', name: 'Reserve 24', level: 'upper', baseAngle: 95, angleSpan: 5, covered: false, price: 'value' },
+      { id: '25RS', name: 'Reserve 25', level: 'upper', baseAngle: 100, angleSpan: 5, covered: false, price: 'value' },
+      { id: '26RS', name: 'Reserve 26', level: 'upper', baseAngle: 105, angleSpan: 5, covered: false, price: 'value' },
+      { id: '27RS', name: 'Reserve 27', level: 'upper', baseAngle: 110, angleSpan: 5, covered: false, price: 'value' },
+      { id: '28RS', name: 'Reserve 28', level: 'upper', baseAngle: 115, angleSpan: 5, covered: false, price: 'value' },
+      { id: '29RS', name: 'Reserve 29', level: 'upper', baseAngle: 245, angleSpan: 5, covered: false, price: 'value' },
+      { id: '30RS', name: 'Reserve 30', level: 'upper', baseAngle: 250, angleSpan: 5, covered: false, price: 'value' },
+      { id: '31RS', name: 'Reserve 31', level: 'upper', baseAngle: 255, angleSpan: 5, covered: false, price: 'value' },
+      { id: '32RS', name: 'Reserve 32', level: 'upper', baseAngle: 260, angleSpan: 5, covered: false, price: 'value' },
+      { id: '33RS', name: 'Reserve 33', level: 'upper', baseAngle: 265, angleSpan: 5, covered: false, price: 'value' },
+      { id: '34RS', name: 'Reserve 34', level: 'upper', baseAngle: 270, angleSpan: 5, covered: false, price: 'value' },
+      { id: '35RS', name: 'Reserve 35', level: 'upper', baseAngle: 275, angleSpan: 5, covered: false, price: 'value' },
+      { id: '36RS', name: 'Reserve 36', level: 'upper', baseAngle: 280, angleSpan: 5, covered: false, price: 'value' },
+      { id: '37RS', name: 'Reserve 37', level: 'upper', baseAngle: 285, angleSpan: 5, covered: false, price: 'value' },
+      { id: '38RS', name: 'Reserve 38', level: 'upper', baseAngle: 290, angleSpan: 5, covered: false, price: 'value' },
+      { id: '39RS', name: 'Reserve 39', level: 'upper', baseAngle: 295, angleSpan: 5, covered: false, price: 'value' },
+      { id: '40RS', name: 'Reserve 40', level: 'upper', baseAngle: 300, angleSpan: 5, covered: false, price: 'value' },
+      { id: '41RS', name: 'Reserve 41', level: 'upper', baseAngle: 305, angleSpan: 5, covered: false, price: 'value' },
+      { id: '42RS', name: 'Reserve 42', level: 'upper', baseAngle: 310, angleSpan: 5, covered: false, price: 'value' },
+      { id: '43RS', name: 'Reserve 43', level: 'upper', baseAngle: 315, angleSpan: 5, covered: false, price: 'value' },
+      { id: '44RS', name: 'Reserve 44', level: 'upper', baseAngle: 320, angleSpan: 5, covered: true, price: 'value' },
+      { id: '45RS', name: 'Reserve 45', level: 'upper', baseAngle: 325, angleSpan: 5, covered: true, price: 'value' },
+      { id: '46RS', name: 'Reserve 46', level: 'upper', baseAngle: 330, angleSpan: 5, covered: true, price: 'value' },
+      { id: '47RS', name: 'Reserve 47', level: 'upper', baseAngle: 335, angleSpan: 5, covered: true, price: 'value' },
+      
+      // Top Deck
+      { id: '1TD', name: 'Top Deck 1', level: 'upper', baseAngle: 350, angleSpan: 8, covered: true, price: 'value' },
+      { id: '2TD', name: 'Top Deck 2', level: 'upper', baseAngle: 358, angleSpan: 8, covered: true, price: 'value' },
+      { id: '3TD', name: 'Top Deck 3', level: 'upper', baseAngle: 6, angleSpan: 8, covered: true, price: 'value' },
+      { id: '4TD', name: 'Top Deck 4', level: 'upper', baseAngle: 14, angleSpan: 8, covered: true, price: 'value' },
+      { id: '5TD', name: 'Top Deck 5', level: 'upper', baseAngle: 22, angleSpan: 8, covered: false, price: 'value' },
+      { id: '6TD', name: 'Top Deck 6', level: 'upper', baseAngle: 30, angleSpan: 8, covered: false, price: 'value' },
+      { id: '7TD', name: 'Top Deck 7', level: 'upper', baseAngle: 38, angleSpan: 8, covered: false, price: 'value' },
+      { id: '8TD', name: 'Top Deck 8', level: 'upper', baseAngle: 46, angleSpan: 8, covered: false, price: 'value' },
+      { id: '9TD', name: 'Top Deck 9', level: 'upper', baseAngle: 54, angleSpan: 8, covered: false, price: 'value' },
+      { id: '10TD', name: 'Top Deck 10', level: 'upper', baseAngle: 62, angleSpan: 8, covered: false, price: 'value' },
+      { id: '11TD', name: 'Top Deck 11', level: 'upper', baseAngle: 70, angleSpan: 8, covered: false, price: 'value' },
+      { id: '12TD', name: 'Top Deck 12', level: 'upper', baseAngle: 78, angleSpan: 8, covered: false, price: 'value' },
+      { id: '13TD', name: 'Top Deck 13', level: 'upper', baseAngle: 86, angleSpan: 8, covered: false, price: 'value' },
+      
+      // Pavilions
+      { id: '301PL', name: 'Left Field Pavilion 301', level: 'upper', baseAngle: 140, angleSpan: 10, covered: false, price: 'value' },
+      { id: '302PL', name: 'Left Field Pavilion 302', level: 'upper', baseAngle: 150, angleSpan: 10, covered: false, price: 'value' },
+      { id: '303PL', name: 'Left Field Pavilion 303', level: 'upper', baseAngle: 160, angleSpan: 10, covered: false, price: 'value' },
+      { id: '304PL', name: 'Left Field Pavilion 304', level: 'upper', baseAngle: 170, angleSpan: 10, covered: false, price: 'value' },
+      { id: '305PL', name: 'Left Field Pavilion 305', level: 'upper', baseAngle: 180, angleSpan: 10, covered: false, price: 'value' },
+      { id: '306PL', name: 'Right Field Pavilion 306', level: 'upper', baseAngle: 190, angleSpan: 10, covered: false, price: 'value' },
+      { id: '307PL', name: 'Right Field Pavilion 307', level: 'upper', baseAngle: 200, angleSpan: 10, covered: false, price: 'value' },
+      { id: '308PL', name: 'Right Field Pavilion 308', level: 'upper', baseAngle: 210, angleSpan: 10, covered: false, price: 'value' },
+      { id: '309PL', name: 'Right Field Pavilion 309', level: 'upper', baseAngle: 220, angleSpan: 10, covered: false, price: 'value' },
+      { id: '310PL', name: 'Right Field Pavilion 310', level: 'upper', baseAngle: 230, angleSpan: 10, covered: false, price: 'value' },
+    ]
+  };

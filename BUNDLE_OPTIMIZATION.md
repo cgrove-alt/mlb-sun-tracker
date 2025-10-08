@@ -134,6 +134,36 @@ ls -lh .next/static/chunks/*.js | sort -k5 -hr
    - Requires more substantial refactoring
    - Best user experience
 
+## Phase 6.1 Update: Stadium Section File Splitting
+
+### Changes Made (October 8, 2025)
+
+**Created split section files:**
+- Split 5375-line `stadiumSections.ts` into 30 individual files
+- New directory: `src/data/stadiumSections-split/` with one file per MLB stadium
+- Each file contains only that stadium's section data (~60-240 lines each)
+
+**Updated dynamic imports:**
+- Modified `getStadiumSectionsAsync()` to use file-based dynamic imports
+- Uses webpack's dynamic import syntax: `import(\`./stadiumSections-split/${stadiumId}.ts\`)`
+- This allows Next.js to create separate chunks for each stadium
+
+**Build results:**
+- Build succeeded with no errors
+- 244 static pages generated successfully
+- Created split script: `scripts/split-stadium-sections.js` for regeneration
+
+**Current Status:**
+- Stadium pages still showing 598 kB First Load JS
+- Dynamic imports are in place but not yet reducing bundle size
+- Likely cause: Other files still importing the full `stadiumSections` array
+
+**Next Steps:**
+1. Identify remaining files importing `stadiumSections` directly
+2. Update those files to use `getStadiumSectionsAsync()`
+3. Re-run bundle analyzer to measure actual impact
+4. Expected result: 40-60% reduction once all imports are migrated
+
 ## Impact Summary
 
 ✅ **Completed:**
@@ -141,11 +171,12 @@ ls -lh .next/static/chunks/*.js | sort -k5 -hr
 - Root cause identified (2.9 MB section data)
 - Dynamic import system created
 - Stadium pages updated to async loading
-- 17% reduction in data chunk size (500 KB saved)
+- **Split 30 MLB stadiums into individual files**
+- **Implemented file-based dynamic imports**
 
 🔄 **In Progress:**
 - Migrating remaining imports to async
-- Further bundle size reductions
+- Measuring bundle size impact
 
 📊 **Expected Final Result:**
 - Stadium pages: ~360 kB (-40% from 598 kB)
