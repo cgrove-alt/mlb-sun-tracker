@@ -125,9 +125,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-actual-google-verification-code', // Replace with your actual code
-  },
+  // Uncomment and add your Google Search Console verification code when ready
+  // verification: {
+  //   google: 'your-verification-code-here',
+  // },
 };
 
 export function generateViewport() {
@@ -153,10 +154,19 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <meta name="theme-color" content="#1e40af" />
-        
+
         {/* Google AdSense Verification */}
         <meta name="google-adsense-account" content="ca-pub-3681192675377295" />
-        
+
+        {/* Font preloading for Inter */}
+        <link
+          rel="preload"
+          href="/_next/static/media/inter-latin.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
         {/* Resource hints for performance */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

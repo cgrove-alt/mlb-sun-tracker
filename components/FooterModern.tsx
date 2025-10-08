@@ -13,11 +13,11 @@ const FooterModern: React.FC = () => {
           {/* Brand Section */}
           <div>
             <h3 className="text-lg font-bold text-ink-900 mb-2">The Shadium</h3>
-            <p className="text-xs text-ink-600 mb-2">
-              Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking 
+            <p className="text-sm text-ink-700 mb-3">
+              Find seats in the shade at any MLB, MiLB, or NFL stadium. Real-time sun tracking
               for 250+ venues.
             </p>
-            <p className="text-xs text-ink-500">
+            <p className="text-xs text-ink-600">
               © {currentYear} The Shadium™. All rights reserved.
             </p>
           </div>
@@ -26,17 +26,17 @@ const FooterModern: React.FC = () => {
           <div>
             <h4 className="font-semibold text-ink-900 mb-2 text-sm">Quick Links</h4>
             <div className="grid grid-cols-2 gap-x-4">
-              <ul className="space-y-1">
-                <li><Link href="/guide" className="text-xs text-ink-600 hover:text-primary-500">Shade Guide</Link></li>
-                <li><Link href="/stadiums" className="text-xs text-ink-600 hover:text-primary-500">All Stadiums</Link></li>
-                <li><Link href="/faq" className="text-xs text-ink-600 hover:text-primary-500">FAQ</Link></li>
-                <li><Link href="/contact" className="text-xs text-ink-600 hover:text-primary-500">Contact</Link></li>
+              <ul className="space-y-1.5">
+                <li><Link href="/guide" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Shade Guide</Link></li>
+                <li><Link href="/stadiums" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">All Stadiums</Link></li>
+                <li><Link href="/faq" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">FAQ</Link></li>
+                <li><Link href="/contact" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Contact</Link></li>
               </ul>
-              <ul className="space-y-1">
-                <li><Link href="/terms" className="text-xs text-ink-600 hover:text-primary-500">Terms</Link></li>
-                <li><Link href="/privacy" className="text-xs text-ink-600 hover:text-primary-500">Privacy</Link></li>
-                <li><Link href="/cookies" className="text-xs text-ink-600 hover:text-primary-500">Cookies</Link></li>
-                <li><Link href="/accessibility" className="text-xs text-ink-600 hover:text-primary-500">Accessibility</Link></li>
+              <ul className="space-y-1.5">
+                <li><Link href="/terms" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Terms</Link></li>
+                <li><Link href="/privacy" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Privacy</Link></li>
+                <li><Link href="/cookies" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Cookies</Link></li>
+                <li><Link href="/accessibility" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">Accessibility</Link></li>
               </ul>
             </div>
           </div>
@@ -44,20 +44,20 @@ const FooterModern: React.FC = () => {
           {/* Privacy Section */}
           <div>
             <h4 className="font-semibold text-ink-900 mb-2 text-sm">Privacy Options</h4>
-            <ul className="space-y-1">
+            <ul className="space-y-1.5">
               <li>
-                <Link href="/privacy#california" className="text-xs text-ink-600 hover:text-primary-500">
+                <Link href="/privacy#california" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">
                   California Privacy Rights
                 </Link>
               </li>
               <li>
-                <Link href="/privacy#gdpr" className="text-xs text-ink-600 hover:text-primary-500">
+                <Link href="/privacy#gdpr" className="text-sm text-ink-700 hover:text-primary-600 transition-colors">
                   EU Privacy Rights
                 </Link>
               </li>
               <li>
-                <button 
-                  className="text-xs text-ink-600 hover:text-primary-500 text-left"
+                <button
+                  className="text-sm text-ink-700 hover:text-primary-600 text-left transition-colors"
                   onClick={() => {
                     if (typeof window !== 'undefined' && (window as any).showCookiePreferences) {
                       (window as any).showCookiePreferences();

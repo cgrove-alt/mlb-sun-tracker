@@ -75,7 +75,7 @@
 }
 
 .search-input {
-  width: 200px;
+  width: 260px;
   height: 40px;
   padding: 0 40px 0 16px;
   border: 1px solid #e0e0e0;
@@ -88,7 +88,7 @@
 .search-input:focus {
   border-color: #ff6b35;
   box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
-  width: 240px;
+  width: 320px;
 }
 
 .search-button {
@@ -141,11 +141,43 @@
   background: #f8f8f8;
 }
 
+.result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+
 .result-name {
   color: #1a1a1a;
   font-weight: 500;
   font-size: 14px;
-  margin-bottom: 2px;
+  flex: 1;
+}
+
+.league-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.league-mlb {
+  background: #ef4444;
+  color: white;
+}
+
+.league-nfl {
+  background: #3b82f6;
+  color: white;
+}
+
+.league-milb {
+  background: #8b5cf6;
+  color: white;
 }
 
 .result-team {
@@ -175,7 +207,7 @@
 .hamburger-line {
   width: 24px;
   height: 2px;
-  background: #333;
+  background: var(--ink-700, #334155);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
   border-radius: 1px;
@@ -198,8 +230,8 @@
   top: 64px;
   right: -100%;
   bottom: 0;
-  width: 80%;
-  max-width: 320px;
+  width: 85%;
+  max-width: 380px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -332,7 +364,7 @@
 .mobile-nav-links > a {
   display: block;
   padding: 12px 16px;
-  color: #333;
+  color: var(--ink-800, #1B2432);
   text-decoration: none !important;
   font-weight: 500;
   font-size: 15px;
@@ -426,16 +458,94 @@
 }
 
 .mobile-league-toggle[aria-expanded="true"] {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(255, 107, 53, 0.1);
   border-left-color: #ff6b35;
+  box-shadow: inset 0 0 0 1px rgba(255, 107, 53, 0.2);
 }
 
 .toggle-arrow {
   transition: transform 0.2s ease;
+  opacity: 0.6;
 }
 
 .mobile-league-toggle[aria-expanded="true"] .toggle-arrow {
   transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* MiLB Browse Link */
+.mobile-league-browse {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px 12px 24px;
+  margin: 8px 0 8px 8px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobile-league-browse:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  border-color: rgba(59, 130, 246, 0.3);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+.browse-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1e40af;
+}
+
+.browse-icon {
+  font-size: 16px;
+}
+
+.browse-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.browse-count {
+  font-size: 12px;
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.browse-arrow {
+  color: #6366f1;
+  transition: transform 0.2s ease;
+}
+
+.mobile-league-browse:hover .browse-arrow {
+  transform: translateX(2px);
+}
+
+/* Nav link hierarchy */
+.nav-link-primary {
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 8px;
+}
+
+.nav-link-secondary {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  gap: 8px;
+  opacity: 0.8;
 }
 
 .mobile-venues-menu {
@@ -490,6 +600,52 @@
 }
 
 /* Mobile nav sections for grouping links */
+/* Popular Stadiums Grid */
+.mobile-section-popular {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(255, 107, 53, 0.08) 100%) !important;
+  border: 1px solid rgba(255, 107, 53, 0.15) !important;
+}
+
+.popular-stadiums-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.popular-stadium-card {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 60px;
+}
+
+.popular-stadium-card:hover {
+  background: #fff8f0;
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 107, 53, 0.15);
+}
+
+.stadium-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.stadium-venue {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.2;
+}
+
 .mobile-nav-section {
   margin: 0 0 20px 0;
   padding: 16px;
@@ -578,25 +734,28 @@
   .desktop-only {
     display: none;
   }
-  
+
   .mobile-only {
     display: flex;
   }
-  
-  /* Keep search visible on tablets, only hide on small mobile */
-  /* .nav-search will be hidden at 480px breakpoint */
-  
+
+  /* Keep search visible on all devices now */
+
   .nav-right {
     gap: 10px;
     margin-left: auto;
   }
-  
+
   .search-input {
-    width: 160px;
+    width: 180px;
   }
-  
+
   .search-input:focus {
-    width: 200px;
+    width: 220px;
+  }
+
+  .popular-stadiums-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -604,14 +763,19 @@
   .nav-container {
     padding: 0 16px;
   }
-  
+
   .nav-content {
     height: 56px;
   }
-  
-  /* Hide search only on small mobile */
-  .nav-search {
-    display: none;
+
+  /* Keep search visible on small mobile - just smaller */
+  .search-input {
+    width: 140px;
+    font-size: 13px;
+  }
+
+  .search-input:focus {
+    width: 180px;
   }
   
   .sticky-nav-mobile-menu {

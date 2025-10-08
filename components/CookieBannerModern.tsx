@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { ModernButton } from '../src/components/ModernButton';
 import { useGlobalPrivacyControl } from '../hooks/useGlobalPrivacyControl';
 import { cookieConsent, cookiesEnabled } from '../utils/cookies';
+import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -24,8 +25,9 @@ const CookieBannerModern: React.FC = () => {
     functional: false,
     timestamp: Date.now()
   });
-  
+
   const { isGPCEnabled, isGPCSupported } = useGlobalPrivacyControl();
+  const haptic = useHapticFeedback();
 
   useEffect(() => {
     // Check for existing consent in cookies or localStorage
@@ -90,11 +92,33 @@ const CookieBannerModern: React.FC = () => {
       
     } else if (!existingConsent) {
       // Show banner if no consent stored (regardless of GPC)
-      // No consent found, showing banner in 1 second
-      setTimeout(() => {
-        // Setting showBanner to true
-        setShowBanner(true);
-      }, 1000);
+      // Delay banner to reduce intrusiveness - show after 3 seconds OR on first scroll
+      let bannerShown = false;
+
+      const showBannerDelayed = () => {
+        if (!bannerShown) {
+          bannerShown = true;
+          setShowBanner(true);
+        }
+      };
+
+      // Show after 3 seconds
+      const timeoutId = setTimeout(showBannerDelayed, 3000);
+
+      // OR show on first scroll (whichever comes first)
+      const handleScroll = () => {
+        showBannerDelayed();
+        window.removeEventListener('scroll', handleScroll);
+        clearTimeout(timeoutId);
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      // Cleanup if component unmounts
+      return () => {
+        clearTimeout(timeoutId);
+        window.removeEventListener('scroll', handleScroll);
+      };
     } else {
       // Apply existing preferences
       try {
@@ -138,18 +162,19 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleAcceptAll = () => {
+    haptic.success();
     const newPreferences = {
       necessary: true,
       performance: true,
       functional: true,
       timestamp: Date.now()
     };
-    
+
     const saved = cookieConsent.setConsent(newPreferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(newPreferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
     
@@ -160,21 +185,22 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleRejectAll = () => {
+    haptic.tap();
     const newPreferences = {
       necessary: true,
       performance: false,
       functional: false,
       timestamp: Date.now()
     };
-    
+
     const saved = cookieConsent.setConsent(newPreferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(newPreferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
-    
+
     applyCookiePreferences(newPreferences);
     setPreferences(newPreferences);
     setShowBanner(false);
@@ -182,14 +208,15 @@ const CookieBannerModern: React.FC = () => {
   };
 
   const handleSavePreferences = () => {
+    haptic.success();
     const saved = cookieConsent.setConsent(preferences);
     if (saved) {
       cookieConsent.setConsentDate(new Date().toISOString());
     }
-    
+
     localStorage.setItem('cookie_consent', JSON.stringify(preferences));
     localStorage.setItem('cookie_consent_date', new Date().toISOString());
-    
+
     applyCookiePreferences(preferences);
     setShowBanner(false);
     setShowPreferences(false);
@@ -197,14 +224,14 @@ const CookieBannerModern: React.FC = () => {
 
   if (showGPCNotice) {
     return (
-      <div className="fixed bottom-4 right-4 z-50 max-w-sm animate-slide-up">
-        <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-4 shadow-lg backdrop-blur-sm">
-          <div className="flex items-start gap-3">
-            <span className="text-2xl">🛡️</span>
+      <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 max-w-sm w-[calc(100%-2rem)] sm:w-full animate-slide-up">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-3 sm:p-4 shadow-lg backdrop-blur-sm">
+          <div className="flex items-start gap-2 sm:gap-3">
+            <span className="text-xl sm:text-2xl">🛡️</span>
             <div>
-              <h4 className="font-semibold text-green-900 mb-1">Privacy Preserved</h4>
-              <p className="text-sm text-green-700">
-                We've honored your Global Privacy Control signal and applied strict privacy settings.
+              <h4 className="font-semibold text-green-900 mb-0.5 sm:mb-1 text-sm sm:text-base">Privacy Preserved</h4>
+              <p className="text-xs sm:text-sm text-green-700">
+                We've honored your Global Privacy Control signal.
               </p>
             </div>
           </div>
@@ -219,58 +246,49 @@ const CookieBannerModern: React.FC = () => {
 
   return (
     <>
-      {/* Glass morphism overlay */}
-      {(showBanner || showPreferences) && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40" />
-      )}
-
       {/* Main Banner */}
       {showBanner && !showPreferences && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-slide-up">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 animate-slide-up">
           <div className="mx-auto max-w-7xl">
-            <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl p-6">
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-xl sm:rounded-2xl shadow-2xl p-4 sm:p-6">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-ink-900 mb-2 flex items-center gap-2">
+                  <h3 className="text-base sm:text-lg font-bold text-ink-900 mb-1.5 sm:mb-2 flex items-center gap-2">
                     <span>🍪</span> We value your privacy
                   </h3>
-                  <p className="text-sm text-ink-600 mb-2">
-                    We use cookies to enhance your experience and analyze site traffic. 
-                    By clicking "Accept All", you consent to our use of cookies.
-                  </p>
-                  <p className="text-xs text-ink-500">
-                    Learn more in our{' '}
+                  <p className="text-xs sm:text-sm text-ink-600 mb-1.5 sm:mb-2">
+                    We use cookies to enhance your experience.
+                    {' '}
                     <Link href="/cookies" className="text-primary-600 hover:text-primary-700 underline">
                       Cookie Policy
                     </Link>
-                    {' '}and{' '}
-                    <Link href="/privacy" className="text-primary-600 hover:text-primary-700 underline">
-                      Privacy Policy
-                    </Link>.
                   </p>
                 </div>
-                
-                <div className="flex flex-wrap gap-3">
+
+                <div className="flex flex-col sm:flex-row w-full lg:w-auto gap-2 sm:gap-3">
                   <ModernButton
                     onClick={() => setShowPreferences(true)}
                     variant="ghost"
                     size="md"
+                    className="text-xs sm:text-sm"
                   >
-                    Manage Preferences
+                    Manage
                   </ModernButton>
                   <ModernButton
                     onClick={handleRejectAll}
                     variant="secondary"
                     size="md"
+                    className="text-xs sm:text-sm"
                   >
-                    Reject All
+                    Reject
                   </ModernButton>
                   <ModernButton
                     onClick={handleAcceptAll}
                     variant="primary"
                     size="md"
+                    className="text-xs sm:text-sm"
                   >
-                    Accept All
+                    Accept
                   </ModernButton>
                 </div>
               </div>
@@ -281,8 +299,13 @@ const CookieBannerModern: React.FC = () => {
 
       {/* Preferences Modal */}
       {showPreferences && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <>
+          <div
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40"
+            onClick={() => setShowPreferences(false)}
+          />
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <div className="bg-white/95 backdrop-blur-md border-2 border-ink-200 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto">
             <div className="p-6">
               <h2 className="text-2xl font-bold text-ink-900 mb-4">Cookie Preferences</h2>
               
@@ -375,7 +398,8 @@ const CookieBannerModern: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </>
       )}
     </>
   );

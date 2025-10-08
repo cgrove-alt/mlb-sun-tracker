@@ -58,9 +58,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
 
   const loadGamesForStadium = useCallback(async () => {
     if (!selectedStadium) return;
-    
-    console.log('[GameSelector] Loading games for:', selectedStadium.name);
-    
+
     // Simple direct loading without complex state management
     try {
       setError(null);
@@ -77,8 +75,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
       );
       
       const homeGames = mlbApi.getHomeGamesForStadium(selectedStadium.id, allGames);
-      console.log('[GameSelector] Found', homeGames.length, 'games');
-      
+
       setGames(homeGames);
       gamesLoading.setData(homeGames);
       

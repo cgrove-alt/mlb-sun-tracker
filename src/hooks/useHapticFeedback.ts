@@ -9,7 +9,8 @@ export const useHapticFeedback = () => {
 
   // Check for iOS specific haptic API
   const hasIOSHaptics = useCallback(() => {
-    return 'ontouchstart' in window && 
+    if (typeof window === 'undefined') return false;
+    return 'ontouchstart' in window &&
            /iPhone|iPad|iPod/.test(navigator.userAgent) &&
            'vibrate' in navigator;
   }, []);
@@ -17,6 +18,7 @@ export const useHapticFeedback = () => {
   // Check user preferences
   useEffect(() => {
     // Check if user has disabled haptics in settings
+    if (typeof window === 'undefined') return;
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     isEnabledRef.current = !mediaQuery.matches;
 
@@ -94,7 +96,7 @@ export const useHapticFeedback = () => {
     ...patterns,
     setEnabled,
     isEnabled,
-    hasIOSHaptics: hasIOSHaptics()
+    hasIOSHaptics
   };
 };
 

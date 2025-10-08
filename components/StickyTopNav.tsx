@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { MLB_STADIUMS } from '../src/data/stadiums';
 import { ALL_UNIFIED_VENUES, getVenuesByLeague } from '../src/data/unifiedVenues';
+import { useHapticFeedback } from '../src/hooks/useHapticFeedback';
 import './StickyTopNav.css';
 
 export default function StickyTopNav() {
@@ -19,11 +20,24 @@ export default function StickyTopNav() {
   const pathname = usePathname();
   const searchRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const haptic = useHapticFeedback();
 
   // Get venues by league
   const mlbVenues = getVenuesByLeague('MLB');
   const nflVenues = getVenuesByLeague('NFL');
   const milbVenues = getVenuesByLeague('MiLB');
+
+  // Popular stadiums for quick access (top 8 most visited)
+  const popularStadiums = [
+    { id: 'yankees', name: 'Yankee Stadium', team: 'New York Yankees', league: 'MLB' },
+    { id: 'dodgers', name: 'Dodger Stadium', team: 'Los Angeles Dodgers', league: 'MLB' },
+    { id: 'cubs', name: 'Wrigley Field', team: 'Chicago Cubs', league: 'MLB' },
+    { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox', league: 'MLB' },
+    { id: 'giants', name: 'Oracle Park', team: 'San Francisco Giants', league: 'MLB' },
+    { id: 'braves', name: 'Truist Park', team: 'Atlanta Braves', league: 'MLB' },
+    { id: 'astros', name: 'Minute Maid Park', team: 'Houston Astros', league: 'MLB' },
+    { id: 'mets', name: 'Citi Field', team: 'New York Mets', league: 'MLB' },
+  ];
 
   // Function to close mobile menu
   const closeMobileMenu = () => {
@@ -133,7 +147,7 @@ export default function StickyTopNav() {
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Search stadiums..."
+                    placeholder="Search: Yankee Stadium, Dodgers..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onFocus={() => searchQuery && setShowSearchResults(true)}
@@ -158,8 +172,14 @@ export default function StickyTopNav() {
                           key={result.id}
                           href={`/${route}/${result.id}`}
                           className="search-result-item"
+                          onClick={() => haptic.tap()}
                         >
-                          <span className="result-name">{result.name}</span>
+                          <div className="result-header">
+                            <span className="result-name">{result.name}</span>
+                            <span className={`league-badge league-${result.league?.toLowerCase()}`}>
+                              {result.league}
+                            </span>
+                          </div>
                           <span className="result-team">{result.team}</span>
                         </Link>
                       );
@@ -170,7 +190,10 @@ export default function StickyTopNav() {
 
               <button
                 className="hamburger-menu"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={() => {
+                  haptic.tap();
+                  setIsMenuOpen(!isMenuOpen);
+                }}
                 aria-label="Toggle menu"
                 aria-expanded={isMenuOpen}
               >
@@ -197,19 +220,43 @@ export default function StickyTopNav() {
           </button>
 
           <div className="mobile-nav-links">
+            {/* POPULAR STADIUMS Section - NEW */}
+            <div className="mobile-nav-section mobile-section-popular">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">⭐</span>
+                Popular Stadiums
+              </h4>
+              <div className="popular-stadiums-grid">
+                {popularStadiums.map((stadium) => (
+                  <Link
+                    key={stadium.id}
+                    href={`/stadium/${stadium.id}`}
+                    className="popular-stadium-card"
+                    onClick={() => {
+                      haptic.tap();
+                      closeMobileMenu();
+                    }}
+                  >
+                    <span className="stadium-name">{stadium.team}</span>
+                    <span className="stadium-venue">{stadium.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* FIND YOUR STADIUM Section */}
             <div className="mobile-nav-section">
               <h4 className="mobile-section-title">
-                <span className="section-icon">🏟️</span>
-                Find Your Stadium
+                <span className="section-icon">🔍</span>
+                Search All Stadiums
               </h4>
-              
+
               {/* Integrated Search */}
               <div className="mobile-search">
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Quick search..."
+                    placeholder="Search 250+ stadiums: Yankee Stadium, Dodgers..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     className="mobile-search-input"
@@ -218,19 +265,22 @@ export default function StickyTopNav() {
                 </form>
                 {searchQuery && searchResults.length > 0 && (
                   <div className="mobile-search-results">
-                    {searchResults.slice(0, 5).map((result) => (
-                      <Link
-                        key={result.id}
-                        href={`/stadium/${result.id}`}
-                        className="mobile-search-result"
-                        onClick={closeMobileMenu}
-                      >
-                        <span>{result.name}</span>
-                        <span className="team-label">{result.team}</span>
-                      </Link>
-                    ))}
+                    {searchResults.slice(0, 5).map((result) => {
+                      const route = result.league === 'MLB' ? 'stadium' : 'venue';
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${route}/${result.id}`}
+                          className="mobile-search-result"
+                          onClick={closeMobileMenu}
+                        >
+                          <span>{result.name}</span>
+                          <span className="team-label">{result.team}</span>
+                        </Link>
+                      );
+                    })}
                     {searchResults.length > 5 && (
-                      <div className="search-more">View all {searchResults.length} results</div>
+                      <div className="search-more">+{searchResults.length - 5} more results</div>
                     )}
                   </div>
                 )}
@@ -300,58 +350,44 @@ export default function StickyTopNav() {
                 )}
               </div>
 
-              {/* MiLB Dropdown */}
-              <div className="mobile-league-dropdown">
-                <button
-                  type="button"
-                  className="mobile-league-toggle"
-                  onClick={() => setIsMiLBOpen(!isMiLBOpen)}
-                  aria-expanded={isMiLBOpen}
-                  aria-label="Toggle MiLB stadiums menu"
-                  aria-controls="milb-venues-menu"
-                >
-                  MiLB Stadiums ({milbVenues.length})
-                  <svg className="toggle-arrow" width="12" height="8" viewBox="0 0 12 8" fill="none">
-                    <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              {/* MiLB Browse Link - Too many to show in dropdown */}
+              <Link
+                href="/league/milb"
+                className="mobile-league-browse"
+                onClick={closeMobileMenu}
+              >
+                <span className="browse-label">
+                  <span className="browse-icon">⚾</span>
+                  MiLB Stadiums
+                </span>
+                <span className="browse-meta">
+                  <span className="browse-count">{milbVenues.length}+ stadiums</span>
+                  <svg className="browse-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
-                </button>
-                {isMiLBOpen && (
-                  <div id="milb-venues-menu" className="mobile-venues-menu" role="region" aria-label="MiLB stadiums list">
-                    {milbVenues.map((venue) => (
-                      <Link
-                        key={venue.id}
-                        href={`/venue/${venue.id}`}
-                        className="mobile-venue-link"
-                        onClick={closeMobileMenu}
-                      >
-                        {venue.name}
-                        <span className="venue-team">{venue.team} ({venue.level})</span>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                </span>
+              </Link>
             </div>
 
-            {/* NAVIGATION Section */}
+            {/* NAVIGATION Section - Streamlined */}
             <div className="mobile-nav-section">
               <h4 className="mobile-section-title">
                 <span className="section-icon">📍</span>
-                Navigation
+                Navigate
               </h4>
-              
-              <Link 
-                href="/" 
-                className={pathname === '/' ? 'active' : ''}
+
+              <Link
+                href="/"
+                className={`nav-link-primary ${pathname === '/' ? 'active' : ''}`}
                 onClick={closeMobileMenu}
                 aria-current={pathname === '/' ? 'page' : undefined}
               >
-                Home
+                🏠 Home
               </Link>
-              
-              <Link 
-                href="/#app-section" 
-                className={pathname === '/' ? '' : ''}
+
+              <Link
+                href="/#app-section"
+                className="nav-link-primary"
                 onClick={() => {
                   closeMobileMenu();
                   // Trigger the stadium selector to show
@@ -363,95 +399,25 @@ export default function StickyTopNav() {
                   }
                 }}
               >
-                Shade Finder Tool
+                🎯 Shade Finder Tool
               </Link>
-              
-              <Link 
-                href="/stadiums" 
-                className={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/stadiums' || pathname?.startsWith('/stadium/') || pathname?.startsWith('/venue/') || pathname?.startsWith('/league/') ? 'page' : undefined}
-              >
-                All Stadiums
-              </Link>
-              
-              <Link 
-                href="/blog" 
-                className={pathname?.startsWith('/blog') ? 'active' : ''}
+
+              <Link
+                href="/blog"
+                className={`nav-link-primary ${pathname?.startsWith('/blog') ? 'active' : ''}`}
                 onClick={closeMobileMenu}
                 aria-current={pathname?.startsWith('/blog') ? 'page' : undefined}
               >
-                Blog
+                📰 Blog & Guides
               </Link>
-            </div>
 
-            {/* RESOURCES Section */}
-            <div className="mobile-nav-section">
-              <h4 className="mobile-section-title">
-                <span className="section-icon">📚</span>
-                Resources
-              </h4>
-              
-              <Link 
-                href="/guide/how-to-find-shaded-seats" 
-                className={pathname === '/guide/how-to-find-shaded-seats' ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/guide/how-to-find-shaded-seats' ? 'page' : undefined}
-              >
-                How to Find Shaded Seats
-              </Link>
-              
-              <Link 
-                href="/guide/best-shaded-seats-mlb" 
-                className={pathname === '/guide/best-shaded-seats-mlb' ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/guide/best-shaded-seats-mlb' ? 'page' : undefined}
-              >
-                Best Shaded Seats Guide
-              </Link>
-              
-              <Link 
-                href="/faq" 
-                className={pathname === '/faq' ? 'active' : ''}
+              <Link
+                href="/faq"
+                className={`nav-link-secondary ${pathname === '/faq' ? 'active' : ''}`}
                 onClick={closeMobileMenu}
                 aria-current={pathname === '/faq' ? 'page' : undefined}
               >
-                FAQs
-              </Link>
-            </div>
-
-            {/* ABOUT Section */}
-            <div className="mobile-nav-section">
-              <h4 className="mobile-section-title">
-                <span className="section-icon">ℹ️</span>
-                About
-              </h4>
-              
-              <Link 
-                href="/contact" 
-                className={pathname === '/contact' ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/contact' ? 'page' : undefined}
-              >
-                Contact Us
-              </Link>
-              
-              <Link 
-                href="/privacy" 
-                className={pathname === '/privacy' ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/privacy' ? 'page' : undefined}
-              >
-                Privacy Policy
-              </Link>
-              
-              <Link 
-                href="/terms" 
-                className={pathname === '/terms' ? 'active' : ''}
-                onClick={closeMobileMenu}
-                aria-current={pathname === '/terms' ? 'page' : undefined}
-              >
-                Terms of Service
+                ❓ FAQs
               </Link>
             </div>
           </div>

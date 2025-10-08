@@ -105,16 +105,19 @@ export class PerformanceMonitor {
 // Export singleton instance
 export const performanceMonitor = PerformanceMonitor.getInstance();
 
-// Web Vitals tracking
-export const trackWebVitals = () => {
+// Web Vitals tracking with callback
+export const trackWebVitals = (onMetric?: (metric: { name: string; value: number }) => void) => {
   if ('PerformanceObserver' in window) {
     // Track Largest Contentful Paint
     const lcpObserver = new PerformanceObserver((list) => {
       const entries = list.getEntries();
       const lastEntry = entries[entries.length - 1];
-      console.log('LCP:', lastEntry.startTime.toFixed(2), 'ms');
+      const value = lastEntry.startTime;
+      if (onMetric) {
+        onMetric({ name: 'LCP', value });
+      }
     });
-    
+
     try {
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
     } catch (e) {
@@ -124,15 +127,16 @@ export const trackWebVitals = () => {
     // Track First Input Delay
     const fidObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        // Cast to any since PerformanceEventTiming isn't in all TypeScript versions
         const eventEntry = entry as any;
         if (eventEntry.processingStart) {
           const delay = eventEntry.processingStart - eventEntry.startTime;
-          console.log('FID:', delay.toFixed(2), 'ms');
+          if (onMetric) {
+            onMetric({ name: 'FID', value: delay });
+          }
         }
       }
     });
-    
+
     try {
       fidObserver.observe({ entryTypes: ['first-input'] });
     } catch (e) {
@@ -146,11 +150,13 @@ export const trackWebVitals = () => {
         const layoutEntry = entry as any;
         if (!layoutEntry.hadRecentInput && layoutEntry.value) {
           clsValue += layoutEntry.value;
-          console.log('CLS:', clsValue.toFixed(3));
+          if (onMetric) {
+            onMetric({ name: 'CLS', value: clsValue });
+          }
         }
       }
     });
-    
+
     try {
       clsObserver.observe({ entryTypes: ['layout-shift'] });
     } catch (e) {

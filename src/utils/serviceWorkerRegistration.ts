@@ -36,10 +36,7 @@ export function register(config?: SWConfig) {
 
         // Add some additional logging so developers can see what's happening
         navigator.serviceWorker.ready.then(() => {
-          console.log(
-            'This web app is being served cache-first by a service worker.'
-          );
-          
+
           // Load service worker extensions after main SW is ready
           if (navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage({ type: 'LOAD_EXTENSIONS' });
@@ -53,28 +50,28 @@ export function register(config?: SWConfig) {
 
     // Listen for online/offline events
     window.addEventListener('online', () => {
-      console.log('[SW] Back online');
+
       config?.onOnline?.();
       
       // Trigger background sync if available
       navigator.serviceWorker.ready.then((registration) => {
         if ('sync' in registration) {
           (registration as any).sync.register('mlb-sync-preferences').catch((error: Error) => {
-            console.log('[SW] Background sync registration failed:', error);
+
           });
         }
       });
     });
 
     window.addEventListener('offline', () => {
-      console.log('[SW] Offline mode');
+
       config?.onOffline?.();
     });
 
     // Listen for messages from service worker
     navigator.serviceWorker.addEventListener('message', (event) => {
       if (event.data && event.data.type === 'SYNC_COMPLETE') {
-        console.log('[SW] Sync completed:', event.data.data);
+
         // Notify the app that preferences were synced
         window.dispatchEvent(new CustomEvent('sw-sync-complete', { detail: event.data.data }));
       }
@@ -92,7 +89,7 @@ function registerValidSW(swUrl: string, config?: SWConfig) {
           tag: 'update-weather',
           minInterval: 30 * 60 * 1000, // 30 minutes
         }).catch((error: Error) => {
-          console.log('[SW] Periodic sync registration failed:', error);
+
         });
       }
 
@@ -107,9 +104,6 @@ function registerValidSW(swUrl: string, config?: SWConfig) {
               // At this point, the updated precached content has been fetched,
               // but the previous service worker will still serve the older
               // content until all client tabs are closed.
-              console.log(
-                'New content is available and will be used when all tabs are closed.'
-              );
 
               // Execute callback
               if (config && config.onUpdate) {
@@ -117,7 +111,6 @@ function registerValidSW(swUrl: string, config?: SWConfig) {
               }
             } else {
               // At this point, everything has been precached.
-              console.log('Content is cached for offline use.');
 
               // Execute callback
               if (config && config.onSuccess) {
@@ -158,7 +151,7 @@ function checkValidServiceWorker(swUrl: string, config?: SWConfig) {
       }
     })
     .catch(() => {
-      console.log('No internet connection found. App is running in offline mode.');
+
       config?.onOffline?.();
     });
 }

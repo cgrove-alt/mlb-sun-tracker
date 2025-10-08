@@ -124,8 +124,6 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
       return;
     }
 
-    console.log('[GameSelector] Loading games for:', selectedVenue.name);
-    
     try {
       setError(null);
       gamesLoading.setLoading(true);
@@ -144,8 +142,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
         );
         
         const homeGames = mlbApi.getHomeGamesForStadium(selectedVenue.id, schedule);
-        
-        console.log('[GameSelector] Found', homeGames.length, 'MLB games');
+
         setGames(homeGames);
         gamesLoading.setData(homeGames);
         
@@ -153,8 +150,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'MiLB') {
-        console.log('[GameSelector] Selected MiLB venue:', selectedVenue);
-        
+
         // Get the numeric venue ID from the string ID
         const venueId = getVenueIdFromStringId(selectedVenue.id);
         
@@ -176,9 +172,7 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           gamesLoading.setData([]);
           return;
         }
-        
-        console.log('[GameSelector] Loading MiLB games for team:', teamId, 'venue:', venueId, 'level:', selectedVenue.level);
-        
+
         // Get the sport ID for this MiLB level
         let sportId = 11; // Default to AAA
         if (selectedVenue.level) {
@@ -206,21 +200,16 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
               break;
           }
         }
-        
-        console.log('[GameSelector] Fetching schedule with sportId:', sportId);
-        
+
         const schedule = await milbApi.getTeamScheduleByLevel(
           teamId,
           now.toISOString().split('T')[0],
           endDate.toISOString().split('T')[0],
           sportId
         );
-        
-        console.log('[GameSelector] API returned schedule:', schedule);
-        
+
         const homeGames = milbApi.getHomeGamesForVenue(venueId, schedule);
-        
-        console.log('[GameSelector] Found', homeGames.length, 'MiLB games for venue', venueId);
+
         setGames(homeGames);
         gamesLoading.setData(homeGames);
         
@@ -228,11 +217,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           onGamesLoaded(homeGames);
         }
       } else if (selectedVenue.league === 'NFL') {
-        console.log('[GameSelector] Loading NFL games for venue:', selectedVenue.id);
-        
+
         const nflGames = await nflApi.getUpcomingVenueGames(selectedVenue.id);
-        
-        console.log('[GameSelector] Found', nflGames.length, 'NFL games');
+
         setGames(nflGames);
         gamesLoading.setData(nflGames);
         

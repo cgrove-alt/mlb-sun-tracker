@@ -136,10 +136,9 @@ class NFLApiService {
     };
     
     this.cache.set(cacheKey, { data: schedule, timestamp: Date.now() });
-    console.log(`[NFL API] Loaded ${games.length} games for ${targetSeason} season`);
+
     return schedule;
   }
-
 
   // Get games for a specific team
   async getTeamSchedule(teamName: string, season?: number): Promise<NFLGame[]> {
@@ -155,11 +154,11 @@ class NFLApiService {
     
     // Try to get real data
     try {
-      console.log(`[NFL API] Fetching real venue data for ${venueId} in ${targetSeason}`);
+
       const games = await nflApiClient.fetchVenueSchedule(venueId, targetSeason);
       
       if (games.length > 0) {
-        console.log(`[NFL API] Found ${games.length} real games for venue ${venueId}`);
+
         return games;
       }
       

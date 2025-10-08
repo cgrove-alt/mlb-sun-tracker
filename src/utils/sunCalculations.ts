@@ -176,7 +176,7 @@ export function calculateDetailedSectionSunExposure(
     const { cloudCover, conditions, precipitationProbability } = weather;
     // Log in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.log('Weather data applied:', { cloudCover, conditions: conditions[0]?.main, precipitationProbability });
+
     }
     
     // Reduce sun exposure based on weather conditions
@@ -197,12 +197,12 @@ export function calculateDetailedSectionSunExposure(
     
     // Log in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.log('Weather multiplier applied:', weatherMultiplier);
+
     }
   } else {
     // Log in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.log('No weather data available for sun calculations');
+
     }
   }
 
@@ -236,12 +236,6 @@ export function filterSectionsBySunExposure(
 ): SeatingSectionSun[] {
   // Debug logging
   if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
-    console.log('[Filter Debug] Criteria:', { 
-      minExposure: criteria.minExposure, 
-      maxExposure: criteria.maxExposure,
-      totalSections: sectionSunData.length,
-      highSunSections: sectionSunData.filter(s => s.sunExposure >= 75).length
-    });
   }
   
   const filteredResults = sectionSunData.filter(item => {
@@ -275,10 +269,6 @@ export function filterSectionsBySunExposure(
   
   // Debug logging for results
   if (typeof window !== 'undefined' && window.location.hostname === 'localhost' && (criteria.minExposure !== undefined || criteria.maxExposure !== undefined)) {
-    console.log('[Filter Debug] Results:', { 
-      filteredCount: filteredResults.length,
-      examples: filteredResults.slice(0, 3).map(s => ({ name: s.section.name, sun: s.sunExposure }))
-    });
   }
   
   return filteredResults;

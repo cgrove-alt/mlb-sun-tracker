@@ -358,10 +358,7 @@ export class SunCalculator {
     
     const startDate = new Date(gameStartTime);
     
-    // Debug logging for covered sections
-    if (section.covered && process.env.NODE_ENV === 'development') {
-      console.log(`[SunCalc] Calculating for covered section: ${section.name} at ${this.stadium.name}`);
-    }
+    // Covered sections are handled separately
     
     for (let i = 0; i < intervals; i++) {
       const checkTime = new Date(startDate.getTime() + i * timeStep * 60000);

@@ -14,15 +14,6 @@ const ComprehensiveStadiumGuide = dynamic(
   }
 );
 
-// Dynamic imports with proper default export handling
-const StadiumVisualizationSection = dynamic(
-  () => import('../../../src/components/StadiumVisualizationSection'),
-  {
-    loading: () => <LoadingSpinner />,
-    ssr: false,
-  }
-);
-
 const SeatRecommendationsSection = dynamic(
   () => import('../../../src/components/SeatRecommendationsSection'),
   {
@@ -99,7 +90,7 @@ export default function StadiumPageClient({
             <LoadingSpinner message="Calculating sun exposure..." />
           </div>
         ) : sectionsWithSunData && sectionsWithSunData.length > 0 ? (
-          <SeatRecommendationsSection 
+          <SeatRecommendationsSection
             sections={sectionsWithSunData}
             stadiumId={stadium.id}
             gameTime="13:00"
@@ -111,20 +102,11 @@ export default function StadiumPageClient({
               ⚠️ AI Recommendations Unavailable
             </div>
             <p className="text-sm text-gray-500">
-              Sun exposure data could not be calculated for this stadium. 
+              Sun exposure data could not be calculated for this stadium.
               Basic section information is still available above.
             </p>
           </div>
         )}
-      </div>
-
-      {/* 3D Visualization Section - Outside Suspense */}
-      <div className="mt-8" style={{ display: 'block' }}>
-        <StadiumVisualizationSection 
-          stadium={stadium}
-          defaultDate={new Date()}
-          defaultTime="13:00"
-        />
       </div>
     </>
   );
