@@ -25,6 +25,14 @@ export default function StickyTopNav() {
   const nflVenues = getVenuesByLeague('NFL');
   const milbVenues = getVenuesByLeague('MiLB');
 
+  // Group MiLB venues by level
+  const milbByLevel = {
+    'AAA': milbVenues.filter(v => v.level === 'AAA'),
+    'AA': milbVenues.filter(v => v.level === 'AA'),
+    'A+': milbVenues.filter(v => v.level === 'A+'),
+    'A': milbVenues.filter(v => v.level === 'A'),
+  };
+
   // Function to close mobile menu
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
@@ -197,41 +205,130 @@ export default function StickyTopNav() {
           </button>
 
           <div className="mobile-nav-links">
+            {/* POPULAR STADIUMS Section */}
+            <div className="mobile-nav-section">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">⭐</span>
+                Popular Stadiums
+              </h4>
+              <div className="popular-stadiums-grid">
+                <Link
+                  href="/stadium/yankees"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">🗽</span>
+                  <span>Yankee Stadium</span>
+                </Link>
+                <Link
+                  href="/stadium/dodgers"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">⚾</span>
+                  <span>Dodger Stadium</span>
+                </Link>
+                <Link
+                  href="/stadium/cubs"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">🐻</span>
+                  <span>Wrigley Field</span>
+                </Link>
+                <Link
+                  href="/stadium/redsox"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">🧦</span>
+                  <span>Fenway Park</span>
+                </Link>
+                <Link
+                  href="/stadium/giants"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">🌉</span>
+                  <span>Oracle Park</span>
+                </Link>
+                <Link
+                  href="/stadium/braves"
+                  className="popular-stadium-link"
+                  onClick={closeMobileMenu}
+                >
+                  <span className="stadium-emoji">⚾</span>
+                  <span>Truist Park</span>
+                </Link>
+              </div>
+            </div>
+
             {/* FIND YOUR STADIUM Section */}
             <div className="mobile-nav-section">
               <h4 className="mobile-section-title">
                 <span className="section-icon">🏟️</span>
-                Find Your Stadium
+                All Stadiums
               </h4>
-              
-              {/* Integrated Search */}
+
+              {/* Enhanced Search */}
               <div className="mobile-search">
                 <form onSubmit={handleSearchSubmit}>
-                  <input
-                    type="search"
-                    placeholder="Quick search..."
-                    value={searchQuery}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    className="mobile-search-input"
-                    aria-label="Search stadiums"
-                  />
+                  <div className="search-input-wrapper">
+                    <svg className="search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                      <circle cx="8" cy="8" r="6.5" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M13 13L16.5 16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                    </svg>
+                    <input
+                      type="search"
+                      placeholder="Search by stadium or team name..."
+                      value={searchQuery}
+                      onChange={(e) => handleSearch(e.target.value)}
+                      className="mobile-search-input"
+                      aria-label="Search stadiums"
+                    />
+                    {searchQuery && (
+                      <button
+                        type="button"
+                        className="clear-search"
+                        onClick={() => {
+                          setSearchQuery('');
+                          setSearchResults([]);
+                          setShowSearchResults(false);
+                        }}
+                        aria-label="Clear search"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
                 </form>
                 {searchQuery && searchResults.length > 0 && (
                   <div className="mobile-search-results">
-                    {searchResults.slice(0, 5).map((result) => (
-                      <Link
-                        key={result.id}
-                        href={`/stadium/${result.id}`}
-                        className="mobile-search-result"
-                        onClick={closeMobileMenu}
-                      >
-                        <span>{result.name}</span>
-                        <span className="team-label">{result.team}</span>
-                      </Link>
-                    ))}
-                    {searchResults.length > 5 && (
-                      <div className="search-more">View all {searchResults.length} results</div>
+                    {searchResults.slice(0, 8).map((result) => {
+                      const route = result.league === 'MLB' ? 'stadium' : 'venue';
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${route}/${result.id}`}
+                          className="mobile-search-result"
+                          onClick={closeMobileMenu}
+                        >
+                          <div className="result-content">
+                            <span className="result-name">{result.name}</span>
+                            <span className="result-team">{result.team}</span>
+                          </div>
+                          <span className="result-league">{result.league}</span>
+                        </Link>
+                      );
+                    })}
+                    {searchResults.length > 8 && (
+                      <div className="search-more">+{searchResults.length - 8} more results</div>
                     )}
+                  </div>
+                )}
+                {searchQuery && searchResults.length === 0 && (
+                  <div className="no-results">
+                    <span>No stadiums found for "{searchQuery}"</span>
                   </div>
                 )}
               </div>
@@ -300,7 +397,7 @@ export default function StickyTopNav() {
                 )}
               </div>
 
-              {/* MiLB Dropdown */}
+              {/* MiLB Dropdown - Grouped by Level */}
               <div className="mobile-league-dropdown">
                 <button
                   type="button"
@@ -316,17 +413,24 @@ export default function StickyTopNav() {
                   </svg>
                 </button>
                 {isMiLBOpen && (
-                  <div id="milb-venues-menu" className="mobile-venues-menu" role="region" aria-label="MiLB stadiums list">
-                    {milbVenues.map((venue) => (
-                      <Link
-                        key={venue.id}
-                        href={`/venue/${venue.id}`}
-                        className="mobile-venue-link"
-                        onClick={closeMobileMenu}
-                      >
-                        {venue.name}
-                        <span className="venue-team">{venue.team} ({venue.level})</span>
-                      </Link>
+                  <div id="milb-venues-menu" className="mobile-venues-menu grouped" role="region" aria-label="MiLB stadiums list">
+                    {Object.entries(milbByLevel).map(([level, venues]) => (
+                      venues.length > 0 && (
+                        <div key={level} className="venue-level-group">
+                          <div className="level-header">{level} ({venues.length})</div>
+                          {venues.map((venue) => (
+                            <Link
+                              key={venue.id}
+                              href={`/venue/${venue.id}`}
+                              className="mobile-venue-link"
+                              onClick={closeMobileMenu}
+                            >
+                              {venue.name}
+                              <span className="venue-team">{venue.team}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      )
                     ))}
                   </div>
                 )}
