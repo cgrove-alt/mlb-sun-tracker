@@ -3,6 +3,28 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Mobile Menu Body States */
+@layer base {
+  /* Prevent body scroll when menu is open - only on desktop */
+  @media (min-width: 769px) {
+    body.menu-open {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  /* Allow scrolling on mobile even with menu open */
+  @media (max-width: 768px) {
+    body.menu-open {
+      overflow-y: auto !important;
+      position: relative !important;
+      height: auto !important;
+    }
+  }
+}
+
 /* Import existing styles from CRA */
 @import url('../src/index.css');
 @import url('../src/App.css');

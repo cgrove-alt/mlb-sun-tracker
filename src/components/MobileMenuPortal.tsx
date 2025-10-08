@@ -19,7 +19,7 @@ export const MobileMenuPortal: React.FC<MobileMenuPortalProps> = ({ children, is
   }
 
   return createPortal(
-    <div className="mobile-menu-container">
+    <div className="fixed inset-0 z-[9999] pointer-events-none [&>*]:pointer-events-auto">
       {children}
     </div>,
     document.body
