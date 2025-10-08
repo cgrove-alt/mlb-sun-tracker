@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ErrorIcon, WarningIcon, InfoIcon, CloseIcon } from './Icons';
-import './ErrorNotification.css';
 
 export interface ErrorNotificationProps {
   message: string;
@@ -48,17 +47,30 @@ export const ErrorNotification: React.FC<ErrorNotificationProps> = ({
     }
   };
 
+  const getTypeStyles = () => {
+    switch (type) {
+      case 'error':
+        return 'bg-red-50 border-red-200 text-red-700';
+      case 'warning':
+        return 'bg-amber-50 border-amber-200 text-warning';
+      case 'info':
+        return 'bg-blue-50 border-blue-200 text-blue-600';
+      default:
+        return 'bg-red-50 border-red-200 text-red-700';
+    }
+  };
+
   return (
-    <div 
-      className={`error-notification error-notification-${type}`}
+    <div
+      className={`fixed top-5 right-5 left-5 md:left-auto md:top-5 md:right-5 max-w-md z-[1000] rounded-lg p-4 shadow-lg animate-slide-in ${getTypeStyles()} border`}
       role="alert"
       aria-live="polite"
     >
-      <div className="error-notification-content">
-        <span className="error-notification-icon">{getIcon()}</span>
-        <span className="error-notification-message">{message}</span>
-        <button 
-          className="error-notification-close"
+      <div className="flex items-center gap-3">
+        <span className="text-xl flex-shrink-0">{getIcon()}</span>
+        <span className="flex-1 text-sm leading-snug">{message}</span>
+        <button
+          className="bg-transparent border-0 text-lg cursor-pointer p-2.5 rounded min-w-[44px] min-h-[44px] flex items-center justify-center touch-manipulation opacity-70 hover:opacity-100 focus:outline focus:outline-2 focus:outline-current focus:outline-offset-2 transition-opacity duration-200"
           onClick={handleClose}
           aria-label="Close notification"
         >
