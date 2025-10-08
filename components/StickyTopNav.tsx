@@ -25,6 +25,18 @@ export default function StickyTopNav() {
   const nflVenues = getVenuesByLeague('NFL');
   const milbVenues = getVenuesByLeague('MiLB');
 
+  // Popular stadiums for quick access (top 8 most visited)
+  const popularStadiums = [
+    { id: 'yankees', name: 'Yankee Stadium', team: 'New York Yankees', league: 'MLB' },
+    { id: 'dodgers', name: 'Dodger Stadium', team: 'Los Angeles Dodgers', league: 'MLB' },
+    { id: 'cubs', name: 'Wrigley Field', team: 'Chicago Cubs', league: 'MLB' },
+    { id: 'redsox', name: 'Fenway Park', team: 'Boston Red Sox', league: 'MLB' },
+    { id: 'giants', name: 'Oracle Park', team: 'San Francisco Giants', league: 'MLB' },
+    { id: 'braves', name: 'Truist Park', team: 'Atlanta Braves', league: 'MLB' },
+    { id: 'astros', name: 'Minute Maid Park', team: 'Houston Astros', league: 'MLB' },
+    { id: 'mets', name: 'Citi Field', team: 'New York Mets', league: 'MLB' },
+  ];
+
   // Function to close mobile menu
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
@@ -133,7 +145,7 @@ export default function StickyTopNav() {
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Search stadiums..."
+                    placeholder="Search: Yankee Stadium, Dodgers..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onFocus={() => searchQuery && setShowSearchResults(true)}
@@ -197,19 +209,40 @@ export default function StickyTopNav() {
           </button>
 
           <div className="mobile-nav-links">
+            {/* POPULAR STADIUMS Section - NEW */}
+            <div className="mobile-nav-section mobile-section-popular">
+              <h4 className="mobile-section-title">
+                <span className="section-icon">⭐</span>
+                Popular Stadiums
+              </h4>
+              <div className="popular-stadiums-grid">
+                {popularStadiums.map((stadium) => (
+                  <Link
+                    key={stadium.id}
+                    href={`/stadium/${stadium.id}`}
+                    className="popular-stadium-card"
+                    onClick={closeMobileMenu}
+                  >
+                    <span className="stadium-name">{stadium.team}</span>
+                    <span className="stadium-venue">{stadium.name}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* FIND YOUR STADIUM Section */}
             <div className="mobile-nav-section">
               <h4 className="mobile-section-title">
-                <span className="section-icon">🏟️</span>
-                Find Your Stadium
+                <span className="section-icon">🔍</span>
+                Search All Stadiums
               </h4>
-              
+
               {/* Integrated Search */}
               <div className="mobile-search">
                 <form onSubmit={handleSearchSubmit}>
                   <input
                     type="search"
-                    placeholder="Quick search..."
+                    placeholder="Search 250+ stadiums: Yankee Stadium, Dodgers..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     className="mobile-search-input"
@@ -218,19 +251,22 @@ export default function StickyTopNav() {
                 </form>
                 {searchQuery && searchResults.length > 0 && (
                   <div className="mobile-search-results">
-                    {searchResults.slice(0, 5).map((result) => (
-                      <Link
-                        key={result.id}
-                        href={`/stadium/${result.id}`}
-                        className="mobile-search-result"
-                        onClick={closeMobileMenu}
-                      >
-                        <span>{result.name}</span>
-                        <span className="team-label">{result.team}</span>
-                      </Link>
-                    ))}
+                    {searchResults.slice(0, 5).map((result) => {
+                      const route = result.league === 'MLB' ? 'stadium' : 'venue';
+                      return (
+                        <Link
+                          key={result.id}
+                          href={`/${route}/${result.id}`}
+                          className="mobile-search-result"
+                          onClick={closeMobileMenu}
+                        >
+                          <span>{result.name}</span>
+                          <span className="team-label">{result.team}</span>
+                        </Link>
+                      );
+                    })}
                     {searchResults.length > 5 && (
-                      <div className="search-more">View all {searchResults.length} results</div>
+                      <div className="search-more">+{searchResults.length - 5} more results</div>
                     )}
                   </div>
                 )}
