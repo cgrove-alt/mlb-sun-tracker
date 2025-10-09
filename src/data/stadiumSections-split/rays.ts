@@ -1,4 +1,4 @@
-import type { StadiumSection } from '../stadiumSections';
+import type { StadiumSection } from '../stadiumSectionTypes';
 
 export const stadiumSections = {
     stadiumId: 'rays',

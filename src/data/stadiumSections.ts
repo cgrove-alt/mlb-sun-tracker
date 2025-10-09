@@ -1,20 +1,8 @@
-export interface StadiumSection {
-  id: string;
-  name: string;
-  level: 'field' | 'lower' | 'club' | 'upper' | 'suite';
-  baseAngle: number; // Angle from home plate (0 = behind home, 90 = first base, 180 = center field, 270 = third base)
-  angleSpan: number; // How many degrees this section spans
-  rows?: number; // Number of rows in section
-  covered: boolean; // Whether section has overhead coverage
-  partialCoverage?: boolean; // Whether section has partial coverage (e.g., back rows only)
-  coveredRows?: string; // Which rows are covered (e.g., "M-Z" or "last 5 rows")
-  price?: 'value' | 'moderate' | 'premium' | 'luxury';
-}
+// Import types from separate file to avoid bundling data with type imports
+import type { StadiumSection, StadiumSections } from './stadiumSectionTypes';
 
-export interface StadiumSections {
-  stadiumId: string;
-  sections: StadiumSection[];
-}
+// Re-export types for backwards compatibility
+export type { StadiumSection, StadiumSections };
 
 // Helper function to generate sections for a standard stadium layout
 function generateStandardSections(prefix: string, startAngle: number, anglePerSection: number, count: number, level: 'field' | 'lower' | 'club' | 'upper', covered: boolean = false): StadiumSection[] {
