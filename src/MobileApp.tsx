@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Stadium, MLB_STADIUMS } from './data/stadiums';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
-import { getStadiumSections } from './data/stadiumSections';
+import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
 import { generateBaseballSections } from './utils/generateBaseballSections';
 import { MLBGame } from './services/mlbApi';
@@ -160,7 +160,8 @@ const MobileApp: React.FC = () => {
       // Get sections based on venue type
       let sections: any[] = [];
       if (selectedVenue.league === 'MLB') {
-        sections = getStadiumSections(selectedVenue.id);
+        // Use async MLB sections to avoid bundling all stadiums
+        sections = await getStadiumSectionsAsync(selectedVenue.id);
       } else if (selectedVenue.league === 'MiLB') {
         // Get MiLB sections - will use custom layouts if available
         sections = getVenueSections(selectedVenue.id);

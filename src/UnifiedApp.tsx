@@ -23,7 +23,7 @@ import MobileApp from './MobileApp';
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
 import { getSunPosition, getSunDescription, getCompassDirection, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
-import { getStadiumSections } from './data/stadiumSections';
+import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
 import { MLBGame, mlbApi } from './services/mlbApi';
 import { NFLGame } from './services/nflApi';
@@ -187,8 +187,8 @@ function UnifiedAppContent() {
         // Get sections based on venue type
         let sections: any[] = [];
         if (selectedVenue.league === 'MLB') {
-          // Use existing MLB sections
-          sections = getStadiumSections(selectedVenue.id);
+          // Use async MLB sections to avoid bundling all stadiums
+          sections = await getStadiumSectionsAsync(selectedVenue.id);
         } else if (selectedVenue.league === 'MiLB') {
           // Get MiLB sections - will use custom layouts if available
           sections = getVenueSections(selectedVenue.id);
@@ -248,8 +248,8 @@ function UnifiedAppContent() {
           setDetailedSections(detailedSectionData);
           setFilteredSections(filterSectionsBySunExposure(detailedSectionData, filterCriteria));
           
-          // Calculate game exposure
-          const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration);
+          // Calculate game exposure - pass sections to avoid bundling
+          const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
           setGameExposureData(exposureMap);
         } else {
           // For non-MLB venues, convert shade results to legacy format

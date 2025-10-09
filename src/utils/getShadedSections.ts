@@ -2,7 +2,7 @@
 // Provides getShadedSections() function with enhanced 3D calculations
 
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
-import { StadiumSection, getStadiumSections } from '../data/stadiumSections';
+import { StadiumSection } from '../data/stadiumSections';
 import { getSunPosition, SunPosition as LegacySunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 
@@ -24,15 +24,14 @@ export interface ShadedSection {
 const calculatorCache = new Map<string, ShadeCalculator3D>();
 
 // Get or create calculator for stadium
-function getCalculatorForStadium(stadium: Stadium): ShadeCalculator3D {
+function getCalculatorForStadium(stadium: Stadium, sections: StadiumSection[]): ShadeCalculator3D {
   if (calculatorCache.has(stadium.id)) {
     return calculatorCache.get(stadium.id)!;
   }
-  
-  const sections = getStadiumSections(stadium.id);
+
   const stadium3D = getStadium3DModel(stadium, sections);
   const calculator = new ShadeCalculator3D(stadium3D);
-  
+
   calculatorCache.set(stadium.id, calculator);
   return calculator;
 }
@@ -41,15 +40,18 @@ function getCalculatorForStadium(stadium: Stadium): ShadeCalculator3D {
 export function getShadedSections(
   stadium: Stadium,
   gameDateTime: Date,
-  weather?: WeatherData
+  weather?: WeatherData,
+  sections?: StadiumSection[]
 ): ShadedSection[] {
+  // Use provided sections or empty array (caller should provide to avoid bundle bloat)
+  const stadiumSections = sections || [];
+
   // Get sun position
   const sunPos = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude);
-  
+
   // Early return for night games or fixed roof stadiums
   if (sunPos.altitudeDegrees <= 0 || stadium.roof === 'fixed') {
-    const sections = getStadiumSections(stadium.id);
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       shadePercentage: 100,
       isFullyShaded: true,
@@ -57,27 +59,26 @@ export function getShadedSections(
       isInSun: false
     }));
   }
-  
+
   // Get 3D calculator
-  const calculator = getCalculatorForStadium(stadium);
-  
+  const calculator = getCalculatorForStadium(stadium, stadiumSections);
+
   // Convert sun position format
   const sunPosition3D = createSunPosition(sunPos.azimuthDegrees, sunPos.altitudeDegrees);
-  
+
   // Calculate shade for all sections
   const shadeResults = calculator.calculateAllSectionsShade(sunPosition3D);
-  
+
   // Apply weather adjustments
   let weatherMultiplier = 1.0;
   if (weather) {
     weatherMultiplier = calculateWeatherMultiplier(weather);
   }
-  
+
   // Convert results to expected format
   const shadedSections: ShadedSection[] = [];
-  const sections = getStadiumSections(stadium.id);
-  
-  for (const section of sections) {
+
+  for (const section of stadiumSections) {
     const shadeResult = shadeResults.get(section.id);
     if (!shadeResult) {
       // Fallback for sections without 3D data
@@ -113,14 +114,17 @@ export function getShadedSections(
 export function getShadedSectionsQuick(
   stadium: Stadium,
   gameDateTime: Date,
-  weather?: WeatherData
+  weather?: WeatherData,
+  sections?: StadiumSection[]
 ): ShadedSection[] {
+  // Use provided sections or empty array (caller should provide to avoid bundle bloat)
+  const stadiumSections = sections || [];
+
   const sunPos = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude);
-  
+
   // Early returns
   if (sunPos.altitudeDegrees <= 0 || stadium.roof === 'fixed') {
-    const sections = getStadiumSections(stadium.id);
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       shadePercentage: 100,
       isFullyShaded: true,
@@ -128,27 +132,26 @@ export function getShadedSectionsQuick(
       isInSun: false
     }));
   }
-  
-  const calculator = getCalculatorForStadium(stadium);
+
+  const calculator = getCalculatorForStadium(stadium, stadiumSections);
   const sunPosition3D = createSunPosition(sunPos.azimuthDegrees, sunPos.altitudeDegrees);
   const weatherMultiplier = weather ? calculateWeatherMultiplier(weather) : 1.0;
-  
-  const sections = getStadiumSections(stadium.id);
-  const shadedSections: ShadedSection[] = [];
-  
+
+  const shadedSectionsList: ShadedSection[] = [];
+
   // Use quick estimation method
-  const stadium3D = getStadium3DModel(stadium, sections);
+  const stadium3D = getStadium3DModel(stadium, stadiumSections);
   for (const sectionGeometry of stadium3D.sections) {
-    const section = sections.find(s => s.id === sectionGeometry.id);
+    const section = stadiumSections.find(s => s.id === sectionGeometry.id);
     if (!section) continue;
-    
+
     const estimatedShade = calculator.estimateSectionShade(sectionGeometry, sunPosition3D);
     const adjustedShade = Math.min(
       100,
       estimatedShade + (100 - estimatedShade) * (1 - weatherMultiplier)
     );
-    
-    shadedSections.push({
+
+    shadedSectionsList.push({
       section,
       shadePercentage: Math.round(adjustedShade),
       isFullyShaded: adjustedShade >= 95,
@@ -156,8 +159,8 @@ export function getShadedSectionsQuick(
       isInSun: adjustedShade < 50
     });
   }
-  
-  return shadedSections;
+
+  return shadedSectionsList;
 }
 
 // Calculate weather impact multiplier
