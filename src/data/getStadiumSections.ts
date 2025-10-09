@@ -49,7 +49,7 @@ export async function getStadiumSectionsAsync(stadiumId: string): Promise<Stadiu
         return [];
     }
     const data = module.stadiumSections;
-    return data.sections || [];
+    return (data.sections || []) as StadiumSection[];
   } catch (error) {
     console.warn(`Error loading section data for stadium: ${stadiumId}`, error);
     return [];

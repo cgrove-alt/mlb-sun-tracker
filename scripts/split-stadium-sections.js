@@ -9,8 +9,8 @@ const mainFile = fs.readFileSync(
 
 const lines = mainFile.split('\n');
 
-// Extract the type definitions and helper functions (lines 1-34)
-const header = lines.slice(0, 34).join('\n');
+// Import statement for split files
+const importStatement = `import type { StadiumSection } from '../stadiumSections';`;
 
 // Stadium boundaries - each entry is the {  stadiumId: 'x', sections: [...] }, object
 // Line numbers are 1-based, array indices are 0-based, so subtract 1
@@ -67,8 +67,8 @@ stadiums.forEach(stadium => {
     stadiumData = stadiumData.slice(0, -1);
   }
 
-  // Create the file content
-  const content = `${header}
+  // Create the file content with import instead of full header
+  const content = `${importStatement}
 
 export const stadiumSections = ${stadiumData};
 `;
