@@ -4,7 +4,7 @@
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MiLBStadium } from '../data/milbStadiums';
 import { NFLStadium, NFL_STADIUMS } from '../data/nflStadiums';
-import { StadiumSection, getStadiumSections } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getMiLBStadiumSections } from '../data/milbStadiumSections';
 import { getNFLStadiumSections } from '../data/nflStadiumSections';
 import { getSunPosition } from './sunCalculations';
@@ -125,17 +125,18 @@ export interface UnifiedShadedSection {
 export function getUnifiedShadedSections(
   stadium: UnifiedStadium,
   gameDateTime: Date,
-  weather?: WeatherData
+  weather?: WeatherData,
+  sections?: StadiumSection[]
 ): UnifiedShadedSection[] {
   // Get sun position
   const sunPos = getSunPosition(gameDateTime, stadium.latitude, stadium.longitude);
-  
-  // Get appropriate sections (may need custom sections for MiLB/NFL)
-  const sections = getStadiumSectionsForType(stadium);
+
+  // Use provided sections or get appropriate sections for stadium type
+  const stadiumSections = sections || getStadiumSectionsForType(stadium);
   
   // Early return for night games or fixed roof
   if (sunPos.altitudeDegrees <= 0 || stadium.roof === 'fixed') {
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       shadePercentage: 100,
       isFullyShaded: true,
@@ -146,24 +147,24 @@ export function getUnifiedShadedSections(
   }
   
   // Get calculator
-  const calculator = getUnifiedCalculator(stadium, sections);
-  
+  const calculator = getUnifiedCalculator(stadium, stadiumSections);
+
   // Convert sun position
   const sunPosition3D = createSunPosition(sunPos.azimuthDegrees, sunPos.altitudeDegrees);
-  
+
   // Calculate shade
   const shadeResults = calculator.calculateAllSectionsShade(sunPosition3D);
-  
+
   // Apply weather adjustments
   let weatherMultiplier = 1.0;
   if (weather) {
     weatherMultiplier = calculateWeatherMultiplier(weather);
   }
-  
+
   // Convert results
   const shadedSections: UnifiedShadedSection[] = [];
-  
-  for (const section of sections) {
+
+  for (const section of stadiumSections) {
     const shadeResult = shadeResults.get(section.id);
     if (!shadeResult) {
       shadedSections.push({
@@ -196,17 +197,19 @@ export function getUnifiedShadedSections(
 }
 
 // Get sections for different stadium types
+// Note: For MLB, callers should provide sections via async import to avoid bundling all stadiums
 function getStadiumSectionsForType(stadium: UnifiedStadium): StadiumSection[] {
-  // For MLB, use existing sections
+  // For MLB, return empty array - caller should provide sections
   if (stadium.type === 'MLB') {
-    return getStadiumSections(stadium.id);
+    console.warn('[getStadiumSectionsForType] MLB stadium sections should be provided by caller to avoid bundle bloat');
+    return [];
   }
-  
+
   // For MiLB stadiums, use stadium-specific or generate generic sections
   if (stadium.type === 'MiLB') {
     return getMiLBStadiumSections(stadium.id);
   }
-  
+
   // For NFL stadiums, use stadium-specific or generate generic sections
   if (stadium.type === 'NFL') {
     return getNFLStadiumSections(stadium.id);

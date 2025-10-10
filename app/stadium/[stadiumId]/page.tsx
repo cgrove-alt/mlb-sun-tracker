@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { Suspense } from 'react';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
-import { getStadiumSections } from '../../../src/data/stadiumSections';
+import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
@@ -117,7 +117,8 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
     notFound();
   }
 
-  const sections = getStadiumSections(stadium.id);
+  // Load sections asynchronously to avoid bundling all section data
+  const sections = await getStadiumSectionsAsync(stadium.id);
   const amenities = getStadiumAmenities(stadium.id);
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);

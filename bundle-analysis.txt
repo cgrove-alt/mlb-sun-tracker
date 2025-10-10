@@ -1,0 +1,702 @@
+
+> mlb-sun-tracker@0.2.0 build
+> node scripts/generate-sitemap.js && next build
+
+✓ Sitemaps generated with 233 total URLs
+  Main sitemap: 16 URLs (static + league pages)
+  Stadiums sitemap: 212 URLs
+    - 30 MLB stadiums (x2 for old/new URLs)
+    - 32 NFL venues
+    - 120 MiLB stadiums
+  Guides sitemap: 5 URLs
+✓ Saved to: /Users/sygrovefamily/mlb-sun-tracker/public/
+  - sitemap.xml
+  - sitemap-stadiums.xml
+  - sitemap-guides.xml
+  - sitemap-index.xml
+   ▲ Next.js 15.5.0
+
+   Creating an optimized production build ...
+Webpack Bundle Analyzer saved report to /Users/sygrovefamily/mlb-sun-tracker/.next/analyze/nodejs.html
+
+No bundles were parsed. Analyzer will show only original module sizes from stats file.
+
+Webpack Bundle Analyzer saved report to /Users/sygrovefamily/mlb-sun-tracker/.next/analyze/edge.html
+Webpack Bundle Analyzer saved report to /Users/sygrovefamily/mlb-sun-tracker/.next/analyze/client.html
+ ✓ Compiled successfully in 9.8s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/244) ...
+   Generating static pages (61/244) 
+   Generating static pages (122/244) 
+   Generating static pages (183/244) 
+ ✓ Generating static pages (244/244)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                Size  First Load JS
+┌ ○ /                                                    4.5 kB         266 kB
+├ ○ /_not-found                                           120 B         262 kB
+├ ○ /accessibility                                        165 B         262 kB
+├ ƒ /api/metrics                                          120 B         262 kB
+├ ƒ /api/mlb/schedule                                     120 B         262 kB
+├ ƒ /api/stadium/[stadiumId]/shade                        120 B         262 kB
+├ ƒ /api/weather/[stadiumId]                              120 B         262 kB
+├ ○ /attributions                                         120 B         262 kB
+├ ○ /blog                                                 179 B         262 kB
+├ ● /blog/[slug]                                          181 B         262 kB
+├   ├ /blog/fenway-park-green-monster-shade-guide
+├   ├ /blog/complete-guide-shaded-seats-yankee-stadium
+├   └ /blog/best-time-day-games-avoid-sun
+├ ○ /contact                                              119 B         262 kB
+├ ○ /cookies                                              120 B         262 kB
+├ ○ /disclaimer                                           120 B         262 kB
+├ ○ /dmca                                                 120 B         262 kB
+├ ○ /do-not-sell                                        4.03 kB         266 kB
+├ ○ /faq                                                  120 B         262 kB
+├ ○ /faqs                                                 120 B         262 kB
+├ ○ /guide                                                119 B         262 kB
+├ ○ /guide/avoid-sun-baseball-games                       120 B         262 kB
+├ ○ /guide/best-shaded-seats-mlb                          120 B         262 kB
+├ ○ /guide/how-to-find-shaded-seats                       119 B         262 kB
+├ ● /league/[leagueId]                                  1.41 kB         263 kB
+├   ├ /league/mlb
+├   ├ /league/nfl
+├   └ /league/milb
+├ ○ /privacy                                              120 B         262 kB
+├ ○ /privacy-rights                                     8.62 kB         270 kB
+├ ○ /seats-shade-finder                                   119 B         262 kB
+├ ● /stadium/[stadiumId]                                6.55 kB         598 kB
+├   ├ /stadium/angels
+├   ├ /stadium/astros
+├   ├ /stadium/athletics
+├   └ [+27 more paths]
+├ ○ /stadiums                                             120 B         262 kB
+├ ○ /terms                                                120 B         262 kB
+├ ○ /test-cookies                                         887 B         262 kB
+└ ● /venue/[venueId]                                      178 B         591 kB
+    ├ /venue/angels
+    ├ /venue/astros
+    ├ /venue/athletics
+    └ [+179 more paths]
++ First Load JS shared by all                            261 kB
+  ├ chunks/common-ec34522ea8814bc9.js                     25 kB
+  ├ chunks/vendor-89cab996128cc313.js                    234 kB
+  └ other shared chunks (total)                         2.79 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+
+> mlb-sun-tracker@0.2.0 postbuild
+> node scripts/compress-build.js
+
+🗜️  Starting compression of build output...
+
+
+Compressing out...
+✓ Compressed index.html: 78.66% (Brotli), 74.48% (Gzip)
+✓ Compressed 404.html: 78.66% (Brotli), 74.48% (Gzip)
+✓ Compressed _buildManifest.js: 67.95% (Brotli), 64.18% (Gzip)
+- Skipped _ssgManifest.js: File too small
+✓ Compressed 281.d3a226f25e2e5ccb.js: 96.15% (Brotli), 91.93% (Gzip)
+✓ Compressed 357.ac3f012c9791505c.js: 71.55% (Brotli), 66.33% (Gzip)
+- Skipped 425.bb4f40efdd121879.js: File too small
+✓ Compressed 459.02951028b2156ad1.js: 76.12% (Brotli), 71.40% (Gzip)
+✓ Compressed 4bd1b696-c49c6f05a40ba469.js: 73.01% (Brotli), 68.66% (Gzip)
+✓ Compressed 581.17ba27f1ba385a35.js: 72.71% (Brotli), 68.43% (Gzip)
+✓ Compressed 586.c87325b6d7f4f7e4.js: 86.36% (Brotli), 81.39% (Gzip)
+- Skipped 657.36f3634117ef09a7.js: File too small
+✓ Compressed 694-c00782d21ca15eed.js: 85.40% (Brotli), 83.42% (Gzip)
+✓ Compressed 764-45c37e7ba0acc573.js: 88.97% (Brotli), 86.04% (Gzip)
+✓ Compressed 78.15944754e7647f49.js: 75.56% (Brotli), 71.35% (Gzip)
+✓ Compressed 819.5394d4fd944eb479.js: 71.21% (Brotli), 66.62% (Gzip)
+✓ Compressed 874-437a265a67d6cfee.js: 64.64% (Brotli), 60.27% (Gzip)
+✓ Compressed 964-fdb1941f8b547d4d.js: 78.04% (Brotli), 73.72% (Gzip)
+- Skipped page-25b9b5a0f71556b5.js: File too small
+- Skipped page-2945cdf052296cca.js: File too small
+- Skipped page-c1f60eab4b3fecdc.js: File too small
+- Skipped page-25b9b5a0f71556b5.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped page-25b9b5a0f71556b5.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+✓ Compressed layout-2aad40d493ec8da5.js: 72.26% (Brotli), 67.62% (Gzip)
+✓ Compressed page-acec62e95b2999c8.js: 72.30% (Brotli), 68.58% (Gzip)
+✓ Compressed not-found-814c885756fc1175.js: 66.32% (Brotli), 60.23% (Gzip)
+✓ Compressed page-dc36d33008efc256.js: 71.48% (Brotli), 67.08% (Gzip)
+- Skipped page-25b9b5a0f71556b5.js: File too small
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped error-8c8b68cdd38f4f50.js: File too small
+- Skipped loading-441c6e1f7663b9e9.js: File too small
+✓ Compressed page-e933e0aa35d7c84a.js: 68.27% (Brotli), 64.01% (Gzip)
+- Skipped page-dd91e0b676a6df99.js: File too small
+- Skipped page-25b9b5a0f71556b5.js: File too small
+✓ Compressed page-7ee7a07fbdc5c061.js: 73.73% (Brotli), 69.01% (Gzip)
+✓ Compressed framework-f75312fc4004b783.js: 72.06% (Brotli), 67.98% (Gzip)
+✓ Compressed main-5eab58a7c90c7ca3.js: 74.95% (Brotli), 70.64% (Gzip)
+- Skipped main-app-18d7d033b70ca78f.js: File too small
+- Skipped _app-0a0020ddd67f79cf.js: File too small
+- Skipped _error-03529f2c21436739.js: File too small
+✓ Compressed polyfills-42372ed130431b0a.js: 68.77% (Brotli), 64.90% (Gzip)
+- Skipped styles-d870ae6d13be7345.js: File too small
+✓ Compressed webpack-dbccd6dfa3736244.js: 57.75% (Brotli), 51.86% (Gzip)
+✓ Compressed 02ec254527b2cc05.css: 84.50% (Brotli), 81.46% (Gzip)
+✓ Compressed index.html: 83.49% (Brotli), 79.80% (Gzip)
+✓ Compressed index.txt: 77.00% (Brotli), 72.14% (Gzip)
+✓ Compressed index.html: 82.74% (Brotli), 78.98% (Gzip)
+✓ Compressed index.txt: 75.82% (Brotli), 70.81% (Gzip)
+✓ Compressed index.html: 83.34% (Brotli), 78.06% (Gzip)
+✓ Compressed index.txt: 76.26% (Brotli), 71.33% (Gzip)
+✓ Compressed index.html: 82.33% (Brotli), 78.68% (Gzip)
+✓ Compressed index.txt: 78.34% (Brotli), 73.75% (Gzip)
+✓ Compressed index.html: 80.68% (Brotli), 76.87% (Gzip)
+✓ Compressed index.txt: 75.92% (Brotli), 70.88% (Gzip)
+✓ Compressed index.html: 82.28% (Brotli), 77.80% (Gzip)
+✓ Compressed index.txt: 76.40% (Brotli), 71.10% (Gzip)
+✓ Compressed index.html: 78.49% (Brotli), 74.12% (Gzip)
+✓ Compressed index.txt: 73.61% (Brotli), 68.51% (Gzip)
+✓ Compressed index.html: 80.77% (Brotli), 76.88% (Gzip)
+✓ Compressed index.txt: 75.82% (Brotli), 70.86% (Gzip)
+✓ Compressed index.html: 82.80% (Brotli), 78.43% (Gzip)
+✓ Compressed index.txt: 78.81% (Brotli), 74.21% (Gzip)
+✓ Compressed index.html: 80.29% (Brotli), 76.09% (Gzip)
+✓ Compressed index.txt: 74.93% (Brotli), 69.36% (Gzip)
+✓ Compressed index.html: 80.25% (Brotli), 76.24% (Gzip)
+✓ Compressed index.txt: 75.18% (Brotli), 70.10% (Gzip)
+✓ Compressed index.html: 78.44% (Brotli), 74.10% (Gzip)
+✓ Compressed index.txt: 72.98% (Brotli), 67.59% (Gzip)
+✓ Compressed index.html: 78.93% (Brotli), 74.63% (Gzip)
+✓ Compressed index.txt: 74.56% (Brotli), 69.47% (Gzip)
+✓ Compressed index.html: 85.03% (Brotli), 81.31% (Gzip)
+✓ Compressed index.txt: 75.63% (Brotli), 70.73% (Gzip)
+✓ Compressed index.html: 85.23% (Brotli), 81.42% (Gzip)
+✓ Compressed index.txt: 75.65% (Brotli), 70.96% (Gzip)
+✓ Compressed en.json: 73.95% (Brotli), 69.55% (Gzip)
+✓ Compressed es.json: 72.32% (Brotli), 68.68% (Gzip)
+✓ Compressed ja.json: 73.40% (Brotli), 69.16% (Gzip)
+- Skipped manifest.json: File too small
+✓ Compressed index.html: 79.56% (Brotli), 75.37% (Gzip)
+✓ Compressed index.txt: 74.28% (Brotli), 68.63% (Gzip)
+✓ Compressed privacy.html: 76.05% (Brotli), 68.57% (Gzip)
+- Skipped robots.txt: File too small
+✓ Compressed index.html: 86.98% (Brotli), 83.70% (Gzip)
+✓ Compressed index.txt: 83.89% (Brotli), 80.54% (Gzip)
+✓ Compressed sitemap.xml: 93.67% (Brotli), 93.11% (Gzip)
+✓ Compressed index.html: 82.59% (Brotli), 76.92% (Gzip)
+✓ Compressed index.txt: 78.88% (Brotli), 73.48% (Gzip)
+✓ Compressed index.html: 82.42% (Brotli), 76.73% (Gzip)
+✓ Compressed index.txt: 77.46% (Brotli), 71.99% (Gzip)
+✓ Compressed index.html: 81.30% (Brotli), 76.63% (Gzip)
+✓ Compressed index.txt: 75.34% (Brotli), 69.80% (Gzip)
+✓ Compressed index.html: 84.51% (Brotli), 78.66% (Gzip)
+✓ Compressed index.txt: 82.48% (Brotli), 76.72% (Gzip)
+✓ Compressed index.html: 84.63% (Brotli), 78.99% (Gzip)
+✓ Compressed index.txt: 82.34% (Brotli), 76.81% (Gzip)
+✓ Compressed index.html: 84.66% (Brotli), 78.62% (Gzip)
+✓ Compressed index.txt: 82.58% (Brotli), 76.93% (Gzip)
+✓ Compressed index.html: 84.64% (Brotli), 78.76% (Gzip)
+✓ Compressed index.txt: 82.36% (Brotli), 76.66% (Gzip)
+✓ Compressed index.html: 83.63% (Brotli), 77.57% (Gzip)
+✓ Compressed index.txt: 80.76% (Brotli), 75.28% (Gzip)
+✓ Compressed index.html: 83.77% (Brotli), 77.51% (Gzip)
+✓ Compressed index.txt: 80.70% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 84.09% (Brotli), 78.50% (Gzip)
+✓ Compressed index.txt: 81.19% (Brotli), 75.91% (Gzip)
+✓ Compressed index.html: 84.07% (Brotli), 78.29% (Gzip)
+✓ Compressed index.txt: 81.27% (Brotli), 75.75% (Gzip)
+✓ Compressed index.html: 84.69% (Brotli), 79.08% (Gzip)
+✓ Compressed index.txt: 82.77% (Brotli), 77.08% (Gzip)
+✓ Compressed index.html: 84.09% (Brotli), 78.34% (Gzip)
+✓ Compressed index.txt: 82.06% (Brotli), 76.41% (Gzip)
+✓ Compressed index.html: 83.88% (Brotli), 78.23% (Gzip)
+✓ Compressed index.txt: 81.43% (Brotli), 75.93% (Gzip)
+✓ Compressed index.html: 84.42% (Brotli), 78.82% (Gzip)
+✓ Compressed index.txt: 82.19% (Brotli), 76.88% (Gzip)
+✓ Compressed index.html: 84.28% (Brotli), 78.42% (Gzip)
+✓ Compressed index.txt: 82.27% (Brotli), 76.49% (Gzip)
+✓ Compressed index.html: 84.00% (Brotli), 78.23% (Gzip)
+✓ Compressed index.txt: 81.48% (Brotli), 75.91% (Gzip)
+✓ Compressed index.html: 83.66% (Brotli), 78.10% (Gzip)
+✓ Compressed index.txt: 81.13% (Brotli), 75.73% (Gzip)
+✓ Compressed index.html: 84.34% (Brotli), 78.75% (Gzip)
+✓ Compressed index.txt: 82.19% (Brotli), 76.60% (Gzip)
+✓ Compressed index.html: 85.51% (Brotli), 79.93% (Gzip)
+✓ Compressed index.txt: 84.25% (Brotli), 78.50% (Gzip)
+✓ Compressed index.html: 84.81% (Brotli), 79.18% (Gzip)
+✓ Compressed index.txt: 83.16% (Brotli), 77.46% (Gzip)
+✓ Compressed index.html: 83.65% (Brotli), 78.19% (Gzip)
+✓ Compressed index.txt: 80.94% (Brotli), 75.67% (Gzip)
+✓ Compressed index.html: 84.60% (Brotli), 79.02% (Gzip)
+✓ Compressed index.txt: 82.33% (Brotli), 76.97% (Gzip)
+✓ Compressed index.html: 82.91% (Brotli), 77.22% (Gzip)
+✓ Compressed index.txt: 79.12% (Brotli), 74.06% (Gzip)
+✓ Compressed index.html: 84.75% (Brotli), 79.32% (Gzip)
+✓ Compressed index.txt: 83.16% (Brotli), 77.72% (Gzip)
+✓ Compressed index.html: 85.63% (Brotli), 80.06% (Gzip)
+✓ Compressed index.txt: 84.47% (Brotli), 78.67% (Gzip)
+✓ Compressed index.html: 85.56% (Brotli), 80.02% (Gzip)
+✓ Compressed index.txt: 84.36% (Brotli), 78.58% (Gzip)
+✓ Compressed index.html: 85.63% (Brotli), 79.95% (Gzip)
+✓ Compressed index.txt: 84.48% (Brotli), 78.69% (Gzip)
+✓ Compressed index.html: 84.58% (Brotli), 78.97% (Gzip)
+✓ Compressed index.txt: 82.38% (Brotli), 76.75% (Gzip)
+✓ Compressed index.html: 83.34% (Brotli), 77.45% (Gzip)
+✓ Compressed index.txt: 79.96% (Brotli), 74.74% (Gzip)
+✓ Compressed index.html: 90.95% (Brotli), 87.71% (Gzip)
+✓ Compressed index.txt: 89.22% (Brotli), 86.80% (Gzip)
+✓ Compressed sw-custom.js: 78.03% (Brotli), 74.16% (Gzip)
+✓ Compressed sw-extensions.js: 72.11% (Brotli), 67.10% (Gzip)
+- Skipped sw-init.js: File too small
+✓ Compressed sw.js: 75.92% (Brotli), 71.78% (Gzip)
+✓ Compressed index.html: 79.81% (Brotli), 75.53% (Gzip)
+✓ Compressed index.txt: 74.61% (Brotli), 68.75% (Gzip)
+✓ Compressed terms.html: 72.23% (Brotli), 61.98% (Gzip)
+✓ Compressed index.html: 81.41% (Brotli), 77.51% (Gzip)
+✓ Compressed index.txt: 79.93% (Brotli), 75.41% (Gzip)
+✓ Compressed index.html: 83.22% (Brotli), 78.51% (Gzip)
+✓ Compressed index.txt: 82.89% (Brotli), 78.43% (Gzip)
+✓ Compressed index.html: 81.00% (Brotli), 77.04% (Gzip)
+✓ Compressed index.txt: 79.49% (Brotli), 74.98% (Gzip)
+✓ Compressed index.html: 81.76% (Brotli), 77.97% (Gzip)
+✓ Compressed index.txt: 80.31% (Brotli), 75.88% (Gzip)
+✓ Compressed index.html: 83.46% (Brotli), 78.82% (Gzip)
+✓ Compressed index.txt: 82.87% (Brotli), 78.40% (Gzip)
+✓ Compressed index.html: 81.24% (Brotli), 77.30% (Gzip)
+✓ Compressed index.txt: 79.74% (Brotli), 75.20% (Gzip)
+✓ Compressed index.html: 81.10% (Brotli), 77.08% (Gzip)
+✓ Compressed index.txt: 79.49% (Brotli), 75.00% (Gzip)
+✓ Compressed index.html: 78.97% (Brotli), 74.78% (Gzip)
+✓ Compressed index.txt: 74.72% (Brotli), 69.82% (Gzip)
+✓ Compressed index.html: 81.22% (Brotli), 77.30% (Gzip)
+✓ Compressed index.txt: 79.76% (Brotli), 75.21% (Gzip)
+✓ Compressed index.html: 81.04% (Brotli), 77.19% (Gzip)
+✓ Compressed index.txt: 79.60% (Brotli), 75.19% (Gzip)
+✓ Compressed index.html: 79.27% (Brotli), 75.14% (Gzip)
+✓ Compressed index.txt: 74.89% (Brotli), 69.99% (Gzip)
+✓ Compressed index.html: 83.19% (Brotli), 78.66% (Gzip)
+✓ Compressed index.txt: 82.73% (Brotli), 78.21% (Gzip)
+✓ Compressed index.html: 79.13% (Brotli), 74.97% (Gzip)
+✓ Compressed index.txt: 74.90% (Brotli), 70.09% (Gzip)
+✓ Compressed index.html: 81.02% (Brotli), 77.10% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.00% (Gzip)
+✓ Compressed index.html: 83.31% (Brotli), 78.59% (Gzip)
+✓ Compressed index.txt: 82.91% (Brotli), 78.44% (Gzip)
+✓ Compressed index.html: 81.08% (Brotli), 77.20% (Gzip)
+✓ Compressed index.txt: 79.67% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 81.01% (Brotli), 77.00% (Gzip)
+✓ Compressed index.txt: 79.49% (Brotli), 74.94% (Gzip)
+✓ Compressed index.html: 81.22% (Brotli), 77.32% (Gzip)
+✓ Compressed index.txt: 79.69% (Brotli), 75.27% (Gzip)
+✓ Compressed index.html: 81.83% (Brotli), 77.94% (Gzip)
+✓ Compressed index.txt: 80.33% (Brotli), 75.95% (Gzip)
+✓ Compressed index.html: 79.16% (Brotli), 75.11% (Gzip)
+✓ Compressed index.txt: 74.79% (Brotli), 69.91% (Gzip)
+✓ Compressed index.html: 81.80% (Brotli), 77.95% (Gzip)
+✓ Compressed index.txt: 80.37% (Brotli), 75.96% (Gzip)
+✓ Compressed index.html: 81.30% (Brotli), 77.43% (Gzip)
+✓ Compressed index.txt: 79.76% (Brotli), 75.35% (Gzip)
+✓ Compressed index.html: 81.72% (Brotli), 77.92% (Gzip)
+✓ Compressed index.txt: 80.24% (Brotli), 75.86% (Gzip)
+✓ Compressed index.html: 78.95% (Brotli), 74.72% (Gzip)
+✓ Compressed index.txt: 74.69% (Brotli), 69.78% (Gzip)
+✓ Compressed index.html: 79.44% (Brotli), 75.32% (Gzip)
+✓ Compressed index.txt: 75.02% (Brotli), 70.26% (Gzip)
+✓ Compressed index.html: 81.16% (Brotli), 77.15% (Gzip)
+✓ Compressed index.txt: 79.60% (Brotli), 75.15% (Gzip)
+✓ Compressed index.html: 81.75% (Brotli), 77.83% (Gzip)
+✓ Compressed index.txt: 80.19% (Brotli), 75.78% (Gzip)
+✓ Compressed index.html: 83.43% (Brotli), 78.82% (Gzip)
+✓ Compressed index.txt: 82.89% (Brotli), 78.44% (Gzip)
+✓ Compressed index.html: 79.05% (Brotli), 74.89% (Gzip)
+✓ Compressed index.txt: 74.92% (Brotli), 70.07% (Gzip)
+✓ Compressed index.html: 81.14% (Brotli), 77.22% (Gzip)
+✓ Compressed index.txt: 79.59% (Brotli), 75.13% (Gzip)
+✓ Compressed index.html: 81.42% (Brotli), 77.45% (Gzip)
+✓ Compressed index.txt: 79.87% (Brotli), 75.32% (Gzip)
+✓ Compressed index.html: 81.31% (Brotli), 77.40% (Gzip)
+✓ Compressed index.txt: 79.77% (Brotli), 75.28% (Gzip)
+✓ Compressed index.html: 81.77% (Brotli), 77.91% (Gzip)
+✓ Compressed index.txt: 80.29% (Brotli), 75.88% (Gzip)
+✓ Compressed index.html: 81.07% (Brotli), 77.08% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.09% (Gzip)
+✓ Compressed index.html: 81.92% (Brotli), 78.03% (Gzip)
+✓ Compressed index.txt: 80.38% (Brotli), 75.96% (Gzip)
+✓ Compressed index.html: 81.83% (Brotli), 77.89% (Gzip)
+✓ Compressed index.txt: 80.29% (Brotli), 75.87% (Gzip)
+✓ Compressed index.html: 81.14% (Brotli), 77.17% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.12% (Gzip)
+✓ Compressed index.html: 81.83% (Brotli), 77.96% (Gzip)
+✓ Compressed index.txt: 80.30% (Brotli), 75.94% (Gzip)
+✓ Compressed index.html: 81.26% (Brotli), 77.30% (Gzip)
+✓ Compressed index.txt: 79.66% (Brotli), 75.26% (Gzip)
+✓ Compressed index.html: 78.94% (Brotli), 74.74% (Gzip)
+✓ Compressed index.txt: 74.73% (Brotli), 69.86% (Gzip)
+✓ Compressed index.html: 81.82% (Brotli), 77.91% (Gzip)
+✓ Compressed index.txt: 80.39% (Brotli), 75.88% (Gzip)
+✓ Compressed index.html: 81.26% (Brotli), 77.34% (Gzip)
+✓ Compressed index.txt: 79.67% (Brotli), 75.24% (Gzip)
+✓ Compressed index.html: 81.27% (Brotli), 77.40% (Gzip)
+✓ Compressed index.txt: 79.71% (Brotli), 75.26% (Gzip)
+✓ Compressed index.html: 79.24% (Brotli), 75.11% (Gzip)
+✓ Compressed index.txt: 74.85% (Brotli), 69.96% (Gzip)
+✓ Compressed index.html: 79.08% (Brotli), 74.94% (Gzip)
+✓ Compressed index.txt: 74.91% (Brotli), 70.11% (Gzip)
+✓ Compressed index.html: 81.19% (Brotli), 77.22% (Gzip)
+✓ Compressed index.txt: 79.52% (Brotli), 75.04% (Gzip)
+✓ Compressed index.html: 81.74% (Brotli), 77.88% (Gzip)
+✓ Compressed index.txt: 80.23% (Brotli), 75.87% (Gzip)
+✓ Compressed index.html: 81.93% (Brotli), 78.12% (Gzip)
+✓ Compressed index.txt: 80.56% (Brotli), 76.08% (Gzip)
+✓ Compressed index.html: 81.97% (Brotli), 78.14% (Gzip)
+✓ Compressed index.txt: 80.47% (Brotli), 76.07% (Gzip)
+✓ Compressed index.html: 83.28% (Brotli), 78.62% (Gzip)
+✓ Compressed index.txt: 82.94% (Brotli), 78.54% (Gzip)
+✓ Compressed index.html: 81.03% (Brotli), 76.98% (Gzip)
+✓ Compressed index.txt: 79.41% (Brotli), 74.93% (Gzip)
+✓ Compressed index.html: 80.95% (Brotli), 76.94% (Gzip)
+✓ Compressed index.txt: 79.41% (Brotli), 74.90% (Gzip)
+✓ Compressed index.html: 83.13% (Brotli), 78.50% (Gzip)
+✓ Compressed index.txt: 82.72% (Brotli), 78.39% (Gzip)
+✓ Compressed index.html: 81.05% (Brotli), 77.05% (Gzip)
+✓ Compressed index.txt: 79.49% (Brotli), 75.00% (Gzip)
+✓ Compressed index.html: 81.22% (Brotli), 77.27% (Gzip)
+✓ Compressed index.txt: 79.68% (Brotli), 75.21% (Gzip)
+✓ Compressed index.html: 83.25% (Brotli), 78.64% (Gzip)
+✓ Compressed index.txt: 82.84% (Brotli), 78.28% (Gzip)
+✓ Compressed index.html: 81.94% (Brotli), 78.09% (Gzip)
+✓ Compressed index.txt: 80.38% (Brotli), 76.02% (Gzip)
+✓ Compressed index.html: 81.80% (Brotli), 77.93% (Gzip)
+✓ Compressed index.txt: 80.28% (Brotli), 75.91% (Gzip)
+✓ Compressed index.html: 81.51% (Brotli), 77.65% (Gzip)
+✓ Compressed index.txt: 80.12% (Brotli), 75.55% (Gzip)
+✓ Compressed index.html: 81.81% (Brotli), 77.94% (Gzip)
+✓ Compressed index.txt: 80.41% (Brotli), 75.91% (Gzip)
+✓ Compressed index.html: 81.81% (Brotli), 77.92% (Gzip)
+✓ Compressed index.txt: 80.43% (Brotli), 75.90% (Gzip)
+✓ Compressed index.html: 83.44% (Brotli), 78.76% (Gzip)
+✓ Compressed index.txt: 82.97% (Brotli), 78.61% (Gzip)
+✓ Compressed index.html: 79.04% (Brotli), 74.79% (Gzip)
+✓ Compressed index.txt: 74.82% (Brotli), 69.89% (Gzip)
+✓ Compressed index.html: 83.19% (Brotli), 78.49% (Gzip)
+✓ Compressed index.txt: 82.88% (Brotli), 78.38% (Gzip)
+✓ Compressed index.html: 80.99% (Brotli), 77.07% (Gzip)
+✓ Compressed index.txt: 79.51% (Brotli), 75.04% (Gzip)
+✓ Compressed index.html: 81.38% (Brotli), 77.47% (Gzip)
+✓ Compressed index.txt: 79.86% (Brotli), 75.37% (Gzip)
+✓ Compressed index.html: 81.38% (Brotli), 77.41% (Gzip)
+✓ Compressed index.txt: 79.84% (Brotli), 75.36% (Gzip)
+✓ Compressed index.html: 79.18% (Brotli), 74.99% (Gzip)
+✓ Compressed index.txt: 75.07% (Brotli), 70.14% (Gzip)
+✓ Compressed index.html: 81.81% (Brotli), 77.91% (Gzip)
+✓ Compressed index.txt: 80.29% (Brotli), 75.89% (Gzip)
+✓ Compressed index.html: 83.65% (Brotli), 78.94% (Gzip)
+✓ Compressed index.txt: 83.64% (Brotli), 79.12% (Gzip)
+✓ Compressed index.html: 81.06% (Brotli), 77.11% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.05% (Gzip)
+✓ Compressed index.html: 81.02% (Brotli), 77.06% (Gzip)
+✓ Compressed index.txt: 79.58% (Brotli), 75.04% (Gzip)
+✓ Compressed index.html: 81.20% (Brotli), 77.20% (Gzip)
+✓ Compressed index.txt: 79.62% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 83.13% (Brotli), 78.45% (Gzip)
+✓ Compressed index.txt: 82.89% (Brotli), 78.35% (Gzip)
+✓ Compressed index.html: 81.15% (Brotli), 77.15% (Gzip)
+✓ Compressed index.txt: 79.69% (Brotli), 75.12% (Gzip)
+✓ Compressed index.html: 81.34% (Brotli), 77.40% (Gzip)
+✓ Compressed index.txt: 79.86% (Brotli), 75.27% (Gzip)
+✓ Compressed index.html: 83.18% (Brotli), 78.53% (Gzip)
+✓ Compressed index.txt: 82.95% (Brotli), 78.43% (Gzip)
+✓ Compressed index.html: 81.94% (Brotli), 78.01% (Gzip)
+✓ Compressed index.txt: 80.36% (Brotli), 75.98% (Gzip)
+✓ Compressed index.html: 81.26% (Brotli), 77.31% (Gzip)
+✓ Compressed index.txt: 79.67% (Brotli), 75.22% (Gzip)
+✓ Compressed index.html: 81.76% (Brotli), 77.83% (Gzip)
+✓ Compressed index.txt: 80.21% (Brotli), 75.77% (Gzip)
+✓ Compressed index.html: 81.93% (Brotli), 78.08% (Gzip)
+✓ Compressed index.txt: 80.32% (Brotli), 76.03% (Gzip)
+✓ Compressed index.html: 81.24% (Brotli), 77.25% (Gzip)
+✓ Compressed index.txt: 79.65% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 81.42% (Brotli), 77.47% (Gzip)
+✓ Compressed index.txt: 79.82% (Brotli), 75.34% (Gzip)
+✓ Compressed index.html: 81.34% (Brotli), 77.46% (Gzip)
+✓ Compressed index.txt: 79.80% (Brotli), 75.35% (Gzip)
+✓ Compressed index.html: 81.27% (Brotli), 77.27% (Gzip)
+✓ Compressed index.txt: 79.71% (Brotli), 75.20% (Gzip)
+✓ Compressed index.html: 81.17% (Brotli), 77.14% (Gzip)
+✓ Compressed index.txt: 79.57% (Brotli), 75.03% (Gzip)
+✓ Compressed index.html: 81.36% (Brotli), 77.38% (Gzip)
+✓ Compressed index.txt: 79.81% (Brotli), 75.31% (Gzip)
+✓ Compressed index.html: 82.27% (Brotli), 78.35% (Gzip)
+✓ Compressed index.txt: 80.69% (Brotli), 76.36% (Gzip)
+✓ Compressed index.html: 80.09% (Brotli), 76.02% (Gzip)
+✓ Compressed index.txt: 76.86% (Brotli), 72.27% (Gzip)
+✓ Compressed index.html: 81.82% (Brotli), 77.91% (Gzip)
+✓ Compressed index.txt: 80.37% (Brotli), 75.89% (Gzip)
+✓ Compressed index.html: 81.86% (Brotli), 78.04% (Gzip)
+✓ Compressed index.txt: 80.38% (Brotli), 75.99% (Gzip)
+✓ Compressed index.html: 81.89% (Brotli), 77.96% (Gzip)
+✓ Compressed index.txt: 80.25% (Brotli), 75.85% (Gzip)
+✓ Compressed index.html: 83.05% (Brotli), 78.44% (Gzip)
+✓ Compressed index.txt: 82.83% (Brotli), 78.32% (Gzip)
+✓ Compressed index.html: 83.28% (Brotli), 78.59% (Gzip)
+✓ Compressed index.txt: 82.91% (Brotli), 78.47% (Gzip)
+✓ Compressed index.html: 81.98% (Brotli), 78.10% (Gzip)
+✓ Compressed index.txt: 80.41% (Brotli), 76.08% (Gzip)
+✓ Compressed index.html: 83.50% (Brotli), 78.83% (Gzip)
+✓ Compressed index.txt: 82.91% (Brotli), 78.41% (Gzip)
+✓ Compressed index.html: 82.99% (Brotli), 78.34% (Gzip)
+✓ Compressed index.txt: 82.74% (Brotli), 78.22% (Gzip)
+✓ Compressed index.html: 81.36% (Brotli), 77.42% (Gzip)
+✓ Compressed index.txt: 79.87% (Brotli), 75.31% (Gzip)
+✓ Compressed index.html: 83.09% (Brotli), 78.49% (Gzip)
+✓ Compressed index.txt: 82.81% (Brotli), 78.36% (Gzip)
+✓ Compressed index.html: 79.20% (Brotli), 75.08% (Gzip)
+✓ Compressed index.txt: 74.78% (Brotli), 69.90% (Gzip)
+✓ Compressed index.html: 79.17% (Brotli), 75.06% (Gzip)
+✓ Compressed index.txt: 74.66% (Brotli), 69.86% (Gzip)
+✓ Compressed index.html: 81.75% (Brotli), 77.92% (Gzip)
+✓ Compressed index.txt: 80.42% (Brotli), 75.89% (Gzip)
+✓ Compressed index.html: 83.49% (Brotli), 78.86% (Gzip)
+✓ Compressed index.txt: 82.79% (Brotli), 78.40% (Gzip)
+✓ Compressed index.html: 83.14% (Brotli), 78.47% (Gzip)
+✓ Compressed index.txt: 82.80% (Brotli), 78.35% (Gzip)
+✓ Compressed index.html: 83.08% (Brotli), 78.46% (Gzip)
+✓ Compressed index.txt: 82.81% (Brotli), 78.34% (Gzip)
+✓ Compressed index.html: 78.93% (Brotli), 74.70% (Gzip)
+✓ Compressed index.txt: 74.64% (Brotli), 69.81% (Gzip)
+✓ Compressed index.html: 81.26% (Brotli), 77.31% (Gzip)
+✓ Compressed index.txt: 79.74% (Brotli), 75.24% (Gzip)
+✓ Compressed index.html: 81.09% (Brotli), 77.16% (Gzip)
+✓ Compressed index.txt: 79.55% (Brotli), 75.11% (Gzip)
+✓ Compressed index.html: 81.19% (Brotli), 77.29% (Gzip)
+✓ Compressed index.txt: 79.64% (Brotli), 75.23% (Gzip)
+✓ Compressed index.html: 81.26% (Brotli), 77.32% (Gzip)
+✓ Compressed index.txt: 79.72% (Brotli), 75.27% (Gzip)
+✓ Compressed index.html: 81.90% (Brotli), 77.99% (Gzip)
+✓ Compressed index.txt: 80.33% (Brotli), 75.95% (Gzip)
+✓ Compressed index.html: 79.11% (Brotli), 74.92% (Gzip)
+✓ Compressed index.txt: 74.96% (Brotli), 70.08% (Gzip)
+✓ Compressed index.html: 81.27% (Brotli), 77.36% (Gzip)
+✓ Compressed index.txt: 79.80% (Brotli), 75.18% (Gzip)
+✓ Compressed index.html: 83.17% (Brotli), 78.44% (Gzip)
+✓ Compressed index.txt: 82.89% (Brotli), 78.37% (Gzip)
+✓ Compressed index.html: 81.69% (Brotli), 77.81% (Gzip)
+✓ Compressed index.txt: 80.10% (Brotli), 75.77% (Gzip)
+✓ Compressed index.html: 81.28% (Brotli), 77.36% (Gzip)
+✓ Compressed index.txt: 79.77% (Brotli), 75.30% (Gzip)
+✓ Compressed index.html: 83.19% (Brotli), 78.54% (Gzip)
+✓ Compressed index.txt: 82.94% (Brotli), 78.47% (Gzip)
+✓ Compressed index.html: 83.28% (Brotli), 78.67% (Gzip)
+✓ Compressed index.txt: 82.82% (Brotli), 78.26% (Gzip)
+✓ Compressed index.html: 82.14% (Brotli), 78.14% (Gzip)
+✓ Compressed index.txt: 80.60% (Brotli), 76.14% (Gzip)
+✓ Compressed index.html: 81.82% (Brotli), 77.88% (Gzip)
+✓ Compressed index.txt: 80.16% (Brotli), 75.77% (Gzip)
+✓ Compressed index.html: 79.38% (Brotli), 75.21% (Gzip)
+✓ Compressed index.txt: 75.21% (Brotli), 70.39% (Gzip)
+✓ Compressed index.html: 78.89% (Brotli), 74.72% (Gzip)
+✓ Compressed index.txt: 74.61% (Brotli), 69.82% (Gzip)
+✓ Compressed index.html: 81.40% (Brotli), 77.47% (Gzip)
+✓ Compressed index.txt: 79.82% (Brotli), 75.30% (Gzip)
+✓ Compressed index.html: 83.13% (Brotli), 78.45% (Gzip)
+✓ Compressed index.txt: 82.76% (Brotli), 78.39% (Gzip)
+✓ Compressed index.html: 81.24% (Brotli), 77.34% (Gzip)
+✓ Compressed index.txt: 79.77% (Brotli), 75.26% (Gzip)
+✓ Compressed index.html: 80.96% (Brotli), 76.97% (Gzip)
+✓ Compressed index.txt: 79.43% (Brotli), 74.94% (Gzip)
+✓ Compressed index.html: 79.19% (Brotli), 75.03% (Gzip)
+✓ Compressed index.txt: 75.12% (Brotli), 70.20% (Gzip)
+✓ Compressed index.html: 78.90% (Brotli), 74.71% (Gzip)
+✓ Compressed index.txt: 74.67% (Brotli), 69.77% (Gzip)
+✓ Compressed index.html: 81.14% (Brotli), 77.14% (Gzip)
+✓ Compressed index.txt: 79.65% (Brotli), 75.10% (Gzip)
+✓ Compressed index.html: 81.30% (Brotli), 77.33% (Gzip)
+✓ Compressed index.txt: 79.74% (Brotli), 75.20% (Gzip)
+✓ Compressed index.html: 81.25% (Brotli), 77.30% (Gzip)
+✓ Compressed index.txt: 79.64% (Brotli), 75.23% (Gzip)
+✓ Compressed index.html: 79.23% (Brotli), 75.13% (Gzip)
+✓ Compressed index.txt: 74.67% (Brotli), 69.91% (Gzip)
+✓ Compressed index.html: 83.25% (Brotli), 78.60% (Gzip)
+✓ Compressed index.txt: 82.96% (Brotli), 78.50% (Gzip)
+✓ Compressed index.html: 79.31% (Brotli), 75.13% (Gzip)
+✓ Compressed index.txt: 75.15% (Brotli), 70.31% (Gzip)
+✓ Compressed index.html: 81.95% (Brotli), 78.11% (Gzip)
+✓ Compressed index.txt: 80.44% (Brotli), 76.02% (Gzip)
+✓ Compressed index.html: 79.28% (Brotli), 75.09% (Gzip)
+✓ Compressed index.txt: 75.15% (Brotli), 70.25% (Gzip)
+✓ Compressed index.html: 78.83% (Brotli), 74.72% (Gzip)
+✓ Compressed index.txt: 74.62% (Brotli), 69.71% (Gzip)
+✓ Compressed index.html: 81.88% (Brotli), 77.94% (Gzip)
+✓ Compressed index.txt: 80.32% (Brotli), 75.90% (Gzip)
+✓ Compressed index.html: 81.86% (Brotli), 77.98% (Gzip)
+✓ Compressed index.txt: 80.25% (Brotli), 75.90% (Gzip)
+✓ Compressed index.html: 81.87% (Brotli), 77.99% (Gzip)
+✓ Compressed index.txt: 80.32% (Brotli), 75.91% (Gzip)
+✓ Compressed index.html: 81.12% (Brotli), 77.19% (Gzip)
+✓ Compressed index.txt: 79.63% (Brotli), 75.10% (Gzip)
+✓ Compressed index.html: 78.92% (Brotli), 74.73% (Gzip)
+✓ Compressed index.txt: 74.66% (Brotli), 69.79% (Gzip)
+✓ Compressed index.html: 81.20% (Brotli), 77.18% (Gzip)
+✓ Compressed index.txt: 79.59% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 81.86% (Brotli), 77.93% (Gzip)
+✓ Compressed index.txt: 80.45% (Brotli), 75.94% (Gzip)
+✓ Compressed index.html: 79.17% (Brotli), 74.94% (Gzip)
+✓ Compressed index.txt: 74.96% (Brotli), 70.11% (Gzip)
+✓ Compressed index.html: 81.94% (Brotli), 77.95% (Gzip)
+✓ Compressed index.txt: 80.38% (Brotli), 75.95% (Gzip)
+✓ Compressed index.html: 81.67% (Brotli), 77.79% (Gzip)
+✓ Compressed index.txt: 80.12% (Brotli), 75.70% (Gzip)
+✓ Compressed index.html: 82.14% (Brotli), 78.14% (Gzip)
+✓ Compressed index.txt: 80.56% (Brotli), 76.16% (Gzip)
+✓ Compressed index.html: 82.24% (Brotli), 78.22% (Gzip)
+✓ Compressed index.txt: 80.70% (Brotli), 76.24% (Gzip)
+✓ Compressed index.html: 81.10% (Brotli), 77.14% (Gzip)
+✓ Compressed index.txt: 79.57% (Brotli), 75.10% (Gzip)
+✓ Compressed index.html: 81.78% (Brotli), 77.95% (Gzip)
+✓ Compressed index.txt: 80.17% (Brotli), 75.85% (Gzip)
+✓ Compressed index.html: 79.37% (Brotli), 75.25% (Gzip)
+✓ Compressed index.txt: 74.85% (Brotli), 69.95% (Gzip)
+✓ Compressed index.html: 83.39% (Brotli), 78.75% (Gzip)
+✓ Compressed index.txt: 82.85% (Brotli), 78.37% (Gzip)
+✓ Compressed index.html: 83.10% (Brotli), 78.41% (Gzip)
+✓ Compressed index.txt: 82.86% (Brotli), 78.40% (Gzip)
+✓ Compressed index.html: 81.13% (Brotli), 77.15% (Gzip)
+✓ Compressed index.txt: 79.63% (Brotli), 75.08% (Gzip)
+✓ Compressed index.html: 81.16% (Brotli), 77.16% (Gzip)
+✓ Compressed index.txt: 79.58% (Brotli), 75.14% (Gzip)
+✓ Compressed index.html: 81.17% (Brotli), 77.14% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.12% (Gzip)
+✓ Compressed index.html: 81.17% (Brotli), 77.25% (Gzip)
+✓ Compressed index.txt: 79.62% (Brotli), 75.20% (Gzip)
+✓ Compressed index.html: 81.06% (Brotli), 77.04% (Gzip)
+✓ Compressed index.txt: 79.58% (Brotli), 75.00% (Gzip)
+✓ Compressed index.html: 80.99% (Brotli), 77.00% (Gzip)
+✓ Compressed index.txt: 79.46% (Brotli), 74.98% (Gzip)
+✓ Compressed index.html: 83.47% (Brotli), 78.81% (Gzip)
+✓ Compressed index.txt: 82.89% (Brotli), 78.39% (Gzip)
+✓ Compressed index.html: 81.23% (Brotli), 77.28% (Gzip)
+✓ Compressed index.txt: 79.68% (Brotli), 75.23% (Gzip)
+✓ Compressed index.html: 81.30% (Brotli), 77.36% (Gzip)
+✓ Compressed index.txt: 79.88% (Brotli), 75.30% (Gzip)
+✓ Compressed index.html: 81.87% (Brotli), 77.95% (Gzip)
+✓ Compressed index.txt: 80.32% (Brotli), 75.94% (Gzip)
+✓ Compressed index.html: 81.13% (Brotli), 77.14% (Gzip)
+✓ Compressed index.txt: 79.54% (Brotli), 75.09% (Gzip)
+✓ Compressed index.html: 82.02% (Brotli), 78.11% (Gzip)
+✓ Compressed index.txt: 80.40% (Brotli), 76.04% (Gzip)
+✓ Compressed index.html: 79.03% (Brotli), 74.78% (Gzip)
+✓ Compressed index.txt: 74.78% (Brotli), 69.92% (Gzip)
+✓ Compressed index.html: 81.86% (Brotli), 77.93% (Gzip)
+✓ Compressed index.txt: 80.27% (Brotli), 75.90% (Gzip)
+✓ Compressed index.html: 81.13% (Brotli), 77.15% (Gzip)
+✓ Compressed index.txt: 79.53% (Brotli), 75.06% (Gzip)
+✓ Compressed index.html: 81.01% (Brotli), 77.04% (Gzip)
+✓ Compressed index.txt: 79.46% (Brotli), 74.99% (Gzip)
+✓ Compressed index.html: 79.02% (Brotli), 74.79% (Gzip)
+✓ Compressed index.txt: 74.78% (Brotli), 69.89% (Gzip)
+✓ Compressed index.html: 83.38% (Brotli), 78.76% (Gzip)
+✓ Compressed index.txt: 82.85% (Brotli), 78.32% (Gzip)
+✓ Compressed index.html: 81.23% (Brotli), 77.30% (Gzip)
+✓ Compressed index.txt: 79.71% (Brotli), 75.24% (Gzip)
+✓ Compressed index.html: 81.16% (Brotli), 77.28% (Gzip)
+✓ Compressed index.txt: 79.73% (Brotli), 75.23% (Gzip)
+✓ Compressed index.html: 81.90% (Brotli), 78.00% (Gzip)
+✓ Compressed index.txt: 80.32% (Brotli), 75.95% (Gzip)
+✓ Compressed index.html: 79.24% (Brotli), 75.07% (Gzip)
+✓ Compressed index.txt: 75.05% (Brotli), 70.29% (Gzip)
+✓ Compressed index.html: 81.81% (Brotli), 78.03% (Gzip)
+✓ Compressed index.txt: 80.50% (Brotli), 75.97% (Gzip)
+✓ Compressed index.html: 81.37% (Brotli), 77.46% (Gzip)
+✓ Compressed index.txt: 79.83% (Brotli), 75.34% (Gzip)
+✓ Compressed index.html: 81.10% (Brotli), 77.18% (Gzip)
+✓ Compressed index.txt: 79.68% (Brotli), 75.10% (Gzip)
+✓ Compressed index.html: 81.81% (Brotli), 77.93% (Gzip)
+✓ Compressed index.txt: 80.24% (Brotli), 75.78% (Gzip)
+✓ Compressed index.html: 81.75% (Brotli), 77.89% (Gzip)
+✓ Compressed index.txt: 80.34% (Brotli), 75.83% (Gzip)
+✓ Compressed index.html: 79.13% (Brotli), 74.85% (Gzip)
+✓ Compressed index.txt: 74.75% (Brotli), 69.98% (Gzip)
+✓ Compressed workbox-40bcce23.js: 69.54% (Brotli), 66.36% (Gzip)
+
+Compressing .next/static...
+✓ Compressed _buildManifest.js: 74.62% (Brotli), 71.79% (Gzip)
+- Skipped _ssgManifest.js: File too small
+✓ Compressed 3582.8c6eff4a3f3ca92d.js: 76.44% (Brotli), 71.85% (Gzip)
+✓ Compressed 6664.d49469fa6db6475b.js: 76.58% (Brotli), 73.26% (Gzip)
+- Skipped page-b694c0ec1bb96e7f.js: File too small
+- Skipped page-288decc0638820f2.js: File too small
+- Skipped route-6a2dee08634329ca.js: File too small
+- Skipped route-406e48ee458e43ae.js: File too small
+- Skipped route-024f9cc2f1958e6d.js: File too small
+- Skipped route-12aebee4636030c7.js: File too small
+- Skipped page-349a55afb4221751.js: File too small
+- Skipped page-6b7e61962d35f8d8.js: File too small
+- Skipped page-b2ac4444fea28a11.js: File too small
+- Skipped page-5633b3044e23c1f1.js: File too small
+- Skipped page-810b968cd2105db7.js: File too small
+- Skipped page-6fa59da5e73d5d65.js: File too small
+- Skipped page-494089d686538aa7.js: File too small
+✓ Compressed page-8b1d1841641bef84.js: 77.64% (Brotli), 72.52% (Gzip)
+- Skipped page-cad25cbd36f9f03c.js: File too small
+- Skipped page-d2ed54f54848864e.js: File too small
+- Skipped page-5262f9a809ef5e10.js: File too small
+- Skipped page-30c04c641a81ceb3.js: File too small
+- Skipped page-ec72edbaa2cc6016.js: File too small
+- Skipped page-8ca07548e11e6140.js: File too small
+✓ Compressed layout-17fde5e10dc7ff63.js: 77.49% (Brotli), 73.72% (Gzip)
+- Skipped loading-03ec89fce0955337.js: File too small
+✓ Compressed page-4a2895d65268507d.js: 67.70% (Brotli), 63.97% (Gzip)
+✓ Compressed not-found-4ae32de62181c77a.js: 66.26% (Brotli), 60.29% (Gzip)
+✓ Compressed page-7c5cdc158b3c85eb.js: 74.61% (Brotli), 69.90% (Gzip)
+- Skipped page-25ae53116bf997fa.js: File too small
+✓ Compressed page-d95620d4e1050483.js: 77.29% (Brotli), 72.97% (Gzip)
+- Skipped page-c6484dcbd52730ba.js: File too small
+- Skipped error-b33d656a44dbd439.js: File too small
+- Skipped loading-95df9aebb3fc6ed6.js: File too small
+✓ Compressed page-7fcb5a29018d42c2.js: 72.33% (Brotli), 67.71% (Gzip)
+- Skipped page-dc334a57e0d70d51.js: File too small
+- Skipped page-7304f46fc0964e47.js: File too small
+✓ Compressed page-6fc7df956300c193.js: 67.73% (Brotli), 61.93% (Gzip)
+- Skipped page-a3cee338fe1e581e.js: File too small
+✓ Compressed common-ec34522ea8814bc9.js: 76.34% (Brotli), 72.70% (Gzip)
+✓ Compressed data-648887de7bab8dcf.js: 92.96% (Brotli), 89.05% (Gzip)
+- Skipped main-9cfa84f6348662b5.js: File too small
+- Skipped main-app-5d450bfc42b60cae.js: File too small
+- Skipped _app-f9461d3e6826f9ec.js: File too small
+- Skipped _error-31cc669b93910bc0.js: File too small
+✓ Compressed polyfills-42372ed130431b0a.js: 68.77% (Brotli), 64.90% (Gzip)
+✓ Compressed runtime-d265c8b54608eca8.js: 57.11% (Brotli), 51.14% (Gzip)
+✓ Compressed vendor-89cab996128cc313.js: 77.42% (Brotli), 69.74% (Gzip)
+✓ Compressed 03aa074dad028d81.css: 76.99% (Brotli), 74.03% (Gzip)
+✓ Compressed 05c2dd3ec2015896.css: 80.50% (Brotli), 77.57% (Gzip)
+✓ Compressed 124dfb868087ca5d.css: 74.56% (Brotli), 68.31% (Gzip)
+✓ Compressed 1b57f54b48d71bd9.css: 82.32% (Brotli), 79.44% (Gzip)
+✓ Compressed 1bad589ca3d2febb.css: 80.69% (Brotli), 77.97% (Gzip)
+✓ Compressed 221c3c2defdcf4fe.css: 83.64% (Brotli), 81.58% (Gzip)
+✓ Compressed 5dd9336c63b53ec2.css: 78.89% (Brotli), 75.02% (Gzip)
+✓ Compressed 7d963cf7e9451426.css: 80.49% (Brotli), 78.03% (Gzip)
+✓ Compressed 89a39e92b367dc57.css: 81.38% (Brotli), 78.13% (Gzip)
+✓ Compressed 8e968aff8d91c83e.css: 73.85% (Brotli), 65.95% (Gzip)
+✓ Compressed 956832b8fd9a8a3d.css: 82.72% (Brotli), 79.92% (Gzip)
+✓ Compressed 97b37ae2202d1ce4.css: 76.71% (Brotli), 73.10% (Gzip)
+✓ Compressed 9ae59a4469f2b36e.css: 77.90% (Brotli), 74.04% (Gzip)
+✓ Compressed a8937a3731433d69.css: 80.67% (Brotli), 78.16% (Gzip)
+✓ Compressed b18bfab74aa719ee.css: 77.37% (Brotli), 73.74% (Gzip)
+✓ Compressed e1ad3a40f75e6151.css: 82.92% (Brotli), 80.66% (Gzip)
+✓ Compressed f08c74247854467a.css: 82.80% (Brotli), 80.60% (Gzip)
+✓ Compressed f0fd7d9835b4a4e5.css: 72.78% (Brotli), 67.68% (Gzip)
+- Skipped fd4b0e34ee573825.css: File too small
+
+==================================================
+📊 Compression Results:
+==================================================
+Files compressed: 532
+Original size: 21.01 MB
+Brotli size: 3.57 MB (83.01% reduction)
+Gzip size: 4.52 MB (78.47% reduction)
+
+✅ Compression complete!

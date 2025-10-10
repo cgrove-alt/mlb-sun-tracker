@@ -1,5 +1,6 @@
 import { Stadium } from '../data/stadiums';
-import { getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
+import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { processInChunks } from './performanceUtils';
@@ -16,27 +17,28 @@ export async function calculateDetailedSectionSunExposureOptimized(
   stadium: Stadium,
   sunPosition: SunPosition,
   weather?: WeatherData,
-  onProgress?: (progress: number) => void
+  onProgress?: (progress: number) => void,
+  sections?: StadiumSection[]
 ): Promise<SeatingSectionSun[]> {
-  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
-  let sections = getStadiumSections(stadium.id);
-  if (sections.length === 0) {
+  // Use provided sections or fall back to venue sections
+  let stadiumSections = sections;
+  if (!stadiumSections || stadiumSections.length === 0) {
     // Try venue sections (for MiLB and NFL venues)
-    sections = getVenueSections(stadium.id);
+    stadiumSections = getVenueSections(stadium.id);
   }
-  
+
   // If stadium has a fixed roof, quickly return all sections as not in sun
   if (stadium.roof === 'fixed') {
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       inSun: false,
       sunExposure: 0
     }));
   }
-  
+
   // For small numbers of sections, use the original synchronous function
-  if (sections.length < 100) {
-    return originalCalculateDetailedSectionSunExposure(stadium, sunPosition, weather);
+  if (stadiumSections.length < 100) {
+    return originalCalculateDetailedSectionSunExposure(stadium, sunPosition, weather, stadiumSections);
   }
   
   // Calculate weather impact
@@ -68,18 +70,18 @@ export async function calculateDetailedSectionSunExposureOptimized(
   
   // Process sections in chunks
   const results = await processInChunks(
-    sections,
+    stadiumSections,
     50, // Process 50 sections at a time
     (section) => {
       const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees);
       let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth);
       sunExposure = sunExposure * weatherMultiplier;
-      
+
       processedCount++;
       if (onProgress) {
-        onProgress(processedCount / sections.length);
+        onProgress(processedCount / stadiumSections.length);
       }
-      
+
       return {
         section,
         inSun: inSun && sunExposure > 10,
@@ -88,16 +90,22 @@ export async function calculateDetailedSectionSunExposureOptimized(
     },
     10 // 10ms delay between chunks
   );
-  
+
   return results;
 }
 
 // Cache for stadium sections to avoid repeated lookups
+// NOTE: Deprecated - callers should use getStadiumSectionsAsync() directly
 const sectionCache = new Map<string, any[]>();
 
-export function getCachedStadiumSections(stadiumId: string) {
+export function getCachedStadiumSections(stadiumId: string, sections?: StadiumSection[]) {
+  if (sections) {
+    sectionCache.set(stadiumId, sections);
+    return sections;
+  }
   if (!sectionCache.has(stadiumId)) {
-    sectionCache.set(stadiumId, getStadiumSections(stadiumId));
+    console.warn('[getCachedStadiumSections] No sections provided and none in cache. Use getStadiumSectionsAsync() instead.');
+    return [];
   }
   return sectionCache.get(stadiumId)!;
 }

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';
-import { StadiumSection } from '../../../src/data/stadiumSections';
+import type { StadiumSection } from '../../../src/data/stadiumSectionTypes';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
 import { SectionList } from '../../../src/components/SectionList';

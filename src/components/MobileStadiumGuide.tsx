@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Stadium } from '../data/stadiums';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { StadiumAmenities } from '../data/stadiumAmenities';
 import { stadiumHistories } from '../data/stadiumDetails';
 import { SunIcon, CloudIcon, DropletIcon, MapPinIcon, ClockIcon, InfoIcon } from './Icons';

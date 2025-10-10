@@ -1,6 +1,7 @@
 import SunCalc from 'suncalc';
 import { Stadium } from '../data/stadiums';
-import { StadiumSection, getStadiumSections, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
+import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { SunCalculator } from './sunCalculator';
@@ -129,7 +130,8 @@ export function calculateSunnySections(
 export function calculateDetailedSectionSunExposure(
   stadium: Stadium,
   sunPosition: SunPosition,
-  weather?: WeatherData
+  weather?: WeatherData,
+  sections?: StadiumSection[]
 ): SeatingSectionSun[] {
   // Add atmospheric refraction correction for low sun angles
   let correctedAltitude = sunPosition.altitudeDegrees;
@@ -138,25 +140,26 @@ export function calculateDetailedSectionSunExposure(
     const refraction = 1.02 / Math.tan((sunPosition.altitudeDegrees + 10.3 / (sunPosition.altitudeDegrees + 5.11)) * Math.PI / 180);
     correctedAltitude = sunPosition.altitudeDegrees + refraction / 60;
   }
-  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
-  let sections = getStadiumSections(stadium.id);
-  if (sections.length === 0) {
+
+  // Use provided sections or fall back to venue sections
+  let stadiumSections = sections;
+  if (!stadiumSections || stadiumSections.length === 0) {
     // Try venue sections (for MiLB and NFL venues)
-    sections = getVenueSections(stadium.id);
+    stadiumSections = getVenueSections(stadium.id);
   }
   const sectionSunData: SeatingSectionSun[] = [];
-  
+
   // Safety check to prevent performance issues
-  if (sections.length > 250) {
+  if (stadiumSections.length > 250) {
     // Log warning in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+      console.warn(`[calculateDetailedSectionSunExposure] Large number of sections (${stadiumSections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
-  
+
   // If stadium has a fixed roof, no sections get sun
   if (stadium.roof === 'fixed') {
-    sections.forEach(section => {
+    stadiumSections.forEach(section => {
       sectionSunData.push({
         section,
         inSun: false,
@@ -206,7 +209,7 @@ export function calculateDetailedSectionSunExposure(
     }
   }
 
-  sections.forEach(section => {
+  stadiumSections.forEach(section => {
     const inSun = isSectionInSun(section, sunAzimuth, sunPosition.altitudeDegrees);
     let sunExposure = getSectionSunExposure(section, sunPosition.altitudeDegrees, sunAzimuth);
     
@@ -300,21 +303,23 @@ export function getCompassDirection(azimuthDegrees: number): string {
 export function calculateEnhancedSectionSunExposure(
   stadium: Stadium,
   date: Date,
-  weather?: WeatherData
+  weather?: WeatherData,
+  sections?: StadiumSection[]
 ): SeatingSectionSun[] {
   const calculator = new SunCalculator(stadium);
-  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
-  let sections = getStadiumSections(stadium.id);
-  if (sections.length === 0) {
+
+  // Use provided sections or fall back to venue sections
+  let stadiumSections = sections;
+  if (!stadiumSections || stadiumSections.length === 0) {
     // Try venue sections (for MiLB and NFL venues)
-    sections = getVenueSections(stadium.id);
+    stadiumSections = getVenueSections(stadium.id);
   }
-  
+
   // Safety check to prevent performance issues
-  if (sections.length > 250) {
+  if (stadiumSections.length > 250) {
     // Log warning in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+      console.warn(`[calculateEnhancedSectionSunExposure] Large number of sections (${stadiumSections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
   
@@ -325,7 +330,7 @@ export function calculateEnhancedSectionSunExposure(
   
   // If stadium has a fixed roof, no sections get sun
   if (stadium.roof === 'fixed') {
-    return sections.map(section => ({
+    return stadiumSections.map(section => ({
       section,
       inSun: false,
       sunExposure: 0
@@ -335,7 +340,7 @@ export function calculateEnhancedSectionSunExposure(
   // Calculate shadows for all sections
   const shadowData = calculator.calculateShadows(
     sunPos,
-    sections.map(s => ({
+    stadiumSections.map(s => ({
       ...s,
       side: getSectionSide(s),
       angle: getSectionAngle(s, stadium.orientation)
@@ -364,7 +369,7 @@ export function calculateEnhancedSectionSunExposure(
   }
   
   // Combine section data with shadow calculations
-  return sections.map((section, index) => {
+  return stadiumSections.map((section, index) => {
     const shadow = shadowData[index];
     const adjustedExposure = Math.round(shadow.sunExposure * weatherMultiplier);
     
@@ -401,26 +406,28 @@ function getSectionAngle(section: StadiumSection, stadiumOrientation: number): n
 export function calculateGameSunExposure(
   stadium: Stadium,
   gameDateTime: Date,
-  gameDuration: number = 3
+  gameDuration: number = 3,
+  sections?: StadiumSection[]
 ): Map<string, number> {
   const calculator = new SunCalculator(stadium);
-  // Try to get sections - first check MLB stadiums, then check all venues (including MiLB/NFL)
-  let sections = getStadiumSections(stadium.id);
-  if (sections.length === 0) {
+
+  // Use provided sections or fall back to venue sections
+  let stadiumSections = sections;
+  if (!stadiumSections || stadiumSections.length === 0) {
     // Try venue sections (for MiLB and NFL venues)
-    sections = getVenueSections(stadium.id);
+    stadiumSections = getVenueSections(stadium.id);
   }
   const exposureMap = new Map<string, number>();
-  
+
   // Safety check to prevent performance issues
-  if (sections.length > 250) {
+  if (stadiumSections.length > 250) {
     // Log warning in development
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-      console.warn(`[calculateGameSunExposure] Large number of sections (${sections.length}) for stadium ${stadium.id}. Processing may be slow.`);
+      console.warn(`[calculateGameSunExposure] Large number of sections (${stadiumSections.length}) for stadium ${stadium.id}. Processing may be slow.`);
     }
   }
-  
-  sections.forEach(section => {
+
+  stadiumSections.forEach(section => {
     const sectionWithGeometry = {
       ...section,
       side: getSectionSide(section),

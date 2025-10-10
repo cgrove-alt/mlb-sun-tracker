@@ -1,20 +1,19 @@
 import React from 'react';
 import { Stadium } from '../data/stadiums';
-import { getStadiumSections } from '../data/stadiumSections';
 
 interface StadiumSchemaProps {
   stadium: Stadium;
   gameDate?: Date;
   shadedSectionsCount?: number;
+  totalSections?: number; // Now passed as prop instead of loading all stadium data
 }
 
-export const StadiumSchema: React.FC<StadiumSchemaProps> = ({ 
-  stadium, 
+export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
+  stadium,
   gameDate,
-  shadedSectionsCount 
+  shadedSectionsCount,
+  totalSections = 0 // Default to 0 if not provided
 }) => {
-  const sections = getStadiumSections(stadium.id);
-  const totalSections = sections.length;
   
   const schemaData = {
     "@context": "https://schema.org",
@@ -84,10 +83,10 @@ export const StadiumSchema: React.FC<StadiumSchemaProps> = ({
 // Stadium-specific shade guide schema
 interface StadiumShadeGuideSchemaProps {
   stadium: Stadium;
+  sections?: any[]; // Sections passed as prop to avoid bundling all stadium data
 }
 
-export const StadiumShadeGuideSchema: React.FC<StadiumShadeGuideSchemaProps> = ({ stadium }) => {
-  const sections = getStadiumSections(stadium.id);
+export const StadiumShadeGuideSchema: React.FC<StadiumShadeGuideSchemaProps> = ({ stadium, sections = [] }) => {
   
   const schemaData = {
     "@context": "https://schema.org",
