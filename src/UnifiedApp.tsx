@@ -10,7 +10,6 @@ import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
-import { ShareButton } from './components/ShareButton';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
@@ -458,15 +457,6 @@ function UnifiedAppContent() {
                   </div>
                 )}
               </div>
-
-              {/* Share Button - allows users to share their sun analysis */}
-              {selectedVenue && gameDateTime && (
-                <ShareButton
-                  selectedStadium={legacyStadium!}
-                  selectedGame={selectedGame}
-                  gameDateTime={gameDateTime}
-                />
-              )}
 
               {selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
