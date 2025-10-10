@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon } from './Icons';
 import { Tooltip } from './Tooltip';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';

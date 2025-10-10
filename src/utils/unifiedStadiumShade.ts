@@ -4,7 +4,7 @@
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
 import { MiLBStadium } from '../data/milbStadiums';
 import { NFLStadium, NFL_STADIUMS } from '../data/nflStadiums';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getMiLBStadiumSections } from '../data/milbStadiumSections';
 import { getNFLStadiumSections } from '../data/nflStadiumSections';
 import { getSunPosition } from './sunCalculations';

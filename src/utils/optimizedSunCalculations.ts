@@ -1,5 +1,6 @@
 import { Stadium } from '../data/stadiums';
-import { StadiumSection, isSectionInSun, getSectionSunExposure } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
+import { isSectionInSun, getSectionSunExposure } from './sectionSunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { getVenueSections } from '../data/venueSections';
 import { processInChunks } from './performanceUtils';

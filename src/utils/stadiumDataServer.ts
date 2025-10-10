@@ -1,5 +1,5 @@
 import { Stadium } from '../data/stadiums';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 
 // Server-side shade calculation for static generation
 export interface ShadeData {

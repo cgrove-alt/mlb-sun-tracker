@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { MLB_STADIUMS } from '../../src/data/stadiums';
-import { getStadiumSections } from '../../src/data/stadiumSections';
 import styles from './StadiumsPageSSR.module.css';
 
 export default function StadiumsPageSSR() {
@@ -91,16 +90,13 @@ export default function StadiumsPageSSR() {
             {['yankees', 'dodgers', 'cubs', 'redsox', 'giants'].map(id => {
               const stadium = MLB_STADIUMS.find(s => s.id === id);
               if (!stadium) return null;
-              const sections = getStadiumSections(stadium.id);
-              const coveredCount = sections.filter(s => s.covered).length;
-              
+
               return (
                 <Link key={id} href={`/stadium/${id}`} className={styles.popularCard}>
                   <h3>{stadium.name}</h3>
                   <p className={styles.team}>{stadium.team}</p>
                   <div className={styles.cardStats}>
                     <span>{stadium.roof === 'open' ? '☀️ Open Air' : '🏟️ ' + stadium.roof}</span>
-                    {coveredCount > 0 && <span>🛡️ {coveredCount} Covered</span>}
                   </div>
                 </Link>
               );
@@ -117,9 +113,6 @@ export default function StadiumsPageSSR() {
               <h3 className={styles.divisionTitle}>{division}</h3>
               <div className={styles.stadiumsGrid}>
                 {stadiums.map(stadium => {
-                  const sections = getStadiumSections(stadium.id);
-                  const coveredCount = sections.filter(s => s.covered).length;
-                  const upperCount = sections.filter(s => s.level === 'upper').length;
                   
                   return (
                     <Link key={stadium.id} href={`/stadium/${stadium.id}`} className={styles.stadiumCard}>
@@ -148,26 +141,22 @@ export default function StadiumsPageSSR() {
                       
                       <div className={styles.shadeStats}>
                         <div className={styles.shadeStat}>
-                          <strong>{coveredCount}</strong>
-                          <span>Covered Sections</span>
+                          <strong>{stadium.capacity?.toLocaleString() || 'N/A'}</strong>
+                          <span>Capacity</span>
                         </div>
                         <div className={styles.shadeStat}>
-                          <strong>{upperCount}</strong>
-                          <span>Upper Deck</span>
-                        </div>
-                        <div className={styles.shadeStat}>
-                          <strong>{sections.length}</strong>
-                          <span>Total Sections</span>
+                          <strong>{stadium.roof}</strong>
+                          <span>Roof Type</span>
                         </div>
                       </div>
                       
                       <div className={styles.shadeRating}>
                         <span className={styles.ratingLabel}>Shade Rating:</span>
                         <div className={styles.ratingBar}>
-                          <div 
+                          <div
                             className={styles.ratingFill}
-                            style={{ 
-                              width: `${Math.min(100, (coveredCount / sections.length) * 100 + (upperCount / sections.length) * 50)}%` 
+                            style={{
+                              width: `${stadium.roof !== 'open' ? '100%' : '60%'}`
                             }}
                           />
                         </div>

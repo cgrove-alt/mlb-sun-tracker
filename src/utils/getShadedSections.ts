@@ -2,7 +2,7 @@
 // Provides getShadedSections() function with enhanced 3D calculations
 
 import { Stadium, MLB_STADIUMS } from '../data/stadiums';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import { getSunPosition, SunPosition as LegacySunPosition } from './sunCalculations';
 import { WeatherData } from '../services/weatherApi';
 import { 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StadiumSection } from '../data/stadiumSections';
+import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './MobileSectionCard.css';
 
 interface MobileSectionCardProps {
