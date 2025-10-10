@@ -12,6 +12,7 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
+  defaultExpanded?: boolean;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -20,12 +21,14 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
+  defaultExpanded = false,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
     rootMargin: '200px',
   });
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const haptic = useHapticFeedback();
   const roundedExposure = Math.round(sunExposure);
 
@@ -34,6 +37,11 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       setIsLoaded(true);
     }
   }, [isIntersecting, isLoaded]);
+
+  // Update expanded state when defaultExpanded changes
+  useEffect(() => {
+    setIsExpanded(defaultExpanded);
+  }, [defaultExpanded]);
 
   const getSunExposureIcon = (exposure: number) => {
     if (exposure === 0) return <CloudIcon size={24} />;
@@ -65,6 +73,16 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     announceToScreenReader(announcement, 'polite');
   };
 
+  const handleToggleDetails = (e: React.MouseEvent) => {
+    e.stopPropagation(); // Prevent card click event
+    haptic.light();
+    setIsExpanded(!isExpanded);
+    announceToScreenReader(
+      isExpanded ? 'Details collapsed' : 'Details expanded',
+      'polite'
+    );
+  };
+
   return (
     <div 
       ref={ref}
@@ -93,13 +111,16 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent-600 transition-colors">
                 {section.name}
               </h3>
-              <div className="flex items-center gap-2 mt-1">
-                <span className="text-xs font-medium text-gray-500">
-                  {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
-                </span>
-              </div>
+              {/* Angle range - only shown when expanded */}
+              {isExpanded && (
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-xs font-medium text-gray-500">
+                    {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
+                  </span>
+                </div>
+              )}
             </div>
-            
+
             {/* Sun exposure indicator with animation */}
             <div className="flex flex-col items-center gap-1">
               <div className="p-2 rounded-xl bg-white/50 shadow-sm group-hover:animate-pulse-slow">
@@ -112,14 +133,42 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             </div>
           </div>
 
-          {/* Sun exposure description */}
-          <p className="text-sm text-gray-600 font-medium">
-            {getSunExposureDescription(sunExposure, timeInSun)}
-          </p>
+          {/* Collapsible details section */}
+          {isExpanded && (
+            <div className="space-y-4">
+              {/* Sun exposure description */}
+              <p className="text-sm text-gray-600 font-medium">
+                {getSunExposureDescription(sunExposure, timeInSun)}
+              </p>
 
-          {/* Meta information with badges */}
+              {/* Meta information with badges */}
+              <div className="flex flex-wrap gap-2">
+                {/* Covered indicator */}
+                {section.covered && (
+                  <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
+                      <UmbrellaIcon size={14} /> Covered
+                    </span>
+                  </Tooltip>
+                )}
+
+                {/* Price tier */}
+                {section.price && (
+                  <span className={`
+                    inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
+                    ${section.price === 'premium' || section.price === 'luxury' ? 'bg-yellow-100 text-yellow-800' :
+                      section.price === 'moderate' ? 'bg-sky-100 text-sky-700' :
+                      'bg-gray-100 text-gray-700'}
+                  `}>
+                    {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* Level badge - always shown */}
           <div className="flex flex-wrap gap-2">
-            {/* Level badge */}
             <span className={`
               inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium
               ${section.level === 'field' ? 'bg-purple-100 text-purple-700' :
@@ -136,28 +185,18 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               {section.level === 'suite' && <CrownIcon size={14} />}
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
-
-            {/* Covered indicator */}
-            {section.covered && (
-              <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
-                  <UmbrellaIcon size={14} /> Covered
-                </span>
-              </Tooltip>
-            )}
-
-            {/* Price tier */}
-            {section.price && (
-              <span className={`
-                inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                ${section.price === 'premium' || section.price === 'luxury' ? 'bg-yellow-100 text-yellow-800' :
-                  section.price === 'moderate' ? 'bg-sky-100 text-sky-700' :
-                  'bg-gray-100 text-gray-700'}
-              `}>
-                {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
-              </span>
-            )}
           </div>
+
+          {/* Toggle details button */}
+          <button
+            onClick={handleToggleDetails}
+            className="w-full py-2 px-4 text-sm font-medium text-accent-600 hover:text-accent-700 hover:bg-accent-50 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+            aria-expanded={isExpanded}
+            aria-controls={`section-${section.id}-details`}
+            aria-label={isExpanded ? 'Hide section details' : 'Show section details'}
+          >
+            <span>{isExpanded ? '▲ Hide Details' : '▼ Show Details'}</span>
+          </button>
 
           {/* Animated hover indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />

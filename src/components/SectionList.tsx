@@ -29,6 +29,9 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>(() => {
     return preferencesStorage.get('sortOrder', 'desc');
   });
+  const [viewMode, setViewMode] = useState<'quick' | 'detailed'>(() => {
+    return preferencesStorage.get('sectionViewMode', 'quick');
+  });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
   const [containerHeight, setContainerHeight] = useState<number>(600);
@@ -244,19 +247,25 @@ export const SectionList: React.FC<SectionListProps> = ({
   const handleSort = (newSortBy: 'name' | 'exposure' | 'level' | 'price') => {
     haptic.light();
     let newSortOrder: 'asc' | 'desc';
-    
+
     if (sortBy === newSortBy) {
       newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
     } else {
       newSortOrder = 'desc';
     }
-    
+
     setSortBy(newSortBy);
     setSortOrder(newSortOrder);
-    
+
     // Save sorting preferences to localStorage
     preferencesStorage.update('sortBy', newSortBy);
     preferencesStorage.update('sortOrder', newSortOrder);
+  };
+
+  const handleViewModeChange = (newViewMode: 'quick' | 'detailed') => {
+    haptic.medium();
+    setViewMode(newViewMode);
+    preferencesStorage.update('sectionViewMode', newViewMode);
   };
 
   const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {
@@ -349,10 +358,35 @@ export const SectionList: React.FC<SectionListProps> = ({
               </button>
             )}
           </div>
-          
+
+          {/* View Mode Toggle */}
+          <div className="view-mode-controls" role="toolbar" aria-label="View mode options">
+            <span className="sort-label" id="view-mode-label">View:</span>
+            <button
+              className={`sort-btn ${viewMode === 'quick' ? 'active' : ''}`}
+              onClick={() => handleViewModeChange('quick')}
+              onKeyDown={(e) => handleKeyDown(e, () => handleViewModeChange('quick'))}
+              aria-label="Quick view - show essential information only"
+              aria-pressed={viewMode === 'quick'}
+              title="Quick View - Essential info only"
+            >
+              <ListIcon size={16} /> Quick
+            </button>
+            <button
+              className={`sort-btn ${viewMode === 'detailed' ? 'active' : ''}`}
+              onClick={() => handleViewModeChange('detailed')}
+              onKeyDown={(e) => handleKeyDown(e, () => handleViewModeChange('detailed'))}
+              aria-label="Detailed view - show all information"
+              aria-pressed={viewMode === 'detailed'}
+              title="Detailed View - All info"
+            >
+              <StadiumIcon size={16} /> Detailed
+            </button>
+          </div>
+
           <div className="sort-controls" role="toolbar" aria-label="Section sorting options">
             <span className="sort-label" id="sort-label">Sort by:</span>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'exposure' ? 'active' : ''}`}
               onClick={() => handleSort('exposure')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('exposure'))}
@@ -361,7 +395,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Sun {sortBy === 'exposure' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'name' ? 'active' : ''}`}
               onClick={() => handleSort('name')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('name'))}
@@ -370,7 +404,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Name {sortBy === 'name' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'level' ? 'active' : ''}`}
               onClick={() => handleSort('level')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('level'))}
@@ -379,7 +413,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Level {sortBy === 'level' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'price' ? 'active' : ''}`}
               onClick={() => handleSort('price')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('price'))}
@@ -415,6 +449,7 @@ export const SectionList: React.FC<SectionListProps> = ({
               height={containerHeight}
               itemHeight={260}
               width="100%"
+              defaultExpanded={viewMode === 'detailed'}
             />
           ) : (
             // Use regular rendering for small lists
@@ -427,6 +462,7 @@ export const SectionList: React.FC<SectionListProps> = ({
                   inSun={sectionData.inSun}
                   index={index}
                   timeInSun={sectionData.timeInSun}
+                  defaultExpanded={viewMode === 'detailed'}
                 />
               ))}
             </div>
