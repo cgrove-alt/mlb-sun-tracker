@@ -36,10 +36,7 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
   const [containerHeight, setContainerHeight] = useState<number>(600);
   const [filters, setFilters] = useState<SectionFilterValues>({
-    sunPreference: 'any',
-    customMin: 0,
-    customMax: 100,
-    shadeLevel: [],
+    maxSunExposure: undefined,
     sectionType: [],
     priceRange: []
   });
@@ -156,49 +153,9 @@ export const SectionList: React.FC<SectionListProps> = ({
         if (!matchesSearch) return false;
       }
 
-      // Sun preference filter
-      if (filters.sunPreference && filters.sunPreference !== 'any') {
-        switch (filters.sunPreference) {
-          case 'avoid':
-            if (exposure > 20) return false;
-            break;
-          case 'prefer':
-            if (exposure < 60) return false;
-            break;
-          case 'custom':
-            const min = filters.customMin || 0;
-            const max = filters.customMax || 100;
-            if (exposure < min || exposure > max) return false;
-            break;
-        }
-      }
-
-      // Shade level filter
-      if (filters.shadeLevel.length > 0) {
-        const exposure = sectionData.sunExposure;
-        let matchesShade = false;
-        
-        for (const level of filters.shadeLevel) {
-          switch (level) {
-            case 'fully-shaded':
-              if (exposure === 0) matchesShade = true;
-              break;
-            case 'mostly-shaded':
-              if (exposure > 0 && exposure <= 25) matchesShade = true;
-              break;
-            case 'partial-shade':
-              if (exposure > 25 && exposure <= 75) matchesShade = true;
-              break;
-            case 'mostly-sunny':
-              if (exposure > 75 && exposure < 100) matchesShade = true;
-              break;
-            case 'full-sun':
-              if (exposure === 100) matchesShade = true;
-              break;
-          }
-        }
-        
-        if (!matchesShade) return false;
+      // Sun exposure filter
+      if (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) {
+        if (exposure > filters.maxSunExposure) return false;
       }
       
       // Section type filter
@@ -326,7 +283,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             <span className="summary-item shady">
               <CloudIcon size={16} /> {shadyCount} shaded
             </span>
-            {(debouncedSearchTerm || (filters.sunPreference && filters.sunPreference !== 'any') || filters.shadeLevel.length > 0 || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
+            {(debouncedSearchTerm || (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
               <span className="summary-item search-results">
                 <SearchIcon size={16} /> {filteredSections.length} of {sections.length} shown
               </span>

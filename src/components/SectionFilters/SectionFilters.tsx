@@ -3,10 +3,7 @@ import styles from './SectionFilters.module.css';
 import { SunIcon, CloudIcon, PartlyCloudyIcon, FireIcon, MoneyIcon } from '../Icons';
 
 export interface SectionFilterValues {
-  sunPreference?: 'any' | 'avoid' | 'prefer' | 'custom';
-  customMin?: number;
-  customMax?: number;
-  shadeLevel: string[];
+  maxSunExposure?: number;
   sectionType: string[];
   priceRange: string[];
 }
@@ -24,7 +21,7 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
   isExpanded = true,
   onToggleExpand
 }) => {
-  const toggleFilter = (category: 'shadeLevel' | 'sectionType' | 'priceRange', value: string) => {
+  const toggleFilter = (category: 'sectionType' | 'priceRange', value: string) => {
     const currentValues = filters[category];
     const newValues = currentValues.includes(value)
       ? currentValues.filter(v => v !== value)
@@ -36,28 +33,25 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
     });
   };
 
-  const handleSunPreferenceChange = (preference: 'any' | 'avoid' | 'prefer' | 'custom') => {
+  const handleSliderChange = (value: number) => {
     onChange({
       ...filters,
-      sunPreference: preference
+      maxSunExposure: value === 100 ? undefined : value
     });
   };
 
-  const handleCustomRangeChange = (min: number, max: number) => {
+  const handlePresetClick = (value: number) => {
     onChange({
       ...filters,
-      customMin: min,
-      customMax: max
+      maxSunExposure: value === 100 ? undefined : value
     });
   };
 
-  const clearCategory = (category: 'shadeLevel' | 'sectionType' | 'priceRange' | 'sunPreference') => {
-    if (category === 'sunPreference') {
+  const clearCategory = (category: 'sunExposure' | 'sectionType' | 'priceRange') => {
+    if (category === 'sunExposure') {
       onChange({
         ...filters,
-        sunPreference: 'any',
-        customMin: 0,
-        customMax: 100
+        maxSunExposure: undefined
       });
     } else {
       onChange({
@@ -69,33 +63,27 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
 
   const clearAllFilters = () => {
     onChange({
-      sunPreference: 'any',
-      customMin: 0,
-      customMax: 100,
-      shadeLevel: [],
+      maxSunExposure: undefined,
       sectionType: [],
       priceRange: []
     });
   };
 
   const hasActiveFilters =
-    (filters.sunPreference && filters.sunPreference !== 'any') ||
-    filters.shadeLevel.length > 0 ||
+    (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) ||
     filters.sectionType.length > 0 ||
     filters.priceRange.length > 0;
 
   const activeFilterCount =
-    (filters.sunPreference && filters.sunPreference !== 'any' ? 1 : 0) +
-    filters.shadeLevel.length +
+    (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100 ? 1 : 0) +
     filters.sectionType.length +
     filters.priceRange.length;
 
-  const shadeLevels = [
-    { value: 'fully-shaded', label: 'Fully Shaded', icon: <CloudIcon size={16} />, description: '100% shade' },
-    { value: 'mostly-shaded', label: 'Mostly Shaded', icon: <CloudIcon size={16} />, description: '75-99% shade' },
-    { value: 'partial-shade', label: 'Partial Shade', icon: <PartlyCloudyIcon size={16} />, description: '25-74% shade' },
-    { value: 'mostly-sunny', label: 'Mostly Sunny', icon: <SunIcon size={16} color="#f59e0b" />, description: '1-24% shade' },
-    { value: 'full-sun', label: 'Full Sun', icon: <FireIcon size={16} color="#dc2626" />, description: '0% shade' }
+  const presets = [
+    { label: 'All Sections', value: 100, icon: '🌤️' },
+    { label: 'Mostly Shaded', value: 25, icon: '☁️' },
+    { label: 'Balanced', value: 50, icon: '⛅' },
+    { label: 'Some Sun', value: 75, icon: '☀️' }
   ];
 
   const sectionTypes = [
@@ -149,123 +137,68 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
 
       {isExpanded && (
         <div className={styles.filtersContent}>
-          {/* Sun Preference Filters */}
+          {/* Sun Exposure Slider */}
           <div className={styles.filterGroup}>
             <div className={styles.groupHeader}>
-              <h5 className={styles.groupTitle}>Sun Preference</h5>
-              {filters.sunPreference && filters.sunPreference !== 'any' && (
+              <h5 className={styles.groupTitle}>Sun Exposure</h5>
+              {filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100 && (
                 <button
                   className={styles.clearGroupBtn}
-                  onClick={() => clearCategory('sunPreference')}
-                  aria-label="Clear sun preference filter"
+                  onClick={() => clearCategory('sunExposure')}
+                  aria-label="Clear sun exposure filter"
                 >
                   Clear
                 </button>
               )}
             </div>
-            <div className={styles.filterOptions}>
-              <label className={styles.radioOption}>
-                <input
-                  type="radio"
-                  name="sunPreference"
-                  value="any"
-                  checked={!filters.sunPreference || filters.sunPreference === 'any'}
-                  onChange={() => handleSunPreferenceChange('any')}
-                />
-                <span>Any amount of sun</span>
-              </label>
-              <label className={styles.radioOption}>
-                <input
-                  type="radio"
-                  name="sunPreference"
-                  value="avoid"
-                  checked={filters.sunPreference === 'avoid'}
-                  onChange={() => handleSunPreferenceChange('avoid')}
-                />
-                <span>Avoid sun (≤20% of game)</span>
-              </label>
-              <label className={styles.radioOption}>
-                <input
-                  type="radio"
-                  name="sunPreference"
-                  value="prefer"
-                  checked={filters.sunPreference === 'prefer'}
-                  onChange={() => handleSunPreferenceChange('prefer')}
-                />
-                <span>Prefer sun (≥60% of game)</span>
-              </label>
-              <label className={styles.radioOption}>
-                <input
-                  type="radio"
-                  name="sunPreference"
-                  value="custom"
-                  checked={filters.sunPreference === 'custom'}
-                  onChange={() => handleSunPreferenceChange('custom')}
-                />
-                <span>Custom range</span>
-              </label>
-              {filters.sunPreference === 'custom' && (
-                <div className={styles.customRange}>
-                  <div className={styles.rangeInput}>
-                    <label htmlFor="customMin">
-                      Min: <strong>{filters.customMin || 0}%</strong>
-                    </label>
-                    <input
-                      id="customMin"
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={filters.customMin || 0}
-                      onChange={(e) => handleCustomRangeChange(Number(e.target.value), filters.customMax || 100)}
-                    />
-                  </div>
-                  <div className={styles.rangeInput}>
-                    <label htmlFor="customMax">
-                      Max: <strong>{filters.customMax || 100}%</strong>
-                    </label>
-                    <input
-                      id="customMax"
-                      type="range"
-                      min="0"
-                      max="100"
-                      value={filters.customMax || 100}
-                      onChange={(e) => handleCustomRangeChange(filters.customMin || 0, Number(e.target.value))}
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
 
-          {/* Shade Level Filters */}
-          <div className={styles.filterGroup}>
-            <div className={styles.groupHeader}>
-              <h5 className={styles.groupTitle}>Shade Level</h5>
-              {filters.shadeLevel.length > 0 && (
+            {/* Quick Preset Buttons */}
+            <div className={styles.presetButtons}>
+              {presets.map(preset => (
                 <button
-                  className={styles.clearGroupBtn}
-                  onClick={() => clearCategory('shadeLevel')}
-                  aria-label="Clear shade level filters"
-                >
-                  Clear
-                </button>
-              )}
-            </div>
-            <div className={styles.filterChips}>
-              {shadeLevels.map(level => (
-                <button
-                  key={level.value}
-                  className={`${styles.filterChip} ${
-                    filters.shadeLevel.includes(level.value) ? styles.active : ''
+                  key={preset.value}
+                  className={`${styles.presetButton} ${
+                    (filters.maxSunExposure === preset.value ||
+                     (filters.maxSunExposure === undefined && preset.value === 100))
+                      ? styles.active : ''
                   }`}
-                  onClick={() => toggleFilter('shadeLevel', level.value)}
-                  aria-pressed={filters.shadeLevel.includes(level.value)}
-                  title={level.description}
+                  onClick={() => handlePresetClick(preset.value)}
+                  title={`Maximum ${preset.value}% sun exposure`}
                 >
-                  {level.icon}
-                  <span>{level.label}</span>
+                  <span className={styles.presetIcon}>{preset.icon}</span>
+                  <span className={styles.presetLabel}>{preset.label}</span>
                 </button>
               ))}
+            </div>
+
+            {/* Interactive Slider */}
+            <div className={styles.sliderContainer}>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={filters.maxSunExposure || 100}
+                onChange={(e) => handleSliderChange(Number(e.target.value))}
+                className={styles.sunSlider}
+                style={{
+                  '--slider-value': `${filters.maxSunExposure || 100}%`
+                } as React.CSSProperties}
+                aria-label="Maximum sun exposure percentage"
+              />
+              <div className={styles.sliderLabels}>
+                <span className={styles.sliderLabelStart}>0% sun</span>
+                <span className={styles.sliderValue}>
+                  {filters.maxSunExposure === undefined || filters.maxSunExposure === 100
+                    ? 'No limit'
+                    : `≤ ${filters.maxSunExposure}%`}
+                </span>
+                <span className={styles.sliderLabelEnd}>100% sun</span>
+              </div>
+              <p className={styles.sliderHelp}>
+                {filters.maxSunExposure === undefined || filters.maxSunExposure === 100
+                  ? 'Showing all sections'
+                  : `Up to ${Math.round((filters.maxSunExposure / 100) * 180)} minutes of sun in a 3-hour game`}
+              </p>
             </div>
           </div>
 
@@ -336,35 +269,18 @@ export const SectionFilters: React.FC<SectionFiltersProps> = ({
       {/* Active Filter Badges */}
       {hasActiveFilters && isExpanded && (
         <div className={styles.activeBadges}>
-          {filters.sunPreference && filters.sunPreference !== 'any' && (
+          {filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100 && (
             <span className={styles.badge}>
-              {filters.sunPreference === 'avoid' && 'Avoid sun (≤20%)'}
-              {filters.sunPreference === 'prefer' && 'Prefer sun (≥60%)'}
-              {filters.sunPreference === 'custom' && `Sun ${filters.customMin || 0}%-${filters.customMax || 100}%`}
+              Max {filters.maxSunExposure}% sun
               <button
                 className={styles.removeBadge}
-                onClick={() => clearCategory('sunPreference')}
-                aria-label="Remove sun preference filter"
+                onClick={() => clearCategory('sunExposure')}
+                aria-label="Remove sun exposure filter"
               >
                 ×
               </button>
             </span>
           )}
-          {filters.shadeLevel.map(value => {
-            const level = shadeLevels.find(l => l.value === value);
-            return level ? (
-              <span key={value} className={styles.badge}>
-                {level.label}
-                <button
-                  className={styles.removeBadge}
-                  onClick={() => toggleFilter('shadeLevel', value)}
-                  aria-label={`Remove ${level.label} filter`}
-                >
-                  ×
-                </button>
-              </span>
-            ) : null;
-          })}
           {filters.sectionType.map(value => {
             const type = sectionTypes.find(t => t.value === value);
             return type ? (
