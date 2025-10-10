@@ -664,3 +664,8 @@
   font-weight: 600;
 }
 
+/* Ensure dropdown menus in portals appear above mobile keyboards */
+.react-select__menu-portal {
+  z-index: 9999 !important;
+}
+
