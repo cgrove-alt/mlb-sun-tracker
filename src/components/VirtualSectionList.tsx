@@ -25,7 +25,7 @@ const Row = memo(({ index, style, data }: { index: number; style: React.CSSPrope
     ...style,
     paddingRight: '8px',
     paddingLeft: '8px',
-    paddingBottom: '8px',
+    paddingBottom: '24px', // Increased from 8px to match grid gap
   };
 
   return (
@@ -62,7 +62,7 @@ VirtualSectionListInner.displayName = 'VirtualSectionListInner';
 export const VirtualSectionList: React.FC<VirtualSectionListProps> = memo(({
   sections,
   height,
-  itemHeight = 260, // Adjusted for better spacing
+  itemHeight = 284, // 260px card + 24px bottom padding
   width = '100%',
   defaultExpanded = false
 }) => {
@@ -85,9 +85,9 @@ export const VirtualSectionList: React.FC<VirtualSectionListProps> = memo(({
   const getItemSize = useCallback(() => {
     // Adjust item height based on screen width for responsive design
     if (window.innerWidth < 768) {
-      return defaultExpanded ? 280 : 180; // Collapsed cards are shorter on mobile
+      return defaultExpanded ? 304 : 204; // Card height + 24px padding (280+24, 180+24)
     }
-    return defaultExpanded ? itemHeight : 180; // Collapsed cards are ~180px
+    return defaultExpanded ? itemHeight : 204; // Collapsed: 180px card + 24px padding
   }, [itemHeight, defaultExpanded]);
 
   return (
