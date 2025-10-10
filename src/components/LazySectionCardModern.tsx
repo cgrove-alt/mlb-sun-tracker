@@ -13,6 +13,7 @@ interface LazySectionCardProps {
   index: number;
   timeInSun?: number;
   defaultExpanded?: boolean;
+  onToggleExpanded?: (index: number, isExpanded: boolean) => void;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -22,6 +23,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   index,
   timeInSun,
   defaultExpanded = false,
+  onToggleExpanded,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -76,7 +78,14 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   const handleToggleDetails = (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click event
     haptic.light();
-    setIsExpanded(!isExpanded);
+    const newExpandedState = !isExpanded;
+    setIsExpanded(newExpandedState);
+
+    // Notify parent component if callback provided (for virtual list height recalc)
+    if (onToggleExpanded) {
+      onToggleExpanded(index, newExpandedState);
+    }
+
     announceToScreenReader(
       isExpanded ? 'Details collapsed' : 'Details expanded',
       'polite'
@@ -228,6 +237,7 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.section.id === nextProps.section.id &&
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
-    prevProps.index === nextProps.index
+    prevProps.index === nextProps.index &&
+    prevProps.defaultExpanded === nextProps.defaultExpanded
   );
 });

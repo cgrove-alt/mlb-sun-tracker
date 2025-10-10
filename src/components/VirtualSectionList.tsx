@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, forwardRef, memo, useCallback } from 'react';
-import { FixedSizeList as List, areEqual } from 'react-window';
+import React, { useRef, useEffect, forwardRef, memo, useCallback, useState } from 'react';
+import { VariableSizeList as List, areEqual } from 'react-window';
 import { SeatingSectionSun } from '../utils/sunCalculations';
 import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
 
@@ -14,6 +14,8 @@ interface VirtualSectionListProps {
 interface ItemData {
   sections: SeatingSectionSun[];
   defaultExpanded?: boolean;
+  expandedCards: Set<number>;
+  onToggleCard: (index: number, isExpanded: boolean) => void;
 }
 
 // Memoized row renderer component for better performance
@@ -37,6 +39,7 @@ const Row = memo(({ index, style, data }: { index: number; style: React.CSSPrope
         index={index}
         timeInSun={section.timeInSun}
         defaultExpanded={data.defaultExpanded}
+        onToggleExpanded={data.onToggleCard}
       />
     </div>
   );
@@ -68,6 +71,14 @@ export const VirtualSectionList: React.FC<VirtualSectionListProps> = memo(({
 }) => {
   const listRef = useRef<List>(null);
 
+  // Track which cards are individually expanded (when user clicks toggle)
+  const [expandedCards, setExpandedCards] = useState<Set<number>>(new Set());
+
+  // Reset expanded state when defaultExpanded changes (view mode switch)
+  useEffect(() => {
+    setExpandedCards(new Set());
+  }, [defaultExpanded]);
+
   // Optimized scroll reset
   const scrollToTop = useCallback(() => {
     if (listRef.current) {
@@ -81,23 +92,44 @@ export const VirtualSectionList: React.FC<VirtualSectionListProps> = memo(({
     scrollToTop();
   }, [sections.length > 0 ? Math.floor(sections.length / 10) : 0, scrollToTop]);
 
-  // Calculate dynamic item size based on viewport and expanded state
-  const getItemSize = useCallback(() => {
-    // Adjust item height based on screen width for responsive design
-    if (window.innerWidth < 768) {
-      return defaultExpanded ? 304 : 204; // Card height + 24px padding (280+24, 180+24)
+  // Handle individual card toggle
+  const handleToggleCard = useCallback((index: number, isExpanded: boolean) => {
+    setExpandedCards(prev => {
+      const next = new Set(prev);
+      if (isExpanded) {
+        next.add(index);
+      } else {
+        next.delete(index);
+      }
+      return next;
+    });
+
+    // Force list to recalculate heights from this index onward
+    if (listRef.current) {
+      listRef.current.resetAfterIndex(index);
     }
-    return defaultExpanded ? itemHeight : 204; // Collapsed: 180px card + 24px padding
-  }, [itemHeight, defaultExpanded]);
+  }, []);
+
+  // Calculate item size based on actual expanded state
+  const getItemSize = useCallback((index: number) => {
+    // Check if card is individually expanded (overrides default)
+    const isCardExpanded = expandedCards.has(index) ? !defaultExpanded : defaultExpanded;
+
+    // Adjust item height based on screen width and expanded state
+    if (window.innerWidth < 768) {
+      return isCardExpanded ? 304 : 204; // Card height + 24px padding (280+24, 180+24)
+    }
+    return isCardExpanded ? itemHeight : 204; // Collapsed: 180px card + 24px padding
+  }, [itemHeight, defaultExpanded, expandedCards]);
 
   return (
     <List
       ref={listRef}
       height={height}
       itemCount={sections.length}
-      itemSize={getItemSize()}
+      itemSize={getItemSize}
       width={width}
-      itemData={{ sections, defaultExpanded }}
+      itemData={{ sections, defaultExpanded, expandedCards, onToggleCard: handleToggleCard }}
       outerElementType={VirtualSectionListInner}
       className="section-grid-virtual"
       overscanCount={3} // Render 3 items outside of the visible area for smoother scrolling
