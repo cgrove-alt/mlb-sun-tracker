@@ -4,7 +4,6 @@ import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
-import { VirtualSectionList } from './VirtualSectionList';
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
@@ -29,12 +28,8 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>(() => {
     return preferencesStorage.get('sortOrder', 'desc');
   });
-  const [viewMode, setViewMode] = useState<'quick' | 'detailed'>(() => {
-    return preferencesStorage.get('sectionViewMode', 'quick');
-  });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
-  const [containerHeight, setContainerHeight] = useState<number>(600);
   const [filters, setFilters] = useState<SectionFilterValues>({
     maxSunExposure: undefined,
     sectionType: [],
@@ -43,7 +38,6 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [filtersExpanded, setFiltersExpanded] = useState(true);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   // Debounce search term
   useEffect(() => {
@@ -53,25 +47,6 @@ export const SectionList: React.FC<SectionListProps> = ({
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
-
-  // Calculate container height based on viewport
-  const calculateContainerHeight = useCallback(() => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const topOffset = rect.top;
-      // Use remaining viewport height minus some padding
-      const calculatedHeight = Math.max(400, viewportHeight - topOffset - 100);
-      setContainerHeight(calculatedHeight);
-    }
-  }, []);
-
-  // Update container height on mount and resize
-  useEffect(() => {
-    calculateContainerHeight();
-    window.addEventListener('resize', calculateContainerHeight);
-    return () => window.removeEventListener('resize', calculateContainerHeight);
-  }, [calculateContainerHeight]);
 
   // Improve scroll performance with passive event listeners
   useEffect(() => {
@@ -240,12 +215,6 @@ export const SectionList: React.FC<SectionListProps> = ({
     preferencesStorage.update('sortOrder', newSortOrder);
   };
 
-  const handleViewModeChange = (newViewMode: 'quick' | 'detailed') => {
-    haptic.medium();
-    setViewMode(newViewMode);
-    preferencesStorage.update('sectionViewMode', newViewMode);
-  };
-
   const handleKeyDown = (event: React.KeyboardEvent, action: () => void) => {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
@@ -337,31 +306,6 @@ export const SectionList: React.FC<SectionListProps> = ({
             )}
           </div>
 
-          {/* View Mode Toggle */}
-          <div className="view-mode-controls" role="toolbar" aria-label="View mode options">
-            <span className="sort-label" id="view-mode-label">View:</span>
-            <button
-              className={`sort-btn ${viewMode === 'quick' ? 'active' : ''}`}
-              onClick={() => handleViewModeChange('quick')}
-              onKeyDown={(e) => handleKeyDown(e, () => handleViewModeChange('quick'))}
-              aria-label="Quick view - show essential information only"
-              aria-pressed={viewMode === 'quick'}
-              title="Quick View - Essential info only"
-            >
-              <ListIcon size={16} /> Quick
-            </button>
-            <button
-              className={`sort-btn ${viewMode === 'detailed' ? 'active' : ''}`}
-              onClick={() => handleViewModeChange('detailed')}
-              onKeyDown={(e) => handleKeyDown(e, () => handleViewModeChange('detailed'))}
-              aria-label="Detailed view - show all information"
-              aria-pressed={viewMode === 'detailed'}
-              title="Detailed View - All info"
-            >
-              <StadiumIcon size={16} /> Detailed
-            </button>
-          </div>
-
           <div className="sort-controls" role="toolbar" aria-label="Section sorting options">
             <span className="sort-label" id="sort-label">Sort by:</span>
             <button
@@ -419,32 +363,19 @@ export const SectionList: React.FC<SectionListProps> = ({
           )}
         </div>
       ) : (
-        <div className="section-list-container" role="list" aria-labelledby="sections-title" ref={containerRef}>
-          {sortedSections.length > 15 ? (
-            // Use virtual scrolling for large lists
-            <VirtualSectionList
-              sections={sortedSections}
-              height={containerHeight}
-              itemHeight={260}
-              width="100%"
-              defaultExpanded={viewMode === 'detailed'}
-            />
-          ) : (
-            // Use regular rendering for small lists
-            <div className="section-grid">
-              {sortedSections.map((sectionData, index) => (
-                <LazySectionCard
-                  key={`${sectionData.section.id}-${index}`}
-                  section={sectionData.section}
-                  sunExposure={sectionData.sunExposure}
-                  inSun={sectionData.inSun}
-                  index={index}
-                  timeInSun={sectionData.timeInSun}
-                  defaultExpanded={viewMode === 'detailed'}
-                />
-              ))}
-            </div>
-          )}
+        <div className="section-list-container" role="list" aria-labelledby="sections-title">
+          <div className="section-grid">
+            {sortedSections.map((sectionData, index) => (
+              <LazySectionCard
+                key={`${sectionData.section.id}-${index}`}
+                section={sectionData.section}
+                sunExposure={sectionData.sunExposure}
+                inSun={sectionData.inSun}
+                index={index}
+                timeInSun={sectionData.timeInSun}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>

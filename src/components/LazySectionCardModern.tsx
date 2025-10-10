@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon, UmbrellaIcon } from './Icons';
-import { Tooltip } from './Tooltip';
+import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
 interface LazySectionCardProps {
@@ -12,8 +11,6 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
-  defaultExpanded?: boolean;
-  onToggleExpanded?: (index: number, isExpanded: boolean) => void;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -22,15 +19,12 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
-  defaultExpanded = false,
-  onToggleExpanded,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
     rootMargin: '200px',
   });
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(defaultExpanded);
   const haptic = useHapticFeedback();
   const roundedExposure = Math.round(sunExposure);
 
@@ -40,11 +34,6 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     }
   }, [isIntersecting, isLoaded]);
 
-  // Update expanded state when defaultExpanded changes
-  useEffect(() => {
-    setIsExpanded(defaultExpanded);
-  }, [defaultExpanded]);
-
   const getSunExposureIcon = (exposure: number) => {
     if (exposure === 0) return <CloudIcon size={24} />;
     if (exposure < 25) return <PartlyCloudyIcon size={24} />;
@@ -53,13 +42,6 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     return <FireIcon size={24} color="#dc2626" />;
   };
 
-  const getSunExposureDescription = (exposure: number, minutes?: number): string => {
-    if (exposure === 0) return 'No sun during game';
-    if (exposure < 25) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Minimal sun';
-    if (exposure < 50) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Some sun';
-    if (exposure < 75) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Mostly sun';
-    return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Full sun';
-  };
 
   const getSunExposureColorClass = (exposure: number): string => {
     if (exposure === 0) return 'from-gray-100 to-gray-200 border-gray-300';
@@ -75,23 +57,6 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     announceToScreenReader(announcement, 'polite');
   };
 
-  const handleToggleDetails = (e: React.MouseEvent) => {
-    e.stopPropagation(); // Prevent card click event
-    haptic.light();
-    const newExpandedState = !isExpanded;
-    setIsExpanded(newExpandedState);
-
-    // Notify parent component if callback provided (for virtual list height recalc)
-    if (onToggleExpanded) {
-      onToggleExpanded(index, newExpandedState);
-    }
-
-    announceToScreenReader(
-      isExpanded ? 'Details collapsed' : 'Details expanded',
-      'polite'
-    );
-  };
-
   return (
     <div
       ref={ref}
@@ -100,8 +65,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
         ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}
         ${getSunExposureColorClass(roundedExposure)}
         bg-gradient-to-br hover:shadow-card-hover hover:-translate-y-1 cursor-pointer
-        backdrop-blur-sm
-        ${isExpanded ? 'border-[3px] shadow-xl ring-2 ring-primary/20' : 'border-[3px] shadow-lg'}
+        backdrop-blur-sm border-[3px] shadow-lg
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
@@ -114,21 +78,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       <div className="absolute inset-0 bg-white/30 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {isLoaded ? (
-        <div className="relative p-5 space-y-4">
+        <div className="relative p-5 space-y-3">
           {/* Header with section name and sun indicator */}
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent-600 transition-colors">
                 {section.name}
               </h3>
-              {/* Angle range - only shown when expanded */}
-              {isExpanded && (
-                <div className="flex items-center gap-2 mt-1">
-                  <span className="text-xs font-medium text-gray-500">
-                    {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
-                  </span>
-                </div>
-              )}
             </div>
 
             {/* Sun exposure indicator with animation */}
@@ -138,44 +94,10 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               </div>
               <span className="text-2xl font-bold text-gray-900">
                 {roundedExposure}%
-                <span className="sr-only"> of game in sun - {getSunExposureDescription(sunExposure, timeInSun)}</span>
+                <span className="sr-only"> of game in sun</span>
               </span>
             </div>
           </div>
-
-          {/* Collapsible details section */}
-          {isExpanded && (
-            <div className="space-y-4">
-              {/* Sun exposure description */}
-              <p className="text-sm text-gray-600 font-medium">
-                {getSunExposureDescription(sunExposure, timeInSun)}
-              </p>
-
-              {/* Meta information with badges */}
-              <div className="flex flex-wrap gap-2">
-                {/* Covered indicator */}
-                {section.covered && (
-                  <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
-                      <UmbrellaIcon size={14} /> Covered
-                    </span>
-                  </Tooltip>
-                )}
-
-                {/* Price tier */}
-                {section.price && (
-                  <span className={`
-                    inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                    ${section.price === 'premium' || section.price === 'luxury' ? 'bg-yellow-100 text-yellow-800' :
-                      section.price === 'moderate' ? 'bg-sky-100 text-sky-700' :
-                      'bg-gray-100 text-gray-700'}
-                  `}>
-                    {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
-                  </span>
-                )}
-              </div>
-            </div>
-          )}
 
           {/* Level badge - always shown */}
           <div className="flex flex-wrap gap-2">
@@ -197,34 +119,20 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             </span>
           </div>
 
-          {/* Toggle details button */}
-          <button
-            onClick={handleToggleDetails}
-            className="w-full py-2 px-4 text-sm font-medium text-accent-600 hover:text-accent-700 hover:bg-accent-50 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-            aria-expanded={isExpanded}
-            aria-controls={`section-${section.id}-details`}
-            aria-label={isExpanded ? 'Hide section details' : 'Show section details'}
-          >
-            <span>{isExpanded ? '▲ Hide Details' : '▼ Show Details'}</span>
-          </button>
-
           {/* Animated hover indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </div>
       ) : (
-        <div className="p-5 space-y-4">
+        <div className="p-5 space-y-3">
           {/* Skeleton with shimmer effect */}
           <div className="flex items-start justify-between gap-3">
-            <div className="flex-1 space-y-2">
+            <div className="flex-1">
               <div className="h-6 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '60%' }} />
-              <div className="h-4 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '40%' }} />
             </div>
             <div className="w-12 h-12 bg-gray-200 rounded-xl skeleton-shimmer" />
           </div>
-          <div className="h-4 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '80%' }} />
           <div className="flex gap-2">
             <div className="h-6 bg-gray-200 rounded-full skeleton-shimmer" style={{ width: '80px' }} />
-            <div className="h-6 bg-gray-200 rounded-full skeleton-shimmer" style={{ width: '60px' }} />
           </div>
         </div>
       )}
@@ -237,7 +145,6 @@ export const LazySectionCardModern = React.memo(LazySectionCardModernComponent, 
     prevProps.section.id === nextProps.section.id &&
     prevProps.sunExposure === nextProps.sunExposure &&
     prevProps.inSun === nextProps.inSun &&
-    prevProps.index === nextProps.index &&
-    prevProps.defaultExpanded === nextProps.defaultExpanded
+    prevProps.index === nextProps.index
   );
 });
