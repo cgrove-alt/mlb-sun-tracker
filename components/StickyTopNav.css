@@ -67,7 +67,8 @@
 
 .nav-search {
   position: relative;
-  flex-shrink: 0;
+  flex-shrink: 1; /* Allow search to shrink on mobile to prevent overflow */
+  min-width: 0; /* Allow flex item to shrink below content size */
 }
 
 .nav-search form {
@@ -198,6 +199,7 @@
   cursor: pointer;
   transition: background 0.2s ease;
   border-radius: 4px;
+  flex-shrink: 0; /* Never allow hamburger to shrink - must always be visible */
 }
 
 .hamburger-menu:hover {
@@ -751,12 +753,17 @@
   }
 
   .search-input {
-    width: 120px;
+    width: 80px;
     font-size: 13px;
+    padding: 0 28px 0 10px;
   }
 
   .search-input:focus {
-    width: 160px;
+    width: 120px;
+  }
+
+  .search-button {
+    right: 6px;
   }
 
   .popular-stadiums-grid {
@@ -789,17 +796,17 @@
 
   /* Keep search visible on small mobile - just smaller */
   .search-input {
-    width: 100px;
+    width: 60px;
     font-size: 12px;
-    padding: 0 32px 0 12px;
+    padding: 0 26px 0 8px;
   }
 
   .search-input:focus {
-    width: 140px;
+    width: 100px;
   }
 
   .search-button {
-    right: 8px;
+    right: 4px;
   }
 
   .hamburger-menu {
@@ -826,18 +833,14 @@
   }
 }
 
-/* Extra small mobile devices - hide logo text to save space */
+/* Extra small mobile devices - hide search entirely, show in menu only */
 @media (max-width: 390px) {
   .logo-text {
     display: none;
   }
 
-  .search-input {
-    width: 85px;
-  }
-
-  .search-input:focus {
-    width: 120px;
+  .nav-search {
+    display: none; /* Hide search on very small screens - available in hamburger menu */
   }
 }
 
