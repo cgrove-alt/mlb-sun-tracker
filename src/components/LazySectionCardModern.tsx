@@ -60,11 +60,11 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   };
 
   const getSunExposureColorClass = (exposure: number): string => {
-    if (exposure === 0) return 'from-gray-50 to-gray-100 border-gray-200';
-    if (exposure < 25) return 'from-blue-50 to-sky-50 border-blue-200';
-    if (exposure < 50) return 'from-amber-50 to-yellow-50 border-amber-200';
-    if (exposure < 75) return 'from-orange-50 to-amber-50 border-orange-200';
-    return 'from-red-50 to-orange-50 border-red-200';
+    if (exposure === 0) return 'from-gray-100 to-gray-200 border-gray-300';
+    if (exposure < 25) return 'from-blue-100 to-sky-100 border-blue-300';
+    if (exposure < 50) return 'from-amber-100 to-yellow-100 border-amber-300';
+    if (exposure < 75) return 'from-orange-100 to-amber-100 border-orange-300';
+    return 'from-red-100 to-orange-100 border-red-300';
   };
 
   const handleClick = () => {
@@ -84,14 +84,15 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   };
 
   return (
-    <div 
+    <div
       ref={ref}
       className={`
-        group relative overflow-hidden rounded-2xl border-2 transition-all duration-300
+        group relative overflow-hidden rounded-2xl transition-all duration-300
         ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}
         ${getSunExposureColorClass(roundedExposure)}
         bg-gradient-to-br hover:shadow-card-hover hover:-translate-y-1 cursor-pointer
         backdrop-blur-sm
+        ${isExpanded ? 'border-[3px] shadow-xl ring-2 ring-primary/20' : 'border-[3px] shadow-lg'}
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
