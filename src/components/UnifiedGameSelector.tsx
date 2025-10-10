@@ -460,6 +460,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           aria-label="Select league"
           isSearchable={false}
           styles={customSelectStyles}
+          menuPosition="fixed"
+          menuPlacement="auto"
+          menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
         />
       </div>
 
@@ -481,6 +484,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
             aria-label="Select MiLB level"
             isSearchable={false}
             styles={customSelectStyles}
+            menuPosition="fixed"
+            menuPlacement="auto"
+            menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
           />
         </div>
       )}
@@ -502,6 +508,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
           blurInputOnSelect={true}
           isDisabled={!selectedLeague}
           styles={customSelectStyles}
+          menuPosition="fixed"
+          menuPlacement="auto"
+          menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
         />
       </div>
 
@@ -556,6 +565,9 @@ export const UnifiedGameSelector: React.FC<UnifiedGameSelectorProps> = ({
                         isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                         aria-label={t('gameSelector.selectGame')}
                         styles={customSelectStyles}
+                        menuPosition="fixed"
+                        menuPlacement="auto"
+                        menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
                       />
                     </>
                   )}

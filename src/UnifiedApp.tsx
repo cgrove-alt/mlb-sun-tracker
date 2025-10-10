@@ -11,7 +11,6 @@ import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
 import { ShareButton } from './components/ShareButton';
-import { Navigation } from './components/Navigation';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
@@ -53,7 +52,6 @@ function UnifiedAppContent() {
   const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationInProgress, setCalculationInProgress] = useState(false);
-  const [activeTab, setActiveTab] = useState<'tracker' | 'itinerary'>('tracker');
   const [changingVenue, setChangingVenue] = useState(false);
   const { showError } = useError();
 
@@ -329,31 +327,8 @@ function UnifiedAppContent() {
         shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
       />
       <OfflineIndicator />
-      <header className="App-header">
-        <div className="header-content">
-          <div className="header-left">
-            <h1>{t('app.title')}</h1>
-            <p>{t('app.subtitle')}</p>
-            {selectedVenue && gameDateTime && (
-              <div className="quick-summary">
-                <span className="stadium-name">{selectedVenue.name}</span>
-                <span className="game-time">
-                  {formatDateTimeWithTimezone(gameDateTime, selectedVenue.timezone)}
-                </span>
-              </div>
-            )}
-          </div>
-          <div className="header-right">
-            <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-            <ShareButton
-              selectedStadium={legacyStadium}
-              gameDateTime={gameDateTime}
-              selectedGame={selectedGame}
-            />
-          </div>
-        </div>
-      </header>
-      
+      {/* Duplicate header removed - StickyTopNav in layout.tsx provides global navigation */}
+
       <main className="App-main">
         <div className="sun-tracker-container">
           {changingVenue && (
@@ -442,9 +417,9 @@ function UnifiedAppContent() {
               
               <div className="weather-info-section">
                 {weatherForecast && (
-                  <WeatherDisplay 
+                  <WeatherDisplay
                     key={`weather-${gameDateTime?.toISOString() || 'no-game'}`}
-                    weather={weatherForecast} 
+                    weather={weatherForecast}
                     gameTime={gameDateTime}
                     loading={loadingWeather}
                     stadium={legacyStadium!}
@@ -465,7 +440,7 @@ function UnifiedAppContent() {
                       <p>
                         {sunPosition.altitudeDegrees > 0 ? (
                           <>
-                            <SunIcon size={20} /> Sun is {getSunDescription(sunPosition.altitudeDegrees)} 
+                            <SunIcon size={20} /> Sun is {getSunDescription(sunPosition.altitudeDegrees)}
                             at {sunPosition.altitudeDegrees.toFixed(1)}° elevation
                           </>
                         ) : (
@@ -484,21 +459,31 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {sunPosition && sunPosition.altitudeDegrees > 0 && (
+              {/* Share Button - allows users to share their sun analysis */}
+              {selectedVenue && gameDateTime && (
+                <ShareButton
+                  selectedStadium={legacyStadium!}
+                  selectedGame={selectedGame}
+                  gameDateTime={gameDateTime}
+                />
+              )}
+
+              {selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
                   <EnhancedSunFilter
                     onFilterChange={handleFilterChange}
                   />
-                  
+
                   <SunExposureExplanation />
                 </>
               )}
 
               {filteredSections.length > 0 && (
-                <SectionList 
+                <SectionList
                   sections={filteredSections}
                   loading={loadingSections}
                   calculationProgress={null}
+                  showFilters={true}
                 />
               )}
 
