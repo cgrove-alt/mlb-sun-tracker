@@ -313,6 +313,7 @@ export const GameSelector: React.FC<GameSelectorProps> = ({
                       isDisabled={games.length === 0 || gamesLoading.isRefreshing}
                       aria-label={t('gameSelector.selectGame')}
                       styles={customSelectStyles}
+                      menuPortalTarget={typeof document !== 'undefined' ? document.body : null}
                     />
                   </>
                 )}
