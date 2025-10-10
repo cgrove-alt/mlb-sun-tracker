@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MobileMenuPortal } from './MobileMenuPortal';
+import { BaseballIcon, StadiumIcon, SunIcon, SearchIcon, QuestionIcon, SettingsIcon } from './Icons';
 import './MobileHeader.css';
 
 interface MobileHeaderProps {
@@ -68,7 +69,9 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             </button>
           ) : title ? (
             <div className="mobile-header-logo">
-              <div className="mobile-header-icon">⚾</div>
+              <div className="mobile-header-icon">
+                <BaseballIcon size={24} />
+              </div>
               <h1 className="mobile-header-title">{title}</h1>
             </div>
           ) : (
@@ -118,27 +121,27 @@ export const MobileHeader: React.FC<MobileHeaderProps> = ({
             
             <div className="mobile-menu-items">
               <a href="/" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">🏟️</span>
+                <span className="mobile-menu-icon"><StadiumIcon size={20} /></span>
                 <span>Home</span>
               </a>
               <a href="/guide" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">☀️</span>
+                <span className="mobile-menu-icon"><SunIcon size={20} /></span>
                 <span>Shade Guides</span>
               </a>
               <a href="/guide/how-to-find-shaded-seats" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">🔍</span>
+                <span className="mobile-menu-icon"><SearchIcon size={20} /></span>
                 <span>Find Shaded Seats</span>
               </a>
               <a href="/guide/best-shaded-seats-mlb" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">⭐</span>
+                <span className="mobile-menu-icon"><BaseballIcon size={20} /></span>
                 <span>Best Shaded Seats</span>
               </a>
               <a href="/faq" className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">❓</span>
+                <span className="mobile-menu-icon"><QuestionIcon size={20} /></span>
                 <span>FAQ</span>
               </a>
               <button className="mobile-menu-item" onClick={() => setMenuOpen(false)}>
-                <span className="mobile-menu-icon">⚙️</span>
+                <span className="mobile-menu-icon"><SettingsIcon size={20} /></span>
                 <span>Settings</span>
               </button>
             </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon } from './Icons';
+import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon, UmbrellaIcon } from './Icons';
 import { Tooltip } from './Tooltip';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
@@ -121,26 +121,27 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
           <div className="flex flex-wrap gap-2">
             {/* Level badge */}
             <span className={`
-              inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-              ${section.level === 'field' ? 'bg-purple-100 text-purple-700' : 
-                section.level === 'lower' ? 'bg-blue-100 text-blue-700' : 
-                section.level === 'club' ? 'bg-green-100 text-green-700' : 
-                section.level === 'upper' ? 'bg-amber-100 text-amber-700' : 
-                section.level === 'suite' ? 'bg-pink-100 text-pink-700' : 
+              inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium
+              ${section.level === 'field' ? 'bg-purple-100 text-purple-700' :
+                section.level === 'lower' ? 'bg-blue-100 text-blue-700' :
+                section.level === 'club' ? 'bg-green-100 text-green-700' :
+                section.level === 'upper' ? 'bg-amber-100 text-amber-700' :
+                section.level === 'suite' ? 'bg-pink-100 text-pink-700' :
                 'bg-gray-100 text-gray-700'}
             `}>
-              {section.level === 'field' ? '⚾ Field Level' : 
-               section.level === 'lower' ? '🏟️ Lower Level' : 
-               section.level === 'club' ? '🎫 Club Level' : 
-               section.level === 'upper' ? '🔝 Upper Level' : 
-               section.level === 'suite' ? '✨ Suite Level' : section.level}
+              {section.level === 'field' && <FieldLevelIcon size={14} />}
+              {section.level === 'lower' && <LowerLevelIcon size={14} />}
+              {section.level === 'club' && <ClubLevelIcon size={14} />}
+              {section.level === 'upper' && <UpperLevelIcon size={14} />}
+              {section.level === 'suite' && <CrownIcon size={14} />}
+              <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
 
             {/* Covered indicator */}
             {section.covered && (
               <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
-                  🏛️ Covered
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
+                  <UmbrellaIcon size={14} /> Covered
                 </span>
               </Tooltip>
             )}
@@ -149,11 +150,11 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
             {section.price && (
               <span className={`
                 inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                ${section.price === 'premium' ? 'bg-yellow-100 text-yellow-800' :
+                ${section.price === 'premium' || section.price === 'luxury' ? 'bg-yellow-100 text-yellow-800' :
                   section.price === 'moderate' ? 'bg-sky-100 text-sky-700' :
                   'bg-gray-100 text-gray-700'}
               `}>
-                {section.price === 'premium' ? '💎' : section.price === 'moderate' ? '💵' : '💸'} {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
+                {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
               </span>
             )}
           </div>
