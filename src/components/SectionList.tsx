@@ -36,6 +36,9 @@ export const SectionList: React.FC<SectionListProps> = ({
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
   const [containerHeight, setContainerHeight] = useState<number>(600);
   const [filters, setFilters] = useState<SectionFilterValues>({
+    sunPreference: 'any',
+    customMin: 0,
+    customMax: 100,
     shadeLevel: [],
     sectionType: [],
     priceRange: []
@@ -139,19 +142,37 @@ export const SectionList: React.FC<SectionListProps> = ({
   const filteredSections = useMemo(() => {
     return sections.filter(sectionData => {
       const section = sectionData.section;
-      
+      const exposure = sectionData.sunExposure;
+
       // Text search filter
       if (debouncedSearchTerm) {
         const term = debouncedSearchTerm.toLowerCase();
-        const matchesSearch = 
+        const matchesSearch =
           section.name.toLowerCase().includes(term) ||
           section.id.toLowerCase().includes(term) ||
           section.level.toLowerCase().includes(term) ||
           (section.price && section.price.toLowerCase().includes(term));
-        
+
         if (!matchesSearch) return false;
       }
-      
+
+      // Sun preference filter
+      if (filters.sunPreference && filters.sunPreference !== 'any') {
+        switch (filters.sunPreference) {
+          case 'avoid':
+            if (exposure > 20) return false;
+            break;
+          case 'prefer':
+            if (exposure < 60) return false;
+            break;
+          case 'custom':
+            const min = filters.customMin || 0;
+            const max = filters.customMax || 100;
+            if (exposure < min || exposure > max) return false;
+            break;
+        }
+      }
+
       // Shade level filter
       if (filters.shadeLevel.length > 0) {
         const exposure = sectionData.sunExposure;
@@ -305,7 +326,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             <span className="summary-item shady">
               <CloudIcon size={16} /> {shadyCount} shaded
             </span>
-            {(debouncedSearchTerm || filters.shadeLevel.length > 0 || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
+            {(debouncedSearchTerm || (filters.sunPreference && filters.sunPreference !== 'any') || filters.shadeLevel.length > 0 || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
               <span className="summary-item search-results">
                 <SearchIcon size={16} /> {filteredSections.length} of {sections.length} shown
               </span>
