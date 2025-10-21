@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import type { Stadium } from '../../../../../src/data/stadiums';
 import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
 import { SeatGrid } from '../../../../../src/components/SeatGrid';
 import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
+import { useSunExposure } from '../../../../../src/hooks/useSunExposure';
 
 interface SectionPageClientProps {
   stadium: Stadium;
@@ -19,9 +20,16 @@ export default function SectionPageClient({
   sectionId,
 }: SectionPageClientProps) {
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
-  const [sunExposureData] = useState<Record<string, boolean> | null>(null); // TODO: Load client-side via API
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
+
+  // Load sun exposure data
+  const { data: sunExposureData, isLoading: isSunDataLoading, error: sunDataError } = useSunExposure({
+    stadiumId: 'dodger-stadium', // TODO: Map stadium.id to seat data stadium ID
+    gameTime: '13:10', // TODO: Allow user to select game time
+    gameDate: new Date(), // TODO: Allow user to select game date
+    enabled: true,
+  });
 
   // Handle seat click
   const handleSeatClick = (seat: Seat) => {
@@ -162,10 +170,24 @@ export default function SectionPageClient({
           filterShaded={filterShaded}
           filterSunny={filterSunny}
         />
-        {!sunExposureData && (
-          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-            <p className="text-sm text-yellow-800">
-              ℹ️ Sun exposure data is loading... Seats will show sun/shade information once data is available.
+        {isSunDataLoading && (
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-sm text-blue-800">
+              ⏳ Loading sun exposure data...
+            </p>
+          </div>
+        )}
+        {sunDataError && (
+          <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+            <p className="text-sm text-red-800">
+              ⚠️ Failed to load sun exposure data: {sunDataError.message}
+            </p>
+          </div>
+        )}
+        {sunExposureData && !isSunDataLoading && (
+          <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <p className="text-sm text-green-800">
+              ✅ Sun exposure data loaded for {Object.keys(sunExposureData).length} seats
             </p>
           </div>
         )}
