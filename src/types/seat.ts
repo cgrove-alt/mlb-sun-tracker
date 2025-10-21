@@ -16,7 +16,7 @@ export interface Seat {
 
   // Physical location
   position3D: Vector3D; // 3D coordinates in stadium space
-  elevation: number; // Height above field level in feet
+  elevation: number | null; // Height above field level in feet
   distanceFromHomeplate: number; // Distance from home plate in feet
 
   // Spatial properties
@@ -70,7 +70,7 @@ export interface SeatRow {
 
   // Row properties
   seatCount: number; // Total seats in this row
-  elevation: number; // Height above field level in feet
+  elevation: number | null; // Height above field level in feet
   depth: number; // Distance from front of section in feet
   rowSpacing: number; // Inches between this row and next
 

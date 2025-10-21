@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Stadium } from '../../../../../src/data/stadiums';
 import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
@@ -11,17 +11,15 @@ interface SectionPageClientProps {
   stadium: Stadium;
   sectionData: SectionSeatingData;
   sectionId: string;
-  initialSunExposureData: Record<string, boolean> | null;
 }
 
 export default function SectionPageClient({
   stadium,
   sectionData,
   sectionId,
-  initialSunExposureData,
 }: SectionPageClientProps) {
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
-  const [sunExposureData] = useState<Record<string, boolean> | null>(initialSunExposureData);
+  const [sunExposureData] = useState<Record<string, boolean> | null>(null); // TODO: Load client-side via API
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
 
@@ -164,6 +162,13 @@ export default function SectionPageClient({
           filterShaded={filterShaded}
           filterSunny={filterSunny}
         />
+        {!sunExposureData && (
+          <div className="mt-4 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+            <p className="text-sm text-yellow-800">
+              ℹ️ Sun exposure data is loading... Seats will show sun/shade information once data is available.
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Seat Detail Modal */}

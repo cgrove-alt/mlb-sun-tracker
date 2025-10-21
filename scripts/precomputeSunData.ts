@@ -369,14 +369,16 @@ async function precomputeSunData(
 function savePrecomputedData(
   data: PrecomputedData,
   stadiumId: string,
+  gameTime: string,
   testMode: boolean
 ): string {
   log.step('Compressing and saving data...');
 
   const outputDir = path.join(__dirname, '..', 'src', 'data', 'seatData', stadiumId);
+  const timeStr = gameTime.replace(':', ''); // '13:10' → '1310'
   const filename = testMode
-    ? 'precomputed-sun-110pm-test.json.gz'
-    : 'precomputed-sun-110pm.json.gz';
+    ? `precomputed-sun-${timeStr}pm-test.json.gz`
+    : `precomputed-sun-${timeStr}pm.json.gz`;
   const outputPath = path.join(outputDir, filename);
 
   // Convert to JSON
@@ -419,7 +421,7 @@ async function main() {
   const data = await precomputeSunData(stadiumId, gameTime, testMode);
 
   // Save compressed file
-  const outputPath = savePrecomputedData(data, stadiumId, testMode);
+  const outputPath = savePrecomputedData(data, stadiumId, gameTime, testMode);
 
   // Summary
   console.log('━'.repeat(50));

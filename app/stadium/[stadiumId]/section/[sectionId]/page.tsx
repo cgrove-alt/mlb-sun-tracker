@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import * as fs from 'fs';
 import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
-import { getSeatDataForSection, loadPrecomputedSunData, getSectionSunExposure } from '../../../../../src/utils/seatDataLoader';
+import { getSeatDataForSection } from '../../../../../src/utils/seatDataLoader';
 import SectionPageClient from './SectionPageClient';
 
 interface SectionPageProps {
@@ -99,24 +99,6 @@ export default async function SectionPage({ params }: SectionPageProps) {
     notFound();
   }
 
-  // Load precomputed sun data (server-side only)
-  let sunExposureData: Record<string, boolean> | null = null;
-  try {
-    const precomputedData = await loadPrecomputedSunData(seatDataStadiumId, '13:10');
-    if (precomputedData) {
-      const today = new Date();
-      sunExposureData = getSectionSunExposure(
-        precomputedData,
-        sectionId,
-        today,
-        today
-      );
-    }
-  } catch (error) {
-    console.error('Failed to load precomputed sun data:', error);
-    // Continue without sun data - page will still render
-  }
-
   // Structured data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -161,7 +143,6 @@ export default async function SectionPage({ params }: SectionPageProps) {
         stadium={stadium}
         sectionData={sectionData}
         sectionId={sectionId}
-        initialSunExposureData={sunExposureData}
       />
     </div>
   );
