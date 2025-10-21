@@ -359,7 +359,7 @@ export function validateSectionSeats(
           `Seat ${seat.id} has unusual coordinates: (${x}, ${y}, ${z})`
         );
       }
-      if (z < 0 || z > 300) {
+      if (z !== null && (z < 0 || z > 300)) {
         warnings.push(`Seat ${seat.id} has unusual elevation: ${z} feet`);
       }
     });

@@ -53,8 +53,8 @@ function rayBoxIntersect(
   if (tymin > tmin) tmin = tymin;
   if (tymax < tmax) tmax = tymax;
 
-  let tzmin = (boxMin.z - rayOrigin.z) / rayDirection.z;
-  let tzmax = (boxMax.z - rayOrigin.z) / rayDirection.z;
+  let tzmin = ((boxMin.z ?? 0) - (rayOrigin.z ?? 0)) / (rayDirection.z ?? 1);
+  let tzmax = ((boxMax.z ?? 0) - (rayOrigin.z ?? 0)) / (rayDirection.z ?? 1);
 
   if (tzmin > tzmax) [tzmin, tzmax] = [tzmax, tzmin];
 
@@ -76,7 +76,7 @@ export function isSeatInShadow(
   const rayDirection = {
     x: -sunDirection.x,
     y: -sunDirection.y,
-    z: -sunDirection.z,
+    z: -(sunDirection.z ?? 0),
   };
 
   for (const obstruction of obstructions) {

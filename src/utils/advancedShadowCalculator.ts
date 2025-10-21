@@ -22,13 +22,13 @@ function raySphereIntersect(
   const oc = {
     x: rayOrigin.x - sphereCenter.x,
     y: rayOrigin.y - sphereCenter.y,
-    z: rayOrigin.z - sphereCenter.z
+    z: (rayOrigin.z ?? 0) - (sphereCenter.z ?? 0)
   };
-  
-  const a = rayDirection.x * rayDirection.x + 
-            rayDirection.y * rayDirection.y + 
-            rayDirection.z * rayDirection.z;
-  const b = 2 * (oc.x * rayDirection.x + oc.y * rayDirection.y + oc.z * rayDirection.z);
+
+  const a = rayDirection.x * rayDirection.x +
+            rayDirection.y * rayDirection.y +
+            (rayDirection.z ?? 0) * (rayDirection.z ?? 0);
+  const b = 2 * (oc.x * rayDirection.x + oc.y * rayDirection.y + oc.z * (rayDirection.z ?? 0));
   const c = oc.x * oc.x + oc.y * oc.y + oc.z * oc.z - sphereRadius * sphereRadius;
   
   const discriminant = b * b - 4 * a * c;
@@ -57,8 +57,8 @@ function rayBoxIntersect(
   if (tymin > tmin) tmin = tymin;
   if (tymax < tmax) tmax = tymax;
   
-  let tzmin = (boxMin.z - rayOrigin.z) / rayDirection.z;
-  let tzmax = (boxMax.z - rayOrigin.z) / rayDirection.z;
+  let tzmin = ((boxMin.z ?? 0) - (rayOrigin.z ?? 0)) / (rayDirection.z ?? 1);
+  let tzmax = ((boxMax.z ?? 0) - (rayOrigin.z ?? 0)) / (rayDirection.z ?? 1);
   
   if (tzmin > tzmax) [tzmin, tzmax] = [tzmax, tzmin];
   
@@ -91,7 +91,7 @@ function isPointInShadow(
   const rayDirection = {
     x: -sunDirection.x,
     y: -sunDirection.y,
-    z: -sunDirection.z
+    z: -(sunDirection.z ?? 0)
   };
   
   for (const obstruction of obstructions) {
@@ -163,10 +163,10 @@ export function calculateSectionShadow(
          u * (1 - v) * vertices[1].y +
          u * v * vertices[2].y +
          (1 - u) * v * vertices[3].y,
-      z: (1 - u) * (1 - v) * vertices[0].z +
-         u * (1 - v) * vertices[1].z +
-         u * v * vertices[2].z +
-         (1 - u) * v * vertices[3].z
+      z: (1 - u) * (1 - v) * (vertices[0].z ?? 0) +
+         u * (1 - v) * (vertices[1].z ?? 0) +
+         u * v * (vertices[2].z ?? 0) +
+         (1 - u) * v * (vertices[3].z ?? 0)
     };
     
     samplePoints.push(point);

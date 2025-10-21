@@ -120,10 +120,10 @@ export class OptimizedShadeCalculator3D {
     for (const obs of obstructions) {
       node.min.x = Math.min(node.min.x, obs.boundingBox.min.x);
       node.min.y = Math.min(node.min.y, obs.boundingBox.min.y);
-      node.min.z = Math.min(node.min.z, obs.boundingBox.min.z);
+      node.min.z = Math.min(node.min.z ?? 0, obs.boundingBox.min.z ?? 0);
       node.max.x = Math.max(node.max.x, obs.boundingBox.max.x);
       node.max.y = Math.max(node.max.y, obs.boundingBox.max.y);
-      node.max.z = Math.max(node.max.z, obs.boundingBox.max.z);
+      node.max.z = Math.max(node.max.z ?? 0, obs.boundingBox.max.z ?? 0);
     }
     
     // Leaf node if few obstructions
@@ -136,7 +136,7 @@ export class OptimizedShadeCalculator3D {
     const size = {
       x: node.max.x - node.min.x,
       y: node.max.y - node.min.y,
-      z: node.max.z - node.min.z
+      z: (node.max.z ?? 0) - (node.min.z ?? 0)
     };
     
     let splitAxis: 'x' | 'y' | 'z' = 'x';
@@ -145,8 +145,8 @@ export class OptimizedShadeCalculator3D {
     
     // Sort and split
     const sorted = [...obstructions].sort((a, b) => {
-      const centerA = (a.boundingBox.min[splitAxis] + a.boundingBox.max[splitAxis]) / 2;
-      const centerB = (b.boundingBox.min[splitAxis] + b.boundingBox.max[splitAxis]) / 2;
+      const centerA = ((a.boundingBox.min[splitAxis] ?? 0) + (a.boundingBox.max[splitAxis] ?? 0)) / 2;
+      const centerB = ((b.boundingBox.min[splitAxis] ?? 0) + (b.boundingBox.max[splitAxis] ?? 0)) / 2;
       return centerA - centerB;
     });
     
@@ -193,7 +193,7 @@ export class OptimizedShadeCalculator3D {
     return {
       x: Math.floor(pos.x / cellSize),
       y: Math.floor(pos.y / cellSize),
-      z: Math.floor(pos.z / cellSize)
+      z: Math.floor((pos.z ?? 0) / cellSize)
     };
   }
   
@@ -219,15 +219,15 @@ export class OptimizedShadeCalculator3D {
     const invDir = {
       x: 1 / rayDirection.x,
       y: 1 / rayDirection.y,
-      z: 1 / rayDirection.z
+      z: 1 / (rayDirection.z ?? 1)
     };
     
     const t1 = (boxMin.x - rayOrigin.x) * invDir.x;
     const t2 = (boxMax.x - rayOrigin.x) * invDir.x;
     const t3 = (boxMin.y - rayOrigin.y) * invDir.y;
     const t4 = (boxMax.y - rayOrigin.y) * invDir.y;
-    const t5 = (boxMin.z - rayOrigin.z) * invDir.z;
-    const t6 = (boxMax.z - rayOrigin.z) * invDir.z;
+    const t5 = ((boxMin.z ?? 0) - (rayOrigin.z ?? 0)) * (invDir.z ?? 1);
+    const t6 = ((boxMax.z ?? 0) - (rayOrigin.z ?? 0)) * (invDir.z ?? 1);
     
     const tMin = Math.max(
       Math.min(t1, t2),
@@ -501,15 +501,15 @@ export class OptimizedShadeCalculator3D {
       (acc, v) => ({
         x: acc.x + v.x,
         y: acc.y + v.y,
-        z: acc.z + v.z
+        z: (acc.z ?? 0) + (v.z ?? 0)
       }),
-      { x: 0, y: 0, z: 0 }
+      { x: 0, y: 0, z: 0 as number }
     );
     
     return {
       x: sum.x / section.vertices.length,
       y: sum.y / section.vertices.length,
-      z: sum.z / section.vertices.length
+      z: (sum.z ?? 0) / section.vertices.length
     };
   }
   

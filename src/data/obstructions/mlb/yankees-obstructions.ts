@@ -374,8 +374,8 @@ export function calculateShadowCoverage(
       const box = obs.boundingBox;
       const width = box.max.x - box.min.x;
       const depth = box.max.y - box.min.y;
-      const height = box.max.z - box.min.z;
-      
+      const height = (box.max.z ?? 0) - (box.min.z ?? 0);
+
       // Simple shadow projection (would be more complex in reality)
       const shadowLength = height / Math.tan(sunElevation * Math.PI / 180);
       totalShadowArea += width * shadowLength;
