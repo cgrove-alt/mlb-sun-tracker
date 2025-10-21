@@ -44,7 +44,7 @@ function generateSectionFile(
   
   const sectionsCode = sections.map(section => {
     const verticesStr = section.vertices3D
-      .map(v => `      { x: ${v.x.toFixed(0)}, y: ${v.y.toFixed(0)}, z: ${v.z.toFixed(0)} }`)
+      .map(v => `      { x: ${v.x.toFixed(0)}, y: ${v.y.toFixed(0)}, z: ${v.z !== null ? v.z.toFixed(0) : 'null'} }`)
       .join(',\n');
     
     const rowsStr = section.rows.length > 0
