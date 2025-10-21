@@ -36,7 +36,7 @@ export async function getSeatDataForSection(
   try {
     // Dynamic import of section data
     const module = await import(
-      `@/data/seatData/${stadiumId}/sections/${sectionId}.ts`
+      `@/data/seatData/${stadiumId}/sections/${sectionId}`
     );
 
     // The module should export a default or named export

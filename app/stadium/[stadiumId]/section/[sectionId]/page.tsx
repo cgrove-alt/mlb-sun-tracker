@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import * as fs from 'fs';
+import * as path from 'path';
 import { MLB_STADIUMS } from '../../../../../src/data/stadiums';
-import { getSeatDataForSection } from '../../../../../src/utils/seatDataLoader';
+import { getSeatDataForSection, loadPrecomputedSunData, getSectionSunExposure } from '../../../../../src/utils/seatDataLoader';
 import SectionPageClient from './SectionPageClient';
 
 interface SectionPageProps {
@@ -12,14 +14,31 @@ interface SectionPageProps {
 }
 
 export async function generateStaticParams() {
-  // For now, only generate for dodger-stadium sections
-  // Future: Generate for all stadiums with seat data
-  const dodgerSections = Array.from({ length: 195 }, (_, i) => (i + 1).toString());
+  // Read actual section files from disk to generate accurate params
+  const sectionsDir = path.join(
+    process.cwd(),
+    'src',
+    'data',
+    'seatData',
+    'dodger-stadium',
+    'sections'
+  );
 
-  return dodgerSections.map((sectionId) => ({
-    stadiumId: 'dodgers',
-    sectionId,
-  }));
+  try {
+    const sectionFiles = fs
+      .readdirSync(sectionsDir)
+      .filter((f) => f.endsWith('.ts') && f !== '_template.ts')
+      .map((f) => f.replace('.ts', ''));
+
+    return sectionFiles.map((sectionId) => ({
+      stadiumId: 'dodgers',
+      sectionId,
+    }));
+  } catch (error) {
+    console.error('Failed to read section files:', error);
+    // Fallback to empty array if directory doesn't exist
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: SectionPageProps): Promise<Metadata> {
@@ -80,6 +99,24 @@ export default async function SectionPage({ params }: SectionPageProps) {
     notFound();
   }
 
+  // Load precomputed sun data (server-side only)
+  let sunExposureData: Record<string, boolean> | null = null;
+  try {
+    const precomputedData = await loadPrecomputedSunData(seatDataStadiumId, '13:10');
+    if (precomputedData) {
+      const today = new Date();
+      sunExposureData = getSectionSunExposure(
+        precomputedData,
+        sectionId,
+        today,
+        today
+      );
+    }
+  } catch (error) {
+    console.error('Failed to load precomputed sun data:', error);
+    // Continue without sun data - page will still render
+  }
+
   // Structured data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -124,6 +161,7 @@ export default async function SectionPage({ params }: SectionPageProps) {
         stadium={stadium}
         sectionData={sectionData}
         sectionId={sectionId}
+        initialSunExposureData={sunExposureData}
       />
     </div>
   );

@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import type { Stadium } from '../../../../../src/data/stadiums';
 import type { SectionSeatingData, Seat } from '../../../../../src/types/seat';
-import { loadPrecomputedSunData, getSectionSunExposure } from '../../../../../src/utils/seatDataLoader';
 import { SeatGrid } from '../../../../../src/components/SeatGrid';
 import { SeatDetailModal } from '../../../../../src/components/SeatDetailModal';
 
@@ -12,54 +11,19 @@ interface SectionPageClientProps {
   stadium: Stadium;
   sectionData: SectionSeatingData;
   sectionId: string;
+  initialSunExposureData: Record<string, boolean> | null;
 }
 
 export default function SectionPageClient({
   stadium,
   sectionData,
   sectionId,
+  initialSunExposureData,
 }: SectionPageClientProps) {
   const [selectedSeat, setSelectedSeat] = useState<Seat | null>(null);
-  const [sunExposureData, setSunExposureData] = useState<Record<string, boolean> | null>(null);
+  const [sunExposureData] = useState<Record<string, boolean> | null>(initialSunExposureData);
   const [filterShaded, setFilterShaded] = useState(false);
   const [filterSunny, setFilterSunny] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Load precomputed sun data
-  useEffect(() => {
-    async function loadSunData() {
-      try {
-        setIsLoading(true);
-
-        // Map stadium ID to seat data directory
-        const seatDataStadiumId = stadium.id === 'dodgers' ? 'dodger-stadium' : stadium.id;
-
-        // Load precomputed sun data for 1:10 PM game
-        const precomputedData = await loadPrecomputedSunData(seatDataStadiumId, '13:10');
-
-        if (precomputedData) {
-          // Get today's date for sun exposure calculation
-          const today = new Date();
-
-          // Get sun exposure for all seats in this section
-          const sectionExposure = getSectionSunExposure(
-            precomputedData,
-            sectionId,
-            today,
-            today
-          );
-
-          setSunExposureData(sectionExposure);
-        }
-      } catch (error) {
-        console.error('Failed to load sun exposure data:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    loadSunData();
-  }, [stadium.id, sectionId]);
 
   // Handle seat click
   const handleSeatClick = (seat: Seat) => {
@@ -190,27 +154,17 @@ export default function SectionPageClient({
         </div>
       </div>
 
-      {/* Loading State */}
-      {isLoading && (
-        <div className="bg-white rounded-xl shadow-md p-12 text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-accent-600 mb-4"></div>
-          <p className="text-gray-600">Loading seat data...</p>
-        </div>
-      )}
-
       {/* Seat Grid */}
-      {!isLoading && (
-        <div className="bg-white rounded-xl shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Seat Map</h2>
-          <SeatGrid
-            rows={sectionData.rows}
-            sunExposureData={sunExposureData}
-            onSeatClick={handleSeatClick}
-            filterShaded={filterShaded}
-            filterSunny={filterSunny}
-          />
-        </div>
-      )}
+      <div className="bg-white rounded-xl shadow-md p-6">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">Seat Map</h2>
+        <SeatGrid
+          rows={sectionData.rows}
+          sunExposureData={sunExposureData}
+          onSeatClick={handleSeatClick}
+          filterShaded={filterShaded}
+          filterSunny={filterSunny}
+        />
+      </div>
 
       {/* Seat Detail Modal */}
       <SeatDetailModal
