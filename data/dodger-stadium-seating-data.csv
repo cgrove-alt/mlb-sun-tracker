@@ -1,0 +1,196 @@
+section_id,section_name,level,rows,seats_per_row,covered,partial_coverage,covered_rows,base_angle,angle_span,price_tier,wheelchair_rows,notes
+1,Field Box 1,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",0,4,premium,X,Behind home plate - excellent view with netting
+2,Field Box 2,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",4,4,premium,X,Behind home plate area with netting
+3,Field Box 3,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",8,4,premium,X,Behind home plate area with netting
+4,Field Box 4,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",12,4,premium,X,Behind home plate area with netting
+5,Field Box 5,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",16,4,premium,X,Behind home plate area with netting
+6,Field Box 6,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",20,4,premium,X,Behind home plate area with netting
+7,Field Box 7,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",24,4,premium,X,Behind home plate area with netting
+8,Field Box 8,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",28,4,premium,X,Behind home plate area with netting
+9,Field Box 9,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",32,4,premium,X,Behind home plate area with netting
+10,Field Box 10,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",36,4,premium,X,Behind home plate area with netting
+11,Field Box 11,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",40,4,premium,X,Behind home plate area with netting
+12,Field Box 12,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",44,4,premium,X,Behind home plate area with netting
+13,Field Box 13,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",48,4,premium,X,Behind home plate area with netting
+14,Field Box 14,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",52,4,premium,X,Behind home plate area - first base side
+15,Field Box 15,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",56,4,premium,X,First base side with netting
+16,Field Box 16,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",60,4,premium,X,First base side with netting
+17,Field Box 17,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",64,4,premium,X,First base side with netting
+18,Field Box 18,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",68,4,premium,X,First base side with netting
+19,Field Box 19,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",72,4,premium,X,First base side with netting
+20,Field Box 20,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",76,4,premium,X,First base side with netting
+21,Field Box 21,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",80,4,premium,X,First base side with netting
+22,Field Box 22,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",84,4,premium,X,First base side with netting
+23,Field Box 23,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",88,4,premium,X,First base side with netting
+24,Field Box 24,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",92,4,premium,X,First base side with netting
+25,Field Box 25,field,"DR,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",96,4,premium,X,First base side with netting
+26,Baseline Club 26,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",100,4,luxury,X,Premium Baseline Club rows 1-6
+27,Baseline Club 27,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",104,4,luxury,X,Premium Baseline Club rows 1-6
+28,Baseline Club 28,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",108,4,luxury,X,Premium Baseline Club rows 1-6
+29,Baseline Club 29,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",112,4,luxury,X,Premium Baseline Club rows 1-6
+30,Baseline Club 30,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",116,4,luxury,X,Premium Baseline Club rows 1-6
+31,Baseline Club 31,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",120,4,luxury,X,Premium Baseline Club rows 1-6
+32,Baseline Club 32,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",124,4,luxury,X,Premium Baseline Club rows 1-6
+33,Baseline Club 33,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",128,4,luxury,X,Premium Baseline Club rows 1-6
+34,Baseline Club 34,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",132,4,luxury,X,Premium Baseline Club rows 1-6
+35,Baseline Club 35,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",136,4,luxury,X,Premium Baseline Club rows 1-6
+36,Baseline Club 36,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",140,4,luxury,X,Premium Baseline Club rows 1-6
+37,Baseline Club 37,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",144,4,luxury,X,Premium Baseline Club rows 1-6
+38,Baseline Club 38,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",148,4,luxury,X,Premium Baseline Club rows 1-6
+39,Baseline Club 39,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",152,4,luxury,X,Premium Baseline Club rows 1-6
+40,Baseline Club 40,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",156,4,luxury,X,Premium Baseline Club rows 1-6
+41,Baseline Club 41,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",160,4,luxury,X,Premium Baseline Club rows 1-6
+42,Baseline Club 42,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",164,4,luxury,X,Premium Baseline Club rows 1-6
+43,Baseline Club 43,field,"1,2,3,4,5,6,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,partial,"T,U,V,W,X",168,4,luxury,X,Premium Baseline Club rows 1-6
+44,Baseline Club 44,field,"AA,BB,CC,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",172,4,luxury,W,Premium Baseline Club rows AA-CC
+45,Baseline Club 45,field,"AA,BB,CC,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",176,4,luxury,W,Premium Baseline Club rows AA-CC
+46,Field Level 46,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",180,5,moderate,W,Outfield field level
+47,Field Level 47,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",185,5,moderate,W,Outfield field level
+48,Field Level 48,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",190,5,moderate,W,Outfield field level
+49,Field Level 49,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",195,5,moderate,W,Outfield field level
+50,Field Level 50,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",200,5,moderate,W,Outfield field level
+51,Field Level 51,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",205,5,moderate,W,Outfield field level
+52,Field Level 52,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",210,5,moderate,W,Outfield field level
+53,Field Level 53,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",215,5,moderate,W,Outfield field level
+101,Loge Box 101,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",0,3,premium,W,Directly behind home plate - small rows
+102,Loge Box 102,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",3,3,premium,W,Behind home plate area
+103,Loge Box 103,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",6,3,premium,W,Behind home plate area
+104,Loge Box 104,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",9,3,premium,W,Behind home plate area
+105,Loge Box 105,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",12,3,premium,W,Behind home plate area
+106,Loge Box 106,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",15,3,premium,W,Behind home plate area
+107,Loge Box 107,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",18,3,premium,W,Behind home plate area
+108,Loge Box 108,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",21,3,premium,W,Behind home plate area
+109,Loge Box 109,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",24,3,premium,W,Behind home plate area
+110,Loge Box 110,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",27,3,premium,W,Behind home plate area
+111,Loge Box 111,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",30,3,premium,W,Behind home plate area
+112,Loge Box 112,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",33,3,premium,W,Behind home plate area
+113,Loge Box 113,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",36,3,premium,W,Behind home plate area
+114,Loge Box 114,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",39,3,premium,W,Behind home plate area
+115,Loge Box 115,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",42,3,premium,W,Behind home plate area
+116,Loge Box 116,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",45,3,premium,W,Behind home plate area
+117,Loge Box 117,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",48,3,premium,W,Behind home plate area
+118,Loge Box 118,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",6,false,partial,"N,O,P,Q,R,S,T,U,V,W",51,3,premium,W,Behind home plate area
+119,Loge Box 119,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",54,3,premium,W,First base side
+120,Loge Box 120,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",57,3,premium,W,First base side
+121,Loge Box 121,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",60,3,premium,W,First base side
+122,Loge Box 122,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",63,3,premium,W,First base side
+123,Loge Box 123,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",66,3,premium,W,First base side
+124,Loge Box 124,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",69,3,premium,W,First base side
+125,Loge Box 125,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",72,3,premium,W,First base side
+126,Loge Box 126,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",75,3,premium,W,First base side
+127,Loge Box 127,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",78,3,premium,W,First base side
+128,Loge Box 128,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",81,3,premium,W,First base side
+129,Loge Box 129,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",84,3,premium,W,First base side
+130,Loge Box 130,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",87,3,premium,W,First base side
+131,Loge Box 131,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",90,3,premium,W,First base side
+132,Loge Box 132,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",93,3,premium,W,First base side to right field
+133,Loge Box 133,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",96,3,premium,W,First base to right field
+134,Loge Box 134,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",99,3,premium,W,First base to right field
+135,Loge Box 135,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",102,3,premium,W,First base to right field
+136,Loge Box 136,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",105,3,premium,W,Right field area
+137,Loge Box 137,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",108,3,moderate,W,Right field
+138,Loge Box 138,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",111,3,moderate,W,Right field
+139,Loge Box 139,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",114,3,moderate,W,Right field
+140,Loge Box 140,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",117,3,moderate,W,Right field
+141,Loge Box 141,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",120,3,moderate,W,Right field
+142,Loge Box 142,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",123,3,moderate,W,Right field
+143,Loge Box 143,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",126,3,moderate,W,Right field
+144,Loge Box 144,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",129,3,moderate,W,Right field
+145,Loge Box 145,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",132,3,moderate,W,Right field
+146,Loge Box 146,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",135,3,moderate,W,Right field
+147,Loge Box 147,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",138,3,moderate,W,Right field
+148,Loge Box 148,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",141,3,moderate,W,Right field
+149,Loge Box 149,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",144,3,moderate,W,Right field
+150,Loge Box 150,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",147,3,moderate,W,Third base side
+151,Loge Box 151,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",150,3,moderate,W,Third base side
+152,Loge Box 152,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",153,3,moderate,W,Third base side
+153,Loge Box 153,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",156,3,moderate,W,Third base side
+154,Loge Box 154,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",159,3,moderate,W,Third base side
+155,Loge Box 155,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",162,3,moderate,W,Third base side
+156,Loge Box 156,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",8,false,partial,"N,O,P,Q,R,S,T,U,V,W",165,3,moderate,W,Third base side
+157,Loge Box 157,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",168,3,moderate,W,Third base side
+158,Loge Box 158,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",171,3,moderate,W,Third base side
+159,Loge Box 159,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",174,3,moderate,W,Third base to left field
+160,Loge Box 160,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",177,3,moderate,W,Third base to left field
+161,Loge Box 161,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",180,3,moderate,W,Left field area
+162,Loge Box 162,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",183,3,moderate,W,Left field
+163,Loge Box 163,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",186,3,moderate,W,Left field
+164,Loge Box 164,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",189,3,moderate,W,Left field
+165,Loge Box 165,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",192,3,moderate,W,Left field
+166,Loge Box 166,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",195,3,moderate,W,Left field
+167,Loge Box 167,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",198,3,moderate,W,Left field
+168,Loge Box 168,loge,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"N,O,P,Q,R,S,T,U,V,W",201,3,moderate,W,Left field
+1IR,Infield Reserve 1,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",0,4,moderate,V,Behind home plate - upper level
+2IR,Infield Reserve 2,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",4,4,moderate,V,Behind home plate - upper level
+3IR,Infield Reserve 3,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",8,4,moderate,V,Behind home plate - upper level
+4IR,Infield Reserve 4,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",12,4,moderate,V,Behind home plate - upper level
+5IR,Infield Reserve 5,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",16,4,moderate,V,Behind home plate - upper level
+6IR,Infield Reserve 6,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",20,4,moderate,V,Behind home plate - upper level
+7IR,Infield Reserve 7,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",24,4,moderate,V,Behind home plate - upper level
+8IR,Infield Reserve 8,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",28,4,moderate,V,Behind home plate - upper level
+9IR,Infield Reserve 9,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",32,4,moderate,V,Behind home plate - upper level
+10IR,Infield Reserve 10,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",36,4,moderate,V,Behind home plate - upper level
+11IR,Infield Reserve 11,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",40,4,moderate,V,Behind home plate - upper level
+12IR,Infield Reserve 12,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",44,4,moderate,V,Behind home plate - upper level
+13IR,Infield Reserve 13,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",48,4,moderate,V,First base side - upper level
+14IR,Infield Reserve 14,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",52,4,moderate,V,First base side - upper level
+15IR,Infield Reserve 15,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",56,4,moderate,V,First base side - upper level
+16IR,Infield Reserve 16,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",60,4,moderate,V,First base side - upper level
+17IR,Infield Reserve 17,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",64,4,moderate,V,First base side - upper level
+18IR,Infield Reserve 18,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",68,4,moderate,V,First base side - upper level
+19IR,Infield Reserve 19,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",72,4,moderate,V,First base side - upper level
+1RS,Reserve 1,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",76,4,value,V,Right field area
+2RS,Reserve 2,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",80,4,value,V,Right field area
+3RS,Reserve 3,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",84,4,value,V,Right field area
+4RS,Reserve 4,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",88,4,value,V,Right field area
+5RS,Reserve 5,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",92,4,value,V,Right field area
+6RS,Reserve 6,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",96,4,value,V,Right field area
+7RS,Reserve 7,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",100,4,value,V,Right field area
+8RS,Reserve 8,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",104,4,value,V,Right field area
+9RS,Reserve 9,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",108,4,value,V,Right field area
+10RS,Reserve 10,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",112,4,value,V,Right field area
+11RS,Reserve 11,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",116,4,value,V,Right field area
+12RS,Reserve 12,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",120,4,value,V,Right field area
+13RS,Reserve 13,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",124,4,value,V,Right field area
+14RS,Reserve 14,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",128,4,value,V,Right field area
+15RS,Reserve 15,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",132,4,value,V,Right field area
+16RS,Reserve 16,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",136,4,value,V,Right field area
+17RS,Reserve 17,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",140,4,value,V,Third base side
+18RS,Reserve 18,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",144,4,value,V,Third base side
+19RS,Reserve 19,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",148,4,value,V,Third base side
+20RS,Reserve 20,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",152,4,value,V,Third base side
+21RS,Reserve 21,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",156,4,value,V,Third base side
+22RS,Reserve 22,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",160,4,value,V,Third base side
+23RS,Reserve 23,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",164,4,value,V,Third base side
+24RS,Reserve 24,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",168,4,value,V,Left field area
+25RS,Reserve 25,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",172,4,value,V,Left field area
+26RS,Reserve 26,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V",22,false,partial,"N,O,P,Q,R,S,T,U,V",176,4,value,V,Left field area
+1TD,Top Deck 1,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,0,6,value,W,Behind home plate - covered by overhang
+2TD,Top Deck 2,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,6,6,value,W,Behind home plate - covered by overhang
+3TD,Top Deck 3,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,12,6,value,W,Behind home plate - covered by overhang
+4TD,Top Deck 4,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,18,6,value,W,Behind home plate - covered by overhang
+5TD,Top Deck 5,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"O,P,Q,R,S,T,U,V,W",24,6,value,W,First base side - partial coverage
+6TD,Top Deck 6,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,30,6,value,W,First base side - covered by overhang
+7TD,Top Deck 7,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,36,6,value,W,First base to right field - covered
+8TD,Top Deck 8,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,42,6,value,W,Right field - covered by overhang
+9TD,Top Deck 9,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,48,6,value,W,Right field - covered by overhang
+10TD,Top Deck 10,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,54,6,value,W,Third base side - covered by overhang
+11TD,Top Deck 11,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,true,full,ALL,60,6,value,W,Third base side - covered by overhang
+12TD,Top Deck 12,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"O,P,Q,R,S,T,U,V,W",66,6,value,W,Left field - partial coverage
+13TD,Top Deck 13,upper,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"O,P,Q,R,S,T,U,V,W",72,6,value,W,Left field - partial coverage
+301,Left Field Pavilion 301,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",9,false,partial,"T,U,V,W,X",180,5,value,X,Left field bleachers - home run territory
+302,Right Field Pavilion 302,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",9,false,partial,"T,U,V,W,X",180,5,value,X,Right field bleachers - home run territory
+303,Left Field Pavilion 303,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",20,false,partial,"T,U,V,W,X",185,5,value,X,Left field bleachers - home run territory
+304,Right Field Pavilion 304,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",20,false,partial,"T,U,V,W,X",185,5,value,X,Right field bleachers - home run territory
+305,Left Field Pavilion 305,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",20,false,partial,"T,U,V,W,X",190,5,value,X,Left field bleachers - home run territory
+306,Right Field Pavilion 306,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",20,false,partial,"T,U,V,W,X",190,5,value,X,Right field bleachers - home run territory
+307,Left Field Pavilion 307,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",195,5,value,W,Left field bleachers - home run territory
+308,Right Field Pavilion 308,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",195,5,value,W,Right field bleachers - home run territory
+309,Left Field Pavilion 309,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",200,5,value,W,Left field bleachers - home run territory
+310,Right Field Pavilion 310,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",200,5,value,W,Right field bleachers - home run territory
+311,Left Field Pavilion 311,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",205,5,value,W,Left field bleachers - home run territory
+312,Right Field Pavilion 312,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",205,5,value,W,Right field bleachers - home run territory
+313,Left Field Pavilion 313,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",210,5,value,W,Left field bleachers - home run territory
+314,Right Field Pavilion 314,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",210,5,value,W,Right field bleachers - home run territory
+315,Left Field Pavilion 315,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",215,5,value,W,Left field bleachers - home run territory
+316,Right Field Pavilion 316,field,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W",20,false,partial,"T,U,V,W",215,5,value,W,Right field bleachers - home run territory

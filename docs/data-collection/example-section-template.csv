@@ -1,0 +1,7 @@
+section_id,section_name,level,rows,seats_per_row,covered,partial_coverage,covered_rows,base_angle,angle_span,price_tier,wheelchair_rows,notes
+1,Field Box 1,field,"A,B,C,D,E,F,G,H",8,false,,,45,10,premium,,Behind home plate - excellent view
+15,Field Box 15,field,"A,B,C,D,E,F,G,H,I,J",8,false,,,75,8,premium,,First base line
+120,Loge Box 120,lower,"A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X",8,false,,,90,8,moderate,,Mid-level first base side
+15RS,Reserve 15,upper,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20","22,22,22,22,22,22,22,22,22,22,24,24,24,24,24,24,24,24,24,24",false,,,135,12,value,,Upper deck - affordable
+305,Left Field Pavilion 305,field,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",28,true,partial,"11,12,13,14,15",180,15,value,,"Back rows covered - general admission area"
+5TD,Top Deck 5,upper,"1,2,3,4,5,6,7,8,9,10,11,12",20,false,,,200,18,value,,Highest level - great panoramic view

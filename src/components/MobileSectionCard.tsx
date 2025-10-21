@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
 import './MobileSectionCard.css';
 
@@ -8,6 +9,7 @@ interface MobileSectionCardProps {
   inSun: boolean;
   timeInSun?: number;
   onClick?: () => void;
+  stadiumId?: string;
 }
 
 export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
@@ -15,7 +17,8 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
   sunExposure,
   inSun,
   timeInSun,
-  onClick
+  onClick,
+  stadiumId
 }) => {
   const getSunIcon = () => {
     if (sunExposure === 0) return '🌑';
@@ -79,12 +82,23 @@ export const MobileSectionCard: React.FC<MobileSectionCardProps> = ({
 
       <div className="mobile-section-visual">
         <div className="mobile-section-sun-bar">
-          <div 
-            className="mobile-section-sun-fill" 
+          <div
+            className="mobile-section-sun-fill"
             style={{ width: `${sunExposure}%` }}
           />
         </div>
       </div>
+
+      {/* View Seats link */}
+      {stadiumId && (
+        <Link
+          href={`/stadium/${stadiumId}/section/${section.id}`}
+          className="mobile-section-view-seats"
+          onClick={(e) => e.stopPropagation()}
+        >
+          View Seats →
+        </Link>
+      )}
     </button>
   );
 };

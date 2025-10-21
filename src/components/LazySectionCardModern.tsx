@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
@@ -11,6 +12,7 @@ interface LazySectionCardProps {
   inSun: boolean;
   index: number;
   timeInSun?: number;
+  stadiumId?: string;
 }
 
 const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
@@ -19,6 +21,7 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   inSun,
   index,
   timeInSun,
+  stadiumId,
 }) => {
   const [ref, isIntersecting] = useIntersectionObserver({
     threshold: 0.01,
@@ -118,6 +121,20 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
           </div>
+
+          {/* View Seats link */}
+          {stadiumId && (
+            <Link
+              href={`/stadium/${stadiumId}/section/${section.id}`}
+              className="inline-flex items-center gap-1 px-3 py-1 mt-1 text-xs font-medium text-accent-700 hover:text-accent-900 hover:underline transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                haptic.light();
+              }}
+            >
+              View Seats →
+            </Link>
+          )}
 
           {/* Animated hover indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
