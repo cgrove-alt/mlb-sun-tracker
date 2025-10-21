@@ -12,6 +12,7 @@ interface UseSunCalculationsResult {
   data: any[] | null;
   isLoading: boolean;
   error: Error | null;
+  refetch: () => void;
 }
 
 // Cache for calculation results
@@ -112,7 +113,7 @@ export function useSunCalculations({
   
   useEffect(() => {
     calculate();
-    
+
     // Cleanup worker on unmount
     return () => {
       if (workerRef.current) {
@@ -120,8 +121,14 @@ export function useSunCalculations({
       }
     };
   }, [calculate]);
-  
-  return { data, isLoading, error };
+
+  // Refetch function that clears cache and recalculates
+  const refetch = useCallback(() => {
+    calculationCache.delete(cacheKey);
+    calculate();
+  }, [cacheKey, calculate]);
+
+  return { data, isLoading, error, refetch };
 }
 
 // Hook to prefetch calculations for better UX

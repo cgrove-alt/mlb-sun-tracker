@@ -1,12 +1,10 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Stadium } from '../../../src/data/stadiums';
 import type { StadiumSection } from '../../../src/data/stadiumSectionTypes';
 import { StadiumAmenities } from '../../../src/data/stadiumAmenities';
-import { setupShadeCalculationListener } from '../../../utils/shadeCalculation';
-import { SectionList } from '../../../src/components/SectionList';
 import StadiumTitleBlock from '../../../src/components/StadiumTitleBlock';
 import { StadiumTitleData } from '../../../src/components/StadiumTitleBlock';
 import { stadiumHistories } from '../../../src/data/stadiumDetails';
@@ -54,51 +52,6 @@ function getSeasonalPattern(month: number) {
 }
 
 export default function StadiumPageSSR({ stadium, sections, amenities, guide }: StadiumPageSSRProps) {
-  const [shadeResult, setShadeResult] = useState<any>(null);
-  const [isCalculating, setIsCalculating] = useState(false);
-
-  // Setup event listeners for shade calculation
-  useEffect(() => {
-    // Setup shade calculation listener
-    const cleanup = setupShadeCalculationListener();
-
-    // Listen for shade calculation results
-    const handleShadeCalculated = (event: Event) => {
-      const customEvent = event as CustomEvent;
-      setShadeResult(customEvent.detail);
-      setIsCalculating(false);
-      
-      // Scroll to shade results (if you have a results section)
-      const resultsSection = document.getElementById('shade-results');
-      if (resultsSection) {
-        resultsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    };
-
-    const handleShadeCalculationStart = () => {
-      setIsCalculating(true);
-      setShadeResult(null);
-    };
-
-    const handleShadeCalculationError = (event: Event) => {
-      const customEvent = event as CustomEvent;
-      console.error('Shade calculation error:', customEvent.detail);
-      setIsCalculating(false);
-    };
-
-    // Add event listeners
-    window.addEventListener('calculateShade', handleShadeCalculationStart);
-    window.addEventListener('shadeCalculated', handleShadeCalculated);
-    window.addEventListener('shadeCalculationError', handleShadeCalculationError);
-
-    // Cleanup
-    return () => {
-      cleanup();
-      window.removeEventListener('calculateShade', handleShadeCalculationStart);
-      window.removeEventListener('shadeCalculated', handleShadeCalculated);
-      window.removeEventListener('shadeCalculationError', handleShadeCalculationError);
-    };
-  }, []);
 
   // Pre-calculate shade data for common scenarios
   const months = [
@@ -132,46 +85,6 @@ export default function StadiumPageSSR({ stadium, sections, amenities, guide }: 
 
   return (
     <div className={styles.stadiumSsrPage}>
-      {/* Shade Calculation Result Banner */}
-      {(isCalculating || shadeResult) && (
-        <section id="shade-results" className={styles.shadeResultBanner}>
-          <div className={styles.container}>
-            {isCalculating ? (
-              <div className={styles.calculating}>
-                <div className={styles.spinner}></div>
-                <span>Calculating shade for your selected game...</span>
-              </div>
-            ) : shadeResult ? (
-              <div className={styles.shadeResult}>
-                <div className={styles.resultHeader}>
-                  <h2>🌤️ Shade Results for {shadeResult.date} at {shadeResult.time}</h2>
-                  {shadeResult.weather && (
-                    <div className={styles.weatherInfo}>
-                      <span>{shadeResult.weather.temperature}°F</span>
-                      <span>{shadeResult.weather.conditions?.[0]?.description || 'Clear'}</span>
-                    </div>
-                  )}
-                  <button 
-                    className={styles.closeButton}
-                    onClick={() => setShadeResult(null)}
-                    aria-label="Close shade results"
-                  >
-                    ✕
-                  </button>
-                </div>
-                {shadeResult.sectionData && (
-                  <SectionList 
-                    sections={shadeResult.sectionData}
-                    loading={false}
-                    showFilters={true}
-                  />
-                )}
-              </div>
-            ) : null}
-          </div>
-        </section>
-      )}
-
       {/* Hero Section with Stadium Info */}
       <section className={styles.stadiumHero}>
         <div className={styles.container}>

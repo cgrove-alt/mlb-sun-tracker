@@ -5,12 +5,10 @@ import './App.css';
 import { UnifiedVenue, ALL_UNIFIED_VENUES, convertToLegacyStadium } from './data/unifiedVenues';
 import { UnifiedGameSelector } from './components/UnifiedGameSelector';
 import { WeatherDisplay } from './components/WeatherDisplay';
-import { EnhancedSunFilter, SunFilterCriteria } from './components/EnhancedSunFilter';
 import { SectionList } from './components/SectionList';
 import { EmptyState } from './components/EmptyStates';
 import { ErrorProvider, useError } from './components/ErrorNotification';
 import { Breadcrumb } from './components/Breadcrumb';
-import { ShareButton } from './components/ShareButton';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { VenueChangeSkeleton } from './components/SkeletonScreens';
 import { SunIcon, CloudIcon, ChartIcon, InfoIcon, MoonIcon, StadiumIcon, ShadeIcon, PartlyCloudyIcon, RainIcon } from './components/Icons';
@@ -20,7 +18,7 @@ import { SunExposureExplanation } from './components/SunExposureExplanation';
 import MobileApp from './MobileApp';
 
 import { I18nProvider, useTranslation } from './i18n/i18nContext';
-import { getSunPosition, getSunDescription, getCompassDirection, filterSectionsBySunExposure, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
+import { getSunPosition, getSunDescription, getCompassDirection, SeatingSectionSun, calculateGameSunExposure } from './utils/sunCalculations';
 import { SunCalculator } from './utils/sunCalculator';
 import { getStadiumSectionsAsync } from './data/getStadiumSections';
 import { getVenueSections } from './data/venueSections';
@@ -33,7 +31,7 @@ import { formatDateTimeWithTimezone } from './utils/timeUtils';
 import { performanceMonitor, trackWebVitals } from './utils/performanceMonitor';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import * as serviceWorkerRegistration from './utils/serviceWorkerRegistration';
-import { trackStadiumSelection, trackGameSelection, trackFilterUsage } from './utils/analytics';
+import { trackStadiumSelection, trackGameSelection } from './utils/analytics';
 import { getUnifiedVenueShade, ShadedVenueSection } from './utils/getUnifiedVenueShade';
 
 function UnifiedAppContent() {
@@ -47,9 +45,7 @@ function UnifiedAppContent() {
   const [loadingWeather, setLoadingWeather] = useState(false);
   const [detailedSections, setDetailedSections] = useState<SeatingSectionSun[]>([]);
   const [shadedSections, setShadedSections] = useState<ShadedVenueSection[]>([]);
-  const [filteredSections, setFilteredSections] = useState<SeatingSectionSun[]>([]);
   const [gameExposureData, setGameExposureData] = useState<Map<string, number> | null>(null);
-  const [filterCriteria, setFilterCriteria] = useState<SunFilterCriteria>({});
   const [loadingSections, setLoadingSections] = useState(false);
   const [calculationInProgress, setCalculationInProgress] = useState(false);
   const [changingVenue, setChangingVenue] = useState(false);
@@ -134,7 +130,6 @@ function UnifiedAppContent() {
     setWeatherForecast(null);
     setDetailedSections([]);
     setShadedSections([]);
-    setFilteredSections([]);
     
     setTimeout(() => setChangingVenue(false), 300);
   };
@@ -154,7 +149,6 @@ function UnifiedAppContent() {
     if (!selectedVenue || !gameDateTime) {
       setDetailedSections([]);
       setShadedSections([]);
-      setFilteredSections([]);
       setSunPosition(null);
       setLoadingSections(false);
       setCalculationInProgress(false);
@@ -242,9 +236,8 @@ function UnifiedAppContent() {
           });
           
           if (isCancelled) return;
-          
+
           setDetailedSections(detailedSectionData);
-          setFilteredSections(filterSectionsBySunExposure(detailedSectionData, filterCriteria));
           
           // Calculate game exposure - pass sections to avoid bundling
           const exposureMap = calculateGameSunExposure(legacyStadium!, gameDateTime, gameDuration, sections);
@@ -266,9 +259,8 @@ function UnifiedAppContent() {
             timeInSun: result.isInSun ? 180 : 0,
             percentageOfGameInSun: 100 - result.shadePercentage
           }));
-          
+
           setDetailedSections(convertedSections);
-          setFilteredSections(filterSectionsBySunExposure(convertedSections, filterCriteria));
         }
         
       } catch (error) {
@@ -289,7 +281,7 @@ function UnifiedAppContent() {
       clearTimeout(timeoutId);
       setCalculationInProgress(false);
     };
-  }, [selectedVenue, gameDateTime, filterCriteria, selectedGame, weatherForecast]);
+  }, [selectedVenue, gameDateTime, selectedGame, weatherForecast]);
 
   // Load weather forecast when venue AND game time are selected
   useEffect(() => {
@@ -297,34 +289,18 @@ function UnifiedAppContent() {
       const timeoutId = setTimeout(() => {
         loadWeatherForecast();
       }, 1000);
-      
+
       return () => clearTimeout(timeoutId);
     }
   }, [selectedVenue, gameDateTime, loadWeatherForecast]);
 
-  // Update filtered sections when filter criteria changes
-  useEffect(() => {
-    if (detailedSections.length > 0) {
-      const filtered = filterSectionsBySunExposure(detailedSections, filterCriteria);
-      setFilteredSections(filtered);
-    }
-  }, [detailedSections, filterCriteria]);
-
-  const handleFilterChange = (criteria: SunFilterCriteria) => {
-    setFilterCriteria(criteria);
-    
-    if (criteria.sunPreference) {
-      trackFilterUsage('sun_preference', criteria.sunPreference);
-    }
-  };
-
   return (
     <div className="App">
-      <SEOHelmet 
-        stadium={legacyStadium} 
+      <SEOHelmet
+        stadium={legacyStadium}
         game={selectedGame}
         pageType={selectedGame ? 'game' : selectedVenue ? 'stadium' : 'home'}
-        shadedSectionsCount={filteredSections.filter(s => !s.inSun).length}
+        shadedSectionsCount={detailedSections.filter(s => !s.inSun).length}
       />
       <OfflineIndicator />
       {/* Duplicate header removed - StickyTopNav in layout.tsx provides global navigation */}
@@ -459,52 +435,18 @@ function UnifiedAppContent() {
                 )}
               </div>
 
-              {/* Share Button - allows users to share their sun analysis */}
-              {selectedVenue && gameDateTime && (
-                <ShareButton
-                  selectedStadium={legacyStadium!}
-                  selectedGame={selectedGame}
-                  gameDateTime={gameDateTime}
-                />
-              )}
-
               {selectedVenue && gameDateTime && detailedSections.length > 0 && (
                 <>
-                  <EnhancedSunFilter
-                    onFilterChange={handleFilterChange}
-                  />
-
                   <SunExposureExplanation />
                 </>
               )}
 
-              {filteredSections.length > 0 && (
+              {detailedSections.length > 0 && (
                 <SectionList
-                  sections={filteredSections}
+                  sections={detailedSections}
                   loading={loadingSections}
                   calculationProgress={null}
                   showFilters={true}
-                />
-              )}
-
-              {filteredSections.length === 0 && detailedSections.length > 0 && (
-                <EmptyState 
-                  type="no-sections"
-                  action={
-                    <button 
-                      onClick={() => setFilterCriteria({})}
-                      style={{
-                        padding: '0.5rem 1rem',
-                        backgroundColor: '#2196f3',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      Clear Filters
-                    </button>
-                  }
                 />
               )}
             </div>

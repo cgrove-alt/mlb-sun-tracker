@@ -4,7 +4,6 @@ import { preferencesStorage } from '../utils/preferences';
 import { Tooltip } from './Tooltip';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import { LazySectionCardModern as LazySectionCard } from './LazySectionCardModern';
-import { VirtualSectionList } from './VirtualSectionList';
 import { ListIcon, SearchIcon, SunIcon, CloudIcon, CloseIcon, BaseballIcon, TicketIcon, CrownIcon, StadiumIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, ValuePriceIcon, ModeratePriceIcon, PremiumPriceIcon, LuxuryPriceIcon, MoneyIcon, PartlyCloudyIcon, FireIcon } from './Icons';
 import { LoadingSpinner } from './LoadingSpinner';
 import SectionFilters, { SectionFilterValues } from './SectionFilters/SectionFilters';
@@ -31,16 +30,14 @@ export const SectionList: React.FC<SectionListProps> = ({
   });
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState<string>('');
-  const [containerHeight, setContainerHeight] = useState<number>(600);
   const [filters, setFilters] = useState<SectionFilterValues>({
-    shadeLevel: [],
+    maxSunExposure: undefined,
     sectionType: [],
     priceRange: []
   });
   const [filtersExpanded, setFiltersExpanded] = useState(true);
   const haptic = useHapticFeedback();
   const sectionListRef = useRef<HTMLDivElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   // Debounce search term
   useEffect(() => {
@@ -50,25 +47,6 @@ export const SectionList: React.FC<SectionListProps> = ({
 
     return () => clearTimeout(timer);
   }, [searchTerm]);
-
-  // Calculate container height based on viewport
-  const calculateContainerHeight = useCallback(() => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const topOffset = rect.top;
-      // Use remaining viewport height minus some padding
-      const calculatedHeight = Math.max(400, viewportHeight - topOffset - 100);
-      setContainerHeight(calculatedHeight);
-    }
-  }, []);
-
-  // Update container height on mount and resize
-  useEffect(() => {
-    calculateContainerHeight();
-    window.addEventListener('resize', calculateContainerHeight);
-    return () => window.removeEventListener('resize', calculateContainerHeight);
-  }, [calculateContainerHeight]);
 
   // Improve scroll performance with passive event listeners
   useEffect(() => {
@@ -136,45 +114,23 @@ export const SectionList: React.FC<SectionListProps> = ({
   const filteredSections = useMemo(() => {
     return sections.filter(sectionData => {
       const section = sectionData.section;
-      
+      const exposure = sectionData.sunExposure;
+
       // Text search filter
       if (debouncedSearchTerm) {
         const term = debouncedSearchTerm.toLowerCase();
-        const matchesSearch = 
+        const matchesSearch =
           section.name.toLowerCase().includes(term) ||
           section.id.toLowerCase().includes(term) ||
           section.level.toLowerCase().includes(term) ||
           (section.price && section.price.toLowerCase().includes(term));
-        
+
         if (!matchesSearch) return false;
       }
-      
-      // Shade level filter
-      if (filters.shadeLevel.length > 0) {
-        const exposure = sectionData.sunExposure;
-        let matchesShade = false;
-        
-        for (const level of filters.shadeLevel) {
-          switch (level) {
-            case 'fully-shaded':
-              if (exposure === 0) matchesShade = true;
-              break;
-            case 'mostly-shaded':
-              if (exposure > 0 && exposure <= 25) matchesShade = true;
-              break;
-            case 'partial-shade':
-              if (exposure > 25 && exposure <= 75) matchesShade = true;
-              break;
-            case 'mostly-sunny':
-              if (exposure > 75 && exposure < 100) matchesShade = true;
-              break;
-            case 'full-sun':
-              if (exposure === 100) matchesShade = true;
-              break;
-          }
-        }
-        
-        if (!matchesShade) return false;
+
+      // Sun exposure filter
+      if (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) {
+        if (exposure > filters.maxSunExposure) return false;
       }
       
       // Section type filter
@@ -244,16 +200,16 @@ export const SectionList: React.FC<SectionListProps> = ({
   const handleSort = (newSortBy: 'name' | 'exposure' | 'level' | 'price') => {
     haptic.light();
     let newSortOrder: 'asc' | 'desc';
-    
+
     if (sortBy === newSortBy) {
       newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
     } else {
       newSortOrder = 'desc';
     }
-    
+
     setSortBy(newSortBy);
     setSortOrder(newSortOrder);
-    
+
     // Save sorting preferences to localStorage
     preferencesStorage.update('sortBy', newSortBy);
     preferencesStorage.update('sortOrder', newSortOrder);
@@ -296,7 +252,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             <span className="summary-item shady">
               <CloudIcon size={16} /> {shadyCount} shaded
             </span>
-            {(debouncedSearchTerm || filters.shadeLevel.length > 0 || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
+            {(debouncedSearchTerm || (filters.maxSunExposure !== undefined && filters.maxSunExposure !== 100) || filters.sectionType.length > 0 || filters.priceRange.length > 0) && (
               <span className="summary-item search-results">
                 <SearchIcon size={16} /> {filteredSections.length} of {sections.length} shown
               </span>
@@ -349,10 +305,10 @@ export const SectionList: React.FC<SectionListProps> = ({
               </button>
             )}
           </div>
-          
+
           <div className="sort-controls" role="toolbar" aria-label="Section sorting options">
             <span className="sort-label" id="sort-label">Sort by:</span>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'exposure' ? 'active' : ''}`}
               onClick={() => handleSort('exposure')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('exposure'))}
@@ -361,7 +317,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Sun {sortBy === 'exposure' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'name' ? 'active' : ''}`}
               onClick={() => handleSort('name')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('name'))}
@@ -370,7 +326,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Name {sortBy === 'name' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'level' ? 'active' : ''}`}
               onClick={() => handleSort('level')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('level'))}
@@ -379,7 +335,7 @@ export const SectionList: React.FC<SectionListProps> = ({
             >
               Level {sortBy === 'level' && (sortOrder === 'desc' ? '↓' : '↑')}
             </button>
-            <button 
+            <button
               className={`sort-btn ${sortBy === 'price' ? 'active' : ''}`}
               onClick={() => handleSort('price')}
               onKeyDown={(e) => handleKeyDown(e, () => handleSort('price'))}
@@ -407,30 +363,19 @@ export const SectionList: React.FC<SectionListProps> = ({
           )}
         </div>
       ) : (
-        <div className="section-list-container" role="list" aria-labelledby="sections-title" ref={containerRef}>
-          {sortedSections.length > 15 ? (
-            // Use virtual scrolling for large lists
-            <VirtualSectionList
-              sections={sortedSections}
-              height={containerHeight}
-              itemHeight={260}
-              width="100%"
-            />
-          ) : (
-            // Use regular rendering for small lists
-            <div className="section-grid">
-              {sortedSections.map((sectionData, index) => (
-                <LazySectionCard
-                  key={`${sectionData.section.id}-${index}`}
-                  section={sectionData.section}
-                  sunExposure={sectionData.sunExposure}
-                  inSun={sectionData.inSun}
-                  index={index}
-                  timeInSun={sectionData.timeInSun}
-                />
-              ))}
-            </div>
-          )}
+        <div className="section-list-container" role="list" aria-labelledby="sections-title">
+          <div className="section-grid">
+            {sortedSections.map((sectionData, index) => (
+              <LazySectionCard
+                key={`${sectionData.section.id}-${index}`}
+                section={sectionData.section}
+                sunExposure={sectionData.sunExposure}
+                inSun={sectionData.inSun}
+                index={index}
+                timeInSun={sectionData.timeInSun}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>

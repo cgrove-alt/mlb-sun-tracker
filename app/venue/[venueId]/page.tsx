@@ -1,11 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Suspense } from 'react';
 import { ALL_UNIFIED_VENUES, getUnifiedVenueById } from '../../../src/data/unifiedVenues';
 import { getVenueSections } from '../../../src/data/venueSections';
 import { generateBaseballSections } from '../../../src/utils/generateBaseballSections';
 import ComprehensiveStadiumGuide from '../../../src/components/ComprehensiveStadiumGuide';
-import StickyShadeBar from '../../../components/StickyShadeBar';
 
 interface VenuePageProps {
   params: Promise<{
@@ -138,22 +136,10 @@ export default async function VenuePage({ params }: VenuePageProps) {
   }
 
   return (
-    <>
-      {/* Show StickyShadeBar only for MLB venues - wrapped in Suspense for useSearchParams */}
-      {venue.league === 'MLB' && (
-        <Suspense fallback={null}>
-          <StickyShadeBar 
-            stadiumName={venue.name}
-            stadiumId={venue.id}
-          />
-        </Suspense>
-      )}
-      
-      <div className={venue.league === 'MLB' ? 'has-sticky-shade-bar' : ''}>
-        <ComprehensiveStadiumGuide
-          stadiumId={venue.id}
-        />
-      </div>
-    </>
+    <div>
+      <ComprehensiveStadiumGuide
+        stadiumId={venue.id}
+      />
+    </div>
   );
 }

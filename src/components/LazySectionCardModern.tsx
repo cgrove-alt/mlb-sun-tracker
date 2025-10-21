@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { useHapticFeedback } from '../hooks/useHapticFeedback';
 import type { StadiumSection } from '../data/stadiumSectionTypes';
-import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon, UmbrellaIcon } from './Icons';
-import { Tooltip } from './Tooltip';
+import { CloudIcon, PartlyCloudyIcon, SunIcon, FireIcon, FieldLevelIcon, LowerLevelIcon, ClubLevelIcon, UpperLevelIcon, CrownIcon } from './Icons';
 import { formatPercentageForScreenReader, announceToScreenReader } from '../utils/accessibility';
 
 interface LazySectionCardProps {
@@ -43,20 +42,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
     return <FireIcon size={24} color="#dc2626" />;
   };
 
-  const getSunExposureDescription = (exposure: number, minutes?: number): string => {
-    if (exposure === 0) return 'No sun during game';
-    if (exposure < 25) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Minimal sun';
-    if (exposure < 50) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Some sun';
-    if (exposure < 75) return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Mostly sun';
-    return minutes ? `Sun for ~${Math.round(minutes)} min` : 'Full sun';
-  };
 
   const getSunExposureColorClass = (exposure: number): string => {
-    if (exposure === 0) return 'from-gray-50 to-gray-100 border-gray-200';
-    if (exposure < 25) return 'from-blue-50 to-sky-50 border-blue-200';
-    if (exposure < 50) return 'from-amber-50 to-yellow-50 border-amber-200';
-    if (exposure < 75) return 'from-orange-50 to-amber-50 border-orange-200';
-    return 'from-red-50 to-orange-50 border-red-200';
+    if (exposure === 0) return 'from-gray-100 to-gray-200 border-gray-300';
+    if (exposure < 25) return 'from-blue-100 to-sky-100 border-blue-300';
+    if (exposure < 50) return 'from-amber-100 to-yellow-100 border-amber-300';
+    if (exposure < 75) return 'from-orange-100 to-amber-100 border-orange-300';
+    return 'from-red-100 to-orange-100 border-red-300';
   };
 
   const handleClick = () => {
@@ -66,14 +58,14 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
   };
 
   return (
-    <div 
+    <div
       ref={ref}
       className={`
-        group relative overflow-hidden rounded-2xl border-2 transition-all duration-300
+        group relative overflow-hidden rounded-2xl transition-all duration-300
         ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}
         ${getSunExposureColorClass(roundedExposure)}
         bg-gradient-to-br hover:shadow-card-hover hover:-translate-y-1 cursor-pointer
-        backdrop-blur-sm
+        backdrop-blur-sm border-[3px] shadow-lg
       `}
       data-exposure={roundedExposure}
       data-section={section.id}
@@ -86,20 +78,15 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
       <div className="absolute inset-0 bg-white/30 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       
       {isLoaded ? (
-        <div className="relative p-5 space-y-4">
+        <div className="relative p-5 space-y-3">
           {/* Header with section name and sun indicator */}
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent-600 transition-colors">
                 {section.name}
               </h3>
-              <div className="flex items-center gap-2 mt-1">
-                <span className="text-xs font-medium text-gray-500">
-                  {Math.round(section.baseAngle)}°-{Math.round(section.baseAngle + section.angleSpan)}°
-                </span>
-              </div>
             </div>
-            
+
             {/* Sun exposure indicator with animation */}
             <div className="flex flex-col items-center gap-1">
               <div className="p-2 rounded-xl bg-white/50 shadow-sm group-hover:animate-pulse-slow">
@@ -107,19 +94,13 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               </div>
               <span className="text-2xl font-bold text-gray-900">
                 {roundedExposure}%
-                <span className="sr-only"> of game in sun - {getSunExposureDescription(sunExposure, timeInSun)}</span>
+                <span className="sr-only"> of game in sun</span>
               </span>
             </div>
           </div>
 
-          {/* Sun exposure description */}
-          <p className="text-sm text-gray-600 font-medium">
-            {getSunExposureDescription(sunExposure, timeInSun)}
-          </p>
-
-          {/* Meta information with badges */}
+          {/* Level badge - always shown */}
           <div className="flex flex-wrap gap-2">
-            {/* Level badge */}
             <span className={`
               inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium
               ${section.level === 'field' ? 'bg-purple-100 text-purple-700' :
@@ -136,46 +117,22 @@ const LazySectionCardModernComponent: React.FC<LazySectionCardProps> = ({
               {section.level === 'suite' && <CrownIcon size={14} />}
               <span>{section.level.charAt(0).toUpperCase() + section.level.slice(1)} Level</span>
             </span>
-
-            {/* Covered indicator */}
-            {section.covered && (
-              <Tooltip content="This section has a roof or overhang providing protection from sun and rain">
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-teal-100 text-teal-700 cursor-help">
-                  <UmbrellaIcon size={14} /> Covered
-                </span>
-              </Tooltip>
-            )}
-
-            {/* Price tier */}
-            {section.price && (
-              <span className={`
-                inline-flex items-center px-3 py-1 rounded-full text-xs font-medium
-                ${section.price === 'premium' || section.price === 'luxury' ? 'bg-yellow-100 text-yellow-800' :
-                  section.price === 'moderate' ? 'bg-sky-100 text-sky-700' :
-                  'bg-gray-100 text-gray-700'}
-              `}>
-                {section.price.charAt(0).toUpperCase() + section.price.slice(1)}
-              </span>
-            )}
           </div>
 
           {/* Animated hover indicator */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
         </div>
       ) : (
-        <div className="p-5 space-y-4">
+        <div className="p-5 space-y-3">
           {/* Skeleton with shimmer effect */}
           <div className="flex items-start justify-between gap-3">
-            <div className="flex-1 space-y-2">
+            <div className="flex-1">
               <div className="h-6 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '60%' }} />
-              <div className="h-4 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '40%' }} />
             </div>
             <div className="w-12 h-12 bg-gray-200 rounded-xl skeleton-shimmer" />
           </div>
-          <div className="h-4 bg-gray-200 rounded-lg skeleton-shimmer" style={{ width: '80%' }} />
           <div className="flex gap-2">
             <div className="h-6 bg-gray-200 rounded-full skeleton-shimmer" style={{ width: '80px' }} />
-            <div className="h-6 bg-gray-200 rounded-full skeleton-shimmer" style={{ width: '60px' }} />
           </div>
         </div>
       )}

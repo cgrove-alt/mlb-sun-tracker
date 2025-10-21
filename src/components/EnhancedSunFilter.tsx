@@ -31,6 +31,14 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
   isMobile = false
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isDesktopCollapsed, setIsDesktopCollapsed] = useState(() => {
+    // Load saved state from localStorage, default to collapsed
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('filterPanelCollapsed');
+      return saved ? JSON.parse(saved) : true;
+    }
+    return true;
+  });
   const [sunPreference, setSunPreference] = useState<'any' | 'avoid' | 'prefer' | 'custom'>('any');
   const [customMin, setCustomMin] = useState<number>(0);
   const [customMax, setCustomMax] = useState<number>(100);
@@ -38,7 +46,7 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
   const [coveredPreference, setCoveredPreference] = useState<'any' | 'covered' | 'uncovered'>('any');
   const [selectedPriceRanges, setSelectedPriceRanges] = useState<Array<'value' | 'moderate' | 'premium' | 'luxury'>>([]);
   const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
-    sunPreference: true,
+    sunPreference: false,
     seatingLevel: false,
     coverage: false,
     priceRange: false
@@ -238,6 +246,32 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
       ...prev,
       [section]: !prev[section]
     }));
+  };
+
+  const toggleDesktopCollapse = () => {
+    const newState = !isDesktopCollapsed;
+    setIsDesktopCollapsed(newState);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('filterPanelCollapsed', JSON.stringify(newState));
+    }
+  };
+
+  const expandAllSections = () => {
+    setExpandedSections({
+      sunPreference: true,
+      seatingLevel: true,
+      coverage: true,
+      priceRange: true
+    });
+  };
+
+  const collapseAllSections = () => {
+    setExpandedSections({
+      sunPreference: false,
+      seatingLevel: false,
+      coverage: false,
+      priceRange: false
+    });
   };
 
   const activeFiltersCount = activeChips.length;
@@ -600,13 +634,28 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
             <span className="active-filters-count">{activeFiltersCount}</span>
           )}
         </h3>
-        {activeFiltersCount > 0 && (
-          <button onClick={clearFilters} className="clear-filters-btn">
-            Clear All
+        <div className="filter-header-actions">
+          <button
+            onClick={toggleDesktopCollapse}
+            className="collapse-toggle-btn"
+            aria-expanded={!isDesktopCollapsed}
+            aria-controls="filter-panel-content"
+            title={isDesktopCollapsed ? 'Show filters' : 'Hide filters'}
+          >
+            <ChevronDownIcon
+              size={16}
+              className={`chevron-icon ${isDesktopCollapsed ? '' : 'rotated'}`}
+            />
+            {isDesktopCollapsed ? 'Show Filters' : 'Hide Filters'}
           </button>
-        )}
+          {activeFiltersCount > 0 && (
+            <button onClick={clearFilters} className="clear-filters-btn">
+              Clear All
+            </button>
+          )}
+        </div>
       </div>
-      
+
       {/* Filter chips for desktop */}
       {activeChips.length > 0 && (
         <div className="filter-chips">
@@ -624,8 +673,23 @@ export const EnhancedSunFilter: React.FC<EnhancedSunFilterProps> = ({
           ))}
         </div>
       )}
-      
-      <FilterContent />
+
+      {/* Collapsible filter panel */}
+      {!isDesktopCollapsed && (
+        <div id="filter-panel-content" className="filter-panel-content">
+          {/* Expand/Collapse All buttons */}
+          <div className="filter-panel-controls">
+            <button onClick={expandAllSections} className="expand-collapse-btn">
+              Expand All
+            </button>
+            <button onClick={collapseAllSections} className="expand-collapse-btn">
+              Collapse All
+            </button>
+          </div>
+
+          <FilterContent />
+        </div>
+      )}
     </div>
   );
 };

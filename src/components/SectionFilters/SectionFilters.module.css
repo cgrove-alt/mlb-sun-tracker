@@ -1,9 +1,13 @@
 .filtersContainer {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background: white;
   border: 1px solid var(--color-gray-200);
   border-radius: 8px;
   margin-bottom: 16px;
   overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .filtersHeader {
@@ -154,6 +158,150 @@
 
 .filterChip svg {
   flex-shrink: 0;
+}
+
+/* Preset Buttons */
+.presetButtons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.presetButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  background: white;
+  border: 1.5px solid var(--color-gray-300);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-gray-700);
+}
+
+.presetButton:hover {
+  background: var(--color-gray-50);
+  border-color: var(--color-primary);
+}
+
+.presetButton.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  box-shadow: 0 2px 4px rgba(33, 150, 243, 0.2);
+}
+
+.presetIcon {
+  font-size: 18px;
+}
+
+.presetLabel {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* Slider Container */
+.sliderContainer {
+  margin-top: 8px;
+}
+
+.sunSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    #4caf50 0%,
+    #8bc34a 25%,
+    #ffc107 50%,
+    #ff9800 75%,
+    #f44336 100%
+  );
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Fade effect to show threshold */
+.sunSlider::before {
+  content: '';
+  position: absolute;
+  left: var(--slider-value, 100%);
+  right: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.sunSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sunSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sunSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sunSlider::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sliderLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--color-gray-600);
+}
+
+.sliderLabelStart,
+.sliderLabelEnd {
+  color: var(--color-gray-500);
+}
+
+.sliderValue {
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 13px;
+}
+
+.sliderHelp {
+  margin: 8px 0 0 0;
+  font-size: 12px;
+  color: var(--color-gray-600);
+  text-align: center;
+  font-style: italic;
 }
 
 .activeBadges {

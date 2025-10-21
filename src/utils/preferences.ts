@@ -10,6 +10,7 @@ export interface UserPreferences {
   lastUsedTime?: string;
   sortBy?: 'name' | 'exposure' | 'level' | 'price';
   sortOrder?: 'asc' | 'desc';
+  sectionViewMode?: 'quick' | 'detailed';
 }
 
 const PREFERENCES_KEY = 'mlb-sun-tracker-preferences';

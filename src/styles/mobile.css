@@ -362,7 +362,8 @@
   .control-group,
   .filter-section,
   .mobile-filter-section,
-  .mobile-filter-body {
+  .mobile-filter-body,
+  .game-selector {
     overflow: visible !important;
     position: relative;
     z-index: auto;
