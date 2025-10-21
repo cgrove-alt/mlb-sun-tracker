@@ -6,6 +6,7 @@ import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
 import { getStadiumGuide } from '../../../src/data/guides';
 import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadiumSlugMapping';
+import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
 import StickyShadeBar from '../../../components/StickyShadeBar';
@@ -229,13 +230,15 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
       
       {/* Main content in grid */}
       <div className={styles.contentWrapper} suppressHydrationWarning>
-        <StadiumPageClient 
-          stadium={stadium}
-          sections={sections}
-          amenities={amenities}
-          guide={guide}
-          useComprehensive={!!guide}
-        />
+        <ErrorBoundary level="section" resetKeys={[stadiumId]}>
+          <StadiumPageClient
+            stadium={stadium}
+            sections={sections}
+            amenities={amenities}
+            guide={guide}
+            useComprehensive={!!guide}
+          />
+        </ErrorBoundary>
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { Suspense, useState } from 'react';
 import dynamic from 'next/dynamic';
 import PWAInstallPrompt from '../components/PWAInstallPrompt';
 import { HomePageSkeleton } from '../src/components/SkeletonScreens';
+import { ErrorBoundary } from '../src/components/ErrorBoundary';
 import HomepageSchema from './HomepageSchema';
 import Link from 'next/link';
 
@@ -76,9 +77,11 @@ export default function HomePage() {
         </div>
 
         <div id="app-section" className={showApp ? 'app-visible' : 'app-hidden'}>
-          <Suspense fallback={<HomePageSkeleton />}>
-            <App />
-          </Suspense>
+          <ErrorBoundary level="section">
+            <Suspense fallback={<HomePageSkeleton />}>
+              <App />
+            </Suspense>
+          </ErrorBoundary>
         </div>
         <PWAInstallPrompt />
       </main>
