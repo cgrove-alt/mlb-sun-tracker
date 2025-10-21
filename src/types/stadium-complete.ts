@@ -4,7 +4,7 @@
 export interface Vector3D {
   x: number;
   y: number;
-  z: number | null;
+  z: number;
 }
 
 export interface RowDetail {
