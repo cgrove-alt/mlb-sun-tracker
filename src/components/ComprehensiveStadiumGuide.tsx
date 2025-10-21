@@ -13,13 +13,74 @@ import {
 } from './Icons';
 import StadiumTitleBlock from './StadiumTitleBlock';
 import { StadiumTitleData } from './StadiumTitleBlock';
+import { SectionSelector } from './SectionSelector';
 import './StadiumGuide.css';
 
 interface ComprehensiveStadiumGuideProps {
   stadiumId: string;
+  availableSections?: string[];
 }
 
-const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId }) => {
+// Helper to extract section numbers from text and create links
+function formatSectionText(text: string, stadiumId: string, availableSections?: string[]): React.ReactNode {
+  if (!availableSections || availableSections.length === 0) {
+    return text;
+  }
+
+  // Pattern: "Section 1-20" or "Sections 1-20" or "Section 101"
+  const sectionPattern = /Section(?:s)?\s+(\d+)(?:-(\d+))?/gi;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = sectionPattern.exec(text)) !== null) {
+    // Add text before match
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+
+    const startSection = parseInt(match[1]);
+    const endSection = match[2] ? parseInt(match[2]) : startSection;
+
+    // Create links for sections in range
+    const sectionLinks: React.ReactNode[] = [];
+    for (let i = startSection; i <= endSection && i <= startSection + 20; i++) {
+      const sectionId = i.toString();
+      if (availableSections.includes(sectionId)) {
+        sectionLinks.push(
+          <Link key={sectionId} href={`/stadium/${stadiumId}/section/${sectionId}`} className="section-inline-link">
+            {sectionId}
+          </Link>
+        );
+        if (i < endSection) {
+          sectionLinks.push(<span key={`sep-${i}`}>, </span>);
+        }
+      }
+    }
+
+    if (sectionLinks.length > 0) {
+      parts.push(
+        <span key={match.index}>
+          {match[2] ? 'Sections ' : 'Section '}
+          {sectionLinks}
+        </span>
+      );
+    } else {
+      parts.push(match[0]);
+    }
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? <>{parts}</> : text;
+}
+
+const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ stadiumId, availableSections }) => {
   const guide = getStadiumGuide(stadiumId);
   
   // Debug logging
@@ -104,7 +165,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
               <h4>Morning Games</h4>
               <ul>
                 {guide.shadeGuide.bestShadedSections.morning.map((section, idx) => (
-                  <li key={idx}>{section}</li>
+                  <li key={idx}>{formatSectionText(section, stadiumId, availableSections)}</li>
                 ))}
               </ul>
             </div>
@@ -112,7 +173,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
               <h4>Afternoon Games</h4>
               <ul>
                 {guide.shadeGuide.bestShadedSections.afternoon.map((section, idx) => (
-                  <li key={idx}>{section}</li>
+                  <li key={idx}>{formatSectionText(section, stadiumId, availableSections)}</li>
                 ))}
               </ul>
             </div>
@@ -120,7 +181,7 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
               <h4>Evening Games</h4>
               <ul>
                 {guide.shadeGuide.bestShadedSections.evening.map((section, idx) => (
-                  <li key={idx}>{section}</li>
+                  <li key={idx}>{formatSectionText(section, stadiumId, availableSections)}</li>
                 ))}
               </ul>
             </div>
@@ -158,7 +219,12 @@ const ComprehensiveStadiumGuide: React.FC<ComprehensiveStadiumGuideProps> = ({ s
       {/* Seating Guide */}
       <section className="guide-section seating-guide">
         <h2>Seating Guide</h2>
-        
+
+        {/* Section Selector - Only show if sections are available */}
+        {availableSections && availableSections.length > 0 && (
+          <SectionSelector stadiumId={stadiumId} sections={availableSections} />
+        )}
+
         {guide.seatingGuide.premiumSeating && (
           <div className="premium-seating">
             <h3>Premium Seating Options</h3>

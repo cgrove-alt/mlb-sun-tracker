@@ -30,6 +30,7 @@ interface StadiumPageClientProps {
   amenities: any;
   guide: any;
   useComprehensive?: boolean;
+  availableSections?: string[];
 }
 
 export default function StadiumPageClient({
@@ -37,7 +38,8 @@ export default function StadiumPageClient({
   sections,
   amenities,
   guide,
-  useComprehensive = false
+  useComprehensive = false,
+  availableSections
 }: StadiumPageClientProps) {
   const [refreshKey, setRefreshKey] = useState(0);
 
@@ -111,6 +113,7 @@ export default function StadiumPageClient({
         }>
           <ComprehensiveStadiumGuide
             stadiumId={stadium.id}
+            availableSections={availableSections}
           />
         </Suspense>
       </div>

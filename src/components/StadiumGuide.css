@@ -2039,7 +2039,7 @@ div.guide-page.stadium-guide > * {
    ============================================ */
 @media (max-width: 768px) {
   /* Global h1 overrides removed - handled by StadiumHeader module CSS */
-  
+
   /* Ensure header section has enough space */
   .stadium-header,
   header.stadium-header {
@@ -2047,4 +2047,31 @@ div.guide-page.stadium-guide > * {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
   }
+}
+
+/* Section Link Styles - Inline clickable section numbers */
+.section-inline-link {
+  color: #4299e1;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.125rem 0.25rem;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  display: inline-block;
+}
+
+.section-inline-link:hover {
+  color: #2b6cb0;
+  background-color: rgba(66, 153, 225, 0.1);
+  text-decoration: underline;
+}
+
+.section-inline-link:active {
+  transform: scale(0.97);
+}
+
+/* Ensure links work within lists */
+.shade-by-time li .section-inline-link,
+.seating-tips li .section-inline-link {
+  margin: 0 0.125rem;
 }

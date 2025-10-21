@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { Suspense } from 'react';
+import * as fs from 'fs';
+import * as path from 'path';
 import { MLB_STADIUMS } from '../../../src/data/stadiums';
 import { getStadiumSectionsAsync } from '../../../src/data/getStadiumSections';
 import { getStadiumAmenities } from '../../../src/data/stadiumAmenities';
@@ -16,6 +18,36 @@ interface StadiumPageProps {
   params: Promise<{
     stadiumId: string;
   }>;
+}
+
+// Helper to get available seat-level sections for a stadium
+function getAvailableSections(stadiumId: string): string[] {
+  // Map stadiumId to seat data directory name
+  const seatDataStadiumId = stadiumId === 'dodgers' ? 'dodger-stadium' : stadiumId;
+  const sectionsDir = path.join(
+    process.cwd(),
+    'src',
+    'data',
+    'seatData',
+    seatDataStadiumId,
+    'sections'
+  );
+
+  try {
+    if (!fs.existsSync(sectionsDir)) {
+      return [];
+    }
+
+    const sectionFiles = fs
+      .readdirSync(sectionsDir)
+      .filter((f) => f.endsWith('.ts') && f !== '_template.ts')
+      .map((f) => f.replace('.ts', ''));
+
+    return sectionFiles;
+  } catch (error) {
+    console.error(`Failed to read section files for ${stadiumId}:`, error);
+    return [];
+  }
 }
 
 export async function generateStaticParams() {
@@ -123,6 +155,9 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
   // Use the stadium's canonical ID for guide lookup
   const guide = getStadiumGuide(stadium.id) || getStadiumGuide(stadiumId);
 
+  // Get available seat-level sections for navigation
+  const availableSections = getAvailableSections(stadium.id);
+
   // Structured data for better SEO
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -226,6 +261,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
             amenities={amenities}
             guide={guide}
             useComprehensive={!!guide}
+            availableSections={availableSections}
           />
         </ErrorBoundary>
       </div>
