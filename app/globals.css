@@ -270,19 +270,6 @@ button, a, .clickable {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Sticky shade bar padding adjustments */
-@media (max-width: 768px) {
-  .has-sticky-shade-bar {
-    padding-bottom: calc(100px + env(safe-area-inset-bottom));
-  }
-}
-
-@media (min-width: 769px) {
-  .has-sticky-shade-bar {
-    padding-top: 70px;
-  }
-}
-
 /* Loading states for PWA */
 .pwa-loading {
   position: fixed;

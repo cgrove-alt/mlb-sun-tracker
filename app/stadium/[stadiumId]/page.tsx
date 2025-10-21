@@ -9,7 +9,6 @@ import { getCanonicalStadiumId, needsRedirect } from '../../../src/utils/stadium
 import { ErrorBoundary } from '../../../src/components/ErrorBoundary';
 import StadiumPageClient from './StadiumPageClient';
 import StadiumPageSSR from './StadiumPageSSR';
-import StickyShadeBar from '../../../components/StickyShadeBar';
 import styles from './StadiumPage.module.css';
 import killOverhang from './KillOverhang.module.css';
 
@@ -205,17 +204,7 @@ export default async function StadiumPage({ params }: StadiumPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         suppressHydrationWarning
       />
-      
-      {/* Sticky shade calculator bar in grid */}
-      <div className={styles.stickyContainer}>
-        <Suspense fallback={null}>
-          <StickyShadeBar 
-            stadiumName={stadium.name}
-            stadiumId={stadium.id}
-          />
-        </Suspense>
-      </div>
-      
+
       {/* Server-side rendered content for SEO and no-JS users */}
       <noscript>
         <div className={styles.contentSection}>
