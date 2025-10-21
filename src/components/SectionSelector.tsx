@@ -124,7 +124,7 @@ export const SectionSelector: React.FC<SectionSelectorProps> = ({ stadiumId, sec
             Object.entries(filteredGroups).map(([group, sectionList]) => (
               <div key={group} className="section-group">
                 <h4 className="section-group-title">{group}</h4>
-                <div className="section-grid">
+                <div className="section-selector-grid">
                   {sectionList.map((section) => (
                     <Link
                       key={section}
