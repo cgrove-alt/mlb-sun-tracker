@@ -1,0 +1,27325 @@
+/**
+ * Section 103 - athletics
+ * Generated: 2025-10-22T21:08:42.428Z
+ * Total Seats: 1036
+ * Total Rows: 28
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_103: SectionSeatingData = {
+  "sectionId": "103",
+  "sectionName": "Section 103",
+  "stadiumId": "athletics",
+  "totalSeats": 1036,
+  "totalRows": 28,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 0,
+      "depth": 80,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-A-1",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.599707950494974,
+            "y": 79.42194663482636,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-2",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.299926910365317,
+            "y": 79.45760731019946,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-3",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.000013432947016,
+            "y": 79.49213645516626,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-4",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.699971789212128,
+            "y": 79.52553357800822,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-5",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.399806251957777,
+            "y": 79.55779820312759,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-6",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.099521095745574,
+            "y": 79.58892987105413,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-7",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.7991205968404795,
+            "y": 79.61892813845171,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 79.99999999999999,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-8",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.498609033150103,
+            "y": 79.6477925781246,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-9",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.197990684163564,
+            "y": 79.67552277902351,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-10",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.897269830890788,
+            "y": 79.70211834625152,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-11",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.596450755801463,
+            "y": 79.72757890106965,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-12",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.295537742763813,
+            "y": 79.75190408090226,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-13",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.994535076984012,
+            "y": 79.77509353934227,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-14",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.693447044944936,
+            "y": 79.79714694615596,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-15",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.392277934344989,
+            "y": 79.81806398728784,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-16",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.091032034037298,
+            "y": 79.837844364865,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-17",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 4.789713633968543,
+            "y": 79.8564877972014,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-18",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 4.488327025117836,
+            "y": 79.87399401880187,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-19",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.186876499435518,
+            "y": 79.8903627803659,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-20",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 3.8853663497822923,
+            "y": 79.90559384879121,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-21",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 3.583800869867932,
+            "y": 79.91968700717699,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-22",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.2821843541900604,
+            "y": 79.93264205482707,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-23",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 2.980521097973139,
+            "y": 79.94445880725279,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-24",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 2.6788153971072988,
+            "y": 79.95513709617552,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-25",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.377071548087023,
+            "y": 79.96467676952915,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-26",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.0752938479500513,
+            "y": 79.97307769146227,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 79.99999999999999,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-27",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 1.773486594216256,
+            "y": 79.98033974234002,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-28",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.4716540848263915,
+            "y": 79.98646281874586,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-29",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.1698006180807277,
+            "y": 79.991446833483,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-30",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 0.8679304925780873,
+            "y": 79.99529171557569,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-31",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.5660480071545794,
+            "y": 79.9979974102702,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80.00000000000001,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-32",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.2641574608221663,
+            "y": 79.99956387903556,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-33",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.037736847292290175,
+            "y": 79.99999109956423,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-34",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.33963061800835775,
+            "y": 79.99927906577228,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-35",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.641519552153204,
+            "y": 79.99742778779955,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-36",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -0.9433993506230854,
+            "y": 79.99443729200952,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 80,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-A-37",
+          "sectionId": "103",
+          "row": "A",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.245265714444144,
+            "y": 79.99030762098886,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 79.99999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 2.5,
+      "depth": 82.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-B-1",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.935697728762298,
+            "y": 82.20171476704527,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.80000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-2",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.625424352228103,
+            "y": 82.23862356605643,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-3",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.31501390310016,
+            "y": 82.27436123109707,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-4",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.004470801834552,
+            "y": 82.30892725323851,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-5",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.6937994707763,
+            "y": 82.34232114023705,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-6",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.38300433409667,
+            "y": 82.37454241654102,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-7",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.072089817729896,
+            "y": 82.40559062329753,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-8",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.761060349310356,
+            "y": 82.43546531835895,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-9",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.4499203581092885,
+            "y": 82.46416607628933,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-10",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.138674274971965,
+            "y": 82.49169248837032,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-11",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.827326532254514,
+            "y": 82.51804416260708,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-12",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.515881563760546,
+            "y": 82.54322072373385,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-13",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.2043438046784525,
+            "y": 82.56722181321923,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-14",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.892717691518008,
+            "y": 82.59004708927142,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-15",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.581007662047063,
+            "y": 82.61169622684291,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-16",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.269218155228603,
+            "y": 82.63216891763527,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-17",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 4.957353611157442,
+            "y": 82.65146487010344,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-18",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 4.64541847099696,
+            "y": 82.66958380945994,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-19",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.33341717691576,
+            "y": 82.68652547767871,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-20",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.021354172024672,
+            "y": 82.70228963349889,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-21",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 3.7092339003133095,
+            "y": 82.71687605242818,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-22",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.3970608065867123,
+            "y": 82.73028452674602,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-23",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.0848393364021987,
+            "y": 82.74251486550662,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-24",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 2.772573936006054,
+            "y": 82.75356689454165,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-25",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.4602690522700685,
+            "y": 82.76344045646267,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-26",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.147929132628303,
+            "y": 82.77213541066345,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-27",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 1.8355586250138252,
+            "y": 82.77965163332192,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-28",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.5231619777953151,
+            "y": 82.78598901740196,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-29",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.210743639713553,
+            "y": 82.7911474726549,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-30",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 0.8983080598183203,
+            "y": 82.79512692562083,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-31",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.5858596874049896,
+            "y": 82.79792731962965,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-32",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.2734029719509421,
+            "y": 82.79954861480181,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-33",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.039057636947520326,
+            "y": 82.79999078804897,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-34",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.35151768963865027,
+            "y": 82.7992538330743,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.79999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-35",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.6639727364785661,
+            "y": 82.79733776037254,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-36",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -0.9764183278948935,
+            "y": 82.79424259722985,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-B-37",
+          "sectionId": "103",
+          "row": "B",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.288850014449689,
+            "y": 82.78996838772348,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 82.8,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 5,
+      "depth": 85.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-C-1",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.271687507029622,
+            "y": 84.9814828992642,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-2",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.950921794090888,
+            "y": 85.01963982191342,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-3",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.630014373253307,
+            "y": 85.05658600702789,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-4",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.308969814456978,
+            "y": 85.0923209284688,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-5",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.987792689594821,
+            "y": 85.12684407734652,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-6",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.666487572447764,
+            "y": 85.16015496202792,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-7",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.345059038619313,
+            "y": 85.19225310814333,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-8",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.02351166547061,
+            "y": 85.2231380585933,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-9",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.701850032055013,
+            "y": 85.25280937355515,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-10",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.3800787190531425,
+            "y": 85.28126663048913,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-11",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.058202308707565,
+            "y": 85.30850942414452,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-12",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.736225384757279,
+            "y": 85.33453736656543,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-13",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.414152532372893,
+            "y": 85.35935008709622,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-14",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.091988338091081,
+            "y": 85.38294723238688,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-15",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.769737389749138,
+            "y": 85.40532846639799,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-16",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.447404276419908,
+            "y": 85.42649347040555,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-17",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.124993588346341,
+            "y": 85.44644194300548,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-18",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 4.802509916876084,
+            "y": 85.46517360011799,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-19",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.4799578543960035,
+            "y": 85.48268817499151,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-20",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.157341994267052,
+            "y": 85.49898541820659,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-21",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 3.834666930758687,
+            "y": 85.51406509767938,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.60000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-22",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.511937258983364,
+            "y": 85.52792699866497,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-23",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.1891575748312584,
+            "y": 85.54057092376047,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-24",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 2.8663324749048096,
+            "y": 85.55199669290779,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-25",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.5434665564531143,
+            "y": 85.56220414339619,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-26",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.2205644173065546,
+            "y": 85.57119312986462,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-27",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 1.897630655811394,
+            "y": 85.57896352430382,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-28",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.5746698707642388,
+            "y": 85.58551521605806,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-29",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.2516866613463784,
+            "y": 85.5908481118268,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-30",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 0.9286856270585534,
+            "y": 85.59496213566598,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-31",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.6056713676553999,
+            "y": 85.5978572289891,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-32",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.2826484830797179,
+            "y": 85.59953335056805,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-33",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04037842660275048,
+            "y": 85.59999047653372,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-34",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.3634047612689428,
+            "y": 85.59922860037634,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-35",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.6864259208039282,
+            "y": 85.59724773294552,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-36",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.0094373051667014,
+            "y": 85.59404790245019,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-C-37",
+          "sectionId": "103",
+          "row": "C",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.332434314455234,
+            "y": 85.58962915445808,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 85.6,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 7.5,
+      "depth": 88.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-D-1",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.607677285296948,
+            "y": 87.76125103148313,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.40000000000002,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-2",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.276419235953677,
+            "y": 87.80065607777041,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-3",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.945014843406453,
+            "y": 87.83881078295873,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-4",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.613468827079403,
+            "y": 87.87571460369908,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-5",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.281785908413346,
+            "y": 87.91136701445599,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-6",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.94997081079886,
+            "y": 87.94576750751482,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-7",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.61802825950873,
+            "y": 87.97891559298915,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-8",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.285962981630865,
+            "y": 88.01081079882768,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-9",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.953779706000739,
+            "y": 88.04145267082099,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-10",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.621483163134321,
+            "y": 88.07084077260794,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-11",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.289078085160617,
+            "y": 88.09897468568197,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-12",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.956569205754014,
+            "y": 88.12585400939702,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-13",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.623961260067334,
+            "y": 88.1514783609732,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-14",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.291258984664155,
+            "y": 88.17584737550234,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-15",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.958467117451213,
+            "y": 88.19896070595307,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-16",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.625590397611214,
+            "y": 88.22081802317584,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-17",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.292633565535241,
+            "y": 88.24141901590755,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-18",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 4.959601362755209,
+            "y": 88.26076339077608,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-19",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.626498531876247,
+            "y": 88.27885087230433,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-20",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.293329816509433,
+            "y": 88.2956812029143,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-21",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 3.960099961204065,
+            "y": 88.31125414293058,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-22",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.626813711380017,
+            "y": 88.32556947058391,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-23",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.2934758132603186,
+            "y": 88.33862698201433,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-24",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 2.960091013803565,
+            "y": 88.35042649127395,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-25",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.6266640606361604,
+            "y": 88.36096783032971,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-26",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.2931997019848067,
+            "y": 88.37025084906581,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-27",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 1.959702686608963,
+            "y": 88.37827541528573,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-28",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.6261777637331627,
+            "y": 88.38504141471418,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-29",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.292629682979204,
+            "y": 88.39054875099872,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-30",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 0.9590631942987865,
+            "y": 88.39479734571114,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-31",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.6254830479058102,
+            "y": 88.39778713834858,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-32",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.2918939942084937,
+            "y": 88.39951808633431,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-33",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04169921625798064,
+            "y": 88.39999016501848,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-34",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.37529183289923534,
+            "y": 88.39920336767837,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-35",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.7088791051292904,
+            "y": 88.39715770551851,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-36",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.0424562824385095,
+            "y": 88.39385320767053,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.4,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-D-37",
+          "sectionId": "103",
+          "row": "D",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.376018614460779,
+            "y": 88.3892899211927,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 88.39999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 10,
+      "depth": 91.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-E-1",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.943667063564272,
+            "y": 90.54101916370205,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-2",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.601916677816462,
+            "y": 90.58167233362738,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-3",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.260015313559599,
+            "y": 90.62103555888955,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-4",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.917967839701827,
+            "y": 90.65910827892937,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-5",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.575779127231867,
+            "y": 90.69588995156545,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-6",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.233454049149955,
+            "y": 90.73138005300171,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-7",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.890997480398147,
+            "y": 90.76557807783496,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-8",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.548414297791117,
+            "y": 90.79848353906203,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-9",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.205709379946464,
+            "y": 90.83009596808681,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-10",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.862887607215498,
+            "y": 90.86041491472673,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-11",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.519953861613668,
+            "y": 90.8894399472194,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-12",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.176913026750746,
+            "y": 90.91717065222859,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-13",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.833769987761774,
+            "y": 90.94360663485018,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-14",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.490529631237227,
+            "y": 90.9687475186178,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-15",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.147196845153288,
+            "y": 90.99259294550814,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-16",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.803776518802519,
+            "y": 91.0151425759461,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-17",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.46027354272414,
+            "y": 91.0363960888096,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-18",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.116692808634333,
+            "y": 91.05635318143413,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-19",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.77303920935649,
+            "y": 91.07501356961714,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-20",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.429317638751813,
+            "y": 91.09237698762198,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-21",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.085532991649442,
+            "y": 91.10844318818177,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-22",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.741690163776669,
+            "y": 91.12321194250286,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-23",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.3977940516893783,
+            "y": 91.13668304026818,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-24",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.0538495527023204,
+            "y": 91.1488562896401,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-25",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.709861564819206,
+            "y": 91.15973151726324,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-26",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.3658349866630584,
+            "y": 91.16930856826698,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-27",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.021774717406532,
+            "y": 91.17758730626763,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-28",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.6776856567020864,
+            "y": 91.18456761337028,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-29",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.3335727046120294,
+            "y": 91.19024939017062,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-30",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 0.9894407615390195,
+            "y": 91.19463255575629,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-31",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.6452947281562206,
+            "y": 91.19771704770803,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-32",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3011395053372696,
+            "y": 91.19950282210054,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-33",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.0430200059132108,
+            "y": 91.19998985350323,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-34",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.38717890452952786,
+            "y": 91.1991781349804,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-35",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.7313322894546526,
+            "y": 91.1970676780915,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.2,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-36",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.0754752597103174,
+            "y": 91.19365851289086,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.20000000000002,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-E-37",
+          "sectionId": "103",
+          "row": "E",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.4196029144663243,
+            "y": 91.1889506879273,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 91.19999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 12.5,
+      "depth": 94,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-F-1",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.279656841831596,
+            "y": 93.32078729592097,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-2",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.927414119679247,
+            "y": 93.36268858948436,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-3",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.575015783712743,
+            "y": 93.40326033482036,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-4",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.222466852324251,
+            "y": 93.44250195415965,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-5",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.86977234605039,
+            "y": 93.48041288867492,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-6",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.51693728750105,
+            "y": 93.5169925984886,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-7",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.163966701287563,
+            "y": 93.55224056268077,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-8",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.810865613951371,
+            "y": 93.5861562792964,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-9",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.457639053892189,
+            "y": 93.61873926535263,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-10",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.104292051296676,
+            "y": 93.64998905684554,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-11",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.750829638066719,
+            "y": 93.67990520875684,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-12",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.39725684774748,
+            "y": 93.70848729506017,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-13",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.043578715456214,
+            "y": 93.73573490872715,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-14",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.6898002778103,
+            "y": 93.76164766173326,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-15",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.335926572855362,
+            "y": 93.78622518506322,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-16",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.981962639993824,
+            "y": 93.80946712871638,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-17",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.627913519913039,
+            "y": 93.83137316171164,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-18",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.2737842545134574,
+            "y": 93.85194297209219,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-19",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 4.919579886836733,
+            "y": 93.87117626692994,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-20",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.565305460994193,
+            "y": 93.88907277232967,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-21",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.21096602209482,
+            "y": 93.90563223343297,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-22",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.8565666161733207,
+            "y": 93.92085441442181,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-23",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.502112290118438,
+            "y": 93.93473909852202,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-24",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.147608091601076,
+            "y": 93.94728608800622,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-25",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.793059069002252,
+            "y": 93.95849520419675,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-26",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.4384702713413104,
+            "y": 93.96836628746817,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-27",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.0838467482041008,
+            "y": 93.97689919724952,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-28",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.72919354967101,
+            "y": 93.98409381202639,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94.00000000000001,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-29",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.3745157262448549,
+            "y": 93.98995002934252,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-30",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.0198183287792526,
+            "y": 93.99446776580143,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-31",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.6651064084066308,
+            "y": 93.99764695706747,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-32",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3103850164660454,
+            "y": 93.99948755786679,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 93.99999999999999,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-33",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04434079556844095,
+            "y": 93.99998954198797,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-34",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.39906597615982037,
+            "y": 93.99915290228243,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-35",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.7537854737800147,
+            "y": 93.99697765066448,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-36",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.1084942369821253,
+            "y": 93.9934638181112,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-F-37",
+          "sectionId": "103",
+          "row": "F",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.4631872144718692,
+            "y": 93.98861145466192,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 94,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 15,
+      "depth": 96.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-G-1",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.61564662009892,
+            "y": 96.10055542813988,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-2",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.252911561542033,
+            "y": 96.14370484534135,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-3",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.89001625386589,
+            "y": 96.18548511075117,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-4",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.526965864946675,
+            "y": 96.22589562938994,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-5",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.16376556486891,
+            "y": 96.26493582578438,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-6",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.800420525852145,
+            "y": 96.3026051439755,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-7",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.43693592217698,
+            "y": 96.33890304752657,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-8",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.073316930111625,
+            "y": 96.37382901953076,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-9",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.709568727837913,
+            "y": 96.40738256261845,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-10",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.345696495377853,
+            "y": 96.43956319896434,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-11",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.9817054145197694,
+            "y": 96.47037047029427,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-12",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.617600668744213,
+            "y": 96.49980393789174,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-13",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.253387443150655,
+            "y": 96.52786318260414,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-14",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.889070924383372,
+            "y": 96.55454780484871,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-15",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.524656300557436,
+            "y": 96.57985742461828,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-16",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 6.1601487611851296,
+            "y": 96.60379168148665,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-17",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.795553497101937,
+            "y": 96.62635023461368,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-18",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.430875700392582,
+            "y": 96.64753276275026,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-19",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.066120564316976,
+            "y": 96.66733896424275,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-20",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.7012932832365735,
+            "y": 96.68576855703736,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-21",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.336399052540197,
+            "y": 96.70282127868416,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.80000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-22",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 3.9714430685699726,
+            "y": 96.71849688634076,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-23",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.606430528547498,
+            "y": 96.73279515677586,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-24",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.241366630499831,
+            "y": 96.74571588637237,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-25",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.8762565731852976,
+            "y": 96.75725889113026,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-26",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.511105556019562,
+            "y": 96.76742400666934,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-27",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.14591877900167,
+            "y": 96.77621108823142,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-28",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.7807014426399337,
+            "y": 96.78362001068248,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-29",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.4154587478776803,
+            "y": 96.78965066851443,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-30",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.0501958960194857,
+            "y": 96.79430297584658,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-31",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.6849180886570411,
+            "y": 96.79757686642694,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-32",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3196305275948212,
+            "y": 96.79947229363303,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-33",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04566158522367111,
+            "y": 96.79998923047272,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-34",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.4109530477901129,
+            "y": 96.79912766958445,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-35",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.7762386581053767,
+            "y": 96.79688762323745,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-36",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.1415132142539335,
+            "y": 96.79326912333153,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.8,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-G-37",
+          "sectionId": "103",
+          "row": "G",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.506771514477414,
+            "y": 96.78827222139653,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 96.79999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 17.5,
+      "depth": 99.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-H-1",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.951636398366242,
+            "y": 98.8803235603588,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.60000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-2",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.578409003404818,
+            "y": 98.92472110119832,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-3",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.205016724019034,
+            "y": 98.96770988668199,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-4",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.831464877569099,
+            "y": 99.00928930462022,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-5",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.457758783687433,
+            "y": 99.04945876289383,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-6",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.083903764203239,
+            "y": 99.08821768946238,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-7",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.709905143066397,
+            "y": 99.12556553237238,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-8",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.335768246271877,
+            "y": 99.16150175976512,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-9",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.961498401783636,
+            "y": 99.19602585988427,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-10",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.58710093945903,
+            "y": 99.22913734108313,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-11",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.212581190972822,
+            "y": 99.2608357318317,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-12",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.837944489740946,
+            "y": 99.29112058072332,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-13",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.4631961708450945,
+            "y": 99.3199914564811,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-14",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.088341570956445,
+            "y": 99.34744794796417,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-15",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.713386028259511,
+            "y": 99.37348966417335,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-16",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 6.338334882376435,
+            "y": 99.39811623425692,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-17",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 5.963193474290836,
+            "y": 99.42132730751572,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-18",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.587967146271706,
+            "y": 99.44312255340832,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-19",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.2126612417972185,
+            "y": 99.46350166155555,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-20",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.8372811054789535,
+            "y": 99.48246434174504,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-21",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.461832082985575,
+            "y": 99.50001032393534,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-22",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.086319520966625,
+            "y": 99.5161393582597,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-23",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.7107487669765575,
+            "y": 99.53085121502971,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-24",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.335125169398587,
+            "y": 99.54414568473851,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-25",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 2.9594540773683433,
+            "y": 99.55602257806379,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-26",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.5837408406978137,
+            "y": 99.56648172587052,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-27",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.207990809799239,
+            "y": 99.57552297921332,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-28",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.8322093356088573,
+            "y": 99.5831462093386,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-29",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.4564017695105058,
+            "y": 99.58935130768633,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-30",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.0805734632597186,
+            "y": 99.59413818589172,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-31",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.7047297689074513,
+            "y": 99.59750677578639,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-32",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.328876038723597,
+            "y": 99.59945702939928,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-33",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.046982374878901265,
+            "y": 99.59998891895746,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-34",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.4228401194204054,
+            "y": 99.59910243688648,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-35",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.7986918424307389,
+            "y": 99.59679759581044,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.6,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-36",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.1745321915257414,
+            "y": 99.59307442855184,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-H-37",
+          "sectionId": "103",
+          "row": "H",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.5503558144829592,
+            "y": 99.58793298813113,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 99.59999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 20,
+      "depth": 102.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-I-1",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.287626176633568,
+            "y": 101.66009169257774,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.40000000000002,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-2",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.903906445267607,
+            "y": 101.70573735705531,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-3",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.520017194172182,
+            "y": 101.74993466261282,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-4",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.135963890191526,
+            "y": 101.79268297985053,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-5",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.751752002505956,
+            "y": 101.83398170000332,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-6",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.367387002554336,
+            "y": 101.8738302349493,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-7",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.982874363955816,
+            "y": 101.9122280172182,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-8",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.598219562432133,
+            "y": 101.94917449999949,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-9",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.213428075729363,
+            "y": 101.98466915715011,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.40000000000002,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-10",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.82850538354021,
+            "y": 102.01871148320195,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-11",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.443456967425872,
+            "y": 102.05130099336915,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-12",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.05828831073768,
+            "y": 102.0824372235549,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-13",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.673004898539536,
+            "y": 102.1121197303581,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-14",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.287612217529518,
+            "y": 102.14034809107964,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-15",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.902115755961586,
+            "y": 102.16712190372844,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-16",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 6.516521003567741,
+            "y": 102.19244078702721,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-17",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.130833451479736,
+            "y": 102.2163043804178,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-18",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.74505859215083,
+            "y": 102.2387123440664,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-19",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.359201919277463,
+            "y": 102.25966435886836,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-20",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 4.973268927721334,
+            "y": 102.27916012645275,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-21",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.587265113430953,
+            "y": 102.29719936918656,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-22",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.201195973363277,
+            "y": 102.31378183017866,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.39999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-23",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.815067005405618,
+            "y": 102.32890727328356,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-24",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.4288837082973425,
+            "y": 102.34257548310467,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-25",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.0426515815513895,
+            "y": 102.35478626499732,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-26",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.656376125376066,
+            "y": 102.3655394450717,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-27",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.270062840596808,
+            "y": 102.37483487019523,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.39999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-28",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.8837172285777812,
+            "y": 102.3826724079947,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-29",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.4973447911433313,
+            "y": 102.38905194685825,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-30",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.1109510304999517,
+            "y": 102.39397339593688,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.39999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-31",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.7245414491578617,
+            "y": 102.39743668514586,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.40000000000002,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-32",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.33812154985237286,
+            "y": 102.39944176516553,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-33",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04830316453413142,
+            "y": 102.39998860744222,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-34",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.43472719105069796,
+            "y": 102.39907720418853,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-35",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.8211450267561011,
+            "y": 102.39670756838343,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.39999999999999,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-36",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.2075511687975495,
+            "y": 102.39287973377219,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.4,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-I-37",
+          "sectionId": "103",
+          "row": "I",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.5939401144885044,
+            "y": 102.38759375486575,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 102.39999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 22.5,
+      "depth": 105.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-J-1",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.623615954900892,
+            "y": 104.43985982479666,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-2",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.229403887130392,
+            "y": 104.4867536129123,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-3",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.835017664325326,
+            "y": 104.53215943854364,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-4",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.44046290281395,
+            "y": 104.57607665508081,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-5",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.045745221324477,
+            "y": 104.61850463711278,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-6",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.65087024090543,
+            "y": 104.65944278043618,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-7",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.25584358484523,
+            "y": 104.698890502064,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-8",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.860670878592385,
+            "y": 104.73684724023384,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-9",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.465357749675087,
+            "y": 104.77331245441593,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-10",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.069909827621386,
+            "y": 104.80828562532075,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-11",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.674332743878924,
+            "y": 104.84176625490659,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-12",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.278632131734414,
+            "y": 104.8737538663865,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-13",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.882813626233976,
+            "y": 104.90424800423509,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-14",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.486882864102591,
+            "y": 104.93324823419509,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-15",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 7.090845483663661,
+            "y": 104.96075414328351,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-16",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 6.694707124759046,
+            "y": 104.98676533979749,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-17",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.298473428668635,
+            "y": 105.01128145331984,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-18",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 5.902150038029954,
+            "y": 105.03430213472446,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-19",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.505742596757705,
+            "y": 105.05582705618117,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-20",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.1092567499637145,
+            "y": 105.07585591116045,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-21",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.712698143876331,
+            "y": 105.09438841443774,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-22",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.31607242575993,
+            "y": 105.1114243020976,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-23",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 3.919385243834678,
+            "y": 105.12696333153741,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-24",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.5226422471960976,
+            "y": 105.1410052814708,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-25",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.125849085734435,
+            "y": 105.15354995193084,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-26",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.7290114100543175,
+            "y": 105.16459716427289,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-27",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.332134871394377,
+            "y": 105.17414676117713,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-28",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.935225121546705,
+            "y": 105.1821986066508,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-29",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.5382878127761568,
+            "y": 105.18875258603015,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-30",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.1413285977401848,
+            "y": 105.19380860598203,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-31",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.7443531294082719,
+            "y": 105.19736659450531,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.20000000000002,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-32",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.34736706098114867,
+            "y": 105.19942650093176,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-33",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.04962395418936158,
+            "y": 105.19998829592697,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-34",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.44661426268099047,
+            "y": 105.19905197149055,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-35",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.8435982110814633,
+            "y": 105.19661754095642,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-36",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.2405701460693574,
+            "y": 105.19268503899252,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.19999999999999,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-J-37",
+          "sectionId": "103",
+          "row": "J",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.6375244144940493,
+            "y": 105.18725452160037,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 105.2,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 25,
+      "depth": 108,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-K-1",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.959605733168216,
+            "y": 107.21962795701558,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-2",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.554901328993179,
+            "y": 107.26776986876926,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-3",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.150018134478472,
+            "y": 107.31438421447446,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-4",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.744961915436374,
+            "y": 107.3594703303111,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-5",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.339738440143,
+            "y": 107.40302757422225,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-6",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.934353479256526,
+            "y": 107.44505532592308,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-7",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.528812805734647,
+            "y": 107.48555298690981,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-8",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.12312219475264,
+            "y": 107.5245199804682,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-9",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.717287423620812,
+            "y": 107.56195575168174,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-10",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.311314271702564,
+            "y": 107.59785976743956,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-11",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.905208520331975,
+            "y": 107.63223151644402,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-12",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.498975952731147,
+            "y": 107.66507050921807,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-13",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 8.092622353928416,
+            "y": 107.69637627811206,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-14",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.6861535106756635,
+            "y": 107.72614837731055,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-15",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 7.279575211365735,
+            "y": 107.75438638283859,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-16",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 6.872893245950351,
+            "y": 107.78108989256775,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-17",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.466113405857534,
+            "y": 107.80625852622188,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-18",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.059241483909078,
+            "y": 107.82989192538253,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-19",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.6522832742379485,
+            "y": 107.85198975349397,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-20",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.2452445722060945,
+            "y": 107.87255169586813,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-21",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.838131174321708,
+            "y": 107.89157745968893,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-22",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.430948878156581,
+            "y": 107.90906677401655,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-23",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.023703482263738,
+            "y": 107.92501938979126,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-24",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.6164007860948533,
+            "y": 107.93943507983694,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108.00000000000001,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-25",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.209046589917481,
+            "y": 107.95231363886435,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-26",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.801646694732569,
+            "y": 107.96365488347406,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-27",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.3942069021919457,
+            "y": 107.97345865215902,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-28",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 1.9867330145156286,
+            "y": 107.98172480530691,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-29",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.5792308344089823,
+            "y": 107.98845322520205,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-30",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.171706164980418,
+            "y": 107.99364381602717,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-31",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.7641648096586822,
+            "y": 107.99729650386476,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-32",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3566125721099245,
+            "y": 107.99941123669801,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-33",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.05094474384459173,
+            "y": 107.99998798441172,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-34",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.458501334311283,
+            "y": 107.99902673879258,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-35",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.8660513954068254,
+            "y": 107.9965275135294,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 107.99999999999999,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-36",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.2735891233411654,
+            "y": 107.99249034421285,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-K-37",
+          "sectionId": "103",
+          "row": "K",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.6811087144995944,
+            "y": 107.98691528833497,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 108,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 27.5,
+      "depth": 110.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-L-1",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.29559551143554,
+            "y": 109.9993960892345,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-2",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.880398770855964,
+            "y": 110.04878612462625,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-3",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.465018604631616,
+            "y": 110.09660899040527,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-4",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.049460928058798,
+            "y": 110.14286400554138,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-5",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.633731658961521,
+            "y": 110.18755051133171,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-6",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.21783671760762,
+            "y": 110.23066787140996,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-7",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.801782026624064,
+            "y": 110.27221547175562,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-8",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.385573510912893,
+            "y": 110.31219272070255,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-9",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.969217097566537,
+            "y": 110.35059904894756,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-10",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.55271871578374,
+            "y": 110.38743390955835,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-11",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.136084296785025,
+            "y": 110.42269677798146,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-12",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.71931977372788,
+            "y": 110.45638715204964,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-13",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 8.302431081622856,
+            "y": 110.48850455198904,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-14",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.885424157248736,
+            "y": 110.51904852042601,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-15",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 7.468304939067809,
+            "y": 110.54801862239366,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-16",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.051079367141656,
+            "y": 110.57541444533803,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-17",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.633753383046432,
+            "y": 110.60123559912392,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-18",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.216332929788202,
+            "y": 110.62548171604058,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-19",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.798823951718191,
+            "y": 110.64815245080678,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-20",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.381232394448475,
+            "y": 110.66924748057582,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-21",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 4.963564204767086,
+            "y": 110.68876650494013,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-22",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.5458253305532335,
+            "y": 110.70670924593549,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-23",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.128021720692797,
+            "y": 110.72307544804511,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-24",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.7101593249936085,
+            "y": 110.73786487820308,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-25",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.2922440941005267,
+            "y": 110.75107732579787,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-26",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.8742819794108208,
+            "y": 110.76271260267524,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-27",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.4562789329895147,
+            "y": 110.77277054314094,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-28",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.038240907484552,
+            "y": 110.781251003963,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-29",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.6201738560418077,
+            "y": 110.78815386437395,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-30",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.2020837322206508,
+            "y": 110.79347902607233,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-31",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.7839764899090924,
+            "y": 110.79722641322422,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-32",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3658580832387003,
+            "y": 110.79939597246425,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-33",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.05226553349982189,
+            "y": 110.79998767289646,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.80000000000001,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-34",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.4703884059415755,
+            "y": 110.7990015060946,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-35",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.8885045797321874,
+            "y": 110.79643748610238,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-36",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.3066081006129733,
+            "y": 110.79229564943319,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.79999999999998,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-L-37",
+          "sectionId": "103",
+          "row": "L",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.7246930145051393,
+            "y": 110.78657605506957,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 110.8,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 30,
+      "depth": 113.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-M-1",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.631585289702864,
+            "y": 112.77916422145341,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-2",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.20589621271875,
+            "y": 112.82980238048323,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-3",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.780019074784763,
+            "y": 112.87883376633609,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-4",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.353959940681221,
+            "y": 112.92625768077167,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-5",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.927724877780044,
+            "y": 112.97207344844117,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-6",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.501319955958715,
+            "y": 113.01628041689686,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-7",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.07475124751348,
+            "y": 113.05887795660144,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-8",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.648024827073145,
+            "y": 113.09986546093693,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-9",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.221146771512261,
+            "y": 113.13924234621338,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-10",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.794123159864919,
+            "y": 113.17700805167715,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.59999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-11",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.366960073238078,
+            "y": 113.21316203951889,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-12",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.939663594724614,
+            "y": 113.24770379488122,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-13",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 8.512239809317297,
+            "y": 113.28063282586601,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-14",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 8.084694803821808,
+            "y": 113.31194866354147,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-15",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 7.657034666769884,
+            "y": 113.34165086194872,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-16",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.2292654883329615,
+            "y": 113.3697389981083,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-17",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.801393360235331,
+            "y": 113.39621267202597,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.59999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-18",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.373424375667327,
+            "y": 113.42107150669865,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-19",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 5.945364629198434,
+            "y": 113.44431514811959,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-20",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.517220216690855,
+            "y": 113.46594326528351,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-21",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.088997235212463,
+            "y": 113.48595555019132,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-22",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.660701782949885,
+            "y": 113.50435171785443,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-23",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.232339959121857,
+            "y": 113.52113150629894,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-24",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.803917863892364,
+            "y": 113.53629467656923,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.60000000000001,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-25",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.3754415982835724,
+            "y": 113.54984101273139,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-26",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 2.946917264089073,
+            "y": 113.56177032187641,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.59999999999998,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-27",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.518350963787084,
+            "y": 113.57208243412283,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-28",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.0897488004534757,
+            "y": 113.58077720261912,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-29",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.661116877674633,
+            "y": 113.58785450354586,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-30",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.232461299460884,
+            "y": 113.59331423611748,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-31",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.8037881701595027,
+            "y": 113.59715632258367,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-32",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3751035943674761,
+            "y": 113.5993807082305,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-33",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.053586323155052046,
+            "y": 113.59998736138121,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-34",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.482275477571868,
+            "y": 113.59897627339663,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-35",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.9109577640575496,
+            "y": 113.59634745867537,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-36",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.3396270778847812,
+            "y": 113.59210095465352,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.6,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-M-37",
+          "sectionId": "103",
+          "row": "M",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.7682773145106843,
+            "y": 113.58623682180418,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 113.59999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 32.5,
+      "depth": 116.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-N-1",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.967575067970188,
+            "y": 115.55893235367235,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-2",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.531393654581537,
+            "y": 115.61081863634021,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-3",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.095019544937909,
+            "y": 115.66105854226691,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-4",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.658458953303647,
+            "y": 115.70965135600197,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-5",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.221718096598567,
+            "y": 115.75659638555065,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-6",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.784803194309811,
+            "y": 115.80189296238376,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-7",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.3477204684029,
+            "y": 115.84554044144726,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-8",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.910476143233401,
+            "y": 115.8875382011713,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-9",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.473076445457986,
+            "y": 115.92788564347921,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-10",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.035527603946097,
+            "y": 115.96658219379597,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-11",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.59783584969113,
+            "y": 116.00362730105634,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-12",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 9.160007415721347,
+            "y": 116.03902043771281,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-13",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 8.722048537011737,
+            "y": 116.072761099743,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-14",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 8.283965450394883,
+            "y": 116.10484880665693,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-15",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 7.845764394471959,
+            "y": 116.13528310150382,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-16",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.4074516095242675,
+            "y": 116.16406355087858,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-17",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 6.969033337424231,
+            "y": 116.19118974492804,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-18",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.530515821546452,
+            "y": 116.21666129735672,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-19",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.091905306678678,
+            "y": 116.2404778454324,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-20",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.6532080389332355,
+            "y": 116.26263904999121,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-21",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.214430265657841,
+            "y": 116.28314459544252,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-22",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.775578235346538,
+            "y": 116.3019941897734,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-23",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.336658197550918,
+            "y": 116.3191875645528,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-24",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.8976764027911197,
+            "y": 116.33472447493537,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-25",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.4586391024666185,
+            "y": 116.34860469966492,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.39999999999999,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-26",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.019552548767325,
+            "y": 116.36082804107761,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-27",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.580422994584653,
+            "y": 116.37139432510475,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-28",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.1412566934223998,
+            "y": 116.38030340127523,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-29",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.7020598993074587,
+            "y": 116.38755514271777,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-30",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.262838866701117,
+            "y": 116.39314944616264,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-31",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.823599850409913,
+            "y": 116.39708623194313,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-32",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.38434910549625195,
+            "y": 116.39936544399676,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-33",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.0549071128102822,
+            "y": 116.39998704986597,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-34",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.4941625492021606,
+            "y": 116.39895104069868,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-35",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.9334109483829118,
+            "y": 116.39625743124836,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-36",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.3726460551565893,
+            "y": 116.39190625987386,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-N-37",
+          "sectionId": "103",
+          "row": "N",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.8118616145162296,
+            "y": 116.38589758853881,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 116.4,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "O",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 35,
+      "depth": 119.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-O-1",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.30356484623751,
+            "y": 118.33870048589125,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-2",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.856891096444322,
+            "y": 118.39183489219718,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-3",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.410020015091053,
+            "y": 118.44328331819771,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-4",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.962957965926071,
+            "y": 118.49304503123223,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999997,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-5",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.515711315417088,
+            "y": 118.5411193226601,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-6",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.068286432660905,
+            "y": 118.58750550787065,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-7",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.620689689292314,
+            "y": 118.63220292629305,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-8",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.172927459393653,
+            "y": 118.67521094140564,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-9",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.72500611940371,
+            "y": 118.71652894074502,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-10",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.276932048027273,
+            "y": 118.75615633591475,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-11",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.828711626144178,
+            "y": 118.79409256259376,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-12",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 9.380351236718079,
+            "y": 118.83033708054437,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-13",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 8.931857264706178,
+            "y": 118.86488937361996,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-14",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 8.483236096967953,
+            "y": 118.89774894977238,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-15",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.034494122174033,
+            "y": 118.92891534105887,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-16",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.585637730715572,
+            "y": 118.95838810364884,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-17",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.136673314613129,
+            "y": 118.98616681783007,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-18",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.687607267425575,
+            "y": 119.01225108801478,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-19",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.23844598415892,
+            "y": 119.03664054274519,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-20",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.789195861175615,
+            "y": 119.05933483469889,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-21",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.339863296103218,
+            "y": 119.08033364069371,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-22",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 4.89045468774319,
+            "y": 119.09963666169233,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-23",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.440976435979977,
+            "y": 119.11724362280664,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-24",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 3.9914349416898744,
+            "y": 119.1331542733015,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-25",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.541836606649664,
+            "y": 119.14736838659843,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-26",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.092187833445576,
+            "y": 119.15988576027877,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-27",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.6424950253822215,
+            "y": 119.17070621608663,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-28",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.192764586391323,
+            "y": 119.17982959993132,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-29",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.743002920940284,
+            "y": 119.18725578188966,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-30",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.2932164339413499,
+            "y": 119.19298465620777,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-31",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.8434115306603233,
+            "y": 119.19701614130258,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.2,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-32",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.3935946166250277,
+            "y": 119.19935017976297,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-33",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.056227902465512354,
+            "y": 119.1999867383507,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-34",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.506049620832453,
+            "y": 119.19892580800068,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999997,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-35",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.9558641327082739,
+            "y": 119.19616740382132,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999997,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-36",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.4056650324283972,
+            "y": 119.19171156509418,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-O-37",
+          "sectionId": "103",
+          "row": "O",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.8554459145217743,
+            "y": 119.1855583552734,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 119.19999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "P",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 37.5,
+      "depth": 122,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-P-1",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.639554624504836,
+            "y": 121.11846861811019,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-2",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.182388538307109,
+            "y": 121.17285114805418,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-3",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.7250204852442,
+            "y": 121.22550809412856,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-4",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.267456978548497,
+            "y": 121.27643870646253,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-5",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.80970453423561,
+            "y": 121.32564225976957,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-6",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.351769671012,
+            "y": 121.37311805335754,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-7",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.893658910181731,
+            "y": 121.41886541113887,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-8",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.435378775553907,
+            "y": 121.46288368164001,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-9",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.976935793349435,
+            "y": 121.50517223801086,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-10",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.518336492108451,
+            "y": 121.54573047803356,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-11",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 10.05958740259723,
+            "y": 121.58455782413121,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-12",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 9.600695057714814,
+            "y": 121.62165372337596,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-13",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 9.141665992400618,
+            "y": 121.65701764749696,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-14",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 8.682506743541028,
+            "y": 121.69064909288785,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-15",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.223223849876108,
+            "y": 121.72254758061395,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-16",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.763823851906878,
+            "y": 121.75271265641913,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-17",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.304313291802029,
+            "y": 121.78114389073212,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-18",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 6.8446987133047,
+            "y": 121.80784087867285,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-19",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.3849866616391635,
+            "y": 121.83280324005801,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-20",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 5.925183683417996,
+            "y": 121.8560306194066,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-21",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.4652963265485965,
+            "y": 121.87752268594491,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-22",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.005331140139842,
+            "y": 121.89727913361129,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-23",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.545294674409037,
+            "y": 121.91529968106049,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-24",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.0851934805886305,
+            "y": 121.93158407166766,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-25",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.62503411083271,
+            "y": 121.94613207353196,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-26",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.164823118123828,
+            "y": 121.95894347947996,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-27",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.7045670561797905,
+            "y": 121.97001810706854,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-28",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.244272479360247,
+            "y": 121.97935579858743,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-29",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.7839459425731095,
+            "y": 121.98695642106158,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-30",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.3235940011815832,
+            "y": 121.99281986625293,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-31",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.8632232109107336,
+            "y": 121.99694605066205,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-32",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.40284012775380357,
+            "y": 121.99933491552923,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-33",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.05754869212074251,
+            "y": 121.99998642683546,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122.00000000000001,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-34",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5179366924627455,
+            "y": 121.99890057530273,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-35",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -0.978317317033636,
+            "y": 121.99607737639433,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-36",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.4386840097002054,
+            "y": 121.99151687031453,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 122,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-P-37",
+          "sectionId": "103",
+          "row": "P",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.8990302145273195,
+            "y": 121.98521912200802,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 121.99999999999999,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Q",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 40,
+      "depth": 124.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-Q-1",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.97554440277216,
+            "y": 123.8982367503291,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.80000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-2",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.507885980169894,
+            "y": 123.95386740391115,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-3",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.040020955397345,
+            "y": 124.00773287005937,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-4",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.57195599117092,
+            "y": 124.05983238169281,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-5",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.103697753054133,
+            "y": 124.11016519687904,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-6",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.635252909363096,
+            "y": 124.15873059884444,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-7",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.166628131071148,
+            "y": 124.20552789598467,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-8",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.697830091714161,
+            "y": 124.25055642187436,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-9",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 11.22886546729516,
+            "y": 124.29381553527668,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-10",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.759740936189628,
+            "y": 124.33530462015237,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-11",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 10.290463179050281,
+            "y": 124.37502308566864,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-12",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 9.821038878711548,
+            "y": 124.41297036620753,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-13",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 9.351474720095059,
+            "y": 124.44914592137393,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-14",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 8.8817773901141,
+            "y": 124.4835492360033,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-15",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.411953577578183,
+            "y": 124.51617982016903,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-16",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 7.942009973098183,
+            "y": 124.5470372091894,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-17",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.471953268990928,
+            "y": 124.57612096363417,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-18",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.001790159183824,
+            "y": 124.6034306693309,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-19",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.531527339119407,
+            "y": 124.62896593737081,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-20",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.061171505660376,
+            "y": 124.65272640411428,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-21",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.5907293569939736,
+            "y": 124.6747117311961,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-22",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.120207592536494,
+            "y": 124.69492160553023,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-23",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.649612912838097,
+            "y": 124.71335573931434,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-24",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.178952019487386,
+            "y": 124.7300138700338,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-25",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.7082316150157557,
+            "y": 124.74489576046547,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-26",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.23745840280208,
+            "y": 124.75800119868114,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-27",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.7666390869773596,
+            "y": 124.76932999805044,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-28",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.2957803723291708,
+            "y": 124.77888199724353,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-29",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.824888964205935,
+            "y": 124.78665706023348,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-30",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.353971568421816,
+            "y": 124.79265507629808,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-31",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.8830348911611439,
+            "y": 124.79687596002151,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-32",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4120856388825794,
+            "y": 124.79931965129548,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-33",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.05886948177597267,
+            "y": 124.79998611532021,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-34",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5298237640930381,
+            "y": 124.79887534260476,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-35",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.0007705013589983,
+            "y": 124.7959873489673,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-36",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.4717029869720133,
+            "y": 124.79132217553486,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.8,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Q-37",
+          "sectionId": "103",
+          "row": "Q",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.9426145145328646,
+            "y": 124.78487988874262,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 124.79999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "R",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 42.5,
+      "depth": 127.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-R-1",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.311534181039484,
+            "y": 126.67800488254802,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.60000000000001,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-2",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.83338342203268,
+            "y": 126.73488365976813,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-3",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.35502142555049,
+            "y": 126.78995764599019,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-4",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.876455003793344,
+            "y": 126.8432260569231,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-5",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.397690971872654,
+            "y": 126.8946881339885,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-6",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.91873614771419,
+            "y": 126.94434314433133,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-7",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.439597351960565,
+            "y": 126.99219038083048,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-8",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.960281407874414,
+            "y": 127.03822916210872,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-9",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 11.480795141240884,
+            "y": 127.0824588325425,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-10",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 11.001145380270806,
+            "y": 127.12487876227117,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-11",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 10.521338955503333,
+            "y": 127.16548834720608,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-12",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 10.041382699708281,
+            "y": 127.20428700903912,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-13",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 9.5612834477895,
+            "y": 127.24127419525091,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-14",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 9.081048036687172,
+            "y": 127.27644937911876,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-15",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.600683305280256,
+            "y": 127.3098120597241,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-16",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 8.120196094289488,
+            "y": 127.34136176195967,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-17",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.639593246179826,
+            "y": 127.37109803653622,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-18",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.158881605062948,
+            "y": 127.39902045998898,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-19",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.67806801659965,
+            "y": 127.42512863468362,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-20",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.197159327902756,
+            "y": 127.44942218882197,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-21",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.7161623874393515,
+            "y": 127.4719007764473,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.60000000000001,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-22",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.235084044933146,
+            "y": 127.49256407744917,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-23",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.753931151267157,
+            "y": 127.51141179756819,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-24",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.272710558386141,
+            "y": 127.52844366839993,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-25",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.7914291191988014,
+            "y": 127.543659447399,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-26",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.3100936874803315,
+            "y": 127.55705891788232,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-27",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.8287111177749282,
+            "y": 127.56864188903234,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-28",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.3472882652980944,
+            "y": 127.57840819589964,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-29",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.8658319858387604,
+            "y": 127.58635769940538,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-30",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.3843491356620492,
+            "y": 127.59249028634322,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-31",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.9028465714115541,
+            "y": 127.59680586938096,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-32",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4213311500113552,
+            "y": 127.59930438706172,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-33",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06019027143120282,
+            "y": 127.59998580380494,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-34",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5417108357233306,
+            "y": 127.59885010990678,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.59999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-35",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.0232236856843604,
+            "y": 127.59589732154029,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-36",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.5047219642438212,
+            "y": 127.59112748075519,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-R-37",
+          "sectionId": "103",
+          "row": "R",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -1.9861988145384095,
+            "y": 127.58454065547724,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 127.6,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "S",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 45,
+      "depth": 130.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-S-1",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.64752395930681,
+            "y": 129.45777301476696,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-2",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.158880863895467,
+            "y": 129.5158999156251,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-3",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.670021895703638,
+            "y": 129.572182421921,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-4",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.18095401641577,
+            "y": 129.62661973215342,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.40000000000003,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-5",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.691684190691179,
+            "y": 129.67921107109797,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-6",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.202219386065286,
+            "y": 129.72995568981824,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-7",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.712566572849983,
+            "y": 129.7788528656763,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-8",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 12.22273272403467,
+            "y": 129.8259019023431,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-9",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 11.73272481518661,
+            "y": 129.87110212980832,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-10",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 11.242549824351984,
+            "y": 129.91445290438998,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-11",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 10.752214731956386,
+            "y": 129.95595360874353,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-12",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 10.261726520705015,
+            "y": 129.9956036518707,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-13",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 9.77109217548394,
+            "y": 130.0334024691279,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-14",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 9.280318683260246,
+            "y": 130.06934952223423,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.40000000000003,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-15",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.789413032982333,
+            "y": 130.10344429927918,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-16",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 8.298382215480794,
+            "y": 130.13568631472995,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-17",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.807233223368726,
+            "y": 130.16607510943828,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-18",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.315973050942072,
+            "y": 130.19461025064706,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-19",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.824608694079894,
+            "y": 130.22129133199644,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-20",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.333147150145137,
+            "y": 130.24611797352966,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-21",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.841595417884729,
+            "y": 130.2690898216985,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-22",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.349960497329798,
+            "y": 130.29020654936812,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-23",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.8582493896962164,
+            "y": 130.30946785582205,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-24",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.366469097284897,
+            "y": 130.3268734667661,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.40000000000003,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-25",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.8746266233818476,
+            "y": 130.34242313433253,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-26",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.3827289721585836,
+            "y": 130.35611663708352,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-27",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.8907831485724977,
+            "y": 130.36795378001423,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-28",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.398796158267018,
+            "y": 130.37793439455575,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-29",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.9067750074715861,
+            "y": 130.3860583385773,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-30",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.4147267029022823,
+            "y": 130.39232549638837,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-31",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.9226582516619645,
+            "y": 130.39673577874044,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.40000000000003,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-32",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.43057666114013105,
+            "y": 130.39928912282798,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-33",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.061511061086432985,
+            "y": 130.39998549228972,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-34",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5535979073536231,
+            "y": 130.39882487720882,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-35",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.0456768700097225,
+            "y": 130.39580729411327,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.39999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-36",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.5377409415156293,
+            "y": 130.39093278597554,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-S-37",
+          "sectionId": "103",
+          "row": "S",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.029783114543955,
+            "y": 130.38420142221185,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 130.4,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "T",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 47.5,
+      "depth": 133.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-T-1",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.983513737574132,
+            "y": 132.23754114698585,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-2",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.484378305758252,
+            "y": 132.29691617148208,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-3",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.98502236585678,
+            "y": 132.35440719785183,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-4",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.485453029038194,
+            "y": 132.41001340738367,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-5",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.985677409509698,
+            "y": 132.4637340082074,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-6",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.48570262441638,
+            "y": 132.51556823530512,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-7",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.985535793739398,
+            "y": 132.5655153505221,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-8",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 12.485184040194921,
+            "y": 132.61357464257745,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-9",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 11.984654489132334,
+            "y": 132.65974542707414,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.20000000000002,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-10",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 11.48395426843316,
+            "y": 132.70402704650877,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-11",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 10.983090508409434,
+            "y": 132.74641887028096,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-12",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 10.482070341701746,
+            "y": 132.78692029470227,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-13",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 9.98090090317838,
+            "y": 132.82553074300486,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-14",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 9.479589329833317,
+            "y": 132.86224966534968,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.20000000000002,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-15",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 8.978142760684406,
+            "y": 132.89707653883423,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.19999999999996,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-16",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 8.476568336672099,
+            "y": 132.93001086750021,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-17",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 7.974873200557624,
+            "y": 132.9610521823403,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.19999999999996,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-18",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.473064496821196,
+            "y": 132.9902000413051,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-19",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 6.971149371560136,
+            "y": 133.01745402930922,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-20",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.469134972387516,
+            "y": 133.04281375823734,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-21",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 5.967028448330106,
+            "y": 133.0662788669497,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.20000000000002,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-22",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.4648369497264495,
+            "y": 133.08784902128707,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-23",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 4.962567628125276,
+            "y": 133.10752391407587,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-24",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.460227636183652,
+            "y": 133.1253032651322,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-25",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 3.957824127564893,
+            "y": 133.14118682126602,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-26",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.4553642568368352,
+            "y": 133.15517435628468,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-27",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 2.9528551793700664,
+            "y": 133.16726567099613,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-28",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.4503040512359417,
+            "y": 133.17746059321183,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-29",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.9477180291044112,
+            "y": 133.18575897774917,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-30",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.4451042701425152,
+            "y": 133.1921607064335,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.19999999999996,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-31",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.9424699319123746,
+            "y": 133.19666568809987,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.20000000000002,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-32",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4398221722689068,
+            "y": 133.1992738585942,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-33",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06283185074166313,
+            "y": 133.19998518077443,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-34",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5654849789839156,
+            "y": 133.19879964451084,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-35",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.0681300543350845,
+            "y": 133.19571726668624,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-36",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.5707599187874373,
+            "y": 133.19073809119584,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-T-37",
+          "sectionId": "103",
+          "row": "T",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.0733674145494994,
+            "y": 133.18386218894645,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 133.2,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "U",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 50,
+      "depth": 136,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-U-1",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.319503515841458,
+            "y": 135.0173092792048,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-2",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.809875747621039,
+            "y": 135.07793242733908,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-3",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.300022836009926,
+            "y": 135.13663197378264,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-4",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.78995204166062,
+            "y": 135.19340708261396,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-5",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 14.279670628328223,
+            "y": 135.2482569453169,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-6",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.769185862767475,
+            "y": 135.301180780792,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-7",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 13.258505014628815,
+            "y": 135.3521778353679,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-8",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 12.747635356355175,
+            "y": 135.40124738281182,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-9",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 12.23658416307806,
+            "y": 135.44838872433996,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-10",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 11.725358712514339,
+            "y": 135.4936011886276,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-11",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 11.213966284862487,
+            "y": 135.5368841318184,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-12",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 10.702414162698481,
+            "y": 135.57823693753386,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-13",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 10.19070963087282,
+            "y": 135.61765901688184,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-14",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 9.678859976406391,
+            "y": 135.65514980846515,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136.00000000000003,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-15",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 9.166872488386481,
+            "y": 135.69070877838934,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-16",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 8.654754457863405,
+            "y": 135.7243354202705,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-17",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.142513177746524,
+            "y": 135.75602925524237,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-18",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.630155942700321,
+            "y": 135.78578983196317,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-19",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.117690049040379,
+            "y": 135.81361672662203,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 135.99999999999997,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-20",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.605122794629897,
+            "y": 135.83950954294505,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-21",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.092461478775484,
+            "y": 135.8634679122009,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-22",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.579713402123103,
+            "y": 135.88549149320602,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-23",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.066885866554336,
+            "y": 135.90557997232972,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-24",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.553986175082407,
+            "y": 135.92373306349836,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-25",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.041021631747939,
+            "y": 135.93995050819956,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-26",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.5279995415150873,
+            "y": 135.95423207548586,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-27",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.0149272101676354,
+            "y": 135.96657756197803,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-28",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.5018119442048654,
+            "y": 135.97698679186797,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-29",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 1.9886610507372369,
+            "y": 135.9854596169211,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-30",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.4754818373827483,
+            "y": 135.9919959164787,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-31",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.962281612162785,
+            "y": 135.99659559745933,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-32",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.44906768339768266,
+            "y": 135.99925859436047,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-33",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06415264039689329,
+            "y": 135.9999848692592,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-34",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5773720506142082,
+            "y": 135.9987744118129,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-35",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.0905832386604468,
+            "y": 135.99562723925925,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-36",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.6037788960592454,
+            "y": 135.9905433964162,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-U-37",
+          "sectionId": "103",
+          "row": "U",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.1169517145550447,
+            "y": 135.98352295568108,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 136,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "V",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 52.5,
+      "depth": 138.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-V-1",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.655493294108783,
+            "y": 137.79707741142371,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-2",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.135373189483825,
+            "y": 137.85894868319608,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-3",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.615023306163074,
+            "y": 137.91885674971348,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-4",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 15.094451054283045,
+            "y": 137.97680075784427,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-5",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 14.573663847146745,
+            "y": 138.03277988242638,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-6",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 14.052669101118573,
+            "y": 138.08679332627892,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-7",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 13.531474235518234,
+            "y": 138.13884032021375,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-8",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 13.01008667251543,
+            "y": 138.1889201230462,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-9",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 12.488513837023785,
+            "y": 138.2370320216058,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-10",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 11.966763156595517,
+            "y": 138.2831753307464,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-11",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 11.444842061315539,
+            "y": 138.32734939335586,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-12",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 10.922757983695217,
+            "y": 138.36955358036545,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-13",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 10.400518358567263,
+            "y": 138.40978729075883,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-14",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 9.878130622979464,
+            "y": 138.4480499515806,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-15",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 9.355602216088556,
+            "y": 138.48434101794442,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-16",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 8.83294057905471,
+            "y": 138.5186599730408,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-17",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.310153154935424,
+            "y": 138.55100632814444,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-18",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.787247388579446,
+            "y": 138.58137962262126,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-19",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.264230726520623,
+            "y": 138.60977942393487,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-20",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.741110616872278,
+            "y": 138.63620532765276,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-21",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.217894509220862,
+            "y": 138.6606569574521,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-22",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.694589854519755,
+            "y": 138.683133965125,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-23",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.1712041049833966,
+            "y": 138.7036360305836,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-24",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.647744713981163,
+            "y": 138.72216286186452,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-25",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.124219135930986,
+            "y": 138.7387141951331,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-26",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.6006348261933394,
+            "y": 138.75328979468705,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-27",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.0769992409652045,
+            "y": 138.76588945295995,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-28",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.5533198371737895,
+            "y": 138.77651299052408,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-29",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.0296040723700624,
+            "y": 138.785160256093,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-30",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.5058594046229816,
+            "y": 138.79183112652385,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-31",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 0.9820932924131953,
+            "y": 138.7965255068188,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-32",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4583131945264585,
+            "y": 138.79924333012673,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-33",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06547343005212346,
+            "y": 138.79998455774395,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-34",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.5892591222445007,
+            "y": 138.7987491791149,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-35",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.113036422985809,
+            "y": 138.79553721183223,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-36",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.6367978733310535,
+            "y": 138.79034870163653,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.8,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-V-37",
+          "sectionId": "103",
+          "row": "V",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.16053601456059,
+            "y": 138.78318372241569,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 138.79999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "W",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 55,
+      "depth": 141.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-W-1",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.991483072376106,
+            "y": 140.57684554364263,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-2",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.460870631346612,
+            "y": 140.63996493905304,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-3",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.930023776316217,
+            "y": 140.70108152564427,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-4",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 15.398950066905467,
+            "y": 140.76019443307453,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-5",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 14.867657065965266,
+            "y": 140.81730281953583,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-6",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 14.336152339469667,
+            "y": 140.8724058717658,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-7",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 13.804443456407649,
+            "y": 140.92550280505952,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-8",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 13.272537988675682,
+            "y": 140.97659286328053,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-9",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 12.740443510969508,
+            "y": 141.0256753188716,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-10",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 12.208167600676694,
+            "y": 141.07274947286518,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-11",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 11.67571783776859,
+            "y": 141.11781465489327,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-12",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 11.143101804691948,
+            "y": 141.160870223197,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-13",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 10.610327086261702,
+            "y": 141.2019155646358,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-14",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 10.077401269552537,
+            "y": 141.24095009469605,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-15",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 9.54433194379063,
+            "y": 141.27797325749947,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-16",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.011126700246015,
+            "y": 141.31298452581106,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-17",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.477793132124322,
+            "y": 141.34598340104645,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-18",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 7.944338834458569,
+            "y": 141.3769694132793,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-19",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.410771404000865,
+            "y": 141.40594212124765,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-20",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 6.877098439114657,
+            "y": 141.43290111236044,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-21",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.343327539666239,
+            "y": 141.45784600270326,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-22",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.8094663069164065,
+            "y": 141.48077643704391,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-23",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.275522343412455,
+            "y": 141.50169208883742,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-24",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.741503252879919,
+            "y": 141.52059266023065,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-25",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.2074166401140305,
+            "y": 141.53747788206658,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-26",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.6732701108715906,
+            "y": 141.5523475138882,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-27",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.139071271762773,
+            "y": 141.56520134394182,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-28",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.6048277301427127,
+            "y": 141.57603918918016,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-29",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.0705470940028876,
+            "y": 141.5848608952649,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-30",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.5362369718632145,
+            "y": 141.59166633656898,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-31",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.0019049726636056,
+            "y": 141.59645541617823,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-32",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4675587056552343,
+            "y": 141.59922806589293,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-33",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06679421970735361,
+            "y": 141.5999842462287,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-34",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6011461938747932,
+            "y": 141.59872394641692,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-35",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.1354896073111709,
+            "y": 141.5954471844052,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.59999999999997,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-36",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.6698168506028612,
+            "y": 141.59015400685686,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-W-37",
+          "sectionId": "103",
+          "row": "W",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.2041203145661346,
+            "y": 141.5828444891503,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 141.6,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "X",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 57.5,
+      "depth": 144.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-X-1",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 17.327472850643428,
+            "y": 143.35661367586152,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-2",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.786368073209395,
+            "y": 143.42098119491,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-3",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 16.245024246469363,
+            "y": 143.48330630157508,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-4",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 15.70344907952789,
+            "y": 143.54358810830482,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-5",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 15.161650284783786,
+            "y": 143.60182575664527,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-6",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 14.619635577820759,
+            "y": 143.6580184172527,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-7",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 14.077412677297064,
+            "y": 143.71216528990533,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-8",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 13.534989304835934,
+            "y": 143.76426560351487,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-9",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 12.992373184915232,
+            "y": 143.81431861613743,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-10",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 12.44957204475787,
+            "y": 143.86232361498398,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-11",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 11.906593614221638,
+            "y": 143.9082799164307,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-12",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 11.36344562568868,
+            "y": 143.95218686602857,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-13",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 10.82013581395614,
+            "y": 143.99404383851277,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-14",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 10.276671916125608,
+            "y": 144.0338502378115,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-15",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 9.733061671492704,
+            "y": 144.07160549705452,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-16",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.18931282143732,
+            "y": 144.1073090785813,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-17",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.64543310931322,
+            "y": 144.1409604739485,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-18",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 8.101430280337693,
+            "y": 144.17255920393734,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-19",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.557312081481108,
+            "y": 144.20210481856043,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-20",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 7.013086261357036,
+            "y": 144.22959689706812,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-21",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.468760570111616,
+            "y": 144.25503504795444,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-22",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 5.924342759313058,
+            "y": 144.27841890896283,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-23",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.379840581841515,
+            "y": 144.29974814709124,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-24",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.835261791778673,
+            "y": 144.31902245859678,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-25",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.290614144297076,
+            "y": 144.3362415690001,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-26",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.745905395549842,
+            "y": 144.35140523308937,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-27",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.2011433025603417,
+            "y": 144.36451323492372,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-28",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.6563356231116364,
+            "y": 144.37556538783625,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-29",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.111490115635713,
+            "y": 144.38456153443678,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999995,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-30",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.5666145391034474,
+            "y": 144.3915015466141,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-31",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.0217166529140156,
+            "y": 144.3963853255377,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.4,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-32",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.47680421678401,
+            "y": 144.39921280165916,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-33",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06811500936258374,
+            "y": 144.39998393471342,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-34",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6130332655050856,
+            "y": 144.39869871371894,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-35",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.157942791636533,
+            "y": 144.39535715697818,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-36",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.702835827874669,
+            "y": 144.38995931207717,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999998,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-X-37",
+          "sectionId": "103",
+          "row": "X",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.2477046145716795,
+            "y": 144.38250525588487,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 144.39999999999995,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Y",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 60,
+      "depth": 147.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-Y-1",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 17.66346262891075,
+            "y": 146.13638180808047,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-2",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 17.111865515072182,
+            "y": 146.20199745076698,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.19999999999996,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-3",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 16.560024716622507,
+            "y": 146.2655310775059,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-4",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 16.007948092150315,
+            "y": 146.3269817835351,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-5",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 15.45564350360231,
+            "y": 146.38634869375474,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-6",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 14.903118816171856,
+            "y": 146.44363096273958,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-7",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 14.350381898186482,
+            "y": 146.49882777475113,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-8",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 13.79744062099619,
+            "y": 146.55193834374924,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-9",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 13.244302858860957,
+            "y": 146.60296191340325,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-10",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 12.690976488839048,
+            "y": 146.65189775710277,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.19999999999996,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-11",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 12.13746939067469,
+            "y": 146.69874517796814,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-12",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 11.583789446685413,
+            "y": 146.74350350886016,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-13",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 11.02994454165058,
+            "y": 146.78617211238975,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-14",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 10.47594256269868,
+            "y": 146.82675038092697,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-15",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 9.92179139919478,
+            "y": 146.8652377366096,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-16",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.367498942628625,
+            "y": 146.9016336313516,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-17",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.81307308650212,
+            "y": 146.93593754685057,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-18",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 8.258521726216818,
+            "y": 146.96814899459542,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-19",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.703852758961351,
+            "y": 146.99826751587327,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-20",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 7.149074083599417,
+            "y": 147.0262926817758,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-21",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.594193600556994,
+            "y": 147.05222409320564,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-22",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 6.03921921170971,
+            "y": 147.0760613808818,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-23",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.484158820270575,
+            "y": 147.0978042053451,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-24",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 4.929020330677429,
+            "y": 147.11745225696293,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-25",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.373811648480122,
+            "y": 147.13500525593363,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-26",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.818540680228094,
+            "y": 147.15046295229055,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-27",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.2632153333579113,
+            "y": 147.16382512590562,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.19999999999996,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-28",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.70784351608056,
+            "y": 147.17509158649236,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-29",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.1524331372685386,
+            "y": 147.18426217360872,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-30",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.5969921063436805,
+            "y": 147.19133675665927,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-31",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.041528333164426,
+            "y": 147.19631523489716,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-32",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.4860497279127859,
+            "y": 147.19919753742542,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-33",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.06943579901781391,
+            "y": 147.1999836231982,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-34",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6249203371353782,
+            "y": 147.198673481021,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-35",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.1803959759618952,
+            "y": 147.19526712955118,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-36",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.735854805146477,
+            "y": 147.1897646172975,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Y-37",
+          "sectionId": "103",
+          "row": "Y",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.291288914577225,
+            "y": 147.1821660226195,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 147.2,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Z",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 62.5,
+      "depth": 150,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-Z-1",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 17.999452407178076,
+            "y": 148.9161499402994,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-2",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 17.43736295693497,
+            "y": 148.98301370662398,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-3",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 16.875025186775655,
+            "y": 149.04775585343674,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-4",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 16.31244710477274,
+            "y": 149.11037545876542,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-5",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 15.749636722420833,
+            "y": 149.17087163086424,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-6",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 15.186602054522952,
+            "y": 149.2292435082265,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-7",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 14.623351119075899,
+            "y": 149.28549025959697,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-8",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 14.059891937156443,
+            "y": 149.3396110839836,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-9",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 13.496232532806683,
+            "y": 149.3916052106691,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-10",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 12.932380932920227,
+            "y": 149.4414718992216,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-11",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 12.368345167127742,
+            "y": 149.4892104395056,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-12",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 11.804133267682149,
+            "y": 149.53482015169175,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-13",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 11.239753269345023,
+            "y": 149.57830038626673,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 149.99999999999997,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-14",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 10.675213209271755,
+            "y": 149.61965052404244,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-15",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 10.110521126896854,
+            "y": 149.6588699761647,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-16",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.545685063819933,
+            "y": 149.69595818412188,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-17",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 8.98071306369102,
+            "y": 149.7309146197526,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-18",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 8.415613172095942,
+            "y": 149.7637387852535,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-19",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.850393436441595,
+            "y": 149.79443021318608,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-20",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 7.285061905841798,
+            "y": 149.8229884664835,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-21",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.719626631002372,
+            "y": 149.84941313845687,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150.00000000000003,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-22",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 6.154095664106363,
+            "y": 149.87370385280076,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-23",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.5884770586996355,
+            "y": 149.89586026359896,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-24",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 5.022778869576185,
+            "y": 149.9158820553291,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150.00000000000003,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-25",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.4570091526631685,
+            "y": 149.93376894286715,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-26",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.891175964906346,
+            "y": 149.94952067149174,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 149.99999999999997,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-27",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.3252873641554803,
+            "y": 149.96313701688754,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-28",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.759351409049484,
+            "y": 149.9746177851485,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-29",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.1933761589013643,
+            "y": 149.98396281278062,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-30",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.6273696735839136,
+            "y": 149.99117196670443,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-31",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.0613400134148363,
+            "y": 149.99624514425662,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-32",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.49529523904156175,
+            "y": 149.99918227319168,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-33",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.07075658867304407,
+            "y": 149.99998331168294,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-34",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6368074087656708,
+            "y": 149.99864824832304,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-35",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.2028491602872575,
+            "y": 149.99517710212416,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-36",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.7688737824182852,
+            "y": 149.98956992251786,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-Z-37",
+          "sectionId": "103",
+          "row": "Z",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.3348732145827698,
+            "y": 149.98182678935413,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 150,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "[",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 65,
+      "depth": 152.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-[-1",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 18.3354421854454,
+            "y": 151.69591807251834,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-2",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 17.762860398797756,
+            "y": 151.76402996248098,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-3",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 17.190025656928803,
+            "y": 151.82998062936758,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-4",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 16.616946117395166,
+            "y": 151.8937691339957,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-5",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 16.043629941239356,
+            "y": 151.9553945679737,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-6",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 15.470085292874048,
+            "y": 152.0148560537134,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-7",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 14.896320339965317,
+            "y": 152.07215274444277,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-8",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 14.322343253316697,
+            "y": 152.12728382421798,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-9",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 13.74816220675241,
+            "y": 152.18024850793492,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-10",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 13.173785377001405,
+            "y": 152.23104604134042,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-11",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 12.599220943580795,
+            "y": 152.27967570104303,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-12",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 12.024477088678884,
+            "y": 152.32613679452334,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-13",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 11.449561997039464,
+            "y": 152.37042866014374,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-14",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 10.874483855844828,
+            "y": 152.41255066715792,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.80000000000004,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-15",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 10.29925085459893,
+            "y": 152.4525022157198,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-16",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.72387118501124,
+            "y": 152.49028273689217,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-17",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 9.148353040879918,
+            "y": 152.52589169265468,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-18",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 8.572704617975067,
+            "y": 152.5593285759116,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-19",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 7.996934113921839,
+            "y": 152.59059291049888,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-20",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 7.421049728084179,
+            "y": 152.61968425119122,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-21",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.845059661447751,
+            "y": 152.64660218370807,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-22",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 6.268972116503016,
+            "y": 152.6713463247197,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.79999999999998,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-23",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.692795297128696,
+            "y": 152.69391632185284,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-24",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 5.116537408474941,
+            "y": 152.71431185369525,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.80000000000004,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-25",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.540206656846214,
+            "y": 152.7325326298007,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-26",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 3.963811249584598,
+            "y": 152.74857839069296,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-27",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.3873593949530494,
+            "y": 152.76244890786947,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-28",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.810859302018408,
+            "y": 152.7741439838046,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-29",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.23431918053419,
+            "y": 152.78366345195255,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-30",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.657747240824147,
+            "y": 152.7910071767496,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-31",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.0811516936652468,
+            "y": 152.79617505361608,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-32",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.5045407501703376,
+            "y": 152.79916700895794,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-33",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.07207737832827424,
+            "y": 152.79998300016769,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-34",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6486944803959633,
+            "y": 152.79862301562505,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-35",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.2253023446126197,
+            "y": 152.79508707469716,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-36",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.8018927596900933,
+            "y": 152.7893752277382,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.8,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-[-37",
+          "sectionId": "103",
+          "row": "[",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.378457514588315,
+            "y": 152.78148755608873,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 152.79999999999998,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "\\",
+      "sectionId": "103",
+      "seatCount": 37,
+      "elevation": 67.5,
+      "depth": 155.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "athletics-103-\\-1",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 18.671431963712724,
+            "y": 154.47568620473723,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 173.1081081081081,
+          "facing": 353.1081081081081,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-2",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 18.088357840660542,
+            "y": 154.54504621833794,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 173.32432432432432,
+          "facing": 353.3243243243243,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-3",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 17.505026127081944,
+            "y": 154.61220540529837,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 173.54054054054055,
+          "facing": 353.5405405405405,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-4",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 16.921445130017588,
+            "y": 154.677162809226,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 173.75675675675674,
+          "facing": 353.7567567567568,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-5",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 16.337623160057877,
+            "y": 154.73991750508316,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 173.97297297297297,
+          "facing": 353.97297297297297,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-6",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 15.753568531225142,
+            "y": 154.8004685992003,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 174.1891891891892,
+          "facing": 354.18918918918916,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-7",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 15.169289560854732,
+            "y": 154.85881522928858,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 174.40540540540542,
+          "facing": 354.4054054054054,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-8",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 14.58479456947695,
+            "y": 154.91495656445232,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 174.6216216216216,
+          "facing": 354.6216216216216,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-9",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 14.000091880698132,
+            "y": 154.96889180520074,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 174.83783783783784,
+          "facing": 354.8378378378378,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-10",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 13.415189821082581,
+            "y": 155.02062018345922,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 175.05405405405406,
+          "facing": 355.05405405405406,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-11",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 12.830096720033845,
+            "y": 155.07014096258047,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 175.27027027027026,
+          "facing": 355.27027027027026,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-12",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 12.244820909675616,
+            "y": 155.1174534373549,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 175.48648648648648,
+          "facing": 355.48648648648646,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-13",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 11.659370724733904,
+            "y": 155.1625569340207,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 175.7027027027027,
+          "facing": 355.7027027027027,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-14",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 11.0737545024179,
+            "y": 155.20545081027333,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 175.9189189189189,
+          "facing": 355.9189189189189,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-15",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 10.487980582301002,
+            "y": 155.24613445527484,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 176.13513513513513,
+          "facing": 356.1351351351351,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-16",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 9.902057306202543,
+            "y": 155.28460728966243,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 176.35135135135135,
+          "facing": 356.35135135135135,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-17",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "17",
+          "position3D": {
+            "x": 9.315993018068816,
+            "y": 155.3208687655567,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 176.56756756756758,
+          "facing": 356.5675675675676,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-18",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "18",
+          "position3D": {
+            "x": 8.72979606385419,
+            "y": 155.35491836656962,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 176.78378378378378,
+          "facing": 356.78378378378375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-19",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "19",
+          "position3D": {
+            "x": 8.143474791402081,
+            "y": 155.3867556078117,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 177,
+          "facing": 357,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-20",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "20",
+          "position3D": {
+            "x": 7.557037550326558,
+            "y": 155.4163800358989,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 177.21621621621622,
+          "facing": 357.21621621621625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-21",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "21",
+          "position3D": {
+            "x": 6.970492691893127,
+            "y": 155.44379122895924,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 177.43243243243242,
+          "facing": 357.4324324324324,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-22",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "22",
+          "position3D": {
+            "x": 6.383848568899667,
+            "y": 155.46898879663866,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 177.64864864864865,
+          "facing": 357.64864864864865,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-23",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "23",
+          "position3D": {
+            "x": 5.797113535557755,
+            "y": 155.49197238010666,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 177.86486486486487,
+          "facing": 357.8648648648649,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-24",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "24",
+          "position3D": {
+            "x": 5.210295947373695,
+            "y": 155.51274165206138,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.60000000000002,
+          "angle": 178.0810810810811,
+          "facing": 358.0810810810811,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-25",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "25",
+          "position3D": {
+            "x": 4.62340416102926,
+            "y": 155.5312963167342,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 178.2972972972973,
+          "facing": 358.2972972972973,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-26",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "26",
+          "position3D": {
+            "x": 4.03644653426285,
+            "y": 155.5476361098941,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 178.51351351351352,
+          "facing": 358.51351351351354,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-27",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "27",
+          "position3D": {
+            "x": 3.449431425750618,
+            "y": 155.56176079885134,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 178.72972972972974,
+          "facing": 358.72972972972974,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-28",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "28",
+          "position3D": {
+            "x": 2.8623671949873315,
+            "y": 155.5736701824607,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 178.94594594594594,
+          "facing": 358.94594594594594,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-29",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "29",
+          "position3D": {
+            "x": 2.2752622021670152,
+            "y": 155.58336409112442,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 179.16216216216216,
+          "facing": 359.1621621621622,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-30",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "30",
+          "position3D": {
+            "x": 1.6881248080643798,
+            "y": 155.59084238679472,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 179.3783783783784,
+          "facing": 359.3783783783784,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-31",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "31",
+          "position3D": {
+            "x": 1.1009633739156568,
+            "y": 155.59610496297552,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 179.59459459459458,
+          "facing": 359.5945945945946,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-32",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "32",
+          "position3D": {
+            "x": 0.5137862612991133,
+            "y": 155.59915174472417,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 179.8108108108108,
+          "facing": 359.81081081081084,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-33",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "33",
+          "position3D": {
+            "x": -0.07339816798350439,
+            "y": 155.59998268865243,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 180.02702702702703,
+          "facing": 0.027027027027031636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-34",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "34",
+          "position3D": {
+            "x": -0.6605815520262558,
+            "y": 155.59859778292707,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": 180.24324324324326,
+          "facing": 0.24324324324322788,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-35",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "35",
+          "position3D": {
+            "x": -1.2477555289379816,
+            "y": 155.59499704727014,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 180.45945945945945,
+          "facing": 0.45945945945948097,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-36",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "36",
+          "position3D": {
+            "x": -1.8349117369619012,
+            "y": 155.58918053295852,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 180.67567567567568,
+          "facing": 0.6756756756756772,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "athletics-103-\\-37",
+          "sectionId": "103",
+          "row": "\\",
+          "seatNumber": "37",
+          "position3D": {
+            "x": -2.42204181459386,
+            "y": 155.58114832282334,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 155.6,
+          "angle": 180.8918918918919,
+          "facing": 0.8918918918918735,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 980,
+    "aisle": 56,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
