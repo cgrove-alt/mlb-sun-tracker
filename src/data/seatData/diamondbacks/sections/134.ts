@@ -1,0 +1,11608 @@
+/**
+ * Section 134 - diamondbacks
+ * Generated: 2025-10-22T23:53:58.740Z
+ * Total Seats: 432
+ * Total Rows: 27
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_134: SectionSeatingData = {
+  "sectionId": "134",
+  "sectionName": "Section 134",
+  "stadiumId": "diamondbacks",
+  "totalSeats": 432,
+  "totalRows": 27,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 0,
+      "depth": 75,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-1-1",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 8.937160789068312,
+            "y": 74.46561056642415,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-2",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 8.53088297142799,
+            "y": 74.51324738412492,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-3",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 8.124351379459814,
+            "y": 74.55866760252003,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-4",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 7.717578106552221,
+            "y": 74.60186987046146,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-5",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 7.310575253283107,
+            "y": 74.64285290278022,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-6",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 6.903354927059797,
+            "y": 74.68161548032447,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-7",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 6.4959292417591366,
+            "y": 74.71815644999587,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75.00000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-8",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.088310317366737,
+            "y": 74.75247472478384,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-9",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 5.6805102796167,
+            "y": 74.78456928379791,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-10",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 5.272541259630838,
+            "y": 74.81443917229808,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-11",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 4.8644153935577945,
+            "y": 74.84208350172327,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-12",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 4.456144822212034,
+            "y": 74.86750144971764,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-13",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.047741690712667,
+            "y": 74.89069226015518,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-14",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 3.6392181481221035,
+            "y": 74.91165524316212,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-15",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.230586347084907,
+            "y": 74.93038977513748,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-1-16",
+          "sectionId": "134",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 2.821858443465884,
+            "y": 74.94689529877165,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 2.5,
+      "depth": 77.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-2-1",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.270814791860195,
+            "y": 77.24566002757065,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-2",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 8.849369269027969,
+            "y": 77.29507528646559,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-3",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 8.427660497626313,
+            "y": 77.3421911930141,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-4",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.00570102253017,
+            "y": 77.38700634562535,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-5",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 7.583503396072343,
+            "y": 77.42951941115066,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-6",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.16108017767003,
+            "y": 77.46972912492325,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-7",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 6.738443933451477,
+            "y": 77.5076342907957,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-8",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.315607235881762,
+            "y": 77.54323378117576,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-9",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 5.8925826633890575,
+            "y": 77.57652653705969,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-10",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 5.469382799990389,
+            "y": 77.60751156806387,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-11",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.046020234917285,
+            "y": 77.63618795245426,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-12",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 4.6225075622412835,
+            "y": 77.66255483717376,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-13",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.198857380499273,
+            "y": 77.68661143786764,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-14",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 3.775082292318662,
+            "y": 77.70835703890684,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-15",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.3511949040427433,
+            "y": 77.72779099340929,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-2-16",
+          "sectionId": "134",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 2.927207825355277,
+            "y": 77.74491272325912,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 5,
+      "depth": 80.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-3-1",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.604468794652078,
+            "y": 80.02570948871714,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-2",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.167855566627946,
+            "y": 80.07690318880624,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-3",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 8.730969615792812,
+            "y": 80.12571478350819,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-4",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.293823938508119,
+            "y": 80.17214282078925,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-5",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 7.856431538861579,
+            "y": 80.21618591952112,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-6",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.418805428280262,
+            "y": 80.25784276952201,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-7",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 6.980958625143819,
+            "y": 80.29711213159555,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-8",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.542904154396787,
+            "y": 80.33399283756769,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-9",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.104655047161414,
+            "y": 80.36848379032148,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-10",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 5.66622434034994,
+            "y": 80.40058396382967,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-11",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.227625076276777,
+            "y": 80.43029240318526,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-12",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 4.788870302270532,
+            "y": 80.45760822462988,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-13",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.34997307028588,
+            "y": 80.48253061558009,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-14",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 3.91094643651522,
+            "y": 80.50505883465155,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-15",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.47180346100058,
+            "y": 80.52519221168109,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.60000000000001,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-3-16",
+          "sectionId": "134",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.03255720724467,
+            "y": 80.54293014774659,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 7.5,
+      "depth": 83.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-4-1",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 9.938122797443963,
+            "y": 82.80575894986366,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-2",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.486341864227926,
+            "y": 82.85873109114692,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-3",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.034278733959313,
+            "y": 82.90923837400227,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-4",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.58194685448607,
+            "y": 82.95727929595316,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-5",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.129359681650817,
+            "y": 83.0028524278916,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-6",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.6765306788904955,
+            "y": 83.04595641412081,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-7",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.22347331683616,
+            "y": 83.08658997239542,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-8",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.770201072911813,
+            "y": 83.12475189395963,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-9",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.3167274309337715,
+            "y": 83.16044104358328,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-10",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 5.863065880709493,
+            "y": 83.19365635959548,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-11",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.409229917636268,
+            "y": 83.22439685391628,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-12",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 4.955233042299782,
+            "y": 83.25266161208602,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.39999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-13",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.501088760072486,
+            "y": 83.27844979329257,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-14",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.046810580711779,
+            "y": 83.30176063039629,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-15",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.592412017958417,
+            "y": 83.32259342995289,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-4-16",
+          "sectionId": "134",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.1379065891340634,
+            "y": 83.34094757223409,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 10,
+      "depth": 86.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-5-1",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.271776800235846,
+            "y": 85.58580841101015,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.19999999999999,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-2",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 9.804828161827905,
+            "y": 85.64055899348759,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-3",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.337587852125813,
+            "y": 85.69276196449636,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-4",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 8.87006977046402,
+            "y": 85.74241577111704,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-5",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.402287824440052,
+            "y": 85.78951893626206,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-6",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 7.934255929500727,
+            "y": 85.83407005871959,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-7",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.465988008528501,
+            "y": 85.87606781319525,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-8",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 6.997497991426837,
+            "y": 85.91551095035156,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.20000000000002,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-9",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.528799814706129,
+            "y": 85.95239829684506,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-10",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.059907421069044,
+            "y": 85.98672875536127,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-11",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.590834758995759,
+            "y": 86.01850130464727,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-12",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.121595782329031,
+            "y": 86.04771499954214,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-13",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.652204449859092,
+            "y": 86.07436897100501,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-14",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.182674724908337,
+            "y": 86.098462426141,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-15",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.7130205749162535,
+            "y": 86.11999464822469,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-5-16",
+          "sectionId": "134",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.2432559710234563,
+            "y": 86.13896499672155,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 12.5,
+      "depth": 89,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-6-1",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.60543080302773,
+            "y": 88.36585787215665,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-2",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.123314459427881,
+            "y": 88.42238689582824,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-3",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.640896970292312,
+            "y": 88.47628555499043,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-4",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.15819268644197,
+            "y": 88.52755224628093,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-5",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.675215967229288,
+            "y": 88.57618544463251,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 88.99999999999999,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-6",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.19198118011096,
+            "y": 88.62218370331837,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-7",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.708502700220842,
+            "y": 88.6655456539951,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-8",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.224794909941862,
+            "y": 88.70627000674348,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-9",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.740872198478485,
+            "y": 88.74435555010685,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-10",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.2567489614285945,
+            "y": 88.77980115112706,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-11",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.772439600355249,
+            "y": 88.81260575537827,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-12",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.28795852235828,
+            "y": 88.84276838699826,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-13",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.803320139645698,
+            "y": 88.87028814871748,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-14",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.318538869104896,
+            "y": 88.89516422188572,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-15",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.8336291318740896,
+            "y": 88.91739586649649,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-6-16",
+          "sectionId": "134",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.348605352912849,
+            "y": 88.93698242120902,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 15,
+      "depth": 91.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-7-1",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 10.939084805819613,
+            "y": 91.14590733330316,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-2",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.44180075702786,
+            "y": 91.2042147981689,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-3",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 9.944206088458811,
+            "y": 91.25980914548451,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-4",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.446315602419919,
+            "y": 91.31268872144483,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-5",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 8.948144110018523,
+            "y": 91.36285195300297,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-6",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.449706430721191,
+            "y": 91.41029734791714,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-7",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 7.951017391913183,
+            "y": 91.45502349479494,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-8",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.4520918284568864,
+            "y": 91.49702906313541,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-9",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 6.952944582250842,
+            "y": 91.53631280336863,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-10",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.453590501788145,
+            "y": 91.57287354689285,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-11",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 5.954044441714741,
+            "y": 91.60671020610927,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-12",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.45432126238753,
+            "y": 91.63782177445438,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-13",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 4.954435829432304,
+            "y": 91.66620732642994,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-14",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.454403013301454,
+            "y": 91.69186601763043,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-15",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 3.954237688831926,
+            "y": 91.71479708476828,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-7-16",
+          "sectionId": "134",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.453954734802242,
+            "y": 91.73499984569649,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 17.5,
+      "depth": 94.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-8-1",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.272738808611496,
+            "y": 93.92595679444965,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-2",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 10.760287054627838,
+            "y": 93.98604270050957,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-3",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.247515206625312,
+            "y": 94.04333273597858,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.59999999999998,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-4",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 9.734438518397868,
+            "y": 94.09782519660872,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-5",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.22107225280776,
+            "y": 94.14951846137343,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-6",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.707431681331425,
+            "y": 94.19841099251592,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-7",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.193532083605524,
+            "y": 94.24450133559478,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-8",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.67938874697191,
+            "y": 94.28778811952733,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-9",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.165016966023198,
+            "y": 94.32827005663042,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-10",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.650432042147696,
+            "y": 94.36594594265864,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-11",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.1356492830742315,
+            "y": 94.40081465684027,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-12",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.620684002416779,
+            "y": 94.4328751619105,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-13",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.105551519218911,
+            "y": 94.46212650414239,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-14",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.590267157498013,
+            "y": 94.48856781337516,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-15",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.074846245789763,
+            "y": 94.51219830304008,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-8-16",
+          "sectionId": "134",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.559304116691635,
+            "y": 94.53301727018396,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 20,
+      "depth": 97.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-9-1",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.606392811403381,
+            "y": 96.70600625559617,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-2",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.078773352227818,
+            "y": 96.76787060285024,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-3",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.550824324791812,
+            "y": 96.82685632647268,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-4",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.022561434375818,
+            "y": 96.88296167177262,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-5",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.494000395596997,
+            "y": 96.9361849697439,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-6",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 8.965156931941657,
+            "y": 96.98652463711471,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-7",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.436046775297866,
+            "y": 97.03397917639464,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-8",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 7.906685665486937,
+            "y": 97.07854717591927,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.39999999999999,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-9",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.377089349795556,
+            "y": 97.12022730989221,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-10",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 6.847273582507249,
+            "y": 97.15901833842445,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-11",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.317254124433723,
+            "y": 97.1949191075713,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-12",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.787046742446028,
+            "y": 97.22792854936664,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.39999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-13",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.256667209005517,
+            "y": 97.25804568185487,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-14",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.726131301694572,
+            "y": 97.28526960911988,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-15",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.1954548027476,
+            "y": 97.3095995213119,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.40000000000002,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-9-16",
+          "sectionId": "134",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.664653498581029,
+            "y": 97.33103469467146,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 22.5,
+      "depth": 100.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-10-1",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 11.940046814195265,
+            "y": 99.48605571674265,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-2",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.397259649827795,
+            "y": 99.5496985051909,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-3",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 10.854133442958313,
+            "y": 99.61037991696676,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-4",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.310684350353768,
+            "y": 99.66809814693652,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-5",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 9.766928538386232,
+            "y": 99.72285147811436,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-6",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.22288218255189,
+            "y": 99.7746382817135,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-7",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.678561466990207,
+            "y": 99.82345701719449,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-8",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.133982584001961,
+            "y": 99.8693062323112,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-9",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.589161733567912,
+            "y": 99.912184563154,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-10",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.0441151228668,
+            "y": 99.95209073419024,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-11",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.498858965793214,
+            "y": 99.98902355830229,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-12",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 5.953409482475277,
+            "y": 100.02298193682276,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-13",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.4077828987921235,
+            "y": 100.05396485956732,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-14",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.8619954458911305,
+            "y": 100.08197140486459,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-15",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.316063359705436,
+            "y": 100.1070007395837,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-10-16",
+          "sectionId": "134",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.7700028804704218,
+            "y": 100.12905211915893,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 25,
+      "depth": 103,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-11-1",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.273700816987148,
+            "y": 102.26610517788916,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-2",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 11.715745947427774,
+            "y": 102.33152640753157,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-3",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.157442561124812,
+            "y": 102.39390350746083,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-4",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.598807266331717,
+            "y": 102.45323462210041,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-5",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.039856681175468,
+            "y": 102.50951798648482,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-6",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.480607433162122,
+            "y": 102.56275192631226,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-7",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 8.921076158682547,
+            "y": 102.61293485799432,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-8",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.361279502516986,
+            "y": 102.66006528870312,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-9",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 7.801234117340269,
+            "y": 102.70414181641578,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-10",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.240956663226351,
+            "y": 102.74516312995604,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-11",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.680463807152705,
+            "y": 102.78312800903329,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-12",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.119772222504527,
+            "y": 102.81803532427888,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-13",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.55889858857873,
+            "y": 102.84988403727978,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-14",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 4.997859590087689,
+            "y": 102.87867320060931,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-15",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.436671916663272,
+            "y": 102.90440195785548,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-11-16",
+          "sectionId": "134",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.8753522623598147,
+            "y": 102.9270695436464,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 27.5,
+      "depth": 105.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-12-1",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.607354819779031,
+            "y": 105.04615463903566,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-2",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.034232245027752,
+            "y": 105.11335430987222,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-3",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.460751679291311,
+            "y": 105.17742709795492,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-4",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 10.886930182309666,
+            "y": 105.2383710972643,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-5",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.312784823964703,
+            "y": 105.29618449485528,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-6",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.738332683772354,
+            "y": 105.35086557091104,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-7",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.163590850374888,
+            "y": 105.40241269879417,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-8",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.58857642103201,
+            "y": 105.45082434509506,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-9",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.013306501112625,
+            "y": 105.49609906967757,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-10",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.437798203585902,
+            "y": 105.53823552572183,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-11",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 6.862068648512196,
+            "y": 105.57723245976429,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-12",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.286134962533776,
+            "y": 105.613088711735,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-13",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.710014278365335,
+            "y": 105.64580321499224,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-14",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.133723734284247,
+            "y": 105.67537499635402,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-15",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.557280473621109,
+            "y": 105.70180317612729,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-12-16",
+          "sectionId": "134",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 3.9807016442492076,
+            "y": 105.72508696813387,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 30,
+      "depth": 108.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-13-1",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 12.941008822570915,
+            "y": 107.82620410018215,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-2",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.352718542627729,
+            "y": 107.89518221221289,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-3",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 11.76406079745781,
+            "y": 107.96095068844899,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-4",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.175053098287616,
+            "y": 108.02350757242819,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-5",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.58571296675394,
+            "y": 108.08285100322574,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-6",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 9.996057934382586,
+            "y": 108.13897921550982,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-7",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.406105542067229,
+            "y": 108.19189053959401,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.60000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-8",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 8.815873339547036,
+            "y": 108.24158340148698,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-9",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.225378884884982,
+            "y": 108.28805632293935,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-10",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.634639743945453,
+            "y": 108.33130792148762,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-11",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.043673489871686,
+            "y": 108.37133691049529,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-12",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.452497702563025,
+            "y": 108.40814209919112,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-13",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 5.861129968151942,
+            "y": 108.44172239270469,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-14",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.269587878480806,
+            "y": 108.47207679209875,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-15",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.677889030578945,
+            "y": 108.49920439439909,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.60000000000001,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-13-16",
+          "sectionId": "134",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.0860510261386,
+            "y": 108.52310439262133,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.59999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 32.5,
+      "depth": 111.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-14-1",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.2746628253628,
+            "y": 110.60625356132867,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-2",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.671204840227709,
+            "y": 110.67701011455357,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-3",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.067369915624312,
+            "y": 110.74447427894309,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-4",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.463176014265567,
+            "y": 110.8086440475921,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-5",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 10.858641109543177,
+            "y": 110.86951751159621,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-6",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.25378318499282,
+            "y": 110.92709286010862,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-7",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.648620233759571,
+            "y": 110.98136838039387,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.40000000000002,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-8",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.04317025806206,
+            "y": 111.03234245787893,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-9",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.43745126865734,
+            "y": 111.08001357620115,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-10",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 7.8314812843050055,
+            "y": 111.12438031725343,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-11",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.225278331231178,
+            "y": 111.1654413612263,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-12",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.618860442592275,
+            "y": 111.20319548664726,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-13",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.012245657938548,
+            "y": 111.23764157041717,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-14",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.405452022677364,
+            "y": 111.26877858784347,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-15",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.798497587536782,
+            "y": 111.29660561267089,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-14-16",
+          "sectionId": "134",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.191400408027993,
+            "y": 111.32112181710883,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 35,
+      "depth": 114.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-15-1",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.608316828154681,
+            "y": 113.38630302247515,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-2",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 12.989691137827686,
+            "y": 113.4588380168942,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-3",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.37067903379081,
+            "y": 113.52799786943714,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-4",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 11.751298930243514,
+            "y": 113.59378052275598,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-5",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.131569252332412,
+            "y": 113.65618401996666,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-6",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.51150843560305,
+            "y": 113.71520650470737,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-7",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 9.891134925451912,
+            "y": 113.7708462211937,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-8",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.270467176577084,
+            "y": 113.82310151427083,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-9",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.649523652429695,
+            "y": 113.87197082946292,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-10",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.028322824664555,
+            "y": 113.9174527130192,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-11",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.406883172590668,
+            "y": 113.95954581195728,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-12",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.7852231826215235,
+            "y": 113.99824887410338,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-13",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.163361347725154,
+            "y": 114.0335607481296,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-14",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.541316166873922,
+            "y": 114.06548038358818,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-15",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 4.919106144494618,
+            "y": 114.09400683094267,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-15-16",
+          "sectionId": "134",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.296749789917386,
+            "y": 114.11913924159629,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 37.5,
+      "depth": 117,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-16-1",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 13.941970830946566,
+            "y": 116.16635248362167,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-2",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.308177435427666,
+            "y": 116.24066591923489,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-3",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.67398815195731,
+            "y": 116.31152145993124,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-4",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.039421846221465,
+            "y": 116.37891699791989,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-5",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.404497395121648,
+            "y": 116.44285052833713,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-6",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 10.769233686213283,
+            "y": 116.50332014930616,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-7",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.133649617144252,
+            "y": 116.56032406199355,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-8",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.49776409509211,
+            "y": 116.61386057066278,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-9",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 8.861596036202053,
+            "y": 116.66392808272472,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-10",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.225164365024108,
+            "y": 116.710525108785,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-11",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.58848801395016,
+            "y": 116.7536502626883,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-12",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 6.951585922650773,
+            "y": 116.79330226155952,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-13",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.314477037511761,
+            "y": 116.82947992584208,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-14",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.677180311070481,
+            "y": 116.8621821793329,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-15",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.039714701452455,
+            "y": 116.89140804921449,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-16-16",
+          "sectionId": "134",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.402099171806779,
+            "y": 116.91715666608377,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 40,
+      "depth": 119.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-17-1",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.27562483373845,
+            "y": 118.94640194476817,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-2",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.626663733027643,
+            "y": 119.02249382157555,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-3",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 12.97729727012381,
+            "y": 119.09504505042531,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-4",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.327544762199414,
+            "y": 119.16405347308377,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-5",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.677425537910883,
+            "y": 119.22951703670759,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-6",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.026958936823517,
+            "y": 119.29143379390494,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-7",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.376164308836595,
+            "y": 119.3498019027934,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.80000000000001,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-8",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.725061013607135,
+            "y": 119.4046196270547,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-9",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.07366841997441,
+            "y": 119.45588533598651,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-10",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.422005905383658,
+            "y": 119.5035975045508,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-11",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.770092855309651,
+            "y": 119.5477547134193,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-12",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.117948662680022,
+            "y": 119.58835564901564,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-13",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.465592727298366,
+            "y": 119.62539910355453,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-14",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.81304445526704,
+            "y": 119.65888397507763,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-15",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.160323258410291,
+            "y": 119.68880926748628,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-17-16",
+          "sectionId": "134",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.507448553696173,
+            "y": 119.71517409057124,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 42.5,
+      "depth": 122.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-18-1",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.609278836530333,
+            "y": 121.72645140591466,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-2",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 13.945150030627621,
+            "y": 121.8043217239162,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-3",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.280606388290309,
+            "y": 121.8785686409194,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-4",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.615667678177363,
+            "y": 121.94918994824766,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-5",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 11.95035368070012,
+            "y": 122.01618354507805,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-6",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.284684187433749,
+            "y": 122.07954743850372,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-7",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.618679000528935,
+            "y": 122.13927974359324,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-8",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 9.95235793212216,
+            "y": 122.19537868344663,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-9",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.285740803746766,
+            "y": 122.2478425892483,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-10",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.61884744574321,
+            "y": 122.2966699003166,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-11",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 7.951697696669141,
+            "y": 122.34185916415029,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-12",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.284311402709271,
+            "y": 122.38340903647176,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-13",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.616708417084973,
+            "y": 122.42131828126699,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-14",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 5.948908599463598,
+            "y": 122.45558577082234,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-15",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.2809318153681275,
+            "y": 122.48621048575808,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-18-16",
+          "sectionId": "134",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.612797935585565,
+            "y": 122.51319151505872,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 45,
+      "depth": 125.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-19-1",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 14.942932839322218,
+            "y": 124.50650086706118,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-2",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.263636328227602,
+            "y": 124.58614962625688,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-3",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.58391550645681,
+            "y": 124.6620922314135,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-4",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 12.903790594155314,
+            "y": 124.73432642341157,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-5",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.223281823489357,
+            "y": 124.80285005344852,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-6",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.542409438043983,
+            "y": 124.8676610831025,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.39999999999999,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-7",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 10.861193692221278,
+            "y": 124.9287575843931,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-8",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.179654850637185,
+            "y": 124.98613773983857,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-9",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.497813187519125,
+            "y": 125.03979984251009,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.39999999999999,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-10",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 8.815688986102762,
+            "y": 125.0897422960824,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-11",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.133302538028634,
+            "y": 125.1359636148813,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-12",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.450674142738521,
+            "y": 125.1784624239279,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-13",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.76782410687158,
+            "y": 125.21723745897947,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-14",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.0847727436601575,
+            "y": 125.25228756656708,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-15",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.4015403723259645,
+            "y": 125.2836117040299,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-19-16",
+          "sectionId": "134",
+          "row": "19",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.718147317474958,
+            "y": 125.3112089395462,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 47.5,
+      "depth": 128.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-20-1",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.2765868421141,
+            "y": 127.28655032820767,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-2",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.582122625827576,
+            "y": 127.36797752859752,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-3",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 13.887224624623308,
+            "y": 127.44561582190755,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-4",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.191913510133261,
+            "y": 127.51946289857545,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-5",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.496209966278592,
+            "y": 127.58951656181897,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-6",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 11.800134688654213,
+            "y": 127.65577472770127,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-7",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.103708383913617,
+            "y": 127.71823542519293,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-8",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.406951769152208,
+            "y": 127.77689679623049,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-9",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.70988557129148,
+            "y": 127.83175709577188,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-10",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.012530526462312,
+            "y": 127.88281469184818,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-11",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.314907379388123,
+            "y": 127.93006806561229,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-12",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.61703688276777,
+            "y": 127.973515811384,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-13",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 6.918939796658185,
+            "y": 128.01315663669192,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.20000000000002,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-14",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.220636887856715,
+            "y": 128.04898936231177,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-15",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.522148929283801,
+            "y": 128.08101292230168,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-20-16",
+          "sectionId": "134",
+          "row": "20",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.823496699364351,
+            "y": 128.10922636403367,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "21",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 50,
+      "depth": 131,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-21-1",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.610240844905984,
+            "y": 130.06659978935417,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-2",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 14.900608923427557,
+            "y": 130.14980543093822,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-3",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.190533742789809,
+            "y": 130.22913941240165,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-4",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.480036426111212,
+            "y": 130.30459937373936,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-5",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 12.769138109067828,
+            "y": 130.37618307018943,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-6",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.057859939264446,
+            "y": 130.44388837230005,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 130.99999999999997,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-7",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.346223075605959,
+            "y": 130.50771326599278,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-8",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.634248687667235,
+            "y": 130.56765585262244,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-9",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 9.921957955063837,
+            "y": 130.62371434903366,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-10",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.209372066821864,
+            "y": 130.67588708761397,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-11",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.496512220747615,
+            "y": 130.72417251634332,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-12",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.7833996227970195,
+            "y": 130.76856919884014,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-13",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.070055486444792,
+            "y": 130.80907581440437,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-14",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.356501032053274,
+            "y": 130.8456911580565,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-15",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.642757486241638,
+            "y": 130.87841414057348,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-21-16",
+          "sectionId": "134",
+          "row": "21",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 4.928846081253744,
+            "y": 130.90724378852116,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "22",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 52.5,
+      "depth": 133.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-22-1",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 15.94389484769787,
+            "y": 132.8466492505007,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-2",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.219095221027537,
+            "y": 132.93163333327888,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-3",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.49384286095631,
+            "y": 133.01266300289575,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-4",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 13.768159342089163,
+            "y": 133.08973584890327,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-5",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.042066251857065,
+            "y": 133.1628495785599,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.79999999999998,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-6",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.31558518987468,
+            "y": 133.23200201689886,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-7",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.588737767298301,
+            "y": 133.29719110679264,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-8",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 10.86154560618226,
+            "y": 133.35841490901436,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-9",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.134030338836196,
+            "y": 133.41567160229548,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-10",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.406213607181416,
+            "y": 133.4689594833798,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.79999999999998,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-11",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.678117062107107,
+            "y": 133.5182769670743,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-12",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 7.949762362826269,
+            "y": 133.56362258629628,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-13",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.221171176231398,
+            "y": 133.60499499211684,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-14",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.492365176249833,
+            "y": 133.64239295380122,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-15",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.763366043199475,
+            "y": 133.67581535884528,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-22-16",
+          "sectionId": "134",
+          "row": "22",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.0341954631431385,
+            "y": 133.70526121300864,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "23",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 55,
+      "depth": 136.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-23-1",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.27754885048975,
+            "y": 135.62669871164718,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-2",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.537581518627512,
+            "y": 135.71346123561952,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-3",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 14.797151979122807,
+            "y": 135.7961865933898,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-4",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.056282258067112,
+            "y": 135.87487232406713,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-5",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.3149943946463,
+            "y": 135.94951608693034,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-6",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.57331044048491,
+            "y": 136.0201156614976,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-7",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 11.83125245899064,
+            "y": 136.08666894759247,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-8",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.088842524697284,
+            "y": 136.14917396540628,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-9",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.346102722608551,
+            "y": 136.20762885555723,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-10",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.603055147540966,
+            "y": 136.26203187914558,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-11",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 8.859721903466596,
+            "y": 136.3123814178053,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-12",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.116125102855518,
+            "y": 136.35867597375238,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-13",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.372286866018004,
+            "y": 136.4009141698293,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-14",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.6282293204463905,
+            "y": 136.43909474954594,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-15",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 5.883974600157311,
+            "y": 136.47321657711709,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-23-16",
+          "sectionId": "134",
+          "row": "23",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.13954484503253,
+            "y": 136.5032786374961,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "24",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 57.5,
+      "depth": 139.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-24-1",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.611202853281632,
+            "y": 138.40674817279367,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-2",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 15.856067816227489,
+            "y": 138.49528913796019,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-3",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.100461097289305,
+            "y": 138.57971018388386,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-4",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.34440517404506,
+            "y": 138.660008799231,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-5",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.587922537435533,
+            "y": 138.7361825953008,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-6",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 12.831035691095142,
+            "y": 138.8082293060964,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-7",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.07376715068298,
+            "y": 138.8761467883923,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-8",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.316139443212307,
+            "y": 138.9399330217982,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-9",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.558175106380906,
+            "y": 138.99958610881902,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-10",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.799896687900516,
+            "y": 139.05510427491134,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-11",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.041326744826087,
+            "y": 139.10648586853628,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-12",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.282487842884766,
+            "y": 139.1537293612085,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-13",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.523402555804609,
+            "y": 139.19683334754174,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-14",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.764093464642949,
+            "y": 139.23579654529064,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-15",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.004583157115146,
+            "y": 139.27061779538886,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-24-16",
+          "sectionId": "134",
+          "row": "24",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.2448942269219225,
+            "y": 139.30129606198355,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "25",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 60,
+      "depth": 142.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-25-1",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 16.944856856073518,
+            "y": 141.18679763394016,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-2",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.17455411382747,
+            "y": 141.27711704030085,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-3",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.403770215455806,
+            "y": 141.36323377437796,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-4",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.63252809002301,
+            "y": 141.44514527439492,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-5",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 13.860850680224772,
+            "y": 141.52284910367126,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-6",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.088760941705376,
+            "y": 141.59634295069517,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-7",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.316281842375322,
+            "y": 141.66562462919217,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-8",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.543436361727332,
+            "y": 141.73069207819015,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-9",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.770247490153263,
+            "y": 141.7915433620808,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-10",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 9.996738228260067,
+            "y": 141.84817667067716,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-11",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.222931586185577,
+            "y": 141.9005903192673,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-12",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.448850582914016,
+            "y": 141.94878274866463,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-13",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.674518245591217,
+            "y": 141.99275252525422,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-14",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 6.899957608839507,
+            "y": 142.03249834103536,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-15",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.125191714072983,
+            "y": 142.06801901366066,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-25-16",
+          "sectionId": "134",
+          "row": "25",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.350243608811316,
+            "y": 142.09931348647103,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "26",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 62.5,
+      "depth": 145,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-26-1",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 17.278510858865403,
+            "y": 143.96684709508668,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-2",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.493040411427447,
+            "y": 144.05894494264152,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-3",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 15.707079333622307,
+            "y": 144.14675736487206,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-4",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 14.920651006000961,
+            "y": 144.23028174955883,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-5",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 14.133778823014008,
+            "y": 144.30951561204174,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-6",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.346486192315608,
+            "y": 144.38445659529395,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-7",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.558796534067664,
+            "y": 144.455102469992,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-8",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.770733280242359,
+            "y": 144.52145113458207,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-9",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 10.982319873925622,
+            "y": 144.58350061534261,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-10",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.193579768619621,
+            "y": 144.64124906644295,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-11",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.40453642754507,
+            "y": 144.6946947699983,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-12",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.615213322943266,
+            "y": 144.74383613612076,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-13",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.825633935377823,
+            "y": 144.78867170296667,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-14",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.035821753036067,
+            "y": 144.8292001367801,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-15",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.24580027103082,
+            "y": 144.8654202319325,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-26-16",
+          "sectionId": "134",
+          "row": "26",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.45559299070071,
+            "y": 144.89733091095852,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 145,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "27",
+      "sectionId": "134",
+      "seatCount": 16,
+      "elevation": 65,
+      "depth": 147.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "diamondbacks-134-27-1",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 17.612164861657288,
+            "y": 146.7468965562332,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -186.84375,
+          "facing": -6.84375,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-2",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 16.81152670902743,
+            "y": 146.8407728449822,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -186.53125,
+          "facing": -6.53125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-3",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 16.01038845178881,
+            "y": 146.93028095536613,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -186.21875,
+          "facing": -6.21875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-4",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 15.208773921978912,
+            "y": 147.01541822472274,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -185.90625,
+          "facing": -5.90625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-5",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 14.406706965803245,
+            "y": 147.0961821204122,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -185.59375,
+          "facing": -5.59375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-6",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 13.604211442925841,
+            "y": 147.17257023989276,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -185.28125,
+          "facing": -5.28125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-7",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 12.801311225760006,
+            "y": 147.24458031079186,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -184.96875,
+          "facing": -4.96875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-8",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 11.998030198757384,
+            "y": 147.312210190974,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -184.65625,
+          "facing": -4.65625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-9",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 11.194392257697979,
+            "y": 147.3754578686044,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.79999999999998,
+          "angle": -184.34375,
+          "facing": -4.34375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-10",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 10.390421308979173,
+            "y": 147.43432146220877,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -184.03125,
+          "facing": -4.03125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-11",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 9.586141268904562,
+            "y": 147.48879922072933,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -183.71875,
+          "facing": -3.71875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-12",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 8.781576062972515,
+            "y": 147.5388895235769,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -183.40625,
+          "facing": -3.40625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-13",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 7.97674962516443,
+            "y": 147.58459088067914,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -183.09375,
+          "facing": -3.09375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-14",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 7.171685897232626,
+            "y": 147.62590193252484,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -182.78125,
+          "facing": -2.78125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-15",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 6.366408827988657,
+            "y": 147.6628214502043,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -182.46875,
+          "facing": -2.46875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "diamondbacks-134-27-16",
+          "sectionId": "134",
+          "row": "27",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 5.5609423725901035,
+            "y": 147.695348335446,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 147.8,
+          "angle": -182.15625,
+          "facing": -2.15625,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 378,
+    "aisle": 54,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
