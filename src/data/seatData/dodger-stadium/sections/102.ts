@@ -1,8 +1,8 @@
 /**
  * Loge Box 102 - dodger-stadium
- * Generated: 2025-10-21T16:30:21.524Z
- * Total Seats: 138
- * Total Rows: 23
+ * Generated: 2025-10-22T00:43:37.411Z
+ * Total Seats: 210
+ * Total Rows: 21
  */
 
 import type { SectionSeatingData } from '@/types/seat';
@@ -11,15 +11,15 @@ export const section_102: SectionSeatingData = {
   "sectionId": "102",
   "sectionName": "Loge Box 102",
   "stadiumId": "dodger-stadium",
-  "totalSeats": 138,
-  "totalRows": 23,
+  "totalSeats": 210,
+  "totalRows": 21,
   "rows": [
     {
       "rowNumber": "A",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 60.13704652454262,
+      "seatCount": 10,
+      "elevation": 25,
+      "depth": 100,
       "rowSpacing": 36,
       "seats": [
         {
@@ -28,14 +28,14 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "1",
           "position3D": {
-            "x": 1.8364959896894741,
-            "y": -60.10899805499055,
-            "z": null
+            "x": -98.74138067509115,
+            "y": 15.815806725448331,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.13704652454262,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -54,14 +54,14 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.360969366848084,
-            "y": -60.09068304108224,
-            "z": null
+            "x": -98.90158633619168,
+            "y": 14.78094111296106,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.13704652454262,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -80,14 +80,14 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "3",
           "position3D": {
-            "x": 2.8852629470485436,
-            "y": -60.067791889009804,
-            "z": null
+            "x": -99.05094632383089,
+            "y": 13.744454603714685,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.13704652454262,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -106,14 +106,14 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "4",
           "position3D": {
-            "x": 3.4093368033048495,
-            "y": -60.040326342023114,
-            "z": null
+            "x": -99.18944425900297,
+            "y": 12.70646086013504,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.13704652454262,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 25,
+          "distanceFromHomeplate": 100.00000000000001,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -132,14 +132,14 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "5",
           "position3D": {
-            "x": 3.933151025363786,
-            "y": -60.0082884917299,
-            "z": null
+            "x": -99.31706495384861,
+            "y": 11.667073709933288,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.13704652454262,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 25,
+          "distanceFromHomeplate": 100.00000000000001,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -158,14 +158,118 @@ export const section_102: SectionSeatingData = {
           "row": "A",
           "seatNumber": "6",
           "position3D": {
-            "x": 4.456665722744328,
-            "y": -59.97168077793651,
-            "z": null
+            "x": -99.43379441332046,
+            "y": 10.626407133623356,
+            "z": 25
           },
-          "elevation": null,
-          "distanceFromHomeplate": 60.137046524542626,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 25,
+          "distanceFromHomeplate": 99.99999999999999,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-A-7",
+          "sectionId": "102",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -99.53961983671788,
+            "y": 9.584575252022411,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 99.99999999999999,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-A-8",
+          "sectionId": "102",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -99.63452961909064,
+            "y": 8.541692313736736,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-A-9",
+          "sectionId": "102",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -99.71851335251158,
+            "y": 7.49787268263278,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-A-10",
+          "sectionId": "102",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -99.7915618272179,
+            "y": 6.453230825295783,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 100,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -180,15 +284,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "B",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 63.13704652454262,
+      "seatCount": 10,
+      "elevation": 27.5,
+      "depth": 102.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -197,14 +301,14 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "1",
           "position3D": {
-            "x": 1.9281115293189426,
-            "y": -63.10759882750069,
-            "z": null
+            "x": -101.5061393339937,
+            "y": 16.258649313760884,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -223,14 +327,14 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.47874881412529,
-            "y": -63.088370149804405,
-            "z": null
+            "x": -101.67083075360505,
+            "y": 15.19480746412397,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -249,14 +353,14 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.0291973326125756,
-            "y": -63.06433704846466,
-            "z": null
+            "x": -101.82437282089815,
+            "y": 14.129299332618695,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.80000000000001,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -275,14 +379,14 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "4",
           "position3D": {
-            "x": 3.579415165994982,
-            "y": -63.03550135369516,
-            "z": null
+            "x": -101.96674869825505,
+            "y": 13.062241764218822,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -301,14 +405,14 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "5",
           "position3D": {
-            "x": 4.129360413054215,
-            "y": -63.00186526144571,
-            "z": null
+            "x": -102.09794277255637,
+            "y": 11.993751773811418,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -327,14 +431,118 @@ export const section_102: SectionSeatingData = {
           "row": "B",
           "seatNumber": "6",
           "position3D": {
-            "x": 4.678991193330525,
-            "y": -62.963431333234965,
-            "z": null
+            "x": -102.21794065689342,
+            "y": 10.923946533364811,
+            "z": 27.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 63.13704652454262,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.79999999999998,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-B-7",
+          "sectionId": "102",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -102.32672919214598,
+            "y": 9.852943359079038,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-B-8",
+          "sectionId": "102",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -102.42429644842518,
+            "y": 8.780859698521365,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.8,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-B-9",
+          "sectionId": "102",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -102.51063172638189,
+            "y": 7.707813117746497,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.79999999999998,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-B-10",
+          "sectionId": "102",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -102.58572555838,
+            "y": 6.633921288404065,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 102.80000000000001,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -349,15 +557,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "C",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 66.13704652454263,
+      "seatCount": 10,
+      "elevation": 30,
+      "depth": 105.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -366,14 +574,14 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.0197270689484115,
-            "y": -66.10619960001084,
-            "z": null
+            "x": -104.27089799289625,
+            "y": 16.701491902073435,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454264,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.6,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -392,14 +600,14 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.5965282614024963,
-            "y": -66.08605725852658,
-            "z": null
+            "x": -104.4400751710184,
+            "y": 15.60867381528688,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.59999999999998,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -418,14 +626,14 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.1731317181766077,
-            "y": -66.06088220791952,
-            "z": null
+            "x": -104.5977993179654,
+            "y": 14.514144061522705,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.59999999999998,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -444,14 +652,14 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "4",
           "position3D": {
-            "x": 3.749493528685115,
-            "y": -66.03067636536721,
-            "z": null
+            "x": -104.74405313750712,
+            "y": 13.418022668302603,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.6,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -470,14 +678,14 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "5",
           "position3D": {
-            "x": 4.325569800744645,
-            "y": -65.99544203116153,
-            "z": null
+            "x": -104.87882059126413,
+            "y": 12.32042983768955,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.60000000000001,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -496,14 +704,118 @@ export const section_102: SectionSeatingData = {
           "row": "C",
           "seatNumber": "6",
           "position3D": {
-            "x": 4.901316663916723,
-            "y": -65.95518188853343,
-            "z": null
+            "x": -105.0020869004664,
+            "y": 11.221485933106264,
+            "z": 30
           },
-          "elevation": null,
-          "distanceFromHomeplate": 66.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 30,
+          "distanceFromHomeplate": 105.59999999999998,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-C-7",
+          "sectionId": "102",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -105.11383854757408,
+            "y": 10.121311466135666,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 105.6,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-C-8",
+          "sectionId": "102",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -105.2140632777597,
+            "y": 9.020027083305992,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 105.59999999999998,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-C-9",
+          "sectionId": "102",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -105.30275010025221,
+            "y": 7.917753552860215,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 105.6,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-C-10",
+          "sectionId": "102",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -105.37988928954209,
+            "y": 6.814611751512347,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 105.6,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -518,15 +830,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "D",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 69.13704652454263,
+      "seatCount": 10,
+      "elevation": 32.5,
+      "depth": 108.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -535,14 +847,14 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.1113426085778797,
-            "y": -69.10480037252097,
-            "z": null
+            "x": -107.03565665179882,
+            "y": 17.14433449038599,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.40000000000002,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -561,14 +873,14 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.7143077086797023,
-            "y": -69.08374436724876,
-            "z": null
+            "x": -107.2093195884318,
+            "y": 16.02254016644979,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.40000000000002,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -587,14 +899,14 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.3170661037406393,
-            "y": -69.05742736737437,
-            "z": null
+            "x": -107.37122581503267,
+            "y": 14.898988790426719,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.39999999999999,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -613,14 +925,14 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "4",
           "position3D": {
-            "x": 3.9195718913752478,
-            "y": -69.02585137703926,
-            "z": null
+            "x": -107.52135757675923,
+            "y": 13.773803572386385,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.40000000000002,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -639,14 +951,14 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "5",
           "position3D": {
-            "x": 4.521779188435073,
-            "y": -68.98901880087733,
-            "z": null
+            "x": -107.6596984099719,
+            "y": 12.647107901567685,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454261,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.4,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -665,14 +977,118 @@ export const section_102: SectionSeatingData = {
           "row": "D",
           "seatNumber": "6",
           "position3D": {
-            "x": 5.12364213450292,
-            "y": -68.94693244383188,
-            "z": null
+            "x": -107.78623314403937,
+            "y": 11.51902533284772,
+            "z": 32.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 69.13704652454261,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.39999999999999,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-D-7",
+          "sectionId": "102",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -107.90094790300218,
+            "y": 10.389679573192293,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.39999999999999,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-D-8",
+          "sectionId": "102",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -108.00383010709426,
+            "y": 9.259194468090623,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.4,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-D-9",
+          "sectionId": "102",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -108.09486847412255,
+            "y": 8.127693987973933,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.39999999999999,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-D-10",
+          "sectionId": "102",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -108.1740530207042,
+            "y": 6.995302214620629,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 108.4,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -687,15 +1103,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "E",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 72.13704652454263,
+      "seatCount": 10,
+      "elevation": 35,
+      "depth": 111.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -704,14 +1120,14 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.2029581482073484,
-            "y": -72.10340114503111,
-            "z": null
+            "x": -109.80041531070137,
+            "y": 17.587177078698545,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.20000000000002,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -730,14 +1146,14 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.8320871559569083,
-            "y": -72.08143147597092,
-            "z": null
+            "x": -109.97856400584516,
+            "y": 16.4364065176127,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.2,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -756,14 +1172,14 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.461000489304671,
-            "y": -72.05397252682923,
-            "z": null
+            "x": -110.14465231209994,
+            "y": 15.283833519330729,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454264,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.19999999999999,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -782,14 +1198,14 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.089650254065381,
-            "y": -72.0210263887113,
-            "z": null
+            "x": -110.2986620160113,
+            "y": 14.129584476470166,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.20000000000002,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -808,14 +1224,14 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "5",
           "position3D": {
-            "x": 4.717988576125503,
-            "y": -71.98259557059315,
-            "z": null
+            "x": -110.44057622867966,
+            "y": 12.973785965445815,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.2,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -834,14 +1250,118 @@ export const section_102: SectionSeatingData = {
           "row": "E",
           "seatNumber": "6",
           "position3D": {
-            "x": 5.345967605089117,
-            "y": -71.93868299913035,
-            "z": null
+            "x": -110.57037938761235,
+            "y": 11.816564732589173,
+            "z": 35
           },
-          "elevation": null,
-          "distanceFromHomeplate": 72.13704652454264,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 35,
+          "distanceFromHomeplate": 111.2,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-E-7",
+          "sectionId": "102",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -110.68805725843028,
+            "y": 10.65804768024892,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 111.19999999999999,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-E-8",
+          "sectionId": "102",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -110.7935969364288,
+            "y": 9.49836185287525,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 111.2,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-E-9",
+          "sectionId": "102",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -110.88698684799287,
+            "y": 8.337634423087652,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 111.2,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-E-10",
+          "sectionId": "102",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -110.96821675186631,
+            "y": 7.175992677728911,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 111.20000000000002,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -856,15 +1376,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "F",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 75.13704652454263,
+      "seatCount": 10,
+      "elevation": 37.5,
+      "depth": 114,
       "rowSpacing": 36,
       "seats": [
         {
@@ -873,14 +1393,14 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.2945736878368166,
-            "y": -75.10200191754124,
-            "z": null
+            "x": -112.5651739696039,
+            "y": 18.030019667011096,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 113.99999999999999,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -899,14 +1419,14 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "2",
           "position3D": {
-            "x": 2.9498666032341143,
-            "y": -75.07911858469309,
-            "z": null
+            "x": -112.74780842325852,
+            "y": 16.85027286877561,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -925,14 +1445,14 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.6049348748687025,
-            "y": -75.05051768628407,
-            "z": null
+            "x": -112.9180788091672,
+            "y": 15.66867824823474,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 113.99999999999999,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -951,14 +1471,14 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.259728616755513,
-            "y": -75.01620140038335,
-            "z": null
+            "x": -113.07596645526338,
+            "y": 14.485365380553947,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -977,14 +1497,14 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "5",
           "position3D": {
-            "x": 4.914197963815932,
-            "y": -74.97617234030896,
-            "z": null
+            "x": -113.22145404738741,
+            "y": 13.300464029323948,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1003,14 +1523,118 @@ export const section_102: SectionSeatingData = {
           "row": "F",
           "seatNumber": "6",
           "position3D": {
-            "x": 5.5682930756753155,
-            "y": -74.9304335544288,
-            "z": null
+            "x": -113.35452563118531,
+            "y": 12.114104132330628,
+            "z": 37.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 75.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 37.5,
+          "distanceFromHomeplate": 113.99999999999999,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-F-7",
+          "sectionId": "102",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -113.47516661385838,
+            "y": 10.926415787305547,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-F-8",
+          "sectionId": "102",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -113.58336376576332,
+            "y": 9.73752923765988,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 113.99999999999999,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-F-9",
+          "sectionId": "102",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -113.6791052218632,
+            "y": 8.547574858201369,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-F-10",
+          "sectionId": "102",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -113.76238048302841,
+            "y": 7.356683140837193,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 114,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1025,15 +1649,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "G",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 78.13704652454263,
+      "seatCount": 10,
+      "elevation": 40,
+      "depth": 116.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1042,14 +1666,14 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.3861892274662853,
-            "y": -78.10060269005139,
-            "z": null
+            "x": -115.32993262850646,
+            "y": 18.47286225532365,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1068,14 +1692,14 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.06764605051132,
-            "y": -78.07680569341525,
-            "z": null
+            "x": -115.51705284067188,
+            "y": 17.264139219938517,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1094,14 +1718,14 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.7488692604327345,
-            "y": -78.04706284573892,
-            "z": null
+            "x": -115.69150530623446,
+            "y": 16.05352297713875,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1120,14 +1744,14 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.4298069794456465,
-            "y": -78.0113764120554,
-            "z": null
+            "x": -115.85327089451546,
+            "y": 14.841146284637727,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1146,14 +1770,14 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "5",
           "position3D": {
-            "x": 5.110407351506361,
-            "y": -77.96974911002476,
-            "z": null
+            "x": -116.00233186609518,
+            "y": 13.62714209320208,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1172,14 +1796,118 @@ export const section_102: SectionSeatingData = {
           "row": "G",
           "seatNumber": "6",
           "position3D": {
-            "x": 5.790618546261513,
-            "y": -77.92218410972725,
-            "z": null
+            "x": -116.13867187475829,
+            "y": 12.41164353207208,
+            "z": 40
           },
-          "elevation": null,
-          "distanceFromHomeplate": 78.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-G-7",
+          "sectionId": "102",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -116.26227596928648,
+            "y": 11.194783894362175,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-G-8",
+          "sectionId": "102",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -116.37313059509786,
+            "y": 9.976696622444507,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-G-9",
+          "sectionId": "102",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -116.47122359573352,
+            "y": 8.757515293315086,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-G-10",
+          "sectionId": "102",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -116.55654421419051,
+            "y": 7.537373603945475,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 116.8,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1194,15 +1922,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "H",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 81.13704652454263,
+      "seatCount": 10,
+      "elevation": 42.5,
+      "depth": 119.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1211,14 +1939,14 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.4778047670957535,
-            "y": -81.09920346256153,
-            "z": null
+            "x": -118.094691287409,
+            "y": 18.915704843636203,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1237,14 +1965,14 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.185425497788526,
-            "y": -81.07449280213743,
-            "z": null
+            "x": -118.28629725808524,
+            "y": 17.678005571101426,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1263,14 +1991,14 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "3",
           "position3D": {
-            "x": 3.892803645996766,
-            "y": -81.04360800519378,
-            "z": null
+            "x": -118.46493180330172,
+            "y": 16.43836770604276,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.59999999999998,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1289,14 +2017,14 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.599885342135779,
-            "y": -81.00655142372744,
-            "z": null
+            "x": -118.63057533376754,
+            "y": 15.196927188721508,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1315,14 +2043,14 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "5",
           "position3D": {
-            "x": 5.30661673919679,
-            "y": -80.96332587974058,
-            "z": null
+            "x": -118.78320968480293,
+            "y": 13.95382015708021,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1341,14 +2069,118 @@ export const section_102: SectionSeatingData = {
           "row": "H",
           "seatNumber": "6",
           "position3D": {
-            "x": 6.01294401684771,
-            "y": -80.91393466502572,
-            "z": null
+            "x": -118.92281811833125,
+            "y": 12.709182931813535,
+            "z": 42.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 81.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.59999999999998,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-H-7",
+          "sectionId": "102",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -119.04938532471458,
+            "y": 11.463152001418802,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-H-8",
+          "sectionId": "102",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -119.1628974244324,
+            "y": 10.215864007229136,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-H-9",
+          "sectionId": "102",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -119.26334196960383,
+            "y": 8.967455728428803,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-H-10",
+          "sectionId": "102",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -119.35070794535261,
+            "y": 7.718064067053756,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 119.6,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1363,15 +2195,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "I",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 84.13704652454263,
+      "seatCount": 10,
+      "elevation": 45,
+      "depth": 122.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1380,14 +2212,14 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.569420306725222,
-            "y": -84.09780423507166,
-            "z": null
+            "x": -120.85944994631157,
+            "y": 19.358547431948757,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1406,14 +2238,14 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.303204945065732,
-            "y": -84.07217991085959,
-            "z": null
+            "x": -121.05554167549863,
+            "y": 18.09187192226434,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.40000000000002,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1432,14 +2264,14 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.036738031560798,
-            "y": -84.04015316464863,
-            "z": null
+            "x": -121.238358300369,
+            "y": 16.823212434946775,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1458,14 +2290,14 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.769963704825912,
-            "y": -84.00172643539949,
-            "z": null
+            "x": -121.40787977301964,
+            "y": 15.552708092805291,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.40000000000002,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1484,14 +2316,14 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "5",
           "position3D": {
-            "x": 5.50282612688722,
-            "y": -83.9569026494564,
-            "z": null
+            "x": -121.5640875035107,
+            "y": 14.280498220958345,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1510,14 +2342,118 @@ export const section_102: SectionSeatingData = {
           "row": "I",
           "seatNumber": "6",
           "position3D": {
-            "x": 6.235269487433907,
-            "y": -83.90568522032417,
-            "z": null
+            "x": -121.70696436190424,
+            "y": 13.00672233155499,
+            "z": 45
           },
-          "elevation": null,
-          "distanceFromHomeplate": 84.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-I-7",
+          "sectionId": "102",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -121.83649468014268,
+            "y": 11.731520108475431,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 122.39999999999999,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-I-8",
+          "sectionId": "102",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -121.95266425376695,
+            "y": 10.455031392013765,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-I-9",
+          "sectionId": "102",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -122.05546034347417,
+            "y": 9.177396163542522,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 122.39999999999999,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-I-10",
+          "sectionId": "102",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -122.14487167651471,
+            "y": 7.898754530162039,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 122.4,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1532,15 +2468,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "J",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 87.13704652454263,
+      "seatCount": 10,
+      "elevation": 47.5,
+      "depth": 125.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1549,14 +2485,14 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.6610358463546904,
-            "y": -87.09640500758181,
-            "z": null
+            "x": -123.62420860521412,
+            "y": 19.801390020261312,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.20000000000002,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1575,14 +2511,14 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.420984392342938,
-            "y": -87.06986701958176,
-            "z": null
+            "x": -123.82478609291199,
+            "y": 18.505738273427248,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1601,14 +2537,14 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.180672417124829,
-            "y": -87.03669832410348,
-            "z": null
+            "x": -124.01178479743626,
+            "y": 17.208057163850786,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1627,14 +2563,14 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "4",
           "position3D": {
-            "x": 4.940042067516044,
-            "y": -86.99690144707154,
-            "z": null
+            "x": -124.18518421227172,
+            "y": 15.908488996889071,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.20000000000002,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1653,14 +2589,14 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "5",
           "position3D": {
-            "x": 5.699035514577648,
-            "y": -86.9504794191722,
-            "z": null
+            "x": -124.34496532221846,
+            "y": 14.607176284836475,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1679,14 +2615,118 @@ export const section_102: SectionSeatingData = {
           "row": "J",
           "seatNumber": "6",
           "position3D": {
-            "x": 6.457594958020104,
-            "y": -86.89743577562263,
-            "z": null
+            "x": -124.4911106054772,
+            "y": 13.304261731296444,
+            "z": 47.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 87.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.19999999999999,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-J-7",
+          "sectionId": "102",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -124.62360403557078,
+            "y": 11.999888215532058,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-J-8",
+          "sectionId": "102",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -124.74243108310148,
+            "y": 10.694198776798393,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.19999999999999,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-J-9",
+          "sectionId": "102",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -124.84757871734449,
+            "y": 9.38733659865624,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-J-10",
+          "sectionId": "102",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -124.93903540767681,
+            "y": 8.07944499327032,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 125.2,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1701,15 +2741,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "K",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 90.13704652454263,
+      "seatCount": 10,
+      "elevation": 50,
+      "depth": 128,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1718,14 +2758,14 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.752651385984159,
-            "y": -90.09500578009194,
-            "z": null
+            "x": -126.38896726411667,
+            "y": 20.244232608573864,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1744,14 +2784,14 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.538763839620144,
-            "y": -90.06755412830393,
-            "z": null
+            "x": -126.59403051032535,
+            "y": 18.919604624590157,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1770,14 +2810,14 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.324606802688861,
-            "y": -90.03324348355834,
-            "z": null
+            "x": -126.78521129450353,
+            "y": 17.592901892754796,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1796,14 +2836,14 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.110120430206178,
-            "y": -89.99207645874358,
-            "z": null
+            "x": -126.9624886515238,
+            "y": 16.264269900972852,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1822,14 +2862,14 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "5",
           "position3D": {
-            "x": 5.895244902268078,
-            "y": -89.94405618888801,
-            "z": null
+            "x": -127.12584314092622,
+            "y": 14.933854348714608,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1848,14 +2888,118 @@ export const section_102: SectionSeatingData = {
           "row": "K",
           "seatNumber": "6",
           "position3D": {
-            "x": 6.6799204286063025,
-            "y": -89.88918633092109,
-            "z": null
+            "x": -127.27525684905018,
+            "y": 13.601801131037897,
+            "z": 50
           },
-          "elevation": null,
-          "distanceFromHomeplate": 90.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 50,
+          "distanceFromHomeplate": 127.99999999999999,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-K-7",
+          "sectionId": "102",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -127.41071339099888,
+            "y": 12.268256322588686,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 127.99999999999999,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-K-8",
+          "sectionId": "102",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -127.53219791243602,
+            "y": 10.933366161583022,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 127.99999999999999,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-K-9",
+          "sectionId": "102",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -127.63969709121481,
+            "y": 9.597277033769958,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 127.99999999999999,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-K-10",
+          "sectionId": "102",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -127.73319913883891,
+            "y": 8.260135456378602,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 128,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1870,15 +3014,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "L",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 93.13704652454263,
+      "seatCount": 10,
+      "elevation": 52.5,
+      "depth": 130.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1887,14 +3031,14 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.8442669256136273,
-            "y": -93.09360655260208,
-            "z": null
+            "x": -129.15372592301924,
+            "y": 20.68707519688642,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.80000000000004,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1913,14 +3057,14 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.65654328689735,
-            "y": -93.0652412370261,
-            "z": null
+            "x": -129.36327492773873,
+            "y": 19.33347097575307,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1939,14 +3083,14 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.468541188252893,
-            "y": -93.02978864301319,
-            "z": null
+            "x": -129.5586377915708,
+            "y": 17.97774662165881,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454264,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1965,14 +3109,14 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.28019879289631,
-            "y": -92.98725147041563,
-            "z": null
+            "x": -129.7397930907759,
+            "y": 16.620050805056636,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454261,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1991,14 +3135,14 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "5",
           "position3D": {
-            "x": 6.091454289958507,
-            "y": -92.93763295860383,
-            "z": null
+            "x": -129.906720959634,
+            "y": 15.260532412592742,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454264,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2017,14 +3161,118 @@ export const section_102: SectionSeatingData = {
           "row": "L",
           "seatNumber": "6",
           "position3D": {
-            "x": 6.9022458991925,
-            "y": -92.88093688621954,
-            "z": null
+            "x": -130.05940309262317,
+            "y": 13.899340530779352,
+            "z": 52.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 93.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.80000000000004,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-L-7",
+          "sectionId": "102",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -130.197822746427,
+            "y": 12.536624429645315,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-L-8",
+          "sectionId": "102",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -130.32196474177056,
+            "y": 11.172533546367651,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-L-9",
+          "sectionId": "102",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -130.43181546508515,
+            "y": 9.807217468883676,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-L-10",
+          "sectionId": "102",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -130.527362870001,
+            "y": 8.440825919486885,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 130.8,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2039,15 +3287,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "M",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 96.13704652454263,
+      "seatCount": 10,
+      "elevation": 55,
+      "depth": 133.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2056,14 +3304,14 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "1",
           "position3D": {
-            "x": 2.935882465243096,
-            "y": -96.09220732511223,
-            "z": null
+            "x": -131.91848458192177,
+            "y": 21.12991778519897,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2082,14 +3330,14 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.774322734174556,
-            "y": -96.06292834574826,
-            "z": null
+            "x": -132.13251934515208,
+            "y": 19.747337326915975,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2108,14 +3356,14 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.6124755738169245,
-            "y": -96.02633380246803,
-            "z": null
+            "x": -132.33206428863804,
+            "y": 18.362591350562816,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2134,14 +3382,14 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.450277155586443,
-            "y": -95.98242648208767,
-            "z": null
+            "x": -132.51709753002797,
+            "y": 16.975831709140415,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.60000000000002,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2160,14 +3408,14 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "5",
           "position3D": {
-            "x": 6.287663677648936,
-            "y": -95.93120972831963,
-            "z": null
+            "x": -132.68759877834174,
+            "y": 15.58721047647087,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2186,14 +3434,118 @@ export const section_102: SectionSeatingData = {
           "row": "M",
           "seatNumber": "6",
           "position3D": {
-            "x": 7.124571369778697,
-            "y": -95.872687441518,
-            "z": null
+            "x": -132.84354933619613,
+            "y": 14.196879930520804,
+            "z": 55
           },
-          "elevation": null,
-          "distanceFromHomeplate": 96.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 55,
+          "distanceFromHomeplate": 133.60000000000002,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-M-7",
+          "sectionId": "102",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -132.98493210185507,
+            "y": 12.80499253670194,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-M-8",
+          "sectionId": "102",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -133.11173157110508,
+            "y": 11.411700931152279,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-M-9",
+          "sectionId": "102",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -133.22393383895545,
+            "y": 10.017157903997393,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-M-10",
+          "sectionId": "102",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -133.3215266011631,
+            "y": 8.621516382595166,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 133.6,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2208,15 +3560,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "N",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 99.13704652454263,
+      "seatCount": 10,
+      "elevation": 57.5,
+      "depth": 136.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2225,14 +3577,14 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.027498004872564,
-            "y": -99.09080809762236,
-            "z": null
+            "x": -134.68324324082434,
+            "y": 21.572760373511525,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2251,14 +3603,14 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "2",
           "position3D": {
-            "x": 3.892102181451762,
-            "y": -99.06061545447044,
-            "z": null
+            "x": -134.90176376256545,
+            "y": 20.161203678078888,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2277,14 +3629,14 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.756409959380957,
-            "y": -99.02287896192288,
-            "z": null
+            "x": -135.1054907857053,
+            "y": 18.74743607946683,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2303,14 +3655,14 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.620355518276575,
-            "y": -98.97760149375972,
-            "z": null
+            "x": -135.29440196928005,
+            "y": 17.3316126132242,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2329,14 +3681,14 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "5",
           "position3D": {
-            "x": 6.483873065339365,
-            "y": -98.92478649803544,
-            "z": null
+            "x": -135.46847659704952,
+            "y": 15.913888540349005,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2355,14 +3707,118 @@ export const section_102: SectionSeatingData = {
           "row": "N",
           "seatNumber": "6",
           "position3D": {
-            "x": 7.346896840364894,
-            "y": -98.86443799681646,
-            "z": null
+            "x": -135.6276955797691,
+            "y": 14.494419330262259,
+            "z": 57.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 99.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.39999999999998,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-N-7",
+          "sectionId": "102",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -135.7720414572832,
+            "y": 13.07336064375857,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-N-8",
+          "sectionId": "102",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -135.90149840043964,
+            "y": 11.650868315936908,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-N-9",
+          "sectionId": "102",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -136.0160522128258,
+            "y": 10.227098339111112,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-N-10",
+          "sectionId": "102",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -136.11569033232522,
+            "y": 8.802206845703449,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 136.4,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2377,15 +3833,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "O",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 102.13704652454263,
+      "seatCount": 10,
+      "elevation": 60,
+      "depth": 139.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2394,14 +3850,14 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.119113544502033,
-            "y": -102.0894088701325,
-            "z": null
+            "x": -137.44800189972688,
+            "y": 22.015602961824076,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2420,14 +3876,14 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.0098816287289685,
-            "y": -102.0583025631926,
-            "z": null
+            "x": -137.6710081799788,
+            "y": 20.575070029241793,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.19999999999996,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2446,14 +3902,14 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "3",
           "position3D": {
-            "x": 4.900344344944989,
-            "y": -102.01942412137774,
-            "z": null
+            "x": -137.87891728277256,
+            "y": 19.13228080837084,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.19999999999996,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2472,14 +3928,14 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.790433880966709,
-            "y": -101.97277650543177,
-            "z": null
+            "x": -138.07170640853212,
+            "y": 17.687393517307974,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454261,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2498,14 +3954,14 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "5",
           "position3D": {
-            "x": 6.680082453029795,
-            "y": -101.91836326775125,
-            "z": null
+            "x": -138.24935441575727,
+            "y": 16.240566604227133,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454261,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.20000000000002,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2524,14 +3980,118 @@ export const section_102: SectionSeatingData = {
           "row": "O",
           "seatNumber": "6",
           "position3D": {
-            "x": 7.569222310951091,
-            "y": -101.85618855211492,
-            "z": null
+            "x": -138.41184182334206,
+            "y": 14.791958730003712,
+            "z": 60
           },
-          "elevation": null,
-          "distanceFromHomeplate": 102.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-O-7",
+          "sectionId": "102",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -138.55915081271127,
+            "y": 13.341728750815195,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 139.19999999999996,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-O-8",
+          "sectionId": "102",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -138.69126522977416,
+            "y": 11.890035700721535,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-O-9",
+          "sectionId": "102",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -138.8081705866961,
+            "y": 10.437038774224828,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-O-10",
+          "sectionId": "102",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -138.9098540634873,
+            "y": 8.98289730881173,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 139.2,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2546,15 +4106,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "P",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 105.13704652454263,
+      "seatCount": 10,
+      "elevation": 62.5,
+      "depth": 142,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2563,14 +4123,14 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.210729084131501,
-            "y": -105.08800964264263,
-            "z": null
+            "x": -140.21276055862944,
+            "y": 22.45844555013663,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2589,14 +4149,14 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.1276610760061745,
-            "y": -105.05598967191477,
-            "z": null
+            "x": -140.4402525973922,
+            "y": 20.988936380404706,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2615,14 +4175,14 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.04427873050902,
-            "y": -105.01596928083259,
-            "z": null
+            "x": -140.65234377983984,
+            "y": 19.51712553727485,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2641,14 +4201,14 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "4",
           "position3D": {
-            "x": 5.960512243656841,
-            "y": -104.96795151710381,
-            "z": null
+            "x": -140.84901084778423,
+            "y": 18.043174421391758,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142.00000000000003,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2667,14 +4227,14 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "5",
           "position3D": {
-            "x": 6.876291840720223,
-            "y": -104.91194003746706,
-            "z": null
+            "x": -141.03023223446502,
+            "y": 16.567244668105268,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2693,14 +4253,118 @@ export const section_102: SectionSeatingData = {
           "row": "P",
           "seatNumber": "6",
           "position3D": {
-            "x": 7.791547781537289,
-            "y": -104.84793910741337,
-            "z": null
+            "x": -141.19598806691505,
+            "y": 15.089498129745166,
+            "z": 62.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 105.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-P-7",
+          "sectionId": "102",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -141.3462601681394,
+            "y": 13.610096857871824,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-P-8",
+          "sectionId": "102",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -141.4810320591087,
+            "y": 12.129203085506164,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-P-9",
+          "sectionId": "102",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -141.60028896056644,
+            "y": 10.646979209338546,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-P-10",
+          "sectionId": "102",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -141.70401779464942,
+            "y": 9.163587771920012,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 142,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2715,15 +4379,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "Q",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 108.13704652454263,
+      "seatCount": 10,
+      "elevation": 65,
+      "depth": 144.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2732,14 +4396,14 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.3023446237609697,
-            "y": -108.08661041515278,
-            "z": null
+            "x": -142.977519217532,
+            "y": 22.901288138449186,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.80000000000004,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2758,14 +4422,14 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.24544052328338,
-            "y": -108.05367678063695,
-            "z": null
+            "x": -143.20949701480558,
+            "y": 21.40280273156762,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.80000000000004,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2784,14 +4448,14 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.188213116073052,
-            "y": -108.01251444028745,
-            "z": null
+            "x": -143.42577027690712,
+            "y": 19.901970266178864,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.79999999999998,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2810,14 +4474,14 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "4",
           "position3D": {
-            "x": 6.130590606346974,
-            "y": -107.96312652877586,
-            "z": null
+            "x": -143.6263152870363,
+            "y": 18.39895532547554,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2836,14 +4500,14 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "5",
           "position3D": {
-            "x": 7.072501228410652,
-            "y": -107.90551680718288,
-            "z": null
+            "x": -143.8111100531728,
+            "y": 16.8939227319834,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2862,14 +4526,118 @@ export const section_102: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "6",
           "position3D": {
-            "x": 8.013873252123487,
-            "y": -107.83968966271183,
-            "z": null
+            "x": -143.98013431048804,
+            "y": 15.387037529486623,
+            "z": 65
           },
-          "elevation": null,
-          "distanceFromHomeplate": 108.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-Q-7",
+          "sectionId": "102",
+          "row": "Q",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -144.1333695235675,
+            "y": 13.878464964928451,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-Q-8",
+          "sectionId": "102",
+          "row": "Q",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -144.27079888844327,
+            "y": 12.368370470290795,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-Q-9",
+          "sectionId": "102",
+          "row": "Q",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -144.39240733443677,
+            "y": 10.856919644452265,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-Q-10",
+          "sectionId": "102",
+          "row": "Q",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -144.49818152581153,
+            "y": 9.344278235028295,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 144.8,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2884,15 +4652,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "R",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 111.13704652454263,
+      "seatCount": 10,
+      "elevation": 67.5,
+      "depth": 147.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2901,14 +4669,14 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.3939601633904384,
-            "y": -111.0852111876629,
-            "z": null
+            "x": -145.74227787643454,
+            "y": 23.344130726761737,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.60000000000002,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2927,14 +4695,14 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.363219970560586,
-            "y": -111.05136388935911,
-            "z": null
+            "x": -145.97874143221892,
+            "y": 21.816669082730524,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2953,14 +4721,14 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.332147501637083,
-            "y": -111.0090595997423,
-            "z": null
+            "x": -146.19919677397436,
+            "y": 20.286814995082874,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2979,14 +4747,14 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "4",
           "position3D": {
-            "x": 6.3006689690371065,
-            "y": -110.9583015404479,
-            "z": null
+            "x": -146.40361972628838,
+            "y": 18.75473622955932,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454261,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3005,14 +4773,14 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "5",
           "position3D": {
-            "x": 7.268710616101082,
-            "y": -110.89909357689868,
-            "z": null
+            "x": -146.59198787188055,
+            "y": 17.220600795861532,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454261,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3031,14 +4799,118 @@ export const section_102: SectionSeatingData = {
           "row": "R",
           "seatNumber": "6",
           "position3D": {
-            "x": 8.236198722709684,
-            "y": -110.83144021801029,
-            "z": null
+            "x": -146.76428055406097,
+            "y": 15.684576929228074,
+            "z": 67.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 111.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.59999999999997,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-R-7",
+          "sectionId": "102",
+          "row": "R",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -146.92047887899557,
+            "y": 14.146833071985078,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.59999999999997,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-R-8",
+          "sectionId": "102",
+          "row": "R",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -147.0605657177778,
+            "y": 12.607537855075421,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-R-9",
+          "sectionId": "102",
+          "row": "R",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -147.18452570830706,
+            "y": 11.066860079565982,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.59999999999997,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-R-10",
+          "sectionId": "102",
+          "row": "R",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -147.29234525697362,
+            "y": 9.524968698136576,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 147.6,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3053,15 +4925,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "S",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 114.13704652454263,
+      "seatCount": 10,
+      "elevation": 70,
+      "depth": 150.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -3070,14 +4942,14 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.4855757030199066,
-            "y": -114.08381196017305,
-            "z": null
+            "x": -148.5070365353371,
+            "y": 23.78697331507429,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.40000000000003,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3096,14 +4968,14 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.480999417837792,
-            "y": -114.04905099808128,
-            "z": null
+            "x": -148.7479858496323,
+            "y": 22.230535433893436,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3122,14 +4994,14 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.476081887201115,
-            "y": -114.00560475919715,
-            "z": null
+            "x": -148.97262327104164,
+            "y": 20.671659723986885,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.39999999999998,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3148,14 +5020,14 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "4",
           "position3D": {
-            "x": 6.47074733172724,
-            "y": -113.95347655211995,
-            "z": null
+            "x": -149.18092416554046,
+            "y": 19.110517133643103,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454261,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3174,14 +5046,14 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "5",
           "position3D": {
-            "x": 7.46492000379151,
-            "y": -113.8926703466145,
-            "z": null
+            "x": -149.37286569058833,
+            "y": 17.547278859739663,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3200,14 +5072,118 @@ export const section_102: SectionSeatingData = {
           "row": "S",
           "seatNumber": "6",
           "position3D": {
-            "x": 8.458524193295881,
-            "y": -113.82319077330875,
-            "z": null
+            "x": -149.54842679763397,
+            "y": 15.98211632896953,
+            "z": 70
           },
-          "elevation": null,
-          "distanceFromHomeplate": 114.13704652454264,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-S-7",
+          "sectionId": "102",
+          "row": "S",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -149.7075882344237,
+            "y": 14.415201179041706,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-S-8",
+          "sectionId": "102",
+          "row": "S",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -149.85033254711232,
+            "y": 12.846705239860052,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 150.39999999999998,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-S-9",
+          "sectionId": "102",
+          "row": "S",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -149.97664408217742,
+            "y": 11.276800514679701,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-S-10",
+          "sectionId": "102",
+          "row": "S",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -150.08650898813573,
+            "y": 9.705659161244858,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 150.4,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3222,15 +5198,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "T",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 117.13704652454263,
+      "seatCount": 10,
+      "elevation": 72.5,
+      "depth": 153.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -3239,14 +5215,14 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.5771912426493753,
-            "y": -117.0824127326832,
-            "z": null
+            "x": -151.27179519423964,
+            "y": 24.22981590338684,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.20000000000002,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3265,14 +5241,14 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.598778865114998,
-            "y": -117.04673810680345,
-            "z": null
+            "x": -151.51723026704565,
+            "y": 22.644401785056342,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3291,14 +5267,14 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.620016272765147,
-            "y": -117.002149918652,
-            "z": null
+            "x": -151.7460497681089,
+            "y": 21.056504452890895,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3317,14 +5293,14 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "4",
           "position3D": {
-            "x": 6.640825694417372,
-            "y": -116.948651563792,
-            "z": null
+            "x": -151.95822860479254,
+            "y": 19.466298037726883,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3343,14 +5319,14 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "5",
           "position3D": {
-            "x": 7.66112939148194,
-            "y": -116.88624711633031,
-            "z": null
+            "x": -152.15374350929605,
+            "y": 17.873956923617794,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3369,14 +5345,118 @@ export const section_102: SectionSeatingData = {
           "row": "T",
           "seatNumber": "6",
           "position3D": {
-            "x": 8.680849663882078,
-            "y": -116.8149413286072,
-            "z": null
+            "x": -152.33257304120693,
+            "y": 16.27965572871098,
+            "z": 72.5
           },
-          "elevation": null,
-          "distanceFromHomeplate": 117.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-T-7",
+          "sectionId": "102",
+          "row": "T",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -152.49469758985177,
+            "y": 14.683569286098331,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-T-8",
+          "sectionId": "102",
+          "row": "T",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -152.64009937644684,
+            "y": 13.08587262464468,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.19999999999996,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-T-9",
+          "sectionId": "102",
+          "row": "T",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -152.7687624560477,
+            "y": 11.486740949793417,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-T-10",
+          "sectionId": "102",
+          "row": "T",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -152.88067271929782,
+            "y": 9.886349624353139,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 153.2,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3391,15 +5471,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
       "rowNumber": "U",
       "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 120.13704652454263,
+      "seatCount": 10,
+      "elevation": 75,
+      "depth": 156,
       "rowSpacing": 36,
       "seats": [
         {
@@ -3408,14 +5488,14 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "1",
           "position3D": {
-            "x": 3.6688067822788435,
-            "y": -120.08101350519333,
-            "z": null
+            "x": -154.0365538531422,
+            "y": 24.672658491699398,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
+          "elevation": 75,
+          "distanceFromHomeplate": 156.00000000000003,
+          "angle": -99.10000000000001,
+          "facing": 80.89999999999999,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3434,14 +5514,14 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "2",
           "position3D": {
-            "x": 4.716558312392204,
-            "y": -120.04442521552562,
-            "z": null
+            "x": -154.28647468445902,
+            "y": 23.058268136219255,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -98.5,
+          "facing": 81.5,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3460,14 +5540,14 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "3",
           "position3D": {
-            "x": 5.763950658329178,
-            "y": -119.99869507810685,
-            "z": null
+            "x": -154.51947626517617,
+            "y": 21.44134918179491,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -97.9,
+          "facing": 82.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3486,14 +5566,14 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "4",
           "position3D": {
-            "x": 6.810904057107505,
-            "y": -119.94382657546404,
-            "z": null
+            "x": -154.73553304404464,
+            "y": 19.822078941810663,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
+          "elevation": 75,
+          "distanceFromHomeplate": 156.00000000000003,
+          "angle": -97.30000000000001,
+          "facing": 82.69999999999999,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3512,14 +5592,14 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "5",
           "position3D": {
-            "x": 7.857338779172369,
-            "y": -119.87982388604611,
-            "z": null
+            "x": -154.93462132800383,
+            "y": 18.200634987495928,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454261,
-          "angle": 3.75,
-          "facing": 183.75,
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -96.7,
+          "facing": 83.3,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3538,14 +5618,118 @@ export const section_102: SectionSeatingData = {
           "row": "U",
           "seatNumber": "6",
           "position3D": {
-            "x": 8.903175134468276,
-            "y": -119.80669188390566,
-            "z": null
+            "x": -155.11671928477992,
+            "y": 16.577195128452438,
+            "z": 75
           },
-          "elevation": null,
-          "distanceFromHomeplate": 120.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -96.10000000000001,
+          "facing": 83.89999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-U-7",
+          "sectionId": "102",
+          "row": "U",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -155.2818069452799,
+            "y": 14.95193739315496,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -95.5,
+          "facing": 84.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-U-8",
+          "sectionId": "102",
+          "row": "U",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -155.4298662057814,
+            "y": 13.325040009429308,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -94.9,
+          "facing": 85.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-U-9",
+          "sectionId": "102",
+          "row": "U",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -155.56088082991806,
+            "y": 11.696681384907135,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -94.30000000000001,
+          "facing": 85.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "dodger-stadium-102-U-10",
+          "sectionId": "102",
+          "row": "U",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -155.67483645045994,
+            "y": 10.067040087461422,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 156,
+          "angle": -93.7,
+          "facing": 86.3,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3560,353 +5744,15 @@ export const section_102: SectionSeatingData = {
         }
       ],
       "covered": false,
-      "hasAisleSeats": true,
+      "hasAisleSeats": false,
       "wheelchairRow": false
-    },
-    {
-      "rowNumber": "V",
-      "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 123.13704652454263,
-      "rowSpacing": 36,
-      "seats": [
-        {
-          "id": "dodger-stadium-102-V-1",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "1",
-          "position3D": {
-            "x": 3.760422321908312,
-            "y": -123.07961427770347,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454263,
-          "angle": 1.75,
-          "facing": 181.75,
-          "seatType": "aisle",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-V-2",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "2",
-          "position3D": {
-            "x": 4.83433775966941,
-            "y": -123.04211232424778,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454261,
-          "angle": 2.25,
-          "facing": 182.25,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-V-3",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "3",
-          "position3D": {
-            "x": 5.90788504389321,
-            "y": -122.9952402375617,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-V-4",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "4",
-          "position3D": {
-            "x": 6.980982419797638,
-            "y": -122.93900158713609,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454261,
-          "angle": 3.25,
-          "facing": 183.25,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-V-5",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "5",
-          "position3D": {
-            "x": 8.053548166862798,
-            "y": -122.87340065576193,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-V-6",
-          "sectionId": "102",
-          "row": "V",
-          "seatNumber": "6",
-          "position3D": {
-            "x": 9.125500605054473,
-            "y": -122.79844243920412,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 123.13704652454263,
-          "angle": 4.25,
-          "facing": 184.25,
-          "seatType": "aisle",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        }
-      ],
-      "covered": false,
-      "hasAisleSeats": true,
-      "wheelchairRow": false
-    },
-    {
-      "rowNumber": "W",
-      "sectionId": "102",
-      "seatCount": 6,
-      "elevation": null,
-      "depth": 126.13704652454263,
-      "rowSpacing": 36,
-      "seats": [
-        {
-          "id": "dodger-stadium-102-W-1",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "1",
-          "position3D": {
-            "x": 3.8520378615377804,
-            "y": -126.0782150502136,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454261,
-          "angle": 1.75,
-          "facing": 181.75,
-          "seatType": "aisle",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": true,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-W-2",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "2",
-          "position3D": {
-            "x": 4.952117206946616,
-            "y": -126.03979943296996,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454263,
-          "angle": 2.25,
-          "facing": 182.25,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": true,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-W-3",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "3",
-          "position3D": {
-            "x": 6.051819429457242,
-            "y": -125.99178539701656,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454263,
-          "angle": 2.75,
-          "facing": 182.75,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": true,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-W-4",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "4",
-          "position3D": {
-            "x": 7.151060782487771,
-            "y": -125.93417659880814,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454263,
-          "angle": 3.25,
-          "facing": 183.25,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": true,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-W-5",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "5",
-          "position3D": {
-            "x": 8.249757554553227,
-            "y": -125.86697742547774,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454263,
-          "angle": 3.75,
-          "facing": 183.75,
-          "seatType": "standard",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": false,
-            "companionSeat": true,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        },
-        {
-          "id": "dodger-stadium-102-W-6",
-          "sectionId": "102",
-          "row": "W",
-          "seatNumber": "6",
-          "position3D": {
-            "x": 9.34782607564067,
-            "y": -125.79019299450258,
-            "z": null
-          },
-          "elevation": null,
-          "distanceFromHomeplate": 126.13704652454264,
-          "angle": 4.25,
-          "facing": 184.25,
-          "seatType": "aisle",
-          "hasArmrests": true,
-          "cupHolders": true,
-          "viewQuality": "good",
-          "accessibility": {
-            "wheelchairAccessible": true,
-            "companionSeat": false,
-            "requiresStairs": false,
-            "elevatorAccess": false
-          },
-          "covered": false
-        }
-      ],
-      "covered": false,
-      "hasAisleSeats": true,
-      "wheelchairRow": true
     }
   ],
   "seatDistribution": {
-    "standard": 88,
-    "aisle": 44,
-    "wheelchair": 2,
-    "companion": 4,
+    "standard": 168,
+    "aisle": 42,
+    "wheelchair": 0,
+    "companion": 0,
     "other": 0
   }
 };

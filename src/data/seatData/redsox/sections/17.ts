@@ -1,0 +1,4690 @@
+/**
+ * Field 17 - redsox
+ * Generated: 2025-10-22T01:13:38.998Z
+ * Total Seats: 165
+ * Total Rows: 15
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_17: SectionSeatingData = {
+  "sectionId": "17",
+  "sectionName": "Field 17",
+  "stadiumId": "redsox",
+  "totalSeats": 165,
+  "totalRows": 15,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 0,
+      "depth": 50,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-1-1",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -48.58121137707515,
+            "y": 11.826491497309934,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-2",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -48.70956487147558,
+            "y": 11.286199095865374,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-3",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -48.8319097390774,
+            "y": 10.744514471794323,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50.00000000000001,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-4",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -48.94823088788275,
+            "y": 10.20150444525321,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-5",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -49.058513968956774,
+            "y": 9.65723599989527,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50.00000000000001,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-6",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -49.162745378197734,
+            "y": 9.111776274607351,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50.00000000000001,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-7",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -49.260912258015125,
+            "y": 8.56519255522811,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 49.99999999999999,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-8",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -49.35300249891574,
+            "y": 8.017552266247884,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-9",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -49.439004740997476,
+            "y": 7.468922962491248,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-10",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -49.51890837535059,
+            "y": 6.9193723207841185,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-1-11",
+          "sectionId": "17",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -49.592703545366426,
+            "y": 6.368968131605055,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 50.00000000000001,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 2.5,
+      "depth": 52.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-2-1",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -51.30175921419136,
+            "y": 12.48877502115929,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-2",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -51.43730050427821,
+            "y": 11.918226245233836,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-3",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -51.56649668446573,
+            "y": 11.346207282214806,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-4",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -51.68933181760418,
+            "y": 10.77278869418739,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.79999999999999,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-5",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -51.80579075121835,
+            "y": 10.198041215889406,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-6",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -51.9158591193768,
+            "y": 9.622035745985363,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.79999999999999,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-7",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -52.01952334446397,
+            "y": 9.044843338320884,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-8",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -52.11677063885502,
+            "y": 8.466535193157766,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-9",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -52.207589006493336,
+            "y": 7.887182648390757,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-10",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -52.29196724437022,
+            "y": 7.306857170748029,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.8,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-2-11",
+          "sectionId": "17",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -52.36989494390694,
+            "y": 6.7256303469749374,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 52.800000000000004,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 5,
+      "depth": 55.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-3-1",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -54.02230705130757,
+            "y": 13.151058545008647,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-2",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -54.16503613708085,
+            "y": 12.550253394602297,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-3",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -54.30108362985407,
+            "y": 11.947900092635289,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.599999999999994,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-4",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -54.43043274732562,
+            "y": 11.34407294312157,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.6,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-5",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -54.55306753347993,
+            "y": 10.738846431883541,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-6",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -54.668972860555876,
+            "y": 10.132295217363374,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.599999999999994,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-7",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -54.77813443091282,
+            "y": 9.524494121413658,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.6,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-8",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -54.88053877879431,
+            "y": 8.915518120067649,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-9",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -54.9761732719892,
+            "y": 8.305442334290268,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-10",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -55.065026113389855,
+            "y": 7.69434202071194,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.6,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-3-11",
+          "sectionId": "17",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -55.147086342447466,
+            "y": 7.082292562344821,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 55.60000000000001,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 7.5,
+      "depth": 58.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-4-1",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -56.74285488842377,
+            "y": 13.813342068858002,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-2",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -56.892771769883474,
+            "y": 13.182280543970757,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-3",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -57.0356705752424,
+            "y": 12.54959290305577,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-4",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -57.17153367704705,
+            "y": 11.91535719205575,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-5",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -57.30034431574151,
+            "y": 11.279651647877676,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.400000000000006,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-6",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -57.42208660173495,
+            "y": 10.642554688741386,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-7",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -57.536745517361666,
+            "y": 10.004144904506433,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-8",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -57.644306918733584,
+            "y": 9.36450104697753,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-9",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -57.74475753748505,
+            "y": 8.723702020189778,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.4,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-10",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -57.83808498240949,
+            "y": 8.081826870675851,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.400000000000006,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-4-11",
+          "sectionId": "17",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -57.92427774098798,
+            "y": 7.438954777714703,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 58.400000000000006,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 10,
+      "depth": 61.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-5-1",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -59.463402725539986,
+            "y": 14.47562559270736,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-2",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -59.620507402686115,
+            "y": 13.81430769333922,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.20000000000001,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-3",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -59.77025752063074,
+            "y": 13.151285713476254,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-4",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -59.912634606768485,
+            "y": 12.486641440989931,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.199999999999996,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-5",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -60.04762109800309,
+            "y": 11.820456863871811,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-6",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -60.175200342914025,
+            "y": 11.152814160119398,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-7",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -60.29535660381052,
+            "y": 10.483795687599207,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-8",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -60.40807505867287,
+            "y": 9.813483973887411,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-9",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -60.51334180298092,
+            "y": 9.141961706089289,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.20000000000001,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-10",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -60.61114385142913,
+            "y": 8.469311720639762,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.2,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-5-11",
+          "sectionId": "17",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -60.701469139528506,
+            "y": 7.795616993084587,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 61.20000000000001,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 12.5,
+      "depth": 64,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-6-1",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -62.18395056265619,
+            "y": 15.137909116556715,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-2",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -62.34824303548874,
+            "y": 14.44633484270768,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-3",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -62.50484446601907,
+            "y": 13.752978523896735,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-4",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -62.65373553648992,
+            "y": 13.05792568992411,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 63.99999999999999,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-5",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -62.79489788026467,
+            "y": 12.361262079865947,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-6",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -62.928314084093095,
+            "y": 11.66307363149741,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 63.99999999999999,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-7",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -63.05396769025936,
+            "y": 10.96344647069198,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-8",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -63.17184319861215,
+            "y": 10.262466900797293,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-9",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -63.28192606847677,
+            "y": 9.560221391988797,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-10",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -63.384202720448755,
+            "y": 8.856796570603672,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-6-11",
+          "sectionId": "17",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -63.47866053806902,
+            "y": 8.15227920845447,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 64,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 15,
+      "depth": 66.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-7-1",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -64.9044983997724,
+            "y": 15.80019264040607,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-2",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -65.07597866829137,
+            "y": 15.07836199207614,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-3",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -65.23943141140741,
+            "y": 14.354671334317215,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.80000000000001,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-4",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -65.39483646621134,
+            "y": 13.629209938858288,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.79999999999998,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-5",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -65.54217466252625,
+            "y": 12.902067295860082,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.80000000000001,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-6",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -65.68142782527217,
+            "y": 12.173333102875421,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-7",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -65.81257877670821,
+            "y": 11.443097253784755,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-8",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -65.93561133855142,
+            "y": 10.711449827707174,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-9",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -66.05051033397262,
+            "y": 9.978481077888306,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.8,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-10",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -66.15726158946839,
+            "y": 9.244281420567582,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.80000000000001,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-7-11",
+          "sectionId": "17",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -66.25585193660955,
+            "y": 8.508941423824352,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 66.80000000000001,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 17.5,
+      "depth": 69.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-8-1",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -67.62504623688861,
+            "y": 16.462476164255428,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-2",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -67.803714301094,
+            "y": 15.710389141444601,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-3",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -67.97401835679574,
+            "y": 14.956364144737698,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-4",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -68.13593739593279,
+            "y": 14.200494187792469,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-5",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -68.28945144478783,
+            "y": 13.442872511854215,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-6",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -68.43454156645123,
+            "y": 12.683592574253431,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.59999999999998,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-7",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -68.57118986315704,
+            "y": 11.922748036877529,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-8",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -68.69937947849071,
+            "y": 11.160432754617055,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-9",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -68.81909459946849,
+            "y": 10.396740763787816,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-10",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -68.93032045848801,
+            "y": 9.631766270531493,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-8-11",
+          "sectionId": "17",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -69.03304333515005,
+            "y": 8.865603639194235,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 69.6,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 20,
+      "depth": 72.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-9-1",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -70.34559407400482,
+            "y": 17.124759688104785,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-2",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -70.53144993389665,
+            "y": 16.342416290813063,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.40000000000002,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-3",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -70.70860530218408,
+            "y": 15.558056955158182,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-4",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -70.87703832565423,
+            "y": 14.77177843672665,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-5",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -71.03672822704941,
+            "y": 13.983677727848354,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-6",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -71.18765530763032,
+            "y": 13.193852045631445,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-7",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -71.32980094960591,
+            "y": 12.402398819970305,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-8",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -71.46314761843,
+            "y": 11.609415681526938,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-9",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -71.58767886496436,
+            "y": 10.815000449687329,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.40000000000002,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-10",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -71.70337932750766,
+            "y": 10.019251120495404,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.4,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-9-11",
+          "sectionId": "17",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -71.81023473369059,
+            "y": 9.22226585456412,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 72.40000000000002,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 22.5,
+      "depth": 75.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-10-1",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -73.06614191112104,
+            "y": 17.787043211954142,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.20000000000002,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-2",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -73.25918556669927,
+            "y": 16.974443440181524,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-3",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -73.44319224757241,
+            "y": 16.159749765578663,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-4",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -73.61813925537565,
+            "y": 15.34306268566083,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-5",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -73.78400500931099,
+            "y": 14.524482943842488,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-6",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -73.94076904880939,
+            "y": 13.704111517009457,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-7",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -74.08841203605475,
+            "y": 12.882049603063077,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-8",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -74.22691575836929,
+            "y": 12.05839860843682,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.20000000000002,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-9",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -74.3562631304602,
+            "y": 11.233260135586837,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-10",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -74.47643819652728,
+            "y": 10.406735970459314,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-10-11",
+          "sectionId": "17",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -74.5874261322311,
+            "y": 9.578928069934003,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 75.2,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 25,
+      "depth": 78,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-11-1",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -75.78668974823724,
+            "y": 18.449326735803496,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-2",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -75.98692119950191,
+            "y": 17.606470589549986,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-3",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -76.17777919296074,
+            "y": 16.761442575999144,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-4",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -76.3592401850971,
+            "y": 15.91434693459501,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-5",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -76.53128179157257,
+            "y": 15.065288159836623,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-6",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -76.69388278998846,
+            "y": 14.214370988387468,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-7",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -76.8470231225036,
+            "y": 13.361700386155851,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-8",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -76.99068389830856,
+            "y": 12.5073815353467,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-9",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -77.12484739595607,
+            "y": 11.651519821486346,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-10",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -77.24949706554692,
+            "y": 10.794220820423226,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-11-11",
+          "sectionId": "17",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -77.36461753077162,
+            "y": 9.935590285303885,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 78,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 27.5,
+      "depth": 80.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-12-1",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -78.50723758535344,
+            "y": 19.111610259652853,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-2",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -78.71465683230454,
+            "y": 18.238497738918444,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.80000000000001,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-3",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -78.91236613834907,
+            "y": 17.36313538641963,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-4",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -79.10034111481852,
+            "y": 16.48563118352919,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-5",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -79.27855857383415,
+            "y": 15.606093375830758,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-6",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -79.44699653116753,
+            "y": 14.724630459765478,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-7",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -79.60563420895244,
+            "y": 13.841351169248625,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-8",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -79.75445203824783,
+            "y": 12.956364462256582,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-9",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -79.89343166145193,
+            "y": 12.069779507385856,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.80000000000001,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-10",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -80.02255593456655,
+            "y": 11.181705670387135,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-12-11",
+          "sectionId": "17",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -80.14180892931213,
+            "y": 10.292252500673767,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 80.8,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 30,
+      "depth": 83.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-13-1",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -81.22778542246965,
+            "y": 19.773893783502206,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.60000000000001,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-2",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -81.44239246510716,
+            "y": 18.870524888286905,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-3",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -81.6469530837374,
+            "y": 17.96482819684011,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.59999999999998,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-4",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -81.84144204453995,
+            "y": 17.056915432463366,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-5",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -82.02583535609573,
+            "y": 16.146898591824893,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.60000000000001,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-6",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -82.2001102723466,
+            "y": 15.23488993114349,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-7",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -82.36424529540129,
+            "y": 14.3210019523414,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-8",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -82.51822017818712,
+            "y": 13.405347389166463,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-9",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -82.66201592694777,
+            "y": 12.488039193285365,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-10",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -82.79561480358618,
+            "y": 11.569190520351047,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-13-11",
+          "sectionId": "17",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -82.91900032785266,
+            "y": 10.64891471604365,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 83.6,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 32.5,
+      "depth": 86.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-14-1",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -83.94833325958587,
+            "y": 20.436177307351567,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-2",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -84.17012809790981,
+            "y": 19.50255203765537,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.40000000000002,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-3",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -84.38154002912576,
+            "y": 18.566521007260594,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-4",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -84.5825429742614,
+            "y": 17.62819968139755,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-5",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -84.7731121383573,
+            "y": 16.68770380781903,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-6",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -84.95322401352568,
+            "y": 15.745149402521504,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-7",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -85.12285638185014,
+            "y": 14.800652735434175,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-8",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -85.28198831812641,
+            "y": 13.854330316076346,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-9",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -85.43060019244365,
+            "y": 12.906298879184877,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-10",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -85.56867367260583,
+            "y": 11.956675370314958,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-14-11",
+          "sectionId": "17",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -85.69619172639318,
+            "y": 11.005576931413534,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 86.4,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "17",
+      "seatCount": 11,
+      "elevation": 35,
+      "depth": 89.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "redsox-17-15-1",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -86.66888109670205,
+            "y": 21.098460831200917,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -103.68181818181819,
+          "facing": 76.31818181818181,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-2",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -86.89786373071243,
+            "y": 20.134579187023828,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.2,
+          "angle": -103.04545454545455,
+          "facing": 76.95454545454545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-3",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -87.11612697451407,
+            "y": 19.16821381768107,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -102.4090909090909,
+          "facing": 77.5909090909091,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-4",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -87.32364390398281,
+            "y": 18.199483930331727,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -101.77272727272727,
+          "facing": 78.22727272727273,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-5",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -87.52038892061887,
+            "y": 17.22850902381316,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -101.13636363636364,
+          "facing": 78.86363636363636,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-6",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -87.70633775470473,
+            "y": 16.255408873899512,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999997,
+          "angle": -100.5,
+          "facing": 79.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-7",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -87.88146746829898,
+            "y": 15.280303518526946,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -99.86363636363636,
+          "facing": 80.13636363636364,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-8",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -88.04575645806567,
+            "y": 14.303313242986224,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.19999999999999,
+          "angle": -99.22727272727273,
+          "facing": 80.77272727272727,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-9",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -88.1991844579395,
+            "y": 13.324558565084384,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.2,
+          "angle": -98.5909090909091,
+          "facing": 81.4090909090909,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-10",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -88.34173254162545,
+            "y": 12.344160220278866,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.2,
+          "angle": -97.95454545454545,
+          "facing": 82.04545454545455,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "redsox-17-15-11",
+          "sectionId": "17",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -88.47338312493369,
+            "y": 11.362239146783416,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 89.2,
+          "angle": -97.31818181818181,
+          "facing": 82.68181818181819,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 135,
+    "aisle": 30,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};

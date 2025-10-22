@@ -1,0 +1,12284 @@
+/**
+ * Main 220 - yankees
+ * Generated: 2025-10-22T01:07:01.526Z
+ * Total Seats: 460
+ * Total Rows: 23
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_220: SectionSeatingData = {
+  "sectionId": "220",
+  "sectionName": "Main 220",
+  "stadiumId": "yankees",
+  "totalSeats": 460,
+  "totalRows": 23,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 30,
+      "depth": 110,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-1-1",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -87.15186076907095,
+            "y": 67.11596802913947,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-2",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -87.61829098266156,
+            "y": 66.50590263486127,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-3",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -88.0804508043607,
+            "y": 65.89259583671443,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-4",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -88.53831770915058,
+            "y": 65.27607752640715,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110.00000000000001,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-5",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -88.99186938124421,
+            "y": 64.65637775217203,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 109.99999999999999,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-6",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -89.44108371517305,
+            "y": 64.03352671730183,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-7",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -89.88593881686413,
+            "y": 63.40755477867729,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110.00000000000001,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-8",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -90.32641300470746,
+            "y": 62.77849244528746,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-9",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -90.76248481061245,
+            "y": 62.14637037674319,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-10",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -91.19413298105461,
+            "y": 61.511219381782134,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110.00000000000001,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-11",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -91.62133647811092,
+            "y": 60.873070416767874,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-12",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -92.04407448048576,
+            "y": 60.23195458418054,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 109.99999999999999,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-13",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -92.46232638452526,
+            "y": 59.587903131101406,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-14",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -92.87607180522167,
+            "y": 58.94094744768961,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-15",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -93.28529057720687,
+            "y": 58.29111906565252,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 109.99999999999999,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-16",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -93.68996275573524,
+            "y": 57.63844965670872,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110.00000000000001,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-17",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -94.09006861765575,
+            "y": 56.98297103104429,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-18",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -94.48558866237308,
+            "y": 56.32471513576289,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-19",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -94.87650361279833,
+            "y": 55.663714053328,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-1-20",
+          "sectionId": "220",
+          "row": "1",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -95.26279441628824,
+            "y": 55.000000000000014,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 110,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 32.5,
+      "depth": 112.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-2-1",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -89.37027177046548,
+            "y": 68.82437448806303,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-2",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -89.84857475312931,
+            "y": 68.19878015647592,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-3",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -90.32249864301714,
+            "y": 67.56986191255807,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-4",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -90.79202034174713,
+            "y": 66.93765040889751,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.80000000000001,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-5",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -91.25711696549406,
+            "y": 66.30217645859095,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.79999999999998,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-6",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -91.71776584610473,
+            "y": 65.66347103374223,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-7",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -92.17394453220248,
+            "y": 65.02156526395271,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.80000000000001,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-8",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -92.62563079028183,
+            "y": 64.37649043480387,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-9",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -93.07280260579167,
+            "y": 63.72827798633302,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.79999999999998,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-10",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -93.51543818420872,
+            "y": 63.07695951150023,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-11",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -93.9535159520992,
+            "y": 62.42256675464924,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-12",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -94.38701455817086,
+            "y": 61.76513160995968,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-13",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -94.81591287431317,
+            "y": 61.10468611989308,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-14",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -95.24018999662731,
+            "y": 60.44126247363079,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-15",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -95.65982524644485,
+            "y": 59.7748930055055,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-16",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -96.07479817133576,
+            "y": 59.105610193424944,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-17",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -96.48508854610516,
+            "y": 58.43344665728906,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-18",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -96.89067637377893,
+            "y": 57.758435157400484,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-19",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -97.29154188657866,
+            "y": 57.08060859286726,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-2-20",
+          "sectionId": "220",
+          "row": "2",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -97.68766554688467,
+            "y": 56.40000000000001,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 112.8,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 35,
+      "depth": 115.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-3-1",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -91.58868277186002,
+            "y": 70.53278094698658,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-2",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -92.07885852359706,
+            "y": 69.89165767809057,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.6,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-3",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -92.5645464816736,
+            "y": 69.2471279884017,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-4",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -93.04572297434369,
+            "y": 68.59922329138787,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-5",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -93.52236454974393,
+            "y": 67.94797516500988,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-6",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -93.9944479770364,
+            "y": 67.29341535018264,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-7",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -94.46195024754084,
+            "y": 66.63557574922812,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-8",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -94.92484857585619,
+            "y": 65.97448842432027,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-9",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -95.3831204009709,
+            "y": 65.31018559592285,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-10",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -95.83674338736283,
+            "y": 64.64269964121831,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.6,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-11",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -96.28569542608747,
+            "y": 63.972063092530604,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-12",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -96.72995463585595,
+            "y": 63.29830863573882,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-13",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -97.16949936410109,
+            "y": 62.62146910868475,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.6,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-14",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -97.60430818803295,
+            "y": 61.941577499571984,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-15",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -98.03435991568284,
+            "y": 61.25866694535847,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-16",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -98.45963358693629,
+            "y": 60.572770730141166,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-17",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -98.88010847455459,
+            "y": 59.88392228353382,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-18",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -99.29576408518479,
+            "y": 59.19215517903809,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.59999999999998,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-19",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -99.70658016035897,
+            "y": 58.497503132406514,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.6,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-3-20",
+          "sectionId": "220",
+          "row": "3",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -100.1125366774811,
+            "y": 57.80000000000001,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 115.60000000000001,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 37.5,
+      "depth": 118.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-4-1",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -93.80709377325455,
+            "y": 72.24118740591013,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-2",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -94.30914229406481,
+            "y": 71.58453519970523,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-3",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -94.80659432033006,
+            "y": 70.92439406424535,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-4",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -95.29942560694025,
+            "y": 70.26079617387825,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-5",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -95.78761213399379,
+            "y": 69.59377387142881,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-6",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -96.27113010796809,
+            "y": 68.92335966662306,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-7",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -96.7499559628792,
+            "y": 68.24958623450355,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-8",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -97.22406636143057,
+            "y": 67.57248641383669,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-9",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -97.69343819615013,
+            "y": 66.89209320551268,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-10",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -98.15804859051696,
+            "y": 66.20843977093641,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-11",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -98.61787490007576,
+            "y": 65.52155943041197,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-12",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -99.07289471354105,
+            "y": 64.83148566151797,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-13",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -99.523085853889,
+            "y": 64.13825209747642,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-14",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -99.9684263794386,
+            "y": 63.44189252551318,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-15",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -100.40889458492084,
+            "y": 62.74244088521145,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-16",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -100.84446900253684,
+            "y": 62.039931266857394,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-17",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -101.27512840300402,
+            "y": 61.33439790977859,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-18",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -101.70085179659065,
+            "y": 60.625875200675694,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.39999999999999,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-19",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -102.12161843413931,
+            "y": 59.91439767194578,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.40000000000002,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-4-20",
+          "sectionId": "220",
+          "row": "4",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -102.53740780807753,
+            "y": 59.20000000000002,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 118.4,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 40,
+      "depth": 121.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-5-1",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -96.0255047746491,
+            "y": 73.94959386483367,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-2",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -96.53942606453256,
+            "y": 73.27741272131988,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-3",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -97.04864215898651,
+            "y": 72.601660140089,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-4",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -97.55312823953682,
+            "y": 71.92236905636861,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.20000000000003,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-5",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -98.05285971824364,
+            "y": 71.23957257784774,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-6",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -98.54781223889977,
+            "y": 70.55330398306347,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-7",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -99.03796167821756,
+            "y": 69.86359671977898,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-8",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -99.52328414700494,
+            "y": 69.1704844033531,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-9",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -100.00375599132936,
+            "y": 68.4740008151025,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-10",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -100.47935379367108,
+            "y": 67.7741799006545,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-11",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -100.95005437406404,
+            "y": 67.07105576829333,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-12",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -101.41583479122613,
+            "y": 66.36466268729711,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-13",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -101.87667234367692,
+            "y": 65.6550350862681,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.19999999999999,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-14",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -102.33254457084425,
+            "y": 64.94220755145437,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-15",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -102.78342925415885,
+            "y": 64.22621482506442,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-16",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -103.22930441813736,
+            "y": 63.507091803573616,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-17",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -103.67014833145343,
+            "y": 62.784873536023355,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.20000000000002,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-18",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -104.10593950799652,
+            "y": 62.05959522231329,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-19",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -104.53665670791962,
+            "y": 61.331292211485035,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-5-20",
+          "sectionId": "220",
+          "row": "5",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -104.96227893867396,
+            "y": 60.600000000000016,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 121.2,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 42.5,
+      "depth": 124,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-6-1",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -98.24391577604362,
+            "y": 75.65800032375722,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-2",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -98.76970983500031,
+            "y": 74.97029024293452,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-3",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -99.29068999764297,
+            "y": 74.27892621593263,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-4",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -99.80683087213338,
+            "y": 73.58394193885897,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-5",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -100.31810730249349,
+            "y": 72.88537128426665,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-6",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -100.82449436983144,
+            "y": 72.18324829950387,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-7",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -101.32596739355591,
+            "y": 71.4776072050544,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-8",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -101.82250193257931,
+            "y": 70.7684823928695,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-9",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -102.31407378650857,
+            "y": 70.05590842469232,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 123.99999999999999,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-10",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -102.80065899682519,
+            "y": 69.33992003037258,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-11",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -103.28223384805231,
+            "y": 68.6205521061747,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-12",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -103.75877486891123,
+            "y": 67.89783971307625,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-13",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -104.23025883346483,
+            "y": 67.17181807505978,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-14",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -104.69666276224989,
+            "y": 66.44252257739556,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-15",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -105.15796392339684,
+            "y": 65.7099887649174,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-16",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -105.6141398337379,
+            "y": 64.97425234028984,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-17",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -106.06516825990285,
+            "y": 64.23534916226811,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-18",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -106.51102721940238,
+            "y": 63.49331524395089,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-19",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -106.95169498169994,
+            "y": 62.74818675102429,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-6-20",
+          "sectionId": "220",
+          "row": "6",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -107.38715006927039,
+            "y": 62.000000000000014,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 124.00000000000001,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 45,
+      "depth": 126.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-7-1",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -100.46232677743815,
+            "y": 77.36640678268077,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-2",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -100.99999360546805,
+            "y": 76.66316776454917,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-3",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -101.53273783629942,
+            "y": 75.95619229177628,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-4",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -102.06053350472993,
+            "y": 75.24551482134933,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-5",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -102.58335488674334,
+            "y": 74.53116999068558,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-6",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -103.10117650076312,
+            "y": 73.81319261594429,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-7",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -103.61397310889427,
+            "y": 73.09161769032981,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-8",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -104.12171971815368,
+            "y": 72.36648038238592,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-9",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -104.6243915816878,
+            "y": 71.63781603428215,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-10",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -105.1219641999793,
+            "y": 70.90566016009068,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-11",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -105.61441332204059,
+            "y": 70.17004844405606,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-12",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -106.10171494659632,
+            "y": 69.43101673885539,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-13",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -106.58384532325275,
+            "y": 68.68860106385144,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-14",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -107.06078095365552,
+            "y": 67.94283760333674,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-15",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -107.53249859263482,
+            "y": 67.19376270477036,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-16",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -107.99897524933843,
+            "y": 66.44141287700606,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.80000000000001,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-17",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -108.46018818835226,
+            "y": 65.68582478851287,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-18",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -108.91611493080823,
+            "y": 64.92703526558849,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-19",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -109.36673325548026,
+            "y": 64.16508129056355,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-7-20",
+          "sectionId": "220",
+          "row": "7",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -109.8120211998668,
+            "y": 63.40000000000001,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 126.8,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 47.5,
+      "depth": 129.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-8-1",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -102.68073777883268,
+            "y": 79.07481324160432,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-2",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -103.2302773759358,
+            "y": 78.35604528616382,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-3",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -103.77478567495587,
+            "y": 77.63345836761991,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-4",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -104.31423613732649,
+            "y": 76.9070877038397,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.60000000000002,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-5",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -104.84860247099319,
+            "y": 76.1769686971045,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-6",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -105.37785863169479,
+            "y": 75.44313693238469,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-7",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -105.90197882423263,
+            "y": 74.70562817560524,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-8",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -106.42093750372806,
+            "y": 73.96447837190232,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-9",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -106.93470937686702,
+            "y": 73.21972364387197,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-10",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -107.44326940313341,
+            "y": 72.47140028980877,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-11",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -107.94659279602887,
+            "y": 71.71954478193742,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-12",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -108.4446550242814,
+            "y": 70.96419376463453,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-13",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -108.93743181304066,
+            "y": 70.20538405264311,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-14",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -109.42489914506116,
+            "y": 69.44315262927793,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-15",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -109.90703326187281,
+            "y": 68.67753664462334,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-16",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -110.38381066493896,
+            "y": 67.90857341372228,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-17",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -110.85520811680168,
+            "y": 67.13630041475764,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-18",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -111.32120264221409,
+            "y": 66.36075528722608,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-19",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -111.78177152926058,
+            "y": 65.5819758301028,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-8-20",
+          "sectionId": "220",
+          "row": "8",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -112.23689233046323,
+            "y": 64.80000000000001,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 129.6,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 50,
+      "depth": 132.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-9-1",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -104.89914878022722,
+            "y": 80.78321970052788,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-2",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -105.46056114640356,
+            "y": 80.04892280777848,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-3",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -106.01683351361233,
+            "y": 79.31072444346356,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-4",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -106.56793876992306,
+            "y": 78.56866058633007,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.40000000000003,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-5",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -107.11385005524305,
+            "y": 77.82276740352343,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-6",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -107.65454076262648,
+            "y": 77.0730812488251,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-7",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -108.189984539571,
+            "y": 76.31963866088067,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-8",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -108.72015528930244,
+            "y": 75.56247636141873,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-9",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -109.24502717204625,
+            "y": 74.8016312534618,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.39999999999998,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-10",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -109.76457460628754,
+            "y": 74.03714041952686,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-11",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -110.27877227001716,
+            "y": 73.2690411198188,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-12",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -110.78759510196652,
+            "y": 72.49737079041367,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-13",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -111.29101830282859,
+            "y": 71.72216704143479,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-14",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -111.78901733646681,
+            "y": 70.94346765521914,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-15",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -112.28156793111081,
+            "y": 70.16131058447631,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-16",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -112.7686460805395,
+            "y": 69.3757339504385,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-17",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -113.2502280452511,
+            "y": 68.58677604100241,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-18",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -113.72629035361996,
+            "y": 67.7944753088637,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-19",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -114.1968098030409,
+            "y": 66.99887036964206,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-9-20",
+          "sectionId": "220",
+          "row": "9",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -114.66176346105968,
+            "y": 66.20000000000002,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 132.4,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 52.5,
+      "depth": 135.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-10-1",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -107.11755978162175,
+            "y": 82.49162615945141,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-2",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -107.6908449168713,
+            "y": 81.74180032939312,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-3",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -108.25888135226877,
+            "y": 80.98799051930719,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-4",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -108.8216414025196,
+            "y": 80.23023346882042,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-5",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -109.37909763949288,
+            "y": 79.46856610994234,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-6",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -109.93122289355814,
+            "y": 78.7030255652655,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-7",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -110.47799025490934,
+            "y": 77.93364914615607,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-8",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -111.0193730748768,
+            "y": 77.16047435093513,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-9",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -111.55534496722547,
+            "y": 76.38353886305163,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-10",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -112.08587980944165,
+            "y": 75.60288054924494,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-11",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -112.61095174400542,
+            "y": 74.81853745770015,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-12",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -113.13053517965159,
+            "y": 74.03054781619281,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-13",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -113.64460479261649,
+            "y": 73.23895003022645,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-14",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -114.15313552787245,
+            "y": 72.44378268116031,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-15",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -114.65610260034879,
+            "y": 71.64508452432928,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-16",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -115.15348149614002,
+            "y": 70.84289448715472,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-17",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -115.6452479737005,
+            "y": 70.03725166724716,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-18",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -116.13137806502581,
+            "y": 69.2281953305013,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.20000000000002,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-19",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -116.61184807682122,
+            "y": 68.41576490918132,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-10-20",
+          "sectionId": "220",
+          "row": "10",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -117.0866345916561,
+            "y": 67.60000000000001,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 135.2,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 55,
+      "depth": 138,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-11-1",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -109.33597078301628,
+            "y": 84.20003261837498,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-2",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -109.92112868733905,
+            "y": 83.43467785100778,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-3",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -110.50092919092523,
+            "y": 82.66525659515084,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-4",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -111.07534403511617,
+            "y": 81.89180635131079,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138.00000000000003,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-5",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -111.64434522374275,
+            "y": 81.11436481636127,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-6",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -112.20790502448983,
+            "y": 80.33296988170592,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-7",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -112.76599597024772,
+            "y": 79.5476596314315,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-8",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -113.31859086045117,
+            "y": 78.75847234045155,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-9",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -113.8656627624047,
+            "y": 77.96544647264146,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-10",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -114.40718501259578,
+            "y": 77.16862067896304,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-11",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -114.94313121799371,
+            "y": 76.36803379558151,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-12",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -115.47347525733669,
+            "y": 75.56372484197195,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-13",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -115.9981912824044,
+            "y": 74.75573301901814,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-14",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -116.5172537192781,
+            "y": 73.9440977071015,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-15",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -117.03063726958679,
+            "y": 73.12885846418226,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-16",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -117.53831691174057,
+            "y": 72.31005502387094,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-17",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -118.04026790214994,
+            "y": 71.48772729349193,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-18",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -118.53646577643168,
+            "y": 70.66191535213889,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-19",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -119.02688635060154,
+            "y": 69.83265944872058,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-11-20",
+          "sectionId": "220",
+          "row": "11",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -119.51150572225252,
+            "y": 69.00000000000001,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 138,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 57.5,
+      "depth": 140.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-12-1",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -111.55438178441082,
+            "y": 85.90843907729854,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-2",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -112.15141245780681,
+            "y": 85.12755537262242,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-3",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -112.7429770295817,
+            "y": 84.34252267099448,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-4",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -113.32904666771273,
+            "y": 83.55337923380115,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-5",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -113.90959280799261,
+            "y": 82.7601635227802,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-6",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -114.48458715542152,
+            "y": 81.96291419814634,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-7",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -115.05400168558609,
+            "y": 81.16167011670693,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-8",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -115.61780864602555,
+            "y": 80.35647032996796,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-9",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -116.17598055758394,
+            "y": 79.5473540822313,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-10",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -116.7284902157499,
+            "y": 78.73436080868115,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-11",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -117.275310691982,
+            "y": 77.91753013346289,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-12",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -117.81641533502179,
+            "y": 77.0969018677511,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-13",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -118.35177777219234,
+            "y": 76.27251600780981,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-14",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -118.88137191068375,
+            "y": 75.44441273304271,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-15",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -119.4051719388248,
+            "y": 74.61263240403524,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-16",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -119.9231523273411,
+            "y": 73.77721556058718,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-17",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -120.43528783059936,
+            "y": 72.93820291973671,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-18",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -120.94155348783755,
+            "y": 72.0956353737765,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-19",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -121.44192462438188,
+            "y": 71.24955398825985,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-12-20",
+          "sectionId": "220",
+          "row": "12",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -121.93637685284897,
+            "y": 70.40000000000002,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 140.8,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 60,
+      "depth": 143.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-13-1",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -113.77279278580535,
+            "y": 87.61684553622207,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-2",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -114.38169622827455,
+            "y": 86.82043289423707,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-3",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -114.98502486823814,
+            "y": 86.0197887468381,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-4",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -115.58274930030929,
+            "y": 85.21495211629151,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.60000000000002,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-5",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -116.17484039224244,
+            "y": 84.40596222919912,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-6",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -116.76126928635318,
+            "y": 83.59285851458674,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-7",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -117.34200740092443,
+            "y": 82.77568060198234,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-8",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -117.91702643159991,
+            "y": 81.95446831948436,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-9",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -118.48629835276314,
+            "y": 81.12926169182111,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-10",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -119.049795418904,
+            "y": 80.30010093839923,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-11",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -119.60749016597026,
+            "y": 79.46702647134424,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-12",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -120.15935541270687,
+            "y": 78.63007889353023,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-13",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -120.70536426198024,
+            "y": 77.78929899660147,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-14",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -121.24549010208938,
+            "y": 76.94472775898389,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-15",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -121.77970660806278,
+            "y": 76.0964063438882,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-16",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -122.30798774294162,
+            "y": 75.24437609730339,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-17",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -122.83030775904878,
+            "y": 74.38867854598146,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-18",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -123.3466411992434,
+            "y": 73.5293553954141,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-19",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -123.85696289816218,
+            "y": 72.66644852779909,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-13-20",
+          "sectionId": "220",
+          "row": "13",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -124.36124798344538,
+            "y": 71.80000000000001,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 143.6,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 62.5,
+      "depth": 146.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-14-1",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -115.9912037871999,
+            "y": 89.32525199514563,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-2",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -116.6119799987423,
+            "y": 88.51331041585173,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-3",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -117.2270727068946,
+            "y": 87.69705482268175,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-4",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -117.83645193290586,
+            "y": 86.87652499878187,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-5",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -118.44008797649231,
+            "y": 86.05176093561805,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-6",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -119.03795141728487,
+            "y": 85.22280283102715,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-7",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -119.6300131162628,
+            "y": 84.38969108725777,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-8",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -120.21624421717429,
+            "y": 83.55246630900078,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-9",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -120.79661614794239,
+            "y": 82.71116930141095,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-10",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -121.37110062205814,
+            "y": 81.86584106811732,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-11",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -121.93966963995855,
+            "y": 81.0165228092256,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-12",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -122.50229549039197,
+            "y": 80.16325591930938,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-13",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -123.05895075176817,
+            "y": 79.30608198539315,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-14",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -123.60960829349503,
+            "y": 78.44504278492508,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-15",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -124.15424127730078,
+            "y": 77.58018028374119,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-16",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -124.69282315854217,
+            "y": 76.71153663401961,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-17",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -125.22532768749821,
+            "y": 75.83915417222623,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-18",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -125.75172891064926,
+            "y": 74.9630754170517,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-19",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -126.27200117194252,
+            "y": 74.08334306733836,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.40000000000003,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-14-20",
+          "sectionId": "220",
+          "row": "14",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -126.78611911404181,
+            "y": 73.20000000000002,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 146.4,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 65,
+      "depth": 149.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-15-1",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -118.20961478859441,
+            "y": 91.03365845406917,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-2",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -118.84226376921004,
+            "y": 90.20618793746637,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-3",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -119.46912054555104,
+            "y": 89.37432089852538,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-4",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -120.0901545655024,
+            "y": 88.53809788127224,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-5",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -120.70533556074216,
+            "y": 87.69755964203696,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-6",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -121.31463354821653,
+            "y": 86.85274714746755,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-7",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -121.91801883160115,
+            "y": 86.00370157253319,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-8",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -122.51546200274865,
+            "y": 85.15046429851718,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-9",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -123.10693394312159,
+            "y": 84.29307691100075,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-10",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -123.69240582521223,
+            "y": 83.4315811978354,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-11",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -124.27184911394681,
+            "y": 82.56601914710697,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-12",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -124.84523556807704,
+            "y": 81.6964329450885,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-13",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -125.41253724155607,
+            "y": 80.82286497418481,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-14",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -125.97372648490065,
+            "y": 79.94535781086626,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.19999999999996,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-15",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -126.52877594653876,
+            "y": 79.06395422359415,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-16",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -127.07765857414269,
+            "y": 78.17869717073583,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-17",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -127.62034761594761,
+            "y": 77.28962979847098,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-18",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -128.15681662205512,
+            "y": 76.3967954386893,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-19",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -128.68703944572283,
+            "y": 75.5002376068776,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-15-20",
+          "sectionId": "220",
+          "row": "15",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -129.21099024463823,
+            "y": 74.60000000000001,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 149.2,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 67.5,
+      "depth": 152,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-16-1",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -120.42802578998895,
+            "y": 92.74206491299273,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-2",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -121.0725475396778,
+            "y": 91.89906545908103,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-3",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -121.71116838420751,
+            "y": 91.05158697436903,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-4",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -122.34385719809897,
+            "y": 90.19967076376261,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152.00000000000003,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-5",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -122.97058314499202,
+            "y": 89.3433583484559,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-6",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -123.59131567914822,
+            "y": 88.48269146390797,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-7",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -124.20602454693952,
+            "y": 87.61771205780862,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-8",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -124.81467978832303,
+            "y": 86.74846228803358,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-9",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -125.41725173830083,
+            "y": 85.87498452059059,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-10",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -126.01371102836636,
+            "y": 84.9973213275535,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-11",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -126.60402858793509,
+            "y": 84.11551548498834,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-12",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -127.18817564576216,
+            "y": 83.22960997086766,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-13",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -127.76612373134398,
+            "y": 82.33964796297649,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-14",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -128.3378446763063,
+            "y": 81.44567283680746,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-15",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -128.90331061577677,
+            "y": 80.54772816344713,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-16",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -129.46249398974322,
+            "y": 79.64585770745205,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-17",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -130.01536754439704,
+            "y": 78.74010542471575,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-18",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -130.56190433346097,
+            "y": 77.8305154603269,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-19",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -131.10207771950314,
+            "y": 76.91713214641688,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-16-20",
+          "sectionId": "220",
+          "row": "16",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -131.63586137523467,
+            "y": 76.00000000000001,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 152,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 70,
+      "depth": 154.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-17-1",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -122.6464367913835,
+            "y": 94.45047137191628,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-2",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -123.30283131014555,
+            "y": 93.59194298069568,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-3",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -123.95321622286397,
+            "y": 92.72885305021268,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-4",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -124.59755983069553,
+            "y": 91.86124364625297,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-5",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -125.23583072924187,
+            "y": 90.98915705487484,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-6",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -125.86799781007991,
+            "y": 90.1126357803484,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-7",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -126.49403026227789,
+            "y": 89.23172254308405,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-8",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -127.11389757389742,
+            "y": 88.34646027755,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-9",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -127.72756953348006,
+            "y": 87.45689213018042,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-10",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -128.33501623152048,
+            "y": 86.56306145727159,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-11",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -128.9362080619234,
+            "y": 85.6650118228697,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-12",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -129.53111572344724,
+            "y": 84.76278699664681,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.79999999999998,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-13",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -130.11971022113192,
+            "y": 83.85643095176817,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-14",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -130.70196286771196,
+            "y": 82.94598786274865,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-15",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -131.27784528501476,
+            "y": 82.03150210330011,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-16",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -131.84732940534377,
+            "y": 81.11301824416829,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-17",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -132.41038747284645,
+            "y": 80.19058105096052,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-18",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -132.96699204486686,
+            "y": 79.2642354819645,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.80000000000004,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-19",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -133.51711599328348,
+            "y": 78.33402668595613,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-17-20",
+          "sectionId": "220",
+          "row": "17",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -134.0607325058311,
+            "y": 77.40000000000002,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 154.8,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 72.5,
+      "depth": 157.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-18-1",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -124.86484779277801,
+            "y": 96.15887783083983,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-2",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -125.53311508061329,
+            "y": 95.28482050231032,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-3",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -126.1952640615204,
+            "y": 94.40611912605631,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-4",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -126.85126246329209,
+            "y": 93.52281652874333,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-5",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -127.50107831349172,
+            "y": 92.63495576129374,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-6",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -128.14467994101156,
+            "y": 91.74258009678879,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-7",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -128.78203597761623,
+            "y": 90.84573302835945,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-8",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -129.41311535947176,
+            "y": 89.9444582670664,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-9",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -130.03788732865928,
+            "y": 89.03879973977024,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-10",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -130.6563214346746,
+            "y": 88.12880158698968,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-11",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -131.26838753591164,
+            "y": 87.21450816075107,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-12",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -131.87405580113233,
+            "y": 86.29596402242593,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-13",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -132.4732967109198,
+            "y": 85.37321394055984,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-14",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -133.06608105911758,
+            "y": 84.44630288868983,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-15",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -133.65237995425275,
+            "y": 83.51527604315307,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-16",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -134.2321648209443,
+            "y": 82.5801787808845,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-17",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -134.80540740129587,
+            "y": 81.64105667720528,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-18",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -135.37207975627268,
+            "y": 80.6979555036021,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-19",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -135.9321542670638,
+            "y": 79.75092122549539,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-18-20",
+          "sectionId": "220",
+          "row": "18",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -136.48560363642753,
+            "y": 78.80000000000001,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 157.6,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 75,
+      "depth": 160.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-19-1",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -127.08325879417255,
+            "y": 97.86728428976338,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-2",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -127.76339885108105,
+            "y": 96.97769802392499,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-3",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -128.43731190017687,
+            "y": 96.08338520189996,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-4",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -129.10496509588864,
+            "y": 95.1843894112337,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-5",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -129.76632589774158,
+            "y": 94.28075446771268,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-6",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -130.42136207194326,
+            "y": 93.37252441322921,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-7",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -131.0700416929546,
+            "y": 92.45974351363488,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-8",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -131.71233314504616,
+            "y": 91.54245625658281,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-9",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -132.3482051238385,
+            "y": 90.62070734936007,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.39999999999998,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-10",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -132.9776266378287,
+            "y": 89.69454171670777,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-11",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -133.60056700989995,
+            "y": 88.76400449863243,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-12",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -134.21699587881744,
+            "y": 87.82914104820509,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-13",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -134.82688320070773,
+            "y": 86.88999692935151,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.39999999999998,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-14",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -135.43019925052323,
+            "y": 85.94661791463103,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-15",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -136.02691462349074,
+            "y": 84.99904998300605,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-16",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -136.61700023654484,
+            "y": 84.04733931760073,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-17",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -137.2004273297453,
+            "y": 83.09153230345005,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.40000000000003,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-18",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -137.77716746767857,
+            "y": 82.1316755252397,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-19",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -138.34719254084413,
+            "y": 81.16781576503465,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.4,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-19-20",
+          "sectionId": "220",
+          "row": "19",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -138.91047476702394,
+            "y": 80.20000000000002,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 160.39999999999998,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 77.5,
+      "depth": 163.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-20-1",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -129.30166979556708,
+            "y": 99.57569074868692,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-2",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -129.99368262154877,
+            "y": 98.67057554553962,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-3",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -130.6793597388333,
+            "y": 97.76065127774359,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-4",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -131.3586677284852,
+            "y": 96.84596229372406,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-5",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -132.03157348199142,
+            "y": 95.9265531741316,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-6",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -132.6980442028749,
+            "y": 95.00246872966962,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-7",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -133.35804740829295,
+            "y": 94.07375399891029,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-8",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -134.0115509306205,
+            "y": 93.14045424609921,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.19999999999996,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-9",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -134.6585229190177,
+            "y": 92.2026149589499,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.19999999999996,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-10",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -135.29893184098282,
+            "y": 91.26028184642585,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-11",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -135.9327464838882,
+            "y": 90.31350083651378,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-12",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -136.5599359565025,
+            "y": 89.36231807398421,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.19999999999996,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-13",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -137.18046969049564,
+            "y": 88.40677991814317,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-14",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -137.79431744192888,
+            "y": 87.44693294057221,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-15",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -138.40144929272873,
+            "y": 86.48282392285901,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-16",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -139.00183565214536,
+            "y": 85.51449985431694,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.20000000000002,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-17",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -139.5954472581947,
+            "y": 84.5420079296948,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-18",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -140.18225517908442,
+            "y": 83.5653955468773,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.20000000000002,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-19",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -140.76223081462442,
+            "y": 82.5847103045739,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-20-20",
+          "sectionId": "220",
+          "row": "20",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -141.33534589762036,
+            "y": 81.60000000000001,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 163.2,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "21",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 80,
+      "depth": 166,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-21-1",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -131.52008079696162,
+            "y": 101.28409720761047,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-2",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -132.22396639201654,
+            "y": 100.36345306715428,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-3",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -132.9214075774898,
+            "y": 99.43791735358724,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.00000000000003,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-4",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -133.61237036108176,
+            "y": 98.50753517621442,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-5",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -134.29682106624128,
+            "y": 97.57235188055053,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-6",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -134.97472633380661,
+            "y": 96.63241304611003,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-7",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -135.6460531236313,
+            "y": 95.68776448418572,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-8",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -136.3107687161949,
+            "y": 94.73845223561563,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-9",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -136.96884071419697,
+            "y": 93.78452256853973,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-10",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -137.62023704413696,
+            "y": 92.82602197614395,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.00000000000003,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-11",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -138.2649259578765,
+            "y": 91.86299717439516,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-12",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -138.9028760341876,
+            "y": 90.89549509976337,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-13",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -139.53405618028356,
+            "y": 89.92356290693485,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 165.99999999999997,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-14",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -140.15843563333453,
+            "y": 88.9472479665134,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-15",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -140.77598396196672,
+            "y": 87.96659786271199,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-16",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -141.3866710677459,
+            "y": 86.98166039103317,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166.00000000000003,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-17",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -141.99046718664414,
+            "y": 85.99248355593957,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-18",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -142.58734289049028,
+            "y": 84.99911556851491,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-19",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -143.17726908840476,
+            "y": 84.00160484411316,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-21-20",
+          "sectionId": "220",
+          "row": "21",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -143.7602170282168,
+            "y": 83.00000000000001,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 166,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "22",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 82.5,
+      "depth": 168.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-22-1",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -133.73849179835616,
+            "y": 102.99250366653403,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-2",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -134.4542501624843,
+            "y": 102.05633058876893,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-3",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -135.16345541614623,
+            "y": 101.11518342943087,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-4",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -135.86607299367833,
+            "y": 100.1691080587048,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-5",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -136.56206865049114,
+            "y": 99.21815058696946,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-6",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -137.2514084647383,
+            "y": 98.26235736255045,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-7",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -137.9340588389697,
+            "y": 97.30177496946115,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-8",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -138.60998650176927,
+            "y": 96.33645022513204,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-9",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -139.2791585093762,
+            "y": 95.36643017812956,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-10",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -139.94154224729107,
+            "y": 94.39176210586204,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-11",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -140.59710543186478,
+            "y": 93.41249351227653,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-12",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -141.24581611187273,
+            "y": 92.4286721255425,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-13",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -141.8876426700715,
+            "y": 91.44034589572654,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-14",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -142.52255382474019,
+            "y": 90.4475629924546,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-15",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -143.15051863120473,
+            "y": 89.45037180256497,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-16",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -143.77150648334643,
+            "y": 88.4488209277494,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-17",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -144.38548711509355,
+            "y": 87.44295918218434,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-18",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -144.99243060189616,
+            "y": 86.43283559015251,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-19",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -145.5923073621851,
+            "y": 85.41849938365243,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.80000000000004,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-22-20",
+          "sectionId": "220",
+          "row": "22",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -146.18508815881324,
+            "y": 84.40000000000002,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 168.8,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "23",
+      "sectionId": "220",
+      "seatCount": 20,
+      "elevation": 85,
+      "depth": 171.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "yankees-220-23-1",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -135.95690279975068,
+            "y": 104.70091012545757,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -127.60000000000001,
+          "facing": 52.39999999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-2",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -136.68453393295204,
+            "y": 103.74920811038358,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -127.20000000000002,
+          "facing": 52.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-3",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -137.40550325480268,
+            "y": 102.7924495052745,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -126.80000000000001,
+          "facing": 53.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-4",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -138.11977562627487,
+            "y": 101.83068094119514,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -126.4,
+          "facing": 53.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-5",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -138.82731623474098,
+            "y": 100.86394929338837,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -126.00000000000001,
+          "facing": 53.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-6",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -139.52809059566997,
+            "y": 99.89230167899085,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.60000000000002,
+          "angle": -125.60000000000001,
+          "facing": 54.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-7",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -140.22206455430802,
+            "y": 98.91578545473656,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -125.20000000000002,
+          "facing": 54.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-8",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -140.90920428734364,
+            "y": 97.93444821464844,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -124.80000000000001,
+          "facing": 55.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-9",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -141.5894763045554,
+            "y": 96.94833778771938,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.59999999999997,
+          "angle": -124.4,
+          "facing": 55.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-10",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -142.26284745044518,
+            "y": 95.95750223558012,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -124.00000000000001,
+          "facing": 55.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-11",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -142.92928490585305,
+            "y": 94.96198985015788,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -123.60000000000001,
+          "facing": 56.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-12",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -143.58875618955778,
+            "y": 93.96184915132164,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.59999999999997,
+          "angle": -123.20000000000002,
+          "facing": 56.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-13",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -144.2412291598594,
+            "y": 92.9571288845182,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -122.80000000000001,
+          "facing": 57.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-14",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -144.8866720161458,
+            "y": 91.94787801839578,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -122.4,
+          "facing": 57.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-15",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -145.52505330044272,
+            "y": 90.93414574241794,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -122.00000000000001,
+          "facing": 57.999999999999986,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-16",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -146.15634189894695,
+            "y": 89.9159814644656,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -121.60000000000001,
+          "facing": 58.39999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-17",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -146.78050704354297,
+            "y": 88.89343480842909,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -121.20000000000002,
+          "facing": 58.79999999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-18",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -147.397518313302,
+            "y": 87.8665556117901,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -120.80000000000001,
+          "facing": 59.19999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-19",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -148.0073456359654,
+            "y": 86.83539392319167,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -120.4,
+          "facing": 59.599999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "yankees-220-23-20",
+          "sectionId": "220",
+          "row": "23",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -148.60995928940966,
+            "y": 85.80000000000001,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 171.6,
+          "angle": -120.00000000000001,
+          "facing": 59.999999999999986,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 414,
+    "aisle": 46,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};

@@ -1,6 +1,6 @@
 /**
  * Reserve 4 - dodger-stadium
- * Generated: 2025-10-21T16:30:21.589Z
+ * Generated: 2025-10-22T00:43:37.521Z
  * Total Seats: 484
  * Total Rows: 22
  */
@@ -19,7 +19,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 75,
-      "depth": 196.5100503297499,
+      "depth": 175,
       "rowSpacing": 36,
       "seats": [
         {
@@ -28,14 +28,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "1",
           "position3D": {
-            "x": 196.05286469511842,
-            "y": -13.396795342112043,
+            "x": -167.99706490814646,
+            "y": 49.01006205105259,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 175,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -46,7 +46,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-2",
@@ -54,14 +55,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "2",
           "position3D": {
-            "x": 196.09438989648953,
-            "y": -12.774589297679372,
+            "x": -168.22844818437758,
+            "y": 48.209845690234104,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 175,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -72,7 +73,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-3",
@@ -80,14 +82,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "3",
           "position3D": {
-            "x": 196.13394042953146,
-            "y": -12.152254613274243,
+            "x": -168.4560198327445,
+            "y": 47.40853701718702,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 175,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -98,7 +100,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-4",
@@ -106,14 +109,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "4",
           "position3D": {
-            "x": 196.17151589597074,
-            "y": -11.529797555800078,
+            "x": -168.67977469705374,
+            "y": 46.60615418752324,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 175,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -124,7 +127,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-5",
@@ -132,14 +136,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "5",
           "position3D": {
-            "x": 196.2071159174229,
-            "y": -10.907224393392577,
+            "x": -168.8997077075902,
+            "y": 45.80271538119313,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 174.99999999999997,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -150,7 +154,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-6",
@@ -158,14 +163,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "6",
           "position3D": {
-            "x": 196.24074013539604,
-            "y": -10.28454139535648,
+            "x": -169.11581388123264,
+            "y": 44.99823880207178,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 175,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -176,7 +181,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-7",
@@ -184,14 +190,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "7",
           "position3D": {
-            "x": 196.2723882112947,
-            "y": -9.661754832102712,
+            "x": -169.32808832156582,
+            "y": 44.19274267754842,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 175,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -202,7 +208,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-8",
@@ -210,14 +217,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "8",
           "position3D": {
-            "x": 196.30205982642312,
-            "y": -9.038870975085098,
+            "x": -169.53652621899198,
+            "y": 43.386245258112,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 175,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -228,7 +235,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-9",
@@ -236,14 +244,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "9",
           "position3D": {
-            "x": 196.32975468198845,
-            "y": -8.415896096737068,
+            "x": -169.74112285083964,
+            "y": 42.57876481693857,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 175,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -254,7 +262,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-10",
@@ -262,14 +271,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "10",
           "position3D": {
-            "x": 196.3554724991038,
-            "y": -7.792836470408777,
+            "x": -169.9418735814706,
+            "y": 41.77031964947679,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 175,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -280,7 +289,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-11",
@@ -288,14 +298,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "11",
           "position3D": {
-            "x": 196.37921301879103,
-            "y": -7.169698370303792,
+            "x": -170.13877386238488,
+            "y": 40.960928073033934,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 175,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -306,7 +316,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-12",
@@ -314,14 +325,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "12",
           "position3D": {
-            "x": 196.40097600198337,
-            "y": -6.546488071415772,
+            "x": -170.33181923232408,
+            "y": 40.15060842635973,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 175,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -332,7 +343,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-13",
@@ -340,14 +352,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "13",
           "position3D": {
-            "x": 196.42076122952784,
-            "y": -5.9232118494655985,
+            "x": -170.52100531737207,
+            "y": 39.33937906923238,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 174.99999999999997,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -358,7 +370,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-14",
@@ -366,14 +379,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "14",
           "position3D": {
-            "x": 196.43856850218742,
-            "y": -5.299875980837813,
+            "x": -170.70632783105438,
+            "y": 38.5272583820415,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 175,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -384,7 +397,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-15",
@@ -392,14 +406,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "15",
           "position3D": {
-            "x": 196.45439764064307,
-            "y": -4.67648674251774,
+            "x": -170.88778257443522,
+            "y": 37.714264765371745,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 175.00000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -410,7 +424,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-16",
@@ -418,14 +433,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "16",
           "position3D": {
-            "x": 196.46824848549548,
-            "y": -4.053050412028138,
+            "x": -171.0653654362125,
+            "y": 36.900416639586574,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 175,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -436,7 +451,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-17",
@@ -444,14 +460,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "17",
           "position3D": {
-            "x": 196.4801208972669,
-            "y": -3.429573267365834,
+            "x": -171.2390723928112,
+            "y": 36.085732444410155,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 175,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -462,7 +478,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-18",
@@ -470,14 +487,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "18",
           "position3D": {
-            "x": 196.49001475640216,
-            "y": -2.806061586938804,
+            "x": -171.4088995084745,
+            "y": 35.27023063851001,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 175,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -488,7 +505,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-19",
@@ -496,14 +514,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "19",
           "position3D": {
-            "x": 196.49792996327034,
-            "y": -2.182521649502795,
+            "x": -171.57484293535273,
+            "y": 34.45392969907839,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 175,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -514,7 +532,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-20",
@@ -522,14 +541,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "20",
           "position3D": {
-            "x": 196.5038664381653,
-            "y": -1.5589597340979575,
+            "x": -171.73689891359084,
+            "y": 33.63684812141411,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 175,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -540,7 +559,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-21",
@@ -548,14 +568,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "21",
           "position3D": {
-            "x": 196.5078241213068,
-            "y": -0.9353821199859051,
+            "x": -171.8950637714134,
+            "y": 32.819004418503134,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 175,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -566,7 +586,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-A-22",
@@ -574,14 +595,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "A",
           "seatNumber": "22",
           "position3D": {
-            "x": 196.50980297284107,
-            "y": -0.31179508658633803,
+            "x": -172.04933392520772,
+            "y": 32.00041712059958,
             "z": 75
           },
           "elevation": 75,
-          "distanceFromHomeplate": 196.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 175,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -592,11 +613,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -604,7 +627,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 77.5,
-      "depth": 199.5100503297499,
+      "depth": 177.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -613,14 +636,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "1",
           "position3D": {
-            "x": 199.04588511874766,
-            "y": -13.601316108143578,
+            "x": -170.68501794667682,
+            "y": 49.79422304386944,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974987,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 177.8,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -631,7 +654,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-2",
@@ -639,14 +663,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "2",
           "position3D": {
-            "x": 199.08804426023485,
-            "y": -12.969611220622904,
+            "x": -170.92010335532763,
+            "y": 48.98120322127785,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 177.8,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -657,7 +681,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-3",
@@ -665,14 +690,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "3",
           "position3D": {
-            "x": 199.12819858732664,
-            "y": -12.337775729261173,
+            "x": -171.15131615006842,
+            "y": 48.16707360946202,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 177.8,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -683,7 +708,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-4",
@@ -691,14 +717,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "4",
           "position3D": {
-            "x": 199.16634769566937,
-            "y": -11.705815996634824,
+            "x": -171.3786510922066,
+            "y": 47.35185265452362,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 177.8,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -709,7 +735,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-5",
@@ -717,14 +744,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "5",
           "position3D": {
-            "x": 199.202491201102,
-            "y": -11.073738386571398,
+            "x": -171.60210303091168,
+            "y": 46.53555882729223,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 177.8,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -735,7 +762,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-6",
@@ -743,14 +771,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "6",
           "position3D": {
-            "x": 199.23662873965975,
-            "y": -10.441549264085312,
+            "x": -171.82166690333239,
+            "y": 45.718210622904934,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 177.8,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -761,7 +789,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-7",
@@ -769,14 +798,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "7",
           "position3D": {
-            "x": 199.26875996757806,
-            "y": -9.80925499531406,
+            "x": -172.03733773471086,
+            "y": 44.899826560389194,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 177.8,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -787,7 +816,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-8",
@@ -795,14 +825,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "8",
           "position3D": {
-            "x": 199.2988845612958,
-            "y": -9.176861947453954,
+            "x": -172.24911063849586,
+            "y": 44.0804251822418,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 177.8,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -813,7 +843,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-9",
@@ -821,14 +852,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "9",
           "position3D": {
-            "x": 199.3270022174586,
-            "y": -8.544376488695876,
+            "x": -172.45698081645307,
+            "y": 43.26002505400959,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 177.8,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -839,7 +870,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-10",
@@ -847,14 +879,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "10",
           "position3D": {
-            "x": 199.35311265292208,
-            "y": -7.911804988161414,
+            "x": -172.66094355877414,
+            "y": 42.438644763868425,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 177.8,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -865,7 +897,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-11",
@@ -873,14 +906,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "11",
           "position3D": {
-            "x": 199.37721560475435,
-            "y": -7.2791538158386055,
+            "x": -172.86099424418305,
+            "y": 41.61630292220248,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 177.8,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -891,7 +924,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-12",
@@ -899,14 +933,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "12",
           "position3D": {
-            "x": 199.399310830239,
-            "y": -6.64642934251764,
+            "x": -173.0571283400413,
+            "y": 40.79301816118149,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974993,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 177.8,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -917,7 +951,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-13",
@@ -925,14 +960,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "13",
           "position3D": {
-            "x": 199.41939810687728,
-            "y": -6.013637939727032,
+            "x": -173.24934140245006,
+            "y": 39.9688091343401,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 177.8,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -943,7 +978,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-14",
@@ -951,14 +987,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "14",
           "position3D": {
-            "x": 199.43747723239065,
-            "y": -5.380785979669086,
+            "x": -173.43762907635127,
+            "y": 39.14369451615417,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 177.8,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -969,7 +1005,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-15",
@@ -977,14 +1014,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "15",
           "position3D": {
-            "x": 199.45354802472244,
-            "y": -4.747879835156063,
+            "x": -173.6219870956262,
+            "y": 38.31769300161769,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 177.80000000000004,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -995,7 +1032,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-16",
@@ -1003,14 +1041,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "16",
           "position3D": {
-            "x": 199.46761032203997,
-            "y": -4.11492587954586,
+            "x": -173.8024112831919,
+            "y": 37.49082330581996,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 177.8,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1021,7 +1059,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-17",
@@ -1029,14 +1068,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "17",
           "position3D": {
-            "x": 199.47966398273607,
-            "y": -3.4819304866776846,
+            "x": -173.97889755109622,
+            "y": 36.66310416352072,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974993,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 177.8,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1047,7 +1086,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-18",
@@ -1055,14 +1095,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "18",
           "position3D": {
-            "x": 199.48970888543047,
-            "y": -2.8489000308081653,
+            "x": -174.1514419006101,
+            "y": 35.83455432872617,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 177.8,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1073,7 +1113,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-19",
@@ -1081,14 +1122,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "19",
           "position3D": {
-            "x": 199.49774492897117,
-            "y": -2.2158408865470145,
+            "x": -174.32004042231839,
+            "y": 35.005192574263646,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 177.8,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1099,7 +1140,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-20",
@@ -1107,14 +1149,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "20",
           "position3D": {
-            "x": 199.50377203243528,
-            "y": -1.5827594287926865,
+            "x": -174.4846892962083,
+            "y": 34.17503769135674,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 177.8,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1125,7 +1167,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-21",
@@ -1133,14 +1176,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "21",
           "position3D": {
-            "x": 199.50779013512994,
-            "y": -0.9496620326684826,
+            "x": -174.64538479175602,
+            "y": 33.344108489199186,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.51005032974993,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 177.8,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1151,7 +1194,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-B-22",
@@ -1159,14 +1203,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "B",
           "seatNumber": "22",
           "position3D": {
-            "x": 199.50979919659287,
-            "y": -0.31655507345820244,
+            "x": -174.80212326801106,
+            "y": 32.51242379452917,
             "z": 77.5
           },
           "elevation": 77.5,
-          "distanceFromHomeplate": 199.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 177.79999999999998,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1177,11 +1221,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -1189,7 +1235,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 80,
-      "depth": 202.5100503297499,
+      "depth": 180.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1198,14 +1244,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "1",
           "position3D": {
-            "x": 202.03890554237694,
-            "y": -13.805836874175114,
+            "x": -173.37297098520713,
+            "y": 50.57838403668627,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 180.6,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1216,7 +1262,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-2",
@@ -1224,14 +1271,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "2",
           "position3D": {
-            "x": 202.08169862398017,
-            "y": -13.164633143566435,
+            "x": -173.61175852627767,
+            "y": 49.75256075232159,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 180.6,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1242,7 +1289,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-3",
@@ -1250,14 +1298,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "3",
           "position3D": {
-            "x": 202.1224567451218,
-            "y": -12.523296845248101,
+            "x": -173.8466124673923,
+            "y": 48.92561020173701,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 180.6,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1268,7 +1316,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-4",
@@ -1276,14 +1325,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "4",
           "position3D": {
-            "x": 202.161179495368,
-            "y": -11.881834437469571,
+            "x": -174.07752748735945,
+            "y": 48.097551121523985,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 180.6,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1294,7 +1343,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-5",
@@ -1302,14 +1352,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "5",
           "position3D": {
-            "x": 202.1978664847811,
-            "y": -11.240252379750219,
+            "x": -174.3044983542331,
+            "y": 47.26840227339132,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 180.59999999999997,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1320,7 +1370,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-6",
@@ -1328,14 +1379,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "6",
           "position3D": {
-            "x": 202.23251734392346,
-            "y": -10.598557132814143,
+            "x": -174.52751992543207,
+            "y": 46.43818244373808,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.51005032974987,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 180.6,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1346,7 +1397,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-7",
@@ -1354,14 +1406,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "7",
           "position3D": {
-            "x": 202.26513172386143,
-            "y": -9.956755158525407,
+            "x": -174.7465871478559,
+            "y": 45.606910443229964,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 180.6,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1372,7 +1424,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-8",
@@ -1380,14 +1433,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "8",
           "position3D": {
-            "x": 202.29570929616847,
-            "y": -9.314852919822812,
+            "x": -174.9616950579997,
+            "y": 44.77460510637158,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 180.59999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1398,7 +1451,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-9",
@@ -1406,14 +1460,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "9",
           "position3D": {
-            "x": 202.3242497529288,
-            "y": -8.672856880654683,
+            "x": -175.1728387820665,
+            "y": 43.941285291080604,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 180.6,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1424,7 +1478,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-10",
@@ -1432,14 +1487,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "10",
           "position3D": {
-            "x": 202.3507528067404,
-            "y": -8.03077350591405,
+            "x": -175.38001353607766,
+            "y": 43.106969878260045,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 180.6,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1450,7 +1505,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-11",
@@ -1458,14 +1514,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "11",
           "position3D": {
-            "x": 202.37521819071767,
-            "y": -7.38860926137342,
+            "x": -175.58321462598119,
+            "y": 42.27167777137102,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 180.6,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1476,7 +1532,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-12",
@@ -1484,14 +1541,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "12",
           "position3D": {
-            "x": 202.39764565849458,
-            "y": -6.746370613619509,
+            "x": -175.78243744775844,
+            "y": 41.43542789600324,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 180.59999999999997,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1502,7 +1559,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-13",
@@ -1510,14 +1568,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "13",
           "position3D": {
-            "x": 202.41803498422672,
-            "y": -6.104064029988466,
+            "x": -175.97767748752798,
+            "y": 40.59823919944782,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 180.6,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1528,7 +1586,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-14",
@@ -1536,14 +1595,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "14",
           "position3D": {
-            "x": 202.43638596259387,
-            "y": -5.461695978500359,
+            "x": -176.16893032164813,
+            "y": 39.76013065026683,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 180.60000000000002,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1554,7 +1613,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-15",
@@ -1562,14 +1622,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "15",
           "position3D": {
-            "x": 202.45269840880184,
-            "y": -4.819272927794385,
+            "x": -176.35619161681714,
+            "y": 38.92112123786364,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 180.60000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1580,7 +1640,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-16",
@@ -1588,14 +1649,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "16",
           "position3D": {
-            "x": 202.46697215858444,
-            "y": -4.176801347063582,
+            "x": -176.5394571301713,
+            "y": 38.08122997205334,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 180.6,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1606,7 +1667,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-17",
@@ -1614,14 +1676,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "17",
           "position3D": {
-            "x": 202.47920706820523,
-            "y": -3.5342877059895352,
+            "x": -176.71872270938118,
+            "y": 37.24047588263128,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 180.6,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1632,7 +1694,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-18",
@@ -1640,14 +1703,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "18",
           "position3D": {
-            "x": 202.48940301445876,
-            "y": -2.891738474677527,
+            "x": -176.89398429274567,
+            "y": 36.39887801894233,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 180.6,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1658,7 +1721,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-19",
@@ -1666,14 +1730,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "19",
           "position3D": {
-            "x": 202.49755989467204,
-            "y": -2.2491601235912335,
+            "x": -177.065237909284,
+            "y": 35.5564554494489,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 180.59999999999997,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1684,7 +1748,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-20",
@@ -1692,14 +1757,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "20",
           "position3D": {
-            "x": 202.50367762670527,
-            "y": -1.6065591234874155,
+            "x": -177.23247967882574,
+            "y": 34.713227261299366,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 180.6,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1710,7 +1775,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-21",
@@ -1718,14 +1784,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "21",
           "position3D": {
-            "x": 202.50775614895304,
-            "y": -0.9639419453510599,
+            "x": -177.3957058120986,
+            "y": 33.86921255989523,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.51005032974987,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 180.6,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1736,7 +1802,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-C-22",
@@ -1744,14 +1811,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "C",
           "seatNumber": "22",
           "position3D": {
-            "x": 202.50979542034466,
-            "y": -0.3213150603300668,
+            "x": -177.55491261081437,
+            "y": 33.02443046845876,
             "z": 80
           },
           "elevation": 80,
-          "distanceFromHomeplate": 202.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 180.6,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1762,11 +1829,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -1774,7 +1843,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 82.5,
-      "depth": 205.5100503297499,
+      "depth": 183.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -1783,14 +1852,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "1",
           "position3D": {
-            "x": 205.03192596600618,
-            "y": -14.01035764020665,
+            "x": -176.0609240237375,
+            "y": 51.36254502950312,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 183.4,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1801,7 +1870,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-2",
@@ -1809,14 +1879,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "2",
           "position3D": {
-            "x": 205.0753529877255,
-            "y": -13.359655066509967,
+            "x": -176.3034136972277,
+            "y": 50.52391828336534,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 183.4,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1827,7 +1897,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-3",
@@ -1835,14 +1906,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "3",
           "position3D": {
-            "x": 205.11671490291698,
-            "y": -12.708817961235031,
+            "x": -176.54190878471624,
+            "y": 49.684146794012,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 183.4,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1853,7 +1924,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-4",
@@ -1861,14 +1933,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "4",
           "position3D": {
-            "x": 205.15601129506663,
-            "y": -12.057852878304319,
+            "x": -176.7764038825123,
+            "y": 48.84324958852436,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 183.4,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1879,7 +1951,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-5",
@@ -1887,14 +1960,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "5",
           "position3D": {
-            "x": 205.19324176846018,
-            "y": -11.40676637292904,
+            "x": -177.00689367755456,
+            "y": 48.001245719490406,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 183.4,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1905,7 +1978,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-6",
@@ -1913,14 +1987,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "6",
           "position3D": {
-            "x": 205.2284059481872,
-            "y": -10.755565001542974,
+            "x": -177.23337294753182,
+            "y": 47.15815426457123,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 183.4,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1931,7 +2005,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-7",
@@ -1939,14 +2014,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "7",
           "position3D": {
-            "x": 205.26150348014477,
-            "y": -10.104255321736755,
+            "x": -177.45583656100098,
+            "y": 46.31399432607074,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 183.4,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1957,7 +2032,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-8",
@@ -1965,14 +2041,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "8",
           "position3D": {
-            "x": 205.29253403104116,
-            "y": -9.45284389219167,
+            "x": -177.67427947750357,
+            "y": 45.46878503050138,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 183.39999999999998,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -1983,7 +2059,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-9",
@@ -1991,14 +2068,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "9",
           "position3D": {
-            "x": 205.321497288399,
-            "y": -8.801337272613491,
+            "x": -177.88869674767994,
+            "y": 44.622545528151626,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 183.4,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2009,7 +2086,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-10",
@@ -2017,14 +2095,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "10",
           "position3D": {
-            "x": 205.34839296055867,
-            "y": -8.149742023666686,
+            "x": -178.09908351338117,
+            "y": 43.77529499265168,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 183.4,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2035,7 +2113,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-11",
@@ -2043,14 +2122,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "11",
           "position3D": {
-            "x": 205.373220776681,
-            "y": -7.498064706908233,
+            "x": -178.30543500777935,
+            "y": 42.92705262053956,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 183.4,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2061,7 +2140,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-12",
@@ -2069,14 +2149,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "12",
           "position3D": {
-            "x": 205.39598048675018,
-            "y": -6.846311884721377,
+            "x": -178.50774655547565,
+            "y": 42.077837630825,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 183.4,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2087,7 +2167,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-13",
@@ -2095,14 +2176,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "13",
           "position3D": {
-            "x": 205.41667186157616,
-            "y": -6.194490120249899,
+            "x": -178.70601357260594,
+            "y": 41.22766926455554,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 183.4,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2113,7 +2194,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-14",
@@ -2121,14 +2203,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "14",
           "position3D": {
-            "x": 205.4352946927971,
-            "y": -5.542605977331632,
+            "x": -178.900231566945,
+            "y": 40.37656678437949,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 183.4,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2139,7 +2221,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-15",
@@ -2147,14 +2230,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "15",
           "position3D": {
-            "x": 205.4518487928812,
-            "y": -4.8906660204327075,
+            "x": -179.09039613800812,
+            "y": 39.52454947410959,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 183.4,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2165,7 +2248,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-16",
@@ -2173,14 +2257,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "16",
           "position3D": {
-            "x": 205.46633399512893,
-            "y": -4.2386768145813045,
+            "x": -179.2765029771507,
+            "y": 38.67163663828673,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 183.4,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2191,7 +2275,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-17",
@@ -2199,14 +2284,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "17",
           "position3D": {
-            "x": 205.4787501536744,
-            "y": -3.5866449253013855,
+            "x": -179.45854786766617,
+            "y": 37.817847601741846,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 183.4,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2217,7 +2302,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-18",
@@ -2225,14 +2311,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "18",
           "position3D": {
-            "x": 205.48909714348707,
-            "y": -2.9345769185468886,
+            "x": -179.6365266848813,
+            "y": 36.96320170915849,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 183.4,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2243,7 +2329,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-19",
@@ -2251,14 +2338,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "19",
           "position3D": {
-            "x": 205.49737486037287,
-            "y": -2.2824793606354525,
+            "x": -179.8104353962497,
+            "y": 36.10771832463415,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 183.4,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2269,7 +2356,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-20",
@@ -2277,14 +2365,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "20",
           "position3D": {
-            "x": 205.5035832209753,
-            "y": -1.6303588181821445,
+            "x": -179.9802700614432,
+            "y": 35.25141683124199,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 183.4,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2295,7 +2383,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-21",
@@ -2303,14 +2392,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "21",
           "position3D": {
-            "x": 205.50772216277616,
-            "y": -0.9782218580336373,
+            "x": -180.14602683244124,
+            "y": 34.394316630591284,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 183.4,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2321,7 +2410,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-D-22",
@@ -2329,14 +2419,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "D",
           "seatNumber": "22",
           "position3D": {
-            "x": 205.50979164409642,
-            "y": -0.32607504720193115,
+            "x": -180.3077019536177,
+            "y": 33.53643714238836,
             "z": 82.5
           },
           "elevation": 82.5,
-          "distanceFromHomeplate": 205.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 183.4,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2347,11 +2437,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -2359,7 +2451,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 85,
-      "depth": 208.5100503297499,
+      "depth": 186.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2368,14 +2460,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "1",
           "position3D": {
-            "x": 208.02494638963546,
-            "y": -14.214878406238187,
+            "x": -178.74887706226784,
+            "y": 52.146706022319954,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974993,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2386,7 +2478,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-2",
@@ -2394,14 +2487,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "2",
           "position3D": {
-            "x": 208.06900735147082,
-            "y": -13.5546769894535,
+            "x": -178.99506886817773,
+            "y": 51.29527581440908,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 186.19999999999996,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2412,7 +2505,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-3",
@@ -2420,14 +2514,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "3",
           "position3D": {
-            "x": 208.11097306071218,
-            "y": -12.894339077221959,
+            "x": -179.23720510204012,
+            "y": 50.442683386286994,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974993,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 186.2,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2438,7 +2532,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-4",
@@ -2446,14 +2541,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "4",
           "position3D": {
-            "x": 208.15084309476526,
-            "y": -12.233871319139066,
+            "x": -179.47528027766518,
+            "y": 49.588948055524725,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2464,7 +2559,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-5",
@@ -2472,14 +2568,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "5",
           "position3D": {
-            "x": 208.18861705213928,
-            "y": -11.573280366107861,
+            "x": -179.70928900087597,
+            "y": 48.734089165589495,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 186.19999999999996,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2490,7 +2586,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-6",
@@ -2498,14 +2595,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "6",
           "position3D": {
-            "x": 208.2242945524509,
-            "y": -10.912572870271806,
+            "x": -179.93922596963154,
+            "y": 47.878126085404375,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2516,7 +2613,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-7",
@@ -2524,14 +2622,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "7",
           "position3D": {
-            "x": 208.25787523642813,
-            "y": -10.2517554849481,
+            "x": -180.16508597414602,
+            "y": 47.02107820891151,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2542,7 +2640,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-8",
@@ -2550,14 +2649,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "8",
           "position3D": {
-            "x": 208.28935876591385,
-            "y": -9.590834864560527,
+            "x": -180.38686389700743,
+            "y": 46.162964954631164,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 186.19999999999996,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2568,7 +2667,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-9",
@@ -2576,14 +2676,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "9",
           "position3D": {
-            "x": 208.3187448238692,
-            "y": -8.929817664572298,
+            "x": -180.60455471329337,
+            "y": 45.303805765222634,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 186.2,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2594,7 +2694,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-10",
@@ -2602,14 +2703,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "10",
           "position3D": {
-            "x": 208.34603311437695,
-            "y": -8.268710541419322,
+            "x": -180.8181534906847,
+            "y": 44.4436201070433,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 186.2,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2620,7 +2721,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-11",
@@ -2628,14 +2730,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "11",
           "position3D": {
-            "x": 208.37122336264432,
-            "y": -7.607520152443046,
+            "x": -181.0276553895775,
+            "y": 43.5824274697081,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 186.2,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2646,7 +2748,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-12",
@@ -2654,14 +2757,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "12",
           "position3D": {
-            "x": 208.39431531500577,
-            "y": -6.946253155823245,
+            "x": -181.23305566319283,
+            "y": 42.72024736564675,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2672,7 +2775,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-13",
@@ -2680,14 +2784,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "13",
           "position3D": {
-            "x": 208.4153087389256,
-            "y": -6.284916210511333,
+            "x": -181.4343496576839,
+            "y": 41.85709932966325,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 186.2,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2698,7 +2802,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-14",
@@ -2706,14 +2811,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "14",
           "position3D": {
-            "x": 208.43420342300033,
-            "y": -5.6235159761629046,
+            "x": -181.63153281224186,
+            "y": 40.99300291849215,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 186.2,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2724,7 +2829,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-15",
@@ -2732,14 +2838,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "15",
           "position3D": {
-            "x": 208.4509991769606,
-            "y": -4.96205911307103,
+            "x": -181.82460065919906,
+            "y": 40.12797771035553,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2750,7 +2856,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-16",
@@ -2758,14 +2865,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "16",
           "position3D": {
-            "x": 208.4656958316734,
-            "y": -4.3005522820990265,
+            "x": -182.01354882413008,
+            "y": 39.26204330452011,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 186.2,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2776,7 +2883,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-17",
@@ -2784,14 +2892,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "17",
           "position3D": {
-            "x": 208.47829323914357,
-            "y": -3.639002144613236,
+            "x": -182.19837302595113,
+            "y": 38.395219320852405,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 186.2,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2802,7 +2910,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-18",
@@ -2810,14 +2919,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "18",
           "position3D": {
-            "x": 208.48879127251536,
-            "y": -2.9774153624162505,
+            "x": -182.37906907701685,
+            "y": 37.527525399374646,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 186.2,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2828,7 +2937,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-19",
@@ -2836,14 +2946,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "19",
           "position3D": {
-            "x": 208.49718982607374,
-            "y": -2.315798597679672,
+            "x": -182.5556328832153,
+            "y": 36.6589811998194,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.51005032974993,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 186.2,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2854,7 +2964,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-20",
@@ -2862,14 +2973,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "20",
           "position3D": {
-            "x": 208.50348881524528,
-            "y": -1.6541585128768734,
+            "x": -182.72806044406065,
+            "y": 35.789606401184614,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 186.2,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2880,7 +2991,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-21",
@@ -2888,14 +3000,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "21",
           "position3D": {
-            "x": 208.5076881765993,
-            "y": -0.9925017707162147,
+            "x": -182.89634785278383,
+            "y": 34.91942070128733,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 186.20000000000002,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2906,7 +3018,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-E-22",
@@ -2914,14 +3027,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "E",
           "seatNumber": "22",
           "position3D": {
-            "x": 208.50978786784822,
-            "y": -0.3308350340737955,
+            "x": -183.06049129642102,
+            "y": 34.04844381631795,
             "z": 85
           },
           "elevation": 85,
-          "distanceFromHomeplate": 208.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 186.2,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2932,11 +3045,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -2944,7 +3059,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 87.5,
-      "depth": 211.5100503297499,
+      "depth": 189,
       "rowSpacing": 36,
       "seats": [
         {
@@ -2953,14 +3068,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "1",
           "position3D": {
-            "x": 211.0179668132647,
-            "y": -14.419399172269722,
+            "x": -181.43683010079818,
+            "y": 52.9308670151368,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 189,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2971,7 +3086,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-2",
@@ -2979,14 +3095,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "2",
           "position3D": {
-            "x": 211.06266171521614,
-            "y": -13.749698912397031,
+            "x": -181.6867240391278,
+            "y": 52.06663334545283,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 189,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -2997,7 +3113,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-3",
@@ -3005,14 +3122,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "3",
           "position3D": {
-            "x": 211.10523121850736,
-            "y": -13.079860193208887,
+            "x": -181.93250141936406,
+            "y": 51.20121997856199,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 189,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3023,7 +3140,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-4",
@@ -3031,14 +3149,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "4",
           "position3D": {
-            "x": 211.14567489446387,
-            "y": -12.409889759973812,
+            "x": -182.17415667281804,
+            "y": 50.3346465225251,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 189,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3049,7 +3167,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-5",
@@ -3057,14 +3176,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "5",
           "position3D": {
-            "x": 211.1839923358184,
-            "y": -11.739794359286682,
+            "x": -182.41168432419744,
+            "y": 49.466932611688584,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 188.99999999999997,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3075,7 +3194,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-6",
@@ -3083,14 +3203,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "6",
           "position3D": {
-            "x": 211.22018315671465,
-            "y": -11.069580739000637,
+            "x": -182.64507899173125,
+            "y": 48.59809790623753,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 189,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3101,7 +3221,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-7",
@@ -3109,14 +3230,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "7",
           "position3D": {
-            "x": 211.2542469927115,
-            "y": -10.399255648159448,
+            "x": -182.87433538729107,
+            "y": 47.72816209175229,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 189,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3127,7 +3248,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-8",
@@ -3135,14 +3257,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "8",
           "position3D": {
-            "x": 211.2861835007865,
-            "y": -9.728825836929385,
+            "x": -183.0994483165113,
+            "y": 46.85714487876096,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 188.99999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3153,7 +3275,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-9",
@@ -3161,14 +3284,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "9",
           "position3D": {
-            "x": 211.31599235933936,
-            "y": -9.058298056531104,
+            "x": -183.3204126789068,
+            "y": 45.98506600229366,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 188.99999999999997,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3179,7 +3302,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-10",
@@ -3187,14 +3311,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "10",
           "position3D": {
-            "x": 211.34367326819526,
-            "y": -8.38767905917196,
+            "x": -183.53722346798824,
+            "y": 45.11194522143494,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 189,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3205,7 +3329,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-11",
@@ -3213,14 +3338,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "11",
           "position3D": {
-            "x": 211.36922594860766,
-            "y": -7.71697559797786,
+            "x": -183.74987577137566,
+            "y": 44.237802318876646,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 189,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3231,7 +3356,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-12",
@@ -3239,14 +3365,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "12",
           "position3D": {
-            "x": 211.3926501432614,
-            "y": -7.046194426925113,
+            "x": -183.95836477091,
+            "y": 43.36265710046851,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 189,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3257,7 +3383,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-13",
@@ -3265,14 +3392,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "13",
           "position3D": {
-            "x": 211.41394561627507,
-            "y": -6.3753423007727665,
+            "x": -184.16268574276185,
+            "y": 42.48652939477097,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 189,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3283,7 +3410,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-14",
@@ -3291,14 +3419,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "14",
           "position3D": {
-            "x": 211.43311215320355,
-            "y": -5.7044259749941775,
+            "x": -184.36283405753875,
+            "y": 41.60943905260482,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 189.00000000000003,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3309,7 +3437,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-15",
@@ -3317,14 +3446,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "15",
           "position3D": {
-            "x": 211.45014956103998,
-            "y": -5.033452205709352,
+            "x": -184.55880518039004,
+            "y": 40.731405946601484,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 189.00000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3335,7 +3464,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-16",
@@ -3343,14 +3473,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "16",
           "position3D": {
-            "x": 211.46505766821787,
-            "y": -4.3624277496167485,
+            "x": -184.7505946711095,
+            "y": 39.8524499707535,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 189.00000000000003,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3361,7 +3491,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-17",
@@ -3369,14 +3500,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "17",
           "position3D": {
-            "x": 211.47783632461275,
-            "y": -3.691359363925087,
+            "x": -184.93819818423611,
+            "y": 38.97259103996297,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 189,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3387,7 +3518,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-18",
@@ -3395,14 +3527,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "18",
           "position3D": {
-            "x": 211.48848540154367,
-            "y": -3.020253806285612,
+            "x": -185.12161146915247,
+            "y": 38.09184908959081,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 189,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3413,7 +3545,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-19",
@@ -3421,14 +3554,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "19",
           "position3D": {
-            "x": 211.49700479177457,
-            "y": -2.349117834723891,
+            "x": -185.30083037018096,
+            "y": 37.21024407500466,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 189,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3439,7 +3572,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-20",
@@ -3447,14 +3581,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "20",
           "position3D": {
-            "x": 211.50339440951527,
-            "y": -1.6779582075716024,
+            "x": -185.4758508266781,
+            "y": 36.327795971127244,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 189,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3465,7 +3599,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-21",
@@ -3473,14 +3608,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "21",
           "position3D": {
-            "x": 211.50765419042241,
-            "y": -1.0067816833987921,
+            "x": -185.64666887312646,
+            "y": 35.44452477198338,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.51005032974993,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 189,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3491,7 +3626,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-F-22",
@@ -3499,14 +3635,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "F",
           "seatNumber": "22",
           "position3D": {
-            "x": 211.5097840916,
-            "y": -0.33559502094565985,
+            "x": -185.81328063922436,
+            "y": 34.56045049024754,
             "z": 87.5
           },
           "elevation": 87.5,
-          "distanceFromHomeplate": 211.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 189,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3517,11 +3653,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -3529,7 +3667,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 90,
-      "depth": 214.5100503297499,
+      "depth": 191.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -3538,14 +3676,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "1",
           "position3D": {
-            "x": 214.01098723689398,
-            "y": -14.623919938301258,
+            "x": -184.12478313932854,
+            "y": 53.71502800795364,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 191.8,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3556,7 +3694,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-2",
@@ -3564,14 +3703,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "2",
           "position3D": {
-            "x": 214.05631607896146,
-            "y": -13.944720835340565,
+            "x": -184.37837921007784,
+            "y": 52.83799087649658,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3582,7 +3721,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-3",
@@ -3590,14 +3730,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "3",
           "position3D": {
-            "x": 214.09948937630253,
-            "y": -13.265381309195817,
+            "x": -184.62779773668797,
+            "y": 51.95975657083698,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3608,7 +3748,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-4",
@@ -3616,14 +3757,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "4",
           "position3D": {
-            "x": 214.1405066941625,
-            "y": -12.585908200808559,
+            "x": -184.8730330679709,
+            "y": 51.08034498952548,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 191.8,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3634,7 +3775,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-5",
@@ -3642,14 +3784,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "5",
           "position3D": {
-            "x": 214.1793676194975,
-            "y": -11.906308352465503,
+            "x": -185.11407964751888,
+            "y": 50.19977605778768,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3660,7 +3802,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-6",
@@ -3668,14 +3811,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "6",
           "position3D": {
-            "x": 214.21607176097837,
-            "y": -11.22658860772947,
+            "x": -185.350932013831,
+            "y": 49.31806972707068,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 191.8,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3686,7 +3829,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-7",
@@ -3694,14 +3838,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "7",
           "position3D": {
-            "x": 214.25061874899487,
-            "y": -10.546755811370796,
+            "x": -185.58358480043614,
+            "y": 48.435245974593066,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 191.8,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3712,7 +3856,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-8",
@@ -3720,14 +3865,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "8",
           "position3D": {
-            "x": 214.2830082356592,
-            "y": -9.866816809298243,
+            "x": -185.8120327360152,
+            "y": 47.551324802890754,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3738,7 +3883,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-9",
@@ -3746,14 +3892,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "9",
           "position3D": {
-            "x": 214.31323989480956,
-            "y": -9.186778448489912,
+            "x": -186.03627064452024,
+            "y": 46.66632623936468,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 191.8,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3764,7 +3910,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-10",
@@ -3772,14 +3919,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "10",
           "position3D": {
-            "x": 214.34131342201354,
-            "y": -8.506647576924596,
+            "x": -186.2562934452918,
+            "y": 45.780270335826565,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 191.8,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3790,7 +3937,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-11",
@@ -3798,14 +3946,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "11",
           "position3D": {
-            "x": 214.36722853457098,
-            "y": -7.826431043512673,
+            "x": -186.47209615317382,
+            "y": 44.89317716804519,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3816,7 +3964,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-12",
@@ -3824,14 +3973,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "12",
           "position3D": {
-            "x": 214.39098497151699,
-            "y": -7.146135698026981,
+            "x": -186.68367387862722,
+            "y": 44.00506683529027,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 191.8,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3842,7 +3991,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-13",
@@ -3850,14 +4000,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "13",
           "position3D": {
-            "x": 214.4125824936245,
-            "y": -6.465768391034199,
+            "x": -186.8910218278398,
+            "y": 43.115959459878695,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3868,7 +4018,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-14",
@@ -3876,14 +4027,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "14",
           "position3D": {
-            "x": 214.43202088340678,
-            "y": -5.78533597382545,
+            "x": -187.0941353028356,
+            "y": 42.22587518671749,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 191.8,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3894,7 +4045,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-15",
@@ -3902,14 +4054,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "15",
           "position3D": {
-            "x": 214.44929994511938,
-            "y": -5.104845298347675,
+            "x": -187.293009701581,
+            "y": 41.33483418284743,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 191.80000000000004,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3920,7 +4072,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-16",
@@ -3928,14 +4081,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "16",
           "position3D": {
-            "x": 214.46441950476236,
-            "y": -4.424303217134471,
+            "x": -187.4876405180889,
+            "y": 40.44285663698689,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 191.8,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3946,7 +4099,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-17",
@@ -3954,14 +4108,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "17",
           "position3D": {
-            "x": 214.47737941008194,
-            "y": -3.7437165832369375,
+            "x": -187.6780233425211,
+            "y": 39.54996275907353,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3972,7 +4126,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-18",
@@ -3980,14 +4135,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "18",
           "position3D": {
-            "x": 214.48817953057198,
-            "y": -3.0630922501549733,
+            "x": -187.86415386128806,
+            "y": 38.65617277980697,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 191.8,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -3998,7 +4153,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-19",
@@ -4006,14 +4162,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "19",
           "position3D": {
-            "x": 214.49681975747544,
-            "y": -2.3824370717681105,
+            "x": -188.0460278571466,
+            "y": 37.76150695018992,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 191.79999999999998,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4024,7 +4180,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-20",
@@ -4032,14 +4189,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "20",
           "position3D": {
-            "x": 214.50330000378528,
-            "y": -1.7017579022663314,
+            "x": -188.22364120929558,
+            "y": 36.865985541069875,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 191.8,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4050,7 +4207,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-21",
@@ -4058,14 +4216,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "21",
           "position3D": {
-            "x": 214.5076202042455,
-            "y": -1.0210615960813694,
+            "x": -188.39698989346908,
+            "y": 35.969628842679434,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.51005032974987,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 191.8,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4076,7 +4234,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-G-22",
@@ -4084,14 +4243,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "G",
           "seatNumber": "22",
           "position3D": {
-            "x": 214.5097803153518,
-            "y": -0.3403550078175242,
+            "x": -188.5660699820277,
+            "y": 35.07245716417714,
             "z": 90
           },
           "elevation": 90,
-          "distanceFromHomeplate": 214.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 191.8,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4102,11 +4261,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -4114,7 +4275,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 92.5,
-      "depth": 217.5100503297499,
+      "depth": 194.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -4123,14 +4284,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "1",
           "position3D": {
-            "x": 217.00400766052323,
-            "y": -14.828440704332793,
+            "x": -186.81273617785885,
+            "y": 54.49918900077048,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 194.6,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4141,7 +4302,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-2",
@@ -4149,14 +4311,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "2",
           "position3D": {
-            "x": 217.04997044270678,
-            "y": -14.139742758284097,
+            "x": -187.07003438102785,
+            "y": 53.609348407540324,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4167,7 +4329,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-3",
@@ -4175,14 +4338,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "3",
           "position3D": {
-            "x": 217.0937475340977,
-            "y": -13.450902425182745,
+            "x": -187.32309405401188,
+            "y": 52.71829316311197,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 194.6,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4193,7 +4356,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-4",
@@ -4201,14 +4365,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "4",
           "position3D": {
-            "x": 217.13533849386113,
-            "y": -12.761926641643306,
+            "x": -187.57190946312375,
+            "y": 51.826043456525845,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 194.6,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4219,7 +4383,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-5",
@@ -4227,14 +4392,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "5",
           "position3D": {
-            "x": 217.1747429031766,
-            "y": -12.072822345644324,
+            "x": -187.81647497084032,
+            "y": 50.93261950388676,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.51005032974993,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4245,7 +4410,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-6",
@@ -4253,14 +4419,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "6",
           "position3D": {
-            "x": 217.21196036524208,
-            "y": -11.383596476458301,
+            "x": -188.0567850359307,
+            "y": 50.038041547903816,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4271,7 +4437,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-7",
@@ -4279,14 +4446,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "7",
           "position3D": {
-            "x": 217.2469905052782,
-            "y": -10.694255974582143,
+            "x": -188.2928342135812,
+            "y": 49.142329857433836,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4297,7 +4464,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-8",
@@ -4305,14 +4473,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "8",
           "position3D": {
-            "x": 217.27983297053188,
-            "y": -10.004807781667099,
+            "x": -188.52461715551905,
+            "y": 48.245504727020545,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 194.6,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4323,7 +4491,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-9",
@@ -4331,14 +4500,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "9",
           "position3D": {
-            "x": 217.31048743027975,
-            "y": -9.315258840448719,
+            "x": -188.75212861013367,
+            "y": 47.34758647643569,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 194.6,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4349,7 +4518,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-10",
@@ -4357,14 +4527,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "10",
           "position3D": {
-            "x": 217.33895357583182,
-            "y": -8.625616094677232,
+            "x": -188.97536342259528,
+            "y": 46.448595450218185,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 194.6,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4375,7 +4545,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-11",
@@ -4383,14 +4554,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "11",
           "position3D": {
-            "x": 217.3652311205343,
-            "y": -7.935886489047486,
+            "x": -189.19431653497196,
+            "y": 45.54855201721373,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4401,7 +4572,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-12",
@@ -4409,14 +4581,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "12",
           "position3D": {
-            "x": 217.38931979977258,
-            "y": -7.24607696912885,
+            "x": -189.40898298634437,
+            "y": 44.64747657011202,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4427,7 +4599,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-13",
@@ -4435,14 +4608,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "13",
           "position3D": {
-            "x": 217.41121937097395,
-            "y": -6.556194481295633,
+            "x": -189.61935791291776,
+            "y": 43.74538952498641,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4453,7 +4626,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-14",
@@ -4461,14 +4635,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "14",
           "position3D": {
-            "x": 217.43092961361,
-            "y": -5.866245972656723,
+            "x": -189.82543654813247,
+            "y": 42.84231132083015,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 194.6,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4479,7 +4653,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-15",
@@ -4487,14 +4662,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "15",
           "position3D": {
-            "x": 217.44845032919878,
-            "y": -5.176238390985996,
+            "x": -190.02721422277196,
+            "y": 41.93826241909338,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4505,7 +4680,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-16",
@@ -4513,14 +4689,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "16",
           "position3D": {
-            "x": 217.46378134130683,
-            "y": -4.486178684652193,
+            "x": -190.2246863650683,
+            "y": 41.03326330322027,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4531,7 +4707,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-17",
@@ -4539,14 +4716,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "17",
           "position3D": {
-            "x": 217.4769224955511,
-            "y": -3.7960738025487877,
+            "x": -190.4178485008061,
+            "y": 40.12733447818409,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4557,7 +4734,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-18",
@@ -4565,14 +4743,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "18",
           "position3D": {
-            "x": 217.48787365960027,
-            "y": -3.105930694024335,
+            "x": -190.60669625342362,
+            "y": 39.22049647002313,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 194.6,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4583,7 +4761,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-19",
@@ -4591,14 +4770,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "19",
           "position3D": {
-            "x": 217.49663472317627,
-            "y": -2.4157563088123295,
+            "x": -190.79122534411223,
+            "y": 38.31276982537516,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4609,7 +4788,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-20",
@@ -4617,14 +4797,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "20",
           "position3D": {
-            "x": 217.50320559805527,
-            "y": -1.7255575969610604,
+            "x": -190.97143159191302,
+            "y": 37.40417511101249,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 194.6,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4635,7 +4815,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-21",
@@ -4643,14 +4824,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "21",
           "position3D": {
-            "x": 217.50758621806864,
-            "y": -1.0353415087639468,
+            "x": -191.14731091381168,
+            "y": 36.49473291337548,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 194.60000000000002,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4661,7 +4842,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-H-22",
@@ -4669,14 +4851,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "H",
           "seatNumber": "22",
           "position3D": {
-            "x": 217.50977653910357,
-            "y": -0.34511499468938855,
+            "x": -191.31885932483098,
+            "y": 35.58446383810673,
             "z": 92.5
           },
           "elevation": 92.5,
-          "distanceFromHomeplate": 217.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 194.59999999999997,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4687,11 +4869,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -4699,7 +4883,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 95,
-      "depth": 220.5100503297499,
+      "depth": 197.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -4708,14 +4892,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "1",
           "position3D": {
-            "x": 219.9970280841525,
-            "y": -15.032961470364329,
+            "x": -189.50068921638922,
+            "y": 55.28334999358733,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.51005032974993,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4726,7 +4910,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-2",
@@ -4734,14 +4919,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "2",
           "position3D": {
-            "x": 220.0436248064521,
-            "y": -14.334764681227629,
+            "x": -189.76168955197792,
+            "y": 54.38070593858407,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4752,7 +4937,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-3",
@@ -4760,14 +4946,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "3",
           "position3D": {
-            "x": 220.08800569189287,
-            "y": -13.636423541169673,
+            "x": -190.01839037133578,
+            "y": 53.476829755386966,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4778,7 +4964,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-4",
@@ -4786,14 +4973,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "4",
           "position3D": {
-            "x": 220.13017029355976,
-            "y": -12.937945082478054,
+            "x": -190.2707858582766,
+            "y": 52.57174192352622,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 197.4,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4804,7 +4991,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-5",
@@ -4812,14 +5000,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "5",
           "position3D": {
-            "x": 220.1701181868557,
-            "y": -12.239336338823145,
+            "x": -190.5188702941618,
+            "y": 51.66546294998586,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.51005032974993,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 197.4,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4830,7 +5018,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-6",
@@ -4838,14 +5027,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "6",
           "position3D": {
-            "x": 220.20784896950582,
-            "y": -11.540604345187132,
+            "x": -190.76263805803043,
+            "y": 50.75801336873697,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 197.4,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4856,7 +5045,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-7",
@@ -4864,14 +5054,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "7",
           "position3D": {
-            "x": 220.24336226156157,
-            "y": -10.841756137793489,
+            "x": -191.00208362672623,
+            "y": 49.84941374027461,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 197.4,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4882,7 +5072,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-8",
@@ -4890,14 +5081,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "8",
           "position3D": {
-            "x": 220.27665770540455,
-            "y": -10.142798754035956,
+            "x": -191.23720157502294,
+            "y": 48.93968465115034,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4908,7 +5099,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-9",
@@ -4916,14 +5108,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "9",
           "position3D": {
-            "x": 220.30773496574994,
-            "y": -9.443739232407527,
+            "x": -191.46798657574712,
+            "y": 48.02884671350671,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 197.4,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4934,7 +5126,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-10",
@@ -4942,14 +5135,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "10",
           "position3D": {
-            "x": 220.33659372965013,
-            "y": -8.744584612429868,
+            "x": -191.69443339989883,
+            "y": 47.11692056460982,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.51005032974993,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4960,7 +5153,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-11",
@@ -4968,14 +5162,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "11",
           "position3D": {
-            "x": 220.36323370649762,
-            "y": -8.0453419345823,
+            "x": -191.91653691677016,
+            "y": 46.203926866382275,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -4986,7 +5180,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-12",
@@ -4994,14 +5189,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "12",
           "position3D": {
-            "x": 220.38765462802817,
-            "y": -7.346018240230718,
+            "x": -192.13429209406158,
+            "y": 45.28988630493378,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 197.4,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5012,7 +5207,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-13",
@@ -5020,14 +5216,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "13",
           "position3D": {
-            "x": 220.4098562483234,
-            "y": -6.646620571557066,
+            "x": -192.34769399799572,
+            "y": 44.37481959009413,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 197.4,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5038,7 +5234,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-14",
@@ -5046,14 +5243,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "14",
           "position3D": {
-            "x": 220.42983834381323,
-            "y": -5.947155971487996,
+            "x": -192.55673779342936,
+            "y": 43.45874745494282,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5064,7 +5261,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-15",
@@ -5072,14 +5270,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "15",
           "position3D": {
-            "x": 220.44760071327815,
-            "y": -5.2476314836243185,
+            "x": -192.76141874396293,
+            "y": 42.54169065533933,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5090,7 +5288,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-16",
@@ -5098,14 +5297,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "16",
           "position3D": {
-            "x": 220.46314317785132,
-            "y": -4.548054152169915,
+            "x": -192.9617322120477,
+            "y": 41.62366996945366,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5116,7 +5315,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-17",
@@ -5124,14 +5324,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "17",
           "position3D": {
-            "x": 220.47646558102028,
-            "y": -3.8484310218606383,
+            "x": -193.15767365909107,
+            "y": 40.704706197294655,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5142,7 +5342,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-18",
@@ -5150,14 +5351,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "18",
           "position3D": {
-            "x": 220.48756778862858,
-            "y": -3.1487691378936966,
+            "x": -193.34923864555924,
+            "y": 39.78482016023929,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 197.4,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5168,7 +5369,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-19",
@@ -5176,14 +5378,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "19",
           "position3D": {
-            "x": 220.49644968887714,
-            "y": -2.449075545856549,
+            "x": -193.53642283107789,
+            "y": 38.86403270056042,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5194,7 +5396,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-20",
@@ -5202,14 +5405,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "20",
           "position3D": {
-            "x": 220.50311119232526,
-            "y": -1.7493572916557893,
+            "x": -193.71922197453048,
+            "y": 37.94236468095512,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 197.4,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5220,7 +5423,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-21",
@@ -5228,14 +5432,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "21",
           "position3D": {
-            "x": 220.50755223189176,
-            "y": -1.0496214214465243,
+            "x": -193.8976319341543,
+            "y": 37.01983698407153,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 197.40000000000003,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5246,7 +5450,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-I-22",
@@ -5254,14 +5459,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "I",
           "seatNumber": "22",
           "position3D": {
-            "x": 220.50977276285536,
-            "y": -0.3498749815612529,
+            "x": -194.07164866763432,
+            "y": 36.09647051203632,
             "z": 95
           },
           "elevation": 95,
-          "distanceFromHomeplate": 220.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 197.39999999999998,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5272,11 +5477,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -5284,7 +5491,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 97.5,
-      "depth": 223.5100503297499,
+      "depth": 200.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -5293,14 +5500,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "1",
           "position3D": {
-            "x": 222.99004850778175,
-            "y": -15.237482236395866,
+            "x": -192.18864225491956,
+            "y": 56.067510986404166,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 200.2,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5311,7 +5518,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-2",
@@ -5319,14 +5527,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "2",
           "position3D": {
-            "x": 223.03727917019742,
-            "y": -14.52978660417116,
+            "x": -192.45334472292794,
+            "y": 55.15206346962781,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 200.2,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5337,7 +5545,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-3",
@@ -5345,14 +5554,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "3",
           "position3D": {
-            "x": 223.08226384968805,
-            "y": -13.821944657156603,
+            "x": -192.7136866886597,
+            "y": 54.23536634766195,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 200.2,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5363,7 +5572,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-4",
@@ -5371,14 +5581,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "4",
           "position3D": {
-            "x": 223.1250020932584,
-            "y": -13.113963523312801,
+            "x": -192.96966225342948,
+            "y": 53.317440390526585,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 200.2,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5389,7 +5599,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-5",
@@ -5397,14 +5608,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "5",
           "position3D": {
-            "x": 223.16549347053478,
-            "y": -12.405850332001965,
+            "x": -193.2212656174832,
+            "y": 52.39830639608494,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 200.19999999999996,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5415,7 +5626,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-6",
@@ -5423,14 +5635,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "6",
           "position3D": {
-            "x": 223.20373757376953,
-            "y": -11.697612213915964,
+            "x": -193.46849108013015,
+            "y": 51.47798518957011,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 200.2,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5441,7 +5653,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-7",
@@ -5449,14 +5662,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "7",
           "position3D": {
-            "x": 223.23973401784494,
-            "y": -10.989256301004836,
+            "x": -193.71133303987128,
+            "y": 50.55649762311538,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 200.2,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5467,7 +5680,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-8",
@@ -5475,14 +5689,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "8",
           "position3D": {
-            "x": 223.27348244027723,
-            "y": -10.280789726404814,
+            "x": -193.9497859945268,
+            "y": 49.63386457528013,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 200.19999999999996,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5493,7 +5707,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-9",
@@ -5501,14 +5716,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "9",
           "position3D": {
-            "x": 223.3049825012201,
-            "y": -9.572219624366333,
+            "x": -194.18384454136054,
+            "y": 48.710106950577725,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 200.2,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5519,7 +5734,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-10",
@@ -5527,14 +5743,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "10",
           "position3D": {
-            "x": 223.3342338834684,
-            "y": -8.863553130182506,
+            "x": -194.41350337720235,
+            "y": 47.78524567900144,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 200.2,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5545,7 +5761,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-11",
@@ -5553,14 +5770,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "11",
           "position3D": {
-            "x": 223.36123629246094,
-            "y": -8.154797380117113,
+            "x": -194.6387572985683,
+            "y": 46.859301715550814,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 200.2,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5571,7 +5788,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-12",
@@ -5579,14 +5797,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "12",
           "position3D": {
-            "x": 223.3859894562838,
-            "y": -7.445959511332586,
+            "x": -194.85960120177876,
+            "y": 45.93229603975553,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 200.2,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5597,7 +5815,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-13",
@@ -5605,14 +5824,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "13",
           "position3D": {
-            "x": 223.40849312567283,
-            "y": -6.7370466618185,
+            "x": -195.07603008307365,
+            "y": 45.00424965520184,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 200.2,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5623,7 +5842,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-14",
@@ -5631,14 +5851,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "14",
           "position3D": {
-            "x": 223.42874707401646,
-            "y": -6.028065970319269,
+            "x": -195.28803903872623,
+            "y": 44.07518358905548,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 200.20000000000002,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5649,7 +5869,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-15",
@@ -5657,14 +5878,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "15",
           "position3D": {
-            "x": 223.44675109735755,
-            "y": -5.319024576262641,
+            "x": -195.49562326515388,
+            "y": 43.14511889158527,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 200.2,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5675,7 +5896,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-16",
@@ -5683,14 +5905,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "16",
           "position3D": {
-            "x": 223.4625050143958,
-            "y": -4.609929619687638,
+            "x": -195.6987780590271,
+            "y": 42.214076635687036,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 200.2,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5701,7 +5923,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-17",
@@ -5709,14 +5932,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "17",
           "position3D": {
-            "x": 223.47600866648946,
-            "y": -3.900788241172489,
+            "x": -195.89749881737603,
+            "y": 41.282077916405214,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974993,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 200.2,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5727,7 +5950,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-18",
@@ -5735,14 +5959,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "18",
           "position3D": {
-            "x": 223.48726191765687,
-            "y": -3.191607581763058,
+            "x": -196.0917810376948,
+            "y": 40.34914385045545,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 200.19999999999996,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5753,7 +5977,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-19",
@@ -5761,14 +5986,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "19",
           "position3D": {
-            "x": 223.49626465457797,
-            "y": -2.482394782900768,
+            "x": -196.28162031804354,
+            "y": 39.415295575745674,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 200.2,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5779,7 +6004,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-20",
@@ -5787,14 +6013,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "20",
           "position3D": {
-            "x": 223.50301678659528,
-            "y": -1.773156986350518,
+            "x": -196.46701235714792,
+            "y": 38.48055425089775,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 200.2,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5805,7 +6031,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-21",
@@ -5813,14 +6040,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "21",
           "position3D": {
-            "x": 223.5075182457149,
-            "y": -1.0639013341291017,
+            "x": -196.6479529544969,
+            "y": 37.54494105476758,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 200.2,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5831,7 +6058,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-J-22",
@@ -5839,14 +6067,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "J",
           "seatNumber": "22",
           "position3D": {
-            "x": 223.50976898660716,
-            "y": -0.3546349684331173,
+            "x": -196.82443801043763,
+            "y": 36.60847718596591,
             "z": 97.5
           },
           "elevation": 97.5,
-          "distanceFromHomeplate": 223.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 200.2,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5857,11 +6085,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -5869,7 +6099,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 100,
-      "depth": 226.5100503297499,
+      "depth": 203,
       "rowSpacing": 36,
       "seats": [
         {
@@ -5878,14 +6108,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "1",
           "position3D": {
-            "x": 225.983068931411,
-            "y": -15.442003002427402,
+            "x": -194.8765952934499,
+            "y": 56.85167197922101,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 203,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5896,7 +6126,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-2",
@@ -5904,14 +6135,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "2",
           "position3D": {
-            "x": 226.03093353394274,
-            "y": -14.724808527114693,
+            "x": -195.144999893878,
+            "y": 55.92342100067156,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 203,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5922,7 +6153,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-3",
@@ -5930,14 +6162,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "3",
           "position3D": {
-            "x": 226.07652200748322,
-            "y": -14.007465773143531,
+            "x": -195.4089830059836,
+            "y": 54.99390293993695,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 202.99999999999997,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5948,7 +6180,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-4",
@@ -5956,14 +6189,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "4",
           "position3D": {
-            "x": 226.119833892957,
-            "y": -13.289981964147547,
+            "x": -195.66853864858234,
+            "y": 54.06313885752696,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 203.00000000000003,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -5974,7 +6207,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-5",
@@ -5982,14 +6216,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "5",
           "position3D": {
-            "x": 226.16086875421388,
-            "y": -12.572364325180786,
+            "x": -195.92366094080467,
+            "y": 53.13114984218404,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 203,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6000,7 +6234,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-6",
@@ -6008,14 +6243,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "6",
           "position3D": {
-            "x": 226.19962617803324,
-            "y": -11.854620082644795,
+            "x": -196.17434410222987,
+            "y": 52.197957010403265,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 203,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6026,7 +6261,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-7",
@@ -6034,14 +6270,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "7",
           "position3D": {
-            "x": 226.2361057741283,
-            "y": -11.136756464216184,
+            "x": -196.42058245301635,
+            "y": 51.26358150595616,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 203.00000000000003,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6052,7 +6288,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-8",
@@ -6060,14 +6297,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "8",
           "position3D": {
-            "x": 226.2703071751499,
-            "y": -10.418780698773672,
+            "x": -196.66237041403068,
+            "y": 50.32804449940992,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 202.99999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6078,7 +6315,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-9",
@@ -6086,14 +6324,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "9",
           "position3D": {
-            "x": 226.3022300366903,
-            "y": -9.700700016325142,
+            "x": -196.89970250697397,
+            "y": 49.39136718764874,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 202.99999999999997,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6104,7 +6342,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-10",
@@ -6112,14 +6351,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "10",
           "position3D": {
-            "x": 226.3318740372867,
-            "y": -8.982521647935142,
+            "x": -197.1325733545059,
+            "y": 48.45357079339308,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 203,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6130,7 +6369,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-11",
@@ -6138,14 +6378,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "11",
           "position3D": {
-            "x": 226.35923887842426,
-            "y": -8.264252825651926,
+            "x": -197.36097768036646,
+            "y": 47.51467656471936,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 203,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6156,7 +6396,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-12",
@@ -6164,14 +6405,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "12",
           "position3D": {
-            "x": 226.3843242845394,
-            "y": -7.545900782434455,
+            "x": -197.58491030949594,
+            "y": 46.57470577457729,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 202.99999999999997,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6182,7 +6423,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-13",
@@ -6190,14 +6432,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "13",
           "position3D": {
-            "x": 226.40713000302227,
-            "y": -6.827472752079934,
+            "x": -197.80436616815163,
+            "y": 45.63367972030956,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 203,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6208,7 +6450,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-14",
@@ -6216,14 +6459,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "14",
           "position3D": {
-            "x": 226.42765580421968,
-            "y": -6.108975969150542,
+            "x": -198.0193402840231,
+            "y": 44.691619723168145,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 203,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6234,7 +6477,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-15",
@@ -6242,14 +6486,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "15",
           "position3D": {
-            "x": 226.44590148143692,
-            "y": -5.390417668900963,
+            "x": -198.22982778634486,
+            "y": 43.74854712783122,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 203.00000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6260,7 +6504,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-16",
@@ -6268,14 +6513,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "16",
           "position3D": {
-            "x": 226.46186685094025,
-            "y": -4.67180508720536,
+            "x": -198.4358239060065,
+            "y": 42.80448330192043,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 203.00000000000003,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6286,7 +6531,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-17",
@@ -6294,14 +6540,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "17",
           "position3D": {
-            "x": 226.47555175195862,
-            "y": -3.9531454604843392,
+            "x": -198.63732397566102,
+            "y": 41.85944963551578,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 203,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6312,7 +6558,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-18",
@@ -6320,14 +6567,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "18",
           "position3D": {
-            "x": 226.48695604668518,
-            "y": -3.23444602563242,
+            "x": -198.83432342983042,
+            "y": 40.91346754067161,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 203,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6338,7 +6585,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-19",
@@ -6346,14 +6594,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "19",
           "position3D": {
-            "x": 226.49607962027883,
-            "y": -2.5157140199449874,
+            "x": -199.0268178050092,
+            "y": 39.96655845093093,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 203,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6364,7 +6612,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-20",
@@ -6372,14 +6621,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "20",
           "position3D": {
-            "x": 226.50292238086527,
-            "y": -1.796956681045247,
+            "x": -199.2148027397654,
+            "y": 39.01874382084037,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 203.00000000000003,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6390,7 +6639,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-21",
@@ -6398,14 +6648,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "21",
           "position3D": {
-            "x": 226.507484259538,
-            "y": -1.078181246811679,
+            "x": -199.39827397483953,
+            "y": 38.07004512546363,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.51005032974987,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 203,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6416,7 +6666,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-K-22",
@@ -6424,14 +6675,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "K",
           "seatNumber": "22",
           "position3D": {
-            "x": 226.50976521035895,
-            "y": -0.35939495530498167,
+            "x": -199.57722735324097,
+            "y": 37.12048385989551,
             "z": 100
           },
           "elevation": 100,
-          "distanceFromHomeplate": 226.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 203,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6442,11 +6693,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -6454,7 +6707,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 102.5,
-      "depth": 229.5100503297499,
+      "depth": 205.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -6463,14 +6716,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "1",
           "position3D": {
-            "x": 228.97608935504027,
-            "y": -15.646523768458938,
+            "x": -197.56454833198026,
+            "y": 57.63583297203785,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 205.80000000000004,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6481,7 +6734,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-2",
@@ -6489,14 +6743,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "2",
           "position3D": {
-            "x": 229.02458789768806,
-            "y": -14.919830450058225,
+            "x": -197.83665506482805,
+            "y": 56.69477853171531,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 205.8,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6507,7 +6761,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-3",
@@ -6515,14 +6770,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "3",
           "position3D": {
-            "x": 229.07078016527842,
-            "y": -14.19298688913046,
+            "x": -198.10427932330754,
+            "y": 55.752439532211945,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 205.8,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6533,7 +6788,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-4",
@@ -6541,14 +6797,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "4",
           "position3D": {
-            "x": 229.11466569265562,
-            "y": -13.466000404982294,
+            "x": -198.3674150437352,
+            "y": 54.80883732452733,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 205.8,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6559,7 +6815,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-5",
@@ -6567,14 +6824,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "5",
           "position3D": {
-            "x": 229.15624403789298,
-            "y": -12.738878318359607,
+            "x": -198.6260562641261,
+            "y": 53.863993288283126,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 205.8,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6585,7 +6842,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-6",
@@ -6593,14 +6851,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "6",
           "position3D": {
-            "x": 229.19551478229698,
-            "y": -12.011627951373626,
+            "x": -198.8801971243296,
+            "y": 52.917928831236416,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 205.8,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6611,7 +6869,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-7",
@@ -6619,14 +6878,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "7",
           "position3D": {
-            "x": 229.23247753041164,
-            "y": -11.284256627427531,
+            "x": -199.1298318661614,
+            "y": 51.97066538879694,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 205.8,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6637,7 +6896,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-8",
@@ -6645,14 +6905,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "8",
           "position3D": {
-            "x": 229.26713191002258,
-            "y": -10.55677167114253,
+            "x": -199.37495483353456,
+            "y": 51.02222442353972,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 205.8,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6663,7 +6923,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-9",
@@ -6671,14 +6932,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "9",
           "position3D": {
-            "x": 229.2994775721605,
-            "y": -9.829180408283948,
+            "x": -199.61556047258742,
+            "y": 50.07262742471976,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 205.8,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6689,7 +6950,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-10",
@@ -6697,14 +6959,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "10",
           "position3D": {
-            "x": 229.32951419110498,
-            "y": -9.101490165687778,
+            "x": -199.8516433318094,
+            "y": 49.121895907784705,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 205.79999999999998,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6715,7 +6977,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-11",
@@ -6723,14 +6986,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "11",
           "position3D": {
-            "x": 229.35724146438758,
-            "y": -8.37370827118674,
+            "x": -200.08319806216463,
+            "y": 48.170051413887904,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 205.8,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6741,7 +7004,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-12",
@@ -6749,14 +7013,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "12",
           "position3D": {
-            "x": 229.38265911279498,
-            "y": -7.645842053536323,
+            "x": -200.31021941721315,
+            "y": 47.217115509399044,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 205.8,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6767,7 +7031,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-13",
@@ -6775,14 +7040,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "13",
           "position3D": {
-            "x": 229.40576688037174,
-            "y": -6.9178988423413665,
+            "x": -200.5327022532296,
+            "y": 46.263109785417285,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 205.8,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6793,7 +7058,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-14",
@@ -6801,14 +7067,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "14",
           "position3D": {
-            "x": 229.4265645344229,
-            "y": -6.189885967981815,
+            "x": -200.75064152931998,
+            "y": 45.308055857280806,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 205.80000000000004,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6819,7 +7085,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-15",
@@ -6827,14 +7094,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "15",
           "position3D": {
-            "x": 229.44505186551632,
-            "y": -5.461810761539286,
+            "x": -200.96403230753583,
+            "y": 44.35197536407717,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 205.80000000000004,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6845,7 +7112,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-16",
@@ -6853,14 +7121,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "16",
           "position3D": {
-            "x": 229.46122868748475,
-            "y": -4.733680554723082,
+            "x": -201.17286975298592,
+            "y": 43.39488996815381,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 205.80000000000004,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6871,7 +7139,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-17",
@@ -6879,14 +7148,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "17",
           "position3D": {
-            "x": 229.4750948374278,
-            "y": -4.00550267979619,
+            "x": -201.377149133946,
+            "y": 42.436821354626346,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.51005032974993,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 205.8,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6897,7 +7166,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-18",
@@ -6905,14 +7175,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "18",
           "position3D": {
-            "x": 229.48665017571346,
-            "y": -3.2772844695017813,
+            "x": -201.576865821966,
+            "y": 41.477791230887775,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 205.8,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6923,7 +7193,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-19",
@@ -6931,14 +7202,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "19",
           "position3D": {
-            "x": 229.49589458597967,
-            "y": -2.5490332569892065,
+            "x": -201.77201529197484,
+            "y": 40.517821326116184,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 205.8,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6949,7 +7220,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-20",
@@ -6957,14 +7229,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "20",
           "position3D": {
-            "x": 229.50282797513526,
-            "y": -1.820756375739976,
+            "x": -201.96259312238286,
+            "y": 39.556933390783,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 205.8,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -6975,7 +7247,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-21",
@@ -6983,14 +7256,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "21",
           "position3D": {
-            "x": 229.50745027336112,
-            "y": -1.0924611594942564,
+            "x": -202.14859499518215,
+            "y": 38.59514919615968,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 205.8,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7001,7 +7274,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-L-22",
@@ -7009,14 +7283,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "L",
           "seatNumber": "22",
           "position3D": {
-            "x": 229.50976143411071,
-            "y": -0.364154942176846,
+            "x": -202.3300166960443,
+            "y": 37.632490533825106,
             "z": 102.5
           },
           "elevation": 102.5,
-          "distanceFromHomeplate": 229.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 205.8,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7027,11 +7301,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -7039,7 +7315,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 105,
-      "depth": 232.5100503297499,
+      "depth": 208.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -7048,14 +7324,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "1",
           "position3D": {
-            "x": 231.96910977866952,
-            "y": -15.851044534490473,
+            "x": -200.25250137051057,
+            "y": 58.41999396485469,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 208.6,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7066,7 +7342,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-2",
@@ -7074,14 +7351,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "2",
           "position3D": {
-            "x": 232.0182422614334,
-            "y": -15.114852373001757,
+            "x": -200.52831023577806,
+            "y": 57.46613606275905,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 208.59999999999997,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7092,7 +7369,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-3",
@@ -7100,14 +7378,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "3",
           "position3D": {
-            "x": 232.0650383230736,
-            "y": -14.37850800511739,
+            "x": -200.79957564063142,
+            "y": 56.51097612448693,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.51005032974993,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 208.6,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7118,7 +7396,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-4",
@@ -7126,14 +7405,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "4",
           "position3D": {
-            "x": 232.10949749235425,
-            "y": -13.642018845817041,
+            "x": -201.06629143888804,
+            "y": 55.554535791527705,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 208.6,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7144,7 +7423,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-5",
@@ -7152,14 +7432,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "5",
           "position3D": {
-            "x": 232.15161932157207,
-            "y": -12.905392311538428,
+            "x": -201.32845158744755,
+            "y": 54.596836734382215,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 208.6,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7170,7 +7450,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-6",
@@ -7178,14 +7459,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "6",
           "position3D": {
-            "x": 232.1914033865607,
-            "y": -12.168635820102457,
+            "x": -201.5860501464293,
+            "y": 53.63790065206956,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 208.6,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7196,7 +7477,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-7",
@@ -7204,14 +7486,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "7",
           "position3D": {
-            "x": 232.228849286695,
-            "y": -11.431756790638877,
+            "x": -201.83908127930644,
+            "y": 52.67774927163771,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 208.6,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7222,7 +7504,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-8",
@@ -7230,14 +7513,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "8",
           "position3D": {
-            "x": 232.26395664489527,
-            "y": -10.694762643511385,
+            "x": -202.08753925303841,
+            "y": 51.7164043476695,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.51005032974993,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 208.6,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7248,7 +7531,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-9",
@@ -7256,14 +7540,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "9",
           "position3D": {
-            "x": 232.2967251076307,
-            "y": -9.957660800242756,
+            "x": -202.33141843820084,
+            "y": 50.75388766179078,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 208.6,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7274,7 +7558,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-10",
@@ -7282,14 +7567,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "10",
           "position3D": {
-            "x": 232.3271543449233,
-            "y": -9.220458683440414,
+            "x": -202.57071330911293,
+            "y": 49.79022102217633,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 208.6,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7300,7 +7585,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-11",
@@ -7308,14 +7594,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "11",
           "position3D": {
-            "x": 232.3552440503509,
-            "y": -8.483163716721553,
+            "x": -202.80541844396276,
+            "y": 48.82542626305644,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 208.6,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7326,7 +7612,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-12",
@@ -7334,14 +7621,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "12",
           "position3D": {
-            "x": 232.38099394105058,
-            "y": -7.745783324638191,
+            "x": -203.0355285249303,
+            "y": 47.8595252442208,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 208.6,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7352,7 +7639,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-13",
@@ -7360,14 +7648,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "13",
           "position3D": {
-            "x": 232.40440375772118,
-            "y": -7.0083249326028,
+            "x": -203.26103833830751,
+            "y": 46.892539850525,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 208.6,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7378,7 +7666,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-14",
@@ -7386,14 +7675,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "14",
           "position3D": {
-            "x": 232.42547326462613,
-            "y": -6.270795966813087,
+            "x": -203.48194277461684,
+            "y": 45.92449199139347,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 208.60000000000002,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7404,7 +7693,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-15",
@@ -7412,14 +7702,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "15",
           "position3D": {
-            "x": 232.4442022495957,
-            "y": -5.533203854177608,
+            "x": -203.69823682872678,
+            "y": 44.955403600323116,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 208.60000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7430,7 +7720,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-16",
@@ -7438,14 +7729,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "16",
           "position3D": {
-            "x": 232.46059052402921,
-            "y": -4.795556022240805,
+            "x": -203.9099155999653,
+            "y": 43.9852966343872,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 208.60000000000002,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7456,7 +7747,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-17",
@@ -7464,14 +7756,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "17",
           "position3D": {
-            "x": 232.47463792289696,
-            "y": -4.05785989910804,
+            "x": -204.11697429223096,
+            "y": 43.014193073736905,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 208.6,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7482,7 +7774,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-18",
@@ -7490,14 +7783,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "18",
           "position3D": {
-            "x": 232.48634430474178,
-            "y": -3.320122913371143,
+            "x": -204.3194082141016,
+            "y": 42.04211492110393,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 208.6,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7508,7 +7801,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-19",
@@ -7516,14 +7810,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "19",
           "position3D": {
-            "x": 232.49570955168053,
-            "y": -2.5823524940334255,
+            "x": -204.51721277894046,
+            "y": 41.069084201301436,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 208.6,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7534,7 +7828,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-20",
@@ -7542,14 +7837,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "20",
           "position3D": {
-            "x": 232.50273356940528,
-            "y": -1.844556070434705,
+            "x": -204.7103835050003,
+            "y": 40.095122960725625,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 208.60000000000002,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7560,7 +7855,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-21",
@@ -7568,14 +7864,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "21",
           "position3D": {
-            "x": 232.50741628718424,
-            "y": -1.1067410721768338,
+            "x": -204.89891601552475,
+            "y": 39.120253266855734,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 208.6,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7586,7 +7882,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-M-22",
@@ -7594,14 +7891,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "M",
           "seatNumber": "22",
           "position3D": {
-            "x": 232.5097576578625,
-            "y": -0.36891492904871037,
+            "x": -205.08280603884762,
+            "y": 38.144497207754696,
             "z": 105
           },
           "elevation": 105,
-          "distanceFromHomeplate": 232.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 208.60000000000002,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7612,11 +7909,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -7624,7 +7923,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 107.5,
-      "depth": 235.5100503297499,
+      "depth": 211.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -7633,14 +7932,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "1",
           "position3D": {
-            "x": 234.9621302022988,
-            "y": -16.05556530052201,
+            "x": -202.94045440904094,
+            "y": 59.204154957671534,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 211.4,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7651,7 +7950,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-2",
@@ -7659,14 +7959,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "2",
           "position3D": {
-            "x": 235.0118966251787,
-            "y": -15.30987429594529,
+            "x": -203.21996540672814,
+            "y": 58.237493593802796,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 211.4,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7677,7 +7977,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-3",
@@ -7685,14 +7986,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "3",
           "position3D": {
-            "x": 235.05929648086877,
-            "y": -14.564029121104317,
+            "x": -203.49487195795535,
+            "y": 57.26951271676193,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 211.4,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7703,7 +8004,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-4",
@@ -7711,14 +8013,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "4",
           "position3D": {
-            "x": 235.10432929205288,
-            "y": -13.818037286651789,
+            "x": -203.7651678340409,
+            "y": 56.30023425852808,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 211.39999999999998,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7729,7 +8031,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-5",
@@ -7737,14 +8040,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "5",
           "position3D": {
-            "x": 235.1469946052512,
-            "y": -13.071906304717249,
+            "x": -204.030846910769,
+            "y": 55.32968018048131,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 211.4,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7755,7 +8058,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-6",
@@ -7763,14 +8067,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "6",
           "position3D": {
-            "x": 235.1872919908244,
-            "y": -12.32564368883129,
+            "x": -204.29190316852905,
+            "y": 54.35787247290271,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 211.4,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7781,7 +8085,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-7",
@@ -7789,14 +8094,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "7",
           "position3D": {
-            "x": 235.22522104297838,
-            "y": -11.579256953850225,
+            "x": -204.54833069245151,
+            "y": 53.384833154478486,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 211.4,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7807,7 +8112,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-8",
@@ -7815,14 +8121,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "8",
           "position3D": {
-            "x": 235.26078137976793,
-            "y": -10.832753615880243,
+            "x": -204.8001236725423,
+            "y": 52.4105842717993,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 211.4,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7833,7 +8139,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-9",
@@ -7841,14 +8148,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "9",
           "position3D": {
-            "x": 235.29397264310086,
-            "y": -10.086141192201563,
+            "x": -205.0472764038143,
+            "y": 51.43514789886179,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 211.4,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7859,7 +8166,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-10",
@@ -7867,14 +8175,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "10",
           "position3D": {
-            "x": 235.32479449874157,
-            "y": -9.33942720119305,
+            "x": -205.28978328641648,
+            "y": 50.45854613656796,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 211.4,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7885,7 +8193,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-11",
@@ -7893,14 +8202,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "11",
           "position3D": {
-            "x": 235.35324663631425,
-            "y": -8.592619162256367,
+            "x": -205.52763882576093,
+            "y": 49.48080111222499,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 211.4,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7911,7 +8220,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-12",
@@ -7919,14 +8229,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "12",
           "position3D": {
-            "x": 235.37932876930617,
-            "y": -7.84572459574006,
+            "x": -205.7608376326475,
+            "y": 48.50193497904256,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 211.4,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7937,7 +8247,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-13",
@@ -7945,14 +8256,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "13",
           "position3D": {
-            "x": 235.40304063507062,
-            "y": -7.098751022864234,
+            "x": -205.98937442338547,
+            "y": 47.52196991563272,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 211.39999999999998,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7963,7 +8274,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-14",
@@ -7971,14 +8283,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "14",
           "position3D": {
-            "x": 235.42438199482936,
-            "y": -6.35170596564436,
+            "x": -206.2132440199137,
+            "y": 46.540928125506134,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 211.4,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -7989,7 +8301,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-15",
@@ -7997,14 +8310,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "15",
           "position3D": {
-            "x": 235.4433526336751,
-            "y": -5.6045969468159305,
+            "x": -206.43244134991775,
+            "y": 45.55883183656907,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 211.40000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8015,7 +8328,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-16",
@@ -8023,14 +8337,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "16",
           "position3D": {
-            "x": 235.4599523605737,
-            "y": -4.857431489758527,
+            "x": -206.64696144694472,
+            "y": 44.57570330062058,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 211.40000000000003,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8041,7 +8355,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-17",
@@ -8049,14 +8364,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "17",
           "position3D": {
-            "x": 235.47418100836614,
-            "y": -4.110217118419891,
+            "x": -206.85679945051595,
+            "y": 43.59156479284747,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974993,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 211.39999999999998,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8067,7 +8382,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-18",
@@ -8075,14 +8391,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "18",
           "position3D": {
-            "x": 235.48603843377006,
-            "y": -3.3629613572405046,
+            "x": -207.0619506062372,
+            "y": 42.606438611320094,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 211.4,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8093,7 +8409,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-19",
@@ -8101,14 +8418,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "19",
           "position3D": {
-            "x": 235.49552451738137,
-            "y": -2.615671731077645,
+            "x": -207.2624102659061,
+            "y": 41.620347076486695,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 211.4,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8119,7 +8436,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-20",
@@ -8127,14 +8445,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "20",
           "position3D": {
-            "x": 235.50263916367527,
-            "y": -1.868355765129434,
+            "x": -207.45817388761776,
+            "y": 40.63331253066825,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 211.4,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8145,7 +8463,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-21",
@@ -8153,14 +8472,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "21",
           "position3D": {
-            "x": 235.50738230100737,
-            "y": -1.121020984859411,
+            "x": -207.64923703586737,
+            "y": 39.645357337551786,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 211.4,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8171,7 +8490,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-N-22",
@@ -8179,14 +8499,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "N",
           "seatNumber": "22",
           "position3D": {
-            "x": 235.5097538816143,
-            "y": -0.3736749159205747,
+            "x": -207.83559538165093,
+            "y": 38.65650388168429,
             "z": 107.5
           },
           "elevation": 107.5,
-          "distanceFromHomeplate": 235.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 211.4,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8197,11 +8517,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -8209,7 +8531,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 110,
-      "depth": 238.5100503297499,
+      "depth": 214.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -8218,14 +8540,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "1",
           "position3D": {
-            "x": 237.95515062592804,
-            "y": -16.260086066553544,
+            "x": -205.62840744757125,
+            "y": 59.98831595048837,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 214.2,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8236,7 +8558,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-2",
@@ -8244,14 +8567,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "2",
           "position3D": {
-            "x": 238.00555098892403,
-            "y": -15.504896218888822,
+            "x": -205.91162057767815,
+            "y": 59.00885112484654,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 214.2,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8262,7 +8585,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-3",
@@ -8270,14 +8594,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "3",
           "position3D": {
-            "x": 238.05355463866394,
-            "y": -14.749550237091245,
+            "x": -206.19016827527923,
+            "y": 58.028049309036916,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 214.2,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8288,7 +8612,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-4",
@@ -8296,14 +8621,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "4",
           "position3D": {
-            "x": 238.0991610917515,
-            "y": -13.994055727486534,
+            "x": -206.46404422919377,
+            "y": 57.045932725528445,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 214.2,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8314,7 +8639,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-5",
@@ -8322,14 +8648,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "5",
           "position3D": {
-            "x": 238.1423698889303,
-            "y": -13.23842029789607,
+            "x": -206.73324223409043,
+            "y": 56.06252362658039,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974993,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 214.2,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8340,7 +8666,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-6",
@@ -8348,14 +8675,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "6",
           "position3D": {
-            "x": 238.18318059508815,
-            "y": -12.482651557560121,
+            "x": -206.99775619062873,
+            "y": 55.07784429373586,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 214.19999999999996,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8366,7 +8693,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-7",
@@ -8374,14 +8702,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "7",
           "position3D": {
-            "x": 238.22159279926174,
-            "y": -11.726757117061572,
+            "x": -207.25758010559653,
+            "y": 54.091917037319256,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 214.2,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8392,7 +8720,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-8",
@@ -8400,14 +8729,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "8",
           "position3D": {
-            "x": 238.25760611464062,
-            "y": -10.9707445882491,
+            "x": -207.51270809204615,
+            "y": 53.104764195929086,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 214.19999999999996,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8418,7 +8747,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-9",
@@ -8426,14 +8756,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "9",
           "position3D": {
-            "x": 238.29122017857105,
-            "y": -10.21462158416037,
+            "x": -207.7631343694277,
+            "y": 52.11640813593281,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 214.2,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8444,7 +8774,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-10",
@@ -8452,14 +8783,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "10",
           "position3D": {
-            "x": 238.32243465255985,
-            "y": -9.458395718945688,
+            "x": -208.00885326372,
+            "y": 51.12687125095959,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 214.2,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8470,7 +8801,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-11",
@@ -8478,14 +8810,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "11",
           "position3D": {
-            "x": 238.35124922227757,
-            "y": -8.70207460779118,
+            "x": -208.24985920755907,
+            "y": 50.13617596139353,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 214.19999999999996,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8496,7 +8828,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-12",
@@ -8504,14 +8837,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "12",
           "position3D": {
-            "x": 238.3776635975618,
-            "y": -7.945665866841928,
+            "x": -208.48614674036466,
+            "y": 49.14434471386431,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 214.19999999999996,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8522,7 +8855,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-13",
@@ -8530,14 +8864,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "13",
           "position3D": {
-            "x": 238.40167751242006,
-            "y": -7.189177113125667,
+            "x": -208.71771050846343,
+            "y": 48.15139998074043,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 214.2,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8548,7 +8882,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-14",
@@ -8556,14 +8891,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "14",
           "position3D": {
-            "x": 238.4232907250326,
-            "y": -6.432615964475633,
+            "x": -208.94454526521056,
+            "y": 47.157364259618795,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 214.2,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8574,7 +8909,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-15",
@@ -8582,14 +8918,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "15",
           "position3D": {
-            "x": 238.4425030177545,
-            "y": -5.675990039454253,
+            "x": -209.1666458711087,
+            "y": 46.16226007281501,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 214.20000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8600,7 +8936,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-16",
@@ -8608,14 +8945,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "16",
           "position3D": {
-            "x": 238.45931419711818,
-            "y": -4.919306957276249,
+            "x": -209.38400729392407,
+            "y": 45.166109966853966,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 214.2,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8626,7 +8963,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-17",
@@ -8634,14 +8972,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "17",
           "position3D": {
-            "x": 238.47372409383533,
-            "y": -4.1625743377317415,
+            "x": -209.59662460880094,
+            "y": 44.16893651195803,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 214.2,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8652,7 +8990,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-18",
@@ -8660,14 +8999,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "18",
           "position3D": {
-            "x": 238.48573256279838,
-            "y": -3.405799801109866,
+            "x": -209.80449299837278,
+            "y": 43.17076230153625,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 214.2,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8678,7 +9017,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-19",
@@ -8686,14 +9026,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "19",
           "position3D": {
-            "x": 238.49533948308223,
-            "y": -2.648990968121864,
+            "x": -210.00760775287173,
+            "y": 42.17160995167195,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 214.2,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8704,7 +9044,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-20",
@@ -8712,14 +9053,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "20",
           "position3D": {
-            "x": 238.50254475794526,
-            "y": -1.892155459824163,
+            "x": -210.20596427023517,
+            "y": 41.17150210061087,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 214.2,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8730,7 +9071,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-21",
@@ -8738,14 +9080,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "21",
           "position3D": {
-            "x": 238.50734831483047,
-            "y": -1.1353008975419885,
+            "x": -210.39955805620997,
+            "y": 40.17046140824783,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.51005032974987,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 214.2,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8756,7 +9098,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-O-22",
@@ -8764,14 +9107,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "O",
           "seatNumber": "22",
           "position3D": {
-            "x": 238.5097501053661,
-            "y": -0.3784349027924391,
+            "x": -210.58838472445424,
+            "y": 39.16851055561388,
             "z": 110
           },
           "elevation": 110,
-          "distanceFromHomeplate": 238.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 214.2,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8782,11 +9125,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -8794,7 +9139,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 112.5,
-      "depth": 241.5100503297499,
+      "depth": 217,
       "rowSpacing": 36,
       "seats": [
         {
@@ -8803,14 +9148,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "1",
           "position3D": {
-            "x": 240.94817104955732,
-            "y": -16.46460683258508,
+            "x": -208.31636048610162,
+            "y": 60.772476943305215,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974993,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 217,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8821,7 +9166,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-2",
@@ -8829,14 +9175,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "2",
           "position3D": {
-            "x": 240.99920535266935,
-            "y": -15.699918141832354,
+            "x": -208.6032757486282,
+            "y": 59.780208655890284,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8847,7 +9193,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-3",
@@ -8855,14 +9202,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "3",
           "position3D": {
-            "x": 241.0478127964591,
-            "y": -14.935071353078175,
+            "x": -208.88546459260317,
+            "y": 58.78658590131191,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 217,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8873,7 +9220,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-4",
@@ -8881,14 +9229,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "4",
           "position3D": {
-            "x": 241.0939928914501,
-            "y": -14.170074168321282,
+            "x": -209.16292062434664,
+            "y": 57.79163119252882,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 217,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8899,7 +9247,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-5",
@@ -8907,14 +9256,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "5",
           "position3D": {
-            "x": 241.13774517260939,
-            "y": -13.404934291074891,
+            "x": -209.43563755741187,
+            "y": 56.79536707267949,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8925,7 +9274,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-6",
@@ -8933,14 +9283,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "6",
           "position3D": {
-            "x": 241.17906919935186,
-            "y": -12.639659426288953,
+            "x": -209.70360921272848,
+            "y": 55.79781611456901,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 217,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8951,7 +9301,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-7",
@@ -8959,14 +9310,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "7",
           "position3D": {
-            "x": 241.2179645555451,
-            "y": -11.87425728027292,
+            "x": -209.9668295187416,
+            "y": 54.79900092016003,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 217,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -8977,7 +9328,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-8",
@@ -8985,14 +9337,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "8",
           "position3D": {
-            "x": 241.25443084951328,
-            "y": -11.108735560617959,
+            "x": -210.22529251155004,
+            "y": 53.798944120058884,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974987,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9003,7 +9355,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-9",
@@ -9011,14 +9364,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "9",
           "position3D": {
-            "x": 241.28846771404125,
-            "y": -10.343101976119177,
+            "x": -210.47899233504114,
+            "y": 52.79766837300383,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9029,7 +9382,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-10",
@@ -9037,14 +9391,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "10",
           "position3D": {
-            "x": 241.32007480637816,
-            "y": -9.577364236698324,
+            "x": -210.72792324102352,
+            "y": 51.79519636535122,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9055,7 +9409,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-11",
@@ -9063,14 +9418,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "11",
           "position3D": {
-            "x": 241.3492518082409,
-            "y": -8.811530053325994,
+            "x": -210.97207958935724,
+            "y": 50.79155081056208,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9081,7 +9436,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-12",
@@ -9089,14 +9445,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "12",
           "position3D": {
-            "x": 241.3759984258174,
-            "y": -8.045607137943795,
+            "x": -211.21145584808187,
+            "y": 49.78675444868607,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 217,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9107,7 +9463,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-13",
@@ -9115,14 +9472,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "13",
           "position3D": {
-            "x": 241.4003143897695,
-            "y": -7.279603203387101,
+            "x": -211.44604659354138,
+            "y": 48.780830045848155,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 217,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9133,7 +9490,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-14",
@@ -9141,14 +9499,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "14",
           "position3D": {
-            "x": 241.4221994552358,
-            "y": -6.513525963306906,
+            "x": -211.67584651050745,
+            "y": 47.77380039373146,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 217.00000000000003,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9159,7 +9517,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-15",
@@ -9167,14 +9526,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "15",
           "position3D": {
-            "x": 241.44165340183386,
-            "y": -5.747383132092575,
+            "x": -211.90085039229967,
+            "y": 46.76568830906096,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 217.00000000000003,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9185,7 +9544,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-16",
@@ -9193,14 +9553,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "16",
           "position3D": {
-            "x": 241.45867603366267,
-            "y": -4.981182424793972,
+            "x": -212.12105314090348,
+            "y": 45.75651663308735,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 217,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9211,7 +9571,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-17",
@@ -9219,14 +9580,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "17",
           "position3D": {
-            "x": 241.4732671793045,
-            "y": -4.214931557043592,
+            "x": -212.33644976708592,
+            "y": 44.746308231068596,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 217,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9237,7 +9598,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-18",
@@ -9245,14 +9607,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "18",
           "position3D": {
-            "x": 241.48542669182666,
-            "y": -3.448638244979228,
+            "x": -212.54703539050837,
+            "y": 43.735085991752406,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9263,7 +9625,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-19",
@@ -9271,14 +9634,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "19",
           "position3D": {
-            "x": 241.49515444878307,
-            "y": -2.6823102051660834,
+            "x": -212.7528052398374,
+            "y": 42.7228728268572,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9289,7 +9652,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-20",
@@ -9297,14 +9661,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "20",
           "position3D": {
-            "x": 241.50245035221528,
-            "y": -1.915955154518892,
+            "x": -212.95375465285264,
+            "y": 41.709691670553504,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 216.99999999999997,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9315,7 +9679,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-21",
@@ -9323,14 +9688,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "21",
           "position3D": {
-            "x": 241.5073143286536,
-            "y": -1.149580810224566,
+            "x": -213.1498790765526,
+            "y": 40.695565478943884,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 217.00000000000003,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9341,7 +9706,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-P-22",
@@ -9349,14 +9715,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "P",
           "seatNumber": "22",
           "position3D": {
-            "x": 241.50974632911786,
-            "y": -0.38319488966430343,
+            "x": -213.34117406725758,
+            "y": 39.680517229543476,
             "z": 112.5
           },
           "elevation": 112.5,
-          "distanceFromHomeplate": 241.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 217,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9367,11 +9733,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -9379,7 +9747,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 115,
-      "depth": 244.5100503297499,
+      "depth": 219.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -9388,14 +9756,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "1",
           "position3D": {
-            "x": 243.94119147318656,
-            "y": -16.66912759861662,
+            "x": -211.00431352463198,
+            "y": 61.55663793612206,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 219.80000000000004,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9406,7 +9774,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-2",
@@ -9414,14 +9783,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "2",
           "position3D": {
-            "x": 243.99285971641467,
-            "y": -15.894940064775886,
+            "x": -211.29493091957826,
+            "y": 60.55156618693404,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 219.8,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9432,7 +9801,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-3",
@@ -9440,14 +9810,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "3",
           "position3D": {
-            "x": 244.04207095425429,
-            "y": -15.120592469065103,
+            "x": -211.58076090992708,
+            "y": 59.54512249358691,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 219.79999999999998,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9458,7 +9828,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-4",
@@ -9466,14 +9837,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "4",
           "position3D": {
-            "x": 244.08882469114874,
-            "y": -14.34609260915603,
+            "x": -211.8617970194995,
+            "y": 58.53732965952919,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 219.8,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9484,7 +9855,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-5",
@@ -9492,14 +9864,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "5",
           "position3D": {
-            "x": 244.13312045628848,
-            "y": -13.571448284253712,
+            "x": -212.13803288073333,
+            "y": 57.52821051877858,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 219.8,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9510,7 +9882,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-6",
@@ -9518,14 +9891,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "6",
           "position3D": {
-            "x": 244.17495780361557,
-            "y": -12.796667295017784,
+            "x": -212.40946223482823,
+            "y": 56.51778793540216,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 219.8,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9536,7 +9909,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-7",
@@ -9544,14 +9918,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "7",
           "position3D": {
-            "x": 244.21433631182845,
-            "y": -12.021757443484265,
+            "x": -212.67607893188668,
+            "y": 55.50608480300081,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 219.80000000000004,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9562,7 +9936,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-8",
@@ -9570,14 +9945,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "8",
           "position3D": {
-            "x": 244.25125558438597,
-            "y": -11.246726532986816,
+            "x": -212.93787693105392,
+            "y": 54.493124044188676,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 219.8,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9588,7 +9963,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-9",
@@ -9596,14 +9972,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "9",
           "position3D": {
-            "x": 244.28571524951144,
-            "y": -10.471582368077984,
+            "x": -213.1948503006546,
+            "y": 53.478928610074846,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 219.8,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9614,7 +9990,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-10",
@@ -9622,14 +9999,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "10",
           "position3D": {
-            "x": 244.31771496019644,
-            "y": -9.69633275445096,
+            "x": -213.44699321832707,
+            "y": 52.46352147974285,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 219.8,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9640,7 +10017,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-11",
@@ -9648,14 +10026,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "11",
           "position3D": {
-            "x": 244.3472543942042,
-            "y": -8.920985498860807,
+            "x": -213.6942999711554,
+            "y": 51.446925659730624,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 219.8,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9666,7 +10044,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-12",
@@ -9674,14 +10053,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "12",
           "position3D": {
-            "x": 244.37433325407298,
-            "y": -8.145548409045665,
+            "x": -213.93676495579908,
+            "y": 50.42916418350782,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 219.8,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9692,7 +10071,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-13",
@@ -9700,14 +10080,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "13",
           "position3D": {
-            "x": 244.39895126711895,
-            "y": -7.3700292936485345,
+            "x": -214.17438267861934,
+            "y": 49.410260110955875,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974987,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 219.79999999999998,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9718,7 +10098,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-14",
@@ -9726,14 +10107,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "14",
           "position3D": {
-            "x": 244.42110818543904,
-            "y": -6.594435962138179,
+            "x": -214.40714775580432,
+            "y": 48.39023652784413,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 219.8,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9744,7 +10125,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-15",
@@ -9752,14 +10134,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "15",
           "position3D": {
-            "x": 244.44080378591326,
-            "y": -5.818776224730898,
+            "x": -214.63505491349062,
+            "y": 47.36911654530691,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974993,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 219.8,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9770,7 +10152,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-16",
@@ -9778,14 +10161,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "16",
           "position3D": {
-            "x": 244.45803787020714,
-            "y": -5.043057892311694,
+            "x": -214.8580989878829,
+            "y": 46.346923299320736,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.51005032974993,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 219.8,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9796,7 +10179,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-17",
@@ -9804,14 +10188,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "17",
           "position3D": {
-            "x": 244.47281026477367,
-            "y": -4.267288776355443,
+            "x": -215.0762749253709,
+            "y": 45.323679950179155,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 219.8,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9822,7 +10206,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-18",
@@ -9830,14 +10215,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "18",
           "position3D": {
-            "x": 244.48512082085497,
-            "y": -3.4914766888485893,
+            "x": -215.289577782644,
+            "y": 44.29940968196857,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 219.8,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9848,7 +10233,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-19",
@@ -9856,14 +10242,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "19",
           "position3D": {
-            "x": 244.49496941448393,
-            "y": -2.7156294422103024,
+            "x": -215.49800272680307,
+            "y": 43.27413570204246,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 219.8,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9874,7 +10260,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-20",
@@ -9882,14 +10269,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "20",
           "position3D": {
-            "x": 244.50235594648527,
-            "y": -1.939754849213621,
+            "x": -215.7015450354701,
+            "y": 42.24788124049613,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 219.8,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9900,7 +10287,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-21",
@@ -9908,14 +10296,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "21",
           "position3D": {
-            "x": 244.50728034247672,
-            "y": -1.1638607229071434,
+            "x": -215.90020009689522,
+            "y": 41.220669549639936,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 219.8,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9926,7 +10314,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-Q-22",
@@ -9934,14 +10323,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "Q",
           "seatNumber": "22",
           "position3D": {
-            "x": 244.50974255286965,
-            "y": -0.38795487653616784,
+            "x": -216.09396341006092,
+            "y": 40.19252390347307,
             "z": 115
           },
           "elevation": 115,
-          "distanceFromHomeplate": 244.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 219.8,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9952,11 +10341,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -9964,7 +10355,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 117.5,
-      "depth": 247.5100503297499,
+      "depth": 222.6,
       "rowSpacing": 36,
       "seats": [
         {
@@ -9973,14 +10364,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "1",
           "position3D": {
-            "x": 246.93421189681584,
-            "y": -16.873648364648155,
+            "x": -213.6922665631623,
+            "y": 62.340798928938895,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974993,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 222.6,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -9991,7 +10382,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-2",
@@ -9999,14 +10391,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "2",
           "position3D": {
-            "x": 246.98651408016,
-            "y": -16.08996198771942,
+            "x": -213.98658609052828,
+            "y": 61.32292371797778,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 222.6,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10017,7 +10409,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-3",
@@ -10025,14 +10418,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "3",
           "position3D": {
-            "x": 247.03632911204946,
-            "y": -15.306113585052032,
+            "x": -214.276057227251,
+            "y": 60.303659085861895,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 222.6,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10043,7 +10436,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-4",
@@ -10051,14 +10445,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "4",
           "position3D": {
-            "x": 247.08365649084737,
-            "y": -14.522111049990777,
+            "x": -214.56067341465234,
+            "y": 59.28302812652956,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 222.6,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10069,7 +10463,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-5",
@@ -10077,14 +10472,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "5",
           "position3D": {
-            "x": 247.12849573996758,
-            "y": -13.737962277432533,
+            "x": -214.84042820405475,
+            "y": 58.26105396487767,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 222.6,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10095,7 +10490,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-6",
@@ -10103,14 +10499,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "6",
           "position3D": {
-            "x": 247.1708464078793,
-            "y": -12.953675163746615,
+            "x": -215.11531525692791,
+            "y": 57.237759756235306,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 222.6,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10121,7 +10517,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-7",
@@ -10129,14 +10526,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "7",
           "position3D": {
-            "x": 247.2107080681118,
-            "y": -12.169257606695613,
+            "x": -215.3853283450317,
+            "y": 56.21316868584158,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 222.6,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10147,7 +10544,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-8",
@@ -10155,14 +10553,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "8",
           "position3D": {
-            "x": 247.24808031925866,
-            "y": -11.384717505355674,
+            "x": -215.65046135055778,
+            "y": 55.18730396831847,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974993,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 222.59999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10173,7 +10571,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-9",
@@ -10181,14 +10580,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "9",
           "position3D": {
-            "x": 247.2829627849816,
-            "y": -10.600062760036792,
+            "x": -215.91070826626802,
+            "y": 54.16018884714586,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 222.6,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10199,7 +10598,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-10",
@@ -10207,14 +10607,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "10",
           "position3D": {
-            "x": 247.31535511401472,
-            "y": -9.815301272203596,
+            "x": -216.16606319563058,
+            "y": 53.13184659413447,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 222.6,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10225,7 +10625,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-11",
@@ -10233,14 +10634,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "11",
           "position3D": {
-            "x": 247.34525698016753,
-            "y": -9.03044094439562,
+            "x": -216.41652035295354,
+            "y": 52.10230050889916,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974993,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 222.59999999999997,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10251,7 +10652,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-12",
@@ -10259,14 +10661,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "12",
           "position3D": {
-            "x": 247.37266808232857,
-            "y": -8.245489680147532,
+            "x": -216.66207406351623,
+            "y": 51.07157391832958,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 222.6,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10277,7 +10679,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-13",
@@ -10285,14 +10688,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "13",
           "position3D": {
-            "x": 247.39758814446841,
-            "y": -7.460455383909967,
+            "x": -216.9027187636973,
+            "y": 50.03969017606359,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 222.6,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10303,7 +10706,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-14",
@@ -10311,14 +10715,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "14",
           "position3D": {
-            "x": 247.42001691564226,
-            "y": -6.675345960969452,
+            "x": -217.13844900110118,
+            "y": 49.00667266195679,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 222.6,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10329,7 +10733,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-15",
@@ -10337,14 +10742,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "15",
           "position3D": {
-            "x": 247.43995416999263,
-            "y": -5.89016931736922,
+            "x": -217.3692594346816,
+            "y": 47.972544781552855,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 222.60000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10355,7 +10760,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-16",
@@ -10363,14 +10769,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "16",
           "position3D": {
-            "x": 247.4573997067516,
-            "y": -5.104933359829416,
+            "x": -217.59514483486228,
+            "y": 46.93732996555412,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 222.6,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10381,7 +10787,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-17",
@@ -10389,14 +10796,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "17",
           "position3D": {
-            "x": 247.47235335024283,
-            "y": -4.319645995667293,
+            "x": -217.81610008365587,
+            "y": 45.901051669289714,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 222.6,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10407,7 +10814,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-18",
@@ -10415,14 +10823,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "18",
           "position3D": {
-            "x": 247.48481494988326,
-            "y": -3.5343151327179507,
+            "x": -218.03212017477955,
+            "y": 44.863733372184726,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 222.6,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10433,7 +10841,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-19",
@@ -10441,14 +10850,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "19",
           "position3D": {
-            "x": 247.49478438018477,
-            "y": -2.748948679254522,
+            "x": -218.2432002137687,
+            "y": 43.82539857722771,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 222.6,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10459,7 +10868,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-20",
@@ -10467,14 +10877,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "20",
           "position3D": {
-            "x": 247.50226154075526,
-            "y": -1.96355454390835,
+            "x": -218.44933541808754,
+            "y": 42.78607081043875,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 222.6,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10485,7 +10895,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-21",
@@ -10493,14 +10904,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "21",
           "position3D": {
-            "x": 247.50724635629985,
-            "y": -1.1781406355897206,
+            "x": -218.65052111723782,
+            "y": 41.74577362033598,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 222.6,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10511,7 +10922,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-R-22",
@@ -10519,14 +10931,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "R",
           "seatNumber": "22",
           "position3D": {
-            "x": 247.50973877662145,
-            "y": -0.3927148634080322,
+            "x": -218.84675275286423,
+            "y": 40.70453057740266,
             "z": 117.5
           },
           "elevation": 117.5,
-          "distanceFromHomeplate": 247.51005032974987,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 222.6,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10537,11 +10949,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -10549,7 +10963,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 120,
-      "depth": 250.5100503297499,
+      "depth": 225.4,
       "rowSpacing": 36,
       "seats": [
         {
@@ -10558,14 +10972,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "1",
           "position3D": {
-            "x": 249.92723232044509,
-            "y": -17.07816913067969,
+            "x": -216.38021960169266,
+            "y": 63.12495992175574,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 225.4,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10576,7 +10990,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-2",
@@ -10584,14 +10999,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "2",
           "position3D": {
-            "x": 249.9801684439053,
-            "y": -16.28498391066295,
+            "x": -216.67824126147832,
+            "y": 62.09428124902153,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.51005032974987,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 225.39999999999998,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10602,7 +11017,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-3",
@@ -10610,14 +11026,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "3",
           "position3D": {
-            "x": 250.03058726984463,
-            "y": -15.491634701038961,
+            "x": -216.97135354457492,
+            "y": 61.06219567813689,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 225.4,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10628,7 +11044,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-4",
@@ -10636,14 +11053,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "4",
           "position3D": {
-            "x": 250.078488290546,
-            "y": -14.698129490825522,
+            "x": -217.2595498098052,
+            "y": 60.02872659352994,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 225.4,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10654,7 +11071,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-5",
@@ -10662,14 +11080,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "5",
           "position3D": {
-            "x": 250.12387102364667,
-            "y": -13.904476270611354,
+            "x": -217.5428235273762,
+            "y": 58.99389741097676,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 225.4,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10680,7 +11098,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-6",
@@ -10688,14 +11107,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "6",
           "position3D": {
-            "x": 250.16673501214302,
-            "y": -13.110683032475446,
+            "x": -217.82116827902766,
+            "y": 57.95773157706846,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 225.4,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10706,7 +11125,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-7",
@@ -10714,14 +11134,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "7",
           "position3D": {
-            "x": 250.20707982439518,
-            "y": -12.31675776990696,
+            "x": -218.09457775817677,
+            "y": 56.920252568682365,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 225.4,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10732,7 +11152,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-8",
@@ -10740,14 +11161,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "8",
           "position3D": {
-            "x": 250.24490505413132,
-            "y": -11.52270847772453,
+            "x": -218.36304577006166,
+            "y": 55.88148389244826,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 225.4,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10758,7 +11179,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-9",
@@ -10766,14 +11188,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "9",
           "position3D": {
-            "x": 250.2802103204518,
-            "y": -10.728543151995598,
+            "x": -218.62656623188147,
+            "y": 54.84144908421688,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.51005032974987,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 225.4,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10784,7 +11206,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-10",
@@ -10792,14 +11215,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "10",
           "position3D": {
-            "x": 250.31299526783303,
-            "y": -9.934269789956232,
+            "x": -218.88513317293413,
+            "y": 53.80017170852611,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 225.4,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10810,7 +11233,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-11",
@@ -10818,14 +11242,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "11",
           "position3D": {
-            "x": 250.34325956613085,
-            "y": -9.139896389930433,
+            "x": -219.13874073475174,
+            "y": 52.75767535806771,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 225.4,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10836,7 +11260,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-12",
@@ -10844,14 +11269,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "12",
           "position3D": {
-            "x": 250.3710029105842,
-            "y": -8.345430951249401,
+            "x": -219.38738317123344,
+            "y": 51.71398365315134,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 225.4,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10862,7 +11287,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-13",
@@ -10870,14 +11296,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "13",
           "position3D": {
-            "x": 250.39622502181786,
-            "y": -7.550881474171401,
+            "x": -219.63105484877525,
+            "y": 50.669120241171306,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 225.4,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10888,7 +11314,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-14",
@@ -10896,14 +11323,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "14",
           "position3D": {
-            "x": 250.4189256458455,
-            "y": -6.756255959800725,
+            "x": -219.86975024639807,
+            "y": 49.62310879606945,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.51005032974993,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 225.4,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10914,7 +11341,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-15",
@@ -10922,14 +11350,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "15",
           "position3D": {
-            "x": 250.43910455407203,
-            "y": -5.961562410007542,
+            "x": -220.10346395587254,
+            "y": 48.57597301779881,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 225.4,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10940,7 +11368,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-16",
@@ -10948,14 +11377,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "16",
           "position3D": {
-            "x": 250.4567615432961,
-            "y": -5.166808827347139,
+            "x": -220.3321906818417,
+            "y": 47.527736631787505,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 225.4,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10966,7 +11395,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-17",
@@ -10974,14 +11404,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "17",
           "position3D": {
-            "x": 250.471896435712,
-            "y": -4.372003214979143,
+            "x": -220.55592524194086,
+            "y": 46.47842338840028,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 225.4,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -10992,7 +11422,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-18",
@@ -11000,14 +11431,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "18",
           "position3D": {
-            "x": 250.48450907891157,
-            "y": -3.5771535765873126,
+            "x": -220.77466256691517,
+            "y": 45.42805706240089,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 225.4,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11018,7 +11449,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-19",
@@ -11026,14 +11458,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "19",
           "position3D": {
-            "x": 250.49459934588563,
-            "y": -2.782267916298741,
+            "x": -220.98839770073434,
+            "y": 44.37666145241297,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 225.4,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11044,7 +11476,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-20",
@@ -11052,14 +11485,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "20",
           "position3D": {
-            "x": 250.50216713502527,
-            "y": -1.987354238603079,
+            "x": -221.197125800705,
+            "y": 43.32426038038138,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 225.4,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11070,7 +11503,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-21",
@@ -11078,14 +11512,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "21",
           "position3D": {
-            "x": 250.50721237012294,
-            "y": -1.192420548272298,
+            "x": -221.40084213758044,
+            "y": 42.270877691032034,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.51005032974987,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 225.4,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11096,7 +11530,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-S-22",
@@ -11104,14 +11539,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "S",
           "seatNumber": "22",
           "position3D": {
-            "x": 250.50973500037324,
-            "y": -0.39747485027989654,
+            "x": -221.59954209566757,
+            "y": 41.216537251332255,
             "z": 120
           },
           "elevation": 120,
-          "distanceFromHomeplate": 250.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 225.4,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11122,11 +11557,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -11134,7 +11571,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 122.5,
-      "depth": 253.5100503297499,
+      "depth": 228.2,
       "rowSpacing": 36,
       "seats": [
         {
@@ -11143,14 +11580,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "1",
           "position3D": {
-            "x": 252.92025274407436,
-            "y": -17.282689896711226,
+            "x": -219.06817264022297,
+            "y": 63.909120914572576,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974993,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 228.2,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11161,7 +11598,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-2",
@@ -11169,14 +11607,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "2",
           "position3D": {
-            "x": 252.97382280765063,
-            "y": -16.480005833606484,
+            "x": -219.36989643242836,
+            "y": 62.86563878006527,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 228.2,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11187,7 +11625,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-3",
@@ -11195,14 +11634,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "3",
           "position3D": {
-            "x": 253.02484542763983,
-            "y": -15.67715581702589,
+            "x": -219.6666498618988,
+            "y": 61.820732270411874,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974993,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 228.2,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11213,7 +11652,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-4",
@@ -11221,14 +11661,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "4",
           "position3D": {
-            "x": 253.07332009024464,
-            "y": -14.87414793166027,
+            "x": -219.95842620495807,
+            "y": 60.774425060530305,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 228.2,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11239,7 +11679,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-5",
@@ -11247,14 +11688,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "5",
           "position3D": {
-            "x": 253.11924630732577,
-            "y": -14.070990263790174,
+            "x": -220.24521885069763,
+            "y": 59.726740857075846,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 228.19999999999996,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11265,7 +11706,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-6",
@@ -11273,14 +11715,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "6",
           "position3D": {
-            "x": 253.16262361640673,
-            "y": -13.26769090120428,
+            "x": -220.52702130112735,
+            "y": 58.6777033979016,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974987,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 228.2,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11291,7 +11733,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-7",
@@ -11299,14 +11742,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "7",
           "position3D": {
-            "x": 253.20345158067855,
-            "y": -12.464257933118308,
+            "x": -220.8038271713218,
+            "y": 57.627336451523135,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 228.20000000000002,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11317,7 +11760,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-8",
@@ -11325,14 +11769,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "8",
           "position3D": {
-            "x": 253.241729789004,
-            "y": -11.660699450093388,
+            "x": -221.07563018956552,
+            "y": 56.57566381657805,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 228.2,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11343,7 +11787,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-9",
@@ -11351,14 +11796,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "9",
           "position3D": {
-            "x": 253.277457855922,
-            "y": -10.857023543954407,
+            "x": -221.34242419749486,
+            "y": 55.5227093212879,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 228.2,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11369,7 +11814,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-10",
@@ -11377,14 +11823,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "10",
           "position3D": {
-            "x": 253.3106354216513,
-            "y": -10.05323830770887,
+            "x": -221.60420315023765,
+            "y": 54.46849682291773,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 228.2,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11395,7 +11841,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-11",
@@ -11403,14 +11850,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "11",
           "position3D": {
-            "x": 253.34126215209417,
-            "y": -9.249351835465246,
+            "x": -221.86096111654987,
+            "y": 53.413050207236246,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 228.2,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11421,7 +11868,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-12",
@@ -11429,14 +11877,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "12",
           "position3D": {
-            "x": 253.3693377388398,
-            "y": -8.445372222351269,
+            "x": -222.1126922789506,
+            "y": 52.356393387973085,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 228.2,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11447,7 +11895,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-13",
@@ -11455,14 +11904,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "13",
           "position3D": {
-            "x": 253.3948618991673,
-            "y": -7.641307564432834,
+            "x": -222.35939093385318,
+            "y": 51.29855030627902,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 228.19999999999996,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11473,7 +11922,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-14",
@@ -11481,14 +11931,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "14",
           "position3D": {
-            "x": 253.41783437604872,
-            "y": -6.8371659586319975,
+            "x": -222.6010514916949,
+            "y": 50.23954493018211,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 228.2,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11499,7 +11949,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-15",
@@ -11507,14 +11958,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "15",
           "position3D": {
-            "x": 253.4382549381514,
-            "y": -6.032955502645865,
+            "x": -222.83766847706352,
+            "y": 49.17940125404475,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 228.20000000000002,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11525,7 +11976,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-16",
@@ -11533,14 +11985,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "16",
           "position3D": {
-            "x": 253.45612337984056,
-            "y": -5.228684294864861,
+            "x": -223.06923652882108,
+            "y": 48.11814329802089,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 228.2,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11551,7 +12003,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-17",
@@ -11559,14 +12012,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "17",
           "position3D": {
-            "x": 253.4714395211812,
-            "y": -4.424360434290994,
+            "x": -223.2957504002258,
+            "y": 47.05579510751084,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974993,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 228.19999999999996,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11577,7 +12030,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-18",
@@ -11585,14 +12039,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "18",
           "position3D": {
-            "x": 253.48420320793986,
-            "y": -3.619992020456674,
+            "x": -223.51720495905073,
+            "y": 45.992380752617045,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974987,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 228.2,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11603,7 +12057,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-19",
@@ -11611,14 +12066,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "19",
           "position3D": {
-            "x": 253.49441431158647,
-            "y": -2.8155871533429604,
+            "x": -223.73359518769996,
+            "y": 44.92792432759821,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 228.2,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11629,7 +12084,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-20",
@@ -11637,14 +12093,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "20",
           "position3D": {
-            "x": 253.50207272929526,
-            "y": -2.011153933297808,
+            "x": -223.94491618332245,
+            "y": 43.862449950324006,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 228.2,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11655,7 +12111,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-21",
@@ -11663,14 +12120,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "21",
           "position3D": {
-            "x": 253.50717838394607,
-            "y": -1.2067004609548755,
+            "x": -224.15116315792304,
+            "y": 42.79598176172808,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 228.2,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11681,7 +12138,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-T-22",
@@ -11689,14 +12147,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "T",
           "seatNumber": "22",
           "position3D": {
-            "x": 253.509731224125,
-            "y": -0.4022348371517609,
+            "x": -224.35233143847088,
+            "y": 41.728543925261846,
             "z": 122.5
           },
           "elevation": 122.5,
-          "distanceFromHomeplate": 253.51005032974987,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 228.2,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11707,11 +12165,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -11719,7 +12179,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 125,
-      "depth": 256.5100503297499,
+      "depth": 231,
       "rowSpacing": 36,
       "seats": [
         {
@@ -11728,14 +12188,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "1",
           "position3D": {
-            "x": 255.9132731677036,
-            "y": -17.48721066274276,
+            "x": -221.75612567875334,
+            "y": 64.69328190738942,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 231,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11746,7 +12206,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-2",
@@ -11754,14 +12215,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "2",
           "position3D": {
-            "x": 255.96747717139598,
-            "y": -16.675027756550016,
+            "x": -222.0615516033784,
+            "y": 63.636996311109016,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 231,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11772,7 +12233,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-3",
@@ -11780,14 +12242,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "3",
           "position3D": {
-            "x": 256.019103585435,
-            "y": -15.862676933012818,
+            "x": -222.36194617922274,
+            "y": 62.579268862686874,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 231,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11798,7 +12260,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-4",
@@ -11806,14 +12269,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "4",
           "position3D": {
-            "x": 256.06815188994324,
-            "y": -15.050166372495017,
+            "x": -222.65730260011094,
+            "y": 61.52012352753068,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 231,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11824,7 +12287,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-5",
@@ -11832,14 +12296,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "5",
           "position3D": {
-            "x": 256.1146215910049,
-            "y": -14.237504256968995,
+            "x": -222.9476141740191,
+            "y": 60.459584303174935,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 231,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11850,7 +12314,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-6",
@@ -11858,14 +12323,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "6",
           "position3D": {
-            "x": 256.15851222067045,
-            "y": -13.42469876993311,
+            "x": -223.2328743232271,
+            "y": 59.397675218734754,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 231,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11876,7 +12341,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-7",
@@ -11884,14 +12350,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "7",
           "position3D": {
-            "x": 256.1998233369619,
-            "y": -12.611758096329654,
+            "x": -223.51307658446686,
+            "y": 58.33442033436391,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974996,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 231,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11902,7 +12368,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-8",
@@ -11910,14 +12377,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "8",
           "position3D": {
-            "x": 256.2385545238767,
-            "y": -11.798690422462245,
+            "x": -223.7882146090694,
+            "y": 57.26984374070784,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 230.99999999999997,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11928,7 +12395,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-9",
@@ -11936,14 +12404,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "9",
           "position3D": {
-            "x": 256.27470539139216,
-            "y": -10.985503935913213,
+            "x": -224.05828216310832,
+            "y": 56.203969558358914,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974984,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 231,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11954,7 +12422,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-10",
@@ -11962,14 +12431,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "10",
           "position3D": {
-            "x": 256.3082755754696,
-            "y": -10.172206825461506,
+            "x": -224.32327312754117,
+            "y": 55.136821937309364,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 230.99999999999997,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -11980,7 +12449,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-11",
@@ -11988,14 +12458,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "11",
           "position3D": {
-            "x": 256.3392647380575,
-            "y": -9.358807281000061,
+            "x": -224.58318149834804,
+            "y": 54.06842505640479,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 231,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12006,7 +12476,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-12",
@@ -12014,14 +12485,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "12",
           "position3D": {
-            "x": 256.3676725670954,
-            "y": -8.545313493453138,
+            "x": -224.8380013866678,
+            "y": 52.99880312279485,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 231,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12032,7 +12503,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-13",
@@ -12040,14 +12512,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "13",
           "position3D": {
-            "x": 256.3934987765167,
-            "y": -7.731733654694268,
+            "x": -225.08772701893116,
+            "y": 51.927980371386745,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974984,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 231,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12058,7 +12530,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-14",
@@ -12066,14 +12539,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "14",
           "position3D": {
-            "x": 256.41674310625194,
-            "y": -6.91807595746327,
+            "x": -225.3323527369918,
+            "y": 50.85598106429478,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974996,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 231,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12084,7 +12557,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-15",
@@ -12092,14 +12566,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "15",
           "position3D": {
-            "x": 256.4374053222308,
-            "y": -6.104348595284187,
+            "x": -225.57187299825446,
+            "y": 49.7828294902907,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 231,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12110,7 +12584,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-16",
@@ -12118,14 +12593,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "16",
           "position3D": {
-            "x": 256.45548521638506,
-            "y": -5.290559762382583,
+            "x": -225.8062823758005,
+            "y": 48.708549964254274,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974996,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 231.00000000000003,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12136,7 +12611,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-17",
@@ -12144,14 +12620,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "17",
           "position3D": {
-            "x": 256.47098260665035,
-            "y": -4.476717653602845,
+            "x": -226.03557555851083,
+            "y": 47.633166826621405,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 231.00000000000003,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12162,7 +12638,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-18",
@@ -12170,14 +12647,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "18",
           "position3D": {
-            "x": 256.48389733696814,
-            "y": -3.662830464326036,
+            "x": -226.25974735118635,
+            "y": 46.55670444283321,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.51005032974984,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 231,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12188,7 +12665,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-19",
@@ -12196,14 +12674,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "19",
           "position3D": {
-            "x": 256.49422927728733,
-            "y": -2.8489063903871794,
+            "x": -226.4787926746656,
+            "y": 45.47918720278347,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 230.99999999999997,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12214,7 +12692,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-20",
@@ -12222,14 +12701,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "20",
           "position3D": {
-            "x": 256.50197832356525,
-            "y": -2.034953627992537,
+            "x": -226.69270656593991,
+            "y": 44.40063952026663,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 231,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12240,7 +12719,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-21",
@@ -12248,14 +12728,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "21",
           "position3D": {
-            "x": 256.5071443977692,
-            "y": -1.220980373637453,
+            "x": -226.90148417826566,
+            "y": 43.32108583242413,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 231.00000000000003,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12266,7 +12746,8 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-U-22",
@@ -12274,14 +12755,14 @@ export const section_4RS: SectionSeatingData = {
           "row": "U",
           "seatNumber": "22",
           "position3D": {
-            "x": 256.5097274478768,
-            "y": -0.40699482402362525,
+            "x": -227.1051207812742,
+            "y": 42.24055059919144,
             "z": 125
           },
           "elevation": 125,
-          "distanceFromHomeplate": 256.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 230.99999999999997,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
@@ -12292,11 +12773,13 @@ export const section_4RS: SectionSeatingData = {
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
       "wheelchairRow": false
     },
     {
@@ -12304,7 +12787,7 @@ export const section_4RS: SectionSeatingData = {
       "sectionId": "4RS",
       "seatCount": 22,
       "elevation": 127.5,
-      "depth": 259.5100503297499,
+      "depth": 233.8,
       "rowSpacing": 36,
       "seats": [
         {
@@ -12313,25 +12796,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "1",
           "position3D": {
-            "x": 258.9062935913329,
-            "y": -17.691731428774297,
+            "x": -224.4440787172837,
+            "y": 65.47744290020627,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 86.0909090909091,
-          "facing": 266.0909090909091,
+          "distanceFromHomeplate": 233.80000000000004,
+          "angle": -106.26363636363637,
+          "facing": 73.73636363636363,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
-            "wheelchairAccessible": true,
+            "wheelchairAccessible": false,
             "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-2",
@@ -12339,25 +12823,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "2",
           "position3D": {
-            "x": 258.9611315351413,
-            "y": -16.870049679493548,
+            "x": -224.75320677432845,
+            "y": 64.40835384215276,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 86.27272727272727,
-          "facing": 266.27272727272725,
+          "distanceFromHomeplate": 233.79999999999998,
+          "angle": -105.9909090909091,
+          "facing": 74.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-3",
@@ -12365,25 +12850,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "3",
           "position3D": {
-            "x": 259.0133617432302,
-            "y": -16.048198048999748,
+            "x": -225.05724249654665,
+            "y": 63.33780545496187,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 86.45454545454545,
-          "facing": 266.45454545454544,
+          "distanceFromHomeplate": 233.8,
+          "angle": -105.71818181818182,
+          "facing": 74.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-4",
@@ -12391,25 +12877,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "4",
           "position3D": {
-            "x": 259.0629836896419,
-            "y": -15.226184813329764,
+            "x": -225.3561789952638,
+            "y": 62.26582199453105,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 86.63636363636364,
-          "facing": 266.6363636363636,
+          "distanceFromHomeplate": 233.8,
+          "angle": -105.44545454545455,
+          "facing": 74.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-5",
@@ -12417,25 +12904,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "5",
           "position3D": {
-            "x": 259.109996874684,
-            "y": -14.404018250147816,
+            "x": -225.65000949734053,
+            "y": 61.19242774927403,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 86.81818181818181,
-          "facing": 266.8181818181818,
+          "distanceFromHomeplate": 233.79999999999998,
+          "angle": -105.17272727272727,
+          "facing": 74.82727272727273,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-6",
@@ -12443,25 +12931,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "6",
           "position3D": {
-            "x": 259.15440082493416,
-            "y": -13.581706638661942,
+            "x": -225.93872734532684,
+            "y": 60.117647039567906,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974984,
-          "angle": 87,
-          "facing": 267,
+          "distanceFromHomeplate": 233.8,
+          "angle": -104.9,
+          "facing": 75.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-7",
@@ -12469,25 +12958,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "7",
           "position3D": {
-            "x": 259.19619509324525,
-            "y": -12.759258259541001,
+            "x": -226.22232599761193,
+            "y": 59.04150421720469,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 87.18181818181819,
-          "facing": 267.1818181818182,
+          "distanceFromHomeplate": 233.8,
+          "angle": -104.62727272727274,
+          "facing": 75.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-8",
@@ -12495,25 +12985,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "8",
           "position3D": {
-            "x": 259.2353792587494,
-            "y": -11.936681394831103,
+            "x": -226.50079902857328,
+            "y": 57.96402366483764,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 87.36363636363636,
-          "facing": 267.3636363636364,
+          "distanceFromHomeplate": 233.8,
+          "angle": -104.35454545454546,
+          "facing": 75.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-9",
@@ -12521,25 +13012,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "9",
           "position3D": {
-            "x": 259.27195292686235,
-            "y": -11.113984327872021,
+            "x": -226.77414012872177,
+            "y": 56.885229795429936,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974984,
-          "angle": 87.54545454545455,
-          "facing": 267.54545454545456,
+          "distanceFromHomeplate": 233.8,
+          "angle": -104.08181818181819,
+          "facing": 75.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-10",
@@ -12547,25 +13039,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "10",
           "position3D": {
-            "x": 259.3059157292879,
-            "y": -10.291175343214142,
+            "x": -227.04234310484472,
+            "y": 55.80514705170099,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974996,
-          "angle": 87.72727272727273,
-          "facing": 267.72727272727275,
+          "distanceFromHomeplate": 233.8,
+          "angle": -103.80909090909091,
+          "facing": 76.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-11",
@@ -12573,25 +13066,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "11",
           "position3D": {
-            "x": 259.33726732402084,
-            "y": -9.468262726534874,
+            "x": -227.3054018801462,
+            "y": 54.72379990557334,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974996,
-          "angle": 87.9090909090909,
-          "facing": 267.9090909090909,
+          "distanceFromHomeplate": 233.8,
+          "angle": -103.53636363636365,
+          "facing": 76.46363636363635,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-12",
@@ -12599,25 +13093,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "12",
           "position3D": {
-            "x": 259.366007395351,
-            "y": -8.645254764555006,
+            "x": -227.563310494385,
+            "y": 53.6412128576166,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 88.0909090909091,
-          "facing": 268.0909090909091,
+          "distanceFromHomeplate": 233.8,
+          "angle": -103.26363636363637,
+          "facing": 76.73636363636363,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-13",
@@ -12625,25 +13120,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "13",
           "position3D": {
-            "x": 259.3921356538662,
-            "y": -7.822159744955702,
+            "x": -227.81606310400912,
+            "y": 52.557410436494465,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 88.27272727272727,
-          "facing": 268.27272727272725,
+          "distanceFromHomeplate": 233.8,
+          "angle": -102.9909090909091,
+          "facing": 77.0090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-14",
@@ -12651,25 +13147,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "14",
           "position3D": {
-            "x": 259.41565183645514,
-            "y": -6.998985956294543,
+            "x": -228.06365398228868,
+            "y": 51.47241719840745,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 88.45454545454545,
-          "facing": 268.45454545454544,
+          "distanceFromHomeplate": 233.8,
+          "angle": -102.71818181818182,
+          "facing": 77.28181818181818,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-15",
@@ -12677,25 +13174,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "15",
           "position3D": {
-            "x": 259.4365557063102,
-            "y": -6.1757416879225095,
+            "x": -228.30607751944544,
+            "y": 50.38625772653665,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 88.63636363636364,
-          "facing": 268.6363636363636,
+          "distanceFromHomeplate": 233.8,
+          "angle": -102.44545454545455,
+          "facing": 77.55454545454545,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-16",
@@ -12703,25 +13201,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "16",
           "position3D": {
-            "x": 259.45484705292955,
-            "y": -5.352435229900306,
+            "x": -228.5433282227799,
+            "y": 49.298956630487666,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 88.81818181818181,
-          "facing": 268.8181818181818,
+          "distanceFromHomeplate": 233.80000000000004,
+          "angle": -102.17272727272729,
+          "facing": 77.82727272727271,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-17",
@@ -12729,25 +13228,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "17",
           "position3D": {
-            "x": 259.4705256921195,
-            "y": -4.529074872914696,
+            "x": -228.77540071679582,
+            "y": 48.21053854573197,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 89,
-          "facing": 269,
+          "distanceFromHomeplate": 233.8,
+          "angle": -101.9,
+          "facing": 78.1,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-18",
@@ -12755,25 +13255,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "18",
           "position3D": {
-            "x": 259.4835914659965,
-            "y": -3.7056689081953973,
+            "x": -229.00228974332194,
+            "y": 47.12102813304937,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 89.18181818181819,
-          "facing": 269.1818181818182,
+          "distanceFromHomeplate": 233.8,
+          "angle": -101.62727272727274,
+          "facing": 78.37272727272726,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-19",
@@ -12781,25 +13282,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "19",
           "position3D": {
-            "x": 259.4940442429882,
-            "y": -2.8822256274313984,
+            "x": -229.22399016163126,
+            "y": 46.03045007796873,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 89.36363636363636,
-          "facing": 269.3636363636364,
+          "distanceFromHomeplate": 233.8,
+          "angle": -101.35454545454546,
+          "facing": 78.64545454545454,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-20",
@@ -12807,25 +13309,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "20",
           "position3D": {
-            "x": 259.50188391783524,
-            "y": -2.058753322687266,
+            "x": -229.44049694855738,
+            "y": 44.93882909020926,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974984,
-          "angle": 89.54545454545455,
-          "facing": 269.54545454545456,
+          "distanceFromHomeplate": 233.8,
+          "angle": -101.08181818181819,
+          "facing": 78.91818181818181,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-21",
@@ -12833,25 +13336,26 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "21",
           "position3D": {
-            "x": 259.5071104115923,
-            "y": -1.2352602863200302,
+            "x": -229.6518051986083,
+            "y": 43.846189903120184,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.51005032974984,
-          "angle": 89.72727272727273,
-          "facing": 269.72727272727275,
+          "distanceFromHomeplate": 233.8,
+          "angle": -100.80909090909091,
+          "facing": 79.19090909090909,
           "seatType": "standard",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
             "wheelchairAccessible": false,
-            "companionSeat": true,
+            "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         },
         {
           "id": "dodger-stadium-4RS-V-22",
@@ -12859,37 +13363,39 @@ export const section_4RS: SectionSeatingData = {
           "row": "V",
           "seatNumber": "22",
           "position3D": {
-            "x": 259.5097236716286,
-            "y": -0.4117548108954896,
+            "x": -229.85791012407753,
+            "y": 42.752557273121035,
             "z": 127.5
           },
           "elevation": 127.5,
-          "distanceFromHomeplate": 259.5100503297499,
-          "angle": 89.9090909090909,
-          "facing": 269.9090909090909,
+          "distanceFromHomeplate": 233.8,
+          "angle": -100.53636363636365,
+          "facing": 79.46363636363635,
           "seatType": "aisle",
           "hasArmrests": true,
           "cupHolders": true,
           "viewQuality": "fair",
           "accessibility": {
-            "wheelchairAccessible": true,
+            "wheelchairAccessible": false,
             "companionSeat": false,
             "requiresStairs": true,
             "elevatorAccess": false
           },
-          "covered": false
+          "covered": true,
+          "overhangHeight": 20
         }
       ],
-      "covered": false,
-      "hasAisleSeats": true,
-      "wheelchairRow": true
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
     }
   ],
   "seatDistribution": {
-    "standard": 420,
-    "aisle": 42,
-    "wheelchair": 2,
-    "companion": 20,
+    "standard": 440,
+    "aisle": 44,
+    "wheelchair": 0,
+    "companion": 0,
     "other": 0
   }
 };

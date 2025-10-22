@@ -1,0 +1,9034 @@
+/**
+ * Section 126 - giants
+ * Generated: 2025-10-22T00:57:42.838Z
+ * Total Seats: 336
+ * Total Rows: 21
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_126: SectionSeatingData = {
+  "sectionId": "126",
+  "sectionName": "Section 126",
+  "stadiumId": "giants",
+  "totalSeats": 336,
+  "totalRows": 21,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 0,
+      "depth": 65,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-A-1",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -58.043631321723915,
+            "y": 29.25639866743326,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-2",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -58.29672819962474,
+            "y": 28.748764864235095,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-3",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -58.54538555596822,
+            "y": 28.238941731287102,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-4",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -58.78958445453394,
+            "y": 27.726968093594767,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-5",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -59.02930629863028,
+            "y": 27.212882939932832,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-6",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -59.26453283251077,
+            "y": 26.696725419876007,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-7",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -59.49524614276407,
+            "y": 26.17853484081791,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-8",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -59.7214286596784,
+            "y": 25.65835066497734,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-9",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -59.94306315857936,
+            "y": 25.136212506393342,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-10",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -60.160132761141824,
+            "y": 24.612160127908126,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-11",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -60.37262093667507,
+            "y": 24.08623343813937,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-12",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -60.580511503381906,
+            "y": 23.5584724884406,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-13",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -60.78378862959076,
+            "y": 23.028917469851528,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-14",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -60.982436834961476,
+            "y": 22.49760871003702,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-15",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -61.176440991664094,
+            "y": 21.96458667021624,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-A-16",
+          "sectionId": "126",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -61.365786325530976,
+            "y": 21.429891942081163,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 65,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 2.5,
+      "depth": 67.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-B-1",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -60.543972363275095,
+            "y": 30.516674302338075,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-2",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -60.80797187591626,
+            "y": 29.9871731968483,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-3",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -61.06734062607146,
+            "y": 29.45538845201947,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-4",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -61.32205886180616,
+            "y": 28.921360565318846,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-5",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -61.572107185340506,
+            "y": 28.38513020503763,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-6",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -61.81746655452661,
+            "y": 27.84673820719374,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-7",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -62.058118284298516,
+            "y": 27.306225572422374,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-8",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -62.294044048095316,
+            "y": 26.76363346285329,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-9",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -62.52522587925663,
+            "y": 26.21900319897644,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-10",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -62.751646172391006,
+            "y": 25.672376256494935,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-11",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -62.97328768471645,
+            "y": 25.12379426316691,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-12",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -63.19013353737374,
+            "y": 24.573298995634964,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-13",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -63.40216721671159,
+            "y": 24.02093237624513,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-14",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -63.609372575544434,
+            "y": 23.466736469854,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-15",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -63.81173383438193,
+            "y": 22.91075348062555,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.8,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-B-16",
+          "sectionId": "126",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -64.00923558263078,
+            "y": 22.353025748816968,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 67.80000000000001,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 5,
+      "depth": 70.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-C-1",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -63.044313404826276,
+            "y": 31.77694993724289,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-2",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -63.31921555220779,
+            "y": 31.2255815294615,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-3",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -63.58929569617471,
+            "y": 30.671835172751837,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.60000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-4",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -63.854533269078395,
+            "y": 30.11575303704293,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-5",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -64.11490807205072,
+            "y": 29.557377470142427,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-6",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -64.37040027654245,
+            "y": 28.996750994511476,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-7",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -64.62099042583297,
+            "y": 28.433916304026834,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-8",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -64.86665943651224,
+            "y": 27.868916260729232,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.60000000000001,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-9",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -65.10738859993388,
+            "y": 27.301793891559537,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-10",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -65.34315958364019,
+            "y": 26.732592385081748,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-11",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -65.57395443275784,
+            "y": 26.16135508819445,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.60000000000001,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-12",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -65.79975557136557,
+            "y": 25.588125502829325,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.59999999999998,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-13",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -66.02054580383242,
+            "y": 25.012947282638734,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-14",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -66.23630831612738,
+            "y": 24.435864229670976,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-15",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -66.44702667709977,
+            "y": 23.856920291034864,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.6,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-C-16",
+          "sectionId": "126",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -66.65268483973057,
+            "y": 23.27615955555277,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 70.60000000000001,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 7.5,
+      "depth": 73.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-D-1",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -65.54465444637748,
+            "y": 33.03722557214771,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-2",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -65.83045922849932,
+            "y": 32.46398986207471,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-3",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -66.11125076627796,
+            "y": 31.88828189348421,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-4",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -66.38700767635063,
+            "y": 31.310145508767015,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-5",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -66.65770895876096,
+            "y": 30.72962473524723,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-6",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -66.92333399855832,
+            "y": 30.146763781829215,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-7",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -67.18386256736743,
+            "y": 29.561607035631305,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-8",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -67.43927482492916,
+            "y": 28.974199058605183,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-9",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -67.68955132061117,
+            "y": 28.38458458414264,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.40000000000002,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-10",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -67.93467299488938,
+            "y": 27.792808513668565,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-11",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -68.17462118079924,
+            "y": 27.198915913221995,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-12",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -68.40937760535742,
+            "y": 26.602952010023692,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-13",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -68.63892439095326,
+            "y": 26.004962189032344,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-14",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -68.86324405671036,
+            "y": 25.40499198948796,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-15",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -69.08231951981762,
+            "y": 24.803087101444184,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-D-16",
+          "sectionId": "126",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -69.29613409683037,
+            "y": 24.19929336228858,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 73.4,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 10,
+      "depth": 76.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-E-1",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -68.04499548792866,
+            "y": 34.29750120705253,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-2",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -68.34170290479085,
+            "y": 33.702398194687916,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-3",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -68.63320583638121,
+            "y": 33.104728614216576,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-4",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -68.91948208362287,
+            "y": 32.504537980491094,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-5",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -69.20050984547119,
+            "y": 31.90187200035203,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-6",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -69.47626772057416,
+            "y": 31.29677656914695,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-7",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -69.74673470890188,
+            "y": 30.689297767235765,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-8",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -70.01189021334606,
+            "y": 30.07948185648113,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-9",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -70.27171404128843,
+            "y": 29.467375276725736,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-10",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -70.52618640613856,
+            "y": 28.853024642255374,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-11",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -70.77528792884063,
+            "y": 28.23647673824954,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-12",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -71.01899963934925,
+            "y": 27.617778517218056,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-13",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -71.2573029780741,
+            "y": 26.996977095425947,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-14",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -71.49017979729331,
+            "y": 26.37411974930494,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-15",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -71.71761236253545,
+            "y": 25.749253911853497,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-E-16",
+          "sectionId": "126",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -71.93958335393016,
+            "y": 25.12242716902438,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 76.2,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 12.5,
+      "depth": 79,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-F-1",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -70.54533652947984,
+            "y": 35.55777684195734,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-2",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -70.85294658108238,
+            "y": 34.94080652730111,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-3",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -71.15516090648445,
+            "y": 34.32117533494894,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-4",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -71.45195649089509,
+            "y": 33.69893045221518,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-5",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -71.74331073218141,
+            "y": 33.07411926545683,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-6",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -72.02920144259001,
+            "y": 32.446789356464684,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-7",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -72.30960685043632,
+            "y": 31.816988498840228,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-8",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -72.58450560176298,
+            "y": 31.184764654357075,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-9",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -72.8538767619657,
+            "y": 30.550165969308832,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-10",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -73.11769981738776,
+            "y": 29.913240770842183,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79.00000000000001,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-11",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -73.375954676882,
+            "y": 29.27403756327708,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-12",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -73.62862167334109,
+            "y": 28.63260502441242,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-13",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -73.87568156519492,
+            "y": 27.98899200181955,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-14",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -74.11711553787626,
+            "y": 27.343247509121916,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-15",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -74.3529052052533,
+            "y": 26.695420722262813,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-F-16",
+          "sectionId": "126",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -74.58303261102996,
+            "y": 26.045560975760182,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 79,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 15,
+      "depth": 81.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-G-1",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -73.04567757103102,
+            "y": 36.818052476862164,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-2",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -73.36419025737389,
+            "y": 36.17921485991432,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-3",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -73.6771159765877,
+            "y": 35.537622055681304,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-4",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -73.98443089816732,
+            "y": 34.89332292393926,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-5",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -74.28611161889164,
+            "y": 34.24636653056162,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-6",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -74.58213516460584,
+            "y": 33.59680214378242,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-7",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -74.87247899197078,
+            "y": 32.94467923044469,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-8",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -75.15712099017989,
+            "y": 32.290047452233026,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-9",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -75.43603948264295,
+            "y": 31.63295666189193,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-10",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -75.70921322863694,
+            "y": 30.973456899428996,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-11",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -75.9766214249234,
+            "y": 30.31159838830462,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-12",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -76.23824370733291,
+            "y": 29.647431531606784,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.79999999999998,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-13",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -76.49406015231575,
+            "y": 28.981006908213153,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-14",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -76.74405127845921,
+            "y": 28.312375268938897,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-15",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -76.98819804797112,
+            "y": 27.641587532672126,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-G-16",
+          "sectionId": "126",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -77.22648186812975,
+            "y": 26.968694782495987,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 81.8,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 17.5,
+      "depth": 84.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-H-1",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -75.5460186125822,
+            "y": 38.07832811176698,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-2",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -75.87543393366542,
+            "y": 37.41762319252752,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-3",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -76.19907104669093,
+            "y": 36.754068776413675,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-4",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -76.51690530543955,
+            "y": 36.08771539566334,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-5",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -76.82891250560186,
+            "y": 35.418613795666424,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-6",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -77.1350688866217,
+            "y": 34.746814931100154,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-7",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -77.43535113350524,
+            "y": 34.07236996204915,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-8",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -77.72973637859681,
+            "y": 33.39533025010897,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-9",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -78.01820220332021,
+            "y": 32.71574735447503,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-10",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -78.30072663988612,
+            "y": 32.033673028015805,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-11",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -78.57728817296477,
+            "y": 31.34915921333216,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-12",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -78.84786574132475,
+            "y": 30.66225803880115,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-13",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -79.11243873943658,
+            "y": 29.973021814606756,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-14",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -79.37098701904216,
+            "y": 29.281503028755875,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-15",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -79.62349089068896,
+            "y": 28.58775434308144,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-H-16",
+          "sectionId": "126",
+          "row": "H",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -79.86993112522954,
+            "y": 27.89182858923179,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 84.6,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 20,
+      "depth": 87.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-I-1",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -78.0463596541334,
+            "y": 39.3386037466718,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-2",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -78.38667760995696,
+            "y": 38.65603152514073,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-3",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -78.72102611679419,
+            "y": 37.970515497146046,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-4",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -79.04937971271178,
+            "y": 37.282107867387424,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-5",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -79.3717133923121,
+            "y": 36.590861060771225,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-6",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -79.68800260863756,
+            "y": 35.896827718417896,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-7",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -79.99822327503969,
+            "y": 35.200060693653626,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-8",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -80.30235176701373,
+            "y": 34.50061304798492,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-9",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -80.60036492399749,
+            "y": 33.79853804705813,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-10",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -80.89224005113532,
+            "y": 33.09388915660262,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-11",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -81.17795492100618,
+            "y": 32.386720038359705,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-12",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -81.4574877753166,
+            "y": 31.677084545995516,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-13",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -81.73081732655743,
+            "y": 30.965036721000367,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-14",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -81.99792275962513,
+            "y": 30.250630788572856,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-15",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -82.2587837334068,
+            "y": 29.53392115349076,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-I-16",
+          "sectionId": "126",
+          "row": "I",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -82.51338038232936,
+            "y": 28.814962395967598,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 87.4,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 22.5,
+      "depth": 90.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-J-1",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -80.54670069568458,
+            "y": 40.598879381576616,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-2",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -80.89792128624849,
+            "y": 39.89443985775393,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.20000000000002,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-3",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -81.24298118689744,
+            "y": 39.18696221787841,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-4",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -81.58185411998402,
+            "y": 38.47650033911151,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-5",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -81.91451427902233,
+            "y": 37.763108325876026,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-6",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -82.2409363306534,
+            "y": 37.04684050573563,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-7",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -82.56109541657415,
+            "y": 36.327751425258086,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-8",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -82.87496715543065,
+            "y": 35.605895845860864,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-9",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -83.18252764467475,
+            "y": 34.881328739641226,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-10",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -83.4837534623845,
+            "y": 34.15410528518943,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-11",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -83.77862166904755,
+            "y": 33.424280863387246,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.19999999999999,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-12",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -84.06710980930843,
+            "y": 32.69191105318988,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-13",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -84.34919591367826,
+            "y": 31.95705162739397,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-14",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -84.62485850020808,
+            "y": 31.219758548389837,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-15",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -84.89407657612465,
+            "y": 30.480087963900072,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-J-16",
+          "sectionId": "126",
+          "row": "J",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -85.15682963942915,
+            "y": 29.7380962027034,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 90.2,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 25,
+      "depth": 93,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-K-1",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -83.04704173723576,
+            "y": 41.85915501648143,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-2",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -83.40916496254,
+            "y": 41.132848190367135,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-3",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -83.76493625700068,
+            "y": 40.40340893861078,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93.00000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-4",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -84.11432852725625,
+            "y": 39.67089281083559,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93.00000000000001,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-5",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -84.45731516573255,
+            "y": 38.93535559098082,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-6",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -84.79387005266925,
+            "y": 38.196853293053366,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-7",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -85.12396755810859,
+            "y": 37.455442156862546,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-8",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -85.44758254384756,
+            "y": 36.71117864373681,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-9",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -85.76469036535201,
+            "y": 35.96411943222432,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-10",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -86.07526687363368,
+            "y": 35.21432141377624,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-11",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -86.37928841708894,
+            "y": 34.461841688414786,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-12",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -86.67673184330026,
+            "y": 33.70673756038424,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-13",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -86.96757450079909,
+            "y": 32.94906653378757,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-14",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -87.25179424079104,
+            "y": 32.18888630820681,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-15",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -87.52936941884248,
+            "y": 31.426254774309385,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-K-16",
+          "sectionId": "126",
+          "row": "K",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -87.80027889652894,
+            "y": 30.661230009439205,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 93,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 27.5,
+      "depth": 95.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-L-1",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -85.54738277878694,
+            "y": 43.119430651386246,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-2",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -85.92040863883153,
+            "y": 42.37125652298034,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-3",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -86.28689132710393,
+            "y": 41.619855659343145,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-4",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -86.64680293452848,
+            "y": 40.86528528255967,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-5",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -87.00011605244278,
+            "y": 40.10760285608562,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-6",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -87.3468037746851,
+            "y": 39.3468660803711,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-7",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -87.68683969964304,
+            "y": 38.58313288846701,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-8",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -88.02019793226448,
+            "y": 37.81646144161276,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-9",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -88.34685308602928,
+            "y": 37.04691012480742,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-10",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -88.66678028488286,
+            "y": 36.274537542363056,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-11",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -88.97995516513033,
+            "y": 35.49940251344233,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-12",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -89.2863538772921,
+            "y": 34.721564067578605,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-13",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -89.58595308791992,
+            "y": 33.94108144018117,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-14",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -89.878729981374,
+            "y": 33.158014068023796,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-15",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -90.16466226156031,
+            "y": 32.3724215847187,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.8,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-L-16",
+          "sectionId": "126",
+          "row": "L",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -90.44372815362874,
+            "y": 31.584363816175006,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 95.80000000000001,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 30,
+      "depth": 98.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-M-1",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -88.04772382033812,
+            "y": 44.37970628629106,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-2",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -88.43165231512306,
+            "y": 43.60966485559354,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-3",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -88.80884639720716,
+            "y": 42.83630238007551,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.59999999999998,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-4",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -89.1792773418007,
+            "y": 42.05967775428375,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-5",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -89.542916939153,
+            "y": 41.279850121190414,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.59999999999998,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-6",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -89.89973749670094,
+            "y": 40.49687886768883,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-7",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -90.24971184117749,
+            "y": 39.71082362007147,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-8",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -90.59281332068139,
+            "y": 38.9217442394887,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-9",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -90.92901580670654,
+            "y": 38.129700817390514,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-10",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -91.25829369613206,
+            "y": 37.334753670949866,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.60000000000001,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-11",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -91.58062191317171,
+            "y": 36.536963338469874,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-12",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -91.89597591128393,
+            "y": 35.73639057477297,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.59999999999998,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-13",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -92.20433167504075,
+            "y": 34.93309634657478,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-14",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -92.50566572195694,
+            "y": 34.127141827840774,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.60000000000001,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-15",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -92.79995510427815,
+            "y": 33.31858839512801,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.6,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-M-16",
+          "sectionId": "126",
+          "row": "M",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -93.08717741072853,
+            "y": 32.50749762291081,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 98.60000000000001,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 32.5,
+      "depth": 101.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-N-1",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -90.54806486188932,
+            "y": 45.63998192119588,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.4,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-2",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -90.94289599141459,
+            "y": 44.848073188206754,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.4,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-3",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -91.33080146731042,
+            "y": 44.05274910080789,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-4",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -91.71175174907295,
+            "y": 43.25407022600784,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-5",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -92.08571782586324,
+            "y": 42.45209738629522,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.4,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-6",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -92.4526712187168,
+            "y": 41.64689165500657,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.4,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-7",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -92.81258398271196,
+            "y": 40.83851435167594,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-8",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -93.16542870909832,
+            "y": 40.027027037364654,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-9",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -93.51117852738382,
+            "y": 39.21249150997362,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.4,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-10",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -93.84980710738125,
+            "y": 38.39496979953668,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-11",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -94.18128866121312,
+            "y": 37.574524163497415,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-12",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -94.50559794527578,
+            "y": 36.75121708196734,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-13",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -94.82271026216159,
+            "y": 35.925111252968385,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-14",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -95.13260146253991,
+            "y": 35.09626958765775,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.39999999999999,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-15",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -95.435247946996,
+            "y": 34.264755205537334,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-N-16",
+          "sectionId": "126",
+          "row": "N",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -95.73062666782833,
+            "y": 33.43063142964662,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 101.40000000000002,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "O",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 35,
+      "depth": 104.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-O-1",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -93.04840590344048,
+            "y": 46.9002575561007,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.2,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-2",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -93.4541396677061,
+            "y": 46.086481520819945,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-3",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -93.85275653741365,
+            "y": 45.269195821540244,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.2,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-4",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -94.24422615634516,
+            "y": 44.44846269773191,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.2,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-5",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -94.62851871257345,
+            "y": 43.624344651400015,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999997,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-6",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -95.00560494073262,
+            "y": 42.7969044423243,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999997,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-7",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -95.37545612424638,
+            "y": 41.9662050832804,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999997,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-8",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -95.73804409751521,
+            "y": 41.1323098352406,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.2,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-9",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -96.09334124806107,
+            "y": 40.29528220255671,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.2,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-10",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -96.44132051863042,
+            "y": 39.455185928123484,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-11",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -96.78195540925448,
+            "y": 38.612084988524956,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999997,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-12",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -97.1152199792676,
+            "y": 37.7660435891617,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-13",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -97.44108884928241,
+            "y": 36.917126159361985,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-14",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -97.75953720312285,
+            "y": 36.06539734747473,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-15",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -98.07054078971382,
+            "y": 35.21092201594664,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-O-16",
+          "sectionId": "126",
+          "row": "O",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -98.3740759249281,
+            "y": 34.353765236382415,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 104.19999999999999,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "P",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 37.5,
+      "depth": 107,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-P-1",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -95.54874694499168,
+            "y": 48.16053319100552,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-2",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -95.96538334399764,
+            "y": 47.324889853433156,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107.00000000000001,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-3",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -96.37471160751691,
+            "y": 46.485642542272615,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107.00000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-4",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -96.7767005636174,
+            "y": 45.642855169456,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-5",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -97.17131959928369,
+            "y": 44.796591916504816,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 106.99999999999999,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-6",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -97.55853866274849,
+            "y": 43.94691722964204,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-7",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -97.93832826578085,
+            "y": 43.09389581488487,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107.00000000000001,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-8",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -98.31065948593215,
+            "y": 42.23759263311655,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107.00000000000001,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-9",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -98.67550396873834,
+            "y": 41.37807289513981,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-10",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -99.03283392987962,
+            "y": 40.5154020567103,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-11",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -99.38262215729588,
+            "y": 39.649645813552496,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-12",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -99.72484201325945,
+            "y": 38.78087009635606,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-13",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -100.05946743640325,
+            "y": 37.90914106575559,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-14",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -100.38647294370581,
+            "y": 37.034525107291714,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-15",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -100.70583363243166,
+            "y": 36.15708882635596,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 106.99999999999999,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-P-16",
+          "sectionId": "126",
+          "row": "P",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -101.01752518202792,
+            "y": 35.27689904311822,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 107,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "Q",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 40,
+      "depth": 109.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-Q-1",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -98.04908798654286,
+            "y": 49.420808825910335,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-2",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -98.47662702028917,
+            "y": 48.56329818604636,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-3",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -98.89666667762016,
+            "y": 47.702089263004986,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.80000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-4",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -99.30917497088963,
+            "y": 46.83724764118008,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-5",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -99.71412048599392,
+            "y": 45.96883918160962,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-6",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -100.11147238476434,
+            "y": 45.096930016959774,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-7",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -100.5012004073153,
+            "y": 44.22158654648933,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.79999999999998,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-8",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -100.88327487434906,
+            "y": 43.34287543099249,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-9",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -101.2576666894156,
+            "y": 42.46086358772291,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-10",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -101.6243473411288,
+            "y": 41.57561818529711,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-11",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -101.98328890533726,
+            "y": 40.68720663858004,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.79999999999998,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-12",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -102.33446404725127,
+            "y": 39.795696603550425,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.79999999999998,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-13",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -102.67784602352408,
+            "y": 38.9011559721492,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-14",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -103.01340868428878,
+            "y": 38.00365286710869,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-15",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -103.34112647514951,
+            "y": 37.103255636765276,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-Q-16",
+          "sectionId": "126",
+          "row": "Q",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -103.66097443912771,
+            "y": 36.200032849854026,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 109.8,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "R",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 42.5,
+      "depth": 112.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-R-1",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -100.54942902809404,
+            "y": 50.68108446081515,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-2",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -100.98787069658069,
+            "y": 49.801706518659564,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-3",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -101.4186217477234,
+            "y": 48.91853598373735,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-4",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -101.84164937816186,
+            "y": 48.031640112904164,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-5",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -102.25692137270414,
+            "y": 47.14108644671441,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-6",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -102.66440610678018,
+            "y": 46.24694280427751,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-7",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -103.06407254884975,
+            "y": 45.349277278093794,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-8",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -103.45589026276598,
+            "y": 44.44815822886844,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-9",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -103.83982941009286,
+            "y": 43.54365428030601,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-10",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -104.21586075237798,
+            "y": 42.63583431388392,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-11",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -104.58395565337865,
+            "y": 41.724767463607584,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-12",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -104.94408608124311,
+            "y": 40.81052311074479,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-13",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -105.29622461064491,
+            "y": 39.8931708785428,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-14",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -105.64034442487173,
+            "y": 38.97278062692567,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-15",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -105.97641931786734,
+            "y": 38.049422447174585,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-R-16",
+          "sectionId": "126",
+          "row": "R",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -106.3044236962275,
+            "y": 37.12316665658983,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 112.6,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "S",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 45,
+      "depth": 115.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-S-1",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -103.04977006964523,
+            "y": 51.94136009571997,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-2",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -103.49911437287223,
+            "y": 51.04011485127277,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-3",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -103.94057681782665,
+            "y": 50.13498270446972,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-4",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -104.3741237854341,
+            "y": 49.22603258462825,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-5",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -104.79972225941438,
+            "y": 48.31333371181922,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-6",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -105.21733982879604,
+            "y": 47.39695559159525,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-7",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -105.6269446903842,
+            "y": 46.47696800969826,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-8",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -106.0285056511829,
+            "y": 45.55344102674439,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-9",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -106.42199213077014,
+            "y": 44.62644497288911,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-10",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -106.80737416362717,
+            "y": 43.696050442470735,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-11",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -107.18462240142004,
+            "y": 42.762328288635125,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-12",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -107.55370811523495,
+            "y": 41.82534961793916,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-13",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -107.91460319776576,
+            "y": 40.88518578493641,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-14",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -108.2672801654547,
+            "y": 39.941908386742654,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-15",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -108.61171216058518,
+            "y": 38.99558925758391,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.4,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-S-16",
+          "sectionId": "126",
+          "row": "S",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -108.94787295332732,
+            "y": 38.046300463325636,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 115.40000000000002,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "T",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 47.5,
+      "depth": 118.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-T-1",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -105.5501111111964,
+            "y": 53.20163573062478,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-2",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -106.01035804916374,
+            "y": 52.278523183885966,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-3",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -106.46253188792988,
+            "y": 51.351429425202085,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-4",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -106.90659819270631,
+            "y": 50.42042505635232,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-5",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -107.34252314612459,
+            "y": 49.485580976924005,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-6",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -107.77027355081186,
+            "y": 48.54696837891298,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-7",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -108.18981683191865,
+            "y": 47.604658741302714,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-8",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -108.60112103959979,
+            "y": 46.65872382462033,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-9",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -109.0041548514474,
+            "y": 45.7092356654722,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.2,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-10",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -109.39888757487635,
+            "y": 44.756266571057544,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-11",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -109.78528914946142,
+            "y": 43.799889113662665,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-12",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -110.16333014922678,
+            "y": 42.84017612513352,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-13",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -110.53298178488657,
+            "y": 41.87720069133001,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-14",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -110.89421590603763,
+            "y": 40.911036146559624,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-15",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -111.24700500330302,
+            "y": 39.94175606799322,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-T-16",
+          "sectionId": "126",
+          "row": "T",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -111.5913222104271,
+            "y": 38.969434270061434,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 118.19999999999999,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "U",
+      "sectionId": "126",
+      "seatCount": 16,
+      "elevation": 50,
+      "depth": 121,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "giants-126-U-1",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -108.0504521527476,
+            "y": 54.4619113655296,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -116.75,
+          "facing": 63.25,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-2",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -108.52160172545528,
+            "y": 53.51693151649918,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -116.25,
+          "facing": 63.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-3",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -108.98448695803314,
+            "y": 52.567876145934456,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -115.75,
+          "facing": 64.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-4",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -109.43907259997856,
+            "y": 51.61481752807641,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -115.25,
+          "facing": 64.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-5",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -109.88532403283483,
+            "y": 50.65782824202881,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -114.75,
+          "facing": 65.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-6",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -110.32320727282773,
+            "y": 49.69698116623072,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -114.25,
+          "facing": 65.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-7",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -110.75268897345312,
+            "y": 48.73234947290719,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -113.75,
+          "facing": 66.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-8",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -111.17373642801672,
+            "y": 47.76400662249628,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -113.25,
+          "facing": 66.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-9",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -111.58631757212467,
+            "y": 46.7920263580553,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -112.75,
+          "facing": 67.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-10",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -111.99040098612555,
+            "y": 45.81648269964436,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -112.25,
+          "facing": 67.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-11",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -112.38595589750282,
+            "y": 44.837449938690206,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121.00000000000001,
+          "angle": -111.75,
+          "facing": 68.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-12",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -112.77295218321862,
+            "y": 43.85500263232788,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 120.99999999999999,
+          "angle": -111.25,
+          "facing": 68.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-13",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -113.15136037200742,
+            "y": 42.86921559772362,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -110.75,
+          "facing": 69.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-14",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -113.5211516466206,
+            "y": 41.88016390637661,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -110.25,
+          "facing": 69.75,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-15",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -113.88229784602086,
+            "y": 40.887922878402534,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -109.75,
+          "facing": 70.25,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "giants-126-U-16",
+          "sectionId": "126",
+          "row": "U",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -114.2347714675269,
+            "y": 39.89256807679724,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 121,
+          "angle": -109.25,
+          "facing": 70.75,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 294,
+    "aisle": 42,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};

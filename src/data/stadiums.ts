@@ -107,7 +107,7 @@ export const MLB_STADIUMS: Stadium[] = [
     latitude: 38.6226,
     longitude: -90.1928,
     orientation: 92,
-    capacity: 44494,
+    capacity: 44383, // Updated to 2020-present official capacity
     roof: 'open',
     timezone: 'America/Chicago'
   },
@@ -159,7 +159,7 @@ export const MLB_STADIUMS: Stadium[] = [
     latitude: 37.7786,
     longitude: -122.3893,
     orientation: 87,
-    capacity: 41915,
+    capacity: 41331, // Updated to 2021-present official capacity
     roof: 'open',
     timezone: 'America/Los_Angeles'
   },

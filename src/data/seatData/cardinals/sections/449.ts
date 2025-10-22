@@ -1,0 +1,7487 @@
+/**
+ * Terrace 449 - cardinals
+ * Generated: 2025-10-22T00:29:14.767Z
+ * Total Seats: 280
+ * Total Rows: 14
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_449: SectionSeatingData = {
+  "sectionId": "449",
+  "sectionName": "Terrace 449",
+  "stadiumId": "cardinals",
+  "totalSeats": 280,
+  "totalRows": 14,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 90,
+      "depth": 250,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-A-1",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -215.84888765169293,
+            "y": 126.13190595375478,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-2",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -216.72418723390066,
+            "y": 124.62193493845763,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-3",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -217.58892398497494,
+            "y": 123.10589002586673,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 249.99999999999997,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-4",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -218.44305575886628,
+            "y": 121.58384510587268,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250.00000000000003,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-5",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -219.2865409263972,
+            "y": 120.05587436079718,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 249.99999999999997,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-6",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -220.11933837729052,
+            "y": 118.52205226177902,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-7",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -220.94140752217334,
+            "y": 116.98245356514339,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-8",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -221.75270829455545,
+            "y": 115.43715330875844,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-9",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -222.55320115278167,
+            "y": 113.88622680837882,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-10",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -223.34284708195943,
+            "y": 112.32974965397409,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250.00000000000003,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-11",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -224.1216075958601,
+            "y": 110.76779770604496,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 249.99999999999997,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-12",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -224.8894447387951,
+            "y": 109.2004470919255,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-13",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -225.64632108746514,
+            "y": 107.62777420207382,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-14",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -226.39219975278493,
+            "y": 106.04985568634747,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-15",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -227.12704438168043,
+            "y": 104.46676845026923,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-16",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -227.8508191588613,
+            "y": 102.87858965127722,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-17",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -228.56348880856598,
+            "y": 101.28539669496556,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250.00000000000003,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-18",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -229.265018596281,
+            "y": 99.68726723131158,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-19",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -229.95537433043444,
+            "y": 98.0842791508903,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-A-20",
+          "sectionId": "449",
+          "row": "A",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -230.63452236406167,
+            "y": 96.47651058107947,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 250,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 92.5,
+      "depth": 252.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-B-1",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -218.2663951933919,
+            "y": 127.54458330043684,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-2",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -219.15149813092034,
+            "y": 126.01770060976837,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-3",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -220.02591993360667,
+            "y": 124.48467599415645,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-4",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -220.88961798336558,
+            "y": 122.94558417105846,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-5",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -221.74255018477288,
+            "y": 121.4005001536381,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-6",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -222.5846749671162,
+            "y": 119.84949924711094,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-7",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -223.4159512864217,
+            "y": 118.292657045073,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-8",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -224.2363386274545,
+            "y": 116.73004942581653,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-9",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -225.04579700569283,
+            "y": 115.16175254863268,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-10",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -225.8442869692774,
+            "y": 113.58784285009861,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.80000000000004,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-11",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -226.63176960093375,
+            "y": 112.00839704035266,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-12",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -227.40820651986962,
+            "y": 110.42349209935507,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-13",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -228.17355988364474,
+            "y": 108.83320527313705,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-14",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -228.92779239001612,
+            "y": 107.23761407003457,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-15",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -229.67086727875528,
+            "y": 105.63679625691225,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-16",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -230.40274833344054,
+            "y": 104.03082985537152,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.79999999999998,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-17",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -231.12339988322194,
+            "y": 102.41979313794917,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-18",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -231.83278680455936,
+            "y": 100.80376462430227,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-19",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -232.53087452293533,
+            "y": 99.18282307738028,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.80000000000004,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-B-20",
+          "sectionId": "449",
+          "row": "B",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -233.21762901453917,
+            "y": 97.55704749958755,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 252.8,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 95,
+      "depth": 255.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-C-1",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -220.68390273509087,
+            "y": 128.9572606471189,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-2",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -221.57880902794003,
+            "y": 127.41346628107908,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-3",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -222.46291588223838,
+            "y": 125.86346196244615,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-4",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -223.33618020786489,
+            "y": 124.30732323624423,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-5",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -224.1985594431485,
+            "y": 122.74512594647904,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.59999999999997,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-6",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -225.05001155694183,
+            "y": 121.17694623244286,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-7",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -225.89049505067,
+            "y": 119.6028605250026,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-8",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -226.7199689603535,
+            "y": 118.02294554287462,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-9",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -227.53839285860397,
+            "y": 116.43727828888652,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-10",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -228.34572685659532,
+            "y": 114.8459360462231,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.60000000000002,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-11",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -229.14193160600738,
+            "y": 113.24899637466036,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-12",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -229.9269683009441,
+            "y": 111.64653710678463,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-13",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -230.70079867982435,
+            "y": 110.03863634420027,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-14",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -231.4633850272473,
+            "y": 108.42537245372166,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-15",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -232.21469017583007,
+            "y": 106.80682406355525,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-16",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -232.95467750801978,
+            "y": 105.18307005946582,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-17",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -233.68331095787784,
+            "y": 103.55418958093279,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-18",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -234.4005550128377,
+            "y": 101.92026201729296,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.60000000000002,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-19",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -235.10637471543617,
+            "y": 100.28136700387024,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-C-20",
+          "sectionId": "449",
+          "row": "C",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -235.80073566501665,
+            "y": 98.63758441809564,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 255.6,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 97.5,
+      "depth": 258.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-D-1",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -223.1014102767898,
+            "y": 130.36993799380093,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-2",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -224.0061199249597,
+            "y": 128.8092319523898,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-3",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -224.89991183087008,
+            "y": 127.24224793073584,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-4",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -225.78274243236416,
+            "y": 125.66906230142999,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-5",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -226.65456870152414,
+            "y": 124.08975173931995,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-6",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -227.51534814676748,
+            "y": 122.50439321777478,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-7",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -228.36503881491834,
+            "y": 120.9130640049322,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-8",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -229.2035992932525,
+            "y": 119.31584165993272,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-9",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -230.0309887115151,
+            "y": 117.71280402914034,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-10",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -230.84716674391325,
+            "y": 116.10402924234761,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-11",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -231.652093611081,
+            "y": 114.48959570896805,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-12",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -232.4457300820186,
+            "y": 112.86958211421418,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-13",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -233.22803747600395,
+            "y": 111.2440674152635,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-14",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -233.99897766447847,
+            "y": 109.61313083740875,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-15",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -234.7585130729049,
+            "y": 107.97685187019826,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-16",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -235.50660668259903,
+            "y": 106.33531026356012,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-17",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -236.24322203253377,
+            "y": 104.68858602391639,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-18",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -236.96832322111604,
+            "y": 103.03675941028364,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-19",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -237.68187490793701,
+            "y": 101.3799109303602,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-D-20",
+          "sectionId": "449",
+          "row": "D",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -238.38384231549412,
+            "y": 99.71812133660373,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 258.4,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 100,
+      "depth": 261.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-E-1",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -225.51891781848877,
+            "y": 131.782615340483,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-2",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -226.4334308219794,
+            "y": 130.20499762370054,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-3",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -227.33690777950181,
+            "y": 128.62103389902555,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-4",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -228.22930465686346,
+            "y": 127.03080136661578,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-5",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -229.11057795989979,
+            "y": 125.43437753216088,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-6",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -229.98068473659313,
+            "y": 123.83184020310671,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-7",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -230.8395825791667,
+            "y": 122.22326748486181,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-8",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -231.68722962615152,
+            "y": 120.60873777699081,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-9",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -232.52358456442627,
+            "y": 118.9883297693942,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-10",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -233.3486066312312,
+            "y": 117.36212243847213,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-11",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -234.16225561615462,
+            "y": 115.73019504327577,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-12",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -234.96449186309312,
+            "y": 114.09262712164376,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-13",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -235.75527627218355,
+            "y": 112.44949848632673,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-14",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -236.5345703017097,
+            "y": 110.80088922109584,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-15",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -237.3023359699797,
+            "y": 109.14687967684128,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-16",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -238.05853585717827,
+            "y": 107.48755046765443,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-17",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -238.80313310718972,
+            "y": 105.82298246690002,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-18",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -239.5360914293944,
+            "y": 104.15325680327433,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-19",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -240.2573751004379,
+            "y": 102.47845485685018,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-E-20",
+          "sectionId": "449",
+          "row": "E",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -240.96694896597162,
+            "y": 100.79865825511182,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 261.2,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 102.5,
+      "depth": 264,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-F-1",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -227.93642536018774,
+            "y": 133.19529268716505,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-2",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -228.8607417189991,
+            "y": 131.60076329501126,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-3",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -229.77390372813355,
+            "y": 129.99981986731527,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-4",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -230.6758668813628,
+            "y": 128.39254043180156,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-5",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -231.56658721827546,
+            "y": 126.77900332500182,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-6",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -232.4460213264188,
+            "y": 125.15928718843864,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-7",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -233.31412634341504,
+            "y": 123.53347096479142,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-8",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -234.17085995905057,
+            "y": 121.90163389404891,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-9",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -235.01618041733744,
+            "y": 120.26385550964804,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-10",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -235.85004651854916,
+            "y": 118.62021563459663,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-11",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -236.67241762122828,
+            "y": 116.97079437758347,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-12",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -237.48325364416763,
+            "y": 115.31567212907333,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-13",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -238.28251506836318,
+            "y": 113.65492955738996,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-14",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -239.07016293894088,
+            "y": 111.98864760478294,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-15",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -239.84615886705456,
+            "y": 110.3169074834843,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-16",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -240.61046503175754,
+            "y": 108.63979067174874,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-17",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -241.36304418184568,
+            "y": 106.95737890988363,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-18",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -242.10385963767274,
+            "y": 105.26975419626503,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-19",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -242.83287529293878,
+            "y": 103.57699878334016,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-F-20",
+          "sectionId": "449",
+          "row": "F",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -243.55005561644913,
+            "y": 101.87919517361992,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 264,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 105,
+      "depth": 266.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-G-1",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -230.3539329018867,
+            "y": 134.60797003384712,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-2",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -231.2880526160188,
+            "y": 132.996528966322,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-3",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -232.21089967676528,
+            "y": 131.378605835605,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-4",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -233.1224291058621,
+            "y": 129.75427949698732,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-5",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -234.0225964766511,
+            "y": 128.12362911784274,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.79999999999995,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-6",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -234.91135791624447,
+            "y": 126.48673417377057,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-7",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -235.7886701076634,
+            "y": 124.84367444472103,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-8",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -236.6544902919496,
+            "y": 123.194530011107,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-9",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -237.5087762702486,
+            "y": 121.5393812499019,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-10",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -238.3514864058671,
+            "y": 119.87830883072115,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-11",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -239.18257962630193,
+            "y": 118.21139371189119,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-12",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -240.00201542524215,
+            "y": 116.5387171365029,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-13",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -240.80975386454278,
+            "y": 114.8603606284532,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-14",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -241.6057555761721,
+            "y": 113.17640598847004,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-15",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -242.38998176412937,
+            "y": 111.48693529012732,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-16",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -243.16239420633678,
+            "y": 109.79203087584305,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-17",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -243.9229552565016,
+            "y": 108.09177535286724,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-18",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -244.6716278459511,
+            "y": 106.38625158925572,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-19",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -245.40837548543965,
+            "y": 104.67554270983013,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-G-20",
+          "sectionId": "449",
+          "row": "G",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -246.13316226692663,
+            "y": 102.95973209212801,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 266.8,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 107.5,
+      "depth": 269.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-H-1",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -232.77144044358567,
+            "y": 136.02064738052917,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-2",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -233.71536351303848,
+            "y": 134.39229463763272,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-3",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -234.647895625397,
+            "y": 132.7573918038947,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-4",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -235.5689913303614,
+            "y": 131.1160185621731,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-5",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -236.47860573502678,
+            "y": 129.4682549106837,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-6",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -237.37669450607012,
+            "y": 127.8141811591025,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-7",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -238.26321387191174,
+            "y": 126.15387792465064,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-8",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -239.13812062484863,
+            "y": 124.48742612816511,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-9",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -240.00137212315977,
+            "y": 122.81490699015573,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-10",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -240.85292629318505,
+            "y": 121.13640202684567,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-11",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -241.69274163137555,
+            "y": 119.4519930461989,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-12",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -242.52077720631667,
+            "y": 117.76176214393247,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-13",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -243.33699266072242,
+            "y": 116.06579169951642,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-14",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -244.1413482134033,
+            "y": 114.36416437215713,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-15",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -244.9338046612042,
+            "y": 112.65696309677034,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-16",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -245.71432338091603,
+            "y": 110.94427107993737,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-17",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -246.48286633115757,
+            "y": 109.22617179585086,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-18",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -247.23939605422947,
+            "y": 107.50274898224642,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6000000000001,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-19",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -247.98387567794052,
+            "y": 105.7740866363201,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-H-20",
+          "sectionId": "449",
+          "row": "H",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -248.71626891740414,
+            "y": 104.04026901063611,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 269.6,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 110,
+      "depth": 272.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-I-1",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -235.1889479852846,
+            "y": 137.43332472721121,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.40000000000003,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-2",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -236.14267441005813,
+            "y": 135.78806030894341,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-3",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -237.0848915740287,
+            "y": 134.1361777721844,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-4",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -238.01555355486067,
+            "y": 132.47775762735887,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-5",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -238.9346149934024,
+            "y": 130.8128807035246,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-6",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -239.84203109589575,
+            "y": 129.1416281444344,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-7",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -240.73775763616004,
+            "y": 127.46408140458023,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-8",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -241.6217509577476,
+            "y": 125.78032224522318,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-9",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -242.49396797607088,
+            "y": 124.09043273040956,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-10",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -243.35436618050298,
+            "y": 122.39449522297016,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-11",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -244.20290363644915,
+            "y": 120.69259238050658,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-12",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -245.03953898739113,
+            "y": 118.98480715136202,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-13",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -245.864231456902,
+            "y": 117.27122277057963,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-14",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -246.67694085063445,
+            "y": 115.5519227558442,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-15",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -247.47762755827898,
+            "y": 113.82699090341335,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-16",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -248.26625255549524,
+            "y": 112.09651128403165,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-17",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -249.04277740581347,
+            "y": 110.36056823883446,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-18",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -249.80716426250777,
+            "y": 108.61924637523708,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-19",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -250.55937587044136,
+            "y": 106.87263056281006,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-I-20",
+          "sectionId": "449",
+          "row": "I",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -251.29937556788158,
+            "y": 105.12080592914417,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 272.4,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 112.5,
+      "depth": 275.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-J-1",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -237.60645552698358,
+            "y": 138.84600207389326,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-2",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -238.56998530707784,
+            "y": 137.18382598025417,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-3",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -239.52188752266042,
+            "y": 135.5149637404741,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-4",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -240.46211577935998,
+            "y": 133.83949669254463,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-5",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -241.39062425177804,
+            "y": 132.15750649636553,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-6",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -242.3073676857214,
+            "y": 130.46907512976634,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-7",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -243.2123014004084,
+            "y": 128.77428488450983,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-8",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -244.10538129064665,
+            "y": 127.07321836228128,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-9",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -244.98656382898204,
+            "y": 125.36595847066341,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-10",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -245.85580606782094,
+            "y": 123.65258841909467,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-11",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -246.7130656415228,
+            "y": 121.93319171481428,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-12",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -247.55830076846564,
+            "y": 120.20785215879158,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-13",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -248.3914702530816,
+            "y": 118.47665384164286,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-14",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -249.21253348786564,
+            "y": 116.7396811395313,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-15",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -250.02145045535383,
+            "y": 114.99701871005637,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-16",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -250.8181817300745,
+            "y": 113.24875148812596,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-17",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -251.60268848046942,
+            "y": 111.49496468181808,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-18",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -252.37493247078612,
+            "y": 109.73574376822778,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-19",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -253.13487606294223,
+            "y": 107.97117448930004,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-J-20",
+          "sectionId": "449",
+          "row": "J",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -253.8824822183591,
+            "y": 106.20134284765227,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 275.2,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 115,
+      "depth": 278,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-K-1",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -240.02396306868255,
+            "y": 140.25867942057533,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-2",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -240.99729620409752,
+            "y": 138.5795916515649,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-3",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -241.95888347129215,
+            "y": 136.8937497087638,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-4",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -242.9086780038593,
+            "y": 135.20123575773042,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-5",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -243.8466335101537,
+            "y": 133.50213228920646,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-6",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -244.77270427554706,
+            "y": 131.79652211509827,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-7",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -245.68684516465675,
+            "y": 130.08448836443944,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-8",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -246.58901162354567,
+            "y": 128.3661144793394,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-9",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -247.4791596818932,
+            "y": 126.64148421091726,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-10",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -248.35724595513886,
+            "y": 124.91068161521919,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-11",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -249.22322764659646,
+            "y": 123.173791049122,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-12",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -250.07706254954016,
+            "y": 121.43089716622116,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-13",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -250.91870904926122,
+            "y": 119.68208491270609,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-14",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -251.74812612509686,
+            "y": 117.9274395232184,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-15",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -252.56527335242865,
+            "y": 116.16704651669939,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-16",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -253.37011090465376,
+            "y": 114.40099169222027,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-17",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -254.16259955512535,
+            "y": 112.6293611248017,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-18",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -254.94270067906447,
+            "y": 110.85224116121847,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-19",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -255.7103762554431,
+            "y": 109.06971841579,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-K-20",
+          "sectionId": "449",
+          "row": "K",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -256.46558886883656,
+            "y": 107.28187976616036,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 278,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 117.5,
+      "depth": 280.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-L-1",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -242.44147061038151,
+            "y": 141.67135676725738,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-2",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -243.42460710111723,
+            "y": 139.97535732287562,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-3",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -244.3958794199239,
+            "y": 138.27253567705353,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-4",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -245.3552402283586,
+            "y": 136.5629748229162,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-5",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -246.30264276852935,
+            "y": 134.8467580820474,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-6",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -247.23804086537274,
+            "y": 133.1239691004302,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-7",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -248.1613889289051,
+            "y": 131.39469184436905,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-8",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -249.0726419564447,
+            "y": 129.65901059639748,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-9",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -249.97175553480437,
+            "y": 127.91700995117111,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-10",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -250.85868584245682,
+            "y": 126.16877481134371,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-11",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -251.73338965167008,
+            "y": 124.4143903834297,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-12",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -252.59582433061468,
+            "y": 122.65394217365073,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-13",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -253.44594784544086,
+            "y": 120.88751598376932,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-14",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -254.28371876232805,
+            "y": 119.1151979069055,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-15",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -255.10909624950347,
+            "y": 117.3370743233424,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-16",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -255.92204007923303,
+            "y": 115.55323189631457,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-17",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -256.7225106297813,
+            "y": 113.76375756778532,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-18",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -257.5104688873428,
+            "y": 111.96873855420917,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-19",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -258.28587644794396,
+            "y": 110.16826234227999,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-L-20",
+          "sectionId": "449",
+          "row": "L",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -259.0486955193141,
+            "y": 108.36241668466846,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 280.8,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 120,
+      "depth": 283.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-M-1",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -244.85897815208048,
+            "y": 143.08403411393945,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-2",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -245.85191799813694,
+            "y": 141.37112299418635,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-3",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -246.83287536855562,
+            "y": 139.65132164534324,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-4",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -247.8018024528579,
+            "y": 137.924713888102,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-5",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -248.75865202690503,
+            "y": 136.19138387488832,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-6",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -249.7033774551984,
+            "y": 134.45141608576213,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-7",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -250.63593269315345,
+            "y": 132.70489532429866,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-8",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -251.55627228934372,
+            "y": 130.95190671345557,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-9",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -252.46435138771554,
+            "y": 129.19253569142495,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-10",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -253.36012572977478,
+            "y": 127.42686800746822,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-11",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -254.24355165674373,
+            "y": 125.65498971773741,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-12",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -255.1145861116892,
+            "y": 123.8769871810803,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-13",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -255.97318664162046,
+            "y": 122.09294705483256,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-14",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -256.81931139955924,
+            "y": 120.30295629059259,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-15",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -257.6529191465783,
+            "y": 118.50710212998543,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-16",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -258.4739692538123,
+            "y": 116.70547210040888,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-17",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -259.28242170443724,
+            "y": 114.89815401076893,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.59999999999997,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-18",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -260.0782370956212,
+            "y": 113.08523594719986,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-19",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -260.86137664044486,
+            "y": 111.26680626876995,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-M-20",
+          "sectionId": "449",
+          "row": "M",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -261.63180216979157,
+            "y": 109.44295360317655,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 283.6,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "449",
+      "seatCount": 20,
+      "elevation": 122.5,
+      "depth": 286.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "cardinals-449-N-1",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -247.27648569377942,
+            "y": 144.49671146062147,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -120.3,
+          "facing": 59.7,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-2",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -248.2792288951566,
+            "y": 142.76688866549705,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -119.9,
+          "facing": 60.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-3",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -249.2698713171873,
+            "y": 141.0301076136329,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -119.5,
+          "facing": 60.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-4",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -250.2483646773572,
+            "y": 139.28645295328772,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -119.1,
+          "facing": 60.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-5",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -251.2146612852806,
+            "y": 137.53600966772925,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -118.7,
+          "facing": 61.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-6",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -252.16871404502402,
+            "y": 135.77886307109404,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -118.3,
+          "facing": 61.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-7",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -253.11047645740175,
+            "y": 134.01509880422824,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -117.9,
+          "facing": 62.099999999999994,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-8",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -254.03990262224272,
+            "y": 132.24480283051366,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -117.5,
+          "facing": 62.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-9",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -254.95694724062665,
+            "y": 130.46806143167876,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -117.1,
+          "facing": 62.900000000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-10",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -255.8615656170927,
+            "y": 128.6849612035927,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -116.7,
+          "facing": 63.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-11",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -256.7537136618173,
+            "y": 126.8955890520451,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -116.3,
+          "facing": 63.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-12",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -257.63334789276365,
+            "y": 125.10003218850984,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -115.9,
+          "facing": 64.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-13",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -258.5004254378,
+            "y": 123.29837812589577,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.3999999999999,
+          "angle": -115.5,
+          "facing": 64.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-14",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -259.3549040367904,
+            "y": 121.49071467427966,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -115.1,
+          "facing": 64.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-15",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -260.1967420436531,
+            "y": 119.67712993662842,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.40000000000003,
+          "angle": -114.7,
+          "facing": 65.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-16",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -261.0258984283915,
+            "y": 117.85771230450317,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -114.3,
+          "facing": 65.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-17",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -261.84233277909317,
+            "y": 116.03255045375253,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.40000000000003,
+          "angle": -113.9,
+          "facing": 66.1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-18",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -262.6460053038995,
+            "y": 114.20173334019053,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.40000000000003,
+          "angle": -113.5,
+          "facing": 66.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-19",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -263.4368768329457,
+            "y": 112.36535019525992,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -113.1,
+          "facing": 66.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "cardinals-449-N-20",
+          "sectionId": "449",
+          "row": "N",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -264.21490882026905,
+            "y": 110.52349052168462,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 286.4,
+          "angle": -112.7,
+          "facing": 67.3,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 252,
+    "aisle": 28,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
