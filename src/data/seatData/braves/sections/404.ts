@@ -1,0 +1,5053 @@
+/**
+ * Grandstand 404 - braves
+ * Generated: 2025-10-22T20:21:13.085Z
+ * Total Seats: 180
+ * Total Rows: 12
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_404: SectionSeatingData = {
+  "sectionId": "404",
+  "sectionName": "Grandstand 404",
+  "stadiumId": "braves",
+  "totalSeats": 180,
+  "totalRows": 12,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 95,
+      "depth": 260,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-1-1",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -233.48716969776012,
+            "y": 114.38418416253782,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-2",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -234.28002554374385,
+            "y": 112.7513619927615,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-3",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -235.06146291180238,
+            "y": 111.11304448067001,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-4",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -235.83144371578098,
+            "y": 109.46931147554743,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-5",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -236.58993042790124,
+            "y": 107.82024309062213,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-6",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -237.33688608059114,
+            "y": 106.16591969916006,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-7",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -238.07227426828592,
+            "y": 104.50642193054951,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-8",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -238.79605914920265,
+            "y": 102.84183066637095,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-9",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -239.5082054470876,
+            "y": 101.17222703645349,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-10",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -240.2086784529346,
+            "y": 99.4976924149232,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-11",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -240.8974440266777,
+            "y": 97.81830841623503,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-12",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -241.57446859885465,
+            "y": 96.13415689119549,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-13",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -242.23971917224273,
+            "y": 94.44531992297433,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-14",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -242.89316332346772,
+            "y": 92.7518798231024,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-1-15",
+          "sectionId": "404",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -243.5347692045834,
+            "y": 91.05391912746148,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 260,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 97.5,
+      "depth": 262.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-2-1",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -236.00164690988987,
+            "y": 115.61601383813439,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-2",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -236.8030412034457,
+            "y": 113.96560742960664,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-3",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -237.59289405085258,
+            "y": 112.30964649815415,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-4",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -238.3711669557971,
+            "y": 110.64821175297641,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-5",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -239.13782198635556,
+            "y": 108.98138417005961,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-6",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -239.89282177684368,
+            "y": 107.30924498822793,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-7",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -240.6361295296367,
+            "y": 105.6318757051862,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-8",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -241.3677090169633,
+            "y": 103.94935807354726,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-9",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -242.08752458267162,
+            "y": 102.26177409684607,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-10",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -242.79554114396623,
+            "y": 100.56920602554545,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-11",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -243.49172419311887,
+            "y": 98.87173635302526,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-12",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -244.17603979915003,
+            "y": 97.16944781156221,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-13",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -244.8484546094823,
+            "y": 95.46242336829867,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-14",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -245.5089358515666,
+            "y": 93.75074622119736,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-2-15",
+          "sectionId": "404",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -246.1574513344789,
+            "y": 92.03449979498801,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 262.8,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 100,
+      "depth": 265.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-3-1",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -238.5161241220196,
+            "y": 116.84784351373095,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-2",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -239.32605686314756,
+            "y": 115.17985286645177,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-3",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -240.12432518990275,
+            "y": 113.50624851563829,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-4",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -240.9108901958132,
+            "y": 111.82711203040539,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-5",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -241.6857135448099,
+            "y": 110.14252524949708,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-6",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -242.4487574730962,
+            "y": 108.45257027729582,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-7",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -243.1999847909875,
+            "y": 106.7573294798229,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-8",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -243.93935888472396,
+            "y": 105.05688548072357,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-9",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -244.66684371825565,
+            "y": 103.35132115723866,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6000000000001,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-10",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -245.38240383499783,
+            "y": 101.6407196361677,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-11",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -246.08600435956,
+            "y": 99.92516428981547,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-12",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -246.7776109994454,
+            "y": 98.20473873192893,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-13",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -247.45719004672185,
+            "y": 96.47952681362301,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-14",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -248.12470837966552,
+            "y": 94.74961261929231,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-3-15",
+          "sectionId": "404",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -248.78013346437444,
+            "y": 93.01508046251452,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 265.6,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 102.5,
+      "depth": 268.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-4-1",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -241.03060133414928,
+            "y": 118.0796731893275,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-2",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -241.84907252284938,
+            "y": 116.39409830329687,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-3",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -242.6557563289529,
+            "y": 114.70285053312242,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-4",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -243.45061343582927,
+            "y": 113.00601230783434,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-5",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -244.23360510326418,
+            "y": 111.30366632893453,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-6",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -245.00469316934868,
+            "y": 109.59589556636368,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-7",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -245.76384005233822,
+            "y": 107.88278325445957,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-8",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -246.51100875248454,
+            "y": 106.16441288789986,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-9",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -247.24616285383962,
+            "y": 104.4408682176312,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-10",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -247.9692665260294,
+            "y": 102.71223324678994,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-11",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -248.68028452600112,
+            "y": 100.97859222660568,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-12",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -249.3791821997407,
+            "y": 99.24002965229563,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-13",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -250.06592548396134,
+            "y": 97.49663025894733,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-14",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -250.74048090776435,
+            "y": 95.74847901738724,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-4-15",
+          "sectionId": "404",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -251.40281559426992,
+            "y": 93.995661130041,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 268.4,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 105,
+      "depth": 271.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-5-1",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -243.545078546279,
+            "y": 119.31150286492407,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-2",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -244.37208818255124,
+            "y": 117.608343740142,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-3",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -245.1871874680031,
+            "y": 115.89945255060655,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-4",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -245.99033667584538,
+            "y": 114.18491258526332,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-5",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -246.7814966617185,
+            "y": 112.46480740837201,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-6",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -247.56062886560122,
+            "y": 110.73922085543155,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-7",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -248.327695313689,
+            "y": 109.00823702909625,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-8",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -249.0826586202452,
+            "y": 107.27194029507616,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-9",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -249.82548198942365,
+            "y": 105.5304152780238,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-10",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -250.55612921706103,
+            "y": 103.7837468574122,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-11",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -251.27456469244228,
+            "y": 102.03202016339591,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-12",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -251.98075340003606,
+            "y": 100.27532057266237,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-13",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -252.67466092120088,
+            "y": 98.51373370427169,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-14",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -253.35625343586324,
+            "y": 96.7473454154822,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-5-15",
+          "sectionId": "404",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -254.02549772416543,
+            "y": 94.97624179756752,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 271.2,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 107.5,
+      "depth": 274,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-6-1",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -246.05955575840875,
+            "y": 120.54333254052062,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-2",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -246.89510384225312,
+            "y": 118.82258917698712,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-3",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -247.7186186070533,
+            "y": 117.09605456809071,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-4",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -248.5300599158615,
+            "y": 115.3638128626923,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-5",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -249.32938822017283,
+            "y": 113.62594848780948,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-6",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -250.11656456185375,
+            "y": 111.88254614449944,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-7",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -250.8915505750398,
+            "y": 110.13369080373295,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-8",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -251.65430848800585,
+            "y": 108.37946770225247,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-9",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -252.40480112500768,
+            "y": 106.61996233841637,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-10",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -253.14299190809263,
+            "y": 104.85526046803444,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-11",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -253.86884485888342,
+            "y": 103.08544810018614,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-12",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -254.58232460033145,
+            "y": 101.31061149302909,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-13",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -255.28339635844043,
+            "y": 99.53083714959602,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-14",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -255.97202596396215,
+            "y": 97.74621181357715,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-6-15",
+          "sectionId": "404",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -256.64817985406097,
+            "y": 95.95682246509404,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 274,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 110,
+      "depth": 276.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-7-1",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -248.5740329705385,
+            "y": 121.7751622161172,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-2",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -249.41811950195498,
+            "y": 120.03683461383226,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-3",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -250.25004974610346,
+            "y": 118.29265658557485,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-4",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -251.06978315587762,
+            "y": 116.54271314012128,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-5",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -251.87727977862718,
+            "y": 114.78708956724695,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-6",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -252.67250025810625,
+            "y": 113.02587143356732,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-7",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -253.45540583639055,
+            "y": 111.25914457836964,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-8",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -254.22595835576652,
+            "y": 109.48699510942878,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-9",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -254.9841202605917,
+            "y": 107.70950939880895,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-10",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -255.72985459912425,
+            "y": 105.9267740786567,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-11",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -256.4631250253246,
+            "y": 104.13887603697637,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-12",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -257.18389580062683,
+            "y": 102.3459024133958,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-13",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -257.89213179568,
+            "y": 100.54794059492036,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-14",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -258.58779849206104,
+            "y": 98.74507821167211,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-7-15",
+          "sectionId": "404",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -259.2708619839565,
+            "y": 96.93740313262055,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 276.8,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 112.5,
+      "depth": 279.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-8-1",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -251.08851018266822,
+            "y": 123.00699189171375,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-2",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -251.94113516165686,
+            "y": 121.25108005067739,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6000000000001,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-3",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -252.78148088515366,
+            "y": 119.48925860305899,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-4",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -253.60950639589373,
+            "y": 117.72161341755024,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-5",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -254.4251713370815,
+            "y": 115.94823064668442,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-6",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -255.2284359543588,
+            "y": 114.1691967226352,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-7",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -256.0192610977413,
+            "y": 112.38459835300633,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-8",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -256.79760822352716,
+            "y": 110.59452251660508,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-9",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -257.56343939617574,
+            "y": 108.79905645920154,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-10",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -258.31671729015585,
+            "y": 106.99828768927895,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-11",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -259.0574051917657,
+            "y": 105.1923039737666,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.59999999999997,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-12",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -259.7854670009222,
+            "y": 103.38119333376254,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6000000000001,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-13",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -260.5008672329195,
+            "y": 101.56504404024471,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-14",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -261.2035710201599,
+            "y": 99.74394460976706,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-8-15",
+          "sectionId": "404",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -261.893544113852,
+            "y": 97.91798380014706,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 279.6,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 115,
+      "depth": 282.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-9-1",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -253.6029873947979,
+            "y": 124.2388215673103,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-2",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -254.46415082135866,
+            "y": 122.46532548752249,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-3",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -255.3129120242038,
+            "y": 120.68586062054311,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-4",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -256.14922963590976,
+            "y": 118.90051369497921,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-5",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -256.9730628955358,
+            "y": 117.10937172612188,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-6",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -257.78437165061126,
+            "y": 115.31252201170307,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-7",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -258.58311635909206,
+            "y": 113.510052127643,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.3999999999999,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-8",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -259.36925809128775,
+            "y": 111.70204992378137,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-9",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -260.14275853175974,
+            "y": 109.88860351959408,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-10",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -260.9035799811874,
+            "y": 108.06980129990119,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-11",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -261.65168535820686,
+            "y": 106.2457319105568,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-12",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -262.3870382012175,
+            "y": 104.41648425412924,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-13",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -263.109602670159,
+            "y": 102.58214748556904,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-14",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -263.81934354825876,
+            "y": 100.74281100786199,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.3999999999999,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-9-15",
+          "sectionId": "404",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -264.5162262437475,
+            "y": 98.89856446767355,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 282.4,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 117.5,
+      "depth": 285.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-10-1",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -256.1174646069276,
+            "y": 125.47065124290687,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-2",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -256.9871664810605,
+            "y": 123.67957092436762,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-3",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -257.844343163254,
+            "y": 121.88246263802725,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-4",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -258.6889528759259,
+            "y": 120.07941397240818,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-5",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -259.5209544539901,
+            "y": 118.27051280555935,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-6",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -260.3403073468638,
+            "y": 116.45584730077094,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-7",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -261.14697162044286,
+            "y": 114.63550590227969,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-8",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -261.94090795904845,
+            "y": 112.80957733095768,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-9",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -262.72207766734374,
+            "y": 110.97815057998667,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-10",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -263.49044267221905,
+            "y": 109.14131491052345,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-11",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -264.245965524648,
+            "y": 107.29915984734703,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-12",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -264.98860940151286,
+            "y": 105.45177517449596,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-13",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -265.71833810739855,
+            "y": 103.59925093089338,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-14",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -266.43511607635764,
+            "y": 101.74167740595693,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-10-15",
+          "sectionId": "404",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -267.138908373643,
+            "y": 99.87914513520006,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 285.2,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 120,
+      "depth": 288,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-11-1",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -258.6319418190574,
+            "y": 126.70248091850343,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-2",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -259.5101821407624,
+            "y": 124.89381636121274,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288.00000000000006,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-3",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -260.3757743023042,
+            "y": 123.07906465551139,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-4",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -261.228676115942,
+            "y": 121.25831424983716,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-5",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -262.06884601244445,
+            "y": 119.43165388499682,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-6",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -262.8962430431163,
+            "y": 117.59917258983883,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-7",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -263.71082688179365,
+            "y": 115.76095967691639,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-8",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -264.5125578268091,
+            "y": 113.91710473813399,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-9",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -265.3013968029278,
+            "y": 112.06769764037925,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-10",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -266.0773053632506,
+            "y": 110.2128285211457,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-11",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -266.84024569108914,
+            "y": 108.35258778413726,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-12",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -267.59018060180824,
+            "y": 106.48706609486268,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-13",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -268.3270735446381,
+            "y": 104.61635437621771,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-14",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -269.05088860445653,
+            "y": 102.7405438040519,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-11-15",
+          "sectionId": "404",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -269.7615905035385,
+            "y": 100.85972580272657,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 288,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "404",
+      "seatCount": 15,
+      "elevation": 122.5,
+      "depth": 290.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "braves-404-12-1",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -261.1464190311871,
+            "y": 127.9343105941,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -116.1,
+          "facing": 63.900000000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-2",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -262.0331978004643,
+            "y": 126.10806179805788,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -115.7,
+          "facing": 64.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-3",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -262.9072054413544,
+            "y": 124.27566667299554,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.80000000000007,
+          "angle": -115.3,
+          "facing": 64.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-4",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -263.76839935595814,
+            "y": 122.43721452726614,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -114.89999999999999,
+          "facing": 65.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-5",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -264.61673757089875,
+            "y": 120.59279496443429,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.79999999999995,
+          "angle": -114.5,
+          "facing": 65.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-6",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -265.4521787393689,
+            "y": 118.7424978789067,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -114.1,
+          "facing": 65.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-7",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -266.27468214314445,
+            "y": 116.88641345155307,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -113.7,
+          "facing": 66.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-8",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -267.0842076945697,
+            "y": 115.02463214531029,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -113.3,
+          "facing": 66.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-9",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -267.8807159385118,
+            "y": 113.15724470077183,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -112.89999999999999,
+          "facing": 67.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-10",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -268.66416805428224,
+            "y": 111.28434213176796,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -112.5,
+          "facing": 67.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-11",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -269.43452585753033,
+            "y": 109.40601572092748,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -112.1,
+          "facing": 67.9,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-12",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -270.1917518021036,
+            "y": 107.52235701522942,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -111.7,
+          "facing": 68.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-13",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -270.93580898187764,
+            "y": 105.63345782154207,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -111.3,
+          "facing": 68.7,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-14",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -271.6666611325555,
+            "y": 103.73941020214684,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -110.89999999999999,
+          "facing": 69.10000000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "braves-404-12-15",
+          "sectionId": "404",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -272.3842726334341,
+            "y": 101.84030647025308,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 290.8,
+          "angle": -110.5,
+          "facing": 69.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 156,
+    "aisle": 24,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
