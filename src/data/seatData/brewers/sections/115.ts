@@ -1,0 +1,10100 @@
+/**
+ * Field Infield 115 - brewers
+ * Generated: 2025-10-22T22:55:29.669Z
+ * Total Seats: 375
+ * Total Rows: 25
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_115: SectionSeatingData = {
+  "sectionId": "115",
+  "sectionName": "Field Infield 115",
+  "stadiumId": "brewers",
+  "totalSeats": 375,
+  "totalRows": 25,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 0,
+      "depth": 75,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-1-1",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.0471635254358755,
+            "y": 74.99268930069782,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-2",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.3089304827962607,
+            "y": 74.98857713672935,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-3",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.5706814912517528,
+            "y": 74.98355126061341,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-4",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -1.8324133614489677,
+            "y": 74.97761173358873,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-5",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.0941229042676475,
+            "y": 74.97075862802657,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-6",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.3558069308596044,
+            "y": 74.96299202742988,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75.00000000000001,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-7",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -2.617462252687555,
+            "y": 74.95431202643218,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-8",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -2.879085681563978,
+            "y": 74.94471873079658,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 74.99999999999999,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-9",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.1406740296899383,
+            "y": 74.93421225741437,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-10",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -3.402224109694017,
+            "y": 74.92279273430361,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-11",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -3.663732734670962,
+            "y": 74.91046030060755,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-12",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -3.9251967182207714,
+            "y": 74.89721510659304,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-13",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.1866128744872535,
+            "y": 74.88305731364858,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-14",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -4.44797801819709,
+            "y": 74.8679870942824,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-1-15",
+          "sectionId": "115",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -4.709288964698488,
+            "y": 74.85200463212037,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 75,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 2.5,
+      "depth": 77.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-2-1",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.0862576303854816,
+            "y": 77.79241636792386,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-2",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.3577972208206543,
+            "y": 77.78815068316723,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-3",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.6293202669251514,
+            "y": 77.78293717434298,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-4",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -1.9008234602763958,
+            "y": 77.77677590497605,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-5",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.1723034926936395,
+            "y": 77.76966695013957,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-6",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.4437570562783626,
+            "y": 77.76161039645392,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-7",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -2.715180843454557,
+            "y": 77.75260634208564,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-8",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -2.9865715470090333,
+            "y": 77.74265489674632,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.79999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-9",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.257925860131696,
+            "y": 77.73175618169118,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-10",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -3.529240476455927,
+            "y": 77.7199103297176,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-11",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -3.8005120900986777,
+            "y": 77.70711748516356,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-12",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.071737395701013,
+            "y": 77.69337780390585,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-13",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.34291308846811,
+            "y": 77.67869145335813,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-14",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -4.614035864209781,
+            "y": 77.66305861246894,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-2-15",
+          "sectionId": "115",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -4.885102419380565,
+            "y": 77.64647947171953,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 77.8,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 5,
+      "depth": 80.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-3-1",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.1253517353350877,
+            "y": 80.59214343514992,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-2",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.4066639588450482,
+            "y": 80.58772422960513,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-3",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.6879590425985502,
+            "y": 80.58232308807254,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-4",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -1.969233559103824,
+            "y": 80.57594007636335,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-5",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.2504840811196316,
+            "y": 80.56857527225256,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-6",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.5317071816971213,
+            "y": 80.56022876547796,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-7",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -2.812899434221559,
+            "y": 80.5509006577391,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-8",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.0940574124540885,
+            "y": 80.54059106269605,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-9",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.3751776905734534,
+            "y": 80.52930010596798,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-10",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -3.6562568432178364,
+            "y": 80.5170279251316,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-11",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -3.9372914455263937,
+            "y": 80.50377466971958,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-12",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.2182780731812555,
+            "y": 80.48954050121864,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-13",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.499213302448968,
+            "y": 80.47432559306766,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-14",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -4.780093710222473,
+            "y": 80.45813013065548,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.6,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-3-15",
+          "sectionId": "115",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.060915874062642,
+            "y": 80.44095431131868,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 80.59999999999998,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 7.5,
+      "depth": 83.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-4-1",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.1644458402846938,
+            "y": 83.39187050237598,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-2",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.4555306968694421,
+            "y": 83.38729777604304,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-3",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.7465978182719493,
+            "y": 83.38170900180212,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-4",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.0376436579312522,
+            "y": 83.37510424775068,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-5",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.328664669545624,
+            "y": 83.36748359436555,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.39999999999999,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-6",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.61965730711588,
+            "y": 83.35884713450203,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-7",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -2.9106180249885614,
+            "y": 83.3491949733926,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-8",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.2015432778991437,
+            "y": 83.33852722864582,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-9",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.492429521015212,
+            "y": 83.3268440302448,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-10",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -3.7832732099797473,
+            "y": 83.31414552054562,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-11",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.07407080095411,
+            "y": 83.30043185427562,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-12",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.364818750661498,
+            "y": 83.28570319853146,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-13",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.655513516429826,
+            "y": 83.26995973277722,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-14",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -4.946151556235165,
+            "y": 83.25320164884204,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.40000000000002,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-4-15",
+          "sectionId": "115",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.23672932874472,
+            "y": 83.23542915091785,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 83.4,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 10,
+      "depth": 86.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-5-1",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.2035399452342999,
+            "y": 86.19159756960202,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-2",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.5043974348938358,
+            "y": 86.18687132248093,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-3",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.8052365939453479,
+            "y": 86.18109491553169,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-4",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.1060537567586803,
+            "y": 86.17426841913799,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-5",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.406845257971616,
+            "y": 86.16639191647855,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-6",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.7076074325346386,
+            "y": 86.15746550352607,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-7",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.0083366157555633,
+            "y": 86.14748928904606,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-8",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.309029143344199,
+            "y": 86.13646339459555,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-9",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.6096813514569694,
+            "y": 86.1243879545216,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-10",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -3.910289576741657,
+            "y": 86.11126311595962,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-11",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.2108501563818255,
+            "y": 86.09708903883163,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-12",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.51135942814174,
+            "y": 86.08186589584427,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-13",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.811813730410684,
+            "y": 86.06559387248677,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-14",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.112209402247856,
+            "y": 86.04827316702857,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-5-15",
+          "sectionId": "115",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.4125427834267965,
+            "y": 86.02990399051701,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 86.2,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 12.5,
+      "depth": 89,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-6-1",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.2426340501839057,
+            "y": 88.99132463682808,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89.00000000000001,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-2",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.5532641729182295,
+            "y": 88.98644486891882,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-3",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.8638753696187467,
+            "y": 88.98048082926125,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-4",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.1744638555861084,
+            "y": 88.97343259052529,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 88.99999999999999,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-5",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.4850258463976083,
+            "y": 88.96530023859154,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-6",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.795557557953397,
+            "y": 88.95608387255011,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-7",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.1060552065225653,
+            "y": 88.94578360469953,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-8",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.416515008789254,
+            "y": 88.93439956054529,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-9",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.726933181898727,
+            "y": 88.92193187879839,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-10",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.037305943503567,
+            "y": 88.90838071137361,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-11",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.347629511809542,
+            "y": 88.89374622338764,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-12",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.657900105621982,
+            "y": 88.87802859315707,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-13",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -4.968113944391541,
+            "y": 88.8612280121963,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-14",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.278267248260547,
+            "y": 88.84334468521511,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-6-15",
+          "sectionId": "115",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.588356238108873,
+            "y": 88.82437883011617,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 89,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 15,
+      "depth": 91.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-7-1",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.2817281551335118,
+            "y": 91.79105170405413,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-2",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.6021309109426232,
+            "y": 91.78601841535672,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-3",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.9225141452921455,
+            "y": 91.77986674299082,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-4",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.2428739544135365,
+            "y": 91.77259676191261,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-5",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.5632064348236003,
+            "y": 91.76420856070453,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-6",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.8835076833721556,
+            "y": 91.75470224157417,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-7",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.2037737972895672,
+            "y": 91.74407792035299,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-8",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.524000874234309,
+            "y": 91.73233572649502,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-9",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.8441850123404846,
+            "y": 91.7194758030752,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-10",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.164322310265477,
+            "y": 91.70549830678762,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.80000000000001,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-11",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.484408867237257,
+            "y": 91.69040340794365,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-12",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.804440783102224,
+            "y": 91.67419129046988,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-13",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.124414158372398,
+            "y": 91.65686215190586,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.8,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-14",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.444325094273238,
+            "y": 91.63841620340165,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-7-15",
+          "sectionId": "115",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.76416969279095,
+            "y": 91.61885366971532,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 91.79999999999998,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 17.5,
+      "depth": 94.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-8-1",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.3208222600831176,
+            "y": 94.59077877128017,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-2",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.6509976489670168,
+            "y": 94.5855919617946,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-3",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -1.981152920965544,
+            "y": 94.57925265672039,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.60000000000001,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-4",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.3112840532409646,
+            "y": 94.57176093329991,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-5",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.641387023249593,
+            "y": 94.56311688281751,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.59999999999998,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-6",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -2.971457808790914,
+            "y": 94.5533206105982,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-7",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.301492388056569,
+            "y": 94.54237223600646,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-8",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.631486739679364,
+            "y": 94.53027189244476,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-9",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -3.961436842782242,
+            "y": 94.517019727352,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-10",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.291338677027387,
+            "y": 94.50261590220161,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-11",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.621188222664973,
+            "y": 94.48706059249966,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-12",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -4.950981460582466,
+            "y": 94.47035398778267,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.59999999999998,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-13",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.2807143723532555,
+            "y": 94.4524962916154,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-14",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.6103829402859295,
+            "y": 94.4334877215882,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-8-15",
+          "sectionId": "115",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -5.9399831474730265,
+            "y": 94.41332850931448,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 94.6,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 20,
+      "depth": 97.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-9-1",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.359916365032724,
+            "y": 97.39050583850624,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-2",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.6998643869914107,
+            "y": 97.38516550823252,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-3",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.039791696638943,
+            "y": 97.37863857044995,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.39999999999999,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-4",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.3796941520683927,
+            "y": 97.37092510468725,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-5",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.719567611675585,
+            "y": 97.36202520493052,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-6",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.059407934209673,
+            "y": 97.35193897962226,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-7",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.3992109788235716,
+            "y": 97.34066655165994,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-8",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.73897260512442,
+            "y": 97.32820805839451,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-9",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.078688673224001,
+            "y": 97.31456365162882,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-10",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.418355043789297,
+            "y": 97.29973349761562,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-11",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.75796757809269,
+            "y": 97.28371777705568,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-12",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.0975221380627085,
+            "y": 97.2665166850955,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-13",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.437014586334113,
+            "y": 97.24813043132495,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-14",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.776440786298622,
+            "y": 97.22855923977475,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-9-15",
+          "sectionId": "115",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.115796602155104,
+            "y": 97.20780334891366,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 97.4,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 22.5,
+      "depth": 100.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-10-1",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.3990104699823298,
+            "y": 100.19023290573229,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-2",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.7487311250158044,
+            "y": 100.1847390546704,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-3",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.0984304723123417,
+            "y": 100.17802448417952,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-4",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.448104250895821,
+            "y": 100.17008927607455,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-5",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.7977482001015774,
+            "y": 100.16093352704351,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-6",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.147358059628431,
+            "y": 100.1505573486463,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-7",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.4969295695905735,
+            "y": 100.1389608673134,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-8",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.846458470569475,
+            "y": 100.12614422434424,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-9",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.195940503665758,
+            "y": 100.11210757590561,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-10",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.545371410551207,
+            "y": 100.09685109302961,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-11",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -4.8947469335204055,
+            "y": 100.0803749616117,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-12",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.244062815542951,
+            "y": 100.0626793824083,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.19999999999999,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-13",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.593314800314971,
+            "y": 100.0437645710345,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-14",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -5.942498632311313,
+            "y": 100.02363075796129,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-10-15",
+          "sectionId": "115",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.291610056837181,
+            "y": 100.00227818851282,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 100.2,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 25,
+      "depth": 103,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-11-1",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.4381045749319359,
+            "y": 102.98995997295833,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-2",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.797597863040198,
+            "y": 102.9843126011083,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-3",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.1570692479857407,
+            "y": 102.97741039790908,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-4",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.516514349723249,
+            "y": 102.96925344746187,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-5",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.8759287885275695,
+            "y": 102.9598418491565,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-6",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.23530818504719,
+            "y": 102.94917571767036,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-7",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.5946481603575755,
+            "y": 102.93725518296687,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-8",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -3.95394433601453,
+            "y": 102.92408039029398,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-9",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.313192334107516,
+            "y": 102.90965150018242,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-10",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.672387777313117,
+            "y": 102.89396868844362,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-11",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.031526288948121,
+            "y": 102.8770321461677,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-12",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.3906034930231925,
+            "y": 102.8588420797211,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-13",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.749615014295828,
+            "y": 102.83939871074405,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-14",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.1085564783240045,
+            "y": 102.81870227614783,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 103.00000000000001,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-11-15",
+          "sectionId": "115",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.467423511519257,
+            "y": 102.79675302811197,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 102.99999999999999,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 27.5,
+      "depth": 105.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-12-1",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.4771986798815417,
+            "y": 105.78968704018439,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-2",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.8464646010645918,
+            "y": 105.7838861475462,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.80000000000001,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-3",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.2157080236591393,
+            "y": 105.77679631163865,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-4",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.584924448550677,
+            "y": 105.76841761884917,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-5",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -2.9541093769535616,
+            "y": 105.75875017126948,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-6",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.323258310465948,
+            "y": 105.7477940866944,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-7",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.6923667511245775,
+            "y": 105.73554949862033,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-8",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.061430201459585,
+            "y": 105.72201655624372,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-9",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.430444164549273,
+            "y": 105.70719542445921,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-10",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.799404144075027,
+            "y": 105.69108628385762,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-11",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.168305644375837,
+            "y": 105.67368933072372,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-12",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.537144170503435,
+            "y": 105.65500477703391,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-13",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -5.905915228276685,
+            "y": 105.63503285045358,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-14",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.274614324336695,
+            "y": 105.61377379433436,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.8,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-12-15",
+          "sectionId": "115",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.643236966201334,
+            "y": 105.59122786771113,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 105.79999999999998,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 30,
+      "depth": 108.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-13-1",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.5162927848311478,
+            "y": 108.58941410741043,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-2",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.8953313390889854,
+            "y": 108.58345969398408,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-3",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.274346799332538,
+            "y": 108.57618222536821,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-4",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.653334547378105,
+            "y": 108.56758179023647,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-5",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.0322899653795536,
+            "y": 108.55765849338248,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-6",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.411208435884707,
+            "y": 108.54641245571844,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-7",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.7900853418915794,
+            "y": 108.5338438142738,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-8",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.16891606690464,
+            "y": 108.51995272219345,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-9",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.547695994991031,
+            "y": 108.50473934873601,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-10",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -4.9264205108369366,
+            "y": 108.48820387927161,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-11",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.305084999803553,
+            "y": 108.47034651527973,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-12",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.683684847983677,
+            "y": 108.45116747434672,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-13",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.062215442257543,
+            "y": 108.43066699016313,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-14",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.440672170349386,
+            "y": 108.40884531252091,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.60000000000001,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-13-15",
+          "sectionId": "115",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.819050420883411,
+            "y": 108.38570270731029,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 108.6,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 32.5,
+      "depth": 111.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-14-1",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.555386889780754,
+            "y": 111.38914117463649,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-2",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.9441980771133793,
+            "y": 111.383033240422,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-3",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.332985575005937,
+            "y": 111.3755681390978,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-4",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.7217446462055337,
+            "y": 111.3667459616238,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-5",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.110470553805546,
+            "y": 111.35656681549548,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-6",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.4991585613034655,
+            "y": 111.34503082474251,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-7",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.887803932658582,
+            "y": 111.33213812992727,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-8",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.276401932349696,
+            "y": 111.3178888881432,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-9",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.6649478254327885,
+            "y": 111.30228327301283,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-10",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.0534368775988465,
+            "y": 111.28532147468563,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-11",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.441864355231269,
+            "y": 111.26700369983577,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-12",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.83022552546392,
+            "y": 111.24733017165953,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.39999999999999,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-13",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.2185156562384005,
+            "y": 111.2263011298727,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-14",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.606730016362079,
+            "y": 111.20391683070746,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-14-15",
+          "sectionId": "115",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -6.994863875565488,
+            "y": 111.18017754690946,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 111.4,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 35,
+      "depth": 114.19999999999999,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-15-1",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.5944809947303598,
+            "y": 114.18886824186254,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-2",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -1.9930648151377728,
+            "y": 114.18260678685988,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-3",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.3916243506793355,
+            "y": 114.17495405282735,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-4",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.7901547450329613,
+            "y": 114.1659101330111,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-5",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.188651142231538,
+            "y": 114.15547513760846,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-6",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.5871086867222237,
+            "y": 114.14364919376654,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-7",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -3.9855225234255833,
+            "y": 114.13043244558072,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-8",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.38388779779475,
+            "y": 114.11582505409292,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-9",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.782199655874546,
+            "y": 114.09982719728961,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-10",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.180453244360756,
+            "y": 114.08243907009961,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-11",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.578643710658985,
+            "y": 114.06366088439177,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.2,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-12",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -5.976766202944161,
+            "y": 114.04349286897232,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-13",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.374815870219257,
+            "y": 114.02193526958222,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-14",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.772787862374769,
+            "y": 113.99898834889399,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999999,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-15-15",
+          "sectionId": "115",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -7.170677330247565,
+            "y": 113.9746523865086,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 114.19999999999997,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 37.5,
+      "depth": 117,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-16-1",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.633575099679966,
+            "y": 116.9885953090886,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-2",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.0419315531621667,
+            "y": 116.98218033329778,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-3",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.4502631263527346,
+            "y": 116.97433996655693,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-4",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.8585648438603894,
+            "y": 116.96507430439843,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-5",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.2668317306575303,
+            "y": 116.95438345972146,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-6",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.6750588121409824,
+            "y": 116.94226756279059,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-7",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.083241114192586,
+            "y": 116.9287267612342,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-8",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.491373663239806,
+            "y": 116.91376122004267,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 116.99999999999999,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-9",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -4.899451486316304,
+            "y": 116.89737112156644,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-10",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.3074696111226665,
+            "y": 116.87955666551362,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-11",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.715423066086701,
+            "y": 116.86031806894779,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-12",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.123306880424403,
+            "y": 116.83965556628515,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117.00000000000001,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-13",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.531116084200115,
+            "y": 116.81756940929178,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-14",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -6.938845708387461,
+            "y": 116.79405986708053,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-16-15",
+          "sectionId": "115",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -7.346490784929642,
+            "y": 116.76912722610777,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 117,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 40,
+      "depth": 119.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-17-1",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.672669204629572,
+            "y": 119.78832237631464,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-2",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.0907982911865606,
+            "y": 119.78175387973567,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-3",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.508901902026133,
+            "y": 119.77372588028649,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-4",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.9269749426878175,
+            "y": 119.76423847578573,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-5",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.3450123190835224,
+            "y": 119.75329178183445,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-6",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.763008937559741,
+            "y": 119.74088593181465,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-7",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.180959704959588,
+            "y": 119.72702107688767,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-8",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.598859528684861,
+            "y": 119.71169738599241,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-9",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.016703316758061,
+            "y": 119.69491504584323,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-10",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.434485977884576,
+            "y": 119.67667426092763,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-11",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.852202421514416,
+            "y": 119.6569752535038,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-12",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.2698475579046455,
+            "y": 119.63581826359794,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.79999999999998,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-13",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.687416298180973,
+            "y": 119.61320354900133,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-14",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.104903554400152,
+            "y": 119.58913138526708,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-17-15",
+          "sectionId": "115",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -7.522304239611719,
+            "y": 119.56360206570693,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 119.8,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 42.5,
+      "depth": 122.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-18-1",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.711763309579178,
+            "y": 122.5880494435407,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-2",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.139665029210954,
+            "y": 122.58132742617356,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-3",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.5675406776995318,
+            "y": 122.57311179401606,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-4",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -2.9953850415152456,
+            "y": 122.56340264717305,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-5",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.4231929075095144,
+            "y": 122.55220010394744,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-6",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.8509590629784993,
+            "y": 122.53950430083869,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-7",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.27867829572659,
+            "y": 122.52531539254113,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-8",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.706345394129916,
+            "y": 122.50963355194214,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-9",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.133955147199819,
+            "y": 122.49245897012003,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-10",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.561502344646486,
+            "y": 122.47379185634162,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-11",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -5.988981776942132,
+            "y": 122.45363243805981,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-12",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.416388235384887,
+            "y": 122.43198096091075,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-13",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -6.84371651216183,
+            "y": 122.40883768871086,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.59999999999998,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-14",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.270961400412843,
+            "y": 122.38420290345363,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-18-15",
+          "sectionId": "115",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -7.698117694293796,
+            "y": 122.35807690530609,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 122.6,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 45,
+      "depth": 125.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-19-1",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.750857414528784,
+            "y": 125.38777651076676,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-2",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.188531767235348,
+            "y": 125.38090097261147,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-3",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.626179453372931,
+            "y": 125.37249770774564,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.40000000000002,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-4",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.063795140342674,
+            "y": 125.36256681856037,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-5",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.501373495935507,
+            "y": 125.35110842606043,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-6",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -3.9389091883972585,
+            "y": 125.33812266986274,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-7",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.376396886493592,
+            "y": 125.32360970819461,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-8",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.813831259574972,
+            "y": 125.3075697178919,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.39999999999999,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-9",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.251206977641577,
+            "y": 125.29000289439685,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-10",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.688518711408396,
+            "y": 125.27090945175563,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-11",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.125761132369849,
+            "y": 125.25028962261584,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-12",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.5629289128651305,
+            "y": 125.22814365822356,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-13",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.000016726142688,
+            "y": 125.20447182842042,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-14",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.437019246425535,
+            "y": 125.17927442164017,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.4,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-19-15",
+          "sectionId": "115",
+          "row": "19",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -7.873931148975873,
+            "y": 125.15255174490525,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 125.39999999999999,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 47.5,
+      "depth": 128.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-20-1",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.78995151947839,
+            "y": 128.1875035779928,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-2",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.2373985052597414,
+            "y": 128.18047451904934,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-3",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.6848182290463294,
+            "y": 128.1718836214752,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-4",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.132205239170102,
+            "y": 128.16173098994767,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-5",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.5795540843614986,
+            "y": 128.1500167481734,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-6",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.026859313816017,
+            "y": 128.13674103888678,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-7",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.474115477260594,
+            "y": 128.12190402384806,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-8",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -4.9213171250200265,
+            "y": 128.10550588384163,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-9",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.368458808083334,
+            "y": 128.08754681867364,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.20000000000002,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-10",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.8155350781703055,
+            "y": 128.0680270471696,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-11",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.262540487797564,
+            "y": 128.04694680717185,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.20000000000002,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-12",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.709469590345371,
+            "y": 128.02430635553637,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-13",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.156316940123545,
+            "y": 128.00010596812996,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-14",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.603077092438226,
+            "y": 127.9743459398267,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-20-15",
+          "sectionId": "115",
+          "row": "20",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.049744603657949,
+            "y": 127.9470265845044,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 128.2,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "21",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 50,
+      "depth": 131,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-21-1",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.829045624427996,
+            "y": 130.98723064521886,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-2",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.2862652432841353,
+            "y": 130.98004806548727,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-3",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.7434570047197284,
+            "y": 130.97126953520475,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-4",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.2006153379975304,
+            "y": 130.96089516133497,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-5",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.657734672787491,
+            "y": 130.9489250702864,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-6",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.114809439234775,
+            "y": 130.93535940791085,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-7",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.571834068027596,
+            "y": 130.92019833950155,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-8",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -5.028802990465082,
+            "y": 130.90344204979138,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-9",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.485710638525092,
+            "y": 130.88509074295044,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-10",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -5.942551444932216,
+            "y": 130.86514464258363,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-11",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.39931984322528,
+            "y": 130.84360399172786,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-12",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -6.8560102678256145,
+            "y": 130.82046905284918,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-13",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.3126171541044025,
+            "y": 130.79574010783952,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-14",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.769134938450918,
+            "y": 130.76941745801327,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-21-15",
+          "sectionId": "115",
+          "row": "21",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.225558058340027,
+            "y": 130.74150142410357,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 131,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "22",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 52.5,
+      "depth": 133.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-22-1",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.8681397293776023,
+            "y": 133.78695771244492,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-2",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.3351319813085296,
+            "y": 133.77962161192517,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-3",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.8020957803931275,
+            "y": 133.77065544893435,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-4",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.2690254368249585,
+            "y": 133.7600593327223,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.79999999999998,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-5",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.7359152612134836,
+            "y": 133.74783339239943,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-6",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.202759564653534,
+            "y": 133.7339777769349,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-7",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.669552658794599,
+            "y": 133.71849265515502,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-8",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -5.136288855910138,
+            "y": 133.70137821574113,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-9",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.602962468966851,
+            "y": 133.68263466722726,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-10",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -6.069567811694126,
+            "y": 133.66226223799765,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-11",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.536099198652996,
+            "y": 133.6402611762839,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-12",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -7.002550945305857,
+            "y": 133.616631750162,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-13",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.46891736808526,
+            "y": 133.59137424754908,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-14",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -7.93519278446361,
+            "y": 133.5644889761998,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.8,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-22-15",
+          "sectionId": "115",
+          "row": "22",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.401371513022104,
+            "y": 133.53597626370274,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 133.79999999999998,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "23",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 55,
+      "depth": 136.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-23-1",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.9072338343272082,
+            "y": 136.58668477967095,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-2",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.383998719332923,
+            "y": 136.57919515836304,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-3",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.8607345560665256,
+            "y": 136.5700413626639,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-4",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.3374355356523866,
+            "y": 136.5592235041096,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-5",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.8140958496394752,
+            "y": 136.5467417145124,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-6",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.290709690072292,
+            "y": 136.53259614595893,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-7",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.7672712495616,
+            "y": 136.51678697080848,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-8",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -5.243774721355192,
+            "y": 136.49931438169085,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-9",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.720214299408608,
+            "y": 136.48017859150406,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-10",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -6.196584178456036,
+            "y": 136.45937983341162,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-11",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.672878554080712,
+            "y": 136.43691836083988,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-12",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -7.1490916227860986,
+            "y": 136.41279444747477,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-13",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.625217582066117,
+            "y": 136.3870083872586,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.59999999999997,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-14",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -8.1012506304763,
+            "y": 136.35956049438633,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-23-15",
+          "sectionId": "115",
+          "row": "23",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.57718496770418,
+            "y": 136.3304511033019,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 136.6,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "24",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 57.5,
+      "depth": 139.39999999999998,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-24-1",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.9463279392768138,
+            "y": 139.38641184689698,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-2",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.432865457357316,
+            "y": 139.37876870480093,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-3",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.919373331739924,
+            "y": 139.36942727639345,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-4",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.4058456344798143,
+            "y": 139.3583876754969,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-5",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.892276438065467,
+            "y": 139.3456500366254,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-6",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.3786598154910505,
+            "y": 139.33121451498297,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.4,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-7",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.864989840328602,
+            "y": 139.31508128646192,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-8",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -5.3512605868002465,
+            "y": 139.29725054764057,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-9",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.837466129850364,
+            "y": 139.27772251578082,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-10",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -6.323600545217945,
+            "y": 139.2564974288256,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-11",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.809657909508427,
+            "y": 139.2335755453959,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-12",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -7.295632300266339,
+            "y": 139.20895714478758,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-13",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.781517796046974,
+            "y": 139.18264252696812,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999995,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-14",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -8.26730847648899,
+            "y": 139.15463201257288,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-24-15",
+          "sectionId": "115",
+          "row": "24",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.752998422386256,
+            "y": 139.12492594290103,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 139.39999999999998,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "25",
+      "sectionId": "115",
+      "seatCount": 15,
+      "elevation": 60,
+      "depth": 142.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "brewers-115-25-1",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -1.98542204422642,
+            "y": 142.18613891412306,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 180.79999999999998,
+          "facing": 0.7999999999999545,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-2",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -2.4817321953817104,
+            "y": 142.17834225123883,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 181,
+          "facing": 1,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-3",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -2.9780121074133232,
+            "y": 142.16881319012302,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 181.2,
+          "facing": 1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-4",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -3.4742557333072424,
+            "y": 142.15755184688422,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 181.39999999999998,
+          "facing": 1.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-5",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -3.9704570264914594,
+            "y": 142.14455835873838,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 181.6,
+          "facing": 1.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-6",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -4.466609940909809,
+            "y": 142.12983288400702,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 181.79999999999998,
+          "facing": 1.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-7",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -4.962708431095604,
+            "y": 142.1133756021154,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 182,
+          "facing": 2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-8",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -5.458746452245302,
+            "y": 142.09518671359032,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 182.2,
+          "facing": 2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-9",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -5.954717960292123,
+            "y": 142.07526644005765,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 182.39999999999998,
+          "facing": 2.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-10",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -6.450616911979855,
+            "y": 142.05361502423963,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 182.6,
+          "facing": 2.6000000000000227,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-11",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -6.946437264936144,
+            "y": 142.0302327299519,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 182.79999999999998,
+          "facing": 2.7999999999999545,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-12",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -7.442172977746582,
+            "y": 142.00511984210038,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 183,
+          "facing": 3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-13",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -7.937818010027832,
+            "y": 141.9782766666777,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 183.2,
+          "facing": 3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-14",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -8.433366322501683,
+            "y": 141.94970353075942,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 183.39999999999998,
+          "facing": 3.3999999999999773,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "brewers-115-25-15",
+          "sectionId": "115",
+          "row": "25",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -8.928811877068334,
+            "y": 141.9194007825002,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 142.2,
+          "angle": 183.6,
+          "facing": 3.6000000000000227,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 325,
+    "aisle": 50,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
