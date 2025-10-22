@@ -1,0 +1,8945 @@
+/**
+ * View 543 - angels
+ * Generated: 2025-10-22T20:29:59.811Z
+ * Total Seats: 320
+ * Total Rows: 20
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_543: SectionSeatingData = {
+  "sectionId": "543",
+  "sectionName": "View 543",
+  "stadiumId": "angels",
+  "totalSeats": 320,
+  "totalRows": 20,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 80,
+      "depth": 210,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-1-1",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -137.832895687879,
+            "y": 158.43640006732755,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-2",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -138.7809595193349,
+            "y": 157.60661558098607,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-3",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -139.7240279684757,
+            "y": 156.77115808803808,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-4",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -140.66206708981292,
+            "y": 155.93005766054523,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 209.99999999999997,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-5",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -141.5950431188876,
+            "y": 155.08334457368517,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-6",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -142.5229224734849,
+            "y": 154.23104930466178,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-7",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -143.445671754844,
+            "y": 153.3732025316077,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-8",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -144.363257748859,
+            "y": 152.50983513248087,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-9",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -145.27564742727577,
+            "y": 151.64097818395217,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-10",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -146.18280794887946,
+            "y": 150.76666296028782,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-11",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -147.08470666067788,
+            "y": 149.88692093222255,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-12",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -147.9813110990757,
+            "y": 149.00178376582804,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-13",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -148.87258899104398,
+            "y": 148.11128332137187,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-14",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -149.75850825528093,
+            "y": 147.21545165217188,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 210,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-15",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -150.63903700336732,
+            "y": 146.3143210034415,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 209.99999999999997,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-1-16",
+          "sectionId": "543",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -151.51414354091403,
+            "y": 145.40792381112968,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 209.99999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 82.5,
+      "depth": 212.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-2-1",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -139.67066763038406,
+            "y": 160.5488854015586,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-2",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -140.63137231292603,
+            "y": 159.70803712206592,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.8,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-3",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -141.58701500805537,
+            "y": 158.8614401958786,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-4",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -142.5375613176771,
+            "y": 158.00912509601918,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.79999999999998,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-5",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -143.4829770271394,
+            "y": 157.15112250133433,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-6",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -144.4232281064647,
+            "y": 156.2874632953906,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.8,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-7",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -145.35828071157525,
+            "y": 155.41817856536247,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.8,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-8",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -146.28810118551047,
+            "y": 154.54329960091397,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.8,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-9",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -147.21265605963947,
+            "y": 153.66285789307156,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-10",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -148.13191205486453,
+            "y": 152.77688513309167,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.8,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-11",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -149.04583608282027,
+            "y": 151.88541321131888,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-12",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -149.9543952470634,
+            "y": 150.9884742160391,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-13",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -150.8575568442579,
+            "y": 150.08610043232352,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-14",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -151.75528836535136,
+            "y": 149.1783243408675,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.80000000000004,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-15",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -152.64755749674555,
+            "y": 148.26517861682075,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.79999999999998,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-2-16",
+          "sectionId": "543",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -153.53433212145956,
+            "y": 147.3466961286114,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 212.79999999999998,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 85,
+      "depth": 215.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-3-1",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -141.5084395728891,
+            "y": 162.6613707357896,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-2",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -142.48178510651715,
+            "y": 161.8094586631457,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.59999999999997,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-3",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -143.45000204763502,
+            "y": 160.9517223037191,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-4",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -144.41305554554128,
+            "y": 160.0881925314931,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-5",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -145.37091093539124,
+            "y": 159.21890042898343,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-6",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -146.32353373944449,
+            "y": 158.34387728611944,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-7",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -147.2708896683065,
+            "y": 157.46315459911722,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-8",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -148.21294462216193,
+            "y": 156.57676406934704,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-9",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -149.1496646920031,
+            "y": 155.6847376021909,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-10",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -150.08101616084957,
+            "y": 154.7871073058955,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-11",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -151.00696550496264,
+            "y": 153.88390549041515,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-12",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -151.92747939505105,
+            "y": 152.97516466625012,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-13",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -152.84252469747182,
+            "y": 152.06091754327514,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-14",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -153.75206847542177,
+            "y": 151.14119702956313,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.60000000000002,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-15",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -154.65607799012378,
+            "y": 150.21603623019996,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.6,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-3-16",
+          "sectionId": "543",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -155.55452070200508,
+            "y": 149.28546844609312,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 215.59999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 87.5,
+      "depth": 218.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-4-1",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -143.34621151539417,
+            "y": 164.77385607002066,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.40000000000003,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-2",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -144.3321979001083,
+            "y": 163.91088020422552,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-3",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -145.3129890872147,
+            "y": 163.0420044115596,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-4",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -146.28854977340546,
+            "y": 162.16725996696704,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-5",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -147.2588448436431,
+            "y": 161.2866783566326,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-6",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -148.2238393724243,
+            "y": 160.40029127684826,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-7",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -149.18349862503777,
+            "y": 159.508130632872,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-8",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -150.13778805881338,
+            "y": 158.61022853778013,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.40000000000003,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-9",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -151.0866733243668,
+            "y": 157.70661731131028,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.40000000000003,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-10",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -152.03012026683464,
+            "y": 156.79732947869934,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-11",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -152.968094927105,
+            "y": 155.88239776951147,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-12",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -153.90056354303874,
+            "y": 154.96185511646118,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.40000000000003,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-13",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -154.82749255068575,
+            "y": 154.03573465422676,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-14",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -155.74884858549217,
+            "y": 153.10406971825876,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-15",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -156.664598483502,
+            "y": 152.16689384357917,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.39999999999998,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-4-16",
+          "sectionId": "543",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -157.5747092825506,
+            "y": 151.22424076357487,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 218.4,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 90,
+      "depth": 221.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-5-1",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -145.18398345789922,
+            "y": 166.88634140425168,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-2",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -146.18261069369942,
+            "y": 166.01230174530534,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-3",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -147.17597612679438,
+            "y": 165.13228651940008,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-4",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -148.16404400126962,
+            "y": 164.24632740244098,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.2,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-5",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -149.1467787518949,
+            "y": 163.35445628428172,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-6",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -150.12414500540407,
+            "y": 162.45670526757706,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-7",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -151.096107581769,
+            "y": 161.55310666662675,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-8",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -152.0626314954648,
+            "y": 160.6436930062132,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-9",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -153.02368195673048,
+            "y": 159.72849702042961,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.2,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-10",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -153.97922437281971,
+            "y": 158.80755165150316,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-11",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -154.92922434924736,
+            "y": 157.88089004860777,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-12",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -155.8736476910264,
+            "y": 156.9485455666722,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-13",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -156.81246040389965,
+            "y": 156.01055176517838,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-14",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -157.74562869556257,
+            "y": 155.06694240695438,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.20000000000002,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-15",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -158.67311897688023,
+            "y": 154.1177514569584,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-5-16",
+          "sectionId": "543",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -159.5948978630961,
+            "y": 153.1630130810566,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 221.19999999999996,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 92.5,
+      "depth": 224,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-6-1",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -147.02175540040426,
+            "y": 168.99882673848273,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224.00000000000003,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-2",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -148.03302348729056,
+            "y": 168.11372328638515,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-3",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -149.03896316637406,
+            "y": 167.2225686272406,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-4",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -150.0395382291338,
+            "y": 166.32539483791493,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-5",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -151.03471266014674,
+            "y": 165.42223421193086,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-6",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -152.02445063838388,
+            "y": 164.51311925830592,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-7",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -153.00871653850027,
+            "y": 163.59808270038153,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-8",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -153.98747493211627,
+            "y": 162.67715747464626,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-9",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -154.96069058909416,
+            "y": 161.750376729549,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-10",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -155.92832847880476,
+            "y": 160.817773824307,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-11",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -156.89035377138975,
+            "y": 159.87938232770406,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-12",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -157.8467318390141,
+            "y": 158.93523601688324,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224.00000000000003,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-13",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -158.79742825711358,
+            "y": 157.98536887613,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-14",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -159.742408805633,
+            "y": 157.02981509565,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 224.00000000000003,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-15",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -160.68163947025846,
+            "y": 156.06860907033763,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 223.99999999999997,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-6-16",
+          "sectionId": "543",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -161.61508644364164,
+            "y": 155.1017853985383,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 223.99999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 95,
+      "depth": 226.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-7-1",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -148.85952734290933,
+            "y": 171.11131207271376,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-2",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -149.8834362808817,
+            "y": 170.21514482746497,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-3",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -150.90195020595374,
+            "y": 169.31285073508113,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-4",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -151.91503245699798,
+            "y": 168.40446227338884,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.79999999999998,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-5",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -152.9226465683986,
+            "y": 167.49001213958,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-6",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -153.9247562713637,
+            "y": 166.56953324903475,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-7",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -154.9213254952315,
+            "y": 165.6430587341363,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-8",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -155.91231836876773,
+            "y": 164.71062194307936,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-9",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -156.89769922145786,
+            "y": 163.77225643866836,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-10",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -157.87743258478983,
+            "y": 162.82799599711086,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-11",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -158.85148319353212,
+            "y": 161.87787460680036,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.79999999999998,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-12",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -159.81981598700176,
+            "y": 160.9219264670943,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-13",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -160.7823961103275,
+            "y": 159.96018598708164,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-14",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -161.7391889157034,
+            "y": 158.99268778434563,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.8,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-15",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -162.69015996363672,
+            "y": 158.01946668371684,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.79999999999998,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-7-16",
+          "sectionId": "543",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -163.63527502418717,
+            "y": 157.04055771602006,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 226.79999999999998,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 97.5,
+      "depth": 229.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-8-1",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -150.69729928541437,
+            "y": 173.22379740694478,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-2",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -151.73384907447283,
+            "y": 172.31656636854478,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-3",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -152.76493724553342,
+            "y": 171.40313284292162,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-4",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -153.79052668486213,
+            "y": 170.4835297088628,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.59999999999997,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-5",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -154.81058047665041,
+            "y": 169.55779006722912,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-6",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -155.82506190434347,
+            "y": 168.62594723976355,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-7",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -156.83393445196276,
+            "y": 167.68803476789105,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.59999999999997,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-8",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -157.83716180541919,
+            "y": 166.74408641151243,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-9",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -158.8347078538215,
+            "y": 165.79413614778773,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-10",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -159.82653669077487,
+            "y": 164.83821816991468,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-11",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -160.81261261567448,
+            "y": 163.87636688589666,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-12",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -161.79290013498945,
+            "y": 162.90861691730532,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.60000000000002,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-13",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -162.7673639635414,
+            "y": 161.93500309803326,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-14",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -163.7359690257738,
+            "y": 160.95556047304126,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-15",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -164.69868045701494,
+            "y": 159.97032429709606,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.6,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-8-16",
+          "sectionId": "543",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -165.65546360473266,
+            "y": 158.97933003350178,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 229.59999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 100,
+      "depth": 232.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-9-1",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -152.53507122791942,
+            "y": 175.33628274117584,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-2",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -153.58426186806395,
+            "y": 174.4179879096246,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.39999999999998,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-3",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -154.6279242851131,
+            "y": 173.49341495076214,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-4",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -155.6660209127263,
+            "y": 172.56259714433673,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.39999999999998,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-5",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -156.69851438490227,
+            "y": 171.62556799487828,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-6",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -157.72536753732328,
+            "y": 170.68236123049238,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.39999999999998,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-7",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -158.74654340869404,
+            "y": 169.73301080164583,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.4,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-8",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -159.76200524207064,
+            "y": 168.77755087994552,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-9",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -160.7717164861852,
+            "y": 167.8160158569071,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-10",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -161.77564079675994,
+            "y": 166.84844034271853,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-11",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -162.77374203781687,
+            "y": 165.87485916499298,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-12",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -163.76598428297712,
+            "y": 164.89530736751638,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-13",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -164.75233181675534,
+            "y": 163.90982020898488,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-14",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -165.73274913584424,
+            "y": 162.91843316173689,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.40000000000003,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-15",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -166.70720095039317,
+            "y": 161.9211819104753,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.4,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-9-16",
+          "sectionId": "543",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -167.6756521852782,
+            "y": 160.9181023509835,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 232.39999999999998,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 102.5,
+      "depth": 235.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-10-1",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -154.37284317042446,
+            "y": 177.44876807540686,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-2",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -155.4346746616551,
+            "y": 176.51940945070442,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-3",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -156.49091132469275,
+            "y": 175.58369705860264,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-4",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -157.5415151405905,
+            "y": 174.64166457981065,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-5",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -158.5864482931541,
+            "y": 173.69334592252739,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-6",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -159.62567317030306,
+            "y": 172.7387752212212,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-7",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -160.65915236542526,
+            "y": 171.7779868354006,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-8",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -161.68684867872207,
+            "y": 170.8110153483786,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-9",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -162.70872511854887,
+            "y": 169.83789556602645,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-10",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -163.724744902745,
+            "y": 168.85866251552235,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-11",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -164.73487145995924,
+            "y": 167.87335144408925,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-12",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -165.73906843096478,
+            "y": 166.8819978177274,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-13",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -166.73729966996925,
+            "y": 165.8846373199365,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-14",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -167.72952924591465,
+            "y": 164.8813058504325,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.20000000000002,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-15",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -168.7157214437714,
+            "y": 163.87203952385448,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.2,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-10-16",
+          "sectionId": "543",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -169.6958407658237,
+            "y": 162.85687466846522,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 235.19999999999996,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 105,
+      "depth": 238,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-11-1",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -156.21061511292953,
+            "y": 179.56125340963789,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-2",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -157.2850874552462,
+            "y": 178.62083099178423,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-3",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -158.35389836427242,
+            "y": 177.67397916644316,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-4",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -159.41700936845467,
+            "y": 176.7207320152846,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-5",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -160.47438220140592,
+            "y": 175.76112385017655,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-6",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -161.52597880328287,
+            "y": 174.79518921195003,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-7",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -162.57176132215653,
+            "y": 173.8229628691554,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-8",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -163.61169211537356,
+            "y": 172.84447981681166,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-9",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -164.64573375091254,
+            "y": 171.8597752751458,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-10",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -165.67384900873006,
+            "y": 170.8688846883262,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-11",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -166.6960008821016,
+            "y": 169.87184372318558,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-12",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -167.71215257895247,
+            "y": 168.86868826793844,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-13",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -168.72226752318318,
+            "y": 167.85945443088815,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238.00000000000003,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-14",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -169.72630935598505,
+            "y": 166.84417853912814,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-15",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -170.72424193714963,
+            "y": 165.82289713723372,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 238,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-11-16",
+          "sectionId": "543",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -171.71602934636923,
+            "y": 164.79564698594697,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 237.99999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 107.5,
+      "depth": 240.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-12-1",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -158.0483870554346,
+            "y": 181.67373874386894,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.80000000000004,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-2",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -159.13550024883736,
+            "y": 180.72225253286405,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-3",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -160.21688540385213,
+            "y": 179.76426127428365,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-4",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -161.29250359631885,
+            "y": 178.79979945075854,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-5",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -162.36231610965777,
+            "y": 177.82890177782568,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-6",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -163.42628443626268,
+            "y": 176.85160320267886,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-7",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -164.48437027888778,
+            "y": 175.86793890291017,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-8",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -165.53653555202501,
+            "y": 174.87794428524475,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.80000000000004,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-9",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -166.58274238327624,
+            "y": 173.88165498426517,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-10",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -167.62295311471513,
+            "y": 172.87910686113003,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-11",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -168.657130304244,
+            "y": 171.87033600228187,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-12",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -169.68523672694016,
+            "y": 170.8553787181495,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.80000000000004,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-13",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -170.7072353763971,
+            "y": 169.83427154183977,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.80000000000004,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-14",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -171.72308946605548,
+            "y": 168.80705122782376,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.80000000000004,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-15",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -172.73276243052786,
+            "y": 167.77375475061294,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-12-16",
+          "sectionId": "543",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -173.73621792691478,
+            "y": 166.7344193034287,
+            "z": 107.5
+          },
+          "elevation": 107.5,
+          "distanceFromHomeplate": 240.8,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 110,
+      "depth": 243.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-13-1",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -159.88615899793965,
+            "y": 183.78622407809996,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-2",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -160.98591304242848,
+            "y": 182.82367407394386,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-3",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -162.07987244343178,
+            "y": 181.85454338212415,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-4",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -163.167997824183,
+            "y": 180.87886688623246,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-5",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -164.2502500179096,
+            "y": 179.8966797054748,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-6",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -165.32659006924249,
+            "y": 178.90801719340766,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-7",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -166.39697923561903,
+            "y": 177.91291493666492,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-8",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -167.46137898867644,
+            "y": 176.91140875367782,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-9",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -168.51975101563988,
+            "y": 175.90353469338453,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-10",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -169.57205722070017,
+            "y": 174.88932903393388,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-11",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -170.61825972638636,
+            "y": 173.86882828137817,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-12",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -171.65832087492782,
+            "y": 172.84206916836052,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-13",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -172.692203229611,
+            "y": 171.8090886527914,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-14",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -173.7198695761259,
+            "y": 170.7699239165194,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.60000000000002,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-15",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -174.74128292390608,
+            "y": 169.72461236399215,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.6,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-13-16",
+          "sectionId": "543",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -175.75640650746027,
+            "y": 168.67319162091042,
+            "z": 110
+          },
+          "elevation": 110,
+          "distanceFromHomeplate": 243.59999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 112.5,
+      "depth": 246.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-14-1",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -161.7239309404447,
+            "y": 185.898709412331,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-2",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -162.83632583601963,
+            "y": 184.92509561502368,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-3",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -163.94285948301146,
+            "y": 183.94482548996467,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-4",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -165.04349205204718,
+            "y": 182.9579343217064,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.39999999999998,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-5",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -166.13818392616142,
+            "y": 181.96445763312394,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-6",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -167.22689570222227,
+            "y": 180.96443118413652,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-7",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -168.3095881923503,
+            "y": 179.9578909704197,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-8",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -169.3862224253279,
+            "y": 178.9448732221109,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-9",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -170.45675964800358,
+            "y": 177.9254144025039,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-10",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -171.52116132668525,
+            "y": 176.8995512067377,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-11",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -172.57938914852872,
+            "y": 175.86732056047447,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.39999999999998,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-12",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -173.63140502291552,
+            "y": 174.82875961857158,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.40000000000003,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-13",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -174.67717108282494,
+            "y": 173.783905763743,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-14",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -175.7166496861963,
+            "y": 172.73279660521501,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.4,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-15",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -176.7498034172843,
+            "y": 171.6754699773714,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.39999999999998,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-14-16",
+          "sectionId": "543",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -177.7765950880058,
+            "y": 170.61196393839217,
+            "z": 112.5
+          },
+          "elevation": 112.5,
+          "distanceFromHomeplate": 246.39999999999998,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 115,
+      "depth": 249.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-15-1",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -163.56170288294973,
+            "y": 188.011194746562,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-2",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -164.68673862961074,
+            "y": 187.02651715610347,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-3",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -165.80584652259114,
+            "y": 186.03510759780517,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-4",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -166.91898627991134,
+            "y": 185.03700175718032,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-5",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -168.02611783441324,
+            "y": 184.03223556077307,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-6",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -169.12720133520207,
+            "y": 183.02084517486531,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-7",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -170.22219714908152,
+            "y": 182.00286700417445,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-8",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -171.31106586197936,
+            "y": 180.97833769054398,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-9",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -172.39376828036725,
+            "y": 179.94729411162325,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-10",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -173.4702654326703,
+            "y": 178.90977337954152,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-11",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -174.54051857067108,
+            "y": 177.86581283957076,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-12",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -175.60448917090318,
+            "y": 176.8154500687826,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.20000000000002,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-13",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -176.66213893603884,
+            "y": 175.75872287469463,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-14",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -177.7134297962667,
+            "y": 174.69566929391064,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.2,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-15",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -178.75832391066254,
+            "y": 173.6263275907506,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-15-16",
+          "sectionId": "543",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -179.7967836685513,
+            "y": 172.55073625587386,
+            "z": 115
+          },
+          "elevation": 115,
+          "distanceFromHomeplate": 249.19999999999996,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 117.5,
+      "depth": 252,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-16-1",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -165.3994748254548,
+            "y": 190.12368008079306,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252.00000000000003,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-2",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -166.5371514232019,
+            "y": 189.1279386971833,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-3",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -167.66883356217082,
+            "y": 188.1253897056457,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-4",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -168.79448050777552,
+            "y": 187.11606919265427,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 251.99999999999997,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-5",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -169.9140517426651,
+            "y": 186.1000134884222,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-6",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -171.02750696818188,
+            "y": 185.07725916559414,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252.00000000000003,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-7",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -172.1348061058128,
+            "y": 184.04784303792923,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-8",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -173.23590929863082,
+            "y": 183.01180215897705,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-9",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -174.33077691273093,
+            "y": 181.9691738207426,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-10",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -175.41936953865536,
+            "y": 180.91999555234537,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-11",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -176.50164799281347,
+            "y": 179.86430511866706,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-12",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -177.57757331889084,
+            "y": 178.80214051899364,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-13",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -178.64710678925277,
+            "y": 177.73353998564627,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252.00000000000003,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-14",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -179.71020990633713,
+            "y": 176.65854198260627,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252.00000000000003,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-15",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -180.7668444040408,
+            "y": 175.57718520412982,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 252,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-16-16",
+          "sectionId": "543",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -181.81697224909684,
+            "y": 174.4895085733556,
+            "z": 117.5
+          },
+          "elevation": 117.5,
+          "distanceFromHomeplate": 251.99999999999997,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 120,
+      "depth": 254.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-17-1",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -167.23724676795987,
+            "y": 192.23616541502412,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.80000000000004,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-2",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -168.387564216793,
+            "y": 191.22936023826313,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-3",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -169.5318206017505,
+            "y": 190.2156718134862,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-4",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -170.6699747356397,
+            "y": 189.1951366281282,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.79999999999998,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-5",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -171.80198565091695,
+            "y": 188.16779141607137,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-6",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -172.9278126011617,
+            "y": 187.13367315632297,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-7",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -174.04741506254405,
+            "y": 186.092819071684,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-8",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -175.16075273528227,
+            "y": 185.04526662741014,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-9",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -176.26778554509463,
+            "y": 183.991053529862,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.80000000000004,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-10",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -177.36847364464043,
+            "y": 182.93021772514922,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-11",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -178.46277741495584,
+            "y": 181.8627973977634,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-12",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -179.55065746687853,
+            "y": 180.7888309692047,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-13",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -180.6320746424667,
+            "y": 179.7083570965979,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-14",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -181.70699001640753,
+            "y": 178.6214146713019,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-15",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -182.77536489741902,
+            "y": 177.52804281750906,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.8,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-17-16",
+          "sectionId": "543",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -183.83716082964236,
+            "y": 176.42828089083736,
+            "z": 120
+          },
+          "elevation": 120,
+          "distanceFromHomeplate": 254.79999999999998,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 122.5,
+      "depth": 257.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-18-1",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -169.07501871046492,
+            "y": 194.34865074925514,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-2",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -170.23797701038416,
+            "y": 193.33078177934294,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-3",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -171.39480764133017,
+            "y": 192.30595392132673,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-4",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -172.54546896350388,
+            "y": 191.27420406360216,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.59999999999997,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-5",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -173.68991955916877,
+            "y": 190.2355693437205,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-6",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -174.82811823414147,
+            "y": 189.19008714705183,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-7",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -175.96002401927532,
+            "y": 188.13779510543878,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-8",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -177.08559617193373,
+            "y": 187.07873109584324,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-9",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -178.2047941774583,
+            "y": 186.01293323898136,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-10",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -179.3175777506255,
+            "y": 184.94043989795307,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-11",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -180.42390683709823,
+            "y": 183.86128967685968,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-12",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -181.52374161486622,
+            "y": 182.77552141941575,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-13",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -182.61704249568064,
+            "y": 181.68317420754954,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-14",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -183.70377012647796,
+            "y": 180.58428735999752,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-15",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -184.78388539079725,
+            "y": 179.47890043088827,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.59999999999997,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-18-16",
+          "sectionId": "543",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -185.8573494101879,
+            "y": 178.36705320831908,
+            "z": 122.5
+          },
+          "elevation": 122.5,
+          "distanceFromHomeplate": 257.6,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "19",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 125,
+      "depth": 260.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-19-1",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -170.91279065296993,
+            "y": 196.46113608348614,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-2",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -172.08838980397528,
+            "y": 195.43220332042273,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-3",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -173.25779468090983,
+            "y": 194.3962360291672,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-4",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -174.42096319136803,
+            "y": 193.35327149907607,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-5",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -175.5778534674206,
+            "y": 192.3033472713696,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-6",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -176.72842386712125,
+            "y": 191.2465011377806,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-7",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -177.87263297600654,
+            "y": 190.1827711391935,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-8",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -179.01043960858516,
+            "y": 189.11219556427628,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-9",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -180.14180280982194,
+            "y": 188.0348129481007,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-10",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -181.26668185661052,
+            "y": 186.95066207075686,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-11",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -182.38503625924056,
+            "y": 185.85978195595595,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-12",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -183.49682576285386,
+            "y": 184.76221186962675,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-13",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -184.60201034889454,
+            "y": 183.65799131850113,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.40000000000003,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-14",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -185.70055023654834,
+            "y": 182.54716004869312,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-15",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -186.79240588417545,
+            "y": 181.42975804426746,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-19-16",
+          "sectionId": "543",
+          "row": "19",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -187.87753799073337,
+            "y": 180.30582552580077,
+            "z": 125
+          },
+          "elevation": 125,
+          "distanceFromHomeplate": 260.4,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "20",
+      "sectionId": "543",
+      "seatCount": 16,
+      "elevation": 127.5,
+      "depth": 263.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "angels-543-20-1",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -172.750562595475,
+            "y": 198.5736214177172,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -138.97812499999998,
+          "facing": 41.02187500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-2",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -173.9388025975664,
+            "y": 197.53362486150255,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -138.63437499999998,
+          "facing": 41.36562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-3",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -175.1207817204895,
+            "y": 196.48651813700772,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -138.29062499999998,
+          "facing": 41.70937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-4",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -176.2964574192322,
+            "y": 195.43233893455002,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -137.94687499999998,
+          "facing": 42.05312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-5",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -177.46578737567242,
+            "y": 194.37112519901873,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -137.60312499999998,
+          "facing": 42.39687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-6",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -178.62872950010106,
+            "y": 193.30291512850943,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -137.25937499999998,
+          "facing": 42.74062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-7",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -179.7852419327378,
+            "y": 192.22774717294828,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -136.91562499999998,
+          "facing": 43.08437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-8",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -180.93528304523662,
+            "y": 191.14566003270937,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -136.57187499999998,
+          "facing": 43.42812500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-9",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -182.07881144218564,
+            "y": 190.05669265722005,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -136.22812499999998,
+          "facing": 43.77187500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-10",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -183.2157859625956,
+            "y": 188.9608842435607,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -135.88437499999998,
+          "facing": 44.11562500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-11",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -184.34616568138296,
+            "y": 187.85827423505228,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -135.54062499999998,
+          "facing": 44.45937500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-12",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -185.46990991084155,
+            "y": 186.7489023198378,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -135.19687499999998,
+          "facing": 44.80312500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-13",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -186.58697820210844,
+            "y": 185.63280842945275,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -134.85312499999998,
+          "facing": 45.14687500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-14",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -187.69733034661877,
+            "y": 184.51003273738877,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.20000000000005,
+          "angle": -134.50937499999998,
+          "facing": 45.49062500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-15",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -188.8009263775537,
+            "y": 183.3806156576467,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -134.16562499999998,
+          "facing": 45.83437500000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "angels-543-20-16",
+          "sectionId": "543",
+          "row": "20",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -189.89772657127892,
+            "y": 182.24459784328252,
+            "z": 127.5
+          },
+          "elevation": 127.5,
+          "distanceFromHomeplate": 263.2,
+          "angle": -133.82187499999998,
+          "facing": 46.17812500000002,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 280,
+    "aisle": 40,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
