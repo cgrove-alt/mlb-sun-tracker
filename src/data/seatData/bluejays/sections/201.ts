@@ -1,0 +1,7760 @@
+/**
+ * Club 201 - bluejays
+ * Generated: 2025-10-22T21:21:52.900Z
+ * Total Seats: 289
+ * Total Rows: 17
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_201: SectionSeatingData = {
+  "sectionId": "201",
+  "sectionName": "Club 201",
+  "stadiumId": "bluejays",
+  "totalSeats": 289,
+  "totalRows": 17,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 40,
+      "depth": 150,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-1-1",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -119.23698140784289,
+            "y": 91.00847358760463,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-2",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -119.70258409203593,
+            "y": 90.39519545688843,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-3",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -120.16503250181397,
+            "y": 89.77953532870391,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-4",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -120.62431445123129,
+            "y": 89.16150942626798,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-5",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -121.08041783778141,
+            "y": 88.54113403513797,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-6",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -121.53333064271601,
+            "y": 87.9184255027822,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-7",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -121.98304093136143,
+            "y": 87.29340023814974,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-8",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -122.42953685343326,
+            "y": 86.66607471123766,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-9",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -122.87280664334881,
+            "y": 86.03646545265687,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-10",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -123.31283862053677,
+            "y": 85.404589053197,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-11",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -123.7496211897454,
+            "y": 84.77046216338871,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-12",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -124.18314284134766,
+            "y": 84.13410149306547,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-13",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -124.61339215164507,
+            "y": 83.49552381092248,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-14",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -125.04035778316792,
+            "y": 82.85474594407587,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-15",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -125.46402848497495,
+            "y": 82.21178477761809,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-16",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -125.88439309294901,
+            "y": 81.56665725417398,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-1-17",
+          "sectionId": "201",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -126.30144053009182,
+            "y": 80.91938037345366,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 150,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 42.5,
+      "depth": 152.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-2-1",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -121.46273839412264,
+            "y": 92.70729842790658,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-2",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -121.93703232842061,
+            "y": 92.08257243875035,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.79999999999998,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-3",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -122.4081131085145,
+            "y": 91.45541998817306,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-4",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -122.87596832098761,
+            "y": 90.82585760222499,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-5",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -123.34058563742,
+            "y": 90.19390187046055,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-6",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -123.80195281471339,
+            "y": 89.55956944550081,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-7",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -124.26005769541351,
+            "y": 88.9228770425952,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-8",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -124.71488820803069,
+            "y": 88.28384143918076,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-9",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -125.16643236735798,
+            "y": 87.64247947443981,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-10",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -125.6146782747868,
+            "y": 86.99880804885669,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-11",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -126.05961411862066,
+            "y": 86.35284412377197,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-12",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -126.50122817438617,
+            "y": 85.70460472093603,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-13",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -126.93950880514245,
+            "y": 85.05410692205972,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-14",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -127.37444446178706,
+            "y": 84.4013678683653,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-15",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -127.80602368336115,
+            "y": 83.74640476013363,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-16",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -128.23423509735073,
+            "y": 83.08923485625189,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-2-17",
+          "sectionId": "201",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -128.65906741998688,
+            "y": 82.42987547375813,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 152.8,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 45,
+      "depth": 155.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-3-1",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -123.68849538040236,
+            "y": 94.40612326820852,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-2",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -124.17148056480528,
+            "y": 93.76994942061226,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-3",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -124.65119371521502,
+            "y": 93.1313046476422,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-4",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -125.12762219074392,
+            "y": 92.49020577818199,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-5",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -125.60075343705859,
+            "y": 91.84666970578311,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-6",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -126.07057498671074,
+            "y": 91.2007133882194,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-7",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -126.53707445946559,
+            "y": 90.55235384704066,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-8",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -127.0002395626281,
+            "y": 89.90160816712385,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-9",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -127.46005809136716,
+            "y": 89.24849349622272,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-10",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -127.9165179290368,
+            "y": 88.59302704451635,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-11",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -128.3696070474959,
+            "y": 87.93522608415522,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-12",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -128.81931350742465,
+            "y": 87.27510794880658,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-13",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -129.26562545863982,
+            "y": 86.61269003319693,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-14",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -129.7085311404062,
+            "y": 85.9479897926547,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-15",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -130.14801888174733,
+            "y": 85.28102474264915,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-16",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -130.58407710175243,
+            "y": 84.6118124583298,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.59999999999997,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-3-17",
+          "sectionId": "201",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -131.01669430988193,
+            "y": 83.9403705740626,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 155.6,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 47.5,
+      "depth": 158.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-4-1",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -125.91425236668209,
+            "y": 96.10494810851048,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-2",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -126.40592880118996,
+            "y": 95.45732640247418,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-3",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -126.89427432191555,
+            "y": 94.80718930711133,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-4",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -127.37927606050025,
+            "y": 94.15455395413899,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-5",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -127.86092123669718,
+            "y": 93.49943754110569,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-6",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -128.33919715870812,
+            "y": 92.84185733093801,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-7",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -128.81409122351766,
+            "y": 92.18183065148612,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-8",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -129.28559091722553,
+            "y": 91.51937489506696,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-9",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -129.75368381537635,
+            "y": 90.85450751800566,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-10",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -130.21835758328683,
+            "y": 90.18724604017603,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-11",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -130.67959997637115,
+            "y": 89.51760804453849,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-12",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -131.13739884046313,
+            "y": 88.84561117667714,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-13",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -131.5917421121372,
+            "y": 88.17127314433415,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-14",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -132.04261781902534,
+            "y": 87.49461171694412,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-15",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -132.49001408013353,
+            "y": 86.8156447251647,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-16",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -132.93391910615415,
+            "y": 86.13439006040771,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-4-17",
+          "sectionId": "201",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -133.37432119977697,
+            "y": 85.45086567436707,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 158.4,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 50,
+      "depth": 161.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-5-1",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -128.1400093529618,
+            "y": 97.80377294881242,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-2",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -128.6403770375746,
+            "y": 97.1447033843361,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-3",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -129.13735492861605,
+            "y": 96.48307396658046,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-4",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -129.63092993025654,
+            "y": 95.81890213009598,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-5",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -130.12108903633575,
+            "y": 95.15220537642827,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-6",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -130.60781933070547,
+            "y": 94.4830012736566,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-7",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -131.09110798756973,
+            "y": 93.81130745593158,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.19999999999996,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-8",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -131.57094227182293,
+            "y": 93.13714162301005,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-9",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -132.0473095393855,
+            "y": 92.46052153978859,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-10",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -132.52019723753685,
+            "y": 91.78146503583571,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-11",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -132.98959290524638,
+            "y": 91.09999000492174,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-12",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -133.45548417350162,
+            "y": 90.41611440454768,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-13",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -133.91785876563458,
+            "y": 89.72985625547136,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.20000000000002,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-14",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -134.37670449764445,
+            "y": 89.04123364123353,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-15",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -134.83200927851973,
+            "y": 88.35026470768022,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-16",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -135.28376111055587,
+            "y": 87.65696766248561,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-5-17",
+          "sectionId": "201",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -135.73194808967202,
+            "y": 86.96136077467152,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 161.2,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 52.5,
+      "depth": 164,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-6-1",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -130.36576633924156,
+            "y": 99.50259778911439,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-2",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -130.8748252739593,
+            "y": 98.83208036619801,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-3",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -131.3804355353166,
+            "y": 98.15895862604961,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-4",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -131.88258380001287,
+            "y": 97.483250306053,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-5",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -132.38125683597434,
+            "y": 96.80497321175085,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-6",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -132.87644150270285,
+            "y": 96.12414521637521,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-7",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -133.36812475162182,
+            "y": 95.44078426037704,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-8",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -133.85629362642035,
+            "y": 94.75490835095316,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-9",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -134.3409352633947,
+            "y": 94.06653556157151,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-10",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -134.82203689178687,
+            "y": 93.37568403149538,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-11",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -135.29958583412164,
+            "y": 92.682371965305,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-12",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -135.77356950654013,
+            "y": 91.98661763241824,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-13",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -136.24397541913194,
+            "y": 91.28843936660859,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-14",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -136.7107911762636,
+            "y": 90.58785556552294,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-15",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -137.17400447690594,
+            "y": 89.88488469019578,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-16",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -137.6336031149576,
+            "y": 89.17954526456354,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-6-17",
+          "sectionId": "201",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -138.08957497956706,
+            "y": 88.471855874976,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 164,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 55,
+      "depth": 166.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-7-1",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -132.5915233255213,
+            "y": 101.20142262941634,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-2",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -133.10927351034397,
+            "y": 100.51945734805994,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-3",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -133.62351614201714,
+            "y": 99.83484328551876,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-4",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -134.1342376697692,
+            "y": 99.14759848201,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-5",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -134.64142463561294,
+            "y": 98.45774104707343,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-6",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -135.14506367470022,
+            "y": 97.76528915909383,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-7",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -135.6451415156739,
+            "y": 97.07026106482252,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-8",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -136.1416449810178,
+            "y": 96.37267507889628,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-9",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -136.6345609874039,
+            "y": 95.67254958335445,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-10",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -137.12387654603688,
+            "y": 94.96990302715507,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-11",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -137.60957876299688,
+            "y": 94.26475392568825,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-12",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -138.0916548395786,
+            "y": 93.5571208602888,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-13",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -138.57009207262934,
+            "y": 92.84702247774581,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.80000000000004,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-14",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -139.04487785488274,
+            "y": 92.13447748981237,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-15",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -139.51599967529214,
+            "y": 91.41950467271131,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-16",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -139.98344511935932,
+            "y": 90.70212286664146,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.8,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-7-17",
+          "sectionId": "201",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -140.4472018694621,
+            "y": 89.98235097528047,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 166.79999999999998,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 57.5,
+      "depth": 169.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-8-1",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -134.81728031180103,
+            "y": 102.9002474697183,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-2",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -135.34372174672862,
+            "y": 102.20683432992185,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.59999999999997,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-3",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -135.86659674871765,
+            "y": 101.51072794498789,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-4",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -136.3858915395255,
+            "y": 100.811946657967,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-5",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -136.9015924352515,
+            "y": 100.11050888239599,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-6",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -137.41368584669758,
+            "y": 99.40643310181241,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-7",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -137.92215827972598,
+            "y": 98.69973786926796,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-8",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -138.4269963356152,
+            "y": 97.99044180683937,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-9",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -138.92818671141305,
+            "y": 97.27856360513736,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.60000000000002,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-10",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -139.4257162002869,
+            "y": 96.56412202281474,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-11",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -139.91957169187214,
+            "y": 95.8471358860715,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-12",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -140.4097401726171,
+            "y": 95.12762408815935,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-13",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -140.8962087261267,
+            "y": 94.40560558888302,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.60000000000002,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-14",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -141.37896453350186,
+            "y": 93.68109941410178,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-15",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -141.85799487367834,
+            "y": 92.95412465522685,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.60000000000002,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-16",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -142.333287123761,
+            "y": 92.22470046871936,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-8-17",
+          "sectionId": "201",
+          "row": "8",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -142.80482875935715,
+            "y": 91.49284607558494,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 169.6,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 60,
+      "depth": 172.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-9-1",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -137.04303729808078,
+            "y": 104.59907231002025,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-2",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -137.5781699831133,
+            "y": 103.89421131178376,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.39999999999998,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-3",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -138.10967735541817,
+            "y": 103.18661260445704,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-4",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -138.63754540928184,
+            "y": 102.476294833924,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-5",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -139.1617602348901,
+            "y": 101.76327671771858,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-6",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -139.68230801869495,
+            "y": 101.04757704453101,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-7",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -140.19917504377807,
+            "y": 100.32921467371344,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-8",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -140.71234769021262,
+            "y": 99.60820853478248,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-9",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -141.22181243542224,
+            "y": 98.8845776269203,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-10",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -141.72755585453694,
+            "y": 98.15834101847442,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-11",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -142.22956462074737,
+            "y": 97.42951784645477,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-12",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -142.7278255056556,
+            "y": 96.69812731602993,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-13",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -143.22232537962407,
+            "y": 95.96418870002024,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-14",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -143.713051212121,
+            "y": 95.2277213383912,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-15",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -144.19999007206454,
+            "y": 94.48874463774239,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-16",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -144.68312912816273,
+            "y": 93.74727807079728,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.4,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-9-17",
+          "sectionId": "201",
+          "row": "9",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -145.1624556492522,
+            "y": 93.0033411758894,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 172.39999999999998,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 62.5,
+      "depth": 175.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-10-1",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -139.2687942843605,
+            "y": 106.29789715032219,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-2",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -139.81261821949798,
+            "y": 105.58158829364568,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-3",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -140.3527579621187,
+            "y": 104.86249726392616,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-4",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -140.88919927903814,
+            "y": 104.14064300988099,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-5",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -141.4219280345287,
+            "y": 103.41604455304115,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-6",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -141.9509301906923,
+            "y": 102.68872098724961,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-7",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -142.47619180783013,
+            "y": 101.95869147815888,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-8",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -142.99769904481005,
+            "y": 101.22597526272557,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-9",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -143.5154381594314,
+            "y": 100.49059164870322,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-10",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -144.02939550878693,
+            "y": 99.75256001413409,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-11",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -144.5395575496226,
+            "y": 99.01189980683802,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-12",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -145.04591083869406,
+            "y": 98.26863054390047,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-13",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -145.54844203312143,
+            "y": 97.52277181115745,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-14",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -146.04713789074012,
+            "y": 96.7743432626806,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-15",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -146.54198527045074,
+            "y": 96.02336462025792,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-16",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -147.03297113256443,
+            "y": 95.2698556728752,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-10-17",
+          "sectionId": "201",
+          "row": "10",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -147.52008253914724,
+            "y": 94.51383627619387,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 175.2,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 65,
+      "depth": 178,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-11-1",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -141.49455127064022,
+            "y": 107.99672199062415,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-2",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -142.04706645588266,
+            "y": 107.2689652755076,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-3",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -142.59583856881923,
+            "y": 106.5383819233953,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-4",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -143.14085314879446,
+            "y": 105.804991185838,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-5",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -143.68209583416728,
+            "y": 105.06881238836372,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178.00000000000003,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-6",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -144.21955236268968,
+            "y": 104.32986492996821,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-7",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -144.75320857188223,
+            "y": 103.58816828260436,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-8",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -145.28305039940747,
+            "y": 102.84374199066868,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-9",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -145.8090638834406,
+            "y": 102.09660567048616,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-10",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -146.33123516303698,
+            "y": 101.34677900979378,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178.00000000000003,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-11",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -146.84955047849786,
+            "y": 100.59428176722128,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-12",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -147.36399617173257,
+            "y": 99.83913377177103,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-13",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -147.87455868661883,
+            "y": 99.08135492229468,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-14",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -148.38122456935926,
+            "y": 98.32096518697003,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-15",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -148.88398046883694,
+            "y": 97.55798460277346,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-16",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -149.38281313696615,
+            "y": 96.79243327495311,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 178,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-11-17",
+          "sectionId": "201",
+          "row": "11",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -149.87770942904228,
+            "y": 96.02433137649834,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 177.99999999999997,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 67.5,
+      "depth": 180.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-12-1",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -143.72030825691996,
+            "y": 109.6955468309261,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-2",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -144.28151469226734,
+            "y": 108.95634225736953,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-3",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -144.83891917551978,
+            "y": 108.21426658286445,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-4",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -145.3925070185508,
+            "y": 107.46933936179501,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-5",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -145.94226363380588,
+            "y": 106.7215802236863,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-6",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -146.48817453468703,
+            "y": 105.97100887268682,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-7",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -147.03022533593432,
+            "y": 105.21764508704982,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-8",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -147.5684017540049,
+            "y": 104.46150871861178,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-9",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -148.10268960744978,
+            "y": 103.7026196922691,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.80000000000004,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-10",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -148.633074817287,
+            "y": 102.94099800545345,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-11",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -149.15954340737312,
+            "y": 102.17666372760453,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-12",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -149.68208150477105,
+            "y": 101.40963699964159,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-13",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -150.20067534011622,
+            "y": 100.6399380334319,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.80000000000004,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-14",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -150.7153112479784,
+            "y": 99.86758711125945,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-15",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -151.22597566722314,
+            "y": 99.09260458528901,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-16",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -151.73265514136787,
+            "y": 98.31501087703103,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-12-17",
+          "sectionId": "201",
+          "row": "12",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -152.23533631893736,
+            "y": 97.53482647680282,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 180.8,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 70,
+      "depth": 183.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-13-1",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -145.94606524319968,
+            "y": 111.39437167122806,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-2",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -146.515962928652,
+            "y": 110.64371923923143,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-3",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -147.0819997822203,
+            "y": 109.89015124233359,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-4",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -147.64416088830708,
+            "y": 109.13368753775201,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-5",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -148.20243143344445,
+            "y": 108.37434805900887,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-6",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -148.75679670668438,
+            "y": 107.61215281540541,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-7",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -149.30724209998638,
+            "y": 106.84712189149528,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-8",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -149.8537531086023,
+            "y": 106.07927544655489,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.59999999999997,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-9",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -150.39631533145894,
+            "y": 105.30863371405201,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-10",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -150.934914471537,
+            "y": 104.53521700111312,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-11",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -151.46953633624835,
+            "y": 103.75904568798778,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-12",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -152.00016683780953,
+            "y": 102.98014022751214,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-13",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -152.52679199361356,
+            "y": 102.19852114456911,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-14",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -153.04939792659755,
+            "y": 101.41420903554886,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-15",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -153.56797086560934,
+            "y": 100.62722456780453,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.60000000000002,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-16",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -154.0824971457696,
+            "y": 99.83758847910893,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-13-17",
+          "sectionId": "201",
+          "row": "13",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -154.5929632088324,
+            "y": 99.04532157710727,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 183.6,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 72.5,
+      "depth": 186.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-14-1",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -148.17182222947943,
+            "y": 113.09319651153001,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-2",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -148.75041116503667,
+            "y": 112.33109622109336,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-3",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -149.3250803889208,
+            "y": 111.56603590180273,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-4",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -149.8958147580634,
+            "y": 110.79803571370901,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-5",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -150.46259923308304,
+            "y": 110.02711589433146,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-6",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -151.02541887868176,
+            "y": 109.25329675812402,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-7",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -151.58425886403847,
+            "y": 108.47659869594074,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-8",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -152.13910446319974,
+            "y": 107.697042174498,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-9",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -152.68994105546813,
+            "y": 106.91464773583495,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-10",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -153.23675412578703,
+            "y": 106.12943599677281,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-11",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -153.7795292651236,
+            "y": 105.34142764837105,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-12",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -154.31825217084804,
+            "y": 104.5506434553827,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-13",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -154.85290864711095,
+            "y": 103.75710425570634,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-14",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -155.3834846052167,
+            "y": 102.96083095983829,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-15",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -155.90996606399554,
+            "y": 102.16184455032008,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-16",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -156.43233915017132,
+            "y": 101.36016608118686,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-14-17",
+          "sectionId": "201",
+          "row": "14",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -156.95059009872745,
+            "y": 100.55581667741176,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 186.4,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 75,
+      "depth": 189.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-15-1",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -150.39757921575915,
+            "y": 114.79202135183195,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-2",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -150.98485940142132,
+            "y": 114.01847320295526,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-3",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -151.56816099562133,
+            "y": 113.24192056127187,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-4",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -152.1474686278197,
+            "y": 112.46238388966601,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-5",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -152.7227670327216,
+            "y": 111.67988372965402,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-6",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -153.2940410506791,
+            "y": 110.89444070084261,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-7",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -153.86127562809054,
+            "y": 110.1060755003862,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-8",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -154.42445581779714,
+            "y": 109.31480890244109,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-9",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -154.9835667794773,
+            "y": 108.52066175761786,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-10",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -155.53859378003705,
+            "y": 107.72365499243247,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-11",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -156.08952219399885,
+            "y": 106.9238096087543,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-12",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -156.63633750388652,
+            "y": 106.12114668325324,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-13",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -157.17902530060832,
+            "y": 105.31568736684355,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-14",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -157.7175712838358,
+            "y": 104.50745288412769,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-15",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -158.2519612623817,
+            "y": 103.6964645328356,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-16",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -158.782181154573,
+            "y": 102.88274368326476,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-15-17",
+          "sectionId": "201",
+          "row": "15",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -159.3082169886225,
+            "y": 102.06631177771621,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 189.2,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 77.5,
+      "depth": 192,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-16-1",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -152.6233362020389,
+            "y": 116.49084619213392,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-2",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -153.219307637806,
+            "y": 115.7058501848172,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-3",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -153.81124160232187,
+            "y": 114.917805220741,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-4",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -154.39912249757606,
+            "y": 114.12673206562302,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-5",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -154.9829348323602,
+            "y": 113.3326515649766,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-6",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -155.5626632226765,
+            "y": 112.53558464356122,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-7",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -156.13829239214263,
+            "y": 111.73555230483166,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-8",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -156.70980717239456,
+            "y": 110.93257563038419,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-9",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -157.27719250348648,
+            "y": 110.1266757794008,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-10",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -157.84043343428706,
+            "y": 109.31787398809216,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-11",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -158.3995151228741,
+            "y": 108.50619156913756,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-12",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -158.954422836925,
+            "y": 107.6916499111238,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-13",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -159.50514195410568,
+            "y": 106.87427047798079,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-14",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -160.05165796245495,
+            "y": 106.05407480841711,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192.00000000000003,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-15",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -160.5939564607679,
+            "y": 105.23108451535114,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-16",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -161.13202315897473,
+            "y": 104.40532128534268,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-16-17",
+          "sectionId": "201",
+          "row": "16",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -161.66584387851753,
+            "y": 103.57680687802068,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 192,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "201",
+      "seatCount": 17,
+      "elevation": 80,
+      "depth": 194.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "bluejays-201-17-1",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -154.84909318831865,
+            "y": 118.18967103243588,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -127.3529411764706,
+          "facing": 52.647058823529406,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-2",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -155.45375587419068,
+            "y": 117.39322716667911,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.79999999999998,
+          "angle": -127.05882352941177,
+          "facing": 52.94117647058823,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-3",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -156.05432220902242,
+            "y": 116.59368988021015,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -126.76470588235294,
+          "facing": 53.23529411764706,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-4",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -156.65077636733238,
+            "y": 115.79108024158002,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -126.47058823529412,
+          "facing": 53.529411764705884,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-5",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -157.2431026319988,
+            "y": 114.98541940029918,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -126.17647058823529,
+          "facing": 53.82352941176471,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-6",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -157.83128539467387,
+            "y": 114.17672858627984,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -125.88235294117646,
+          "facing": 54.117647058823536,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-7",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -158.41530915619472,
+            "y": 113.36502910927713,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -125.58823529411765,
+          "facing": 54.41176470588235,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-8",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -158.995158526992,
+            "y": 112.5503423583273,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.79999999999998,
+          "angle": -125.29411764705883,
+          "facing": 54.705882352941174,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-9",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -159.57081822749566,
+            "y": 111.73268980118374,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -125,
+          "facing": 55,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-10",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -160.14227308853708,
+            "y": 110.91209298375185,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -124.70588235294117,
+          "facing": 55.294117647058826,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-11",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -160.70950805174937,
+            "y": 110.08857352952081,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -124.41176470588235,
+          "facing": 55.58823529411765,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-12",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -161.27250816996352,
+            "y": 109.26215313899436,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -124.11764705882354,
+          "facing": 55.882352941176464,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-13",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -161.83125860760308,
+            "y": 108.43285358911801,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -123.82352941176471,
+          "facing": 56.17647058823529,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-14",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -162.3857446410741,
+            "y": 107.60069673270654,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -123.52941176470588,
+          "facing": 56.470588235294116,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-15",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -162.93595165915414,
+            "y": 106.7657044978667,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -123.23529411764706,
+          "facing": 56.76470588235294,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-16",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -163.48186516337645,
+            "y": 105.9278988874206,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -122.94117647058823,
+          "facing": 57.05882352941177,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "bluejays-201-17-17",
+          "sectionId": "201",
+          "row": "17",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -164.02347076841258,
+            "y": 105.08730197832516,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 194.8,
+          "angle": -122.6470588235294,
+          "facing": 57.352941176470594,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 255,
+    "aisle": 34,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
