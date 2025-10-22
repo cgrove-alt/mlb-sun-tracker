@@ -263,7 +263,7 @@ export const MLB_STADIUMS: Stadium[] = [
     latitude: 39.9061,
     longitude: -75.1665,
     orientation: 59,
-    capacity: 42792,
+    capacity: 42901, // Updated to 2023-present official capacity
     roof: 'open',
     timezone: 'America/New_York'
   },

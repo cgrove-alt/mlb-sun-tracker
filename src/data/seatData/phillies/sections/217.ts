@@ -1,0 +1,8889 @@
+/**
+ * Hall of Fame Club 217 - phillies
+ * Generated: 2025-10-22T20:01:24.135Z
+ * Total Seats: 320
+ * Total Rows: 16
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_217: SectionSeatingData = {
+  "sectionId": "217",
+  "sectionName": "Hall of Fame Club 217",
+  "stadiumId": "phillies",
+  "totalSeats": 320,
+  "totalRows": 16,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 40,
+      "depth": 155,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-A-1",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -144.38755930083641,
+            "y": 56.36694704476595,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-2",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -144.72918929643686,
+            "y": 55.483887441275684,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-3",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -145.06541864738548,
+            "y": 54.598757427791206,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-4",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -145.39623480710995,
+            "y": 53.71159003339733,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-5",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -145.72162543103397,
+            "y": 52.822418363204804,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-6",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -146.0415783770378,
+            "y": 51.93127559711514,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-7",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -146.3560817059116,
+            "y": 51.03819498858208,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-8",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -146.6651236818008,
+            "y": 50.14320986337112,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-9",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -146.96869277264395,
+            "y": 49.246353618315645,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 154.99999999999997,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-10",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -147.26677765060333,
+            "y": 48.347659720070844,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-11",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -147.55936719248726,
+            "y": 47.447161703865014,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-12",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -147.84645048016552,
+            "y": 46.544893172247924,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-13",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -148.1280168009764,
+            "y": 45.64088779383729,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-14",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -148.404055648127,
+            "y": 44.73517930206179,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-15",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -148.6745567210847,
+            "y": 43.82780149390297,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-16",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -148.93950992596194,
+            "y": 42.91878822863348,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155.00000000000003,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-17",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -149.19890537589254,
+            "y": 42.00817342655426,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 154.99999999999997,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-18",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -149.45273339140107,
+            "y": 41.095991067728185,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-19",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -149.70098450076358,
+            "y": 40.18227519071245,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-A-20",
+          "sectionId": "217",
+          "row": "A",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -149.94364944036138,
+            "y": 39.267059891288135,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 155,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 42.5,
+      "depth": 157.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-B-1",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -146.99585069465797,
+            "y": 57.38518866880044,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-2",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -147.3436520708241,
+            "y": 56.48617702086002,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-3",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -147.685955242306,
+            "y": 55.585057561970665,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-4",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -148.02274743588356,
+            "y": 54.68186391787161,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-5",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -148.3540160839817,
+            "y": 53.77662979170141,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-6",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -148.67974882513914,
+            "y": 52.869388962740445,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-7",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -148.99993350447002,
+            "y": 51.960175285150015,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-8",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -149.3145581741172,
+            "y": 51.049022686709435,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-9",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -149.62361109369817,
+            "y": 50.13596516754974,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-10",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -149.92708073074328,
+            "y": 49.22103679888503,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.80000000000004,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-11",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -150.22495576112576,
+            "y": 48.30427172174129,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-12",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -150.51722506948462,
+            "y": 47.385704145682084,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-13",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -150.80387774963924,
+            "y": 46.46536834753242,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-14",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -151.0849031049964,
+            "y": 45.543298670099034,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.79999999999998,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-15",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -151.36029064894947,
+            "y": 44.61952952088961,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-16",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -151.63003010526964,
+            "y": 43.69409537082815,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-17",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -151.89411140848932,
+            "y": 42.76703075296943,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-18",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -152.152524704278,
+            "y": 41.838370261209725,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-19",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -152.40526034980962,
+            "y": 40.908148548996294,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-B-20",
+          "sectionId": "217",
+          "row": "B",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -152.65230891412278,
+            "y": 39.97640032803399,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 157.8,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 45,
+      "depth": 160.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-C-1",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -149.60414208847953,
+            "y": 58.40343029283491,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-2",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -149.95811484521136,
+            "y": 57.48846660044435,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-3",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -150.3064918372265,
+            "y": 56.571357696150116,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-4",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -150.64926006465714,
+            "y": 55.65213780234588,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.59999999999997,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-5",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -150.98640673692938,
+            "y": 54.730841220198,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-6",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -151.31791927324045,
+            "y": 53.80750232836574,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-7",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -151.6437853030284,
+            "y": 52.882155581717946,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-8",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -151.9639926664336,
+            "y": 51.95483551004775,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.60000000000002,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-9",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -152.27852941475237,
+            "y": 51.025576716783824,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-10",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -152.58738381088318,
+            "y": 50.09441387769921,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-11",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -152.8905443297642,
+            "y": 49.16138173961755,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.59999999999997,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-12",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -153.18799965880373,
+            "y": 48.226515119116236,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-13",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -153.47973869830201,
+            "y": 47.289848901227536,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-14",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -153.7657505618658,
+            "y": 46.35141803813628,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.59999999999997,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-15",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -154.0460245768142,
+            "y": 45.41125754787624,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.59999999999997,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-16",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -154.32055028457734,
+            "y": 44.469402513022814,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-17",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -154.58931744108608,
+            "y": 43.52588807938461,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-18",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -154.8523160171549,
+            "y": 42.580749454691265,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-19",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -155.10953619885566,
+            "y": 41.63402190728013,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-C-20",
+          "sectionId": "217",
+          "row": "C",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -155.36096838788413,
+            "y": 40.68574076477983,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 160.6,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 47.5,
+      "depth": 163.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-D-1",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -152.2124334823011,
+            "y": 59.4216719168694,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-2",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -152.5725776195986,
+            "y": 58.49075618002869,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-3",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -152.927028432147,
+            "y": 57.557657830329575,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-4",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -153.27577269343075,
+            "y": 56.62241168682016,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-5",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -153.6187973898771,
+            "y": 55.68505264869461,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-6",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -153.95608972134178,
+            "y": 54.745615693991056,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-7",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -154.28763710158682,
+            "y": 53.804135878285884,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-8",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -154.61342715875,
+            "y": 52.860648333386074,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-9",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -154.9334477358066,
+            "y": 51.915188266017914,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-10",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -155.24768689102314,
+            "y": 50.9677909565134,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-11",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -155.5561328984027,
+            "y": 50.01849175749383,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-12",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -155.85877424812287,
+            "y": 49.067326092550395,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-13",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -156.15559964696482,
+            "y": 48.11432945492266,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-14",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -156.4465980187352,
+            "y": 47.15953740617353,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.39999999999998,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-15",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -156.731758504679,
+            "y": 46.20298557486287,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-16",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -157.01107046388503,
+            "y": 45.24470965521749,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-17",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -157.28452347368287,
+            "y": 44.28474540579978,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-18",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -157.55210733003182,
+            "y": 43.32312864817281,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-19",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -157.81381204790173,
+            "y": 42.359895265563964,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-D-20",
+          "sectionId": "217",
+          "row": "D",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -158.0696278616455,
+            "y": 41.395081201525684,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 163.4,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 50,
+      "depth": 166.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-E-1",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -154.82072487612265,
+            "y": 60.43991354090387,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-2",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -155.18704039398582,
+            "y": 59.49304575961302,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-3",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -155.54756502706752,
+            "y": 58.54395796450902,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-4",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -155.90228532220434,
+            "y": 57.592685571294425,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-5",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -156.2511880428248,
+            "y": 56.63926407719121,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-6",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -156.5942601694431,
+            "y": 55.683729059616354,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.19999999999996,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-7",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -156.9314889001452,
+            "y": 54.726116174853814,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-8",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -157.26286165106637,
+            "y": 53.76646115672438,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-9",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -157.5883660568608,
+            "y": 52.804799815252004,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.19999999999996,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-10",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -157.90798997116303,
+            "y": 51.84116803532757,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-11",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -158.22172146704116,
+            "y": 50.87560177537009,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-12",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -158.52954883744198,
+            "y": 49.90813706598455,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.20000000000002,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-13",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -158.83146059562762,
+            "y": 48.938810008617786,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-14",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -159.12744547560456,
+            "y": 47.96765677421077,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.19999999999996,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-15",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -159.41749243254372,
+            "y": 46.994713601849504,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-16",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -159.70159064319273,
+            "y": 46.020016797412154,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-17",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -159.97972950627963,
+            "y": 45.04360273221495,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-18",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -160.25189864290874,
+            "y": 44.065507841654345,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-19",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -160.51808789694778,
+            "y": 43.0857686238478,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-E-20",
+          "sectionId": "217",
+          "row": "E",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -160.77828733540684,
+            "y": 42.10442163827153,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 166.2,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 52.5,
+      "depth": 169,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-F-1",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -157.4290162699442,
+            "y": 61.45815516493836,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-2",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -157.8015031683731,
+            "y": 60.495335339197354,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169.00000000000003,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-3",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -158.16810162198803,
+            "y": 59.53025809868848,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-4",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -158.52879795097795,
+            "y": 58.5629594557687,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-5",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -158.8835786957725,
+            "y": 57.59347550568781,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-6",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -159.23243061754445,
+            "y": 56.62184242524167,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169.00000000000003,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-7",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -159.57534069870363,
+            "y": 55.64809647142175,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-8",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -159.9122961433828,
+            "y": 54.672273980062705,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-9",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -160.24328437791502,
+            "y": 53.69441136448609,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-10",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -160.568293051303,
+            "y": 52.71454511414176,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-11",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -160.88731003567966,
+            "y": 51.732711793246374,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-12",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -161.2003234267611,
+            "y": 50.74894803941871,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-13",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -161.50732154429042,
+            "y": 49.76329056231291,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-14",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -161.808292932474,
+            "y": 48.77577614224801,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-15",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -162.10322636040848,
+            "y": 47.786441628836144,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-16",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -162.39211082250043,
+            "y": 46.795323939606824,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-17",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -162.67493553887638,
+            "y": 45.802460058630125,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-18",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -162.95168995578567,
+            "y": 44.80788703513589,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-19",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -163.22236374599382,
+            "y": 43.81164198213164,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 169,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-F-20",
+          "sectionId": "217",
+          "row": "F",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -163.48694680916822,
+            "y": 42.81376207501739,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 168.99999999999997,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 55,
+      "depth": 171.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-G-1",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -160.0373076637658,
+            "y": 62.47639678897284,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.80000000000004,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-2",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -160.41596594276035,
+            "y": 61.497624918781696,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.80000000000004,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-3",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -160.78863821690857,
+            "y": 60.516558232867936,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-4",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -161.15531057975156,
+            "y": 59.53323334024298,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-5",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -161.51596934872023,
+            "y": 58.54768693418442,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-6",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -161.8706010656458,
+            "y": 57.55995579086697,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-7",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -162.21919249726204,
+            "y": 56.57007676798969,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-8",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -162.5617306356992,
+            "y": 55.57808680340102,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-9",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -162.89820269896924,
+            "y": 54.58402291372018,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-10",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -163.22859613144294,
+            "y": 53.58792219295594,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.80000000000004,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-11",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -163.55289860431813,
+            "y": 52.58982181112265,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-12",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -163.87109801608023,
+            "y": 51.589759012852866,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-13",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -164.18318249295322,
+            "y": 50.58777111600804,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-14",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -164.4891403893434,
+            "y": 49.58389551028527,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-15",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -164.78896028827324,
+            "y": 48.57816965582278,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-16",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -165.08263100180812,
+            "y": 47.5706310818015,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-17",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -165.37014157147317,
+            "y": 46.56131738504531,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-18",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -165.6514812686626,
+            "y": 45.55026622861743,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.79999999999998,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-19",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -165.9266395950399,
+            "y": 44.53751534041548,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-G-20",
+          "sectionId": "217",
+          "row": "G",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -166.19560628292962,
+            "y": 43.523102511763234,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 171.8,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 57.5,
+      "depth": 174.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-H-1",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -162.64559905758733,
+            "y": 63.49463841300732,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-2",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -163.03042871714757,
+            "y": 62.499914498366024,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-3",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -163.40917481182905,
+            "y": 61.50285836704739,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-4",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -163.78182320852514,
+            "y": 60.50350722471725,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-5",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -164.14836000166792,
+            "y": 59.50189836268102,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-6",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -164.5087715137471,
+            "y": 58.49806915649227,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-7",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -164.86304429582043,
+            "y": 57.49205706455761,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-8",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -165.21116512801558,
+            "y": 56.48389962673934,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.59999999999997,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-9",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -165.55312102002344,
+            "y": 55.47363446295427,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-10",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -165.88889921158284,
+            "y": 54.46129927177012,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-11",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -166.2184871729566,
+            "y": 53.44693182899891,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-12",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -166.54187260539933,
+            "y": 52.43056998628701,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.60000000000002,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-13",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -166.85904344161602,
+            "y": 51.41225166970316,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-14",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -167.16998784621276,
+            "y": 50.392014878322506,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-15",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -167.474694216138,
+            "y": 49.36989768280941,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-16",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -167.77315118111582,
+            "y": 48.345938223996164,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-17",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -168.06534760406993,
+            "y": 47.320174711460474,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-18",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -168.35127258153952,
+            "y": 46.29264542209897,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-19",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -168.63091544408593,
+            "y": 45.263388698699316,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-H-20",
+          "sectionId": "217",
+          "row": "H",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -168.90426575669096,
+            "y": 44.23244294850908,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 174.6,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 60,
+      "depth": 177.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-I-1",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -165.25389045140892,
+            "y": 64.51288003704181,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.40000000000003,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-2",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -165.64489149153485,
+            "y": 63.50220407795036,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.40000000000003,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-3",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -166.02971140674958,
+            "y": 62.48915850122684,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-4",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -166.40833583729875,
+            "y": 61.47378110919153,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-5",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -166.78075065461564,
+            "y": 60.456109791177624,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-6",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -167.14694196184843,
+            "y": 59.43618252211758,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-7",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -167.50689609437885,
+            "y": 58.41403736112556,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-8",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -167.860599620332,
+            "y": 57.38971245007765,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-9",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -168.20803934107767,
+            "y": 56.36324601218836,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-10",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -168.5492022917228,
+            "y": 55.33467635058431,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-11",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -168.8840757415951,
+            "y": 54.30404184687519,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-12",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -169.21264719471847,
+            "y": 53.27138095972118,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-13",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -169.53490439027883,
+            "y": 52.23673222339829,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-14",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -169.85083530308216,
+            "y": 51.20013424635975,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-15",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -170.16042814400276,
+            "y": 50.16162570979605,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-16",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -170.46367136042352,
+            "y": 49.121245366190834,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-17",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -170.7605536366667,
+            "y": 48.07903203787565,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-18",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -171.05106389441644,
+            "y": 47.03502461558052,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-19",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -171.335191293132,
+            "y": 45.98926205698316,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-I-20",
+          "sectionId": "217",
+          "row": "I",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -171.61292523045233,
+            "y": 44.941783385254936,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 177.4,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 62.5,
+      "depth": 180.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-J-1",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -167.86218184523045,
+            "y": 65.53112166107628,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-2",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -168.25935426592207,
+            "y": 64.5044936575347,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-3",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -168.65024800167006,
+            "y": 63.47545863540629,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-4",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -169.03484846607233,
+            "y": 62.444054993665794,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-5",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -169.41314130756334,
+            "y": 61.41032121967422,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-6",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -169.78511240994973,
+            "y": 60.37429588774288,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-7",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -170.15074789293723,
+            "y": 59.33601765769348,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-8",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -170.51003411264838,
+            "y": 58.29552527341597,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-9",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -170.86295766213186,
+            "y": 57.252857561422445,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-10",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -171.2095053718627,
+            "y": 56.20805342939849,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-11",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -171.54966431023357,
+            "y": 55.16115186475145,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-12",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -171.88342178403755,
+            "y": 54.11219193315532,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-13",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -172.2107653389416,
+            "y": 53.06121277709341,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.19999999999996,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-14",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -172.53168275995154,
+            "y": 52.00825361439699,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-15",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -172.8461620718675,
+            "y": 50.953353736782674,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.19999999999996,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-16",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -173.15419153973122,
+            "y": 49.896552508385504,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-17",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -173.45575966926344,
+            "y": 48.83788936429082,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.19999999999996,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-18",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -173.75085520729334,
+            "y": 47.77740380906205,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-19",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -174.039467142178,
+            "y": 46.71513541526699,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.2,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-J-20",
+          "sectionId": "217",
+          "row": "J",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -174.32158470421368,
+            "y": 45.651123822000784,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 180.19999999999996,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 65,
+      "depth": 183,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-K-1",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -170.470473239052,
+            "y": 66.54936328511077,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-2",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -170.87381704030932,
+            "y": 65.50678323711902,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-3",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -171.2707845965906,
+            "y": 64.46175876958574,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-4",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -171.66136109484594,
+            "y": 63.414328878140076,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-5",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -172.04553196051106,
+            "y": 62.36453264817083,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-6",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -172.42328285805107,
+            "y": 61.312409253368195,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-7",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -172.79459969149565,
+            "y": 60.25799795426142,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-8",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -173.1594686049648,
+            "y": 59.201338096754284,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 182.99999999999997,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-9",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -173.5178759831861,
+            "y": 58.14246911065654,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-10",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -173.86980845200264,
+            "y": 57.08143050821268,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-11",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -174.21525287887204,
+            "y": 56.018261882627726,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 182.99999999999997,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-12",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -174.5541963733567,
+            "y": 54.95300290658948,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-13",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -174.88662628760443,
+            "y": 53.88569333078854,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-14",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -175.21253021682094,
+            "y": 52.81637298243424,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-15",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -175.53189599973228,
+            "y": 51.74508176376931,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-16",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -175.8447117190389,
+            "y": 50.671859650580174,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-17",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -176.15096570186023,
+            "y": 49.59674669070599,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 182.99999999999997,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-18",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -176.45064652017027,
+            "y": 48.5197830025436,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 182.99999999999997,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-19",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -176.74374299122408,
+            "y": 47.44100877355083,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 183,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-K-20",
+          "sectionId": "217",
+          "row": "K",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -177.03024417797505,
+            "y": 46.36046425874663,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 182.99999999999997,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 67.5,
+      "depth": 185.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-L-1",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -173.0787646328736,
+            "y": 67.56760490914526,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-2",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -173.48827981469657,
+            "y": 66.50907281670337,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-3",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -173.8913211915111,
+            "y": 65.4480589037652,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-4",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -174.28787372361955,
+            "y": 64.38460276261435,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-5",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -174.6779226134588,
+            "y": 63.318744076667436,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-6",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -175.06145330615243,
+            "y": 62.2505226189935,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-7",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -175.43845149005406,
+            "y": 61.17997825082936,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-8",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -175.80890309728122,
+            "y": 60.10715092009261,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-9",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -176.1727943042403,
+            "y": 59.03208065989063,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-10",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -176.53011153214257,
+            "y": 57.95480758702686,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-11",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -176.88084144751053,
+            "y": 56.875371900504,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-12",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -177.22497096267583,
+            "y": 55.79381388002364,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-13",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -177.56248723626723,
+            "y": 54.710173884483666,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-14",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -177.89337767369034,
+            "y": 53.62449235047149,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-15",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -178.21762992759705,
+            "y": 52.53680979075595,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-16",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -178.53523189834664,
+            "y": 51.447166792774844,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-17",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -178.84617173445702,
+            "y": 50.35560401712117,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-18",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -179.15043783304722,
+            "y": 49.262162196025145,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-19",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -179.44801884027015,
+            "y": 48.16688213183467,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-L-20",
+          "sectionId": "217",
+          "row": "L",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -179.73890365173645,
+            "y": 47.069804695492486,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 185.8,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 70,
+      "depth": 188.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-M-1",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -175.68705602669513,
+            "y": 68.58584653317973,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-2",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -176.10274258908382,
+            "y": 67.5113623962877,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.60000000000002,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-3",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -176.51185778643162,
+            "y": 66.43435903794466,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-4",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -176.91438635239314,
+            "y": 65.35487664708862,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-5",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -177.3103132664065,
+            "y": 64.27295550516403,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-6",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -177.69962375425374,
+            "y": 63.1886359846188,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-7",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -178.08230328861245,
+            "y": 62.10195854739729,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-8",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -178.4583375895976,
+            "y": 61.012963743430916,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-9",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -178.8277126252945,
+            "y": 59.921692209124714,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-10",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -179.1904146122825,
+            "y": 58.828184665841036,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-11",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -179.546430016149,
+            "y": 57.732481918380266,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-12",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -179.89574555199493,
+            "y": 56.634624853457794,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.60000000000002,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-13",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -180.23834818493,
+            "y": 55.53465443817879,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-14",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -180.5742251305597,
+            "y": 54.43261171850873,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-15",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -180.90336385546178,
+            "y": 53.32853781774258,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-16",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -181.2257520776543,
+            "y": 52.22247393496951,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.59999999999997,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-17",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -181.54137776705377,
+            "y": 51.11446134353634,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-18",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -181.85022914592412,
+            "y": 50.00454138950668,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-19",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -182.1522946893162,
+            "y": 48.8927554901185,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.60000000000002,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-M-20",
+          "sectionId": "217",
+          "row": "M",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -182.4475631254978,
+            "y": 47.779145132238334,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 188.6,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 72.5,
+      "depth": 191.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-N-1",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -178.29534742051672,
+            "y": 69.60408815721422,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-2",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -178.71720536347107,
+            "y": 68.51365197587204,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-3",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -179.13239438135213,
+            "y": 67.42065917212412,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-4",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -179.54089898116675,
+            "y": 66.3251505315629,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-5",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -179.94270391935422,
+            "y": 65.22716693366064,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-6",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -180.33779420235507,
+            "y": 64.12674935024411,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-7",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -180.72615508717087,
+            "y": 63.023938843965226,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-8",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -181.10777208191402,
+            "y": 61.91877656676924,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-9",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -181.48263094634873,
+            "y": 60.81130375835881,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-10",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -181.85071769242245,
+            "y": 59.70156174465522,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-11",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -182.2120185847875,
+            "y": 58.58959193625654,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-12",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -182.56652014131404,
+            "y": 57.47543582689195,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-13",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -182.91420913359283,
+            "y": 56.359134991873916,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-14",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -183.2550725874291,
+            "y": 55.24073108654598,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-15",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -183.58909778332654,
+            "y": 54.12026584472922,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.39999999999998,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-16",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -183.91627225696203,
+            "y": 52.997781077164184,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-17",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -184.23658379965056,
+            "y": 51.873318669951516,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-18",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -184.55002045880104,
+            "y": 50.746920582988224,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-19",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -184.85657053836223,
+            "y": 49.618628848402345,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-N-20",
+          "sectionId": "217",
+          "row": "N",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -185.15622259925917,
+            "y": 48.48848556898419,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 191.4,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "O",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 75,
+      "depth": 194.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-O-1",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -180.90363881433825,
+            "y": 70.6223297812487,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-2",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -181.3316681378583,
+            "y": 69.51594155545637,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-3",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -181.75293097627264,
+            "y": 68.40695930630356,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-4",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -182.16741160994033,
+            "y": 67.29542441603716,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-5",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -182.5750945723019,
+            "y": 66.18137836215723,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-6",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -182.97596465045638,
+            "y": 65.06486271586941,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-7",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -183.37000688572925,
+            "y": 63.94591914053316,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-8",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -183.7572065742304,
+            "y": 62.824589390107555,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-9",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -184.13754926740293,
+            "y": 61.700915307592894,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-10",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -184.51102077256235,
+            "y": 60.5749388234694,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-11",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -184.87760715342597,
+            "y": 59.446701954132806,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-12",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -185.23729473063315,
+            "y": 58.316246800326105,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-13",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -185.5900700822556,
+            "y": 57.18361554556903,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-14",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -185.93592004429848,
+            "y": 56.04885045458322,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-15",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -186.2748317111913,
+            "y": 54.91199387171584,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-16",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -186.6067924362697,
+            "y": 53.77308821935885,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.19999999999996,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-17",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -186.9317898322473,
+            "y": 52.63217599636668,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.19999999999996,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-18",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -187.24981177167797,
+            "y": 51.48929977646976,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-19",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -187.56084638740828,
+            "y": 50.34450220668618,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-O-20",
+          "sectionId": "217",
+          "row": "O",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -187.8648820730205,
+            "y": 49.19782600573003,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 194.2,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "P",
+      "sectionId": "217",
+      "seatCount": 20,
+      "elevation": 77.5,
+      "depth": 197,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "phillies-217-P-1",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -183.51193020815984,
+            "y": 71.64057140528318,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197.00000000000003,
+          "angle": -111.325,
+          "facing": 68.675,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-2",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -183.94613091224556,
+            "y": 70.51823113504071,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197.00000000000003,
+          "angle": -110.975,
+          "facing": 69.025,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-3",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -184.37346757119315,
+            "y": 69.39325944048302,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 196.99999999999997,
+          "angle": -110.625,
+          "facing": 69.375,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-4",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -184.79392423871394,
+            "y": 68.26569830051145,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -110.275,
+          "facing": 69.725,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-5",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -185.20748522524963,
+            "y": 67.13558979065384,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197.00000000000003,
+          "angle": -109.925,
+          "facing": 70.075,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-6",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -185.6141350985577,
+            "y": 66.00297608149472,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -109.575,
+          "facing": 70.425,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-7",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -186.01385868428767,
+            "y": 64.86789943710109,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -109.225,
+          "facing": 70.775,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-8",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -186.4066410665468,
+            "y": 63.73040221344587,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -108.875,
+          "facing": 71.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-9",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -186.79246758845716,
+            "y": 62.59052685682698,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -108.525,
+          "facing": 71.475,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-10",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -187.1713238527023,
+            "y": 61.44831590228359,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -108.175,
+          "facing": 71.825,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-11",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -187.54319572206444,
+            "y": 60.303811972009086,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 196.99999999999997,
+          "angle": -107.825,
+          "facing": 72.175,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-12",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -187.9080693199523,
+            "y": 59.157057773760265,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -107.475,
+          "facing": 72.525,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-13",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -188.2659310309184,
+            "y": 58.008096099264165,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 196.99999999999997,
+          "angle": -107.125,
+          "facing": 72.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-14",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -188.61676750116789,
+            "y": 56.85696982262047,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 196.99999999999997,
+          "angle": -106.775,
+          "facing": 73.225,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-15",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -188.96056563905606,
+            "y": 55.70372189870248,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -106.425,
+          "facing": 73.575,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-16",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -189.29731261557743,
+            "y": 54.54839536155352,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -106.075,
+          "facing": 73.925,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-17",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -189.62699586484408,
+            "y": 53.391033322781865,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 196.99999999999997,
+          "angle": -105.725,
+          "facing": 74.275,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-18",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -189.9496030845549,
+            "y": 52.231678969951304,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -105.375,
+          "facing": 74.625,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-19",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -190.26512223645435,
+            "y": 51.07037556497002,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197.00000000000003,
+          "angle": -105.025,
+          "facing": 74.975,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "phillies-217-P-20",
+          "sectionId": "217",
+          "row": "P",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -190.5735415467819,
+            "y": 49.907166442475884,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 197,
+          "angle": -104.675,
+          "facing": 75.325,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 288,
+    "aisle": 32,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
