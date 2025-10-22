@@ -1,0 +1,584 @@
+/**
+ * Section 210 - mets
+ * Generated: 2025-10-22T19:43:57.172Z
+ * Total Seats: 21
+ * Total Rows: 1
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_210: SectionSeatingData = {
+  "sectionId": "210",
+  "sectionName": "Section 210",
+  "stadiumId": "mets",
+  "totalSeats": 21,
+  "totalRows": 1,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "210",
+      "seatCount": 21,
+      "elevation": 30,
+      "depth": 120,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "mets-210-1-1",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -119.9548697175079,
+            "y": -3.290779703308446,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -88.42857142857143,
+          "facing": 91.57142857142857,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-2",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -119.9462918740204,
+            "y": -3.589855940327811,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -88.28571428571429,
+          "facing": 91.71428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-3",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -119.93696836296117,
+            "y": -3.888909860365747,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 119.99999999999999,
+          "angle": -88.14285714285714,
+          "facing": 91.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-4",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -119.9268992422915,
+            "y": -4.187939604300084,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -88,
+          "facing": 92,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-5",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -119.91608457460784,
+            "y": -4.4869433131590535,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -87.85714285714286,
+          "facing": 92.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-6",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -119.90452442714151,
+            "y": -4.785919128132581,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -87.71428571428571,
+          "facing": 92.28571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-7",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -119.89221887175825,
+            "y": -5.084865190584102,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 119.99999999999999,
+          "angle": -87.57142857142857,
+          "facing": 92.42857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-8",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -119.87916798495776,
+            "y": -5.383779642061753,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -87.42857142857143,
+          "facing": 92.57142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-9",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -119.86537184787318,
+            "y": -5.682660624310712,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -87.28571428571429,
+          "facing": 92.71428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-10",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -119.85083054627069,
+            "y": -5.981506279283645,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -87.14285714285714,
+          "facing": 92.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-11",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -119.83554417054886,
+            "y": -6.2803147491532565,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 119.99999999999999,
+          "angle": -87,
+          "facing": 93,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-12",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -119.81951281573822,
+            "y": -6.579084176323158,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -86.85714285714286,
+          "facing": 93.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-13",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -119.80273658150051,
+            "y": -6.877812703439885,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86.71428571428571,
+          "facing": 93.28571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-14",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -119.78521557212822,
+            "y": -7.176498473404132,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86.57142857142857,
+          "facing": 93.42857142857143,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-15",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -119.76694989654382,
+            "y": -7.475139629382242,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86.42857142857143,
+          "facing": 93.57142857142857,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-16",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -119.74793966829917,
+            "y": -7.773734314818225,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86.28571428571429,
+          "facing": 93.71428571428571,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-17",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -119.72818500557473,
+            "y": -8.072280673444773,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86.14285714285714,
+          "facing": 93.85714285714286,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-18",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -119.70768603117891,
+            "y": -8.370776849295062,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -86,
+          "facing": 94,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-19",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "19",
+          "position3D": {
+            "x": -119.68644287254725,
+            "y": -8.66922098671424,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120.00000000000001,
+          "angle": -85.85714285714286,
+          "facing": 94.14285714285714,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-20",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "20",
+          "position3D": {
+            "x": -119.66445566174161,
+            "y": -8.967611230370961,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 119.99999999999999,
+          "angle": -85.71428571428571,
+          "facing": 94.28571428571429,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        },
+        {
+          "id": "mets-210-1-21",
+          "sectionId": "210",
+          "row": "1",
+          "seatNumber": "21",
+          "position3D": {
+            "x": -119.64172453544947,
+            "y": -9.265945725268862,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 120,
+          "angle": -85.57142857142857,
+          "facing": 94.42857142857143,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "excellent",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": true
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 19,
+    "aisle": 2,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};

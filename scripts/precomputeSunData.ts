@@ -86,12 +86,12 @@ function parseArgs(): { stadiumId: string; gameTime: string; testMode: boolean }
 }
 
 /**
- * Generate weekly dates from April through October 2025
+ * Generate weekly dates from March through September 2026
  */
 function generateWeeklyDates(): Date[] {
   const dates: Date[] = [];
-  const startDate = new Date('2025-04-05'); // First Saturday in April
-  const endDate = new Date('2025-10-11'); // Last game in October
+  const startDate = new Date('2026-03-28'); // First Saturday after Opening Day
+  const endDate = new Date('2026-09-27'); // Final day of 2026 regular season
 
   let currentDate = new Date(startDate);
   while (currentDate <= endDate) {
