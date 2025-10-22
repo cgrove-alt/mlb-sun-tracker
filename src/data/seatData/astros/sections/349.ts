@@ -1,0 +1,6310 @@
+/**
+ * View 349 - astros
+ * Generated: 2025-10-22T20:52:08.652Z
+ * Total Seats: 225
+ * Total Rows: 15
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_349: SectionSeatingData = {
+  "sectionId": "349",
+  "sectionName": "View 349",
+  "stadiumId": "astros",
+  "totalSeats": 225,
+  "totalRows": 15,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 70,
+      "depth": 200,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-1-1",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 48.93738704054057,
+            "y": 193.92042736556746,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 199.99999999999997,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-2",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 47.808381915519774,
+            "y": 194.20185019360602,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 199.99999999999997,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-3",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.67775865440246,
+            "y": 194.4767000105703,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-4",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 45.54555552458518,
+            "y": 194.74496751381517,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-5",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 44.411810846937726,
+            "y": 195.0066436234823,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-6",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 43.276562994504495,
+            "y": 195.2617194828077,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-7",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 42.1398503912073,
+            "y": 195.51018645842132,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-8",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 41.00171151054465,
+            "y": 195.75203614063906,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 199.99999999999997,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-9",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 39.86218487428876,
+            "y": 195.98726034374792,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-10",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 38.72130905118235,
+            "y": 196.2158511062825,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200.00000000000003,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-11",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 37.57912265563314,
+            "y": 196.43780069129485,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-12",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 36.435664346406824,
+            "y": 196.65310158661617,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-13",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 35.290972825318676,
+            "y": 196.8617465051111,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200.00000000000003,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-14",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 34.145086835923415,
+            "y": 197.0637283849244,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200.00000000000003,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-1-15",
+          "sectionId": "349",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 32.998045162204775,
+            "y": 197.2590403897198,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 200.00000000000003,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 72.5,
+      "depth": 202.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-2-1",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 49.62251045910814,
+            "y": 196.63531334868543,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-2",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 48.477699262337055,
+            "y": 196.92067609631653,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.79999999999998,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-3",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.331247275564095,
+            "y": 197.1993738107183,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-4",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 46.18319330192937,
+            "y": 197.4713970590086,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-5",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 45.033576198794854,
+            "y": 197.73673663421104,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.79999999999998,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-6",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 43.88243487642756,
+            "y": 197.99538355556703,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-7",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 42.7298082966842,
+            "y": 198.2473290688392,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.79999999999998,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-8",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 41.57573547169228,
+            "y": 198.49256464660803,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.79999999999998,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-9",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 40.4202554625288,
+            "y": 198.7310819885604,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-10",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 39.26340737789891,
+            "y": 198.96287302177046,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-11",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 38.10523037281201,
+            "y": 199.187929900973,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-12",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 36.94576364725653,
+            "y": 199.40624500882882,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.80000000000004,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-13",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 35.78504644487314,
+            "y": 199.61781095618267,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.80000000000004,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-14",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 34.62311805162635,
+            "y": 199.82262058231333,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.8,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-2-15",
+          "sectionId": "349",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 33.46001779447565,
+            "y": 200.02066695517587,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 202.80000000000004,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 75,
+      "depth": 205.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-3-1",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 50.307633877675705,
+            "y": 199.35019933180337,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-2",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 49.14701660915433,
+            "y": 199.639501999027,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-3",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 47.984735896725724,
+            "y": 199.9220476108663,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.60000000000002,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-4",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 46.82083107927356,
+            "y": 200.197826604202,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-5",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 45.65534155065198,
+            "y": 200.46682964493976,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-6",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 44.488306758350625,
+            "y": 200.72904762832633,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.60000000000002,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-7",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 43.3197662021611,
+            "y": 200.9844716792571,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-8",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.1497594328399,
+            "y": 201.23309315257697,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-9",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 40.97832605076884,
+            "y": 201.47490363337286,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-10",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 39.805505704615456,
+            "y": 201.7098949372584,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-11",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 38.63133808999087,
+            "y": 201.93805911065112,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.60000000000002,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-12",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 37.455862948106216,
+            "y": 202.15938843104144,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.60000000000002,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-13",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 36.2791200644276,
+            "y": 202.37387540725422,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-14",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 35.10114926732927,
+            "y": 202.58151277970225,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-3-15",
+          "sectionId": "349",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 33.92199042674651,
+            "y": 202.78229352063192,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 205.6,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 77.5,
+      "depth": 208.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-4-1",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 50.992757296243276,
+            "y": 202.0650853149213,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-2",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 49.81633395597161,
+            "y": 202.35832790173748,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-3",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 48.63822451788736,
+            "y": 202.64472141101427,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-4",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 47.458468856617756,
+            "y": 202.92425614939543,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.40000000000003,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-5",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.27710690250911,
+            "y": 203.19692265566854,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-6",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 45.09417864027369,
+            "y": 203.46271170108562,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-7",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 43.909724107638006,
+            "y": 203.72161428967502,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-8",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 42.72378339398753,
+            "y": 203.9736216585459,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.39999999999998,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-9",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 41.536396639008885,
+            "y": 204.21872527818533,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-10",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 40.34760403133201,
+            "y": 204.45691685274636,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-11",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 39.157445807169736,
+            "y": 204.68818832032926,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-12",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 37.96596224895591,
+            "y": 204.91253185325405,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-13",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 36.773193683982065,
+            "y": 205.12993985832577,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-14",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 35.579180483032204,
+            "y": 205.34040497709123,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.40000000000003,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-4-15",
+          "sectionId": "349",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 34.383963059017375,
+            "y": 205.543920086088,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 208.4,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 80,
+      "depth": 211.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-5-1",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 51.67788071481084,
+            "y": 204.77997129803924,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.19999999999996,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-2",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 50.48565130278888,
+            "y": 205.07715380444796,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-3",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 49.291713139048994,
+            "y": 205.36739521116223,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-4",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.096106633961945,
+            "y": 205.65068569458882,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-5",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 46.89887225436624,
+            "y": 205.92701566639727,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-6",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 45.70005052219675,
+            "y": 206.19637577384492,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-7",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 44.4996820131149,
+            "y": 206.45875690009288,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.19999999999996,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-8",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 43.29780735513515,
+            "y": 206.71415016451485,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-9",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 42.09446722724893,
+            "y": 206.96254692299777,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-10",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 40.88970235804856,
+            "y": 207.2039387682343,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-11",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 39.683553524348596,
+            "y": 207.43831753000737,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.20000000000002,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-12",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 38.47606154980561,
+            "y": 207.66567527546667,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.2,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-13",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 37.26726730353652,
+            "y": 207.88600430939732,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.20000000000002,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-14",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 36.057211698735124,
+            "y": 208.09929717448014,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.20000000000002,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-5-15",
+          "sectionId": "349",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 34.84593569128824,
+            "y": 208.30554665154406,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 211.20000000000002,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 82.5,
+      "depth": 214,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-6-1",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 52.36300413337841,
+            "y": 207.49485728115718,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 213.99999999999997,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-2",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.15496864960616,
+            "y": 207.79597970715844,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 213.99999999999997,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-3",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 49.94520176021063,
+            "y": 208.09006901131025,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214.00000000000003,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-4",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 48.73374441130614,
+            "y": 208.37711523978226,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214.00000000000003,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-5",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 47.52063760622337,
+            "y": 208.65710867712605,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-6",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.30592240411981,
+            "y": 208.93003984660425,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-7",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.08963991859181,
+            "y": 209.1958995105108,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-8",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 43.87183131628278,
+            "y": 209.45467867048382,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-9",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 42.65253781548897,
+            "y": 209.70636856781027,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-10",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 41.431800684765115,
+            "y": 209.9509606837223,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214.00000000000003,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-11",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 40.20966124152746,
+            "y": 210.1884467396855,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214.00000000000003,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-12",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 38.9861608506553,
+            "y": 210.4188186976793,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-13",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 37.761340923090984,
+            "y": 210.64206876046887,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-14",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 36.53524291443806,
+            "y": 210.8581893718691,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-6-15",
+          "sectionId": "349",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 35.30790832355911,
+            "y": 211.06717321700015,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 214,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 85,
+      "depth": 216.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-7-1",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 53.04812755194598,
+            "y": 210.20974326427515,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.79999999999998,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-2",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 51.82428599642344,
+            "y": 210.51480560986894,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-3",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 50.598690381372265,
+            "y": 210.81274281145824,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-4",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 49.37138218865034,
+            "y": 211.10354478497567,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-5",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.142402958080496,
+            "y": 211.3872016878548,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.79999999999998,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-6",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 46.91179428604288,
+            "y": 211.66370391936357,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-7",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 45.67959782406871,
+            "y": 211.93304212092872,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-8",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 44.445855277430404,
+            "y": 212.19520717645275,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.79999999999998,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-9",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 43.21060840372902,
+            "y": 212.45019021262274,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-10",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 41.97389901148167,
+            "y": 212.69798259921023,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-11",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 40.73576895870632,
+            "y": 212.93857594936364,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-12",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 39.496260151505005,
+            "y": 213.17196211989196,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-13",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 38.25541454264545,
+            "y": 213.39813321154045,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-14",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 37.013274130140985,
+            "y": 213.61708156925803,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.8,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-7-15",
+          "sectionId": "349",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 35.769880955829976,
+            "y": 213.82879978245626,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 216.80000000000004,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 87.5,
+      "depth": 219.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-8-1",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 53.733250970513545,
+            "y": 212.92462924739309,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-2",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 52.493603343240714,
+            "y": 213.23363151257942,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-3",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 51.25217900253389,
+            "y": 213.5354166116062,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-4",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 50.009019965994526,
+            "y": 213.82997433016905,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-5",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 48.764168309937624,
+            "y": 214.11729469858355,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-6",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 47.517666167965935,
+            "y": 214.39736799212287,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-7",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.26955572954561,
+            "y": 214.67018473134658,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.59999999999997,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-8",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 45.01987923857803,
+            "y": 214.9357356824217,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.59999999999997,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-9",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 43.768678991969054,
+            "y": 215.1940118574352,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-10",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 42.51599733819822,
+            "y": 215.44500451469818,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-11",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 41.26187667588519,
+            "y": 215.68870515904175,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-12",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 40.006359452354694,
+            "y": 215.92510554210455,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-13",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 38.74948816219991,
+            "y": 216.15419766261198,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-14",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 37.49130534584391,
+            "y": 216.37597376664698,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-8-15",
+          "sectionId": "349",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 36.23185358810084,
+            "y": 216.5904263479123,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 219.6,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 90,
+      "depth": 222.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-9-1",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 54.418374389081116,
+            "y": 215.63951523051102,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.39999999999998,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-2",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 53.162920690057994,
+            "y": 215.9524574152899,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.39999999999998,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-3",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 51.905667623695535,
+            "y": 216.25809041175418,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-4",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 50.64665774333872,
+            "y": 216.5564038753625,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-5",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 49.38593366179475,
+            "y": 216.8473877093123,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-6",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 48.123538049889,
+            "y": 217.13103206488216,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.39999999999998,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-7",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 46.859513635022516,
+            "y": 217.4073273417645,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-8",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 45.59390319972565,
+            "y": 217.67626418839066,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.39999999999998,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-9",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 44.3267495802091,
+            "y": 217.93783350224768,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-10",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 43.058095664914774,
+            "y": 218.19202643018616,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.40000000000003,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-11",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 41.78798439306405,
+            "y": 218.43883436871988,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.4,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-12",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 40.51645875320439,
+            "y": 218.6782489643172,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.40000000000003,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-13",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 39.24356178175437,
+            "y": 218.91026211368356,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.40000000000003,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-14",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 37.96933656154684,
+            "y": 219.13486596403592,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.40000000000003,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-9-15",
+          "sectionId": "349",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 36.69382622037171,
+            "y": 219.3520529133684,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 222.40000000000003,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 92.5,
+      "depth": 225.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-10-1",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 55.10349780764868,
+            "y": 218.35440121362896,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-2",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 53.83223803687527,
+            "y": 218.67128331800038,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-3",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 52.559156244857164,
+            "y": 218.98076421190217,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-4",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 51.28429552068291,
+            "y": 219.28283342055587,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-5",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.00769901365188,
+            "y": 219.57748072004102,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.19999999999996,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-6",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 48.729409931812064,
+            "y": 219.86469613764146,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-7",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 47.44947154049941,
+            "y": 220.1444699521824,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-8",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.167927160873276,
+            "y": 220.4167926943596,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-9",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 44.88482016844914,
+            "y": 220.68165514706016,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-10",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 43.60019399163132,
+            "y": 220.93904834567408,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-11",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 42.31409211024291,
+            "y": 221.18896357839802,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.20000000000002,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-12",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 41.026558054054085,
+            "y": 221.4313923865298,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-13",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 39.73763540130883,
+            "y": 221.66632656475508,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-14",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 38.44736777724977,
+            "y": 221.89375816142484,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-10-15",
+          "sectionId": "349",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 37.155798852642576,
+            "y": 222.11367947882445,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 225.2,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 95,
+      "depth": 228,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-11-1",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 55.78862122621625,
+            "y": 221.06928719674693,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-2",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 54.50155538369255,
+            "y": 221.39010922071088,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-3",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 53.2126448660188,
+            "y": 221.70343801205016,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-4",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 51.921933298027106,
+            "y": 222.00926296574931,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228.00000000000003,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-5",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 50.62946436550901,
+            "y": 222.3075737307698,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-6",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 49.33528181373513,
+            "y": 222.59836021040078,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228.00000000000003,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-7",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.03942944597632,
+            "y": 222.88161256260028,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 227.99999999999997,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-8",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 46.74195112202091,
+            "y": 223.15732120032854,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 227.99999999999997,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-9",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 45.44289075668919,
+            "y": 223.42547679187263,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-10",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 44.14229231834788,
+            "y": 223.68607026116206,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-11",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 42.84019982742178,
+            "y": 223.93909278807615,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228.00000000000003,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-12",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 41.53665735490378,
+            "y": 224.18453580874245,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228.00000000000003,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-13",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 40.23170902086329,
+            "y": 224.42239101582666,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228.00000000000003,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-14",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 38.925398992952694,
+            "y": 224.6526503588138,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-11-15",
+          "sectionId": "349",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 37.61777148491345,
+            "y": 224.87530604428053,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 228,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 97.5,
+      "depth": 230.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-12-1",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 56.47374464478382,
+            "y": 223.78417317986487,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-2",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 55.17087273050983,
+            "y": 224.10893512342136,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-3",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 53.86613348718044,
+            "y": 224.42611181219814,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-4",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 52.5595710753713,
+            "y": 224.73569251094273,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-5",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 51.25122971736614,
+            "y": 225.03766674149855,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-6",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 49.941153695658194,
+            "y": 225.3320242831601,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.80000000000004,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-7",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 48.62938735145322,
+            "y": 225.6187551730182,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-8",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.31597508316853,
+            "y": 225.8978497062975,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-9",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 46.00096134492923,
+            "y": 226.1692984366851,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-10",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 44.68439064506443,
+            "y": 226.43309217665,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-11",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 43.366307544600645,
+            "y": 226.6892219977543,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.80000000000004,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-12",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 42.04675665575348,
+            "y": 226.93767923095507,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-13",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 40.725782640417755,
+            "y": 227.1784554668982,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.80000000000004,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-14",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 39.40343020865562,
+            "y": 227.41154255620276,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.80000000000004,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-12-15",
+          "sectionId": "349",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 38.07974411718431,
+            "y": 227.63693260973662,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 230.8,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 100,
+      "depth": 233.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-13-1",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 57.158868063351385,
+            "y": 226.4990591629828,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-2",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 55.8401900773271,
+            "y": 226.82776102613184,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-3",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 54.51962210834207,
+            "y": 227.14878561234613,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-4",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 53.19720885271549,
+            "y": 227.46212205613614,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-5",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 51.872995069223265,
+            "y": 227.7677597522273,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-6",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 50.54702557758125,
+            "y": 228.0656883559194,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-7",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 49.21934525693012,
+            "y": 228.3558977834361,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-8",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 47.889999044316156,
+            "y": 228.63837821226645,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-9",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 46.559031933169265,
+            "y": 228.91312008149757,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-10",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 45.22648897178099,
+            "y": 229.18011409213796,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-11",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 43.892415261779504,
+            "y": 229.4393512074324,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-12",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 42.55685595660317,
+            "y": 229.6908226531677,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.6,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-13",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 41.21985625997222,
+            "y": 229.93451991796977,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-14",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 39.88146142435855,
+            "y": 230.17043475359168,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-13-15",
+          "sectionId": "349",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 38.541716749455176,
+            "y": 230.3985591751927,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 233.60000000000002,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 102.5,
+      "depth": 236.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-14-1",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 57.843991481918955,
+            "y": 229.21394514610077,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-2",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 56.509507424144374,
+            "y": 229.54658692884234,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-3",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 55.173110729503705,
+            "y": 229.87145941249412,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-4",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 53.83484663005969,
+            "y": 230.18855160132955,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-5",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 52.49476042108039,
+            "y": 230.49785276295606,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-6",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.15289745950432,
+            "y": 230.7993524286787,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-7",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 49.809303162407026,
+            "y": 231.09304039385398,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-8",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 48.46402300546378,
+            "y": 231.37890671823538,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.39999999999998,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-9",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.117102521409315,
+            "y": 231.65694172631004,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-10",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 45.76858729849754,
+            "y": 231.92713600762593,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-11",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 44.41852297895837,
+            "y": 232.18948041711053,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-12",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 43.06695525745287,
+            "y": 232.44396607538033,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-13",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 41.71392987952668,
+            "y": 232.69058436904132,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-14",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 40.359492640061475,
+            "y": 232.92932695098062,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.4,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-14-15",
+          "sectionId": "349",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 39.00368938172605,
+            "y": 233.16018574064879,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 236.40000000000003,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "349",
+      "seatCount": 15,
+      "elevation": 105,
+      "depth": 239.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "astros-349-15-1",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 58.52911490048652,
+            "y": 231.92883112921868,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.19999999999996,
+          "angle": -194.16333333333333,
+          "facing": -14.163333333333327,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-2",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 57.17882477096165,
+            "y": 232.2654128315528,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.19999999999996,
+          "angle": -193.82999999999998,
+          "facing": -13.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-3",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 55.82659935066533,
+            "y": 232.59413321264208,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -193.49666666666664,
+          "facing": -13.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-4",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 54.472484407403876,
+            "y": 232.91498114652293,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -193.16333333333333,
+          "facing": -13.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-5",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 53.11652577293752,
+            "y": 233.22794577368478,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.19999999999996,
+          "angle": -192.82999999999998,
+          "facing": -12.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-6",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 51.758769341427374,
+            "y": 233.533016501438,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -192.49666666666664,
+          "facing": -12.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-7",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 50.39926106788392,
+            "y": 233.83018300427187,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -192.16333333333333,
+          "facing": -12.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-8",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 49.038046966611404,
+            "y": 234.11943522420432,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -191.82999999999998,
+          "facing": -11.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-9",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 47.67517310964935,
+            "y": 234.4007633711225,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -191.49666666666664,
+          "facing": -11.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-10",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 46.31068562521409,
+            "y": 234.67415792311385,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -191.16333333333333,
+          "facing": -11.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-11",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 44.94463069613723,
+            "y": 234.93960962678864,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -190.82999999999998,
+          "facing": -10.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-12",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 43.577054558302564,
+            "y": 235.19710949759295,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.20000000000002,
+          "angle": -190.49666666666664,
+          "facing": -10.496666666666641,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-13",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 42.20800349908114,
+            "y": 235.44664882011287,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -190.16333333333333,
+          "facing": -10.163333333333327,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-14",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 40.8375238557644,
+            "y": 235.68821914836954,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -189.82999999999998,
+          "facing": -9.829999999999984,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "astros-349-15-15",
+          "sectionId": "349",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 39.46566201399691,
+            "y": 235.92181230610484,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 239.2,
+          "angle": -189.49666666666664,
+          "facing": -9.496666666666641,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": false
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 195,
+    "aisle": 30,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
