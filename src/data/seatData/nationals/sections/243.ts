@@ -1,0 +1,6889 @@
+/**
+ * 243 - nationals
+ * Generated: 2025-10-23T01:01:06.534Z
+ * Total Seats: 256
+ * Total Rows: 16
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_243: SectionSeatingData = {
+  "sectionId": "243",
+  "sectionName": "243",
+  "stadiumId": "nationals",
+  "totalSeats": 256,
+  "totalRows": 16,
+  "rows": [
+    {
+      "rowNumber": "A",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 35,
+      "depth": 95,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-A-1",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -27.393529919682113,
+            "y": 90.96479823832668,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-2",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -27.740624633560053,
+            "y": 90.85954955281213,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-3",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -28.087314988947348,
+            "y": 90.7529764619963,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-4",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -28.43359593234593,
+            "y": 90.64508051933144,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-5",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -28.779462416225712,
+            "y": 90.53586329755215,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-6",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -29.124909399097856,
+            "y": 90.42532638865254,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-7",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -29.46993184558842,
+            "y": 90.31347140386296,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-8",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -29.814524726511433,
+            "y": 90.20029997362668,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-9",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -30.158683018942774,
+            "y": 90.08581374757588,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-10",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -30.50240170629273,
+            "y": 89.97001439450786,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-11",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -30.845675778379764,
+            "y": 89.85290360236043,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-12",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -31.188500231502914,
+            "y": 89.73448307818764,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-13",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -31.53087006851529,
+            "y": 89.61475454813457,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-14",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -31.87278029889667,
+            "y": 89.49371975741238,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-15",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -32.21422593882599,
+            "y": 89.37138047027287,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-A-16",
+          "sectionId": "243",
+          "row": "A",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -32.55520201125458,
+            "y": 89.24773846998256,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 95,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "B",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 37.5,
+      "depth": 97.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-B-1",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -28.200918169946426,
+            "y": 93.64586597587736,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-2",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -28.558243043812347,
+            "y": 93.53751522384238,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-3",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -28.91515164125316,
+            "y": 93.4278010314025,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-4",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -29.2716387598256,
+            "y": 93.31672499779594,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-5",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -29.62769920323026,
+            "y": 93.20428874211159,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-6",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -29.983327781387054,
+            "y": 93.09049390326545,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-7",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -30.33851931051103,
+            "y": 92.97534213997682,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-8",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -30.69326861318756,
+            "y": 92.8588351307441,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-9",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -31.047570518448456,
+            "y": 92.74097457382022,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-10",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -31.40141986184662,
+            "y": 92.62176218718808,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-11",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -31.754811485532006,
+            "y": 92.50119970853525,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-12",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -32.10774023832616,
+            "y": 92.37928889522895,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-13",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -32.46020097579785,
+            "y": 92.25603152429011,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.79999999999998,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-14",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -32.81218856033784,
+            "y": 92.13142939236769,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-15",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -33.163697861233494,
+            "y": 92.00548431571248,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-B-16",
+          "sectionId": "243",
+          "row": "B",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -33.51472375474418,
+            "y": 91.87819813015047,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "C",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 40,
+      "depth": 100.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-C-1",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -29.00830642021074,
+            "y": 96.32693371342803,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-2",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -29.37586145406464,
+            "y": 96.21548089487263,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-3",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -29.742988293558977,
+            "y": 96.10262560080871,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-4",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -30.109681587305268,
+            "y": 95.98836947626046,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-5",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -30.475935990234806,
+            "y": 95.87271418667102,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-6",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -30.841746163676255,
+            "y": 95.75566141787837,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-7",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -31.207106775433633,
+            "y": 95.63721287609067,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-8",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -31.572012499863686,
+            "y": 95.51737028786152,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-9",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -31.936458017954138,
+            "y": 95.39613540006457,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-10",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -32.30043801740051,
+            "y": 95.27350997986831,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-11",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -32.663947192684255,
+            "y": 95.1494958147101,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-12",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -33.0269802451494,
+            "y": 95.02409471227027,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.60000000000001,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-13",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -33.3895318830804,
+            "y": 94.89730850044566,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-14",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -33.751596821778996,
+            "y": 94.769139027323,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-15",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -34.113169783641,
+            "y": 94.6395881611521,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.6,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-C-16",
+          "sectionId": "243",
+          "row": "C",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -34.47424549823379,
+            "y": 94.50865779031837,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 100.59999999999998,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "D",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 42.5,
+      "depth": 103.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-D-1",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -29.81569467047506,
+            "y": 99.00800145097874,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-2",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -30.19347986431694,
+            "y": 98.89344656590289,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-3",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -30.570824945864796,
+            "y": 98.77745017021492,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-4",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -30.94772441478494,
+            "y": 98.66001395472497,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-5",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -31.324172777239358,
+            "y": 98.54113963123046,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.40000000000002,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-6",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -31.700164545965457,
+            "y": 98.42082893249129,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-7",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -32.07569424035624,
+            "y": 98.29908361220454,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-8",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -32.450756386539815,
+            "y": 98.17590544497895,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-9",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -32.82534551745982,
+            "y": 98.0512962263089,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-10",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -33.199456172954406,
+            "y": 97.92525777254855,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-11",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -33.5730828998365,
+            "y": 97.79779192088493,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-12",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -33.94622025197265,
+            "y": 97.6689005293116,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-13",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -34.318862790362964,
+            "y": 97.53858547660121,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-14",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -34.69100508322017,
+            "y": 97.40684866227832,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-15",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -35.0626417060485,
+            "y": 97.27369200659173,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.39999999999999,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-D-16",
+          "sectionId": "243",
+          "row": "D",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -35.4337672417234,
+            "y": 97.1391174504863,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 103.4,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "E",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 45,
+      "depth": 106.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-E-1",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -30.623082920739375,
+            "y": 101.68906918852942,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-2",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -31.011098274569235,
+            "y": 101.57141223693314,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-3",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -31.398661598170612,
+            "y": 101.45227473962113,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-4",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -31.78576724226461,
+            "y": 101.33165843318947,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-5",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -32.17240956424391,
+            "y": 101.2095650757899,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-6",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -32.55858292825466,
+            "y": 101.08599644710421,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.2,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-7",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -32.94428170527885,
+            "y": 100.9609543483184,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-8",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -33.32950027321594,
+            "y": 100.83444060209636,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-9",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -33.7142330169655,
+            "y": 100.70645705255325,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-10",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -34.098474328508296,
+            "y": 100.57700556522879,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-11",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -34.482218606988745,
+            "y": 100.44608802705977,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.20000000000002,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-12",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -34.86546025879589,
+            "y": 100.31370634635292,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.2,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-13",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -35.24819369764552,
+            "y": 100.17986245275675,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.19999999999999,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-14",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -35.630413344661335,
+            "y": 100.04455829723364,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.2,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-15",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -36.01211362845601,
+            "y": 99.90779585203136,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.2,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-E-16",
+          "sectionId": "243",
+          "row": "E",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -36.39328898521301,
+            "y": 99.7695771106542,
+            "z": 45
+          },
+          "elevation": 45,
+          "distanceFromHomeplate": 106.2,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "F",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 47.5,
+      "depth": 109,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-F-1",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -31.43047117100369,
+            "y": 104.3701369260801,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-2",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -31.828716684821533,
+            "y": 104.24937790796339,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-3",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -32.22649825047643,
+            "y": 104.12709930902733,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-4",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -32.62381006974428,
+            "y": 104.00330291165398,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-5",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -33.02064635124845,
+            "y": 103.87799052034933,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109.00000000000001,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-6",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -33.41700131054385,
+            "y": 103.75116396171713,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-7",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -33.81286917020145,
+            "y": 103.62282508443225,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-8",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -34.20824415989207,
+            "y": 103.49297575921378,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-9",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -34.603120516471186,
+            "y": 103.36161787879759,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-10",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -34.997492484062185,
+            "y": 103.22875335790901,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-11",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -35.39135431414099,
+            "y": 103.0943841332346,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-12",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -35.784700265619136,
+            "y": 102.95851216339423,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-13",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -36.177524604928074,
+            "y": 102.82113942891229,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-14",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -36.569821606102494,
+            "y": 102.68226793218895,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-15",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -36.961585550863504,
+            "y": 102.54189969747097,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 108.99999999999999,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-F-16",
+          "sectionId": "243",
+          "row": "F",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -37.35281072870262,
+            "y": 102.4000367708221,
+            "z": 47.5
+          },
+          "elevation": 47.5,
+          "distanceFromHomeplate": 109,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "G",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 50,
+      "depth": 111.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-G-1",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -32.237859421268,
+            "y": 107.05120466363077,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-2",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -32.64633509507383,
+            "y": 106.92734357899364,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-3",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -33.054334902782244,
+            "y": 106.80192387843353,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-4",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -33.46185289722395,
+            "y": 106.67494739011848,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-5",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -33.868883138253,
+            "y": 106.54641596490875,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-6",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -34.275419692833054,
+            "y": 106.41633147633004,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-7",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -34.68145663512406,
+            "y": 106.2846958205461,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.80000000000001,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-8",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -35.086988046568194,
+            "y": 106.15151091633119,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-9",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -35.492008015976864,
+            "y": 106.01677870504193,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-10",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -35.896510639616075,
+            "y": 105.88050115058924,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-11",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -36.300490021293236,
+            "y": 105.74268023940942,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-12",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -36.70394027244238,
+            "y": 105.60331798043555,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-13",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -37.10685551221063,
+            "y": 105.46241640506784,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-14",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -37.50922986754366,
+            "y": 105.31997756714425,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-15",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -37.91105747327101,
+            "y": 105.17600354291059,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-G-16",
+          "sectionId": "243",
+          "row": "G",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -38.312332472192224,
+            "y": 105.03049643099,
+            "z": 50
+          },
+          "elevation": 50,
+          "distanceFromHomeplate": 111.8,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "H",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 52.5,
+      "depth": 114.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-H-1",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -33.045247671532316,
+            "y": 109.73227240118145,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-2",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -33.463953505326124,
+            "y": 109.60530925002388,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-3",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -33.882171555088064,
+            "y": 109.47674844783974,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-4",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -34.29989572470362,
+            "y": 109.34659186858298,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-5",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -34.71711992525754,
+            "y": 109.21484140946818,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-6",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -35.133838075122256,
+            "y": 109.08149899094295,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-7",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -35.55004410004666,
+            "y": 108.94656655665996,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-8",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -35.965731933244314,
+            "y": 108.8100460734486,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-9",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -36.38089551548254,
+            "y": 108.67193953128627,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-10",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -36.795528795169965,
+            "y": 108.53224894326947,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-11",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -37.20962572844548,
+            "y": 108.39097634558426,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-12",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -37.62318027926562,
+            "y": 108.24812379747686,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-13",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -38.036186419493184,
+            "y": 108.10369338122338,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.59999999999998,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-14",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -38.448638128984825,
+            "y": 107.95768720209956,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-15",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -38.86052939567851,
+            "y": 107.8101073883502,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-H-16",
+          "sectionId": "243",
+          "row": "H",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -39.271854215681834,
+            "y": 107.66095609115791,
+            "z": 52.5
+          },
+          "elevation": 52.5,
+          "distanceFromHomeplate": 114.6,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "I",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 55,
+      "depth": 117.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-I-1",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -33.85263592179663,
+            "y": 112.41334013873214,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-2",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -34.281571915578425,
+            "y": 112.28327492105414,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-3",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -34.710008207393884,
+            "y": 112.15157301724595,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-4",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -35.137938552183286,
+            "y": 112.0182363470475,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-5",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -35.565356712262094,
+            "y": 111.88326685402762,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-6",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -35.99225645741146,
+            "y": 111.74666650555588,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-7",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -36.418631564969274,
+            "y": 111.60843729277381,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-8",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -36.84447581992045,
+            "y": 111.46858123056604,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.40000000000002,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-9",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -37.26978301498823,
+            "y": 111.32710035753063,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-10",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -37.69454695072386,
+            "y": 111.1839967359497,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-11",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -38.118761435597726,
+            "y": 111.0392724517591,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-12",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -38.54242028608887,
+            "y": 110.8929296145182,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-13",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -38.96551732677574,
+            "y": 110.74497035737893,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.39999999999999,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-14",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -39.38804639042599,
+            "y": 110.59539683705489,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-15",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -39.810001318086016,
+            "y": 110.44421123378984,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-I-16",
+          "sectionId": "243",
+          "row": "I",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -40.231375959171444,
+            "y": 110.29141575132583,
+            "z": 55
+          },
+          "elevation": 55,
+          "distanceFromHomeplate": 117.4,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "J",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 57.5,
+      "depth": 120.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-J-1",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -34.66002417206095,
+            "y": 115.09440787628282,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-2",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -35.09919032583072,
+            "y": 114.9612405920844,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-3",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -35.537844859699696,
+            "y": 114.82639758665216,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-4",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -35.975981379662954,
+            "y": 114.689880825512,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-5",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -36.41359349926664,
+            "y": 114.55169229858706,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-6",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -36.85067483970066,
+            "y": 114.4118340201688,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-7",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -37.28721902989188,
+            "y": 114.27030802888767,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-8",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -37.72321970659657,
+            "y": 114.12711638768346,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-9",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -38.15867051449391,
+            "y": 113.98226118377497,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-10",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -38.59356510627775,
+            "y": 113.83574452862995,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.20000000000002,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-11",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -39.02789714274997,
+            "y": 113.68756855793393,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-12",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -39.461660292912114,
+            "y": 113.53773543155951,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-13",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -39.894848234058294,
+            "y": 113.38624733353448,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-14",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -40.32745465186716,
+            "y": 113.23310647201019,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.19999999999999,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-15",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -40.75947324049352,
+            "y": 113.07831507922945,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.19999999999999,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-J-16",
+          "sectionId": "243",
+          "row": "J",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -41.190897702661054,
+            "y": 112.92187541149373,
+            "z": 57.5
+          },
+          "elevation": 57.5,
+          "distanceFromHomeplate": 120.2,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "K",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 60,
+      "depth": 123,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-K-1",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -35.46741242232526,
+            "y": 117.77547561383349,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-2",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -35.91680873608301,
+            "y": 117.63920626311464,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123.00000000000001,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-3",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -36.36568151200551,
+            "y": 117.50122215605836,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 122.99999999999999,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-4",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -36.81402420714262,
+            "y": 117.3615253039765,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123.00000000000001,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-5",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -37.261830286271184,
+            "y": 117.22011774314649,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123.00000000000001,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-6",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -37.70909322198985,
+            "y": 117.07700153478172,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-7",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -38.155806494814485,
+            "y": 116.93217876500152,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-8",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -38.6019635932727,
+            "y": 116.78565154480087,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123.00000000000001,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-9",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -39.04755801399959,
+            "y": 116.6374220100193,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-10",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -39.49258326183164,
+            "y": 116.48749232131017,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-11",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -39.93703284990222,
+            "y": 116.33586466410877,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-12",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -40.38090029973535,
+            "y": 116.18254124860083,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-13",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -40.82417914134085,
+            "y": 116.02752430969002,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-14",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -41.26686291330832,
+            "y": 115.8708161069655,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-15",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -41.708945162901024,
+            "y": 115.71241892466908,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-K-16",
+          "sectionId": "243",
+          "row": "K",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -42.150419446150664,
+            "y": 115.55233507166163,
+            "z": 60
+          },
+          "elevation": 60,
+          "distanceFromHomeplate": 123,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "L",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 62.5,
+      "depth": 125.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-L-1",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -36.27480067258958,
+            "y": 120.45654335138417,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-2",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -36.73442714633531,
+            "y": 120.3171719341449,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.80000000000001,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-3",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -37.19351816431133,
+            "y": 120.17604672546457,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-4",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -37.65206703462229,
+            "y": 120.033169782441,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-5",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -38.11006707327574,
+            "y": 119.8885431877059,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-6",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -38.567511604279055,
+            "y": 119.74216904939462,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-7",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -39.02439395973709,
+            "y": 119.59404950111538,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-8",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -39.480707479948826,
+            "y": 119.44418670191828,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-9",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -39.93644551350528,
+            "y": 119.29258283626363,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.79999999999998,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-10",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -40.39160141738553,
+            "y": 119.1392401139904,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-11",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -40.84616855705446,
+            "y": 118.9841607702836,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-12",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -41.300140306558596,
+            "y": 118.82734706564214,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-13",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -41.753510048623404,
+            "y": 118.66880128584556,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.79999999999998,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-14",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -42.20627117474949,
+            "y": 118.50852574192082,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.8,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-15",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -42.65841708530852,
+            "y": 118.34652277010869,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.79999999999998,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-L-16",
+          "sectionId": "243",
+          "row": "L",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -43.10994118964027,
+            "y": 118.18279473182953,
+            "z": 62.5
+          },
+          "elevation": 62.5,
+          "distanceFromHomeplate": 125.79999999999998,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "M",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 65,
+      "depth": 128.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-M-1",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -37.08218892285389,
+            "y": 123.13761108893485,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-2",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -37.55204555658761,
+            "y": 122.99513760517515,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-3",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -38.02135481661714,
+            "y": 122.85087129487077,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-4",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -38.49010986210196,
+            "y": 122.70481426090551,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-5",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -38.95830386028028,
+            "y": 122.55696863226534,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-6",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -39.425929986568256,
+            "y": 122.40733656400754,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-7",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -39.892981424659695,
+            "y": 122.25592023722923,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-8",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -40.35945136662495,
+            "y": 122.1027218590357,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-9",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -40.825333013010955,
+            "y": 121.94774366250797,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-10",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -41.29061957293942,
+            "y": 121.79098790667062,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-11",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -41.75530426420671,
+            "y": 121.63245687645843,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-12",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -42.21938031338184,
+            "y": 121.47215288268346,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-13",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -42.68284095590596,
+            "y": 121.31007826200111,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-14",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -43.14567943619065,
+            "y": 121.14623537687612,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-15",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -43.607889007716025,
+            "y": 120.98062661554832,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-M-16",
+          "sectionId": "243",
+          "row": "M",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -44.06946293312988,
+            "y": 120.81325439199745,
+            "z": 65
+          },
+          "elevation": 65,
+          "distanceFromHomeplate": 128.6,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "N",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 67.5,
+      "depth": 131.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-N-1",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -37.889577173118205,
+            "y": 125.81867882648554,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-2",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -38.3696639668399,
+            "y": 125.67310327620541,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-3",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -38.84919146892296,
+            "y": 125.52569586427698,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-4",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -39.328152689581636,
+            "y": 125.37645873937002,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-5",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -39.806540647284834,
+            "y": 125.22539407682478,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-6",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -40.28434836885746,
+            "y": 125.07250407862047,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-7",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -40.7615688895823,
+            "y": 124.9177909733431,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-8",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -41.23819525330108,
+            "y": 124.76125701615312,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-9",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -41.71422051251664,
+            "y": 124.60290448875233,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-10",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -42.18963772849332,
+            "y": 124.44273569935086,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-11",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -42.66443997135896,
+            "y": 124.28075298263327,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-12",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -43.138620320205085,
+            "y": 124.11695869972479,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-13",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -43.61217186318852,
+            "y": 123.95135523815667,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-14",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -44.08508769763182,
+            "y": 123.78394501183145,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-15",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -44.55736093012353,
+            "y": 123.61473046098794,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-N-16",
+          "sectionId": "243",
+          "row": "N",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -45.02898467661949,
+            "y": 123.44371405216536,
+            "z": 67.5
+          },
+          "elevation": 67.5,
+          "distanceFromHomeplate": 131.4,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "O",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 70,
+      "depth": 134.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-O-1",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -38.696965423382515,
+            "y": 128.4997465640362,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-2",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -39.187282377092195,
+            "y": 128.35106894723563,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-3",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -39.67702812122877,
+            "y": 128.20052043368318,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-4",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -40.1661955170613,
+            "y": 128.04810321783452,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-5",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -40.65477743428937,
+            "y": 127.8938195213842,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-6",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -41.14276675114665,
+            "y": 127.73767159323337,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-7",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -41.630156354504905,
+            "y": 127.57966170945694,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-8",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -42.1169391399772,
+            "y": 127.41979217327054,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-9",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -42.60310801202232,
+            "y": 127.25806531499666,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-10",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -43.0886558840472,
+            "y": 127.09448349203109,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-11",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -43.5735756785112,
+            "y": 126.92904908880809,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-12",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -44.05786032702832,
+            "y": 126.7617645167661,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-13",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -44.54150277047107,
+            "y": 126.59263221431219,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-14",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -45.02449595907298,
+            "y": 126.42165464678675,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-15",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -45.506832852531026,
+            "y": 126.24883430642755,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-O-16",
+          "sectionId": "243",
+          "row": "O",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -45.98850642010909,
+            "y": 126.07417371233325,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 134.2,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "P",
+      "sectionId": "243",
+      "seatCount": 16,
+      "elevation": 72.5,
+      "depth": 137,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "nationals-243-P-1",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -39.50435367364684,
+            "y": 131.1808143015869,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -163.240625,
+          "facing": 16.759375000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-2",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -40.004900787344496,
+            "y": 131.0290346182659,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -163.021875,
+          "facing": 16.978125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-3",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -40.50486477353459,
+            "y": 130.8753450030894,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -162.803125,
+          "facing": 17.196875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-4",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -41.00423834454097,
+            "y": 130.71974769629904,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -162.584375,
+          "facing": 17.415625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-5",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -41.503014221293924,
+            "y": 130.56224496594365,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -162.365625,
+          "facing": 17.634375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-6",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -42.001185133435854,
+            "y": 130.4028391078463,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -162.146875,
+          "facing": 17.853125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-7",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -42.49874381942751,
+            "y": 130.2415324455708,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -161.928125,
+          "facing": 18.071875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-8",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -42.99568302665333,
+            "y": 130.07832733038796,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -161.709375,
+          "facing": 18.290625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-9",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -43.491995511528,
+            "y": 129.913226141241,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -161.490625,
+          "facing": 18.509375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-10",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -43.987674039601096,
+            "y": 129.7462312847113,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -161.271875,
+          "facing": 18.728125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-11",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -44.48271138566345,
+            "y": 129.57734519498294,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -161.053125,
+          "facing": 18.946875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-12",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -44.977100333851574,
+            "y": 129.40657033380742,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -160.834375,
+          "facing": 19.165625000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-13",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -45.47083367775363,
+            "y": 129.23390919046776,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -160.615625,
+          "facing": 19.384375000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-14",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -45.963904220514145,
+            "y": 129.05936428174206,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -160.396875,
+          "facing": 19.603125000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-15",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -46.45630477493854,
+            "y": 128.8829381518672,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -160.178125,
+          "facing": 19.821875000000006,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "nationals-243-P-16",
+          "sectionId": "243",
+          "row": "P",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -46.94802816359871,
+            "y": 128.70463337250118,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 137,
+          "angle": -159.959375,
+          "facing": 20.040625000000006,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 224,
+    "aisle": 32,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
