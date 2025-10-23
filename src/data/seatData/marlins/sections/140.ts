@@ -1,0 +1,8683 @@
+/**
+ * Bullpen 140 - marlins
+ * Generated: 2025-10-23T00:49:17.182Z
+ * Total Seats: 324
+ * Total Rows: 18
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_140: SectionSeatingData = {
+  "sectionId": "140",
+  "sectionName": "Bullpen 140",
+  "stadiumId": "marlins",
+  "totalSeats": 324,
+  "totalRows": 18,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 0,
+      "depth": 320,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-1-1",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -308.0949205294205,
+            "y": -86.47265431319929,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-2",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -307.85901583155623,
+            "y": -87.30879893358741,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-3",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -307.62084190953817,
+            "y": -88.14430000213802,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-4",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -307.38040051894274,
+            "y": -88.97915136038523,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-5",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -307.1376934320598,
+            "y": -89.81334685465215,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-6",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -306.89272243787957,
+            "y": -90.64688033609653,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-7",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -306.64548934207966,
+            "y": -91.47974566075554,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-8",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -306.39599596701123,
+            "y": -92.31193668959187,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-9",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -306.14424415168645,
+            "y": -93.14344728853762,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-10",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -305.890235751764,
+            "y": -93.97427132854098,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-11",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -305.63397263953595,
+            "y": -94.80440268561038,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 319.99999999999994,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-12",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -305.37545670391404,
+            "y": -95.63383524085987,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-13",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -305.11468985041506,
+            "y": -96.462562880555,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-14",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -304.8516740011476,
+            "y": -97.29057949615688,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-15",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -304.58641109479754,
+            "y": -98.11787898436742,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 319.99999999999994,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-16",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -304.3189030866139,
+            "y": -98.94445524717443,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-17",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -304.04915194839396,
+            "y": -99.77030219189695,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-1-18",
+          "sectionId": "140",
+          "row": "1",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -303.7771596684694,
+            "y": -100.59541373122957,
+            "z": 0
+          },
+          "elevation": 0,
+          "distanceFromHomeplate": 320,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 2.5,
+      "depth": 322.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-2-1",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -310.79075108405294,
+            "y": -87.22929003843979,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-2",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -310.55278222008235,
+            "y": -88.07275092425631,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.79999999999995,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-3",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -310.3125242762467,
+            "y": -88.91556262715673,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-4",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -310.0699790234835,
+            "y": -89.75771893478861,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-5",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -309.8251482495903,
+            "y": -90.59921363963036,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-6",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -309.57803375921105,
+            "y": -91.44004053903737,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-7",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -309.32863737382286,
+            "y": -92.28019343528716,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-8",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -309.0769609317226,
+            "y": -93.1196661356258,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-9",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -308.82300628801374,
+            "y": -93.95845245231233,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-10",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -308.56677531459195,
+            "y": -94.79654620266571,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-11",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -308.3082699001319,
+            "y": -95.63394120910948,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.79999999999995,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-12",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -308.04749195007327,
+            "y": -96.4706312992174,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-13",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -307.7844433866062,
+            "y": -97.30661030575986,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-14",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -307.5191261486577,
+            "y": -98.14187206674826,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-15",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -307.25154219187704,
+            "y": -98.97641042548065,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-16",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -306.9816934886218,
+            "y": -99.81021923058722,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-17",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -306.7095820279424,
+            "y": -100.64329233607604,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-2-18",
+          "sectionId": "140",
+          "row": "2",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -306.4352098155685,
+            "y": -101.47562360137783,
+            "z": 2.5
+          },
+          "elevation": 2.5,
+          "distanceFromHomeplate": 322.8,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 5,
+      "depth": 325.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-3-1",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -313.4865816386854,
+            "y": -87.98592576368027,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-2",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -313.2465486086085,
+            "y": -88.8367029149252,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-3",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -313.0042066429551,
+            "y": -89.68682525217544,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-4",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -312.75955752802423,
+            "y": -90.53628650919198,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-5",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -312.51260306712084,
+            "y": -91.38508042460857,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-6",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -312.2633450805425,
+            "y": -92.23320074197822,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-7",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -312.01178540556606,
+            "y": -93.08064120981876,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-8",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -311.75792589643396,
+            "y": -93.92739558165974,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-9",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -311.501768424341,
+            "y": -94.77345761608703,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-10",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -311.2433148774199,
+            "y": -95.61882107679045,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-11",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -310.98256716072785,
+            "y": -96.46347973260858,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.59999999999997,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-12",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -310.71952719623255,
+            "y": -97.30742735757492,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-13",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -310.45419692279734,
+            "y": -98.15065773096472,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-14",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -310.18657829616774,
+            "y": -98.99316463733963,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-15",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -309.91667328895653,
+            "y": -99.83494186659387,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-16",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -309.64448389062966,
+            "y": -100.675983214,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-17",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -309.3700121074909,
+            "y": -101.51628248025516,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-3-18",
+          "sectionId": "140",
+          "row": "3",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -309.0932599626676,
+            "y": -102.3558334715261,
+            "z": 5
+          },
+          "elevation": 5,
+          "distanceFromHomeplate": 325.6,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 7.5,
+      "depth": 328.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-4-1",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -316.18241219331776,
+            "y": -88.74256148892076,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-2",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -315.9403149971346,
+            "y": -89.60065490559408,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-3",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -315.6958890096635,
+            "y": -90.45808787719413,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-4",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -315.449136032565,
+            "y": -91.31485408359535,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-5",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -315.20005788465136,
+            "y": -92.17094720958677,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-6",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -314.9486564018739,
+            "y": -93.02636094491905,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-7",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -314.6949334373092,
+            "y": -93.88108898435037,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-8",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -314.4388908611453,
+            "y": -94.73512502769366,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-9",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -314.1805305606682,
+            "y": -95.58846277986171,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-10",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -313.9198544402478,
+            "y": -96.44109595091517,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-11",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -313.65686442132375,
+            "y": -97.29301825610764,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.3999999999999,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-12",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -313.3915624423918,
+            "y": -98.14422341593243,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-13",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -313.1239504589884,
+            "y": -98.99470515616957,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-14",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -312.85403044367774,
+            "y": -99.844457207931,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-15",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -312.58180438603597,
+            "y": -100.69347330770707,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-16",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -312.3072742926375,
+            "y": -101.54174719741276,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-17",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -312.0304421870393,
+            "y": -102.38927262443424,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-4-18",
+          "sectionId": "140",
+          "row": "4",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -311.7513101097667,
+            "y": -103.23604334167435,
+            "z": 7.5
+          },
+          "elevation": 7.5,
+          "distanceFromHomeplate": 328.4,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 10,
+      "depth": 331.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-5-1",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -318.8782427479502,
+            "y": -89.49919721416126,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-2",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -318.6340813856607,
+            "y": -90.36460689626297,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-3",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -318.387571376372,
+            "y": -91.22935050221285,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-4",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -318.1387145371057,
+            "y": -92.09342165799872,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-5",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -317.8875127021819,
+            "y": -92.95681399456498,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-6",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -317.63396772320533,
+            "y": -93.8195211478599,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-7",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -317.3780814690524,
+            "y": -94.68153675888198,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-8",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -317.11985582585663,
+            "y": -95.54285447372759,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-9",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -316.85929269699545,
+            "y": -96.40346794363643,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.19999999999993,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-10",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -316.5963940030758,
+            "y": -97.26337082503991,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.20000000000005,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-11",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -316.3311616819197,
+            "y": -98.12255677960674,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.19999999999993,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-12",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -316.063597688551,
+            "y": -98.98101947428997,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-13",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -315.7937039951796,
+            "y": -99.83875258137442,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.20000000000005,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-14",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -315.52148259118775,
+            "y": -100.69574977852237,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.19999999999993,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-15",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -315.24693548311546,
+            "y": -101.55200474882028,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.19999999999993,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-16",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -314.9700646946454,
+            "y": -102.40751118082554,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-17",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -314.69087226658775,
+            "y": -103.26226276861334,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-5-18",
+          "sectionId": "140",
+          "row": "5",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -314.4093602568658,
+            "y": -104.11625321182261,
+            "z": 10
+          },
+          "elevation": 10,
+          "distanceFromHomeplate": 331.2,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 12.5,
+      "depth": 334,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-6-1",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -321.57407330258263,
+            "y": -90.25583293940176,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-2",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -321.3278477741868,
+            "y": -91.12855888693187,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-3",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -321.07925374308047,
+            "y": -92.00061312723156,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-4",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -320.8282930416465,
+            "y": -92.87198923240209,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-5",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -320.5749675197124,
+            "y": -93.74268077954319,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-6",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -320.3192790445368,
+            "y": -94.61268135080074,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-7",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -320.0612295007956,
+            "y": -95.4819845334136,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-8",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -319.80082079056797,
+            "y": -96.35058391976152,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 333.99999999999994,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-9",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -319.53805483332275,
+            "y": -97.21847310741114,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-10",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -319.2729335659037,
+            "y": -98.08564569916464,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334.00000000000006,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-11",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -319.00545894251565,
+            "y": -98.95209530310584,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 333.99999999999994,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-12",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -318.7356329347103,
+            "y": -99.81781553264749,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-13",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -318.46345753137075,
+            "y": -100.68280000657928,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-14",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -318.1889347386978,
+            "y": -101.54704234911375,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-15",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -317.91206658019496,
+            "y": -102.4105361899335,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-16",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -317.6328550966532,
+            "y": -103.27327516423831,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 333.99999999999994,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-17",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -317.3513023461362,
+            "y": -104.13525291279244,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-6-18",
+          "sectionId": "140",
+          "row": "6",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -317.0674104039649,
+            "y": -104.99646308197087,
+            "z": 12.5
+          },
+          "elevation": 12.5,
+          "distanceFromHomeplate": 334,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 15,
+      "depth": 336.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-7-1",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -324.2699038572151,
+            "y": -91.01246866464224,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.80000000000007,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-2",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -324.021614162713,
+            "y": -91.89251087760076,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-3",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -323.7709361097889,
+            "y": -92.77187575225027,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.79999999999995,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-4",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -323.5178715461872,
+            "y": -93.65055680680547,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-5",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -323.2624223372429,
+            "y": -94.5285475645214,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-6",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -323.00459036586824,
+            "y": -95.4058415537416,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-7",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -322.74437753253886,
+            "y": -96.28243230794521,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.80000000000007,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-8",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -322.48178575527936,
+            "y": -97.15831336579545,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-9",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -322.21681696965,
+            "y": -98.03347827118584,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-10",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -321.94947312873165,
+            "y": -98.90792057328939,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.80000000000007,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-11",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -321.6797562031116,
+            "y": -99.78163382660493,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-12",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -321.4076681808695,
+            "y": -100.65461159100502,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-13",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -321.1332110675619,
+            "y": -101.52684743178415,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-14",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -320.8563868862079,
+            "y": -102.39833491970512,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-15",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -320.57719767727446,
+            "y": -103.26906763104672,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-16",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -320.2956454986611,
+            "y": -104.1390391476511,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-17",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -320.01173242568467,
+            "y": -105.00824305697154,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-7-18",
+          "sectionId": "140",
+          "row": "7",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -319.72546055106403,
+            "y": -105.87667295211914,
+            "z": 15
+          },
+          "elevation": 15,
+          "distanceFromHomeplate": 336.8,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 17.5,
+      "depth": 339.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-8-1",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -326.96573441184756,
+            "y": -91.76910438988274,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-2",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -326.7153805512391,
+            "y": -92.65646286826966,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-3",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -326.4626184764974,
+            "y": -93.54313837726897,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-4",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -326.207450050728,
+            "y": -94.42912438120884,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-5",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -325.94987715477345,
+            "y": -95.31441434949961,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.59999999999997,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-6",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -325.6899016871997,
+            "y": -96.19900175668243,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-7",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -325.42752556428206,
+            "y": -97.08288008247682,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-8",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -325.1627507199907,
+            "y": -97.96604281182938,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-9",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -324.8955791059773,
+            "y": -98.84848343496056,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-10",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -324.6260126915596,
+            "y": -99.73019544741412,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-11",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -324.35405346370754,
+            "y": -100.61117235010403,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.59999999999997,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-12",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -324.0797034270288,
+            "y": -101.49140764936254,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-13",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -323.802964603753,
+            "y": -102.37089485698901,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-14",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -323.52383903371793,
+            "y": -103.2496274902965,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-15",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -323.24232877435395,
+            "y": -104.12759907215994,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-16",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -322.958435900669,
+            "y": -105.00480313106388,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.59999999999997,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-17",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -322.67216250523313,
+            "y": -105.88123320115065,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-8-18",
+          "sectionId": "140",
+          "row": "8",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -322.38351069816315,
+            "y": -106.7568828222674,
+            "z": 17.5
+          },
+          "elevation": 17.5,
+          "distanceFromHomeplate": 339.6,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 20,
+      "depth": 342.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-9-1",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -329.66156496647994,
+            "y": -92.52574011512323,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-2",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -329.40914693976515,
+            "y": -93.42041485893853,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-3",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -329.1543008432058,
+            "y": -94.31440100228768,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.3999999999999,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-4",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -328.8970285552687,
+            "y": -95.2076919556122,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-5",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -328.63733197230397,
+            "y": -96.1002811344778,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-6",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -328.37521300853115,
+            "y": -96.99216195962327,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-7",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -328.1106735960252,
+            "y": -97.88332785700842,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-8",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -327.84371568470203,
+            "y": -98.7737722578633,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-9",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -327.5743412423045,
+            "y": -99.66348859873524,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-10",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -327.3025522543875,
+            "y": -100.55247032153883,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-11",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -327.0283507243035,
+            "y": -101.4407108736031,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-12",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -326.75173867318796,
+            "y": -102.32820370772005,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-13",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -326.4727181399441,
+            "y": -103.21494228219385,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-14",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -326.19129118122794,
+            "y": -104.10092006088786,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-15",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -325.9074598714334,
+            "y": -104.98613051327314,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-16",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -325.6212263026768,
+            "y": -105.87056711447664,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.3999999999999,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-17",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -325.33259258478154,
+            "y": -106.75422334532973,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-9-18",
+          "sectionId": "140",
+          "row": "9",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -325.0415608452622,
+            "y": -107.63709269241564,
+            "z": 20
+          },
+          "elevation": 20,
+          "distanceFromHomeplate": 342.4,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 22.5,
+      "depth": 345.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-10-1",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -332.3573955211124,
+            "y": -93.28237584036373,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-2",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -332.10291332829127,
+            "y": -94.18436684960741,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.19999999999993,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-3",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -331.8459832099143,
+            "y": -95.08566362730639,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-4",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -331.58660705980947,
+            "y": -95.98625953001557,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-5",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -331.3247867898345,
+            "y": -96.88614791945601,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-6",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -331.0605243298626,
+            "y": -97.78532216256411,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-7",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -330.7938216277684,
+            "y": -98.68377563154003,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-8",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -330.52468064941337,
+            "y": -99.58150170389723,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-9",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -330.25310337863175,
+            "y": -100.47849376250996,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-10",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -329.9790918172154,
+            "y": -101.37474519566358,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-11",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -329.70264798489944,
+            "y": -102.27024939710219,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-12",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -329.42377391934724,
+            "y": -103.16499976607759,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-13",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -329.14247167613524,
+            "y": -104.05898970739871,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-14",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -328.858743328738,
+            "y": -104.95221263147924,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-15",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -328.5725909685129,
+            "y": -105.84466195438635,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-16",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -328.2840167046847,
+            "y": -106.73633109788942,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.19999999999993,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-17",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -327.99302266433,
+            "y": -107.62721348950883,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-10-18",
+          "sectionId": "140",
+          "row": "10",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -327.69961099236133,
+            "y": -108.5173025625639,
+            "z": 22.5
+          },
+          "elevation": 22.5,
+          "distanceFromHomeplate": 345.2,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 25,
+      "depth": 348,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-11-1",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -335.0532260757448,
+            "y": -94.03901156560421,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-2",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -334.79667971681744,
+            "y": -94.94831884027631,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-3",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -334.53766557662277,
+            "y": -95.8569262523251,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-4",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -334.2761855643502,
+            "y": -96.76482710441894,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-5",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -334.012241607365,
+            "y": -97.67201470443422,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-6",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -333.74583565119406,
+            "y": -98.57848236550497,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-7",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -333.4769696595116,
+            "y": -99.48422340607165,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-8",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -333.2056456141247,
+            "y": -100.38923114993116,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 347.99999999999994,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-9",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -332.93186551495904,
+            "y": -101.29349892628466,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-10",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -332.65563138004336,
+            "y": -102.19702006978831,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-11",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -332.3769452454954,
+            "y": -103.09978792060129,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-12",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -332.0958091655065,
+            "y": -104.0017958244351,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-13",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -331.8122252123264,
+            "y": -104.90303713260357,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-14",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -331.526195476248,
+            "y": -105.80350520207061,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-15",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -331.2377220655924,
+            "y": -106.70319339549958,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-16",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -330.9468071066926,
+            "y": -107.6020950813022,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-17",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -330.65345274387846,
+            "y": -108.50020363368793,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-11-18",
+          "sectionId": "140",
+          "row": "11",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -330.35766113946045,
+            "y": -109.39751243271216,
+            "z": 25
+          },
+          "elevation": 25,
+          "distanceFromHomeplate": 348,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 27.5,
+      "depth": 350.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-12-1",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -337.74905663037725,
+            "y": -94.79564729084471,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-2",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -337.49044610534355,
+            "y": -95.7122708309452,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-3",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -337.2293479433312,
+            "y": -96.6281888773438,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.79999999999995,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-4",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -336.96576406889096,
+            "y": -97.54339467882232,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.79999999999995,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-5",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -336.69969642489554,
+            "y": -98.45788148941243,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-6",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -336.4311469725255,
+            "y": -99.37164256844582,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-7",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -336.1601176912548,
+            "y": -100.28467118060327,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-8",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -335.8866105788361,
+            "y": -101.1969605959651,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-9",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -335.6106276512863,
+            "y": -102.10850409005937,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.79999999999995,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-10",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -335.3321709428713,
+            "y": -103.01929494391305,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-11",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -335.05124250609134,
+            "y": -103.92932644410038,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-12",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -334.76784441166575,
+            "y": -104.83859188279264,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-13",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -334.4819787485175,
+            "y": -105.74708455780842,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-14",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -334.19364762375807,
+            "y": -106.654797772662,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-15",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -333.9028531626718,
+            "y": -107.5617248366128,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.79999999999995,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-16",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -333.60959750870046,
+            "y": -108.46785906471499,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-17",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -333.3138828234269,
+            "y": -109.37319377786703,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.80000000000007,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-12-18",
+          "sectionId": "140",
+          "row": "12",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -333.01571128655956,
+            "y": -110.27772230286043,
+            "z": 27.5
+          },
+          "elevation": 27.5,
+          "distanceFromHomeplate": 350.8,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 30,
+      "depth": 353.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-13-1",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -340.4448871850097,
+            "y": -95.55228301608521,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-2",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -340.18421249386967,
+            "y": -96.4762228216141,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-3",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -339.9210303100397,
+            "y": -97.39945150236252,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-4",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -339.65534257343177,
+            "y": -98.32196225322569,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-5",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -339.38715124242606,
+            "y": -99.24374827439064,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.59999999999997,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-6",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -339.11645829385697,
+            "y": -100.16480277138666,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-7",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -338.843265722998,
+            "y": -101.08511895513487,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-8",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -338.56757554354743,
+            "y": -102.00469004199903,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.59999999999997,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-9",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -338.2893897876136,
+            "y": -102.92350925383407,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-10",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -338.00871050569924,
+            "y": -103.84156981803778,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-11",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -337.7255397666873,
+            "y": -104.75886496759948,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-12",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -337.43987965782503,
+            "y": -105.67538794115016,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-13",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -337.15173228470866,
+            "y": -106.59113198301328,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-14",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -336.86109977126813,
+            "y": -107.50609034325336,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-15",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -336.5679842597513,
+            "y": -108.42025627772601,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.59999999999997,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-16",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -336.27238791070835,
+            "y": -109.33362304812776,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-17",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -335.9743129029754,
+            "y": -110.24618392204614,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-13-18",
+          "sectionId": "140",
+          "row": "13",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -335.6737614336587,
+            "y": -111.15793217300869,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 353.6,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 32.5,
+      "depth": 356.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-14-1",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -343.14071773964207,
+            "y": -96.3089187413257,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-2",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -342.8779788823957,
+            "y": -97.24017481228297,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-3",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -342.6127126767481,
+            "y": -98.17071412738122,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-4",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -342.34492107797246,
+            "y": -99.10052982762905,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-5",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -342.0746060599566,
+            "y": -100.02961505936884,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-6",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -341.80176961518833,
+            "y": -100.9579629743275,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-7",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -341.52641375474116,
+            "y": -101.88556672966648,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-8",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -341.24854050825877,
+            "y": -102.81241948803294,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-9",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -340.96815192394075,
+            "y": -103.73851441760877,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-10",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -340.6852500685271,
+            "y": -104.66384469216251,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-11",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -340.3998370272832,
+            "y": -105.58840349109856,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-12",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -340.1119149039842,
+            "y": -106.51218399950767,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-13",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -339.82148582089974,
+            "y": -107.43517940821813,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-14",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -339.52855191877813,
+            "y": -108.35738291384472,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-15",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -339.23311535683075,
+            "y": -109.27878771883921,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-16",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -338.9351783127162,
+            "y": -110.19938703154052,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.4,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-17",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -338.6347429825238,
+            "y": -111.11917406622521,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.40000000000003,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-14-18",
+          "sectionId": "140",
+          "row": "14",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -338.33181158075774,
+            "y": -112.03814204315694,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 356.3999999999999,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 35,
+      "depth": 359.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-15-1",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -345.8365482942745,
+            "y": -97.0655544665662,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-2",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -345.5717452709219,
+            "y": -98.00412680295187,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-3",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -345.3043950434566,
+            "y": -98.94197675239992,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-4",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -345.0344995825132,
+            "y": -99.87909740203243,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-5",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -344.7620608774871,
+            "y": -100.81548184434705,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-6",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -344.4870809365198,
+            "y": -101.75112317726834,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-7",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -344.2095617864844,
+            "y": -102.68601450419808,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.20000000000005,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-8",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -343.9295054729701,
+            "y": -103.62014893406688,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.19999999999993,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-9",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -343.64691406026805,
+            "y": -104.55351958138347,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-10",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -343.3617896313551,
+            "y": -105.48611956628724,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.20000000000005,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-11",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -343.07413428787913,
+            "y": -106.41794201459764,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-12",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -342.7839501501435,
+            "y": -107.3489800578652,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-13",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -342.4912393570909,
+            "y": -108.279226833423,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-14",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -342.1960040662882,
+            "y": -109.2086754844361,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-15",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -341.89824645391025,
+            "y": -110.13731915995243,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.19999999999993,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-16",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -341.59796871472406,
+            "y": -111.0651510149533,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.19999999999993,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-17",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -341.2951730620722,
+            "y": -111.99216421040433,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-15-18",
+          "sectionId": "140",
+          "row": "15",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -340.98986172785686,
+            "y": -112.9183519133052,
+            "z": 35
+          },
+          "elevation": 35,
+          "distanceFromHomeplate": 359.2,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "16",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 37.5,
+      "depth": 362,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-16-1",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -348.53237884890694,
+            "y": -97.82219019180668,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-2",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -348.265511659448,
+            "y": -98.76807879362076,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-3",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -347.99607741016507,
+            "y": -99.71323937741863,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-4",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -347.72407808705395,
+            "y": -100.6576649764358,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-5",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -347.4495156950176,
+            "y": -101.60134862932526,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-6",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -347.1723922578513,
+            "y": -102.5442833802092,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-7",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -346.8927098182276,
+            "y": -103.4864622787297,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-8",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -346.6104704376815,
+            "y": -104.42787838010081,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-9",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -346.3256761965953,
+            "y": -105.36852474515818,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 361.99999999999994,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-10",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -346.03832919418306,
+            "y": -106.30839444041199,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-11",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -345.7484315484751,
+            "y": -107.24748053809674,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-12",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -345.45598539630276,
+            "y": -108.18577611622273,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362.00000000000006,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-13",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -345.16099289328207,
+            "y": -109.12327425862784,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362.00000000000006,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-14",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -344.86345621379826,
+            "y": -110.05996805502747,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-15",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -344.56337755098974,
+            "y": -110.99585060106565,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-16",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -344.26075911673195,
+            "y": -111.93091499836608,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-17",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -343.95560314162066,
+            "y": -112.86515435458342,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-16-18",
+          "sectionId": "140",
+          "row": "16",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -343.647911874956,
+            "y": -113.79856178345347,
+            "z": 37.5
+          },
+          "elevation": 37.5,
+          "distanceFromHomeplate": 362,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "17",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 40,
+      "depth": 364.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-17-1",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -351.2282094035394,
+            "y": -98.57882591704718,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-2",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -350.9592780479741,
+            "y": -99.53203078428966,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.79999999999995,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-3",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -350.6877597768735,
+            "y": -100.48450200243735,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.79999999999995,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-4",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -350.4136565915947,
+            "y": -101.43623255083918,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.79999999999995,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-5",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -350.13697051254815,
+            "y": -102.38721541430345,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-6",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -349.8577035791827,
+            "y": -103.33744358315003,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-7",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -349.5758578499708,
+            "y": -104.28691005326132,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-8",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -349.29143540239284,
+            "y": -105.23560782613474,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-9",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -349.0044383329226,
+            "y": -106.18352990893288,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-10",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -348.714868757011,
+            "y": -107.13066931453672,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.80000000000007,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-11",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -348.42272880907103,
+            "y": -108.07701906159583,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-12",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -348.128020642462,
+            "y": -109.02257217458026,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-13",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -347.8307464294732,
+            "y": -109.96732168383271,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.80000000000007,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-14",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -347.53090836130826,
+            "y": -110.91126062561885,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.79999999999995,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-15",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -347.22850864806924,
+            "y": -111.85438204217887,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-16",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -346.92354951873983,
+            "y": -112.79667898177887,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-17",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -346.6160332211691,
+            "y": -113.73814449876252,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-17-18",
+          "sectionId": "140",
+          "row": "17",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -346.3059620220551,
+            "y": -114.67877165360173,
+            "z": 40
+          },
+          "elevation": 40,
+          "distanceFromHomeplate": 364.8,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "18",
+      "sectionId": "140",
+      "seatCount": 18,
+      "elevation": 42.5,
+      "depth": 367.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-140-18-1",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "1",
+          "position3D": {
+            "x": -353.9240399581718,
+            "y": -99.33546164228768,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -74.32222222222222,
+          "facing": 105.67777777777778,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-2",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "2",
+          "position3D": {
+            "x": -353.65304443650024,
+            "y": -100.29598277495855,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -74.16666666666667,
+          "facing": 105.83333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-3",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "3",
+          "position3D": {
+            "x": -353.379442143582,
+            "y": -101.25576462745606,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -74.01111111111112,
+          "facing": 105.98888888888888,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-4",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "4",
+          "position3D": {
+            "x": -353.1032350961355,
+            "y": -102.21480012524255,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6000000000001,
+          "angle": -73.85555555555555,
+          "facing": 106.14444444444445,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-5",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "5",
+          "position3D": {
+            "x": -352.8244253300787,
+            "y": -103.17308219928167,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -73.7,
+          "facing": 106.3,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-6",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "6",
+          "position3D": {
+            "x": -352.5430149005142,
+            "y": -104.13060378609089,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6000000000001,
+          "angle": -73.54444444444445,
+          "facing": 106.45555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-7",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "7",
+          "position3D": {
+            "x": -352.259005881714,
+            "y": -105.08735782779293,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -73.3888888888889,
+          "facing": 106.6111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-8",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "8",
+          "position3D": {
+            "x": -351.97240036710417,
+            "y": -106.04333727216867,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.59999999999997,
+          "angle": -73.23333333333333,
+          "facing": 106.76666666666667,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-9",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "9",
+          "position3D": {
+            "x": -351.6832004692498,
+            "y": -106.9985350727076,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.59999999999997,
+          "angle": -73.07777777777778,
+          "facing": 106.92222222222222,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-10",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "10",
+          "position3D": {
+            "x": -351.39140831983894,
+            "y": -107.95294418866146,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6000000000001,
+          "angle": -72.92222222222223,
+          "facing": 107.07777777777777,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-11",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "11",
+          "position3D": {
+            "x": -351.097026069667,
+            "y": -108.90655758509493,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -72.76666666666667,
+          "facing": 107.23333333333333,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-12",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "12",
+          "position3D": {
+            "x": -350.8000558886213,
+            "y": -109.85936823293778,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6000000000001,
+          "angle": -72.61111111111111,
+          "facing": 107.38888888888889,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-13",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "13",
+          "position3D": {
+            "x": -350.50049996566435,
+            "y": -110.81136910903757,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6000000000001,
+          "angle": -72.45555555555556,
+          "facing": 107.54444444444444,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-14",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "14",
+          "position3D": {
+            "x": -350.1983605088183,
+            "y": -111.76255319621022,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -72.30000000000001,
+          "facing": 107.69999999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-15",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "15",
+          "position3D": {
+            "x": -349.89363974514873,
+            "y": -112.71291348329208,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -72.14444444444445,
+          "facing": 107.85555555555555,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-16",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "16",
+          "position3D": {
+            "x": -349.5863399207477,
+            "y": -113.66244296519164,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -71.9888888888889,
+          "facing": 108.0111111111111,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-17",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "17",
+          "position3D": {
+            "x": -349.2764633007176,
+            "y": -114.61113464294162,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.6,
+          "angle": -71.83333333333334,
+          "facing": 108.16666666666666,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "marlins-140-18-18",
+          "sectionId": "140",
+          "row": "18",
+          "seatNumber": "18",
+          "position3D": {
+            "x": -348.9640121691542,
+            "y": -115.55898152374998,
+            "z": 42.5
+          },
+          "elevation": 42.5,
+          "distanceFromHomeplate": 367.59999999999997,
+          "angle": -71.67777777777778,
+          "facing": 108.32222222222222,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 288,
+    "aisle": 36,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};

@@ -1,0 +1,917 @@
+/**
+ * Suite S40 - marlins
+ * Generated: 2025-10-23T00:49:17.247Z
+ * Total Seats: 32
+ * Total Rows: 2
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_S40: SectionSeatingData = {
+  "sectionId": "S40",
+  "sectionName": "Suite S40",
+  "stadiumId": "marlins",
+  "totalSeats": 32,
+  "totalRows": 2,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "S40",
+      "seatCount": 16,
+      "elevation": 30,
+      "depth": 95,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-S40-1-1",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 6.626865005691895,
+            "y": 94.7685847746833,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "aisle",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-2",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 6.296020537999942,
+            "y": 94.79113948774476,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -183.79999999999998,
+          "facing": -3.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-3",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 5.965099355284804,
+            "y": 94.8125392006858,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -183.6,
+          "facing": -3.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-4",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 5.634105489716239,
+            "y": 94.8327836527577,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -183.4,
+          "facing": -3.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-5",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 5.303042974350467,
+            "y": 94.85187259728819,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -183.2,
+          "facing": -3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-6",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 4.971915843079675,
+            "y": 94.86980580168452,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -183,
+          "facing": -3,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-7",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 4.640728130583122,
+            "y": 94.88658304743623,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -182.79999999999998,
+          "facing": -2.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-8",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 4.309483872279161,
+            "y": 94.9022041301179,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-9",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 3.978187104273869,
+            "y": 94.91666885939155,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -182.4,
+          "facing": -2.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-10",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 3.6468418633143185,
+            "y": 94.92997705900902,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -182.2,
+          "facing": -2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-11",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 3.315452186737622,
+            "y": 94.94212856681409,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -182,
+          "facing": -2,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-12",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 2.984022112422069,
+            "y": 94.9531232347445,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -181.79999999999998,
+          "facing": -1.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-13",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 2.6525556787391142,
+            "y": 94.96296092883367,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -181.6,
+          "facing": -1.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-14",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 2.321056924501972,
+            "y": 94.97164152921239,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 94.99999999999999,
+          "angle": -181.4,
+          "facing": -1.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-15",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 1.9895298889188542,
+            "y": 94.97916493011033,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95.00000000000001,
+          "angle": -181.2,
+          "facing": -1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-1-16",
+          "sectionId": "S40",
+          "row": "1",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 1.6579786115418973,
+            "y": 94.98553103985716,
+            "z": 30
+          },
+          "elevation": 30,
+          "distanceFromHomeplate": 95,
+          "angle": -181,
+          "facing": -1,
+          "seatType": "aisle",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "S40",
+      "seatCount": 16,
+      "elevation": 32.5,
+      "depth": 97.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "marlins-S40-2-1",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 6.8221831321754465,
+            "y": 97.56176411541081,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -184,
+          "facing": -4,
+          "seatType": "aisle",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-2",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 6.4815874591199405,
+            "y": 97.5849835989625,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.79999999999998,
+          "facing": -3.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-3",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 6.140912809966882,
+            "y": 97.60701404028495,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.6,
+          "facing": -3.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-4",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 5.800163335728929,
+            "y": 97.62785517094424,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.4,
+          "facing": -3.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-5",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 5.459343188331323,
+            "y": 97.64750673699774,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183.2,
+          "facing": -3.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-6",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 5.118456520559918,
+            "y": 97.66596849899732,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -183,
+          "facing": -3,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-7",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 4.777507486010835,
+            "y": 97.68324023199224,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.79999999999998,
+          "angle": -182.79999999999998,
+          "facing": -2.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-8",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 4.436500239041073,
+            "y": 97.69932172553189,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.6,
+          "facing": -2.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-9",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 4.095438934715625,
+            "y": 97.71421278366834,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.4,
+          "facing": -2.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-10",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 3.754327728759372,
+            "y": 97.72791322495875,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182.2,
+          "facing": -2.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-11",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "11",
+          "position3D": {
+            "x": 3.413170777504625,
+            "y": 97.74042288246756,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -182,
+          "facing": -2,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-12",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "12",
+          "position3D": {
+            "x": 3.0719722378408245,
+            "y": 97.75174160376855,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -181.79999999999998,
+          "facing": -1.799999999999983,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-13",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "13",
+          "position3D": {
+            "x": 2.730736267165109,
+            "y": 97.76186925094666,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.80000000000001,
+          "angle": -181.6,
+          "facing": -1.5999999999999943,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-14",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "14",
+          "position3D": {
+            "x": 2.3894670233293986,
+            "y": 97.77080570059971,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -181.4,
+          "facing": -1.4000000000000057,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-15",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "15",
+          "position3D": {
+            "x": 2.048168664592252,
+            "y": 97.77855084383988,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -181.2,
+          "facing": -1.1999999999999886,
+          "seatType": "standard",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        },
+        {
+          "id": "marlins-S40-2-16",
+          "sectionId": "S40",
+          "row": "2",
+          "seatNumber": "16",
+          "position3D": {
+            "x": 1.70684534956629,
+            "y": 97.78510458629506,
+            "z": 32.5
+          },
+          "elevation": 32.5,
+          "distanceFromHomeplate": 97.8,
+          "angle": -181,
+          "facing": -1,
+          "seatType": "aisle",
+          "hasArmrests": false,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": true,
+            "elevatorAccess": true
+          },
+          "covered": true,
+          "overhangHeight": 20
+        }
+      ],
+      "covered": true,
+      "overhangHeight": 20,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 28,
+    "aisle": 4,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
