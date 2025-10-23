@@ -1,0 +1,285 @@
+/**
+ * 4 - rays
+ * Generated: 2025-10-23T02:20:17.029Z
+ * Total Seats: 9
+ * Total Rows: 2
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_4: SectionSeatingData = {
+  "sectionId": "4",
+  "sectionName": "4",
+  "stadiumId": "rays",
+  "totalSeats": 9,
+  "totalRows": 2,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "4",
+      "seatCount": 5,
+      "elevation": 8,
+      "depth": 55,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rays-4-1-1",
+          "sectionId": "4",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 45.38124240530623,
+            "y": 31.07318518837159,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 55,
+          "angle": 124.4,
+          "facing": 304.4,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-1-2",
+          "sectionId": "4",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 44.94296940843207,
+            "y": 31.70377738933863,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 55,
+          "angle": 125.2,
+          "facing": 305.2,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-1-3",
+          "sectionId": "4",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 44.49593469062211,
+            "y": 32.328188876086024,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 55,
+          "angle": 126,
+          "facing": 306,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-1-4",
+          "sectionId": "4",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 44.04022540218035,
+            "y": 32.94629791835722,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 55,
+          "angle": 126.8,
+          "facing": 306.8,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-1-5",
+          "sectionId": "4",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 43.575930384535496,
+            "y": 33.55798401456971,
+            "z": 8
+          },
+          "elevation": 8,
+          "distanceFromHomeplate": 55,
+          "angle": 127.6,
+          "facing": 307.6,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "4",
+      "seatCount": 4,
+      "elevation": 10.5,
+      "depth": 57.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "rays-4-2-1",
+          "sectionId": "4",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 47.63449370235251,
+            "y": 32.738280494255335,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 57.800000000000004,
+          "angle": 124.5,
+          "facing": 304.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-2-2",
+          "sectionId": "4",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 47.05587696099525,
+            "y": 33.56463084009232,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 57.8,
+          "angle": 125.5,
+          "facing": 305.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-2-3",
+          "sectionId": "4",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 46.46292654367517,
+            "y": 34.380757074227525,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 57.800000000000004,
+          "angle": 126.5,
+          "facing": 306.5,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "rays-4-2-4",
+          "sectionId": "4",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 45.85582306883339,
+            "y": 35.18641059670405,
+            "z": 10.5
+          },
+          "elevation": 10.5,
+          "distanceFromHomeplate": 57.79999999999999,
+          "angle": 127.5,
+          "facing": 307.5,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 5,
+    "aisle": 4,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
