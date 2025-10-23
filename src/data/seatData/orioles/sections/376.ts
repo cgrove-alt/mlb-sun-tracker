@@ -1,0 +1,4120 @@
+/**
+ * 376 - orioles
+ * Generated: 2025-10-23T01:12:26.008Z
+ * Total Seats: 150
+ * Total Rows: 15
+ */
+
+import type { SectionSeatingData } from '@/types/seat';
+
+export const section_376: SectionSeatingData = {
+  "sectionId": "376",
+  "sectionName": "376",
+  "stadiumId": "orioles",
+  "totalSeats": 150,
+  "totalRows": 15,
+  "rows": [
+    {
+      "rowNumber": "1",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 70,
+      "depth": 140,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-1-1",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 130.19118308175558,
+            "y": -51.48063565820452,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-2",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 130.50322935786807,
+            "y": -50.68438741040169,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-3",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 130.81040583839135,
+            "y": -49.88624784843367,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-4",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 131.11270106087588,
+            "y": -49.0862467552918,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-5",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 131.41010374501892,
+            "y": -48.28441398343118,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-6",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 131.70260279308525,
+            "y": -47.48077945365695,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-7",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 131.99018729032136,
+            "y": -46.67537315400801,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-8",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 132.27284650536293,
+            "y": -45.86822513863707,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-9",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 132.5505698906349,
+            "y": -45.05936552669057,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-1-10",
+          "sectionId": "376",
+          "row": "1",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 132.8233470827453,
+            "y": -44.24882450118396,
+            "z": 70
+          },
+          "elevation": 70,
+          "distanceFromHomeplate": 140,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "2",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 72.5,
+      "depth": 142.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-2-1",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 132.7950067433907,
+            "y": -52.51024837136861,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-2",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 133.11329394502542,
+            "y": -51.698075158609726,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-3",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 133.42661395515918,
+            "y": -50.88397280540235,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-4",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 133.73495508209342,
+            "y": -50.06797169039764,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-5",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 134.03830581991932,
+            "y": -49.250102263099805,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-6",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 134.33665484894698,
+            "y": -48.43039504273009,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-7",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 134.6299910361278,
+            "y": -47.608880617088175,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-8",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 134.9183034354702,
+            "y": -46.78558964140982,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-9",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 135.2015812884476,
+            "y": -45.96055283722439,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-2-10",
+          "sectionId": "376",
+          "row": "2",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 135.4798140244002,
+            "y": -45.13380099120764,
+            "z": 72.5
+          },
+          "elevation": 72.5,
+          "distanceFromHomeplate": 142.8,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "3",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 75,
+      "depth": 145.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-3-1",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 135.39883040502582,
+            "y": -53.539861084532696,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.60000000000002,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-2",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 135.72335853218277,
+            "y": -52.711762906817754,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-3",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 136.042822071927,
+            "y": -51.88169776237101,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-4",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 136.3572091033109,
+            "y": -51.04969662550347,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-5",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 136.66650789481966,
+            "y": -50.215790542768424,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-6",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 136.97070690480865,
+            "y": -49.38001063180322,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-7",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 137.2697947819342,
+            "y": -48.54238808016833,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-8",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 137.56376036557745,
+            "y": -47.702954144182556,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-9",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 137.8525926862603,
+            "y": -46.8617401477582,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-3-10",
+          "sectionId": "376",
+          "row": "3",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 138.1362809660551,
+            "y": -46.01877748123131,
+            "z": 75
+          },
+          "elevation": 75,
+          "distanceFromHomeplate": 145.6,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "4",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 77.5,
+      "depth": 148.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-4-1",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 138.00265406666094,
+            "y": -54.56947379769679,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-2",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 138.33342311934015,
+            "y": -53.72545065502579,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-3",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 138.65903018869483,
+            "y": -52.87942271933969,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-4",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 138.97946312452845,
+            "y": -52.03142156060932,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-5",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 139.29470996972006,
+            "y": -51.18147882243705,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-6",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 139.60475896067038,
+            "y": -50.32962622087637,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-7",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 139.90959852774063,
+            "y": -49.47589554324849,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-8",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 140.2092172956847,
+            "y": -48.6203186469553,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-9",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 140.503604084073,
+            "y": -47.76292745829201,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-4-10",
+          "sectionId": "376",
+          "row": "4",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 140.79274790771,
+            "y": -46.903753971255,
+            "z": 77.5
+          },
+          "elevation": 77.5,
+          "distanceFromHomeplate": 148.4,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "5",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 80,
+      "depth": 151.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-5-1",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 140.60647772829603,
+            "y": -55.59908651086087,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-2",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 140.94348770649748,
+            "y": -54.73913840323382,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-3",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 141.27523830546264,
+            "y": -53.87714767630836,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-4",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 141.60171714574594,
+            "y": -53.01314649571514,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.19999999999996,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-5",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 141.92291204462043,
+            "y": -52.14716710210567,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-6",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 142.23881101653205,
+            "y": -51.279241809949504,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-7",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 142.54940227354706,
+            "y": -50.409403006328645,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-8",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 142.85467422579194,
+            "y": -49.53768314972803,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-9",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 143.15461548188568,
+            "y": -48.66411476882582,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.2,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-5-10",
+          "sectionId": "376",
+          "row": "5",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 143.4492148493649,
+            "y": -47.78873046127867,
+            "z": 80
+          },
+          "elevation": 80,
+          "distanceFromHomeplate": 151.19999999999996,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "6",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 82.5,
+      "depth": 154,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-6-1",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 143.21030138993115,
+            "y": -56.62869922402497,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-2",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 143.55355229365486,
+            "y": -55.75282615144186,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-3",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 143.89144642223047,
+            "y": -54.874872633277036,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-4",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 144.22397116696348,
+            "y": -53.994871430820986,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-5",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 144.5511141195208,
+            "y": -53.112855381774295,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-6",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 144.87286307239378,
+            "y": -52.228857399022644,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-7",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 145.1892060193535,
+            "y": -51.342910469408814,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-8",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 145.50013115589923,
+            "y": -50.45504765250078,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-9",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 145.8056268796984,
+            "y": -49.56530207935963,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-6-10",
+          "sectionId": "376",
+          "row": "6",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 146.10568179101983,
+            "y": -48.67370695130235,
+            "z": 82.5
+          },
+          "elevation": 82.5,
+          "distanceFromHomeplate": 154,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "7",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 85,
+      "depth": 156.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-7-1",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 145.81412505156626,
+            "y": -57.65831193718906,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-2",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 146.16361688081224,
+            "y": -56.766513899649894,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-3",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 146.5076545389983,
+            "y": -55.87259759024572,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-4",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 146.846225188181,
+            "y": -54.976596365926824,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-5",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 147.1793161944212,
+            "y": -54.07854366144293,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-6",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 147.50691512825549,
+            "y": -53.178472988095784,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-7",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 147.82900976515992,
+            "y": -52.276417932488975,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-8",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 148.14558808600648,
+            "y": -51.37241215527352,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-9",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 148.4566382775111,
+            "y": -50.46648938989345,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-7-10",
+          "sectionId": "376",
+          "row": "7",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 148.76214873267475,
+            "y": -49.55868344132604,
+            "z": 85
+          },
+          "elevation": 85,
+          "distanceFromHomeplate": 156.8,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "8",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 87.5,
+      "depth": 159.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-8-1",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 148.41794871320135,
+            "y": -58.687924650353146,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-2",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 148.77368146796957,
+            "y": -57.78020164785792,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-3",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 149.12386265576612,
+            "y": -56.87032254721438,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-4",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 149.4684792093985,
+            "y": -55.958321301032655,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-5",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 149.80751826932158,
+            "y": -55.04423194111154,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-6",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 150.1409671841172,
+            "y": -54.12808857716892,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-7",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 150.46881351096633,
+            "y": -53.20992539556913,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-8",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 150.79104501611374,
+            "y": -52.289776658046264,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-9",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 151.10764967532378,
+            "y": -51.36767670042725,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-8-10",
+          "sectionId": "376",
+          "row": "8",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 151.41861567432963,
+            "y": -50.44365993134971,
+            "z": 87.5
+          },
+          "elevation": 87.5,
+          "distanceFromHomeplate": 159.6,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "9",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 90,
+      "depth": 162.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-9-1",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 151.0217723748365,
+            "y": -59.717537363517245,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-2",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 151.38374605512695,
+            "y": -58.79388939606596,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-3",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 151.74007077253395,
+            "y": -57.86804750418306,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-4",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 152.09073323061602,
+            "y": -56.94004623613849,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-5",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 152.43572034422195,
+            "y": -56.009920220780174,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-6",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 152.7750192399789,
+            "y": -55.077704166242064,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-7",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 153.10861725677276,
+            "y": -54.14343285864929,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.39999999999998,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-8",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 153.436501946221,
+            "y": -53.207141160819006,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-9",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 153.7586610731365,
+            "y": -52.26886401096107,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-9-10",
+          "sectionId": "376",
+          "row": "9",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 154.07508261598454,
+            "y": -51.328636421373396,
+            "z": 90
+          },
+          "elevation": 90,
+          "distanceFromHomeplate": 162.4,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "10",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 92.5,
+      "depth": 165.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-10-1",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 153.6255960364716,
+            "y": -60.74715007668132,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-2",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 153.9938106422843,
+            "y": -59.807577144273985,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-3",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 154.35627888930176,
+            "y": -58.86577246115173,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-4",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 154.71298725183354,
+            "y": -57.92177117124432,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-5",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 155.06392241912232,
+            "y": -56.975608500448786,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-6",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 155.4090712958406,
+            "y": -56.0273197553152,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-7",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 155.7484210025792,
+            "y": -55.076940321729445,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-8",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 156.08195887632823,
+            "y": -54.12450566359174,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-9",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 156.40967247094918,
+            "y": -53.170051321494874,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-10-10",
+          "sectionId": "376",
+          "row": "10",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 156.73154955763943,
+            "y": -52.213612911397064,
+            "z": 92.5
+          },
+          "elevation": 92.5,
+          "distanceFromHomeplate": 165.2,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "11",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 95,
+      "depth": 168,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-11-1",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 156.2294196981067,
+            "y": -61.77676278984542,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-2",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 156.60387522944166,
+            "y": -60.82126489248203,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-3",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 156.9724870060696,
+            "y": -59.8634974181204,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-4",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 157.33524127305105,
+            "y": -58.90349610635016,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-5",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 157.6921244940227,
+            "y": -57.94129678011742,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-6",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 158.0431233517023,
+            "y": -56.97693534438834,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-7",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 158.38822474838562,
+            "y": -56.010447784809614,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-8",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 158.72741580643552,
+            "y": -55.04187016636449,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-9",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 159.06068386876188,
+            "y": -54.07123863202869,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 168,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-11-10",
+          "sectionId": "376",
+          "row": "11",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 159.38801649929434,
+            "y": -53.098589401420746,
+            "z": 95
+          },
+          "elevation": 95,
+          "distanceFromHomeplate": 167.99999999999997,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "12",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 97.5,
+      "depth": 170.8,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-12-1",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 158.83324335974183,
+            "y": -62.80637550300951,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-2",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 159.21393981659904,
+            "y": -61.83495264069006,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-3",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 159.58869512283744,
+            "y": -60.861222375089085,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-4",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 159.9574952942686,
+            "y": -59.885221041456006,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-5",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 160.3203265689231,
+            "y": -58.906985059786045,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-6",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 160.67717540756402,
+            "y": -57.926550933461485,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-7",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 161.02802849419206,
+            "y": -56.943955247889775,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-8",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 161.37287273654277,
+            "y": -55.95923466913723,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-9",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 161.7116952665746,
+            "y": -54.9724259425625,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-12-10",
+          "sectionId": "376",
+          "row": "12",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 162.04448344094928,
+            "y": -53.983565891444435,
+            "z": 97.5
+          },
+          "elevation": 97.5,
+          "distanceFromHomeplate": 170.8,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "13",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 100,
+      "depth": 173.6,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-13-1",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 161.43706702137692,
+            "y": -63.8359882161736,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-2",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 161.8240044037564,
+            "y": -62.84864038889809,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-3",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 162.20490323960527,
+            "y": -61.85894733205775,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-4",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 162.57974931548608,
+            "y": -60.86694597656184,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-5",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 162.94852864382347,
+            "y": -59.872673339454664,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-6",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 163.3112274634257,
+            "y": -58.87616652253462,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-7",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 163.66783223999846,
+            "y": -57.87746271096993,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-8",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 164.01832966665003,
+            "y": -56.876599171909966,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-9",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 164.36270666438728,
+            "y": -55.87361325309631,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-13-10",
+          "sectionId": "376",
+          "row": "13",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 164.70095038260416,
+            "y": -54.8685423814681,
+            "z": 100
+          },
+          "elevation": 100,
+          "distanceFromHomeplate": 173.6,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "14",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 102.5,
+      "depth": 176.4,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-14-1",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 164.04089068301204,
+            "y": -64.86560092933769,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-2",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 164.43406899091374,
+            "y": -63.862328137106125,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.39999999999998,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-3",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 164.8211113563731,
+            "y": -62.85667228902643,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-4",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 165.20200333670363,
+            "y": -61.848670911667675,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-5",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 165.57673071872384,
+            "y": -60.83836161912329,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-6",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 165.94527951928742,
+            "y": -59.82578211160776,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-7",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 166.3076359858049,
+            "y": -58.81097017405009,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.39999999999998,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-8",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 166.6637865967573,
+            "y": -57.793963674682715,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-9",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 167.01371806219998,
+            "y": -56.77480056363012,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-14-10",
+          "sectionId": "376",
+          "row": "14",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 167.35741732425907,
+            "y": -55.753518871491785,
+            "z": 102.5
+          },
+          "elevation": 102.5,
+          "distanceFromHomeplate": 176.4,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    },
+    {
+      "rowNumber": "15",
+      "sectionId": "376",
+      "seatCount": 10,
+      "elevation": 105,
+      "depth": 179.2,
+      "rowSpacing": 36,
+      "seats": [
+        {
+          "id": "orioles-376-15-1",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "1",
+          "position3D": {
+            "x": 166.64471434464716,
+            "y": -65.89521364250177,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.20000000000002,
+          "angle": -291.575,
+          "facing": -111.57499999999999,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-2",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "2",
+          "position3D": {
+            "x": 167.0441335780711,
+            "y": -64.87601588531416,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -291.225,
+          "facing": -111.22500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-3",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "3",
+          "position3D": {
+            "x": 167.43731947314092,
+            "y": -63.854397245995095,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -290.875,
+          "facing": -110.875,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-4",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "4",
+          "position3D": {
+            "x": 167.8242573579211,
+            "y": -62.830395846773506,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -290.525,
+          "facing": -110.52499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-5",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "5",
+          "position3D": {
+            "x": 168.2049327936242,
+            "y": -61.80404989879191,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -290.175,
+          "facing": -110.17500000000001,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-6",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "6",
+          "position3D": {
+            "x": 168.57933157514913,
+            "y": -60.77539770068089,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -289.825,
+          "facing": -109.82499999999999,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-7",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "7",
+          "position3D": {
+            "x": 168.94743973161133,
+            "y": -59.744477637130245,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -289.475,
+          "facing": -109.47500000000002,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-8",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "8",
+          "position3D": {
+            "x": 169.30924352686455,
+            "y": -58.71132817745545,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -289.125,
+          "facing": -109.125,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-9",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "9",
+          "position3D": {
+            "x": 169.66472946001267,
+            "y": -57.67598787416393,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -288.775,
+          "facing": -108.77499999999998,
+          "seatType": "standard",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        },
+        {
+          "id": "orioles-376-15-10",
+          "sectionId": "376",
+          "row": "15",
+          "seatNumber": "10",
+          "position3D": {
+            "x": 170.01388426591396,
+            "y": -56.63849536151546,
+            "z": 105
+          },
+          "elevation": 105,
+          "distanceFromHomeplate": 179.2,
+          "angle": -288.425,
+          "facing": -108.42500000000001,
+          "seatType": "aisle",
+          "hasArmrests": true,
+          "cupHolders": true,
+          "viewQuality": "good",
+          "accessibility": {
+            "wheelchairAccessible": false,
+            "companionSeat": false,
+            "requiresStairs": false,
+            "elevatorAccess": false
+          },
+          "covered": false
+        }
+      ],
+      "covered": false,
+      "hasAisleSeats": false,
+      "wheelchairRow": false
+    }
+  ],
+  "seatDistribution": {
+    "standard": 120,
+    "aisle": 30,
+    "wheelchair": 0,
+    "companion": 0,
+    "other": 0
+  }
+};
